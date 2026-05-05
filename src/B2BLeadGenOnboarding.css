@@ -1,0 +1,299 @@
+
+.b2b-portal-container {
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  font-family: 'Outfit', sans-serif;
+  background-color: #050505;
+  color: #ffffff;
+}
+
+.bg-gradient-mesh {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: radial-gradient(circle at 80% 20%, rgba(0, 229, 255, 0.08), transparent 50%),
+              radial-gradient(circle at 20% 80%, rgba(112, 0, 255, 0.08), transparent 50%);
+}
+
+.b2b-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2.5rem 3rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 50;
+}
+
+.back-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: rgba(255, 255, 255, 0.4);
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  transition: all 0.3s ease;
+}
+
+.back-link:hover {
+  color: #00e5ff;
+}
+
+.back-icon-wrapper {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.3s ease;
+}
+
+.back-link:hover .back-icon-wrapper {
+  border-color: rgba(0, 229, 255, 0.4);
+}
+
+.b2b-main {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 3rem 15rem;
+  position: relative;
+  z-index: 10;
+}
+
+.welcome-section {
+  text-align: center;
+  padding-top: 8rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-size: 8rem;
+  font-weight: 900;
+  background: linear-gradient(to bottom, #ffffff, rgba(255, 255, 255, 0.3));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.05em;
+  line-height: 0.85;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+}
+
+.hero-subtitle {
+  color: #00e5ff;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.6em;
+  font-size: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-style: italic;
+}
+
+.cta-button {
+  padding: 1.5rem 3.5rem;
+  background: #ffffff;
+  color: #000000;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-style: italic;
+  border-radius: 9999px;
+  border: none;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+  margin-top: 4rem;
+}
+
+.cta-button:hover {
+  background: #00e5ff;
+  transform: scale(1.05);
+}
+
+.cta-button:active {
+  transform: scale(0.95);
+}
+
+.form-section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding-top: 10vh;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(100px);
+  -webkit-backdrop-filter: blur(100px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 5rem;
+  border-radius: 40px;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.4);
+  position: relative;
+}
+
+.glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(0, 229, 255, 0.3), transparent);
+}
+
+.input-group {
+  margin-bottom: 2.5rem;
+  text-align: left;
+}
+
+.input-label {
+  font-size: 10px;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  display: block;
+  margin-bottom: 1.5rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.form-input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.75rem 2rem;
+  border-radius: 1rem;
+  font-size: 1.75rem;
+  color: #ffffff;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: -0.02em;
+  font-style: italic;
+  transition: all 0.3s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #00e5ff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+}
+
+.launch-button {
+  width: 100%;
+  padding: 2.5rem;
+  background: linear-gradient(90deg, #00e5ff, #3b82f6);
+  color: #ffffff;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  letter-spacing: 0.4em;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 3rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 20px 80px rgba(0, 229, 255, 0.3);
+}
+
+.launch-button:hover {
+  transform: scale(1.02);
+  filter: brightness(1.1);
+}
+
+.results-section {
+  padding-top: 8rem;
+}
+
+.manifest-header {
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 4rem;
+}
+
+.manifest-title {
+  font-size: 4rem;
+  font-weight: 900;
+  color: #00e5ff;
+  text-transform: uppercase;
+  font-style: italic;
+}
+
+.property-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 5rem;
+}
+
+.info-label {
+  font-size: 10px;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.2);
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  margin-bottom: 0.5rem;
+}
+
+.signals-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 6rem;
+}
+
+.signal-card {
+  padding: 1.25rem 1.75rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 1.25rem;
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+.signal-card:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(0, 229, 255, 0.4);
+}
+
+.signal-tag {
+  font-size: 9px;
+  font-weight: 900;
+  color: rgba(0, 229, 255, 0.4);
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.signal-name {
+  font-size: 1.1rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+@media (max-width: 1024px) {
+  .hero-title { font-size: 5rem; }
+  .grid-2 { grid-template-columns: 1fr; }
+  .signals-grid { grid-template-columns: repeat(2, 1fr); }
+}
