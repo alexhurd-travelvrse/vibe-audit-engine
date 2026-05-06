@@ -28,6 +28,8 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
   }, [initialStep]);
 
   const startAnalysis = async () => {
+    // Email validation and Formspree logging temporarily disabled to save credits
+    /*
     if (!formData.email) {
       alert("Please enter your work email to launch the audit.");
       return;
@@ -51,6 +53,7 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
     } catch (e) {
       console.error("Failed to notify Formspree", e);
     }
+    */
 
     setStep('processing');
     
