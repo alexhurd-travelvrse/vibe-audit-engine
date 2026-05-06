@@ -12,6 +12,7 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
   const [step, setStep] = useState(initialStep);
   const [processingStage, setProcessingStage] = useState(0);
   const [formData, setFormData] = useState({
+    email: '',
     propertyName: '25hours Copenhagen',
     propertyUrl: 'https://www.25hours-hotels.com/en/hotels/copenhagen/indre-by',
     city: 'Copenhagen',
@@ -26,6 +27,30 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
   }, [initialStep]);
 
   const startAnalysis = async () => {
+    if (!formData.email) {
+      alert("Please enter your work email to launch the audit.");
+      return;
+    }
+
+    try {
+      await fetch("https://formspree.io/f/xaqlrjor", {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          email: formData.email,
+          property: formData.propertyName,
+          market: formData.city,
+          neighborhood: formData.neighborhood,
+          source: "Vibe Audit Engine Onboarding"
+        })
+      });
+    } catch (e) {
+      console.error("Failed to notify Formspree", e);
+    }
+
     setStep('processing');
     
     setProcessingStage(1);
@@ -124,6 +149,11 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                         <label className="input-label" style={{ marginBottom: '0.75rem' }}>Neighborhood</label>
                         <input type="text" className="form-input" style={{ fontSize: '1.1rem', padding: '1rem 1.5rem' }} value={formData.neighborhood} placeholder="e.g. Soho" onChange={e => setFormData({...formData, neighborhood: e.target.value})} />
                     </div>
+                </div>
+
+                <div className="input-group" style={{ marginBottom: '1.5rem' }}>
+                  <label className="input-label" style={{ marginBottom: '0.75rem' }}>Work Email</label>
+                  <input type="email" className="form-input" style={{ fontSize: '1.1rem', padding: '1rem 1.5rem' }} value={formData.email} placeholder="Enter your work email" onChange={e => setFormData({...formData, email: e.target.value})} />
                 </div>
 
                 <button className="launch-button" style={{ padding: '1.25rem', fontSize: '1.2rem', marginTop: '1.5rem' }} onClick={startAnalysis}>
@@ -297,6 +327,38 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
           to { transform: rotate(360deg); }
         }
       `}</style>
+
+      <footer style={{
+        borderTop: '1px solid rgba(212, 175, 55, 0.15)',
+        marginTop: '4rem',
+        padding: '2rem 3rem',
+        maxWidth: '1400px',
+        margin: '4rem auto 0',
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        flexWrap: 'wrap',
+        gap: '1rem',
+        position: 'relative',
+        zIndex: 10
+      }}>
+        <p style={{ color: '#8892B0', fontSize: '13px', fontWeight: 500 }}>
+          © {new Date().getFullYear()} Travelvrse. All rights reserved.
+        </p>
+        <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
+          <a href="https://usgrant.travelvrse.com/privacy" target="_blank" rel="noopener noreferrer" style={{ color: '#8892B0', fontSize: '13px', fontWeight: 500, textDecoration: 'none', transition: 'color 0.3s ease' }}
+            onMouseEnter={e => e.target.style.color = '#00e5ff'}
+            onMouseLeave={e => e.target.style.color = '#8892B0'}>
+            Privacy Policy
+          </a>
+          <span style={{ color: 'rgba(212, 175, 55, 0.4)' }}>|</span>
+          <a href="https://usgrant.travelvrse.com/terms" target="_blank" rel="noopener noreferrer" style={{ color: '#8892B0', fontSize: '13px', fontWeight: 500, textDecoration: 'none', transition: 'color 0.3s ease' }}
+            onMouseEnter={e => e.target.style.color = '#00e5ff'}
+            onMouseLeave={e => e.target.style.color = '#8892B0'}>
+            Terms &amp; Conditions
+          </a>
+        </div>
+      </footer>
     </div>
   );
 };

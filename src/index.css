@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -7,9 +9,9 @@
 html, body, #root {
   width: 100%;
   min-height: 100vh;
-  background: #000;
-  color: #fff;
-  font-family: 'Outfit', 'Inter', system-ui, sans-serif;
+  background: #050B14;
+  color: #E6F1FF;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
