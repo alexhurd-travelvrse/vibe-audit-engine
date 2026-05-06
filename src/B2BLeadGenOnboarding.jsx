@@ -280,12 +280,12 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
 
               {/* Propulsion Roadmap */}
               <section style={{ marginBottom: '8rem', width: '100%' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', marginBottom: '3rem' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', marginBottom: '3rem', paddingBottom: '2rem', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
                    <div style={{ width: '50px', height: '50px', borderRadius: '1rem', background: 'rgba(112,0,255,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid rgba(112,0,255,0.2)' }}>
                       <Zap color="#7000ff" size={24} />
                    </div>
                    <div style={{ textAlign: 'left' }}>
-                      <h2 style={{ fontSize: '2rem', fontWeight: 900, textTransform: 'uppercase', fontStyle: 'italic' }}>Propulsion Roadmap</h2>
+                      <h2 style={{ fontSize: '2rem', fontWeight: 900, textTransform: 'uppercase', fontStyle: 'italic', marginBottom: '0.5rem' }}>Propulsion Roadmap</h2>
                       <p style={{ fontSize: '12px', fontWeight: 700, color: 'rgba(255,255,255,0.65)', textTransform: 'uppercase', letterSpacing: '0.3em' }}>Whitelabel Challenge Strategy</p>
                    </div>
                 </div>
