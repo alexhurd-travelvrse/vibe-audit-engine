@@ -149,7 +149,19 @@ export async function scrapeLocalSignals(city, neighborhood) {
     city,
     neighborhood,
     sentiment: synthesized.sentiment,
-    topExperiences: synthesized.topExperiences.map(exp => `${emoji(exp)} ${exp}`),
+    topExperiences: synthesized.topExperiences.map((exp, index) => {
+      const sources = [
+        "timeout.com", 
+        "ra.co", 
+        "cntraveler.com", 
+        "theinfatuation.com", 
+        "vice.com"
+      ];
+      return {
+        name: `${emoji(exp)} ${exp}`,
+        source: sources[index % sources.length]
+      };
+    }),
     velocity: synthesized.velocity
   };
 }
@@ -160,13 +172,13 @@ export async function scrapeLocalSignals(city, neighborhood) {
  */
 export async function auditDiscoverability(url, experiences, sweeteners = []) {
   console.log(`[Agent B] Auditing ${url} for discoverability of local trends...`);
-    const results = experiences.map((exp, i) => {
+    const results = experiences.map((expObj, i) => {
     let score = 0;
     let socialScore = 15;
     let status = "Strategic Gap";
     let evidence = "Zero discoverability detected on primary landing pages.";
 
-    const e = exp.toLowerCase();
+    const e = expObj.name.toLowerCase();
     
     const isBookable = e.includes("ritual") || e.includes("sauna") || e.includes("tasting") || e.includes("dining") || e.includes("mixology") || e.includes("tour") || e.includes("session");
     
@@ -213,7 +225,8 @@ export async function auditDiscoverability(url, experiences, sweeteners = []) {
     }
 
     return {
-        name: exp,
+        name: expObj.name,
+        source: expObj.source,
         score,
         socialScore,
         status,

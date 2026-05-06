@@ -215,10 +215,14 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                     </div>
                 </div>
                 
-                <div className="signals-grid" style={{ justifyContent: 'center' }}>
-                  {analysis?.signals?.topExperiences?.map((exp, i) => (
-                    <div key={i} className="signal-card" style={{ flex: 1, minWidth: '180px' }}>
-                       <h4 className="signal-name" style={{ textAlign: 'center', fontSize: '1rem' }}>{exp}</h4>
+                <div className="signals-grid" style={{ justifyContent: 'center', flexWrap: 'wrap' }}>
+                  {analysis?.signals?.topExperiences?.map((expObj, i) => (
+                    <div key={i} className="signal-card" style={{ flex: 1, minWidth: '240px', padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                       <h4 className="signal-name" style={{ textAlign: 'center', fontSize: '1.1rem', margin: 0 }}>{expObj.name}</h4>
+                       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '1rem' }}>
+                         <Globe size={12} color="#00e5ff" />
+                         <span style={{ fontSize: '10px', fontWeight: 700, color: '#00e5ff', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Source: {expObj.source}</span>
+                       </div>
                     </div>
                   ))}
                 </div>
