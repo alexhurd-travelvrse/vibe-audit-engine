@@ -214,7 +214,7 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                         <Search color="#ec4899" size={24} />
                     </div>
                     <div style={{ textAlign: 'left' }}>
-                        <h2 style={{ fontSize: '2rem', fontWeight: 900, textTransform: 'uppercase', fontStyle: 'italic' }}>Discoverability / Bookability</h2>
+                        <h2 style={{ fontSize: '2rem', fontWeight: 900, textTransform: 'uppercase', fontStyle: 'italic' }}>YOUR REACH</h2>
                         <p style={{ fontSize: '12px', fontWeight: 700, color: 'rgba(255,255,255,0.65)', textTransform: 'uppercase', letterSpacing: '0.3em' }}>Digital Supply vs Market Demand</p>
                     </div>
                   </div>
