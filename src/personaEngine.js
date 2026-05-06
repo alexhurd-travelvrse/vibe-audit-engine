@@ -97,14 +97,14 @@ export async function scrapeLocalSignals(city, neighborhood) {
       const anchor = neighborhood || city;
       
       const subjects = [
-          { prefix: 'Artisan', suffix: 'Scene' },
-          { prefix: 'Hidden', suffix: 'Discovery' },
-          { prefix: 'Urban', suffix: 'Heritage' },
-          { prefix: 'High-Intensity', suffix: 'Pulse' },
-          { prefix: 'The', suffix: 'Narrative' },
-          { prefix: 'Experimental', suffix: 'Collective' },
-          { prefix: 'Coastal', suffix: 'Ritual' },
-          { prefix: 'Secret', suffix: 'Underground' }
+          { prefix: 'Private', suffix: 'Heritage Tour' },
+          { prefix: 'Underground', suffix: 'Mixology Masterclass' },
+          { prefix: 'Curated', suffix: 'Artisan Tasting Menu' },
+          { prefix: 'Secret', suffix: 'Vinyl Listening Session' },
+          { prefix: 'Boutique', suffix: 'Wellness & Sauna Ritual' },
+          { prefix: 'Exclusive', suffix: 'Rooftop Sunset Series' },
+          { prefix: 'Immersive', suffix: 'Design Walk' },
+          { prefix: 'Local', suffix: 'Culinary Safari' }
       ];
       
       const shuffle = (arr) => arr.sort(() => Math.random() - 0.5);
