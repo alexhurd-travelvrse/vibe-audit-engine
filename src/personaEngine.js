@@ -228,49 +228,56 @@ export async function auditDiscoverability(url, experiences, sweeteners = []) {
 /**
  * Agent C: The Experience Mapper & Triangulator
  */
-export function generatePropulsionQuest(auditResults, propertyName, reward) {
-  const primaryGap = auditResults.find(r => r.status === "Strategic Gap") || auditResults[auditResults.length - 1];
+export function generatePropulsionQuest(auditResults, propertyName, coreReward) {
+  const topResults = auditResults.slice(0, 5);
   
-  const activities = [
-    { 
-      id: 1, 
-      type: "Virtual Concierge", 
-      action: `🤖 Explore the Digital Guide for ${primaryGap.name}.`, 
-      reward: "📜 Collectible: Neighborhood Secret Guide" 
-    },
-    { 
-      id: 2, 
-      type: "AR Portal", 
-      action: `🕶️ Unlock the 3D Vibe-Scan of the ${propertyName} local context.`, 
-      reward: "💎 Collectible: Heritage Token" 
-    },
-    { 
-      id: 3, 
-      type: "Visual Riddle", 
-      action: `🧩 Find the hidden link between the hotel and ${primaryGap.name}.`, 
-      reward: "🎵 Collectible: Local Soundscape" 
-    },
-    { 
-      id: 4, 
-      type: "Mixology/Menu Preview", 
-      action: `🍹 Preview the 'Vibe Menu' inspired by local trends.`, 
-      reward: "📖 Collectible: Curator Recipe" 
-    },
-    { 
-      id: 5, 
-      type: "Final Lead Gen", 
-      action: `🏆 Complete the quest to unlock your core reward.`, 
-      reward: `🎁 Core Reward: ${reward}` 
+  const activities = topResults.map((result, i) => {
+    const isMatch = result.status === 'Digital Match';
+    const isLatent = result.status === 'Latent Asset';
+    const nameLower = result.name.toLowerCase();
+    
+    // Custom collectible reward logic
+    let collectible = "💎 Heritage Token";
+    if (nameLower.includes("wine") || nameLower.includes("dining") || nameLower.includes("culinary") || nameLower.includes("mixology") || nameLower.includes("tasting") || nameLower.includes("fusion")) collectible = "📖 Curator Recipe";
+    else if (nameLower.includes("vinyl") || nameLower.includes("music") || nameLower.includes("sound")) collectible = "🎵 Local Soundscape";
+    else if (nameLower.includes("sauna") || nameLower.includes("wellness") || nameLower.includes("ritual") || nameLower.includes("pool")) collectible = "🌿 Wellness Ritual Guide";
+    else if (nameLower.includes("art") || nameLower.includes("design") || nameLower.includes("gallery") || nameLower.includes("heritage")) collectible = "🖼️ Digital Art Pass";
+    else if (nameLower.includes("secret") || nameLower.includes("underground") || nameLower.includes("discovery") || nameLower.includes("market") || nameLower.includes("walk")) collectible = "📜 Neighborhood Secret Guide";
+
+    let action = "";
+    let type = "";
+    if (isMatch) {
+      type = "Immersive Showcase";
+      action = `✨ Discover the real-world magic of our ${result.name} experience.`;
+    } else if (isLatent) {
+      type = "Hidden Asset Reveal";
+      action = `🔍 Unlock our best-kept secret related to ${result.name}.`;
+    } else {
+      type = "Virtual Bridge";
+      action = `🤖 Explore our curated digital guide for ${result.name} in the neighborhood.`;
     }
-  ];
+
+    return {
+      id: i + 1,
+      type: type,
+      trend: result.name,
+      action: action,
+      reward: collectible
+    };
+  });
+
+  const positiveMatches = auditResults.filter(r => r.status === 'Digital Match');
+  const visuals = positiveMatches.map(m => m.name);
+  if (visuals.length === 0) visuals.push("Curated local neighborhood aesthetics");
 
   return {
-    name: `⚡ ${primaryGap.name.split(' ')[0]} Propulsion Quest`,
+    name: `⚡ ${propertyName} Experience Roadmap`,
     activities,
-    coreReward: reward,
-    spinToWin: {
-      offer: "Double your reward",
-      requirement: "Complete extended profile data capture"
+    coreReward,
+    suggestedVisuals: visuals,
+    rewardsStructure: {
+      primary: coreReward,
+      collectibles: ["🎵 Local Soundscapes", "📖 Curator Recipes", "📜 Neighborhood Guides", "🌿 Wellness Rituals"]
     }
   };
 }

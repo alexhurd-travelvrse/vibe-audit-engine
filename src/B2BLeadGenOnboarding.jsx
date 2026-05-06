@@ -285,9 +285,32 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                       <Zap color="#7000ff" size={24} />
                    </div>
                    <div style={{ textAlign: 'left' }}>
-                      <h2 style={{ fontSize: '2rem', fontWeight: 900, textTransform: 'uppercase', fontStyle: 'italic', marginBottom: '0.5rem' }}>Propulsion Roadmap</h2>
+                      <h2 style={{ fontSize: '2rem', fontWeight: 900, textTransform: 'uppercase', fontStyle: 'italic', marginBottom: '0.5rem' }}>YOUR VIRTUAL EXPERIENCES ROADMAP</h2>
                       <p style={{ fontSize: '12px', fontWeight: 700, color: 'rgba(255,255,255,0.65)', textTransform: 'uppercase', letterSpacing: '0.3em' }}>Whitelabel Challenge Strategy</p>
                    </div>
+                </div>
+
+                <div style={{ marginBottom: '3rem', padding: '2.5rem', background: 'rgba(212, 175, 55, 0.05)', borderRadius: '1.5rem', border: '1px solid rgba(212, 175, 55, 0.2)' }}>
+                  <h3 style={{ fontSize: '1.2rem', fontWeight: 900, textTransform: 'uppercase', color: '#B5942D', marginBottom: '1.5rem' }}>Recommended Rewards Structure</h3>
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
+                    <div>
+                      <p style={{ fontSize: '10px', fontWeight: 700, color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', marginBottom: '0.5rem' }}>Core Conversion Offer</p>
+                      <p style={{ fontSize: '1.5rem', fontWeight: 900, color: '#ffffff' }}>{analysis.challenge.rewardsStructure?.primary || analysis.challenge.coreReward}</p>
+                    </div>
+                    <div>
+                      <p style={{ fontSize: '10px', fontWeight: 700, color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', marginBottom: '0.5rem' }}>Unlockable Collectibles</p>
+                      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+                         {analysis.challenge.rewardsStructure?.collectibles?.map((c, i) => (
+                           <span key={i} style={{ background: 'rgba(255,255,255,0.1)', color: '#ffffff', padding: '0.25rem 0.75rem', borderRadius: '1rem', fontSize: '12px', fontWeight: 700 }}>{c}</span>
+                         ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div style={{ marginBottom: '3rem', padding: '2.5rem', background: 'rgba(0, 229, 255, 0.05)', borderRadius: '1.5rem', border: '1px solid rgba(0, 229, 255, 0.2)' }}>
+                  <h3 style={{ fontSize: '1.2rem', fontWeight: 900, textTransform: 'uppercase', color: '#00e5ff', marginBottom: '1.5rem' }}>Visual Cornerstone (From Digital Presence)</h3>
+                  <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px', lineHeight: 1.6 }}>We will use existing positive assets from your digital presence as the cornerstone of this immersive experience: <strong style={{color: '#fff'}}>{analysis.challenge.suggestedVisuals?.join(', ')}</strong></p>
                 </div>
 
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '2.5rem' }}>
@@ -304,8 +327,8 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                         </div>
                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '1.5rem', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
                           <div>
-                            <p style={{ fontSize: '12px', fontWeight: 700, color: 'rgba(255,255,255,0.65)', textTransform: 'uppercase', marginBottom: '0.5rem' }}>Experience Type</p>
-                            <p style={{ fontSize: '14px', fontWeight: 900, color: '#ffffff' }}>{exp.type}</p>
+                            <p style={{ fontSize: '12px', fontWeight: 700, color: 'rgba(255,255,255,0.65)', textTransform: 'uppercase', marginBottom: '0.5rem' }}>Associated Trend</p>
+                            <p style={{ fontSize: '14px', fontWeight: 900, color: '#ffffff' }}>{exp.trend}</p>
                           </div>
                           <div style={{ textAlign: 'right' }}>
                             <p style={{ fontSize: '12px', fontWeight: 700, color: 'rgba(255,255,255,0.65)', textTransform: 'uppercase', marginBottom: '0.5rem' }}>Reward Segment</p>
@@ -315,6 +338,12 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                       </div>
                     </div>
                   ))}
+                </div>
+
+                <div style={{ marginTop: '4rem', display: 'flex', justifyContent: 'center' }}>
+                  <button className="launch-button" style={{ maxWidth: '600px', display: 'flex', alignItems: 'center', gap: '1rem' }} onClick={() => alert("Brief sent to Creator Marketplace!")}>
+                    Save Brief & Send to Creator Marketplace <ExternalLink size={24} />
+                  </button>
                 </div>
               </section>
 
