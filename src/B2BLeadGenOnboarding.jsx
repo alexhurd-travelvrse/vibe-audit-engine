@@ -21,6 +21,7 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
     reward: '20% OFF YOUR VOYAGE'
   });
   const [analysis, setAnalysis] = useState(null);
+  const [activeTab, setActiveTab] = useState('trends');
 
   useEffect(() => {
     setStep(initialStep);
@@ -175,18 +176,35 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
             <motion.div key="results" initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="results-section">
 
 
-              <div className="property-info" style={{ borderBottom: '1px solid rgba(255,255,255,0.05)', paddingBottom: '3rem', marginBottom: '5rem' }}>
+              <div className="property-info" style={{ borderBottom: '1px solid rgba(255,255,255,0.05)', paddingBottom: '3rem', marginBottom: '3rem' }}>
                 <div style={{ textAlign: 'left' }}>
                   <h1 style={{ fontSize: '4rem', fontWeight: 900, textTransform: 'uppercase', lineHeight: 1 }}>{formData.propertyName}</h1>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', color: 'rgba(255,255,255,0.4)', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.3em', fontSize: '20px', marginTop: '1.5rem' }}>
                     <MapPin size={22} color="#00e5ff" /> {formData.neighborhood}, {formData.city}
                   </div>
                 </div>
-                
-
               </div>
 
-              <section style={{ marginBottom: '6rem' }}>
+              <div style={{ display: 'flex', gap: '3rem', borderBottom: '1px solid rgba(255,255,255,0.1)', marginBottom: '5rem', justifyContent: 'center' }}>
+                <button 
+                  onClick={() => setActiveTab('trends')} 
+                  style={{ background: 'transparent', border: 'none', color: activeTab === 'trends' ? '#00e5ff' : 'rgba(255,255,255,0.4)', paddingBottom: '1rem', borderBottom: activeTab === 'trends' ? '2px solid #00e5ff' : '2px solid transparent', fontSize: '13px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', cursor: 'pointer', transition: 'all 0.3s' }}>
+                  1. Market Trends
+                </button>
+                <button 
+                  onClick={() => setActiveTab('reach')} 
+                  style={{ background: 'transparent', border: 'none', color: activeTab === 'reach' ? '#ec4899' : 'rgba(255,255,255,0.4)', paddingBottom: '1rem', borderBottom: activeTab === 'reach' ? '2px solid #ec4899' : '2px solid transparent', fontSize: '13px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', cursor: 'pointer', transition: 'all 0.3s' }}>
+                  2. Your Reach
+                </button>
+                <button 
+                  onClick={() => setActiveTab('roadmap')} 
+                  style={{ background: 'transparent', border: 'none', color: activeTab === 'roadmap' ? '#B5942D' : 'rgba(255,255,255,0.4)', paddingBottom: '1rem', borderBottom: activeTab === 'roadmap' ? '2px solid #B5942D' : '2px solid transparent', fontSize: '13px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', cursor: 'pointer', transition: 'all 0.3s' }}>
+                  3. Virtual Roadmap
+                </button>
+              </div>
+
+              {activeTab === 'trends' && (
+                <motion.section initial={{opacity: 0, y: 20}} animate={{opacity: 1, y: 0}} style={{ marginBottom: '6rem' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', marginBottom: '3rem', paddingBottom: '2rem', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
                    <div style={{ width: '50px', height: '50px', borderRadius: '1rem', background: 'rgba(0,229,255,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid rgba(0,229,255,0.2)' }}>
                       <TrendingUp color="#00e5ff" size={24} />
@@ -204,10 +222,12 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                     </div>
                   ))}
                 </div>
-              </section>
+                </motion.section>
+              )}
 
               {/* Discoverability / Bookability Header with Integrated Score */}
-              <section style={{ marginBottom: '6rem', width: '100%' }}>
+              {activeTab === 'reach' && (
+              <motion.section initial={{opacity: 0, y: 20}} animate={{opacity: 1, y: 0}} style={{ marginBottom: '6rem', width: '100%' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '3rem', paddingBottom: '2rem', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
                     <div style={{ width: '50px', height: '50px', borderRadius: '1rem', background: 'rgba(236,72,153,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid rgba(236,72,153,0.2)' }}>
@@ -276,10 +296,12 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                     </div>
                   ))}
                 </div>
-              </section>
+              </motion.section>
+              )}
 
               {/* Propulsion Roadmap */}
-              <section style={{ marginBottom: '8rem', width: '100%' }}>
+              {activeTab === 'roadmap' && (
+              <motion.section initial={{opacity: 0, y: 20}} animate={{opacity: 1, y: 0}} style={{ marginBottom: '8rem', width: '100%' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', marginBottom: '3rem', paddingBottom: '2rem', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
                    <div style={{ width: '50px', height: '50px', borderRadius: '1rem', background: 'rgba(112,0,255,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid rgba(112,0,255,0.2)' }}>
                       <Zap color="#7000ff" size={24} />
@@ -345,7 +367,8 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                     Save Brief & Send to Creator Marketplace <ExternalLink size={24} />
                   </button>
                 </div>
-              </section>
+              </motion.section>
+              )}
 
             </motion.div>
           )}
