@@ -175,7 +175,7 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
             <motion.div key="results" initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="results-section">
 
 
-              <div className="property-info">
+              <div className="property-info" style={{ borderBottom: '1px solid rgba(255,255,255,0.05)', paddingBottom: '3rem', marginBottom: '5rem' }}>
                 <div style={{ textAlign: 'left' }}>
                   <h1 style={{ fontSize: '4rem', fontWeight: 900, textTransform: 'uppercase', lineHeight: 1 }}>{formData.propertyName}</h1>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', color: 'rgba(255,255,255,0.4)', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.3em', fontSize: '20px', marginTop: '1.5rem' }}>
@@ -187,12 +187,13 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
               </div>
 
               <section style={{ marginBottom: '6rem' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', marginBottom: '3rem' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', marginBottom: '3rem', paddingBottom: '2rem', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
                    <div style={{ width: '50px', height: '50px', borderRadius: '1rem', background: 'rgba(0,229,255,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid rgba(0,229,255,0.2)' }}>
                       <TrendingUp color="#00e5ff" size={24} />
                    </div>
                     <div style={{ textAlign: 'left' }}>
-                       <h2 style={{ fontSize: '2rem', fontWeight: 900, textTransform: 'uppercase', fontStyle: 'italic' }}>Trending Experiences</h2>
+                       <h2 style={{ fontSize: '2rem', fontWeight: 900, textTransform: 'uppercase', fontStyle: 'italic', marginBottom: '0.5rem' }}>Trending Experiences</h2>
+                       <p style={{ fontSize: '12px', fontWeight: 700, color: 'rgba(255,255,255,0.65)', textTransform: 'uppercase', letterSpacing: '0.3em' }}>High-Demand Market Signals</p>
                     </div>
                 </div>
                 
