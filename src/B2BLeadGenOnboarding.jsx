@@ -219,7 +219,7 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                   </div>
 
                   <div style={{ textAlign: 'right' }}>
-                    <p style={{ fontSize: '12px', fontWeight: 700, color: 'rgba(255,255,255,0.65)', textTransform: 'uppercase', letterSpacing: '0.3em', marginBottom: '0.5rem' }}>Overall Propulsion</p>
+                    <p style={{ fontSize: '12px', fontWeight: 700, color: 'rgba(255,255,255,0.65)', textTransform: 'uppercase', letterSpacing: '0.3em', marginBottom: '0.5rem' }}>OVERALL SCORE</p>
                     <div style={{ display: 'flex', alignItems: 'baseline', gap: '1rem' }}>
                         <span style={{ fontSize: '4rem', fontWeight: 900, background: 'linear-gradient(to bottom, #00e5ff, #3b82f6)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', lineHeight: 1 }}>
                             {Math.round(analysis.auditResults.reduce((acc, r) => acc + r.score, 0) / analysis.auditResults.length)}%
