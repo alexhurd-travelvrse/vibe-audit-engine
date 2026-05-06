@@ -129,8 +129,8 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                     LOCAL VIBE <br/>
                     <span style={{ color: '#00e5ff' }}>AUDIT ENGINE</span>
                 </h1>
-                <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '13px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.3em', marginTop: '1rem' }}>
-                  78% of Next-Gen Travelers search for local experiences first — how discoverable are these on your digital presence?
+                <p style={{ color: '#ffffff', fontSize: '14px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.15em', marginTop: '1.5rem', lineHeight: 1.6 }}>
+                  <span style={{ color: '#00e5ff', fontWeight: 900, fontSize: '18px' }}>78%</span> of Next-Gen Travelers search for local experiences first — how discoverable are these on your digital presence?
                 </p>
               </div>
 
