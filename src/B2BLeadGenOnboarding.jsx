@@ -79,7 +79,7 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
           </div>
           <span>Back to TravelVRSE</span>
         </a>
-        <img src="/models/travelvrse logo.png" alt="TravelVRSE" style={{ height: '42px', opacity: 0.9 }} />
+        <img src="/models/travelvrse_logo_main.svg" alt="TravelVRSE" style={{ height: '54px', width: 'auto' }} />
       </nav>
 
       <main className="b2b-main">
@@ -104,8 +104,8 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                     LOCAL VIBE <br/>
                     <span style={{ color: '#00e5ff' }}>AUDIT ENGINE</span>
                 </h1>
-                <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: '9px', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.4em', marginTop: '1rem' }}>
-                  Generate a high-fidelity whitelabel manifest in seconds
+                <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '13px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.3em', marginTop: '1rem' }}>
+                  78% of Next-Gen Travelers search for local experiences first — how discoverable are these on your digital presence?
                 </p>
               </div>
 
@@ -184,12 +184,12 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                     </div>
                     <div style={{ textAlign: 'left' }}>
                         <h2 style={{ fontSize: '2rem', fontWeight: 900, textTransform: 'uppercase', fontStyle: 'italic' }}>Discoverability / Bookability</h2>
-                        <p style={{ fontSize: '9px', fontWeight: 900, color: 'rgba(255,255,255,0.2)', textTransform: 'uppercase', letterSpacing: '0.3em' }}>Digital Supply vs Market Demand</p>
+                        <p style={{ fontSize: '12px', fontWeight: 700, color: 'rgba(255,255,255,0.65)', textTransform: 'uppercase', letterSpacing: '0.3em' }}>Digital Supply vs Market Demand</p>
                     </div>
                   </div>
 
                   <div style={{ textAlign: 'right' }}>
-                    <p style={{ fontSize: '9px', fontWeight: 900, color: 'rgba(255,255,255,0.2)', textTransform: 'uppercase', letterSpacing: '0.3em', marginBottom: '0.5rem' }}>Overall Propulsion</p>
+                    <p style={{ fontSize: '12px', fontWeight: 700, color: 'rgba(255,255,255,0.65)', textTransform: 'uppercase', letterSpacing: '0.3em', marginBottom: '0.5rem' }}>Overall Propulsion</p>
                     <div style={{ display: 'flex', alignItems: 'baseline', gap: '1rem' }}>
                         <span style={{ fontSize: '4rem', fontWeight: 900, background: 'linear-gradient(to bottom, #00e5ff, #3b82f6)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', lineHeight: 1 }}>
                             {Math.round(analysis.auditResults.reduce((acc, r) => acc + r.score, 0) / analysis.auditResults.length)}%
@@ -209,11 +209,11 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                       
                       <div style={{ display: 'flex', gap: '2.5rem', alignItems: 'center' }}>
                          <div style={{ textAlign: 'center' }}>
-                            <p style={{ fontSize: '12px', fontWeight: 900, color: 'rgba(255,255,255,0.2)', textTransform: 'uppercase', marginBottom: '0.5rem' }}>Web</p>
+                            <p style={{ fontSize: '12px', fontWeight: 700, color: 'rgba(255,255,255,0.65)', textTransform: 'uppercase', marginBottom: '0.5rem' }}>Web</p>
                             <p style={{ fontSize: '2.25rem', fontWeight: 900, color: result.score > 50 ? '#00e5ff' : '#ec4899' }}>{result.score}%</p>
                          </div>
                          <div style={{ textAlign: 'center' }}>
-                            <p style={{ fontSize: '12px', fontWeight: 900, color: 'rgba(255,255,255,0.2)', textTransform: 'uppercase', marginBottom: '0.5rem' }}>Social</p>
+                            <p style={{ fontSize: '12px', fontWeight: 700, color: 'rgba(255,255,255,0.65)', textTransform: 'uppercase', marginBottom: '0.5rem' }}>Social</p>
                             <p style={{ fontSize: '2.25rem', fontWeight: 900, color: result.socialScore > 50 ? '#00e5ff' : '#ec4899' }}>{result.socialScore}%</p>
                          </div>
                          
@@ -255,7 +255,7 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                    </div>
                    <div style={{ textAlign: 'left' }}>
                       <h2 style={{ fontSize: '2rem', fontWeight: 900, textTransform: 'uppercase', fontStyle: 'italic' }}>Propulsion Roadmap</h2>
-                      <p style={{ fontSize: '9px', fontWeight: 900, color: 'rgba(255,255,255,0.2)', textTransform: 'uppercase', letterSpacing: '0.3em' }}>Whitelabel Challenge Strategy</p>
+                      <p style={{ fontSize: '12px', fontWeight: 700, color: 'rgba(255,255,255,0.65)', textTransform: 'uppercase', letterSpacing: '0.3em' }}>Whitelabel Challenge Strategy</p>
                    </div>
                 </div>
 
@@ -268,16 +268,16 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                       <h3 style={{ fontSize: '1.75rem', fontWeight: 900, textTransform: 'uppercase', marginBottom: '2rem', color: '#7000ff' }}>{exp.type}</h3>
                       <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
                         <div>
-                          <p style={{ fontSize: '10px', fontWeight: 900, color: 'rgba(255,255,255,0.3)', textTransform: 'uppercase', marginBottom: '0.75rem' }}>Strategic Objective</p>
+                          <p style={{ fontSize: '12px', fontWeight: 700, color: 'rgba(255,255,255,0.65)', textTransform: 'uppercase', marginBottom: '0.75rem' }}>Strategic Objective</p>
                           <p style={{ fontSize: '14px', fontWeight: 700, lineHeight: 1.5 }}>{exp.action}</p>
                         </div>
                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '1.5rem', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
                           <div>
-                            <p style={{ fontSize: '10px', fontWeight: 900, color: 'rgba(255,255,255,0.3)', textTransform: 'uppercase', marginBottom: '0.5rem' }}>Experience Type</p>
+                            <p style={{ fontSize: '12px', fontWeight: 700, color: 'rgba(255,255,255,0.65)', textTransform: 'uppercase', marginBottom: '0.5rem' }}>Experience Type</p>
                             <p style={{ fontSize: '14px', fontWeight: 900, color: '#ffffff' }}>{exp.type}</p>
                           </div>
                           <div style={{ textAlign: 'right' }}>
-                            <p style={{ fontSize: '10px', fontWeight: 900, color: 'rgba(255,255,255,0.3)', textTransform: 'uppercase', marginBottom: '0.5rem' }}>Reward Segment</p>
+                            <p style={{ fontSize: '12px', fontWeight: 700, color: 'rgba(255,255,255,0.65)', textTransform: 'uppercase', marginBottom: '0.5rem' }}>Reward Segment</p>
                             <p style={{ fontSize: '14px', fontWeight: 900, color: '#00e5ff' }}>{exp.reward}</p>
                           </div>
                         </div>
