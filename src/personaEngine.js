@@ -93,16 +93,15 @@ export async function scrapeLocalSignals(city, neighborhood) {
   const API_KEY = import.meta.env.VITE_SERPER_API_KEY;
   const HEADERS = { 'X-API-KEY': API_KEY, 'Content-Type': 'application/json' };
   
-  console.log(`[Agent A] Initializing High-Fidelity Vibe Stack for ${targetArea}...`);
+  console.log(`[Agent A] Initializing Balanced Vibe Stack for ${targetArea}...`);
 
   try {
-    // 1. DIVERSIFIED SOURCE SEARCH
     const tourQuery = `site:getyourguide.com OR site:viator.com "${targetArea}" tour experience`;
-    const trendQuery = `site:timeout.com OR site:wallpaper.com OR site:highsnobiety.com OR site:monocle.com OR site:cntraveler.com "${targetArea}" curated experience`;
+    const trendQuery = `site:timeout.com OR site:wallpaper.com OR site:highsnobiety.com OR site:monocle.com OR site:cntraveler.com OR site:dezeen.com OR site:nowness.com "${targetArea}" curated experience`;
 
     const [tourRes, trendRes] = await Promise.all([
       fetch(`https://google.serper.dev/search`, { method: 'POST', headers: HEADERS, body: JSON.stringify({ q: tourQuery, num: 15 }) }).then(r => r.json()),
-      fetch(`https://google.serper.dev/search`, { method: 'POST', headers: HEADERS, body: JSON.stringify({ q: trendQuery, num: 15 }) }).then(r => r.json())
+      fetch(`https://google.serper.dev/search`, { method: 'POST', headers: HEADERS, body: JSON.stringify({ q: trendQuery, num: 25 }) }).then(r => r.json())
     ]);
 
     const allOrganic = [...(tourRes.organic || []), ...(trendRes.organic || [])];
@@ -112,20 +111,17 @@ export async function scrapeLocalSignals(city, neighborhood) {
       let candidates = allOrganic.map(item => {
         let name = item.title.split('-')[0].split('|')[0].trim();
         name = name.replace(/The Best|Top 10|Guide to|Secret|Hidden|Gems in|In ${targetArea}/ig, '').trim();
-        // Keep track if it came from a publisher vs aggregator
         const isPublisher = !item.link.includes('getyourguide.com') && !item.link.includes('viator.com');
         return { name, source: new URL(item.link).hostname.replace('www.', ''), snippet: item.snippet, link: item.link, isPublisher };
       });
 
-      // Deduplicate
       candidates = Array.from(new Map(candidates.map(c => [c.name.toLowerCase(), c])).values());
 
-      const validatedTrends = await Promise.all(candidates.slice(0, 12).map(async (candidate) => {
+      const validatedTrends = await Promise.all(candidates.slice(0, 15).map(async (candidate) => {
         let trendScore = 0;
         let demandLabel = "Emergent Signal";
         let venueName = candidate.name;
         
-        // Parallel Validation
         const [placesData, gygData, socialData] = await Promise.all([
           fetch(`https://google.serper.dev/places`, { method: 'POST', headers: HEADERS, body: JSON.stringify({ q: `${candidate.name} ${targetArea}` }) }).then(r => r.json()).catch(() => ({})),
           fetch(`https://google.serper.dev/search`, { method: 'POST', headers: HEADERS, body: JSON.stringify({ q: `site:getyourguide.com "${candidate.name}" ${targetArea}` }) }).then(r => r.json()).catch(() => ({})),
@@ -135,35 +131,23 @@ export async function scrapeLocalSignals(city, neighborhood) {
         const hasPhysicalPlace = placesData.places && placesData.places.length > 0;
         const hasTourListing = gygData.organic && gygData.organic.length > 0;
 
-        // THE GATEKEEPER: Must be bookable/visitable to pass
+        // Gatekeeper
         if (!hasPhysicalPlace && !hasTourListing) return null;
 
-        // 1. Publisher Boost (+20)
         if (candidate.isPublisher) trendScore += 20;
 
-        // 2. Search Trends (+30) - THE HIGHEST WEIGHT
         const isTrending = relatedSearches.some(q => q.includes(candidate.name.toLowerCase()));
-        if (isTrending) {
-          trendScore += 30;
-          demandLabel = "Trending Search Topic";
-        }
+        if (isTrending) { trendScore += 30; demandLabel = "Trending Search Topic"; }
 
-        // 3. TikTok Velocity (+30) - THE HIGHEST WEIGHT
         if (socialData.organic && socialData.organic.length > 0) {
           trendScore += 30;
           demandLabel = "High Social Velocity";
         }
 
-        // 4. Review Volume (+20)
         if (hasPhysicalPlace) {
           const place = placesData.places[0];
           venueName = place.title;
-          if (place.ratingCount > 20) {
-            trendScore += 20;
-            if (demandLabel === "Emergent Signal") demandLabel = "High Local Demand";
-          }
-        } else if (hasTourListing) {
-           demandLabel = "Verified Bookable Tour";
+          if (place.ratingCount > 20) { trendScore += 20; if (demandLabel === "Emergent Signal") demandLabel = "High Local Demand"; }
         }
 
         return {
@@ -174,14 +158,36 @@ export async function scrapeLocalSignals(city, neighborhood) {
         };
       }));
 
-      // Filter out nulls (Gatekeeper rejects) and sort
-      const finalTrends = validatedTrends.filter(t => t !== null);
-      finalTrends.sort((a, b) => b.score - a.score);
+      const results = validatedTrends.filter(t => t !== null);
+      results.sort((a, b) => b.score - a.score);
+
+      // BASKET LOGIC: Ensure a diverse mix of categories
+      const finalTrends = [];
+      const categoryCounts = {};
+      
+      for (const t of results) {
+        const cat = t.category;
+        categoryCounts[cat] = (categoryCounts[cat] || 0) + 1;
+        
+        // LIMIT any category (like "Curated Local Tour") to max 2 spots
+        if (categoryCounts[cat] <= 2) {
+          finalTrends.push(t);
+        }
+        if (finalTrends.length >= 5) break;
+      }
+
+      // If we still don't have 5 due to over-filtering, grab the highest remaining ones
+      if (finalTrends.length < 5) {
+        for (const t of results) {
+          if (!finalTrends.includes(t)) finalTrends.push(t);
+          if (finalTrends.length >= 5) break;
+        }
+      }
 
       return {
         city, neighborhood,
         sentiment: 'Validated Market Intelligence',
-        topExperiences: finalTrends.slice(0, 5),
+        topExperiences: finalTrends,
         velocity: 9.8
       };
     }
