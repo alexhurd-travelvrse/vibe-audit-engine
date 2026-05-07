@@ -26,143 +26,87 @@ export const VIBE_CATEGORIES = [
 export async function scrapeLocalSignals(city, neighborhood) {
   const c = (city || "").toLowerCase();
   const n = (neighborhood || "").toLowerCase();
-  console.log(`[Agent A] Synthesizing Dynamic Signals for ${n}, ${c}...`);
+  console.log(`[Agent A] Fetching live Google Custom Search signals for ${n}, ${c}...`);
   
-  // Signal Library for Global Contexts with Trend Velocity Grades
-  const signalLibrary = {
-    miami: {
-      topExperiences: ["Miami Music Week", "Wynwood Walls Art Tour", "Rooftop Pool Session", "Art Deco Heritage Walk", "Latin Fusion Culinary Tour"],
-      sentiment: 'Vibrant & Maximalist',
-      velocity: 9.8
-    },
-    london: {
-      topExperiences: ["Tate Modern Immersion", "Riverfront Artisan Market", "Lyaness Mixology Class", "Industrial Design Tour", "South Bank Sunset Walk"],
-      sentiment: 'Industrial-Chic',
-      velocity: 9.5
-    },
-    'chichester': {
-      topExperiences: ['Goodwood Festival of Speed', 'Goodwood Revival Heritage', 'Chichester Festival Theatre', 'Coastal Gastronomy Tour', 'South Downs Exploration'],
-      sentiment: 'High-Octane Heritage',
-      velocity: 9.8
-    },
-    'chichester harbour': {
-      topExperiences: ['Sailing Heritage (Itchenor)', 'Chichester Harbour Seal Spotting', 'Coastal Nature Photography', 'Artisan Seafood Dining', 'Harbour Birdwatching Safari'],
-      sentiment: 'Nautical & Serene',
-      velocity: 9.6
-    },
-    'manchester': {
-      topExperiences: ['Factory International (Aviva Studios)', 'Northern Quarter Street Art', 'Spinningfields Mixology', 'Warehouse Project Club Culture', 'MediaCityUK Exploration'],
-      sentiment: 'Culturally Explosive',
-      velocity: 9.4
-    },
-    'st johns': {
-      topExperiences: ['Old Granada Studios Heritage', 'Aviva Studios Cultural Pop-up', 'Soho House Manchester Vibe', 'Retro Americana Diner Scene', 'Science & Industry Museum'],
-      sentiment: 'Media-Centric & Retro',
-      velocity: 9.7
-    },
-    copenhagen: {
-      topExperiences: ["Harbor Sauna Ritual", "Nordic Design Heritage Tour", "Natural Wine Tasting", "Secret Courtyard Discovery", "Analog Vinyl Session"],
-      sentiment: 'Nordic-Minimalist',
-      velocity: 9.6
-    },
-    berlin: {
-      topExperiences: ["GDR Brutalist Architecture Tour", "East Berlin Retro-Gaming Culture", "Mitte Gallery Hopping", "Underground Techno Heritage", "Rooftop Sundowners (Alexanderplatz)"],
-      sentiment: 'Raw & Creative',
-      velocity: 9.7
-    },
-    'las vegas': {
-      topExperiences: ["Neon Museum Boneyard Heritage", "Vintage Vegas Mid-Century Tour", "Immersive Art Velocity (Area15)", "Off-Strip Culinary Secrets", "Red Rock Desert Exploration"],
-      sentiment: 'Neon-Noir & Immersive',
-      velocity: 9.8
-    },
-    'san diego': {
-      topExperiences: ["Victorian Nightlife Heritage", "Craft Beer Capital Pulse", "Ballpark District Energy", "Coastal-Urban Mixology", "Little Italy Culinary Safari"],
-      sentiment: 'Sun-Drenched & Sophisticated',
-      velocity: 9.6
-    }
-  };
-
-  const cityData = signalLibrary[c];
-  const neighborhoodData = signalLibrary[n] || signalLibrary[Object.keys(signalLibrary).find(k => n.includes(k))];
-
-  let synthesized;
-  if (neighborhoodData && neighborhoodData.velocity >= 9.5) {
-      console.log(`[Agent A] High-Velocity Grade detected in ${n}. Sticking to hyper-local.`);
-      synthesized = neighborhoodData;
-  } else if (cityData) {
-      console.log(`[Agent A] Pulling city-wide trends for ${c}.`);
-      synthesized = cityData;
-  } else {
-      console.log(`[Agent A] UNIVERSAL DYNAMIC MODE: Synthesizing generative signals for ${c}, ${n}...`);
-      const anchor = neighborhood || city;
+  const API_KEY = "AIzaSyCy7lWU-8FjZg88shauFmDdxoO48VXZbpM";
+  const CX = "d3dbf0de4daf64262";
+  
+  const query = `${neighborhood || city} hidden gems underground trends local experiences`;
+  
+  try {
+    console.log(`[Agent A] Pinging Google Custom Search API...`);
+    const res = await fetch(`https://www.googleapis.com/customsearch/v1?key=${API_KEY}&cx=${CX}&q=${encodeURIComponent(query)}`);
+    const data = await res.json();
+    
+    if (data.items && data.items.length > 0) {
+      console.log(`[Agent A] Successfully retrieved ${data.items.length} live signals from Google.`);
       
-      const subjects = [
-          { prefix: 'Private', suffix: 'Heritage Tour' },
-          { prefix: 'Underground', suffix: 'Mixology Masterclass' },
-          { prefix: 'Curated', suffix: 'Artisan Tasting Menu' },
-          { prefix: 'Secret', suffix: 'Vinyl Listening Session' },
-          { prefix: 'Boutique', suffix: 'Wellness & Sauna Ritual' },
-          { prefix: 'Exclusive', suffix: 'Rooftop Sunset Series' },
-          { prefix: 'Immersive', suffix: 'Design Walk' },
-          { prefix: 'Local', suffix: 'Culinary Safari' }
-      ];
-      
-      const shuffle = (arr) => arr.sort(() => Math.random() - 0.5);
-      const selected = shuffle(subjects).slice(0, 5);
+      const experiences = data.items.slice(0, 5).map(item => {
+        // Extract a punchy trend name from the Google Search Title
+        let name = item.title.split('-')[0].split('|')[0].trim();
+        // Remove common generic words from titles to make it sound like an "experience"
+        name = name.replace(/The Best|Top 10|Guide to|Things to Do in|Hidden Gems in/ig, '').trim();
+        if (name.length > 35) name = name.substring(0, 35) + "...";
+        
+        // Extract the actual premium publisher domain
+        let source = "premium-publisher.com";
+        try {
+          source = new URL(item.link).hostname.replace('www.', '');
+        } catch(e){}
 
-      const specificVibes = selected.map(s => {
-          const loc = Math.random() > 0.5 ? city : (neighborhood || city);
-          return `${s.prefix} ${loc} ${s.suffix}`;
+        return {
+          name: `✨ ${name}`,
+          source: source
+        };
       });
 
-      synthesized = {
-          sentiment: 'Emerging & Dynamic',
-          velocity: 9.2,
-          topExperiences: specificVibes
+      return {
+        city,
+        neighborhood,
+        sentiment: 'High-Velocity & Emergent',
+        topExperiences: experiences,
+        velocity: 9.6
       };
+    } else {
+        console.warn("[Agent A] Google returned no results. Checking fallback...");
+    }
+  } catch (err) {
+    console.error("[Agent A] Google API failed (Check Quota/Key). Falling back to dynamic generator...", err);
   }
 
-  const experienceEmojis = {
-    "Harbor Sauna Ritual": "🧖‍♂️",
-    "Nordic Design Heritage Tour": "🎨",
-    "Natural Wine Tasting": "🍷",
-    "Secret Courtyard Discovery": "🌿",
-    "Analog Vinyl Session": "🎶",
-    "Tate Modern Immersion": "🖼️",
-    "Riverfront Artisan Market": "🛍️",
-    "Lyaness Mixology Class": "🍸",
-    "Industrial Design Tour": "🏭",
-    "South Bank Sunset Walk": "🌇",
-    "Miami Music Week": "🎧",
-    "Wynwood Walls Art Tour": "🖌️",
-    "Rooftop Pool Session": "🏊",
-    "Art Deco Heritage Walk": "🏛️",
-    "Latin Fusion Culinary Tour": "🌮"
-  };
+  // ==========================================
+  // FALLBACK GENERATOR (If API Limit Exceeded)
+  // ==========================================
+  console.log(`[Agent A] UNIVERSAL DYNAMIC MODE: Synthesizing generative signals for ${c}, ${n}...`);
+  const subjects = [
+      { prefix: 'Private', suffix: 'Heritage Tour' },
+      { prefix: 'Underground', suffix: 'Mixology Masterclass' },
+      { prefix: 'Curated', suffix: 'Artisan Tasting Menu' },
+      { prefix: 'Secret', suffix: 'Vinyl Listening Session' },
+      { prefix: 'Boutique', suffix: 'Wellness & Sauna Ritual' },
+      { prefix: 'Exclusive', suffix: 'Rooftop Sunset Series' },
+      { prefix: 'Immersive', suffix: 'Design Walk' },
+      { prefix: 'Local', suffix: 'Culinary Safari' }
+  ];
+  
+  const shuffle = (arr) => arr.sort(() => Math.random() - 0.5);
+  const selected = shuffle(subjects).slice(0, 5);
 
-  const emoji = (exp) => {
-    const entry = Object.entries(experienceEmojis).find(([k]) => exp.toLowerCase().includes(k.toLowerCase().split(' ')[0]));
-    return entry ? entry[1] : "✨";
-  };
+  const specificVibes = selected.map((s, index) => {
+      const loc = Math.random() > 0.5 ? city : (neighborhood || city);
+      const sources = ["timeout.com", "ra.co", "cntraveler.com", "theinfatuation.com", "vice.com"];
+      return {
+          name: `✨ ${s.prefix} ${loc} ${s.suffix}`,
+          source: sources[index % sources.length]
+      };
+  });
 
   return {
-    city,
-    neighborhood,
-    sentiment: synthesized.sentiment,
-    topExperiences: synthesized.topExperiences.map((exp, index) => {
-      const sources = [
-        "timeout.com", 
-        "ra.co", 
-        "cntraveler.com", 
-        "theinfatuation.com", 
-        "vice.com"
-      ];
-      return {
-        name: `${emoji(exp)} ${exp}`,
-        source: sources[index % sources.length]
-      };
-    }),
-    velocity: synthesized.velocity
+      city,
+      neighborhood,
+      sentiment: 'Emerging & Dynamic',
+      velocity: 9.2,
+      topExperiences: specificVibes
   };
 }
 
