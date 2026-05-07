@@ -26,36 +26,44 @@ export const VIBE_CATEGORIES = [
 export async function scrapeLocalSignals(city, neighborhood) {
   const c = (city || "").toLowerCase();
   const n = (neighborhood || "").toLowerCase();
-  console.log(`[Agent A] Fetching live Google Custom Search signals for ${n}, ${c}...`);
+  console.log(`[Agent A] Fetching live Serper Search signals for ${n}, ${c}...`);
   
-  const API_KEY = "AIzaSyCy7lWU-8FjZg88shauFmDdxoO48VXZbpM";
-  const CX = "d3dbf0de4daf64262";
+  const API_KEY = import.meta.env.VITE_SERPER_API_KEY;
   
-  const query = `${neighborhood || city} hidden gems underground trends local experiences`;
+  const sites = "site:timeout.com OR site:ra.co OR site:cntraveler.com OR site:theinfatuation.com OR site:vice.com";
+  const query = `${sites} ${neighborhood || city} hidden gems underground trends local experiences`;
   
   try {
-    console.log(`[Agent A] Pinging Google Custom Search API...`);
-    const res = await fetch(`https://www.googleapis.com/customsearch/v1?key=${API_KEY}&cx=${CX}&q=${encodeURIComponent(query)}`);
+    console.log(`[Agent A] Pinging Serper API...`);
+    const res = await fetch(`https://google.serper.dev/search`, {
+      method: 'POST',
+      headers: {
+        'X-API-KEY': API_KEY,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        q: query,
+        num: 10
+      })
+    });
+    
     const data = await res.json();
     
-    if (data.items && data.items.length > 0) {
-      console.log(`[Agent A] Successfully retrieved ${data.items.length} live signals from Google.`);
+    if (data.organic && data.organic.length > 0) {
+      console.log(`[Agent A] Successfully retrieved ${data.organic.length} live signals from Serper.`);
       
-      const experiences = data.items.slice(0, 5).map(item => {
-        // Extract a punchy trend name from the Google Search Title
+      const experiences = data.organic.slice(0, 5).map(item => {
         let name = item.title.split('-')[0].split('|')[0].trim();
-        // Remove common generic words from titles to make it sound like an "experience"
         name = name.replace(/The Best|Top 10|Guide to|Things to Do in|Hidden Gems in/ig, '').trim();
         if (name.length > 35) name = name.substring(0, 35) + "...";
         
-        // Extract the actual premium publisher domain
         let source = "premium-publisher.com";
         try {
           source = new URL(item.link).hostname.replace('www.', '');
         } catch(e){}
 
         return {
-          name: `✨ ${name}`,
+          name: `? ${name}`,
           source: source
         };
       });
@@ -68,15 +76,13 @@ export async function scrapeLocalSignals(city, neighborhood) {
         velocity: 9.6
       };
     } else {
-        console.warn("[Agent A] Google returned no results. Checking fallback...");
+        console.warn("[Agent A] Serper returned no results. Checking fallback...");
     }
   } catch (err) {
-    console.error("[Agent A] Google API failed (Check Quota/Key). Falling back to dynamic generator...", err);
+    console.error("[Agent A] Serper API failed. Falling back to dynamic generator...", err);
   }
 
-  // ==========================================
-  // FALLBACK GENERATOR (If API Limit Exceeded)
-  // ==========================================
+  // FALLBACK GENERATOR
   console.log(`[Agent A] UNIVERSAL DYNAMIC MODE: Synthesizing generative signals for ${c}, ${n}...`);
   const subjects = [
       { prefix: 'Private', suffix: 'Heritage Tour' },
@@ -96,7 +102,7 @@ export async function scrapeLocalSignals(city, neighborhood) {
       const loc = Math.random() > 0.5 ? city : (neighborhood || city);
       const sources = ["timeout.com", "ra.co", "cntraveler.com", "theinfatuation.com", "vice.com"];
       return {
-          name: `✨ ${s.prefix} ${loc} ${s.suffix}`,
+          name: `? ${s.prefix} ${loc} ${s.suffix}`,
           source: sources[index % sources.length]
       };
   });
