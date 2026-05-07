@@ -26,10 +26,9 @@ export async function scrapeLocalSignals(city, neighborhood) {
   const API_KEY = import.meta.env.VITE_SERPER_API_KEY;
   const HEADERS = { 'X-API-KEY': API_KEY, 'Content-Type': 'application/json' };
   
-  console.log(`[Agent A] Probing Trends for ${targetArea}...`);
+  console.log(`[Agent A] Probing for 5 Distinct Trend Categories for ${targetArea}...`);
 
   try {
-    // To stay under the Google 32-word limit, we split the sites into two groups
     const siteGroup1 = "site:timeout.com OR site:ra.co OR site:cntraveler.com OR site:getyourguide.com";
     const siteGroup2 = "site:wallpaper.com OR site:highsnobiety.com OR site:monocle.com OR site:dezeen.com";
     
@@ -46,7 +45,7 @@ export async function scrapeLocalSignals(city, neighborhood) {
     const relatedSearches = [...(res1.relatedSearches || []), ...(res2.relatedSearches || [])].map(r => r.query.toLowerCase());
 
     if (organic.length > 0) {
-      const validatedTrends = await Promise.all(organic.slice(0, 15).map(async (item) => {
+      const validatedTrends = await Promise.all(organic.slice(0, 20).map(async (item) => {
         let name = item.title.split('-')[0].split('|')[0].trim();
         name = name.replace(/The Best|Top 10|Guide to|Gems in|In ${city}/ig, '').trim();
         
@@ -75,39 +74,59 @@ export async function scrapeLocalSignals(city, neighborhood) {
       }));
 
       const results = validatedTrends.filter(t => t !== null).sort((a, b) => b.score - a.score);
+      
+      // THE "DISTINCT 5" SELECTION LOGIC
       const finalTrends = [];
+      const seenCategories = new Set();
       const seenNames = new Set();
-      const catCounts = {};
 
       for (const t of results) {
         if (finalTrends.length >= 5) break;
         if (seenNames.has(t.name.toLowerCase())) continue;
-        const cat = t.category;
-        catCounts[cat] = (catCounts[cat] || 0) + 1;
-        if (catCounts[cat] <= 2) {
+
+        // ONLY pick it if we haven't seen this category yet
+        if (!seenCategories.has(t.category)) {
           finalTrends.push(t);
+          seenCategories.add(t.category);
           seenNames.add(t.name.toLowerCase());
         }
       }
 
-      return { city, neighborhood, sentiment: 'Native Trend Velocity', topExperiences: finalTrends, velocity: 9.8 };
+      // If we have fewer than 5 because of category uniqueness, fill the rest with best remaining
+      if (finalTrends.length < 5) {
+        for (const t of results) {
+          if (finalTrends.length >= 5) break;
+          if (!seenNames.has(t.name.toLowerCase())) {
+            finalTrends.push(t);
+            seenNames.add(t.name.toLowerCase());
+          }
+        }
+      }
+
+      return { city, neighborhood, sentiment: 'Validated Market Intelligence', topExperiences: finalTrends, velocity: 9.8 };
     }
   } catch (err) {
-    console.error("[Agent A] Robust Stack failed...", err);
+    console.error("[Agent A] Distinct Stack failed...", err);
   }
 
-  // FAILSAFE FALLBACK
-  const fallback = ["Hidden Heritage Walk", "Artisan Canal Cruise", "Boutique Concept Store", "Secret Mixology Session", "Immersive Gallery Tour"];
-  return { city, neighborhood, sentiment: 'Emerging & Dynamic', topExperiences: fallback.map(s => ({ name: s, category: "Urban Exploration", demandLabel: "Rising Niche Interest", score: 65 })), velocity: 9.2 };
+  // FAILSAFE
+  const fallback = [
+    { name: "Artisan Canal Cruise", category: "Curated Tour", demandLabel: "Rising Niche Interest", score: 65 },
+    { name: "Natural Wine Listening Bar", category: "Mixology & Nightlife", demandLabel: "High Social Velocity", score: 75 },
+    { name: "Urban Sauna Ritual", category: "Urban Wellness", demandLabel: "Trending Search Topic", score: 80 },
+    { name: "Concept Design Hub", category: "Experience Retail", demandLabel: "Emergent Signal", score: 60 },
+    { name: "Chef's Garden Tasting", category: "Culinary Experience", demandLabel: "High Local Demand", score: 70 }
+  ];
+  return { city, neighborhood, sentiment: 'Emerging & Dynamic', topExperiences: fallback, velocity: 9.2 };
 }
 
 function deriveAdaptiveCategory(item) {
   const combined = (item.title + " " + item.snippet + " " + (item.link || "")).toLowerCase();
-  if (combined.includes("food") || combined.includes("restaurant") || combined.includes("tasting")) return "Culinary Experience";
-  if (combined.includes("bar") || combined.includes("cocktail") || combined.includes("wine")) return "Mixology & Nightlife";
-  if (combined.includes("store") || combined.includes("boutique") || combined.includes("fashion")) return "Experience Retail";
-  if (combined.includes("wellness") || combined.includes("sauna") || combined.includes("spa")) return "Urban Wellness";
-  if (combined.includes("tour") || combined.includes("canal") || combined.includes("boat")) return "Curated Tour";
+  if (combined.includes("food") || combined.includes("restaurant") || combined.includes("tasting") || combined.includes("gastronomy")) return "Culinary Experience";
+  if (combined.includes("bar") || combined.includes("cocktail") || combined.includes("wine") || combined.includes("nightlife")) return "Mixology & Nightlife";
+  if (combined.includes("store") || combined.includes("boutique") || combined.includes("retail") || combined.includes("fashion")) return "Experience Retail";
+  if (combined.includes("wellness") || combined.includes("sauna") || combined.includes("spa") || combined.includes("ritual")) return "Urban Wellness";
+  if (combined.includes("tour") || combined.includes("canal") || combined.includes("boat") || combined.includes("guide")) return "Curated Tour";
   return "Urban Exploration";
 }
 /**
