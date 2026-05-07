@@ -21,17 +21,39 @@ export const VIBE_CATEGORIES = [
  */
 /**
  * Agent A: The Multi-Source Signal Scraper
+/**
+ * TravelVRSE Persona-Matching Engine (The Triangulator)
+ * 
+ * Logic flow:
+ * 1. Agent A (Demand): Local Pulse analysis (neighborhood-level trends)
+ * 2. Agent B (Supply): Brand DNA analysis (Visual + Textual supply)
+ * 3. Agent C (Inventory): Experience mapping (Onsite vs local trends)
+ */
+
+export const VIBE_CATEGORIES = [
+  "Cultural Heritage",
+  "Urban Exploration",
+  "Luxury & Lifestyle",
+  "Wellness & Rituals",
+  "Culinary & Mixology"
+];
+
+/**
+ * Agent A: The Hyper-Local Pulse
+ * Scrapes neighborhood-level demand data.
+ */
+/**
+ * Agent A: The Multi-Source Signal Scraper
  * Aggregates signals from Geography (Maps), Social (IG/TikTok), and Trends (Local Events).
  */
 export async function scrapeLocalSignals(city, neighborhood) {
   const c = (city || "").toLowerCase();
   const n = (neighborhood || "").toLowerCase();
   console.log(`[Agent A] Fetching live Serper Search signals for ${n}, ${c}...`);
+  // Search the open web to find the most popular emerging trends across ALL publishers
+  const query = `${neighborhood || city} hidden gems underground trends local experiences`;
   
   const API_KEY = import.meta.env.VITE_SERPER_API_KEY;
-  
-  const sites = "site:timeout.com OR site:ra.co OR site:cntraveler.com OR site:theinfatuation.com OR site:vice.com";
-  const query = `${sites} ${neighborhood || city} hidden gems underground trends local experiences`;
   
   try {
     console.log(`[Agent A] Pinging Serper API...`);
