@@ -28,8 +28,8 @@ export async function scrapeLocalSignals(city, neighborhood) {
   const n = (neighborhood || "").toLowerCase();
   console.log(`[Agent A] Fetching live Google Custom Search signals for ${n}, ${c}...`);
   
-  const API_KEY = "AIzaSyCy7lWU-8FjZg88shauFmDdxoO48VXZbpM";
-  const CX = "d3dbf0de4daf64262";
+  const API_KEY = import.meta.env.VITE_GOOGLE_API_KEY;
+  const CX = import.meta.env.VITE_GOOGLE_CX;
   
   const query = `${neighborhood || city} hidden gems underground trends local experiences`;
   
