@@ -93,37 +93,35 @@ export async function scrapeLocalSignals(city, neighborhood) {
   const API_KEY = import.meta.env.VITE_SERPER_API_KEY;
   const HEADERS = { 'X-API-KEY': API_KEY, 'Content-Type': 'application/json' };
   
-  console.log(`[Agent A] Initializing Multi-Search Vibe Stack for ${targetArea}...`);
+  console.log(`[Agent A] Initializing High-Fidelity Vibe Stack for ${targetArea}...`);
 
   try {
-    // 1. DIVERSIFIED SEARCH: Run two parallel searches to ensure variety and volume
-    // Search A: Focused on Tours & Activities
-    const tourQuery = `site:getyourguide.com OR site:timeout.com OR site:viator.com "${targetArea}" tour experience`;
-    // Search B: Focused on Lifestyle & Trends
-    const trendQuery = `site:wallpaper.com OR site:highsnobiety.com OR site:monocle.com OR site:cntraveler.com "${targetArea}" curated experience`;
+    // 1. DIVERSIFIED SOURCE SEARCH
+    const tourQuery = `site:getyourguide.com OR site:viator.com "${targetArea}" tour experience`;
+    const trendQuery = `site:timeout.com OR site:wallpaper.com OR site:highsnobiety.com OR site:monocle.com OR site:cntraveler.com "${targetArea}" curated experience`;
 
     const [tourRes, trendRes] = await Promise.all([
-      fetch(`https://google.serper.dev/search`, { method: 'POST', headers: HEADERS, body: JSON.stringify({ q: tourQuery, num: 10 }) }).then(r => r.json()),
-      fetch(`https://google.serper.dev/search`, { method: 'POST', headers: HEADERS, body: JSON.stringify({ q: trendQuery, num: 10 }) }).then(r => r.json())
+      fetch(`https://google.serper.dev/search`, { method: 'POST', headers: HEADERS, body: JSON.stringify({ q: tourQuery, num: 15 }) }).then(r => r.json()),
+      fetch(`https://google.serper.dev/search`, { method: 'POST', headers: HEADERS, body: JSON.stringify({ q: trendQuery, num: 15 }) }).then(r => r.json())
     ]);
 
     const allOrganic = [...(tourRes.organic || []), ...(trendRes.organic || [])];
     const relatedSearches = [...(tourRes.relatedSearches || []), ...(trendRes.relatedSearches || [])].map(r => r.query.toLowerCase());
 
     if (allOrganic.length > 0) {
-      console.log(`[Agent A] Found ${allOrganic.length} total raw signals.`);
-      
       let candidates = allOrganic.map(item => {
         let name = item.title.split('-')[0].split('|')[0].trim();
         name = name.replace(/The Best|Top 10|Guide to|Secret|Hidden|Gems in|In ${targetArea}/ig, '').trim();
-        return { name, source: new URL(item.link).hostname.replace('www.', ''), snippet: item.snippet, link: item.link };
+        // Keep track if it came from a publisher vs aggregator
+        const isPublisher = !item.link.includes('getyourguide.com') && !item.link.includes('viator.com');
+        return { name, source: new URL(item.link).hostname.replace('www.', ''), snippet: item.snippet, link: item.link, isPublisher };
       });
 
-      // Deduplicate candidates by name
+      // Deduplicate
       candidates = Array.from(new Map(candidates.map(c => [c.name.toLowerCase(), c])).values());
 
-      const validatedTrends = await Promise.all(candidates.slice(0, 10).map(async (candidate) => {
-        let trendScore = 50;
+      const validatedTrends = await Promise.all(candidates.slice(0, 12).map(async (candidate) => {
+        let trendScore = 0;
         let demandLabel = "Emergent Signal";
         let venueName = candidate.name;
         
@@ -134,25 +132,38 @@ export async function scrapeLocalSignals(city, neighborhood) {
           fetch(`https://google.serper.dev/search`, { method: 'POST', headers: HEADERS, body: JSON.stringify({ q: `site:tiktok.com "${candidate.name}" ${targetArea}` }) }).then(r => r.json()).catch(() => ({}))
         ]);
 
-        if (placesData.places && placesData.places.length > 0) {
-          const place = placesData.places[0];
-          venueName = place.title; 
-          if (place.ratingCount > 15) { trendScore += 20; demandLabel = "High Local Demand"; }
-        }
+        const hasPhysicalPlace = placesData.places && placesData.places.length > 0;
+        const hasTourListing = gygData.organic && gygData.organic.length > 0;
 
-        if (gygData.organic && gygData.organic.length > 0) {
+        // THE GATEKEEPER: Must be bookable/visitable to pass
+        if (!hasPhysicalPlace && !hasTourListing) return null;
+
+        // 1. Publisher Boost (+20)
+        if (candidate.isPublisher) trendScore += 20;
+
+        // 2. Search Trends (+30) - THE HIGHEST WEIGHT
+        const isTrending = relatedSearches.some(q => q.includes(candidate.name.toLowerCase()));
+        if (isTrending) {
           trendScore += 30;
-          demandLabel = "Verified Bookable Tour";
-        }
-
-        if (socialData.organic && socialData.organic.length > 0) {
-          trendScore += 15;
-          if (demandLabel === "Emergent Signal") demandLabel = "Social Velocity High";
-        }
-
-        if (relatedSearches.some(q => q.includes(candidate.name.toLowerCase()))) {
-          trendScore += 15;
           demandLabel = "Trending Search Topic";
+        }
+
+        // 3. TikTok Velocity (+30) - THE HIGHEST WEIGHT
+        if (socialData.organic && socialData.organic.length > 0) {
+          trendScore += 30;
+          demandLabel = "High Social Velocity";
+        }
+
+        // 4. Review Volume (+20)
+        if (hasPhysicalPlace) {
+          const place = placesData.places[0];
+          venueName = place.title;
+          if (place.ratingCount > 20) {
+            trendScore += 20;
+            if (demandLabel === "Emergent Signal") demandLabel = "High Local Demand";
+          }
+        } else if (hasTourListing) {
+           demandLabel = "Verified Bookable Tour";
         }
 
         return {
@@ -163,27 +174,22 @@ export async function scrapeLocalSignals(city, neighborhood) {
         };
       }));
 
-      // Sort and Deduplicate
-      const finalTrends = Array.from(new Map(validatedTrends.map(t => [t.name.toLowerCase(), t])).values());
+      // Filter out nulls (Gatekeeper rejects) and sort
+      const finalTrends = validatedTrends.filter(t => t !== null);
       finalTrends.sort((a, b) => b.score - a.score);
 
       return {
         city, neighborhood,
-        sentiment: 'Verified Market Intelligence',
+        sentiment: 'Validated Market Intelligence',
         topExperiences: finalTrends.slice(0, 5),
         velocity: 9.8
       };
     }
   } catch (err) {
-    console.error("[Agent A] Multi-Search Vibe Stack failed...", err);
+    console.error("[Agent A] Vibe Stack failed...", err);
   }
 
-  // ROBUST FALLBACK (Ensures UI never breaks)
-  const fallback = ["Hidden Heritage Walk", "Artisan Canal Cruise", "Boutique Concept Store", "Secret Mixology Session", "Immersive Gallery Tour"];
-  const experiences = fallback.map(s => ({
-    name: `? ${s} ${targetArea}`, category: "Curated Local Tour", demandLabel: "Rising Niche Interest", score: 65
-  }));
-  return { city, neighborhood, sentiment: 'Emerging & Dynamic', topExperiences: experiences, velocity: 9.2 };
+  return { city, neighborhood, sentiment: 'Emerging & Dynamic', topExperiences: [], velocity: 9.2 };
 }
 /**
  * Agent B: The Discoverability Auditor
