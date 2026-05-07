@@ -226,10 +226,10 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                        </div>
                        
                        <div style={{ textAlign: 'left' }}>
-                          <span style={{ fontSize: '9px', fontWeight: 900, color: 'rgba(255,255,255,0.4)', textTransform: 'uppercase', letterSpacing: '0.2em', marginBottom: '0.5rem', display: 'block' }}>
+                          <span style={{ fontSize: '13px', fontWeight: 900, color: '#B5942D', textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: '0.75rem', display: 'block' }}>
                              {expObj.category}
                           </span>
-                          <h4 className="signal-name" style={{ fontSize: '1.4rem', fontWeight: 900, margin: 0, lineHeight: 1.2, color: '#fff' }}>
+                          <h4 className="signal-name" style={{ fontSize: '1.1rem', fontWeight: 800, margin: 0, lineHeight: 1.3, color: '#fff', opacity: 0.9 }}>
                              {expObj.name}
                           </h4>
                        </div>
