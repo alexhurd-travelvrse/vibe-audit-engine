@@ -93,11 +93,9 @@ export async function scrapeLocalSignals(city, neighborhood) {
   const API_KEY = import.meta.env.VITE_SERPER_API_KEY;
   const HEADERS = { 'X-API-KEY': API_KEY, 'Content-Type': 'application/json' };
   
-  console.log(`[Agent A] Initializing Balanced Vibe Stack for ${targetArea}...`);
-
   try {
     const tourQuery = `site:getyourguide.com OR site:viator.com "${targetArea}" tour experience`;
-    const trendQuery = `site:timeout.com OR site:wallpaper.com OR site:highsnobiety.com OR site:monocle.com OR site:cntraveler.com OR site:dezeen.com OR site:nowness.com "${targetArea}" curated experience`;
+    const trendQuery = `site:timeout.com OR site:wallpaper.com OR site:highsnobiety.com OR site:monocle.com OR site:cntraveler.com "${targetArea}" curated experience`;
 
     const [tourRes, trendRes] = await Promise.all([
       fetch(`https://google.serper.dev/search`, { method: 'POST', headers: HEADERS, body: JSON.stringify({ q: tourQuery, num: 15 }) }).then(r => r.json()),
@@ -111,8 +109,7 @@ export async function scrapeLocalSignals(city, neighborhood) {
       let candidates = allOrganic.map(item => {
         let name = item.title.split('-')[0].split('|')[0].trim();
         name = name.replace(/The Best|Top 10|Guide to|Secret|Hidden|Gems in|In ${targetArea}/ig, '').trim();
-        const isPublisher = !item.link.includes('getyourguide.com') && !item.link.includes('viator.com');
-        return { name, source: new URL(item.link).hostname.replace('www.', ''), snippet: item.snippet, link: item.link, isPublisher };
+        return { name, source: new URL(item.link).hostname.replace('www.', ''), snippet: item.snippet, link: item.link };
       });
 
       candidates = Array.from(new Map(candidates.map(c => [c.name.toLowerCase(), c])).values());
@@ -130,25 +127,21 @@ export async function scrapeLocalSignals(city, neighborhood) {
 
         const hasPhysicalPlace = placesData.places && placesData.places.length > 0;
         const hasTourListing = gygData.organic && gygData.organic.length > 0;
-
-        // Gatekeeper
         if (!hasPhysicalPlace && !hasTourListing) return null;
 
-        if (candidate.isPublisher) trendScore += 20;
-
-        const isTrending = relatedSearches.some(q => q.includes(candidate.name.toLowerCase()));
-        if (isTrending) { trendScore += 30; demandLabel = "Trending Search Topic"; }
-
-        if (socialData.organic && socialData.organic.length > 0) {
-          trendScore += 30;
-          demandLabel = "High Social Velocity";
-        }
-
+        if (relatedSearches.some(q => q.includes(candidate.name.toLowerCase()))) trendScore += 30;
+        if (socialData.organic && socialData.organic.length > 0) trendScore += 30;
+        
         if (hasPhysicalPlace) {
           const place = placesData.places[0];
           venueName = place.title;
-          if (place.ratingCount > 20) { trendScore += 20; if (demandLabel === "Emergent Signal") demandLabel = "High Local Demand"; }
+          if (place.ratingCount > 20) {
+            trendScore += 20;
+            demandLabel = "High Local Demand";
+          }
         }
+        
+        if (hasTourListing) trendScore += 10; // Small boost for tour existence
 
         return {
           name: venueName,
@@ -161,27 +154,28 @@ export async function scrapeLocalSignals(city, neighborhood) {
       const results = validatedTrends.filter(t => t !== null);
       results.sort((a, b) => b.score - a.score);
 
-      // BASKET LOGIC: Ensure a diverse mix of categories
+      // IRONCLAD BASKET LOGIC
       const finalTrends = [];
-      const categoryCounts = {};
-      
+      let tourCount = 0;
+      const seenCategories = {};
+
       for (const t of results) {
-        const cat = t.category;
-        categoryCounts[cat] = (categoryCounts[cat] || 0) + 1;
+        const isTour = t.name.toLowerCase().match(/tour|cruise|canal|boat|trip|guided/);
         
-        // LIMIT any category (like "Curated Local Tour") to max 2 spots
-        if (categoryCounts[cat] <= 2) {
-          finalTrends.push(t);
+        if (isTour) {
+          if (tourCount < 2) {
+            finalTrends.push(t);
+            tourCount++;
+          }
+        } else {
+          // Non-tour items: Limit to 2 per specific category to ensure diversity
+          const cat = t.category;
+          seenCategories[cat] = (seenCategories[cat] || 0) + 1;
+          if (seenCategories[cat] <= 2) {
+            finalTrends.push(t);
+          }
         }
         if (finalTrends.length >= 5) break;
-      }
-
-      // If we still don't have 5 due to over-filtering, grab the highest remaining ones
-      if (finalTrends.length < 5) {
-        for (const t of results) {
-          if (!finalTrends.includes(t)) finalTrends.push(t);
-          if (finalTrends.length >= 5) break;
-        }
       }
 
       return {
