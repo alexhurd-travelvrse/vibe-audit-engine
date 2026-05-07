@@ -50,8 +50,8 @@ export async function scrapeLocalSignals(city, neighborhood) {
   const c = (city || "").toLowerCase();
   const n = (neighborhood || "").toLowerCase();
   console.log(`[Agent A] Fetching live Serper Search signals for ${n}, ${c}...`);
-  // Recreate the "Custom Search Engine" curation using Serper advanced search operators
-  const sites = "site:timeout.com OR site:ra.co OR site:cntraveler.com OR site:theinfatuation.com OR site:vice.com OR site:wallpaper.com";
+  // Curated list of ~20 Next-Gen lifestyle, design, and travel publishers
+  const sites = "site:timeout.com OR site:ra.co OR site:cntraveler.com OR site:theinfatuation.com OR site:vice.com OR site:wallpaper.com OR site:highsnobiety.com OR site:hypebeast.com OR site:monocle.com OR site:dezeen.com OR site:nowness.com OR site:thespaces.com OR site:suitcasemag.com OR site:kinfolk.com OR site:cerealmag.com OR site:archdigest.com OR site:surface.com OR site:coolhunting.com OR site:designboom.com OR site:somewhere.com";
   const query = `${sites} ${neighborhood || city} hidden gems local experiences`;
   
   const API_KEY = import.meta.env.VITE_SERPER_API_KEY;
