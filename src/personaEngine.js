@@ -23,7 +23,7 @@ export const VIBE_CATEGORIES = {
   NIGHTLIFE: "Emergent Nightlife & Mixology",
   CULINARY: "High-Fidelity Gastronomy",
   CULTURE: "Immersive Art & Design",
-  HERITAGE: "Hyper-Local Urban Heritage",
+  HERITAGE: "Curated Local Tour",
   URBAN: "Adaptive Urbanism & Architecture"
 };
 
