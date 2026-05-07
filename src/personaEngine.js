@@ -16,6 +16,7 @@
 
 
 
+
 export const VIBE_CATEGORIES = {
   RETAIL: "Experience-Led Retail Design",
   WELLNESS: "Next-Gen Wellness & Rituals",
@@ -23,35 +24,68 @@ export const VIBE_CATEGORIES = {
   CULINARY: "High-Fidelity Gastronomy",
   CULTURE: "Immersive Art & Design",
   HERITAGE: "Hyper-Local Urban Heritage",
-  URBAN: "Adaptive Urbanism & Architecture",
-  SOCIAL: "Community-Centric Social Spaces"
+  URBAN: "Adaptive Urbanism & Architecture"
 };
 
-// Adaptive Taxonomy Engine: Learns from the publisher's context
 function deriveAdaptiveCategory(item) {
-  const title = item.title.toLowerCase();
-  const snippet = item.snippet.toLowerCase();
-  const url = item.link.toLowerCase();
-  const combined = title + " " + snippet + " " + url;
+  const combined = (item.title + " " + item.snippet + " " + item.link).toLowerCase();
+  
+  // Scoring weights for each category
+  const weights = {
+    [VIBE_CATEGORIES.HERITAGE]: 0,
+    [VIBE_CATEGORIES.RETAIL]: 0,
+    [VIBE_CATEGORIES.WELLNESS]: 0,
+    [VIBE_CATEGORIES.NIGHTLIFE]: 0,
+    [VIBE_CATEGORIES.CULINARY]: 0,
+    [VIBE_CATEGORIES.CULTURE]: 0,
+    [VIBE_CATEGORIES.URBAN]: 0
+  };
 
-  // Primary Buckets (Consistency Layer)
-  if (combined.includes("retail") || combined.includes("store") || combined.includes("fashion") || combined.includes("shopping")) return VIBE_CATEGORIES.RETAIL;
-  if (combined.includes("wellness") || combined.includes("spa") || combined.includes("sauna") || combined.includes("yoga") || combined.includes("meditation")) return VIBE_CATEGORIES.WELLNESS;
-  if (combined.includes("nightlife") || combined.includes("club") || combined.includes("bar") || combined.includes("cocktail") || combined.includes("music")) return VIBE_CATEGORIES.NIGHTLIFE;
-  if (combined.includes("gastronomy") || combined.includes("dining") || combined.includes("restaurant") || combined.includes("culinary") || combined.includes("chef")) return VIBE_CATEGORIES.CULINARY;
-  if (combined.includes("art") || combined.includes("gallery") || combined.includes("design") || combined.includes("architecture") || combined.includes("creative")) return VIBE_CATEGORIES.CULTURE;
-  if (combined.includes("history") || combined.includes("heritage") || combined.includes("tour") || combined.includes("local secrets")) return VIBE_CATEGORIES.HERITAGE;
+  // 1. Heritage & Tours (High Intent)
+  if (combined.includes("tour") || combined.includes("cruise") || combined.includes("canal") || combined.includes("boat")) weights[VIBE_CATEGORIES.HERITAGE] += 50;
+  if (combined.includes("history") || combined.includes("heritage") || combined.includes("historic")) weights[VIBE_CATEGORIES.HERITAGE] += 30;
 
-  // Dynamic Discovery (Self-Learning Layer)
-  // If no bucket matches, we attempt to extract a high-value noun from the snippet
-  const keywords = ["concept", "hub", "collective", "studio", "installation", "popup"];
-  for (const k of keywords) {
-    if (combined.includes(k)) {
-      return `${k.charAt(0).toUpperCase() + k.slice(1)}-Led Innovation`;
+  // 2. Retail (Only if matched with commerce words)
+  if (combined.includes("store") || combined.includes("shop") || combined.includes("boutique") || combined.includes("showroom")) weights[VIBE_CATEGORIES.RETAIL] += 40;
+  if (combined.includes("fashion") || combined.includes("apparel") || combined.includes("retail")) weights[VIBE_CATEGORIES.RETAIL] += 30;
+
+  // 3. Culinary
+  if (combined.includes("restaurant") || combined.includes("dining") || combined.includes("tasting") || combined.includes("culinary") || combined.includes("chef") || combined.includes("food")) weights[VIBE_CATEGORIES.CULINARY] += 45;
+
+  // 4. Nightlife & Mixology
+  if (combined.includes("bar") || combined.includes("cocktail") || combined.includes("mixology") || combined.includes("club") || combined.includes("nightlife") || combined.includes("underground")) weights[VIBE_CATEGORIES.NIGHTLIFE] += 45;
+
+  // 5. Wellness
+  if (combined.includes("spa") || combined.includes("wellness") || combined.includes("sauna") || combined.includes("bath") || combined.includes("ritual")) weights[VIBE_CATEGORIES.WELLNESS] += 45;
+
+  // 6. Culture & Design
+  if (combined.includes("gallery") || combined.includes("art") || combined.includes("exhibition") || combined.includes("studio")) weights[VIBE_CATEGORIES.CULTURE] += 40;
+  if (combined.includes("design") || combined.includes("architecture")) {
+      // If it mentions design but also retail words, it's retail. Otherwise it's Culture/Urban.
+      if (weights[VIBE_CATEGORIES.RETAIL] > 0) weights[VIBE_CATEGORIES.RETAIL] += 20;
+      else weights[VIBE_CATEGORIES.URBAN] += 30;
+  }
+
+  // Find the category with the highest weight
+  let topCategory = VIBE_CATEGORIES.HERITAGE;
+  let maxWeight = -1;
+  for (const [cat, weight] of Object.entries(weights)) {
+    if (weight > maxWeight) {
+      maxWeight = weight;
+      topCategory = cat;
     }
   }
 
-  return VIBE_CATEGORIES.URBAN; // Intelligent Default
+  // If no weight found, check for dynamic keywords
+  if (maxWeight <= 0) {
+    const keywords = ["collective", "hub", "installation", "popup"];
+    for (const k of keywords) {
+      if (combined.includes(k)) return `${k.charAt(0).toUpperCase() + k.slice(1)}-Led Innovation`;
+    }
+    return VIBE_CATEGORIES.URBAN;
+  }
+
+  return topCategory;
 }
 
 export async function scrapeLocalSignals(city, neighborhood) {
