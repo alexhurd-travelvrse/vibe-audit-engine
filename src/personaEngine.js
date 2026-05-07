@@ -7,13 +7,7 @@
  * 3. Agent C (Inventory): Experience mapping (Onsite vs local trends)
  */
 
-export const VIBE_CATEGORIES = [
-  "Cultural Heritage",
-  "Urban Exploration",
-  "Luxury & Lifestyle",
-  "Wellness & Rituals",
-  "Culinary & Mixology"
-];
+
 
 /**
  * Agent A: The Hyper-Local Pulse
