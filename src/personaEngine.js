@@ -95,11 +95,12 @@ export async function scrapeLocalSignals(city, neighborhood) {
   
   try {
     const tourQuery = `site:getyourguide.com OR site:viator.com "${targetArea}" tour experience`;
-    const trendQuery = `site:timeout.com OR site:wallpaper.com OR site:highsnobiety.com OR site:monocle.com OR site:cntraveler.com "${targetArea}" curated experience`;
+    // EXPANDED trend query to include Bars, Restaurants, and Nightlife specifically
+    const trendQuery = `site:timeout.com OR site:ra.co OR site:theinfatuation.com OR site:wallpaper.com OR site:monocle.com OR site:cntraveler.com "${targetArea}" "mixology" OR "gastronomy" OR "boutique" OR "underground"`;
 
     const [tourRes, trendRes] = await Promise.all([
       fetch(`https://google.serper.dev/search`, { method: 'POST', headers: HEADERS, body: JSON.stringify({ q: tourQuery, num: 15 }) }).then(r => r.json()),
-      fetch(`https://google.serper.dev/search`, { method: 'POST', headers: HEADERS, body: JSON.stringify({ q: trendQuery, num: 25 }) }).then(r => r.json())
+      fetch(`https://google.serper.dev/search`, { method: 'POST', headers: HEADERS, body: JSON.stringify({ q: trendQuery, num: 30 }) }).then(r => r.json())
     ]);
 
     const allOrganic = [...(tourRes.organic || []), ...(trendRes.organic || [])];
@@ -114,7 +115,7 @@ export async function scrapeLocalSignals(city, neighborhood) {
 
       candidates = Array.from(new Map(candidates.map(c => [c.name.toLowerCase(), c])).values());
 
-      const validatedTrends = await Promise.all(candidates.slice(0, 15).map(async (candidate) => {
+      const validatedTrends = await Promise.all(candidates.slice(0, 18).map(async (candidate) => {
         let trendScore = 0;
         let demandLabel = "Emergent Signal";
         let venueName = candidate.name;
@@ -135,13 +136,10 @@ export async function scrapeLocalSignals(city, neighborhood) {
         if (hasPhysicalPlace) {
           const place = placesData.places[0];
           venueName = place.title;
-          if (place.ratingCount > 20) {
-            trendScore += 20;
-            demandLabel = "High Local Demand";
-          }
+          if (place.ratingCount > 15) { trendScore += 20; demandLabel = "High Local Demand"; }
         }
         
-        if (hasTourListing) trendScore += 10; // Small boost for tour existence
+        if (hasTourListing) trendScore += 10;
 
         return {
           name: venueName,
@@ -154,13 +152,13 @@ export async function scrapeLocalSignals(city, neighborhood) {
       const results = validatedTrends.filter(t => t !== null);
       results.sort((a, b) => b.score - a.score);
 
-      // IRONCLAD BASKET LOGIC
       const finalTrends = [];
       let tourCount = 0;
       const seenCategories = {};
 
       for (const t of results) {
-        const isTour = t.name.toLowerCase().match(/tour|cruise|canal|boat|trip|guided/);
+        // ENHANCED TOUR DETECTION (Check name AND category)
+        const isTour = t.name.toLowerCase().match(/tour|cruise|canal|boat|trip|guided|sightseeing/) || t.category === "Curated Local Tour";
         
         if (isTour) {
           if (tourCount < 2) {
@@ -168,14 +166,22 @@ export async function scrapeLocalSignals(city, neighborhood) {
             tourCount++;
           }
         } else {
-          // Non-tour items: Limit to 2 per specific category to ensure diversity
           const cat = t.category;
           seenCategories[cat] = (seenCategories[cat] || 0) + 1;
+          // Allowing bars/restaurants to compete more freely
           if (seenCategories[cat] <= 2) {
             finalTrends.push(t);
           }
         }
         if (finalTrends.length >= 5) break;
+      }
+
+      // If we don't have 5, fill with whatever is left
+      if (finalTrends.length < 5) {
+        for (const t of results) {
+          if (!finalTrends.includes(t)) finalTrends.push(t);
+          if (finalTrends.length >= 5) break;
+        }
       }
 
       return {
