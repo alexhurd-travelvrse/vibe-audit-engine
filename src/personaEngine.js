@@ -20,113 +20,93 @@
 
 
 
+
 export async function scrapeLocalSignals(city, neighborhood) {
-  const c = city || "";
-  const n = neighborhood || "";
+  const targetArea = neighborhood || city;
   const API_KEY = import.meta.env.VITE_SERPER_API_KEY;
   const HEADERS = { 'X-API-KEY': API_KEY, 'Content-Type': 'application/json' };
   
-  console.log(`[Agent A] Running Diverse Vibe Audit for ${n || c}...`);
+  console.log(`[Agent A] Analyzing Natural Trend Velocity for ${targetArea}...`);
 
   try {
-    // 1. DUAL-STREAM SEARCH (Widen to City for trends, Neighborhood for local specific)
-    const eliteSites = "site:timeout.com OR site:ra.co OR site:cntraveler.com OR site:theinfatuation.com OR site:wallpaper.com OR site:highsnobiety.com OR site:monocle.com";
+    const eliteSites = "site:timeout.com OR site:ra.co OR site:cntraveler.com OR site:theinfatuation.com OR site:wallpaper.com OR site:highsnobiety.com OR site:monocle.com OR site:getyourguide.com";
     
-    const [trendRes, gygRes] = await Promise.all([
-      // Widen search to City if needed to ensure variety
-      fetch(`https://google.serper.dev/search`, { 
-        method: 'POST', headers: HEADERS, body: JSON.stringify({ q: `${eliteSites} ${c} "${n}" hidden gems underground OR emerging experience`, num: 30 }) 
-      }).then(r => r.json()),
-      // Explicitly pull 1 bookable tour
-      fetch(`https://google.serper.dev/search`, { 
-        method: 'POST', headers: HEADERS, body: JSON.stringify({ q: `site:getyourguide.com "${c}" tour experience`, num: 5 }) 
-      }).then(r => r.json())
-    ]);
+    // THE "SOUL" SEARCH: Look for what is emerging, underground, and hot across all elite domains
+    const query = `${eliteSites} "${targetArea}" "hidden gems" OR "underground" OR "emerging" OR "secret" experience`;
 
-    const relatedSearches = (trendRes.relatedSearches || []).map(r => r.query.toLowerCase());
+    const searchRes = await fetch(`https://google.serper.dev/search`, { 
+      method: 'POST', headers: HEADERS, body: JSON.stringify({ q: query, num: 30 }) 
+    }).then(r => r.json());
+
+    const relatedSearches = (searchRes.relatedSearches || []).map(r => r.query.toLowerCase());
     
-    // Combine and label candidates
-    let candidates = [
-      ...(trendRes.organic || []).map(item => ({ ...item, isTour: false })),
-      ...(gygRes.organic || []).map(item => ({ ...item, isTour: true }))
-    ];
-
-    if (candidates.length > 0) {
-      const validatedTrends = await Promise.all(candidates.map(async (item) => {
+    if (searchRes.organic && searchRes.organic.length > 0) {
+      const validatedTrends = await Promise.all(searchRes.organic.slice(0, 15).map(async (item) => {
         let name = item.title.split('-')[0].split('|')[0].trim();
-        name = name.replace(/The Best|Top 10|Guide to|Gems in|In ${c}|In ${n}/ig, '').trim();
+        name = name.replace(/The Best|Top 10|Guide to|Gems in|In ${city}/ig, '').trim();
         
-        let trendScore = 0;
+        let trendScore = 20; // Base Publisher Boost
         let demandLabel = "Emergent Signal";
         
+        // Parallel Demand Validation
         const [placesData, socialData] = await Promise.all([
-          fetch(`https://google.serper.dev/places`, { method: 'POST', headers: HEADERS, body: JSON.stringify({ q: `${name} ${c}` }) }).then(r => r.json()).catch(() => ({})),
-          fetch(`https://google.serper.dev/search`, { method: 'POST', headers: HEADERS, body: JSON.stringify({ q: `site:tiktok.com "${name}" ${c}` }) }).then(r => r.json()).catch(() => ({}))
+          fetch(`https://google.serper.dev/places`, { method: 'POST', headers: HEADERS, body: JSON.stringify({ q: `${name} ${city}` }) }).then(r => r.json()).catch(() => ({})),
+          fetch(`https://google.serper.dev/search`, { method: 'POST', headers: HEADERS, body: JSON.stringify({ q: `site:tiktok.com "${name}" ${city}` }) }).then(r => r.json()).catch(() => ({}))
         ]);
 
         if (placesData.places && placesData.places.length > 0) {
           name = placesData.places[0].title;
-          if (placesData.places[0].ratingCount > 10) trendScore += 20;
+          if (placesData.places[0].ratingCount > 15) trendScore += 20;
         }
 
-        if (item.isTour) { trendScore += 30; demandLabel = "Verified Bookable Tour"; }
-        if (socialData.organic && socialData.organic.length > 0) { trendScore += 30; if (!item.isTour) demandLabel = "High Social Velocity"; }
-        if (relatedSearches.some(q => q.includes(name.toLowerCase()))) { trendScore += 20; if (!item.isTour) demandLabel = "Trending Search Topic"; }
+        if (socialData.organic && socialData.organic.length > 0) { 
+          trendScore += 30; 
+          demandLabel = "High Social Velocity"; 
+        }
+        
+        if (relatedSearches.some(q => q.includes(name.toLowerCase()))) { 
+          trendScore += 30; 
+          demandLabel = "Trending Search Topic"; 
+        }
 
         return {
           name,
           category: deriveAdaptiveCategory({ title: name, snippet: item.snippet, link: item.link }),
           demandLabel: demandLabel,
-          score: Math.min(trendScore + 20, 100),
-          isTour: item.isTour
+          score: Math.min(trendScore, 100)
         };
       }));
 
-      // 3. THE "BALANCED 5" BASKET LOGIC
+      // 3. NATURAL TREND SELECTION (Soft-Deduplicated)
+      const results = validatedTrends.filter(t => t !== null).sort((a, b) => b.score - a.score);
+      
       const finalTrends = [];
-      const usedCategories = new Set();
-      let tourAdded = false;
+      const seenNames = new Set();
+      const catCounts = {};
 
-      // Sort by score first
-      const sorted = validatedTrends.filter(t => t !== null).sort((a, b) => b.score - a.score);
-
-      // Rule A: Exactly 1 Tour from GYG
-      const topTour = sorted.find(t => t.isTour);
-      if (topTour) {
-        finalTrends.push(topTour);
-        tourAdded = true;
-        usedCategories.add(topTour.category);
-      }
-
-      // Rule B: Diverse Lifestyle Categories (No duplicates)
-      for (const t of sorted) {
+      for (const t of results) {
         if (finalTrends.length >= 5) break;
-        if (t.isTour) continue; // Skip extra tours
-        if (!usedCategories.has(t.category)) {
+        if (seenNames.has(t.name.toLowerCase())) continue;
+        
+        // SOFT DIVERSITY CAP: Allow natural clusters but limit to 2 of the same "vibe" to keep audit interesting
+        const cat = t.category;
+        catCounts[cat] = (catCounts[cat] || 0) + 1;
+        
+        if (catCounts[cat] <= 2) {
           finalTrends.push(t);
-          usedCategories.add(t.category);
-        }
-      }
-
-      // Rule C: Fill remainders with highest scores if diversity exhausted
-      if (finalTrends.length < 5) {
-        for (const t of sorted) {
-          if (finalTrends.length >= 5) break;
-          if (!finalTrends.find(f => f.name === t.name)) {
-            finalTrends.push(t);
-          }
+          seenNames.add(t.name.toLowerCase());
         }
       }
 
       return {
         city, neighborhood,
-        sentiment: 'High-Diversity Market Audit',
+        sentiment: 'Native Trend Velocity',
         topExperiences: finalTrends,
         velocity: 9.8
       };
     }
   } catch (err) {
-    console.error("[Agent A] Diverse Stack failed...", err);
+    console.error("[Agent A] Demand-Led Stack failed...", err);
   }
 
   return { city, neighborhood, sentiment: 'Emerging & Dynamic', topExperiences: [], velocity: 9.2 };
@@ -134,12 +114,11 @@ export async function scrapeLocalSignals(city, neighborhood) {
 
 function deriveAdaptiveCategory(item) {
   const combined = (item.title + " " + item.snippet + " " + (item.link || "")).toLowerCase();
-  if (combined.includes("food") || combined.includes("restaurant") || combined.includes("tasting") || combined.includes("gastronomy")) return "High-Fidelity Gastronomy";
-  if (combined.includes("bar") || combined.includes("cocktail") || combined.includes("wine") || combined.includes("nightlife")) return "Mixology & Nightlife";
-  if (combined.includes("store") || combined.includes("boutique") || combined.includes("retail") || combined.includes("fashion")) return "Experience Retail Design";
-  if (combined.includes("wellness") || combined.includes("sauna") || combined.includes("spa") || combined.includes("ritual")) return "Next-Gen Wellness";
-  if (combined.includes("tour") || combined.includes("canal") || combined.includes("boat") || combined.includes("getyourguide")) return "Curated Local Tour";
-  if (combined.includes("art") || combined.includes("gallery") || combined.includes("design") || combined.includes("exhibition")) return "Immersive Art & Design";
+  if (combined.includes("food") || combined.includes("restaurant") || combined.includes("tasting")) return "Culinary Experience";
+  if (combined.includes("bar") || combined.includes("cocktail") || combined.includes("wine")) return "Mixology & Nightlife";
+  if (combined.includes("store") || combined.includes("boutique") || combined.includes("fashion")) return "Experience Retail";
+  if (combined.includes("wellness") || combined.includes("sauna") || combined.includes("spa")) return "Urban Wellness";
+  if (combined.includes("tour") || combined.includes("canal") || combined.includes("boat")) return "Curated Tour";
   return "Urban Exploration";
 }
 /**
