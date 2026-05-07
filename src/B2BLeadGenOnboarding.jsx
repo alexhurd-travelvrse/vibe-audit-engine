@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowLeft, ChevronRight, Send, Star, MapPin, TrendingUp, Search, Globe, Zap, CheckCircle2, BarChart3, ExternalLink, Gift, RefreshCw } from 'lucide-react';
+import { ArrowLeft, ChevronRight, Send, Star, MapPin, TrendingUp, Search, Globe, Zap, CheckCircle2, BarChart3, ExternalLink, Gift, RefreshCw, Activity } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   scrapeLocalSignals, 
@@ -218,13 +218,27 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                     </div>
                 </div>
                 
-                <div className="signals-grid" style={{ justifyContent: 'center', flexWrap: 'wrap' }}>
+                <div className="signals-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
                   {analysis?.signals?.topExperiences?.map((expObj, i) => (
-                    <div key={i} className="signal-card" style={{ flex: 1, minWidth: '240px', padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                       <h4 className="signal-name" style={{ textAlign: 'center', fontSize: '1.1rem', margin: 0 }}>{expObj.name}</h4>
-                       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '1rem' }}>
-                         <Globe size={12} color="#00e5ff" />
-                         <span style={{ fontSize: '10px', fontWeight: 700, color: '#00e5ff', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Source: {expObj.source}</span>
+                    <div key={i} className="signal-card" style={{ padding: '2rem', display: 'flex', flexDirection: 'column', gap: '1.2rem', position: 'relative', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '1rem', background: 'rgba(255,255,255,0.02)' }}>
+                       <div style={{ position: 'absolute', top: 0, right: 0, padding: '1rem', background: 'rgba(0,229,255,0.1)', borderBottomLeftRadius: '1rem', fontSize: '14px', fontWeight: 900, color: '#00e5ff' }}>
+                          {expObj.score}%
+                       </div>
+                       
+                       <div style={{ textAlign: 'left' }}>
+                          <span style={{ fontSize: '9px', fontWeight: 900, color: 'rgba(255,255,255,0.4)', textTransform: 'uppercase', letterSpacing: '0.2em', marginBottom: '0.5rem', display: 'block' }}>
+                             {expObj.category}
+                          </span>
+                          <h4 className="signal-name" style={{ fontSize: '1.4rem', fontWeight: 900, margin: 0, lineHeight: 1.2, color: '#fff' }}>
+                             {expObj.name}
+                          </h4>
+                       </div>
+
+                       <div style={{ display: 'flex', alignItems: 'center', gap: '0.7rem', marginTop: 'auto', background: 'rgba(0,229,255,0.05)', padding: '0.75rem', borderRadius: '0.5rem', border: '1px solid rgba(0,229,255,0.1)' }}>
+                         <Activity size={14} color="#00e5ff" />
+                         <span style={{ fontSize: '11px', fontWeight: 800, color: '#00e5ff', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
+                            {expObj.demandLabel}
+                         </span>
                        </div>
                     </div>
                   ))}
