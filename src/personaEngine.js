@@ -39,6 +39,13 @@ const CITY_BIBLE_REGISTRY = {
     { name: "Listening Bar Culture", vibeConcept: "Audiophile speakeasies focusing on high-fidelity vinyl and low-intervention wine.", source: "Monocle", category: "Emergent Nightlife & Mixology", demandLabel: "Trending Signal", score: 92, id: "NIGHTLIFE" },
     { name: "Zero-Waste Gastronomy", vibeConcept: "Hyper-local, circular dining concepts with zero-waste labs.", source: "Eater", category: "High-Fidelity Gastronomy", demandLabel: "Authority Signal", score: 90, id: "CULINARY" },
     { name: "Modular Fashion Hubs", vibeConcept: "Interchangeable, sustainable design ateliers focusing on utility streetwear.", source: "Highsnobiety", category: "Experience-Led Retail Design", demandLabel: "High Social Velocity", score: 88, id: "RETAIL" }
+  ],
+  "Miami": [
+    { name: "Art Deco Heritage Rituals", vibeConcept: "Preserving the neon-noir aesthetic through curated architectural discovery and preservation culture.", source: "Wallpaper", category: "Immersive Art & Culture", demandLabel: "Authority Verified", score: 98, id: "CULTURE" },
+    { name: "Pastel Modernism Hubs", vibeConcept: "Contemporary hospitality hubs merging mid-century nostalgia with next-gen sensory design.", source: "Monocle", category: "Experience-Led Retail Design", demandLabel: "Emergent Trend", score: 95, id: "RETAIL" },
+    { name: "Tropical-Chic Wellness", vibeConcept: "High-sensory wellness rituals focused on ocean-front restoration and modular sanctuary design.", source: "Dezeen", category: "Next-Gen Wellness & Rituals", demandLabel: "High Social Velocity", score: 92, id: "WELLNESS" },
+    { name: "Neon-Noir Mixology", vibeConcept: "Atmospheric nightlife hubs where cinematic lighting meets avant-garde cocktail science.", source: "Resident Advisor", category: "Emergent Nightlife & Mixology", demandLabel: "Trending Signal", score: 90, id: "NIGHTLIFE" },
+    { name: "Ocean-Front Gastro-Labs", vibeConcept: "Experimental culinary spaces focusing on circular economy and marine-inspired flavors.", source: "Eater", category: "High-Fidelity Gastronomy", demandLabel: "Authority Signal", score: 88, id: "CULINARY" }
   ]
 };
 
@@ -82,21 +89,14 @@ export async function scrapeLocalSignals(city, neighborhood) {
         cat.keywords.some(k => combined.includes(k))
       ) || { id: "EXPLORATION", label: "Urban Exploration", keywords: ["explore", "urban"] };
 
-      // THE HEROIFIER: Synthesize a premium vibe name from raw data
-      const adjectives = ["Emergent", "Immersive", "Curated", "Niche", "Next-Gen", "High-Fidelity", "Industrial-Chic", "Minimalist", "Sensory"];
-      const types = ["Rituals", "Hubs", "Sanctuaries", "Ateliers", "Galleries", "Labs", "Speakeasies"];
-      
-      const adj = adjectives[Math.abs(rawName.length) % adjectives.length];
-      const type = types[Math.abs(rawName.charCodeAt(0)) % types.length];
-      const vertical = category.label.split(' ')[0].replace('Next-Gen', '').replace('High-Fidelity', '').trim();
-      
-      const synthesizedName = `${adj} ${vertical} ${type}`;
-      const vibeConcept = item.snippet.split('.')[0] + ". " + (category.keywords[0].charAt(0).toUpperCase() + category.keywords[0].slice(1)) + "-led culture for the modern voyager.";
+      // CLEAN REAL NAME (No Synthesis)
+      const cleanName = rawName.replace(/The Best|Top \d+|Guide to|Secret|Hidden|Gems in|In ${city}|Trending/ig, '').trim();
+      const vibeConcept = item.snippet.split('.')[0] + ".";
 
       const isSocial = item.link.includes('tiktok.com') || item.link.includes('instagram.com');
 
       return { 
-        name: synthesizedName, 
+        name: cleanName, 
         vibeConcept, 
         category, 
         source: isSocial ? 'Social Signal' : new URL(item.link).hostname.replace('www.', ''),
