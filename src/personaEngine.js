@@ -17,8 +17,8 @@ export const VIBE_TAXONOMY = [
 ];
 
 const DISCOVERY_SOURCES = {
-  GLOBAL: "site:wallpaper.com OR site:monocle.com OR site:dezeen.com OR site:nowness.com OR site:highsnobiety.com",
-  LOCAL: "site:timeout.com OR site:theinfatuation.com OR site:eater.com OR site:ra.co OR site:cntraveler.com"
+  GLOBAL: "site:wallpaper.com OR site:monocle.com OR site:dezeen.com OR site:nowness.com OR site:highsnobiety.com OR site:hypebeast.com OR site:vogue.com",
+  LOCAL: "site:timeout.com OR site:theinfatuation.com OR site:eater.com OR site:ra.co OR site:cntraveler.com OR site:travelandleisure.com OR site:nytimes.com/style"
 };
 
 const CITY_BIBLE_REGISTRY = {
