@@ -60,32 +60,30 @@ export async function scrapeLocalSignals(city, neighborhood) {
   try {
     // 1. PARALLEL TAXONOMY PROBE: One search per vertical
     const verticalResults = await Promise.all(VIBE_TAXONOMY.map(async (vertical) => {
-      // Push for specific venues, avoid listicles
-      const q = `${vertical.sites} "${targetArea}" ${vertical.query} -list -top -best`;
+      // Relaxed query slightly to ensure we get results
+      const q = `${vertical.sites} "${targetArea}" ${vertical.query} -list`;
       const res = await fetch(`https://google.serper.dev/search`, {
         method: 'POST', headers: HEADERS, body: JSON.stringify({ q, num: 10 })
       }).then(r => r.json()).catch(() => ({}));
 
       if (res.organic && res.organic.length > 0) {
-        const blacklist = ["things to do", "best of", "tours in", "guide", "top", "visit", "experiences", "activities", "2024", "2025", "2026"];
+        const blacklist = ["things to do", "best of", "tours in", "guide", "top", "visit", "experiences", "activities"];
         
-        // Find a candidate that isn't a listicle
         const candidates = res.organic.filter(item => {
           const t = item.title.toLowerCase();
           const l = item.link.toLowerCase();
           return !blacklist.some(word => t.includes(word)) && 
-                 !l.includes('/tours/') && 
                  !l.includes('/best-') &&
                  !l.includes('/guide/');
         });
         
-        const item = candidates.length > 0 ? candidates[0] : null;
+        const item = candidates.length > 0 ? candidates[0] : res.organic[0];
         if (!item) return null;
 
         let name = item.title.split('-')[0].split('|')[0].split(':')[0].trim();
         name = name.replace(/The Best|Top \d+|Guide to|Secret|Hidden|Gems in|In ${targetArea}|Review|Tickets|Booking/ig, '').trim();
         
-        if (name.length < 3 || blacklist.includes(name.toLowerCase())) return null;
+        if (name.length < 3) return null;
 
         return { 
           name, 
@@ -115,7 +113,6 @@ export async function scrapeLocalSignals(city, neighborhood) {
       const hasSocialPresence = socialData.organic && socialData.organic.length > 0;
 
       if (!hasPhysicalPlace) {
-        // Fallback for verified platforms if they explicitly mention the city
         if ((candidate.link.includes('getyourguide.com') || candidate.link.includes('viator.com')) && candidate.snippet.toLowerCase().includes(city.toLowerCase())) {
            return {
              name: candidate.name,
@@ -130,9 +127,13 @@ export async function scrapeLocalSignals(city, neighborhood) {
       const place = placesData.places[0];
       const address = (place.address || "").toLowerCase();
       
-      // EXTREME GEO-FENCING: Rejection of any venue outside the target city
-      // This kills false positives like Fanefjord Church (on Møn)
-      if (!address.includes(city.toLowerCase())) {
+      // RELAXED GEO-FENCING: Include local translations and neighborhood matches
+      const cityLocal = city.toLowerCase() === "copenhagen" ? "københavn" : city.toLowerCase();
+      const isLocal = address.includes(city.toLowerCase()) || 
+                      address.includes(cityLocal) || 
+                      address.includes(neighborhood.toLowerCase());
+
+      if (!isLocal) {
         console.log(`[Agent A] REJECTED: ${place.title} is not in ${city}. Address: ${address}`);
         return null;
       }

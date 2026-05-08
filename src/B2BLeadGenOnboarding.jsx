@@ -134,7 +134,6 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                     <span style={{ color: '#00e5ff' }}>AUDIT ENGINE</span>
                 </h1>
                 <p style={{ color: '#ffffff', fontSize: '14px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.15em', marginTop: '1.5rem', lineHeight: 1.6 }}>
-                  Built on <span style={{ color: '#00e5ff' }}>Arival Industry Standard Taxonomy</span>. <br/>
                   <span style={{ color: '#00e5ff', fontWeight: 900, fontSize: '18px' }}>78%</span> of Next-Gen Travelers search for local experiences first — how discoverable are these on your digital presence?
                 </p>
               </div>
@@ -171,8 +170,8 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
           {step === 'processing' && (
             <motion.div key="processing" initial={{ opacity: 0 }} animate={{ opacity: 1 }} style={{ textAlign: 'center', padding: '10rem 0' }}>
                <div style={{ width: '80px', height: '80px', borderRadius: '50%', border: '2px solid rgba(255,255,255,0.1)', borderTopColor: '#00e5ff', animation: 'spin 1s linear infinite', margin: '0 auto 3rem' }} />
-               <h2 style={{ fontSize: '2.5rem', fontWeight: 900, textTransform: 'uppercase' }}>Executing Parallel Taxonomy Probes...</h2>
-               <p style={{ color: '#00e5ff', fontWeight: 900, letterSpacing: '0.4em', textTransform: 'uppercase', fontSize: '10px' }}>Arival Standard Alignment Active | Agent {processingStage} is online</p>
+               <h2 style={{ fontSize: '3rem', fontWeight: 900, textTransform: 'uppercase' }}>Analyzing Trends...</h2>
+               <p style={{ color: '#00e5ff', fontWeight: 900, letterSpacing: '0.4em', textTransform: 'uppercase', fontSize: '10px' }}>Agent {processingStage} is online</p>
             </motion.div>
           )}
 
