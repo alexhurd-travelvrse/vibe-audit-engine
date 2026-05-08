@@ -226,9 +226,14 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                        </div>
                        
                        <div style={{ textAlign: 'left' }}>
-                          <span style={{ fontSize: '13px', fontWeight: 900, color: '#B5942D', textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: '0.75rem', display: 'block' }}>
-                             {expObj.category}
-                          </span>
+                          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+                            <span style={{ fontSize: '11px', fontWeight: 900, color: '#B5942D', textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: '0.75rem' }}>
+                               {expObj.category}
+                            </span>
+                            <span style={{ fontSize: '9px', fontWeight: 800, color: 'rgba(255,255,255,0.4)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
+                               Source: {expObj.source}
+                            </span>
+                          </div>
                           <h4 className="signal-name" style={{ fontSize: '1.1rem', fontWeight: 800, margin: 0, lineHeight: 1.3, color: '#fff', opacity: 0.9 }}>
                              {expObj.name}
                           </h4>
@@ -275,7 +280,10 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                   {analysis?.auditResults?.map((result, i) => (
                     <div key={i} style={{ padding: '2.5rem', background: 'rgba(255,255,255,0.03)', borderRadius: '1.5rem', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                       <div style={{ textAlign: 'left' }}>
-                        <h4 style={{ fontSize: '1.5rem', fontWeight: 900, textTransform: 'uppercase', color: result.status === 'Strategic Gap' ? '#ec4899' : '#00e5ff' }}>{result.name}</h4>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '0.5rem' }}>
+                          <h4 style={{ fontSize: '1.5rem', fontWeight: 900, textTransform: 'uppercase', color: result.status === 'Strategic Gap' ? '#ec4899' : '#00e5ff', margin: 0 }}>{result.name}</h4>
+                          <span style={{ fontSize: '10px', fontWeight: 800, color: 'rgba(255,255,255,0.3)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Source: {analysis.signals.topExperiences.find(e => e.name === result.name)?.source}</span>
+                        </div>
                         <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.5)', fontWeight: 700, marginTop: '1rem', maxWidth: '700px', lineHeight: 1.4 }}>{result.evidence}</p>
                       </div>
                       
