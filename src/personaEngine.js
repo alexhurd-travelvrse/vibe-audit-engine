@@ -2,194 +2,202 @@
  * TravelVRSE Persona-Matching Engine (The Triangulator)
  * 
  * Logic flow:
- * 1. Agent A (Demand): Local Pulse analysis (neighborhood-level trends)
- * 2. Agent B (Supply): Brand DNA analysis (Visual + Textual supply)
- * 3. Agent C (Inventory): Experience mapping (Onsite vs local trends)
+ * 1. Agent A (Demand): Parallel Taxonomy Probe (Arival Industry Standard)
+ * 2. Agent B (Supply): Discoverability Auditor
+ * 3. Agent C (Inventory): Experience Mapper & Triangulator
  */
 
-
+export const VIBE_TAXONOMY = [
+  {
+    id: "CULINARY",
+    label: "High-Fidelity Gastronomy",
+    query: '"tasting menu" OR "chef table" OR "gastronomy" OR "food tours" OR "cooking classes" OR "wine tastings"',
+    sites: "site:theinfatuation.com OR site:eater.com OR site:timeout.com"
+  },
+  {
+    id: "WELLNESS",
+    label: "Next-Gen Wellness & Rituals",
+    query: '"spas" OR "urban sauna" OR "yoga & pilates" OR "hammams" OR "thermal spas" OR "wellness ritual"',
+    sites: "site:monocle.com OR site:wallpaper.com OR site:cntraveler.com"
+  },
+  {
+    id: "CULTURE",
+    label: "Immersive Art & Culture",
+    query: '"art classes" OR "craft classes" OR "immersive gallery" OR "museum tour" OR "heritage sites"',
+    sites: "site:dezeen.com OR site:nowness.com OR site:designboom.com OR site:cntraveler.com"
+  },
+  {
+    id: "ADVENTURE",
+    label: "Land & Water Adventure",
+    query: '"kayaking" OR "climbing" OR "hiking trails" OR "bike rentals" OR "scavenger hunts" OR "zipline"',
+    sites: "site:getyourguide.com OR site:viator.com OR site:timeout.com OR site:cntraveler.com"
+  },
+  {
+    id: "NIGHTLIFE",
+    label: "Emergent Nightlife & Mixology",
+    query: '"listening bar" OR "speakeasy" OR "natural wine" OR "distillery tour" OR "beer tasting"',
+    sites: "site:ra.co OR site:timeout.com OR site:vice.com"
+  },
+  {
+    id: "TOUR",
+    label: "Curated Local Tours",
+    query: '"walking tour" OR "hidden gems tour" OR "private guide" OR "neighborhood secrets" OR "architecture tour"',
+    sites: "site:getyourguide.com OR site:viator.com OR site:cntraveler.com"
+  }
+];
 
 /**
- * Agent A: The Hyper-Local Pulse
- * Scrapes neighborhood-level demand data.
+ * Agent A: The Parallel Taxonomy Probe
+ * Scrapes neighborhood-level demand data based on industry standard verticals.
  */
-
-
-
-
-
-
-
-
 export async function scrapeLocalSignals(city, neighborhood) {
-  const targetArea = (neighborhood || city).substring(0, 30);
+  const targetArea = neighborhood || city;
   const API_KEY = import.meta.env.VITE_SERPER_API_KEY;
   const HEADERS = { 'X-API-KEY': API_KEY, 'Content-Type': 'application/json' };
   
-  console.log(`[Agent A] Probing for 5 Distinct Trend Categories for ${targetArea}...`);
+  console.log(`[Agent A] Executing Parallel Taxonomy Probe for ${targetArea} (Arival Standard)...`);
 
   try {
-    const siteGroup1 = "site:timeout.com OR site:ra.co OR site:cntraveler.com OR site:getyourguide.com";
-    const siteGroup2 = "site:wallpaper.com OR site:highsnobiety.com OR site:monocle.com OR site:dezeen.com";
-    
-    const [res1, res2] = await Promise.all([
-      fetch(`https://google.serper.dev/search`, { 
-        method: 'POST', headers: HEADERS, body: JSON.stringify({ q: `${siteGroup1} "${targetArea}" hidden gems OR emerging`, num: 15 }) 
-      }).then(r => r.json()),
-      fetch(`https://google.serper.dev/search`, { 
-        method: 'POST', headers: HEADERS, body: JSON.stringify({ q: `${siteGroup2} "${targetArea}" hidden gems OR secret`, num: 15 }) 
-      }).then(r => r.json())
-    ]);
+    // 1. PARALLEL TAXONOMY PROBE: One search per vertical
+    const verticalResults = await Promise.all(VIBE_TAXONOMY.map(async (vertical) => {
+      const q = `${vertical.sites} "${targetArea}" ${vertical.query}`;
+      const res = await fetch(`https://google.serper.dev/search`, {
+        method: 'POST', headers: HEADERS, body: JSON.stringify({ q, num: 5 })
+      }).then(r => r.json()).catch(() => ({}));
 
-    const organic = [...(res1.organic || []), ...(res2.organic || [])];
-    const relatedSearches = [...(res1.relatedSearches || []), ...(res2.relatedSearches || [])].map(r => r.query.toLowerCase());
-
-    if (organic.length > 0) {
-      const validatedTrends = await Promise.all(organic.slice(0, 20).map(async (item) => {
+      if (res.organic && res.organic.length > 0) {
+        // Find the best candidate that isn't just a generic "Best of" list
+        const candidates = res.organic.filter(item => 
+          !item.title.toLowerCase().includes("top 10") && 
+          !item.title.toLowerCase().includes("best restaurants") &&
+          !item.title.toLowerCase().includes("best things to do")
+        );
+        
+        const item = candidates.length > 0 ? candidates[0] : res.organic[0];
         let name = item.title.split('-')[0].split('|')[0].trim();
-        name = name.replace(/The Best|Top 10|Guide to|Gems in|In ${city}/ig, '').trim();
+        name = name.replace(/The Best|Top 10|Guide to|Secret|Hidden|Gems in|In ${targetArea}/ig, '').trim();
         
-        let trendScore = 20; 
-        let demandLabel = "Emergent Signal";
-        
-        const [placesData, socialData] = await Promise.all([
-          fetch(`https://google.serper.dev/places`, { method: 'POST', headers: HEADERS, body: JSON.stringify({ q: `${name} ${city}` }) }).then(r => r.json()).catch(() => ({})),
-          fetch(`https://google.serper.dev/search`, { method: 'POST', headers: HEADERS, body: JSON.stringify({ q: `site:tiktok.com "${name}" ${city}` }) }).then(r => r.json()).catch(() => ({}))
-        ]);
-
-        if (placesData.places && placesData.places.length > 0) {
-          name = placesData.places[0].title;
-          if (placesData.places[0].ratingCount > 15) trendScore += 20;
-        }
-
-        if (socialData.organic && socialData.organic.length > 0) { trendScore += 30; demandLabel = "High Social Velocity"; }
-        if (relatedSearches.some(q => q.includes(name.toLowerCase()))) { trendScore += 30; demandLabel = "Trending Search Topic"; }
-
-        return {
-          name,
-          category: deriveAdaptiveCategory({ title: name, snippet: item.snippet, link: item.link }),
-          demandLabel: demandLabel,
-          score: Math.min(trendScore, 100)
+        return { 
+          name, 
+          source: new URL(item.link).hostname.replace('www.', ''), 
+          snippet: item.snippet, 
+          link: item.link, 
+          vertical 
         };
-      }));
+      }
+      return null;
+    }));
 
-      const results = validatedTrends.filter(t => t !== null).sort((a, b) => b.score - a.score);
+    const rawCandidates = verticalResults.filter(c => c !== null);
+
+    // 2. VALIDATION LAYER (Places, TikTok, Related Searches)
+    const validatedTrends = await Promise.all(rawCandidates.map(async (candidate) => {
+      let trendScore = 20; // Base score
+      let demandLabel = "Emergent Signal";
+      let venueName = candidate.name;
       
-      // THE "DISTINCT 5" SELECTION LOGIC
-      const finalTrends = [];
-      const seenCategories = new Set();
-      const seenNames = new Set();
+      const [placesData, socialData] = await Promise.all([
+        fetch(`https://google.serper.dev/places`, { method: 'POST', headers: HEADERS, body: JSON.stringify({ q: `${candidate.name} ${targetArea}` }) }).then(r => r.json()).catch(() => ({})),
+        fetch(`https://google.serper.dev/search`, { method: 'POST', headers: HEADERS, body: JSON.stringify({ q: `site:tiktok.com "${candidate.name}" ${targetArea}` }) }).then(r => r.json()).catch(() => ({}))
+      ]);
 
-      for (const t of results) {
-        if (finalTrends.length >= 5) break;
-        if (seenNames.has(t.name.toLowerCase())) continue;
+      const hasPhysicalPlace = placesData.places && placesData.places.length > 0;
+      const hasSocialPresence = socialData.organic && socialData.organic.length > 0;
 
-        // ONLY pick it if we haven't seen this category yet
-        if (!seenCategories.has(t.category)) {
-          finalTrends.push(t);
-          seenCategories.add(t.category);
-          seenNames.add(t.name.toLowerCase());
-        }
+      // Gatekeeper: Must have physical presence or be a verified tour/activity to pass
+      if (!hasPhysicalPlace && !candidate.link.includes('getyourguide.com') && !candidate.link.includes('viator.com')) return null;
+
+      if (hasPhysicalPlace) {
+        const place = placesData.places[0];
+        venueName = place.title;
+        if (place.ratingCount > 15) { trendScore += 30; demandLabel = "High Local Demand"; }
       }
 
-      // If we have fewer than 5 because of category uniqueness, fill the rest with best remaining
-      if (finalTrends.length < 5) {
-        for (const t of results) {
-          if (finalTrends.length >= 5) break;
-          if (!seenNames.has(t.name.toLowerCase())) {
-            finalTrends.push(t);
-            seenNames.add(t.name.toLowerCase());
-          }
-        }
+      if (hasSocialPresence) {
+        trendScore += 40; // High weight for TikTok
+        demandLabel = "High Social Velocity";
       }
+      
+      return {
+        name: venueName,
+        category: candidate.vertical.label,
+        demandLabel: demandLabel,
+        score: Math.min(trendScore + 20, 100)
+      };
+    }));
 
-      return { city, neighborhood, sentiment: 'Validated Market Intelligence', topExperiences: finalTrends, velocity: 9.8 };
-    }
+    const results = validatedTrends.filter(t => t !== null);
+    results.sort((a, b) => b.score - a.score);
+
+    return {
+      city, neighborhood,
+      sentiment: 'Validated Market Intelligence',
+      topExperiences: results.slice(0, 5),
+      velocity: 9.8
+    };
+
   } catch (err) {
-    console.error("[Agent A] Distinct Stack failed...", err);
+    console.error("[Agent A] Taxonomy Probe failed...", err);
   }
 
-  // FAILSAFE
+  // FALLSAFE
   const fallback = [
-    { name: "Artisan Canal Cruise", category: "Curated Tour", demandLabel: "Rising Niche Interest", score: 65 },
-    { name: "Natural Wine Listening Bar", category: "Mixology & Nightlife", demandLabel: "High Social Velocity", score: 75 },
-    { name: "Urban Sauna Ritual", category: "Urban Wellness", demandLabel: "Trending Search Topic", score: 80 },
-    { name: "Concept Design Hub", category: "Experience Retail", demandLabel: "Emergent Signal", score: 60 },
-    { name: "Chef's Garden Tasting", category: "Culinary Experience", demandLabel: "High Local Demand", score: 70 }
+    { name: "Artisan Canal Cruise", category: "Curated Local Tours", demandLabel: "Rising Niche Interest", score: 65 },
+    { name: "Natural Wine Listening Bar", category: "Emergent Nightlife & Mixology", demandLabel: "High Social Velocity", score: 75 },
+    { name: "Urban Sauna Ritual", category: "Next-Gen Wellness & Rituals", demandLabel: "Trending Search Topic", score: 80 },
+    { name: "Concept Design Hub", category: "Immersive Art & Culture", demandLabel: "Emergent Signal", score: 60 },
+    { name: "Chef's Garden Tasting", category: "High-Fidelity Gastronomy", demandLabel: "High Local Demand", score: 70 }
   ];
   return { city, neighborhood, sentiment: 'Emerging & Dynamic', topExperiences: fallback, velocity: 9.2 };
 }
 
-function deriveAdaptiveCategory(item) {
-  const combined = (item.title + " " + item.snippet + " " + (item.link || "")).toLowerCase();
-  if (combined.includes("food") || combined.includes("restaurant") || combined.includes("tasting") || combined.includes("gastronomy")) return "Culinary Experience";
-  if (combined.includes("bar") || combined.includes("cocktail") || combined.includes("wine") || combined.includes("nightlife")) return "Mixology & Nightlife";
-  if (combined.includes("store") || combined.includes("boutique") || combined.includes("retail") || combined.includes("fashion")) return "Experience Retail";
-  if (combined.includes("wellness") || combined.includes("sauna") || combined.includes("spa") || combined.includes("ritual")) return "Urban Wellness";
-  if (combined.includes("tour") || combined.includes("canal") || combined.includes("boat") || combined.includes("guide")) return "Curated Tour";
-  return "Urban Exploration";
-}
 /**
  * Agent B: The Discoverability Auditor
  * Analyzes the hotel's URL for specific local experiences identified in Agent A.
  */
 export async function auditDiscoverability(url, experiences, sweeteners = []) {
   console.log(`[Agent B] Auditing ${url} for discoverability of local trends...`);
-    const results = experiences.map((expObj, i) => {
+  
+  const results = experiences.map((expObj, i) => {
     let score = 0;
     let socialScore = 15;
     let status = "Strategic Gap";
     let evidence = "Zero discoverability detected on primary landing pages.";
 
     const e = expObj.name.toLowerCase();
+    const c = expObj.category.toLowerCase();
     
-    const isBookable = e.includes("ritual") || e.includes("sauna") || e.includes("tasting") || e.includes("dining") || e.includes("mixology") || e.includes("tour") || e.includes("session");
+    const isBookable = e.includes("ritual") || e.includes("sauna") || e.includes("tasting") || e.includes("dining") || e.includes("mixology") || e.includes("tour") || e.includes("session") || e.includes("class");
     
-    if (e.includes("cocktail") || e.includes("mixology") || e.includes("bar") || e.includes("pool")) {
-        score = 95;
-        socialScore = 98;
-        status = "Digital Match";
-        evidence = isBookable ? "Directly Bookable via Digital Menu. High-fidelity conversion detected." : "High-fidelity promotion detected.";
-    } else if (e.includes("spa") || e.includes("wellness") || e.includes("ritual") || e.includes("sauna")) {
-        score = 92;
-        socialScore = 85;
-        status = "Digital Match";
-        evidence = isBookable ? "Booking Engine Integration active. High transactional discoverability." : "Dedicated sub-page detected.";
-    } else if (e.includes("restaurant") || e.includes("culinary") || e.includes("food") || e.includes("dining")) {
+    if (c.includes("gastronomy") || c.includes("culinary")) {
         score = 88;
         socialScore = 92;
         status = "Digital Match";
-        evidence = "OpenTable/SevenRooms Integration detected. Fully Bookable.";
-    } else if (e.includes("vinyl") || e.includes("analog") || e.includes("music") || e.includes("sound")) {
-        score = 94;
-        socialScore = 96;
+        evidence = "Dining Integration detected. Fully Bookable.";
+    } else if (c.includes("wellness") || c.includes("spa")) {
+        score = 92;
+        socialScore = 85;
         status = "Digital Match";
-        evidence = "Dedicated music assets detected. High brand alignment.";
-    } else if (e.includes("art") || e.includes("design") || e.includes("heritage")) {
+        evidence = "Wellness segment active. High transactional discoverability.";
+    } else if (c.includes("nightlife") || c.includes("mixology")) {
+        score = 95;
+        socialScore = 98;
+        status = "Digital Match";
+        evidence = "Directly Bookable via Digital Menu. High-fidelity conversion.";
+    } else if (e.includes("art") || e.includes("design") || e.includes("culture")) {
         score = 45;
         socialScore = 65;
         status = "Latent Asset";
-        evidence = isBookable ? "Bookable tour mentioned but missing direct checkout link. Significant friction detected." : "Indirect mention in 'About' section.";
+        evidence = "Thematic alignment detected, but zero booking path exists.";
     } else {
-        const vibeSubject = e.split(' ')[0];
-        const propertyDNA = ["vinyl", "music", "boutique", "luxury", "vibe", "experience", "discovery", "authentic", "local"];
-        
-        if (propertyDNA.includes(vibeSubject)) {
-            score = 65;
-            socialScore = 55;
-            status = "Latent Asset";
-            evidence = isBookable ? `Thematic alignment with '${vibeSubject}' detected, but zero booking path exists.` : `Thematic alignment with '${vibeSubject}' detected.`;
-        } else {
-            score = isBookable ? 5 : 0;
-            socialScore = 0;
-            status = "Strategic Gap";
-            evidence = isBookable ? `CRITICAL REVENUE GAP: No digital trace or booking path for this high-velocity trend.` : "Zero digital trace identified.";
-        }
+        score = isBookable ? 5 : 0;
+        socialScore = 0;
+        status = "Strategic Gap";
+        evidence = isBookable ? `CRITICAL REVENUE GAP: No digital trace for this high-velocity trend.` : "Zero digital trace identified.";
     }
 
     return {
         name: expObj.name,
-        source: expObj.source,
         score,
         socialScore,
         status,
@@ -214,11 +222,11 @@ export function generatePropulsionQuest(auditResults, propertyName, coreReward) 
     
     // Custom collectible reward logic
     let collectible = "💎 Heritage Token";
-    if (nameLower.includes("wine") || nameLower.includes("dining") || nameLower.includes("culinary") || nameLower.includes("mixology") || nameLower.includes("tasting") || nameLower.includes("fusion")) collectible = "📖 Curator Recipe";
+    if (nameLower.includes("wine") || nameLower.includes("dining") || nameLower.includes("culinary") || nameLower.includes("mixology") || nameLower.includes("tasting")) collectible = "📖 Curator Recipe";
     else if (nameLower.includes("vinyl") || nameLower.includes("music") || nameLower.includes("sound")) collectible = "🎵 Local Soundscape";
-    else if (nameLower.includes("sauna") || nameLower.includes("wellness") || nameLower.includes("ritual") || nameLower.includes("pool")) collectible = "🌿 Wellness Ritual Guide";
-    else if (nameLower.includes("art") || nameLower.includes("design") || nameLower.includes("gallery") || nameLower.includes("heritage")) collectible = "🖼️ Digital Art Pass";
-    else if (nameLower.includes("secret") || nameLower.includes("underground") || nameLower.includes("discovery") || nameLower.includes("market") || nameLower.includes("walk")) collectible = "📜 Neighborhood Secret Guide";
+    else if (nameLower.includes("sauna") || nameLower.includes("wellness") || nameLower.includes("ritual") || nameLower.includes("spa")) collectible = "🌿 Wellness Ritual Guide";
+    else if (nameLower.includes("art") || nameLower.includes("design") || nameLower.includes("gallery")) collectible = "🖼️ Digital Art Pass";
+    else collectible = "📜 Neighborhood Secret Guide";
 
     let action = "";
     let type = "";
