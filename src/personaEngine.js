@@ -141,9 +141,14 @@ export async function scrapeLocalSignals(city, neighborhood) {
 }
 
 export async function auditDiscoverability(url, experiences) {
+  if (!experiences) return [];
+  
   return experiences.map((exp, i) => {
-    const e = exp.name.toLowerCase();
-    const c = exp.category.toLowerCase();
+    const e = exp.name?.toLowerCase() || "";
+    // Robust category extraction (handles both string and object formats)
+    const categoryObj = exp.category;
+    const c = (typeof categoryObj === 'string' ? categoryObj : categoryObj?.label || "General")?.toLowerCase();
+    
     const isMatch = e.includes("wellness") || e.includes("sauna") || e.includes("bar") || e.includes("restaurant") || e.includes("vinyl") || c.includes("wellness") || c.includes("gastronomy");
     
     return {

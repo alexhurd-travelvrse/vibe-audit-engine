@@ -219,7 +219,7 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                         <div style={{ textAlign: 'left' }}>
                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
                              <span style={{ fontSize: '11px', fontWeight: 900, color: '#B5942D', textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: '0.75rem' }}>
-                                {expObj.category}
+                                {typeof expObj.category === 'string' ? expObj.category : expObj.category?.label || "Urban Exploration"}
                              </span>
                              <div style={{ textAlign: 'right' }}>
                                <div style={{ fontSize: '9px', fontWeight: 800, color: 'rgba(255,255,255,0.4)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Source</div>
