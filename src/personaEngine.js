@@ -60,23 +60,33 @@ export async function scrapeLocalSignals(city, neighborhood) {
   try {
     // 1. PARALLEL TAXONOMY PROBE: One search per vertical
     const verticalResults = await Promise.all(VIBE_TAXONOMY.map(async (vertical) => {
-      const q = `${vertical.sites} "${targetArea}" ${vertical.query}`;
+      // Push for specific venues, avoid listicles
+      const q = `${vertical.sites} "${targetArea}" ${vertical.query} -list -top -best`;
       const res = await fetch(`https://google.serper.dev/search`, {
-        method: 'POST', headers: HEADERS, body: JSON.stringify({ q, num: 5 })
+        method: 'POST', headers: HEADERS, body: JSON.stringify({ q, num: 10 })
       }).then(r => r.json()).catch(() => ({}));
 
       if (res.organic && res.organic.length > 0) {
-        // Find the best candidate that isn't just a generic "Best of" list
-        const candidates = res.organic.filter(item => 
-          !item.title.toLowerCase().includes("top 10") && 
-          !item.title.toLowerCase().includes("best restaurants") &&
-          !item.title.toLowerCase().includes("best things to do")
-        );
+        const blacklist = ["things to do", "best of", "tours in", "guide", "top", "visit", "experiences", "activities", "2024", "2025", "2026"];
         
-        const item = candidates.length > 0 ? candidates[0] : res.organic[0];
-        let name = item.title.split('-')[0].split('|')[0].trim();
-        name = name.replace(/The Best|Top 10|Guide to|Secret|Hidden|Gems in|In ${targetArea}/ig, '').trim();
+        // Find a candidate that isn't a listicle
+        const candidates = res.organic.filter(item => {
+          const t = item.title.toLowerCase();
+          const l = item.link.toLowerCase();
+          return !blacklist.some(word => t.includes(word)) && 
+                 !l.includes('/tours/') && 
+                 !l.includes('/best-') &&
+                 !l.includes('/guide/');
+        });
         
+        const item = candidates.length > 0 ? candidates[0] : null;
+        if (!item) return null;
+
+        let name = item.title.split('-')[0].split('|')[0].split(':')[0].trim();
+        name = name.replace(/The Best|Top \d+|Guide to|Secret|Hidden|Gems in|In ${targetArea}|Review|Tickets|Booking/ig, '').trim();
+        
+        if (name.length < 3 || blacklist.includes(name.toLowerCase())) return null;
+
         return { 
           name, 
           source: new URL(item.link).hostname.replace('www.', ''), 
@@ -90,33 +100,46 @@ export async function scrapeLocalSignals(city, neighborhood) {
 
     const rawCandidates = verticalResults.filter(c => c !== null);
 
-    // 2. VALIDATION LAYER (Places, TikTok, Related Searches)
+    // 2. VALIDATION LAYER (Places, TikTok, Geo-Fencing)
     const validatedTrends = await Promise.all(rawCandidates.map(async (candidate) => {
-      let trendScore = 20; // Base score
+      let trendScore = 20; 
       let demandLabel = "Emergent Signal";
       let venueName = candidate.name;
       
       const [placesData, socialData] = await Promise.all([
-        fetch(`https://google.serper.dev/places`, { method: 'POST', headers: HEADERS, body: JSON.stringify({ q: `${candidate.name} ${targetArea}` }) }).then(r => r.json()).catch(() => ({})),
-        fetch(`https://google.serper.dev/search`, { method: 'POST', headers: HEADERS, body: JSON.stringify({ q: `site:tiktok.com "${candidate.name}" ${targetArea}` }) }).then(r => r.json()).catch(() => ({}))
+        fetch(`https://google.serper.dev/places`, { method: 'POST', headers: HEADERS, body: JSON.stringify({ q: `${candidate.name} ${city} ${neighborhood}` }) }).then(r => r.json()).catch(() => ({})),
+        fetch(`https://google.serper.dev/search`, { method: 'POST', headers: HEADERS, body: JSON.stringify({ q: `site:tiktok.com "${candidate.name}" ${city}` }) }).then(r => r.json()).catch(() => ({}))
       ]);
 
       const hasPhysicalPlace = placesData.places && placesData.places.length > 0;
       const hasSocialPresence = socialData.organic && socialData.organic.length > 0;
 
-      // Gatekeeper: Must have physical presence or be a verified tour/activity to pass
-      if (!hasPhysicalPlace && !candidate.link.includes('getyourguide.com') && !candidate.link.includes('viator.com')) return null;
-
-      if (hasPhysicalPlace) {
-        const place = placesData.places[0];
-        venueName = place.title;
-        if (place.ratingCount > 15) { trendScore += 30; demandLabel = "High Local Demand"; }
+      if (!hasPhysicalPlace) {
+        // Fallback for verified platforms if they explicitly mention the city
+        if ((candidate.link.includes('getyourguide.com') || candidate.link.includes('viator.com')) && candidate.snippet.toLowerCase().includes(city.toLowerCase())) {
+           return {
+             name: candidate.name,
+             category: candidate.vertical.label,
+             demandLabel: "Curated Experience",
+             score: 65
+           };
+        }
+        return null;
       }
 
-      if (hasSocialPresence) {
-        trendScore += 40; // High weight for TikTok
-        demandLabel = "High Social Velocity";
+      const place = placesData.places[0];
+      const address = (place.address || "").toLowerCase();
+      
+      // EXTREME GEO-FENCING: Rejection of any venue outside the target city
+      // This kills false positives like Fanefjord Church (on Møn)
+      if (!address.includes(city.toLowerCase())) {
+        console.log(`[Agent A] REJECTED: ${place.title} is not in ${city}. Address: ${address}`);
+        return null;
       }
+
+      venueName = place.title;
+      if (place.ratingCount > 20) { trendScore += 30; demandLabel = "High Local Demand"; }
+      if (hasSocialPresence) { trendScore += 40; demandLabel = "High Social Velocity"; }
       
       return {
         name: venueName,
@@ -153,10 +176,9 @@ export async function scrapeLocalSignals(city, neighborhood) {
 
 /**
  * Agent B: The Discoverability Auditor
- * Analyzes the hotel's URL for specific local experiences identified in Agent A.
  */
 export async function auditDiscoverability(url, experiences, sweeteners = []) {
-  console.log(`[Agent B] Auditing ${url} for discoverability of local trends...`);
+  console.log(`[Agent B] Auditing ${url} for discoverability...`);
   
   const results = experiences.map((expObj, i) => {
     let score = 0;
@@ -170,40 +192,18 @@ export async function auditDiscoverability(url, experiences, sweeteners = []) {
     const isBookable = e.includes("ritual") || e.includes("sauna") || e.includes("tasting") || e.includes("dining") || e.includes("mixology") || e.includes("tour") || e.includes("session") || e.includes("class");
     
     if (c.includes("gastronomy") || c.includes("culinary")) {
-        score = 88;
-        socialScore = 92;
-        status = "Digital Match";
-        evidence = "Dining Integration detected. Fully Bookable.";
+        score = 88; socialScore = 92; status = "Digital Match"; evidence = "Dining Integration detected. Fully Bookable.";
     } else if (c.includes("wellness") || c.includes("spa")) {
-        score = 92;
-        socialScore = 85;
-        status = "Digital Match";
-        evidence = "Wellness segment active. High transactional discoverability.";
+        score = 92; socialScore = 85; status = "Digital Match"; evidence = "Wellness segment active. High transactional discoverability.";
     } else if (c.includes("nightlife") || c.includes("mixology")) {
-        score = 95;
-        socialScore = 98;
-        status = "Digital Match";
-        evidence = "Directly Bookable via Digital Menu. High-fidelity conversion.";
+        score = 95; socialScore = 98; status = "Digital Match"; evidence = "Directly Bookable via Digital Menu. High-fidelity conversion.";
     } else if (e.includes("art") || e.includes("design") || e.includes("culture")) {
-        score = 45;
-        socialScore = 65;
-        status = "Latent Asset";
-        evidence = "Thematic alignment detected, but zero booking path exists.";
+        score = 45; socialScore = 65; status = "Latent Asset"; evidence = "Thematic alignment detected, but zero booking path exists.";
     } else {
-        score = isBookable ? 5 : 0;
-        socialScore = 0;
-        status = "Strategic Gap";
-        evidence = isBookable ? `CRITICAL REVENUE GAP: No digital trace for this high-velocity trend.` : "Zero digital trace identified.";
+        score = isBookable ? 5 : 0; socialScore = 0; status = "Strategic Gap"; evidence = isBookable ? `CRITICAL REVENUE GAP: No digital trace for this high-velocity trend.` : "Zero digital trace identified.";
     }
 
-    return {
-        name: expObj.name,
-        score,
-        socialScore,
-        status,
-        evidence,
-        rank: 0
-    };
+    return { name: expObj.name, score, socialScore, status, evidence, rank: 0 };
   });
 
   return results.sort((a, b) => b.score - a.score).map((item, i) => ({ ...item, rank: i + 1 }));
@@ -220,7 +220,6 @@ export function generatePropulsionQuest(auditResults, propertyName, coreReward) 
     const isLatent = result.status === 'Latent Asset';
     const nameLower = result.name.toLowerCase();
     
-    // Custom collectible reward logic
     let collectible = "💎 Heritage Token";
     if (nameLower.includes("wine") || nameLower.includes("dining") || nameLower.includes("culinary") || nameLower.includes("mixology") || nameLower.includes("tasting")) collectible = "📖 Curator Recipe";
     else if (nameLower.includes("vinyl") || nameLower.includes("music") || nameLower.includes("sound")) collectible = "🎵 Local Soundscape";
@@ -228,26 +227,10 @@ export function generatePropulsionQuest(auditResults, propertyName, coreReward) 
     else if (nameLower.includes("art") || nameLower.includes("design") || nameLower.includes("gallery")) collectible = "🖼️ Digital Art Pass";
     else collectible = "📜 Neighborhood Secret Guide";
 
-    let action = "";
-    let type = "";
-    if (isMatch) {
-      type = "Immersive Showcase";
-      action = `✨ Discover the real-world magic of our ${result.name} experience.`;
-    } else if (isLatent) {
-      type = "Hidden Asset Reveal";
-      action = `🔍 Unlock our best-kept secret related to ${result.name}.`;
-    } else {
-      type = "Virtual Bridge";
-      action = `🤖 Explore our curated digital guide for ${result.name} in the neighborhood.`;
-    }
+    let action = isMatch ? `✨ Discover the real-world magic of our ${result.name} experience.` : isLatent ? `🔍 Unlock our best-kept secret related to ${result.name}.` : `🤖 Explore our curated digital guide for ${result.name} in the neighborhood.`;
+    let type = isMatch ? "Immersive Showcase" : isLatent ? "Hidden Asset Reveal" : "Virtual Bridge";
 
-    return {
-      id: i + 1,
-      type: type,
-      trend: result.name,
-      action: action,
-      reward: collectible
-    };
+    return { id: i + 1, type, trend: result.name, action, reward: collectible };
   });
 
   const positiveMatches = auditResults.filter(r => r.status === 'Digital Match');
