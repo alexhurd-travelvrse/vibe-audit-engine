@@ -13,12 +13,12 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
   const [processingStage, setProcessingStage] = useState(0);
   const [formData, setFormData] = useState({
     email: '',
-    propertyName: '25hours Copenhagen',
-    propertyUrl: 'https://www.25hours-hotels.com/en/hotels/copenhagen/indre-by',
-    city: 'Copenhagen',
-    neighborhood: 'Indre By',
-    sweeteners: ['cocktails', 'spa', 'bikes'],
-    reward: '20% OFF YOUR VOYAGE'
+    propertyName: '',
+    propertyUrl: '',
+    city: '',
+    neighborhood: '',
+    sweeteners: ['cocktails', 'wellness', 'local-craft'],
+    reward: 'SPECIAL GUEST REWARD'
   });
   const [analysis, setAnalysis] = useState(null);
   const [activeTab, setActiveTab] = useState('trends');
@@ -28,49 +28,40 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
   }, [initialStep]);
 
   const startAnalysis = async () => {
-    // Email validation and Formspree logging temporarily disabled to save credits
-    /*
-    if (!formData.email) {
-      alert("Please enter your work email to launch the audit.");
-      return;
-    }
-
-    try {
-      await fetch("https://formspree.io/f/xaqlrjor", {
-        method: "POST",
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify({
-          email: formData.email,
-          property: formData.propertyName,
-          market: formData.city,
-          neighborhood: formData.neighborhood,
-          source: "Vibe Audit Engine Onboarding"
-        })
-      });
-    } catch (e) {
-      console.error("Failed to notify Formspree", e);
-    }
-    */
-
     setStep('processing');
-    
     setProcessingStage(1);
-    const signals = await scrapeLocalSignals(formData.city, formData.neighborhood);
-    await new Promise(r => setTimeout(r, 1500));
+    
+    try {
+      // PHASE 1: Immediate Vibe Discovery (Agent A)
+      const signals = await scrapeLocalSignals(formData.city, formData.neighborhood);
+      
+      // We have Phase 1, so show the results screen immediately!
+      setAnalysis({ signals, auditResults: null, challenge: null });
+      setStep('results');
+      setActiveTab('trends');
 
-    setProcessingStage(2);
-    const auditResults = await auditDiscoverability(formData.propertyUrl, signals.topExperiences, formData.sweeteners);
-    await new Promise(r => setTimeout(r, 1500));
+      // PHASE 2: Silent Reach Analysis (Agent B) in background
+      // No need to await here if we want to update the UI as it finishes
+      const runSilentPhases = async () => {
+        try {
+          const auditResults = await auditDiscoverability(formData.propertyUrl, signals.topExperiences, formData.sweeteners);
+          setAnalysis(prev => ({ ...prev, auditResults }));
 
-    setProcessingStage(3);
-    const challenge = generatePropulsionQuest(auditResults, formData.propertyName, formData.reward);
-    await new Promise(r => setTimeout(r, 1500));
+          // PHASE 3: Virtual Roadmap (Agent C)
+          const challenge = generatePropulsionQuest(auditResults, formData.propertyName, formData.reward);
+          setAnalysis(prev => ({ ...prev, challenge }));
+        } catch (err) {
+          console.error("Silent analysis phases failed", err);
+        }
+      };
 
-    setAnalysis({ signals, auditResults, challenge });
-    setStep('results');
+      runSilentPhases();
+
+    } catch (err) {
+      console.error("Analysis launch failed", err);
+      setStep('input');
+      alert("Analysis engine encountered a timeout. Please try a broader neighborhood or city.");
+    }
   };
 
   const downloadManifest = () => {
@@ -225,26 +216,30 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                           {expObj.score}%
                        </div>
                        
-                       <div style={{ textAlign: 'left' }}>
-                          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-                            <span style={{ fontSize: '11px', fontWeight: 900, color: '#B5942D', textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: '0.75rem' }}>
-                               {expObj.category}
-                            </span>
-                            <span style={{ fontSize: '9px', fontWeight: 800, color: 'rgba(255,255,255,0.4)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
-                               Source: {expObj.source}
-                            </span>
-                          </div>
-                          <h4 className="signal-name" style={{ fontSize: '1.1rem', fontWeight: 800, margin: 0, lineHeight: 1.3, color: '#fff', opacity: 0.9 }}>
-                             {expObj.name}
-                          </h4>
-                       </div>
+                        <div style={{ textAlign: 'left' }}>
+                           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+                             <span style={{ fontSize: '11px', fontWeight: 900, color: '#B5942D', textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: '0.75rem' }}>
+                                {expObj.category}
+                             </span>
+                             <div style={{ textAlign: 'right' }}>
+                               <div style={{ fontSize: '9px', fontWeight: 800, color: 'rgba(255,255,255,0.4)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Source</div>
+                               <div style={{ fontSize: '11px', fontWeight: 900, color: '#00e5ff', textTransform: 'uppercase' }}>{expObj.source}</div>
+                             </div>
+                           </div>
+                           <h4 className="signal-name" style={{ fontSize: '1.25rem', fontWeight: 900, margin: '0.5rem 0', lineHeight: 1.2, color: '#fff' }}>
+                              {expObj.name}
+                           </h4>
+                           <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)', lineHeight: 1.5, margin: '0.5rem 0' }}>
+                              {expObj.vibeConcept}
+                           </p>
+                        </div>
 
-                       <div style={{ display: 'flex', alignItems: 'center', gap: '0.7rem', marginTop: 'auto', background: 'rgba(0,229,255,0.05)', padding: '0.75rem', borderRadius: '0.5rem', border: '1px solid rgba(0,229,255,0.1)' }}>
-                         <Activity size={14} color="#00e5ff" />
-                         <span style={{ fontSize: '11px', fontWeight: 800, color: '#00e5ff', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
-                            {expObj.demandLabel}
-                         </span>
-                       </div>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.7rem', marginTop: 'auto', background: 'rgba(0,229,255,0.05)', padding: '0.75rem', borderRadius: '0.5rem', border: '1px solid rgba(0,229,255,0.1)' }}>
+                          <Activity size={14} color="#00e5ff" />
+                          <span style={{ fontSize: '11px', fontWeight: 800, color: '#00e5ff', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
+                             {expObj.demandLabel}
+                          </span>
+                        </div>
                     </div>
                   ))}
                 </div>
@@ -253,150 +248,170 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
 
               {/* Discoverability / Bookability Header with Integrated Score */}
               {activeTab === 'reach' && (
-              <motion.section initial={{opacity: 0, y: 20}} animate={{opacity: 1, y: 0}} style={{ marginBottom: '6rem', width: '100%' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '3rem', paddingBottom: '2rem', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
-                    <div style={{ width: '50px', height: '50px', borderRadius: '1rem', background: 'rgba(236,72,153,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid rgba(236,72,153,0.2)' }}>
-                        <Search color="#ec4899" size={24} />
+                <motion.section initial={{opacity: 0, y: 20}} animate={{opacity: 1, y: 0}} style={{ marginBottom: '6rem', width: '100%' }}>
+                  {!analysis.auditResults ? (
+                    <div style={{ padding: '5rem', textAlign: 'center', background: 'rgba(255,255,255,0.02)', borderRadius: '2rem', border: '1px dashed rgba(236,72,153,0.3)' }}>
+                       <div style={{ width: '40px', height: '40px', borderRadius: '50%', border: '2px solid rgba(236,72,153,0.1)', borderTopColor: '#ec4899', animation: 'spin 1s linear infinite', margin: '0 auto 2rem' }} />
+                       <h3 style={{ fontSize: '1.5rem', fontWeight: 900, textTransform: 'uppercase', color: '#ec4899' }}>Scanning Supply...</h3>
+                       <p style={{ color: 'rgba(255,255,255,0.4)', fontWeight: 700, fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.2em', marginTop: '1rem' }}>Agent B is auditing your digital footprint against {analysis.signals.topExperiences.length} identified trends</p>
                     </div>
-                    <div style={{ textAlign: 'left' }}>
-                        <h2 style={{ fontSize: '2rem', fontWeight: 900, textTransform: 'uppercase', fontStyle: 'italic' }}>YOUR REACH</h2>
-                        <p style={{ fontSize: '12px', fontWeight: 700, color: 'rgba(255,255,255,0.65)', textTransform: 'uppercase', letterSpacing: '0.3em' }}>Digital Supply vs Market Demand</p>
-                    </div>
-                  </div>
-
-                  <div style={{ textAlign: 'right' }}>
-                    <p style={{ fontSize: '12px', fontWeight: 700, color: 'rgba(255,255,255,0.65)', textTransform: 'uppercase', letterSpacing: '0.3em', marginBottom: '0.5rem' }}>OVERALL SCORE</p>
-                    <div style={{ display: 'flex', alignItems: 'baseline', gap: '1rem' }}>
-                        <span style={{ fontSize: '4rem', fontWeight: 900, background: 'linear-gradient(to bottom, #00e5ff, #3b82f6)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', lineHeight: 1 }}>
-                            {Math.round(analysis.auditResults.reduce((acc, r) => acc + r.score, 0) / analysis.auditResults.length)}%
-                        </span>
-                        <span style={{ color: '#00e5ff', fontWeight: 900, textTransform: 'uppercase', fontSize: '10px', letterSpacing: '0.2em' }}>Grade: ALPHA-1</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-                  {analysis?.auditResults?.map((result, i) => (
-                    <div key={i} style={{ padding: '2.5rem', background: 'rgba(255,255,255,0.03)', borderRadius: '1.5rem', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                      <div style={{ textAlign: 'left' }}>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '0.5rem' }}>
-                          <h4 style={{ fontSize: '1.5rem', fontWeight: 900, textTransform: 'uppercase', color: result.status === 'Strategic Gap' ? '#ec4899' : '#00e5ff', margin: 0 }}>{result.name}</h4>
-                          <span style={{ fontSize: '10px', fontWeight: 800, color: 'rgba(255,255,255,0.3)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Source: {analysis.signals.topExperiences.find(e => e.name === result.name)?.source}</span>
+                  ) : (
+                    <>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '3rem', paddingBottom: '2rem', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
+                          <div style={{ width: '50px', height: '50px', borderRadius: '1rem', background: 'rgba(236,72,153,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid rgba(236,72,153,0.2)' }}>
+                              <Search color="#ec4899" size={24} />
+                          </div>
+                          <div style={{ textAlign: 'left' }}>
+                              <h2 style={{ fontSize: '2rem', fontWeight: 900, textTransform: 'uppercase', fontStyle: 'italic' }}>YOUR REACH</h2>
+                              <p style={{ fontSize: '12px', fontWeight: 700, color: 'rgba(255,255,255,0.65)', textTransform: 'uppercase', letterSpacing: '0.3em' }}>Digital Supply vs Market Demand</p>
+                          </div>
                         </div>
-                        <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.5)', fontWeight: 700, marginTop: '1rem', maxWidth: '700px', lineHeight: 1.4 }}>{result.evidence}</p>
+
+                        <div style={{ textAlign: 'right' }}>
+                          <p style={{ fontSize: '12px', fontWeight: 700, color: 'rgba(255,255,255,0.65)', textTransform: 'uppercase', letterSpacing: '0.3em', marginBottom: '0.5rem' }}>OVERALL SCORE</p>
+                          <div style={{ display: 'flex', alignItems: 'baseline', gap: '1rem' }}>
+                              <span style={{ fontSize: '4rem', fontWeight: 900, background: 'linear-gradient(to bottom, #00e5ff, #3b82f6)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', lineHeight: 1 }}>
+                                  {Math.round(analysis.auditResults.reduce((acc, r) => acc + r.score, 0) / analysis.auditResults.length)}%
+                              </span>
+                              <span style={{ color: '#00e5ff', fontWeight: 900, textTransform: 'uppercase', fontSize: '10px', letterSpacing: '0.2em' }}>Grade: ALPHA-1</span>
+                          </div>
+                        </div>
                       </div>
-                      
-                      <div style={{ display: 'flex', gap: '2.5rem', alignItems: 'center' }}>
-                         <div style={{ textAlign: 'center' }}>
-                            <p style={{ fontSize: '12px', fontWeight: 700, color: 'rgba(255,255,255,0.65)', textTransform: 'uppercase', marginBottom: '0.5rem' }}>Web</p>
-                            <p style={{ fontSize: '2.25rem', fontWeight: 900, color: result.score > 50 ? '#00e5ff' : '#ec4899' }}>{result.score}%</p>
-                         </div>
-                         <div style={{ textAlign: 'center' }}>
-                            <p style={{ fontSize: '12px', fontWeight: 700, color: 'rgba(255,255,255,0.65)', textTransform: 'uppercase', marginBottom: '0.5rem' }}>Social</p>
-                            <p style={{ fontSize: '2.25rem', fontWeight: 900, color: result.socialScore > 50 ? '#00e5ff' : '#ec4899' }}>{result.socialScore}%</p>
-                         </div>
-                         
-                         <div style={{ 
-                            marginLeft: '1.5rem', 
-                            padding: '1.5rem', 
-                            borderRadius: '1.5rem', 
-                            background: result.status === 'Digital Match' ? 'rgba(16,185,129,0.1)' : 'rgba(236,72,153,0.1)', 
-                            border: `2px solid ${result.status === 'Digital Match' ? '#10b981' : '#ec4899'}`,
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            width: '120px',
-                            height: '120px'
-                         }}>
-                            {result.status === 'Digital Match' ? (
-                                <div style={{ textAlign: 'center' }}>
-                                    <CheckCircle2 color="#10b981" size={48} />
-                                    <p style={{ fontSize: '9px', fontWeight: 900, color: '#10b981', textTransform: 'uppercase', marginTop: '0.5rem' }}>MATCH</p>
-                                </div>
-                            ) : (
-                                <div style={{ textAlign: 'center' }}>
-                                    <Zap color="#ec4899" size={48} />
-                                    <p style={{ fontSize: '9px', fontWeight: 900, color: '#ec4899', textTransform: 'uppercase', marginTop: '0.5rem' }}>GAP</p>
-                                </div>
-                            )}
-                         </div>
+
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                        {analysis?.auditResults?.map((result, i) => (
+                          <div key={i} style={{ padding: '2.5rem', background: 'rgba(255,255,255,0.03)', borderRadius: '1.5rem', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                            <div style={{ textAlign: 'left' }}>
+                              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '0.5rem' }}>
+                                <h4 style={{ fontSize: '1.5rem', fontWeight: 900, textTransform: 'uppercase', color: result.status === 'Strategic Gap' ? '#ec4899' : '#00e5ff', margin: 0 }}>{result.name}</h4>
+                                <span style={{ fontSize: '10px', fontWeight: 800, color: 'rgba(255,255,255,0.3)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Source: {analysis.signals.topExperiences.find(e => e.name === result.name)?.source}</span>
+                              </div>
+                              <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.5)', fontWeight: 700, marginTop: '1rem', maxWidth: '700px', lineHeight: 1.4 }}>{result.evidence}</p>
+                            </div>
+                            
+                            <div style={{ display: 'flex', gap: '2.5rem', alignItems: 'center' }}>
+                              <div style={{ textAlign: 'center' }}>
+                                  <p style={{ fontSize: '12px', fontWeight: 700, color: 'rgba(255,255,255,0.65)', textTransform: 'uppercase', marginBottom: '0.5rem' }}>Web</p>
+                                  <p style={{ fontSize: '2.25rem', fontWeight: 900, color: result.score > 50 ? '#00e5ff' : '#ec4899' }}>{result.score}%</p>
+                              </div>
+                              <div style={{ textAlign: 'center' }}>
+                                  <p style={{ fontSize: '12px', fontWeight: 700, color: 'rgba(255,255,255,0.65)', textTransform: 'uppercase', marginBottom: '0.5rem' }}>Social</p>
+                                  <p style={{ fontSize: '2.25rem', fontWeight: 900, color: result.socialScore > 50 ? '#00e5ff' : '#ec4899' }}>{result.socialScore}%</p>
+                              </div>
+                              
+                              <div style={{ 
+                                  marginLeft: '1.5rem', 
+                                  padding: '1.5rem', 
+                                  borderRadius: '1.5rem', 
+                                  background: result.status === 'Digital Match' ? 'rgba(16,185,129,0.1)' : 'rgba(236,72,153,0.1)', 
+                                  border: `2px solid ${result.status === 'Digital Match' ? '#10b981' : '#ec4899'}`,
+                                  display: 'flex',
+                                  alignItems: 'center',
+                                  justifyContent: 'center',
+                                  width: '120px',
+                                  height: '120px'
+                              }}>
+                                  {result.status === 'Digital Match' ? (
+                                      <div style={{ textAlign: 'center' }}>
+                                          <CheckCircle2 color="#10b981" size={48} />
+                                          <p style={{ fontSize: '9px', fontWeight: 900, color: '#10b981', textTransform: 'uppercase', marginTop: '0.5rem' }}>MATCH</p>
+                                      </div>
+                                  ) : (
+                                      <div style={{ textAlign: 'center' }}>
+                                          <Zap color="#ec4899" size={48} />
+                                          <p style={{ fontSize: '9px', fontWeight: 900, color: '#ec4899', textTransform: 'uppercase', marginTop: '0.5rem' }}>GAP</p>
+                                      </div>
+                                  )}
+                              </div>
+                            </div>
+                          </div>
+                        ))}
                       </div>
-                    </div>
-                  ))}
-                </div>
-              </motion.section>
+                    </>
+                  )}
+                </motion.section>
               )}
 
               {/* Propulsion Roadmap */}
               {activeTab === 'roadmap' && (
-              <motion.section initial={{opacity: 0, y: 20}} animate={{opacity: 1, y: 0}} style={{ marginBottom: '8rem', width: '100%' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', marginBottom: '3rem', paddingBottom: '2rem', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
-                   <div style={{ width: '50px', height: '50px', borderRadius: '1rem', background: 'rgba(112,0,255,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid rgba(112,0,255,0.2)' }}>
-                      <Zap color="#7000ff" size={24} />
-                   </div>
-                   <div style={{ textAlign: 'left' }}>
-                      <h2 style={{ fontSize: '2rem', fontWeight: 900, textTransform: 'uppercase', fontStyle: 'italic', marginBottom: '0.5rem' }}>YOUR VIRTUAL EXPERIENCES ROADMAP</h2>
-                      <p style={{ fontSize: '12px', fontWeight: 700, color: 'rgba(255,255,255,0.65)', textTransform: 'uppercase', letterSpacing: '0.3em' }}>Whitelabel Challenge Strategy</p>
-                   </div>
-                </div>
-
-                <div style={{ marginBottom: '3rem', padding: '2.5rem', background: 'rgba(212, 175, 55, 0.05)', borderRadius: '1.5rem', border: '1px solid rgba(212, 175, 55, 0.2)' }}>
-                  <h3 style={{ fontSize: '1.2rem', fontWeight: 900, textTransform: 'uppercase', color: '#B5942D', marginBottom: '1.5rem' }}>Recommended Rewards Structure</h3>
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
-                    <div>
-                      <p style={{ fontSize: '10px', fontWeight: 700, color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', marginBottom: '0.5rem' }}>Core Conversion Offer</p>
-                      <p style={{ fontSize: '1.5rem', fontWeight: 900, color: '#ffffff' }}>{analysis.challenge.rewardsStructure?.primary || analysis.challenge.coreReward}</p>
+                <motion.section initial={{opacity: 0, y: 20}} animate={{opacity: 1, y: 0}} style={{ marginBottom: '8rem', width: '100%' }}>
+                  {!analysis.challenge ? (
+                    <div style={{ padding: '5rem', textAlign: 'center', background: 'rgba(255,255,255,0.02)', borderRadius: '2rem', border: '1px dashed rgba(181, 148, 45, 0.3)' }}>
+                       <div style={{ width: '40px', height: '40px', borderRadius: '50%', border: '2px solid rgba(181, 148, 45, 0.1)', borderTopColor: '#B5942D', animation: 'spin 1s linear infinite', margin: '0 auto 2rem' }} />
+                       <h3 style={{ fontSize: '1.5rem', fontWeight: 900, textTransform: 'uppercase', color: '#B5942D' }}>Synthesizing Roadmap...</h3>
+                       <p style={{ color: 'rgba(255,255,255,0.4)', fontWeight: 700, fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.2em', marginTop: '1rem' }}>Agent C is generating your proprietary Propulsion Quest</p>
                     </div>
-                    <div>
-                      <p style={{ fontSize: '10px', fontWeight: 700, color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', marginBottom: '0.5rem' }}>Unlockable Collectibles</p>
-                      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
-                         {analysis.challenge.rewardsStructure?.collectibles?.map((c, i) => (
-                           <span key={i} style={{ background: 'rgba(255,255,255,0.1)', color: '#ffffff', padding: '0.25rem 0.75rem', borderRadius: '1rem', fontSize: '12px', fontWeight: 700 }}>{c}</span>
-                         ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div style={{ marginBottom: '3rem', padding: '2.5rem', background: 'rgba(0, 229, 255, 0.05)', borderRadius: '1.5rem', border: '1px solid rgba(0, 229, 255, 0.2)' }}>
-                  <h3 style={{ fontSize: '1.2rem', fontWeight: 900, textTransform: 'uppercase', color: '#00e5ff', marginBottom: '1.5rem' }}>Visual Cornerstone (From Digital Presence)</h3>
-                  <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px', lineHeight: 1.6 }}>We will use existing positive assets from your digital presence as the cornerstone of this immersive experience: <strong style={{color: '#fff'}}>{analysis.challenge.suggestedVisuals?.join(', ')}</strong></p>
-                </div>
-
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '2.5rem' }}>
-                  {analysis?.challenge?.activities?.map((exp, i) => (
-                    <div key={i} style={{ padding: '2rem', background: 'rgba(255,255,255,0.04)', borderRadius: '2.5rem', border: '1px solid rgba(255,255,255,0.08)', textAlign: 'left', position: 'relative', overflow: 'hidden' }}>
-                      <div style={{ position: 'absolute', top: 0, right: 0, padding: '2rem', opacity: 0.15 }}>
-                        <Gift size={48} color="#7000ff" />
-                      </div>
-                      <h3 style={{ fontSize: '1.75rem', fontWeight: 900, textTransform: 'uppercase', marginBottom: '2rem', color: '#7000ff' }}>{exp.type}</h3>
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-                        <div>
-                          <p style={{ fontSize: '12px', fontWeight: 700, color: 'rgba(255,255,255,0.65)', textTransform: 'uppercase', marginBottom: '0.75rem' }}>Strategic Objective</p>
-                          <p style={{ fontSize: '14px', fontWeight: 700, lineHeight: 1.5 }}>{exp.action}</p>
+                  ) : (
+                    <>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', marginBottom: '3rem', paddingBottom: '2rem', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+                        <div style={{ width: '50px', height: '50px', borderRadius: '1rem', background: 'rgba(112,0,255,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid rgba(112,0,255,0.2)' }}>
+                            <Zap color="#7000ff" size={24} />
                         </div>
-                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '1.5rem', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+                        <div style={{ textAlign: 'left' }}>
+                            <h2 style={{ fontSize: '2rem', fontWeight: 900, textTransform: 'uppercase', fontStyle: 'italic', marginBottom: '0.5rem' }}>YOUR VIRTUAL EXPERIENCES ROADMAP</h2>
+                            <p style={{ fontSize: '12px', fontWeight: 700, color: 'rgba(255,255,255,0.65)', textTransform: 'uppercase', letterSpacing: '0.3em' }}>Whitelabel Challenge Strategy</p>
+                        </div>
+                      </div>
+
+                      <div style={{ marginBottom: '3rem', padding: '2.5rem', background: 'rgba(212, 175, 55, 0.05)', borderRadius: '1.5rem', border: '1px solid rgba(212, 175, 55, 0.2)' }}>
+                        <h3 style={{ fontSize: '1.2rem', fontWeight: 900, textTransform: 'uppercase', color: '#B5942D', marginBottom: '1.5rem' }}>Recommended Rewards Structure</h3>
+                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
                           <div>
-                            <p style={{ fontSize: '12px', fontWeight: 700, color: 'rgba(255,255,255,0.65)', textTransform: 'uppercase', marginBottom: '0.5rem' }}>Associated Trend</p>
-                            <p style={{ fontSize: '14px', fontWeight: 900, color: '#ffffff' }}>{exp.trend}</p>
+                            <p style={{ fontSize: '10px', fontWeight: 700, color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', marginBottom: '0.5rem' }}>Core Conversion Offer</p>
+                            <p style={{ fontSize: '1.5rem', fontWeight: 900, color: '#ffffff' }}>{analysis.challenge.rewardsStructure?.primary || analysis.challenge.coreReward}</p>
                           </div>
-                          <div style={{ textAlign: 'right' }}>
-                            <p style={{ fontSize: '12px', fontWeight: 700, color: 'rgba(255,255,255,0.65)', textTransform: 'uppercase', marginBottom: '0.5rem' }}>Reward Segment</p>
-                            <p style={{ fontSize: '14px', fontWeight: 900, color: '#00e5ff' }}>{exp.reward}</p>
+                          <div>
+                            <p style={{ fontSize: '10px', fontWeight: 700, color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', marginBottom: '0.5rem' }}>Unlockable Collectibles</p>
+                            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+                                {analysis.challenge.rewardsStructure?.collectibles?.map((c, i) => (
+                                  <span key={i} style={{ background: 'rgba(255,255,255,0.1)', color: '#ffffff', padding: '0.25rem 0.75rem', borderRadius: '1rem', fontSize: '12px', fontWeight: 700 }}>{c}</span>
+                                ))}
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  ))}
-                </div>
 
-                <div style={{ marginTop: '4rem', display: 'flex', justifyContent: 'center' }}>
-                  <button className="launch-button" style={{ maxWidth: '600px', display: 'flex', alignItems: 'center', gap: '1rem' }} onClick={() => alert("Brief sent to Creator Marketplace!")}>
-                    Save Brief & Send to Creator Marketplace <ExternalLink size={24} />
-                  </button>
-                </div>
-              </motion.section>
+                      <div style={{ marginBottom: '3rem', padding: '2.5rem', background: 'rgba(0, 229, 255, 0.05)', borderRadius: '1.5rem', border: '1px solid rgba(0, 229, 255, 0.2)' }}>
+                        <h3 style={{ fontSize: '1.2rem', fontWeight: 900, textTransform: 'uppercase', color: '#00e5ff', marginBottom: '1.5rem' }}>Visual Cornerstone (From Digital Presence)</h3>
+                        <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px', lineHeight: 1.6 }}>We will use existing positive assets from your digital presence as the cornerstone of this immersive experience: <strong style={{color: '#fff'}}>{analysis.challenge.suggestedVisuals?.join(', ')}</strong></p>
+                      </div>
+
+                      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '2.5rem' }}>
+                        {analysis?.challenge?.activities?.map((exp, i) => (
+                          <div key={i} style={{ padding: '2rem', background: 'rgba(255,255,255,0.04)', borderRadius: '2.5rem', border: '1px solid rgba(255,255,255,0.08)', textAlign: 'left', position: 'relative', overflow: 'hidden' }}>
+                            <div style={{ position: 'absolute', top: 0, right: 0, padding: '2rem', opacity: 0.15 }}>
+                              <Gift size={48} color="#7000ff" />
+                            </div>
+                            <h3 style={{ fontSize: '1.75rem', fontWeight: 900, textTransform: 'uppercase', marginBottom: '2rem', color: '#7000ff' }}>{exp.type}</h3>
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+                              <div>
+                                <p style={{ fontSize: '12px', fontWeight: 700, color: 'rgba(255,255,255,0.65)', textTransform: 'uppercase', marginBottom: '0.75rem' }}>Strategic Objective</p>
+                                <p style={{ fontSize: '14px', fontWeight: 700, lineHeight: 1.5 }}>{exp.action}</p>
+                              </div>
+                              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '1.5rem', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+                                <div>
+                                  <p style={{ fontSize: '12px', fontWeight: 700, color: 'rgba(255,255,255,0.65)', textTransform: 'uppercase', marginBottom: '0.5rem' }}>Associated Trend</p>
+                                  <p style={{ fontSize: '14px', fontWeight: 900, color: '#ffffff' }}>{exp.trend}</p>
+                                </div>
+                                <div style={{ textAlign: 'right' }}>
+                                  <p style={{ fontSize: '12px', fontWeight: 700, color: 'rgba(255,255,255,0.65)', textTransform: 'uppercase', marginBottom: '0.5rem' }}>Reward Segment</p>
+                                  <p style={{ fontSize: '14px', fontWeight: 900, color: '#00e5ff' }}>{exp.reward}</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+
+                      <div style={{ marginTop: '4rem', display: 'flex', justifyContent: 'center' }}>
+                        <button className="launch-button" style={{ maxWidth: '600px', display: 'flex', alignItems: 'center', gap: '1rem' }} onClick={() => alert("Brief sent to Creator Marketplace!")}>
+                          Save Brief & Send to Creator Marketplace <ExternalLink size={24} />
+                        </button>
+                      </div>
+                    </>
+                  )}
+                </motion.section>
               )}
 
             </motion.div>
