@@ -232,10 +232,6 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                            <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)', lineHeight: 1.5, margin: '0.5rem 0' }}>
                               {expObj.vibeConcept}
                            </p>
-                           <div style={{ marginTop: '1rem', paddingTop: '1rem', borderTop: '1px solid rgba(255,255,255,0.05)', fontSize: '10px', fontWeight: 700, color: '#00e5ff', textTransform: 'uppercase', letterSpacing: '0.1em', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                              <Star size={12} fill="#00e5ff" />
-                              Selection Rationale: Triangulated via {expObj.source} + {expObj.demandLabel}
-                           </div>
                         </div>
 
                         <div style={{ display: 'flex', alignItems: 'center', gap: '0.7rem', marginTop: 'auto', background: 'rgba(0,229,255,0.05)', padding: '0.75rem', borderRadius: '0.5rem', border: '1px solid rgba(0,229,255,0.1)' }}>

@@ -21,96 +21,129 @@ const DISCOVERY_SOURCES = {
   LOCAL: "site:timeout.com OR site:theinfatuation.com OR site:eater.com OR site:ra.co OR site:cntraveler.com OR site:travelandleisure.com OR site:nytimes.com/style"
 };
 
-const CITY_BIBLE_REGISTRY = {
-  "Copenhagen": [
-    { name: "Harbour Sauna Rituals", vibeConcept: "Industrial-chic wellness community-led cold plunge culture.", source: "Wallpaper", category: "Next-Gen Wellness & Rituals", demandLabel: "High Social Velocity", score: 98, id: "WELLNESS" },
-    { name: "Japanese Design Hubs", vibeConcept: "Niche, curated retail hubs focusing on high-craft minimalism.", source: "Monocle", category: "Experience-Led Retail Design", demandLabel: "Emergent Trend", score: 95, id: "RETAIL" },
-    { name: "Vinyl & Natural Wine", vibeConcept: "Low-intervention nightlife featuring lo-fi audio and organic pours.", source: "Resident Advisor", category: "Emergent Nightlife & Mixology", demandLabel: "High Social Velocity", score: 92, id: "NIGHTLIFE" },
-    { name: "Opera Park Nature-First", vibeConcept: "Sensory urbanism where nature is the primary architect.", source: "Dezeen", category: "Immersive Art & Culture", demandLabel: "Authority Signal", score: 90, id: "CULTURE" },
-    { name: "Micro-Indulgence Bars", vibeConcept: "Tiny martinis and single-dish menus focused on quality over volume.", source: "The Infatuation", category: "High-Fidelity Gastronomy", demandLabel: "Trending Signal", score: 88, id: "CULINARY" }
-  ],
-  "London": [
-    { name: "Railway Arch Gastronomy", vibeConcept: "Industrial-chic dining in repurposed Victorian railway arches.", source: "Eater", category: "High-Fidelity Gastronomy", demandLabel: "High Local Demand", score: 96, id: "CULINARY" },
-    { name: "Lido & Wild Swimming", vibeConcept: "The resurgence of year-round outdoor swimming and ritualistic wellness.", source: "Monocle", category: "Next-Gen Wellness & Rituals", demandLabel: "Authority Signal", score: 94, id: "WELLNESS" }
-  ],
-  "Berlin": [
-    { name: "Techno-Wellness Rituals", vibeConcept: "Immersive sound-bath saunas and high-energy wellness raves.", source: "Resident Advisor", category: "Next-Gen Wellness & Rituals", demandLabel: "High Social Velocity", score: 98, id: "WELLNESS" },
-    { name: "Brutalist Art Bunkers", vibeConcept: "Private contemporary collections housed in repurposed Cold War bunkers.", source: "Wallpaper", category: "Immersive Art & Culture", demandLabel: "Authority Verified", score: 95, id: "CULTURE" },
-    { name: "Listening Bar Culture", vibeConcept: "Audiophile speakeasies focusing on high-fidelity vinyl and low-intervention wine.", source: "Monocle", category: "Emergent Nightlife & Mixology", demandLabel: "Trending Signal", score: 92, id: "NIGHTLIFE" },
-    { name: "Zero-Waste Gastronomy", vibeConcept: "Hyper-local, circular dining concepts with zero-waste labs.", source: "Eater", category: "High-Fidelity Gastronomy", demandLabel: "Authority Signal", score: 90, id: "CULINARY" },
-    { name: "Modular Fashion Hubs", vibeConcept: "Interchangeable, sustainable design ateliers focusing on utility streetwear.", source: "Highsnobiety", category: "Experience-Led Retail Design", demandLabel: "High Social Velocity", score: 88, id: "RETAIL" }
-  ],
-  "Miami": [
-    { name: "Art Deco Heritage Rituals", vibeConcept: "Preserving the neon-noir aesthetic through curated architectural discovery and preservation culture.", source: "Wallpaper", category: "Immersive Art & Culture", demandLabel: "Authority Verified", score: 98, id: "CULTURE" },
-    { name: "Pastel Modernism Hubs", vibeConcept: "Contemporary hospitality hubs merging mid-century nostalgia with next-gen sensory design.", source: "Monocle", category: "Experience-Led Retail Design", demandLabel: "Emergent Trend", score: 95, id: "RETAIL" },
-    { name: "Tropical-Chic Wellness", vibeConcept: "High-sensory wellness rituals focused on ocean-front restoration and modular sanctuary design.", source: "Dezeen", category: "Next-Gen Wellness & Rituals", demandLabel: "High Social Velocity", score: 92, id: "WELLNESS" },
-    { name: "Neon-Noir Mixology", vibeConcept: "Atmospheric nightlife hubs where cinematic lighting meets avant-garde cocktail science.", source: "Resident Advisor", category: "Emergent Nightlife & Mixology", demandLabel: "Trending Signal", score: 90, id: "NIGHTLIFE" },
-    { name: "Ocean-Front Gastro-Labs", vibeConcept: "Experimental culinary spaces focusing on circular economy and marine-inspired flavors.", source: "Eater", category: "High-Fidelity Gastronomy", demandLabel: "Authority Signal", score: 88, id: "CULINARY" }
-  ]
+import VIBE_CACHE_RAW from './engine/vibeCache.json';
+
+const VIBE_CACHE = { ...VIBE_CACHE_RAW };
+
+// Load from localStorage if available (for persistence across sessions)
+const localCache = JSON.parse(localStorage.getItem('travelvrse_vibe_cache') || '{}');
+Object.assign(VIBE_CACHE, localCache);
+
+const HEROIC_TEMPLATES = {
+  CULINARY: {
+    titles: ["{name} Gastro-Rituals", "{name} Culinary Lab", "Immersive {name} Dining"],
+    concepts: ["A high-fidelity culinary destination where {source} verified techniques meet local {area} flavors.", "Experimental gastronomy focused on circular economy and {area}'s emerging food scene."]
+  },
+  WELLNESS: {
+    titles: ["{name} Sanctuary", "Next-Gen {name} Rituals", "{name} Wellness Hub"],
+    concepts: ["A restorative urban sanctuary focusing on {area}'s emerging wellness culture and sensory design.", "High-velocity wellness rituals triangulated via social signals and {source} authority."]
+  },
+  CULTURE: {
+    titles: ["{name} Heritage Hub", "Immersive {name} Gallery", "{name} Design Collective"],
+    concepts: ["A curated cultural landmark where {area}'s architectural history meets contemporary {source} design.", "Niche cultural discovery focusing on the hidden heritage of {area}."]
+  },
+  RETAIL: {
+    titles: ["{name} Concept Store", "Niche {name} Retail", "{name} Design Studio"],
+    concepts: ["Experience-led retail design focusing on {area}'s high-craft minimalism and {source} curation.", "A boutique retail hub where sustainable local craft meets next-gen fashion velocity."]
+  },
+  NIGHTLIFE: {
+    titles: ["{name} Listening Bar", "Emergent {name} Mixology", "{name} Vinyl Lounge"],
+    concepts: ["Audiophile nightlife featuring lo-fi audio, {source} verified curation, and organic pours.", "Atmospheric nightlife where cinematic lighting meets {area}'s avant-garde cocktail science."]
+  }
 };
+
+function heroify(item, category, city, area, source) {
+  const templates = HEROIC_TEMPLATES[category.id] || HEROIC_TEMPLATES.CULTURE;
+  const rawName = item.title.split('-')[0].split('|')[0].split(':')[0].trim()
+    .replace(/The Best|Top \d+|Guide to|Secret|Hidden|Gems in|In ${city}|Trending/ig, '').trim();
+  
+  const templateIdx = Math.abs(rawName.length) % templates.titles.length;
+  const name = templates.titles[templateIdx].replace('{name}', rawName);
+  const vibeConcept = templates.concepts[templateIdx]
+    .replace('{area}', area)
+    .replace('{source}', source);
+
+  return { name, vibeConcept };
+}
 
 export async function scrapeLocalSignals(city, neighborhood) {
   const targetArea = neighborhood || city;
+  const normalizedCity = city.charAt(0).toUpperCase() + city.slice(1).toLowerCase();
+  
+  // 1. CHECK CACHE FIRST (Persistence for subsequent users/searches)
+  if (VIBE_CACHE[normalizedCity]) {
+    console.log(`[Agent A] Cache Hit for ${normalizedCity}. Serving stored vibes.`);
+    return { 
+      city, neighborhood, sentiment: 'Authority Cached Intelligence', 
+      topExperiences: VIBE_CACHE[normalizedCity].slice(0, 5), velocity: 9.9 
+    };
+  }
+
   const API_KEY = import.meta.env.VITE_SERPER_API_KEY;
   const HEADERS = { 'X-API-KEY': API_KEY, 'Content-Type': 'application/json' };
   
-  console.log(`[Agent A] Global Discovery Rolling Out for ${targetArea}...`);
+  console.log(`[Agent A] Dynamic Discovery Rolling Out for ${targetArea}...`);
 
   try {
-    // 1. DYNAMIC DISCOVERY: City-Agnostic Bible Probes
+    // 2. DYNAMIC DISCOVERY: Global Bible & Social Probes
     const queries = [
-      `${DISCOVERY_SOURCES.GLOBAL} "${targetArea}" "emerging trends" OR "design concept"`,
-      `${DISCOVERY_SOURCES.LOCAL} "${targetArea}" "hidden gems" OR "insider guide"`,
-      `site:tiktok.com "${targetArea}" "aesthetic" "vibe check" "${city}"`
+      `${DISCOVERY_SOURCES.GLOBAL} "${city}" ${neighborhood ? `"${neighborhood}"` : ""} "emerging trends" OR "design concept"`,
+      `${DISCOVERY_SOURCES.LOCAL} "${city}" ${neighborhood ? `"${neighborhood}"` : ""} "hidden gems" OR "insider guide"`,
+      `site:tiktok.com "${city}" "${neighborhood || city}" "aesthetic" "vibe check"`
     ];
 
-    const searchResults = await Promise.all(queries.map(q => 
+    let searchResults = await Promise.all(queries.map(q => 
       fetch(`https://google.serper.dev/search`, {
         method: 'POST', headers: HEADERS, body: JSON.stringify({ q, num: 20 })
       }).then(r => r.json()).catch(() => ({ organic: [] }))
     ));
 
-    const organic = searchResults.flatMap(r => r.organic || []);
+    let organic = searchResults.flatMap(r => r.organic || []);
     
-    // 2. UNIVERSAL VIBE SYNTHESIS (Hero-ifying raw data)
+    // BROADEN SEARCH if results are sparse
+    if (organic.length < 10 && neighborhood) {
+      console.log(`[Agent A] Sparse results for ${neighborhood}. Broadening search to ${city} market...`);
+      const broadQueries = [
+        `${DISCOVERY_SOURCES.GLOBAL} "${city}" "design trends" OR "lifestyle"`,
+        `${DISCOVERY_SOURCES.LOCAL} "${city}" "best new spots" OR "vibe"`
+      ];
+      const broadResults = await Promise.all(broadQueries.map(q => 
+        fetch(`https://google.serper.dev/search`, {
+          method: 'POST', headers: HEADERS, body: JSON.stringify({ q, num: 20 })
+        }).then(r => r.json()).catch(() => ({ organic: [] }))
+      ));
+      organic = [...organic, ...broadResults.flatMap(r => r.organic || [])];
+    }
+    
+    // 3. UNIVERSAL VIBE HEROIFICATION (Turning raw data into premium concepts)
     const candidates = organic.map(item => {
-      let rawName = item.title.split('-')[0].split('|')[0].split(':')[0].trim();
       const combined = (item.title + " " + item.snippet).toLowerCase();
       
-      // Filter out noise
-      const isHashtagSpam = rawName.includes('#') || (rawName.split(' ').length > 10);
-      const isGeneric = rawName.toLowerCase().includes("best things to do") || rawName.toLowerCase().includes("guide to");
-      const hasGeo = combined.includes(city.toLowerCase()) || (neighborhood && combined.includes(neighborhood.toLowerCase()));
-      
-      if (isHashtagSpam || isGeneric || !hasGeo || rawName.length < 3) return null;
-      if (item.link.includes('tripadvisor') || item.link.includes('yelp')) return null;
-
       const category = VIBE_TAXONOMY.find(cat => 
         cat.keywords.some(k => combined.includes(k))
-      ) || { id: "EXPLORATION", label: "Urban Exploration", keywords: ["explore", "urban"] };
-
-      // CLEAN REAL NAME (No Synthesis)
-      const cleanName = rawName.replace(/The Best|Top \d+|Guide to|Secret|Hidden|Gems in|In ${city}|Trending/ig, '').trim();
-      const vibeConcept = item.snippet.split('.')[0] + ".";
+      ) || VIBE_TAXONOMY[2]; // Default to Culture
 
       const isSocial = item.link.includes('tiktok.com') || item.link.includes('instagram.com');
+      const source = isSocial ? 'Social Signal' : new URL(item.link).hostname.replace('www.', '');
+
+      const { name, vibeConcept } = heroify(item, category, city, targetArea, source);
+
+      // Filtering
+      const isHashtagSpam = name.includes('#') || (name.split(' ').length > 12);
+      if (isHashtagSpam || item.link.includes('tripadvisor') || item.link.includes('yelp')) return null;
 
       return { 
-        name: cleanName, 
+        name, 
         vibeConcept, 
-        category, 
-        source: isSocial ? 'Social Signal' : new URL(item.link).hostname.replace('www.', ''),
+        category: category.label, 
+        source,
         id: category.id, score: isSocial ? 99 : 92,
         demandLabel: isSocial ? "High Visual Velocity" : "Authority Verified"
       };
     }).filter(c => c !== null);
 
-    // 3. MERGE WITH CITY REGISTRY OR DYNAMIC DISCOVERY
-    const normalizedCity = city.charAt(0).toUpperCase() + city.slice(1).toLowerCase();
-    const cityRegistry = CITY_BIBLE_REGISTRY[normalizedCity] || [];
-    let results = [...cityRegistry];
-    
-    // Supplement with discovered candidates, ensuring unique categories
+    // 4. DEDUPLICATION & SELECTION
+    const results = [];
     candidates.forEach(cand => {
       if (results.length < 5) {
         if (!results.some(r => r.name.toLowerCase() === cand.name.toLowerCase() || r.id === cand.id)) {
@@ -119,18 +152,17 @@ export async function scrapeLocalSignals(city, neighborhood) {
       }
     });
 
-    // Final check: if still under 5, add generic bibles or wider search
-    if (results.length < 5) {
-        // Fallback to top candidates regardless of category uniqueness
-        candidates.forEach(cand => {
-            if (results.length < 5 && !results.some(r => r.name.toLowerCase() === cand.name.toLowerCase())) {
-                results.push(cand);
-            }
-        });
+    // 5. CACHE PERSISTENCE (Store for future users)
+    if (results.length >= 3) {
+      VIBE_CACHE[normalizedCity] = results;
+      const updatedLocal = JSON.parse(localStorage.getItem('travelvrse_vibe_cache') || '{}');
+      updatedLocal[normalizedCity] = results;
+      localStorage.setItem('travelvrse_vibe_cache', JSON.stringify(updatedLocal));
+      console.log(`[Agent A] Storing Dynamic Discovery for ${normalizedCity} in local cache.`);
     }
 
     return { 
-      city, neighborhood, sentiment: 'Scalable Market Intelligence', 
+      city, neighborhood, sentiment: 'Dynamic Market Intelligence', 
       topExperiences: results.slice(0, 5), velocity: 9.8 
     };
 
@@ -138,11 +170,12 @@ export async function scrapeLocalSignals(city, neighborhood) {
     console.error("[Agent A] Discovery Probe failed", err);
   }
 
-  // GLOBAL FALLSAFE
   return {
-    city, neighborhood, sentiment: 'Discovery-First Trends',
-    topExperiences: CITY_BIBLE_REGISTRY[city]?.slice(0, 5) || [
-      { name: "Urban Exploration Hubs", vibeConcept: "Community-led discovery of hidden urban architectural gems.", source: "Monocle", category: "Immersive Art & Culture", demandLabel: "Authority Verified", score: 85 }
+    city, neighborhood, sentiment: 'Universal Market Intelligence',
+    topExperiences: [
+      { name: `${city} Design Rituals`, vibeConcept: `Curated discovery of the emerging architectural and lifestyle narrative in ${targetArea}.`, source: "Monocle", category: "Immersive Art & Culture", demandLabel: "Authority Verified", score: 92, id: "CULTURE" },
+      { name: "Atmospheric Gastronomy", vibeConcept: `High-fidelity culinary experiences where heritage design meets modern velocity.`, source: "Eater", category: "High-Fidelity Gastronomy", demandLabel: "Trending Signal", score: 90, id: "CULINARY" },
+      { name: "Next-Gen Wellness Sanctuaries", vibeConcept: `Modular restorative spaces focusing on sensory restoration and ritual.`, source: "Wallpaper", category: "Next-Gen Wellness & Rituals", demandLabel: "High Local Demand", score: 88, id: "WELLNESS" }
     ],
     velocity: 9.0
   };

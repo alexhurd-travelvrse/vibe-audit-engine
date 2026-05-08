@@ -1,0 +1,34 @@
+{
+  "Copenhagen": [
+    { "name": "Harbour Sauna Rituals", "vibeConcept": "Industrial-chic wellness community-led cold plunge culture.", "source": "Wallpaper", "category": "Next-Gen Wellness & Rituals", "demandLabel": "High Social Velocity", "score": 98, "id": "WELLNESS" },
+    { "name": "Japanese Design Hubs", "vibeConcept": "Niche, curated retail hubs focusing on high-craft minimalism.", "source": "Monocle", "category": "Experience-Led Retail Design", "demandLabel": "Emergent Trend", "score": 95, "id": "RETAIL" },
+    { "name": "Vinyl & Natural Wine", "vibeConcept": "Low-intervention nightlife featuring lo-fi audio and organic pours.", "source": "Resident Advisor", "category": "Emergent Nightlife & Mixology", "demandLabel": "High Social Velocity", "score": 92, "id": "NIGHTLIFE" },
+    { "name": "Opera Park Nature-First", "vibeConcept": "Sensory urbanism where nature is the primary architect.", "source": "Dezeen", "category": "Immersive Art & Culture", "demandLabel": "Authority Signal", "score": 90, "id": "CULTURE" },
+    { "name": "Micro-Indulgence Bars", "vibeConcept": "Tiny martinis and single-dish menus focused on quality over volume.", "source": "The Infatuation", "category": "High-Fidelity Gastronomy", "demandLabel": "Trending Signal", "score": 88, "id": "CULINARY" }
+  ],
+  "London": [
+    { "name": "Railway Arch Gastronomy", "vibeConcept": "Industrial-chic dining in repurposed Victorian railway arches.", "source": "Eater", "category": "High-Fidelity Gastronomy", "demandLabel": "High Local Demand", "score": 96, "id": "CULINARY" },
+    { "name": "Lido & Wild Swimming", "vibeConcept": "The resurgence of year-round outdoor swimming and ritualistic wellness.", "source": "Monocle", "category": "Next-Gen Wellness & Rituals", "demandLabel": "Authority Signal", "score": 94, "id": "WELLNESS" }
+  ],
+  "Berlin": [
+    { "name": "Techno-Wellness Rituals", "vibeConcept": "Immersive sound-bath saunas and high-energy wellness raves.", "source": "Resident Advisor", "category": "Next-Gen Wellness & Rituals", "demandLabel": "High Social Velocity", "score": 98, "id": "WELLNESS" },
+    { "name": "Brutalist Art Bunkers", "vibeConcept": "Private contemporary collections housed in repurposed Cold War bunkers.", "source": "Wallpaper", "category": "Immersive Art & Culture", "demandLabel": "Authority Verified", "score": 95, "id": "CULTURE" },
+    { "name": "Listening Bar Culture", "vibeConcept": "Audiophile speakeasies focusing on high-fidelity vinyl and low-intervention wine.", "source": "Monocle", "category": "Emergent Nightlife & Mixology", "demandLabel": "Trending Signal", "score": 92, "id": "NIGHTLIFE" },
+    { "name": "Zero-Waste Gastronomy", "vibeConcept": "Hyper-local, circular dining concepts with zero-waste labs.", "source": "Eater", "category": "High-Fidelity Gastronomy", "demandLabel": "Authority Signal", "score": 90, "id": "CULINARY" },
+    { "name": "Modular Fashion Hubs", "vibeConcept": "Interchangeable, sustainable design ateliers focusing on utility streetwear.", "source": "Highsnobiety", "category": "Experience-Led Retail Design", "demandLabel": "High Social Velocity", "score": 88, "id": "RETAIL" }
+  ],
+  "Miami": [
+    { "name": "Art Deco Heritage Rituals", "vibeConcept": "Preserving the neon-noir aesthetic through curated architectural discovery and preservation culture.", "source": "Wallpaper", "category": "Immersive Art & Culture", "demandLabel": "Authority Verified", "score": 98, "id": "CULTURE" },
+    { "name": "Pastel Modernism Hubs", "vibeConcept": "Contemporary hospitality hubs merging mid-century nostalgia with next-gen sensory design.", "source": "Monocle", "category": "Experience-Led Retail Design", "demandLabel": "Emergent Trend", "score": 95, "id": "RETAIL" },
+    { "name": "Tropical-Chic Wellness", "vibeConcept": "High-sensory wellness rituals focused on ocean-front restoration and modular sanctuary design.", "source": "Dezeen", "category": "Next-Gen Wellness & Rituals", "demandLabel": "High Social Velocity", "score": 92, "id": "WELLNESS" },
+    { "name": "Neon-Noir Mixology", "vibeConcept": "Atmospheric nightlife hubs where cinematic lighting meets avant-garde cocktail science.", "source": "Resident Advisor", "category": "Emergent Nightlife & Mixology", "demandLabel": "Trending Signal", "score": 90, "id": "NIGHTLIFE" },
+    { "name": "Ocean-Front Gastro-Labs", "vibeConcept": "Experimental culinary spaces focusing on circular economy and marine-inspired flavors.", "source": "Eater", "category": "High-Fidelity Gastronomy", "demandLabel": "Authority Signal", "score": 88, "id": "CULINARY" }
+  ],
+  "Dubai": [
+    { "name": "Palm Beach Club Rituals", "vibeConcept": "High-fidelity oceanfront wellness and community-led cold plunge culture in the Palm.", "source": "Wallpaper", "category": "Next-Gen Wellness & Rituals", "demandLabel": "High Social Velocity", "score": 98, "id": "WELLNESS" },
+    { "name": "Desert Modernism Hubs", "vibeConcept": "Niche, curated design hubs focusing on high-craft minimalism and arid landscape architecture.", "source": "Monocle", "category": "Immersive Art & Culture", "demandLabel": "Authority Signal", "score": 95, "id": "CULTURE" },
+    { "name": "Floating Gastronomy Labs", "vibeConcept": "Experimental marine-inspired dining on modular aquatic platforms.", "source": "Eater", "category": "High-Fidelity Gastronomy", "demandLabel": "Trending Signal", "score": 92, "id": "CULINARY" },
+    { "name": "Sky-High Mixology Rituals", "vibeConcept": "Atmospheric nightlife in architectural peaks focusing on sensory science and altitude aging.", "source": "Resident Advisor", "category": "Emergent Nightlife & Mixology", "demandLabel": "High Local Demand", "score": 90, "id": "NIGHTLIFE" },
+    { "name": "Oasis Retail Collectives", "vibeConcept": "Hyper-curated boutiques merging traditional craft with next-gen sustainable utility.", "source": "Highsnobiety", "category": "Experience-Led Retail Design", "demandLabel": "Authority Verified", "score": 88, "id": "RETAIL" }
+  ]
+}
