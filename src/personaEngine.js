@@ -60,30 +60,47 @@ export async function scrapeLocalSignals(city, neighborhood) {
   try {
     // 1. PARALLEL TAXONOMY PROBE: One search per vertical
     const verticalResults = await Promise.all(VIBE_TAXONOMY.map(async (vertical) => {
-      // Relaxed query slightly to ensure we get results
-      const q = `${vertical.sites} "${targetArea}" ${vertical.query} -list`;
-      const res = await fetch(`https://google.serper.dev/search`, {
-        method: 'POST', headers: HEADERS, body: JSON.stringify({ q, num: 10 })
+      // 1a. Attempt Neighborhood-level search
+      let q = `${vertical.sites} site:tripadvisor.com "${neighborhood || city}" ${vertical.query} -list`;
+      let res = await fetch(`https://google.serper.dev/search`, {
+        method: 'POST', headers: HEADERS, body: JSON.stringify({ q, num: 15 })
       }).then(r => r.json()).catch(() => ({}));
 
+      // 1b. Fallback to City-level if no candidates found
+      if (!res.organic || res.organic.length < 2) {
+        q = `${vertical.sites} site:tripadvisor.com "${city}" ${vertical.query} -list`;
+        res = await fetch(`https://google.serper.dev/search`, {
+          method: 'POST', headers: HEADERS, body: JSON.stringify({ q, num: 15 })
+        }).then(r => r.json()).catch(() => ({}));
+      }
+
       if (res.organic && res.organic.length > 0) {
-        const blacklist = ["things to do", "best of", "tours in", "guide", "top", "visit", "experiences", "activities"];
+        const blacklist = ["things to do", "best of", "tours in", "guide", "top", "visit", "experiences", "activities", "tripadvisor", "timeout", "condé nast"];
         
         const candidates = res.organic.filter(item => {
           const t = item.title.toLowerCase();
           const l = item.link.toLowerCase();
+          // Skip category pages and generic listicles
           return !blacklist.some(word => t.includes(word)) && 
                  !l.includes('/best-') &&
-                 !l.includes('/guide/');
+                 !l.includes('/guide/') &&
+                 !l.includes('/category/') &&
+                 !l.includes('/location/');
         });
         
-        const item = candidates.length > 0 ? candidates[0] : res.organic[0];
+        // Pick the first candidate that isn't just a generic title matching the taxonomy label
+        const item = candidates.find(c => {
+          const name = c.title.split('-')[0].split('|')[0].split(':')[0].trim().toLowerCase();
+          return name !== vertical.label.toLowerCase() && name !== vertical.id.toLowerCase();
+        }) || candidates[0] || res.organic[0];
+
         if (!item) return null;
 
         let name = item.title.split('-')[0].split('|')[0].split(':')[0].trim();
-        name = name.replace(/The Best|Top \d+|Guide to|Secret|Hidden|Gems in|In ${targetArea}|Review|Tickets|Booking/ig, '').trim();
+        name = name.replace(/The Best|Top \d+|Guide to|Secret|Hidden|Gems in|In ${targetArea}|In ${city}|Review|Tickets|Booking/ig, '').trim();
         
-        if (name.length < 3) return null;
+        // Skip if name is still too generic or matches vertical label
+        if (name.length < 3 || name.toLowerCase().includes(vertical.id.toLowerCase())) return null;
 
         return { 
           name, 
