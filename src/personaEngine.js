@@ -146,13 +146,32 @@ export async function scrapeLocalSignals(city, neighborhood) {
       };
     }).filter(c => c !== null);
 
-    // 4. DEDUPLICATION & SELECTION
+    // 4. SOURCE-DIVERSE SELECTION (Prioritize unique sources and categories)
     const results = [];
+    const usedCategories = new Set();
+    const usedSources = new Set();
+
+    // First pass: try to get unique categories from unique sources
     candidates.forEach(cand => {
-      if (results.length < 5) {
-        if (!results.some(r => r.name.toLowerCase() === cand.name.toLowerCase() || r.id === cand.id)) {
-          results.push(cand);
-        }
+      if (results.length < 5 && !usedCategories.has(cand.id) && !usedSources.has(cand.source)) {
+        results.push(cand);
+        usedCategories.add(cand.id);
+        usedSources.add(cand.source);
+      }
+    });
+
+    // Second pass: fill in remaining slots with unique categories
+    candidates.forEach(cand => {
+      if (results.length < 5 && !usedCategories.has(cand.id)) {
+        results.push(cand);
+        usedCategories.add(cand.id);
+      }
+    });
+
+    // Final pass: just fill it up
+    candidates.forEach(cand => {
+      if (results.length < 5 && !results.some(r => r.name === cand.name)) {
+        results.push(cand);
       }
     });
 

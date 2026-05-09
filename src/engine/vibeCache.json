@@ -26,7 +26,7 @@
     { "name": "Pastel Modernism Hubs", "vibeConcept": "Contemporary hospitality hubs merging mid-century nostalgia with next-gen sensory design.", "source": "Monocle", "category": "Experience-Led Retail Design", "demandLabel": "Emergent Trend", "score": 95, "id": "RETAIL" },
     { "name": "Tropical-Chic Wellness", "vibeConcept": "High-sensory wellness rituals focused on ocean-front restoration and modular sanctuary design.", "source": "Dezeen", "category": "Next-Gen Wellness & Rituals", "demandLabel": "High Social Velocity", "score": 92, "id": "WELLNESS" },
     { "name": "Neon-Noir Mixology", "vibeConcept": "Atmospheric nightlife hubs where cinematic lighting meets avant-garde cocktail science.", "source": "Resident Advisor", "category": "Emergent Nightlife & Mixology", "demandLabel": "Trending Signal", "score": 90, "id": "NIGHTLIFE" },
-    { "name": "Ocean-Front Gastro-Labs", "vibeConcept": "Experimental culinary spaces focusing on circular economy and marine-inspired flavors.", "source": "Eater", "category": "High-Fidelity Gastronomy", "demandLabel": "Authority Signal", "score": 88, "id": "CULINARY" }
+    { "name": "Wynwood Gastro-Hacienda", "vibeConcept": "A high-sensory Yucatecan hacienda where ancient fire-dancing rituals meet next-gen electronic beats.", "source": "Time Out", "category": "High-Fidelity Gastronomy", "demandLabel": "Authority Verified", "score": 94, "id": "CULINARY" }
   ],
   "Dubai": [
     { "name": "Palm Beach Club Rituals", "vibeConcept": "High-fidelity oceanfront wellness and community-led cold plunge culture in the Palm.", "source": "Wallpaper", "category": "Next-Gen Wellness & Rituals", "demandLabel": "High Social Velocity", "score": 98, "id": "WELLNESS" },
