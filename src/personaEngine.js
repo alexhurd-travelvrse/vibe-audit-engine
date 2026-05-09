@@ -47,27 +47,27 @@ Object.assign(VIBE_CACHE, localCache);
 
 const HEROIC_TEMPLATES = {
   CULINARY: {
-    titles: ["{name} Gastro-Rituals", "{name} Culinary Lab", "Immersive {name} Dining"],
+    titles: ["{area} {name} Gastro-Rituals", "{area} {name} Culinary Lab", "Immersive {area} {name} Dining"],
     concepts: ["A high-fidelity culinary destination where {source} verified techniques meet local {area} flavors.", "Experimental gastronomy focused on circular economy and {area}'s emerging food scene."]
   },
   WELLNESS: {
-    titles: ["{name} Sanctuary", "Next-Gen {name} Rituals", "{name} Wellness Hub"],
+    titles: ["{area} {name} Sanctuary", "Next-Gen {area} {name} Rituals", "{area} {name} Wellness Hub"],
     concepts: ["A restorative urban sanctuary focusing on {area}'s emerging wellness culture and sensory design.", "High-velocity wellness rituals triangulated via social signals and {source} authority."]
   },
   CULTURE: {
-    titles: ["{name} Heritage Hub", "Immersive {name} Gallery", "{name} Design Collective"],
+    titles: ["{area} {name} Heritage Hub", "Immersive {area} {name} Gallery", "{area} {name} Design Collective"],
     concepts: ["A curated cultural landmark where {area}'s architectural history meets contemporary {source} design.", "Niche cultural discovery focusing on the hidden heritage of {area}."]
   },
   RETAIL: {
-    titles: ["{name} Concept Store", "Niche {name} Retail", "{name} Design Studio"],
+    titles: ["{area} {name} Concept Store", "Niche {area} {name} Retail", "{area} {name} Design Studio"],
     concepts: ["Experience-led retail design focusing on {area}'s high-craft minimalism and {source} curation.", "A boutique retail hub where sustainable local craft meets next-gen fashion velocity."]
   },
   NIGHTLIFE: {
-    titles: ["{name} Listening Bar", "Emergent {name} Mixology", "{name} Vinyl Lounge"],
+    titles: ["{area} {name} Listening Bar", "Emergent {area} {name} Mixology", "{area} {name} Vinyl Lounge"],
     concepts: ["Audiophile nightlife featuring lo-fi audio, {source} verified curation, and organic pours.", "Atmospheric nightlife where cinematic lighting meets {area}'s avant-garde cocktail science."]
   },
   TOURS: {
-    titles: ["{name} Expedition", "Immersive {name} Guide", "{name} Storytelling Tour"],
+    titles: ["{area} {name} Expedition", "Immersive {area} {name} Guide", "{area} {name} Storytelling Tour"],
     concepts: ["A high-fidelity urban expedition through {area}, triangulating the hidden narratives discovered by {source}.", "Local narrative discovery focusing on the emerging and authentic lifestyle of {area}."]
   }
 };
@@ -78,7 +78,9 @@ function heroify(item, category, city, area, source) {
     .replace(/The Best|Top \d+|Guide to|Secret|Hidden|Gems in|In ${city}|Trending/ig, '').trim();
   
   const templateIdx = Math.abs(rawName.length) % templates.titles.length;
-  const name = templates.titles[templateIdx].replace('{name}', rawName);
+  const name = templates.titles[templateIdx]
+    .replace('{name}', rawName)
+    .replace('{area}', area);
   const vibeConcept = templates.concepts[templateIdx]
     .replace('{area}', area)
     .replace('{source}', source);
@@ -219,7 +221,7 @@ export async function scrapeLocalSignals(city, neighborhood) {
     // SPATIAL FALLBACK: If live search fails, we serve the hyper-local Miami benchmark
     const miamiBenchmark = [
       { name: "Wynwood Gastro-Hacienda", vibeConcept: "High-sensory fire-dancing rituals meeting next-gen electronic beats.", source: "Time Out", category: "Culinary", demandLabel: "Authority Verified", score: 96, id: "CULINARY" },
-      { name: "Neon-Noir Speakeasy", vibeConcept: "Atmospheric nightlife hubs where cinematic lighting meets avant-garde mixology.", source: "Eater", category: "Nightlife", demandLabel: "Trending Signal", score: 94, id: "NIGHTLIFE" },
+      { name: "Brickell Neon-Noir Speakeasy", vibeConcept: "Atmospheric nightlife hubs where cinematic lighting meets avant-garde mixology.", source: "Eater", category: "Nightlife", demandLabel: "Trending Signal", score: 94, id: "NIGHTLIFE" },
       { name: "Design District Art Bunkers", vibeConcept: "Private contemporary collections housed in repurposed industrial architectures.", source: "Wallpaper", category: "Culture", demandLabel: "High Local Demand", score: 92, id: "CULTURE" },
       { name: "Coconut Grove Wellness Rituals", vibeConcept: "Sensory restoration rituals focused on tropical-modern sanctuary design.", source: "Monocle", category: "Wellness", demandLabel: "Authority Signal", score: 90, id: "WELLNESS" },
       { name: "Wynwood Walking Tour", vibeConcept: "An immersive street art expedition through the world's largest open-air gallery.", source: "GetYourGuide", category: "Tours", demandLabel: "Authority Verified", score: 88, id: "TOURS" }
