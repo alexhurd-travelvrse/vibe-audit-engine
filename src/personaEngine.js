@@ -158,8 +158,19 @@ export async function scrapeLocalSignals(city, neighborhood) {
       const isSocial = item.link.includes('tiktok.com') || item.link.includes('instagram.com');
       const source = isSocial ? 'Social Signal' : new URL(item.link).hostname.replace('www.', '');
 
-      // Identify the specific district for the concept
-      const districtMatch = expansionDistricts.find(d => combined.includes(d.toLowerCase())) || neighborhood || city;
+      // Identify the specific district dynamically from the result content
+      const potentialLocations = [...expansionDistricts, city, neighborhood].filter(Boolean);
+      
+      // We also look for capitalized words in the snippet that might be a specific village or street
+      const snippetLocations = item.snippet.match(/[A-Z][a-z]+(?:\s[A-Z][a-z]+)*/g) || [];
+      const filteredSnippetLocs = snippetLocations.filter(loc => 
+        loc.length > 3 && !item.title.includes(loc) && !["The", "And", "For", "Best"].includes(loc)
+      );
+
+      const districtMatch = expansionDistricts.find(d => combined.includes(d.toLowerCase())) || 
+                           filteredSnippetLocs[0] || // Use the first capitalized location found in the snippet
+                           neighborhood || 
+                           city;
       
       const { name, vibeConcept } = heroify(item, category, city, districtMatch, source);
 
