@@ -122,9 +122,13 @@ export async function scrapeLocalSignals(city, neighborhood) {
 
   try {
     // 2. DYNAMIC DISCOVERY: Spatial Expansion Probes (City-Aware)
-    const expansionDistricts = city.toLowerCase() === 'miami' 
-      ? ["Design District", "Brickell", "Little Havana", "Coconut Grove", "Bayside Marketplace"]
-      : ["Arts District", "Financial District", "Old Town", "Creative Quarter"];
+    let expansionDistricts = ["Arts District", "Financial District", "Old Town", "Creative Quarter"];
+    
+    if (city.toLowerCase() === 'miami') {
+      expansionDistricts = ["Design District", "Brickell", "Little Havana", "Coconut Grove", "Bayside Marketplace"];
+    } else if (city.toLowerCase().includes('wittering') || city.toLowerCase().includes('chichester')) {
+      expansionDistricts = ["Chichester", "Bracklesham Bay", "East Wittering", "Bosham", "Selsey", "Itchenor"];
+    }
     
     const queries = [
       { id: 'LOCAL_PRIORITY', q: `${DISCOVERY_SOURCES.LOCAL} "${city}" "${neighborhood}" "vibe" OR "hidden"` },
