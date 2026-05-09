@@ -1,5 +1,6 @@
 /**
  * TravelVRSE Persona-Matching Engine (The Triangulator)
+ * BUILD_ID: 20260509_2341
  * 
  * Logic flow (Discovery-First):
  * 1. Exploratory Discovery: Scrape high-authority "bibles" for emerging/hidden trends.
