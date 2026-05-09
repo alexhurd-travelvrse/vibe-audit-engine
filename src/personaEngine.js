@@ -25,6 +25,14 @@ const DISCOVERY_SOURCES = {
 import VIBE_CACHE_RAW from './engine/vibeCache.json';
 
 const VIBE_CACHE = { ...VIBE_CACHE_RAW };
+const ENGINE_VERSION = "v4.7";
+
+// AUTO-RESET: Clear local cache if engine version has updated
+if (localStorage.getItem('travelvrse_vibe_version') !== ENGINE_VERSION) {
+  console.log(`[Engine] Version update detected (${ENGINE_VERSION}). Clearing legacy cache.`);
+  localStorage.removeItem('travelvrse_vibe_cache');
+  localStorage.setItem('travelvrse_vibe_version', ENGINE_VERSION);
+}
 
 // Load from localStorage if available (for persistence across sessions)
 const localCache = JSON.parse(localStorage.getItem('travelvrse_vibe_cache') || '{}');
