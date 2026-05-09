@@ -89,20 +89,29 @@ export async function scrapeLocalSignals(city, neighborhood) {
   console.log(`[Agent A] Dynamic Discovery Rolling Out for ${targetArea}...`);
 
   try {
-    // 2. DYNAMIC DISCOVERY: Global Bible & Social Probes
+    // 2. DYNAMIC DISCOVERY: Interleaved Probes
     const queries = [
-      `${DISCOVERY_SOURCES.GLOBAL} "${city}" ${neighborhood ? `"${neighborhood}"` : ""} "emerging trends" OR "design concept"`,
-      `${DISCOVERY_SOURCES.LOCAL} "${city}" ${neighborhood ? `"${neighborhood}"` : ""} "hidden gems" OR "insider guide"`,
-      `site:tiktok.com "${city}" "${neighborhood || city}" "aesthetic" "vibe check"`
+      { id: 'LOCAL', q: `${DISCOVERY_SOURCES.LOCAL} "${city}" ${neighborhood ? `"${neighborhood}"` : ""} "hidden gems" OR "insider guide"` },
+      { id: 'GLOBAL', q: `${DISCOVERY_SOURCES.GLOBAL} "${city}" ${neighborhood ? `"${neighborhood}"` : ""} "emerging trends" OR "design concept"` },
+      { id: 'SOCIAL', q: `site:tiktok.com "${city}" "${neighborhood || city}" "aesthetic" "vibe check"` }
     ];
 
-    let searchResults = await Promise.all(queries.map(q => 
+    let searchResults = await Promise.all(queries.map(query => 
       fetch(`https://google.serper.dev/search`, {
-        method: 'POST', headers: HEADERS, body: JSON.stringify({ q, num: 20 })
-      }).then(r => r.json()).catch(() => ({ organic: [] }))
+        method: 'POST', headers: HEADERS, body: JSON.stringify({ q: query.q, num: 20 })
+      }).then(r => r.json()).then(data => ({ ...data, queryId: query.id })).catch(() => ({ organic: [], queryId: query.id }))
     ));
 
-    let organic = searchResults.flatMap(r => r.organic || []);
+    // Interleave results: Local -> Global -> Social -> Local...
+    let organic = [];
+    const maxResults = 20;
+    for (let i = 0; i < maxResults; i++) {
+      searchResults.forEach(res => {
+        if (res.organic && res.organic[i]) {
+          organic.push(res.organic[i]);
+        }
+      });
+    }
     
     // BROADEN SEARCH if results are sparse
     if (organic.length < 10 && neighborhood) {
