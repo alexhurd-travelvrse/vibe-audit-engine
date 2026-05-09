@@ -440,7 +440,7 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
         zIndex: 10
       }}>
         <p style={{ color: '#8892B0', fontSize: '13px', fontWeight: 500 }}>
-          © {new Date().getFullYear()} Travelvrse. All rights reserved. <span style={{ color: '#00e5ff', marginLeft: '1rem', fontWeight: 900 }}>v4.8 - SPATIAL-CONNECTED</span>
+          © {new Date().getFullYear()} Travelvrse. All rights reserved. <span style={{ color: '#00e5ff', marginLeft: '1rem', fontWeight: 900 }}>v4.9 - QUALITY-RIPPLE</span>
         </p>
         <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
           <a href="https://usgrant.travelvrse.com/privacy" target="_blank" rel="noopener noreferrer" style={{ color: '#8892B0', fontSize: '13px', fontWeight: 500, textDecoration: 'none', transition: 'color 0.3s ease' }}

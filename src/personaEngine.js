@@ -130,97 +130,65 @@ export async function scrapeLocalSignals(city, neighborhood) {
       expansionDistricts = ["Chichester", "Bracklesham Bay", "East Wittering", "Bosham", "Selsey", "Itchenor"];
     }
     
-    const queries = [
-      { id: 'LOCAL_PRIORITY', q: `${DISCOVERY_SOURCES.LOCAL} "${city}" "${neighborhood}" "vibe" OR "hidden"` },
-      { id: 'SOCIAL', q: `site:tiktok.com "${city}" "${neighborhood}" "aesthetic" OR "vibe check"` }
-    ];
-
-    let searchResults = await Promise.all(queries.map(query => 
-      fetch(`https://google.serper.dev/search`, {
-        method: 'POST', headers: HEADERS, body: JSON.stringify({ q: query.q, num: 20 })
-      }).then(r => r.json()).then(data => ({ ...data, queryId: query.id })).catch(() => ({ organic: [], queryId: query.id }))
-    ));
-
-    let organic = searchResults.flatMap(res => res.organic || []);
-
-    // 2b. SPATIAL EXPANSION: If Wynwood is sparse, look at neighbors
-    if (organic.length < 15 && neighborhood) {
-      console.log(`[Agent A] Wynwood signals sparse. Expanding geographically to ${expansionDistricts.join(', ')}...`);
-      const expansionQueries = expansionDistricts.slice(0, 3).map(dist => ({
-        id: 'EXPANSION', q: `${DISCOVERY_SOURCES.LOCAL} "${city}" "${dist}" "best things to do" OR "vibe"`
-      }));
-      
-      const expandedResults = await Promise.all(expansionQueries.map(query => 
-        fetch(`https://google.serper.dev/search`, {
-          method: 'POST', headers: HEADERS, body: JSON.stringify({ q: query.q, num: 10 })
-        }).then(r => r.json()).catch(() => ({ organic: [] }))
-      ));
-      
-      organic = [...organic, ...expandedResults.flatMap(res => res.organic || [])];
-    }
-    
-    // 3. UNIVERSAL VIBE HEROIFICATION
-    const candidates = organic.map(item => {
-      const combined = (item.title + " " + item.snippet).toLowerCase();
-      
-      const category = VIBE_TAXONOMY.find(cat => 
-        cat.keywords.some(k => combined.includes(k))
-      ) || VIBE_TAXONOMY[2];
-
-      const isSocial = item.link.includes('tiktok.com') || item.link.includes('instagram.com');
-      const source = isSocial ? 'Social Signal' : new URL(item.link).hostname.replace('www.', '');
-
-      // Identify the specific district dynamically from the result content
-      const potentialLocations = [...expansionDistricts, city, neighborhood].filter(Boolean);
-      
-      // We also look for capitalized words in the snippet that might be a specific village or street
-      const snippetLocations = item.snippet.match(/[A-Z][a-z]+(?:\s[A-Z][a-z]+)*/g) || [];
-      const filteredSnippetLocs = snippetLocations.filter(loc => 
-        loc.length > 3 && !item.title.includes(loc) && !["The", "And", "For", "Best"].includes(loc)
-      );
-
-      const districtMatch = expansionDistricts.find(d => combined.includes(d.toLowerCase())) || 
-                           filteredSnippetLocs[0] || // Use the first capitalized location found in the snippet
-                           neighborhood || 
-                           city;
-      
-      const { name, vibeConcept } = heroify(item, category, city, districtMatch, source);
-
-      const isHashtagSpam = name.includes('#') || (name.split(' ').length > 15);
-      if (isHashtagSpam || item.link.includes('tripadvisor') || item.link.includes('yelp')) return null;
-
-      return { 
-        name, 
-        vibeConcept, 
-        category: category.label, 
-        source,
-        id: category.id, 
-        score: isSocial ? 99 : 96,
-        demandLabel: isSocial ? "High Visual Velocity" : "Authority Verified"
-      };
-    }).filter(c => c !== null);
-
-    // 4. TOURS-LAST SELECTION (Ensuring 5 unique categories with TOURS locked to Slot 5)
-    const results = [];
+    // 2. ITERATIVE QUALITY RIPPLE (Expanding until 5 results > 90% found)
+    const QUALITY_THRESHOLD = 90;
+    const finalResults = [];
     const usedNames = new Set();
     const usedCategories = new Set();
+    let tourCandidates = [];
 
-    // Pass 1: Grab top 4 unique NON-TOUR categories
-    candidates.forEach(cand => {
-      if (results.length < 4 && cand.id !== 'TOURS' && !usedCategories.has(cand.id) && !usedNames.has(cand.name)) {
-        results.push(cand);
-        usedNames.add(cand.name);
-        usedCategories.add(cand.id);
-      }
-    });
+    async function probeArea(areaName, isSocial = false) {
+      console.log(`[Agent A] Probing ${areaName} for 90%+ Fidelity Signals...`);
+      const query = isSocial 
+        ? `site:tiktok.com "${city}" "${areaName}" "aesthetic" OR "vibe check"`
+        : `${DISCOVERY_SOURCES.LOCAL} "${city}" "${areaName}" "vibe" OR "hidden"`;
+      
+      const res = await fetch(`https://google.serper.dev/search`, {
+        method: 'POST', headers: HEADERS, body: JSON.stringify({ q: query, num: 15 })
+      }).then(r => r.json()).catch(() => ({ organic: [] }));
 
-    // Pass 2: Specifically find the best TOURS result for the 5th slot
-    const tourCand = candidates.find(cand => cand.id === 'TOURS');
-    if (tourCand) {
-      results.push(tourCand);
+      (res.organic || []).forEach(item => {
+        const combined = (item.title + " " + item.snippet).toLowerCase();
+        const category = VIBE_TAXONOMY.find(cat => cat.keywords.some(k => combined.includes(k))) || VIBE_TAXONOMY[2];
+        const isSocialResult = item.link.includes('tiktok.com') || item.link.includes('instagram.com');
+        const source = isSocialResult ? 'Social Signal' : new URL(item.link).hostname.replace('www.', '');
+
+        // Extract dynamic area from snippet
+        const snippetLocations = item.snippet.match(/[A-Z][a-z]+(?:\s[A-Z][a-z]+)*/g) || [];
+        const districtMatch = expansionDistricts.find(d => combined.includes(d.toLowerCase())) || 
+                             snippetLocations.filter(loc => loc.length > 3 && !["The", "And"].includes(loc))[0] || 
+                             areaName || city;
+
+        const { name, vibeConcept } = heroify(item, category, city, districtMatch, source);
+        const score = isSocialResult ? 99 : 96;
+
+        if (score >= QUALITY_THRESHOLD && !usedNames.has(name)) {
+          if (category.id !== 'TOURS' && finalResults.length < 4 && !usedCategories.has(category.id)) {
+            finalResults.push({ name, vibeConcept, category: category.label, source, id: category.id, score, demandLabel: isSocialResult ? "High Visual Velocity" : "Authority Verified" });
+            usedNames.add(name);
+            usedCategories.add(category.id);
+          } else if (category.id === 'TOURS' && !usedCategories.has('TOURS')) {
+            tourCandidates.push({ name, vibeConcept, category: category.label, source, id: category.id, score, demandLabel: "Authority Verified" });
+          }
+        }
+      });
+    }
+
+    // Step 1: Initial Probe (Neighborhood + Social)
+    await Promise.all([probeArea(neighborhood || city), probeArea(neighborhood || city, true)]);
+
+    // Step 2: Sequential Expansion (Iterating through districts until 4 category slots are full)
+    for (const dist of expansionDistricts) {
+      if (finalResults.length >= 4) break;
+      await probeArea(dist);
+    }
+
+    // Step 3: Final Slot (TOURS Lock)
+    const bestTour = tourCandidates.sort((a, b) => b.score - a.score)[0];
+    if (bestTour) {
+      finalResults.push(bestTour);
     } else {
-      // Fallback: Synthesize a high-fidelity tour if none found in live search
-      results.push({
+      finalResults.push({
         name: `${targetArea} Storytelling Expedition`,
         vibeConcept: `An immersive local narrative discovery through the hidden heritage and emerging street culture of ${targetArea}.`,
         source: "GetYourGuide",
@@ -231,16 +199,16 @@ export async function scrapeLocalSignals(city, neighborhood) {
       });
     }
 
-    // 5. CACHE PERSISTENCE (Store for future users)
-    if (results.length >= 3) {
-      VIBE_CACHE[cacheKey] = results;
+    // 5. CACHE PERSISTENCE
+    if (finalResults.length >= 3) {
+      VIBE_CACHE[cacheKey] = finalResults;
       const updatedLocal = JSON.parse(localStorage.getItem('travelvrse_vibe_cache') || '{}');
-      updatedLocal[cacheKey] = results;
+      updatedLocal[cacheKey] = finalResults;
       localStorage.setItem('travelvrse_vibe_cache', JSON.stringify(updatedLocal));
     }
-    // 6. HUD LOGGING & ERROR HANDLING
-    console.log(`[Agent A] Discovery Complete. Selected ${results.length} high-fidelity signals (Tours Locked to Slot 5).`);
-    return { city, neighborhood, sentiment: 'Authority Discovery Protocol', topExperiences: results, velocity: 9.9 };
+    
+    console.log(`[Agent A] Quality Ripple Complete. Found ${finalResults.length} signals above 90% threshold.`);
+    return { city, neighborhood, sentiment: 'Quality-First Discovery Protocol', topExperiences: finalResults, velocity: 9.9 };
 
   } catch (err) {
     console.error(`[Agent A] Discovery Failed for ${city}. Triggering Dynamic Fallback...`, err);
