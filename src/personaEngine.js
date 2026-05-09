@@ -104,11 +104,12 @@ export async function scrapeLocalSignals(city, neighborhood) {
   console.log(`[Agent A] Dynamic Discovery Rolling Out for ${targetArea}...`);
 
   try {
-    // 2. DYNAMIC DISCOVERY: Interleaved Probes
+    // 2. DYNAMIC DISCOVERY: Spatial Expansion Probes
+    const expansionDistricts = ["Design District", "Brickell", "Little Havana", "Coconut Grove", "Bayside Marketplace"];
+    
     const queries = [
-      { id: 'LOCAL', q: `${DISCOVERY_SOURCES.LOCAL} "${city}" ${neighborhood ? `"${neighborhood}"` : ""} "hidden gems" OR "insider guide"` },
-      { id: 'GLOBAL', q: `${DISCOVERY_SOURCES.GLOBAL} "${city}" ${neighborhood ? `"${neighborhood}"` : ""} "emerging trends" OR "design concept"` },
-      { id: 'SOCIAL', q: `site:tiktok.com "${city}" "${neighborhood || city}" "aesthetic" "vibe check"` }
+      { id: 'LOCAL_PRIORITY', q: `${DISCOVERY_SOURCES.LOCAL} "${city}" "${neighborhood}" "vibe" OR "hidden"` },
+      { id: 'SOCIAL', q: `site:tiktok.com "${city}" "${neighborhood}" "aesthetic" OR "vibe check"` }
     ];
 
     let searchResults = await Promise.all(queries.map(query => 
@@ -117,47 +118,41 @@ export async function scrapeLocalSignals(city, neighborhood) {
       }).then(r => r.json()).then(data => ({ ...data, queryId: query.id })).catch(() => ({ organic: [], queryId: query.id }))
     ));
 
-    // Interleave results: Local -> Global -> Social -> Local...
-    let organic = [];
-    const maxResults = 20;
-    for (let i = 0; i < maxResults; i++) {
-      searchResults.forEach(res => {
-        if (res.organic && res.organic[i]) {
-          organic.push(res.organic[i]);
-        }
-      });
-    }
-    
-    // BROADEN SEARCH if results are sparse
-    if (organic.length < 10 && neighborhood) {
-      console.log(`[Agent A] Sparse results for ${neighborhood}. Broadening search to ${city} market...`);
-      const broadQueries = [
-        `${DISCOVERY_SOURCES.GLOBAL} "${city}" "design trends" OR "lifestyle"`,
-        `${DISCOVERY_SOURCES.LOCAL} "${city}" "best new spots" OR "vibe"`
-      ];
-      const broadResults = await Promise.all(broadQueries.map(q => 
+    let organic = searchResults.flatMap(res => res.organic || []);
+
+    // 2b. SPATIAL EXPANSION: If Wynwood is sparse, look at neighbors
+    if (organic.length < 15 && neighborhood) {
+      console.log(`[Agent A] Wynwood signals sparse. Expanding geographically to ${expansionDistricts.join(', ')}...`);
+      const expansionQueries = expansionDistricts.slice(0, 3).map(dist => ({
+        id: 'EXPANSION', q: `${DISCOVERY_SOURCES.LOCAL} "${city}" "${dist}" "best things to do" OR "vibe"`
+      }));
+      
+      const expandedResults = await Promise.all(expansionQueries.map(query => 
         fetch(`https://google.serper.dev/search`, {
-          method: 'POST', headers: HEADERS, body: JSON.stringify({ q, num: 20 })
+          method: 'POST', headers: HEADERS, body: JSON.stringify({ q: query.q, num: 10 })
         }).then(r => r.json()).catch(() => ({ organic: [] }))
       ));
-      organic = [...organic, ...broadResults.flatMap(r => r.organic || [])];
+      
+      organic = [...organic, ...expandedResults.flatMap(res => res.organic || [])];
     }
     
-    // 3. UNIVERSAL VIBE HEROIFICATION (Turning raw data into premium concepts)
+    // 3. UNIVERSAL VIBE HEROIFICATION
     const candidates = organic.map(item => {
       const combined = (item.title + " " + item.snippet).toLowerCase();
       
       const category = VIBE_TAXONOMY.find(cat => 
         cat.keywords.some(k => combined.includes(k))
-      ) || VIBE_TAXONOMY[2]; // Default to Culture
+      ) || VIBE_TAXONOMY[2];
 
       const isSocial = item.link.includes('tiktok.com') || item.link.includes('instagram.com');
       const source = isSocial ? 'Social Signal' : new URL(item.link).hostname.replace('www.', '');
 
-      const { name, vibeConcept } = heroify(item, category, city, targetArea, source);
+      // Identify the specific district for the concept
+      const districtMatch = expansionDistricts.find(d => combined.includes(d.toLowerCase())) || neighborhood || city;
+      
+      const { name, vibeConcept } = heroify(item, category, city, districtMatch, source);
 
-      // Filtering
-      const isHashtagSpam = name.includes('#') || (name.split(' ').length > 12);
+      const isHashtagSpam = name.includes('#') || (name.split(' ').length > 15);
       if (isHashtagSpam || item.link.includes('tripadvisor') || item.link.includes('yelp')) return null;
 
       return { 
@@ -165,37 +160,43 @@ export async function scrapeLocalSignals(city, neighborhood) {
         vibeConcept, 
         category: category.label, 
         source,
-        id: category.id, score: isSocial ? 99 : 92,
+        id: category.id, 
+        score: isSocial ? 99 : 96,
         demandLabel: isSocial ? "High Visual Velocity" : "Authority Verified"
       };
     }).filter(c => c !== null);
 
-    // 4. SOURCE-DIVERSE SELECTION (Prioritize unique sources and categories)
+    // 4. SOURCE-DIVERSE SELECTION (Full 5 results guaranteed)
     const results = [];
+    const usedNames = new Set();
     const usedCategories = new Set();
     const usedSources = new Set();
 
-    // First pass: try to get unique categories from unique sources
+    // Pass 1: Local Authority & Social Signal First (Diverse Categories)
     candidates.forEach(cand => {
-      if (results.length < 5 && !usedCategories.has(cand.id) && !usedSources.has(cand.source)) {
+      const isLocal = cand.source.includes('timeout') || cand.source.includes('eater') || cand.source.includes('ra.co');
+      if (results.length < 5 && (isLocal || cand.score === 99) && !usedCategories.has(cand.id) && !usedNames.has(cand.name)) {
         results.push(cand);
+        usedNames.add(cand.name);
         usedCategories.add(cand.id);
         usedSources.add(cand.source);
       }
     });
 
-    // Second pass: fill in remaining slots with unique categories
+    // Pass 2: Global Bibles (Unique Categories)
     candidates.forEach(cand => {
-      if (results.length < 5 && !usedCategories.has(cand.id)) {
+      if (results.length < 5 && !usedCategories.has(cand.id) && !usedNames.has(cand.name)) {
         results.push(cand);
+        usedNames.add(cand.name);
         usedCategories.add(cand.id);
       }
     });
 
-    // Final pass: just fill it up
+    // Pass 3: Backfill with any unique name to reach 5
     candidates.forEach(cand => {
-      if (results.length < 5 && !results.some(r => r.name === cand.name)) {
+      if (results.length < 5 && !usedNames.has(cand.name)) {
         results.push(cand);
+        usedNames.add(cand.name);
       }
     });
 
