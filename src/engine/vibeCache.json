@@ -28,6 +28,13 @@
     { "name": "Neon-Noir Mixology", "vibeConcept": "Atmospheric nightlife hubs where cinematic lighting meets avant-garde cocktail science.", "source": "Resident Advisor", "category": "Nightlife", "demandLabel": "Trending Signal", "score": 90, "id": "NIGHTLIFE" },
     { "name": "Wynwood Gastro-Hacienda", "vibeConcept": "A high-sensory Yucatecan hacienda where ancient fire-dancing rituals meet next-gen electronic beats.", "source": "Time Out", "category": "Culinary", "demandLabel": "Authority Verified", "score": 94, "id": "CULINARY" }
   ],
+  "Wynwood": [
+    { "name": "Wynwood Gastro-Hacienda", "vibeConcept": "A high-sensory Yucatecan hacienda where ancient fire-dancing rituals meet next-gen electronic beats.", "source": "Time Out", "category": "Culinary", "demandLabel": "Authority Verified", "score": 96, "id": "CULINARY" },
+    { "name": "Industrial Street Art Tour", "vibeConcept": "Curated discovery of the emerging architectural and lifestyle narrative in the Wynwood Walls context.", "source": "Time Out", "category": "Culture", "demandLabel": "Authority Verified", "score": 92, "id": "CULTURE" },
+    { "name": "Neon-Noir Speakeasies", "vibeConcept": "Atmospheric nightlife hubs where cinematic lighting meets avant-garde cocktail science.", "source": "Eater", "category": "Nightlife", "demandLabel": "Trending Signal", "score": 90, "id": "NIGHTLIFE" },
+    { "name": "Next-Gen Design Labs", "vibeConcept": "Modular retail and design spaces focusing on high-craft minimalism and sustainable utility.", "source": "Monocle", "category": "Retail", "demandLabel": "Emergent Trend", "score": 95, "id": "RETAIL" },
+    { "name": "Tropical Wellness Rituals", "vibeConcept": "High-sensory wellness rituals focused on sensory restoration and modular sanctuary design.", "source": "Wallpaper", "category": "Wellness", "demandLabel": "High Social Velocity", "score": 88, "id": "WELLNESS" }
+  ],
   "Dubai": [
     { "name": "Palm Beach Club Rituals", "vibeConcept": "High-fidelity oceanfront wellness and community-led cold plunge culture in the Palm.", "source": "Wallpaper", "category": "Wellness", "demandLabel": "High Social Velocity", "score": 98, "id": "WELLNESS" },
     { "name": "Desert Modernism Hubs", "vibeConcept": "Niche, curated design hubs focusing on high-craft minimalism and arid landscape architecture.", "source": "Monocle", "category": "Culture", "demandLabel": "Authority Signal", "score": 95, "id": "CULTURE" },
