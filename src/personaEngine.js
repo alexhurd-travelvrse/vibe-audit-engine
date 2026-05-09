@@ -13,12 +13,13 @@ export const VIBE_TAXONOMY = [
   { id: "CULTURE", label: "Culture", keywords: ["art", "gallery", "culture", "museum", "class", "workshop", "heritage", "history", "design", "architecture"] },
   { id: "ADVENTURE", label: "Adventure", keywords: ["kayak", "boat", "climb", "hike", "bike", "rental", "scavenger", "adventure", "zipline", "outdoor"] },
   { id: "NIGHTLIFE", label: "Nightlife", keywords: ["bar", "mixology", "nightlife", "music", "dj", "club", "speakeasy", "cocktail", "listening", "vinyl"] },
-  { id: "RETAIL", label: "Retail", keywords: ["shop", "retail", "concept", "boutique", "fashion", "store", "curated", "craft", "local"] }
+  { id: "RETAIL", label: "Retail", keywords: ["shop", "retail", "concept", "boutique", "fashion", "store", "curated", "craft", "local"] },
+  { id: "TOURS", label: "Tours", keywords: ["tour", "guide", "getyourguide", "experience", "walking", "boat", "bus", "trip", "excursion", "safari", "scavenger"] }
 ];
 
 const DISCOVERY_SOURCES = {
   GLOBAL: "site:wallpaper.com OR site:monocle.com OR site:dezeen.com OR site:nowness.com OR site:highsnobiety.com OR site:hypebeast.com OR site:vogue.com",
-  LOCAL: "site:timeout.com OR site:theinfatuation.com OR site:eater.com OR site:ra.co OR site:lonelyplanet.com OR site:opentable.com OR site:designmynight.com OR site:cntraveler.com OR site:travelandleisure.com OR site:nytimes.com/style"
+  LOCAL: "site:timeout.com OR site:theinfatuation.com OR site:eater.com OR site:ra.co OR site:lonelyplanet.com OR site:opentable.com OR site:designmynight.com OR site:getyourguide.com OR site:cntraveler.com OR site:travelandleisure.com OR site:nytimes.com/style"
 };
 
 import VIBE_CACHE_RAW from './engine/vibeCache.json';
@@ -64,6 +65,10 @@ const HEROIC_TEMPLATES = {
   NIGHTLIFE: {
     titles: ["{name} Listening Bar", "Emergent {name} Mixology", "{name} Vinyl Lounge"],
     concepts: ["Audiophile nightlife featuring lo-fi audio, {source} verified curation, and organic pours.", "Atmospheric nightlife where cinematic lighting meets {area}'s avant-garde cocktail science."]
+  },
+  TOURS: {
+    titles: ["{name} Expedition", "Immersive {name} Guide", "{name} Storytelling Tour"],
+    concepts: ["A high-fidelity urban expedition through {area}, triangulating the hidden narratives discovered by {source}.", "Local narrative discovery focusing on the emerging and authentic lifestyle of {area}."]
   }
 };
 
