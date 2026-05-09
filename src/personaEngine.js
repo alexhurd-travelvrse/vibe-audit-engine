@@ -229,6 +229,13 @@ export async function scrapeLocalSignals(city, neighborhood) {
         { name: "Prenzlauer Berg Design Labs", vibeConcept: "Repurposed socialist-era architectures housing next-gen sustainable design ateliers.", source: "Wallpaper", category: "Culture", demandLabel: "High Local Demand", score: 92, id: "CULTURE" },
         { name: "Neukölln Wellness Bunkers", vibeConcept: "High-sensory restorative rituals in brutalist sanctuary designs.", source: "Monocle", category: "Wellness", demandLabel: "Authority Signal", score: 90, id: "WELLNESS" },
         { name: "Berlin Street Art Expedition", vibeConcept: "Local narrative discovery through the historic and emerging street culture of Berlin.", source: "GetYourGuide", category: "Tours", demandLabel: "Authority Verified", score: 88, id: "TOURS" }
+      ],
+      'west wittering': [
+        { name: "Chichester Cathedral Storytelling", vibeConcept: "900 years of heritage meets contemporary art in the regional cultural anchor.", source: "Lonely Planet", category: "Culture", demandLabel: "Regional Anchor", score: 96, id: "CULTURE" },
+        { name: "Witterings Coastal Gastronomy", vibeConcept: "Hyper-local seafood rituals focused on the Selsey Bill catch and artisanal pours.", source: "Eater", category: "Culinary", demandLabel: "Local Hero", score: 94, id: "CULINARY" },
+        { name: "Chichester Festival Theatre", vibeConcept: "World-class architectural and cultural discovery in the heart of the district.", source: "Time Out", category: "Culture", demandLabel: "Authority Verified", score: 92, id: "CULTURE" },
+        { name: "Bosham Harbour Wellness", vibeConcept: "Restorative coastal rituals in the historic Saxon harbour landscape.", source: "Monocle", category: "Wellness", demandLabel: "Spatial Signal", score: 90, id: "WELLNESS" },
+        { name: "Witterings Surf & Shore Expedition", vibeConcept: "An immersive discovery of the unique coastal ecosystem and surf culture.", source: "GetYourGuide", category: "Tours", demandLabel: "Local Discovery", score: 94, id: "TOURS" }
       ]
     };
 
