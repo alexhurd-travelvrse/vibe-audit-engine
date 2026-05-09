@@ -27,6 +27,21 @@ const VIBE_CACHE = { ...VIBE_CACHE_RAW };
 
 // Load from localStorage if available (for persistence across sessions)
 const localCache = JSON.parse(localStorage.getItem('travelvrse_vibe_cache') || '{}');
+
+// SANITIZATION: Ensure old labels are migrated to new simplified headers
+Object.keys(localCache).forEach(city => {
+  localCache[city] = localCache[city].map(exp => {
+    let cat = exp.category;
+    if (cat === "High-Fidelity Gastronomy") cat = "Culinary";
+    if (cat === "Next-Gen Wellness & Rituals") cat = "Wellness";
+    if (cat === "Immersive Art & Culture") cat = "Culture";
+    if (cat === "Experience-Led Retail Design") cat = "Retail";
+    if (cat === "Emergent Nightlife & Mixology") cat = "Nightlife";
+    if (cat === "Land & Water Adventure") cat = "Adventure";
+    return { ...exp, category: cat };
+  });
+});
+
 Object.assign(VIBE_CACHE, localCache);
 
 const HEROIC_TEMPLATES = {
@@ -205,9 +220,9 @@ export async function scrapeLocalSignals(city, neighborhood) {
   return {
     city, neighborhood, sentiment: 'Universal Market Intelligence',
     topExperiences: [
-      { name: `${city} Design Rituals`, vibeConcept: `Curated discovery of the emerging architectural and lifestyle narrative in ${targetArea}.`, source: "Monocle", category: "Immersive Art & Culture", demandLabel: "Authority Verified", score: 92, id: "CULTURE" },
-      { name: "Atmospheric Gastronomy", vibeConcept: `High-fidelity culinary experiences where heritage design meets modern velocity.`, source: "Eater", category: "High-Fidelity Gastronomy", demandLabel: "Trending Signal", score: 90, id: "CULINARY" },
-      { name: "Next-Gen Wellness Sanctuaries", vibeConcept: `Modular restorative spaces focusing on sensory restoration and ritual.`, source: "Wallpaper", category: "Next-Gen Wellness & Rituals", demandLabel: "High Local Demand", score: 88, id: "WELLNESS" }
+      { name: `${city} Design Rituals`, vibeConcept: `Curated discovery of the emerging architectural and lifestyle narrative in ${targetArea}.`, source: "Monocle", category: "Culture", demandLabel: "Authority Verified", score: 92, id: "CULTURE" },
+      { name: "Atmospheric Gastronomy", vibeConcept: `High-fidelity culinary experiences where heritage design meets modern velocity.`, source: "Eater", category: "Culinary", demandLabel: "Trending Signal", score: 90, id: "CULINARY" },
+      { name: "Next-Gen Wellness Sanctuaries", vibeConcept: `Modular restorative spaces focusing on sensory restoration and ritual.`, source: "Wallpaper", category: "Wellness", demandLabel: "High Local Demand", score: 88, id: "WELLNESS" }
     ],
     velocity: 9.0
   };
