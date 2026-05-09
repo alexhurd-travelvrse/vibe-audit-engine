@@ -8,12 +8,12 @@
  */
 
 export const VIBE_TAXONOMY = [
-  { id: "CULINARY", label: "High-Fidelity Gastronomy", keywords: ["food", "dining", "tasting", "chef", "restaurant", "culinary", "gastronomy", "wine", "distillery", "brewery"] },
-  { id: "WELLNESS", label: "Next-Gen Wellness & Rituals", keywords: ["wellness", "spa", "sauna", "ritual", "hammam", "yoga", "pilates", "pool", "meditation"] },
-  { id: "CULTURE", label: "Immersive Art & Culture", keywords: ["art", "gallery", "culture", "museum", "class", "workshop", "heritage", "history", "design", "architecture"] },
-  { id: "ADVENTURE", label: "Land & Water Adventure", keywords: ["kayak", "boat", "climb", "hike", "bike", "rental", "scavenger", "adventure", "zipline", "outdoor"] },
-  { id: "NIGHTLIFE", label: "Emergent Nightlife & Mixology", keywords: ["bar", "mixology", "nightlife", "music", "dj", "club", "speakeasy", "cocktail", "listening", "vinyl"] },
-  { id: "RETAIL", label: "Experience-Led Retail Design", keywords: ["shop", "retail", "concept", "boutique", "fashion", "store", "curated", "craft", "local"] }
+  { id: "CULINARY", label: "Culinary", keywords: ["food", "dining", "tasting", "chef", "restaurant", "culinary", "gastronomy", "wine", "distillery", "brewery"] },
+  { id: "WELLNESS", label: "Wellness", keywords: ["wellness", "spa", "sauna", "ritual", "hammam", "yoga", "pilates", "pool", "meditation"] },
+  { id: "CULTURE", label: "Culture", keywords: ["art", "gallery", "culture", "museum", "class", "workshop", "heritage", "history", "design", "architecture"] },
+  { id: "ADVENTURE", label: "Adventure", keywords: ["kayak", "boat", "climb", "hike", "bike", "rental", "scavenger", "adventure", "zipline", "outdoor"] },
+  { id: "NIGHTLIFE", label: "Nightlife", keywords: ["bar", "mixology", "nightlife", "music", "dj", "club", "speakeasy", "cocktail", "listening", "vinyl"] },
+  { id: "RETAIL", label: "Retail", keywords: ["shop", "retail", "concept", "boutique", "fashion", "store", "curated", "craft", "local"] }
 ];
 
 const DISCOVERY_SOURCES = {
