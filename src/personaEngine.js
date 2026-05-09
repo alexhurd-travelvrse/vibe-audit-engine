@@ -74,13 +74,15 @@ const HEROIC_TEMPLATES = {
 
 function heroify(item, category, city, area, source) {
   const templates = HEROIC_TEMPLATES[category.id] || HEROIC_TEMPLATES.CULTURE;
-  const rawName = item.title.split('-')[0].split('|')[0].split(':')[0].trim()
-    .replace(/The Best|Top \d+|Guide to|Secret|Hidden|Gems in|In ${city}|Trending/ig, '').trim();
   
-  const templateIdx = Math.abs(rawName.length) % templates.titles.length;
-  const name = templates.titles[templateIdx]
-    .replace('{name}', rawName)
-    .replace('{area}', area);
+  // Clean the raw name to get the actual venue/experience name
+  const rawName = item.title.split('-')[0].split('|')[0].split(':')[0].trim()
+    .replace(/The Best|Top \d+|Guide to|Secret|Hidden|Gems in|In ${city}|Trending|Best Things to Do in/ig, '').trim();
+  
+  // NEW LITERAL LOGIC: Use the exact name prefaced by the area
+  const name = `${area} ${rawName}`;
+  
+  const templateIdx = Math.abs(rawName.length) % templates.concepts.length;
   const vibeConcept = templates.concepts[templateIdx]
     .replace('{area}', area)
     .replace('{source}', source);
@@ -239,11 +241,11 @@ export async function scrapeLocalSignals(city, neighborhood) {
     };
 
     const miamiBenchmark = fallbackMap[city.toLowerCase()] || [
-      { name: `${city} Gastro-Rituals`, vibeConcept: `High-fidelity culinary experiences where heritage design meets modern velocity in ${city}.`, source: "Eater", category: "Culinary", demandLabel: "Trending Signal", score: 90, id: "CULINARY" },
-      { name: `${city} Vinyl Lounge`, vibeConcept: `Atmospheric nightlife where cinematic lighting meets ${city}'s avant-garde cocktail science.`, source: "Resident Advisor", category: "Nightlife", demandLabel: "High Local Demand", score: 88, id: "NIGHTLIFE" },
-      { name: `${city} Heritage Hub`, vibeConcept: `A curated cultural landmark where ${city}'s architectural history meets contemporary design.`, source: "Wallpaper", category: "Culture", demandLabel: "Authority Verified", score: 86, id: "CULTURE" },
-      { name: `${city} Wellness Sanctuary`, vibeConcept: `A restorative urban sanctuary focusing on ${city}'s emerging wellness culture.`, source: "Monocle", category: "Wellness", demandLabel: "High Social Velocity", score: 84, id: "WELLNESS" },
-      { name: `${city} Discovery Tour`, vibeConcept: `An immersive local narrative discovery through the hidden heritage and emerging culture of ${city}.`, source: "GetYourGuide", category: "Tours", demandLabel: "Authority Verified", score: 82, id: "TOURS" }
+      { name: `${city} Authority Signals`, vibeConcept: `Broad discovery of high-authority travel signals for ${city} from sources like Lonely Planet and Time Out.`, source: "Discovery Engine", category: "Culture", demandLabel: "Authority Signal", score: 85, id: "CULTURE" },
+      { name: `${city} Culinary Trends`, vibeConcept: `Scanning local gastronomy signals for emerging dining patterns in the ${city} market.`, source: "OpenTable", category: "Culinary", demandLabel: "Market Probe", score: 82, id: "CULINARY" },
+      { name: `${city} Experience Discovery`, vibeConcept: `Identifying high-velocity local activities and hidden gems within the ${city} district.`, source: "DesignMyNight", category: "Nightlife", demandLabel: "Emergent Trend", score: 80, id: "NIGHTLIFE" },
+      { name: `${city} Lifestyle Rituals`, vibeConcept: `Mapping wellness and lifestyle trends across the ${city} urban landscape.`, source: "Monocle", category: "Wellness", demandLabel: "Vibe Check", score: 78, id: "WELLNESS" },
+      { name: `${city} Tour Intelligence`, vibeConcept: `Analyzing top-rated guided experiences and narrative tours in ${city}.`, source: "GetYourGuide", category: "Tours", demandLabel: "Authority Verified", score: 88, id: "TOURS" }
     ];
 
     return {
