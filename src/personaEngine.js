@@ -68,14 +68,18 @@ function heroify(item, category, city, area, source) {
 
 export async function scrapeLocalSignals(city, neighborhood) {
   const targetArea = neighborhood || city;
+  const normalizedArea = targetArea.charAt(0).toUpperCase() + targetArea.slice(1).toLowerCase();
   const normalizedCity = city.charAt(0).toUpperCase() + city.slice(1).toLowerCase();
   
-  // 1. CHECK CACHE FIRST (Persistence for subsequent users/searches)
-  if (VIBE_CACHE[normalizedCity]) {
-    console.log(`[Agent A] Cache Hit for ${normalizedCity}. Serving stored vibes.`);
+  // 1. CHECK CACHE FIRST (Prioritizing Neighborhood-level granularity)
+  // We check the specific neighborhood first, then fallback to city-level ONLY if no neighborhood was specified
+  const cacheKey = neighborhood ? normalizedArea : normalizedCity;
+
+  if (VIBE_CACHE[cacheKey]) {
+    console.log(`[Agent A] Cache Hit for ${cacheKey}. Serving stored vibes.`);
     return { 
       city, neighborhood, sentiment: 'Authority Cached Intelligence', 
-      topExperiences: VIBE_CACHE[normalizedCity].slice(0, 5), velocity: 9.9 
+      topExperiences: VIBE_CACHE[cacheKey].slice(0, 5), velocity: 9.9 
     };
   }
 
@@ -154,11 +158,11 @@ export async function scrapeLocalSignals(city, neighborhood) {
 
     // 5. CACHE PERSISTENCE (Store for future users)
     if (results.length >= 3) {
-      VIBE_CACHE[normalizedCity] = results;
+      VIBE_CACHE[cacheKey] = results;
       const updatedLocal = JSON.parse(localStorage.getItem('travelvrse_vibe_cache') || '{}');
-      updatedLocal[normalizedCity] = results;
+      updatedLocal[cacheKey] = results;
       localStorage.setItem('travelvrse_vibe_cache', JSON.stringify(updatedLocal));
-      console.log(`[Agent A] Storing Dynamic Discovery for ${normalizedCity} in local cache.`);
+      console.log(`[Agent A] Storing Dynamic Discovery for ${cacheKey} in local cache.`);
     }
 
     return { 

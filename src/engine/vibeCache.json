@@ -6,6 +6,10 @@
     { "name": "Opera Park Nature-First", "vibeConcept": "Sensory urbanism where nature is the primary architect.", "source": "Dezeen", "category": "Immersive Art & Culture", "demandLabel": "Authority Signal", "score": 90, "id": "CULTURE" },
     { "name": "Micro-Indulgence Bars", "vibeConcept": "Tiny martinis and single-dish menus focused on quality over volume.", "source": "The Infatuation", "category": "High-Fidelity Gastronomy", "demandLabel": "Trending Signal", "score": 88, "id": "CULINARY" }
   ],
+  "Indre By": [
+    { "name": "Vintage Vinyl Collectives", "vibeConcept": "Curated selection of Nordic jazz and experimental electronic on vinyl.", "source": "Resident Advisor", "category": "Emergent Nightlife & Mixology", "demandLabel": "Hyper-Local Trend", "score": 99, "id": "NIGHTLIFE" },
+    { "name": "Secret Canal Gardens", "vibeConcept": "Hidden pocket parks and floating flora labs in the heart of Copenhagen.", "source": "Monocle", "category": "Immersive Art & Culture", "demandLabel": "Authority Verified", "score": 96, "id": "CULTURE" }
+  ],
   "London": [
     { "name": "Railway Arch Gastronomy", "vibeConcept": "Industrial-chic dining in repurposed Victorian railway arches.", "source": "Eater", "category": "High-Fidelity Gastronomy", "demandLabel": "High Local Demand", "score": 96, "id": "CULINARY" },
     { "name": "Lido & Wild Swimming", "vibeConcept": "The resurgence of year-round outdoor swimming and ritualistic wellness.", "source": "Monocle", "category": "Next-Gen Wellness & Rituals", "demandLabel": "Authority Signal", "score": 94, "id": "WELLNESS" }
