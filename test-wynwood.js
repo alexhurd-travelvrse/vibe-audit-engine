@@ -8,9 +8,9 @@ global.localStorage = {
 import { scrapeLocalSignals } from './src/personaEngine.js';
 
 async function runTest() {
-  console.log("Running Vibe Audit for Miami: Wynwood...");
+  console.log("Running Vibe Audit for Copenhagen: Indre By...");
   try {
-    const results = await scrapeLocalSignals('Miami', 'Wynwood');
+    const results = await scrapeLocalSignals('Copenhagen', 'Indre By');
     console.log("\n--- AUDIT RESULTS ---");
     console.log(`Sentiment: ${results.sentiment}`);
     console.log(`Location: ${results.city} (${results.neighborhood})`);
