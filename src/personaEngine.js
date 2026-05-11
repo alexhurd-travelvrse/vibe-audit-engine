@@ -90,6 +90,9 @@ export async function scrapeLocalSignals(city, neighborhood) {
     if (city.toLowerCase() === 'miami') expansionDistricts = ["Design District", "Brickell", "Little Havana", "Coconut Grove"];
     else if (city.toLowerCase().includes('las vegas')) expansionDistricts = ["Fremont Street", "Downtown Las Vegas", "Summerlin", "Henderson"];
     else if (city.toLowerCase().includes('copenhagen')) expansionDistricts = ["Vesterbro", "Nørrebro", "Østerbro", "Christianshavn"];
+    else if (city.toLowerCase().includes('chichester') || city.toLowerCase().includes('wittering')) {
+      expansionDistricts = ["Bracklesham Bay", "East Wittering", "Bosham", "Selsey", "Itchenor"];
+    }
 
     const finalResults = [];
     const usedNames = new Set();
