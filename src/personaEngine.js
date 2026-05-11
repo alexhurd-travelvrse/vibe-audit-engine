@@ -38,9 +38,15 @@ if (localStorage.getItem('travelvrse_vibe_version') !== ENGINE_VERSION) {
 // Load from localStorage if available (for persistence across sessions)
 const localCache = JSON.parse(localStorage.getItem('travelvrse_vibe_cache') || '{}');
 
-// SANITIZATION: Ensure old labels are migrated to new simplified headers
+// SANITIZATION: Ensure old labels are migrated and data format is consistent
 Object.keys(localCache).forEach(city => {
-  localCache[city] = localCache[city].map(exp => {
+  let entry = localCache[city];
+  // Migrate old array format to new object format with timestamp
+  if (Array.isArray(entry)) {
+    entry = { data: entry, lastDiscovery: 0 }; // 0 forces a refresh on next search
+  }
+
+  entry.data = entry.data.map(exp => {
     let cat = exp.category;
     if (cat === "High-Fidelity Gastronomy") cat = "Culinary";
     if (cat === "Next-Gen Wellness & Rituals") cat = "Wellness";
@@ -50,9 +56,9 @@ Object.keys(localCache).forEach(city => {
     if (cat === "Land & Water Adventure") cat = "Adventure";
     return { ...exp, category: cat };
   });
-});
 
-Object.assign(VIBE_CACHE, localCache);
+  VIBE_CACHE[city] = entry;
+});
 
 const HEROIC_TEMPLATES = {
   CULINARY: {
@@ -82,9 +88,17 @@ const HEROIC_TEMPLATES = {
 };
 
 function heroify(item, category, city, area, source) {
+  // 1. Literal Mode (for Google Places / Specific Venues)
+  if (item.type === 'place') {
+    const name = item.title;
+    const trendTitle = item.category || category.label;
+    const description = `${item.title} is a ${trendTitle} at ${item.address}. Verified with a ${item.rating}/5 rating.`;
+    return { name, vibeConcept: description, category: trendTitle };
+  }
+
   const templates = HEROIC_TEMPLATES[category.id] || HEROIC_TEMPLATES.CULTURE;
   
-  // 1. AGGRESSIVE CLEANING: Strip social media suffixes and generic SEO junk
+  // 2. AGGRESSIVE CLEANING: Strip social media suffixes and generic SEO junk
   let rawName = item.title.split('-')[0].split('|')[0].split(':')[0].trim()
     .replace(/TikTok|Instagram|Facebook|YouTube|LinkedIn|Pinterest/g, '')
     .replace(/The Best|Top \d+|Guide to|Secret|Hidden|Gems in|In ${city}|Trending|Best Things to Do in/ig, '')
@@ -92,17 +106,12 @@ function heroify(item, category, city, area, source) {
     .replace(/\.{2,}/g, '') // Remove ellipses
     .trim();
 
-  // 2. FALLBACK: If cleaning stripped everything, use the category name
+  // 3. FALLBACK: If cleaning stripped everything, use the category name
   if (rawName.length < 3) {
     rawName = `${category.label} Discovery`;
   }
   
-  // 3. HEROIC BRANDING: Apply high-fidelity naming conventions
-  const prefixes = ["Elite", "Authentic", "Curation", "Nexus", "Atelier", "Sanctuary", "Ritual"];
-  const prefix = prefixes[Math.abs(rawName.length) % prefixes.length];
-  
-  // Construct the name: [Area] [Name] [Sub-Label]
-  // We want to avoid repeating the area name if it's already in the rawName
+  // 4. HEROIC BRANDING: Use the cleaned literal name
   const cleanArea = area.trim();
   const nameDisplay = rawName.toLowerCase().includes(cleanArea.toLowerCase()) 
     ? rawName 
@@ -113,7 +122,7 @@ function heroify(item, category, city, area, source) {
     .replace('{area}', area)
     .replace('{source}', source);
 
-  return { name: nameDisplay, vibeConcept };
+  return { name: nameDisplay, vibeConcept, category: category.label };
 }
 
 export async function scrapeLocalSignals(city, neighborhood) {
@@ -121,22 +130,31 @@ export async function scrapeLocalSignals(city, neighborhood) {
   const normalizedArea = targetArea.charAt(0).toUpperCase() + targetArea.slice(1).toLowerCase();
   const normalizedCity = city.charAt(0).toUpperCase() + city.slice(1).toLowerCase();
   
-  // 1. CHECK CACHE FIRST (Prioritizing Neighborhood-level granularity)
-  // We check the specific neighborhood first, then fallback to city-level ONLY if no neighborhood was specified
+  // 1. CHECK CACHE FRESHNESS (24h Expiration Protocol)
+  const ONE_DAY_MS = 24 * 60 * 60 * 1000;
   const cacheKey = neighborhood ? normalizedArea : normalizedCity;
+  const cachedEntry = VIBE_CACHE[cacheKey];
+  
+  // Check if cache exists and is less than 24 hours old
+  // If it's a raw array (from static vibeCache.json), we treat it as fresh but only for first-load
+  const isFresh = cachedEntry && (
+    (cachedEntry.lastDiscovery && (Date.now() - cachedEntry.lastDiscovery < ONE_DAY_MS)) || 
+    (Array.isArray(cachedEntry) && !cachedEntry.lastDiscovery) // Static JSON fallback
+  );
 
-  if (VIBE_CACHE[cacheKey]) {
-    console.log(`[Agent A] Cache Hit for ${cacheKey}. Serving stored vibes.`);
+  if (isFresh) {
+    const data = Array.isArray(cachedEntry) ? cachedEntry : cachedEntry.data;
+    console.log(`[Agent A] Cache Hit (Fresh) for ${cacheKey}. Serving stored vibes.`);
     return { 
       city, neighborhood, sentiment: 'Authority Cached Intelligence', 
-      topExperiences: VIBE_CACHE[cacheKey].slice(0, 5), velocity: 9.9 
+      topExperiences: data.slice(0, 5), velocity: 9.9 
     };
   }
 
   const API_KEY = "a23fd96c5cb1aace5f985e1d32f27492c241b349";
   const HEADERS = { 'X-API-KEY': API_KEY, 'Content-Type': 'application/json' };
   
-  console.log(`[Agent A] Dynamic Discovery Rolling Out for ${targetArea}...`);
+  console.log(`[Agent A] Dynamic Discovery Rolling Out for ${targetArea} (Cache Expired or Missing)...`);
 
   try {
     // 2. DYNAMIC DISCOVERY: Spatial Expansion Probes (City-Aware)
@@ -155,13 +173,35 @@ export async function scrapeLocalSignals(city, neighborhood) {
     const usedCategories = new Set();
     let tourCandidates = [];
 
-    async function probeArea(areaName, isSocial = false) {
-      console.log(`[Agent A] Probing ${areaName} for 90%+ Fidelity Signals...`);
+    async function probeArea(areaName, isSocial = false, isPlaces = false) {
+      console.log(`[Agent A] Probing ${areaName} for ${isPlaces ? 'Venues' : 'Signals'}...`);
+      
+      let res;
+      if (isPlaces) {
+        res = await fetch(`https://google.serper.dev/places`, {
+          method: 'POST', headers: HEADERS, body: JSON.stringify({ q: `top trending restaurants bars venues in ${city} ${areaName}`, num: 10 })
+        }).then(r => r.json()).catch(() => ({ places: [] }));
+        
+        (res.places || []).forEach(place => {
+          const combined = (place.title + " " + (place.category || "")).toLowerCase();
+          const category = VIBE_TAXONOMY.find(cat => cat.keywords.some(k => combined.includes(k))) || VIBE_TAXONOMY[2];
+          
+          const { name, vibeConcept, category: trendTitle } = heroify({ ...place, type: 'place' }, category, city, areaName, 'Google Maps');
+          
+          if (!usedNames.has(name) && finalResults.length < 4 && !usedCategories.has(category.id)) {
+            finalResults.push({ name, vibeConcept, category: trendTitle, source: 'Google Maps', id: category.id, score: 98, demandLabel: "High Local Demand" });
+            usedNames.add(name);
+            usedCategories.add(category.id);
+          }
+        });
+        return;
+      }
+
       const query = isSocial 
         ? `site:tiktok.com "${city}" "${areaName}" "aesthetic" OR "vibe check" OR "hushpitality" OR "noctourism"`
         : `${DISCOVERY_SOURCES.LOCAL} "${city}" "${areaName}" "vibe" OR "hidden" OR "hushpitality" OR "noctourism" OR "sight-doing" OR "slow travel"`;
       
-      const res = await fetch(`https://google.serper.dev/search`, {
+      res = await fetch(`https://google.serper.dev/search`, {
         method: 'POST', headers: HEADERS, body: JSON.stringify({ q: query, num: 15 })
       }).then(r => r.json()).catch(() => ({ organic: [] }));
 
@@ -191,28 +231,32 @@ export async function scrapeLocalSignals(city, neighborhood) {
                              snippetLocations.filter(loc => loc.length > 3 && !["The", "And"].includes(loc))[0] || 
                              areaName || city;
 
-        const { name, vibeConcept } = heroify(item, category, city, districtMatch, source);
+        const { name, vibeConcept, category: trendTitle } = heroify(item, category, city, districtMatch, source);
         const score = isSocialResult ? 99 : 96;
 
         if (score >= QUALITY_THRESHOLD && !usedNames.has(name)) {
           if (category.id !== 'TOURS' && finalResults.length < 4 && !usedCategories.has(category.id)) {
-            finalResults.push({ name, vibeConcept, category: category.label, source, id: category.id, score, demandLabel: isSocialResult ? "High Visual Velocity" : "Authority Verified" });
+            finalResults.push({ name, vibeConcept, category: trendTitle, source, id: category.id, score, demandLabel: isSocialResult ? "High Visual Velocity" : "Authority Verified" });
             usedNames.add(name);
             usedCategories.add(category.id);
           } else if (category.id === 'TOURS' && !usedCategories.has('TOURS')) {
-            tourCandidates.push({ name, vibeConcept, category: category.label, source, id: category.id, score, demandLabel: "Authority Verified" });
+            tourCandidates.push({ name, vibeConcept, category: trendTitle, source, id: category.id, score, demandLabel: "Authority Verified" });
           }
         }
       });
     }
 
-    // Step 1: Initial Probe (Neighborhood + Social)
-    await Promise.all([probeArea(neighborhood || city), probeArea(neighborhood || city, true)]);
+    // Step 1: Initial Probe (Places + Social)
+    await Promise.all([
+      probeArea(neighborhood || city, false, true), // PLACES PROBE
+      probeArea(neighborhood || city, true)         // SOCIAL PROBE
+    ]);
 
     // Step 2: Sequential Expansion (Iterating through districts until 4 category slots are full)
     for (const dist of expansionDistricts) {
       if (finalResults.length >= 4) break;
-      await probeArea(dist);
+      await probeArea(dist, false, finalResults.length < 2); // Use places for first 2 expansion slots if needed
+      if (finalResults.length < 4) await probeArea(dist, false, false); // Fallback to articles
     }
 
     // Step 3: Final Slot (TOURS Lock)
@@ -231,11 +275,12 @@ export async function scrapeLocalSignals(city, neighborhood) {
       });
     }
 
-    // 5. CACHE PERSISTENCE
+    // 5. CACHE PERSISTENCE (With 24h Timestamp)
     if (finalResults.length >= 3) {
-      VIBE_CACHE[cacheKey] = finalResults;
+      const entry = { data: finalResults, lastDiscovery: Date.now() };
+      VIBE_CACHE[cacheKey] = entry;
       const updatedLocal = JSON.parse(localStorage.getItem('travelvrse_vibe_cache') || '{}');
-      updatedLocal[cacheKey] = finalResults;
+      updatedLocal[cacheKey] = entry;
       localStorage.setItem('travelvrse_vibe_cache', JSON.stringify(updatedLocal));
     }
     
