@@ -9,7 +9,7 @@
  */
 
 export const VIBE_TAXONOMY = [
-  { id: "CULINARY", label: "Culinary", keywords: ["food", "dining", "tasting", "chef", "restaurant", "culinary", "gastronomy", "wine", "distillery", "brewery", "interactive dining", "small luxuries", "swangy", "fire-driven", "chef-led", "little treat", "glocal", "mediterranean", "italian", "mexican", "bistro", "eatery", "kitchen", "grill", "brunch", "steakhouse", "sushi", "cafe", "coffee", "bakery", "pastry", "ramen", "tapas"] },
+  { id: "CULINARY", label: "Culinary", keywords: ["food", "dining", "tasting", "chef", "restaurant", "culinary", "gastronomy", "wine", "distillery", "brewery", "interactive dining", "small luxuries", "swangy", "fire-driven", "chef-led", "little treat", "glocal", "mediterranean", "italian", "mexican", "bistro", "eatery", "kitchen", "grill", "brunch", "steak", "sushi", "cafe", "coffee", "bakery", "pastry", "ramen", "tapas"] },
   { id: "WELLNESS", label: "Wellness", keywords: ["wellness", "spa", "sauna", "ritual", "hammam", "yoga", "pilates", "pool", "meditation", "sensory restoration", "biophilic", "adaptogens", "human-centric", "restorative", "hushpitality", "slow travel", "off-the-grid", "recovery", "gym", "studio", "massage", "fitness", "sauna"] },
   { id: "CULTURE", label: "Culture", keywords: ["art", "gallery", "culture", "museum", "class", "workshop", "heritage", "history", "design", "architecture", "adaptive reuse", "contemporary heritage", "revival", "landmark", "narrative", "set-jetting", "dejaview", "regenerative", "exhibition", "theater", "theatre", "auditorium", "art gallery", "cultural center", "monument"] },
   { id: "ADVENTURE", label: "Adventure", keywords: ["kayak", "boat", "climb", "hike", "bike", "rental", "scavenger", "adventure", "zipline", "outdoor", "expedition", "urban exploration", "hidden trail", "sight-doing", "coolcations", "surfing", "sailing", "tours", "park", "nature"] },
@@ -181,22 +181,32 @@ export async function scrapeLocalSignals(city, neighborhood) {
       
       let res;
       if (isPlaces) {
-        res = await fetch(`https://google.serper.dev/places`, {
-          method: 'POST', headers: HEADERS, body: JSON.stringify({ q: `top trending restaurants, bars, galleries, boutiques, and museums in ${city} ${areaName}`, num: 20 })
-        }).then(r => r.json()).catch(() => ({ places: [] }));
+        // MULTI-PROBE: Run specific searches for each high-fidelity category
+        const subQueries = [
+          `top trending restaurants and bars in ${city} ${areaName}`,
+          `top trending art galleries and museums in ${city} ${areaName}`,
+          `top trending boutiques and concept stores in ${city} ${areaName}`
+        ];
         
-        (res.places || []).forEach(place => {
-          const combined = (place.title + " " + (place.category || "")).toLowerCase();
-          const category = VIBE_TAXONOMY.find(cat => cat.keywords.some(k => combined.includes(k))) || VIBE_TAXONOMY[2];
+        for (const q of subQueries) {
+          const res = await fetch(`https://google.serper.dev/places`, {
+            method: 'POST', headers: HEADERS, body: JSON.stringify({ q, num: 5 })
+          }).then(r => r.json()).catch(() => ({ places: [] }));
           
-          const { name, vibeConcept, category: trendTitle } = heroify({ ...place, type: 'place' }, category, city, areaName, 'Google Maps');
-          
-          if (!usedNames.has(name) && finalResults.length < 4 && !usedCategories.has(category.id)) {
-            finalResults.push({ name, vibeConcept, category: trendTitle, source: 'Google Maps', id: category.id, score: 100, demandLabel: "High Local Demand" });
-            usedNames.add(name);
-            usedCategories.add(category.id);
-          }
-        });
+          (res.places || []).forEach(place => {
+            const combined = (place.title + " " + (place.category || "")).toLowerCase();
+            const category = VIBE_TAXONOMY.find(cat => cat.keywords.some(k => combined.includes(k))) || VIBE_TAXONOMY[2];
+            
+            const { name, vibeConcept, category: trendTitle } = heroify({ ...place, type: 'place' }, category, city, areaName, 'Google Maps');
+            
+            if (!usedNames.has(name) && finalResults.length < 4 && !usedCategories.has(category.id)) {
+              finalResults.push({ name, vibeConcept, category: trendTitle, source: 'Google Maps', id: category.id, score: 100, demandLabel: "High Local Demand" });
+              usedNames.add(name);
+              usedCategories.add(category.id);
+            }
+          });
+          if (finalResults.length >= 4) break;
+        }
         return;
       }
 
