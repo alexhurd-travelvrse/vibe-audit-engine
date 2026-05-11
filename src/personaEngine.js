@@ -23,20 +23,22 @@ const DISCOVERY_SOURCES = {
   LOCAL: "site:timeout.com OR site:theinfatuation.com OR site:eater.com OR site:ra.co OR site:lonelyplanet.com OR site:opentable.com OR site:designmynight.com OR site:getyourguide.com OR site:cntraveler.com OR site:travelandleisure.com OR site:nytimes.com/style"
 };
 
-import VIBE_CACHE_RAW from './engine/vibeCache.json';
+import VIBE_CACHE_RAW from './engine/vibeCache.json' with { type: 'json' };
 
 const VIBE_CACHE = { ...VIBE_CACHE_RAW };
 const ENGINE_VERSION = "v5.1";
 
 // AUTO-RESET: Clear local cache if engine version has updated
-if (localStorage.getItem('travelvrse_vibe_version') !== ENGINE_VERSION) {
+if (typeof localStorage !== 'undefined' && localStorage.getItem('travelvrse_vibe_version') !== ENGINE_VERSION) {
   console.log(`[Engine] Version update detected (${ENGINE_VERSION}). Clearing legacy cache.`);
   localStorage.removeItem('travelvrse_vibe_cache');
   localStorage.setItem('travelvrse_vibe_version', ENGINE_VERSION);
 }
 
 // Load from localStorage if available (for persistence across sessions)
-const localCache = JSON.parse(localStorage.getItem('travelvrse_vibe_cache') || '{}');
+const localCache = typeof localStorage !== 'undefined' 
+  ? JSON.parse(localStorage.getItem('travelvrse_vibe_cache') || '{}')
+  : {};
 
 // SANITIZATION: Ensure old labels are migrated and data format is consistent
 Object.keys(localCache).forEach(city => {
@@ -88,7 +90,7 @@ const HEROIC_TEMPLATES = {
 };
 
 function heroify(item, category, city, area, source) {
-  // 1. Literal Mode (for Google Places / Specific Venues)
+  // 1. LITERAL MODE (for Google Places / Specific Venues)
   if (item.type === 'place') {
     const name = item.title;
     const trendTitle = item.category || category.label;
@@ -96,13 +98,11 @@ function heroify(item, category, city, area, source) {
     return { name, vibeConcept: description, category: trendTitle };
   }
 
-  const templates = HEROIC_TEMPLATES[category.id] || HEROIC_TEMPLATES.CULTURE;
-  
-  // 2. AGGRESSIVE CLEANING: Strip social media suffixes and generic SEO junk
+  // 2. AGGRESSIVE CLEANING: Strip engagement bait and social noise
   let rawName = item.title.split('-')[0].split('|')[0].split(':')[0].trim()
     .replace(/TikTok|Instagram|Facebook|YouTube|LinkedIn|Pinterest/g, '')
     .replace(/The Best|Top \d+|Guide to|Secret|Hidden|Gems in|In ${city}|Trending|Best Things to Do in/ig, '')
-    .replace(/I went to|I feared|I had fun|Watch this|Check out|Amazing/ig, '')
+    .replace(/I went to|I feared|I had fun|Watch this|Check out|Amazing|Exploring|Experience|The vibe of|My favorite|Party girl era|Entering my|Things to do in/ig, '')
     .replace(/\.{2,}/g, '') // Remove ellipses
     .trim();
 
@@ -111,18 +111,21 @@ function heroify(item, category, city, area, source) {
     rawName = `${category.label} Discovery`;
   }
   
-  // 4. HEROIC BRANDING: Use the cleaned literal name
+  // 4. DISPLAY NAME: Keep it literal
   const cleanArea = area.trim();
   const nameDisplay = rawName.toLowerCase().includes(cleanArea.toLowerCase()) 
     ? rawName 
     : `${cleanArea} ${rawName}`;
 
-  const templateIdx = Math.abs(rawName.length) % templates.concepts.length;
-  const vibeConcept = templates.concepts[templateIdx]
-    .replace('{area}', area)
-    .replace('{source}', source);
+  // 5. DESCRIPTION: Use the actual snippet (Social/Article data) instead of templates
+  const description = item.snippet 
+    ? item.snippet.replace(/\d{1,2} [a-z]+ 202\d/ig, '').trim() // Remove dates
+    : `${nameDisplay} is a curated ${category.label} signal discovered via ${source}.`;
 
-  return { name: nameDisplay, vibeConcept, category: category.label };
+  // 6. TREND TITLE: Use specific category label
+  const trendTitle = category.label;
+
+  return { name: nameDisplay, vibeConcept: description, category: trendTitle };
 }
 
 export async function scrapeLocalSignals(city, neighborhood) {
@@ -189,7 +192,7 @@ export async function scrapeLocalSignals(city, neighborhood) {
           const { name, vibeConcept, category: trendTitle } = heroify({ ...place, type: 'place' }, category, city, areaName, 'Google Maps');
           
           if (!usedNames.has(name) && finalResults.length < 4 && !usedCategories.has(category.id)) {
-            finalResults.push({ name, vibeConcept, category: trendTitle, source: 'Google Maps', id: category.id, score: 98, demandLabel: "High Local Demand" });
+            finalResults.push({ name, vibeConcept, category: trendTitle, source: 'Google Maps', id: category.id, score: 100, demandLabel: "High Local Demand" });
             usedNames.add(name);
             usedCategories.add(category.id);
           }
@@ -232,7 +235,7 @@ export async function scrapeLocalSignals(city, neighborhood) {
                              areaName || city;
 
         const { name, vibeConcept, category: trendTitle } = heroify(item, category, city, districtMatch, source);
-        const score = isSocialResult ? 99 : 96;
+        const score = isSocialResult ? 95 : 90;
 
         if (score >= QUALITY_THRESHOLD && !usedNames.has(name)) {
           if (category.id !== 'TOURS' && finalResults.length < 4 && !usedCategories.has(category.id)) {
@@ -246,11 +249,11 @@ export async function scrapeLocalSignals(city, neighborhood) {
       });
     }
 
-    // Step 1: Initial Probe (Places + Social)
-    await Promise.all([
-      probeArea(neighborhood || city, false, true), // PLACES PROBE
-      probeArea(neighborhood || city, true)         // SOCIAL PROBE
-    ]);
+    // Step 1: Sequential Priority Probe (Places FIRST)
+    await probeArea(neighborhood || city, false, true); // PLACES PROBE (Wait for this)
+
+    // Step 2: Parallel Signal Probe (Social + Articles)
+    await probeArea(neighborhood || city, true);         // SOCIAL PROBE
 
     // Step 2: Sequential Expansion (Iterating through districts until 4 category slots are full)
     for (const dist of expansionDistricts) {
@@ -276,7 +279,7 @@ export async function scrapeLocalSignals(city, neighborhood) {
     }
 
     // 5. CACHE PERSISTENCE (With 24h Timestamp)
-    if (finalResults.length >= 3) {
+    if (finalResults.length >= 3 && typeof localStorage !== 'undefined') {
       const entry = { data: finalResults, lastDiscovery: Date.now() };
       VIBE_CACHE[cacheKey] = entry;
       const updatedLocal = JSON.parse(localStorage.getItem('travelvrse_vibe_cache') || '{}');
