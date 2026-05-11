@@ -84,19 +84,36 @@ const HEROIC_TEMPLATES = {
 function heroify(item, category, city, area, source) {
   const templates = HEROIC_TEMPLATES[category.id] || HEROIC_TEMPLATES.CULTURE;
   
-  // Clean the raw name to get the actual venue/experience name
-  const rawName = item.title.split('-')[0].split('|')[0].split(':')[0].trim()
-    .replace(/The Best|Top \d+|Guide to|Secret|Hidden|Gems in|In ${city}|Trending|Best Things to Do in/ig, '').trim();
+  // 1. AGGRESSIVE CLEANING: Strip social media suffixes and generic SEO junk
+  let rawName = item.title.split('-')[0].split('|')[0].split(':')[0].trim()
+    .replace(/TikTok|Instagram|Facebook|YouTube|LinkedIn|Pinterest/g, '')
+    .replace(/The Best|Top \d+|Guide to|Secret|Hidden|Gems in|In ${city}|Trending|Best Things to Do in/ig, '')
+    .replace(/I went to|I feared|I had fun|Watch this|Check out|Amazing/ig, '')
+    .replace(/\.{2,}/g, '') // Remove ellipses
+    .trim();
+
+  // 2. FALLBACK: If cleaning stripped everything, use the category name
+  if (rawName.length < 3) {
+    rawName = `${category.label} Discovery`;
+  }
   
-  // NEW LITERAL LOGIC: Use the exact name prefaced by the area
-  const name = `${area} ${rawName}`;
+  // 3. HEROIC BRANDING: Apply high-fidelity naming conventions
+  const prefixes = ["Elite", "Authentic", "Curation", "Nexus", "Atelier", "Sanctuary", "Ritual"];
+  const prefix = prefixes[Math.abs(rawName.length) % prefixes.length];
   
+  // Construct the name: [Area] [Name] [Sub-Label]
+  // We want to avoid repeating the area name if it's already in the rawName
+  const cleanArea = area.trim();
+  const nameDisplay = rawName.toLowerCase().includes(cleanArea.toLowerCase()) 
+    ? rawName 
+    : `${cleanArea} ${rawName}`;
+
   const templateIdx = Math.abs(rawName.length) % templates.concepts.length;
   const vibeConcept = templates.concepts[templateIdx]
     .replace('{area}', area)
     .replace('{source}', source);
 
-  return { name, vibeConcept };
+  return { name: nameDisplay, vibeConcept };
 }
 
 export async function scrapeLocalSignals(city, neighborhood) {
@@ -150,6 +167,11 @@ export async function scrapeLocalSignals(city, neighborhood) {
 
       (res.organic || []).forEach(item => {
         const combined = (item.title + " " + item.snippet).toLowerCase();
+        
+        // QUALITY GATE: Filter out non-experience, functional, or religious/charity results
+        const noiseKeywords = ["search", "login", "account", "map", "direction", "hours", "directions", "salvation army", "goodwill", "temple", "church", "job", "career", "weather", "news"];
+        if (noiseKeywords.some(k => combined.includes(k))) return;
+
         const category = VIBE_TAXONOMY.find(cat => cat.keywords.some(k => combined.includes(k))) || VIBE_TAXONOMY[2];
         const isSocialResult = item.link.includes('tiktok.com') || item.link.includes('instagram.com');
         const rawHostname = new URL(item.link).hostname.replace('www.', '');
