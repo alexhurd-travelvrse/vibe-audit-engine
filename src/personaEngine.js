@@ -9,13 +9,13 @@
  */
 
 export const VIBE_TAXONOMY = [
-  { id: "CULINARY", label: "Culinary", keywords: ["food", "dining", "tasting", "chef", "restaurant", "culinary", "gastronomy", "wine", "distillery", "brewery"] },
-  { id: "WELLNESS", label: "Wellness", keywords: ["wellness", "spa", "sauna", "ritual", "hammam", "yoga", "pilates", "pool", "meditation"] },
-  { id: "CULTURE", label: "Culture", keywords: ["art", "gallery", "culture", "museum", "class", "workshop", "heritage", "history", "design", "architecture"] },
-  { id: "ADVENTURE", label: "Adventure", keywords: ["kayak", "boat", "climb", "hike", "bike", "rental", "scavenger", "adventure", "zipline", "outdoor"] },
-  { id: "NIGHTLIFE", label: "Nightlife", keywords: ["bar", "mixology", "nightlife", "music", "dj", "club", "speakeasy", "cocktail", "listening", "vinyl"] },
-  { id: "RETAIL", label: "Retail", keywords: ["shop", "retail", "concept", "boutique", "fashion", "store", "curated", "craft", "local"] },
-  { id: "TOURS", label: "Tours", keywords: ["tour", "guide", "getyourguide", "experience", "walking", "boat", "bus", "trip", "excursion", "safari", "scavenger"] }
+  { id: "CULINARY", label: "Culinary", keywords: ["food", "dining", "tasting", "chef", "restaurant", "culinary", "gastronomy", "wine", "distillery", "brewery", "interactive dining", "small luxuries", "swangy", "fire-driven", "chef-led", "little treat", "glocal"] },
+  { id: "WELLNESS", label: "Wellness", keywords: ["wellness", "spa", "sauna", "ritual", "hammam", "yoga", "pilates", "pool", "meditation", "sensory restoration", "biophilic", "adaptogens", "human-centric", "restorative", "hushpitality", "slow travel", "off-the-grid"] },
+  { id: "CULTURE", label: "Culture", keywords: ["art", "gallery", "culture", "museum", "class", "workshop", "heritage", "history", "design", "architecture", "adaptive reuse", "contemporary heritage", "revival", "landmark", "narrative", "set-jetting", "dejaview", "regenerative"] },
+  { id: "ADVENTURE", label: "Adventure", keywords: ["kayak", "boat", "climb", "hike", "bike", "rental", "scavenger", "adventure", "zipline", "outdoor", "expedition", "urban exploration", "hidden trail", "sight-doing", "coolcations"] },
+  { id: "NIGHTLIFE", label: "Nightlife", keywords: ["bar", "mixology", "nightlife", "music", "dj", "club", "speakeasy", "cocktail", "listening", "vinyl", "audiophile", "zero proof", "listening bar", "noctourism", "after dark"] },
+  { id: "RETAIL", label: "Retail", keywords: ["shop", "retail", "concept", "boutique", "fashion", "store", "curated", "craft", "local", "textural surfaces", "experiential", "artisan", "tactility"] },
+  { id: "TOURS", label: "Tours", keywords: ["tour", "guide", "getyourguide", "experience", "walking", "boat", "bus", "trip", "excursion", "safari", "scavenger", "storytelling", "urban expedition"] }
 ];
 
 const DISCOVERY_SOURCES = {
@@ -141,8 +141,8 @@ export async function scrapeLocalSignals(city, neighborhood) {
     async function probeArea(areaName, isSocial = false) {
       console.log(`[Agent A] Probing ${areaName} for 90%+ Fidelity Signals...`);
       const query = isSocial 
-        ? `site:tiktok.com "${city}" "${areaName}" "aesthetic" OR "vibe check"`
-        : `${DISCOVERY_SOURCES.LOCAL} "${city}" "${areaName}" "vibe" OR "hidden"`;
+        ? `site:tiktok.com "${city}" "${areaName}" "aesthetic" OR "vibe check" OR "hushpitality" OR "noctourism"`
+        : `${DISCOVERY_SOURCES.LOCAL} "${city}" "${areaName}" "vibe" OR "hidden" OR "hushpitality" OR "noctourism" OR "sight-doing" OR "slow travel"`;
       
       const res = await fetch(`https://google.serper.dev/search`, {
         method: 'POST', headers: HEADERS, body: JSON.stringify({ q: query, num: 15 })
@@ -152,7 +152,16 @@ export async function scrapeLocalSignals(city, neighborhood) {
         const combined = (item.title + " " + item.snippet).toLowerCase();
         const category = VIBE_TAXONOMY.find(cat => cat.keywords.some(k => combined.includes(k))) || VIBE_TAXONOMY[2];
         const isSocialResult = item.link.includes('tiktok.com') || item.link.includes('instagram.com');
-        const source = isSocialResult ? 'Social Signal' : new URL(item.link).hostname.replace('www.', '');
+        const rawHostname = new URL(item.link).hostname.replace('www.', '');
+        const source = isSocialResult ? 'Social Signal' : rawHostname;
+
+        // USER ENFORCEMENT: 
+        // 1. Tours MUST be GetYourGuide
+        // 2. GetYourGuide MUST NOT be anything else
+        const isGYG = rawHostname.includes('getyourguide.com');
+        
+        if (isGYG && category.id !== 'TOURS') return; // Skip GYG for non-tours
+        if (category.id === 'TOURS' && !isGYG) return; // Skip non-GYG for tours
 
         // Extract dynamic area from snippet
         const snippetLocations = item.snippet.match(/[A-Z][a-z]+(?:\s[A-Z][a-z]+)*/g) || [];
