@@ -92,6 +92,8 @@ export async function scrapeLocalSignals(city, neighborhood) {
     else if (city.toLowerCase().includes('copenhagen')) expansionDistricts = ["Vesterbro", "Nørrebro", "Østerbro", "Christianshavn"];
     else if (city.toLowerCase().includes('chichester') || city.toLowerCase().includes('wittering')) {
       expansionDistricts = ["Bracklesham Bay", "East Wittering", "Bosham", "Selsey", "Itchenor"];
+    } else if (city.toLowerCase().includes('london')) {
+      expansionDistricts = ["Battersea", "Chelsea", "Putney", "Fulham", "Clapham", "Southfields"];
     }
 
     const finalResults = [];
