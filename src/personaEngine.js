@@ -1,7 +1,7 @@
 import VIBE_CACHE_RAW from './engine/vibeCache.json' with { type: 'json' };
 
 const VIBE_CACHE = { ...VIBE_CACHE_RAW };
-const ENGINE_VERSION = "v5.7";
+const ENGINE_VERSION = "v5.8";
 
 // AUTO-RESET: Clear local cache if engine version has updated
 if (typeof localStorage !== 'undefined' && localStorage.getItem('travelvrse_vibe_version') !== ENGINE_VERSION) {
@@ -238,7 +238,7 @@ export async function scrapeLocalSignals(city, neighborhood) {
           score: totalScore,
           socialScore: Math.round(socialScore / 50 * 100),
           authorityScore: Math.round(authorityScore / 20 * 100),
-          thresholdMet: totalScore >= 70, // Threshold set to 70 out of 120
+          thresholdMet: totalScore >= 50, // Threshold set to 50 out of 120
           demandLabel: socialScore >= 30 ? "Viral High Velocity" : (authorityScore > 0 ? "Authority Verified" : "High Local Demand"),
           source: socialScore >= 30 ? `Verified via Social & Maps` : (authorityScore > 0 ? `Verified via Blogs & Maps` : `Google Maps`),
           vibeConcept: socialScore >= 30 ? `🔥 Trending on Social: ${matches[0]?.snippet.split('.')[0]}...` : place.vibeConcept
@@ -284,10 +284,10 @@ export async function scrapeLocalSignals(city, neighborhood) {
     let finalResults = pickResults(finalAuditResults);
     
     // CATEGORY-SPECIFIC ADAPTIVE EXPANSION
-    const weakCategories = finalResults.filter(r => r.score < 70).map(r => r.id);
+    const weakCategories = finalResults.filter(r => r.score < 50).map(r => r.id);
     
     if (weakCategories.length > 0) {
-      console.log(`[Agent A] Weak categories detected (Score < 70): ${weakCategories.join(', ')}. Broadening search...`);
+      console.log(`[Agent A] Weak categories detected (Score < 50): ${weakCategories.join(', ')}. Broadening search...`);
       const expansionAreas = expansionDistricts.slice(0, 2);
       for (const area of expansionAreas) {
         for (const catId of weakCategories) {
