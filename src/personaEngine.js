@@ -1,7 +1,7 @@
 import VIBE_CACHE_RAW from './engine/vibeCache.json' with { type: 'json' };
 
 const VIBE_CACHE = { ...VIBE_CACHE_RAW };
-const ENGINE_VERSION = "v5.5";
+const ENGINE_VERSION = "v5.6";
 
 // AUTO-RESET: Clear local cache if engine version has updated
 if (typeof localStorage !== 'undefined' && localStorage.getItem('travelvrse_vibe_version') !== ENGINE_VERSION) {
@@ -193,11 +193,15 @@ export async function scrapeLocalSignals(city, neighborhood) {
 
         // 2. Social Recency Score (50 pts)
         let socialScore = 0;
+        const venueName = (place.title || place.name || "").toLowerCase();
+        const cleanVenueName = venueName.replace(/restaurant|bar|cafe|london|wandsworth|south bank|copenhagen|miami|the /ig, "").trim();
+
         const matches = signals.filter(s => {
           if (!s.isSocial) return false;
-          const pName = (place.title || place.name).toLowerCase();
           const sText = (s.name + " " + s.snippet).toLowerCase();
-          return sText.includes(pName) || pName.includes(s.name.toLowerCase());
+          
+          // Fuzzy Match: Check if the clean venue name exists in the social text
+          return sText.includes(cleanVenueName) || cleanVenueName.includes(s.name.toLowerCase());
         });
 
         matches.forEach(match => {
@@ -303,7 +307,10 @@ export async function scrapeLocalSignals(city, neighborhood) {
     console.log(`[Agent A] Final Reverse Social Probe for ${finalResults.length} definitive venues...`);
     const batches = [];
     for (let i = 0; i < finalResults.length; i += 5) {
-      const batch = finalResults.slice(i, i + 5).map(p => `"${p.name}"`).join(" OR ");
+      const batch = finalResults.slice(i, i + 5).map(p => {
+        const clean = p.name.split('(')[0].replace(/restaurant|bar|cafe|london|the /ig, "").trim();
+        return `"${clean}"`;
+      }).join(" OR ");
       batches.push(batch);
     }
 
