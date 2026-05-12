@@ -1,7 +1,7 @@
 import VIBE_CACHE_RAW from './engine/vibeCache.json' with { type: 'json' };
 
 const VIBE_CACHE = { ...VIBE_CACHE_RAW };
-const ENGINE_VERSION = "v6.0";
+const ENGINE_VERSION = "v6.1";
 
 // AUTO-RESET: Clear local cache if engine version has updated
 if (typeof localStorage !== 'undefined' && localStorage.getItem('travelvrse_vibe_version') !== ENGINE_VERSION) {
@@ -34,6 +34,34 @@ export const VIBE_TAXONOMY = [
 const DISCOVERY_SOURCES = {
   LOCAL: "site:timeout.com OR site:theinfatuation.com OR site:eater.com OR site:ra.co OR site:lonelyplanet.com OR site:opentable.com OR site:designmynight.com OR site:getyourguide.com OR site:cntraveler.com OR site:travelandleisure.com OR site:nytimes.com/style"
 };
+
+function parseAmbientVocabulary(snippets, neighborhood) {
+  const commonNouns = ["pool", "beach", "sunset", "rooftop", "party", "cocktails", "luxury", "view", "morning", "night", "street", "market", "vibes", "aesthetic", "hidden", "gems", "local", "authentic", "rituals", "boardwalk", "cabana"];
+  const counts = {};
+  
+  snippets.forEach(snip => {
+    const tokens = snip.toLowerCase().split(/\W+/);
+    tokens.forEach(token => {
+      if (commonNouns.includes(token)) {
+        counts[token] = (counts[token] || 0) + 1;
+      }
+    });
+  });
+
+  const sorted = Object.entries(counts).sort((a, b) => b[1] - a[1]);
+  if (sorted.length === 0) return null;
+
+  const topVibe = sorted[0][0];
+  const capitalizedVibe = topVibe.charAt(0).toUpperCase() + topVibe.slice(1);
+  
+  return {
+    name: `${neighborhood} ${capitalizedVibe} Scene`,
+    vibeConcept: `The defining ambient energy of ${neighborhood} right now is centered around the ${topVibe} pulse, with high social saturation.`,
+    category: "Ambient Vibe",
+    id: "AMBIENT",
+    score: 85 + Math.min(sorted[0][1] * 2, 15) // Boost based on frequency
+  };
+}
 
 function heroify(item, category, city, area, source) {
   if (item.type === 'place') {
@@ -246,19 +274,18 @@ export async function scrapeLocalSignals(city, neighborhood) {
 
     let finalAuditResults = calculateWeightedScores(placeBuffer, socialBuffer);
     
-    // AMBIENT INJECTION: Convert top-tier ambient social signals into candidates
-    const ambientSignals = socialBuffer.filter(s => s.id === 'AMBIENT' && s.isSocial);
-    const ambientCandidates = Array.from(new Map(ambientSignals.map(s => [s.name.toLowerCase(), s])).values())
-      .slice(0, 2)
-      .map(s => ({
-        ...s,
-        score: s.score + 10, // Boost ambient social signals
-        thresholdMet: true,
-        demandLabel: "Viral Ambient Vibe",
-        vibeConcept: `✨ ${s.vibeConcept}`
-      }));
+    // AMBIENT INJECTION: Autonomous Vibe Discovery
+    const rawSnippets = socialBuffer.map(s => s.snippet);
+    const autonomousAmbient = parseAmbientVocabulary(rawSnippets, neighborhood || city);
     
-    finalAuditResults = [...finalAuditResults, ...ambientCandidates];
+    if (autonomousAmbient) {
+      finalAuditResults.push({
+        ...autonomousAmbient,
+        source: "Autonomous Social Discovery",
+        demandLabel: "Viral Ambient Vibe",
+        thresholdMet: true
+      });
+    }
 
     const pickResults = (auditData) => {
       const results = [];
