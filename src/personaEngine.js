@@ -1,7 +1,7 @@
 import VIBE_CACHE_RAW from './engine/vibeCache.json' with { type: 'json' };
 
 const VIBE_CACHE = { ...VIBE_CACHE_RAW };
-const ENGINE_VERSION = "v5.6";
+const ENGINE_VERSION = "v5.7";
 
 // AUTO-RESET: Clear local cache if engine version has updated
 if (typeof localStorage !== 'undefined' && localStorage.getItem('travelvrse_vibe_version') !== ENGINE_VERSION) {
@@ -199,9 +199,16 @@ export async function scrapeLocalSignals(city, neighborhood) {
         const matches = signals.filter(s => {
           if (!s.isSocial) return false;
           const sText = (s.name + " " + s.snippet).toLowerCase();
+          const venueTokens = cleanVenueName.split(" ");
+          const coreBrand = venueTokens.slice(0, 2).join(" ");
           
-          // Fuzzy Match: Check if the clean venue name exists in the social text
-          return sText.includes(cleanVenueName) || cleanVenueName.includes(s.name.toLowerCase());
+          // Primary Match: Full clean name
+          if (sText.includes(cleanVenueName)) return true;
+          
+          // Secondary Match: Core brand tokens (at least 3 characters)
+          if (coreBrand.length > 3 && sText.includes(coreBrand)) return true;
+
+          return cleanVenueName.includes(s.name.toLowerCase());
         });
 
         matches.forEach(match => {
