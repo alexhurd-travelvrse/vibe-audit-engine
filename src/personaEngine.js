@@ -1,7 +1,7 @@
 import VIBE_CACHE_RAW from './engine/vibeCache.json' with { type: 'json' };
 
 const VIBE_CACHE = { ...VIBE_CACHE_RAW };
-const ENGINE_VERSION = "v6.3";
+const ENGINE_VERSION = "v6.4";
 
 // AUTO-RESET: Clear local cache if engine version has updated
 if (typeof localStorage !== 'undefined' && localStorage.getItem('travelvrse_vibe_version') !== ENGINE_VERSION) {
@@ -397,7 +397,29 @@ export async function scrapeLocalSignals(city, neighborhood) {
       localStorage.setItem('travelvrse_vibe_version', ENGINE_VERSION);
     }
 
-    return { city, neighborhood, sentiment: 'Dynamic Intelligence Audit', topExperiences: definitiveResults, velocity: 9.9 };
+    // 5. GENERATE SECTOR HEATMAP FOR UI
+    const sectorHeatmap = VIBE_TAXONOMY.map(cat => {
+      const localTop = finalAuditResults.filter(r => r.id === cat.id).sort((a, b) => b.score - a.score)[0] || { score: 0, name: "Low Signal" };
+      
+      // Look into placeBuffer and socialBuffer for expansion scores
+      const expansionTop = [...placeBuffer, ...socialBuffer, ...tourBuffer]
+        .filter(r => r.id === cat.id && r.district && r.district !== (neighborhood || city))
+        .sort((a, b) => b.score - a.score)[0] || { score: 0, name: "N/A", district: "City Wide" };
+
+      return {
+        id: cat.id,
+        label: cat.label,
+        local: { name: localTop.name, score: localTop.score },
+        expansion: { name: expansionTop.name, score: expansionTop.score, district: expansionTop.district }
+      };
+    }).sort((a, b) => b.local.score - a.local.score); // Sort by neighborhood strength
+
+    return { 
+      city, neighborhood, sentiment: 'Dynamic Intelligence Audit', 
+      topExperiences: definitiveResults, 
+      sectorHeatmap,
+      velocity: 9.9 
+    };
   } catch (error) {
     console.error("[Agent A] Audit Failed:", error);
     return { city, neighborhood, sentiment: 'Audit Failure', topExperiences: [], velocity: 0 };
