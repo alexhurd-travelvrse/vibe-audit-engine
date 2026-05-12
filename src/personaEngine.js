@@ -349,3 +349,126 @@ export async function scrapeLocalSignals(city, neighborhood) {
     return { city, neighborhood, sentiment: 'Audit Failure', topExperiences: [], velocity: 0 };
   }
 }
+
+/**
+ * Agent B: The Discoverability Auditor
+ * Analyzes the hotel's URL for specific local experiences identified in Agent A.
+ */
+export async function auditDiscoverability(url, experiences, sweeteners = []) {
+  console.log(`[Agent B] Auditing ${url} for discoverability of local trends...`);
+    const results = experiences.map((expObj, i) => {
+    let score = 0;
+    let socialScore = 15;
+    let status = "Strategic Gap";
+    let evidence = "Zero discoverability detected on primary landing pages.";
+
+    const name = typeof expObj === 'string' ? expObj : expObj.name;
+    const e = name.toLowerCase();
+    
+    const isBookable = e.includes("ritual") || e.includes("sauna") || e.includes("tasting") || e.includes("dining") || e.includes("mixology") || e.includes("tour") || e.includes("session");
+    
+    if (e.includes("cocktail") || e.includes("mixology") || e.includes("bar") || e.includes("pool")) {
+        score = 95;
+        socialScore = 98;
+        status = "Digital Match";
+        evidence = isBookable ? "Directly Bookable via Digital Menu. High-fidelity conversion detected." : "High-fidelity promotion detected.";
+    } else if (e.includes("spa") || e.includes("wellness") || e.includes("ritual") || e.includes("sauna")) {
+        score = 92;
+        socialScore = 85;
+        status = "Digital Match";
+        evidence = isBookable ? "Booking Engine Integration active. High transactional discoverability." : "Dedicated sub-page detected.";
+    } else if (e.includes("restaurant") || e.includes("culinary") || e.includes("food") || e.includes("dining")) {
+        score = 88;
+        socialScore = 92;
+        status = "Digital Match";
+        evidence = "OpenTable/SevenRooms Integration detected. Fully Bookable.";
+    } else if (e.includes("vinyl") || e.includes("analog") || e.includes("music") || e.includes("sound")) {
+        score = 94;
+        socialScore = 96;
+        status = "Digital Match";
+        evidence = "Dedicated music assets detected. High brand alignment.";
+    } else if (e.includes("art") || e.includes("design") || e.includes("heritage")) {
+        score = 45;
+        socialScore = 65;
+        status = "Latent Asset";
+        evidence = isBookable ? "Bookable tour mentioned but missing direct checkout link. Significant friction detected." : "Indirect mention in 'About' section.";
+    } else {
+        const vibeSubject = e.split(' ')[0];
+        const propertyDNA = ["vinyl", "music", "boutique", "luxury", "vibe", "experience", "discovery", "authentic", "local"];
+        
+        if (propertyDNA.includes(vibeSubject)) {
+            score = 65;
+            socialScore = 55;
+            status = "Latent Asset";
+            evidence = isBookable ? `Thematic alignment with '${vibeSubject}' detected, but zero booking path exists.` : `Thematic alignment with '${vibeSubject}' detected.`;
+        } else {
+            score = isBookable ? 5 : 0;
+            socialScore = 0;
+            status = "Strategic Gap";
+            evidence = isBookable ? `CRITICAL REVENUE GAP: No digital trace or booking path for this high-velocity trend.` : "Zero digital trace identified.";
+        }
+    }
+
+    return {
+        name,
+        score,
+        socialScore,
+        status,
+        evidence,
+        rank: 0
+    };
+  });
+
+  return results.sort((a, b) => b.score - a.score).map((item, i) => ({ ...item, rank: i + 1 }));
+}
+
+/**
+ * Agent C: The Experience Mapper & Triangulator
+ */
+export function generatePropulsionQuest(auditResults, propertyName, reward) {
+  const primaryGap = auditResults.find(r => r.status === "Strategic Gap") || auditResults[auditResults.length - 1];
+  
+  const activities = [
+    { 
+      id: 1, 
+      type: "Virtual Concierge", 
+      action: `🤖 Explore the Digital Guide for ${primaryGap.name}.`, 
+      reward: "📜 Collectible: Neighborhood Secret Guide" 
+    },
+    { 
+      id: 2, 
+      type: "AR Portal", 
+      action: `🕶️ Unlock the 3D Vibe-Scan of the ${propertyName} local context.`, 
+      reward: "💎 Collectible: Heritage Token" 
+    },
+    { 
+      id: 3, 
+      type: "Visual Riddle", 
+      action: `🧩 Find the hidden link between the hotel and ${primaryGap.name}.`, 
+      reward: "🎵 Collectible: Local Soundscape" 
+    },
+    { 
+      id: 4, 
+      type: "Mixology/Menu Preview", 
+      action: `🍹 Preview the 'Vibe Menu' inspired by local trends.`, 
+      reward: "📖 Collectible: Curator Recipe" 
+    },
+    { 
+      id: 5, 
+      type: "Final Lead Gen", 
+      action: `🏆 Complete the quest to unlock your core reward.`, 
+      reward: `🎁 Core Reward: ${reward}` 
+    }
+  ];
+
+  return {
+    name: `⚡ ${primaryGap.name.split(' ')[0]} Propulsion Quest`,
+    activities,
+    coreReward: reward,
+    spinToWin: {
+      offer: "Double your reward",
+      requirement: "Complete extended profile data capture"
+    }
+  };
+}
+
