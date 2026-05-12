@@ -1,7 +1,7 @@
 import VIBE_CACHE_RAW from './engine/vibeCache.json' with { type: 'json' };
 
 const VIBE_CACHE = { ...VIBE_CACHE_RAW };
-const ENGINE_VERSION = "v6.1";
+const ENGINE_VERSION = "v6.3";
 
 // AUTO-RESET: Clear local cache if engine version has updated
 if (typeof localStorage !== 'undefined' && localStorage.getItem('travelvrse_vibe_version') !== ENGINE_VERSION) {
@@ -51,15 +51,16 @@ function parseAmbientVocabulary(snippets, neighborhood) {
   const sorted = Object.entries(counts).sort((a, b) => b[1] - a[1]);
   if (sorted.length === 0) return null;
 
+  // WINNER TAKES ALL: Pick only the top trending noun
   const topVibe = sorted[0][0];
   const capitalizedVibe = topVibe.charAt(0).toUpperCase() + topVibe.slice(1);
   
   return {
     name: `${neighborhood} ${capitalizedVibe} Scene`,
-    vibeConcept: `The defining ambient energy of ${neighborhood} right now is centered around the ${topVibe} pulse, with high social saturation.`,
+    vibeConcept: `The defining ambient energy of ${neighborhood} is currently driven by the ${topVibe} pulse, verified by dominant social frequency.`,
     category: "Ambient Vibe",
     id: "AMBIENT",
-    score: 85 + Math.min(sorted[0][1] * 2, 15) // Boost based on frequency
+    score: 85 + Math.min(sorted[0][1] * 2, 15)
   };
 }
 

@@ -11,8 +11,10 @@ async function deepNeighborhoodAudit(city, neighborhood) {
 
   // 2. EXPANSION MAPPING
   // We want to know which district is 'hottest' for each sector.
-  let expansionDistricts = ["Design District", "Brickell", "Little Havana", "Coconut Grove"]; // Miami defaults
-  if (city.toLowerCase().includes('london')) expansionDistricts = ["Battersea", "Chelsea", "South Bank", "Shoreditch"];
+  let expansionDistricts = ["Design District", "Brickell", "Little Havana", "Coconut Grove"];
+  if (city.toLowerCase().includes('copenhagen')) expansionDistricts = ["Vesterbro", "Nørrebro", "Østerbro", "Christianshavn"];
+  else if (city.toLowerCase().includes('london')) expansionDistricts = ["Battersea", "Chelsea", "Shoreditch", "Soho"];
+  else if (city.toLowerCase().includes('chichester')) expansionDistricts = ["Bracklesham Bay", "East Wittering", "Bosham", "Selsey"];
   
   const expansionHeatmap = {};
   
