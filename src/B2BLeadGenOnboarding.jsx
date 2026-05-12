@@ -243,6 +243,65 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                     </div>
                   ))}
                 </div>
+
+                {/* VIBE DUEL HEATMAP */}
+                <motion.section initial={{opacity: 0, y: 20}} animate={{opacity: 1, y: 0}} style={{ marginTop: '4rem', padding: '3rem', background: 'rgba(255,255,255,0.02)', borderRadius: '2rem', border: '1px solid rgba(255,255,255,0.05)' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '3rem' }}>
+                    <BarChart3 color="#00e5ff" size={24} />
+                    <h2 style={{ fontSize: '1.5rem', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.1em' }}>Vibe Heatmap: Local vs. City Velocity</h2>
+                  </div>
+
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+                    {analysis?.signals?.sectorHeatmap?.map((sector, i) => {
+                      const localWinner = sector.local.score >= sector.expansion.score;
+                      return (
+                        <div key={i} style={{ display: 'grid', gridTemplateColumns: '150px 1fr 1fr', gap: '2rem', alignItems: 'center' }}>
+                          <div style={{ fontSize: '12px', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.5)' }}>
+                            {sector.label}
+                          </div>
+                          
+                          {/* LOCAL BAR */}
+                          <div style={{ position: 'relative' }}>
+                            <div style={{ height: '32px', background: 'rgba(255,255,255,0.05)', borderRadius: '4px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.1)' }}>
+                              <motion.div 
+                                initial={{ width: 0 }}
+                                animate={{ width: `${(sector.local.score / 120) * 100}%` }}
+                                transition={{ duration: 1, delay: i * 0.1 }}
+                                style={{ 
+                                  height: '100%', 
+                                  background: localWinner ? '#10b981' : '#334155',
+                                  boxShadow: localWinner ? '0 0 15px rgba(16,185,129,0.4)' : 'none'
+                                }} 
+                              />
+                            </div>
+                            <div style={{ position: 'absolute', top: '50%', left: '10px', transform: 'translateY(-50%)', fontSize: '10px', fontWeight: 900, color: localWinner ? '#fff' : 'rgba(255,255,255,0.4)' }}>
+                              LOCAL: {sector.local.name} ({sector.local.score})
+                            </div>
+                          </div>
+
+                          {/* EXPANSION BAR */}
+                          <div style={{ position: 'relative' }}>
+                            <div style={{ height: '32px', background: 'rgba(255,255,255,0.05)', borderRadius: '4px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.1)' }}>
+                              <motion.div 
+                                initial={{ width: 0 }}
+                                animate={{ width: `${(sector.expansion.score / 120) * 100}%` }}
+                                transition={{ duration: 1, delay: i * 0.1 }}
+                                style={{ 
+                                  height: '100%', 
+                                  background: !localWinner ? '#10b981' : '#334155',
+                                  boxShadow: !localWinner ? '0 0 15px rgba(16,185,129,0.4)' : 'none'
+                                }} 
+                              />
+                            </div>
+                            <div style={{ position: 'absolute', top: '50%', left: '10px', transform: 'translateY(-50%)', fontSize: '10px', fontWeight: 900, color: !localWinner ? '#fff' : 'rgba(255,255,255,0.4)' }}>
+                              {sector.expansion.district.toUpperCase()}: {sector.expansion.name} ({sector.expansion.score})
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </motion.section>
                 </motion.section>
               )}
 
