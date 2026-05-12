@@ -15,6 +15,7 @@ async function deepNeighborhoodAudit(city, neighborhood) {
   if (city.toLowerCase().includes('copenhagen')) expansionDistricts = ["Vesterbro", "Nørrebro", "Østerbro", "Christianshavn"];
   else if (city.toLowerCase().includes('london')) expansionDistricts = ["Battersea", "Chelsea", "Shoreditch", "Soho"];
   else if (city.toLowerCase().includes('chichester')) expansionDistricts = ["Bracklesham Bay", "East Wittering", "Bosham", "Selsey"];
+  else if (city.toLowerCase().includes('las vegas')) expansionDistricts = ["Downtown", "Arts District", "Summerlin", "Henderson"];
   
   const expansionHeatmap = {};
   
