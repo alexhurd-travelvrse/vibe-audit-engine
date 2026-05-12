@@ -1,7 +1,7 @@
 import VIBE_CACHE_RAW from './engine/vibeCache.json' with { type: 'json' };
 
 const VIBE_CACHE = { ...VIBE_CACHE_RAW };
-const ENGINE_VERSION = "v5.8";
+const ENGINE_VERSION = "v5.9";
 
 // AUTO-RESET: Clear local cache if engine version has updated
 if (typeof localStorage !== 'undefined' && localStorage.getItem('travelvrse_vibe_version') !== ENGINE_VERSION) {
@@ -186,12 +186,12 @@ export async function scrapeLocalSignals(city, neighborhood) {
 
     function calculateWeightedScores(venues, signals) {
       return venues.map(place => {
-        // 1. Google Maps Review Score (50 pts)
-        const ratingWeight = (place.rating / 5) * 25; 
-        const countWeight = Math.min(place.ratingCount || 0, 1000) / 1000 * 25; // Increased volume weight to 25
+        // 1. Google Maps Review Score (30 pts)
+        const ratingWeight = (place.rating / 5) * 15; 
+        const countWeight = Math.min(place.ratingCount || 0, 1000) / 1000 * 15; 
         const googleScore = ratingWeight + countWeight;
 
-        // 2. Social Recency Score (50 pts)
+        // 2. Social Recency Score (70 pts)
         let socialScore = 0;
         const venueName = (place.title || place.name || "").toLowerCase();
         const cleanVenueName = venueName.replace(/restaurant|bar|cafe|london|wandsworth|south bank|copenhagen|miami|the /ig, "").trim();
@@ -202,23 +202,19 @@ export async function scrapeLocalSignals(city, neighborhood) {
           const venueTokens = cleanVenueName.split(" ");
           const coreBrand = venueTokens.slice(0, 2).join(" ");
           
-          // Primary Match: Full clean name
           if (sText.includes(cleanVenueName)) return true;
-          
-          // Secondary Match: Core brand tokens (at least 3 characters)
           if (coreBrand.length > 3 && sText.includes(coreBrand)) return true;
-
           return cleanVenueName.includes(s.name.toLowerCase());
         });
 
         matches.forEach(match => {
-          let weight = 12.5;
+          let weight = 15;
           const snip = match.snippet.toLowerCase();
-          if (snip.includes('day') || snip.includes('hour') || snip.includes('yesterday')) weight = 25; // Max in 2 hits
-          else if (snip.includes('week')) weight = 15;
+          if (snip.includes('day') || snip.includes('hour') || snip.includes('yesterday')) weight = 35; // Max in 2 hits
+          else if (snip.includes('week')) weight = 20;
           socialScore += weight;
         });
-        socialScore = Math.min(socialScore, 50);
+        socialScore = Math.min(socialScore, 70);
 
         // 3. Authority Score (20 pts)
         let authorityScore = 0;
@@ -236,10 +232,10 @@ export async function scrapeLocalSignals(city, neighborhood) {
           ...place,
           name: place.title || place.name,
           score: totalScore,
-          socialScore: Math.round(socialScore / 50 * 100),
+          socialScore: Math.round(socialScore / 70 * 100),
           authorityScore: Math.round(authorityScore / 20 * 100),
-          thresholdMet: totalScore >= 50, // Threshold set to 50 out of 120
-          demandLabel: socialScore >= 30 ? "Viral High Velocity" : (authorityScore > 0 ? "Authority Verified" : "High Local Demand"),
+          thresholdMet: totalScore >= 50, 
+          demandLabel: socialScore >= 40 ? "Viral High Velocity" : (authorityScore > 0 ? "Authority Verified" : "High Local Demand"),
           source: socialScore >= 30 ? `Verified via Social & Maps` : (authorityScore > 0 ? `Verified via Blogs & Maps` : `Google Maps`),
           vibeConcept: socialScore >= 30 ? `🔥 Trending on Social: ${matches[0]?.snippet.split('.')[0]}...` : place.vibeConcept
         };
