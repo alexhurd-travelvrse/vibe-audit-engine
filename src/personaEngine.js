@@ -1,7 +1,7 @@
 import VIBE_CACHE_RAW from './engine/vibeCache.json' with { type: 'json' };
 
 const VIBE_CACHE = { ...VIBE_CACHE_RAW };
-const ENGINE_VERSION = "v5.9";
+const ENGINE_VERSION = "v6.0";
 
 // AUTO-RESET: Clear local cache if engine version has updated
 if (typeof localStorage !== 'undefined' && localStorage.getItem('travelvrse_vibe_version') !== ENGINE_VERSION) {
@@ -27,7 +27,8 @@ export const VIBE_TAXONOMY = [
   { id: "ADVENTURE", label: "Adventure", keywords: ["kayak", "boat", "climb", "hike", "bike", "rental", "scavenger", "adventure", "zipline", "outdoor", "expedition", "urban exploration", "hidden trail", "sight-doing", "coolcations", "surfing", "sailing", "tours", "park", "nature"] },
   { id: "NIGHTLIFE", label: "Nightlife", keywords: ["bar", "mixology", "nightlife", "music", "dj", "club", "speakeasy", "cocktail", "listening", "vinyl", "audiophile", "zero proof", "listening bar", "noctourism", "after dark", "lounge", "pub", "tavern", "night club", "brewery", "distillery"] },
   { id: "RETAIL", label: "Retail", keywords: ["shop", "retail", "concept", "boutique", "fashion", "store", "curated", "craft", "local", "textural surfaces", "experiential", "artisan", "tactility", "showroom", "atelier", "mall", "market", "clothing store", "jewelry", "gift shop"] },
-  { id: "TOURS", label: "Tours", keywords: ["tour", "guide", "getyourguide", "experience", "walking", "boat", "bus", "trip", "excursion", "safari", "scavenger", "storytelling", "urban expedition"] }
+  { id: "TOURS", label: "Tours", keywords: ["tour", "guide", "getyourguide", "experience", "walking", "boat", "bus", "trip", "excursion", "safari", "scavenger", "storytelling", "urban expedition"] },
+  { id: "AMBIENT", label: "Ambient Vibe", keywords: ["beach", "cabana", "pool", "boardwalk", "view", "sunset", "atmosphere", "energy", "pulse", "scene", "lounge", "daybed"] }
 ];
 
 const DISCOVERY_SOURCES = {
@@ -127,6 +128,7 @@ export async function scrapeLocalSignals(city, neighborhood) {
       const socialQueries = [
         `site:tiktok.com "${city}" "${areaName}" "aesthetic" OR "vibe check"`,
         `site:tiktok.com "${city}" "${areaName}" "hidden gems" OR "must visit"`,
+        `site:tiktok.com "${city}" "${areaName}" "beach club" OR "cabana" OR "resort pool"`,
         `site:instagram.com "${city}" "${areaName}" "vibe" OR "trending"`
       ];
       
@@ -244,6 +246,20 @@ export async function scrapeLocalSignals(city, neighborhood) {
 
     let finalAuditResults = calculateWeightedScores(placeBuffer, socialBuffer);
     
+    // AMBIENT INJECTION: Convert top-tier ambient social signals into candidates
+    const ambientSignals = socialBuffer.filter(s => s.id === 'AMBIENT' && s.isSocial);
+    const ambientCandidates = Array.from(new Map(ambientSignals.map(s => [s.name.toLowerCase(), s])).values())
+      .slice(0, 2)
+      .map(s => ({
+        ...s,
+        score: s.score + 10, // Boost ambient social signals
+        thresholdMet: true,
+        demandLabel: "Viral Ambient Vibe",
+        vibeConcept: `✨ ${s.vibeConcept}`
+      }));
+    
+    finalAuditResults = [...finalAuditResults, ...ambientCandidates];
+
     const pickResults = (auditData) => {
       const results = [];
       const usedNames = new Set();
