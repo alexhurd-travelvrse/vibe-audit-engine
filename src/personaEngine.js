@@ -241,13 +241,32 @@ export async function scrapeLocalSignals(city, neighborhood) {
       const results = [];
       const usedNames = new Set();
       const usedCategories = new Set();
+
+      // Phase 1: Best of each category (Threshold Met)
       auditData.sort((a, b) => b.score - a.score).forEach(cand => {
-        if (results.length < 4 && !usedNames.has(cand.name) && !usedCategories.has(cand.id)) {
+        if (results.length < 5 && cand.score >= 70 && !usedNames.has(cand.name) && !usedCategories.has(cand.id)) {
           results.push(cand);
           usedNames.add(cand.name);
           usedCategories.add(cand.id);
         }
       });
+
+      // Phase 2: Best remaining (Threshold Met, ignore category diversity)
+      auditData.sort((a, b) => b.score - a.score).forEach(cand => {
+        if (results.length < 5 && cand.score >= 70 && !usedNames.has(cand.name)) {
+          results.push(cand);
+          usedNames.add(cand.name);
+        }
+      });
+
+      // Phase 3: Fillers (Best remaining overall if we are still short)
+      auditData.sort((a, b) => b.score - a.score).forEach(cand => {
+        if (results.length < 5 && !usedNames.has(cand.name)) {
+          results.push(cand);
+          usedNames.add(cand.name);
+        }
+      });
+
       return results;
     };
 
