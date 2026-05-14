@@ -1,0 +1,35 @@
+From f5ef7e87c18588ba57f598e32c03b2f69267c0a4 Mon Sep 17 00:00:00 2001
+From: alexhurd-travelvrse <alex.hurd@travelvrse.com>
+Date: Tue, 12 May 2026 22:23:18 +0100
+Subject: [PATCH] Milestone: Vibe Duel Chart & Autonomous Heatmap Engine (v6.5)
+
+---
+ deep-audit.js        | 1 +
+ src/personaEngine.js | 2 +-
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/deep-audit.js b/deep-audit.js
+index 418b239..c395d66 100644
+--- a/deep-audit.js
++++ b/deep-audit.js
+@@ -15,6 +15,7 @@ async function deepNeighborhoodAudit(city, neighborhood) {
+   if (city.toLowerCase().includes('copenhagen')) expansionDistricts = ["Vesterbro", "Nørrebro", "Østerbro", "Christianshavn"];
+   else if (city.toLowerCase().includes('london')) expansionDistricts = ["Battersea", "Chelsea", "Shoreditch", "Soho"];
+   else if (city.toLowerCase().includes('chichester')) expansionDistricts = ["Bracklesham Bay", "East Wittering", "Bosham", "Selsey"];
++  else if (city.toLowerCase().includes('las vegas')) expansionDistricts = ["Downtown", "Arts District", "Summerlin", "Henderson"];
+   
+   const expansionHeatmap = {};
+   
+diff --git a/src/personaEngine.js b/src/personaEngine.js
+index f50a72e..d2e78d8 100644
+--- a/src/personaEngine.js
++++ b/src/personaEngine.js
+@@ -1,7 +1,7 @@
+ import VIBE_CACHE_RAW from './engine/vibeCache.json' with { type: 'json' };
+ 
+ const VIBE_CACHE = { ...VIBE_CACHE_RAW };
+-const ENGINE_VERSION = "v6.4";
++const ENGINE_VERSION = "v6.5";
+ 
+ // AUTO-RESET: Clear local cache if engine version has updated
+ if (typeof localStorage !== 'undefined' && localStorage.getItem('travelvrse_vibe_version') !== ENGINE_VERSION) {

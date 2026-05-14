@@ -1,7 +1,7 @@
 import VIBE_CACHE_RAW from './engine/vibeCache.json' with { type: 'json' };
 
 const VIBE_CACHE = { ...VIBE_CACHE_RAW };
-const ENGINE_VERSION = "v6.5";
+const ENGINE_VERSION = "v7.0";
 
 // AUTO-RESET: Clear local cache if engine version has updated
 if (typeof localStorage !== 'undefined' && localStorage.getItem('travelvrse_vibe_version') !== ENGINE_VERSION) {
@@ -28,7 +28,7 @@ export const VIBE_TAXONOMY = [
   { id: "NIGHTLIFE", label: "Nightlife", keywords: ["bar", "mixology", "nightlife", "music", "dj", "club", "speakeasy", "cocktail", "listening", "vinyl", "audiophile", "zero proof", "listening bar", "noctourism", "after dark", "lounge", "pub", "tavern", "night club", "brewery", "distillery"] },
   { id: "RETAIL", label: "Retail", keywords: ["shop", "retail", "concept", "boutique", "fashion", "store", "curated", "craft", "local", "textural surfaces", "experiential", "artisan", "tactility", "showroom", "atelier", "mall", "market", "clothing store", "jewelry", "gift shop"] },
   { id: "TOURS", label: "Tours", keywords: ["tour", "guide", "getyourguide", "experience", "walking", "boat", "bus", "trip", "excursion", "safari", "scavenger", "storytelling", "urban expedition"] },
-  { id: "AMBIENT", label: "Ambient Vibe", keywords: ["beach", "cabana", "pool", "boardwalk", "view", "sunset", "atmosphere", "energy", "pulse", "scene", "lounge", "daybed"] }
+  { id: "AMBIENT", label: "Core Vibe", keywords: ["beach", "cabana", "pool", "boardwalk", "view", "sunset", "atmosphere", "energy", "pulse", "scene", "lounge", "daybed"] }
 ];
 
 const DISCOVERY_SOURCES = {
@@ -49,19 +49,35 @@ function parseAmbientVocabulary(snippets, neighborhood) {
   });
 
   const sorted = Object.entries(counts).sort((a, b) => b[1] - a[1]);
-  if (sorted.length === 0) return null;
+  if (sorted.length === 0) return [];
 
-  // WINNER TAKES ALL: Pick only the top trending noun
-  const topVibe = sorted[0][0];
-  const capitalizedVibe = topVibe.charAt(0).toUpperCase() + topVibe.slice(1);
-  
-  return {
-    name: `${neighborhood} ${capitalizedVibe} Scene`,
-    vibeConcept: `The defining ambient energy of ${neighborhood} is currently driven by the ${topVibe} pulse, verified by dominant social frequency.`,
-    category: "Ambient Vibe",
-    id: "AMBIENT",
-    score: 85 + Math.min(sorted[0][1] * 2, 15)
+  // Map to top 3 literal vibes
+  const vibeDetails = {
+    pool: { label: "Resort Pool Culture", concept: "High-fidelity pool scenes and cabana rituals are the dominant visual anchors." },
+    beach: { label: "Oceanfront Beach Scene", concept: "The energy is entirely defined by the shoreline—everything from dining to wellness is indexed against the water." },
+    sunset: { label: "Golden Hour Rituals", concept: "Social frequency peaks during sunset, driving high demand for view-centric venues." },
+    rooftop: { label: "Elevated Urbanism", concept: "Sky-high social spaces and rooftop lounges are the primary draws for local discovery." },
+    party: { label: "High-Energy Social Pulse", concept: "The area is driven by intense nightlife energy and high-fidelity party signals." },
+    cocktails: { label: "Mixology Excellence", concept: "Advanced cocktail science and speakeasy culture are the core culinary drivers." },
+    luxury: { label: "Luxury Resort energy", concept: "A dominant focus on high-end service, premium finishes, and exclusive access." },
+    view: { label: "Visual Vistas", concept: "High-fidelity viewpoints are the primary social proof generators for the area." },
+    brutalist: { label: "Brutalist Aesthetic", concept: "The raw, concrete architecture of the local landmarks is the dominant visual anchor." },
+    riverside: { label: "Riverside Velocity", concept: "The energy is entirely defined by the river—everything from dining to adventure is indexed against the water." },
+    culture: { label: "Cultural Curation", concept: "The highest-frequency social signals revolve around festivals, exhibitions, and performance." }
   };
+
+  return sorted.slice(0, 3).map(([token, count]) => {
+    const detail = vibeDetails[token] || { 
+      label: `${token.charAt(0).toUpperCase() + token.slice(1)} Scene`, 
+      concept: `The defining core vibe of ${neighborhood} is currently driven by the ${token} scene.` 
+    };
+    return {
+      id: token,
+      name: detail.label,
+      vibeConcept: detail.concept,
+      score: 85 + Math.min(count * 2, 15)
+    };
+  });
 }
 
 function heroify(item, category, city, area, source) {
@@ -137,7 +153,9 @@ export async function scrapeLocalSignals(city, neighborhood) {
         const subQueries = [
           `top trending restaurants and bars in ${city} ${areaName}`,
           `top trending art galleries and museums in ${city} ${areaName}`,
-          `top trending boutiques and shops in ${city} ${areaName}`
+          `top trending boutiques and shops in ${city} ${areaName}`,
+          `top trending spas and wellness centers in ${city} ${areaName}`,
+          `top trending outdoor activities and adventure in ${city} ${areaName}`
         ];
         for (const q of subQueries) {
           const res = await fetch(`https://google.serper.dev/places`, {
@@ -277,14 +295,17 @@ export async function scrapeLocalSignals(city, neighborhood) {
     
     // AMBIENT INJECTION: Autonomous Vibe Discovery
     const rawSnippets = socialBuffer.map(s => s.snippet);
-    const autonomousAmbient = parseAmbientVocabulary(rawSnippets, neighborhood || city);
+    const coreVibes = parseAmbientVocabulary(rawSnippets, neighborhood || city);
     
-    if (autonomousAmbient) {
-      finalAuditResults.push({
-        ...autonomousAmbient,
-        source: "Autonomous Social Discovery",
-        demandLabel: "Viral Ambient Vibe",
-        thresholdMet: true
+    if (coreVibes && coreVibes.length > 0) {
+      coreVibes.forEach(vibe => {
+        finalAuditResults.push({
+          ...vibe,
+          source: "Autonomous Social Discovery",
+          demandLabel: "Dominant Local Trend",
+          thresholdMet: true,
+          category: "Core Vibe"
+        });
       });
     }
 
@@ -418,6 +439,7 @@ export async function scrapeLocalSignals(city, neighborhood) {
       city, neighborhood, sentiment: 'Dynamic Intelligence Audit', 
       topExperiences: definitiveResults, 
       sectorHeatmap,
+      coreVibes: coreVibes || [],
       velocity: 9.9 
     };
   } catch (error) {
