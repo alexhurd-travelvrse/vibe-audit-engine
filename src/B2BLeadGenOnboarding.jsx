@@ -146,10 +146,6 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                     <MapPin size={22} color="#00e5ff" /> {formData.neighborhood}, {formData.city}
                   </div>
                 </div>
-                <div style={{ display: 'flex', gap: '2rem', color: 'rgba(255,255,255,0.4)', fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.2em', textAlign: 'right' }}>
-                  <div>Velocity: <span style={{ color: '#00e5ff' }}>9.9/10</span></div>
-                  <div>Confidence: <span style={{ color: '#00e5ff' }}>98%</span></div>
-                </div>
               </div>
 
               {/* MAIN AUDIT INTERFACE (HEATMAP) */}
@@ -169,21 +165,34 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                   <h2 style={{ fontSize: '2rem', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.1em' }}>Heatmap</h2>
                 </div>
 
-                {/* a) CORE VIBES */}
-                <div style={{ marginBottom: '4rem' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1.5rem' }}>
-                    <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: 'rgba(255,255,255,0.7)' }}>a) Core Vibes</h3>
-                    <div className="info-trigger" title="Analyzes real-time social frequency to identify the literal keywords defining the atmosphere.">
-                      <Info size={14} color="rgba(255,255,255,0.3)" />
+                  {/* CORE VIBES (SCORECARD) */}
+                  <div style={{ marginBottom: '4rem' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1.5rem' }}>
+                      <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: 'rgba(255,255,255,0.7)' }}>Core Vibes</h3>
+                      <div className="info-trigger" data-tooltip="Analyzes real-time social frequency to identify the literal keywords defining the atmosphere.">
+                        <Info size={14} color="rgba(255,255,255,0.3)" />
+                      </div>
                     </div>
-                  </div>
                   <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem' }}>
-                    {(analysis.signals.coreVibes && analysis.signals.coreVibes.length > 0 ? analysis.signals.coreVibes : [
-                      { name: "Riverside Brutalism", vibeConcept: "The raw, concrete architecture of the local landmarks is the dominant visual anchor." },
-                      { name: "Concrete Culture", vibeConcept: "The highest-frequency social signals revolve around festivals, exhibitions, and performance." },
-                      { name: "Late-Night Mixology", vibeConcept: "Advanced cocktail science and speakeasy culture are the core culinary drivers." }
-                    ]).map((vibe, i) => (
+                    {[
+                      { 
+                        label: "ATMOSPHERE", 
+                        name: analysis.signals.coreVibes?.[0]?.name || "Riverside Scene", 
+                        vibeConcept: analysis.signals.coreVibes?.[0]?.vibeConcept || "The defining atmosphere (Brutalist architecture meets the Thames)." 
+                      },
+                      { 
+                        label: "LOCAL ANCHOR", 
+                        name: analysis.signals.coreVibes?.[1]?.name || "National Theatre", 
+                        vibeConcept: analysis.signals.coreVibes?.[1]?.vibeConcept || "The top-scoring local activity anchor (Culture)." 
+                      },
+                      { 
+                        label: "VIRAL TREND", 
+                        name: analysis.signals.coreVibes?.[2]?.name || "Lyaness", 
+                        vibeConcept: analysis.signals.coreVibes?.[2]?.vibeConcept || "The highest-velocity social trend in the area (Nightlife)." 
+                      }
+                    ].map((vibe, i) => (
                       <div key={i} style={{ padding: '1.5rem', background: 'rgba(255,255,255,0.03)', borderRadius: '1rem', border: '1px solid rgba(255,255,255,0.05)' }}>
+                        <div style={{ fontSize: '10px', fontWeight: 900, color: 'rgba(255,255,255,0.4)', letterSpacing: '0.1em', marginBottom: '0.75rem' }}>{vibe.label}</div>
                         <div style={{ fontSize: '1.1rem', fontWeight: 800, marginBottom: '0.5rem', color: '#00e5ff' }}>{vibe.name}</div>
                         <div style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.6)', lineHeight: '1.5' }}>{vibe.vibeConcept}</div>
                       </div>
@@ -191,67 +200,76 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                   </div>
                 </div>
 
-                {/* b) GEOGRAPHIC COMPARISON */}
+                {/* GEOGRAPHIC COMPARISON (VIBE DUEL HEATMAP) */}
                 <div style={{ marginBottom: '4rem' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1.5rem' }}>
-                    <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: 'rgba(255,255,255,0.7)' }}>b) Geographic Comparison</h3>
-                    <div className="info-trigger" title="Triangulates Google Places ratings with high-velocity social proof to score local anchors against expansion districts.">
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '3rem' }}>
+                    <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: 'rgba(255,255,255,0.7)' }}>Geographic Comparison</h3>
+                    <div className="info-trigger" data-tooltip="Triangulates Google Places ratings with high-velocity social proof to score local anchors against expansion districts out of 120.">
                       <Info size={14} color="rgba(255,255,255,0.3)" />
                     </div>
                   </div>
                   
-                  <div style={{ overflowX: 'auto' }}>
-                    <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.9rem' }}>
-                      <thead>
-                        <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
-                          <th style={{ textAlign: 'left', padding: '1rem', color: 'rgba(255,255,255,0.4)', textTransform: 'uppercase', fontSize: '10px' }}>Rank</th>
-                          <th style={{ textAlign: 'left', padding: '1rem', color: 'rgba(255,255,255,0.4)', textTransform: 'uppercase', fontSize: '10px' }}>Sector</th>
-                          <th style={{ textAlign: 'left', padding: '1rem', color: 'rgba(255,255,255,0.4)', textTransform: 'uppercase', fontSize: '10px' }}>Local Anchor</th>
-                          <th style={{ textAlign: 'center', padding: '1rem', color: 'rgba(255,255,255,0.4)', textTransform: 'uppercase', fontSize: '10px' }}>Score</th>
-                          <th style={{ textAlign: 'center', padding: '1rem', color: 'rgba(255,255,255,0.4)', textTransform: 'uppercase', fontSize: '10px' }}>vs</th>
-                          <th style={{ textAlign: 'left', padding: '1rem', color: 'rgba(255,255,255,0.4)', textTransform: 'uppercase', fontSize: '10px' }}>Expansion Venue</th>
-                          <th style={{ textAlign: 'center', padding: '1rem', color: 'rgba(255,255,255,0.4)', textTransform: 'uppercase', fontSize: '10px' }}>Score</th>
-                          <th style={{ textAlign: 'center', padding: '1rem', color: 'rgba(255,255,255,0.4)', textTransform: 'uppercase', fontSize: '10px' }}>Winner</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {analysis.signals.sectorHeatmap
-                          .filter(s => s.id !== 'AMBIENT' && s.id !== 'TOURS')
-                          .sort((a, b) => Math.max(b.local.score, b.expansion.score) - Math.max(a.local.score, a.expansion.score))
-                          .slice(0, 6)
-                          .map((sector, i) => {
-                            const localWinner = sector.local.score >= sector.expansion.score;
-                            return (
-                              <tr key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.03)' }}>
-                                <td style={{ padding: '1rem', fontWeight: 700, color: 'rgba(255,255,255,0.3)' }}>#{i+1}</td>
-                                <td style={{ padding: '1rem', fontWeight: 800 }}>{sector.label}</td>
-                                <td style={{ padding: '1rem', color: localWinner ? '#fff' : 'rgba(255,255,255,0.4)' }}>{sector.local.name}</td>
-                                <td style={{ padding: '1rem', textAlign: 'center', fontWeight: 900, color: localWinner ? '#00e5ff' : 'inherit' }}>{sector.local.score}</td>
-                                <td style={{ padding: '1rem', textAlign: 'center', color: 'rgba(255,255,255,0.2)' }}>🆚</td>
-                                <td style={{ padding: '1rem', color: !localWinner ? '#fff' : 'rgba(255,255,255,0.4)' }}>{sector.expansion.name} ({sector.expansion.district})</td>
-                                <td style={{ padding: '1rem', textAlign: 'center', fontWeight: 900, color: !localWinner ? '#00e5ff' : 'inherit' }}>{sector.expansion.score}</td>
-                                <td style={{ padding: '1rem', textAlign: 'center' }}>
-                                  <div style={{ 
-                                    display: 'inline-block', 
-                                    width: '12px', 
-                                    height: '12px', 
-                                    borderRadius: '2px', 
-                                    background: localWinner ? '#10b981' : '#ef4444' 
-                                  }} />
-                                </td>
-                              </tr>
-                            );
-                          })}
-                      </tbody>
-                    </table>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
+                    {analysis.signals.sectorHeatmap
+                      .filter(s => s.id !== 'AMBIENT' && s.id !== 'TOURS')
+                      .sort((a, b) => Math.max(b.local.score, b.expansion.score) - Math.max(a.local.score, a.expansion.score))
+                      .slice(0, 6)
+                      .map((sector, i) => {
+                        const localWinner = sector.local.score >= sector.expansion.score;
+                        return (
+                          <div key={i} style={{ display: 'grid', gridTemplateColumns: '150px 1fr 1fr', gap: '2.5rem', alignItems: 'center' }}>
+                            <div style={{ fontSize: '11px', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.4)' }}>
+                              {sector.label}
+                            </div>
+                            
+                            {/* LOCAL BAR */}
+                            <div style={{ position: 'relative' }}>
+                              <div style={{ height: '36px', background: 'rgba(255,255,255,0.03)', borderRadius: '6px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.05)' }}>
+                                <motion.div 
+                                  initial={{ width: 0 }}
+                                  animate={{ width: `${(sector.local.score / 120) * 100}%` }}
+                                  transition={{ duration: 1, delay: i * 0.1 }}
+                                  style={{ 
+                                    height: '100%', 
+                                    background: localWinner ? 'linear-gradient(90deg, #10b981, #059669)' : 'rgba(255,255,255,0.1)',
+                                    boxShadow: localWinner ? '0 0 20px rgba(16,185,129,0.2)' : 'none'
+                                  }} 
+                                />
+                              </div>
+                              <div style={{ position: 'absolute', top: '50%', left: '12px', transform: 'translateY(-50%)', fontSize: '10px', fontWeight: 900, color: localWinner ? '#fff' : 'rgba(255,255,255,0.5)', pointerEvents: 'none' }}>
+                                LOCAL: {sector.local.name} ({sector.local.score})
+                              </div>
+                            </div>
+
+                            {/* EXPANSION BAR */}
+                            <div style={{ position: 'relative' }}>
+                              <div style={{ height: '36px', background: 'rgba(255,255,255,0.03)', borderRadius: '6px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.05)' }}>
+                                <motion.div 
+                                  initial={{ width: 0 }}
+                                  animate={{ width: `${(sector.expansion.score / 120) * 100}%` }}
+                                  transition={{ duration: 1, delay: i * 0.1 }}
+                                  style={{ 
+                                    height: '100%', 
+                                    background: !localWinner ? 'linear-gradient(90deg, #10b981, #059669)' : 'rgba(255,255,255,0.1)',
+                                    boxShadow: !localWinner ? '0 0 20px rgba(16,185,129,0.2)' : 'none'
+                                  }} 
+                                />
+                              </div>
+                              <div style={{ position: 'absolute', top: '50%', left: '12px', transform: 'translateY(-50%)', fontSize: '10px', fontWeight: 900, color: !localWinner ? '#fff' : 'rgba(255,255,255,0.5)', pointerEvents: 'none' }}>
+                                {sector.expansion.district.toUpperCase()}: {sector.expansion.name} ({sector.expansion.score})
+                              </div>
+                            </div>
+                          </div>
+                        );
+                      })}
                   </div>
                 </div>
 
-                {/* c) ANALYSIS */}
+                {/* ANALYSIS */}
                 <div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1.5rem' }}>
-                    <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: 'rgba(255,255,255,0.7)' }}>c) Analysis</h3>
-                    <div className="info-trigger" title="AI-driven synthesis of the competitive gaps and local strengths detected.">
+                    <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: 'rgba(255,255,255,0.7)' }}>Analysis</h3>
+                    <div className="info-trigger" data-tooltip="AI-driven synthesis of the competitive gaps and local strengths detected.">
                       <Info size={14} color="rgba(255,255,255,0.3)" />
                     </div>
                   </div>

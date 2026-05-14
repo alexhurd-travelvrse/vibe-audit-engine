@@ -1,24 +1,11 @@
-import VIBE_CACHE_RAW from './engine/vibeCache.json' with { type: 'json' };
-
-const VIBE_CACHE = { ...VIBE_CACHE_RAW };
 const ENGINE_VERSION = "v7.0";
 
-// AUTO-RESET: Clear local cache if engine version has updated
-if (typeof localStorage !== 'undefined' && localStorage.getItem('travelvrse_vibe_version') !== ENGINE_VERSION) {
-  console.log(`[Engine] Version update detected (${ENGINE_VERSION}). Clearing legacy cache.`);
-  localStorage.removeItem('travelvrse_vibe_cache');
-  localStorage.setItem('travelvrse_vibe_version', ENGINE_VERSION);
-}
-
-// Load from localStorage if available (for persistence across sessions)
+// Load from localStorage ONLY if the user specifically saved it (transient cache disabled for live audit focus)
 const localCache = typeof localStorage !== 'undefined' 
   ? JSON.parse(localStorage.getItem('travelvrse_vibe_cache') || '{}')
   : {};
 
-// SANITIZATION: Ensure data format is consistent
-Object.keys(localCache).forEach(city => {
-  VIBE_CACHE[city] = localCache[city];
-});
+const VIBE_CACHE = { ...localCache };
 
 export const VIBE_TAXONOMY = [
   { id: "CULINARY", label: "Culinary", keywords: ["food", "dining", "tasting", "chef", "restaurant", "culinary", "gastronomy", "wine", "distillery", "brewery", "interactive dining", "small luxuries", "swangy", "fire-driven", "chef-led", "little treat", "glocal", "mediterranean", "italian", "mexican", "bistro", "eatery", "kitchen", "grill", "brunch", "steak", "sushi", "cafe", "coffee", "bakery", "pastry", "ramen", "tapas"] },
@@ -113,23 +100,22 @@ export async function scrapeLocalSignals(city, neighborhood) {
   const normalizedCity = city.trim();
   const normalizedArea = neighborhood ? neighborhood.trim() : null;
   const targetArea = normalizedArea || normalizedCity;
-  const cacheKey = normalizedArea ? normalizedArea : normalizedCity;
+  const cacheKey = `vibe_audit_${targetArea.toLowerCase().replace(/\s+/g, '_')}`;
 
-  const cachedEntry = VIBE_CACHE[cacheKey];
-  const TTL = 24 * 60 * 60 * 1000; 
-
-  if (cachedEntry && cachedEntry.lastDiscovery && (Date.now() - cachedEntry.lastDiscovery < TTL)) {
-    console.log(`[Agent A] Cache Hit (Fresh) for ${cacheKey}. Serving stored vibes.`);
-    return { 
-      city, neighborhood, sentiment: 'Authority Cached Intelligence', 
-      topExperiences: cachedEntry.data.slice(0, 5), velocity: 9.9 
-    };
+  // 1. DYNAMIC CACHE CHECK (24-Hour TTL)
+  if (typeof localStorage !== 'undefined') {
+    const cached = JSON.parse(localStorage.getItem(cacheKey) || 'null');
+    const TTL = 24 * 60 * 60 * 1000;
+    if (cached && (Date.now() - cached.timestamp < TTL) && cached.engineVersion === ENGINE_VERSION) {
+      console.log(`[Agent A] Dynamic Cache Hit for ${targetArea}. serving live-generated vibes.`);
+      return cached.data;
+    }
   }
 
   const API_KEY = "a23fd96c5cb1aace5f985e1d32f27492c241b349";
   const HEADERS = { 'X-API-KEY': API_KEY, 'Content-Type': 'application/json' };
   
-  console.log(`[Agent A] Dynamic Discovery Rolling Out for ${targetArea} (Cache Expired or Missing)...`);
+  console.log(`[Agent A] Launching Live Dynamic Discovery for ${targetArea}...`);
 
   try {
     let expansionDistricts = ["Arts District", "Financial District", "Old Town", "Creative Quarter"];
@@ -142,20 +128,17 @@ export async function scrapeLocalSignals(city, neighborhood) {
       expansionDistricts = ["Battersea", "Chelsea", "Putney", "Fulham", "Clapham", "Southfields"];
     }
 
-    const placeBuffer = [];
-    const socialBuffer = [];
-    const tourBuffer = [];
+    const venueMap = new Map();
 
-    async function probeArea(areaName, isSocial = false, isPlaces = false) {
-      console.log(`[Agent A] Probing ${areaName} for ${isPlaces ? 'Venues' : (isSocial ? 'Social' : 'Authority')}...`);
+    async function probeArea(areaName, isSocial = false, isPlaces = false, isAnchor = false) {
+      console.log(`[Agent A] Probing ${areaName} for ${isAnchor ? 'Anchors' : (isPlaces ? 'Venues' : (isSocial ? 'Social' : 'Authority'))}...`);
       
       if (isPlaces) {
         const subQueries = [
           `top trending restaurants and bars in ${city} ${areaName}`,
-          `top trending art galleries and museums in ${city} ${areaName}`,
-          `top trending boutiques and shops in ${city} ${areaName}`,
-          `top trending spas and wellness centers in ${city} ${areaName}`,
-          `top trending outdoor activities and adventure in ${city} ${areaName}`
+          `must visit art galleries and architecture in ${city} ${areaName}`,
+          `best high-craft boutiques in ${city} ${areaName}`,
+          `top rated spas and wellness in ${city} ${areaName}`
         ];
         for (const q of subQueries) {
           const res = await fetch(`https://google.serper.dev/places`, {
@@ -166,7 +149,12 @@ export async function scrapeLocalSignals(city, neighborhood) {
             const combined = (place.title + " " + (place.category || "")).toLowerCase();
             const category = VIBE_TAXONOMY.find(cat => cat.keywords.some(k => combined.includes(k))) || VIBE_TAXONOMY[2];
             const { name, vibeConcept, category: trendTitle } = heroify({ ...place, type: 'place' }, category, city, areaName, 'Google Maps');
-            placeBuffer.push({ ...place, name, vibeConcept, category: trendTitle, id: category.id, score: 100, source: 'Google Maps', demandLabel: 'High Local Demand' });
+            
+            const key = name.toLowerCase();
+            if (!venueMap.has(key)) {
+              venueMap.set(key, { name, vibeConcept, category: trendTitle, id: category.id, score: 0, source: 'Google Maps', district: areaName });
+            }
+            venueMap.get(key).score += 35; // ANCHOR SCORE (FROZEN)
           });
         }
         return;
@@ -175,276 +163,91 @@ export async function scrapeLocalSignals(city, neighborhood) {
       const socialQueries = [
         `site:tiktok.com "${city}" "${areaName}" "aesthetic" OR "vibe check"`,
         `site:tiktok.com "${city}" "${areaName}" "hidden gems" OR "must visit"`,
-        `site:tiktok.com "${city}" "${areaName}" "beach club" OR "cabana" OR "resort pool"`,
         `site:instagram.com "${city}" "${areaName}" "vibe" OR "trending"`
       ];
       
-      const authorityQuery = `${DISCOVERY_SOURCES.LOCAL} "${city}" "${areaName}" "vibe" OR "hidden" OR "hushpitality"`;
+      const authorityQuery = `site:monocle.com OR site:wallpaper.com OR site:eater.com OR site:timeout.com "${city}" "${areaName}" "vibe" OR "hidden"`;
+      const anchorQuery = `iconic landmarks and cultural anchors in ${city} ${areaName} "heritage" OR "brutalist" OR "legendary"`;
 
-      const allSearchQueries = isSocial ? socialQueries : [authorityQuery];
+      const allSearchQueries = isAnchor ? [anchorQuery] : (isSocial ? socialQueries : [authorityQuery]);
 
       for (const q of allSearchQueries) {
-        console.log(`[Agent A] Deep Scanning Social for: ${q}...`);
         const res = await fetch(`https://google.serper.dev/search`, {
           method: 'POST', headers: HEADERS, body: JSON.stringify({ q, num: 40 })
         }).then(r => r.json()).catch(() => ({ organic: [] }));
 
         (res.organic || []).forEach(item => {
-        const combined = (item.title + " " + item.snippet).toLowerCase();
-        const noiseKeywords = ["search", "login", "account", "map", "direction", "hours", "directions", "salvation army", "goodwill", "temple", "church", "job", "career", "weather", "news"];
-        if (noiseKeywords.some(k => combined.includes(k))) return;
+          const combined = (item.title + " " + item.snippet).toLowerCase();
+          const category = VIBE_TAXONOMY.find(cat => cat.keywords.some(k => combined.includes(k))) || VIBE_TAXONOMY[2];
+          const isSocialResult = item.link.includes('tiktok.com') || item.link.includes('instagram.com');
+          const isAuthorityResult = !isSocialResult && (item.link.includes('monocle') || item.link.includes('wallpaper') || item.link.includes('eater') || item.link.includes('timeout'));
+          const rawHostname = new URL(item.link).hostname.replace('www.', '');
+          const source = isSocialResult ? 'Social Signal' : rawHostname;
 
-        const category = VIBE_TAXONOMY.find(cat => cat.keywords.some(k => combined.includes(k))) || VIBE_TAXONOMY[2];
-        const isSocialResult = item.link.includes('tiktok.com') || item.link.includes('instagram.com');
-        const isAuthorityResult = !isSocialResult && DISCOVERY_SOURCES.LOCAL.split(' OR ').some(s => item.link.includes(s.split(':')[1]));
-        const rawHostname = new URL(item.link).hostname.replace('www.', '');
-        const source = isSocialResult ? 'Social Signal' : rawHostname;
-
-        if (rawHostname.includes('getyourguide.com') && category.id !== 'TOURS') return;
-        if (category.id === 'TOURS' && !rawHostname.includes('getyourguide.com')) return;
-
-        const { name, vibeConcept, category: trendTitle } = heroify(item, category, city, areaName, source);
-        const score = isSocialResult ? 95 : (isAuthorityResult ? 90 : 80);
-        
-        const candidate = { 
-          name, 
-          vibeConcept, 
-          category: trendTitle, 
-          id: category.id, 
-          score, 
-          source, 
-          snippet: item.snippet, 
-          link: item.link,
-          isSocial: isSocialResult,
-          isAuthority: isAuthorityResult,
-          district: areaName 
-        };
-        
-        if (category.id === 'TOURS') tourBuffer.push(candidate);
-        else socialBuffer.push(candidate);
-      });
-    }
-  }
-
-    const probeAreas = [targetArea];
-    for (const area of probeAreas) {
-      await probeArea(area, false, true); // Places
-      await probeArea(area, true, false);  // Social
-      await probeArea(area, false, false); // Authority & Tours
-    }
-
-    function calculateWeightedScores(venues, signals) {
-      return venues.map(place => {
-        // 1. Google Maps Review Score (30 pts)
-        const ratingWeight = (place.rating / 5) * 15; 
-        const countWeight = Math.min(place.ratingCount || 0, 1000) / 1000 * 15; 
-        const googleScore = ratingWeight + countWeight;
-
-        // 2. Social Recency Score (70 pts)
-        let socialScore = 0;
-        const venueName = (place.title || place.name || "").toLowerCase();
-        const cleanVenueName = venueName.replace(/restaurant|bar|cafe|london|wandsworth|south bank|copenhagen|miami|the /ig, "").trim();
-
-        const matches = signals.filter(s => {
-          if (!s.isSocial) return false;
-          const sText = (s.name + " " + s.snippet).toLowerCase();
-          const venueTokens = cleanVenueName.split(" ");
-          const coreBrand = venueTokens.slice(0, 2).join(" ");
+          const { name, vibeConcept, category: trendTitle } = heroify(item, category, city, areaName, source);
           
-          if (sText.includes(cleanVenueName)) return true;
-          if (coreBrand.length > 3 && sText.includes(coreBrand)) return true;
-          return cleanVenueName.includes(s.name.toLowerCase());
-        });
-
-        matches.forEach(match => {
-          let weight = 15;
-          const snip = match.snippet.toLowerCase();
-          if (snip.includes('day') || snip.includes('hour') || snip.includes('yesterday')) weight = 35; // Max in 2 hits
-          else if (snip.includes('week')) weight = 20;
-          socialScore += weight;
-        });
-        socialScore = Math.min(socialScore, 70);
-
-        // 3. Authority Score (20 pts)
-        let authorityScore = 0;
-        const authMatches = signals.filter(s => {
-          if (!s.isAuthority) return false;
-          const pName = (place.title || place.name).toLowerCase();
-          const sText = (s.name + " " + s.snippet).toLowerCase();
-          return sText.includes(pName) || pName.includes(s.name.toLowerCase());
-        });
-        if (authMatches.length > 0) authorityScore = 20;
-
-        const totalScore = Math.round(googleScore + socialScore + authorityScore);
-
-        return {
-          ...place,
-          name: place.title || place.name,
-          score: totalScore,
-          socialScore: Math.round(socialScore / 70 * 100),
-          authorityScore: Math.round(authorityScore / 20 * 100),
-          thresholdMet: totalScore >= 50, 
-          demandLabel: socialScore >= 40 ? "Viral High Velocity" : (authorityScore > 0 ? "Authority Verified" : "High Local Demand"),
-          source: socialScore >= 30 ? `Verified via Social & Maps` : (authorityScore > 0 ? `Verified via Blogs & Maps` : `Google Maps`),
-          vibeConcept: socialScore >= 30 ? `🔥 Trending on Social: ${matches[0]?.snippet.split('.')[0]}...` : place.vibeConcept
-        };
-      });
-    }
-
-    let finalAuditResults = calculateWeightedScores(placeBuffer, socialBuffer);
-    
-    // AMBIENT INJECTION: Autonomous Vibe Discovery
-    const rawSnippets = socialBuffer.map(s => s.snippet);
-    const coreVibes = parseAmbientVocabulary(rawSnippets, neighborhood || city);
-    
-    if (coreVibes && coreVibes.length > 0) {
-      coreVibes.forEach(vibe => {
-        finalAuditResults.push({
-          ...vibe,
-          source: "Autonomous Social Discovery",
-          demandLabel: "Dominant Local Trend",
-          thresholdMet: true,
-          category: "Core Vibe"
-        });
-      });
-    }
-
-    const pickResults = (auditData) => {
-      const results = [];
-      const usedNames = new Set();
-      const usedCategories = new Set();
-
-      // Phase 1: Best of each category (Threshold Met)
-      auditData.sort((a, b) => b.score - a.score).forEach(cand => {
-        if (results.length < 5 && cand.score >= 70 && !usedNames.has(cand.name) && !usedCategories.has(cand.id)) {
-          results.push(cand);
-          usedNames.add(cand.name);
-          usedCategories.add(cand.id);
-        }
-      });
-
-      // Phase 2: Best remaining (Threshold Met, ignore category diversity)
-      auditData.sort((a, b) => b.score - a.score).forEach(cand => {
-        if (results.length < 5 && cand.score >= 70 && !usedNames.has(cand.name)) {
-          results.push(cand);
-          usedNames.add(cand.name);
-        }
-      });
-
-      // Phase 3: Fillers (Best remaining overall if we are still short)
-      auditData.sort((a, b) => b.score - a.score).forEach(cand => {
-        if (results.length < 5 && !usedNames.has(cand.name)) {
-          results.push(cand);
-          usedNames.add(cand.name);
-        }
-      });
-
-      return results;
-    };
-
-    let finalResults = pickResults(finalAuditResults);
-    
-    // CATEGORY-SPECIFIC ADAPTIVE EXPANSION
-    const weakCategories = finalResults.filter(r => r.score < 50).map(r => r.id);
-    
-    if (weakCategories.length > 0) {
-      console.log(`[Agent A] Weak categories detected (Score < 50): ${weakCategories.join(', ')}. Broadening search...`);
-      const expansionAreas = expansionDistricts.slice(0, 2);
-      for (const area of expansionAreas) {
-        for (const catId of weakCategories) {
-          const cat = VIBE_TAXONOMY.find(c => c.id === catId);
-          console.log(`[Agent A] Targeted Expansion for ${cat.label} in ${area}...`);
-          const q = `top trending ${cat.keywords[0]} in ${city} ${area}`;
-          const res = await fetch(`https://google.serper.dev/places`, {
-            method: 'POST', headers: HEADERS, body: JSON.stringify({ q, num: 5 })
-          }).then(r => r.json()).catch(() => ({ places: [] }));
+          const key = name.toLowerCase();
+          if (!venueMap.has(key)) {
+            venueMap.set(key, { name, vibeConcept, category: trendTitle, id: category.id, score: 0, source, district: areaName });
+          }
           
-          (res.places || []).forEach(place => {
-            const { name, vibeConcept, category: trendTitle } = heroify({ ...place, type: 'place' }, cat, city, area, 'Google Maps');
-            placeBuffer.push({ ...place, name, vibeConcept, category: trendTitle, id: cat.id, score: 100, source: 'Google Maps', district: area });
-          });
-        }
-        await probeArea(area, true, false); // Social for expansion areas to help triangulation
+          const entry = venueMap.get(key);
+          if (isAuthorityResult) entry.score += 20; // AUTHORITY SCORE (FROZEN)
+          if (isSocialResult) entry.score += 65;    // VIRAL SCORE (FROZEN)
+          if (isAnchor) entry.score += 35;          // ADDITIONAL ANCHOR SIGNAL
+        });
       }
-      // Re-run weighting and picking
-      finalAuditResults = calculateWeightedScores(placeBuffer, socialBuffer);
-      finalResults = pickResults(finalAuditResults);
     }
 
-    // Final Reverse Probe for the definitive set
-    console.log(`[Agent A] Final Reverse Social Probe for ${finalResults.length} definitive venues...`);
-    const batches = [];
-    for (let i = 0; i < finalResults.length; i += 5) {
-      const batch = finalResults.slice(i, i + 5).map(p => {
-        const clean = p.name.split('(')[0].replace(/restaurant|bar|cafe|london|the /ig, "").trim();
-        return `"${clean}"`;
-      }).join(" OR ");
-      batches.push(batch);
+    await probeArea(targetArea, false, true); // Places
+    await probeArea(targetArea, true, false);  // Social
+    await probeArea(targetArea, false, false); // Authority
+    await probeArea(targetArea, false, false, true); // Anchors
+
+    // Probe expansion areas for comparison
+    for (const exp of expansionDistricts.slice(0, 2)) {
+      await probeArea(exp, false, true);
     }
 
-    for (const batchQuery of batches.slice(0, 3)) {
-      const q = `site:tiktok.com ${city} ${batchQuery}`;
-      const res = await fetch(`https://google.serper.dev/search`, {
-        method: 'POST', headers: HEADERS, body: JSON.stringify({ q, num: 10 })
-      }).then(r => r.json()).catch(() => ({ organic: [] }));
-      
-      (res.organic || []).forEach(item => {
-        const isSocialResult = item.link.includes('tiktok.com') || item.link.includes('instagram.com');
-        if (isSocialResult) {
-          socialBuffer.push({
-            name: item.title, snippet: item.snippet, link: item.link, isSocial: true, isAuthority: false, district: targetArea
-          });
-        }
-      });
-    }
-
-    // Re-calculate final scores one last time after the Reverse Probe
-    const definitiveResults = calculateWeightedScores(finalResults, socialBuffer);
-
-    // Handle Tours separately as usual
-    const triangulatedTours = tourBuffer.map(tour => {
-      const match = socialBuffer.find(s => tour.name.toLowerCase().includes(s.name.toLowerCase()));
-      return match ? { ...tour, score: 120, demandLabel: "Viral High Velocity" } : tour;
-    });
-    const bestTour = triangulatedTours.sort((a, b) => b.score - a.score)[0];
-    if (bestTour) definitiveResults.push(bestTour);
-
-    if (definitiveResults.length >= 3 && typeof localStorage !== 'undefined') {
-      const entry = { data: definitiveResults, lastDiscovery: Date.now() };
-      VIBE_CACHE[cacheKey] = entry;
-      const updatedLocal = JSON.parse(localStorage.getItem('travelvrse_vibe_cache') || '{}');
-      updatedLocal[cacheKey] = entry;
-      localStorage.setItem('travelvrse_vibe_cache', JSON.stringify(updatedLocal));
-      localStorage.setItem('travelvrse_vibe_version', ENGINE_VERSION);
-    }
-
-    // 5. GENERATE SECTOR HEATMAP FOR UI
+    const finalAuditResults = Array.from(venueMap.values());
+    const coreVibes = parseAmbientVocabulary(finalAuditResults.map(s => s.vibeConcept), targetArea);
+    
     const sectorHeatmap = VIBE_TAXONOMY.map(cat => {
-      const localTop = finalAuditResults.filter(r => r.id === cat.id).sort((a, b) => b.score - a.score)[0] || { score: 0, name: "Low Signal" };
-      
-      // Look into placeBuffer and socialBuffer for expansion scores
-      const expansionTop = [...placeBuffer, ...socialBuffer, ...tourBuffer]
-        .filter(r => r.id === cat.id && r.district && r.district !== (neighborhood || city))
-        .sort((a, b) => b.score - a.score)[0] || { score: 0, name: "N/A", district: "City Wide" };
-
+      const localTop = finalAuditResults
+        .filter(r => r.id === cat.id && r.district === targetArea)
+        .sort((a, b) => b.score - a.score)[0] || { score: 0, name: "Low Signal" };
+        
+      const expansionTop = finalAuditResults
+        .filter(r => r.id === cat.id && r.district !== targetArea)
+        .sort((a, b) => b.score - a.score)[0] || { score: 0, name: "N/A", district: "Adjacent" };
+        
       return {
         id: cat.id,
         label: cat.label,
         local: { name: localTop.name, score: localTop.score },
         expansion: { name: expansionTop.name, score: expansionTop.score, district: expansionTop.district }
       };
-    }).sort((a, b) => b.local.score - a.local.score); // Sort by neighborhood strength
+    }).sort((a, b) => b.local.score - a.local.score);
 
-    return { 
+    const result = { 
       city, neighborhood, sentiment: 'Dynamic Intelligence Audit', 
-      topExperiences: definitiveResults, 
+      topExperiences: finalAuditResults.slice(0, 5), 
       sectorHeatmap,
-      coreVibes: coreVibes || [],
-      velocity: 9.9 
+      coreVibes: coreVibes || []
     };
+
+    if (typeof localStorage !== 'undefined') {
+      localStorage.setItem(cacheKey, JSON.stringify({
+        data: result,
+        timestamp: Date.now(),
+        engineVersion: ENGINE_VERSION
+      }));
+    }
+
+    return result;
   } catch (error) {
-    console.error("[Agent A] Audit Failed:", error);
-    return { city, neighborhood, sentiment: 'Audit Failure', topExperiences: [], velocity: 0 };
+    console.error("[Agent A] Dynamic Audit Failed:", error);
+    return { city, neighborhood, sentiment: 'Audit Failure', topExperiences: [] };
   }
 }
 
