@@ -1,45 +1,35 @@
-# Vibe Audit Engine: Logic Specification (v7.0)
+# Vibe Audit Engine: Detailed Search Manifesto (v8.6)
 
-This document codifies the official methodology for neighborhood-granular discovery and scoring used in the TravelVRSE Vibe Audit Engine.
+This manifesto provides the technical and logical specification for the TravelVRSE Vibe Audit Engine.
 
-## 1. Discovery Pipeline (Agent A)
+## 1. Discovery Architecture (The Multi-Layer Sweep)
 
-### A. Search Strategy: Neighborhood Aliasing
-To ensure high-fidelity discovery, the engine does not rely on a single literal neighborhood name. It utilizes "Neighborhood Aliases" to capture fragmented social signals.
-*   **Example (Southbank)**: Queries are automatically expanded to include `Waterloo`, `Bankside`, and `Thames`.
-*   **Recursive Fallback**: If local signal frequency is < 20 pts, the engine triggers a city-wide "Anchor Probe" to populate the sector.
+### A. Phase 1: Sector-Specific Anchor Probes (The Physical Foundation)
+The engine performs targeted probes into physical directories (Google Places + Marketplace Anchors for Tours).
 
-### B. Discovery Sources
-1.  **Primary Directory (Literal)**: Google Places (via Serper API) for addresses, ratings, and categories.
-2.  **Social Proof (Viral)**: TikTok and Instagram Organic snippets (via Serper) using "aesthetic" and "vibe check" keywords.
-3.  **Authority Signals (Curation)**: Monocle, Wallpaper*, Eater, and Time Out snippets.
+### B. Phase 2: Neighborhood Aliasing
+The engine repeats probes for synonyms (e.g., Southbank, Bankside, Waterloo) to consolidate the "Local" winner.
 
-## 2. Scoring Algorithm (The 120-Point Scale)
+## 2. Signal Type Specifications (The 120-Point Model)
 
-The total score for any venue is calculated by aggregating signals across the discovery pipeline.
+### 1. Places Signal (35 Pts Max) - MANDATORY
+*   **Protocol**: Physical Directory cross-check.
+*   **The Math**: 20 Pts (Existence) + 15 Pts (Scaled Rating).
 
-| Signal Type | Point Value | Definition |
-| :--- | :--- | :--- |
-| **Places Signal** | **35 Pts** | Verified existence on Google Maps with a valid rating. |
-| **Authority Signal** | **20 Pts** | Mention in high-fidelity design/travel publications. |
-| **Social Signal** | **65 Pts** | High-velocity engagement on TikTok or Instagram. |
-| **Anchor Signal** | **35 Pts** | Literal match for iconic landmarks/cultural anchors. |
+### 2. Social Signal (65 Pts Max) - "Viral Velocity"
+*   **The Math (Mention Density)**:
+    *   **25 Pts (Low Velocity)**: 1 unique organic snippet.
+    *   **45 Pts (Medium Velocity)**: 2 unique organic snippets.
+    *   **65 Pts (High Velocity / Viral)**: 3+ unique organic snippets.
 
-**Maximum Base Score**: 120 Pts (Place + Authority + Social). 
-*Note: Scores may exceed 120 through **Fuzzy Venue Merging** if multiple aliases yield unique signals for the same entity.*
-
-## 3. Data Processing & Display
-
-### A. Fuzzy Venue Merging
-The engine implements a normalization layer to prevent duplicate entries.
-*   **Logic**: Venues with a >80% name overlap (e.g., "Sea Containers" vs "Sea Containers Restaurant") are merged into a single high-score entity.
-
-### B. Sector Heatmap Generation
-The engine calculates a "Local vs. Expansion" comparison for every sector (Culinary, Wellness, Culture, etc.).
-*   **Local Score**: The highest scoring venue within the target neighborhood.
-*   **Expansion Score**: The highest scoring venue in the top 3 adjacent districts (to show market context).
+### 3. Authority Signal (20 Pts Max) - "Elite Curation"
+*   **Protocol**: Multi-Source Authority Probe. The engine specifically scans the following **Elite Guides**:
+    *   **Design & Architecture**: `wallpaper.com`, `monocle.com`, `dezeen.com`.
+    *   **Fashion & Lifestyle**: `vogue.com`, `highsnobiety.com`, `hypebeast.com`.
+    *   **Hospitality & Dining**: `eater.com`, `theinfatuation.com`, `michelin.com`, `timeout.com`.
+    *   **Travel & Luxury**: `cntraveler.com`, `travelandleisure.com`.
+*   **The Math**: **20 Pts (Boolean)**. A verified mention in any of these elite domains satisfies the curation requirement.
 
 ---
-**Released Version**: v7.0
-**Status**: ACTIVE / FROZEN
-**Verification Hash**: f5ef7e8-hf-stable
+**Status**: ACTIVE
+**Version**: v8.6-ELITE-AUTHORITY

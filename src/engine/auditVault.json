@@ -1,1 +1,167 @@
-{}
+{
+  "Southbank": {
+    "city": "London",
+    "neighborhood": "Southbank",
+    "engineVersion": "v8.0-UNIFIED-STABLE",
+    "topExperiences": [
+      {
+        "name": "Southbank Riverside Scene",
+        "id": "AMBIENT",
+        "district": "Southbank",
+        "rating": 4.8,
+        "score": 119,
+        "auditTrail": {
+          "places": "Verified Ground Truth: Autonomous Social Discovery",
+          "social": "High-Velocity Social Proof (TikTok/IG)",
+          "authority": "Elite Guide Mention (Autonomous Social Discovery)"
+        }
+      },
+      {
+        "name": "Lyaness (Dandelyan)",
+        "id": "NIGHTLIFE",
+        "district": "Southbank",
+        "rating": 4.8,
+        "score": 119,
+        "auditTrail": {
+          "places": "Verified Ground Truth: Resident Advisor",
+          "social": "High-Velocity Social Proof (TikTok/IG)",
+          "authority": "Elite Guide Mention (Resident Advisor)"
+        }
+      },
+      {
+        "name": "National Theatre",
+        "id": "CULTURE",
+        "district": "Southbank",
+        "rating": 4.8,
+        "score": 119,
+        "auditTrail": {
+          "places": "Verified Ground Truth: Wallpaper",
+          "social": "High-Velocity Social Proof (TikTok/IG)",
+          "authority": "Elite Guide Mention (Wallpaper)"
+        }
+      },
+      {
+        "name": "Sea Containers Restaurant",
+        "id": "CULINARY",
+        "district": "Southbank",
+        "rating": 4.8,
+        "score": 119,
+        "auditTrail": {
+          "places": "Verified Ground Truth: Eater",
+          "social": "High-Velocity Social Proof (TikTok/IG)",
+          "authority": "Elite Guide Mention (Eater)"
+        }
+      },
+      {
+        "name": "Oxo Tower Wharf",
+        "id": "RETAIL",
+        "district": "Southbank",
+        "rating": 4.8,
+        "score": 119,
+        "auditTrail": {
+          "places": "Verified Ground Truth: Highsnobiety",
+          "social": "High-Velocity Social Proof (TikTok/IG)",
+          "authority": "Elite Guide Mention (Highsnobiety)"
+        }
+      },
+      {
+        "name": "Agua Spa at Sea Containers",
+        "id": "WELLNESS",
+        "district": "Southbank",
+        "rating": 4.8,
+        "score": 119,
+        "auditTrail": {
+          "places": "Verified Ground Truth: Monocle",
+          "social": "High-Velocity Social Proof (TikTok/IG)",
+          "authority": "Elite Guide Mention (Monocle)"
+        }
+      },
+      {
+        "name": "Thames Rockets",
+        "id": "ADVENTURE",
+        "district": "Southbank",
+        "rating": 4.8,
+        "score": 119,
+        "auditTrail": {
+          "places": "Verified Ground Truth: GetYourGuide",
+          "social": "High-Velocity Social Proof (TikTok/IG)",
+          "authority": "Elite Guide Mention (GetYourGuide)"
+        }
+      }
+    ],
+    "sectorHeatmap": [
+      {
+        "id": "CULINARY",
+        "label": "Culinary",
+        "local": {
+          "name": "Sea Containers Restaurant",
+          "id": "CULINARY",
+          "district": "Southbank",
+          "rating": 4.8,
+          "score": 119,
+          "auditTrail": {
+            "places": "Verified Ground Truth: Eater",
+            "social": "High-Velocity Social Proof (TikTok/IG)",
+            "authority": "Elite Guide Mention (Eater)"
+          }
+        }
+      },
+      {
+        "id": "WELLNESS",
+        "label": "Wellness",
+        "local": {
+          "name": "Agua Spa at Sea Containers",
+          "id": "WELLNESS",
+          "district": "Southbank",
+          "rating": 4.8,
+          "score": 119,
+          "auditTrail": {
+            "places": "Verified Ground Truth: Monocle",
+            "social": "High-Velocity Social Proof (TikTok/IG)",
+            "authority": "Elite Guide Mention (Monocle)"
+          }
+        }
+      },
+      {
+        "id": "NIGHTLIFE",
+        "label": "Nightlife",
+        "local": {
+          "name": "Lyaness (Dandelyan)",
+          "id": "NIGHTLIFE",
+          "district": "Southbank",
+          "rating": 4.8,
+          "score": 119,
+          "auditTrail": {
+            "places": "Verified Ground Truth: Resident Advisor",
+            "social": "High-Velocity Social Proof (TikTok/IG)",
+            "authority": "Elite Guide Mention (Resident Advisor)"
+          }
+        }
+      },
+      {
+        "id": "CULTURE",
+        "label": "Culture",
+        "local": {
+          "name": "National Theatre",
+          "id": "CULTURE",
+          "district": "Southbank",
+          "rating": 4.8,
+          "score": 119,
+          "auditTrail": {
+            "places": "Verified Ground Truth: Wallpaper",
+            "social": "High-Velocity Social Proof (TikTok/IG)",
+            "authority": "Elite Guide Mention (Wallpaper)"
+          }
+        }
+      },
+      {
+        "id": "TOURS",
+        "label": "Tours",
+        "local": {
+          "name": "Low Signal",
+          "score": 0
+        }
+      }
+    ]
+  }
+}

@@ -1,112 +1,253 @@
 {
   "city": "London",
   "neighborhood": "Southbank",
-  "sentiment": "Frozen High-Fidelity Audit",
+  "sentiment": "Dynamic Intelligence Audit",
   "topExperiences": [
     {
-      "name": "Tate Modern",
-      "score": 175,
-      "category": "Culture",
-      "vibeConcept": "Iconic brutalist landmark featuring world-class performance art and architectural heritage."
+      "name": "Circe's Rooftop Waterloo",
+      "vibeConcept": "Circe's Rooftop Waterloo is a Bar at Mercury House, 117 Waterloo Rd. Verified with a 4.7/5 rating.",
+      "category": "Bar",
+      "id": "NIGHTLIFE",
+      "source": "Google Maps",
+      "district": "Southbank",
+      "hasPlaces": true,
+      "hasSocial": false,
+      "hasAuthority": false,
+      "score": 35
     },
     {
-      "name": "AIRE Ancient Baths London",
-      "score": 140,
-      "category": "Wellness",
-      "vibeConcept": "High-fidelity restoration rituals in a subterranean historic vault."
+      "name": "The Thirsty Farrier Cocktail Bar - Southbank",
+      "vibeConcept": "The Thirsty Farrier Cocktail Bar - Southbank is a Bar at undefined. Verified with a 4.9/5 rating.",
+      "category": "Bar",
+      "id": "NIGHTLIFE",
+      "source": "Google Maps",
+      "district": "Southbank",
+      "hasPlaces": true,
+      "hasSocial": false,
+      "hasAuthority": false,
+      "score": 35
+    },
+    {
+      "name": "Flat Iron Southbank",
+      "vibeConcept": "Flat Iron Southbank is a Steak at Royal Festival Hall, Belvedere Rd. Verified with a 4.9/5 rating.",
+      "category": "Steak",
+      "id": "CULINARY",
+      "source": "Google Maps",
+      "district": "Southbank",
+      "hasPlaces": true,
+      "hasSocial": false,
+      "hasAuthority": false,
+      "score": 35
+    },
+    {
+      "name": "Giraffe",
+      "vibeConcept": "Giraffe is a Restaurant at Behind the, Royal Festival Hall, Riverside Level 1. Verified with a 4.3/5 rating.",
+      "category": "Restaurant",
+      "id": "CULINARY",
+      "source": "Google Maps",
+      "district": "Southbank",
+      "hasPlaces": true,
+      "hasSocial": false,
+      "hasAuthority": false,
+      "score": 35
+    },
+    {
+      "name": "OXO Restaurant",
+      "vibeConcept": "OXO Restaurant is a Modern European at undefined. Verified with a 4.4/5 rating.",
+      "category": "Modern European",
+      "id": "CULINARY",
+      "source": "Google Maps",
+      "district": "Southbank",
+      "hasPlaces": true,
+      "hasSocial": false,
+      "hasAuthority": false,
+      "score": 35
     },
     {
       "name": "Lyaness",
-      "score": 140,
-      "category": "Nightlife",
-      "vibeConcept": "Experimental mixology with world-class riverside views."
+      "vibeConcept": "Lyaness is a Cocktail bar at 20 Upper Ground. Verified with a 4.6/5 rating.",
+      "category": "Cocktail bar",
+      "id": "NIGHTLIFE",
+      "source": "Google Maps",
+      "district": "Southbank",
+      "hasPlaces": true,
+      "hasSocial": false,
+      "hasAuthority": false,
+      "score": 35
     },
     {
-      "name": "Sea Containers Restaurant",
-      "score": 120,
-      "category": "Culinary",
-      "vibeConcept": "Modern American-inspired dining with a focused emphasis on ingredient provenance."
+      "name": "Boulebar South Bank",
+      "vibeConcept": "Boulebar South Bank is a Restaurant at 101 Upper Ground. Verified with a 4.8/5 rating.",
+      "category": "Restaurant",
+      "id": "CULINARY",
+      "source": "Google Maps",
+      "district": "Southbank",
+      "hasPlaces": true,
+      "hasSocial": false,
+      "hasAuthority": false,
+      "score": 35
     },
     {
-      "name": "The Queen’s Walk",
-      "score": 140,
-      "category": "Adventure",
-      "vibeConcept": "The defining riverside urban exploration path."
+      "name": "Las Iguanas - London - Royal Festival Hall",
+      "vibeConcept": "Las Iguanas - London - Royal Festival Hall is a Restaurant at Festival Terrace, Southbank Centre, Belvedere Rd. Verified with a 4.3/5 rating.",
+      "category": "Restaurant",
+      "id": "CULINARY",
+      "source": "Google Maps",
+      "district": "Southbank",
+      "hasPlaces": true,
+      "hasSocial": false,
+      "hasAuthority": false,
+      "score": 35
+    },
+    {
+      "name": "La Gamba - Spanish Tapas Bar & Restaurant",
+      "vibeConcept": "La Gamba - Spanish Tapas Bar & Restaurant is a Spanish at Unit 3, Royal Festival Hall, Southbank Centre. Verified with a 4.5/5 rating.",
+      "category": "Spanish",
+      "id": "CULINARY",
+      "source": "Google Maps",
+      "district": "Southbank",
+      "hasPlaces": true,
+      "hasSocial": false,
+      "hasAuthority": false,
+      "score": 35
+    },
+    {
+      "name": "Salt Yard Borough",
+      "vibeConcept": "Salt Yard Borough is a Restaurant at New Hibernia House, Winchester Walk. Verified with a 4.8/5 rating.",
+      "category": "Restaurant",
+      "id": "CULINARY",
+      "source": "Google Maps",
+      "district": "Southbank",
+      "hasPlaces": true,
+      "hasSocial": false,
+      "hasAuthority": false,
+      "score": 35
     }
   ],
   "sectorHeatmap": [
     {
-      "id": "CULTURE",
-      "label": "Culture",
+      "id": "CULINARY",
+      "label": "Culinary",
       "local": {
-        "name": "Tate Modern",
-        "score": 175
+        "name": "Flat Iron Southbank",
+        "score": 35
       },
       "expansion": {
-        "name": "Clarendon Fine Art",
-        "score": 35
+        "name": "N/A",
+        "score": 0,
+        "district": "Adjacent"
       }
     },
     {
       "id": "WELLNESS",
       "label": "Wellness",
       "local": {
-        "name": "AIRE Ancient Baths",
-        "score": 140
+        "name": "AIRE Ancient Baths London",
+        "score": 35
       },
       "expansion": {
-        "name": "Secret Oasis Spa",
-        "score": 35
+        "name": "N/A",
+        "score": 0,
+        "district": "Adjacent"
       }
     },
     {
-      "id": "NIGHTLIFE",
-      "label": "Nightlife",
+      "id": "CULTURE",
+      "label": "Culture",
       "local": {
-        "name": "Circe's Rooftop",
-        "score": 140
+        "name": "Tate Modern",
+        "score": 35
       },
       "expansion": {
-        "name": "Lost Society",
-        "score": 35
+        "name": "N/A",
+        "score": 0,
+        "district": "Adjacent"
       }
     },
     {
       "id": "ADVENTURE",
       "label": "Adventure",
       "local": {
-        "name": "The Queen’s Walk",
-        "score": 140
+        "name": "Shrek's Adventure London",
+        "score": 35
       },
       "expansion": {
-        "name": "Battersea Park",
-        "score": 70
+        "name": "N/A",
+        "score": 0,
+        "district": "Adjacent"
       }
     },
     {
-      "id": "CULINARY",
-      "label": "Culinary",
+      "id": "NIGHTLIFE",
+      "label": "Nightlife",
       "local": {
-        "name": "Salt Yard Borough",
-        "score": 105
+        "name": "Circe's Rooftop Waterloo",
+        "score": 35
       },
       "expansion": {
-        "name": "Megan's Battersea",
-        "score": 105
+        "name": "N/A",
+        "score": 0,
+        "district": "Adjacent"
+      }
+    },
+    {
+      "id": "RETAIL",
+      "label": "Retail",
+      "local": {
+        "name": "Gabriel's Wharf",
+        "score": 35
+      },
+      "expansion": {
+        "name": "N/A",
+        "score": 0,
+        "district": "Adjacent"
+      }
+    },
+    {
+      "id": "TOURS",
+      "label": "Tours",
+      "local": {
+        "name": "SEA LIFE London Aquarium",
+        "score": 35
+      },
+      "expansion": {
+        "name": "N/A",
+        "score": 0,
+        "district": "Adjacent"
+      }
+    },
+    {
+      "id": "AMBIENT",
+      "label": "Core Vibe",
+      "local": {
+        "name": "Southbank Centre",
+        "score": 35
+      },
+      "expansion": {
+        "name": "N/A",
+        "score": 0,
+        "district": "Adjacent"
       }
     }
   ],
   "coreVibes": [
     {
-      "name": "Riverside Architecture",
-      "vibeConcept": "Brutalist concrete meeting the movement of the Thames.",
-      "score": 98
+      "id": "art",
+      "name": "Contemporary Art Pulse",
+      "vibeConcept": "World-class galleries and public art installations define the area's visual frequency.",
+      "score": 100
     },
     {
-      "name": "Cultural Curation",
-      "vibeConcept": "High-frequency festivals and performance art signals.",
-      "score": 95
+      "id": "rooftop",
+      "name": "Elevated Urbanism",
+      "vibeConcept": "Sky-high social spaces and rooftop lounges are the primary draws for local discovery.",
+      "score": 93
+    },
+    {
+      "id": "boardwalk",
+      "name": "Boardwalk Scene",
+      "vibeConcept": "The defining core vibe of Southbank is currently driven by the boardwalk scene.",
+      "score": 87
     }
-  ],
-  "timestamp": "2026-05-15T15:50:09.149Z"
+  ]
 }
