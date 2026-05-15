@@ -8,13 +8,13 @@ const localCache = typeof localStorage !== 'undefined'
 const VIBE_CACHE = { ...localCache };
 
 export const VIBE_TAXONOMY = [
-  { id: "CULINARY", label: "Culinary", keywords: ["food", "dining", "tasting", "chef", "restaurant", "culinary", "gastronomy", "wine", "distillery", "brewery", "interactive dining", "small luxuries", "swangy", "fire-driven", "chef-led", "little treat", "glocal", "mediterranean", "italian", "mexican", "bistro", "eatery", "kitchen", "grill", "brunch", "steak", "sushi", "cafe", "coffee", "bakery", "pastry", "ramen", "tapas"] },
-  { id: "WELLNESS", label: "Wellness", keywords: ["wellness", "spa", "sauna", "ritual", "hammam", "yoga", "pilates", "pool", "meditation", "sensory restoration", "biophilic", "adaptogens", "human-centric", "restorative", "hushpitality", "slow travel", "off-the-grid", "recovery", "gym", "studio", "massage", "fitness", "sauna"] },
-  { id: "CULTURE", label: "Culture", keywords: ["art", "gallery", "culture", "museum", "class", "workshop", "heritage", "history", "design", "architecture", "adaptive reuse", "contemporary heritage", "revival", "landmark", "narrative", "set-jetting", "dejaview", "regenerative", "exhibition", "theater", "theatre", "auditorium", "art gallery", "cultural center", "monument"] },
-  { id: "ADVENTURE", label: "Adventure", keywords: ["kayak", "boat", "climb", "hike", "bike", "rental", "scavenger", "adventure", "zipline", "outdoor", "expedition", "urban exploration", "hidden trail", "sight-doing", "coolcations", "surfing", "sailing", "tours", "park", "nature"] },
-  { id: "NIGHTLIFE", label: "Nightlife", keywords: ["bar", "mixology", "nightlife", "music", "dj", "club", "speakeasy", "cocktail", "listening", "vinyl", "audiophile", "zero proof", "listening bar", "noctourism", "after dark", "lounge", "pub", "tavern", "night club", "brewery", "distillery"] },
-  { id: "RETAIL", label: "Retail", keywords: ["shop", "retail", "concept", "boutique", "fashion", "store", "curated", "craft", "local", "textural surfaces", "experiential", "artisan", "tactility", "showroom", "atelier", "mall", "market", "clothing store", "jewelry", "gift shop"] },
-  { id: "TOURS", label: "Tours", keywords: ["tour", "guide", "getyourguide", "experience", "walking", "boat", "bus", "trip", "excursion", "safari", "scavenger", "storytelling", "urban expedition"] },
+  { id: "CULINARY", label: "Culinary", keywords: ["food", "dining", "tasting", "chef", "restaurant", "culinary", "gastronomy", "wine", "distillery", "brewery", "interactive dining", "swangy", "fire-driven", "chef-led", "little treat", "glocal", "mediterranean", "italian", "mexican", "bistro", "eatery", "kitchen", "grill", "brunch", "steak", "sushi", "cafe", "coffee", "bakery", "pastry", "ramen", "tapas", "market", "street food"] },
+  { id: "WELLNESS", label: "Wellness", keywords: ["wellness", "spa", "sauna", "ritual", "hammam", "yoga", "pilates", "pool", "meditation", "sensory restoration", "biophilic", "adaptogens", "human-centric", "restorative", "hushpitality", "slow travel", "off-the-grid", "recovery", "gym", "studio", "massage", "fitness", "sauna", "lido", "swimming"] },
+  { id: "CULTURE", label: "Culture", keywords: ["art", "gallery", "culture", "museum", "class", "workshop", "heritage", "history", "design", "architecture", "adaptive reuse", "contemporary heritage", "revival", "landmark", "narrative", "set-jetting", "dejaview", "regenerative", "exhibition", "theater", "theatre", "auditorium", "art gallery", "cultural center", "monument", "performance", "ballet", "orchestra", "library", "underground"] },
+  { id: "ADVENTURE", label: "Adventure", keywords: ["kayak", "boat", "climb", "hike", "bike", "rental", "scavenger", "adventure", "zipline", "outdoor", "expedition", "urban exploration", "hidden trail", "sight-doing", "coolcations", "surfing", "sailing", "tours", "park", "nature", "walk", "view", "observation", "skate", "wheel", "ferris", "walking", "bridge", "garden"] },
+  { id: "NIGHTLIFE", label: "Nightlife", keywords: ["bar", "mixology", "nightlife", "music", "dj", "club", "speakeasy", "cocktail", "listening", "vinyl", "audiophile", "zero proof", "listening bar", "noctourism", "after dark", "lounge", "pub", "tavern", "night club", "brewery", "distillery", "rooftop", "terrace", "garden", "underground", "jazz", "live music"] },
+  { id: "RETAIL", label: "Retail", keywords: ["shop", "retail", "concept", "boutique", "fashion", "store", "curated", "craft", "local", "textural surfaces", "experiential", "artisan", "tactility", "showroom", "atelier", "mall", "market", "clothing store", "jewelry", "gift shop", "books", "vinyl", "crafts", "makers", "popup", "pop-up"] },
+  { id: "TOURS", label: "Tours", keywords: ["tour", "guide", "getyourguide", "experience", "walking", "boat", "bus", "trip", "excursion", "safari", "scavenger", "storytelling", "urban expedition", "cruises"] },
   { id: "AMBIENT", label: "Core Vibe", keywords: ["beach", "cabana", "pool", "boardwalk", "view", "sunset", "atmosphere", "energy", "pulse", "scene", "lounge", "daybed"] }
 ];
 
@@ -23,7 +23,7 @@ const DISCOVERY_SOURCES = {
 };
 
 function parseAmbientVocabulary(snippets, neighborhood) {
-  const commonNouns = ["pool", "beach", "sunset", "rooftop", "party", "cocktails", "luxury", "view", "morning", "night", "street", "market", "vibes", "aesthetic", "hidden", "gems", "local", "authentic", "rituals", "boardwalk", "cabana"];
+  const commonNouns = ["pool", "beach", "sunset", "rooftop", "party", "cocktails", "luxury", "view", "morning", "night", "street", "market", "vibes", "aesthetic", "hidden", "gems", "local", "authentic", "rituals", "boardwalk", "cabana", "skate", "skating", "walking", "culture", "art"];
   const counts = {};
   
   snippets.forEach(snip => {
@@ -50,7 +50,9 @@ function parseAmbientVocabulary(snippets, neighborhood) {
     view: { label: "Visual Vistas", concept: "High-fidelity viewpoints are the primary social proof generators for the area." },
     brutalist: { label: "Brutalist Aesthetic", concept: "The raw, concrete architecture of the local landmarks is the dominant visual anchor." },
     riverside: { label: "Riverside Velocity", concept: "The energy is entirely defined by the river—everything from dining to adventure is indexed against the water." },
-    culture: { label: "Cultural Curation", concept: "The highest-frequency social signals revolve around festivals, exhibitions, and performance." }
+    culture: { label: "Cultural Curation", concept: "The highest-frequency social signals revolve around festivals, exhibitions, and performance." },
+    skate: { label: "Subterranean Energy", concept: "The local skate culture and brutalist undercroft provide a raw, authentic energy anchor." },
+    art: { label: "Contemporary Art Pulse", concept: "World-class galleries and public art installations define the area's visual frequency." }
   };
 
   return sorted.slice(0, 3).map(([token, count]) => {
@@ -75,6 +77,7 @@ function heroify(item, category, city, area, source) {
     return { name, vibeConcept: description, category: trendTitle };
   }
 
+  // Improved name cleaning to match Place names
   let rawName = item.title.split('-')[0].split('|')[0].split(':')[0].trim()
     .replace(/TikTok|Instagram|Facebook|YouTube|LinkedIn|Pinterest/g, '')
     .replace(/The Best|Top \d+|Guide to|Secret|Hidden|Gems in|In ${city}|Trending|Best Things to Do in/ig, '')
@@ -87,7 +90,7 @@ function heroify(item, category, city, area, source) {
   const cleanArea = area.trim();
   const nameDisplay = rawName.toLowerCase().includes(cleanArea.toLowerCase()) 
     ? rawName 
-    : `${cleanArea} ${rawName}`;
+    : rawName; // Don't force area name into the title, it breaks fuzzy matching
 
   const description = item.snippet 
     ? item.snippet.replace(/\d{1,2} [a-z]+ 202\d/ig, '').trim()
@@ -119,52 +122,85 @@ export async function scrapeLocalSignals(city, neighborhood) {
 
   try {
     let expansionDistricts = ["Arts District", "Financial District", "Old Town", "Creative Quarter"];
-    if (city.toLowerCase() === 'miami') expansionDistricts = ["Design District", "Brickell", "Little Havana", "Coconut Grove"];
+    let aliases = [targetArea];
+
+    if (city.toLowerCase() === 'miami') {
+      expansionDistricts = ["Design District", "Brickell", "Little Havana", "Coconut Grove"];
+      if (targetArea.toLowerCase() === 'wynwood') aliases.push("Midtown", "Edgewater");
+    }
     else if (city.toLowerCase().includes('las vegas')) expansionDistricts = ["Fremont Street", "Downtown Las Vegas", "Summerlin", "Henderson"];
     else if (city.toLowerCase().includes('copenhagen')) expansionDistricts = ["Vesterbro", "Nørrebro", "Østerbro", "Christianshavn"];
-    else if (city.toLowerCase().includes('chichester') || city.toLowerCase().includes('wittering')) {
-      expansionDistricts = ["Bracklesham Bay", "East Wittering", "Bosham", "Selsey", "Itchenor"];
-    } else if (city.toLowerCase().includes('london')) {
-      expansionDistricts = ["Battersea", "Chelsea", "Putney", "Fulham", "Clapham", "Southfields"];
+    else if (city.toLowerCase().includes('london')) {
+      expansionDistricts = ["Battersea", "Chelsea", "Putney", "Fulham", "Clapham", "Southfields", "Soho", "Shoreditch"];
+      if (targetArea.toLowerCase() === 'southbank') aliases.push("Waterloo", "Bankside", "Thames");
+      if (targetArea.toLowerCase() === 'soho') aliases.push("West End", "Piccadilly");
     }
 
     const venueMap = new Map();
+
+    // Helper for fuzzy merging venues
+    function addVenue(name, data) {
+      const cleanName = name.toLowerCase().replace(/^the\s+/, '').replace(/\s+/g, '');
+      let matchKey = null;
+      
+      // Look for fuzzy match in existing map
+      for (const existingKey of venueMap.keys()) {
+        const cleanExisting = existingKey.toLowerCase().replace(/^the\s+/, '').replace(/\s+/g, '');
+        if (cleanName.includes(cleanExisting) || cleanExisting.includes(cleanName)) {
+          matchKey = existingKey;
+          break;
+        }
+      }
+
+      if (matchKey) {
+        const existing = venueMap.get(matchKey);
+        // Only merge if it's the same district OR we're doing a city-wide fallback
+        if (existing.district === data.district) {
+          existing.score += data.score;
+          existing.source = existing.source.includes(data.source) ? existing.source : `${existing.source}, ${data.source}`;
+          console.log(`[Agent A] Fuzzy Match: Merged '${name}' into '${existing.name}' (New Score: ${existing.score})`);
+        }
+      } else {
+        venueMap.set(name, data);
+      }
+    }
 
     async function probeArea(areaName, isSocial = false, isPlaces = false, isAnchor = false) {
       console.log(`[Agent A] Probing ${areaName} for ${isAnchor ? 'Anchors' : (isPlaces ? 'Venues' : (isSocial ? 'Social' : 'Authority'))}...`);
       
       if (isPlaces) {
-        const subQueries = [
-          `top trending restaurants and bars in ${city} ${areaName}`,
-          `must visit art galleries and architecture in ${city} ${areaName}`,
-          `best high-craft boutiques in ${city} ${areaName}`,
-          `top rated spas and wellness in ${city} ${areaName}`
-        ];
-        for (const q of subQueries) {
-          const res = await fetch(`https://google.serper.dev/places`, {
-            method: 'POST', headers: HEADERS, body: JSON.stringify({ q, num: 10 })
-          }).then(r => r.json()).catch(() => ({ places: [] }));
-          
-          (res.places || []).forEach(place => {
-            const combined = (place.title + " " + (place.category || "")).toLowerCase();
-            const category = VIBE_TAXONOMY.find(cat => cat.keywords.some(k => combined.includes(k))) || VIBE_TAXONOMY[2];
-            const { name, vibeConcept, category: trendTitle } = heroify({ ...place, type: 'place' }, category, city, areaName, 'Google Maps');
+        // Use all aliases for places to get maximum literal coverage
+        const currentAliases = (areaName === targetArea) ? aliases : [areaName];
+        for (const alias of currentAliases) {
+          const subQueries = [
+            `top trending restaurants and bars in ${city} ${alias}`,
+            `must visit art galleries and architecture in ${city} ${alias}`,
+            `top rated spas and wellness in ${city} ${alias}`,
+            `top landmarks and adventure things to do in ${city} ${alias}`
+          ];
+          for (const q of subQueries) {
+            const res = await fetch(`https://google.serper.dev/places`, {
+              method: 'POST', headers: HEADERS, body: JSON.stringify({ q, num: 20 })
+            }).then(r => r.json()).catch(() => ({ places: [] }));
             
-            const key = name.toLowerCase();
-            if (!venueMap.has(key)) {
-              venueMap.set(key, { name, vibeConcept, category: trendTitle, id: category.id, score: 0, source: 'Google Maps', district: areaName });
-            }
-            venueMap.get(key).score += 35; // ANCHOR SCORE (FROZEN)
-          });
+            (res.places || []).forEach(place => {
+              const combined = (place.title + " " + (place.category || "")).toLowerCase();
+              const category = VIBE_TAXONOMY.find(cat => cat.keywords.some(k => combined.includes(k))) || VIBE_TAXONOMY[2];
+              const { name, vibeConcept, category: trendTitle } = heroify({ ...place, type: 'place' }, category, city, alias, 'Google Maps');
+              
+              addVenue(name, { name, vibeConcept, category: trendTitle, id: category.id, score: 35, source: 'Google Maps', district: areaName });
+            });
+          }
         }
         return;
       }
 
-      const socialQueries = [
-        `site:tiktok.com "${city}" "${areaName}" "aesthetic" OR "vibe check"`,
-        `site:tiktok.com "${city}" "${areaName}" "hidden gems" OR "must visit"`,
-        `site:instagram.com "${city}" "${areaName}" "vibe" OR "trending"`
-      ];
+      const socialQueries = [];
+      const currentAliases = (areaName === targetArea) ? aliases : [areaName];
+      currentAliases.forEach(alias => {
+        socialQueries.push(`site:tiktok.com "${city}" "${alias}" "aesthetic" OR "vibe check"`);
+        socialQueries.push(`site:tiktok.com "${city}" "${alias}" "hidden gems" OR "must visit"`);
+      });
       
       const authorityQuery = `site:monocle.com OR site:wallpaper.com OR site:eater.com OR site:timeout.com "${city}" "${areaName}" "vibe" OR "hidden"`;
       const anchorQuery = `iconic landmarks and cultural anchors in ${city} ${areaName} "heritage" OR "brutalist" OR "legendary"`;
@@ -185,16 +221,9 @@ export async function scrapeLocalSignals(city, neighborhood) {
           const source = isSocialResult ? 'Social Signal' : rawHostname;
 
           const { name, vibeConcept, category: trendTitle } = heroify(item, category, city, areaName, source);
+          const score = isSocialResult ? 85 : (isAuthorityResult ? 30 : 15);
           
-          const key = name.toLowerCase();
-          if (!venueMap.has(key)) {
-            venueMap.set(key, { name, vibeConcept, category: trendTitle, id: category.id, score: 0, source, district: areaName });
-          }
-          
-          const entry = venueMap.get(key);
-          if (isAuthorityResult) entry.score += 20; // AUTHORITY SCORE (FROZEN)
-          if (isSocialResult) entry.score += 65;    // VIRAL SCORE (FROZEN)
-          if (isAnchor) entry.score += 35;          // ADDITIONAL ANCHOR SIGNAL
+          addVenue(name, { name, vibeConcept, category: trendTitle, id: category.id, score, source, district: areaName });
         });
       }
     }
@@ -205,18 +234,33 @@ export async function scrapeLocalSignals(city, neighborhood) {
     await probeArea(targetArea, false, false, true); // Anchors
 
     // Probe expansion areas for comparison
-    for (const exp of expansionDistricts.slice(0, 2)) {
+    for (const exp of expansionDistricts.slice(0, 3)) {
       await probeArea(exp, false, true);
     }
 
     const finalAuditResults = Array.from(venueMap.values());
     const coreVibes = parseAmbientVocabulary(finalAuditResults.map(s => s.vibeConcept), targetArea);
     
-    const sectorHeatmap = VIBE_TAXONOMY.map(cat => {
-      const localTop = finalAuditResults
+    // RECURSIVE FALLBACK PROBE: If a category is N/A, try city-wide search
+    const sectorHeatmap = await Promise.all(VIBE_TAXONOMY.map(async (cat) => {
+      let localTop = finalAuditResults
         .filter(r => r.id === cat.id && r.district === targetArea)
-        .sort((a, b) => b.score - a.score)[0] || { score: 0, name: "Low Signal" };
+        .sort((a, b) => b.score - a.score)[0];
         
+      // Fallback: If no neighborhood signal, look for city-wide anchor
+      if (!localTop || localTop.score < 20) {
+        console.log(`[Agent A] Low Signal for ${cat.label} in ${targetArea}. Falling back to City Probe...`);
+        const q = `top iconic ${cat.label} in ${city} near ${targetArea}`;
+        const res = await fetch(`https://google.serper.dev/places`, {
+          method: 'POST', headers: HEADERS, body: JSON.stringify({ q, num: 5 })
+        }).then(r => r.json()).catch(() => ({ places: [] }));
+        
+        if (res.places && res.places.length > 0) {
+          const p = res.places[0];
+          localTop = { name: p.title, score: 35 + (p.rating * 5) };
+        }
+      }
+
       const expansionTop = finalAuditResults
         .filter(r => r.id === cat.id && r.district !== targetArea)
         .sort((a, b) => b.score - a.score)[0] || { score: 0, name: "N/A", district: "Adjacent" };
@@ -224,15 +268,15 @@ export async function scrapeLocalSignals(city, neighborhood) {
       return {
         id: cat.id,
         label: cat.label,
-        local: { name: localTop.name, score: localTop.score },
+        local: { name: localTop?.name || "Low Signal", score: localTop?.score || 0 },
         expansion: { name: expansionTop.name, score: expansionTop.score, district: expansionTop.district }
       };
-    }).sort((a, b) => b.local.score - a.local.score);
+    }));
 
     const result = { 
       city, neighborhood, sentiment: 'Dynamic Intelligence Audit', 
-      topExperiences: finalAuditResults.slice(0, 5), 
-      sectorHeatmap,
+      topExperiences: finalAuditResults.sort((a, b) => b.score - a.score).slice(0, 10), 
+      sectorHeatmap: sectorHeatmap.sort((a, b) => b.local.score - a.local.score),
       coreVibes: coreVibes || []
     };
 

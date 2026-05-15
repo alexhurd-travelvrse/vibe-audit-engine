@@ -1,0 +1,223 @@
+{
+  "city": "London",
+  "neighborhood": "Southbank",
+  "sentiment": "Dynamic Intelligence Audit",
+  "topExperiences": [
+    {
+      "name": "Tate Modern",
+      "vibeConcept": "Tate Modern is a Art gallery at undefined. Verified with a 4.5/5 rating.",
+      "category": "Art gallery",
+      "id": "CULTURE",
+      "score": 175,
+      "source": "Google Maps",
+      "district": "Southbank"
+    },
+    {
+      "name": "Circe's Rooftop Waterloo",
+      "vibeConcept": "Circe's Rooftop Waterloo is a Bar at Mercury House, 117 Waterloo Rd. Verified with a 4.7/5 rating.",
+      "category": "Bar",
+      "id": "NIGHTLIFE",
+      "score": 140,
+      "source": "Google Maps",
+      "district": "Southbank"
+    },
+    {
+      "name": "Salt Yard Borough",
+      "vibeConcept": "Salt Yard Borough is a Restaurant at New Hibernia House, Winchester Walk. Verified with a 4.8/5 rating.",
+      "category": "Restaurant",
+      "id": "CULINARY",
+      "score": 140,
+      "source": "Google Maps",
+      "district": "Southbank"
+    },
+    {
+      "name": "Victoria and Albert Museum",
+      "vibeConcept": "Victoria and Albert Museum is a Art gallery at undefined. Verified with a 4.8/5 rating.",
+      "category": "Art gallery",
+      "id": "CULTURE",
+      "score": 140,
+      "source": "Google Maps",
+      "district": "Southbank"
+    },
+    {
+      "name": "AIRE Ancient Baths London",
+      "vibeConcept": "AIRE Ancient Baths London is a Spa at 2-3 Robert St, London WC2N 6BH, United Kingdom. Verified with a 4.6/5 rating.",
+      "category": "Spa",
+      "id": "WELLNESS",
+      "score": 140,
+      "source": "Google Maps",
+      "district": "Southbank"
+    },
+    {
+      "name": "Raffles Spa",
+      "vibeConcept": "Raffles Spa is a Spa and health club at 57 Whitehall, London SW1A 2BX, United Kingdom. Verified with a 4.8/5 rating.",
+      "category": "Spa and health club",
+      "id": "WELLNESS",
+      "score": 140,
+      "source": "Google Maps",
+      "district": "Southbank"
+    },
+    {
+      "name": "Heavenly Spa London",
+      "vibeConcept": "Heavenly Spa London is a Wellness at 2nd Floor, Heavenly Spa by Westin, 60 Upper Thames St., London EC4V 3AD, United Kingdom. Verified with a 4.7/5 rating.",
+      "category": "Wellness",
+      "id": "WELLNESS",
+      "score": 140,
+      "source": "Google Maps",
+      "district": "Southbank"
+    },
+    {
+      "name": "Bamford Wellness Spa",
+      "vibeConcept": "Bamford Wellness Spa is a Spa at Floor 1, 3 Berkeley St, London W1J 8DL, United Kingdom. Verified with a 4.9/5 rating.",
+      "category": "Spa",
+      "id": "WELLNESS",
+      "score": 140,
+      "source": "Google Maps",
+      "district": "Southbank"
+    },
+    {
+      "name": "The Queen’s Walk",
+      "vibeConcept": "The Queen’s Walk is a Tourist attraction at undefined. Verified with a 4.7/5 rating.",
+      "category": "Tourist attraction",
+      "id": "ADVENTURE",
+      "score": 140,
+      "source": "Google Maps",
+      "district": "Southbank"
+    },
+    {
+      "name": "The Graffiti Tunnel",
+      "vibeConcept": "The Graffiti Tunnel is a Tourist attraction at undefined. Verified with a 4.7/5 rating.",
+      "category": "Tourist attraction",
+      "id": "TOURS",
+      "score": 140,
+      "source": "Google Maps",
+      "district": "Southbank"
+    }
+  ],
+  "sectorHeatmap": [
+    {
+      "id": "CULTURE",
+      "label": "Culture",
+      "local": {
+        "name": "Tate Modern",
+        "score": 175
+      },
+      "expansion": {
+        "name": "Clarendon Fine Art Battersea",
+        "score": 70,
+        "district": "Battersea"
+      }
+    },
+    {
+      "id": "CULINARY",
+      "label": "Culinary",
+      "local": {
+        "name": "Salt Yard Borough",
+        "score": 140
+      },
+      "expansion": {
+        "name": "Megan's Battersea Power Station",
+        "score": 105,
+        "district": "Battersea"
+      }
+    },
+    {
+      "id": "WELLNESS",
+      "label": "Wellness",
+      "local": {
+        "name": "AIRE Ancient Baths London",
+        "score": 140
+      },
+      "expansion": {
+        "name": "Studio Voltaire",
+        "score": 35,
+        "district": "Battersea"
+      }
+    },
+    {
+      "id": "ADVENTURE",
+      "label": "Adventure",
+      "local": {
+        "name": "The Queen’s Walk",
+        "score": 140
+      },
+      "expansion": {
+        "name": "The Magic Garden",
+        "score": 35,
+        "district": "Battersea"
+      }
+    },
+    {
+      "id": "NIGHTLIFE",
+      "label": "Nightlife",
+      "local": {
+        "name": "Circe's Rooftop Waterloo",
+        "score": 140
+      },
+      "expansion": {
+        "name": "Lost Society",
+        "score": 35,
+        "district": "Battersea"
+      }
+    },
+    {
+      "id": "TOURS",
+      "label": "Tours",
+      "local": {
+        "name": "The Graffiti Tunnel",
+        "score": 140
+      },
+      "expansion": {
+        "name": "NEON at Battersea Power Station",
+        "score": 35,
+        "district": "Battersea"
+      }
+    },
+    {
+      "id": "RETAIL",
+      "label": "Retail",
+      "local": {
+        "name": "Gabriel's Wharf",
+        "score": 57.5
+      },
+      "expansion": {
+        "name": "N/A",
+        "score": 0,
+        "district": "Adjacent"
+      }
+    },
+    {
+      "id": "AMBIENT",
+      "label": "Core Vibe",
+      "local": {
+        "name": "Southbank Centre",
+        "score": 57.5
+      },
+      "expansion": {
+        "name": "N/A",
+        "score": 0,
+        "district": "Adjacent"
+      }
+    }
+  ],
+  "coreVibes": [
+    {
+      "id": "art",
+      "name": "Contemporary Art Pulse",
+      "vibeConcept": "World-class galleries and public art installations define the area's visual frequency.",
+      "score": 100
+    },
+    {
+      "id": "rooftop",
+      "name": "Elevated Urbanism",
+      "vibeConcept": "Sky-high social spaces and rooftop lounges are the primary draws for local discovery.",
+      "score": 95
+    },
+    {
+      "id": "street",
+      "name": "Street Scene",
+      "vibeConcept": "The defining core vibe of Southbank is currently driven by the street scene.",
+      "score": 89
+    }
+  ]
+}
