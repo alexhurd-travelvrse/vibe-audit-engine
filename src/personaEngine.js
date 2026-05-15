@@ -1,3 +1,5 @@
+import AUDIT_VAULT from './engine/auditVault.json' with { type: 'json' };
+
 const ENGINE_VERSION = "v7.0";
 
 // Load from localStorage ONLY if the user specifically saved it (transient cache disabled for live audit focus)
@@ -8,7 +10,7 @@ const localCache = typeof localStorage !== 'undefined'
 const VIBE_CACHE = { ...localCache };
 
 export const VIBE_TAXONOMY = [
-  { id: "CULINARY", label: "Culinary", keywords: ["food", "dining", "tasting", "chef", "restaurant", "culinary", "gastronomy", "wine", "distillery", "brewery", "interactive dining", "swangy", "fire-driven", "chef-led", "little treat", "glocal", "mediterranean", "italian", "mexican", "bistro", "eatery", "kitchen", "grill", "brunch", "steak", "sushi", "cafe", "coffee", "bakery", "pastry", "ramen", "tapas", "market", "street food"] },
+  { id: "CULINARY", label: "Culinary", keywords: ["food", "dining", "tasting", "chef", "restaurant", "culinary", "gastronomy", "wine", "distillery", "brewery", "interactive dining", "small luxuries", "swangy", "fire-driven", "chef-led", "little treat", "glocal", "mediterranean", "italian", "mexican", "bistro", "eatery", "kitchen", "grill", "brunch", "steak", "sushi", "cafe", "coffee", "bakery", "pastry", "ramen", "tapas", "market", "street food"] },
   { id: "WELLNESS", label: "Wellness", keywords: ["wellness", "spa", "sauna", "ritual", "hammam", "yoga", "pilates", "pool", "meditation", "sensory restoration", "biophilic", "adaptogens", "human-centric", "restorative", "hushpitality", "slow travel", "off-the-grid", "recovery", "gym", "studio", "massage", "fitness", "sauna", "lido", "swimming"] },
   { id: "CULTURE", label: "Culture", keywords: ["art", "gallery", "culture", "museum", "class", "workshop", "heritage", "history", "design", "architecture", "adaptive reuse", "contemporary heritage", "revival", "landmark", "narrative", "set-jetting", "dejaview", "regenerative", "exhibition", "theater", "theatre", "auditorium", "art gallery", "cultural center", "monument", "performance", "ballet", "orchestra", "library", "underground"] },
   { id: "ADVENTURE", label: "Adventure", keywords: ["kayak", "boat", "climb", "hike", "bike", "rental", "scavenger", "adventure", "zipline", "outdoor", "expedition", "urban exploration", "hidden trail", "sight-doing", "coolcations", "surfing", "sailing", "tours", "park", "nature", "walk", "view", "observation", "skate", "wheel", "ferris", "walking", "bridge", "garden"] },
@@ -105,7 +107,15 @@ export async function scrapeLocalSignals(city, neighborhood) {
   const targetArea = normalizedArea || normalizedCity;
   const cacheKey = `vibe_audit_${targetArea.toLowerCase().replace(/\s+/g, '_')}`;
 
-  // 1. DYNAMIC CACHE CHECK (24-Hour TTL)
+  // 1. FROZEN VAULT CHECK (Priority #1)
+  // If the neighborhood exists in the official vault, serve it instantly.
+  const frozenEntry = AUDIT_VAULT[normalizedArea] || AUDIT_VAULT[normalizedCity];
+  if (frozenEntry) {
+    console.log(`[Agent A] Serving Frozen High-Fidelity Scorecard for ${targetArea} from Vault.`);
+    return frozenEntry;
+  }
+
+  // 2. DYNAMIC CACHE CHECK (24-Hour TTL)
   if (typeof localStorage !== 'undefined') {
     const cached = JSON.parse(localStorage.getItem(cacheKey) || 'null');
     const TTL = 24 * 60 * 60 * 1000;
@@ -118,6 +128,9 @@ export async function scrapeLocalSignals(city, neighborhood) {
   const API_KEY = "a23fd96c5cb1aace5f985e1d32f27492c241b349";
   const HEADERS = { 'X-API-KEY': API_KEY, 'Content-Type': 'application/json' };
   
+  console.log(`\n[VIBE ENGINE] Active Methodology: v7.0 High-Fidelity (FROZEN)`);
+  console.log(`[VIBE ENGINE] Target: ${normalizedCity} > ${targetArea}\n`);
+
   console.log(`[Agent A] Launching Live Dynamic Discovery for ${targetArea}...`);
 
   try {
@@ -297,7 +310,6 @@ export async function scrapeLocalSignals(city, neighborhood) {
 
 /**
  * Agent B: The Discoverability Auditor
- * Analyzes the hotel's URL for specific local experiences identified in Agent A.
  */
 export async function auditDiscoverability(url, experiences, sweeteners = []) {
   console.log(`[Agent B] Auditing ${url} for discoverability of local trends...`);
@@ -416,4 +428,3 @@ export function generatePropulsionQuest(auditResults, propertyName, reward) {
     }
   };
 }
-
