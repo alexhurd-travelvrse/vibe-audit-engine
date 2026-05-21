@@ -68,7 +68,6 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
           </div>
           <span>Back to TravelVRSE</span>
         </a>
-        <img src="/models/travelvrse_logo_main.svg" alt="TravelVRSE" style={{ height: '54px', width: 'auto' }} />
       </nav>
 
       <main className="b2b-main">
