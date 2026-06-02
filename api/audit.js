@@ -103,7 +103,7 @@ async function validateVenue(venueName, city) {
 }
 
 async function runPipeline(city, neighborhood) {
-    const categories = ["Nightlife", "Wellness", "Coffee Culture", "Culinary"];
+    const categories = ["Nightlife", "Wellness", "Coffee Culture", "Culinary", "Culture", "Adventure"];
     const vibeData = await extractTopVibes(city, categories);
     if (!vibeData) throw new Error("Gemini mapping failed");
 
