@@ -1,6 +1,4 @@
-import VIBE_CACHE from './engine/vibeCache.json' with { type: 'json' };
-
-const ENGINE_VERSION = "v8.1-ALIGNMENT"; 
+const ENGINE_VERSION = "v8.2-DYNAMIC";
 
 export const VIBE_METHODOLOGY = {
   PLACES_BASE: 20,
@@ -22,34 +20,32 @@ export const VIBE_TAXONOMY = [
 ];
 
 export async function scrapeLocalSignals(city, neighborhood) {
-  const targetArea = neighborhood.trim();
-  console.log(`[Agent A] Running v8.1 Alignment (Local vs Extended)...`);
-
-  const localVenues = VIBE_CACHE[targetArea] || [];
-  const expansionVenues = VIBE_CACHE["Waterloo"] || VIBE_CACHE["Indre By"] || []; // Expanded Context
+  console.log(`[Agent A] Requesting Dynamic Flipped Funnel Data for ${city} / ${neighborhood}...`);
   
-  function scoreVenue(v) {
-    let score = 0;
-    const rating = 4.8;
-    score += VIBE_METHODOLOGY.PLACES_BASE + (rating / 5) * VIBE_METHODOLOGY.PLACES_RATING_MAX;
-    score += VIBE_METHODOLOGY.SOCIAL_LEVELS[3];
-    score += VIBE_METHODOLOGY.AUTHORITY_WEIGHT;
-    return { ...v, score: Math.round(score), rating };
+  const response = await fetch('/api/audit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ city, neighborhood })
+  });
+
+  if (!response.ok) {
+      throw new Error(`API returned ${response.status}: ${await response.text()}`);
   }
 
-  const scoredLocal = localVenues.map(scoreVenue);
-  const scoredExpansion = expansionVenues.map(scoreVenue);
+  const cityData = await response.json();
 
-  return { 
-    city, neighborhood: targetArea, engineVersion: ENGINE_VERSION,
-    topExperiences: scoredLocal.sort((a, b) => b.score - a.score).slice(0, 10),
-    sectorHeatmap: VIBE_TAXONOMY.map(cat => ({
-      id: cat.id, label: cat.label,
-      local: scoredLocal.find(r => r.id === cat.id) || { name: "Low Signal", score: 0 },
-      expansion: scoredExpansion.find(r => r.id === cat.id) || { name: "Low Signal", score: 0 }
-    }))
+  return {
+      city,
+      neighborhood: cityData.MicroLocation || neighborhood,
+      engineVersion: ENGINE_VERSION,
+      categories: cityData.Categories
   };
 }
 
-export async function auditDiscoverability(url, experiences, sweeteners = []) { return []; }
-export function generatePropulsionQuest(auditResults, propertyName, reward) { return {}; }
+export async function auditDiscoverability(url, experiences, sweeteners) {
+    return new Promise(resolve => setTimeout(() => resolve({ score: 85 }), 2000));
+}
+
+export function generatePropulsionQuest(auditResults, propertyName, reward) {
+    return { title: "Vibe Quest", description: "Optimize local SEO." };
+}

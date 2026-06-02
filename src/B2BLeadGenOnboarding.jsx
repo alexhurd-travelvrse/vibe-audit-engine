@@ -15,8 +15,8 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
     email: '',
     propertyName: '',
     propertyUrl: '',
-    city: 'London',
-    neighborhood: 'Southbank',
+    city: 'Copenhagen',
+    neighborhood: 'Indre By',
     sweeteners: ['cocktails', 'wellness', 'local-craft'],
     reward: 'SPECIAL GUEST REWARD'
   });
@@ -147,7 +147,7 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                 </div>
               </div>
 
-              {/* MAIN AUDIT INTERFACE (HEATMAP) */}
+              {/* FLIPPED FUNNEL AUDIT INTERFACE */}
               <motion.section 
                 initial={{opacity: 0, y: 20}} 
                 animate={{opacity: 1, y: 0}} 
@@ -160,142 +160,120 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                 }}
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '3rem' }}>
-                  <Activity color="#00e5ff" size={24} />
-                  <h2 style={{ fontSize: '2rem', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.1em' }}>Heatmap</h2>
+                  <Globe color="#00e5ff" size={24} />
+                  <h2 style={{ fontSize: '2rem', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.1em' }}>Geographic Vibe Gap</h2>
                 </div>
 
-                  {/* CORE VIBES (SCORECARD) */}
-                  <div style={{ marginBottom: '4rem' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1.5rem' }}>
-                      <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: 'rgba(255,255,255,0.7)' }}>Core Vibes</h3>
-                      <div className="info-trigger" data-tooltip="Analyzes real-time social frequency to identify the literal keywords defining the atmosphere.">
-                        <Info size={14} color="rgba(255,255,255,0.3)" />
-                      </div>
-                    </div>
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem' }}>
-                    {[
-                      { 
-                        label: "ATMOSPHERE", 
-                        name: analysis.signals.coreVibes?.[0]?.name || "Riverside Scene", 
-                        vibeConcept: analysis.signals.coreVibes?.[0]?.vibeConcept || "The defining atmosphere (Brutalist architecture meets the Thames)." 
-                      },
-                      { 
-                        label: "LOCAL ANCHOR", 
-                        name: analysis.signals.coreVibes?.[1]?.name || "National Theatre", 
-                        vibeConcept: analysis.signals.coreVibes?.[1]?.vibeConcept || "The top-scoring local activity anchor (Culture)." 
-                      },
-                      { 
-                        label: "VIRAL TREND", 
-                        name: analysis.signals.coreVibes?.[2]?.name || "Lyaness", 
-                        vibeConcept: analysis.signals.coreVibes?.[2]?.vibeConcept || "The highest-velocity social trend in the area (Nightlife)." 
-                      }
-                    ].map((vibe, i) => (
-                      <div key={i} style={{ padding: '1.5rem', background: 'rgba(255,255,255,0.03)', borderRadius: '1rem', border: '1px solid rgba(255,255,255,0.05)' }}>
-                        <div style={{ fontSize: '10px', fontWeight: 900, color: 'rgba(255,255,255,0.4)', letterSpacing: '0.1em', marginBottom: '0.75rem' }}>{vibe.label}</div>
-                        <div style={{ fontSize: '1.1rem', fontWeight: 800, marginBottom: '0.5rem', color: '#00e5ff' }}>{vibe.name}</div>
-                        <div style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.6)', lineHeight: '1.5' }}>{vibe.vibeConcept}</div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* GEOGRAPHIC COMPARISON (VIBE DUEL HEATMAP) */}
-                <div style={{ marginBottom: '4rem' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '3rem' }}>
-                    <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: 'rgba(255,255,255,0.7)' }}>Geographic Comparison</h3>
-                    <div className="info-trigger" data-tooltip="Triangulates Google Places ratings with high-velocity social proof to score local anchors against expansion districts out of 120.">
-                      <Info size={14} color="rgba(255,255,255,0.3)" />
-                    </div>
-                  </div>
+                {Object.entries(analysis.signals.categories || {}).map(([categoryName, data], index) => {
+                  const { Top3Vibes, TopLocalVenue, ExtendedRadiusSearch, syntheticIntent } = data;
                   
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
-                    {analysis.signals.sectorHeatmap
-                      .filter(s => s.id !== 'AMBIENT' && s.id !== 'TOURS')
-                      .sort((a, b) => Math.max(b.local.score, b.expansion.score) - Math.max(a.local.score, a.expansion.score))
-                      .slice(0, 6)
-                      .map((sector, i) => {
-                        const localWinner = sector.local.score >= sector.expansion.score;
-                        return (
-                          <div key={i} style={{ display: 'grid', gridTemplateColumns: '150px 1fr 1fr', gap: '2.5rem', alignItems: 'center' }}>
-                            <div style={{ fontSize: '11px', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.4)' }}>
-                              {sector.label}
-                            </div>
-                            
-                            {/* LOCAL BAR */}
-                            <div style={{ position: 'relative' }}>
-                              <div style={{ height: '36px', background: 'rgba(255,255,255,0.03)', borderRadius: '6px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.05)' }}>
-                                <motion.div 
-                                  initial={{ width: 0 }}
-                                  animate={{ width: `${(sector.local.score / 120) * 100}%` }}
-                                  transition={{ duration: 1, delay: i * 0.1 }}
-                                  style={{ 
-                                    height: '100%', 
-                                    background: localWinner ? 'linear-gradient(90deg, #10b981, #059669)' : 'rgba(255,255,255,0.1)',
-                                    boxShadow: localWinner ? '0 0 20px rgba(16,185,129,0.2)' : 'none'
-                                  }} 
-                                />
-                              </div>
-                              <div style={{ position: 'absolute', top: '50%', left: '12px', transform: 'translateY(-50%)', fontSize: '10px', fontWeight: 900, color: localWinner ? '#fff' : 'rgba(255,255,255,0.5)', pointerEvents: 'none' }}>
-                                LOCAL: {sector.local.name} ({sector.local.score})
-                              </div>
-                            </div>
+                  return (
+                    <div key={categoryName} style={{ marginBottom: '5rem', paddingBottom: '3rem', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+                      <h3 style={{ fontSize: '1.8rem', fontWeight: 900, color: '#00e5ff', textTransform: 'uppercase', marginBottom: '2rem', letterSpacing: '2px' }}>
+                        {categoryName}
+                      </h3>
 
-                            {/* EXPANSION BAR */}
-                            <div style={{ position: 'relative' }}>
-                              <div style={{ height: '36px', background: 'rgba(255,255,255,0.03)', borderRadius: '6px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.05)' }}>
-                                <motion.div 
-                                  initial={{ width: 0 }}
-                                  animate={{ width: `${(sector.expansion.score / 120) * 100}%` }}
-                                  transition={{ duration: 1, delay: i * 0.1 }}
-                                  style={{ 
-                                    height: '100%', 
-                                    background: !localWinner ? 'linear-gradient(90deg, #10b981, #059669)' : 'rgba(255,255,255,0.1)',
-                                    boxShadow: !localWinner ? '0 0 20px rgba(16,185,129,0.2)' : 'none'
-                                  }} 
-                                />
+                      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem' }}>
+                        {/* LEFT COLUMN: VIBES & INTENT */}
+                        <div>
+                          <h4 style={{ fontSize: '1rem', fontWeight: 800, color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '1.5rem' }}>
+                            Top Subcultures (Gemini AI)
+                          </h4>
+                          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginBottom: '2.5rem' }}>
+                            {Top3Vibes?.map((vibe, i) => (
+                              <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '1rem', background: 'rgba(255,255,255,0.03)', borderRadius: '1rem', border: i === 0 ? '1px solid rgba(0, 229, 255, 0.3)' : '1px solid rgba(255,255,255,0.05)' }}>
+                                <div style={{ width: '30px', height: '30px', borderRadius: '50%', background: i === 0 ? '#00e5ff' : 'rgba(255,255,255,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 900, color: i === 0 ? '#000' : '#fff' }}>
+                                  {vibe.rank}
+                                </div>
+                                <div>
+                                  <div style={{ fontSize: '1.1rem', fontWeight: 800, color: i === 0 ? '#00e5ff' : '#fff' }}>{vibe.vibeName}</div>
+                                  <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', letterSpacing: '1px' }}>Trend: {vibe.growthTrend}</div>
+                                </div>
                               </div>
-                              <div style={{ position: 'absolute', top: '50%', left: '12px', transform: 'translateY(-50%)', fontSize: '10px', fontWeight: 900, color: !localWinner ? '#fff' : 'rgba(255,255,255,0.5)', pointerEvents: 'none' }}>
-                                {sector.expansion.district.toUpperCase()}: {sector.expansion.name} ({sector.expansion.score})
+                            ))}
+                          </div>
+
+                          {syntheticIntent?.frequentHumanQueries && (
+                             <div>
+                                <h4 style={{ fontSize: '1rem', fontWeight: 800, color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '1rem' }}>
+                                  Agentic Search Telemetry
+                                </h4>
+                                <div style={{ padding: '1.5rem', background: 'rgba(0, 229, 255, 0.05)', borderLeft: '4px solid #00e5ff', borderRadius: '0 1rem 1rem 0' }}>
+                                  <p style={{ fontStyle: 'italic', fontSize: '1.1rem', color: 'rgba(255,255,255,0.9)', lineHeight: 1.6 }}>
+                                    "{Array.isArray(syntheticIntent.frequentHumanQueries) ? syntheticIntent.frequentHumanQueries[0] : syntheticIntent.frequentHumanQueries}"
+                                  </p>
+                                </div>
+                             </div>
+                          )}
+                        </div>
+
+                        {/* RIGHT COLUMN: HYPER-LOCAL VENUE & EXTENDED RADIUS */}
+                        <div>
+                          <h4 style={{ fontSize: '1rem', fontWeight: 800, color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '1.5rem' }}>
+                            Hyper-Local Reality Check
+                          </h4>
+                          
+                          <div style={{ padding: '1.5rem', background: 'rgba(255,255,255,0.03)', borderRadius: '1rem', border: '1px solid rgba(255,255,255,0.05)', marginBottom: '1.5rem' }}>
+                            <div style={{ fontSize: '0.8rem', fontWeight: 900, color: 'rgba(255,255,255,0.4)', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '0.5rem' }}>Top {analysis.signals.neighborhood} Venue</div>
+                            <div style={{ fontSize: '1.4rem', fontWeight: 800, color: '#fff', marginBottom: '1rem' }}>{TopLocalVenue?.name}</div>
+                            <div style={{ display: 'flex', gap: '1.5rem' }}>
+                              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem', color: 'rgba(255,255,255,0.6)' }}>
+                                <Star size={16} color="#FFD700" /> {TopLocalVenue?.googlePlacesScore} ({TopLocalVenue?.reviewCount} reviews)
+                              </div>
+                              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem', color: 'rgba(255,255,255,0.6)' }}>
+                                <MapPin size={16} color="#00e5ff" /> {TopLocalVenue?.distanceFromHotelKm}km away
                               </div>
                             </div>
                           </div>
-                        );
-                      })}
-                  </div>
-                </div>
 
-                {/* ANALYSIS */}
-                <div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1.5rem' }}>
-                    <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: 'rgba(255,255,255,0.7)' }}>Analysis</h3>
-                    <div className="info-trigger" data-tooltip="AI-driven synthesis of the competitive gaps and local strengths detected.">
-                      <Info size={14} color="rgba(255,255,255,0.3)" />
+                          {/* HYPE SCORECARD */}
+                          <div style={{ padding: '1.5rem', background: 'rgba(138, 43, 226, 0.05)', borderRadius: '1rem', border: '1px solid rgba(138, 43, 226, 0.3)', marginBottom: '2rem' }}>
+                            <div style={{ fontSize: '0.8rem', fontWeight: 900, color: '#b28dff', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '1rem' }}>Validation Layer</div>
+                            <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
+                              <div style={{ flex: 1 }}>
+                                <div style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', marginBottom: '0.25rem' }}>Social (TikTok/IG)</div>
+                                <div style={{ fontSize: '1.1rem', fontWeight: 800, color: TopLocalVenue?.socialVelocity === 'Viral High Velocity' ? '#FF3E6C' : '#00e5ff' }}>
+                                  {TopLocalVenue?.socialVelocity || 'N/A'}
+                                </div>
+                              </div>
+                              <div style={{ width: '1px', height: '30px', background: 'rgba(255,255,255,0.1)' }}></div>
+                              <div style={{ flex: 1 }}>
+                                <div style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', marginBottom: '0.25rem' }}>Editorial (TimeOut/etc)</div>
+                                <div style={{ fontSize: '1.1rem', fontWeight: 800, color: TopLocalVenue?.editorialMentions > 0 ? '#10b981' : '#fff' }}>
+                                  {TopLocalVenue?.editorialMentions || 0} Mentions
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <h4 style={{ fontSize: '1rem', fontWeight: 800, color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '1.5rem' }}>
+                            Spatial Expansion Insight
+                          </h4>
+                          <div style={{ padding: '2rem', background: ExtendedRadiusSearch?.isVibeHotterElsewhere ? 'linear-gradient(135deg, rgba(255, 62, 108, 0.1) 0%, rgba(255, 62, 108, 0.02) 100%)' : 'linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(16, 185, 129, 0.02) 100%)', borderRadius: '1rem', border: ExtendedRadiusSearch?.isVibeHotterElsewhere ? '1px solid rgba(255, 62, 108, 0.3)' : '1px solid rgba(16, 185, 129, 0.3)' }}>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
+                                {ExtendedRadiusSearch?.isVibeHotterElsewhere ? <TrendingUp color="#FF3E6C" size={20} /> : <CheckCircle2 color="#10b981" size={20} />}
+                                <div style={{ fontSize: '1rem', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '1px', color: ExtendedRadiusSearch?.isVibeHotterElsewhere ? '#FF3E6C' : '#10b981' }}>
+                                    {ExtendedRadiusSearch?.isVibeHotterElsewhere ? "Vibe Drain Detected" : "Vibe Epicenter Confirmed"}
+                                </div>
+                            </div>
+                            <p style={{ fontSize: '1.05rem', color: 'rgba(255,255,255,0.8)', lineHeight: 1.6 }}>
+                              {ExtendedRadiusSearch?.marketInsight}
+                            </p>
+                            
+                            {ExtendedRadiusSearch?.isVibeHotterElsewhere && (
+                              <div style={{ marginTop: '1.5rem', paddingTop: '1.5rem', borderTop: '1px solid rgba(255, 62, 108, 0.2)' }}>
+                                <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.9)', fontWeight: 700 }}>
+                                  💡 <strong>Opportunity:</strong> By building a photorealistic {Top3Vibes?.[0]?.vibeName.split(' ')[0]} Challenge for your hotel, you can actively pull that high-value {categoryName.toLowerCase()} search demand straight into {analysis.signals.neighborhood} and position your hotel as the gateway to that culture.
+                                </p>
+                              </div>
+                            )}
+                          </div>
+
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                  <div style={{ 
-                    padding: '2rem', 
-                    background: 'linear-gradient(90deg, rgba(0,229,255,0.05) 0%, rgba(255,255,255,0.02) 100%)', 
-                    borderRadius: '1rem',
-                    borderLeft: '4px solid #00e5ff',
-                    fontSize: '1.1rem',
-                    lineHeight: '1.6',
-                    fontStyle: 'italic'
-                  }}>
-                    {(() => {
-                      const area = analysis.signals.neighborhood || analysis.signals.city;
-                      const losses = analysis.signals.sectorHeatmap.filter(s => s.expansion.score > s.local.score);
-                      const wins = analysis.signals.sectorHeatmap.filter(s => s.local.score >= s.expansion.score);
-                      
-                      let text = `${area} is a ${wins.slice(0,2).map(w => w.label.toLowerCase()).join(' and ')} powerhouse, `;
-                      if (losses.length > 0) {
-                        text += `but it is currently seeing high-velocity ${losses.slice(0,1).map(l => l.label.toLowerCase()).join('')} traffic shift towards ${losses[0].expansion.district}.`;
-                      } else {
-                        text += `and it currently dominates all major city-wide trends.`;
-                      }
-                      return text;
-                    })()}
-                  </div>
-                </div>
+                  );
+                })}
               </motion.section>
 
               {/* ACTION FOOTER */}
