@@ -1,13 +1,12 @@
+// Export Vercel Configuration to increase timeout to 60 seconds
+export const maxDuration = 60;
+
 import fs from 'fs';
 import path from 'path';
+
+// Automatically loads .env if present (Vite/Node)
 import * as dotenv from 'dotenv';
-import { fileURLToPath } from 'url';
-
-// Setup __dirname for ES modules or Vercel
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-dotenv.config({ path: path.resolve(__dirname, '../.env') });
+dotenv.config();
 
 const GEMINI_API_KEY = process.env.VITE_GEMINI_API_KEY;
 const SERPER_API_KEY = process.env.VITE_SERPER_API_KEY;
@@ -113,8 +112,9 @@ async function runPipeline(city, neighborhood) {
         Categories: {}
     };
 
-    for (const [categoryName, categoryInfo] of Object.entries(vibeData)) {
-        finalOutput.Categories[categoryName] = {
+    // Parallelize the category processing to prevent Vercel 10s timeouts
+    const categoryPromises = Object.entries(vibeData).map(async ([categoryName, categoryInfo]) => {
+        let categoryData = {
             Top3Vibes: categoryInfo.Top3Vibes.map(v => ({ rank: v.rank, vibeName: v.vibeName, growthTrend: v.growthTrend })),
             TopLocalVenue: null,
             ExtendedRadiusSearch: null,
@@ -128,7 +128,7 @@ async function runPipeline(city, neighborhood) {
 
         if (topLocalVenue) {
             const validationScores = await validateVenue(topLocalVenue.title, city);
-            finalOutput.Categories[categoryName].TopLocalVenue = {
+            categoryData.TopLocalVenue = {
                 name: topLocalVenue.title,
                 distanceFromHotelKm: 0.3,
                 googlePlacesScore: topLocalVenue.rating || 4.5,
@@ -138,20 +138,19 @@ async function runPipeline(city, neighborhood) {
                 editorialMentions: validationScores.editorialMentions
             };
         } else {
-             finalOutput.Categories[categoryName].TopLocalVenue = {
+             categoryData.TopLocalVenue = {
                 name: "No immediate venue found", distanceFromHotelKm: 0, googlePlacesScore: 0, reviewCount: 0
             };
         }
 
         const needsExpansion = localDensity < 3;
-        // Simplified expansion for any city (assumes 'Downtown' or just city core as fallback)
         const adjacentLocation = city; 
         
         if (needsExpansion) {
             const adjacentVenues = await huntLocalVenues(topVibe.semanticKeywords, adjacentLocation, city);
             const multiplier = adjacentVenues.length > 0 ? (adjacentVenues.length / (localDensity || 1)).toFixed(1) : 0;
             
-            finalOutput.Categories[categoryName].ExtendedRadiusSearch = {
+            categoryData.ExtendedRadiusSearch = {
                 isVibeHotterElsewhere: adjacentVenues.length > localDensity,
                 targetDistrict: "Broader City",
                 distanceKm: 2.0,
@@ -159,11 +158,18 @@ async function runPipeline(city, neighborhood) {
                 marketInsight: `While your immediate neighborhood has ${localDensity} top spot(s), the broader city contains ${adjacentVenues.length} high-velocity hubs, making this vibe ${multiplier}x more active slightly further away.`
             };
         } else {
-             finalOutput.Categories[categoryName].ExtendedRadiusSearch = {
+             categoryData.ExtendedRadiusSearch = {
                 isVibeHotterElsewhere: false,
                 marketInsight: `You are sitting in the absolute epicenter of the ${topVibe.vibeName} vibe for this city.`
             };
         }
+
+        return { name: categoryName, data: categoryData };
+    });
+
+    const resolvedCategories = await Promise.all(categoryPromises);
+    for (const cat of resolvedCategories) {
+        finalOutput.Categories[cat.name] = cat.data;
     }
 
     return finalOutput;
