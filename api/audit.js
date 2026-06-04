@@ -8,8 +8,8 @@ import path from 'path';
 import * as dotenv from 'dotenv';
 dotenv.config();
 
-const GEMINI_API_KEY = process.env.VITE_GEMINI_API_KEY;
-const SERPER_API_KEY = process.env.VITE_SERPER_API_KEY;
+const GEMINI_API_KEY = process.env.VITE_GEMINI_API_KEY || process.env.GEMINI_API_KEY;
+const SERPER_API_KEY = process.env.VITE_SERPER_API_KEY || process.env.SERPER_API_KEY;
 
 // -------------------------------------------------------------
 // HELPER FUNCTIONS (Gemini + Serper)
