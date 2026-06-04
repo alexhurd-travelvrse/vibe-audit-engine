@@ -161,7 +161,7 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '3rem' }}>
                   <Globe color="#00e5ff" size={24} />
-                  <h2 style={{ fontSize: '2rem', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.1em' }}>Geographic Vibe Gap</h2>
+                  <h2 style={{ fontSize: '2rem', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.1em' }}>Top 6 Vibe Categories</h2>
                 </div>
 
                 {Object.entries(analysis.signals.categories || {}).map(([categoryName, data], index) => {
@@ -246,34 +246,44 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                             </div>
                           </div>
 
-                          <h4 style={{ fontSize: '1rem', fontWeight: 800, color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '1.5rem' }}>
-                            Spatial Expansion Insight
-                          </h4>
-                          <div style={{ padding: '2rem', background: ExtendedRadiusSearch?.isVibeHotterElsewhere ? 'linear-gradient(135deg, rgba(255, 62, 108, 0.1) 0%, rgba(255, 62, 108, 0.02) 100%)' : 'linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(16, 185, 129, 0.02) 100%)', borderRadius: '1rem', border: ExtendedRadiusSearch?.isVibeHotterElsewhere ? '1px solid rgba(255, 62, 108, 0.3)' : '1px solid rgba(16, 185, 129, 0.3)' }}>
-                            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
-                                {ExtendedRadiusSearch?.isVibeHotterElsewhere ? <TrendingUp color="#FF3E6C" size={20} /> : <CheckCircle2 color="#10b981" size={20} />}
-                                <div style={{ fontSize: '1rem', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '1px', color: ExtendedRadiusSearch?.isVibeHotterElsewhere ? '#FF3E6C' : '#10b981' }}>
-                                    {ExtendedRadiusSearch?.isVibeHotterElsewhere ? "Vibe Drain Detected" : "Vibe Epicenter Confirmed"}
-                                </div>
-                            </div>
-                            <p style={{ fontSize: '1.05rem', color: 'rgba(255,255,255,0.8)', lineHeight: 1.6 }}>
-                              {ExtendedRadiusSearch?.marketInsight}
-                            </p>
-                            
-                            {ExtendedRadiusSearch?.isVibeHotterElsewhere && (
-                              <div style={{ marginTop: '1.5rem', paddingTop: '1.5rem', borderTop: '1px solid rgba(255, 62, 108, 0.2)' }}>
-                                <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.9)', fontWeight: 700 }}>
-                                  💡 <strong>Opportunity:</strong> By building a photorealistic {Top3Vibes?.[0]?.vibeName.split(' ')[0]} Challenge for your hotel, you can actively pull that high-value {categoryName.toLowerCase()} search demand straight into {analysis.signals.neighborhood} and position your hotel as the gateway to that culture.
-                                </p>
-                              </div>
-                            )}
-                          </div>
+
 
                         </div>
                       </div>
+                    
                     </div>
                   );
                 })}
+
+                {/* SECTION B: Your Vibe Audit */}
+                <div style={{ marginTop: '5rem', padding: '3rem', background: 'rgba(255,255,255,0.02)', borderRadius: '2rem', border: '1px solid rgba(255,255,255,0.05)' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '3rem' }}>
+                    <Search color="#ec4899" size={24} />
+                    <h2 style={{ fontSize: '2rem', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.1em' }}>Your Vibe Audit</h2>
+                  </div>
+                  <div style={{ padding: '3rem', textAlign: 'center', border: '1px dashed rgba(255,255,255,0.2)', borderRadius: '1rem' }}>
+                     <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: 'rgba(255,255,255,0.5)' }}>Pending Service Spec</h3>
+                     <p style={{ color: 'rgba(255,255,255,0.4)', marginTop: '1rem' }}>Auditing the top sub-cultures against website and social presence.</p>
+                  </div>
+                </div>
+
+                {/* SECTION C: Showcase Your Vibe */}
+                <div style={{ marginTop: '5rem', padding: '3rem', background: 'rgba(255,255,255,0.02)', borderRadius: '2rem', border: '1px solid rgba(255,255,255,0.05)' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '3rem' }}>
+                    <Star color="#B5942D" size={24} />
+                    <h2 style={{ fontSize: '2rem', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.1em' }}>Showcase Your Vibe</h2>
+                  </div>
+                  <div style={{ padding: '3rem', textAlign: 'center', border: '1px dashed rgba(255,255,255,0.2)', borderRadius: '1rem', marginBottom: '3rem' }}>
+                     <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: 'rgba(255,255,255,0.5)' }}>Pending Service Spec</h3>
+                     <p style={{ color: 'rgba(255,255,255,0.4)', marginTop: '1rem' }}>Travelvrse tour recommendations to be generated here.</p>
+                  </div>
+                  <div style={{ display: 'flex', justifyContent: 'center' }}>
+                     <button className="launch-button" style={{ maxWidth: '450px', display: 'flex', alignItems: 'center', gap: '1rem', padding: '1.2rem', fontSize: '1.1rem' }} onClick={() => alert('Forwarding Brief...')}>
+                       Forward Brief to Creator Marketplace <ExternalLink size={20} />
+                     </button>
+                  </div>
+                </div>
+
               </motion.section>
 
               {/* ACTION FOOTER */}
