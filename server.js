@@ -6,6 +6,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.get('/', (req, res) => {
+    res.send('Vibe Audit Engine API is running. The endpoint is at POST /api/audit');
+});
+
 app.post('/api/audit', async (req, res) => {
     // Vercel serverless functions have a req, res signature just like Express
     await handler(req, res);
