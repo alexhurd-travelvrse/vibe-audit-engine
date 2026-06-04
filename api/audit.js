@@ -56,7 +56,8 @@ async function extractTopVibes(city, categories) {
         throw new Error("No JSON found in response");
     } catch (error) {
         console.error("Failed to parse Gemini response as JSON", error);
-        return null;
+        console.error("Raw response:", JSON.stringify(data));
+        throw new Error(`Gemini mapping failed: ${error.message} - ${JSON.stringify(data)}`);
     }
 }
 
@@ -141,18 +142,16 @@ async function extractMacroCategories(city, neighborhood) {
         throw new Error("No JSON found in response");
     } catch (error) {
         console.error("Failed to parse Gemini macro response as JSON", error);
-        return null;
+        console.error("Raw response:", JSON.stringify(data));
+        throw new Error(`Gemini macro mapping failed: ${error.message} - ${JSON.stringify(data)}`);
     }
 }
 
 async function runPipeline(city, neighborhood) {
     const macroAnalysis = await extractMacroCategories(city, neighborhood);
-    if (!macroAnalysis || !macroAnalysis.MacroCategoryRankings) throw new Error("Gemini macro mapping failed");
-    
     const top6Categories = macroAnalysis.MacroCategoryRankings.slice(0, 6).map(c => c.categoryName);
     
     const vibeData = await extractTopVibes(city, top6Categories);
-    if (!vibeData) throw new Error("Gemini mapping failed");
 
     const finalOutput = {
         MicroLocation: neighborhood,
