@@ -179,6 +179,12 @@ async function runPipeline(city, neighborhood) {
 // VERCEL SERVERLESS HANDLER
 // -------------------------------------------------------------
 export default async function handler(req, res) {
+    // Set CORS headers manually to guarantee they are applied in Serverless Functions
+    res.setHeader('Access-Control-Allow-Credentials', 'true');
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
+    res.setHeader('Access-Control-Allow-Headers', 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version');
+
     // Handle CORS preflight
     if (req.method === 'OPTIONS') {
         return res.status(200).end();
