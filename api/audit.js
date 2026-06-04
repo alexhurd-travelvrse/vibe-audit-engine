@@ -102,13 +102,63 @@ async function validateVenue(venueName, city) {
     return { socialVelocity, editorialMentions };
 }
 
+async function extractMacroCategories(city, neighborhood) {
+    console.log(`[Step 0] Querying Gemini AI for Macro-Category Analysis in ${neighborhood}, ${city}...`);
+    const allCategories = ["Nightlife", "Wellness", "Coffee Culture", "Culinary", "Culture", "Adventure", "Retail", "Entertainment", "Gaming"];
+    const prompt = `Act as an Agentic Search Telemetry Analyzer. For the city of ${city} (specifically ${neighborhood}), analyze the overall macro cultural landscape.
+    I am going to provide you with a list of 9 overarching travel categories: ${allCategories.join(', ')}.
+    
+    Your task is to RANK these 9 categories from 1 to 9 based on their absolute dominance, historical search volume, and cultural weight for this specific city/neighborhood.
+    
+    Output STRICTLY as a valid JSON object matching exactly this structure:
+    {
+        "MacroCategoryRankings": [
+            {
+                "rank": 1,
+                "categoryName": "Name of the Category",
+                "dominanceScore": 95,
+                "justification": "A one-sentence explanation"
+            }
+        ]
+    }
+    Do not include markdown codeblocks or any other text.`;
+
+    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            contents: [{ parts: [{ text: prompt }] }],
+            generationConfig: { temperature: 0.2 }
+        })
+    });
+
+    const data = await response.json();
+    try {
+        let textResult = data.candidates[0].content.parts[0].text.trim();
+        if (textResult.startsWith('\`\`\`json')) {
+            textResult = textResult.substring(7, textResult.length - 3);
+        } else if (textResult.startsWith('\`\`\`')) {
+            textResult = textResult.substring(3, textResult.length - 3);
+        }
+        return JSON.parse(textResult);
+    } catch (error) {
+        console.error("Failed to parse Gemini macro response as JSON", error);
+        return null;
+    }
+}
+
 async function runPipeline(city, neighborhood) {
-    const categories = ["Nightlife", "Wellness", "Coffee Culture", "Culinary", "Culture", "Adventure"];
-    const vibeData = await extractTopVibes(city, categories);
+    const macroAnalysis = await extractMacroCategories(city, neighborhood);
+    if (!macroAnalysis || !macroAnalysis.MacroCategoryRankings) throw new Error("Gemini macro mapping failed");
+    
+    const top6Categories = macroAnalysis.MacroCategoryRankings.slice(0, 6).map(c => c.categoryName);
+    
+    const vibeData = await extractTopVibes(city, top6Categories);
     if (!vibeData) throw new Error("Gemini mapping failed");
 
     const finalOutput = {
         MicroLocation: neighborhood,
+        MacroCategoryRankings: macroAnalysis.MacroCategoryRankings,
         Categories: {}
     };
 
