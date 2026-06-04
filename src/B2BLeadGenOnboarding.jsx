@@ -40,7 +40,7 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
       // PHASE 2 & 3: Background analysis (Optional for this view but kept for engine integrity)
       const runSilentPhases = async () => {
         try {
-          const auditResults = await auditDiscoverability(formData.propertyUrl, signals.topExperiences, formData.sweeteners);
+          const auditResults = await auditDiscoverability(formData.propertyName, formData.city, signals.categories);
           setAnalysis(prev => ({ ...prev, auditResults }));
           const challenge = generatePropulsionQuest(auditResults, formData.propertyName, formData.reward);
           setAnalysis(prev => ({ ...prev, challenge }));
@@ -261,10 +261,49 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                     <Search color="#ec4899" size={24} />
                     <h2 style={{ fontSize: '2rem', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.1em' }}>Your Vibe Audit</h2>
                   </div>
-                  <div style={{ padding: '3rem', textAlign: 'center', border: '1px dashed rgba(255,255,255,0.2)', borderRadius: '1rem' }}>
-                     <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: 'rgba(255,255,255,0.5)' }}>Pending Service Spec</h3>
-                     <p style={{ color: 'rgba(255,255,255,0.4)', marginTop: '1rem' }}>Auditing the top sub-cultures against website and social presence.</p>
-                  </div>
+                  
+                  {!analysis.auditResults ? (
+                     <div style={{ padding: '3rem', textAlign: 'center', border: '1px dashed rgba(255,255,255,0.2)', borderRadius: '1rem' }}>
+                        <div style={{ width: '40px', height: '40px', borderRadius: '50%', border: '2px solid rgba(255,255,255,0.1)', borderTopColor: '#ec4899', animation: 'spin 1s linear infinite', margin: '0 auto 1.5rem' }} />
+                        <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: 'rgba(255,255,255,0.5)' }}>Agent B is hunting...</h3>
+                        <p style={{ color: 'rgba(255,255,255,0.4)', marginTop: '1rem' }}>Scanning {formData.propertyName}'s digital footprint and social graphs.</p>
+                     </div>
+                  ) : (
+                     <div>
+                        {/* Summary Scorecard */}
+                        <div style={{ display: 'flex', gap: '2rem', marginBottom: '3rem' }}>
+                           <div style={{ flex: 1, padding: '2rem', background: 'rgba(236, 72, 153, 0.05)', borderRadius: '1rem', border: '1px solid rgba(236, 72, 153, 0.2)' }}>
+                              <div style={{ fontSize: '0.8rem', color: '#ec4899', textTransform: 'uppercase', fontWeight: 900, letterSpacing: '1px' }}>Onsite Vibe Alignment</div>
+                              <div style={{ fontSize: '3rem', fontWeight: 900, color: '#fff' }}>{analysis.auditResults.avgOnsiteScore}%</div>
+                              <div style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.6)' }}>Does your website offer the vibe?</div>
+                           </div>
+                           <div style={{ flex: 1, padding: '2rem', background: 'rgba(0, 229, 255, 0.05)', borderRadius: '1rem', border: '1px solid rgba(0, 229, 255, 0.2)' }}>
+                              <div style={{ fontSize: '0.8rem', color: '#00e5ff', textTransform: 'uppercase', fontWeight: 900, letterSpacing: '1px' }}>Local Gateway Score</div>
+                              <div style={{ fontSize: '3rem', fontWeight: 900, color: '#fff' }}>{analysis.auditResults.avgLocalGatewayScore}%</div>
+                              <div style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.6)' }}>Do you promote the top local venues?</div>
+                           </div>
+                        </div>
+                        
+                        {/* Per-Category Diagnostics */}
+                        {Object.entries(analysis.auditResults.categoryAudits || {}).map(([catName, audit]) => (
+                           <div key={catName} style={{ padding: '1.5rem', background: 'rgba(255,255,255,0.03)', borderRadius: '1rem', marginBottom: '1rem', borderLeft: audit.localGatewayScore > 50 ? '4px solid #10b981' : '4px solid #ef4444' }}>
+                              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1rem' }}>
+                                 <div>
+                                    <h4 style={{ fontSize: '1.2rem', fontWeight: 900, color: '#fff', textTransform: 'uppercase' }}>{catName}: {audit.vibeName}</h4>
+                                    <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.9rem', marginTop: '0.25rem' }}>Top Local Venue: {audit.topVenueName}</p>
+                                 </div>
+                                 <div style={{ textAlign: 'right' }}>
+                                    <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase' }}>Gateway Score</div>
+                                    <div style={{ fontSize: '1.2rem', fontWeight: 900, color: audit.localGatewayScore > 50 ? '#10b981' : '#ef4444' }}>{audit.localGatewayScore}%</div>
+                                 </div>
+                              </div>
+                              <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.8)', lineHeight: 1.5, fontStyle: 'italic' }}>
+                                 "{audit.verdict}"
+                              </p>
+                           </div>
+                        ))}
+                     </div>
+                  )}
                 </div>
 
                 {/* SECTION C: Showcase Your Vibe */}
@@ -273,10 +312,36 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                     <Star color="#B5942D" size={24} />
                     <h2 style={{ fontSize: '2rem', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.1em' }}>Showcase Your Vibe</h2>
                   </div>
-                  <div style={{ padding: '3rem', textAlign: 'center', border: '1px dashed rgba(255,255,255,0.2)', borderRadius: '1rem', marginBottom: '3rem' }}>
-                     <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: 'rgba(255,255,255,0.5)' }}>Pending Service Spec</h3>
-                     <p style={{ color: 'rgba(255,255,255,0.4)', marginTop: '1rem' }}>Travelvrse tour recommendations to be generated here.</p>
-                  </div>
+                  
+                  {!analysis.auditResults ? (
+                     <div style={{ padding: '3rem', textAlign: 'center', border: '1px dashed rgba(255,255,255,0.2)', borderRadius: '1rem', marginBottom: '3rem' }}>
+                        <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: 'rgba(255,255,255,0.5)' }}>Awaiting Audit Telemetry...</h3>
+                        <p style={{ color: 'rgba(255,255,255,0.4)', marginTop: '1rem' }}>The Creator Brief will be generated once Agent B finishes the Vibe Gap analysis.</p>
+                     </div>
+                  ) : (
+                     <div style={{ marginBottom: '3rem' }}>
+                        <div style={{ padding: '2rem', background: 'linear-gradient(135deg, rgba(181, 148, 45, 0.1) 0%, rgba(181, 148, 45, 0.02) 100%)', borderRadius: '1rem', border: '1px solid rgba(181, 148, 45, 0.3)', marginBottom: '2rem' }}>
+                           <h3 style={{ fontSize: '1.2rem', fontWeight: 900, color: '#B5942D', textTransform: 'uppercase', marginBottom: '1rem' }}>The Solution: TravelVRSE Vibe Campaign</h3>
+                           <p style={{ fontSize: '1.05rem', color: 'rgba(255,255,255,0.9)', lineHeight: 1.6, marginBottom: '1.5rem' }}>
+                              Based on the gap analysis, we recommend launching a highly-visual TikTok & IG Reels campaign focusing heavily on <strong>{Object.values(analysis.auditResults.categoryAudits || {})[0]?.vibeName || 'Local Culture'}</strong>. 
+                           </p>
+                           <div style={{ padding: '1.5rem', background: 'rgba(0,0,0,0.3)', borderRadius: '0.5rem' }}>
+                              <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', marginBottom: '0.5rem', fontWeight: 700 }}>AI Generated Storyboard</div>
+                              <ul style={{ listStyleType: 'none', padding: 0, margin: 0, color: 'rgba(255,255,255,0.8)', fontSize: '0.95rem' }}>
+                                 <li style={{ marginBottom: '0.5rem' }}>🎬 <strong>Stop 1:</strong> Pre-game at {formData.propertyName} (Showcase onsite alignment)</li>
+                                 <li style={{ marginBottom: '0.5rem' }}>🎬 <strong>Stop 2:</strong> Vibe check at {Object.values(analysis.auditResults.categoryAudits || {})[0]?.topVenueName || 'the top local spot'} (Claiming the local gateway)</li>
+                                 <li>🎬 <strong>Stop 3:</strong> Call to action linking back to direct booking.</li>
+                              </ul>
+                           </div>
+                        </div>
+                        
+                        <div style={{ textAlign: 'center', padding: '1.5rem', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '1rem' }}>
+                           <div style={{ fontSize: '1.5rem', fontWeight: 900, color: '#fff', marginBottom: '0.5rem' }}>14 Local Creators</div>
+                           <div style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.9rem' }}>in our marketplace match this exact demographic.</div>
+                        </div>
+                     </div>
+                  )}
+
                   <div style={{ display: 'flex', justifyContent: 'center' }}>
                      <button className="launch-button" style={{ maxWidth: '450px', display: 'flex', alignItems: 'center', gap: '1rem', padding: '1.2rem', fontSize: '1.1rem' }} onClick={() => alert('Forwarding Brief...')}>
                        Forward Brief to Creator Marketplace <ExternalLink size={20} />

@@ -42,8 +42,31 @@ export async function scrapeLocalSignals(city, neighborhood) {
   };
 }
 
-export async function auditDiscoverability(url, experiences, sweeteners) {
-    return new Promise(resolve => setTimeout(() => resolve({ score: 85 }), 2000));
+export async function auditDiscoverability(propertyName, city, categories) {
+    console.log(`[Agent B] Requesting Vibe Audit for ${propertyName} in ${city}...`);
+    
+    // Prepare the top categories payload
+    const topCategories = Object.entries(categories || {}).slice(0, 3).map(([categoryName, data]) => {
+        const topVibe = data.Top3Vibes?.[0];
+        return {
+            categoryName,
+            vibeName: topVibe?.vibeName || categoryName,
+            keywords: topVibe?.semanticKeywords || [topVibe?.vibeName],
+            topVenueName: data.TopLocalVenue?.name
+        };
+    });
+
+    const response = await fetch('/api/hotel-audit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ hotelName: propertyName, city, topCategories })
+    });
+
+    if (!response.ok) {
+        throw new Error(`Audit API returned ${response.status}: ${await response.text()}`);
+    }
+
+    return await response.json();
 }
 
 export function generatePropulsionQuest(auditResults, propertyName, reward) {
