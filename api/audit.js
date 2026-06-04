@@ -48,13 +48,12 @@ async function extractTopVibes(city, categories) {
 
     const data = await response.json();
     try {
-        let textResult = data.candidates[0].content.parts[0].text.trim();
-        if (textResult.startsWith('\`\`\`json')) {
-            textResult = textResult.substring(7, textResult.length - 3);
-        } else if (textResult.startsWith('\`\`\`')) {
-            textResult = textResult.substring(3, textResult.length - 3);
+        let textResult = data.candidates[0].content.parts[0].text;
+        const jsonMatch = textResult.match(/\{[\s\S]*\}/);
+        if (jsonMatch) {
+            return JSON.parse(jsonMatch[0]);
         }
-        return JSON.parse(textResult);
+        throw new Error("No JSON found in response");
     } catch (error) {
         console.error("Failed to parse Gemini response as JSON", error);
         return null;
@@ -134,13 +133,12 @@ async function extractMacroCategories(city, neighborhood) {
 
     const data = await response.json();
     try {
-        let textResult = data.candidates[0].content.parts[0].text.trim();
-        if (textResult.startsWith('\`\`\`json')) {
-            textResult = textResult.substring(7, textResult.length - 3);
-        } else if (textResult.startsWith('\`\`\`')) {
-            textResult = textResult.substring(3, textResult.length - 3);
+        let textResult = data.candidates[0].content.parts[0].text;
+        const jsonMatch = textResult.match(/\{[\s\S]*\}/);
+        if (jsonMatch) {
+            return JSON.parse(jsonMatch[0]);
         }
-        return JSON.parse(textResult);
+        throw new Error("No JSON found in response");
     } catch (error) {
         console.error("Failed to parse Gemini macro response as JSON", error);
         return null;
