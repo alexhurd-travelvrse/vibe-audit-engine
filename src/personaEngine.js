@@ -22,10 +22,10 @@ export const VIBE_TAXONOMY = [
 export async function scrapeLocalSignals(city, neighborhood) {
   console.log(`[Agent A] Requesting Dynamic Flipped Funnel Data for ${city} / ${neighborhood}...`);
   
-  const response = await fetch('/api/audit', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ city, neighborhood })
+  const params = new URLSearchParams({ city, neighborhood });
+  const response = await fetch(`/api/audit?${params.toString()}`, {
+      method: 'GET',
+      headers: { 'Accept': 'application/json' }
   });
 
   if (!response.ok) {
