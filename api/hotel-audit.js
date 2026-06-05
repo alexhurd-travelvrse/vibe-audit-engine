@@ -15,30 +15,7 @@ async function runSerperSearch(query) {
     return await response.json();
 }
 
-async function extractHotelUrl(hotelName, city) {
-    const data = await runSerperSearch(`"${hotelName}" ${city} official site`);
-    if (data.organic && data.organic.length > 0) {
-        // Find the first non-booking/agoda/tripadvisor link
-        const validLinks = data.organic.filter(link => {
-            const url = link.link.toLowerCase();
-            return !url.includes('booking.com') && 
-                   !url.includes('tripadvisor.') && 
-                   !url.includes('agoda.com') &&
-                   !url.includes('expedia.com') &&
-                   !url.includes('hotels.com');
-        });
-        
-        if (validLinks.length > 0) {
-            try {
-                const urlObj = new URL(validLinks[0].link);
-                return urlObj.hostname;
-            } catch (e) {
-                return null;
-            }
-        }
-    }
-    return null;
-}
+
 
 export default async function handler(req, res) {
     // CORS Headers
@@ -51,19 +28,25 @@ export default async function handler(req, res) {
     if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
 
     try {
-        const { hotelName, city, topCategories } = req.body;
+        const { hotelName, city, topCategories, propertyUrl, instagramUrl } = req.body;
         if (!hotelName || !city || !topCategories) {
             return res.status(400).json({ error: 'Missing parameters' });
         }
 
         console.log(`[Agent B] Starting Vibe Audit for ${hotelName} in ${city}`);
 
-        // Step 1: Auto Discovery
-        const hotelDomain = await extractHotelUrl(hotelName, city);
-        console.log(`[Agent B] Discovered Domain: ${hotelDomain || 'Not Found'}`);
+        // Step 1: Use provided URLs
+        let hotelDomain = null;
+        if (propertyUrl) {
+            try {
+                hotelDomain = new URL(propertyUrl).hostname;
+            } catch(e) {
+                hotelDomain = propertyUrl.replace(/^https?:\/\//, '').split('/')[0];
+            }
+        }
+        console.log(`[Agent B] Target Domain: ${hotelDomain || 'Not Provided'}`);
 
-        const socialData = await runSerperSearch(`site:instagram.com OR site:facebook.com "${hotelName}" ${city}`);
-        let hasSocialPresence = (socialData.organic && socialData.organic.length > 0);
+        let hasSocialPresence = !!instagramUrl;
 
         // Step 2: Audit each top category
         const auditResults = {};

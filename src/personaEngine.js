@@ -42,11 +42,11 @@ export async function scrapeLocalSignals(city, neighborhood) {
   };
 }
 
-export async function auditDiscoverability(propertyName, city, categories) {
+export async function auditDiscoverability(propertyName, city, categories, propertyUrl, instagramUrl) {
     console.log(`[Agent B] Requesting Vibe Audit for ${propertyName} in ${city}...`);
     
     // Prepare the top categories payload
-    const topCategories = Object.entries(categories || {}).slice(0, 3).map(([categoryName, data]) => {
+    const topCategories = Object.entries(categories || {}).slice(0, 6).map(([categoryName, data]) => {
         const topVibe = data.Top3Vibes?.[0];
         return {
             categoryName,
@@ -59,7 +59,7 @@ export async function auditDiscoverability(propertyName, city, categories) {
     const response = await fetch('/api/hotel-audit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ hotelName: propertyName, city, topCategories })
+        body: JSON.stringify({ hotelName: propertyName, city, topCategories, propertyUrl, instagramUrl })
     });
 
     if (!response.ok) {

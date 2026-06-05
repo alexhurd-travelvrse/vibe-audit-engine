@@ -15,6 +15,7 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
     email: '',
     propertyName: '',
     propertyUrl: '',
+    instagramUrl: '',
     city: 'Copenhagen',
     neighborhood: 'Indre By',
     sweeteners: ['cocktails', 'wellness', 'local-craft'],
@@ -40,7 +41,7 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
       // PHASE 2 & 3: Background analysis (Optional for this view but kept for engine integrity)
       const runSilentPhases = async () => {
         try {
-          const auditResults = await auditDiscoverability(formData.propertyName, formData.city, signals.categories);
+          const auditResults = await auditDiscoverability(formData.propertyName, formData.city, signals.categories, formData.propertyUrl, formData.instagramUrl);
           setAnalysis(prev => ({ ...prev, auditResults }));
           const challenge = generatePropulsionQuest(auditResults, formData.propertyName, formData.reward);
           setAnalysis(prev => ({ ...prev, challenge }));
@@ -103,6 +104,17 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                   <input type="text" className="form-input" style={{ fontSize: '1.1rem', padding: '1rem 1.5rem' }} value={formData.propertyName} placeholder="Enter Hotel Name" onChange={e => setFormData({...formData, propertyName: e.target.value})} />
                 </div>
                 
+                <div className="grid-2" style={{ gap: '1.5rem' }}>
+                    <div className="input-group" style={{ marginBottom: '1.5rem' }}>
+                        <label className="input-label" style={{ marginBottom: '0.75rem' }}>Website URL</label>
+                        <input type="url" className="form-input" style={{ fontSize: '1.1rem', padding: '1rem 1.5rem' }} value={formData.propertyUrl} placeholder="https://..." onChange={e => setFormData({...formData, propertyUrl: e.target.value})} />
+                    </div>
+                    <div className="input-group" style={{ marginBottom: '1.5rem' }}>
+                        <label className="input-label" style={{ marginBottom: '0.75rem' }}>Instagram URL</label>
+                        <input type="url" className="form-input" style={{ fontSize: '1.1rem', padding: '1rem 1.5rem' }} value={formData.instagramUrl} placeholder="https://instagram.com/..." onChange={e => setFormData({...formData, instagramUrl: e.target.value})} />
+                    </div>
+                </div>
+
                 <div className="grid-2" style={{ gap: '1.5rem' }}>
                     <div className="input-group" style={{ marginBottom: '1.5rem' }}>
                         <label className="input-label" style={{ marginBottom: '0.75rem' }}>Primary Market</label>

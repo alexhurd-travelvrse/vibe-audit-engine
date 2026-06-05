@@ -14,10 +14,10 @@ const SERPER_API_KEY = process.env.VITE_SERPER_API_KEY || process.env.SERPER_API
 // -------------------------------------------------------------
 // HELPER FUNCTIONS (Gemini + Serper)
 // -------------------------------------------------------------
-async function extractTopVibes(city, categories) {
-    console.log(`[Step 1] Querying Gemini AI for top vibes in ${city}...`);
+async function extractTopVibes(city, neighborhood, categories) {
+    console.log(`[Step 1] Querying Gemini AI for top vibes in ${neighborhood}, ${city}...`);
     const prompt = `
-    Act as an Agentic Search Telemetry Analyzer. For ${city}, identify the top 3 most distinct, highly-searched travel 'vibes' or subcultures for each of the following categories: ${categories.join(', ')}. 
+    Act as an Agentic Search Telemetry Analyzer. For the city of ${city} (specifically ${neighborhood}), identify the top 3 most distinct, highly-searched travel 'vibes' or subcultures for each of the following categories: ${categories.join(', ')}. 
     
     Output STRICTLY as a valid JSON object matching exactly this structure:
     {
@@ -174,7 +174,7 @@ async function runPipeline(city, neighborhood) {
     const macroAnalysis = await extractMacroCategories(city, neighborhood);
     const top6Categories = macroAnalysis.MacroCategoryRankings.slice(0, 6).map(c => c.categoryName);
     
-    const vibeData = await extractTopVibes(city, top6Categories);
+    const vibeData = await extractTopVibes(city, neighborhood, top6Categories);
 
     const finalOutput = {
         MicroLocation: neighborhood,
