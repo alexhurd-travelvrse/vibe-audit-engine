@@ -14,6 +14,18 @@ const SERPER_API_KEY = process.env.VITE_SERPER_API_KEY || process.env.SERPER_API
 // -------------------------------------------------------------
 // HELPER FUNCTIONS (Gemini + Serper)
 // -------------------------------------------------------------
+async function fetchGeminiWithRetry(url, options, retries = 3, delay = 2000) {
+    for (let i = 0; i < retries; i++) {
+        const res = await fetch(url, options);
+        if (res.status === 503) {
+            console.log(`[Gemini] 503 High Demand. Retrying in ${delay}ms... (Attempt ${i+1}/${retries})`);
+            await new Promise(r => setTimeout(r, delay));
+            continue;
+        }
+        return res;
+    }
+    return await fetch(url, options);
+}
 async function extractTopVibes(city, neighborhood, categories) {
     console.log(`[Step 1] Querying Gemini AI for top vibes in ${neighborhood}, ${city}...`);
     const prompt = `
@@ -37,7 +49,7 @@ async function extractTopVibes(city, neighborhood, categories) {
     Do not include markdown codeblocks (\`\`\`json) or any other text outside the JSON object.
     `;
 
-    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`, {
+    const response = await fetchGeminiWithRetry(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -136,7 +148,7 @@ async function extractMacroCategories(city, neighborhood) {
     }
     Do not include markdown codeblocks or any other text.`;
 
-    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`, {
+    const response = await fetchGeminiWithRetry(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
