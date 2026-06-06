@@ -72,7 +72,7 @@ async function extractTopVibes(city, neighborhood, categories) {
         console.log("FALLING BACK TO MOCK VIBE DATA DUE TO API LIMITS");
         
         // Construct a dynamic mock based on requested categories
-        const mockVibes = {};
+        const mockVibes = { isMockData: true };
         categories.forEach(cat => {
             mockVibes[cat] = {
                 "Top3Vibes": [
@@ -167,9 +167,9 @@ async function extractMacroCategories(city, neighborhood) {
         throw new Error("No JSON found in response");
     } catch (error) {
         console.error("Failed to parse Gemini macro response as JSON", error);
-        console.error("Raw response:", JSON.stringify(data));
         console.log("FALLING BACK TO MOCK MACRO DATA DUE TO API LIMITS");
         return {
+            "isMockData": true,
             "MacroCategoryRankings": [
                 { "rank": 1, "categoryName": "Culinary", "dominanceScore": 95, "justification": "World-renowned dining scene." },
                 { "rank": 2, "categoryName": "Culture", "dominanceScore": 90, "justification": "Historic and artistic epicenter." },
@@ -193,6 +193,7 @@ async function runPipeline(city, neighborhood) {
 
     const finalOutput = {
         MicroLocation: neighborhood,
+        isMockData: !!macroAnalysis.isMockData || !!vibeData.isMockData,
         MacroCategoryRankings: macroAnalysis.MacroCategoryRankings,
         Categories: {}
     };
@@ -292,8 +293,6 @@ export default async function handler(req, res) {
             return res.status(400).json({ error: 'Missing city or neighborhood parameters' });
         }
 
-        // Set Vercel Edge Caching to cache the response for 24 hours (86400 seconds)
-        res.setHeader('Cache-Control', 's-maxage=86400, stale-while-revalidate');
 
         const cacheDir = path.resolve('/tmp', '.vibeCache');
         if (!fs.existsSync(cacheDir)) {
@@ -319,8 +318,17 @@ export default async function handler(req, res) {
         // Run pipeline
         const freshData = await runPipeline(city, neighborhood);
         
-        // Save cache
-        fs.writeFileSync(cacheFile, JSON.stringify(freshData, null, 2));
+        if (!freshData.isMockData) {
+            // Set Vercel Edge Caching to cache the response for 24 hours (86400 seconds)
+            res.setHeader('Cache-Control', 's-maxage=86400, stale-while-revalidate');
+            // Save cache locally
+            fs.writeFileSync(cacheFile, JSON.stringify(freshData, null, 2));
+        } else {
+            console.log(`[API] Engine returned mock data fallback. Bypassing all caches.`);
+            res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
+            res.setHeader('Expires', '0');
+            res.setHeader('Surrogate-Control', 'no-store');
+        }
 
         return res.status(200).json(freshData);
 
