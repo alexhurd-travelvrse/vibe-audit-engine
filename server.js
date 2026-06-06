@@ -15,6 +15,10 @@ app.get('/api/audit', async (req, res) => {
     await auditHandler(req, res);
 });
 
+app.post('/api/audit', async (req, res) => {
+    await auditHandler(req, res);
+});
+
 app.post('/api/hotel-audit', async (req, res) => {
     await hotelAuditHandler(req, res);
 });

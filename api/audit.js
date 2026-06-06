@@ -260,15 +260,16 @@ export default async function handler(req, res) {
         return res.status(200).end();
     }
 
-    if (req.method !== 'GET') {
+    if (req.method !== 'GET' && req.method !== 'POST') {
         return res.status(405).json({ error: 'Method not allowed' });
     }
 
     try {
-        // Use req.query for GET requests
-        const { city, neighborhood } = req.query;
+        // Use req.query for GET requests, req.body for POST
+        const city = req.method === 'POST' ? req.body.city : req.query.city;
+        const neighborhood = req.method === 'POST' ? req.body.neighborhood : req.query.neighborhood;
         if (!city || !neighborhood) {
-            return res.status(400).json({ error: 'Missing city or neighborhood query parameters' });
+            return res.status(400).json({ error: 'Missing city or neighborhood parameters' });
         }
 
         // Set Vercel Edge Caching to cache the response for 24 hours (86400 seconds)
