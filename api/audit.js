@@ -26,14 +26,30 @@ async function fetchGeminiWithRetry(url, options, retries = 3, delay = 2000) {
     }
     return await fetch(url, options);
 }
-async function extractTopVibes(city, neighborhood, categories) {
-    console.log(`[Step 1] Querying Gemini AI for top vibes in ${neighborhood}, ${city}...`);
-    const prompt = `
-    Act as an Agentic Search Telemetry Analyzer. For the city of ${city} (specifically ${neighborhood}), identify the top 3 most distinct, highly-searched travel 'vibes' or subcultures for each of the following categories: ${categories.join(', ')}. 
+async function extractFullVibeTelemetry(city, neighborhood) {
+    console.log(`[Step 1] Querying Gemini AI Mega-Prompt for ${neighborhood}, ${city}...`);
+    const allCategories = ["Nightlife", "Wellness", "Coffee Culture", "Culinary", "Culture", "Adventure", "Retail", "Entertainment", "Gaming"];
     
-    Output STRICTLY as a valid JSON object matching exactly this structure:
-    {
-        "CategoryName": {
+    const prompt = `Act as an Agentic Search Telemetry Analyzer. For the city of ${city} (specifically ${neighborhood}), execute a two-part cultural analysis.
+
+PART 1: Macro Analysis
+Rank these 9 categories based on their cultural dominance and search volume for this specific city/neighborhood: ${allCategories.join(', ')}.
+
+PART 2: Micro Vibe Discovery
+For the "Hotel" category, AND for the Top 6 categories you just ranked in Part 1, identify the top 3 most distinct, highly-searched travel 'vibes' or subcultures.
+
+Output STRICTLY as a valid JSON object matching exactly this structure:
+{
+    "MacroCategoryRankings": [
+        {
+            "rank": 1,
+            "categoryName": "Name of the Category",
+            "dominanceScore": 95,
+            "justification": "A one-sentence explanation"
+        }
+    ],
+    "Categories": {
+        "Hotel": {
             "Top3Vibes": [
                 {
                     "rank": 1,
@@ -43,11 +59,13 @@ async function extractTopVibes(city, neighborhood, categories) {
                     "frequentHumanQueries": ["A conversational human query looking for this vibe"]
                 }
             ]
+        },
+        "CategoryNameFromTop6": {
+            "Top3Vibes": [ ... ]
         }
     }
-    
-    Do not include markdown codeblocks (\`\`\`json) or any other text outside the JSON object.
-    `;
+}
+Do not include markdown codeblocks (\`\`\`json) or any other text outside the JSON object.`;
 
     const response = await fetchGeminiWithRetry(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`, {
         method: 'POST',
@@ -67,22 +85,33 @@ async function extractTopVibes(city, neighborhood, categories) {
         }
         throw new Error("No JSON found in response");
     } catch (error) {
-        console.error("Failed to parse Gemini response as JSON", error);
+        console.error("Failed to parse Gemini Mega-Prompt response as JSON", error);
         console.error("Raw response:", JSON.stringify(data));
-        console.log("FALLING BACK TO MOCK VIBE DATA DUE TO API LIMITS");
+        console.log("FALLING BACK TO MOCK DATA DUE TO API LIMITS");
         
-        // Construct a dynamic mock based on requested categories
-        const mockVibes = { isMockData: true };
-        categories.forEach(cat => {
-            mockVibes[cat] = {
-                "Top3Vibes": [
-                    { "rank": 1, "vibeName": `Trending ${cat}`, "growthTrend": "Explosive", "semanticKeywords": [cat.toLowerCase(), "local", "authentic"], "frequentHumanQueries": [`best ${cat.toLowerCase()} near me`] },
-                    { "rank": 2, "vibeName": `Underground ${cat}`, "growthTrend": "Steady", "semanticKeywords": ["hidden gem", cat.toLowerCase()], "frequentHumanQueries": [`secret ${cat.toLowerCase()} spots`] },
-                    { "rank": 3, "vibeName": `Classic ${cat}`, "growthTrend": "High", "semanticKeywords": ["traditional", cat.toLowerCase()], "frequentHumanQueries": [`classic ${cat.toLowerCase()}`] }
-                ]
-            };
-        });
-        return mockVibes;
+        return {
+            "isMockData": true,
+            "MacroCategoryRankings": [
+                { "rank": 1, "categoryName": "Culinary", "dominanceScore": 95, "justification": "World-renowned dining scene." },
+                { "rank": 2, "categoryName": "Culture", "dominanceScore": 90, "justification": "Historic and artistic epicenter." },
+                { "rank": 3, "categoryName": "Coffee Culture", "dominanceScore": 85, "justification": "Deeply ingrained in daily life." },
+                { "rank": 4, "categoryName": "Nightlife", "dominanceScore": 80, "justification": "Vibrant evening entertainment." },
+                { "rank": 5, "categoryName": "Retail", "dominanceScore": 75, "justification": "Bustling shopping districts." },
+                { "rank": 6, "categoryName": "Entertainment", "dominanceScore": 70, "justification": "Theaters and live music." }
+            ],
+            "Categories": {
+                "Hotel": {
+                    "Top3Vibes": [
+                        { "rank": 1, "vibeName": "Trending Hotel", "growthTrend": "Explosive", "semanticKeywords": ["hotel", "local", "authentic"], "frequentHumanQueries": ["best hotel near me"] }
+                    ]
+                },
+                "Culinary": {
+                    "Top3Vibes": [
+                        { "rank": 1, "vibeName": "Trending Culinary", "growthTrend": "Explosive", "semanticKeywords": ["culinary", "local", "authentic"], "frequentHumanQueries": ["best culinary near me"] }
+                    ]
+                }
+            }
+        };
     }
 }
 
@@ -127,81 +156,28 @@ async function validateVenue(venueName, city) {
     return { socialVelocity, editorialMentions };
 }
 
-async function extractMacroCategories(city, neighborhood) {
-    console.log(`[Step 0] Querying Gemini AI for Macro-Category Analysis in ${neighborhood}, ${city}...`);
-    const allCategories = ["Nightlife", "Wellness", "Coffee Culture", "Culinary", "Culture", "Adventure", "Retail", "Entertainment", "Gaming"];
-    const prompt = `Act as an Agentic Search Telemetry Analyzer. For the city of ${city} (specifically ${neighborhood}), analyze the overall macro cultural landscape.
-    I am going to provide you with a list of 9 overarching travel categories: ${allCategories.join(', ')}.
-    
-    Your task is to RANK these 9 categories from 1 to 9 based on their absolute dominance, historical search volume, and cultural weight for this specific city/neighborhood.
-    
-    Output STRICTLY as a valid JSON object matching exactly this structure:
-    {
-        "MacroCategoryRankings": [
-            {
-                "rank": 1,
-                "categoryName": "Name of the Category",
-                "dominanceScore": 95,
-                "justification": "A one-sentence explanation"
-            }
-        ]
-    }
-    Do not include markdown codeblocks or any other text.`;
-
-    const response = await fetchGeminiWithRetry(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-            contents: [{ parts: [{ text: prompt }] }],
-            generationConfig: { temperature: 0.2 }
-        })
-    });
-
-    const data = await response.json();
-    try {
-        let textResult = data.candidates[0].content.parts[0].text;
-        const jsonMatch = textResult.match(/\{[\s\S]*\}/);
-        if (jsonMatch) {
-            return JSON.parse(jsonMatch[0]);
-        }
-        throw new Error("No JSON found in response");
-    } catch (error) {
-        console.error("Failed to parse Gemini macro response as JSON", error);
-        console.log("FALLING BACK TO MOCK MACRO DATA DUE TO API LIMITS");
-        return {
-            "isMockData": true,
-            "MacroCategoryRankings": [
-                { "rank": 1, "categoryName": "Culinary", "dominanceScore": 95, "justification": "World-renowned dining scene." },
-                { "rank": 2, "categoryName": "Culture", "dominanceScore": 90, "justification": "Historic and artistic epicenter." },
-                { "rank": 3, "categoryName": "Coffee Culture", "dominanceScore": 85, "justification": "Deeply ingrained in daily life." },
-                { "rank": 4, "categoryName": "Nightlife", "dominanceScore": 80, "justification": "Vibrant evening entertainment." },
-                { "rank": 5, "categoryName": "Retail", "dominanceScore": 75, "justification": "Bustling shopping districts." },
-                { "rank": 6, "categoryName": "Entertainment", "dominanceScore": 70, "justification": "Theaters and live music." }
-            ]
-        };
-    }
-}
-
 async function runPipeline(city, neighborhood) {
-    const macroAnalysis = await extractMacroCategories(city, neighborhood);
-    const top6Categories = macroAnalysis.MacroCategoryRankings.slice(0, 6).map(c => c.categoryName);
+    const telemetryData = await extractFullVibeTelemetry(city, neighborhood);
+    
+    const macroRankings = telemetryData.MacroCategoryRankings || [];
+    const top6Categories = macroRankings.slice(0, 6).map(c => c.categoryName);
     
     // Inject "Hotel" as a fixed, always-first category
     const queryCategories = ["Hotel", ...top6Categories.filter(c => c !== "Hotel")];
     
-    const vibeData = await extractTopVibes(city, neighborhood, queryCategories);
+    const vibeData = telemetryData.Categories || {};
 
     const finalOutput = {
         MicroLocation: neighborhood,
-        isMockData: !!macroAnalysis.isMockData || !!vibeData.isMockData,
-        MacroCategoryRankings: macroAnalysis.MacroCategoryRankings,
+        isMockData: !!telemetryData.isMockData,
+        MacroCategoryRankings: macroRankings,
         Categories: {}
     };
 
     // Process categories in exact order of queryCategories to ensure "Hotel" remains first
     const categoryPromises = queryCategories.map(async (categoryName) => {
         const categoryInfo = vibeData[categoryName];
-        if (!categoryInfo || !categoryInfo.Top3Vibes) return null;
+        if (!categoryInfo || !categoryInfo.Top3Vibes || categoryInfo.Top3Vibes.length === 0) return null;
 
         let categoryData = {
             Top3Vibes: categoryInfo.Top3Vibes.map(v => ({ rank: v.rank, vibeName: v.vibeName, growthTrend: v.growthTrend })),
