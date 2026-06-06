@@ -1,6 +1,6 @@
 import express from 'express';
 import auditHandler from './api/audit.js';
-import hotelAuditHandler from './api/hotel-audit.js';
+import auditHotelHandler from './api/audit-hotel.js';
 import cors from 'cors';
 
 const app = express();
@@ -19,8 +19,8 @@ app.post('/api/audit', async (req, res) => {
     await auditHandler(req, res);
 });
 
-app.post('/api/hotel-audit', async (req, res) => {
-    await hotelAuditHandler(req, res);
+app.post('/api/audit-hotel', async (req, res) => {
+    await auditHotelHandler(req, res);
 });
 
 app.listen(3001, () => {

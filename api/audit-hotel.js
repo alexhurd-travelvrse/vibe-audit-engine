@@ -1,0 +1,114 @@
+export const maxDuration = 60;
+
+import * as dotenv from 'dotenv';
+dotenv.config();
+
+const SERPER_API_KEY = process.env.VITE_SERPER_API_KEY || process.env.SERPER_API_KEY;
+
+export default async function handler(req, res) {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'POST,OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+    if (req.method === 'OPTIONS') {
+        return res.status(200).end();
+    }
+
+    if (req.method !== 'POST') {
+        return res.status(405).json({ error: 'Method not allowed' });
+    }
+
+    try {
+        const { url, experiences } = req.body;
+        
+        if (!url || !experiences || !Array.isArray(experiences)) {
+            return res.status(400).json({ error: 'Missing url or experiences array' });
+        }
+
+        // Extract base domain for site: search
+        let domain = url;
+        try {
+            const urlObj = new URL(url.startsWith('http') ? url : `https://${url}`);
+            domain = urlObj.hostname.replace('www.', '');
+        } catch (e) {
+            console.warn("Invalid URL format, using raw string for domain", url);
+        }
+
+        console.log(`[Hotel Audit] Starting Serper scan for domain: ${domain}`);
+
+        // Extract keywords from a vibe name and concept to search
+        const getKeywordsForVibe = (exp) => {
+            const e = exp.name?.toLowerCase() || "";
+            const c = (typeof exp.category === 'string' ? exp.category : exp.category?.label || "").toLowerCase();
+            
+            const keywords = [];
+            // Basic fallback category keywords
+            if (e.includes('wellness') || c.includes('wellness')) keywords.push("wellness", "spa", "sauna", "relax");
+            if (e.includes('culinary') || c.includes('culinary') || e.includes('gastronomy')) keywords.push("dining", "restaurant", "culinary", "menu");
+            if (e.includes('nightlife') || c.includes('nightlife')) keywords.push("nightlife", "bar", "club", "cocktails", "dj");
+            if (e.includes('culture') || c.includes('culture')) keywords.push("art", "culture", "design", "gallery");
+            if (e.includes('retail') || c.includes('retail')) keywords.push("shopping", "retail", "boutique");
+            
+            // Extract the longest words from the specific name to make it hyper-specific
+            const words = e.split(/\s+/).filter(w => w.length > 5);
+            words.forEach(w => keywords.push(w));
+
+            // Return top 3 unique keywords formatted for Serper OR query
+            const uniqueKeywords = [...new Set(keywords)].slice(0, 3);
+            return uniqueKeywords.length > 0 ? uniqueKeywords.join(" OR ") : "experience OR hotel";
+        };
+
+        const auditPromises = experiences.map(async (exp, i) => {
+            const searchQuery = getKeywordsForVibe(exp);
+            const serperQuery = `site:${domain} ${searchQuery}`;
+            
+            try {
+                const serperResponse = await fetch('https://google.serper.dev/search', {
+                    method: 'POST',
+                    headers: {
+                        'X-API-KEY': SERPER_API_KEY,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ q: serperQuery })
+                });
+
+                if (!serperResponse.ok) {
+                    throw new Error(`Serper API error: ${serperResponse.statusText}`);
+                }
+
+                const data = await serperResponse.json();
+                
+                // If there are organic results, the domain mentions these keywords!
+                const isMatch = data.organic && data.organic.length > 0;
+                
+                return {
+                    name: exp.name,
+                    score: isMatch ? 90 : 5,
+                    socialScore: isMatch ? 95 : 0,
+                    status: isMatch ? "Digital Match" : "Strategic Gap",
+                    evidence: isMatch ? `Found ${data.organic.length} indexed pages mentioning this vibe.` : "Zero digital trace identified on hotel domain.",
+                    rank: i + 1
+                };
+            } catch (err) {
+                console.error(`Error querying Serper for ${exp.name}:`, err);
+                // Fallback gracefully per item
+                return {
+                    name: exp.name,
+                    score: 5,
+                    socialScore: 0,
+                    status: "Strategic Gap",
+                    evidence: "Audit scan failed or zero trace identified.",
+                    rank: i + 1
+                };
+            }
+        });
+
+        const auditResults = await Promise.all(auditPromises);
+        
+        return res.status(200).json(auditResults);
+
+    } catch (err) {
+        console.error("[Hotel Audit] Critical error:", err);
+        return res.status(500).json({ error: 'Internal server error' });
+    }
+}
