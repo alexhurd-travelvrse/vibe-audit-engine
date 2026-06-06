@@ -186,7 +186,10 @@ async function runPipeline(city, neighborhood) {
     const macroAnalysis = await extractMacroCategories(city, neighborhood);
     const top6Categories = macroAnalysis.MacroCategoryRankings.slice(0, 6).map(c => c.categoryName);
     
-    const vibeData = await extractTopVibes(city, neighborhood, top6Categories);
+    // Inject "Hotel" as a fixed, always-first category
+    const queryCategories = ["Hotel", ...top6Categories.filter(c => c !== "Hotel")];
+    
+    const vibeData = await extractTopVibes(city, neighborhood, queryCategories);
 
     const finalOutput = {
         MicroLocation: neighborhood,
@@ -194,8 +197,11 @@ async function runPipeline(city, neighborhood) {
         Categories: {}
     };
 
-    // Parallelize the category processing to prevent Vercel 10s timeouts
-    const categoryPromises = Object.entries(vibeData).map(async ([categoryName, categoryInfo]) => {
+    // Process categories in exact order of queryCategories to ensure "Hotel" remains first
+    const categoryPromises = queryCategories.map(async (categoryName) => {
+        const categoryInfo = vibeData[categoryName];
+        if (!categoryInfo || !categoryInfo.Top3Vibes) return null;
+
         let categoryData = {
             Top3Vibes: categoryInfo.Top3Vibes.map(v => ({ rank: v.rank, vibeName: v.vibeName, growthTrend: v.growthTrend })),
             TopLocalVenue: null,
@@ -251,7 +257,9 @@ async function runPipeline(city, neighborhood) {
 
     const resolvedCategories = await Promise.all(categoryPromises);
     for (const cat of resolvedCategories) {
-        finalOutput.Categories[cat.name] = cat.data;
+        if (cat) {
+            finalOutput.Categories[cat.name] = cat.data;
+        }
     }
 
     return finalOutput;
