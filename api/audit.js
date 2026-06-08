@@ -89,28 +89,37 @@ Do not include markdown codeblocks (\`\`\`json) or any other text outside the JS
         console.error("Raw response:", JSON.stringify(data));
         console.log("FALLING BACK TO MOCK DATA DUE TO API LIMITS");
         
+        const mockRankings = [
+            { "rank": 1, "categoryName": "Culinary", "dominanceScore": 95, "justification": "World-renowned dining scene." },
+            { "rank": 2, "categoryName": "Culture", "dominanceScore": 90, "justification": "Historic and artistic epicenter." },
+            { "rank": 3, "categoryName": "Coffee Culture", "dominanceScore": 85, "justification": "Deeply ingrained in daily life." },
+            { "rank": 4, "categoryName": "Nightlife", "dominanceScore": 80, "justification": "Vibrant evening entertainment." },
+            { "rank": 5, "categoryName": "Retail", "dominanceScore": 75, "justification": "Bustling shopping districts." },
+            { "rank": 6, "categoryName": "Entertainment", "dominanceScore": 70, "justification": "Theaters and live music." }
+        ];
+
+        const mockCategories = {
+            "Hotel": {
+                "Top3Vibes": [
+                    { "rank": 1, "vibeName": "Trending Hotel", "growthTrend": "Explosive", "semanticKeywords": ["hotel", "local", "authentic"], "frequentHumanQueries": ["best hotel near me"] }
+                ]
+            }
+        };
+
+        mockRankings.forEach(cat => {
+            mockCategories[cat.categoryName] = {
+                "Top3Vibes": [
+                    { "rank": 1, "vibeName": `Trending ${cat.categoryName}`, "growthTrend": "Explosive", "semanticKeywords": [cat.categoryName.toLowerCase(), "local", "authentic"], "frequentHumanQueries": [`best ${cat.categoryName.toLowerCase()} near me`] },
+                    { "rank": 2, "vibeName": `Underground ${cat.categoryName}`, "growthTrend": "Steady", "semanticKeywords": ["hidden gem", cat.categoryName.toLowerCase()], "frequentHumanQueries": [`secret ${cat.categoryName.toLowerCase()} spots`] },
+                    { "rank": 3, "vibeName": `Classic ${cat.categoryName}`, "growthTrend": "High", "semanticKeywords": ["traditional", cat.categoryName.toLowerCase()], "frequentHumanQueries": [`classic ${cat.categoryName.toLowerCase()}`] }
+                ]
+            };
+        });
+
         return {
             "isMockData": true,
-            "MacroCategoryRankings": [
-                { "rank": 1, "categoryName": "Culinary", "dominanceScore": 95, "justification": "World-renowned dining scene." },
-                { "rank": 2, "categoryName": "Culture", "dominanceScore": 90, "justification": "Historic and artistic epicenter." },
-                { "rank": 3, "categoryName": "Coffee Culture", "dominanceScore": 85, "justification": "Deeply ingrained in daily life." },
-                { "rank": 4, "categoryName": "Nightlife", "dominanceScore": 80, "justification": "Vibrant evening entertainment." },
-                { "rank": 5, "categoryName": "Retail", "dominanceScore": 75, "justification": "Bustling shopping districts." },
-                { "rank": 6, "categoryName": "Entertainment", "dominanceScore": 70, "justification": "Theaters and live music." }
-            ],
-            "Categories": {
-                "Hotel": {
-                    "Top3Vibes": [
-                        { "rank": 1, "vibeName": "Trending Hotel", "growthTrend": "Explosive", "semanticKeywords": ["hotel", "local", "authentic"], "frequentHumanQueries": ["best hotel near me"] }
-                    ]
-                },
-                "Culinary": {
-                    "Top3Vibes": [
-                        { "rank": 1, "vibeName": "Trending Culinary", "growthTrend": "Explosive", "semanticKeywords": ["culinary", "local", "authentic"], "frequentHumanQueries": ["best culinary near me"] }
-                    ]
-                }
-            }
+            "MacroCategoryRankings": mockRankings,
+            "Categories": mockCategories
         };
     }
 }
