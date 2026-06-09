@@ -197,8 +197,15 @@ async function runPipeline(city, neighborhood) {
 
         const topVibe = categoryInfo.Top3Vibes[0];
         const localVenues = await huntLocalVenues(topVibe.semanticKeywords, neighborhood, city);
-        let localDensity = localVenues.length;
-        let topLocalVenue = localVenues.length > 0 ? localVenues[0] : null;
+        
+        // Filter out low-rated tourist traps: prioritize venues with 4.0+ rating and high review counts
+        const qualityVenues = localVenues
+            .filter(v => v.rating >= 4.0)
+            .sort((a, b) => (b.rating * b.ratingCount) - (a.rating * a.ratingCount));
+
+        let localDensity = qualityVenues.length > 0 ? qualityVenues.length : localVenues.length;
+        // Fallback to the first result if no quality venues exist, otherwise take the top quality venue
+        let topLocalVenue = qualityVenues.length > 0 ? qualityVenues[0] : (localVenues.length > 0 ? localVenues[0] : null);
 
         if (topLocalVenue) {
             const validationScores = await validateVenue(topLocalVenue.title, city);
