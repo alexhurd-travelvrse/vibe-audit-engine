@@ -53,7 +53,7 @@ export default async function handler(req, res) {
         let totalOnsiteScore = 0;
         let totalLocalGatewayScore = 0;
 
-        for (const cat of topCategories) {
+        const categoryPromises = topCategories.map(async (cat) => {
             const { categoryName, vibeName, keywords, topVenueName } = cat;
             
             let onsiteScore = 0;
@@ -68,44 +68,60 @@ export default async function handler(req, res) {
             const queryTerms = [...new Set([...vibeNameWords, ...semanticWords])].filter(Boolean);
 
             if (hotelDomain && queryTerms.length > 0) {
-                // Onsite check: Single OR query with up to 6 terms
                 const vibeQuery = `site:${hotelDomain} ${queryTerms.map(t => `"${t}"`).join(' OR ')}`;
-                const vibeRes = await runSerperSearch(vibeQuery);
                 
+                // Run Onsite and Gateway checks concurrently
+                const promises = [];
+                promises.push(runSerperSearch(vibeQuery));
+                
+                let doesGatewaySearch = false;
+                if (topVenueName && topVenueName !== "No immediate venue found") {
+                    doesGatewaySearch = true;
+                    promises.push(runSerperSearch(`site:${hotelDomain} "${topVenueName}"`));
+                }
+
+                const results = await Promise.all(promises);
+                const vibeRes = results[0];
+                const venueRes = doesGatewaySearch ? results[1] : null;
+
                 if (vibeRes.organic && vibeRes.organic.length > 0) {
                     onsiteMark = "Pass";
                     onsiteScore = 100;
                     
-                    // Parse snippets to identify exactly which keywords were found
                     const organicText = vibeRes.organic.map(o => `${o.title} ${o.snippet}`).join(' ').toLowerCase();
                     foundKeywords = queryTerms.filter(term => organicText.includes(term.toLowerCase()));
                 }
 
-                // Gateway check: Search hotel domain for the top local venue
-                if (topVenueName && topVenueName !== "No immediate venue found") {
-                    const venueQuery = `site:${hotelDomain} "${topVenueName}"`;
-                    const venueRes = await runSerperSearch(venueQuery);
-                    if (venueRes.organic && venueRes.organic.length > 0) {
-                        gatewayMark = "Pass";
-                        localGatewayScore = 100;
-                    }
+                if (doesGatewaySearch && venueRes && venueRes.organic && venueRes.organic.length > 0) {
+                    gatewayMark = "Pass";
+                    localGatewayScore = 100;
                 }
             }
 
-            auditResults[categoryName] = {
-                vibeName,
-                topVenueName,
-                onsiteMark,
-                gatewayMark,
-                searchTermsUsed: queryTerms,
-                foundKeywords,
-                keywordsMatchCount: `${foundKeywords.length}/${queryTerms.length}`,
-                onsiteScore,         // Kept for backward UI compatibility
-                localGatewayScore    // Kept for backward UI compatibility
+            return {
+                categoryName,
+                auditResult: {
+                    vibeName,
+                    topVenueName,
+                    onsiteMark,
+                    gatewayMark,
+                    searchTermsUsed: queryTerms,
+                    foundKeywords,
+                    keywordsMatchCount: `${foundKeywords.length}/${queryTerms.length}`,
+                    onsiteScore,
+                    localGatewayScore
+                },
+                onsitePass: onsiteMark === "Pass" ? 1 : 0,
+                gatewayPass: gatewayMark === "Pass" ? 1 : 0
             };
+        });
 
-            totalOnsiteScore += (onsiteMark === "Pass" ? 1 : 0);
-            totalLocalGatewayScore += (gatewayMark === "Pass" ? 1 : 0);
+        const resolvedCategories = await Promise.all(categoryPromises);
+
+        for (const resData of resolvedCategories) {
+            auditResults[resData.categoryName] = resData.auditResult;
+            totalOnsiteScore += resData.onsitePass;
+            totalLocalGatewayScore += resData.gatewayPass;
         }
 
         const avgOnsite = Math.round((totalOnsiteScore / topCategories.length) * 100) || 0;

@@ -113,11 +113,21 @@ async function validateVenue(venueName, city) {
     console.log(`   [Validation] Checking Social & Editorial for "${venueName}"...`);
     
     const socialQuery = `site:tiktok.com OR site:instagram.com "${venueName}" ${city}`;
-    const socialRes = await fetch('https://google.serper.dev/search', {
-        method: 'POST',
-        headers: { 'X-API-KEY': SERPER_API_KEY, 'Content-Type': 'application/json' },
-        body: JSON.stringify({ q: socialQuery })
-    });
+    const editorialQuery = `site:timeout.com OR site:monocle.com OR site:ra.co "${venueName}" ${city}`;
+
+    const [socialRes, editorialRes] = await Promise.all([
+        fetch('https://google.serper.dev/search', {
+            method: 'POST',
+            headers: { 'X-API-KEY': SERPER_API_KEY, 'Content-Type': 'application/json' },
+            body: JSON.stringify({ q: socialQuery })
+        }),
+        fetch('https://google.serper.dev/search', {
+            method: 'POST',
+            headers: { 'X-API-KEY': SERPER_API_KEY, 'Content-Type': 'application/json' },
+            body: JSON.stringify({ q: editorialQuery })
+        })
+    ]);
+
     const socialData = await socialRes.json();
     const socialHits = socialData.organic ? socialData.organic.length : 0;
     
@@ -125,12 +135,6 @@ async function validateVenue(venueName, city) {
     if (socialHits >= 5) socialVelocity = "Viral High Velocity";
     else if (socialHits > 0) socialVelocity = "Emerging Trend";
 
-    const editorialQuery = `site:timeout.com OR site:monocle.com OR site:ra.co "${venueName}" ${city}`;
-    const editorialRes = await fetch('https://google.serper.dev/search', {
-        method: 'POST',
-        headers: { 'X-API-KEY': SERPER_API_KEY, 'Content-Type': 'application/json' },
-        body: JSON.stringify({ q: editorialQuery })
-    });
     const editorialData = await editorialRes.json();
     const editorialMentions = editorialData.organic ? editorialData.organic.length : 0;
 
