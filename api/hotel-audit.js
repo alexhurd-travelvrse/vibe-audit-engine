@@ -58,44 +58,58 @@ export default async function handler(req, res) {
             
             let onsiteScore = 0;
             let localGatewayScore = 0;
+            let onsiteMark = "Fail";
+            let gatewayMark = "Fail";
+            let foundKeywords = [];
             
-            if (hotelDomain) {
-                // Onsite check: Search hotel domain for the vibe keywords
-                const vibeQuery = `site:${hotelDomain} ${keywords.slice(0,2).join(' OR ')}`;
+            // Widen the search: Extract up to 3 long words from the Vibe Name + 3 Semantic Keywords
+            const vibeNameWords = (vibeName || '').replace(/[^a-zA-Z0-9\s]/g, '').split(/\s+/).filter(w => w.length > 4).slice(0, 3);
+            const semanticWords = (keywords || []).slice(0, 3);
+            const queryTerms = [...new Set([...vibeNameWords, ...semanticWords])].filter(Boolean);
+
+            if (hotelDomain && queryTerms.length > 0) {
+                // Onsite check: Single OR query with up to 6 terms
+                const vibeQuery = `site:${hotelDomain} ${queryTerms.map(t => `"${t}"`).join(' OR ')}`;
                 const vibeRes = await runSerperSearch(vibeQuery);
-                if (vibeRes.organic && vibeRes.organic.length > 0) onsiteScore = 80;
-                else onsiteScore = 20;
+                
+                if (vibeRes.organic && vibeRes.organic.length > 0) {
+                    onsiteMark = "Pass";
+                    onsiteScore = 100;
+                    
+                    // Parse snippets to identify exactly which keywords were found
+                    const organicText = vibeRes.organic.map(o => `${o.title} ${o.snippet}`).join(' ').toLowerCase();
+                    foundKeywords = queryTerms.filter(term => organicText.includes(term.toLowerCase()));
+                }
 
                 // Gateway check: Search hotel domain for the top local venue
                 if (topVenueName && topVenueName !== "No immediate venue found") {
                     const venueQuery = `site:${hotelDomain} "${topVenueName}"`;
                     const venueRes = await runSerperSearch(venueQuery);
-                    if (venueRes.organic && venueRes.organic.length > 0) localGatewayScore = 95;
-                    else localGatewayScore = 15;
+                    if (venueRes.organic && venueRes.organic.length > 0) {
+                        gatewayMark = "Pass";
+                        localGatewayScore = 100;
+                    }
                 }
-            }
-            
-            // Add social bonus
-            if (hasSocialPresence) {
-                onsiteScore = Math.min(100, onsiteScore + 10);
             }
 
             auditResults[categoryName] = {
                 vibeName,
                 topVenueName,
-                onsiteScore,
-                localGatewayScore,
-                verdict: localGatewayScore > 50 ? 
-                    `Strong local integration. Promoting ${topVenueName} positions you as an authentic gateway.` : 
-                    `Missed opportunity. You are invisible to the search demand for ${vibeName} and do not leverage ${topVenueName}.`
+                onsiteMark,
+                gatewayMark,
+                searchTermsUsed: queryTerms,
+                foundKeywords,
+                keywordsMatchCount: `${foundKeywords.length}/${queryTerms.length}`,
+                onsiteScore,         // Kept for backward UI compatibility
+                localGatewayScore    // Kept for backward UI compatibility
             };
 
-            totalOnsiteScore += onsiteScore;
-            totalLocalGatewayScore += localGatewayScore;
+            totalOnsiteScore += (onsiteMark === "Pass" ? 1 : 0);
+            totalLocalGatewayScore += (gatewayMark === "Pass" ? 1 : 0);
         }
 
-        const avgOnsite = Math.round(totalOnsiteScore / topCategories.length);
-        const avgGateway = Math.round(totalLocalGatewayScore / topCategories.length);
+        const avgOnsite = Math.round((totalOnsiteScore / topCategories.length) * 100) || 0;
+        const avgGateway = Math.round((totalLocalGatewayScore / topCategories.length) * 100) || 0;
 
         return res.status(200).json({
             hotelDomain: hotelDomain || 'Unknown',
