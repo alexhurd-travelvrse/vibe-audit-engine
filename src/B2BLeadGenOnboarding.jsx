@@ -298,20 +298,42 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                         
                         {/* Per-Category Diagnostics */}
                         {Object.entries(analysis.auditResults.categoryAudits || {}).map(([catName, audit]) => (
-                           <div key={catName} style={{ padding: '1.5rem', background: 'rgba(255,255,255,0.03)', borderRadius: '1rem', marginBottom: '1rem', borderLeft: audit.localGatewayScore > 50 ? '4px solid #10b981' : '4px solid #ef4444' }}>
-                              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1rem' }}>
-                                 <div>
-                                    <h4 style={{ fontSize: '1.2rem', fontWeight: 900, color: '#fff', textTransform: 'uppercase' }}>{catName}: {audit.vibeName}</h4>
-                                    <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.9rem', marginTop: '0.25rem' }}>Top Local Venue: {audit.topVenueName}</p>
+                           <div key={catName} style={{ padding: '1.5rem', background: 'rgba(255,255,255,0.03)', borderRadius: '1rem', marginBottom: '1rem', borderLeft: (audit.onsiteMark === 'Pass' || audit.gatewayMark === 'Pass') ? '4px solid #10b981' : '4px solid #ef4444' }}>
+                              <div style={{ marginBottom: '1.5rem' }}>
+                                 <h4 style={{ fontSize: '1.2rem', fontWeight: 900, color: '#fff', textTransform: 'uppercase' }}>{catName}: {audit.vibeName}</h4>
+                              </div>
+                              
+                              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
+                                 {/* Onsite Scorecard */}
+                                 <div style={{ padding: '1rem', background: 'rgba(236, 72, 153, 0.05)', borderRadius: '0.5rem', border: '1px solid rgba(236, 72, 153, 0.1)' }}>
+                                    <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
+                                       <span style={{ fontSize: '0.8rem', color: '#ec4899', textTransform: 'uppercase', fontWeight: 900, letterSpacing: '1px' }}>Onsite Vibe</span>
+                                       <span style={{ fontSize: '0.9rem', fontWeight: 900, color: audit.onsiteMark === 'Pass' ? '#10b981' : '#ef4444' }}>{audit.onsiteMark}</span>
+                                    </div>
+                                    <div style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.9)', marginBottom: '0.25rem' }}>
+                                       Keywords Match: <strong>{audit.keywordsMatchCount}</strong>
+                                    </div>
+                                    <div style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.6)', fontStyle: 'italic', lineHeight: 1.4 }}>
+                                       {audit.foundKeywords && audit.foundKeywords.length > 0 ? 
+                                          `Identified: ${audit.foundKeywords.join(', ')}` : 
+                                          'No keywords identified'}
+                                    </div>
                                  </div>
-                                 <div style={{ textAlign: 'right' }}>
-                                    <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase' }}>Gateway Score</div>
-                                    <div style={{ fontSize: '1.2rem', fontWeight: 900, color: audit.localGatewayScore > 50 ? '#10b981' : '#ef4444' }}>{audit.localGatewayScore}%</div>
+
+                                 {/* Gateway Scorecard */}
+                                 <div style={{ padding: '1rem', background: 'rgba(0, 229, 255, 0.05)', borderRadius: '0.5rem', border: '1px solid rgba(0, 229, 255, 0.1)' }}>
+                                    <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
+                                       <span style={{ fontSize: '0.8rem', color: '#00e5ff', textTransform: 'uppercase', fontWeight: 900, letterSpacing: '1px' }}>Local Gateway</span>
+                                       <span style={{ fontSize: '0.9rem', fontWeight: 900, color: audit.gatewayMark === 'Pass' ? '#10b981' : '#ef4444' }}>{audit.gatewayMark}</span>
+                                    </div>
+                                    <div style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.9)', marginBottom: '0.25rem' }}>
+                                       Target Venue:
+                                    </div>
+                                    <div style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.6)', fontStyle: 'italic', lineHeight: 1.4 }}>
+                                       {audit.topVenueName || 'No venue provided'}
+                                    </div>
                                  </div>
                               </div>
-                              <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.8)', lineHeight: 1.5, fontStyle: 'italic' }}>
-                                 "{audit.verdict}"
-                              </p>
                            </div>
                         ))}
                      </div>
