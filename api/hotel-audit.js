@@ -1,3 +1,5 @@
+export const maxDuration = 60;
+
 import * as dotenv from 'dotenv';
 dotenv.config();
 
@@ -47,6 +49,29 @@ export default async function handler(req, res) {
         console.log(`[Agent B] Target Domain: ${hotelDomain || 'Not Provided'}`);
 
         let hasSocialPresence = !!instagramUrl;
+        let organicSocialText = "";
+
+        // Execute Apify Instagram Scrape ONCE for the profile
+        if (hasSocialPresence && process.env.APIFY_API_TOKEN) {
+            try {
+                const igHandle = instagramUrl.split('instagram.com/')[1]?.split('/')[0]?.split('?')[0] || instagramUrl.replace('@', '');
+                if (igHandle) {
+                    console.log(`[Agent B] Scraping Instagram for @${igHandle} via Apify...`);
+                    const apifyRes = await fetch(`https://api.apify.com/v2/acts/apify~instagram-scraper/run-sync-get-dataset-items?token=${process.env.APIFY_API_TOKEN}`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ search: igHandle, searchType: "user", resultsType: "posts", resultsLimit: 15 })
+                    });
+                    const apifyData = await apifyRes.json();
+                    if (Array.isArray(apifyData)) {
+                        organicSocialText = apifyData.map(item => item.caption || item.text || item.title || "").join(" ").toLowerCase();
+                    }
+                    console.log(`[Agent B] Apify Scrape complete. Pulled data length: ${apifyData.length || 0}`);
+                }
+            } catch (err) {
+                console.error("[Agent B] Apify Scrape Failed:", err);
+            }
+        }
 
         // Step 2: Audit each top category
         const auditResults = {};
@@ -60,7 +85,9 @@ export default async function handler(req, res) {
             let localGatewayScore = 0;
             let onsiteMark = "Fail";
             let gatewayMark = "Fail";
+            let socialMark = "Fail";
             let foundKeywords = [];
+            let foundSocialKeywords = [];
             
             // Widen the search: Extract up to 3 long words from the Vibe Name + 3 Semantic Keywords
             const vibeNameWords = (vibeName || '').replace(/[^a-zA-Z0-9\s]/g, '').split(/\s+/).filter(w => w.length > 4).slice(0, 3);
@@ -98,6 +125,14 @@ export default async function handler(req, res) {
                 }
             }
 
+            // Social Check (Instagram)
+            if (organicSocialText && queryTerms.length > 0) {
+                foundSocialKeywords = queryTerms.filter(term => organicSocialText.includes(term.toLowerCase()));
+                if (foundSocialKeywords.length > 0) {
+                    socialMark = "Pass";
+                }
+            }
+
             return {
                 categoryName,
                 auditResult: {
@@ -105,33 +140,41 @@ export default async function handler(req, res) {
                     topVenueName,
                     onsiteMark,
                     gatewayMark,
+                    socialMark,
                     searchTermsUsed: queryTerms,
                     foundKeywords,
+                    foundSocialKeywords,
                     keywordsMatchCount: `${foundKeywords.length}/${queryTerms.length}`,
+                    socialMatchCount: `${foundSocialKeywords.length}/${queryTerms.length}`,
                     onsiteScore,
                     localGatewayScore
                 },
                 onsitePass: onsiteMark === "Pass" ? 1 : 0,
-                gatewayPass: gatewayMark === "Pass" ? 1 : 0
+                gatewayPass: gatewayMark === "Pass" ? 1 : 0,
+                socialPass: socialMark === "Pass" ? 1 : 0
             };
         });
 
         const resolvedCategories = await Promise.all(categoryPromises);
 
+        let totalSocialScore = 0;
         for (const resData of resolvedCategories) {
             auditResults[resData.categoryName] = resData.auditResult;
             totalOnsiteScore += resData.onsitePass;
             totalLocalGatewayScore += resData.gatewayPass;
+            totalSocialScore += resData.socialPass;
         }
 
         const avgOnsite = Math.round((totalOnsiteScore / topCategories.length) * 100) || 0;
         const avgGateway = Math.round((totalLocalGatewayScore / topCategories.length) * 100) || 0;
+        const avgSocial = Math.round((totalSocialScore / topCategories.length) * 100) || 0;
 
         return res.status(200).json({
             hotelDomain: hotelDomain || 'Unknown',
             hasSocialPresence,
             avgOnsiteScore: avgOnsite,
             avgLocalGatewayScore: avgGateway,
+            avgSocialScore: avgSocial,
             categoryAudits: auditResults
         });
 

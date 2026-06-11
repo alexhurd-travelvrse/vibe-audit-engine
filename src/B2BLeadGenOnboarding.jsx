@@ -22,6 +22,7 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
     reward: 'SPECIAL GUEST REWARD'
   });
   const [analysis, setAnalysis] = useState(null);
+  const [currentPhase, setCurrentPhase] = useState(1);
 
   useEffect(() => {
     setStep(initialStep);
@@ -37,24 +38,24 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
       
       setAnalysis({ signals, auditResults: null, challenge: null });
       setStep('results');
-
-      // PHASE 2 & 3: Background analysis (Optional for this view but kept for engine integrity)
-      const runSilentPhases = async () => {
-        try {
-          const auditResults = await auditDiscoverability(formData.propertyName, formData.city, signals.categories, formData.propertyUrl, formData.instagramUrl);
-          setAnalysis(prev => ({ ...prev, auditResults }));
-          const challenge = generatePropulsionQuest(auditResults, formData.propertyName, formData.reward);
-          setAnalysis(prev => ({ ...prev, challenge }));
-        } catch (err) {
-          console.error("Silent analysis phases failed", err);
-        }
-      };
-      runSilentPhases();
+      setCurrentPhase(1);
 
     } catch (err) {
       console.error("Analysis launch failed", err);
       setStep('input');
       alert("Analysis engine encountered a timeout. Please try a broader neighborhood or city.");
+    }
+  };
+
+  const runPhase2 = async () => {
+    setCurrentPhase(2);
+    try {
+      const auditResults = await auditDiscoverability(formData.propertyName, formData.city, analysis.signals.categories, formData.propertyUrl, formData.instagramUrl);
+      setAnalysis(prev => ({ ...prev, auditResults }));
+      const challenge = generatePropulsionQuest(auditResults, formData.propertyName, formData.reward);
+      setAnalysis(prev => ({ ...prev, challenge }));
+    } catch (err) {
+      console.error("Phase 2 analysis failed", err);
     }
   };
 
@@ -267,7 +268,17 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                   );
                 })}
 
+                {/* SECTION A.5: Launch Phase 2 Button */}
+                {currentPhase === 1 && (
+                    <div style={{ marginTop: '5rem', display: 'flex', justifyContent: 'center' }}>
+                       <button className="launch-button" style={{ padding: '1.25rem 2.5rem', fontSize: '1.2rem', display: 'flex', alignItems: 'center', gap: '1rem' }} onClick={runPhase2}>
+                           Launch Phase 2: Deep Digital Audit <ChevronRight size={24} />
+                       </button>
+                    </div>
+                )}
+
                 {/* SECTION B: Your Vibe Audit */}
+                {currentPhase >= 2 && (
                 <div style={{ marginTop: '5rem', padding: '3rem', background: 'rgba(255,255,255,0.02)', borderRadius: '2rem', border: '1px solid rgba(255,255,255,0.05)' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '3rem' }}>
                     <Search color="#ec4899" size={24} />
@@ -278,36 +289,41 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                      <div style={{ padding: '3rem', textAlign: 'center', border: '1px dashed rgba(255,255,255,0.2)', borderRadius: '1rem' }}>
                         <div style={{ width: '40px', height: '40px', borderRadius: '50%', border: '2px solid rgba(255,255,255,0.1)', borderTopColor: '#ec4899', animation: 'spin 1s linear infinite', margin: '0 auto 1.5rem' }} />
                         <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: 'rgba(255,255,255,0.5)' }}>Agent B is hunting...</h3>
-                        <p style={{ color: 'rgba(255,255,255,0.4)', marginTop: '1rem' }}>Scanning {formData.propertyName}'s digital footprint and social graphs.</p>
+                        <p style={{ color: 'rgba(255,255,255,0.4)', marginTop: '1rem' }}>Scanning {formData.propertyName}'s website and Instagram footprint against local trends.</p>
                      </div>
                   ) : (
                      <div>
                         {/* Summary Scorecard */}
-                        <div style={{ display: 'flex', gap: '2rem', marginBottom: '3rem' }}>
-                           <div style={{ flex: 1, padding: '2rem', background: 'rgba(236, 72, 153, 0.05)', borderRadius: '1rem', border: '1px solid rgba(236, 72, 153, 0.2)' }}>
-                              <div style={{ fontSize: '0.8rem', color: '#ec4899', textTransform: 'uppercase', fontWeight: 900, letterSpacing: '1px' }}>Onsite Vibe Alignment</div>
+                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '2rem', marginBottom: '3rem' }}>
+                           <div style={{ padding: '2rem', background: 'rgba(236, 72, 153, 0.05)', borderRadius: '1rem', border: '1px solid rgba(236, 72, 153, 0.2)' }}>
+                              <div style={{ fontSize: '0.8rem', color: '#ec4899', textTransform: 'uppercase', fontWeight: 900, letterSpacing: '1px' }}>Onsite Vibe Score</div>
                               <div style={{ fontSize: '3rem', fontWeight: 900, color: '#fff' }}>{analysis.auditResults.avgOnsiteScore}%</div>
                               <div style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.6)' }}>Does your website offer the vibe?</div>
                            </div>
-                           <div style={{ flex: 1, padding: '2rem', background: 'rgba(0, 229, 255, 0.05)', borderRadius: '1rem', border: '1px solid rgba(0, 229, 255, 0.2)' }}>
-                              <div style={{ fontSize: '0.8rem', color: '#00e5ff', textTransform: 'uppercase', fontWeight: 900, letterSpacing: '1px' }}>Local Gateway Score</div>
+                           <div style={{ padding: '2rem', background: 'rgba(0, 229, 255, 0.05)', borderRadius: '1rem', border: '1px solid rgba(0, 229, 255, 0.2)' }}>
+                              <div style={{ fontSize: '0.8rem', color: '#00e5ff', textTransform: 'uppercase', fontWeight: 900, letterSpacing: '1px' }}>Gateway Score</div>
                               <div style={{ fontSize: '3rem', fontWeight: 900, color: '#fff' }}>{analysis.auditResults.avgLocalGatewayScore}%</div>
                               <div style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.6)' }}>Do you promote the top local venues?</div>
+                           </div>
+                           <div style={{ padding: '2rem', background: 'rgba(138, 43, 226, 0.05)', borderRadius: '1rem', border: '1px solid rgba(138, 43, 226, 0.2)' }}>
+                              <div style={{ fontSize: '0.8rem', color: '#b28dff', textTransform: 'uppercase', fontWeight: 900, letterSpacing: '1px' }}>Instagram Social Score</div>
+                              <div style={{ fontSize: '3rem', fontWeight: 900, color: '#fff' }}>{analysis.auditResults.avgSocialScore}%</div>
+                              <div style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.6)' }}>Are you posting about these vibes?</div>
                            </div>
                         </div>
                         
                         {/* Per-Category Diagnostics */}
                         {Object.entries(analysis.auditResults.categoryAudits || {}).map(([catName, audit]) => (
-                           <div key={catName} style={{ padding: '1.5rem', background: 'rgba(255,255,255,0.03)', borderRadius: '1rem', marginBottom: '1rem', borderLeft: (audit.onsiteMark === 'Pass' || audit.gatewayMark === 'Pass') ? '4px solid #10b981' : '4px solid #ef4444' }}>
+                           <div key={catName} style={{ padding: '1.5rem', background: 'rgba(255,255,255,0.03)', borderRadius: '1rem', marginBottom: '1rem', borderLeft: (audit.onsiteMark === 'Pass' || audit.gatewayMark === 'Pass' || audit.socialMark === 'Pass') ? '4px solid #10b981' : '4px solid #ef4444' }}>
                               <div style={{ marginBottom: '1.5rem' }}>
                                  <h4 style={{ fontSize: '1.2rem', fontWeight: 900, color: '#fff', textTransform: 'uppercase' }}>{catName}: {audit.vibeName}</h4>
                               </div>
                               
-                              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
+                              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1.5rem' }}>
                                  {/* Onsite Scorecard */}
                                  <div style={{ padding: '1rem', background: 'rgba(236, 72, 153, 0.05)', borderRadius: '0.5rem', border: '1px solid rgba(236, 72, 153, 0.1)' }}>
                                     <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
-                                       <span style={{ fontSize: '0.8rem', color: '#ec4899', textTransform: 'uppercase', fontWeight: 900, letterSpacing: '1px' }}>Onsite Vibe</span>
+                                       <span style={{ fontSize: '0.8rem', color: '#ec4899', textTransform: 'uppercase', fontWeight: 900, letterSpacing: '1px' }}>Onsite Check</span>
                                        <span style={{ fontSize: '0.9rem', fontWeight: 900, color: audit.onsiteMark === 'Pass' ? '#10b981' : '#ef4444' }}>{audit.onsiteMark}</span>
                                     </div>
                                     <div style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.9)', marginBottom: '0.25rem' }}>
@@ -323,7 +339,7 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                                  {/* Gateway Scorecard */}
                                  <div style={{ padding: '1rem', background: 'rgba(0, 229, 255, 0.05)', borderRadius: '0.5rem', border: '1px solid rgba(0, 229, 255, 0.1)' }}>
                                     <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
-                                       <span style={{ fontSize: '0.8rem', color: '#00e5ff', textTransform: 'uppercase', fontWeight: 900, letterSpacing: '1px' }}>Local Gateway</span>
+                                       <span style={{ fontSize: '0.8rem', color: '#00e5ff', textTransform: 'uppercase', fontWeight: 900, letterSpacing: '1px' }}>Gateway Check</span>
                                        <span style={{ fontSize: '0.9rem', fontWeight: 900, color: audit.gatewayMark === 'Pass' ? '#10b981' : '#ef4444' }}>{audit.gatewayMark}</span>
                                     </div>
                                     <div style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.9)', marginBottom: '0.25rem' }}>
@@ -333,14 +349,42 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                                        {audit.topVenueName || 'No venue provided'}
                                     </div>
                                  </div>
+
+                                 {/* Instagram Scorecard */}
+                                 <div style={{ padding: '1rem', background: 'rgba(138, 43, 226, 0.05)', borderRadius: '0.5rem', border: '1px solid rgba(138, 43, 226, 0.1)' }}>
+                                    <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
+                                       <span style={{ fontSize: '0.8rem', color: '#b28dff', textTransform: 'uppercase', fontWeight: 900, letterSpacing: '1px' }}>Instagram Check</span>
+                                       <span style={{ fontSize: '0.9rem', fontWeight: 900, color: audit.socialMark === 'Pass' ? '#10b981' : '#ef4444' }}>{audit.socialMark}</span>
+                                    </div>
+                                    <div style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.9)', marginBottom: '0.25rem' }}>
+                                       Keywords Match: <strong>{audit.socialMatchCount}</strong>
+                                    </div>
+                                    <div style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.6)', fontStyle: 'italic', lineHeight: 1.4 }}>
+                                       {audit.foundSocialKeywords && audit.foundSocialKeywords.length > 0 ? 
+                                          `Identified: ${audit.foundSocialKeywords.join(', ')}` : 
+                                          'No keywords identified'}
+                                    </div>
+                                 </div>
                               </div>
                            </div>
                         ))}
                      </div>
                   )}
+                  
+                  {/* Launch Phase 3 Button */}
+                  {analysis.auditResults && currentPhase === 2 && (
+                    <div style={{ marginTop: '3rem', display: 'flex', justifyContent: 'center' }}>
+                       <button className="launch-button" style={{ padding: '1.25rem 2.5rem', fontSize: '1.2rem', display: 'flex', alignItems: 'center', gap: '1rem', background: 'linear-gradient(45deg, #B5942D, #FFD700)' }} onClick={() => setCurrentPhase(3)}>
+                           Reveal Phase 3: TravelVRSE Strategy <ChevronRight size={24} />
+                       </button>
+                    </div>
+                  )}
+
                 </div>
+                )}
 
                 {/* SECTION C: Showcase Your Vibe */}
+                {currentPhase >= 3 && (
                 <div style={{ marginTop: '5rem', padding: '3rem', background: 'rgba(255,255,255,0.02)', borderRadius: '2rem', border: '1px solid rgba(255,255,255,0.05)' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '3rem' }}>
                     <Star color="#B5942D" size={24} />
@@ -382,6 +426,7 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                      </button>
                   </div>
                 </div>
+                )}
 
               </motion.section>
 
