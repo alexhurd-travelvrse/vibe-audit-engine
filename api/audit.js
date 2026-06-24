@@ -36,7 +36,7 @@ PART 1: Macro Analysis
 Rank these 9 categories based on their cultural dominance and search volume for this specific city/neighborhood: ${allCategories.join(', ')}.
 
 PART 2: Micro Vibe Discovery
-For the "Hotel" category, AND for the Top 6 categories you just ranked in Part 1, identify the top 3 most distinct, highly-searched travel 'vibes' or subcultures.
+For the "Hotel" category, AND for all 9 categories you ranked in Part 1, identify the top 3 most distinct, highly-searched travel 'vibes' or subcultures.
 
 Output STRICTLY as a valid JSON object matching exactly this structure:
 {
@@ -60,7 +60,7 @@ Output STRICTLY as a valid JSON object matching exactly this structure:
                 }
             ]
         },
-        "CategoryNameFromTop6": {
+        "CategoryName": {
             "Top3Vibes": [ ... ]
         }
     }
@@ -145,10 +145,10 @@ async function runPipeline(city, neighborhood) {
     const telemetryData = await extractFullVibeTelemetry(city, neighborhood);
     
     const macroRankings = telemetryData.MacroCategoryRankings || [];
-    const top6Categories = macroRankings.slice(0, 6).map(c => c.categoryName);
+    const allRankedCategories = macroRankings.map(c => c.categoryName);
     
     // Inject "Hotel" as a fixed, always-first category
-    const queryCategories = ["Hotel", ...top6Categories.filter(c => c !== "Hotel")];
+    const queryCategories = ["Hotel", ...allRankedCategories.filter(c => c !== "Hotel")];
     
     const vibeData = telemetryData.Categories || {};
 

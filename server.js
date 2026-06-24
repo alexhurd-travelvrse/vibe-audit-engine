@@ -19,10 +19,15 @@ app.post('/api/audit', async (req, res) => {
     await auditHandler(req, res);
 });
 
+import hotelAuditHandler from './api/hotel-audit.js';
+app.post('/api/hotel-audit', async (req, res) => {
+    await hotelAuditHandler(req, res);
+});
+
 app.post('/api/audit-hotel', async (req, res) => {
     await auditHotelHandler(req, res);
 });
 
-app.listen(3001, () => {
-    console.log('Local Vercel API Emulator running on http://localhost:3001');
+app.listen(3002, () => {
+    console.log('Local Vercel API Emulator running on http://localhost:3002');
 });

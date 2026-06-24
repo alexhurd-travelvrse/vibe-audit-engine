@@ -384,49 +384,64 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                 )}
 
                 {/* SECTION C: Showcase Your Vibe */}
-                {currentPhase >= 3 && (
-                <div style={{ marginTop: '5rem', padding: '3rem', background: 'rgba(255,255,255,0.02)', borderRadius: '2rem', border: '1px solid rgba(255,255,255,0.05)' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '3rem' }}>
-                    <Star color="#B5942D" size={24} />
-                    <h2 style={{ fontSize: '2rem', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.1em' }}>Showcase Your Vibe</h2>
-                  </div>
-                  
-                  {!analysis.auditResults ? (
-                     <div style={{ padding: '3rem', textAlign: 'center', border: '1px dashed rgba(255,255,255,0.2)', borderRadius: '1rem', marginBottom: '3rem' }}>
-                        <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: 'rgba(255,255,255,0.5)' }}>Awaiting Audit Telemetry...</h3>
-                        <p style={{ color: 'rgba(255,255,255,0.4)', marginTop: '1rem' }}>The Creator Brief will be generated once Agent B finishes the Vibe Gap analysis.</p>
-                     </div>
-                  ) : (
-                     <div style={{ marginBottom: '3rem' }}>
-                        <div style={{ padding: '2rem', background: 'linear-gradient(135deg, rgba(181, 148, 45, 0.1) 0%, rgba(181, 148, 45, 0.02) 100%)', borderRadius: '1rem', border: '1px solid rgba(181, 148, 45, 0.3)', marginBottom: '2rem' }}>
-                           <h3 style={{ fontSize: '1.2rem', fontWeight: 900, color: '#B5942D', textTransform: 'uppercase', marginBottom: '1rem' }}>The Solution: TravelVRSE Vibe Campaign</h3>
-                           <p style={{ fontSize: '1.05rem', color: 'rgba(255,255,255,0.9)', lineHeight: 1.6, marginBottom: '1.5rem' }}>
-                              Based on the gap analysis, we recommend launching a highly-visual TikTok & IG Reels campaign focusing heavily on <strong>{Object.values(analysis.auditResults.categoryAudits || {})[0]?.vibeName || 'Local Culture'}</strong>. 
-                           </p>
-                           <div style={{ padding: '1.5rem', background: 'rgba(0,0,0,0.3)', borderRadius: '0.5rem' }}>
-                              <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', marginBottom: '0.5rem', fontWeight: 700 }}>AI Generated Storyboard</div>
-                              <ul style={{ listStyleType: 'none', padding: 0, margin: 0, color: 'rgba(255,255,255,0.8)', fontSize: '0.95rem' }}>
-                                 <li style={{ marginBottom: '0.5rem' }}>🎬 <strong>Stop 1:</strong> Pre-game at {formData.propertyName} (Showcase onsite alignment)</li>
-                                 <li style={{ marginBottom: '0.5rem' }}>🎬 <strong>Stop 2:</strong> Vibe check at {Object.values(analysis.auditResults.categoryAudits || {})[0]?.topVenueName || 'the top local spot'} (Claiming the local gateway)</li>
-                                 <li>🎬 <strong>Stop 3:</strong> Call to action linking back to direct booking.</li>
-                              </ul>
-                           </div>
-                        </div>
-                        
-                        <div style={{ textAlign: 'center', padding: '1.5rem', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '1rem' }}>
-                           <div style={{ fontSize: '1.5rem', fontWeight: 900, color: '#fff', marginBottom: '0.5rem' }}>14 Local Creators</div>
-                           <div style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.9rem' }}>in our marketplace match this exact demographic.</div>
-                        </div>
-                     </div>
-                  )}
+                {currentPhase >= 3 && (() => {
+                  const audits = Object.entries(analysis.auditResults?.categoryAudits || {}).map(([catName, audit]) => ({ catName, ...audit }));
+                  const onsitePasses = audits.filter(a => a.onsiteMark === 'Pass').slice(0, 3);
+                  const onsiteCatNames = onsitePasses.map(a => a.catName);
+                  const localGaps = audits.filter(a => !onsiteCatNames.includes(a.catName)).slice(0, 2);
 
-                  <div style={{ display: 'flex', justifyContent: 'center' }}>
-                     <button className="launch-button" style={{ maxWidth: '450px', display: 'flex', alignItems: 'center', gap: '1rem', padding: '1.2rem', fontSize: '1.1rem' }} onClick={() => alert('Forwarding Brief...')}>
-                       Forward Brief to Creator Marketplace <ExternalLink size={20} />
-                     </button>
-                  </div>
-                </div>
-                )}
+                  return (
+                    <div style={{ marginTop: '5rem', padding: '3rem', background: 'rgba(255,255,255,0.02)', borderRadius: '2rem', border: '1px solid rgba(255,255,255,0.05)' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '3rem' }}>
+                        <Star color="#B5942D" size={24} />
+                        <h2 style={{ fontSize: '2rem', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.1em' }}>Phase 3: The 5-Challenge Framework</h2>
+                      </div>
+                      
+                      {!analysis.auditResults ? (
+                         <div style={{ padding: '3rem', textAlign: 'center', border: '1px dashed rgba(255,255,255,0.2)', borderRadius: '1rem', marginBottom: '3rem' }}>
+                            <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: 'rgba(255,255,255,0.5)' }}>Awaiting Audit Telemetry...</h3>
+                         </div>
+                      ) : (
+                         <div style={{ marginBottom: '3rem' }}>
+                            <div style={{ padding: '2rem', background: 'linear-gradient(135deg, rgba(181, 148, 45, 0.1) 0%, rgba(181, 148, 45, 0.02) 100%)', borderRadius: '1rem', border: '1px solid rgba(181, 148, 45, 0.3)', marginBottom: '2rem' }}>
+                               <h3 style={{ fontSize: '1.2rem', fontWeight: 900, color: '#B5942D', textTransform: 'uppercase', marginBottom: '1rem' }}>Recommended Strategy</h3>
+                               <p style={{ fontSize: '1.05rem', color: 'rgba(255,255,255,0.9)', lineHeight: 1.6, marginBottom: '1.5rem' }}>
+                                  Based on the vibe audit, we recommend a 5-challenge experience covering {onsitePasses.length} onsite strengths and {localGaps.length} local gaps.
+                               </p>
+                               
+                               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
+                                 <div>
+                                   <h4 style={{ color: '#10b981', marginBottom: '1rem', textTransform: 'uppercase' }}>3 Onsite Experiences</h4>
+                                   {onsitePasses.map((p, i) => (
+                                     <div key={i} style={{ padding: '1rem', background: 'rgba(0,0,0,0.3)', borderRadius: '0.5rem', marginBottom: '0.5rem' }}>
+                                       <strong>{p.catName}: {p.vibeName}</strong>
+                                       <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.6)', marginTop: '0.25rem' }}>Keywords: {p.keywords?.join(', ') || p.foundKeywords?.join(', ') || 'N/A'}</div>
+                                     </div>
+                                   ))}
+                                 </div>
+                                 <div>
+                                   <h4 style={{ color: '#ec4899', marginBottom: '1rem', textTransform: 'uppercase' }}>2 Local Gaps</h4>
+                                   {localGaps.map((g, i) => (
+                                     <div key={i} style={{ padding: '1rem', background: 'rgba(0,0,0,0.3)', borderRadius: '0.5rem', marginBottom: '0.5rem' }}>
+                                       <strong>{g.catName}: {g.vibeName}</strong>
+                                       <div style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.9)', marginTop: '0.25rem' }}>Venue: {g.topVenueName}</div>
+                                       <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.6)', marginTop: '0.25rem' }}>Keywords: {g.keywords?.join(', ') || g.foundSocialKeywords?.join(', ') || 'N/A'}</div>
+                                     </div>
+                                   ))}
+                                 </div>
+                               </div>
+                            </div>
+                         </div>
+                      )}
+
+                      <div style={{ display: 'flex', justifyContent: 'center' }}>
+                         <button className="launch-button" style={{ maxWidth: '550px', display: 'flex', alignItems: 'center', gap: '1rem', padding: '1.2rem', fontSize: '1.1rem' }} onClick={() => alert('Forwarding Brief to Hotel/Creator Dashboard... (Open the Whitelabel Wizard App!)')}>
+                           Send 5-Challenge Framework to Hotel Wizard <ExternalLink size={20} />
+                         </button>
+                      </div>
+                    </div>
+                  );
+                })()}
 
               </motion.section>
 
