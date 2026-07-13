@@ -59,6 +59,40 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
     }
   };
 
+  const saveToLocalServer = async () => {
+    const manifest = {
+      client_metadata: {
+        hotel_name: formData.propertyName,
+        property_url: formData.propertyUrl,
+        destination: formData.city,
+        branding: { primary_color: "#00F2FF", reward_label: formData.reward }
+      },
+      challenge_configuration: analysis.challenge,
+      generated_at: new Date().toISOString(),
+      creator: "TravelVRSE Scale Engine v4.0"
+    };
+
+    const companyId = formData.propertyName.toLowerCase().replace(/\s+/g, '-');
+
+    try {
+      const response = await fetch('http://localhost:5177/api/publish', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ companyId, manifest }),
+        mode: 'cors'
+      });
+      
+      if (response.ok) {
+        alert(`Configuration successfully saved to Hotel Dashboard for ${formData.propertyName}!`);
+      } else {
+        alert("Failed to save. Ensure the Hotel Wizard (Vite) is running on port 5177.");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Network error trying to save. Ensure the Hotel Wizard is running on port 5177.");
+    }
+  };
+
   return (
     <div className="b2b-portal-container">
       <div className="bg-gradient-mesh" />
@@ -435,7 +469,7 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                       )}
 
                       <div style={{ display: 'flex', justifyContent: 'center' }}>
-                         <button className="launch-button" style={{ maxWidth: '550px', display: 'flex', alignItems: 'center', gap: '1rem', padding: '1.2rem', fontSize: '1.1rem' }} onClick={() => alert('Forwarding Brief to Hotel/Creator Dashboard... (Open the Whitelabel Wizard App!)')}>
+                         <button className="launch-button" style={{ maxWidth: '550px', display: 'flex', alignItems: 'center', gap: '1rem', padding: '1.2rem', fontSize: '1.1rem' }} onClick={saveToLocalServer}>
                            Send 5-Challenge Framework to Hotel Wizard <ExternalLink size={20} />
                          </button>
                       </div>
