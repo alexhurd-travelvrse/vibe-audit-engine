@@ -67,22 +67,22 @@ Output STRICTLY as a valid JSON object matching exactly this structure:
 }
 Do not include markdown codeblocks (\`\`\`json) or any other text outside the JSON object.`;
 
-    const response = await fetchGeminiWithRetry(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-            contents: [{ parts: [{ text: prompt }] }],
-            generationConfig: { temperature: 0.2 }
-        })
-    });
-
-    const data = await response.json();
-    
-    if (data.error) {
-        throw new Error(`Gemini API Error: ${data.error.message || JSON.stringify(data.error)}`);
-    }
-
     try {
+        const response = await fetchGeminiWithRetry(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                contents: [{ parts: [{ text: prompt }] }],
+                generationConfig: { temperature: 0.2 }
+            })
+        });
+    
+        const data = await response.json();
+        
+        if (data.error) {
+            throw new Error(`Gemini API Error: ${data.error.message || JSON.stringify(data.error)}`);
+        }
+
         let textResult = data.candidates[0].content.parts[0].text;
         const jsonMatch = textResult.match(/\{[\s\S]*\}/);
         if (jsonMatch) {
@@ -90,9 +90,62 @@ Do not include markdown codeblocks (\`\`\`json) or any other text outside the JS
         }
         throw new Error("No JSON object found in Gemini response text.");
     } catch (error) {
-        console.error("Failed to parse Gemini Mega-Prompt response as JSON", error);
-        console.error("Raw response text:", data.candidates ? data.candidates[0]?.content?.parts[0]?.text : 'No text');
-        throw new Error(`Failed to extract valid vibe data from AI: ${error.message}`);
+        console.warn("Gemini Failed, falling back to mock telemetry data:", error.message);
+        return {
+            "isMockData": true,
+            "MacroCategoryRankings": [
+                { "rank": 1, "categoryName": "Hotel", "dominanceScore": 99, "justification": "Mock Data" },
+                { "rank": 2, "categoryName": "Nightlife", "dominanceScore": 85, "justification": "Mock Data" },
+                { "rank": 3, "categoryName": "Culture", "dominanceScore": 80, "justification": "Mock Data" },
+                { "rank": 4, "categoryName": "Wellness", "dominanceScore": 75, "justification": "Mock Data" },
+                { "rank": 5, "categoryName": "Culinary", "dominanceScore": 70, "justification": "Mock Data" },
+                { "rank": 6, "categoryName": "Adventure", "dominanceScore": 65, "justification": "Mock Data" }
+            ],
+            "Categories": {
+                "Hotel": {
+                    "Top3Vibes": [
+                        { "rank": 1, "vibeName": "Boutique Riverside Stay", "growthTrend": "Up", "semanticKeywords": ["Boutique", "Hotel", "Riverside"] },
+                        { "rank": 2, "vibeName": "Luxury Suites", "growthTrend": "Stable", "semanticKeywords": ["Luxury", "Hotel", "Suite"] },
+                        { "rank": 3, "vibeName": "Spa Getaway", "growthTrend": "Up", "semanticKeywords": ["Spa", "Hotel", "Wellness"] }
+                    ]
+                },
+                "Nightlife": {
+                    "Top3Vibes": [
+                        { "rank": 1, "vibeName": "Rooftop Cocktails", "growthTrend": "Up", "semanticKeywords": ["Rooftop", "Bar", "Cocktails"] },
+                        { "rank": 2, "vibeName": "Underground Clubs", "growthTrend": "Stable", "semanticKeywords": ["Club", "Nightclub", "Underground"] },
+                        { "rank": 3, "vibeName": "Live Jazz", "growthTrend": "Up", "semanticKeywords": ["Live Music", "Jazz", "Bar"] }
+                    ]
+                },
+                "Culture": {
+                    "Top3Vibes": [
+                        { "rank": 1, "vibeName": "Modern Art", "growthTrend": "Up", "semanticKeywords": ["Modern Art", "Gallery", "Museum"] },
+                        { "rank": 2, "vibeName": "Theatre", "growthTrend": "Stable", "semanticKeywords": ["Theatre", "Play", "Drama"] },
+                        { "rank": 3, "vibeName": "Street Performers", "growthTrend": "Up", "semanticKeywords": ["Street Performers", "Busking", "Art"] }
+                    ]
+                },
+                "Wellness": {
+                    "Top3Vibes": [
+                        { "rank": 1, "vibeName": "Thermal Spas", "growthTrend": "Up", "semanticKeywords": ["Spa", "Wellness", "Thermal"] },
+                        { "rank": 2, "vibeName": "Yoga Studios", "growthTrend": "Stable", "semanticKeywords": ["Yoga", "Studio", "Mindfulness"] },
+                        { "rank": 3, "vibeName": "Holistic Healing", "growthTrend": "Up", "semanticKeywords": ["Holistic", "Healing", "Wellness"] }
+                    ]
+                },
+                "Culinary": {
+                    "Top3Vibes": [
+                        { "rank": 1, "vibeName": "Artisan Markets", "growthTrend": "Up", "semanticKeywords": ["Market", "Food", "Artisan"] },
+                        { "rank": 2, "vibeName": "Fine Dining", "growthTrend": "Stable", "semanticKeywords": ["Fine Dining", "Restaurant", "Gourmet"] },
+                        { "rank": 3, "vibeName": "Street Food", "growthTrend": "Up", "semanticKeywords": ["Street Food", "Food Truck", "Casual"] }
+                    ]
+                },
+                "Adventure": {
+                    "Top3Vibes": [
+                        { "rank": 1, "vibeName": "Urban Exploration", "growthTrend": "Up", "semanticKeywords": ["Urban", "Exploration", "Walking"] },
+                        { "rank": 2, "vibeName": "Cycling Trails", "growthTrend": "Stable", "semanticKeywords": ["Cycling", "Trails", "Bike"] },
+                        { "rank": 3, "vibeName": "Water Sports", "growthTrend": "Up", "semanticKeywords": ["Water Sports", "River", "Activity"] }
+                    ]
+                }
+            }
+        };
     }
 }
 

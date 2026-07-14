@@ -60,6 +60,34 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
   };
 
   const saveToLocalServer = async () => {
+    let experiences = [];
+    if (analysis.auditResults) {
+      const audits = Object.entries(analysis.auditResults.categoryAudits || {}).map(([catName, audit]) => ({ catName, ...audit }));
+      const onsitePasses = audits.filter(a => a.onsiteMark === 'Pass').slice(0, 3);
+      const onsiteCatNames = onsitePasses.map(a => a.catName);
+      const localGaps = audits.filter(a => !onsiteCatNames.includes(a.catName)).slice(0, 2);
+
+      let expId = 1;
+      onsitePasses.forEach(audit => {
+        experiences.push({
+          exp_id: String(expId++),
+          name: audit.vibeName,
+          vibe_category: audit.catName,
+          description: `Experience the ${audit.vibeName} vibe at our hotel.`,
+          gamification: "Module 3 - AI Audio Vibe Mixer"
+        });
+      });
+      localGaps.forEach(audit => {
+        experiences.push({
+          exp_id: String(expId++),
+          name: audit.vibeName,
+          vibe_category: audit.catName,
+          description: audit.topVenueName || `Explore the local ${audit.vibeName} vibe.`,
+          gamification: "Module 4 & 5 - Spatial Capture"
+        });
+      });
+    }
+
     const manifest = {
       client_metadata: {
         hotel_name: formData.propertyName,
@@ -67,7 +95,11 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
         destination: formData.city,
         branding: { primary_color: "#00F2FF", reward_label: formData.reward }
       },
-      challenge_configuration: analysis.challenge,
+      challenge_configuration: {
+        ...(analysis.challenge || {}),
+        experiences: experiences.length > 0 ? experiences : undefined,
+        total_experiences: experiences.length > 0 ? experiences.length : 5
+      },
       generated_at: new Date().toISOString(),
       creator: "TravelVRSE Scale Engine v4.0"
     };
@@ -75,10 +107,10 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
     const companyId = formData.propertyName.toLowerCase().replace(/\s+/g, '-');
 
     try {
-      const response = await fetch('http://localhost:5177/api/publish', {
+      const response = await fetch('http://localhost:5177/api/save-full-manifest', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ companyId, manifest }),
+        body: JSON.stringify({ companyId, manifestData: manifest }),
         mode: 'cors'
       });
       
