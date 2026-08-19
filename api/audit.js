@@ -194,7 +194,42 @@ async function validateVenue(venueName, city) {
     return { socialVelocity, editorialMentions };
 }
 
-async function runPipeline(city, neighborhood) {
+async function runPipeline(city, neighborhood, exactVibe) {
+    if (exactVibe) {
+        const finalOutput = {
+            MicroLocation: neighborhood,
+            isMockData: false,
+            Categories: {}
+        };
+        const localVenues = await huntLocalVenues([exactVibe], neighborhood, city);
+        const qualityVenues = localVenues
+            .filter(v => v.rating >= 4.0)
+            .sort((a, b) => (b.rating * b.ratingCount) - (a.rating * a.ratingCount));
+
+        const top3Venues = qualityVenues.slice(0, 3);
+        if (top3Venues.length === 0 && localVenues.length > 0) {
+            top3Venues.push(...localVenues.slice(0, 3));
+        }
+
+        finalOutput.Categories[exactVibe] = { Top3LocalVenues: [] };
+
+        for (const topLocalVenue of top3Venues) {
+            if (!topLocalVenue || !topLocalVenue.title) continue;
+            const validationScores = await validateVenue(topLocalVenue.title, city);
+            finalOutput.Categories[exactVibe].Top3LocalVenues.push({
+                name: topLocalVenue.title,
+                distanceFromHotelKm: 0.3,
+                googlePlacesScore: topLocalVenue.rating || 4.5,
+                reviewCount: topLocalVenue.ratingCount || 0,
+                validationTag: "Top Hyper-Local Venue",
+                socialVelocity: validationScores.socialVelocity,
+                editorialMentions: validationScores.editorialMentions,
+                description: topLocalVenue.snippet || topLocalVenue.address || "A top-rated local venue."
+            });
+        }
+        return finalOutput;
+    }
+
     const telemetryData = await extractFullVibeTelemetry(city, neighborhood);
     
     const macroRankings = telemetryData.MacroCategoryRankings || [];
@@ -245,11 +280,12 @@ async function runPipeline(city, neighborhood) {
                 reviewCount: topLocalVenue.ratingCount || 0,
                 validationTag: "Top Hyper-Local Venue",
                 socialVelocity: validationScores.socialVelocity,
-                editorialMentions: validationScores.editorialMentions
+                editorialMentions: validationScores.editorialMentions,
+                description: topLocalVenue.snippet || topLocalVenue.address || "A top-rated local venue."
             };
         } else {
              categoryData.TopLocalVenue = {
-                name: "No immediate venue found", distanceFromHotelKm: 0, googlePlacesScore: 0, reviewCount: 0
+                name: "No immediate venue found", distanceFromHotelKm: 0, googlePlacesScore: 0, reviewCount: 0, description: "No description available."
             };
         }
 
@@ -310,6 +346,7 @@ export default async function handler(req, res) {
         // Use req.query for GET requests, req.body for POST
         const city = req.method === 'POST' ? req.body.city : req.query.city;
         const neighborhood = req.method === 'POST' ? req.body.neighborhood : req.query.neighborhood;
+        const exactVibe = req.method === 'POST' ? req.body.exactVibe : req.query.exactVibe;
         if (!city || !neighborhood) {
             return res.status(400).json({ error: 'Missing city or neighborhood parameters' });
         }
@@ -320,7 +357,8 @@ export default async function handler(req, res) {
             fs.mkdirSync(cacheDir, { recursive: true });
         }
 
-        const cacheFile = path.resolve(cacheDir, `vibe_${city.toLowerCase().replace(/\\s+/g, '_')}_${neighborhood.toLowerCase().replace(/\\s+/g, '_')}.json`);
+        const vibeKey = exactVibe ? `_${exactVibe.toLowerCase().replace(/\s+/g, '_')}` : '';
+        const cacheFile = path.resolve(cacheDir, `vibe_${city.toLowerCase().replace(/\s+/g, '_')}_${neighborhood.toLowerCase().replace(/\s+/g, '_')}${vibeKey}.json`);
         
         // Check 24-hour cache
         if (fs.existsSync(cacheFile)) {
@@ -334,10 +372,10 @@ export default async function handler(req, res) {
             }
         }
 
-        console.log(`[API] Cache expired or missing. Running pipeline for ${city} / ${neighborhood}...`);
+        console.log(`[API] Cache expired or missing. Running pipeline for ${city} / ${neighborhood} ${exactVibe ? `(Exact Vibe: ${exactVibe})` : ''}...`);
         
         // Run pipeline
-        const freshData = await runPipeline(city, neighborhood);
+        const freshData = await runPipeline(city, neighborhood, exactVibe);
         
         if (!freshData.isMockData) {
             // Set Vercel Edge Caching to cache the response for 24 hours (86400 seconds)
