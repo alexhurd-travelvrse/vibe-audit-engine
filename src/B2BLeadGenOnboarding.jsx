@@ -12,9 +12,42 @@ import InteractiveQuizCard from './components/InteractiveQuizCard';
 import BookingOtaAuditCard from './components/BookingOtaAuditCard';
 import './B2BLeadGenOnboarding.css';
 
+// Environment detector: Enforce email on live Vercel/Production, bypass on localhost
+const isLocalhost = typeof window !== 'undefined' && (
+  window.location.hostname === 'localhost' ||
+  window.location.hostname === '127.0.0.1' ||
+  window.location.hostname.includes('192.168.') ||
+  window.location.hostname.endsWith('.local')
+);
+const isLiveProduction = !isLocalhost;
+
+const submitLeadToFormspree = async (data) => {
+  const endpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT || 'https://formspree.io/f/xaqlrjor';
+  try {
+    await fetch(endpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        email: data.email,
+        hotelName: data.propertyName,
+        city: data.city,
+        neighborhood: data.neighborhood,
+        websiteUrl: data.propertyUrl,
+        instagramUrl: data.instagramUrl,
+        timestamp: new Date().toISOString(),
+        source: 'Vibe Audit Engine - Lead Gen'
+      })
+    });
+    console.log('[Formspree] Lead captured successfully');
+  } catch (err) {
+    console.warn('[Formspree] Non-blocking lead capture warning:', err);
+  }
+};
+
 const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
   const [step, setStep] = useState(initialStep);
   const [processingStage, setProcessingStage] = useState(0);
+  const [emailError, setEmailError] = useState('');
   const [formData, setFormData] = useState({
     email: '',
     propertyName: '',
@@ -33,6 +66,22 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
   }, [initialStep]);
 
   const startAnalysis = async () => {
+    setEmailError('');
+
+    // On Live Vercel / Production, enforce email requirement
+    if (isLiveProduction) {
+      if (!formData.email || !formData.email.trim() || !formData.email.includes('@') || !formData.email.includes('.')) {
+        setEmailError('Work email is required to access the live Vibe Audit report.');
+        return;
+      }
+      submitLeadToFormspree(formData);
+    } else {
+      // On localhost, optionally submit if provided
+      if (formData.email && formData.email.includes('@')) {
+        submitLeadToFormspree(formData);
+      }
+    }
+
     setStep('processing');
     setProcessingStage(1);
     
@@ -209,8 +258,31 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                 </div>
 
                 <div className="input-group" style={{ marginBottom: '1.5rem' }}>
-                  <label className="input-label" style={{ marginBottom: '0.75rem' }}>Work Email</label>
-                  <input type="email" className="form-input" style={{ fontSize: '1.1rem', padding: '1rem 1.5rem' }} value={formData.email} placeholder="Enter your work email" onChange={e => setFormData({...formData, email: e.target.value})} />
+                  <label className="input-label" style={{ marginBottom: '0.75rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <span>
+                      Work Email {isLiveProduction ? <span style={{ color: '#00e5ff', fontWeight: 900 }}>* (Required)</span> : <span style={{ color: 'rgba(255,255,255,0.4)', fontSize: '12px' }}>(Optional on Localhost)</span>}
+                    </span>
+                  </label>
+                  <input 
+                    type="email" 
+                    className="form-input" 
+                    style={{ 
+                      fontSize: '1.1rem', 
+                      padding: '1rem 1.5rem',
+                      border: emailError ? '1px solid #ef4444' : undefined 
+                    }} 
+                    value={formData.email} 
+                    placeholder="Enter your work email" 
+                    onChange={e => {
+                      setEmailError('');
+                      setFormData({...formData, email: e.target.value});
+                    }} 
+                  />
+                  {emailError && (
+                    <div style={{ color: '#ef4444', fontSize: '13px', fontWeight: 700, marginTop: '8px', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                      ⚠️ {emailError}
+                    </div>
+                  )}
                 </div>
 
                 <button className="launch-button" style={{ padding: '1.25rem', fontSize: '1.2rem', marginTop: '1.5rem' }} onClick={startAnalysis}>
