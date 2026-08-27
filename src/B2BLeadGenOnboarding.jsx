@@ -4,8 +4,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   scrapeLocalSignals, 
   auditDiscoverability, 
-  generatePropulsionQuest
+  generatePropulsionQuest,
+  fetchMasterVibeAudit
 } from './personaEngine';
+import HotelVibeManifestCard from './components/HotelVibeManifestCard';
+import InteractiveQuizCard from './components/InteractiveQuizCard';
+import BookingOtaAuditCard from './components/BookingOtaAuditCard';
 import './B2BLeadGenOnboarding.css';
 
 const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
@@ -16,8 +20,8 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
     propertyName: '',
     propertyUrl: '',
     instagramUrl: '',
-    city: 'Copenhagen',
-    neighborhood: 'Indre By',
+    city: 'London',
+    neighborhood: 'Southbank',
     sweeteners: ['cocktails', 'wellness', 'local-craft'],
     reward: 'SPECIAL GUEST REWARD'
   });
@@ -33,10 +37,21 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
     setProcessingStage(1);
     
     try {
-      // PHASE 1: Immediate Vibe Discovery (Agent A)
-      const signals = await scrapeLocalSignals(formData.city, formData.neighborhood);
+      // Execute in parallel:
+      // 1. Local signals (Macro/Micro subcultures & top venues)
+      // 2. Master Vibe Audit (5-dim manifest, quiz, Booking.com audit)
+      const [signals, masterAudit] = await Promise.all([
+        scrapeLocalSignals(formData.city, formData.neighborhood).catch(err => {
+          console.warn("Local signals fetch error:", err);
+          return { categories: {} };
+        }),
+        fetchMasterVibeAudit(formData.propertyName || 'Sea Containers London', formData.city, formData.neighborhood).catch(err => {
+          console.warn("Master Vibe Audit fetch error:", err);
+          return null;
+        })
+      ]);
       
-      setAnalysis({ signals, auditResults: null, challenge: null });
+      setAnalysis({ signals, masterAudit, auditResults: null, challenge: null });
       setStep('results');
       setCurrentPhase(1);
 
@@ -226,7 +241,16 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                 </div>
               </div>
 
-              {/* FLIPPED FUNNEL AUDIT INTERFACE */}
+              {/* 1. HOTEL VIBE MANIFEST & ACOUSTIC DNA (PRIMARY SCORECARD) */}
+              {analysis.masterAudit && (
+                <HotelVibeManifestCard 
+                  manifest={analysis.masterAudit} 
+                  hotelName={formData.propertyName} 
+                  location={`${formData.neighborhood}, ${formData.city}`} 
+                />
+              )}
+
+              {/* 2. LOCAL NEIGHBOURHOOD VIBE SIGNALS & TOP VENUES */}
               <motion.section 
                 initial={{opacity: 0, y: 20}} 
                 animate={{opacity: 1, y: 0}} 
@@ -235,15 +259,18 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                   padding: '3rem', 
                   background: 'rgba(255,255,255,0.02)', 
                   borderRadius: '2rem', 
-                  border: '1px solid rgba(255,255,255,0.05)' 
+                  border: '1px solid rgba(255,255,255,0.05)',
+                  marginBottom: '3.5rem'
                 }}
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '3rem' }}>
                   <Globe color="#00e5ff" size={24} />
-                  <h2 style={{ fontSize: '2rem', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.1em' }}>Top 6 Vibe Categories</h2>
+                  <h2 style={{ fontSize: '2rem', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.1em' }}>Top Local Neighbourhood Subcultures</h2>
                 </div>
 
-                {Object.entries(analysis.signals.categories || {}).map(([categoryName, data], index) => {
+                {Object.entries(analysis.signals.categories || {})
+                  .filter(([categoryName]) => categoryName.toLowerCase() !== 'hotel')
+                  .map(([categoryName, data], index) => {
                   const { Top3Vibes, TopLocalVenue, ExtendedRadiusSearch, syntheticIntent } = data;
                   
                   return (
@@ -325,23 +352,37 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                             </div>
                           </div>
 
-
-
                         </div>
                       </div>
                     
                     </div>
                   );
                 })}
+              </motion.section>
 
-                {/* SECTION A.5: Launch Phase 2 Button */}
-                {currentPhase === 1 && (
-                    <div style={{ marginTop: '5rem', display: 'flex', justifyContent: 'center' }}>
-                       <button className="launch-button" style={{ padding: '1.25rem 2.5rem', fontSize: '1.2rem', display: 'flex', alignItems: 'center', gap: '1rem' }} onClick={runPhase2}>
-                           Launch Phase 2: Deep Digital Audit <ChevronRight size={24} />
-                       </button>
-                    </div>
-                )}
+              {/* 3. 3D INTERACTIVE QUIZ CHALLENGE */}
+              {analysis.masterAudit?.interactive_quiz_challenge && (
+                <InteractiveQuizCard 
+                  quizData={analysis.masterAudit.interactive_quiz_challenge} 
+                />
+              )}
+
+              {/* 4. BOOKING.COM VISUAL & COPY AUDIT TEASER PACK */}
+              {analysis.masterAudit?.ota_conversion_audit && (
+                <BookingOtaAuditCard 
+                  otaData={analysis.masterAudit.ota_conversion_audit} 
+                  hotelName={formData.propertyName} 
+                />
+              )}
+
+              {/* SECTION A.5: Launch Phase 2 Button */}
+              {currentPhase === 1 && (
+                  <div style={{ marginTop: '3rem', display: 'flex', justifyContent: 'center' }}>
+                     <button className="launch-button" style={{ padding: '1.25rem 2.5rem', fontSize: '1.2rem', display: 'flex', alignItems: 'center', gap: '1rem' }} onClick={runPhase2}>
+                         Launch Phase 2: Deep Digital Audit <ChevronRight size={24} />
+                     </button>
+                  </div>
+              )}
 
                 {/* SECTION B: Your Vibe Audit */}
                 {currentPhase >= 2 && (
@@ -508,8 +549,6 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                     </div>
                   );
                 })()}
-
-              </motion.section>
 
               {/* ACTION FOOTER */}
               <div style={{ marginTop: '5rem', display: 'flex', justifyContent: 'center', gap: '2rem' }}>

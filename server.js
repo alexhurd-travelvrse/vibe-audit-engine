@@ -24,6 +24,11 @@ app.post('/api/hotel-audit', async (req, res) => {
     await hotelAuditHandler(req, res);
 });
 
+import masterVibeAuditHandler from './api/master-vibe-audit.js';
+app.all('/api/master-vibe-audit', async (req, res) => {
+    await masterVibeAuditHandler(req, res);
+});
+
 app.post('/api/audit-hotel', async (req, res) => {
     await auditHotelHandler(req, res);
 });
