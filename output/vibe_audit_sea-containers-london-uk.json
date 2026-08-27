@@ -1,0 +1,107 @@
+{
+  "venue_id": "sea-containers-london-uk",
+  "venue_name": "Sea Containers London",
+  "location": "London",
+  "vibe_signature": {
+    "energy_score": 85,
+    "social_pacing": "Dynamic & Socially Charged",
+    "headline": "A vibrant riverside hub where cutting-edge design meets a lively, on-trend social scene.",
+    "acoustic_dna": {
+      "soundscape_genre": "Contemporary Soul & Electronic Grooves",
+      "anchor_artists": [
+        "Bon Iver",
+        "Jamie xx",
+        "Jungle"
+      ],
+      "spotify_query": "contemporary soul electronic chill london hotel",
+      "sound_texture": "Warm, resonant acoustics with a subtle industrial edge, designed to carry conversation and curated beats without overwhelming."
+    },
+    "crowd_archetype": {
+      "primary": "The On-Trend Urbanite & Creative Professional",
+      "social_density": "Varies from relaxed daytime buzz to high-energy, packed evenings, especially on weekends.",
+      "dress_code": "Smart Casual to Chic Evening Wear"
+    },
+    "lighting_and_sensory": {
+      "atmosphere": "Moody, sophisticated lighting with dramatic contrasts, creating intimate pockets and vibrant social zones.",
+      "sensory_intensity": "High - a stimulating blend of curated music, dynamic lighting, and river views."
+    },
+    "hyper_local_proximity": {
+      "key_anchors": [
+        "South Bank",
+        "River Thames",
+        "Tate Modern",
+        "Shakespeare's Globe",
+        "Curzon Cinema"
+      ],
+      "insider_lore": "Nestled on the iconic South Bank, this former shipping company headquarters retains its maritime spirit, offering unparalleled access to London's cultural heart while feeling like a world apart."
+    },
+    "qualification_test": {
+      "you_will_love_if": "You thrive in a stylish, energetic environment with world-class cocktails, curated music, and stunning river views.",
+      "skip_if": "You prefer quiet, traditional hotel experiences or early nights away from a lively social scene."
+    }
+  },
+  "interactive_quiz_challenge": {
+    "target_scene_id": 2,
+    "scene_name": "Lobby & Design Elements",
+    "mission_title": "Uncover the Maritime Legacy",
+    "question": "Sea Containers London is renowned for its distinctive design, heavily influenced by its past. Which iconic feature in the lobby pays homage to its original purpose as a shipping company headquarters?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A grand, sweeping staircase resembling a ship's hull."
+      },
+      {
+        "id": "B",
+        "text": "A collection of antique maritime maps displayed behind the reception."
+      },
+      {
+        "id": "C",
+        "text": "A giant, yellow submarine installation suspended from the ceiling."
+      },
+      {
+        "id": "D",
+        "text": "A series of porthole-shaped windows offering river views."
+      }
+    ],
+    "correct_option_id": "A",
+    "success_lore_reveal": "Correct! The dramatic, copper-clad staircase in the lobby is a direct architectural nod to the hull of a ship, reflecting the building's history as the former headquarters of a transatlantic shipping company. It's a stunning centerpiece that grounds the hotel's contemporary design in its rich maritime past.",
+    "reward_badge": "Nautical Navigator Badge"
+  },
+  "ota_conversion_audit": {
+    "channel": "Booking.com",
+    "current_drop_off_flaw": "Leading with generic exterior shots or sterile room photos that fail to convey the hotel's vibrant social energy and unique design, making it appear as a commodity rather than a destination.",
+    "conversion_diagnosis": "Potential guests are not immediately captivated by the hotel's true 'vibe' – its dynamic social spaces, cutting-edge design, and stunning river views. They see a standard hotel, missing the experiential allure that drives higher conversions for lifestyle properties.",
+    "optimal_5_photo_sequence": [
+      {
+        "slot": 1,
+        "photo_subject": "Dynamic shot of Lyaness Bar or 12th Knot Rooftop Bar at peak evening buzz, showcasing stylish crowd and river views.",
+        "psychological_conversion_trigger": "Aspiration & Social Proof – immediately positions the hotel as a desirable, happening destination."
+      },
+      {
+        "slot": 2,
+        "photo_subject": "Close-up of the iconic copper-clad staircase in the lobby, highlighting its architectural drama and unique design.",
+        "psychological_conversion_trigger": "Intrigue & Distinction – signals a unique, design-led experience beyond the ordinary."
+      },
+      {
+        "slot": 3,
+        "photo_subject": "Lifestyle shot of a Riverview Balcony Suite, emphasizing the stunning Thames vista and sophisticated comfort.",
+        "psychological_conversion_trigger": "Desire & Value – showcases the premium room experience and the unique selling point of the view."
+      },
+      {
+        "slot": 4,
+        "photo_subject": "Energetic scene from a live music event or DJ set in the courtyard or a bar, capturing the atmosphere.",
+        "psychological_conversion_trigger": "Experience & Entertainment – highlights the vibrant cultural programming and social opportunities."
+      },
+      {
+        "slot": 5,
+        "photo_subject": "Artistic detail shot of a unique design element (e.g., a specific art piece, a textured wall, a bespoke furniture piece) that reinforces the hotel's aesthetic.",
+        "psychological_conversion_trigger": "Curiosity & Craftsmanship – reinforces the attention to detail and unique brand identity."
+      }
+    ],
+    "anti_commodity_copy_rewrite": {
+      "ota_headline": "Sea Containers London: Your South Bank Sanctuary of Style & Sound",
+      "property_overview_150_words": "Perched on the vibrant South Bank, Sea Containers London is more than a hotel – it's a journey into a world where transatlantic glamour meets contemporary cool. Its design, inspired by a bygone era of ocean liners, creates an atmosphere of sophisticated adventure. From the dramatic, copper-clad lobby, a masterpiece of architectural homage, guests ascend to the electric energy of 12th Knot rooftop bar, where London's iconic skyline unfolds beneath you in a dazzling panorama. Indulge in award-winning cocktails at the renowned Lyaness, or unwind in meticulously designed rooms that blend industrial chic with river-facing serenity. This is where culture, cuisine, and captivating views converge, inviting you to immerse yourself in London's dynamic pulse and discover an experience that transcends the ordinary. Every corner tells a story, every moment is an invitation to connect with the city's vibrant spirit."
+    }
+  },
+  "audit_timestamp": "2026-08-27T15:31:06.727Z"
+}
