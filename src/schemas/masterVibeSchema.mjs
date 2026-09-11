@@ -103,15 +103,26 @@ export const masterVibeSchema = {
           type: "array",
           items: {
             type: "object",
-            properties: {
+                        properties: {
               slot: { type: "integer", description: "Target recommended slot 1 to 5" },
-              current_slot: { type: "integer", description: "Original current slot number on Booking.com (1 to 5)" },
+              category: { 
+                type: "string", 
+                enum: [
+                  "EXTERIOR_LANDMARK",
+                  "SOCIAL_FB_ROOFTOP",
+                  "SIGNATURE_SUITE_BEDROOM",
+                  "WELLNESS_SPA_LOBBY",
+                  "SECONDARY_ROOM_BATHROOM"
+                ],
+                description: "Strict visual merchandising category for this slot"
+              },
+              current_slot: { type: "integer", description: "Original current slot number on Booking.com (1 to 5) if retaining live photo, or null if swapped" },
               action: { type: "string", enum: ["KEEP_HERO", "KEEP", "PROMOTE", "DEMOTE", "REPLACE"] },
-              action_label: { type: "string", description: "Short punchy label e.g. 'PROMOTE TO SLOT #3' or 'KEEP AS HERO'" },
+              action_label: { type: "string", description: "Short punchy label e.g. 'KEEP AS HERO (SLOT #1)', 'SWAP IN ROOFTOP (SLOT #2)', 'KEEP SIGNATURE SUITE (SLOT #3)'" },
               photo_subject: { type: "string", description: "Exact visual content of this specific photo" },
-              psychological_conversion_trigger: { type: "string", description: "Why this reordering triggers booking intent" }
+              psychological_conversion_trigger: { type: "string", description: "Why this reordering triggers booking intent while complying with Booking.com policies" }
             },
-            required: ["slot", "photo_subject", "psychological_conversion_trigger"]
+            required: ["slot", "category", "photo_subject", "psychological_conversion_trigger"]
           }
         },
         anti_commodity_copy_rewrite: {

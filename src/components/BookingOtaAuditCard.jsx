@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { Camera, TrendingUp, AlertCircle, Check, Copy, ExternalLink, ArrowRight, Sparkles, RefreshCw } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -22,13 +22,18 @@ export default function BookingOtaAuditCard({ otaData, hotelName }) {
   };
 
   const getActionBadge = (action, actionLabel) => {
-    if (action === 'KEEP_HERO' || (actionLabel && actionLabel.includes('HERO'))) {
-      return { bg: '#00e5ff', color: '#000', text: actionLabel || 'KEEP AS HERO (SLOT #1)' };
+    const lbl = (actionLabel || '').toUpperCase();
+    const act = (action || '').toUpperCase();
+    if (act === 'KEEP_HERO' || lbl.includes('HERO') || act === 'RETAIN' || lbl.includes('RETAIN')) {
+      return { bg: '#00e5ff', color: '#000', text: actionLabel || 'RETAINED IN PLACE' };
     }
-    if (action === 'PROMOTE' || (actionLabel && actionLabel.includes('PROMOTE'))) {
-      return { bg: '#10b981', color: '#000', text: actionLabel || 'PROMOTE' };
+    if (act === 'PROMOTE' || lbl.includes('PROMOTE') || lbl.includes('MOVE') || act === 'RE_SEQUENCE') {
+      return { bg: '#10b981', color: '#000', text: actionLabel || 'PROMOTED' };
     }
-    if (action === 'DEMOTE' || (actionLabel && actionLabel.includes('DEMOTE'))) {
+    if (act === 'SWAP_IN' || lbl.includes('SWAP')) {
+      return { bg: '#f59e0b', color: '#000', text: actionLabel || 'SWAP IN ASSET' };
+    }
+    if (act === 'DEMOTE' || lbl.includes('DEMOTE')) {
       return { bg: '#ef4444', color: '#fff', text: actionLabel || 'DEMOTE TO SLOT 10+' };
     }
     return { bg: 'rgba(255,255,255,0.15)', color: '#fff', text: actionLabel || 'RE-SEQUENCE' };
@@ -63,9 +68,6 @@ export default function BookingOtaAuditCard({ otaData, hotelName }) {
           }}>
             🏨 Booking.com Visual & Copy Diagnostic
           </span>
-          <span style={{ color: 'rgba(255,255,255,0.5)', fontSize: '12px', fontWeight: 600 }}>
-            Lead-Gen Conversion Blueprint
-          </span>
         </div>
 
         {/* View Toggle */}
@@ -84,7 +86,7 @@ export default function BookingOtaAuditCard({ otaData, hotelName }) {
               textTransform: 'uppercase'
             }}
           >
-            Recommended Blueprint
+            Recommended Photos
           </button>
           {livePhotos.length > 0 && (
             <button
@@ -101,7 +103,7 @@ export default function BookingOtaAuditCard({ otaData, hotelName }) {
                 textTransform: 'uppercase'
               }}
             >
-              Current Live vs AI Sequence
+              Current Live
             </button>
           )}
         </div>
@@ -131,13 +133,13 @@ export default function BookingOtaAuditCard({ otaData, hotelName }) {
         </p>
       </div>
 
-      {/* SECTION: Recommended Blueprint Grid */}
+      {/* SECTION: Recommended Photos Grid */}
       {viewMode === 'recommended' && (
         <div style={{ marginBottom: '2.5rem' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1.25rem' }}>
             <Camera size={20} color="#00e5ff" />
             <h3 style={{ fontSize: '1.3rem', fontWeight: 900, textTransform: 'uppercase', margin: 0 }}>
-              AI Re-Sequenced 5-Photo Conversion Map
+              Recommended Photos
             </h3>
           </div>
 
@@ -145,6 +147,9 @@ export default function BookingOtaAuditCard({ otaData, hotelName }) {
             {photos.map((item, idx) => {
               const photoImg = item.photo_url || item.current_photo?.imageUrl;
               const badge = getActionBadge(item.action, item.action_label);
+              const slotNum = item.slot || (idx + 1);
+              const wasSlot = item.current_slot;
+              const isRetained = item.is_retained ?? (wasSlot === slotNum);
               
               return (
                 <div 
@@ -168,21 +173,21 @@ export default function BookingOtaAuditCard({ otaData, hotelName }) {
                         style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
                       />
                       
-                      {/* Target Slot Badge */}
+                      {/* Target Slot Badge (e.g. SLOT #1 vs NEW SLOT #2) */}
                       <div style={{ 
                         position: 'absolute', 
                         top: '8px', 
                         left: '8px', 
                         background: 'rgba(0,0,0,0.85)', 
                         backdropFilter: 'blur(10px)',
-                        color: '#00e5ff', 
+                        color: isRetained ? '#00e5ff' : '#ffffff', 
                         fontSize: '11px', 
                         fontWeight: 900, 
                         padding: '4px 10px', 
                         borderRadius: '8px',
-                        border: '1px solid rgba(0,229,255,0.4)'
+                        border: isRetained ? '1px solid rgba(0,229,255,0.5)' : '1px solid rgba(255,255,255,0.2)'
                       }}>
-                        NEW SLOT #{item.slot || idx + 1}
+                        {isRetained ? `SLOT #${slotNum}` : `NEW SLOT #${slotNum}`}
                       </div>
 
                       {/* Action Directive Badge */}
@@ -203,33 +208,36 @@ export default function BookingOtaAuditCard({ otaData, hotelName }) {
                       </div>
 
                       {/* Current Live Slot tag */}
-                      {item.current_slot && (
-                        <div style={{ 
-                          position: 'absolute', 
-                          top: '8px', 
-                          right: '8px', 
-                          background: 'rgba(0,0,0,0.75)', 
-                          color: 'rgba(255,255,255,0.8)', 
-                          fontSize: '10px', 
-                          fontWeight: 700, 
-                          padding: '3px 8px', 
-                          borderRadius: '6px'
-                        }}>
-                          Was: Slot #{item.current_slot}
-                        </div>
-                      )}
+                      <div style={{ 
+                        position: 'absolute', 
+                        top: '8px', 
+                        right: '8px', 
+                        background: isRetained ? 'rgba(0, 229, 255, 0.2)' : 'rgba(0,0,0,0.85)', 
+                        color: isRetained ? '#00e5ff' : 'rgba(255,255,255,0.9)', 
+                        border: isRetained ? '1px solid rgba(0,229,255,0.4)' : '1px solid rgba(255,255,255,0.15)',
+                        fontSize: '10px', 
+                        fontWeight: 700, 
+                        padding: '3px 8px', 
+                        borderRadius: '6px'
+                      }}>
+                        {isRetained 
+                          ? `Currently Slot #${wasSlot || slotNum}` 
+                          : wasSlot 
+                            ? `Was: Slot #${wasSlot}` 
+                            : 'Brand Media (New to OTA)'}
+                      </div>
                     </div>
                   ) : (
                     <div style={{ padding: '1rem', background: 'rgba(255,255,255,0.04)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                       <span style={{ 
-                        background: idx === 0 ? '#00e5ff' : 'rgba(255,255,255,0.1)', 
-                        color: idx === 0 ? '#000' : '#fff', 
+                        background: isRetained ? '#00e5ff' : 'rgba(255,255,255,0.1)', 
+                        color: isRetained ? '#000' : '#fff', 
                         fontSize: '11px', 
                         fontWeight: 900, 
                         padding: '4px 10px', 
                         borderRadius: '8px' 
                       }}>
-                        SLOT #{item.slot || idx + 1}
+                        {isRetained ? `SLOT #${slotNum}` : `NEW SLOT #${slotNum}`}
                       </span>
                       <span style={{ fontSize: '10px', color: '#00e5ff', fontWeight: 800 }}>
                         {badge.text}
@@ -268,7 +276,7 @@ export default function BookingOtaAuditCard({ otaData, hotelName }) {
       {viewMode === 'comparison' && livePhotos.length > 0 && (
         <div style={{ marginBottom: '2.5rem' }}>
           <h4 style={{ fontSize: '1.1rem', fontWeight: 900, textTransform: 'uppercase', color: '#00e5ff', marginBottom: '1rem' }}>
-            Current Booking.com Order vs. Recommended AI Sequence
+            Current Live Photos
           </h4>
           
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem', marginBottom: '1.5rem' }}>
