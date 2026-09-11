@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { Zap, Music, Users, Sparkles, CheckCircle2, AlertTriangle, Disc, MapPin, Compass } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -42,9 +42,6 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
             textTransform: 'uppercase' 
           }}>
             ⭐ Official Venue Vibe Manifest
-          </span>
-          <span style={{ color: 'rgba(255,255,255,0.5)', fontSize: '12px', fontWeight: 600 }}>
-            Self-Describing Brand Telemetry
           </span>
         </div>
 

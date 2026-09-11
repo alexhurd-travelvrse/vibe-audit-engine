@@ -10,6 +10,7 @@ import {
 import HotelVibeManifestCard from './components/HotelVibeManifestCard';
 import InteractiveQuizCard from './components/InteractiveQuizCard';
 import BookingOtaAuditCard from './components/BookingOtaAuditCard';
+import { AtmosvibeLogo } from './components/AtmosvibeLogo';
 import './B2BLeadGenOnboarding.css';
 
 // Environment detector: Enforce email on live Vercel/Production, bypass on localhost
@@ -200,12 +201,13 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
           </div>
           <span>Back to TravelVRSE</span>
         </a>
+        <AtmosvibeLogo style={{ height: '60px' }} />
       </nav>
 
       <main className="b2b-main">
         <AnimatePresence mode="wait">
           {step === 'welcome' && (
-            <motion.div key="welcome" initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="welcome-section">
+            <motion.div key="welcome" initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="welcome-section" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
               <h1 className="hero-title">VIBE AUDIT</h1>
               <p className="hero-subtitle">The High-Fidelity Propulsion Scale Engine</p>
               <div style={{ display: 'flex', justifyContent: 'center' }}>
@@ -219,12 +221,8 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
 
           {step === 'input' && (
             <motion.div key="input" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="form-section">
-                <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-                <h1 style={{ fontSize: '2.5rem', fontWeight: 900, textTransform: 'uppercase', lineHeight: 0.9, fontStyle: 'italic' }}>
-                    LOCAL VIBE <br/>
-                    <span style={{ color: '#00e5ff' }}>AUDIT ENGINE</span>
-                </h1>
-                <p style={{ color: '#ffffff', fontSize: '14px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.15em', marginTop: '1.5rem', lineHeight: 1.6 }}>
+              <div style={{ textAlign: 'center', marginBottom: '1.75rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                <p style={{ color: '#ffffff', fontSize: '14px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.15em', margin: 0, lineHeight: 1.6, maxWidth: '750px' }}>
                   <span style={{ color: '#00e5ff', fontWeight: 900, fontSize: '18px' }}>78%</span> of Next-Gen Travelers search for local experiences first — how discoverable are these on your digital presence?
                 </p>
               </div>
@@ -235,17 +233,6 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                   <input type="text" className="form-input" style={{ fontSize: '1.1rem', padding: '1rem 1.5rem' }} value={formData.propertyName} placeholder="Enter Hotel Name" onChange={e => setFormData({...formData, propertyName: e.target.value})} />
                 </div>
                 
-                <div className="grid-2" style={{ gap: '1.5rem' }}>
-                    <div className="input-group" style={{ marginBottom: '1.5rem' }}>
-                        <label className="input-label" style={{ marginBottom: '0.75rem' }}>Website URL</label>
-                        <input type="url" className="form-input" style={{ fontSize: '1.1rem', padding: '1rem 1.5rem' }} value={formData.propertyUrl} placeholder="https://..." onChange={e => setFormData({...formData, propertyUrl: e.target.value})} />
-                    </div>
-                    <div className="input-group" style={{ marginBottom: '1.5rem' }}>
-                        <label className="input-label" style={{ marginBottom: '0.75rem' }}>Instagram URL</label>
-                        <input type="url" className="form-input" style={{ fontSize: '1.1rem', padding: '1rem 1.5rem' }} value={formData.instagramUrl} placeholder="https://instagram.com/..." onChange={e => setFormData({...formData, instagramUrl: e.target.value})} />
-                    </div>
-                </div>
-
                 <div className="grid-2" style={{ gap: '1.5rem' }}>
                     <div className="input-group" style={{ marginBottom: '1.5rem' }}>
                         <label className="input-label" style={{ marginBottom: '0.75rem' }}>Primary Market</label>
