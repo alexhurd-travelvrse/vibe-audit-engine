@@ -26,27 +26,35 @@ export async function runStructuredVibeAudit(hotelName, city, venueCorpus, liveP
   const systemPrompt = `You are the Lead Hospitality Brand Strategist and Visual Merchandising Architect for Vibe Audit Engine.
 Your task is to analyze live real-world venue data (reviews, editorial critique, places metadata) and ACTUAL LIVE BOOKING.COM PHOTOS + SIGNATURE AMENITY ASSETS for "${hotelName}" in "${city}" to synthesize a complete Master Vibe Audit payload.
 
-CRITICAL VISUAL MERCHANDISING & PHOTO RE-SEQUENCING RULES:
+CRITICAL VISUAL MERCHANDISING & LOCAL VIBE RESONANCE RULES:
 You have been provided with the actual images for "CURRENT LIVE BOOKING.COM PHOTOS" (numbered #1, #2, #3...) and "SIGNATURE AMENITY ASSETS" (numbered #1, #2...).
-You must VISUALLY INSPECT EVERY IMAGE to correctly categorize and sequence them into the optimal 5-photo OTA conversion sequence:
 
+LOCAL VIBE SYNERGY PRINCIPLE:
+78% of modern travelers search for neighborhood subcultures (e.g. Craft Gastronomy, Speakeasy Cocktails, Underground Art, Thermal Wellness) FIRST before deciding where to stay.
+Your recommendations must NOT just describe the hotel internally — they must explicitly BRIDGE THE HOTEL DNA WITH THE SURROUNDING NEIGHBORHOOD GRAVITY:
+- If the neighborhood's #1 demand driver is Culinary/Mixology (e.g. Soho, Meatpacking, Indre By), actively prioritize the hotel's signature cocktail bar or restaurant in Slot #2 to capture that local search demand.
+- In "local_vibe_synergy_context", explain how the neighborhood's cultural momentum dictates this visual reordering.
+- In each slot's "local_vibe_connection" and "psychological_conversion_trigger", explicitly explain how that specific photo fulfills what travelers are seeking when visiting this specific neighborhood.
+
+THE 5 RECOMMENDED SLOTS:
 1. Slot #1 (EXTERIOR_LANDMARK):
-   - MUST depict the hotel's authentic exterior facade, building landmark, courtyard, or riverfront entrance.
-   - Visually scan the live photos. If a live photo is an exterior (e.g. Live Photo #13), set "source_type": "LIVE_PHOTO", "source_index": 13, "action": "PROMOTE", "action_label": "PROMOTE EXTERIOR HERO (FROM SLOT #13)".
-   - Do NOT put an interior lobby or bedroom in Slot #1 if an exterior photo is available!
+   - MUST depict the hotel's authentic exterior facade, building landmark, courtyard, or street entrance.
+   - Visually scan live photos. If an exterior exists (e.g. Live Photo #13), set "source_type": "LIVE_PHOTO", "source_index": 13, "action": "PROMOTE", "action_label": "PROMOTE EXTERIOR HERO (FROM SLOT #13)".
+   - Local Vibe Connection: Establishes immediate physical grounding in the neighborhood streetscape.
 
-2. Slot #2 (SOCIAL_FB_ROOFTOP):
-   - MUST depict a signature social anchor: cocktail bar (e.g. Boilerman Bar, Lyaness, 12th Knot), rooftop lounge, or vibrant dining room.
-   - Choose the best cocktail bar / social vibe photo from SIGNATURE AMENITY ASSETS or LIVE PHOTOS.
-   - Set "source_type": "AMENITY_ASSET" (or "LIVE_PHOTO"), "source_index": [index], "action": "SWAP_IN", "action_label": "SWAP IN [BAR/ROOFTOP NAME] (SLOT #2)".
+2. Slot #2 (SOCIAL_FB_ROOFTOP / CULINARY & MIXOLOGY):
+   - MUST depict the signature social anchor: cocktail bar (e.g. Boilerman Bar, Lyaness, 12th Knot), rooftop lounge, or destination restaurant.
+   - Set "source_type": "AMENITY_ASSET" (or "LIVE_PHOTO"), "source_index": [index], "action": "SWAP_IN", "action_label": "SWAP IN [VENUE NAME] (SLOT #2)".
+   - Local Vibe Connection: Validates the hotel's cultural relevance to travelers seeking the neighborhood's top food and nightlife subcultures.
 
 3. Slot #3 (SIGNATURE_SUITE_BEDROOM):
-   - MUST depict the most stylish signature guest room / master king bed / suite with character to satisfy Booking.com policy.
+   - MUST depict the most stylish signature guest room / master king bed / suite with local character.
    - Select from LIVE PHOTOS. Set "source_type": "LIVE_PHOTO", "source_index": [index], "action": "KEEP" or "RETAIN".
 
-4. Slot #4 (WELLNESS_SPA_LOBBY):
+4. Slot #4 (WELLNESS_SPA_LOBBY / TEXTURE):
    - MUST depict the iconic arrival lobby, vinyl library/lounge, art centerpiece, or wellness spa.
    - If the hotel's famous lobby/lounge was originally Live Photo #1 (or another slot), re-sequence it here! Set "source_type": "LIVE_PHOTO", "source_index": 1, "action": "RE_SEQUENCE", "action_label": "MOVE LOBBY LOUNGE (FROM SLOT #1)".
+   - Local Vibe Connection: Proves the hotel's interior vibe reflects the neighborhood's creative texture.
 
 5. Slot #5 (SECONDARY_ROOM_BATHROOM):
    - MUST depict a distinctive secondary bedroom or stylish design bathroom.

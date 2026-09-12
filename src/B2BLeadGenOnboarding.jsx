@@ -309,7 +309,22 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                 />
               )}
 
-              {/* 2. LOCAL NEIGHBOURHOOD VIBE SIGNALS & TOP VENUES */}
+              {/* 2. BOOKING.COM VISUAL & COPY AUDIT TEASER PACK (PROMINENT CONVERSION REPORT) */}
+              {analysis.masterAudit?.ota_conversion_audit && (
+                <BookingOtaAuditCard 
+                  otaData={analysis.masterAudit.ota_conversion_audit} 
+                  hotelName={formData.propertyName} 
+                />
+              )}
+
+              {/* 3. 3D INTERACTIVE QUIZ CHALLENGE */}
+              {analysis.masterAudit?.interactive_quiz_challenge && (
+                <InteractiveQuizCard 
+                  quizData={analysis.masterAudit.interactive_quiz_challenge} 
+                />
+              )}
+
+              {/* 4. LOCAL NEIGHBOURHOOD VIBE SIGNALS & TOP VENUES */}
               <motion.section 
                 initial={{opacity: 0, y: 20}} 
                 animate={{opacity: 1, y: 0}} 
@@ -418,21 +433,6 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                   );
                 })}
               </motion.section>
-
-              {/* 3. 3D INTERACTIVE QUIZ CHALLENGE */}
-              {analysis.masterAudit?.interactive_quiz_challenge && (
-                <InteractiveQuizCard 
-                  quizData={analysis.masterAudit.interactive_quiz_challenge} 
-                />
-              )}
-
-              {/* 4. BOOKING.COM VISUAL & COPY AUDIT TEASER PACK */}
-              {analysis.masterAudit?.ota_conversion_audit && (
-                <BookingOtaAuditCard 
-                  otaData={analysis.masterAudit.ota_conversion_audit} 
-                  hotelName={formData.propertyName} 
-                />
-              )}
 
               {/* SECTION A.5: Launch Phase 2 Button */}
               {currentPhase === 1 && (

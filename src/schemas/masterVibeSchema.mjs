@@ -99,6 +99,10 @@ export const masterVibeSchema = {
         channel: { type: "string", default: "Booking.com" },
         current_drop_off_flaw: { type: "string" },
         conversion_diagnosis: { type: "string" },
+        local_vibe_synergy_context: { 
+          type: "string", 
+          description: "Clear strategic explanation connecting the neighborhood's top local subcultures (e.g. culinary, craft mixology, underground art, wellness) to the photo recommendations" 
+        },
         optimal_5_photo_sequence: {
           type: "array",
           items: {
@@ -129,7 +133,11 @@ export const masterVibeSchema = {
               action: { type: "string", enum: ["KEEP_HERO", "KEEP", "PROMOTE", "DEMOTE", "REPLACE", "SWAP_IN"] },
               action_label: { type: "string", description: "Short punchy label e.g. 'PROMOTE EXTERIOR HERO (FROM SLOT #13)', 'SWAP IN COCKTAIL BAR (SLOT #2)', 'KEEP SIGNATURE SUITE (SLOT #3)'" },
               photo_subject: { type: "string", description: "Exact visual content of this specific photo" },
-              psychological_conversion_trigger: { type: "string", description: "Why this reordering triggers booking intent while complying with Booking.com policies" }
+              local_vibe_connection: { 
+                type: "string", 
+                description: "Explicit connection showing how this photo matches what travelers search for in this specific neighborhood" 
+              },
+              psychological_conversion_trigger: { type: "string", description: "Why this reordering triggers booking intent by bridging hotel DNA with local neighborhood demand" }
             },
             required: ["slot", "category", "source_type", "source_index", "photo_subject", "psychological_conversion_trigger"]
           }

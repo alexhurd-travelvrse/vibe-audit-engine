@@ -131,6 +131,20 @@ export default function BookingOtaAuditCard({ otaData, hotelName }) {
         <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.7)', lineHeight: 1.5, margin: 0, paddingLeft: '1.75rem' }}>
           {otaData.conversion_diagnosis}
         </p>
+
+        <div style={{ 
+          marginTop: '1rem', 
+          paddingTop: '1rem', 
+          borderTop: '1px solid rgba(255,255,255,0.08)',
+          paddingLeft: '1.75rem'
+        }}>
+          <div style={{ fontSize: '12px', fontWeight: 900, color: '#00e5ff', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '4px' }}>
+            📍 Strategic Neighborhood Demand & Local Vibe Synergy:
+          </div>
+          <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.85)', lineHeight: 1.5, margin: 0 }}>
+            {otaData.local_vibe_synergy_context || "Re-aligns the hotel's visual merchandising with the neighborhood's dominant cultural gravity, converting high-intent travelers searching for local experiences before booking."}
+          </p>
+        </div>
       </div>
 
       {/* SECTION: Recommended Photos Grid */}
@@ -170,6 +184,10 @@ export default function BookingOtaAuditCard({ otaData, hotelName }) {
                       <img 
                         src={photoImg} 
                         alt={item.photo_subject}
+                        onError={(e) => {
+                          e.currentTarget.onerror = null;
+                          e.currentTarget.src = 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=80';
+                        }}
                         style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
                       />
                       
@@ -245,24 +263,33 @@ export default function BookingOtaAuditCard({ otaData, hotelName }) {
                     </div>
                   )}
 
-                  {/* Photo Subject & Psychological Trigger */}
+                  {/* Photo Subject, Local Demand Connection & Psychological Trigger */}
                   <div style={{ padding: '1.25rem', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                     <div>
                       <div style={{ fontSize: '13px', fontWeight: 800, color: '#ffffff', marginBottom: '0.5rem', lineHeight: 1.4 }}>
                         {item.photo_subject}
                       </div>
                     </div>
-                    
-                    <div style={{ 
-                      marginTop: '0.75rem', 
-                      paddingTop: '0.75rem', 
-                      borderTop: '1px solid rgba(255,255,255,0.06)',
-                      fontSize: '11px', 
-                      color: 'rgba(0, 229, 255, 0.9)', 
-                      fontWeight: 600,
-                      lineHeight: 1.3
-                    }}>
-                      🎯 <strong>Trigger:</strong> {item.psychological_conversion_trigger}
+
+                    <div style={{ marginTop: '0.75rem', paddingTop: '0.75rem', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+                      <div style={{ 
+                        fontSize: '11px', 
+                        color: '#fbbf24', 
+                        fontWeight: 700,
+                        lineHeight: 1.35,
+                        marginBottom: '6px'
+                      }}>
+                        📍 <strong>Local Demand Match:</strong> {item.local_vibe_connection || "Directly reflects the neighborhood's leading cultural search driver."}
+                      </div>
+                      
+                      <div style={{ 
+                        fontSize: '11px', 
+                        color: 'rgba(0, 229, 255, 0.9)', 
+                        fontWeight: 600,
+                        lineHeight: 1.35
+                      }}>
+                        🎯 <strong>Trigger:</strong> {item.psychological_conversion_trigger}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -283,7 +310,15 @@ export default function BookingOtaAuditCard({ otaData, hotelName }) {
             {livePhotos.map((img, i) => (
               <div key={i} style={{ background: 'rgba(0,0,0,0.5)', borderRadius: '1rem', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.1)' }}>
                 <div style={{ position: 'relative', height: '120px' }}>
-                  <img src={img.imageUrl} alt={img.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  <img 
+                    src={img.imageUrl} 
+                    alt={img.title} 
+                    onError={(e) => {
+                      e.currentTarget.onerror = null;
+                      e.currentTarget.src = 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=80';
+                    }}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+                  />
                   <div style={{ position: 'absolute', top: '6px', left: '6px', background: 'rgba(0,0,0,0.8)', color: '#fff', fontSize: '10px', fontWeight: 900, padding: '2px 6px', borderRadius: '4px' }}>
                     Current Live Slot #{i + 1}
                   </div>
