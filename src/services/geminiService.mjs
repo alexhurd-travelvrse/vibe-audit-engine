@@ -1,4 +1,4 @@
-﻿import * as dotenv from 'dotenv';
+import * as dotenv from 'dotenv';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { masterVibeSchema } from '../schemas/masterVibeSchema.mjs';
 
@@ -26,29 +26,35 @@ export async function runStructuredVibeAudit(hotelName, city, venueCorpus, liveP
   const systemPrompt = `You are the Lead Hospitality Brand Strategist and Visual Merchandising Architect for Vibe Audit Engine.
 Your task is to analyze live real-world venue data (reviews, editorial critique, places metadata) and ACTUAL LIVE BOOKING.COM PHOTOS + SIGNATURE AMENITY ASSETS for "${hotelName}" in "${city}" to synthesize a complete Master Vibe Audit payload.
 
-CRITICAL GUIDELINES:
-1. Grounding & Anti-Hallucination: Extract genuine architectural features, actual named bars/restaurants/spas, authentic neighborhood lore, and verified aesthetic details.
-2. Vibe Signature:
-   - energy_score: 0-100 integer reflecting social pacing and velocity.
-   - acoustic_dna: 3 exact real defining artists, soundscape genre, and texture.
-   - qualification_test: Punchy statements for who will love this venue and who should skip it.
-3. Interactive 3D Quiz Challenge:
-   - Question highlighting signature architectural design or secret history.
-   - 4 distinct options (A, B, C, D) with exactly one correct option.
-4. OTA Conversion & Recommended Photos Strategy (Strict Anti-Repetition & Booking.com Compliance):
-   - MANDATORY ANTI-DUPLICATION RULE:
-     * NEVER output 3 or 4 repetitive living rooms or bedrooms in the optimal 5-photo sequence!
-     * IF the live Booking.com gallery has 3 or 4 living rooms/bedrooms, you MUST actively DEMOTE and REPLACE the duplicate rooms in Slot #2 and/or Slot #4 with signature public amenities from the amenity pool (e.g. Destination Rooftop Lounge, Cocktail Bar, Restaurant, Spa, or Iconic Lobby).
-     * EXACTLY 1 to 2 slots MUST represent high-character guest rooms/suites (Slot #3: Signature Suite / King Bed, Slot #5: Secondary Bedroom or Design Bathroom) to satisfy Booking.com accommodation policies.
-   - The 5 Recommended Slots Structure:
-     * Slot 1: Architectural Exterior / Riverfront / Skyline Hero ("KEEP AS HERO")
-     * Slot 2: Signature Social / F&B Destination (e.g. "SWAP IN 12TH KNOT ROOFTOP" or "SWAP IN COCKTAIL BAR")
-     * Slot 3: Signature Suite / Master Bedroom with View ("KEEP SIGNATURE SUITE")
-     * Slot 4: Wellness Spa, Curated Art, or Iconic Lobby / Arrival ("SWAP IN SPA / LOBBY")
-     * Slot 5: Secondary Room or Design Bathroom ("KEEP SECONDARY ROOM / BATHROOM")
-   - In optimal_5_photo_sequence:
-     * For swapped amenities: set "action": "REPLACE", "action_label": "SWAP IN [AMENITY NAME] (SLOT #X)", "current_slot": null, and describe the exact amenity in "photo_subject".
-     * For retained live photos: set "action": "KEEP_HERO" or "KEEP", set "current_slot": (original slot 1-5).`;
+CRITICAL VISUAL MERCHANDISING & PHOTO RE-SEQUENCING RULES:
+You have been provided with the actual images for "CURRENT LIVE BOOKING.COM PHOTOS" (numbered #1, #2, #3...) and "SIGNATURE AMENITY ASSETS" (numbered #1, #2...).
+You must VISUALLY INSPECT EVERY IMAGE to correctly categorize and sequence them into the optimal 5-photo OTA conversion sequence:
+
+1. Slot #1 (EXTERIOR_LANDMARK):
+   - MUST depict the hotel's authentic exterior facade, building landmark, courtyard, or riverfront entrance.
+   - Visually scan the live photos. If a live photo is an exterior (e.g. Live Photo #13), set "source_type": "LIVE_PHOTO", "source_index": 13, "action": "PROMOTE", "action_label": "PROMOTE EXTERIOR HERO (FROM SLOT #13)".
+   - Do NOT put an interior lobby or bedroom in Slot #1 if an exterior photo is available!
+
+2. Slot #2 (SOCIAL_FB_ROOFTOP):
+   - MUST depict a signature social anchor: cocktail bar (e.g. Boilerman Bar, Lyaness, 12th Knot), rooftop lounge, or vibrant dining room.
+   - Choose the best cocktail bar / social vibe photo from SIGNATURE AMENITY ASSETS or LIVE PHOTOS.
+   - Set "source_type": "AMENITY_ASSET" (or "LIVE_PHOTO"), "source_index": [index], "action": "SWAP_IN", "action_label": "SWAP IN [BAR/ROOFTOP NAME] (SLOT #2)".
+
+3. Slot #3 (SIGNATURE_SUITE_BEDROOM):
+   - MUST depict the most stylish signature guest room / master king bed / suite with character to satisfy Booking.com policy.
+   - Select from LIVE PHOTOS. Set "source_type": "LIVE_PHOTO", "source_index": [index], "action": "KEEP" or "RETAIN".
+
+4. Slot #4 (WELLNESS_SPA_LOBBY):
+   - MUST depict the iconic arrival lobby, vinyl library/lounge, art centerpiece, or wellness spa.
+   - If the hotel's famous lobby/lounge was originally Live Photo #1 (or another slot), re-sequence it here! Set "source_type": "LIVE_PHOTO", "source_index": 1, "action": "RE_SEQUENCE", "action_label": "MOVE LOBBY LOUNGE (FROM SLOT #1)".
+
+5. Slot #5 (SECONDARY_ROOM_BATHROOM):
+   - MUST depict a distinctive secondary bedroom or stylish design bathroom.
+   - Select from LIVE PHOTOS. Set "source_type": "LIVE_PHOTO", "source_index": [index], "action": "KEEP" or "RETAIN".
+
+ANTI-DUPLICATION COMPLIANCE:
+- NEVER recommend 3 or 4 generic repetitive bedrooms.
+- Ensure the 5 slots strictly follow: 1) Exterior Hero -> 2) Social F&B/Bar -> 3) Signature Suite -> 4) Iconic Lobby/Spa -> 5) Secondary Room/Bathroom.`;
 
   const userPrompt = `VENUE: ${hotelName} (${city})
 TIMESTAMP: ${new Date().toISOString()}
@@ -61,43 +67,53 @@ Synthesize this live data and return the complete Master Vibe Audit JSON payload
   console.log(`[Gemini] Preparing multimodal extraction request for ${hotelName}...`);
   const parts = [{ text: systemPrompt }];
 
-  // 1. Attach Current Live Booking.com Photos
-  if (livePhotos && livePhotos.length > 0) {
-    parts.push({ text: `\n=== CURRENT LIVE BOOKING.COM PHOTOS (SLOTS 1 TO ${livePhotos.length}) ===\nThese are the photos currently displayed in order on the hotel's Booking.com listing:\n` });
-    for (let i = 0; i < livePhotos.length; i++) {
-      const p = livePhotos[i];
-      const slotNum = p.slot || (i + 1);
-      try {
-        const resp = await fetch(p.imageUrl, { signal: AbortSignal.timeout(6000) });
-        if (resp.ok) {
-          const buffer = await resp.arrayBuffer();
-          const base64 = Buffer.from(buffer).toString('base64');
-          parts.push({ text: `\n[CURRENT LIVE SLOT #${slotNum} - "${p.title || ''}"]:` });
-          parts.push({ inlineData: { data: base64, mimeType: 'image/jpeg' } });
-        }
-      } catch (err) {
-        console.warn(`[Gemini] Could not download live photo ${slotNum}:`, err.message);
+  // Helper for parallel image fetching
+  const downloadImageBase64 = async (url) => {
+    try {
+      const resp = await fetch(url, { signal: AbortSignal.timeout(3500) });
+      if (resp.ok) {
+        const buffer = await resp.arrayBuffer();
+        return Buffer.from(buffer).toString('base64');
       }
+    } catch (err) {
+      // Quiet timeout
     }
+    return null;
+  };
+
+  // 1. Concurrently fetch and attach Live Booking.com Photos
+  if (livePhotos && livePhotos.length > 0) {
+    const liveSubset = livePhotos.slice(0, 18);
+    const downloadedLive = await Promise.all(
+      liveSubset.map(p => downloadImageBase64(p.imageUrl))
+    );
+
+    parts.push({ text: `\n=== CURRENT LIVE BOOKING.COM PHOTOS (TOTAL ${liveSubset.length} PHOTOS) ===\n` });
+    downloadedLive.forEach((base64, i) => {
+      const p = liveSubset[i];
+      const slotNum = p.slot || (i + 1);
+      if (base64) {
+        parts.push({ text: `\n[CURRENT LIVE PHOTO #${slotNum} (Title: "${p.title || ''}")]:` });
+        parts.push({ inlineData: { data: base64, mimeType: 'image/jpeg' } });
+      }
+    });
   }
 
-  // 2. Attach Signature Amenity Candidate Photos (Rooftops, Bars, Spas, Lobby)
+  // 2. Concurrently fetch and attach Signature Amenity Candidate Photos
   if (amenityPhotos && amenityPhotos.length > 0) {
-    parts.push({ text: `\n=== SIGNATURE AMENITY & VENUE ASSETS (CANDIDATES FOR SWAPPING IN) ===\nUse these signature public vibe spaces to replace repetitive living room/bed shots:\n` });
-    for (let i = 0; i < Math.min(amenityPhotos.length, 6); i++) {
-      const a = amenityPhotos[i];
-      try {
-        const resp = await fetch(a.imageUrl, { signal: AbortSignal.timeout(6000) });
-        if (resp.ok) {
-          const buffer = await resp.arrayBuffer();
-          const base64 = Buffer.from(buffer).toString('base64');
-          parts.push({ text: `\n[SIGNATURE AMENITY ASSET #${i + 1}: "${a.title || 'Amenity'}"]:` });
-          parts.push({ inlineData: { data: base64, mimeType: 'image/jpeg' } });
-        }
-      } catch (err) {
-        console.warn(`[Gemini] Could not download amenity photo ${i + 1}:`, err.message);
+    const amenitySubset = amenityPhotos.slice(0, 8);
+    const downloadedAmenity = await Promise.all(
+      amenitySubset.map(a => downloadImageBase64(a.imageUrl))
+    );
+
+    parts.push({ text: `\n=== SIGNATURE AMENITY & VENUE ASSETS (CANDIDATES FOR SWAPPING IN) ===\n` });
+    downloadedAmenity.forEach((base64, i) => {
+      const a = amenitySubset[i];
+      if (base64) {
+        parts.push({ text: `\n[SIGNATURE AMENITY ASSET #${i + 1} (Title: "${a.title || 'Amenity'}")]:` });
+        parts.push({ inlineData: { data: base64, mimeType: 'image/jpeg' } });
       }
-    }
+    });
   }
 
   parts.push({ text: userPrompt });

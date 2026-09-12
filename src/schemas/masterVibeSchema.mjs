@@ -116,13 +116,22 @@ export const masterVibeSchema = {
                 ],
                 description: "Strict visual merchandising category for this slot"
               },
-              current_slot: { type: "integer", description: "Original current slot number on Booking.com (1 to 5) if retaining live photo, or null if swapped" },
-              action: { type: "string", enum: ["KEEP_HERO", "KEEP", "PROMOTE", "DEMOTE", "REPLACE"] },
-              action_label: { type: "string", description: "Short punchy label e.g. 'KEEP AS HERO (SLOT #1)', 'SWAP IN ROOFTOP (SLOT #2)', 'KEEP SIGNATURE SUITE (SLOT #3)'" },
+              source_type: {
+                type: "string",
+                enum: ["LIVE_PHOTO", "AMENITY_ASSET"],
+                description: "Whether this photo was selected from CURRENT LIVE BOOKING.COM PHOTOS or SIGNATURE AMENITY ASSETS"
+              },
+              source_index: {
+                type: "integer",
+                description: "The 1-indexed number of the photo in the respective pool (e.g. 13 if chosen from LIVE PHOTO #13, or 2 if chosen from AMENITY ASSET #2)"
+              },
+              current_slot: { type: "integer", description: "Original current slot number on Booking.com (1 to 20) if retaining or promoting a live photo, or null if swapped from amenity asset" },
+              action: { type: "string", enum: ["KEEP_HERO", "KEEP", "PROMOTE", "DEMOTE", "REPLACE", "SWAP_IN"] },
+              action_label: { type: "string", description: "Short punchy label e.g. 'PROMOTE EXTERIOR HERO (FROM SLOT #13)', 'SWAP IN COCKTAIL BAR (SLOT #2)', 'KEEP SIGNATURE SUITE (SLOT #3)'" },
               photo_subject: { type: "string", description: "Exact visual content of this specific photo" },
               psychological_conversion_trigger: { type: "string", description: "Why this reordering triggers booking intent while complying with Booking.com policies" }
             },
-            required: ["slot", "category", "photo_subject", "psychological_conversion_trigger"]
+            required: ["slot", "category", "source_type", "source_index", "photo_subject", "psychological_conversion_trigger"]
           }
         },
         anti_commodity_copy_rewrite: {

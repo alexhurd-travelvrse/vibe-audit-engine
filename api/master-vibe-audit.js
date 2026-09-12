@@ -129,7 +129,7 @@ async function fetchBookingPhotosForHotel(hotelName, city) {
 // Dynamic Amenity Photo Fetcher for any hotel & city
 async function fetchAmenityPhotosForHotel(hotelName, city) {
   try {
-    const query = `"${hotelName}" ${city} ("rooftop" OR "cocktail bar" OR "bar" OR "restaurant" OR "lounge" OR "spa" OR "pool" OR "lobby" OR "terrace" OR "12th knot" OR "lyaness" OR "neni")`;
+    const query = `"${hotelName}" ${city} ("rooftop" OR "cocktail bar" OR "bar" OR "restaurant" OR "lounge" OR "spa" OR "pool" OR "lobby" OR "exterior" OR "facade" OR "terrace")`;
     const res = await fetch('https://google.serper.dev/images', {
       method: 'POST',
       headers: { 'X-API-KEY': SERPER_API_KEY, 'Content-Type': 'application/json' },
@@ -147,8 +147,7 @@ async function fetchAmenityPhotosForHotel(hotelName, city) {
   return [];
 }
 
-// Match the best image for a given photo recommendation subject
-// Match the best image for a given photo recommendation subject and category
+// Fallback matching helper
 function matchBestImageForSubject(subjectText, category, liveBookingPhotos = [], amenityPhotos = [], usedUrls = new Set(), defaultIndex = 0) {
   const text = String(subjectText || '').toLowerCase();
   const cat = String(category || '').toUpperCase();
@@ -157,7 +156,6 @@ function matchBestImageForSubject(subjectText, category, liveBookingPhotos = [],
   const allPool = [...poolAmenity, ...poolLive];
   const setUsed = (usedUrls instanceof Set) ? usedUrls : new Set();
 
-  // Helper to find unused image matching predicate
   const findMatch = (pool, predicate) => {
     const match = pool.find(p => p?.imageUrl && !setUsed.has(p.imageUrl) && predicate(p));
     if (match) {
@@ -167,78 +165,60 @@ function matchBestImageForSubject(subjectText, category, liveBookingPhotos = [],
     return null;
   };
 
-  // 1. 12th Knot Rooftop / Rooftop Terrace
-  if (cat === 'SOCIAL_FB_ROOFTOP' && (text.includes('12th knot') || text.includes('rooftop') || text.includes('skyline') || text.includes('terrace'))) {
-    const url = findMatch(amenityPhotos, p => {
+  // 1. Exterior / Facade / Building Hero
+  if (cat === 'EXTERIOR_LANDMARK' || text.includes('exterior') || text.includes('facade') || text.includes('building') || text.includes('courtyard')) {
+    const url = findMatch(poolLive, p => {
       const t = (p.title || '').toLowerCase();
       const u = (p.imageUrl || '').toLowerCase();
-      return (t.includes('12th knot') || t.includes('rooftop') || u.includes('12th-knot') || t.includes('terrace')) && !t.includes('lyaness');
+      return t.includes('exterior') || t.includes('facade') || t.includes('building') || t.includes('outside') || t.includes('entrance') || u.includes('exterior');
+    }) || findMatch(poolAmenity, p => {
+      const t = (p.title || '').toLowerCase();
+      return t.includes('exterior') || t.includes('facade') || t.includes('building') || t.includes('hotel');
     });
     if (url) return url;
   }
 
-  // 2. Lyaness Cocktail Bar / Bar
-  if (cat === 'SOCIAL_FB_ROOFTOP' && (text.includes('lyaness') || text.includes('cocktail') || text.includes('marble bar') || text.includes('boilerman'))) {
-    const url = findMatch(amenityPhotos, p => {
+  // 2. Rooftop / Cocktail Bar / Lounge
+  if (cat === 'SOCIAL_FB_ROOFTOP' || text.includes('bar') || text.includes('cocktail') || text.includes('rooftop') || text.includes('lounge') || text.includes('boilerman')) {
+    const url = findMatch(poolAmenity, p => {
       const t = (p.title || '').toLowerCase();
       const u = (p.imageUrl || '').toLowerCase();
-      return (t.includes('lyaness') || t.includes('cocktail') || u.includes('lyaness') || t.includes('bar')) && !t.includes('12th');
-    });
-    if (url) return url;
-  }
-
-  // 3. Restaurant / Dining (e.g. NENI)
-  if (text.includes('restaurant') || text.includes('dining') || text.includes('neni') || text.includes('conservatory')) {
-    const url = findMatch(allPool, p => {
+      return t.includes('bar') || t.includes('cocktail') || t.includes('rooftop') || t.includes('boilerman') || t.includes('lounge') || u.includes('bar');
+    }) || findMatch(poolLive, p => {
       const t = (p.title || '').toLowerCase();
-      return t.includes('restaurant') || t.includes('dining') || t.includes('neni') || t.includes('conservatory') || t.includes('food');
+      return t.includes('bar') || t.includes('cocktail') || t.includes('lounge');
     });
     if (url) return url;
   }
 
-  // 4. Lobby / Reception / Art Sculpture
-  if (cat === 'WELLNESS_SPA_LOBBY' && (text.includes('lobby') || text.includes('hull') || text.includes('copper') || text.includes('sculpture') || text.includes('reception'))) {
-    const url = findMatch(allPool, p => {
+  // 3. Lobby / Reception / Arrival / Spa
+  if (cat === 'WELLNESS_SPA_LOBBY' || text.includes('lobby') || text.includes('reception') || text.includes('spa') || text.includes('vinyl')) {
+    const url = findMatch(poolLive, p => {
       const t = (p.title || '').toLowerCase();
-      return t.includes('lobby') || t.includes('hull') || t.includes('copper') || t.includes('reception') || t.includes('sculpture');
-    });
-    if (url) return url;
-  }
-
-  // 5. Spa / Wellness Pool
-  if (cat === 'WELLNESS_SPA_LOBBY' && (text.includes('spa') || text.includes('agua') || text.includes('wellness') || text.includes('pool'))) {
-    const url = findMatch(amenityPhotos, p => {
+      return t.includes('lobby') || t.includes('reception') || t.includes('lounge') || t.includes('spa') || t.includes('vinyl');
+    }) || findMatch(poolAmenity, p => {
       const t = (p.title || '').toLowerCase();
-      return t.includes('spa') || t.includes('agua') || t.includes('wellness') || t.includes('massage');
+      return t.includes('lobby') || t.includes('spa') || t.includes('wellness');
     });
     if (url) return url;
   }
 
-  // 6. Bedroom / Suite / Bed
-  if (cat === 'SIGNATURE_SUITE_BEDROOM' || cat === 'SECONDARY_ROOM_BATHROOM' || text.includes('bedroom') || text.includes('bed') || text.includes('headboard') || text.includes('suite') || text.includes('room')) {
-    // Look for actual bed / bedroom in live booking photos
-    const url = findMatch(liveBookingPhotos, p => {
+  // 4. Bedroom / Suite / Bed
+  if (cat === 'SIGNATURE_SUITE_BEDROOM' || cat === 'SECONDARY_ROOM_BATHROOM' || text.includes('bedroom') || text.includes('bed') || text.includes('room') || text.includes('suite')) {
+    const url = findMatch(poolLive, p => {
       const t = (p.title || '').toLowerCase();
       return t.includes('bedroom') || t.includes('bed') || t.includes('room') || t.includes('suite');
     });
     if (url) return url;
   }
 
-  // 7. Bathroom / Tub / Sink
-  if (text.includes('bathroom') || text.includes('tub') || text.includes('sink') || text.includes('basin') || text.includes('bath')) {
-    const url = findMatch(liveBookingPhotos, p => {
+  // 5. Bathroom / Tub
+  if (text.includes('bath') || text.includes('tub') || text.includes('shower')) {
+    const url = findMatch(poolLive, p => {
       const t = (p.title || '').toLowerCase();
-      return t.includes('bath') || t.includes('tub') || t.includes('sink');
+      return t.includes('bath') || t.includes('tub') || t.includes('shower');
     });
     if (url) return url;
-  }
-
-  // 8. Exterior / Riverfront / Skyline Hero
-  if (cat === 'EXTERIOR_LANDMARK' || text.includes('exterior') || text.includes('river') || text.includes('thames') || text.includes('facade') || text.includes('building')) {
-    if (poolLive[0] && !setUsed.has(poolLive[0].imageUrl)) {
-      setUsed.add(poolLive[0].imageUrl);
-      return poolLive[0].imageUrl;
-    }
   }
 
   // Unused fallback
@@ -286,24 +266,34 @@ export default async function handler(req, res) {
         const usedUrls = new Set();
         auditResult.ota_conversion_audit.optimal_5_photo_sequence = auditResult.ota_conversion_audit.optimal_5_photo_sequence.map((item, idx) => {
           const targetSlot = item.slot || (idx + 1);
-          // Determine best matching photo URL based on semantic subject & category
-          const photoUrl = matchBestImageForSubject(item.photo_subject, item.category, liveBookingPhotos, amenityPhotos, usedUrls, idx);
+          let photoUrl = null;
+          let actualLiveSlot = null;
 
-          // Find exact live slot index in liveBookingPhotos (1-indexed)
-          const liveMatchIndex = liveBookingPhotos.findIndex(lp => {
-            if (!lp?.imageUrl || !photoUrl) return false;
-            if (lp.imageUrl === photoUrl) return true;
-            const lpId = lp.imageUrl.match(/\/(\d+)\.jpg/)?.[1];
-            const recId = photoUrl.match(/\/(\d+)\.jpg/)?.[1];
-            return lpId && recId && lpId === recId;
-          });
+          // 1. Direct Resolution via Gemini's Multimodal Visual Selection
+          if (item.source_type === 'LIVE_PHOTO' && item.source_index && liveBookingPhotos[item.source_index - 1]) {
+            photoUrl = liveBookingPhotos[item.source_index - 1].imageUrl;
+            actualLiveSlot = item.source_index;
+            usedUrls.add(photoUrl);
+          } else if (item.source_type === 'AMENITY_ASSET' && item.source_index && amenityPhotos[item.source_index - 1]) {
+            photoUrl = amenityPhotos[item.source_index - 1].imageUrl;
+            actualLiveSlot = null;
+            usedUrls.add(photoUrl);
+          }
 
-          const actualLiveSlot = liveMatchIndex !== -1 ? (liveMatchIndex + 1) : null;
+          // 2. Fallback matching if source_index was not found
+          if (!photoUrl) {
+            photoUrl = matchBestImageForSubject(item.photo_subject, item.category, liveBookingPhotos, amenityPhotos, usedUrls, idx);
+            if (photoUrl) {
+              const liveIdx = liveBookingPhotos.findIndex(lp => lp.imageUrl === photoUrl);
+              actualLiveSlot = liveIdx !== -1 ? (liveIdx + 1) : null;
+            }
+          }
+
           const isRetained = actualLiveSlot === targetSlot;
           const isMoved = actualLiveSlot !== null && actualLiveSlot !== targetSlot;
           const isSwappedIn = actualLiveSlot === null;
 
-          let action = item.action;
+          let action = item.action || 'RE_SEQUENCE';
           let actionLabel = item.action_label;
 
           if (isRetained) {
