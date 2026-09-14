@@ -10,7 +10,6 @@ import {
 import HotelVibeManifestCard from './components/HotelVibeManifestCard';
 import InteractiveQuizCard from './components/InteractiveQuizCard';
 import BookingOtaAuditCard from './components/BookingOtaAuditCard';
-import { AtmosvibeLogo } from './components/AtmosvibeLogo';
 import './B2BLeadGenOnboarding.css';
 
 // Environment detector: Enforce email on live Vercel/Production, bypass on localhost
@@ -194,14 +193,38 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
     <div className="b2b-portal-container">
       <div className="bg-gradient-mesh" />
       
-      <nav className="b2b-nav">
-        <a href="https://travelvrse.com" className="back-link">
+      <nav className="b2b-nav" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '1rem' }}>
+        <a href="https://travelvrse.com" className="back-link" style={{ marginTop: '0.5rem' }}>
           <div className="back-icon-wrapper">
             <ArrowLeft size={16} />
           </div>
           <span>Back to TravelVRSE</span>
         </a>
-        <AtmosvibeLogo style={{ height: '60px' }} />
+
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '14px' }}>
+          {/* Primary Logo: AtmosVibe */}
+          <div>
+            <img 
+              src="/models/atmosVibe-logo.svg" 
+              alt="AtmosVibe" 
+              style={{ height: '60px', width: 'auto', display: 'block' }} 
+            />
+          </div>
+
+          {/* Test Logos under AtmosVibe: Resonex and Ambidex */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap', justifyContent: 'flex-end' }}>
+            <img 
+              src="/models/resonex-svg.svg" 
+              alt="Resonex" 
+              style={{ height: '60px', width: 'auto', display: 'block' }} 
+            />
+            <img 
+              src="/models/ambidex-svg.svg" 
+              alt="Ambidex" 
+              style={{ height: '60px', width: 'auto', display: 'block' }} 
+            />
+          </div>
+        </div>
       </nav>
 
       <main className="b2b-main">

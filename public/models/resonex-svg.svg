@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 180" width="100%" height="100%">
+  <defs>
+    <!-- Specular Glass Rim -->
+    <linearGradient id="rx2_rimGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.9" />
+      <stop offset="35%" stop-color="#38BDF8" stop-opacity="0.5" />
+      <stop offset="70%" stop-color="#F59E0B" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.1" />
+    </linearGradient>
+
+    <!-- Translucent Glass Backplate -->
+    <radialGradient id="rx2_glassFill" cx="30%" cy="25%" r="75%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.22" />
+      <stop offset="55%" stop-color="#0F172A" stop-opacity="0.45" />
+      <stop offset="100%" stop-color="#020617" stop-opacity="0.65" />
+    </radialGradient>
+
+    <!-- Cyan Data Conduit (Top-Left -> Bottom-Right) -->
+    <linearGradient id="rx2_cyanConduit" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00E5FF" />
+      <stop offset="100%" stop-color="#38BDF8" />
+    </linearGradient>
+
+    <!-- Champagne Resonance Conduit (Bottom-Left -> Top-Right) -->
+    <linearGradient id="rx2_goldConduit" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#D97706" />
+      <stop offset="50%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#FEF08A" />
+    </linearGradient>
+
+    <!-- Wordmark RESON: Frosted Platinum -->
+    <linearGradient id="rx2_resonGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="60%" stop-color="#E2E8F0" />
+      <stop offset="100%" stop-color="#94A3B8" />
+    </linearGradient>
+
+    <!-- Wordmark EX: Warm Champagne Brass -->
+    <linearGradient id="rx2_exGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FEF08A" />
+      <stop offset="45%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#D97706" />
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="rx2_goldGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- ==================== EMBLEM: THE APERTURE X ==================== -->
+  <g transform="translate(48, 16)">
+    <!-- 1. Translucent Frosted Glass Disc -->
+    <circle cx="74" cy="74" r="56" fill="url(#rx2_glassFill)" stroke="url(#rx2_rimGrad)" stroke-width="1.5" />
+
+    <!-- 2. Concentric Geometric Horizon -->
+    <circle cx="74" cy="74" r="44" fill="none" stroke="#FFFFFF" stroke-width="0.75" stroke-opacity="0.2" />
+
+    <!-- 3. Cyan Conduits (Top-Left & Bottom-Right) -->
+    <line x1="42" y1="42" x2="60" y2="60" stroke="url(#rx2_cyanConduit)" stroke-width="5" stroke-linecap="round" />
+    <line x1="88" y1="88" x2="106" y2="106" stroke="url(#rx2_cyanConduit)" stroke-width="5" stroke-linecap="round" />
+
+    <!-- 4. Champagne Conduits (Bottom-Left & Top-Right) -->
+    <line x1="42" y1="106" x2="60" y2="88" stroke="url(#rx2_goldConduit)" stroke-width="5" stroke-linecap="round" />
+    <line x1="88" y1="60" x2="106" y2="42" stroke="url(#rx2_goldConduit)" stroke-width="5" stroke-linecap="round" />
+
+    <!-- 5. Central Aperture Ring -->
+    <circle cx="74" cy="74" r="14" fill="#0A101D" stroke="url(#rx2_rimGrad)" stroke-width="1.5" />
+    <circle cx="74" cy="74" r="9" fill="none" stroke="#38BDF8" stroke-width="0.75" stroke-opacity="0.4" />
+
+    <!-- 6. Suspended Exchange Core -->
+    <circle cx="74" cy="74" r="4" fill="#F59E0B" filter="url(#rx2_goldGlow)" />
+    <circle cx="74" cy="74" r="1.5" fill="#FFFFFF" />
+
+    <!-- 7. Specular Top Highlight -->
+    <path d="M 40 40 Q 74 24 108 40 Q 74 34 40 40 Z" fill="#FFFFFF" opacity="0.2" />
+  </g>
+
+  <!-- ==================== WORDMARK ==================== -->
+  <g transform="translate(205, 108)">
+    <text font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="64" letter-spacing="-1.2px">
+      <tspan fill="url(#rx2_resonGrad)" font-weight="300">RESON</tspan><tspan fill="url(#rx2_exGrad)" font-weight="800">EX</tspan>
+    </text>
+
+    <!-- Telemetry Pip -->
+    <circle cx="438" cy="-38" r="4" fill="#F59E0B" filter="url(#rx2_goldGlow)" />
+  </g>
+</svg>
