@@ -34,7 +34,7 @@ const Layout = ({ children }) => {
                         <Link to="/audit" className="nav-link nav-highlight-btn" onClick={() => setIsMenuOpen(false)}>
                             VIBE AUDIT ENGINE
                         </Link>
-                        <a href="/#solution" className="nav-link" onClick={() => setIsMenuOpen(false)}>EXPERIENCES MARKETPLACE</a>
+                        <a href="/#solution" className="nav-link" onClick={() => setIsMenuOpen(false)}>VIBE CONVERSION ENGINE</a>
                         <Link to="/creator" className="nav-link" onClick={() => setIsMenuOpen(false)}>CREATOR SIGNUP/LOGIN</Link>
                         <a href="/#journal" className="nav-link" onClick={() => setIsMenuOpen(false)}>JOURNAL</a>
                         <a href="/#team" className="nav-link" onClick={() => setIsMenuOpen(false)}>OUR TEAM</a>

@@ -157,7 +157,7 @@ const ProblemSection = () => {
                     <div className="animate-fade-up delay-1 marketplace-header text-col" style={{ paddingTop: '0' }}>
                         <div style={{ marginBottom: '2rem' }}>
                             <h2 style={{ fontWeight: '800', marginBottom: '15px', lineHeight: '1.1' }}>
-                                Experiences <br className="mobile-break" /> <span className="text-gold">Marketplace</span>
+                                Vibe Conversion <br className="mobile-break" /> <span className="text-gold">Engine</span>
                             </h2>
                             <div style={{ fontSize: '1rem', fontWeight: 'bold', color: 'var(--color-gold)', letterSpacing: '1px', lineHeight: '1.5' }}>
                                 Travelvrse Vibe Challenges capture travellers in the inspiration stage before they look at OTAs. We pair your experiences with real-time local vibes. Seamlessly capturing guest intent

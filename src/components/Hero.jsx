@@ -8,8 +8,8 @@ const Hero = () => {
     return (
         <section className="hero-section">
             <Helmet>
-                <title>Travelvrse | Travel Experiences Marketplace for Hotels, Resorts & Cruise Operators</title>
-                <meta name="description" content="Discover the world's first Travel Experiences Marketplace. Drive direct revenue for hotels, resorts, and cruise operators via immersive 3D discovery." />
+                <title>Travelvrse | Vibe Conversion Engine for Hotels, Hostels & Resorts</title>
+                <meta name="description" content="Discover the world's first Vibe Conversion Engine. Drive direct revenue for hotels, hostels, and resorts via immersive 3D discovery." />
             </Helmet>
             <div className="hero-bg-container">
                 <video 
@@ -27,15 +27,15 @@ const Hero = () => {
                 <div className="hero-header-group animate-fade-up">
                     <div className="beta-badge-premium">BETA</div>
                     <h1 className="hero-title" style={{ color: '#ffffff', textShadow: '0 4px 20px rgba(0,0,0,0.9), 0 2px 10px rgba(0,0,0,0.8)' }}>
-                        TRAVEL EXPERIENCES MARKETPLACE
+                        VIBE CONVERSION ENGINE
                     </h1>
                     <h2 className="hero-strategy">
-                        FOR HOTELS, CRUISE AND TOUR OPERATORS
+                        FOR HOTELS, HOSTELS AND RESORTS
                     </h2>
                 </div>
 
                 <p className="hero-subtitle">
-                    <span className="progressive-item" style={{ animationDelay: '0.8s' }}>Turn Local Vibes Into Direct Revenue</span>
+                    <span className="progressive-item" style={{ animationDelay: '0.8s' }}>Increase Conversion with Local Atmospheric Intelligence and Content</span>
                 </p>
 
                 <div className="hero-cta-group animate-fade-up" style={{ animationDelay: '3.4s' }}>
