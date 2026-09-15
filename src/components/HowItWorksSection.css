@@ -1,0 +1,30 @@
+.how-it-works-section {
+    background-color: #050b14;
+    position: relative;
+}
+
+.responsive-grid-reversed {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 40px;
+    align-items: center;
+}
+
+@media (min-width: 992px) {
+    .responsive-grid-reversed {
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        gap: 80px;
+    }
+}
+
+.section-title {
+    font-size: 2.2rem;
+    line-height: 1.2;
+}
+
+@media (min-width: 768px) {
+    .section-title {
+        font-size: 2.5rem;
+    }
+}

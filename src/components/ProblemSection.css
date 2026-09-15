@@ -1,0 +1,117 @@
+.problem-section {
+    background-color: var(--color-navy-deep);
+    position: relative;
+    z-index: 2;
+}
+
+.problem-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.problem-grid .text-col {
+    order: 1;
+}
+
+.problem-grid .visual-col {
+    order: 2;
+}
+
+.mobile-break {
+    display: block;
+}
+
+@media (min-width: 768px) {
+    .mobile-break {
+        display: none;
+    }
+}
+
+/* Visibility Utilities */
+.desktop-only {
+    display: none !important;
+}
+
+.mobile-only {
+    display: block !important;
+}
+
+@media (min-width: 992px) {
+    .desktop-only {
+        display: block !important;
+    }
+    .mobile-only {
+        display: none !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .problem-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+        align-items: start;
+    }
+    .problem-grid .text-col {
+        order: unset;
+    }
+    .problem-grid .visual-col {
+        order: unset;
+    }
+}
+
+.marketplace-header {
+    margin-top: 0;
+}
+
+@media (min-width: 992px) {
+    .marketplace-header {
+        margin-top: -5rem;
+    }
+}
+
+.marketplace-header h2 {
+    font-size: 2.8rem;
+    line-height: 1.1;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    letter-spacing: -1px;
+}
+
+@media (min-width: 768px) {
+    .marketplace-header h2 {
+        font-size: 4rem;
+    }
+}
+
+.lead-in-text {
+    font-size: 1.1rem;
+    line-height: 1.4;
+}
+
+@media (min-width: 768px) {
+    .lead-in-text {
+        font-size: 1.3rem;
+    }
+}
+
+.video-overlay-title {
+    font-size: 0.9rem;
+}
+
+@media (min-width: 768px) {
+    .video-overlay-title {
+        font-size: 1.4rem;
+    }
+}
+
+/* Ensure the path line works on mobile */
+.path-line {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .path-line {
+        display: block;
+    }
+}

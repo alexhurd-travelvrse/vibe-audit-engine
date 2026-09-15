@@ -1,0 +1,153 @@
+{
+    "home": {
+        "title": "Travel-Vrse Resort",
+        "subtitle": "Your Immersive Oasis",
+        "heroImage": "/models/hero_video.mp4",
+        "influencerPhoto": "",
+        "description": ""
+    },
+    "teleport": {
+        "title": "The Grand Plaza",
+        "subtitle": "Select your next destination",
+        "promoTitle": "Unlock elite membership",
+        "promoSubtitle": "Receive a 5% discount on your stay.",
+        "backpackTitle": "Fill your backpack for a unique offer",
+        "backpackDesc": "Get an exclusive 10% discount on your stay if you collect exactly 1 item in every experience."
+    },
+    "audio": {
+        "1": "The Owner's Suite is pure luxury. Take a moment to soak in that balcony view—it's my favorite spot for a morning coffee. Don't forget to check the view for your first clue!",
+        "2": "The Celestial Spa is a literal sanctuary. The thermal baths here are world-class. Relax, breathe in the salt air, and see if the temperature holds our next secret.",
+        "3": "Welcome to the Seaside Cantina! The vibe here is electric and the mocktails are legendary. Take a look at the menu—it might have just what we need for the next code.",
+        "4": "This arcade is a high-tech playground. I'm obsessed with the Grand Prix simulator! It feels so real. Check your speed—it might be the key to our next milestone.",
+        "5": "Our City excursion is the ultimate culture trip. This architecture is like nothing else on earth. Let's find the final piece of the puzzle together in this vibrant city.",
+        "home": "Welcome to the stunning Travel-Vrse Resort. I'm Alex Hurd, your digital guide. I've curated this exclusive journey to show you the absolute best of our property. Tap Enter to begin your tropical escape.",
+        "teleport": "The Plaza is where the energy of the resort comes alive. I've highlighted five of my favorite spots below. Where should we head first?",
+        "completion": "You've done it! You've unlocked the exclusive Speakeasy. Your travel DNA and special rewards are waiting in your backpack. Thanks for exploring with me!"
+    },
+    "coins": {
+        "1": {
+            "title": "Suite Clue",
+            "text": "Check the balcony view for your first digit.",
+            "image": "/models/clue1.jpg"
+        },
+        "2": {
+            "title": "Spa Clue",
+            "text": "The temperature of the sauna holds the next digit.",
+            "image": "/models/clue2.jpg"
+        },
+        "3": {
+            "title": "Cantina Clue",
+            "text": "How many types of salsa are on the menu?",
+            "image": "/models/clue3.jpg"
+        },
+        "4": {
+            "title": "Arcade Clue",
+            "text": "The high score is your final digit.",
+            "image": "/models/clue4.jpg"
+        },
+        "5": {
+            "title": "City Code",
+            "text": "Combine all digits to unlock the vault.",
+            "image": "/models/teleport_qr.png"
+        }
+    },
+    "experiences": {
+        "1": {
+            "name": "Owner's Luxury Suite",
+            "items": [
+                {
+                    "id": "1-1",
+                    "name": "Wi-fi Packages",
+                    "type": "bell",
+                    "position": [0.3, 1.2, -1],
+                    "rotation": [0, 0, 0],
+                    "media": "/assets/balcony_preview.jpg",
+                    "video": "https://www.youtube.com/shorts/NdUi4fHQ9e4",
+                    "text": "Need to take some calls or access streaming? There are different wi-fi packages available. Watch the vid for details.",
+                    "collectible": {
+                        "type": "pdf",
+                        "title": "Wifi Guide",
+                        "description": "Wi-fi guide from concierge team",
+                        "url": "wifipackages.pdf"
+                    }
+                }
+            ],
+            "coin": {
+                "id": "special-1",
+                "name": "Elite Coin",
+                "position": [0, 1.2, -1.5],
+                "media": "/textures/coin.png"
+            }
+        },
+        "2": {
+            "name": "Celestial Wellness Spa",
+            "items": [
+                {
+                    "id": "2-1",
+                    "name": "Thermal Bath",
+                    "type": "towel",
+                    "position": [-2.198, 0.054, -4.047],
+                    "media": "/assets/property_immersive_preview.png",
+                    "text": "Relax in our celestial thermal waters.",
+                    "collectible": {
+                        "type": "mp3",
+                        "title": "Spa Ambient Mix",
+                        "url": "https://assets.mixkit.co/active_storage/sfx/2019/2019-preview.mp3",
+                        "description": "A 5-minute relaxing soundscape."
+                    }
+                }
+            ]
+        },
+        "3": {
+            "name": "Seaside Cantina",
+            "items": [
+                {
+                    "id": "3-1",
+                    "name": "Signature Taco",
+                    "type": "activity",
+                    "position": [-0.19, 0.119, -1.313],
+                    "media": "/assets/hola_grab.png",
+                    "text": "Authentic flavors from our chef.",
+                    "collectible": {
+                        "type": "pdf",
+                        "title": "Signature Recipe",
+                        "url": "/assets/recipe_placeholder.pdf",
+                        "description": "Learn how to make our signature dishes at home."
+                    }
+                }
+            ]
+        },
+        "4": {
+            "name": "Grand Prix Simulator",
+            "items": [
+                {
+                    "id": "4-1",
+                    "name": "Simulator Dash",
+                    "type": "car",
+                    "position": [0.856, 1.124, -2.237],
+                    "media": "/assets/arcade_grab.png",
+                    "text": "Feel the G-force of a racing car.",
+                    "collectible": {
+                        "type": "badge",
+                        "title": "Pro Racer Badge",
+                        "url": "/models/racingcar.glb",
+                        "description": "A special 3D trophy for your performance."
+                    }
+                }
+            ]
+        },
+        "5": {
+            "name": "City Landmark",
+            "items": [
+                {
+                    "id": "5-1",
+                    "name": "Local Inspiration",
+                    "type": "ring",
+                    "position": [0, 1.2, -2.5],
+                    "media": "/assets/excursion_filler.jpg",
+                    "text": "Discover the architectural genius of the city landmarks."
+                }
+            ]
+        }
+    }
+}

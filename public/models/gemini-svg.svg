@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 180" width="100%" height="100%">
+  <defs>
+    <!-- Specular Glass Rim -->
+    <linearGradient id="glassRim" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.9" />
+      <stop offset="35%" stop-color="#38BDF8" stop-opacity="0.5" />
+      <stop offset="70%" stop-color="#F59E0B" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.15" />
+    </linearGradient>
+
+    <!-- Translucent Frosted Glass Backplate (Permeable to Dark Blue) -->
+    <radialGradient id="glassBackplate" cx="30%" cy="25%" r="75%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.28" />
+      <stop offset="55%" stop-color="#0F172A" stop-opacity="0.38" />
+      <stop offset="100%" stop-color="#020617" stop-opacity="0.48" />
+    </radialGradient>
+
+    <!-- Wordmark ATMOS: Frosted Platinum -->
+    <linearGradient id="atmosGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="60%" stop-color="#E2E8F0" />
+      <stop offset="100%" stop-color="#94A3B8" />
+    </linearGradient>
+
+    <!-- Wordmark VIBE: Golden Hour Brass -->
+    <linearGradient id="vibeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FEF08A" />
+      <stop offset="45%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#D97706" />
+    </linearGradient>
+
+    <!-- Golden Node Glow Filter -->
+    <filter id="goldGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- ==================== TRANSLUCENT GLASS LENS ==================== -->
+  <g transform="translate(48, 20)">
+    <!-- 1. Translucent Refractive Core -->
+    <circle cx="70" cy="70" r="58" fill="url(#glassBackplate)" stroke="url(#glassRim)" stroke-width="1.5" />
+
+    <!-- 2. Concentric Inner Horizon Ridge -->
+    <circle cx="70" cy="70" r="46" fill="none" stroke="#FFFFFF" stroke-width="0.75" stroke-opacity="0.25" />
+
+    <!-- 3. Chevron Vector (Vibe Wave) -->
+    <path d="M 48 52 L 70 94 L 92 52" fill="none" stroke="#38BDF8" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" />
+    <path d="M 48 52 L 70 94 L 92 52" fill="none" stroke="#FFFFFF" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" opacity="0.98" />
+
+    <!-- 4. Golden Compass Vertex -->
+    <circle cx="70" cy="106" r="4.5" fill="#F59E0B" filter="url(#goldGlow)" />
+    <circle cx="70" cy="106" r="2" fill="#FEF08A" />
+
+    <!-- 5. Top Specular Glass Sheen -->
+    <path d="M 36 36 Q 70 20 104 36 Q 70 30 36 36 Z" fill="#FFFFFF" opacity="0.25" />
+  </g>
+
+  <!-- ==================== UNIFIED WORDMARK ==================== -->
+  <g transform="translate(205, 108)">
+    <text font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="64" letter-spacing="-1px">
+      <tspan fill="url(#atmosGrad)" font-weight="300">ATMOS</tspan><tspan fill="url(#vibeGrad)" font-weight="800">VIBE</tspan>
+    </text>
+    <circle cx="438" cy="-38" r="4" fill="#F59E0B" filter="url(#goldGlow)" />
+  </g>
+</svg>

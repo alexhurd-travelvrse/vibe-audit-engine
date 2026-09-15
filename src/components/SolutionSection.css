@@ -1,0 +1,350 @@
+.solution-section {
+    background: var(--color-navy-light);
+    /* Slightly lighter navy for contrast against problem section */
+    position: relative;
+    overflow: hidden;
+}
+
+.section-header {
+    margin-bottom: 3rem;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--color-text-main);
+    opacity: 0.9;
+    margin-top: 1rem;
+}
+
+/* Intent Into Revenue Journey */
+.intent-revenue-journey {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    margin-top: 3rem;
+    background: rgba(5, 11, 25, 0.4);
+    padding: 3rem 2rem;
+    border-radius: 30px;
+    border: var(--glass-border);
+}
+
+@media (min-width: 1100px) {
+    .intent-revenue-journey {
+        display: grid;
+        grid-template-columns: 1fr 60px 1fr 60px 1fr; /* All same size */
+        justify-content: center;
+        align-items: stretch;
+        padding: 4rem 2rem;
+        gap: 0;
+    }
+}
+
+.journey-stage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+    width: 100%;
+    min-height: 480px; /* Same size for all boxes */
+}
+
+.stage-media {
+    height: 180px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.stage-label {
+    height: 60px; /* Uniform height for 2-line labels */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--color-cyan-neon);
+    letter-spacing: 2px;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.stage-caption {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    text-align: center;
+    line-height: 1.5;
+    max-width: 250px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.caption-text {
+    height: 3.5rem; /* Fixed height for text to align examples */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.caption-example {
+    margin-top: 0.8rem;
+    font-size: 0.8rem;
+    color: var(--color-text-main);
+}
+
+.caption-example strong {
+    color: var(--color-gold-champagne);
+    text-transform: uppercase;
+    display: block;
+    margin-top: 2px;
+}
+
+/* Influence Stage */
+.creative-stack {
+    position: relative;
+    width: 200px;
+    height: 140px;
+}
+
+.creative-mini-card {
+    position: absolute;
+    width: 160px;
+    height: 100px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    border: 2px solid var(--color-gold-champagne);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5), 0 0 15px rgba(212, 175, 55, 0.1);
+}
+
+.influence-1 { top: 0; left: 0; z-index: 2; transform: rotate(-5deg); }
+.influence-2 { top: 20px; left: 40px; z-index: 1; transform: rotate(5deg); opacity: 0.6; }
+
+.mini-tag {
+    position: absolute;
+    bottom: -8px;
+    right: 10px;
+    background: var(--color-gold-champagne);
+    color: #000;
+    font-size: 0.6rem;
+    font-weight: 900;
+    padding: 2px 8px;
+    border-radius: 100px;
+    text-transform: uppercase;
+    border: 1px solid #000;
+}
+
+/* Challenge Stage */
+.immersive-challenge-card {
+    height: 100%;
+    width: 100%;
+    max-width: 340px; /* Better presence for Step 2 */
+    background-size: cover;
+    background-position: center;
+    border-radius: 16px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--color-gold-champagne);
+    box-shadow: 0 0 40px rgba(212, 175, 55, 0.2);
+}
+
+.challenge-pulse {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--color-cyan-neon);
+    box-shadow: 0 0 20px var(--color-cyan-neon);
+    animation: pulse 2s infinite;
+}
+
+/* Offer Stage */
+.direct-offer-card {
+    width: 100%;
+    max-width: 300px;
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid var(--color-gold-champagne);
+    box-shadow: 0 0 40px rgba(212, 175, 55, 0.2);
+}
+
+.offer-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: var(--color-cyan-neon);
+    color: #000;
+    font-size: 0.7rem;
+    font-weight: 900;
+    padding: 4px 12px;
+    border-radius: 4px;
+}
+
+.offer-content {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 20%, transparent 80%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.plus-sign {
+    font-size: 1.2rem;
+    color: var(--color-gold-champagne);
+    margin: 2px 0;
+}
+
+.offer-tagline {
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+/* Connectors */
+.journey-connector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+}
+
+.connector-line {
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--color-cyan-neon), var(--color-gold-champagne));
+}
+
+@media (min-width: 1100px) {
+    .journey-connector { height: auto; width: 60px; flex-direction: row; align-items: flex-start; }
+    .connector-line { width: 100%; height: 2px; background: linear-gradient(to right, var(--color-cyan-neon), var(--color-gold-champagne)); margin-top: 190px; } /* Aligned to center of stage-media (60 + 40 + 90) */
+}
+
+/* Travel Lifecycle */
+.journey-lifecycle-container {
+    margin-top: 5rem;
+    width: 100%;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2rem;
+    background: rgba(5, 11, 25, 0.6);
+    border-radius: 24px;
+    border: var(--glass-border);
+}
+
+.lifecycle-header { text-align: center; margin-bottom: 2rem; }
+.lifecycle-header h4 { font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase; color: var(--color-gold-champagne); font-weight: 800; }
+
+.lifecycle-track { display: flex; flex-direction: column; align-items: center; gap: 1.5rem; position: relative; }
+@media (min-width: 768px) { .lifecycle-track { flex-direction: row; justify-content: space-between; padding: 0 2rem; } }
+
+.lifecycle-node {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.03);
+    border: var(--glass-border);
+    padding: 1.5rem;
+    border-radius: 16px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.node-icon-bg {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: rgba(0, 229, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-cyan-neon);
+}
+
+.node-label { font-size: 1rem; font-weight: 800; color: var(--color-text-main); letter-spacing: 1px; }
+.node-sublabel { font-size: 0.75rem; color: var(--color-text-muted); font-weight: 500; }
+
+.lifecycle-arrow { color: rgba(255, 255, 255, 0.2); display: none; }
+@media (min-width: 768px) { .lifecycle-arrow { display: block; } }
+
+.lifecycle-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.2), transparent);
+    margin: 2.5rem 0;
+}
+
+.lifecycle-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.strip-title {
+    text-align: center;
+    font-size: 0.7rem;
+    letter-spacing: 4px;
+    color: var(--color-gold-champagne);
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    opacity: 0.8;
+}
+
+.verticals-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.vertical-tag {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.5rem 1.2rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 100px;
+    transition: all 0.3s ease;
+}
+
+.vertical-tag:hover {
+    background: rgba(0, 229, 255, 0.08);
+    border-color: var(--color-cyan-neon);
+    transform: translateY(-2px);
+}
+
+.tag-icon {
+    color: var(--color-cyan-neon);
+    display: flex;
+    align-items: center;
+}
+
+.tag-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--color-text-main);
+    letter-spacing: 1px;
+}
+
+@keyframes pulse {
+    0% { transform: scale(0.95); opacity: 0.5; }
+    50% { transform: scale(1.05); opacity: 0.8; }
+    100% { transform: scale(0.95); opacity: 0.5; }
+}

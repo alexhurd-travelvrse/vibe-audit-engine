@@ -1,0 +1,75 @@
+.verticals-strip {
+    background: rgba(10, 25, 47, 0.5);
+    border-top: 1px solid rgba(212, 175, 55, 0.1);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+    padding: 2rem 0;
+    margin-top: -2rem;
+    position: relative;
+    z-index: 10;
+}
+
+.strip-title {
+    text-align: center;
+    font-size: 0.7rem;
+    letter-spacing: 4px;
+    color: var(--color-gold-champagne);
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    opacity: 0.8;
+}
+
+.verticals-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.vertical-tag {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.6rem 1.2rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 100px;
+    transition: all 0.3s ease;
+    cursor: default;
+    justify-content: center;
+}
+
+.vertical-tag:hover {
+    background: rgba(0, 229, 255, 0.08);
+    border-color: var(--color-cyan-neon);
+    transform: translateY(-2px);
+}
+
+.tag-icon {
+    color: var(--color-cyan-neon);
+    display: flex;
+    align-items: center;
+}
+
+.tag-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--color-text-main);
+    letter-spacing: 1px;
+}
+
+@media (min-width: 768px) {
+    .verticals-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+    
+    .vertical-tag {
+        padding: 0.8rem 1.5rem;
+        justify-content: flex-start;
+    }
+}
+
+@media (min-width: 992px) {
+    .verticals-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

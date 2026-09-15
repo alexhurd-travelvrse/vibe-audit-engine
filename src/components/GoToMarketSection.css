@@ -1,0 +1,65 @@
+.go-to-market-section {
+    background-color: var(--color-navy-base);
+    position: relative;
+}
+
+.responsive-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 48px;
+    align-items: start;
+}
+
+@media (min-width: 992px) {
+    .responsive-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: start;
+    }
+}
+
+.section-title {
+    font-size: 2.2rem;
+    line-height: 1.2;
+}
+
+@media (min-width: 768px) {
+    .section-title {
+        font-size: 2.5rem;
+    }
+}
+
+.journey-step-card {
+    min-height: 92px;
+    height: 92px;
+    padding: 18px 24px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    box-sizing: border-box;
+    border-radius: 20px;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.journey-step-card:hover {
+    transform: translateX(4px);
+}
+
+.step-icon-wrapper {
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.step-connector-line {
+    height: 14px;
+    width: 2px;
+    margin-left: 45px;
+    opacity: 0.25;
+}
+

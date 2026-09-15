@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowLeft, ChevronRight, Send, Star, MapPin, TrendingUp, Search, Globe, Zap, CheckCircle2, BarChart3, ExternalLink, Gift, RefreshCw, Activity, Info } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
@@ -194,12 +195,12 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
       <div className="bg-gradient-mesh" />
       
       <nav className="b2b-nav" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '1rem' }}>
-        <a href="https://travelvrse.com" className="back-link" style={{ marginTop: '0.5rem' }}>
+        <Link to="/" className="back-link" style={{ marginTop: '0.5rem' }}>
           <div className="back-icon-wrapper">
             <ArrowLeft size={16} />
           </div>
-          <span>Back to TravelVRSE</span>
-        </a>
+          <span>Back to Home</span>
+        </Link>
 
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '14px' }}>
           {/* Primary Logo: AtmosVibe */}
@@ -230,11 +231,11 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
       <main className="b2b-main">
         <AnimatePresence mode="wait">
           {step === 'welcome' && (
-            <motion.div key="welcome" initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="welcome-section" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <h1 className="hero-title">VIBE AUDIT</h1>
-              <p className="hero-subtitle">The High-Fidelity Propulsion Scale Engine</p>
+            <motion.div key="welcome" initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="b2b-welcome-section" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <h1 className="b2b-hero-title">VIBE AUDIT</h1>
+              <p className="b2b-hero-subtitle">The High-Fidelity Propulsion Scale Engine</p>
               <div style={{ display: 'flex', justifyContent: 'center' }}>
-                <button className="cta-button" onClick={() => setStep('input')}>
+                <button className="b2b-cta-button" onClick={() => setStep('input')}>
                   Launch Audit Engine
                   <ChevronRight size={24} />
                 </button>

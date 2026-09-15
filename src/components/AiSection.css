@@ -1,0 +1,154 @@
+.ai-section {
+    background-color: var(--color-navy-deep);
+    position: relative;
+}
+
+.ai-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+@media (min-width: 900px) {
+    .ai-layout {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+.ai-copy {
+    flex: 1;
+    max-width: 600px;
+}
+
+.ai-copy .subtitle {
+    margin-bottom: 3rem;
+}
+
+.ai-features {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.ai-feature {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    background: var(--glass-bg);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 1.5rem;
+    border-radius: 16px;
+    border: var(--glass-border);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.ai-feature:hover {
+    transform: translateX(5px);
+    border-color: var(--color-cyan-neon);
+}
+
+.ai-icon {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-navy-deep);
+}
+
+.ai-icon.bg-cyan-glow {
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.2);
+    border: 1px solid rgba(0, 229, 255, 0.3);
+}
+
+.ai-icon.bg-gold-glow {
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.ai-icon.bg-navy-glow {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ai-feature h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-text-main);
+}
+
+.ai-feature p {
+    font-size: 0.95rem;
+    margin-bottom: 0;
+}
+
+/* Abstract Cyber Visual */
+.ai-visual {
+    flex: 1;
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    height: 300px;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.cyber-circle {
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid rgba(0, 229, 255, 0.2);
+}
+
+.cyber-circle.inner {
+    width: 40%;
+    height: 40%;
+    border-top-color: var(--color-cyan-neon);
+    animation: spin 8s linear infinite;
+}
+
+.cyber-circle.middle {
+    width: 65%;
+    height: 65%;
+    border-right-color: var(--color-gold-champagne);
+    animation: spin 12s linear infinite reverse;
+}
+
+.cyber-circle.outer {
+    width: 90%;
+    height: 90%;
+    border-bottom-color: var(--color-cyan-neon);
+    animation: spin 20s linear infinite;
+    border-style: dashed;
+}
+
+.cyber-badge {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+}
+
+@keyframes spin {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@media (min-width: 900px) {
+    .ai-visual {
+        max-width: 400px;
+        height: auto;
+        margin: 0;
+    }
+}
