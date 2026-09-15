@@ -35,16 +35,13 @@ const Hero = () => {
                 </div>
 
                 <p className="hero-subtitle">
-                    <span className="progressive-item" style={{ animationDelay: '0.8s' }}>Increase Conversion with Local Atmospheric Intelligence and Content</span>
+                    <span className="progressive-item" style={{ animationDelay: '0.8s' }}>Match Property DNA to Local Character to Increase Conversion</span>
                 </p>
 
-                <div className="hero-cta-group animate-fade-up" style={{ animationDelay: '3.4s' }}>
-                    <Link to="/audit" className="btn btn-primary" style={{ padding: '1.2rem 2.5rem', fontSize: '1.1rem' }}>
-                        Launch Vibe Audit
-                    </Link>
-                    <Link to="/marketplace" className="btn btn-outline" style={{ padding: '1.2rem 2.5rem', fontSize: '1.1rem' }}>
+                <div className="hero-cta-group animate-fade-up" style={{ animationDelay: '3.4s', justifyContent: 'center' }}>
+                    <Link to="/marketplace" className="btn btn-primary" style={{ padding: '1.2rem 2.5rem', fontSize: '1.1rem', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
                         <Play size={20} style={{ marginRight: '8px' }} />
-                        Explore Creator Marketplace
+                        Improve My Booking.com listing
                     </Link>
                 </div>
             </div>
