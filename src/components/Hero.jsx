@@ -8,8 +8,8 @@ const Hero = () => {
     return (
         <section className="hero-section">
             <Helmet>
-                <title>Travelvrse | Vibe Conversion Engine for Hotels, Hostels & Resorts</title>
-                <meta name="description" content="Discover the world's first Vibe Conversion Engine. Drive direct revenue for hotels, hostels, and resorts via immersive 3D discovery." />
+                <title>Travelvrse | Vibe Conversion Engine for Hotels, Tour Operators & Travel Engines</title>
+                <meta name="description" content="Discover the world's first Vibe Conversion Engine. Drive direct revenue for hotels, tour operators, and travel engines via immersive 3D discovery." />
             </Helmet>
             <div className="hero-bg-container">
                 <video 
@@ -30,12 +30,12 @@ const Hero = () => {
                         VIBE CONVERSION ENGINE
                     </h1>
                     <h2 className="hero-strategy">
-                        FOR HOTELS, HOSTELS AND RESORTS
+                        FOR HOTELS, TOUR OPERATORS AND TRAVEL ENGINES
                     </h2>
                 </div>
 
                 <p className="hero-subtitle">
-                    <span className="progressive-item" style={{ animationDelay: '0.8s' }}>Match Property DNA to Local Character to Increase Conversion</span>
+                    <span className="progressive-item" style={{ animationDelay: '0.8s' }}>Match Property DNA to Local Atmosphere to Increase Conversion</span>
                 </p>
 
                 <div className="hero-cta-group animate-fade-up" style={{ animationDelay: '3.4s', justifyContent: 'center' }}>
