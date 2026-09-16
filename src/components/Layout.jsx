@@ -14,10 +14,10 @@ const Layout = ({ children }) => {
                 <div className="container header-content">
                     <Link to="/" className="logo" onClick={() => setIsMenuOpen(false)}>
                         <img
-                            src="/models/atmosVibe-logo.svg"
+                            src="/models/AtmosVibe2.svg"
                             alt="AtmosVibe"
                             className="nav-logo"
-                            style={{ height: '52px', width: 'auto' }}
+                            style={{ height: '133px', width: 'auto', display: 'block' }}
                         />
                     </Link>
 
@@ -42,7 +42,7 @@ const Layout = ({ children }) => {
                 </div>
             </header>
 
-            <main className="main-content" style={{ marginTop: '80px' }}>
+            <main className="main-content" style={{ marginTop: '140px' }}>
                 {children}
             </main>
         </>

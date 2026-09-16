@@ -35,14 +35,25 @@ const Hero = () => {
                 </div>
 
                 <p className="hero-subtitle">
-                    <span className="progressive-item" style={{ animationDelay: '0.8s' }}>Match Property DNA to Local Atmosphere to Increase Conversion</span>
+                    <span className="progressive-item" style={{ animationDelay: '0.8s' }}>Turn Atmosphere into Bookings</span>
                 </p>
 
                 <div className="hero-cta-group animate-fade-up" style={{ animationDelay: '3.4s', justifyContent: 'center' }}>
-                    <Link to="/marketplace" className="btn btn-primary" style={{ padding: '1.2rem 2.5rem', fontSize: '1.1rem', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <a 
+                        href="#vibe-audit-engine" 
+                        className="btn btn-primary" 
+                        style={{ padding: '1.2rem 2.5rem', fontSize: '1.1rem', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}
+                        onClick={(e) => {
+                            const el = document.getElementById('vibe-audit-engine');
+                            if (el) {
+                                e.preventDefault();
+                                el.scrollIntoView({ behavior: 'smooth' });
+                            }
+                        }}
+                    >
                         <Play size={20} style={{ marginRight: '8px' }} />
                         Improve My Booking.com listing
-                    </Link>
+                    </a>
                 </div>
             </div>
 
