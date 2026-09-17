@@ -114,18 +114,9 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
   const startAnalysis = async () => {
     setEmailError('');
 
-    // On Live Vercel / Production, enforce email requirement
-    if (isLiveProduction) {
-      if (!formData.email || !formData.email.trim() || !formData.email.includes('@') || !formData.email.includes('.')) {
-        setEmailError('Work email is required to access the live Vibe Audit report.');
-        return;
-      }
+    // Optional email capture - submit to Formspree if valid email provided
+    if (formData.email && formData.email.includes('@')) {
       submitLeadToFormspree(formData);
-    } else {
-      // On localhost, optionally submit if provided
-      if (formData.email && formData.email.includes('@')) {
-        submitLeadToFormspree(formData);
-      }
     }
 
     setStep('processing');
@@ -299,7 +290,7 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                 <div className="input-group" style={{ marginBottom: '1.5rem' }}>
                   <label className="input-label" style={{ marginBottom: '0.75rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                     <span>
-                      Work Email {isLiveProduction ? <span style={{ color: '#00e5ff', fontWeight: 900 }}>* (Required)</span> : <span style={{ color: 'rgba(255,255,255,0.4)', fontSize: '12px' }}>(Optional on Localhost)</span>}
+                      Work Email <span style={{ color: 'rgba(255,255,255,0.4)', fontSize: '12px' }}>(Optional)</span>
                     </span>
                   </label>
                   <input 

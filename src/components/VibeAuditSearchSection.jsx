@@ -57,16 +57,8 @@ const VibeAuditSearchSection = () => {
     e.preventDefault();
     setEmailError('');
 
-    if (isLiveProduction) {
-      if (!formData.email || !formData.email.trim() || !formData.email.includes('@') || !formData.email.includes('.')) {
-        setEmailError('Work email is required to access the live Vibe Audit report.');
-        return;
-      }
+    if (formData.email && formData.email.includes('@')) {
       submitLeadToFormspree(formData);
-    } else {
-      if (formData.email && formData.email.includes('@')) {
-        submitLeadToFormspree(formData);
-      }
     }
 
     setLoading(true);
@@ -165,7 +157,7 @@ const VibeAuditSearchSection = () => {
                 {/* Work Email */}
                 <div className="vibe-input-field">
                   <label className="vibe-label">
-                    Work Email {isLiveProduction ? <span className="required-tag">* Required</span> : <span className="optional-tag">(Optional)</span>}
+                    Work Email <span className="optional-tag">(Optional)</span>
                   </label>
                   <div className="vibe-input-wrapper">
                     <Zap size={18} className="vibe-input-icon text-gold" />
