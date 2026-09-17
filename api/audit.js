@@ -196,7 +196,7 @@ async function validateVenue(venueName, city) {
 
 async function getHotelCoordinates(hotelName, neighborhood, city) {
     try {
-        const query = hotelName ? `"${hotelName}" ${city}` : `${neighborhood} ${city}`;
+        const query = hotelName ? `"${hotelName}" ${neighborhood ? neighborhood + ' ' : ''}${city}` : `${neighborhood} ${city}`;
         const response = await fetch('https://google.serper.dev/places', {
             method: 'POST',
             headers: { 'X-API-KEY': SERPER_API_KEY, 'Content-Type': 'application/json' },

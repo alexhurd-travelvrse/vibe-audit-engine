@@ -8,15 +8,16 @@ dotenv.config();
 const SERPER_API_KEY = process.env.VITE_SERPER_API_KEY || process.env.SERPER_API_KEY;
 
 // Live Booking.com direct scraper via Playwright (with Serper fallback)
-async function fetchBookingPhotosForHotel(hotelName, city) {
+async function fetchBookingPhotosForHotel(hotelName, city, neighborhood = '') {
   try {
+    const locationContext = neighborhood && neighborhood.trim() ? `${neighborhood.trim()} ${city}` : city;
     // 1. Find the exact Booking.com URL via Serper Search
-    console.log(`[Master Vibe] Resolving Booking.com URL for "${hotelName}" in "${city}"...`);
+    console.log(`[Master Vibe] Resolving Booking.com URL for "${hotelName}" in "${locationContext}"...`);
     const searchRes = await fetch('https://google.serper.dev/search', {
       method: 'POST',
       headers: { 'X-API-KEY': SERPER_API_KEY, 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        q: `site:booking.com/hotel/ "${hotelName}" ${city}`,
+        q: `site:booking.com/hotel/ "${hotelName}" ${locationContext}`,
         num: 3
       })
     });
@@ -107,7 +108,7 @@ async function fetchBookingPhotosForHotel(hotelName, city) {
       method: 'POST',
       headers: { 'X-API-KEY': SERPER_API_KEY, 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        q: `site:booking.com "${hotelName}" ${city} hotel`,
+        q: `site:booking.com "${hotelName}" ${locationContext} hotel`,
         num: 20
       })
     });
@@ -127,9 +128,10 @@ async function fetchBookingPhotosForHotel(hotelName, city) {
 }
 
 // Dynamic Amenity Photo Fetcher for any hotel & city
-async function fetchAmenityPhotosForHotel(hotelName, city) {
+async function fetchAmenityPhotosForHotel(hotelName, city, neighborhood = '') {
   try {
-    const query = `"${hotelName}" ${city} ("rooftop" OR "cocktail bar" OR "bar" OR "restaurant" OR "lounge" OR "spa" OR "pool" OR "lobby" OR "exterior" OR "facade" OR "terrace")`;
+    const locationContext = neighborhood && neighborhood.trim() ? `${neighborhood.trim()} ${city}` : city;
+    const query = `"${hotelName}" ${locationContext} ("rooftop" OR "cocktail bar" OR "bar" OR "restaurant" OR "lounge" OR "spa" OR "pool" OR "lobby" OR "exterior" OR "facade" OR "terrace")`;
     const res = await fetch('https://google.serper.dev/images', {
       method: 'POST',
       headers: { 'X-API-KEY': SERPER_API_KEY, 'Content-Type': 'application/json' },
@@ -246,17 +248,17 @@ export default async function handler(req, res) {
 
     console.log(`[Master Vibe Audit API] Running for: "${hotelName}" in "${city}" (${neighborhood})`);
 
-    // 1. Fetch Venue Corpus from Serper
-    const { rawCorpus } = await fetchVenueCorpus(hotelName, city);
+    // 1. Fetch Venue Corpus from Serper with neighborhood precision
+    const { rawCorpus } = await fetchVenueCorpus(hotelName, city, neighborhood);
 
-    // 2. Fetch Live Booking.com Photos + Signature Amenity Photos concurrently
+    // 2. Fetch Live Booking.com Photos + Signature Amenity Photos concurrently with neighborhood precision
     const [liveBookingPhotos, amenityPhotos] = await Promise.all([
-      fetchBookingPhotosForHotel(hotelName, city),
-      fetchAmenityPhotosForHotel(hotelName, city)
+      fetchBookingPhotosForHotel(hotelName, city, neighborhood),
+      fetchAmenityPhotosForHotel(hotelName, city, neighborhood)
     ]);
 
     // 3. Run Structured Gemini Analysis with multimodal vision
-    const auditResult = await runStructuredVibeAudit(hotelName, city, rawCorpus, liveBookingPhotos, amenityPhotos);
+    const auditResult = await runStructuredVibeAudit(hotelName, city, rawCorpus, liveBookingPhotos, amenityPhotos, neighborhood);
 
     // 4. Map the exact corresponding photos to each re-sequenced recommendation
     if (auditResult.ota_conversion_audit) {

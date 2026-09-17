@@ -14,10 +14,10 @@ const Layout = ({ children }) => {
                 <div className="container header-content">
                     <Link to="/" className="logo" onClick={() => setIsMenuOpen(false)}>
                         <img
-                            src="/models/AtmosVibe2.svg"
+                            src="/models/atmosVibe4.svg"
                             alt="AtmosVibe"
                             className="nav-logo"
-                            style={{ height: '133px', width: 'auto', display: 'block' }}
+                            style={{ height: '56px', width: 'auto', display: 'block' }}
                         />
                     </Link>
 
@@ -32,7 +32,7 @@ const Layout = ({ children }) => {
 
                     <nav className={`header-nav ${isMenuOpen ? 'open' : ''}`}>
                         <Link to="/audit" className="nav-link nav-highlight-btn" onClick={() => setIsMenuOpen(false)}>
-                            VIBE AUDIT ENGINE
+                            VIBE AUDIT
                         </Link>
                         <a href="/#solution" className="nav-link" onClick={() => setIsMenuOpen(false)}>VIBE CONVERSION ENGINE</a>
                         <Link to="/creator" className="nav-link" onClick={() => setIsMenuOpen(false)}>CREATOR SIGNUP/LOGIN</Link>
@@ -42,7 +42,7 @@ const Layout = ({ children }) => {
                 </div>
             </header>
 
-            <main className="main-content" style={{ marginTop: '140px' }}>
+            <main className="main-content" style={{ marginTop: '80px' }}>
                 {children}
             </main>
         </>

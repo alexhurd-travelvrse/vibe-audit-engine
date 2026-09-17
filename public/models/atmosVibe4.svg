@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 90" width="100%" height="auto" fill="none">
+  <defs>
+    <!-- White-to-Silver Gradient for Atmos -->
+    <linearGradient id="nav_whiteGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#E2E8F0" />
+    </linearGradient>
+
+    <!-- Coastal Teal Gradient for Vibe -->
+    <linearGradient id="nav_tealGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="50%" stop-color="#00E5FF" />
+      <stop offset="100%" stop-color="#0284C7" />
+    </linearGradient>
+
+    <!-- Sunset Amber Gradient for Core Node -->
+    <linearGradient id="nav_amberGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#D97706" />
+      <stop offset="50%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#FEF08A" />
+    </linearGradient>
+
+    <!-- Glow Filters -->
+    <filter id="nav_glowTeal" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="2.5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="nav_glowAmber" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="3.5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- ==================== OPTICAL CALIPER SQUARE ==================== -->
+  <g transform="translate(10, 11)">
+    <!-- 68x68 Architectural Square Frame -->
+    <rect x="0" y="0" width="68" height="68" rx="7" fill="rgba(2, 132, 199, 0.08)" stroke="rgba(56, 189, 248, 0.28)" stroke-width="1.2" />
+    <circle cx="34" cy="34" r="28" fill="none" stroke="rgba(56, 189, 248, 0.15)" stroke-width="1" stroke-dasharray="2 2" />
+    
+    <!-- Precision Caliper Brackets [  ] -->
+    <path d="M 23 16 L 14 16 L 14 52 L 23 52" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square" />
+    <path d="M 45 16 L 54 16 L 54 52 L 45 52" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square" />
+    
+    <!-- Measurement Ticks -->
+    <line x1="8" y1="34" x2="14" y2="34" stroke="url(#nav_tealGrad)" stroke-width="2" />
+    <line x1="54" y1="34" x2="60" y2="34" stroke="url(#nav_tealGrad)" stroke-width="2" />
+    <line x1="14" y1="25" x2="17" y2="25" stroke="rgba(255,255,255,0.4)" stroke-width="1" />
+    <line x1="14" y1="43" x2="17" y2="43" stroke="rgba(255,255,255,0.4)" stroke-width="1" />
+    <line x1="51" y1="25" x2="54" y2="25" stroke="rgba(255,255,255,0.4)" stroke-width="1" />
+    <line x1="51" y1="43" x2="54" y2="43" stroke="rgba(255,255,255,0.4)" stroke-width="1" />
+
+    <!-- Optical Axis Alignment Lines -->
+    <line x1="34" y1="9" x2="34" y2="15" stroke="url(#nav_tealGrad)" stroke-width="1.2" stroke-dasharray="1.5 1.5" />
+    <line x1="34" y1="53" x2="34" y2="59" stroke="url(#nav_tealGrad)" stroke-width="1.2" stroke-dasharray="1.5 1.5" />
+
+    <!-- Concentric Ambient Ring -->
+    <circle cx="34" cy="34" r="15" fill="rgba(0, 229, 255, 0.08)" stroke="url(#nav_tealGrad)" stroke-width="1" />
+
+    <!-- Radiant Sunset Amber Core -->
+    <circle cx="34" cy="34" r="7.5" fill="url(#nav_amberGrad)" filter="url(#nav_glowAmber)" opacity="0.45" />
+    <circle cx="34" cy="34" r="4" fill="url(#nav_amberGrad)" />
+    <circle cx="34" cy="34" r="1.5" fill="#FFFFFF" />
+  </g>
+
+  <!-- ==================== BRAND TYPOGRAPHY ==================== -->
+  <!-- Optically Centered on Y=45 (midpoint of 90px canvas) -->
+  <g transform="translate(96, 57)">
+    <text font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Poppins, sans-serif" font-size="46" font-weight="300" letter-spacing="-0.8px" fill="url(#nav_whiteGrad)">Atmos<tspan fill="url(#nav_tealGrad)" font-weight="900">Vibe</tspan></text>
+  </g>
+</svg>

@@ -6,7 +6,7 @@ dotenv.config();
 
 const getApiKey = () => process.env.GEMINI_API_KEY || process.env.VITE_GEMINI_API_KEY;
 
-export async function runStructuredVibeAudit(hotelName, city, venueCorpus, livePhotos = [], amenityPhotos = []) {
+export async function runStructuredVibeAudit(hotelName, city, venueCorpus, livePhotos = [], amenityPhotos = [], neighborhood = '') {
   const apiKey = getApiKey();
   if (!apiKey) {
     throw new Error('GEMINI_API_KEY or VITE_GEMINI_API_KEY is not defined in environment variables');
@@ -23,8 +23,9 @@ export async function runStructuredVibeAudit(hotelName, city, venueCorpus, liveP
     }
   });
 
-  const systemPrompt = `You are the Lead Hospitality Brand Strategist and Visual Merchandising Architect for Vibe Audit Engine.
-Your task is to analyze live real-world venue data (reviews, editorial critique, places metadata) and ACTUAL LIVE BOOKING.COM PHOTOS + SIGNATURE AMENITY ASSETS for "${hotelName}" in "${city}" to synthesize a complete Master Vibe Audit payload.
+  const locationLabel = neighborhood && neighborhood.trim() ? `${neighborhood.trim()}, ${city}` : city;
+  const systemPrompt = `You are the Lead Hospitality Brand Strategist and Visual Merchandising Architect for Vibe Audit.
+Your task is to analyze live real-world venue data (reviews, editorial critique, places metadata) and ACTUAL LIVE BOOKING.COM PHOTOS + SIGNATURE AMENITY ASSETS for "${hotelName}" in "${locationLabel}" to synthesize a complete Master Vibe Audit payload.
 
 CRITICAL VISUAL MERCHANDISING & LOCAL VIBE RESONANCE RULES:
 You have been provided with the actual images for "CURRENT LIVE BOOKING.COM PHOTOS" (numbered #1, #2, #3...) and "SIGNATURE AMENITY ASSETS" (numbered #1, #2...).

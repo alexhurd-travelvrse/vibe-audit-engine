@@ -1,9 +1,9 @@
-﻿import * as dotenv from 'dotenv';
+import * as dotenv from 'dotenv';
 dotenv.config();
 
 const getApiKey = () => process.env.SERPER_API_KEY || process.env.VITE_SERPER_API_KEY;
 
-export async function fetchVenueCorpus(hotelName, city) {
+export async function fetchVenueCorpus(hotelName, city, neighborhood = '') {
   const apiKey = getApiKey();
   if (!apiKey) {
     throw new Error('SERPER_API_KEY or VITE_SERPER_API_KEY is not defined in environment variables');
@@ -14,14 +14,15 @@ export async function fetchVenueCorpus(hotelName, city) {
     'Content-Type': 'application/json'
   };
 
-  console.log(`[Serper] Gathering live intelligence for "${hotelName}" in "${city}"...`);
+  const locationContext = neighborhood && neighborhood.trim() ? `${neighborhood.trim()} ${city}` : city;
+  console.log(`[Serper] Gathering live intelligence for "${hotelName}" in "${locationContext}"...`);
 
-  // 1. Google Places Query
+  // 1. Google Places Query with neighborhood precision
   const placesPromise = fetch('https://google.serper.dev/places', {
     method: 'POST',
     headers,
     body: JSON.stringify({
-      q: `${hotelName} ${city}`,
+      q: `${hotelName} ${locationContext}`,
       num: 5
     })
   }).then(r => r.json()).catch(err => {
@@ -34,7 +35,7 @@ export async function fetchVenueCorpus(hotelName, city) {
     method: 'POST',
     headers,
     body: JSON.stringify({
-      q: `"${hotelName}" ${city} review (site:timeout.com OR site:theinfatuation.com OR site:cntraveller.com OR site:telegraph.co.uk OR site:standard.co.uk OR "vibe" OR "atmosphere")`,
+      q: `"${hotelName}" ${locationContext} review (site:timeout.com OR site:theinfatuation.com OR site:cntraveller.com OR site:telegraph.co.uk OR site:standard.co.uk OR "vibe" OR "atmosphere")`,
       num: 10
     })
   }).then(r => r.json()).catch(err => {
@@ -47,7 +48,7 @@ export async function fetchVenueCorpus(hotelName, city) {
     method: 'POST',
     headers,
     body: JSON.stringify({
-      q: `"${hotelName}" ${city} ("bar" OR "music" OR "interior design" OR "cocktail" OR "lobby" OR "crowd")`,
+      q: `"${hotelName}" ${locationContext} ("bar" OR "music" OR "interior design" OR "cocktail" OR "lobby" OR "crowd")`,
       num: 8
     })
   }).then(r => r.json()).catch(err => {

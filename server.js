@@ -8,7 +8,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get('/', (req, res) => {
-    res.send('Vibe Audit Engine API is running. The endpoint is at POST /api/audit');
+    res.send('Vibe Audit API is running. The endpoint is at POST /api/audit');
 });
 
 app.get('/api/audit', async (req, res) => {

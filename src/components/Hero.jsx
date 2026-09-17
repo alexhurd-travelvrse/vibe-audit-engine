@@ -39,21 +39,14 @@ const Hero = () => {
                 </p>
 
                 <div className="hero-cta-group animate-fade-up" style={{ animationDelay: '3.4s', justifyContent: 'center' }}>
-                    <a 
-                        href="#vibe-audit-engine" 
+                    <Link 
+                        to="/audit" 
                         className="btn btn-primary" 
                         style={{ padding: '1.2rem 2.5rem', fontSize: '1.1rem', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}
-                        onClick={(e) => {
-                            const el = document.getElementById('vibe-audit-engine');
-                            if (el) {
-                                e.preventDefault();
-                                el.scrollIntoView({ behavior: 'smooth' });
-                            }
-                        }}
                     >
                         <Play size={20} style={{ marginRight: '8px' }} />
                         Improve My Booking.com listing
-                    </a>
+                    </Link>
                 </div>
             </div>
 

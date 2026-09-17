@@ -103,12 +103,8 @@ const VibeAuditSearchSection = () => {
         
         {/* Section Header */}
         <div className="section-header animate-fade-up">
-          <div className="audit-badge">
-            <Sparkles size={16} className="text-cyan" />
-            <span>AI-POWERED DIAGNOSTIC ENGINE</span>
-          </div>
           <h2 className="section-title">
-            Vibe <span className="text-cyan">Audit</span> <span className="text-gold">Engine</span>
+            Vibe <span className="text-cyan">Audit</span>
           </h2>
           <p className="subtitle">
             <span className="text-cyan" style={{ fontWeight: 800 }}>78%</span> of Next-Gen Travelers search for local experiences first — uncover your property's experiential discoverability score and conversion gaps in seconds.

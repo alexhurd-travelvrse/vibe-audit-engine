@@ -34,10 +34,7 @@ const B2BHome = () => {
       {/* 1. Hero */}
       <Hero />
       
-      {/* 2. Vibe Audit Engine Search Box */}
-      <VibeAuditSearchSection />
-      
-      {/* 3. Vibe Conversion Engine (ProblemSection) */}
+      {/* 2. Vibe Conversion Engine (ProblemSection) */}
       <ProblemSection />
       
       {/* 4. Increase Direct Revenue */}

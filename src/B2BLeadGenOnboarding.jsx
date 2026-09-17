@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, ChevronRight, Send, Star, MapPin, TrendingUp, Search, Globe, Zap, CheckCircle2, BarChart3, ExternalLink, Gift, RefreshCw, Activity, Info } from 'lucide-react';
+import { ArrowLeft, ChevronRight, Send, Star, MapPin, TrendingUp, Search, Globe, Zap, CheckCircle2, BarChart3, ExternalLink, Gift, RefreshCw, Activity, Info, Compass, Radio, Layers, Cpu, Sparkles } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   scrapeLocalSignals, 
@@ -36,7 +36,7 @@ const submitLeadToFormspree = async (data) => {
         websiteUrl: data.propertyUrl,
         instagramUrl: data.instagramUrl,
         timestamp: new Date().toISOString(),
-        source: 'Vibe Audit Engine - Lead Gen'
+        source: 'Vibe Audit - Lead Gen'
       })
     });
     console.log('[Formspree] Lead captured successfully');
@@ -45,9 +45,43 @@ const submitLeadToFormspree = async (data) => {
   }
 };
 
+const PROCESSING_PHASES = [
+  {
+    title: "Scanning Local Micro-District Gravity",
+    detail: "Indexing Google Places & neighborhood subculture search momentum...",
+    percentage: 22,
+    badge: "STAGE 1/5 • GEOSPATIAL RADAR"
+  },
+  {
+    title: "Auditing Social & Editorial Citations",
+    detail: "Synthesizing viral mentions, TikTok velocity, Time Out & local reviews...",
+    percentage: 46,
+    badge: "STAGE 2/5 • SOCIAL VELOCITY"
+  },
+  {
+    title: "Ingesting Live Booking.com Visual Slots",
+    detail: "Resolving property gallery slots and extracting signature visual assets...",
+    percentage: 70,
+    badge: "STAGE 3/5 • VISUAL MERCHANDISING"
+  },
+  {
+    title: "Multimodal Gemini Vibe Synthesis",
+    detail: "Evaluating 5-slot sequence psychology and revenue conversion triggers...",
+    percentage: 88,
+    badge: "STAGE 4/5 • AI PROPULSION MODEL"
+  },
+  {
+    title: "Finalizing Master Vibe Audit Report",
+    detail: "Compiling acoustic DNA scorecard, optimal gallery & interactive challenge...",
+    percentage: 97,
+    badge: "STAGE 5/5 • REPORT SYNTHESIS"
+  }
+];
+
 const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
   const [step, setStep] = useState(initialStep);
   const [processingStage, setProcessingStage] = useState(0);
+  const [phaseIndex, setPhaseIndex] = useState(0);
   const [emailError, setEmailError] = useState('');
   const [formData, setFormData] = useState({
     email: '',
@@ -65,6 +99,17 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
   useEffect(() => {
     setStep(initialStep);
   }, [initialStep]);
+
+  useEffect(() => {
+    let interval;
+    if (step === 'processing') {
+      setPhaseIndex(0);
+      interval = setInterval(() => {
+        setPhaseIndex(prev => (prev < PROCESSING_PHASES.length - 1 ? prev + 1 : prev));
+      }, 2600);
+    }
+    return () => clearInterval(interval);
+  }, [step]);
 
   const startAnalysis = async () => {
     setEmailError('');
@@ -202,29 +247,12 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
           <span>Back to Home</span>
         </Link>
 
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '14px' }}>
-          {/* Primary Logo: AtmosVibe */}
-          <div>
-            <img 
-              src="/models/atmosVibe-logo.svg" 
-              alt="AtmosVibe" 
-              style={{ height: '60px', width: 'auto', display: 'block' }} 
-            />
-          </div>
-
-          {/* Test Logos under AtmosVibe: Resonex and Ambidex */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap', justifyContent: 'flex-end' }}>
-            <img 
-              src="/models/resonex-svg.svg" 
-              alt="Resonex" 
-              style={{ height: '60px', width: 'auto', display: 'block' }} 
-            />
-            <img 
-              src="/models/ambidex-svg.svg" 
-              alt="Ambidex" 
-              style={{ height: '60px', width: 'auto', display: 'block' }} 
-            />
-          </div>
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <img 
+            src="/models/atmosVibe4.svg" 
+            alt="AtmosVibe" 
+            style={{ height: '48px', width: 'auto', display: 'block' }} 
+          />
         </div>
       </nav>
 
@@ -233,10 +261,10 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
           {step === 'welcome' && (
             <motion.div key="welcome" initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="b2b-welcome-section" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
               <h1 className="b2b-hero-title">VIBE AUDIT</h1>
-              <p className="b2b-hero-subtitle">The High-Fidelity Propulsion Scale Engine</p>
+              <p className="b2b-hero-subtitle">The High-Fidelity Propulsion Scale Diagnostic</p>
               <div style={{ display: 'flex', justifyContent: 'center' }}>
                 <button className="b2b-cta-button" onClick={() => setStep('input')}>
-                  Launch Audit Engine
+                  Launch Vibe Audit
                   <ChevronRight size={24} />
                 </button>
               </div>
@@ -297,17 +325,118 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                 </div>
 
                 <button className="launch-button" style={{ padding: '1.25rem', fontSize: '1.2rem', marginTop: '1.5rem' }} onClick={startAnalysis}>
-                    LAUNCH ENGINE 🚀
+                    LAUNCH VIBE AUDIT 🚀
                 </button>
               </div>
             </motion.div>
           )}
 
           {step === 'processing' && (
-            <motion.div key="processing" initial={{ opacity: 0 }} animate={{ opacity: 1 }} style={{ textAlign: 'center', padding: '10rem 0' }}>
-               <div style={{ width: '80px', height: '80px', borderRadius: '50%', border: '2px solid rgba(255,255,255,0.1)', borderTopColor: '#00e5ff', animation: 'spin 1s linear infinite', margin: '0 auto 3rem' }} />
-               <h2 style={{ fontSize: '3rem', fontWeight: 900, textTransform: 'uppercase' }}>Analyzing Trends...</h2>
-               <p style={{ color: '#00e5ff', fontWeight: 900, letterSpacing: '0.4em', textTransform: 'uppercase', fontSize: '10px' }}>Agent {processingStage} is online</p>
+            <motion.div 
+              key="processing" 
+              initial={{ opacity: 0, scale: 0.95 }} 
+              animate={{ opacity: 1, scale: 1 }} 
+              exit={{ opacity: 0 }}
+              style={{ textAlign: 'center', padding: '4rem 1rem 8rem', maxWidth: '800px', margin: '0 auto' }}
+            >
+              {/* Dual-Ring Cyber Radar */}
+              <div style={{ position: 'relative', width: '120px', height: '120px', margin: '0 auto 2.5rem' }}>
+                <div style={{
+                  position: 'absolute',
+                  inset: 0,
+                  borderRadius: '50%',
+                  border: '2px dashed rgba(56, 189, 248, 0.3)',
+                  animation: 'spin 8s linear infinite'
+                }} />
+                <div style={{
+                  position: 'absolute',
+                  inset: '8px',
+                  borderRadius: '50%',
+                  border: '3px solid transparent',
+                  borderTopColor: '#00E5FF',
+                  borderRightColor: '#F59E0B',
+                  animation: 'spin 1.4s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite'
+                }} />
+                <div style={{
+                  position: 'absolute',
+                  inset: '28px',
+                  borderRadius: '50%',
+                  background: 'radial-gradient(circle, rgba(0, 229, 255, 0.4) 0%, rgba(5, 11, 20, 0.8) 70%)',
+                  boxShadow: '0 0 25px rgba(0, 229, 255, 0.5)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center'
+                }}>
+                  <Radio size={24} color="#00E5FF" style={{ animation: 'pulse 1.5s ease-in-out infinite' }} />
+                </div>
+              </div>
+
+              {/* Phase Badge */}
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 18px', background: 'rgba(0, 229, 255, 0.08)', border: '1px solid rgba(0, 229, 255, 0.3)', borderRadius: '100px', color: '#00E5FF', fontSize: '11px', fontWeight: 800, letterSpacing: '0.15em', marginBottom: '1.25rem' }}>
+                <Sparkles size={13} color="#00E5FF" />
+                <span>{PROCESSING_PHASES[phaseIndex].badge}</span>
+              </div>
+
+              {/* Dynamic Phase Title */}
+              <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', fontWeight: 900, textTransform: 'uppercase', color: '#FFFFFF', marginBottom: '0.75rem', letterSpacing: '-0.02em', minHeight: '3rem' }}>
+                {PROCESSING_PHASES[phaseIndex].title}
+              </h2>
+
+              {/* Dynamic Detail Text */}
+              <p style={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '15px', maxWidth: '620px', margin: '0 auto 2.5rem', lineHeight: 1.6, minHeight: '2.5rem' }}>
+                {PROCESSING_PHASES[phaseIndex].detail}
+              </p>
+
+              {/* Progress Bar */}
+              <div style={{ maxWidth: '480px', margin: '0 auto 3rem', background: 'rgba(255, 255, 255, 0.06)', borderRadius: '100px', padding: '4px', border: '1px solid rgba(255, 255, 255, 0.1)' }}>
+                <div style={{
+                  height: '8px',
+                  borderRadius: '100px',
+                  background: 'linear-gradient(90deg, #00E5FF 0%, #38BDF8 60%, #F59E0B 100%)',
+                  width: `${PROCESSING_PHASES[phaseIndex].percentage}%`,
+                  transition: 'width 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
+                  boxShadow: '0 0 12px rgba(0, 229, 255, 0.5)'
+                }} />
+              </div>
+
+              {/* Live Telemetry Phased Checklist */}
+              <div style={{ maxWidth: '540px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '10px', textAlign: 'left' }}>
+                {PROCESSING_PHASES.map((phase, idx) => {
+                  const isDone = idx < phaseIndex;
+                  const isCurrent = idx === phaseIndex;
+                  return (
+                    <div 
+                      key={phase.badge}
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                        padding: '12px 18px',
+                        borderRadius: '12px',
+                        background: isCurrent ? 'rgba(0, 229, 255, 0.06)' : isDone ? 'rgba(255, 255, 255, 0.02)' : 'rgba(255, 255, 255, 0.01)',
+                        border: isCurrent ? '1px solid rgba(0, 229, 255, 0.35)' : isDone ? '1px solid rgba(255, 255, 255, 0.08)' : '1px solid rgba(255, 255, 255, 0.03)',
+                        transition: 'all 0.3s ease'
+                      }}
+                    >
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                        {isDone ? (
+                          <CheckCircle2 size={18} color="#00E5FF" />
+                        ) : isCurrent ? (
+                          <Activity size={18} color="#F59E0B" style={{ animation: 'pulse 1s infinite' }} />
+                        ) : (
+                          <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'rgba(255,255,255,0.2)', marginLeft: '5px' }} />
+                        )}
+                        <span style={{ fontSize: '13px', fontWeight: isCurrent ? 800 : 500, color: isCurrent ? '#FFFFFF' : isDone ? 'rgba(255,255,255,0.85)' : 'rgba(255,255,255,0.35)' }}>
+                          {phase.title}
+                        </span>
+                      </div>
+                      <span style={{ fontSize: '11px', fontWeight: 700, color: isDone ? '#00E5FF' : isCurrent ? '#F59E0B' : 'rgba(255,255,255,0.25)', letterSpacing: '0.05em' }}>
+                        {isDone ? 'COMPLETE' : isCurrent ? 'PROCESSING...' : 'QUEUED'}
+                      </span>
+                    </div>
+                  );
+                })}
+              </div>
             </motion.div>
           )}
 

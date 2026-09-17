@@ -1,0 +1,15 @@
+﻿{
+  "short_name": "AtmosVibe",
+  "name": "AtmosVibe - Vibe Audit & Conversion Engine",
+  "icons": [
+    {
+      "src": "/models/atmosVibe4.svg",
+      "type": "image/svg+xml",
+      "sizes": "192x192 512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#050B14",
+  "theme_color": "#00E5FF",
+  "display": "standalone"
+}

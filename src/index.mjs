@@ -1,4 +1,4 @@
-﻿import fs from 'fs';
+import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import * as dotenv from 'dotenv';
@@ -33,7 +33,7 @@ async function main() {
   const { hotel, city } = parseArgs();
 
   console.log(`\n======================================================`);
-  console.log(`🚀 STARTING VIBE AUDIT ENGINE`);
+  console.log(`🚀 STARTING VIBE AUDIT`);
   console.log(`🏨 Target: "${hotel}" | 📍 Location: "${city}"`);
   console.log(`======================================================\n`);
 
@@ -63,7 +63,7 @@ async function main() {
     renderTerminalAudit(auditResult);
 
   } catch (error) {
-    console.error(`\n❌ [Vibe Audit Engine] Execution failed:`, error.message);
+    console.error(`\n❌ [Vibe Audit] Execution failed:`, error.message);
     process.exit(1);
   }
 }

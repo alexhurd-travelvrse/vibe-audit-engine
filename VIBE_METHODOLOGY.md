@@ -1,6 +1,6 @@
-# Vibe Audit Engine: Detailed Search Manifesto (v8.7-EXECUTIVE)
+# Vibe Audit: Detailed Search Manifesto (v8.7-EXECUTIVE)
 
-This manifesto provides the technical and logical specification for the TravelVRSE Vibe Audit Engine, ensuring zero-drift discovery and high-fidelity scoring.
+This manifesto provides the technical and logical specification for the TravelVRSE Vibe Audit, ensuring zero-drift discovery and high-fidelity scoring.
 
 ## 1. Discovery Architecture (The Multi-Layer Sweep)
 
