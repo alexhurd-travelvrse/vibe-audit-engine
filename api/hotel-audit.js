@@ -30,20 +30,33 @@ export default async function handler(req, res) {
     if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
 
     try {
-        const { hotelName, city, topCategories, propertyUrl, instagramUrl } = req.body;
+        const { hotelName, city, neighborhood, topCategories, propertyUrl, instagramUrl } = req.body;
         if (!hotelName || !city || !topCategories) {
             return res.status(400).json({ error: 'Missing parameters' });
         }
 
-        console.log(`[Agent B] Starting Vibe Audit for ${hotelName} in ${city}`);
+        const locationContext = neighborhood && neighborhood.trim() ? `${neighborhood.trim()} ${city}` : city;
+        console.log(`[Agent B] Starting Vibe Audit for ${hotelName} in ${locationContext}`);
 
-        // Step 1: Use provided URLs
+        // Step 1: Use provided URLs or auto-resolve domain
         let hotelDomain = null;
         if (propertyUrl) {
             try {
                 hotelDomain = new URL(propertyUrl).hostname;
             } catch(e) {
                 hotelDomain = propertyUrl.replace(/^https?:\/\//, '').split('/')[0];
+            }
+        } else {
+            try {
+                const domainLookup = await runSerperSearch(`"${hotelName}" ${locationContext} official website`);
+                if (domainLookup.organic && domainLookup.organic[0]?.link) {
+                    const parsedUrl = new URL(domainLookup.organic[0].link);
+                    if (!parsedUrl.hostname.includes('tripadvisor') && !parsedUrl.hostname.includes('booking.com') && !parsedUrl.hostname.includes('expedia')) {
+                        hotelDomain = parsedUrl.hostname;
+                    }
+                }
+            } catch(lookupErr) {
+                console.warn('[Agent B] Domain lookup error:', lookupErr.message);
             }
         }
         console.log(`[Agent B] Target Domain: ${hotelDomain || 'Not Provided'}`);

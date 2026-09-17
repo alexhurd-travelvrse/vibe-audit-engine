@@ -89,7 +89,7 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
     propertyUrl: '',
     instagramUrl: '',
     city: 'London',
-    neighborhood: 'Southbank',
+    neighborhood: '',
     sweeteners: ['cocktails', 'wellness', 'local-craft'],
     reward: 'SPECIAL GUEST REWARD'
   });
@@ -160,7 +160,7 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
   const runPhase2 = async () => {
     setCurrentPhase(2);
     try {
-      const auditResults = await auditDiscoverability(formData.propertyName, formData.city, analysis.signals.categories, formData.propertyUrl, formData.instagramUrl);
+      const auditResults = await auditDiscoverability(formData.propertyName, formData.city, analysis.signals.categories, formData.propertyUrl, formData.instagramUrl, formData.neighborhood);
       setAnalysis(prev => ({ ...prev, auditResults }));
       const challenge = generatePropulsionQuest(auditResults, formData.propertyName, formData.reward);
       setAnalysis(prev => ({ ...prev, challenge }));

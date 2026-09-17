@@ -44,7 +44,7 @@ const VibeAuditSearchSection = () => {
   const [formData, setFormData] = useState({
     propertyName: '',
     city: 'London',
-    neighborhood: 'Southbank',
+    neighborhood: '',
     email: '',
     propertyUrl: ''
   });

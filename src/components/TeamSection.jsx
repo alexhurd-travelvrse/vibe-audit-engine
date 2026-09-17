@@ -23,54 +23,11 @@ const Linkedin = ({ size = 18, strokeWidth = 2, className = '', style = {} }) =>
 const team = [
     {
         name: "Alex Hurd",
-        role: "Co-Founder CEO",
+        role: "Founder & CEO",
         image: "/models/Alex_Hurd.jpg",
         linkedin: "https://www.linkedin.com/in/alexhurd/",
         background: "Ex Play2Pay, Shazam, Infospace",
         advisor: false
-    },
-    {
-        name: "Lee Probert",
-        role: "CTO",
-        image: "/models/lee Probert.png",
-        linkedin: "https://www.linkedin.com/in/leeprobert/",
-        advisor: false
-    },
-    {
-        name: "Julian Houchin",
-        role: "Chairman",
-        image: "/models/Julianphoto.jpg",
-        linkedin: "https://www.linkedin.com/in/julianhouchin/",
-        background: "Ex GLC Resorts and IO Resorts",
-        advisor: false
-    },
-    {
-        name: "Lindsay Kotas",
-        role: "VP Operations Insignia Event Services",
-        image: "/models/LindsayKotas.jpg",
-        linkedin: "https://www.linkedin.com/in/lindsay-kotas/",
-        advisor: true
-    },
-    {
-        name: "Amir Azulay",
-        role: "CEO Travel Curious",
-        image: "/models/Amir Azulay.png",
-        linkedin: "https://www.linkedin.com/in/amirazulay/",
-        advisor: true
-    },
-    {
-        name: "Alex Grant",
-        role: "Head of Hotel Solutions Travel Curious",
-        image: "/models/Alex Grant.png",
-        linkedin: "https://www.linkedin.com/in/grantalex/",
-        advisor: true
-    },
-    {
-        name: "Tristan Gadsby",
-        role: "CEO Alliants",
-        image: "/models/tristan.jpg",
-        linkedin: "https://www.linkedin.com/in/tristangadsby/",
-        advisor: true
     }
 ];
 
