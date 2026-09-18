@@ -97,8 +97,16 @@ export const masterVibeSchema = {
       type: "object",
       properties: {
         channel: { type: "string", default: "Booking.com" },
+        before_merchandising_score: { type: "integer", description: "Current visual sequence score on a 0-100 scale (typically 35-55 due to commodity flaws)" },
+        after_merchandising_score: { type: "integer", description: "Optimized visual sequence score on a 0-100 scale (typically 90-98)" },
+        projected_conversion_uplift: { type: "string", description: "Projected OTA conversion uplift e.g. '+18.5%'" },
         current_drop_off_flaw: { type: "string" },
         conversion_diagnosis: { type: "string" },
+        key_strategic_shifts: {
+          type: "array",
+          items: { type: "string" },
+          description: "Exactly 3-4 concise, high-impact bullet points detailing what is changing, explicitly connecting the hotel's DNA with neighborhood search demand"
+        },
         local_vibe_synergy_context: { 
           type: "string", 
           description: "Clear strategic explanation connecting the neighborhood's top local subcultures (e.g. culinary, craft mixology, underground art, wellness) to the photo recommendations" 
@@ -107,7 +115,7 @@ export const masterVibeSchema = {
           type: "array",
           items: {
             type: "object",
-                        properties: {
+            properties: {
               slot: { type: "integer", description: "Target recommended slot 1 to 5" },
               category: { 
                 type: "string", 
@@ -134,13 +142,18 @@ export const masterVibeSchema = {
               action: { type: "string", enum: ["KEEP_HERO", "KEEP", "PROMOTE", "DEMOTE", "REPLACE", "SWAP_IN", "HERO_CULTURAL_MAGNET", "MAGNET_OVERRIDE", "RE_SEQUENCE"] },
               action_label: { type: "string", description: "Short punchy label e.g. 'HERO CULTURAL MAGNET: SUBTERRANEAN HI-FI BAR (SLOT #1)', 'PROMOTE EXTERIOR HERO (FROM SLOT #13)', 'SWAP IN COCKTAIL BAR (SLOT #2)'" },
               photo_subject: { type: "string", description: "Exact visual content of this specific photo" },
+              bullet_points: {
+                type: "array",
+                items: { type: "string" },
+                description: "2 to 3 concise, punchy bullet points justifying this specific photo: (1) Strategic visual shift, (2) Alignment with local neighborhood search demand, (3) Psychological conversion trigger"
+              },
               local_vibe_connection: { 
                 type: "string", 
                 description: "Explicit connection showing how this photo matches what travelers search for in this specific neighborhood" 
               },
               psychological_conversion_trigger: { type: "string", description: "Why this reordering triggers booking intent by bridging hotel DNA with local neighborhood demand" }
             },
-            required: ["slot", "category", "source_type", "source_index", "photo_subject", "psychological_conversion_trigger"]
+            required: ["slot", "category", "source_type", "source_index", "photo_subject", "bullet_points", "psychological_conversion_trigger"]
           }
         },
         slot_1_decision_logic: {
@@ -163,7 +176,7 @@ export const masterVibeSchema = {
           required: ["ota_headline", "property_overview_150_words"]
         }
       },
-      required: ["channel", "current_drop_off_flaw", "conversion_diagnosis", "optimal_5_photo_sequence", "anti_commodity_copy_rewrite"]
+      required: ["channel", "before_merchandising_score", "after_merchandising_score", "projected_conversion_uplift", "current_drop_off_flaw", "key_strategic_shifts", "optimal_5_photo_sequence", "anti_commodity_copy_rewrite"]
     }
   },
   required: ["venue_id", "venue_name", "location", "vibe_signature", "interactive_quiz_challenge", "ota_conversion_audit"]

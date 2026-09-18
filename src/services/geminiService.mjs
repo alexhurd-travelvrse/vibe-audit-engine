@@ -53,21 +53,35 @@ THE TWO VALID 5-SLOT SEQUENCES:
 A) STANDARD BASELINE SEQUENCE (Default when no asset qualifies for override):
 - Slot 1 (EXTERIOR_LANDMARK): Authentic facade/entrance. (Action: "PROMOTE" or "KEEP_HERO")
 - Slot 2 (SOCIAL_FB_ROOFTOP): Signature cocktail bar, rooftop lounge, or restaurant. (Action: "SWAP_IN" or "PROMOTE")
-- Slot 3 (SIGNATURE_SUITE_BEDROOM): Most stylish signature king suite/room. (Action: "KEEP" or "RETAIN")
-- Slot 4 (WELLNESS_SPA_LOBBY): Iconic design lobby, vinyl lounge, or spa. (Action: "RE_SEQUENCE")
-- Slot 5 (SECONDARY_ROOM_BATHROOM): Distinctive design bathroom or secondary room. (Action: "KEEP")
+- Slot 3 (SIGNATURE_SUITE_BEDROOM): Most stylish signature king suite/room with local texture. (Action: "KEEP" or "RETAIN")
+- Slot 4 (WELLNESS_SPA_LOBBY): MUST depict the dedicated Spa, wellness facility, thermal bath, massage room, or iconic design arrival lobby. Category: "WELLNESS_SPA_LOBBY".
+- Slot 5 (SECONDARY_ROOM_BATHROOM): MUST depict a design bathroom, freestanding soaking tub, marble washroom, or luxury rain shower (to confirm finish quality and hygiene). Category: "SECONDARY_ROOM_BATHROOM".
 
 B) MAGNET OVERRIDE SEQUENCE (When NAI >= 0.85 and Asset passes all 4 rules):
-- Slot 1 (HERO_CULTURAL_MAGNET): The unique asset (e.g., Subterranean Hi-Fi Bar, Skyline Rooftop Pool). Category: "HERO_CULTURAL_MAGNET", Action: "HERO_CULTURAL_MAGNET", Action Label: "⚡ HERO CULTURAL MAGNET: [ASSET NAME] (SLOT #1)".
+- Slot 1 (HERO_CULTURAL_MAGNET): The unique asset (e.g., 12th Knot Rooftop Bar, Subterranean Hi-Fi Bar, Skyline Infinity Pool). Category: "HERO_CULTURAL_MAGNET", Action: "HERO_CULTURAL_MAGNET", Action Label: "⚡ HERO CULTURAL MAGNET: [ASSET NAME] (SLOT #1)".
 - Slot 2 (EXTERIOR_LANDMARK): Mandatory exterior facade. Category: "EXTERIOR_LANDMARK", Action: "PROMOTE" or "RE_SEQUENCE", Action Label: "EXTERIOR LANDMARK (SLOT #2 - MANDATORY GROUNDING)".
-- Slot 3 (SIGNATURE_SUITE_BEDROOM): Most stylish signature king suite/room. (Action: "KEEP" or "RETAIN")
-- Slot 4 (WELLNESS_SPA_LOBBY): Iconic design lobby, vinyl lounge, or spa. (Action: "RE_SEQUENCE")
-- Slot 5 (SECONDARY_ROOM_BATHROOM): Distinctive design bathroom or secondary room. (Action: "KEEP")
+- Slot 3 (SIGNATURE_SUITE_BEDROOM): Most stylish signature king suite/room. Category: "SIGNATURE_SUITE_BEDROOM".
+- Slot 4 (WELLNESS_SPA_LOBBY): MUST depict the dedicated Spa (e.g. Agua Spa), wellness treatment room, thermal suite, or iconic design lobby. Category: "WELLNESS_SPA_LOBBY".
+- Slot 5 (SECONDARY_ROOM_BATHROOM): MUST depict a design bathroom, freestanding soaking tub, marble washroom, or luxury rain shower. Category: "SECONDARY_ROOM_BATHROOM".
 
-ANTI-DUPLICATION COMPLIANCE:
-- NEVER recommend 3 or 4 generic repetitive bedrooms.
+STRICT SLOT INTEGRITY RULES:
+- Slot 4 MUST feature the Spa/Wellness or iconic design lobby.
+- Slot 5 MUST feature a luxury bathroom/tub/shower. NEVER put a repetitive bedroom in Slot 5.
 - Strict 5 distinct thematic slots at all times.
-- Populate "slot_1_decision_logic" explaining whether Magnet Override was triggered or why default was retained.`;
+- Populate "slot_1_decision_logic" explaining whether Magnet Override was triggered or why default was retained.
+
+MERCHANDISING SCORES & READABILITY BULLETS:
+1. Merchandising Scores:
+   - "before_merchandising_score": Current live sequence score (35-55/100) reflecting commodity flaws (e.g. duplicate bedrooms, missing spa/amenities).
+   - "after_merchandising_score": Optimized sequence score (90-98/100).
+   - "projected_conversion_uplift": Calculated uplift estimate (e.g. "+18.5%" to "+24.0%").
+2. "key_strategic_shifts" (Overview Bullets):
+   - Provide 3-4 high-impact, scannable bullet points explaining what is changing and WHY, explicitly linking the hotel's cultural DNA with neighborhood traveler search volume (e.g., "Shift 1: Elevate Subterranean Vinyl Hi-Fi Lounge to capture Soho's #1 nightlife search demand", "Shift 2: Move exterior facade to Slot #2 to anchor geographic orientation").
+3. "bullet_points" (Per-Photo Bullets):
+   - For EACH of the 5 photo recommendations, provide exactly 2-3 concise, punchy bullet points:
+     • Bullet 1 (Action & Subject): Specific visual change and why this subject was selected.
+     • Bullet 2 (DNA & Local Synergy): How this visual connects the property's authentic DNA with what travelers search for in this specific neighborhood.
+     • Bullet 3 (Conversion Trigger): The psychological mechanism triggering higher booking intent.`;
 
   const userPrompt = `VENUE: ${hotelName} (${city})
 TIMESTAMP: ${new Date().toISOString()}
@@ -80,13 +94,13 @@ Synthesize this live data and return the complete Master Vibe Audit JSON payload
   console.log(`[Gemini] Preparing multimodal extraction request for ${hotelName}...`);
   const parts = [{ text: systemPrompt }];
 
-  // Helper for parallel image fetching with magic bytes validation
+  // Helper for parallel image fetching with magic bytes validation and fast 1.2s timeout
   const downloadImageBase64 = async (url) => {
     try {
       if (!url || typeof url !== 'string' || !url.startsWith('http')) return null;
       const resp = await fetch(url, { 
         headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' },
-        signal: AbortSignal.timeout(4000) 
+        signal: AbortSignal.timeout(1200) 
       });
       if (!resp.ok) return null;
       
@@ -104,7 +118,6 @@ Synthesize this live data and return the complete Master Vibe Audit JSON payload
       }
 
       if (!mimeType) {
-        // Not a standard recognized format, skip passing as raw inlineData
         return null;
       }
 
@@ -120,7 +133,7 @@ Synthesize this live data and return the complete Master Vibe Audit JSON payload
 
   // 1. Concurrently fetch and attach Top Live Booking.com Photos for Multimodal Vision
   if (livePhotos && livePhotos.length > 0) {
-    const liveVisionSubset = livePhotos.slice(0, 6);
+    const liveVisionSubset = livePhotos.slice(0, 4);
     const downloadedLive = await Promise.all(
       liveVisionSubset.map(p => downloadImageBase64(p.imageUrl))
     );
@@ -137,17 +150,22 @@ Synthesize this live data and return the complete Master Vibe Audit JSON payload
       }
     });
 
-    if (livePhotos.length > 6) {
+    if (livePhotos.length > 4) {
       parts.push({ 
         text: `\n[ADDITIONAL LIVE GALLERY PHOTOS METADATA]:\n` + 
-          livePhotos.slice(6, 20).map((p, i) => `Photo #${p.slot || (i + 7)}: "${p.title || 'Hotel Photo'}" (URL: ${p.imageUrl})`).join('\n') 
+          livePhotos.slice(4, 20).map((p, i) => `Photo #${p.slot || (i + 5)}: "${p.title || 'Hotel Photo'}" (URL: ${p.imageUrl})`).join('\n') 
       });
     }
   }
 
-  // 2. Concurrently fetch and attach Signature Amenity Candidate Photos
+  // 2. Concurrently fetch and attach Signature Amenity Candidate Photos (diverse categories)
   if (amenityPhotos && amenityPhotos.length > 0) {
-    const amenityVisionSubset = amenityPhotos.slice(0, 4);
+    // Pick top candidates from each category: 1 Social, 1 Spa, 1 Bathroom for vision analysis
+    const socialCand = amenityPhotos.find(a => a.detectedCategory === 'SOCIAL') || amenityPhotos[0];
+    const spaCand = amenityPhotos.find(a => a.detectedCategory === 'SPA') || amenityPhotos[1];
+    const bathCand = amenityPhotos.find(a => a.detectedCategory === 'BATHROOM') || amenityPhotos[2];
+    const amenityVisionSubset = [socialCand, spaCand, bathCand].filter(Boolean);
+
     const downloadedAmenity = await Promise.all(
       amenityVisionSubset.map(a => downloadImageBase64(a.imageUrl))
     );
@@ -155,18 +173,19 @@ Synthesize this live data and return the complete Master Vibe Audit JSON payload
     parts.push({ text: `\n=== SIGNATURE AMENITY & VENUE ASSETS (CANDIDATES FOR SWAPPING IN) ===\n` });
     downloadedAmenity.forEach((item, i) => {
       const a = amenityVisionSubset[i];
+      const origIndex = amenityPhotos.findIndex(orig => orig.imageUrl === a.imageUrl) + 1;
       if (item && item.base64 && item.mimeType) {
-        parts.push({ text: `\n[SIGNATURE AMENITY ASSET #${i + 1} (Title: "${a.title || 'Amenity'}")]:` });
+        parts.push({ text: `\n[SIGNATURE AMENITY ASSET #${origIndex || (i + 1)} [Category: ${a.detectedCategory || 'AMENITY'}] (Title: "${a.title || 'Amenity'}")]:` });
         parts.push({ inlineData: { data: item.base64, mimeType: item.mimeType } });
       } else {
-        parts.push({ text: `\n[SIGNATURE AMENITY ASSET #${i + 1} (Title: "${a.title || 'Amenity'}")]: URL: ${a.imageUrl || 'Amenity'}` });
+        parts.push({ text: `\n[SIGNATURE AMENITY ASSET #${origIndex || (i + 1)} [Category: ${a.detectedCategory || 'AMENITY'}] (Title: "${a.title || 'Amenity'}")]: URL: ${a.imageUrl || 'Amenity'}` });
       }
     });
 
-    if (amenityPhotos.length > 4) {
+    if (amenityPhotos.length > 3) {
       parts.push({ 
         text: `\n[ADDITIONAL AMENITY ASSETS METADATA]:\n` + 
-          amenityPhotos.slice(4, 10).map((a, i) => `Amenity Asset #${i + 5}: "${a.title || 'Amenity'}" (URL: ${a.imageUrl})`).join('\n') 
+          amenityPhotos.map((a, i) => `Amenity Asset #${i + 1} [Category: ${a.detectedCategory || 'AMENITY'}]: "${a.title || 'Amenity'}" (URL: ${a.imageUrl})`).join('\n') 
       });
     }
   }
@@ -176,9 +195,14 @@ Synthesize this live data and return the complete Master Vibe Audit JSON payload
   try {
     let result;
     try {
-      result = await model.generateContent(parts);
+      // Race multimodal vision call against an 8-second timeout for ultra-responsive performance
+      const visionTimeout = new Promise((_, reject) => setTimeout(() => reject(new Error('Multimodal vision generation timeout')), 8000));
+      result = await Promise.race([
+        model.generateContent(parts),
+        visionTimeout
+      ]);
     } catch (multimodalErr) {
-      console.warn(`[Gemini] Multimodal inline image generation failed (${multimodalErr.message}), executing graceful text-only metadata generation...`);
+      console.warn(`[Gemini] Multimodal inline image generation fallback (${multimodalErr.message}), executing high-speed metadata generation...`);
       
       const textOnlyParts = [
         { text: systemPrompt },
@@ -188,7 +212,7 @@ Synthesize this live data and return the complete Master Vibe Audit JSON payload
         },
         { 
           text: `\n=== SIGNATURE AMENITY CANDIDATES METADATA ===\n` + 
-            (amenityPhotos || []).slice(0, 10).map((a, i) => `Amenity Asset #${i + 1}: "${a.title || 'Amenity'}" (URL: ${a.imageUrl})`).join('\n')
+            (amenityPhotos || []).slice(0, 25).map((a, i) => `Amenity Asset #${i + 1} [Category: ${a.detectedCategory || 'AMENITY'}]: "${a.title || 'Amenity'}" (URL: ${a.imageUrl})`).join('\n')
         },
         { text: userPrompt }
       ];
