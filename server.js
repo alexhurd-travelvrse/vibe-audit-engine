@@ -7,6 +7,14 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+process.on('uncaughtException', (err) => {
+    console.error('[Server Uncaught Exception]:', err.message);
+});
+
+process.on('unhandledRejection', (reason, promise) => {
+    console.warn('[Server Unhandled Rejection]:', reason);
+});
+
 app.get('/', (req, res) => {
     res.send('Vibe Audit API is running. The endpoint is at POST /api/audit');
 });

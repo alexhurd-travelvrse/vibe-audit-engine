@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { Search, MapPin, Sparkles, ArrowRight, ShieldCheck, Zap, Globe } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { scrapeLocalSignals, fetchMasterVibeAudit } from '../personaEngine';
@@ -203,6 +203,17 @@ const VibeAuditSearchSection = () => {
                     </>
                   )}
                 </button>
+              </div>
+
+              {/* Micro-Consent Disclaimer */}
+              <div style={{ marginTop: '1.25rem', textAlign: 'center' }}>
+                <p style={{ fontSize: '11px', color: 'rgba(255, 255, 255, 0.45)', lineHeight: 1.5, margin: 0 }}>
+                  🔒 By clicking <strong>Launch Vibe Audit</strong>, you agree to our{' '}
+                  <Link to="/terms" style={{ color: '#00e5ff', textDecoration: 'underline' }}>Terms & Conditions</Link>{' '}
+                  and acknowledge our{' '}
+                  <Link to="/privacy" style={{ color: '#00e5ff', textDecoration: 'underline' }}>Privacy Policy</Link>. 
+                  Your work email is used to authenticate your audit and deliver diagnostic reports. We never spam.
+                </p>
               </div>
 
             </form>

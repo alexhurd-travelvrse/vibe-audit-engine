@@ -329,6 +329,17 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                 <button className="launch-button" style={{ padding: '1.25rem', fontSize: '1.2rem', marginTop: '1.5rem' }} onClick={startAnalysis}>
                     LAUNCH VIBE AUDIT 🚀
                 </button>
+
+                {/* Micro-Consent Disclaimer */}
+                <div style={{ marginTop: '1.25rem', textAlign: 'center' }}>
+                  <p style={{ fontSize: '11px', color: 'rgba(255, 255, 255, 0.45)', lineHeight: 1.5, margin: 0 }}>
+                    🔒 By clicking <strong>Launch Vibe Audit</strong>, you agree to our{' '}
+                    <Link to="/terms" style={{ color: '#00e5ff', textDecoration: 'underline' }}>Terms & Conditions</Link>{' '}
+                    and acknowledge our{' '}
+                    <Link to="/privacy" style={{ color: '#00e5ff', textDecoration: 'underline' }}>Privacy Policy</Link>. 
+                    Your work email is used to authenticate your audit and deliver diagnostic reports. We never spam.
+                  </p>
+                </div>
               </div>
             </motion.div>
           )}

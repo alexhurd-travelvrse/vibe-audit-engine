@@ -16,6 +16,8 @@ import BarcelonaPage from './pages/BarcelonaPage';
 import PartnerPage from './pages/PartnerPage';
 import CreatorPage from './pages/CreatorPage';
 import CreatorPortal from './pages/CreatorPortal';
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
+import TermsPage from './pages/TermsPage';
 import B2BLeadGenOnboarding from './B2BLeadGenOnboarding';
 import './B2BLeadGenOnboarding.css';
 
@@ -67,6 +69,8 @@ const App = () => {
           <Route path="/" element={<B2BHome />} />
           <Route path="/audit" element={<B2BLeadGenOnboarding initialStep="input" />} />
           <Route path="/vibe-audit" element={<B2BLeadGenOnboarding initialStep="input" />} />
+          <Route path="/privacy" element={<PrivacyPolicyPage />} />
+          <Route path="/terms" element={<TermsPage />} />
           <Route path="/marketplace" element={<MarketplacePage />} />
           <Route path="/barcelona" element={<BarcelonaPage />} />
           <Route path="/partner" element={<PartnerPage />} />

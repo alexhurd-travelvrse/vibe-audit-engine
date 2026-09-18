@@ -93,9 +93,9 @@ const Footer = () => {
                 <div className="footer-bottom">
                     <p className="copyright">&copy; {new Date().getFullYear()} Travelvrse. All rights reserved.</p>
                     <div className="footer-links">
-                        <a href="https://usgrant.travelvrse.com/privacy" target="_blank" rel="noopener noreferrer" className="footer-link">Privacy Policy</a>
+                        <Link to="/privacy" className="footer-link">Privacy Policy</Link>
                         <span className="footer-divider">|</span>
-                        <a href="https://usgrant.travelvrse.com/terms" target="_blank" rel="noopener noreferrer" className="footer-link">Terms & Conditions</a>
+                        <Link to="/terms" className="footer-link">Terms & Conditions</Link>
                         <span className="footer-divider">|</span>
                         {/* The Hidden Creator Link */}
                         <Link to="/creator-portal" className="stealth-link" title="Creator Portal">
