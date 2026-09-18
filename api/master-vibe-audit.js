@@ -272,11 +272,11 @@ export default async function handler(req, res) {
   if (req.method === 'OPTIONS') return res.status(200).end();
 
   try {
-    const hotelName = req.body.hotelName || req.query.hotelName || req.body.propertyName || 'Sea Containers London';
-    const city = req.body.city || req.query.city || 'London';
-    const neighborhood = req.body.neighborhood || req.query.neighborhood || 'Southbank';
+    const hotelName = req.body.hotelName || req.query.hotelName || req.body.propertyName || 'Hartwell House';
+    const city = req.body.city || req.query.city || 'Aylesbury';
+    const neighborhood = (req.body.neighborhood !== undefined) ? req.body.neighborhood : (req.query.neighborhood || '');
 
-    console.log(`[Master Vibe Audit API] Running for: "${hotelName}" in "${city}" (${neighborhood})`);
+    console.log(`[Master Vibe Audit API] Running for: "${hotelName}" in "${city}" ${neighborhood ? `(${neighborhood})` : ''}`);
 
     // 1. Fetch Venue Corpus from Serper with neighborhood precision
     const { rawCorpus } = await fetchVenueCorpus(hotelName, city, neighborhood);

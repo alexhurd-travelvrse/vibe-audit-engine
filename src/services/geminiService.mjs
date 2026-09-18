@@ -58,16 +58,19 @@ A) STANDARD BASELINE SEQUENCE (Default when no asset qualifies for override):
 - Slot 5 (SECONDARY_ROOM_BATHROOM): MUST depict a design bathroom, freestanding soaking tub, marble washroom, or luxury rain shower (to confirm finish quality and hygiene). Category: "SECONDARY_ROOM_BATHROOM".
 
 B) MAGNET OVERRIDE SEQUENCE (When NAI >= 0.85 and Asset passes all 4 rules):
-- Slot 1 (HERO_CULTURAL_MAGNET): The unique asset (e.g., 12th Knot Rooftop Bar, Subterranean Hi-Fi Bar, Skyline Infinity Pool). Category: "HERO_CULTURAL_MAGNET", Action: "HERO_CULTURAL_MAGNET", Action Label: "⚡ HERO CULTURAL MAGNET: [ASSET NAME] (SLOT #1)".
+- Slot 1 (HERO_CULTURAL_MAGNET): The unique asset (e.g., Hartwell Spa Indoor Pool, 12th Knot Rooftop Bar, Subterranean Hi-Fi Bar). Category: "HERO_CULTURAL_MAGNET", Action: "HERO_CULTURAL_MAGNET", Action Label: "⚡ HERO CULTURAL MAGNET: [ASSET NAME] (SLOT #1)".
 - Slot 2 (EXTERIOR_LANDMARK): Mandatory exterior facade. Category: "EXTERIOR_LANDMARK", Action: "PROMOTE" or "RE_SEQUENCE", Action Label: "EXTERIOR LANDMARK (SLOT #2 - MANDATORY GROUNDING)".
 - Slot 3 (SIGNATURE_SUITE_BEDROOM): Most stylish signature king suite/room. Category: "SIGNATURE_SUITE_BEDROOM".
-- Slot 4 (WELLNESS_SPA_LOBBY): MUST depict the dedicated Spa (e.g. Agua Spa), wellness treatment room, thermal suite, or iconic design lobby. Category: "WELLNESS_SPA_LOBBY".
+- Slot 4 (COMPLEMENTARY AMENITY - NO THEMATIC DUPLICATION):
+  * IF Slot 1 was a Social/Bar/Rooftop asset -> Slot 4 MUST feature the dedicated Spa/Wellness/Thermal facility (Category: "WELLNESS_SPA_LOBBY").
+  * IF Slot 1 was a Spa/Wellness/Pool asset -> Slot 4 MUST feature the Fine Dining Restaurant / Culinary / Cocktail Lounge / Historic Drawing Room (Category: "SOCIAL_FB_ROOFTOP" or "WELLNESS_SPA_LOBBY") to ensure dining is showcased and NEVER duplicated with Slot 1.
 - Slot 5 (SECONDARY_ROOM_BATHROOM): MUST depict a design bathroom, freestanding soaking tub, marble washroom, or luxury rain shower. Category: "SECONDARY_ROOM_BATHROOM".
 
-STRICT SLOT INTEGRITY RULES:
-- Slot 4 MUST feature the Spa/Wellness or iconic design lobby.
-- Slot 5 MUST feature a luxury bathroom/tub/shower. NEVER put a repetitive bedroom in Slot 5.
-- Strict 5 distinct thematic slots at all times.
+STRICT SLOT INTEGRITY & DEDUPLICATION RULES:
+- NEVER repeat the same theme across slots (e.g., NEVER put Spa in Slot 1 AND Spa in Slot 4; NEVER put Bedroom in Slot 3 AND Bedroom in Slot 5).
+- If Spa/Pool is elevated to Slot 1, Slot 4 MUST showcase Fine Dining / Culinary / Social Lounge.
+- Slot 5 MUST feature a luxury bathroom/tub/shower.
+- Strict 5 distinct thematic slots at all times (Magnet ➔ Exterior ➔ Suite ➔ Complementary Dining/Spa ➔ Luxury Bathroom).
 - Populate "slot_1_decision_logic" explaining whether Magnet Override was triggered or why default was retained.
 
 MERCHANDISING SCORES & READABILITY BULLETS:
