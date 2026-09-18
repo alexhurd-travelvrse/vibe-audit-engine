@@ -298,7 +298,10 @@ export default async function handler(req, res) {
           let action = item.action || 'RE_SEQUENCE';
           let actionLabel = item.action_label;
 
-          if (isRetained) {
+          if (item.category === 'HERO_CULTURAL_MAGNET' || item.action === 'HERO_CULTURAL_MAGNET' || item.action === 'MAGNET_OVERRIDE') {
+            action = 'HERO_CULTURAL_MAGNET';
+            actionLabel = item.action_label || `⚡ HERO CULTURAL MAGNET: ${item.photo_subject || 'SIGNATURE ASSET'} (SLOT #1)`;
+          } else if (isRetained) {
             action = targetSlot === 1 ? 'KEEP_HERO' : 'RETAIN';
             actionLabel = targetSlot === 1 ? 'KEEP AS HERO (SLOT #1)' : `RETAIN IN SLOT #${targetSlot}`;
           } else if (isMoved) {

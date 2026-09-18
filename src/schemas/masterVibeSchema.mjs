@@ -112,6 +112,7 @@ export const masterVibeSchema = {
               category: { 
                 type: "string", 
                 enum: [
+                  "HERO_CULTURAL_MAGNET",
                   "EXTERIOR_LANDMARK",
                   "SOCIAL_FB_ROOFTOP",
                   "SIGNATURE_SUITE_BEDROOM",
@@ -130,8 +131,8 @@ export const masterVibeSchema = {
                 description: "The 1-indexed number of the photo in the respective pool (e.g. 13 if chosen from LIVE PHOTO #13, or 2 if chosen from AMENITY ASSET #2)"
               },
               current_slot: { type: "integer", description: "Original current slot number on Booking.com (1 to 20) if retaining or promoting a live photo, or null if swapped from amenity asset" },
-              action: { type: "string", enum: ["KEEP_HERO", "KEEP", "PROMOTE", "DEMOTE", "REPLACE", "SWAP_IN"] },
-              action_label: { type: "string", description: "Short punchy label e.g. 'PROMOTE EXTERIOR HERO (FROM SLOT #13)', 'SWAP IN COCKTAIL BAR (SLOT #2)', 'KEEP SIGNATURE SUITE (SLOT #3)'" },
+              action: { type: "string", enum: ["KEEP_HERO", "KEEP", "PROMOTE", "DEMOTE", "REPLACE", "SWAP_IN", "HERO_CULTURAL_MAGNET", "MAGNET_OVERRIDE", "RE_SEQUENCE"] },
+              action_label: { type: "string", description: "Short punchy label e.g. 'HERO CULTURAL MAGNET: SUBTERRANEAN HI-FI BAR (SLOT #1)', 'PROMOTE EXTERIOR HERO (FROM SLOT #13)', 'SWAP IN COCKTAIL BAR (SLOT #2)'" },
               photo_subject: { type: "string", description: "Exact visual content of this specific photo" },
               local_vibe_connection: { 
                 type: "string", 
@@ -141,6 +142,17 @@ export const masterVibeSchema = {
             },
             required: ["slot", "category", "source_type", "source_index", "photo_subject", "psychological_conversion_trigger"]
           }
+        },
+        slot_1_decision_logic: {
+          type: "object",
+          properties: {
+            is_magnet_override_active: { type: "boolean" },
+            override_asset_name: { type: "string" },
+            neighborhood_affinity_index: { type: "number", description: "0.00 to 1.00 score" },
+            reasoning_code: { type: "string" },
+            strategy_explanation: { type: "string" }
+          },
+          required: ["is_magnet_override_active", "reasoning_code", "strategy_explanation"]
         },
         anti_commodity_copy_rewrite: {
           type: "object",

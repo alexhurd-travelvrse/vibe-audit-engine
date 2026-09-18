@@ -24,6 +24,9 @@ export default function BookingOtaAuditCard({ otaData, hotelName }) {
   const getActionBadge = (action, actionLabel) => {
     const lbl = (actionLabel || '').toUpperCase();
     const act = (action || '').toUpperCase();
+    if (act === 'HERO_CULTURAL_MAGNET' || lbl.includes('MAGNET') || act === 'MAGNET_OVERRIDE') {
+      return { bg: '#8b5cf6', color: '#ffffff', text: actionLabel || '⚡ HERO CULTURAL MAGNET' };
+    }
     if (act === 'KEEP_HERO' || lbl.includes('HERO') || act === 'RETAIN' || lbl.includes('RETAIN')) {
       return { bg: '#00e5ff', color: '#000', text: actionLabel || 'RETAINED IN PLACE' };
     }
