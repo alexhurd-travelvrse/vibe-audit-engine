@@ -57,6 +57,18 @@ const VibeAuditSearchSection = () => {
     e.preventDefault();
     setEmailError('');
 
+    // Require valid work email on live production environments
+    if (isLiveProduction) {
+      if (!formData.email || !formData.email.trim()) {
+        setEmailError('Please enter your work email to generate your Vibe Audit.');
+        return;
+      }
+      if (!formData.email.includes('@') || !formData.email.includes('.')) {
+        setEmailError('Please enter a valid work email address (e.g. alex@hotelgroup.com).');
+        return;
+      }
+    }
+
     if (formData.email && formData.email.includes('@')) {
       submitLeadToFormspree(formData);
     }
@@ -157,7 +169,7 @@ const VibeAuditSearchSection = () => {
                 {/* Work Email */}
                 <div className="vibe-input-field">
                   <label className="vibe-label">
-                    Work Email <span className="optional-tag">(Optional)</span>
+                    Work Email {isLiveProduction ? <span style={{ color: '#ef4444', fontWeight: 900 }}>*</span> : <span className="optional-tag">(Optional in Dev)</span>}
                   </label>
                   <div className="vibe-input-wrapper">
                     <Zap size={18} className="vibe-input-icon text-gold" />

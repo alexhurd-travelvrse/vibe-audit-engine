@@ -114,7 +114,18 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
   const startAnalysis = async () => {
     setEmailError('');
 
-    // Optional email capture - submit to Formspree if valid email provided
+    // Require valid work email on live production environments
+    if (isLiveProduction) {
+      if (!formData.email || !formData.email.trim()) {
+        setEmailError('Please enter your work email to receive and launch your Vibe Audit.');
+        return;
+      }
+      if (!formData.email.includes('@') || !formData.email.includes('.')) {
+        setEmailError('Please enter a valid work email address (e.g. alex@hotelgroup.com).');
+        return;
+      }
+    }
+
     if (formData.email && formData.email.includes('@')) {
       submitLeadToFormspree(formData);
     }
@@ -290,7 +301,7 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                 <div className="input-group" style={{ marginBottom: '1.5rem' }}>
                   <label className="input-label" style={{ marginBottom: '0.75rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                     <span>
-                      Work Email <span style={{ color: 'rgba(255,255,255,0.4)', fontSize: '12px' }}>(Optional)</span>
+                      Work Email {isLiveProduction ? <span style={{ color: '#ef4444', fontWeight: 900 }}>*</span> : <span style={{ color: 'rgba(255,255,255,0.4)', fontSize: '12px' }}>(Optional in Dev)</span>}
                     </span>
                   </label>
                   <input 
