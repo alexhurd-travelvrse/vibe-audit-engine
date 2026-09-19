@@ -362,14 +362,40 @@ export default function BookingOtaAuditCard({ otaData, hotelName }) {
                         {item.photo_subject}
                       </div>
 
+                      {/* Upgrade Callout Badge if brand asset */}
+                      {item.upgrade_rationale && (
+                        <div style={{
+                          background: 'rgba(245, 158, 11, 0.1)',
+                          border: '1px solid rgba(245, 158, 11, 0.3)',
+                          borderRadius: '8px',
+                          padding: '8px 10px',
+                          marginBottom: '0.75rem',
+                          fontSize: '11px',
+                          color: '#fbbf24',
+                          lineHeight: 1.4
+                        }}>
+                          <strong style={{ color: '#f59e0b', textTransform: 'uppercase', fontSize: '10px', letterSpacing: '0.05em', display: 'block', marginBottom: '2px' }}>
+                            ✨ Asset Upgrade Justification:
+                          </strong>
+                          {item.upgrade_rationale}
+                        </div>
+                      )}
+
                       {/* Readable Bullet Points */}
                       <ul style={{ margin: 0, paddingLeft: '1.15rem', display: 'flex', flexDirection: 'column', gap: '7px' }}>
                         {item.bullet_points && Array.isArray(item.bullet_points) && item.bullet_points.length > 0 ? (
-                          item.bullet_points.map((pt, pIdx) => (
-                            <li key={pIdx} style={{ fontSize: '11.5px', color: 'rgba(255,255,255,0.85)', lineHeight: 1.45 }}>
-                              {pt}
-                            </li>
-                          ))
+                          item.bullet_points.map((pt, pIdx) => {
+                            const isUpgradeBullet = pt.toLowerCase().startsWith('visual upgrade') || pt.toLowerCase().startsWith('upgrade rationale') || pt.toLowerCase().startsWith('upgrade:');
+                            return (
+                              <li key={pIdx} style={{ 
+                                fontSize: '11.5px', 
+                                color: isUpgradeBullet ? '#fbbf24' : 'rgba(255,255,255,0.85)', 
+                                lineHeight: 1.45 
+                              }}>
+                                {pt}
+                              </li>
+                            );
+                          })
                         ) : (
                           <>
                             <li style={{ fontSize: '11.5px', color: '#fbbf24', lineHeight: 1.45 }}>

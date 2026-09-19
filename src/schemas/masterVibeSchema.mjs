@@ -145,7 +145,11 @@ export const masterVibeSchema = {
               bullet_points: {
                 type: "array",
                 items: { type: "string" },
-                description: "2 to 3 concise, punchy bullet points justifying this specific photo: (1) Strategic visual shift, (2) Alignment with local neighborhood search demand, (3) Psychological conversion trigger"
+                description: "2 to 3 concise, punchy bullet points justifying this specific photo: (1) Visual Upgrade Rationale (if bringing in a new asset, explain precisely why it is better than the existing photo in composition/lighting/mood), (2) Alignment with local neighborhood search demand, (3) Psychological conversion trigger"
+              },
+              upgrade_rationale: {
+                type: "string",
+                description: "If bringing in a new photo or upgrading an existing OTA photo, a direct 1-2 sentence explanation of why this photo is visually and psychologically superior (e.g. architectural symmetry, ambient lighting, warmth, depth vs. clinical/distorted angles)"
               },
               local_vibe_connection: { 
                 type: "string", 

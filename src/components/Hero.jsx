@@ -35,7 +35,7 @@ const Hero = () => {
                 </div>
 
                 <p className="hero-subtitle">
-                    <span className="progressive-item" style={{ animationDelay: '0.8s' }}>Turn Atmosphere into Bookings</span>
+                    <span className="progressive-item" style={{ animationDelay: '0.8s' }}>Turn Local Atmosphere into Bookings</span>
                 </p>
 
                 <div className="hero-cta-group animate-fade-up" style={{ animationDelay: '3.4s', justifyContent: 'center' }}>

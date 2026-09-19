@@ -67,6 +67,8 @@ B) MAGNET OVERRIDE SEQUENCE (When NAI >= 0.85 and Asset passes all 4 rules):
 - Slot 5 (SECONDARY_ROOM_BATHROOM): MUST depict a design bathroom, freestanding soaking tub, marble washroom, or luxury rain shower. Category: "SECONDARY_ROOM_BATHROOM".
 
 STRICT SLOT INTEGRITY & DEDUPLICATION RULES:
+- LIVE PHOTO SELECTION PRIORITY: Always inspect "CURRENT LIVE BOOKING.COM PHOTOS" first! If an asset of the required category (e.g. Spa Pool, Signature Bedroom, Exterior, Restaurant, Bathroom) is ALREADY present in the live gallery (e.g. Live Photo #4 is the Spa), you MUST select source_type: "LIVE_PHOTO", source_index: [1-indexed slot], and action: "PROMOTE" / "RE_SEQUENCE" / "KEEP". ONLY select "AMENITY_ASSET" if the live gallery completely lacks a photo of that amenity.
+- RESTAURANT / CULINARY FIDELITY: When recommending Slot 4 (or Slot 2) for Social F&B / Restaurant (Category: "SOCIAL_FB_ROOFTOP"), the photo subject MUST depict an authentic indoor dining room, table setting, gastronomy dishes, cocktail bar, or lounge interior. It must NEVER be an exterior building, marina, facade, or street view.
 - NEVER repeat the same theme across slots (e.g., NEVER put Spa in Slot 1 AND Spa in Slot 4; NEVER put Bedroom in Slot 3 AND Bedroom in Slot 5).
 - If Spa/Pool is elevated to Slot 1, Slot 4 MUST showcase Fine Dining / Culinary / Social Lounge.
 - Slot 5 MUST feature a luxury bathroom/tub/shower.
@@ -80,11 +82,13 @@ MERCHANDISING SCORES & READABILITY BULLETS:
    - "projected_conversion_uplift": Calculated uplift estimate (e.g. "+18.5%" to "+24.0%").
 2. "key_strategic_shifts" (Overview Bullets):
    - Provide 3-4 high-impact, scannable bullet points explaining what is changing and WHY, explicitly linking the hotel's cultural DNA with neighborhood traveler search volume (e.g., "Shift 1: Elevate Subterranean Vinyl Hi-Fi Lounge to capture Soho's #1 nightlife search demand", "Shift 2: Move exterior facade to Slot #2 to anchor geographic orientation").
-3. "bullet_points" (Per-Photo Bullets):
-   - For EACH of the 5 photo recommendations, provide exactly 2-3 concise, punchy bullet points:
-     • Bullet 1 (Action & Subject): Specific visual change and why this subject was selected.
-     • Bullet 2 (DNA & Local Synergy): How this visual connects the property's authentic DNA with what travelers search for in this specific neighborhood.
-     • Bullet 3 (Conversion Trigger): The psychological mechanism triggering higher booking intent.`;
+3. "upgrade_rationale" & "bullet_points" (Visual Upgrade Justification):
+   - Whenever you bring in a new photo (source_type: "AMENITY_ASSET") or upgrade/replace an existing live photo:
+     • "upgrade_rationale": Provide a direct, compelling 1-2 sentence explanation detailing EXACTLY why this new asset is visually and psychologically superior to what currently sits on Booking.com (e.g. "Upgrades from a flat, clinical side-angle with overhead fluorescent glare to a warm, sunlit central perspective with crisp reflections and luxury loungers that immediately convey 5-star sanctuary tranquility").
+     • In "bullet_points", format the 3 bullets as:
+       - Bullet 1: "Visual Upgrade: [Clear comparison of why this asset is superior in lighting, composition, emotional warmth, or architectural clarity over the live OTA photo]" (or "Strategic Placement: [Reason for re-sequencing]" if retaining a live photo).
+       - Bullet 2: "Local Synergy: [How this visual connects the property's authentic DNA with what travelers search for in this specific neighborhood]".
+       - Bullet 3: "Conversion Trigger: [The psychological mechanism triggering higher booking intent]".`;
 
   const userPrompt = `VENUE: ${hotelName} (${city})
 TIMESTAMP: ${new Date().toISOString()}
