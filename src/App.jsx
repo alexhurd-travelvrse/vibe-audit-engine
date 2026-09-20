@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import { HelmetProvider } from 'react-helmet-async';
 import Layout from './components/Layout';
 import Hero from './components/Hero';
-import VibeAuditSearchSection from './components/VibeAuditSearchSection';
+import ServiceOfferingSection from './components/ServiceOfferingSection';
 import ProblemSection from './components/ProblemSection';
 import HowItWorksSection from './components/HowItWorksSection';
 import GoToMarketSection from './components/GoToMarketSection';
@@ -36,7 +36,10 @@ const B2BHome = () => {
       {/* 1. Hero */}
       <Hero />
       
-      {/* 2. Vibe Conversion Engine (ProblemSection) */}
+      {/* 2. Service Offering, Transformation Graphic & Dual Tables */}
+      <ServiceOfferingSection />
+
+      {/* 3. Vibe Conversion Engine (ProblemSection) */}
       <ProblemSection />
       
       {/* 4. Increase Direct Revenue */}
