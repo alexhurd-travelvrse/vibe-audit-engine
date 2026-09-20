@@ -71,27 +71,98 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
       {/* 4-Grid Diagnostic Telemetry */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.5rem', marginBottom: '2rem' }}>
         
-        {/* Card 1: Acoustic DNA */}
-        <div style={{ background: 'rgba(0,0,0,0.3)', padding: '1.5rem', borderRadius: '1.25rem', border: '1px solid rgba(255,255,255,0.06)' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.75rem', color: '#00e5ff' }}>
-            <Music size={18} />
-            <h3 style={{ fontSize: '13px', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.1em', margin: 0 }}>
-              Acoustic DNA
-            </h3>
-          </div>
-          <div style={{ fontSize: '15px', fontWeight: 800, color: '#ffffff', marginBottom: '0.5rem' }}>
-            {dna.soundscape_genre || 'Curated Soundscape'}
-          </div>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '0.75rem' }}>
-            {(dna.anchor_artists || []).map((artist, i) => (
-              <span key={i} style={{ background: 'rgba(0, 229, 255, 0.12)', color: '#00e5ff', fontSize: '11px', fontWeight: 700, padding: '3px 8px', borderRadius: '12px' }}>
-                {artist}
+        {/* Card 1: Acoustic DNA & Spotify Playlist */}
+        <div style={{ background: 'rgba(0,0,0,0.35)', padding: '1.5rem', borderRadius: '1.25rem', border: '1px solid rgba(29, 185, 84, 0.25)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+          <div>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#1DB954' }}>
+                <Music size={18} />
+                <h3 style={{ fontSize: '13px', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.1em', margin: 0 }}>
+                  Acoustic DNA
+                </h3>
+              </div>
+              <span style={{ 
+                background: 'rgba(29, 185, 84, 0.15)', 
+                color: '#1DB954', 
+                border: '1px solid rgba(29, 185, 84, 0.4)',
+                fontSize: '10px', 
+                fontWeight: 800, 
+                padding: '2px 8px', 
+                borderRadius: '10px',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '4px'
+              }}>
+                <Disc size={12} className="spin-slow" /> Spotify Vibe
               </span>
-            ))}
+            </div>
+
+            <div style={{ fontSize: '15px', fontWeight: 800, color: '#ffffff', marginBottom: '0.4rem' }}>
+              {dna.soundscape_genre || 'Curated Soundscape'}
+            </div>
+
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '0.75rem' }}>
+              {(dna.anchor_artists || []).map((artist, i) => (
+                <a 
+                  key={i} 
+                  href={`https://open.spotify.com/search/${encodeURIComponent(artist)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ 
+                    background: 'rgba(29, 185, 84, 0.12)', 
+                    color: '#1DB954', 
+                    fontSize: '11px', 
+                    fontWeight: 700, 
+                    padding: '3px 8px', 
+                    borderRadius: '12px',
+                    textDecoration: 'none',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '4px',
+                    border: '1px solid rgba(29, 185, 84, 0.25)',
+                    transition: 'all 0.2s ease'
+                  }}
+                  title={`Listen to ${artist} on Spotify`}
+                >
+                  ♫ {artist}
+                </a>
+              ))}
+            </div>
+
+            <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.65)', lineHeight: 1.4, margin: '0 0 1rem 0' }}>
+              {dna.sound_texture || 'Atmospheric acoustic layering.'}
+            </p>
           </div>
-          <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.4, margin: 0 }}>
-            {dna.sound_texture || 'Atmospheric acoustic layering.'}
-          </p>
+
+          {/* Spotify Direct Launch Button */}
+          <div style={{ paddingTop: '0.75rem', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+            <a
+              href={`https://open.spotify.com/search/${encodeURIComponent(dna.spotify_query || `${hotelName} ${dna.soundscape_genre || ''}`)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '8px',
+                background: 'linear-gradient(90deg, #1DB954 0%, #1aa34a 100%)',
+                color: '#000000',
+                fontWeight: 900,
+                fontSize: '11.5px',
+                letterSpacing: '0.04em',
+                padding: '8px 14px',
+                borderRadius: '12px',
+                textDecoration: 'none',
+                boxShadow: '0 4px 15px rgba(29, 185, 84, 0.3)',
+                transition: 'transform 0.2s ease, box-shadow 0.2s ease'
+              }}
+              onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.02)'}
+              onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+            >
+              <Disc size={15} color="#000000" />
+              <span>Listen to Vibe Playlist on Spotify</span>
+            </a>
+          </div>
         </div>
 
         {/* Card 2: Crowd Archetype & Pacing */}
