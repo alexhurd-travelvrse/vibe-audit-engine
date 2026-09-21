@@ -43,7 +43,7 @@ export default function ServiceOfferingSection() {
   };
 
   return (
-    <section className="service-offering-section" id="vibe-services">
+    <section className="service-offering-section" id="solution">
       <div className="container">
         
         {/* Intro Narrative Section */}

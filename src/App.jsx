@@ -4,13 +4,9 @@ import { HelmetProvider } from 'react-helmet-async';
 import Layout from './components/Layout';
 import Hero from './components/Hero';
 import ServiceOfferingSection from './components/ServiceOfferingSection';
-import ProblemSection from './components/ProblemSection';
-import HowItWorksSection from './components/HowItWorksSection';
-import GoToMarketSection from './components/GoToMarketSection';
 import BlogJournal from './components/BlogJournal';
 import TeamSection from './components/TeamSection';
 import Footer from './components/Footer';
-import RevenueSection from './components/RevenueSection';
 import MarketplacePage from './pages/MarketplacePage';
 import BarcelonaPage from './pages/BarcelonaPage';
 import PartnerPage from './pages/PartnerPage';
@@ -39,25 +35,13 @@ const B2BHome = () => {
       {/* 2. Service Offering, Transformation Graphic & Dual Tables */}
       <ServiceOfferingSection />
 
-      {/* 3. Vibe Conversion Engine (ProblemSection) */}
-      <ProblemSection />
-      
-      {/* 4. Increase Direct Revenue */}
-      <RevenueSection />
-      
-      {/* 5. Friction Free Implementation */}
-      <HowItWorksSection />
-      
-      {/* 6. Go To Market */}
-      <GoToMarketSection />
-      
-      {/* 7. Journal */}
+      {/* 3. Journal */}
       <BlogJournal />
       
-      {/* 8. Team */}
+      {/* 4. Team */}
       <TeamSection />
       
-      {/* 9. Footer */}
+      {/* 5. Footer */}
       <Footer />
     </Layout>
   );

@@ -129,39 +129,32 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
               ))}
             </div>
 
-            <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.65)', lineHeight: 1.4, margin: '0 0 1rem 0' }}>
+            <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.65)', lineHeight: 1.4, margin: '0 0 0.75rem 0' }}>
               {dna.sound_texture || 'Atmospheric acoustic layering.'}
             </p>
           </div>
 
-          {/* Spotify Direct Launch Button */}
-          <div style={{ paddingTop: '0.75rem', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
-            <a
-              href={`https://open.spotify.com/search/${encodeURIComponent(dna.spotify_query || `${hotelName} ${dna.soundscape_genre || ''}`)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                gap: '8px',
-                background: 'linear-gradient(90deg, #1DB954 0%, #1aa34a 100%)',
-                color: '#000000',
-                fontWeight: 900,
-                fontSize: '11.5px',
-                letterSpacing: '0.04em',
-                padding: '8px 14px',
-                borderRadius: '12px',
-                textDecoration: 'none',
-                boxShadow: '0 4px 15px rgba(29, 185, 84, 0.3)',
-                transition: 'transform 0.2s ease, box-shadow 0.2s ease'
-              }}
-              onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.02)'}
-              onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
-            >
-              <Disc size={15} color="#000000" />
-              <span>Listen to Vibe Playlist on Spotify</span>
-            </a>
+          {/* Embedded Spotify Player Direct In Manifest */}
+          <div style={{ marginTop: '0.5rem', borderRadius: '12px', overflow: 'hidden', background: '#121212', border: '1px solid rgba(29, 185, 84, 0.25)', minHeight: '80px' }}>
+            <iframe
+              style={{ borderRadius: '12px', border: 'none', display: 'block' }}
+              src={`https://open.spotify.com/embed/playlist/${(() => {
+                const g = (dna.soundscape_genre || '').toLowerCase();
+                if (g.includes('jazz') || g.includes('bossa') || g.includes('soul')) return '37i9dQZF1DXbITWG1ZJKYt';
+                if (g.includes('house') || g.includes('club') || g.includes('rooftop') || g.includes('sunset') || g.includes('electronic')) return '37i9dQZF1DX8tZsk68tuDw';
+                if (g.includes('indie') || g.includes('folk') || g.includes('acoustic')) return '37i9dQZF1DX2Nc3B70tvx0';
+                if (g.includes('piano') || g.includes('classical') || g.includes('heritage')) return '37i9dQZF1DWWEcRhUVtL8n';
+                if (g.includes('ambient') || g.includes('spa') || g.includes('zen') || g.includes('wellness') || g.includes('sanctuary')) return '37i9dQZF1DX3Ogo9pFvBkY';
+                if (g.includes('latin') || g.includes('tropic') || g.includes('mediterranean') || g.includes('coastal')) return '37i9dQZF1DX10zKzsJ2jva';
+                return '37i9dQZF1DX4WYpdgoIcn6';
+              })()}?utm_source=generator&theme=0`}
+              width="100%"
+              height="80"
+              frameBorder="0"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"
+              title="Hotel Acoustic DNA Spotify Player"
+            />
           </div>
         </div>
 
