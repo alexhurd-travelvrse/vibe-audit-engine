@@ -14,7 +14,7 @@ const Layout = ({ children }) => {
                 <div className="container header-content">
                     <Link to="/" className="logo" onClick={() => setIsMenuOpen(false)}>
                         <img
-                            src="/models/atmosVibe4.svg"
+                            src="/models/Atmosvibe6.svg"
                             alt="AtmosVibe"
                             className="nav-logo"
                             style={{ height: '56px', width: 'auto', display: 'block' }}

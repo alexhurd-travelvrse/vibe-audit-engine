@@ -251,7 +251,7 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
 
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <img 
-            src="/models/atmosVibe4.svg" 
+            src="/models/Atmosvibe6.svg" 
             alt="AtmosVibe" 
             style={{ height: '48px', width: 'auto', display: 'block' }} 
           />
