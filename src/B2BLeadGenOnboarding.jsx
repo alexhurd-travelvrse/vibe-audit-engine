@@ -540,6 +540,23 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                 <BookingOtaAuditCard 
                   otaData={analysis.masterAudit.ota_conversion_audit} 
                   hotelName={formData.propertyName} 
+                  isUnlocked={isProUnlocked}
+                  onUnlockClick={() => {
+                    setPasswordError('');
+                    setIsPasswordModalOpen(true);
+                  }}
+                  onRequestAccessClick={() => {
+                    setContactForm({
+                      name: '',
+                      propertyName: formData.propertyName || '',
+                      city: `${formData.neighborhood ? formData.neighborhood + ', ' : ''}${formData.city || ''}`,
+                      email: formData.email || '',
+                      phone: '',
+                      message: `Hi AtmosVibe Team, I would like to request access to the Booking.com Copy Rewrite and Pro Vibe Intelligence suite for ${formData.propertyName || 'our property'}.`
+                    });
+                    setIsContactSubmitted(false);
+                    setIsContactModalOpen(true);
+                  }}
                 />
               )}
 

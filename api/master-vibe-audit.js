@@ -7,25 +7,65 @@ dotenv.config();
 
 const SERPER_API_KEY = process.env.VITE_SERPER_API_KEY || process.env.SERPER_API_KEY;
 
-// Live Booking.com direct scraper via Playwright (with Serper fallback)
+// Distinctive token extractor (strips generic hospitality stop words)
+function getDistinctiveTokens(name) {
+  const stopWords = new Set(['the', 'a', 'an', 'and', '&', 'hotel', 'hotels', 'inn', 'pub', 'bar', 'lounge', 'rooms', 'house', 'boutique', 'resort', 'spa', 'suites', 'b&b', 'bed', 'breakfast', 'restaurant', 'lodge', 'retreat', 'club', 'london', 'uk']);
+  return String(name || '')
+    .toLowerCase()
+    .replace(/[^a-z0-9\s]/g, ' ')
+    .split(/\s+/)
+    .filter(token => token.length >= 3 && !stopWords.has(token));
+}
+
+function scoreUrlOrTitleMatch(targetStr, tokens) {
+  if (!targetStr || !tokens || tokens.length === 0) return 0;
+  const s = String(targetStr).toLowerCase();
+  let score = 0;
+  for (const token of tokens) {
+    if (s.includes(token)) {
+      score += 10;
+    }
+  }
+  return score;
+}
+
+// Live Booking.com direct scraper via Playwright (with Serper fallback & strict disambiguation)
 async function fetchBookingPhotosForHotel(hotelName, city, neighborhood = '') {
   try {
     const locationContext = neighborhood && neighborhood.trim() ? `${neighborhood.trim()} ${city}` : city;
+    const tokens = getDistinctiveTokens(hotelName);
+    
     // 1. Find the exact Booking.com URL via Serper Search
-    console.log(`[Master Vibe] Resolving Booking.com URL for "${hotelName}" in "${locationContext}"...`);
+    console.log(`[Master Vibe] Resolving Booking.com URL for "${hotelName}" in "${locationContext}" (Tokens: [${tokens.join(', ')}])...`);
     const searchRes = await fetch('https://google.serper.dev/search', {
       method: 'POST',
       headers: { 'X-API-KEY': SERPER_API_KEY, 'Content-Type': 'application/json' },
       body: JSON.stringify({
         q: `site:booking.com/hotel/ "${hotelName}" ${locationContext}`,
-        num: 3
+        num: 8
       })
     });
     const searchData = await searchRes.json();
-    const bookingUrl = searchData.organic?.[0]?.link;
+    const organicResults = searchData.organic || [];
+
+    // Disambiguation: Find the result whose URL slug or title best matches the distinctive hotel tokens
+    let bestMatch = null;
+    let bestScore = -1;
+
+    for (const item of organicResults) {
+      if (!item.link || !item.link.includes('booking.com/hotel/')) continue;
+      const urlSlug = item.link.split('booking.com/hotel/')[1] || '';
+      const score = (scoreUrlOrTitleMatch(urlSlug, tokens) * 2) + scoreUrlOrTitleMatch(item.title, tokens);
+      if (score > bestScore) {
+        bestScore = score;
+        bestMatch = item;
+      }
+    }
+
+    const bookingUrl = (bestMatch && bestScore > 0) ? bestMatch.link : organicResults[0]?.link;
 
     if (bookingUrl && bookingUrl.includes('booking.com/hotel/')) {
-      console.log(`[Master Vibe] Scraping live Booking.com gallery from: ${bookingUrl}`);
+      console.log(`[Master Vibe] Scraping live Booking.com gallery from resolved URL (Score: ${bestScore}): ${bookingUrl}`);
       try {
         const { chromium } = await import('playwright');
         const browser = await chromium.launch({ channel: 'chrome', headless: true }).catch(() => chromium.launch({ headless: true }));
@@ -103,7 +143,7 @@ async function fetchBookingPhotosForHotel(hotelName, city, neighborhood = '') {
       }
     }
 
-    // Fallback: Google Serper Images API
+    // Fallback: Google Serper Images API with venue filtering
     const res = await fetch('https://google.serper.dev/images', {
       method: 'POST',
       headers: { 'X-API-KEY': SERPER_API_KEY, 'Content-Type': 'application/json' },
@@ -114,7 +154,16 @@ async function fetchBookingPhotosForHotel(hotelName, city, neighborhood = '') {
     });
     const data = await res.json();
     if (data.images && data.images.length > 0) {
-      return data.images.map((img, i) => ({
+      // Filter out images that clearly belong to other venues when tokens exist
+      const filtered = data.images.filter(img => {
+        if (tokens.length > 0) {
+          const combined = `${img.title || ''} ${img.link || ''} ${img.imageUrl || ''}`.toLowerCase();
+          return tokens.some(t => combined.includes(t));
+        }
+        return true;
+      });
+      const finalPool = filtered.length >= 3 ? filtered : data.images;
+      return finalPool.map((img, i) => ({
         slot: i + 1,
         title: img.title || `Booking.com Photo ${i + 1}`,
         imageUrl: img.imageUrl,
@@ -127,27 +176,28 @@ async function fetchBookingPhotosForHotel(hotelName, city, neighborhood = '') {
   return [];
 }
 
-// Dynamic Amenity Photo Fetcher for any hotel & city with category-specific precision
+// Dynamic Amenity Photo Fetcher for any hotel & city with category-specific precision and competitor rejection
 async function fetchAmenityPhotosForHotel(hotelName, city, neighborhood = '') {
   try {
     const locationContext = neighborhood && neighborhood.trim() ? `${neighborhood.trim()} ${city}` : city;
+    const tokens = getDistinctiveTokens(hotelName);
     
     // Concurrently fetch specific categories: Dining/Social, Spa/Wellness, and Bathroom
     const [resSocial, resSpa, resBath] = await Promise.all([
       fetch('https://google.serper.dev/images', {
         method: 'POST',
         headers: { 'X-API-KEY': SERPER_API_KEY, 'Content-Type': 'application/json' },
-        body: JSON.stringify({ q: `"${hotelName}" ${locationContext} ("restaurant" OR "dining" OR "brasserie" OR "cocktail bar" OR "bar" OR "lounge" OR "afternoon tea" OR "gastronomy" OR "bistro" OR "food")`, num: 10 })
+        body: JSON.stringify({ q: `"${hotelName}" ${locationContext} ("restaurant" OR "dining" OR "brasserie" OR "cocktail bar" OR "bar" OR "lounge" OR "afternoon tea" OR "gastronomy" OR "bistro" OR "food")`, num: 12 })
       }).then(r => r.json()).catch(() => ({})),
       fetch('https://google.serper.dev/images', {
         method: 'POST',
         headers: { 'X-API-KEY': SERPER_API_KEY, 'Content-Type': 'application/json' },
-        body: JSON.stringify({ q: `"${hotelName}" ${locationContext} ("spa" OR "indoor pool" OR "swimming pool" OR "vitality pool" OR "treatment room" OR "wellness" OR "massage" OR "sauna" OR "bathhouse" OR "steam room")`, num: 10 })
+        body: JSON.stringify({ q: `"${hotelName}" ${locationContext} ("spa" OR "indoor pool" OR "swimming pool" OR "vitality pool" OR "treatment room" OR "wellness" OR "massage" OR "sauna" OR "bathhouse" OR "steam room")`, num: 12 })
       }).then(r => r.json()).catch(() => ({})),
       fetch('https://google.serper.dev/images', {
         method: 'POST',
         headers: { 'X-API-KEY': SERPER_API_KEY, 'Content-Type': 'application/json' },
-        body: JSON.stringify({ q: `"${hotelName}" ${locationContext} ("bathroom" OR "freestanding bath" OR "soaking tub" OR "marble bathroom" OR "rain shower" OR "luxury vanity")`, num: 10 })
+        body: JSON.stringify({ q: `"${hotelName}" ${locationContext} ("bathroom" OR "freestanding bath" OR "soaking tub" OR "marble bathroom" OR "rain shower" OR "luxury vanity")`, num: 12 })
       }).then(r => r.json()).catch(() => ({})),
     ]);
 
@@ -156,16 +206,36 @@ async function fetchAmenityPhotosForHotel(hotelName, city, neighborhood = '') {
       return s.includes('exterior') || s.includes('facade') || s.includes('façade') || s.includes('building') || s.includes('outside') || s.includes('aerial') || s.includes('marina view') || s.includes('view of hotel') || s.includes('entrance') || s.includes('architecture');
     };
 
+    // Filter out photos belonging to rival venues in the same neighborhood
+    const isValidAmenityPhoto = (img) => {
+      if (!img || !img.imageUrl) return false;
+      if (isExteriorLike(img.title, img.imageUrl)) return false;
+      
+      const titleLower = (img.title || '').toLowerCase();
+      const linkLower = (img.link || '').toLowerCase();
+      const combined = `${titleLower} ${linkLower}`;
+      
+      if (tokens.length > 0) {
+        const matchesTargetToken = tokens.some(t => combined.includes(t));
+        // If image title/link refers to another venue type but lacks target hotel token, reject
+        const mentionsGenericVenue = titleLower.includes(' pub') || titleLower.includes(' hotel') || titleLower.includes(' inn') || titleLower.includes(' tavern') || titleLower.includes(' brasserie');
+        if (mentionsGenericVenue && !matchesTargetToken) {
+          return false;
+        }
+      }
+      return true;
+    };
+
     const validSocial = (resSocial.images || [])
-      .filter(img => !isExteriorLike(img.title, img.imageUrl))
+      .filter(isValidAmenityPhoto)
       .map(img => ({ ...img, detectedCategory: 'SOCIAL' }));
 
     const validSpa = (resSpa.images || [])
-      .filter(img => !isExteriorLike(img.title, img.imageUrl))
+      .filter(isValidAmenityPhoto)
       .map(img => ({ ...img, detectedCategory: 'SPA' }));
 
     const validBath = (resBath.images || [])
-      .filter(img => !isExteriorLike(img.title, img.imageUrl))
+      .filter(isValidAmenityPhoto)
       .map(img => ({ ...img, detectedCategory: 'BATHROOM' }));
 
     const combined = [...validSocial, ...validSpa, ...validBath];

@@ -64,9 +64,18 @@ export async function fetchVenueCorpus(hotelName, city, neighborhood = '') {
 
   const corpusSections = [];
 
-  // Parse Places Data
+  // Parse Places Data with strict venue matching
   if (placesData.places && placesData.places.length > 0) {
-    const topPlace = placesData.places[0];
+    const normHotel = hotelName.toLowerCase().replace(/^(the|a|an)\s+/i, '').trim();
+    const hotelTokens = normHotel.split(/\s+/).filter(t => t.length > 2);
+    
+    // Find place that best matches hotel name tokens
+    const matchedPlace = placesData.places.find(p => {
+      const pTitle = (p.title || '').toLowerCase();
+      return hotelTokens.some(t => pTitle.includes(t));
+    }) || placesData.places[0];
+
+    const topPlace = matchedPlace;
     corpusSections.push(`=== GOOGLE PLACES METADATA & REVIEWS ===`);
     corpusSections.push(`Title: ${topPlace.title || hotelName}`);
     corpusSections.push(`Address: ${topPlace.address || ''}`);

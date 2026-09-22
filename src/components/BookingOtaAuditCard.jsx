@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Camera, TrendingUp, AlertCircle, Check, Copy, ExternalLink, ArrowRight, Sparkles, RefreshCw } from 'lucide-react';
+import { Camera, TrendingUp, AlertCircle, Check, Copy, ExternalLink, ArrowRight, Sparkles, RefreshCw, Lock, Key } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-export default function BookingOtaAuditCard({ otaData, hotelName }) {
+export default function BookingOtaAuditCard({ otaData, hotelName, isUnlocked, onUnlockClick, onRequestAccessClick }) {
   if (!otaData) return null;
 
   const [copied, setCopied] = useState(false);
@@ -10,6 +10,10 @@ export default function BookingOtaAuditCard({ otaData, hotelName }) {
   const photos = otaData.optimal_5_photo_sequence || [];
   const livePhotos = otaData.live_photos || [];
   const copyRewrite = otaData.anti_commodity_copy_rewrite || {};
+
+  const unlocked = (typeof isUnlocked === 'boolean') 
+    ? isUnlocked 
+    : (typeof window !== 'undefined' && sessionStorage.getItem('atmosvibe_pro_unlocked') === 'true');
 
   const beforeScore = otaData.before_merchandising_score || 44;
   const afterScore = otaData.after_merchandising_score || 93;
@@ -446,44 +450,157 @@ export default function BookingOtaAuditCard({ otaData, hotelName }) {
         </div>
       )}
 
-      {/* Anti-Commodity Copy Rewrite */}
-      <div style={{ background: 'rgba(0,0,0,0.4)', borderRadius: '1.25rem', padding: '1.75rem', border: '1px solid rgba(255,255,255,0.08)' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem', flexWrap: 'wrap', gap: '1rem' }}>
-          <div>
-            <div style={{ fontSize: '11px', fontWeight: 900, color: '#00e5ff', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
-              Anti-Commodity Copy Rewrite (Booking.com Overview)
+      {/* Anti-Commodity Copy Rewrite (PRO / LOGGED-IN ONLY) */}
+      {!unlocked ? (
+        <div style={{
+          background: 'linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(2, 6, 23, 0.95) 100%)',
+          borderRadius: '1.25rem',
+          padding: '2rem',
+          border: '1px solid rgba(0, 229, 255, 0.25)',
+          position: 'relative',
+          overflow: 'hidden',
+          boxShadow: '0 10px 30px rgba(0, 0, 0, 0.5)'
+        }}>
+          {/* Header */}
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem', flexWrap: 'wrap', gap: '0.75rem' }}>
+            <div>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '11px', fontWeight: 900, color: '#f59e0b', textTransform: 'uppercase', letterSpacing: '0.1em', background: 'rgba(245, 158, 11, 0.12)', padding: '3px 10px', borderRadius: '20px', border: '1px solid rgba(245, 158, 11, 0.3)' }}>
+                <Lock size={12} /> PRO CLIENT SUITE • AVAILABLE AFTER LOGIN
+              </div>
+              <h4 style={{ fontSize: '1.25rem', fontWeight: 900, color: '#ffffff', margin: '8px 0 0 0' }}>
+                Booking.com Anti-Commodity Copy Rewrite
+              </h4>
             </div>
-            <h4 style={{ fontSize: '1.2rem', fontWeight: 900, color: '#ffffff', margin: '4px 0 0 0' }}>
-              {copyRewrite.ota_headline || 'A Sanctuary of Style & Culture'}
-            </h4>
+            <div style={{ fontSize: '11.5px', color: 'rgba(255,255,255,0.5)', fontWeight: 600 }}>
+              Part of the $500/mo Vibe Conversion Suite
+            </div>
           </div>
 
-          <button
-            onClick={handleCopy}
-            style={{
-              background: copied ? '#10b981' : 'rgba(0, 229, 255, 0.15)',
-              color: copied ? '#000' : '#00e5ff',
-              border: `1px solid ${copied ? '#10b981' : 'rgba(0, 229, 255, 0.3)'}`,
-              borderRadius: '20px',
-              padding: '6px 14px',
-              fontSize: '12px',
-              fontWeight: 800,
-              display: 'flex',
-              alignItems: 'center',
-              gap: '6px',
-              cursor: 'pointer',
-              transition: 'all 0.2s ease'
-            }}
-          >
-            {copied ? <Check size={14} /> : <Copy size={14} />}
-            {copied ? 'COPIED TO CLIPBOARD' : 'COPY REWRITE'}
-          </button>
-        </div>
+          {/* Locked Content Overlay Teaser */}
+          <div style={{ position: 'relative', borderRadius: '1rem', overflow: 'hidden', background: 'rgba(0,0,0,0.35)', padding: '1.75rem', border: '1px solid rgba(255,255,255,0.06)' }}>
+            {/* Blurred Background Teaser */}
+            <div style={{ filter: 'blur(6px)', opacity: 0.35, userSelect: 'none', pointerEvents: 'none' }}>
+              <div style={{ fontSize: '1.1rem', fontWeight: 800, color: '#00e5ff', marginBottom: '0.75rem' }}>
+                {copyRewrite.ota_headline || 'A Sanctuary of Cultural Style & Acoustic Warmth'}
+              </div>
+              <p style={{ fontSize: '13px', color: '#fff', lineHeight: 1.7, margin: 0 }}>
+                {copyRewrite.property_overview_150_words || 'Nestled in the heart of the district, this boutique destination redefines the modern urban escape with warm acoustic resonances, artisan culinary experiences, and intuitive design touches designed to bridge the hotel with the vibrant neighborhood DNA.'}
+              </p>
+            </div>
 
-        <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.85)', lineHeight: 1.6, margin: 0, fontStyle: 'normal' }}>
-          {copyRewrite.property_overview_150_words}
-        </p>
-      </div>
+            {/* Centered Lock Call-to-Action */}
+            <div style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: '1.5rem',
+              textAlign: 'center',
+              background: 'radial-gradient(circle at center, rgba(5, 15, 30, 0.92) 0%, rgba(2, 6, 23, 0.98) 100%)'
+            }}>
+              <div style={{ width: '44px', height: '44px', borderRadius: '50%', background: 'rgba(0, 229, 255, 0.12)', border: '1px solid rgba(0, 229, 255, 0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#00e5ff', marginBottom: '0.75rem' }}>
+                <Lock size={20} />
+              </div>
+
+              <h5 style={{ fontSize: '1.15rem', fontWeight: 900, color: '#ffffff', margin: '0 0 6px 0', letterSpacing: '-0.2px' }}>
+                Unlock Full Booking.com Copy Rewrite
+              </h5>
+
+              <p style={{ fontSize: '12.5px', color: 'rgba(255,255,255,0.7)', maxWidth: '520px', margin: '0 0 1.25rem 0', lineHeight: 1.5 }}>
+                The free tier includes your full Vibe Manifest & 5-Photo Resequencing. Log in with your client password or enquire about the Pro Suite to reveal and copy your custom 150-word Booking.com overview.
+              </p>
+
+              <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', justifyContent: 'center' }}>
+                {onUnlockClick && (
+                  <button
+                    onClick={onUnlockClick}
+                    style={{
+                      background: 'linear-gradient(135deg, #00e5ff 0%, #0284c7 100%)',
+                      color: '#050b14',
+                      border: 'none',
+                      borderRadius: '30px',
+                      padding: '8px 20px',
+                      fontSize: '12px',
+                      fontWeight: 900,
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '6px',
+                      cursor: 'pointer',
+                      boxShadow: '0 4px 15px rgba(0, 229, 255, 0.3)'
+                    }}
+                  >
+                    <Key size={14} /> Client Log In
+                  </button>
+                )}
+                {onRequestAccessClick && (
+                  <button
+                    onClick={onRequestAccessClick}
+                    style={{
+                      background: 'rgba(255, 255, 255, 0.08)',
+                      color: '#ffffff',
+                      border: '1px solid rgba(255, 255, 255, 0.2)',
+                      borderRadius: '30px',
+                      padding: '8px 18px',
+                      fontSize: '12px',
+                      fontWeight: 700,
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '6px',
+                      cursor: 'pointer'
+                    }}
+                  >
+                    Enquire for Access
+                  </button>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      ) : (
+        /* UNLOCKED FULL REWRITE CARD */
+        <div style={{ background: 'rgba(0,0,0,0.4)', borderRadius: '1.25rem', padding: '1.75rem', border: '1px solid rgba(0, 229, 255, 0.25)', boxShadow: '0 0 25px rgba(0, 229, 255, 0.08)' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem', flexWrap: 'wrap', gap: '1rem' }}>
+            <div>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '11px', fontWeight: 900, color: '#00e5ff', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
+                <Sparkles size={13} /> Anti-Commodity Copy Rewrite (Booking.com Overview) • PRO UNLOCKED
+              </div>
+              <h4 style={{ fontSize: '1.2rem', fontWeight: 900, color: '#ffffff', margin: '4px 0 0 0' }}>
+                {copyRewrite.ota_headline || 'A Sanctuary of Style & Culture'}
+              </h4>
+            </div>
+
+            <button
+              onClick={handleCopy}
+              style={{
+                background: copied ? '#10b981' : 'rgba(0, 229, 255, 0.15)',
+                color: copied ? '#000' : '#00e5ff',
+                border: `1px solid ${copied ? '#10b981' : 'rgba(0, 229, 255, 0.3)'}`,
+                borderRadius: '20px',
+                padding: '6px 14px',
+                fontSize: '12px',
+                fontWeight: 800,
+                display: 'flex',
+                alignItems: 'center',
+                gap: '6px',
+                cursor: 'pointer',
+                transition: 'all 0.2s ease'
+              }}
+            >
+              {copied ? <Check size={14} /> : <Copy size={14} />}
+              {copied ? 'COPIED TO CLIPBOARD' : 'COPY REWRITE'}
+            </button>
+          </div>
+
+          <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.85)', lineHeight: 1.6, margin: 0, fontStyle: 'normal' }}>
+            {copyRewrite.property_overview_150_words}
+          </p>
+        </div>
+      )}
 
     </motion.div>
   );
