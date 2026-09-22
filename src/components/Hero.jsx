@@ -27,7 +27,7 @@ const Hero = () => {
                 <div className="hero-header-group animate-fade-up">
                     <div className="beta-badge-premium">BETA</div>
                     <h1 className="hero-title" style={{ color: '#ffffff', textShadow: '0 4px 20px rgba(0,0,0,0.9), 0 2px 10px rgba(0,0,0,0.8)' }}>
-                        VIBE CONVERSION ENGINE
+                        VIBE CONVERSION
                     </h1>
                     <h2 className="hero-strategy">
                         FOR HOTELS, HOSTELS AND RESORTS

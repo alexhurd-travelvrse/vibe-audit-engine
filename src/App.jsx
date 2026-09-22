@@ -4,6 +4,8 @@ import { HelmetProvider } from 'react-helmet-async';
 import Layout from './components/Layout';
 import Hero from './components/Hero';
 import ServiceOfferingSection from './components/ServiceOfferingSection';
+import DataApiSection from './components/DataApiSection';
+import MarketsSection from './components/MarketsSection';
 import BlogJournal from './components/BlogJournal';
 import TeamSection from './components/TeamSection';
 import Footer from './components/Footer';
@@ -35,13 +37,19 @@ const B2BHome = () => {
       {/* 2. Service Offering, Transformation Graphic & Dual Tables */}
       <ServiceOfferingSection />
 
-      {/* 3. Journal */}
+      {/* 3. Enterprise Data API & Travelvrse Case Study */}
+      <DataApiSection />
+
+      {/* 4. Global Market Intelligence & Vibe Benchmarks */}
+      <MarketsSection />
+
+      {/* 5. Journal */}
       <BlogJournal />
       
-      {/* 4. Team */}
+      {/* 6. Team */}
       <TeamSection />
       
-      {/* 5. Footer */}
+      {/* 7. Footer */}
       <Footer />
     </Layout>
   );
