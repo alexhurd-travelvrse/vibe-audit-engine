@@ -199,13 +199,37 @@ Synthesize this live data and return the complete Master Vibe Audit JSON payload
 
   parts.push({ text: userPrompt });
 
+  const createModelInstance = (modelName) => genAI.getGenerativeModel({
+    model: modelName,
+    generationConfig: {
+      responseMimeType: 'application/json',
+      responseSchema: masterVibeSchema,
+      temperature: 0.2,
+    }
+  });
+
+  const generateWithFallback = async (contentParts) => {
+    const modelsToTry = ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-1.5-flash'];
+    let lastErr = null;
+    for (const mName of modelsToTry) {
+      try {
+        const mInstance = createModelInstance(mName);
+        return await mInstance.generateContent(contentParts);
+      } catch (err) {
+        lastErr = err;
+        console.warn(`[Gemini] Model ${mName} encountered error (${err.message}). Attempting fallback...`);
+      }
+    }
+    throw lastErr;
+  };
+
   try {
     let result;
     try {
       // Race multimodal vision call against an 8-second timeout for ultra-responsive performance
       const visionTimeout = new Promise((_, reject) => setTimeout(() => reject(new Error('Multimodal vision generation timeout')), 8000));
       result = await Promise.race([
-        model.generateContent(parts),
+        generateWithFallback(parts),
         visionTimeout
       ]);
     } catch (multimodalErr) {
@@ -223,7 +247,7 @@ Synthesize this live data and return the complete Master Vibe Audit JSON payload
         },
         { text: userPrompt }
       ];
-      result = await model.generateContent(textOnlyParts);
+      result = await generateWithFallback(textOnlyParts);
     }
 
     const responseText = result.response.text();

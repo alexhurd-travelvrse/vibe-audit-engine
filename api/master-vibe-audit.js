@@ -62,7 +62,8 @@ async function fetchBookingPhotosForHotel(hotelName, city, neighborhood = '') {
       }
     }
 
-    const bookingUrl = (bestMatch && bestScore > 0) ? bestMatch.link : organicResults[0]?.link;
+    // Strict Disambiguation: ONLY select a Booking.com URL if it explicitly matches hotel name tokens
+    const bookingUrl = (bestMatch && bestScore >= 10) ? bestMatch.link : null;
 
     if (bookingUrl && bookingUrl.includes('booking.com/hotel/')) {
       console.log(`[Master Vibe] Scraping live Booking.com gallery from resolved URL (Score: ${bestScore}): ${bookingUrl}`);
@@ -128,7 +129,7 @@ async function fetchBookingPhotosForHotel(hotelName, city, neighborhood = '') {
 
         await browser.close();
 
-        if (photos.length >= 5) {
+        if (photos.length >= 3) {
           console.log(`[Master Vibe] Successfully extracted ${photos.length} exact live Booking.com photos!`);
           return photos.map((p, i) => ({
             slot: i + 1,
@@ -139,36 +140,37 @@ async function fetchBookingPhotosForHotel(hotelName, city, neighborhood = '') {
           }));
         }
       } catch (browserErr) {
-        console.warn('[Master Vibe] Headless browser scrape error, falling back to Serper images:', browserErr.message);
+        console.warn('[Master Vibe] Headless browser scrape error:', browserErr.message);
       }
+    } else {
+      console.log(`[Master Vibe] Venue "${hotelName}" does not have a verified active room listing on Booking.com.`);
     }
 
-    // Fallback: Google Serper Images API with venue filtering
-    const res = await fetch('https://google.serper.dev/images', {
-      method: 'POST',
-      headers: { 'X-API-KEY': SERPER_API_KEY, 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        q: `site:booking.com "${hotelName}" ${locationContext} hotel`,
-        num: 20
-      })
-    });
-    const data = await res.json();
-    if (data.images && data.images.length > 0) {
-      // Filter out images that clearly belong to other venues when tokens exist
-      const filtered = data.images.filter(img => {
-        if (tokens.length > 0) {
+    // Fallback: Google Serper Images API ONLY if we have tokens and images match
+    if (tokens.length > 0) {
+      const res = await fetch('https://google.serper.dev/images', {
+        method: 'POST',
+        headers: { 'X-API-KEY': SERPER_API_KEY, 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          q: `site:booking.com "${hotelName}" ${locationContext} hotel`,
+          num: 20
+        })
+      });
+      const data = await res.json();
+      if (data.images && data.images.length > 0) {
+        const filtered = data.images.filter(img => {
           const combined = `${img.title || ''} ${img.link || ''} ${img.imageUrl || ''}`.toLowerCase();
           return tokens.some(t => combined.includes(t));
+        });
+        if (filtered.length >= 3) {
+          return filtered.map((img, i) => ({
+            slot: i + 1,
+            title: img.title || `Booking.com Photo ${i + 1}`,
+            imageUrl: img.imageUrl,
+            sourceUrl: img.link
+          }));
         }
-        return true;
-      });
-      const finalPool = filtered.length >= 3 ? filtered : data.images;
-      return finalPool.map((img, i) => ({
-        slot: i + 1,
-        title: img.title || `Booking.com Photo ${i + 1}`,
-        imageUrl: img.imageUrl,
-        sourceUrl: img.link
-      }));
+      }
     }
   } catch (err) {
     console.warn('[Master Vibe] Error fetching booking images:', err.message);
@@ -394,7 +396,10 @@ export default async function handler(req, res) {
 
     // 4. Map the exact corresponding photos to each re-sequenced recommendation
     if (auditResult.ota_conversion_audit) {
+      const isListedOnBooking = liveBookingPhotos && liveBookingPhotos.length >= 3;
       auditResult.ota_conversion_audit.live_photos = liveBookingPhotos;
+      auditResult.ota_conversion_audit.is_listed_on_booking = isListedOnBooking;
+      auditResult.ota_conversion_audit.listing_status = isListedOnBooking ? 'ACTIVE_ON_BOOKING' : 'NOT_LISTED_ON_BOOKING';
       
       if (auditResult.ota_conversion_audit.optimal_5_photo_sequence) {
         const usedUrls = new Set();
@@ -429,7 +434,6 @@ export default async function handler(req, res) {
             }
           }
 
-
           const isRetained = actualLiveSlot === targetSlot;
           const isMoved = actualLiveSlot !== null && actualLiveSlot !== targetSlot;
           const isSwappedIn = actualLiveSlot === null;
@@ -437,7 +441,12 @@ export default async function handler(req, res) {
           let action = item.action || 'RE_SEQUENCE';
           let actionLabel = item.action_label;
 
-          if (item.category === 'HERO_CULTURAL_MAGNET' || item.action === 'HERO_CULTURAL_MAGNET' || item.action === 'MAGNET_OVERRIDE') {
+          if (!isListedOnBooking) {
+            action = targetSlot === 1 ? 'HERO_CULTURAL_MAGNET' : 'CURATED_ASSET';
+            actionLabel = targetSlot === 1 
+              ? `⚡ HERO CULTURAL MAGNET: ${item.photo_subject || 'SIGNATURE ASSET'} (SLOT #1)`
+              : `PRE-LISTING ASSET: ${item.photo_subject || 'SIGNATURE ASSET'} (SLOT #${targetSlot})`;
+          } else if (item.category === 'HERO_CULTURAL_MAGNET' || item.action === 'HERO_CULTURAL_MAGNET' || item.action === 'MAGNET_OVERRIDE') {
             action = 'HERO_CULTURAL_MAGNET';
             actionLabel = item.action_label || `⚡ HERO CULTURAL MAGNET: ${item.photo_subject || 'SIGNATURE ASSET'} (SLOT #1)`;
           } else if (isRetained) {

@@ -15,17 +15,18 @@ export default function BookingOtaAuditCard({ otaData, hotelName, isUnlocked, on
     ? isUnlocked 
     : (typeof window !== 'undefined' && sessionStorage.getItem('atmosvibe_pro_unlocked') === 'true');
 
-  const beforeScore = otaData.before_merchandising_score || 44;
-  const afterScore = otaData.after_merchandising_score || 93;
-  const uplift = otaData.projected_conversion_uplift || '+21.5%';
+  const isListedOnBooking = (otaData.is_listed_on_booking !== false) && (livePhotos && livePhotos.length >= 3);
+  const beforeScore = isListedOnBooking ? (otaData.before_merchandising_score || 44) : 'N/A';
+  const afterScore = otaData.after_merchandising_score || 94;
+  const uplift = otaData.projected_conversion_uplift || '+28.5%';
   
   // Extract or synthesize clean strategic shift bullets
   const strategicShifts = (otaData.key_strategic_shifts && otaData.key_strategic_shifts.length > 0)
     ? otaData.key_strategic_shifts
     : [
-        `Align visual sequence with top local search drivers: ${otaData.local_vibe_synergy_context || 'Highlight signature F&B and wellness over repetitive bedroom imagery.'}`,
-        `Eliminate drop-off friction: ${otaData.conversion_diagnosis || 'Resolve geographic and amenities ambiguity in the first 5 slots.'}`,
-        'Activate high-conversion storytelling: Ground destination authenticity with dedicated Spa, exterior architecture, and design bathroom proof-points.'
+        `Align visual sequence with top local search drivers: ${otaData.local_vibe_synergy_context || 'Highlight signature F&B and atmosphere over generic imagery.'}`,
+        `Eliminate drop-off friction: ${otaData.conversion_diagnosis || 'Resolve geographic and amenities clarity in the first 5 slots.'}`,
+        'Activate high-conversion storytelling: Ground destination authenticity with dedicated dining, exterior architecture, and design atmosphere proof-points.'
       ];
 
   const handleCopy = () => {
@@ -41,6 +42,9 @@ export default function BookingOtaAuditCard({ otaData, hotelName, isUnlocked, on
   const getActionBadge = (action, actionLabel) => {
     const lbl = (actionLabel || '').toUpperCase();
     const act = (action || '').toUpperCase();
+    if (lbl.includes('PRE-LISTING') || act === 'CURATED_ASSET') {
+      return { bg: '#00e5ff', color: '#000', text: actionLabel || 'CURATED LAUNCH ASSET' };
+    }
     if (act === 'HERO_CULTURAL_MAGNET' || lbl.includes('MAGNET') || act === 'MAGNET_OVERRIDE') {
       return { bg: '#8b5cf6', color: '#ffffff', text: actionLabel || '⚡ HERO CULTURAL MAGNET' };
     }
@@ -77,8 +81,8 @@ export default function BookingOtaAuditCard({ otaData, hotelName, isUnlocked, on
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem', flexWrap: 'wrap', gap: '1rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
           <span style={{ 
-            background: 'linear-gradient(90deg, #0071c2, #00b4d8)', 
-            color: '#ffffff', 
+            background: isListedOnBooking ? 'linear-gradient(90deg, #0071c2, #00b4d8)' : 'linear-gradient(90deg, #f59e0b, #00e5ff)', 
+            color: isListedOnBooking ? '#ffffff' : '#050b14', 
             fontSize: '11px', 
             fontWeight: 900, 
             letterSpacing: '0.15em', 
@@ -86,7 +90,7 @@ export default function BookingOtaAuditCard({ otaData, hotelName, isUnlocked, on
             borderRadius: '20px', 
             textTransform: 'uppercase' 
           }}>
-            🏨 Booking.com Visual & Copy Diagnostic
+            {isListedOnBooking ? '🏨 Booking.com Visual & Copy Diagnostic' : '⚡ Direct Site & Pre-Listing Merchandising Blueprint'}
           </span>
         </div>
 
@@ -106,9 +110,9 @@ export default function BookingOtaAuditCard({ otaData, hotelName, isUnlocked, on
               textTransform: 'uppercase'
             }}
           >
-            Recommended Photos
+            {isListedOnBooking ? 'Recommended Photos' : 'Optimal 5-Photo Hierarchy'}
           </button>
-          {livePhotos.length > 0 && (
+          {isListedOnBooking && livePhotos.length > 0 && (
             <button
               onClick={() => setViewMode('comparison')}
               style={{
@@ -140,22 +144,24 @@ export default function BookingOtaAuditCard({ otaData, hotelName, isUnlocked, on
       }}>
         {/* Scorecard Comparison Grid */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(190px, 1fr))', gap: '1rem', marginBottom: '1.5rem' }}>
-          {/* Current Baseline Score */}
+          {/* Current Baseline Score / Status */}
           <div style={{ 
-            background: 'linear-gradient(135deg, rgba(239, 68, 68, 0.12) 0%, rgba(239, 68, 68, 0.04) 100%)', 
-            border: '1px solid rgba(239, 68, 68, 0.35)', 
+            background: isListedOnBooking 
+              ? 'linear-gradient(135deg, rgba(239, 68, 68, 0.12) 0%, rgba(239, 68, 68, 0.04) 100%)' 
+              : 'linear-gradient(135deg, rgba(245, 158, 11, 0.12) 0%, rgba(245, 158, 11, 0.04) 100%)', 
+            border: `1px solid ${isListedOnBooking ? 'rgba(239, 68, 68, 0.35)' : 'rgba(245, 158, 11, 0.35)'}`, 
             borderRadius: '1.15rem', 
             padding: '1.1rem', 
             textAlign: 'center' 
           }}>
-            <div style={{ fontSize: '10px', fontWeight: 900, textTransform: 'uppercase', color: '#ef4444', letterSpacing: '0.1em', marginBottom: '4px' }}>
-              Current Sequence Score
+            <div style={{ fontSize: '10px', fontWeight: 900, textTransform: 'uppercase', color: isListedOnBooking ? '#ef4444' : '#f59e0b', letterSpacing: '0.1em', marginBottom: '4px' }}>
+              {isListedOnBooking ? 'Current OTA Score' : 'OTA Listing Status'}
             </div>
-            <div style={{ fontSize: '32px', fontWeight: 900, color: '#ef4444', fontFamily: 'monospace', lineHeight: 1 }}>
-              {beforeScore}<span style={{ fontSize: '16px', color: 'rgba(239,68,68,0.6)' }}>/100</span>
+            <div style={{ fontSize: isListedOnBooking ? '32px' : '22px', fontWeight: 900, color: isListedOnBooking ? '#ef4444' : '#f59e0b', fontFamily: isListedOnBooking ? 'monospace' : 'inherit', lineHeight: 1.1, paddingTop: isListedOnBooking ? '0' : '5px' }}>
+              {isListedOnBooking ? (<>{beforeScore}<span style={{ fontSize: '16px', color: 'rgba(239,68,68,0.6)' }}>/100</span></>) : 'UNLISTED'}
             </div>
             <div style={{ fontSize: '11px', color: 'rgba(255,255,255,0.6)', marginTop: '6px' }}>
-              Commodity Friction & Drop-Off
+              {isListedOnBooking ? 'Commodity Friction & Drop-Off' : 'Independent / Direct Venue'}
             </div>
           </div>
 
@@ -168,7 +174,7 @@ export default function BookingOtaAuditCard({ otaData, hotelName, isUnlocked, on
             textAlign: 'center' 
           }}>
             <div style={{ fontSize: '10px', fontWeight: 900, textTransform: 'uppercase', color: '#10b981', letterSpacing: '0.1em', marginBottom: '4px' }}>
-              Optimized Sequence Score
+              {isListedOnBooking ? 'Optimized Sequence Score' : 'Target Launch Score'}
             </div>
             <div style={{ fontSize: '32px', fontWeight: 900, color: '#10b981', fontFamily: 'monospace', lineHeight: 1 }}>
               {afterScore}<span style={{ fontSize: '16px', color: 'rgba(16,185,129,0.6)' }}>/100</span>
@@ -187,32 +193,42 @@ export default function BookingOtaAuditCard({ otaData, hotelName, isUnlocked, on
             textAlign: 'center' 
           }}>
             <div style={{ fontSize: '10px', fontWeight: 900, textTransform: 'uppercase', color: '#00e5ff', letterSpacing: '0.1em', marginBottom: '4px' }}>
-              Projected Conversion Uplift
+              {isListedOnBooking ? 'Projected Conversion Uplift' : 'Direct Booking Velocity'}
             </div>
             <div style={{ fontSize: '32px', fontWeight: 900, color: '#00e5ff', fontFamily: 'monospace', lineHeight: 1 }}>
               {uplift}
             </div>
             <div style={{ fontSize: '11px', color: 'rgba(0,229,255,0.85)', fontWeight: 700, marginTop: '6px' }}>
-              Booking Velocity Multiplier
+              Multi-Channel Discovery
             </div>
           </div>
         </div>
 
-        {/* Identified Drop-Off Flaw Bar */}
+        {/* Identified Drop-Off Flaw or Pre-Listing Notice Bar */}
         <div style={{ 
           display: 'flex', 
           alignItems: 'center', 
           gap: '0.75rem', 
           marginBottom: '1.25rem', 
-          background: 'rgba(239, 68, 68, 0.08)', 
+          background: isListedOnBooking ? 'rgba(239, 68, 68, 0.08)' : 'rgba(0, 229, 255, 0.08)', 
           padding: '10px 16px', 
           borderRadius: '12px', 
-          border: '1px solid rgba(239, 68, 68, 0.25)' 
+          border: `1px solid ${isListedOnBooking ? 'rgba(239, 68, 68, 0.25)' : 'rgba(0, 229, 255, 0.25)'}` 
         }}>
-          <AlertCircle size={18} color="#ef4444" style={{ flexShrink: 0 }} />
+          {isListedOnBooking ? (
+            <AlertCircle size={18} color="#ef4444" style={{ flexShrink: 0 }} />
+          ) : (
+            <Sparkles size={18} color="#00e5ff" style={{ flexShrink: 0 }} />
+          )}
           <div style={{ fontSize: '13px', lineHeight: 1.4 }}>
-            <strong style={{ color: '#ef4444', textTransform: 'uppercase', fontSize: '11px', letterSpacing: '0.05em' }}>Identified Flaw: </strong>
-            <span style={{ color: '#ffffff', fontWeight: 600 }}>{otaData.current_drop_off_flaw || 'Leading with generic corporate imagery that dampens lifestyle appeal.'}</span>
+            <strong style={{ color: isListedOnBooking ? '#ef4444' : '#00e5ff', textTransform: 'uppercase', fontSize: '11px', letterSpacing: '0.05em' }}>
+              {isListedOnBooking ? 'Identified Flaw: ' : 'Pre-Listing Visual Strategy: '}
+            </strong>
+            <span style={{ color: '#ffffff', fontWeight: 600 }}>
+              {isListedOnBooking 
+                ? (otaData.current_drop_off_flaw || 'Leading with generic corporate imagery that dampens lifestyle appeal.')
+                : `No active room listing on Booking.com. Below is the curated 5-asset hierarchy to maximize direct website engagement and future OTA launch velocity.`}
+            </span>
           </div>
         </div>
 
