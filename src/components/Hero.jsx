@@ -13,7 +13,7 @@ const Hero = () => {
             </Helmet>
             <div className="hero-bg-container">
                 <video 
-                    src="/models/Generic_Luxury_Travel_Video_Creation.mp4" 
+                    src="/models/atmosvibe1.mp4" 
                     className="hero-video"
                     autoPlay 
                     muted 
