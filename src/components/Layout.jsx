@@ -36,7 +36,7 @@ const Layout = ({ children }) => {
                         </Link>
                         <a href="/#solution" className="nav-link" onClick={() => setIsMenuOpen(false)}>VIBE CONVERSION</a>
                         <a href="/#data-api" className="nav-link" onClick={() => setIsMenuOpen(false)}>DATA API</a>
-                        <a href="/#markets" className="nav-link" onClick={() => setIsMenuOpen(false)}>MARKETS</a>
+                        <a href="/#markets" className="nav-link" onClick={() => setIsMenuOpen(false)}>INSIGHTS</a>
                         <a href="/#journal" className="nav-link" onClick={() => setIsMenuOpen(false)}>JOURNAL</a>
                         <a href="/#team" className="nav-link" onClick={() => setIsMenuOpen(false)}>OUR TEAM</a>
                     </nav>
