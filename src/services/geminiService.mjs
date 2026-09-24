@@ -54,25 +54,26 @@ A) STANDARD BASELINE SEQUENCE (Default when no asset qualifies for override):
 - Slot 1 (EXTERIOR_LANDMARK): Authentic facade/entrance. (Action: "PROMOTE" or "KEEP_HERO")
 - Slot 2 (SOCIAL_FB_ROOFTOP): Signature cocktail bar, rooftop lounge, or restaurant. (Action: "SWAP_IN" or "PROMOTE")
 - Slot 3 (SIGNATURE_SUITE_BEDROOM): Most stylish signature king suite/room with local texture. (Action: "KEEP" or "RETAIN")
-- Slot 4 (WELLNESS_SPA_LOBBY): MUST depict the dedicated Spa, wellness facility, thermal bath, massage room, or iconic design arrival lobby. Category: "WELLNESS_SPA_LOBBY".
+- Slot 4 (WELLNESS_SPA_LOBBY): SIGNATURE DESTINATION AMENITY / HISTORIC GRAND PUBLIC SPACE / WELLNESS. If property has a Spa or Pool, feature it. If property has NO spa or pool (e.g. historic landmarks like The US Grant, boutique urban heritage hotels), Slot 4 MUST feature the Historic Grand Arrival Lobby, Crystal Ballroom, Heritage Drawing Room, or Iconic Lounge. Category: "WELLNESS_SPA_LOBBY".
 - Slot 5 (SECONDARY_ROOM_BATHROOM): MUST depict a design bathroom, freestanding soaking tub, marble washroom, or luxury rain shower (to confirm finish quality and hygiene). Category: "SECONDARY_ROOM_BATHROOM".
 
 B) MAGNET OVERRIDE SEQUENCE (When NAI >= 0.85 and Asset passes all 4 rules):
-- Slot 1 (HERO_CULTURAL_MAGNET): The unique asset (e.g., Hartwell Spa Indoor Pool, 12th Knot Rooftop Bar, Subterranean Hi-Fi Bar). Category: "HERO_CULTURAL_MAGNET", Action: "HERO_CULTURAL_MAGNET", Action Label: "⚡ HERO CULTURAL MAGNET: [ASSET NAME] (SLOT #1)".
+- Slot 1 (HERO_CULTURAL_MAGNET): The unique asset (e.g., Hartwell Spa Indoor Pool, The Grant Grill, 12th Knot Rooftop Bar, Subterranean Hi-Fi Bar). Category: "HERO_CULTURAL_MAGNET", Action: "HERO_CULTURAL_MAGNET", Action Label: "⚡ HERO CULTURAL MAGNET: [ASSET NAME] (SLOT #1)".
 - Slot 2 (EXTERIOR_LANDMARK): Mandatory exterior facade. Category: "EXTERIOR_LANDMARK", Action: "PROMOTE" or "RE_SEQUENCE", Action Label: "EXTERIOR LANDMARK (SLOT #2 - MANDATORY GROUNDING)".
 - Slot 3 (SIGNATURE_SUITE_BEDROOM): Most stylish signature king suite/room. Category: "SIGNATURE_SUITE_BEDROOM".
-- Slot 4 (COMPLEMENTARY AMENITY - NO THEMATIC DUPLICATION):
-  * IF Slot 1 was a Social/Bar/Rooftop asset -> Slot 4 MUST feature the dedicated Spa/Wellness/Thermal facility (Category: "WELLNESS_SPA_LOBBY").
+- Slot 4 (COMPLEMENTARY AMENITY - NO THEMATIC DUPLICATION & ZERO HALLUCINATION):
+  * IF Slot 1 was a Social/Bar/Dining asset (e.g. The Grant Grill) AND hotel HAS a spa/pool -> Slot 4 MUST feature the Spa/Wellness facility (Category: "WELLNESS_SPA_LOBBY").
+  * IF Slot 1 was a Social/Bar/Dining asset AND hotel DOES NOT have a spa/pool (e.g. The US Grant, historic urban landmarks) -> Slot 4 MUST feature the Historic Grand Arrival Lobby, Crystal Ballroom, Palm Court, or Heritage Drawing Room (Category: "WELLNESS_SPA_LOBBY"). NEVER invent a non-existent spa.
   * IF Slot 1 was a Spa/Wellness/Pool asset -> Slot 4 MUST feature the Fine Dining Restaurant / Culinary / Cocktail Lounge / Historic Drawing Room (Category: "SOCIAL_FB_ROOFTOP" or "WELLNESS_SPA_LOBBY") to ensure dining is showcased and NEVER duplicated with Slot 1.
 - Slot 5 (SECONDARY_ROOM_BATHROOM): MUST depict a design bathroom, freestanding soaking tub, marble washroom, or luxury rain shower. Category: "SECONDARY_ROOM_BATHROOM".
 
 STRICT SLOT INTEGRITY & DEDUPLICATION RULES:
-- LIVE PHOTO SELECTION PRIORITY: Always inspect "CURRENT LIVE BOOKING.COM PHOTOS" first! If an asset of the required category (e.g. Spa Pool, Signature Bedroom, Exterior, Restaurant, Bathroom) is ALREADY present in the live gallery (e.g. Live Photo #4 is the Spa), you MUST select source_type: "LIVE_PHOTO", source_index: [1-indexed slot], and action: "PROMOTE" / "RE_SEQUENCE" / "KEEP". ONLY select "AMENITY_ASSET" if the live gallery completely lacks a photo of that amenity.
+- REAL AMENITY FIDELITY & ZERO SPA HALLUCINATION: Inspect the venue corpus and live photo metadata carefully. If a hotel does not have a dedicated spa or pool, NEVER recommend a spa for Slot 4. Instead, feature the property's authentic public grandeur (e.g. Grand Lobby, Ballroom, Heritage Lounge, Palm Court).
+- LIVE PHOTO SELECTION PRIORITY: Always inspect "CURRENT LIVE BOOKING.COM PHOTOS" first! If an asset of the required category (e.g. Grand Lobby, Spa Pool, Signature Bedroom, Exterior, Restaurant, Bathroom) is ALREADY present in the live gallery (e.g. Live Photo #4 is the Grand Lobby or Spa), you MUST select source_type: "LIVE_PHOTO", source_index: [1-indexed slot], and action: "PROMOTE" / "RE_SEQUENCE" / "KEEP". ONLY select "AMENITY_ASSET" if the live gallery completely lacks a photo of that amenity.
 - RESTAURANT / CULINARY FIDELITY: When recommending Slot 4 (or Slot 2) for Social F&B / Restaurant (Category: "SOCIAL_FB_ROOFTOP"), the photo subject MUST depict an authentic indoor dining room, table setting, gastronomy dishes, cocktail bar, or lounge interior. It must NEVER be an exterior building, marina, facade, or street view.
-- NEVER repeat the same theme across slots (e.g., NEVER put Spa in Slot 1 AND Spa in Slot 4; NEVER put Bedroom in Slot 3 AND Bedroom in Slot 5).
-- If Spa/Pool is elevated to Slot 1, Slot 4 MUST showcase Fine Dining / Culinary / Social Lounge.
+- NEVER repeat the same theme across slots (e.g., NEVER put Exterior in Slot 1 AND Slot 4; NEVER put Bedroom in Slot 3 AND Bedroom in Slot 5).
 - Slot 5 MUST feature a luxury bathroom/tub/shower.
-- Strict 5 distinct thematic slots at all times (Magnet ➔ Exterior ➔ Suite ➔ Complementary Dining/Spa ➔ Luxury Bathroom).
+- Strict 5 distinct thematic slots at all times (Magnet ➔ Exterior ➔ Suite ➔ Complementary Public Space/Spa/Dining ➔ Luxury Bathroom).
 - Populate "slot_1_decision_logic" explaining whether Magnet Override was triggered or why default was retained.
 
 MERCHANDISING SCORES & READABILITY BULLETS:
@@ -192,11 +193,12 @@ Synthesize this live data and return the complete Master Vibe Audit JSON payload
 
   // 2. Concurrently fetch and attach Signature Amenity Candidate Photos (diverse categories)
   if (amenityPhotos && amenityPhotos.length > 0) {
-    // Pick top candidates from each category: 1 Social, 1 Spa, 1 Bathroom for vision analysis
-    const socialCand = amenityPhotos.find(a => a.detectedCategory === 'SOCIAL') || amenityPhotos[0];
-    const spaCand = amenityPhotos.find(a => a.detectedCategory === 'SPA') || amenityPhotos[1];
-    const bathCand = amenityPhotos.find(a => a.detectedCategory === 'BATHROOM') || amenityPhotos[2];
-    const amenityVisionSubset = [socialCand, spaCand, bathCand].filter(Boolean);
+    // Pick top candidates from each category: 1 Social, 1 Spa/Lobby, 1 Bathroom for vision analysis
+    const socialCand = amenityPhotos.find(a => a.detectedCategory === 'SOCIAL');
+    const spaCand = amenityPhotos.find(a => a.detectedCategory === 'SPA');
+    const lobbyCand = amenityPhotos.find(a => a.detectedCategory === 'LOBBY');
+    const bathCand = amenityPhotos.find(a => a.detectedCategory === 'BATHROOM');
+    const amenityVisionSubset = [socialCand, spaCand || lobbyCand, bathCand, (lobbyCand && spaCand) ? lobbyCand : null].filter(Boolean);
 
     const downloadedAmenity = await Promise.all(
       amenityVisionSubset.map(a => downloadImageBase64(a.imageUrl))
