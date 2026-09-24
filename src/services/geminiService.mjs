@@ -104,10 +104,16 @@ Synthesize realistic sensory attributes derived from the real venue and neighbor
    - local_ratio: Realistic % of local neighborhood visitors (e.g., 75-90% for pubs/boutique anchors, 40-60% for major luxury hotels).
    - tourist_ratio: Remainder (100 - local_ratio).
    - energy_verdict: e.g. "High Banter & Neighborhood Sanctuary", "Cosmopolitan Creative Haven".
+   - tourist_trap_verdict: e.g. "Authentic Local Magnet — Zero Tourist Trap", "Curated Neighborhood Haven".
 4. Lighting & Photometrics:
    - lighting_temperature: e.g. "2200K Warm Amber Filament", "Subterranean Speakeasy Candelight", "Golden Hour Thames Reflections".
 5. Temporal Dynamics:
-   - best_time_to_visit: Provide specific dual-peak time windows (e.g., "4:30 PM for tranquil fireside drinks; 8:30 PM for peak atmospheric buzz").`;
+   - best_time_to_visit: Provide specific dual-peak time windows (e.g., "4:30 PM for tranquil fireside drinks; 8:30 PM for peak atmospheric buzz").
+6. Insider Secrets & Hidden Lore:
+   - secret_title: Catchy title (e.g. "The Off-Menu Boiler Highball", "The Secret Courtyard Arch").
+   - secret_lore: A real, actionable local insider secret, off-menu perk, or hidden architectural shortcut known only to regulars.
+   - off_menu_perk: Specific actionable recommendation.
+   - insider_badge: e.g. "Head Bartender & Local Regular Lore".`;
 
   const userPrompt = `VENUE: ${hotelName} (${city})
 TIMESTAMP: ${new Date().toISOString()}

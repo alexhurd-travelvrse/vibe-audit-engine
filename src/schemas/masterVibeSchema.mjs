@@ -45,7 +45,8 @@ export const masterVibeSchema = {
             dress_code: { type: "string" },
             local_ratio: { type: "integer", description: "Percentage of locals (0-100), e.g. 82" },
             tourist_ratio: { type: "integer", description: "Percentage of travelers/tourists (0-100), e.g. 18" },
-            energy_verdict: { type: "string", description: "e.g. High Banter & Neighborhood Sanctuary" }
+            energy_verdict: { type: "string", description: "e.g. High Banter & Neighborhood Sanctuary" },
+            tourist_trap_verdict: { type: "string", description: "e.g. Authentic Local Magnet — Zero Tourist Trap" }
           },
           required: ["primary", "social_density", "dress_code"]
         },
@@ -72,6 +73,15 @@ export const masterVibeSchema = {
             insider_lore: { type: "string" }
           },
           required: ["key_anchors", "insider_lore"]
+        },
+        insider_secrets: {
+          type: "object",
+          properties: {
+            secret_title: { type: "string", description: "e.g. The Off-Menu Highball / The Hidden Courtyard Passage" },
+            secret_lore: { type: "string", description: "Actionable insider tip or hidden perk known only to locals" },
+            off_menu_perk: { type: "string", description: "e.g. Order the off-menu botanical highball at the bar" },
+            insider_badge: { type: "string", description: "e.g. Concierge & Local Regular Lore" }
+          }
         },
         qualification_test: {
           type: "object",
