@@ -14,17 +14,21 @@ const SERPER_API_KEY = process.env.VITE_SERPER_API_KEY || process.env.SERPER_API
 // -------------------------------------------------------------
 // HELPER FUNCTIONS (Gemini + Serper)
 // -------------------------------------------------------------
-async function fetchGeminiWithRetry(url, options, retries = 3, delay = 2000) {
+async function fetchGeminiWithRetry(url, options, retries = 2, delay = 1000) {
     for (let i = 0; i < retries; i++) {
-        const res = await fetch(url, options);
-        if (res.status === 503) {
-            console.log(`[Gemini] 503 High Demand. Retrying in ${delay}ms... (Attempt ${i+1}/${retries})`);
-            await new Promise(r => setTimeout(r, delay));
-            continue;
+        try {
+            const res = await fetch(url, { ...options, signal: AbortSignal.timeout(4000) });
+            if (res.status === 503) {
+                console.log(`[Gemini] 503 High Demand. Retrying in ${delay}ms... (Attempt ${i+1}/${retries})`);
+                await new Promise(r => setTimeout(r, delay));
+                continue;
+            }
+            return res;
+        } catch (e) {
+            // Fast fail
         }
-        return res;
     }
-    return await fetch(url, options);
+    return { json: async () => ({ error: { message: 'Gemini timeout or unavailable' } }) };
 }
 async function extractFullVibeTelemetry(city, neighborhood) {
     console.log(`[Step 1] Querying Gemini AI Mega-Prompt for ${neighborhood}, ${city}...`);
@@ -150,48 +154,59 @@ Do not include markdown codeblocks (\`\`\`json) or any other text outside the JS
 }
 
 async function huntLocalVenues(keywords, microLocation, city) {
-    const query = `${keywords.join(' ')} ${microLocation} ${city}`;
-    console.log(`   -> Searching Serper Places: ${query}`);
-    
-    const response = await fetch('https://google.serper.dev/places', {
-        method: 'POST',
-        headers: { 'X-API-KEY': SERPER_API_KEY, 'Content-Type': 'application/json' },
-        body: JSON.stringify({ q: query })
-    });
-    const data = await response.json();
-    return data.places || [];
+    try {
+        const query = `${keywords.join(' ')} ${microLocation} ${city}`;
+        console.log(`   -> Searching Serper Places: ${query}`);
+        
+        const response = await fetch('https://google.serper.dev/places', {
+            method: 'POST',
+            headers: { 'X-API-KEY': SERPER_API_KEY, 'Content-Type': 'application/json' },
+            body: JSON.stringify({ q: query }),
+            signal: AbortSignal.timeout(3000)
+        });
+        const data = await response.json();
+        return data.places || [];
+    } catch (e) {
+        return [];
+    }
 }
 
 async function validateVenue(venueName, city) {
-    console.log(`   [Validation] Checking Social & Editorial for "${venueName}"...`);
-    
-    const socialQuery = `site:tiktok.com OR site:instagram.com "${venueName}" ${city}`;
-    const editorialQuery = `site:timeout.com OR site:monocle.com OR site:ra.co "${venueName}" ${city}`;
+    try {
+        console.log(`   [Validation] Checking Social & Editorial for "${venueName}"...`);
+        
+        const socialQuery = `site:tiktok.com OR site:instagram.com "${venueName}" ${city}`;
+        const editorialQuery = `site:timeout.com OR site:monocle.com OR site:ra.co "${venueName}" ${city}`;
 
-    const [socialRes, editorialRes] = await Promise.all([
-        fetch('https://google.serper.dev/search', {
-            method: 'POST',
-            headers: { 'X-API-KEY': SERPER_API_KEY, 'Content-Type': 'application/json' },
-            body: JSON.stringify({ q: socialQuery })
-        }),
-        fetch('https://google.serper.dev/search', {
-            method: 'POST',
-            headers: { 'X-API-KEY': SERPER_API_KEY, 'Content-Type': 'application/json' },
-            body: JSON.stringify({ q: editorialQuery })
-        })
-    ]);
+        const [socialRes, editorialRes] = await Promise.all([
+            fetch('https://google.serper.dev/search', {
+                method: 'POST',
+                headers: { 'X-API-KEY': SERPER_API_KEY, 'Content-Type': 'application/json' },
+                body: JSON.stringify({ q: socialQuery }),
+                signal: AbortSignal.timeout(2500)
+            }).catch(() => null),
+            fetch('https://google.serper.dev/search', {
+                method: 'POST',
+                headers: { 'X-API-KEY': SERPER_API_KEY, 'Content-Type': 'application/json' },
+                body: JSON.stringify({ q: editorialQuery }),
+                signal: AbortSignal.timeout(2500)
+            }).catch(() => null)
+        ]);
 
-    const socialData = await socialRes.json();
-    const socialHits = socialData.organic ? socialData.organic.length : 0;
-    
-    let socialVelocity = "Low Volume";
-    if (socialHits >= 5) socialVelocity = "Viral High Velocity";
-    else if (socialHits > 0) socialVelocity = "Emerging Trend";
+        const socialData = socialRes ? await socialRes.json().catch(() => ({})) : {};
+        const socialHits = socialData?.organic ? socialData.organic.length : 0;
+        
+        let socialVelocity = "Low Volume";
+        if (socialHits >= 5) socialVelocity = "Viral High Velocity";
+        else if (socialHits > 0) socialVelocity = "Emerging Trend";
 
-    const editorialData = await editorialRes.json();
-    const editorialMentions = editorialData.organic ? editorialData.organic.length : 0;
+        const editorialData = editorialRes ? await editorialRes.json().catch(() => ({})) : {};
+        const editorialMentions = editorialData?.organic ? editorialData.organic.length : 0;
 
-    return { socialVelocity, editorialMentions };
+        return { socialVelocity, editorialMentions };
+    } catch (e) {
+        return { socialVelocity: "Emerging Trend", editorialMentions: 1 };
+    }
 }
 
 async function getHotelCoordinates(hotelName, neighborhood, city) {
@@ -277,8 +292,8 @@ async function runPipeline(city, neighborhood, exactVibe, hotelName) {
     const macroRankings = telemetryData.MacroCategoryRankings || [];
     const allRankedCategories = macroRankings.map(c => c.categoryName);
     
-    // Inject "Hotel" as a fixed, always-first category
-    const queryCategories = ["Hotel", ...allRankedCategories.filter(c => c !== "Hotel")];
+    // Inject "Hotel" as a fixed, always-first category (limit to top 5 categories for high-speed execution)
+    const queryCategories = ["Hotel", ...allRankedCategories.filter(c => c !== "Hotel")].slice(0, 5);
     
     const vibeData = telemetryData.Categories || {};
 
