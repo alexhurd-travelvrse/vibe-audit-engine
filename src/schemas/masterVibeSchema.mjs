@@ -22,16 +22,30 @@ export const masterVibeSchema = {
               description: "Exactly 3 defining artists"
             },
             spotify_query: { type: "string" },
-            sound_texture: { type: "string" }
+            sound_texture: { type: "string" },
+            decibel_level: { type: "string", description: "e.g. 52 dB (Snug/Intimate) or 74 dB (Vibrant)" },
+            conversation_clarity_score: { type: "integer", description: "0-100 percentage e.g. 96" },
+            conversation_verdict: { type: "string", description: "e.g. Effortless Chat, Lean-in Required" }
           },
           required: ["soundscape_genre", "anchor_artists", "spotify_query", "sound_texture"]
+        },
+        authenticity_and_materials: {
+          type: "object",
+          properties: {
+            authenticity_score: { type: "integer", description: "0-100 scale" },
+            material_palette: { type: "string", description: "e.g. Reclaimed Victorian Oak, Aged Brass, Terrazzo" },
+            material_verdict: { type: "string", description: "e.g. Authentic Heritage — Zero Faux Decor" }
+          }
         },
         crowd_archetype: {
           type: "object",
           properties: {
             primary: { type: "string" },
             social_density: { type: "string" },
-            dress_code: { type: "string" }
+            dress_code: { type: "string" },
+            local_ratio: { type: "integer", description: "Percentage of locals (0-100), e.g. 82" },
+            tourist_ratio: { type: "integer", description: "Percentage of travelers/tourists (0-100), e.g. 18" },
+            energy_verdict: { type: "string", description: "e.g. High Banter & Neighborhood Sanctuary" }
           },
           required: ["primary", "social_density", "dress_code"]
         },
@@ -39,9 +53,17 @@ export const masterVibeSchema = {
           type: "object",
           properties: {
             atmosphere: { type: "string" },
+            lighting_temperature: { type: "string", description: "e.g. 2200K Warm Filament Amber, Subterranean Neon, Golden Hour Sunlight" },
             sensory_intensity: { type: "string" }
           },
           required: ["atmosphere", "sensory_intensity"]
+        },
+        temporal_dynamics: {
+          type: "object",
+          properties: {
+            best_time_to_visit: { type: "string", description: "e.g. 4:30 PM for fireside relaxation; 8:30 PM for peak atmospheric buzz" },
+            peak_atmospheric_window: { type: "string", description: "e.g. Late Afternoon Golden Hour" }
+          }
         },
         hyper_local_proximity: {
           type: "object",

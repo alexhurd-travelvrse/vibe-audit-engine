@@ -335,10 +335,189 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
 
           {step === 'input' && (
             <motion.div key="input" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="form-section">
-              <div style={{ textAlign: 'center', marginBottom: '1.75rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                <p style={{ color: '#ffffff', fontSize: '14px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.15em', margin: 0, lineHeight: 1.6, maxWidth: '750px' }}>
-                  <span style={{ color: '#00e5ff', fontWeight: 900, fontSize: '18px' }}>78%</span> of Next-Gen Travelers search for local experiences first — how discoverable are these on your digital presence?
+              <div style={{ textAlign: 'center', marginBottom: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                <h2 style={{ fontSize: 'clamp(2rem, 4vw, 2.75rem)', fontWeight: 900, color: '#ffffff', letterSpacing: '-0.02em', margin: '0 0 0.75rem 0', textTransform: 'uppercase' }}>
+                  VIBE <span style={{ color: '#00e5ff', background: 'linear-gradient(90deg, #00e5ff, #ffd700)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>MATTERS</span>
+                </h2>
+                <p style={{ color: 'rgba(230, 241, 255, 0.85)', fontSize: '15px', lineHeight: 1.65, maxWidth: '720px', margin: '0 auto 1.75rem auto' }}>
+                  Today's high-intent guests book atmospheres, not just square footage. Atmospheric visual merchandising captures subcultural gravity, eliminates bounce rates, and converts casual browsers into direct bookings.
                 </p>
+
+                {/* High-Conversion 5-Slot OTA Resequencing Preview Card */}
+                <div style={{
+                  background: 'rgba(0, 0, 0, 0.65)',
+                  border: '1px solid rgba(0, 229, 255, 0.35)',
+                  borderRadius: '1.5rem',
+                  padding: '1.25rem 1.5rem',
+                  width: '100%',
+                  maxWidth: '750px',
+                  boxShadow: '0 15px 40px rgba(0, 0, 0, 0.6), 0 0 25px rgba(0, 229, 255, 0.12)',
+                  boxSizing: 'border-box'
+                }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem', flexWrap: 'wrap', gap: '0.5rem' }}>
+                    <span style={{ fontSize: '13px', fontWeight: 900, textTransform: 'uppercase', color: '#ffd700', letterSpacing: '0.06em' }}>
+                      2. HIGH-CONVERSION 5-SLOT OTA RESEQUENCING
+                    </span>
+                    <span style={{ 
+                      background: 'rgba(0, 229, 255, 0.12)', 
+                      border: '1px solid rgba(0, 229, 255, 0.5)', 
+                      color: '#00e5ff', 
+                      fontSize: '11px', 
+                      fontWeight: 900, 
+                      padding: '3px 10px', 
+                      borderRadius: '12px', 
+                      fontFamily: 'monospace'
+                    }}>
+                      +21.5% Booking Lift
+                    </span>
+                  </div>
+
+                  <div style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(5, 1fr)',
+                    gap: '8px',
+                    marginBottom: '0.85rem'
+                  }}>
+                    {/* Slot 1: Cultural Magnet */}
+                    <div style={{
+                      position: 'relative',
+                      height: '76px',
+                      borderRadius: '8px',
+                      overflow: 'hidden',
+                      border: '2px solid #00e5ff',
+                      boxShadow: '0 0 12px rgba(0, 229, 255, 0.4)'
+                    }} title="Slot #1: Rooftop Hi-Fi Lounge (Cultural Magnet)">
+                      <img 
+                        src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=400&q=80" 
+                        alt="Cultural Magnet" 
+                        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                      />
+                      <span style={{
+                        position: 'absolute',
+                        bottom: '4px',
+                        left: '4px',
+                        background: '#00e5ff',
+                        color: '#050b14',
+                        fontSize: '8.5px',
+                        fontWeight: 900,
+                        padding: '2px 5px',
+                        borderRadius: '3px',
+                        letterSpacing: '0.02em'
+                      }}>#1 MAGNET</span>
+                    </div>
+
+                    {/* Slot 2: Exterior Landmark */}
+                    <div style={{
+                      position: 'relative',
+                      height: '76px',
+                      borderRadius: '8px',
+                      overflow: 'hidden',
+                      border: '1px solid rgba(255, 255, 255, 0.15)'
+                    }} title="Slot #2: Waterfront Exterior Landmark">
+                      <img 
+                        src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=400&q=80" 
+                        alt="Exterior Landmark" 
+                        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                      />
+                      <span style={{
+                        position: 'absolute',
+                        bottom: '4px',
+                        left: '4px',
+                        background: 'rgba(0, 0, 0, 0.85)',
+                        color: '#ffffff',
+                        fontSize: '8.5px',
+                        fontWeight: 800,
+                        padding: '2px 5px',
+                        borderRadius: '3px'
+                      }}>#2 EXTERIOR</span>
+                    </div>
+
+                    {/* Slot 3: Signature Suite */}
+                    <div style={{
+                      position: 'relative',
+                      height: '76px',
+                      borderRadius: '8px',
+                      overflow: 'hidden',
+                      border: '1px solid rgba(255, 255, 255, 0.15)'
+                    }} title="Slot #3: Signature King Suite">
+                      <img 
+                        src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=400&q=80" 
+                        alt="Signature Suite" 
+                        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                      />
+                      <span style={{
+                        position: 'absolute',
+                        bottom: '4px',
+                        left: '4px',
+                        background: 'rgba(0, 0, 0, 0.85)',
+                        color: '#ffffff',
+                        fontSize: '8.5px',
+                        fontWeight: 800,
+                        padding: '2px 5px',
+                        borderRadius: '3px'
+                      }}>#3 SUITE</span>
+                    </div>
+
+                    {/* Slot 4: Spa/Dining */}
+                    <div style={{
+                      position: 'relative',
+                      height: '76px',
+                      borderRadius: '8px',
+                      overflow: 'hidden',
+                      border: '1px solid rgba(255, 255, 255, 0.15)'
+                    }} title="Slot #4: Thermal Spa & Wellness">
+                      <img 
+                        src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=400&q=80" 
+                        alt="Spa Wellness" 
+                        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                      />
+                      <span style={{
+                        position: 'absolute',
+                        bottom: '4px',
+                        left: '4px',
+                        background: 'rgba(0, 0, 0, 0.85)',
+                        color: '#ffffff',
+                        fontSize: '8.5px',
+                        fontWeight: 800,
+                        padding: '2px 5px',
+                        borderRadius: '3px'
+                      }}>#4 SPA/F&B</span>
+                    </div>
+
+                    {/* Slot 5: Luxury Bathroom */}
+                    <div style={{
+                      position: 'relative',
+                      height: '76px',
+                      borderRadius: '8px',
+                      overflow: 'hidden',
+                      border: '1px solid rgba(255, 255, 255, 0.15)'
+                    }} title="Slot #5: Modern Marble Bathroom">
+                      <img 
+                        src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=400&q=80" 
+                        alt="Luxury Bathroom" 
+                        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                      />
+                      <span style={{
+                        position: 'absolute',
+                        bottom: '4px',
+                        left: '4px',
+                        background: 'rgba(0, 0, 0, 0.85)',
+                        color: '#ffffff',
+                        fontSize: '8.5px',
+                        fontWeight: 800,
+                        padding: '2px 5px',
+                        borderRadius: '3px'
+                      }}>#5 BATH</span>
+                    </div>
+                  </div>
+
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '11.5px', color: 'rgba(255,255,255,0.7)', flexWrap: 'wrap', gap: '6px' }}>
+                    <span>Commodity Score: <strong style={{ color: '#ef4444' }}>40/100</strong> ➔ <strong style={{ color: '#10b981' }}>95/100</strong></span>
+                    <span style={{ color: '#00e5ff', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '4px' }}>
+                      <span style={{ color: '#f59e0b' }}>⚡</span> Solves Drop-Off Flaws
+                    </span>
+                  </div>
+                </div>
               </div>
 
               <div className="glass-card" style={{ padding: '2.5rem', borderRadius: '2rem' }}>

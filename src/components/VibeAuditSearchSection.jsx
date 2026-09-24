@@ -111,7 +111,7 @@ const VibeAuditSearchSection = () => {
             Vibe <span className="text-cyan">Audit</span>
           </h2>
           <p className="subtitle">
-            <span className="text-cyan" style={{ fontWeight: 800 }}>78%</span> of Next-Gen Travelers search for local experiences first — uncover your property's experiential discoverability score and conversion gaps in seconds.
+            Atmospheric visual merchandising captures subcultural gravity, eliminates bounce rates, and converts casual browsers into direct bookings.
           </p>
         </div>
 

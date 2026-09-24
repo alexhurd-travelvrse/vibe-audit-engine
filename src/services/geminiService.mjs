@@ -88,7 +88,26 @@ MERCHANDISING SCORES & READABILITY BULLETS:
      • In "bullet_points", format the 3 bullets as:
        - Bullet 1: "Visual Upgrade: [Clear comparison of why this asset is superior in lighting, composition, emotional warmth, or architectural clarity over the live OTA photo]" (or "Strategic Placement: [Reason for re-sequencing]" if retaining a live photo).
        - Bullet 2: "Local Synergy: [How this visual connects the property's authentic DNA with what travelers search for in this specific neighborhood]".
-       - Bullet 3: "Conversion Trigger: [The psychological mechanism triggering higher booking intent]".`;
+       - Bullet 3: "Conversion Trigger: [The psychological mechanism triggering higher booking intent]".
+
+MULTIDIMENSIONAL SENSORY & ATMOSPHERIC CALIBRATION:
+Synthesize realistic sensory attributes derived from the real venue and neighborhood vibe:
+1. Acoustic DNA & Conversation:
+   - decibel_level: Calibrate realistic sound level (e.g., "52 dB (Snug / Intimate Sanctuary)", "64 dB (Lively Bistro Hum)", "76 dB (High-Energy Cocktail Buzz)").
+   - conversation_clarity_score: 0-100 percentage (e.g. 96 for effortless chat, 68 for vibrant nightlife).
+   - conversation_verdict: e.g. "Effortless Intimate Chat", "Gentle Ambient Murmur", "Vibrant Social Banter".
+2. Material Honesty & Authenticity:
+   - authenticity_score: 0-100 score (e.g. 94/100).
+   - material_palette: Specific physical materials (e.g. "Hand-hewn Victorian oak, aged brass, reclaimed timber, fluted glass").
+   - material_verdict: e.g. "Authentic Heritage — Zero Faux Decor" or "Artisanal Contemporary Craftsmanship".
+3. Crowd Velocity & Local Ratio:
+   - local_ratio: Realistic % of local neighborhood visitors (e.g., 75-90% for pubs/boutique anchors, 40-60% for major luxury hotels).
+   - tourist_ratio: Remainder (100 - local_ratio).
+   - energy_verdict: e.g. "High Banter & Neighborhood Sanctuary", "Cosmopolitan Creative Haven".
+4. Lighting & Photometrics:
+   - lighting_temperature: e.g. "2200K Warm Amber Filament", "Subterranean Speakeasy Candelight", "Golden Hour Thames Reflections".
+5. Temporal Dynamics:
+   - best_time_to_visit: Provide specific dual-peak time windows (e.g., "4:30 PM for tranquil fireside drinks; 8:30 PM for peak atmospheric buzz").`;
 
   const userPrompt = `VENUE: ${hotelName} (${city})
 TIMESTAMP: ${new Date().toISOString()}
@@ -209,15 +228,15 @@ Synthesize this live data and return the complete Master Vibe Audit JSON payload
   });
 
   const generateWithFallback = async (contentParts) => {
-    const modelsToTry = ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-1.5-flash'];
     let lastErr = null;
-    for (const mName of modelsToTry) {
+    for (let attempt = 1; attempt <= 3; attempt++) {
       try {
-        const mInstance = createModelInstance(mName);
+        const mInstance = createModelInstance('gemini-2.5-flash');
         return await mInstance.generateContent(contentParts);
       } catch (err) {
         lastErr = err;
-        console.warn(`[Gemini] Model ${mName} encountered error (${err.message}). Attempting fallback...`);
+        console.warn(`[Gemini] Attempt ${attempt} failed (${err.message}). Retrying...`);
+        if (attempt < 3) await new Promise(r => setTimeout(r, 1000 * attempt));
       }
     }
     throw lastErr;
