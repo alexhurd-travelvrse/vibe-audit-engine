@@ -23,7 +23,7 @@ function upgradePhotoResolution(url) {
 }
 
 function getDistinctiveTokens(name) {
-  const stopWords = new Set(['the', 'a', 'an', 'and', '&', 'hotel', 'hotels', 'inn', 'pub', 'bar', 'lounge', 'rooms', 'house', 'boutique', 'resort', 'spa', 'suites', 'b&b', 'bed', 'breakfast', 'restaurant', 'lodge', 'retreat', 'club', 'london', 'uk']);
+  const stopWords = new Set(['the', 'a', 'an', 'and', '&', 'hotel', 'hotels', 'inn', 'pub', 'bar', 'lounge', 'rooms', 'house', 'boutique', 'resort', 'spa', 'suites', 'b&b', 'bed', 'breakfast', 'restaurant', 'lodge', 'retreat', 'club', 'london', 'uk', 'miami', 'beach', 'south', 'north', 'city', 'downtown', 'knightsbridge', 'brickell']);
   return String(name || '')
     .toLowerCase()
     .replace(/[^a-z0-9\s]/g, ' ')
@@ -31,15 +31,59 @@ function getDistinctiveTokens(name) {
     .filter(token => token.length >= 3 && !stopWords.has(token));
 }
 
-function scoreUrlOrTitleMatch(targetStr, tokens) {
-  if (!targetStr || !tokens || tokens.length === 0) return 0;
-  const s = String(targetStr).toLowerCase();
-  let score = 0;
-  for (const token of tokens) {
-    if (s.includes(token)) {
-      score += 10;
-    }
+function scoreBookingCandidate(item, hotelName, city, neighborhood, brandTokens) {
+  if (!item || !item.link) return -1;
+  const slug = (item.link.split('booking.com/hotel/')[1] || '').toLowerCase();
+  const title = (item.title || '').toLowerCase();
+  const snippet = (item.snippet || '').toLowerCase();
+  const text = `${slug} ${title} ${snippet}`;
+
+  // Reject vacation rentals, apartments, condos, private rooms if searching for hotel
+  if (slug.includes('unit-at') || slug.includes('residence-with') || slug.includes('apartment') || slug.includes('private-mews') || title.includes('apartment') || title.includes('holiday home')) {
+    return -100;
   }
+
+  const isUS = /miami|orlando|new york|san diego|los angeles|chicago|boston|austin|seattle|vegas/i.test(`${city} ${neighborhood}`);
+  const isUK = /london|manchester|edinburgh|birmingham|liverpool|bath|oxford|cambridge/i.test(`${city} ${neighborhood}`);
+
+  let score = 0;
+  if (isUS && !item.link.includes('/hotel/us/')) {
+    score -= 150; // Heavily penalize non-US properties when searching US
+  }
+  if (isUK && !item.link.includes('/hotel/gb/')) {
+    score -= 150; // Heavily penalize non-UK properties when searching UK
+  }
+
+  // MANDATORY: Must match at least one core brand token in slug or title
+  const matchesBrand = brandTokens.some(token => slug.includes(token) || title.includes(token));
+  if (!matchesBrand) return -1;
+
+  for (const token of brandTokens) {
+    if (slug.includes(token)) score += 30;
+    if (title.includes(token)) score += 20;
+    if (snippet.includes(token)) score += 10;
+  }
+
+  // Exact name similarity bonus
+  const cleanHotel = hotelName.toLowerCase().replace(/\b(the|hotel|spa|resort|suites|inn|lodge|and|&)\b/gi, '').trim();
+  if (cleanHotel && (title.includes(cleanHotel) || slug.includes(cleanHotel.replace(/\s+/g, '-')))) {
+    score += 60;
+  }
+
+  // Bonus for neighborhood / location alignment
+  if (neighborhood && text.includes(neighborhood.toLowerCase())) {
+    score += 25;
+  }
+  if (city && text.includes(city.toLowerCase())) {
+    score += 30;
+  }
+  if (hotelName.toLowerCase().includes('hyde park') && text.includes('hyde-park')) {
+    score += 35;
+  }
+  if ((hotelName.toLowerCase().includes('knightsbridge') || (neighborhood && neighborhood.toLowerCase().includes('knightsbridge'))) && text.includes('hyde-park')) {
+    score += 40; // The Knightsbridge Mandarin Oriental is Hyde Park!
+  }
+
   return score;
 }
 
@@ -47,57 +91,71 @@ function scoreUrlOrTitleMatch(targetStr, tokens) {
 async function fetchBookingPhotosForHotel(hotelName, city, neighborhood = '') {
   try {
     const locationContext = neighborhood && neighborhood.trim() ? `${neighborhood.trim()} ${city}` : city;
-    const tokens = getDistinctiveTokens(hotelName);
+    const brandTokens = getDistinctiveTokens(hotelName);
+    const cleanHotel = hotelName.replace(/\b(the|hotel|spa|resort|suites|inn|lodge|and|&)\b/gi, '').trim();
     
-    // 1. Find the exact Booking.com URL via Serper Search
-    console.log(`[Master Vibe] Resolving Booking.com URL for "${hotelName}" in "${locationContext}" (Tokens: [${tokens.join(', ')}])...`);
-    const cleanName = hotelName.replace(/\b(hotel|resort|suites|inn|lodge|boutique)\b/gi, '').trim();
-    const queryStr = cleanName && cleanName !== hotelName 
-      ? `site:booking.com/hotel/ ("${hotelName}" OR "${cleanName}") ${locationContext}`
-      : `site:booking.com/hotel/ "${hotelName}" ${locationContext}`;
+    console.log(`[Master Vibe] Resolving Booking.com URL for "${hotelName}" in "${locationContext}" (Tokens: [${brandTokens.join(', ')}])...`);
 
-    const searchRes = await fetch('https://google.serper.dev/search', {
-      method: 'POST',
-      headers: { 'X-API-KEY': SERPER_API_KEY, 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        q: queryStr,
-        num: 8
-      })
-    });
-    const searchData = await searchRes.json();
-    const organicResults = searchData.organic || [];
+    const queries = [
+      cleanHotel ? `site:booking.com/hotel/ "${cleanHotel}"` : null,
+      `site:booking.com/hotel/ "${hotelName}"`,
+      brandTokens.length > 0 ? `site:booking.com/hotel/ "${brandTokens.join(' ')}" ${city}` : null,
+      brandTokens.length > 0 ? `site:booking.com/hotel/ "${brandTokens.join('-')}"` : null,
+      brandTokens.length > 0 ? `site:booking.com/hotel/ "${brandTokens.join(' ')}"` : null,
+      brandTokens.length > 0 ? `site:booking.com/hotel/ ${brandTokens.join(' ')} ${neighborhood || ''} ${city}` : null
+    ].filter(Boolean);
 
-    // Disambiguation: Find the result whose URL slug or title best matches the distinctive hotel tokens
+    let allCandidates = [];
+
+    for (const q of queries) {
+      try {
+        const searchRes = await fetch('https://google.serper.dev/search', {
+          method: 'POST',
+          headers: { 'X-API-KEY': SERPER_API_KEY, 'Content-Type': 'application/json' },
+          body: JSON.stringify({ q, num: 8 })
+        });
+        const searchData = await searchRes.json();
+        for (const item of (searchData.organic || [])) {
+          if (item.link && item.link.includes('booking.com/hotel/')) {
+            allCandidates.push(item);
+          }
+        }
+      } catch (e) {
+        console.warn('[Master Vibe] Serper query error:', e.message);
+      }
+    }
+
     let bestMatch = null;
     let bestScore = -1;
 
-    for (const item of organicResults) {
-      if (!item.link || !item.link.includes('booking.com/hotel/')) continue;
-      const urlSlug = item.link.split('booking.com/hotel/')[1] || '';
-      const score = (scoreUrlOrTitleMatch(urlSlug, tokens) * 2) + scoreUrlOrTitleMatch(item.title, tokens);
+    for (const item of allCandidates) {
+      const score = scoreBookingCandidate(item, hotelName, city, neighborhood, brandTokens);
       if (score > bestScore) {
         bestScore = score;
         bestMatch = item;
       }
     }
 
-    // Strict Disambiguation: ONLY select a Booking.com URL if it explicitly matches hotel name tokens
-    const bookingUrl = (bestMatch && bestScore >= 10) ? bestMatch.link : null;
+    // Strict Disambiguation: ONLY select a Booking.com URL if score >= 20
+    const bookingUrl = (bestMatch && bestScore >= 20) ? bestMatch.link : null;
 
     if (bookingUrl && bookingUrl.includes('booking.com/hotel/')) {
-      console.log(`[Master Vibe] Scraping live Booking.com gallery from resolved URL (Score: ${bestScore}): ${bookingUrl}`);
+      const cleanUrl = bookingUrl.replace(/\.[a-z]{2,3}(-[a-z]{2,4})?\.html/i, '.html');
+      console.log(`[Master Vibe] Scraping live Booking.com gallery from resolved URL (Score: ${bestScore}): ${cleanUrl}`);
+      let browser = null;
       try {
         const { chromium } = await import('playwright');
-        const browser = await chromium.launch({ channel: 'chrome', headless: true }).catch(() => chromium.launch({ headless: true }));
+        browser = await chromium.launch({ channel: 'chrome', headless: true }).catch(() => chromium.launch({ headless: true }));
         const context = await browser.newContext({
           userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
           viewport: { width: 1440, height: 900 }
         });
         const page = await context.newPage();
-        await page.goto(bookingUrl, { waitUntil: 'domcontentloaded', timeout: 25000 });
-        await page.waitForTimeout(3000);
+        await page.goto(cleanUrl, { waitUntil: 'domcontentloaded', timeout: 20000 }).catch(() => {});
+        await page.waitForLoadState('networkidle', { timeout: 5000 }).catch(() => {});
+        await page.waitForTimeout(1500);
 
-        const photos = await page.evaluate(() => {
+        const extractPhotos = () => {
           const list = [];
           const seen = new Set();
 
@@ -144,9 +202,18 @@ async function fetchBookingPhotosForHotel(hotelName, city, neighborhood = '') {
           }
 
           return list;
-        });
+        };
+
+        let photos = [];
+        try {
+          photos = await page.evaluate(extractPhotos);
+        } catch (navErr) {
+          await page.waitForTimeout(2000);
+          photos = await page.evaluate(extractPhotos).catch(() => []);
+        }
 
         await browser.close();
+        browser = null;
 
         if (photos.length >= 3) {
           console.log(`[Master Vibe] Successfully extracted ${photos.length} exact live Booking.com photos!`);
@@ -159,14 +226,15 @@ async function fetchBookingPhotosForHotel(hotelName, city, neighborhood = '') {
           }));
         }
       } catch (browserErr) {
-        console.warn('[Master Vibe] Headless browser scrape error:', browserErr.message);
+        console.warn('[Master Vibe] Headless browser scrape warning:', browserErr.message);
+        if (browser) await browser.close().catch(() => {});
       }
     } else {
       console.log(`[Master Vibe] Venue "${hotelName}" does not have a verified active room listing on Booking.com.`);
     }
 
     // Fallback: Google Serper Images API ONLY if we have tokens and images match
-    if (tokens.length > 0) {
+    if (brandTokens.length > 0) {
       const res = await fetch('https://google.serper.dev/images', {
         method: 'POST',
         headers: { 'X-API-KEY': SERPER_API_KEY, 'Content-Type': 'application/json' },
@@ -179,7 +247,7 @@ async function fetchBookingPhotosForHotel(hotelName, city, neighborhood = '') {
       if (data.images && data.images.length > 0) {
         const filtered = data.images.filter(img => {
           const combined = `${img.title || ''} ${img.link || ''} ${img.imageUrl || ''}`.toLowerCase();
-          return tokens.some(t => combined.includes(t));
+          return brandTokens.some(t => combined.includes(t));
         });
         if (filtered.length >= 3) {
           return filtered.map((img, i) => ({
@@ -274,8 +342,9 @@ async function fetchAmenityPhotosForHotel(hotelName, city, neighborhood = '') {
     const isLowQualityDomain = (url = '', title = '') => {
       const u = (url || '').toLowerCase();
       const t = (title || '').toLowerCase();
+      const isCrawlerHost = u.includes('lookaside.instagram.com') || u.includes('lookaside.fbsbx.com') || u.includes('fbsbx.com') || u.includes('fbcdn.net') || u.includes('instagram.com/seo/') || u.includes('static.cdninstagram.com');
       const isWeddingOrBlog = t.includes('wedding') || t.includes('bride') || t.includes('groom') || t.includes('dress') || t.includes('couple') || t.includes('timeout') || t.includes('linkedin') || t.includes('pinterest') || u.includes('wedding');
-      return isWeddingOrBlog;
+      return isCrawlerHost || isWeddingOrBlog;
     };
 
     const isExteriorLike = (title = '', url = '') => {

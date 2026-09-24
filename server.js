@@ -37,8 +37,26 @@ app.all('/api/master-vibe-audit', async (req, res) => {
     await masterVibeAuditHandler(req, res);
 });
 
-app.post('/api/audit-hotel', async (req, res) => {
-    await auditHotelHandler(req, res);
+app.get('/api/proxy-image', async (req, res) => {
+  const targetUrl = req.query.url;
+  if (!targetUrl) return res.status(400).send('Missing url parameter');
+  try {
+    const fetchResp = await fetch(targetUrl, {
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
+        'Accept': 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+      },
+      signal: AbortSignal.timeout(8000)
+    });
+    if (!fetchResp.ok) return res.status(fetchResp.status).send('Failed to fetch image');
+    const contentType = fetchResp.headers.get('content-type') || 'image/jpeg';
+    res.setHeader('Content-Type', contentType);
+    res.setHeader('Cache-Control', 'public, max-age=86400');
+    const buffer = Buffer.from(await fetchResp.arrayBuffer());
+    return res.send(buffer);
+  } catch (err) {
+    return res.status(500).send('Proxy error: ' + err.message);
+  }
 });
 
 app.listen(3002, () => {

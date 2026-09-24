@@ -237,34 +237,24 @@ Synthesize this live data and return the complete Master Vibe Audit JSON payload
   });
 
   const generateWithFallback = async (contentParts, timeoutMs = 25000) => {
-    let lastErr = null;
-    for (let attempt = 1; attempt <= 2; attempt++) {
-      try {
-        const mInstance = createModelInstance('gemini-2.5-flash');
-        const timeoutPromise = new Promise((_, reject) => 
-          setTimeout(() => reject(new Error(`Gemini API call timeout (${timeoutMs}ms)`)), timeoutMs)
-        );
-        return await Promise.race([
-          mInstance.generateContent(contentParts),
-          timeoutPromise
-        ]);
-      } catch (err) {
-        lastErr = err;
-        // If credits depleted, 402, 429, abort retry immediately to trigger high-speed synthesizer
-        if (err.message && (err.message.includes('402') || err.message.includes('credits are depleted') || err.message.includes('API_KEY_INVALID'))) {
-          throw err;
-        }
-        console.warn(`[Gemini] Attempt ${attempt} failed (${err.message}). Retrying...`);
-        if (attempt < 2) await new Promise(r => setTimeout(r, 1000));
-      }
+    try {
+      const mInstance = createModelInstance('gemini-2.5-flash');
+      const timeoutPromise = new Promise((_, reject) => 
+        setTimeout(() => reject(new Error(`Gemini API call timeout (${timeoutMs}ms)`)), timeoutMs)
+      );
+      return await Promise.race([
+        mInstance.generateContent(contentParts),
+        timeoutPromise
+      ]);
+    } catch (err) {
+      throw err;
     }
-    throw lastErr;
   };
 
   try {
     let result;
     try {
-      // Execute multimodal vision call with 25-second timeout for full visual classification
+      // Execute multimodal vision call with robust 25-second timeout
       result = await generateWithFallback(parts, 25000);
     } catch (multimodalErr) {
       console.warn(`[Gemini] Multimodal inline image generation fallback (${multimodalErr.message}), executing high-speed metadata generation...`);
@@ -281,7 +271,7 @@ Synthesize this live data and return the complete Master Vibe Audit JSON payload
         },
         { text: userPrompt }
       ];
-      result = await generateWithFallback(textOnlyParts, 6000);
+      result = await generateWithFallback(textOnlyParts, 20000);
     }
 
     const responseText = result.response.text();
@@ -311,13 +301,30 @@ function synthesizeVibeAuditFromCorpus(hotelName, city, neighborhood, venueCorpu
 
   // Intelligent feature detection from live corpus
   const hasPool = corpus.includes('pool') || corpus.includes('swimming') || corpus.includes('courtyard pool');
-  const hasSpa = corpus.includes('spa') || corpus.includes('wellness') || corpus.includes('treatment') || corpus.includes('sauna');
-  const hasRooftop = corpus.includes('rooftop') || corpus.includes('sky bar') || corpus.includes('terrace');
-  const hasGrillOrDining = corpus.includes('grill') || corpus.includes('fine dining') || corpus.includes('michelin') || corpus.includes('sushi') || corpus.includes('bistro') || corpus.includes('restaurant');
-  const isArtDeco = corpus.includes('art deco') || corpus.includes('art moderne') || corpus.includes('historic') || corpus.includes('south beach');
+  const hasSpa = corpus.includes('spa') || corpus.includes('wellness') || corpus.includes('treatment') || corpus.includes('sauna') || corpus.includes('vitality pool') || corpus.includes('agua');
+  const hasRooftop = corpus.includes('rooftop') || corpus.includes('sky bar') || corpus.includes('terrace') || corpus.includes('12th knot');
+  const hasGrillOrDining = corpus.includes('grill') || corpus.includes('fine dining') || corpus.includes('michelin') || corpus.includes('sushi') || corpus.includes('bistro') || corpus.includes('restaurant') || corpus.includes('dinner by heston') || corpus.includes('rosebery') || corpus.includes('essensia') || corpus.includes('blue ribbon');
+  const isArtDeco = corpus.includes('art deco') || corpus.includes('art moderne') || corpus.includes('south beach');
+
+  // Extract authentic dining title from corpus
+  let diningTitle = `Signature Culinary Dining Room & Cocktail Bar`;
+  if (corpus.includes('dinner by heston')) diningTitle = `Dinner by Heston Blumenthal Michelin Dining Room`;
+  else if (corpus.includes('rosebery')) diningTitle = `The Rosebery Traditional Afternoon Tea & Champagne Salon`;
+  else if (corpus.includes('12th knot')) diningTitle = `12th Knot Panoramic Rooftop Bar & Lounge`;
+  else if (corpus.includes('sea containers restaurant')) diningTitle = `Sea Containers Thames Riverfront Restaurant & Terrace`;
+  else if (corpus.includes('essensia')) diningTitle = `Essensia Farm-to-Table Restaurant & Craft Cocktail Lounge`;
+  else if (corpus.includes('blue ribbon')) diningTitle = `Blue Ribbon Sushi Bar & Grill`;
+  else if (corpus.includes('w xyz')) diningTitle = `W XYZ® Bar & Social Lounge`;
+  else if (corpus.includes('grant grill')) diningTitle = `The Grant Grill & Craft Cocktail Lounge`;
+
+  // Extract authentic spa/wellness title from corpus
+  let spaTitle = `Holistic Thermal Spa & Wellness Treatment Sanctuary`;
+  if (corpus.includes('agua')) spaTitle = `agua Subterranean Thermal Spa & Holistic Wellness Treatment Sanctuary`;
+  else if (corpus.includes('aveda')) spaTitle = `AVEDA Holistic Spa & Wellness Treatment Sanctuary`;
+  else if (corpus.includes('mandarin') || corpus.includes('hyde park')) spaTitle = `Subterranean Thermal Spa & Vitality Pool Sanctuary`;
 
   // Detect signature hero magnet
-  let heroTitle = 'Art Deco Courtyard Pool';
+  let heroTitle = 'Curated Lifestyle Sanctuary';
   let heroCategory = 'HERO_CULTURAL_MAGNET';
   let isMagnetOverride = true;
 
@@ -325,16 +332,18 @@ function synthesizeVibeAuditFromCorpus(hotelName, city, neighborhood, venueCorpu
     heroTitle = 'The Grant Grill & Iconic Cocktail Lounge';
   } else if (corpus.includes('plymouth') && hasPool) {
     heroTitle = 'Iconic Art Deco Courtyard Pool & Sanctuary Loungers';
+  } else if (hasRooftop && corpus.includes('12th knot')) {
+    heroTitle = '12th Knot Panoramic Rooftop Bar & River Thames Skyline';
   } else if (hasRooftop) {
-    heroTitle = 'Signature Rooftop Cocktail Lounge';
+    heroTitle = 'Signature Rooftop Cocktail Lounge & Panoramic Skyline';
   } else if (hasPool) {
     heroTitle = 'Curated Lifestyle Pool Sanctuary';
   } else if (hasSpa) {
-    heroTitle = 'Subterranean Thermal Spa & Vitality Pool';
+    heroTitle = spaTitle;
   } else if (hasGrillOrDining) {
-    heroTitle = 'Signature Culinary Dining Destination';
+    heroTitle = diningTitle;
   } else {
-    heroTitle = 'Historic Landmark Architectural Facade';
+    heroTitle = `Historic Landmark Architectural Facade of ${name}`;
     heroCategory = 'EXTERIOR_LANDMARK';
     isMagnetOverride = false;
   }
@@ -387,17 +396,13 @@ function synthesizeVibeAuditFromCorpus(hotelName, city, neighborhood, venueCorpu
       category: "HERO_CULTURAL_MAGNET",
       source_type: "AMENITY_ASSET",
       source_index: slot1SourceIdx,
-      photo_subject: hasRooftop
-        ? `12th Knot Panoramic Rooftop Bar & Lounge with floor-to-ceiling skyline views over the River Thames`
-        : `${heroTitle} with distinctive ambient lighting and design furniture`,
+      photo_subject: `${heroTitle} with distinctive ambient lighting and design furniture`,
       action: "HERO_CULTURAL_MAGNET",
-      action_label: hasRooftop
-        ? `⚡ HERO CULTURAL MAGNET: PANORAMIC ROOFTOP LOUNGE (SLOT #1)`
-        : `⚡ HERO CULTURAL MAGNET: ${heroTitle.toUpperCase()} (SLOT #1)`,
+      action_label: `⚡ HERO CULTURAL MAGNET: ${heroTitle.toUpperCase()} (SLOT #1)`,
       upgrade_rationale: "Disrupts standard OTA search fatigue by elevating the property's highest-gravity cultural asset to Slot #1, capturing high-intent lifestyle search volume within 1.5 seconds.",
       bullet_points: [
         `Visual Upgrade: Twilight/golden-hour framing showcasing glowing panoramic city views, bespoke lounge seating, and skyline context over flat daytime glare.`,
-        `Local Synergy: Directly aligns with the #1 lifestyle and rooftop cocktail search demand in ${loc}.`,
+        `Local Synergy: Directly aligns with the #1 lifestyle and hospitality search demand in ${loc}.`,
         `Conversion Trigger: Instantly establishes emotional escapism and social prestige before commodity price comparisons begin.`
       ],
       psychological_conversion_trigger: "Instantly confirms signature design identity and social cachet before commodity pricing checks."
@@ -436,26 +441,16 @@ function synthesizeVibeAuditFromCorpus(hotelName, city, neighborhood, venueCorpu
     },
     {
       slot: 4,
-      category: (hasDedicatedSpa && isRooftopOrSocialMagnet) ? "WELLNESS_SPA_LOBBY" : ((corpus.includes('w xyz') || hasGrillOrDining || corpus.includes('essensia') || corpus.includes('lounge')) ? "SOCIAL_FB_ROOFTOP" : "WELLNESS_SPA_LOBBY"),
+      category: (hasDedicatedSpa && isRooftopOrSocialMagnet) ? "WELLNESS_SPA_LOBBY" : (hasGrillOrDining ? "SOCIAL_FB_ROOFTOP" : "WELLNESS_SPA_LOBBY"),
       source_type: "AMENITY_ASSET",
       source_index: slot4SourceIdx,
-      photo_subject: (corpus.includes('agua') || (corpus.includes('sea containers') && hasDedicatedSpa))
-        ? `agua Subterranean Thermal Spa & Holistic Wellness Treatment Sanctuary`
-        : (corpus.includes('aveda') || (name.toLowerCase().includes('palms') && hasDedicatedSpa))
-          ? `AVEDA Holistic Spa & Wellness Treatment Sanctuary`
-          : corpus.includes('w xyz')
-            ? `W XYZ® Bar & Re:mix Lounge featuring signature craft cocktails, pool table, and evening acoustic energy`
-            : (hasGrillOrDining 
-              ? `Essensia Farm-to-Table Restaurant & Craft Cocktail Lounge Interior`
-              : `Grand Arrival Lobby with bespoke lounge seating and signature art`),
+      photo_subject: hasDedicatedSpa && isRooftopOrSocialMagnet 
+        ? spaTitle 
+        : (hasGrillOrDining ? diningTitle : `Grand Arrival Lobby with bespoke lounge seating and signature art`),
       action: "SWAP_IN",
-      action_label: (corpus.includes('agua') || (corpus.includes('sea containers') && hasDedicatedSpa))
-        ? `SWAP IN AGUA THERMAL SPA SANCTUARY (SLOT #4)`
-        : (corpus.includes('aveda') || (name.toLowerCase().includes('palms') && hasDedicatedSpa))
-          ? `SWAP IN AVEDA SPA & WELLNESS SANCTUARY (SLOT #4)`
-          : corpus.includes('w xyz')
-            ? `SWAP IN W XYZ® BAR & SOCIAL LOUNGE (SLOT #4)`
-            : `SWAP IN DESTINATION DINING & BAR (SLOT #4)`,
+      action_label: hasDedicatedSpa && isRooftopOrSocialMagnet
+        ? `SWAP IN SPA & WELLNESS SANCTUARY (SLOT #4)`
+        : (hasGrillOrDining ? `SWAP IN DESTINATION DINING & BAR (SLOT #4)` : `SWAP IN GRAND LOBBY (SLOT #4)`),
       upgrade_rationale: hasDedicatedSpa
         ? "Showcases the multi-room holistic thermal spa and wellness treatment sanctuary to establish 5-star lifestyle resort depth."
         : "Showcases the vibrant on-site social and cocktail dimension to demonstrate full property depth and evening energy.",
