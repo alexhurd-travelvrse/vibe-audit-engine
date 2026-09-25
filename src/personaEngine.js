@@ -86,3 +86,29 @@ export async function fetchMasterVibeAudit(hotelName, city, neighborhood) {
   return await response.json();
 }
 
+export async function fetchMasterVibeAuditManifest(hotelName, city, neighborhood) {
+  console.log(`[Master Vibe Phase 1] Fetching instant vibe manifest & strategy text for ${hotelName} in ${city}...`);
+  const response = await fetch('/api/master-vibe-audit?phase=1', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ hotelName, city, neighborhood, phase: 1 })
+  });
+  if (!response.ok) {
+    throw new Error(`Master Vibe Manifest API returned ${response.status}: ${await response.text()}`);
+  }
+  return await response.json();
+}
+
+export async function fetchMasterVibeAuditPhotos(hotelName, city, neighborhood, strategySlots = null) {
+  console.log(`[Master Vibe Phase 2] Resolving and verifying visual photo assets for ${hotelName}...`);
+  const response = await fetch('/api/resolve-audit-photos', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ hotelName, city, neighborhood, strategySlots })
+  });
+  if (!response.ok) {
+    throw new Error(`Photo Resolution API returned ${response.status}: ${await response.text()}`);
+  }
+  return await response.json();
+}
+

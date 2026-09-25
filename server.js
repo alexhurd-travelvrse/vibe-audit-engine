@@ -32,9 +32,18 @@ app.post('/api/hotel-audit', async (req, res) => {
     await hotelAuditHandler(req, res);
 });
 
-import masterVibeAuditHandler from './api/master-vibe-audit.js';
+import masterVibeAuditHandler, { resolveAuditPhotosHandler } from './api/master-vibe-audit.js';
 app.all('/api/master-vibe-audit', async (req, res) => {
     await masterVibeAuditHandler(req, res);
+});
+
+app.all('/api/master-vibe-manifest', async (req, res) => {
+    req.query.phase = '1';
+    await masterVibeAuditHandler(req, res);
+});
+
+app.all('/api/resolve-audit-photos', async (req, res) => {
+    await resolveAuditPhotosHandler(req, res);
 });
 
 app.get('/api/proxy-image', async (req, res) => {

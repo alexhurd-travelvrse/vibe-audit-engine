@@ -197,7 +197,7 @@ export default function MarketsSection() {
             <div className="market-stat-box">
               <div className="market-stat-num" style={{ color: '#ffd700' }}>{selectedMarket.auditedCount}+</div>
               <div className="market-stat-label">Properties Audited & Mapped</div>
-              <div className="market-stat-desc">Continuous Serper Places & Gemini Multimodal intelligence dataset.</div>
+              <div className="market-stat-desc">Continuous real-time geospatial & multimodal intelligence dataset.</div>
             </div>
 
             <div className="market-stat-box">

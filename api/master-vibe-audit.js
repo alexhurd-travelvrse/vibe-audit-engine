@@ -88,7 +88,7 @@ function scoreBookingCandidate(item, hotelName, city, neighborhood, brandTokens)
 }
 
 // Live Booking.com direct scraper via Playwright (with Serper fallback & strict disambiguation)
-async function fetchBookingPhotosForHotel(hotelName, city, neighborhood = '') {
+export async function fetchBookingPhotosForHotel(hotelName, city, neighborhood = '') {
   try {
     const locationContext = neighborhood && neighborhood.trim() ? `${neighborhood.trim()} ${city}` : city;
     const brandTokens = getDistinctiveTokens(hotelName);
@@ -266,7 +266,7 @@ async function fetchBookingPhotosForHotel(hotelName, city, neighborhood = '') {
 }
 
 // Dynamic Amenity Photo Fetcher: Strictly pulls ONLY from Official Hotel Website, TripAdvisor, and Official Social Posts
-async function fetchAmenityPhotosForHotel(hotelName, city, neighborhood = '') {
+export async function fetchAmenityPhotosForHotel(hotelName, city, neighborhood = '') {
   try {
     const locationContext = neighborhood && neighborhood.trim() ? `${neighborhood.trim()} ${city}` : city;
     const tokens = getDistinctiveTokens(hotelName);
@@ -293,49 +293,52 @@ async function fetchAmenityPhotosForHotel(hotelName, city, neighborhood = '') {
       console.warn('[Master Vibe] Domain resolution error:', e.message);
     }
 
-    const domainFilter = officialDomain 
-      ? `(site:${officialDomain} OR site:tripadvisor.com OR site:instagram.com OR site:facebook.com)`
-      : `(site:tripadvisor.com OR site:instagram.com OR site:facebook.com)`;
-
-    const exclusions = '-wedding -bride -groom -couple -dress -menu';
+    const officialClause = officialDomain ? `site:${officialDomain}` : `"${hotelName}" ${locationContext}`;
+    const tripAdvisorClause = `site:tripadvisor.com "${hotelName}" ${neighborhood || city}`;
     
     // Concurrently fetch specific categories: Dining/Social, Spa/Wellness, Grand Lobby/Ballroom/Interior, Exterior Facade, Suite/Bedroom, and Bathroom
-    const [resSocial, resSpa, resLobby, resExterior, resBedroom, resBath] = await Promise.all([
+    const [resSocial, resSpa, resLobby, resExterior, resBedroom, resBath, resTripAdvisor] = await Promise.all([
       fetch('https://google.serper.dev/images', {
         method: 'POST',
         headers: { 'X-API-KEY': SERPER_API_KEY, 'Content-Type': 'application/json' },
-        body: JSON.stringify({ q: `"${hotelName}" ${locationContext} (restaurant OR bar OR cocktail OR lounge OR dining OR "w xyz") ${domainFilter} ${exclusions} -exterior -building -outside -facade -aerial -pool -bedroom -bathroom -motel`, num: 12 }),
-        signal: AbortSignal.timeout(3500)
+        body: JSON.stringify({ q: officialDomain ? `${officialClause} (restaurant OR bar OR sushi OR dining OR cocktails OR lounge OR food) -wedding` : `"${hotelName}" ${locationContext} (restaurant OR bar OR dining OR sushi) site:tripadvisor.com -wedding`, num: 12 }),
+        signal: AbortSignal.timeout(5000)
       }).then(r => r.json()).catch(() => ({})),
       fetch('https://google.serper.dev/images', {
         method: 'POST',
         headers: { 'X-API-KEY': SERPER_API_KEY, 'Content-Type': 'application/json' },
-        body: JSON.stringify({ q: `"${hotelName}" ${locationContext} (spa OR "treatment room" OR wellness OR massage OR "vitality pool" OR sauna OR "agua spa" OR "agua bathhouse" OR "thermal suite") ${domainFilter} ${exclusions} -food -dish -eating -bedroom -bed -suite -cabin -meeting -event`, num: 12 }),
-        signal: AbortSignal.timeout(3500)
+        body: JSON.stringify({ q: officialDomain ? `${officialClause} (spa OR wellness OR treatment OR sauna OR massage) -wedding` : `"${hotelName}" ${locationContext} (spa OR wellness OR sauna) site:tripadvisor.com -wedding`, num: 12 }),
+        signal: AbortSignal.timeout(5000)
       }).then(r => r.json()).catch(() => ({})),
       fetch('https://google.serper.dev/images', {
         method: 'POST',
         headers: { 'X-API-KEY': SERPER_API_KEY, 'Content-Type': 'application/json' },
-        body: JSON.stringify({ q: `"${hotelName}" ${locationContext} (lobby OR "grand lobby" OR reception OR ballroom OR "drawing room" OR lounge OR interior) ${domainFilter} ${exclusions}`, num: 12 }),
-        signal: AbortSignal.timeout(3500)
+        body: JSON.stringify({ q: officialDomain ? `${officialClause} (lobby OR reception OR ballroom OR "drawing room" OR interior) -wedding` : `"${hotelName}" ${locationContext} (lobby OR reception OR interior) site:tripadvisor.com -wedding`, num: 12 }),
+        signal: AbortSignal.timeout(5000)
       }).then(r => r.json()).catch(() => ({})),
       fetch('https://google.serper.dev/images', {
         method: 'POST',
         headers: { 'X-API-KEY': SERPER_API_KEY, 'Content-Type': 'application/json' },
-        body: JSON.stringify({ q: `"${hotelName}" ${locationContext} (facade OR exterior OR "art deco facade" OR entrance OR "building exterior" OR "street view" OR architecture) ${domainFilter} ${exclusions} -pool -swimming -bedroom -bathroom -food -dish`, num: 12 }),
-        signal: AbortSignal.timeout(3500)
+        body: JSON.stringify({ q: officialDomain ? `${officialClause} (facade OR exterior OR entrance OR building) -wedding` : `"${hotelName}" ${locationContext} (facade OR exterior OR entrance) site:tripadvisor.com -wedding`, num: 12 }),
+        signal: AbortSignal.timeout(5000)
       }).then(r => r.json()).catch(() => ({})),
       fetch('https://google.serper.dev/images', {
         method: 'POST',
         headers: { 'X-API-KEY': SERPER_API_KEY, 'Content-Type': 'application/json' },
-        body: JSON.stringify({ q: `"${hotelName}" ${locationContext} ("king suite" OR "oceanfront suite" OR "ocean view" OR "bedroom interior" OR "guest room") ${domainFilter} ${exclusions} -pool -exterior -bathroom`, num: 12 }),
-        signal: AbortSignal.timeout(3500)
+        body: JSON.stringify({ q: officialDomain ? `${officialClause} (suite OR bedroom OR king) -wedding` : `"${hotelName}" ${locationContext} ("king suite" OR "hotel room" OR bedroom) site:tripadvisor.com -wedding`, num: 12 }),
+        signal: AbortSignal.timeout(5000)
       }).then(r => r.json()).catch(() => ({})),
       fetch('https://google.serper.dev/images', {
         method: 'POST',
         headers: { 'X-API-KEY': SERPER_API_KEY, 'Content-Type': 'application/json' },
-        body: JSON.stringify({ q: `"${hotelName}" ${locationContext} (bathroom OR "freestanding bath" OR "soaking tub" OR "marble bathroom" OR "rain shower" OR vanity OR "walk-in shower") ${domainFilter} ${exclusions}`, num: 12 }),
-        signal: AbortSignal.timeout(3500)
+        body: JSON.stringify({ q: officialDomain ? `${officialClause} (tub OR shower OR bath OR bathroom OR "soaking tub" OR "clawfoot tub" OR "freestanding tub") -wedding` : `"${hotelName}" ${locationContext} (bathroom OR bath OR tub OR shower) site:tripadvisor.com -wedding`, num: 20 }),
+        signal: AbortSignal.timeout(5000)
+      }).then(r => r.json()).catch(() => ({})),
+      fetch('https://google.serper.dev/images', {
+        method: 'POST',
+        headers: { 'X-API-KEY': SERPER_API_KEY, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ q: `${tripAdvisorClause} (bath OR bathroom OR dining OR restaurant OR bar OR pool OR facade) -traveler`, num: 15 }),
+        signal: AbortSignal.timeout(5000)
       }).then(r => r.json()).catch(() => ({})),
     ]);
 
@@ -402,6 +405,7 @@ async function fetchAmenityPhotosForHotel(hotelName, city, neighborhood = '') {
       if (!img || !img.imageUrl) return false;
       if (isLowQualityDomain(img.imageUrl, img.title)) return false;
       if (isPoolLike(img.title, img.imageUrl)) return false;
+      if (isRoomLike(img.title, img.imageUrl) || isRoomLike(img.link, '')) return false;
       const titleLower = (img.title || '').toLowerCase();
       const linkLower = (img.link || '').toLowerCase();
       const urlLower = (img.imageUrl || '').toLowerCase();
@@ -414,10 +418,29 @@ async function fetchAmenityPhotosForHotel(hotelName, city, neighborhood = '') {
       return true;
     };
 
+    const isValidDiningPhoto = (img) => {
+      if (!isValidAmenityPhoto(img)) return false;
+      const s = `${img.title || ''} ${img.imageUrl || ''} ${img.link || ''}`.toLowerCase();
+      if (isRoomLike(img.title, img.imageUrl) || isRoomLike(img.link, '')) return false;
+      return true;
+    };
+
+    const isValidBathPhoto = (img) => {
+      if (!img || !img.imageUrl) return false;
+      if (isLowQualityDomain(img.imageUrl, img.title)) return false;
+      const u = (img.imageUrl || '').toLowerCase();
+      const t = (img.title || '').toLowerCase();
+      if (u.includes('bath') || u.includes('tub') || u.includes('shower') || u.includes('vanity')) return true;
+      const isExplicitBath = t.includes('bathroom') || t.includes('shower') || t.includes('clawfoot') || t.includes('soaking tub') || t.includes('bathtub') || t.includes('bath') || t.includes('tub');
+      const isStrictBedroomOnly = (t.includes('bedroom with a bed') || t.includes('classic queen') || t.includes('classic king') || u.includes('bedq')) && !u.includes('bath_wide');
+      if (isStrictBedroomOnly && !isExplicitBath) return false;
+      return isExplicitBath;
+    };
+
     const scoreSource = (img) => {
       const u = (img.imageUrl || '').toLowerCase();
       const l = (img.link || '').toLowerCase();
-      if (officialDomain && (u.includes(officialDomain) || l.includes(officialDomain) || u.includes('tambourine.com') || u.includes('symphony.cdn'))) return 100;
+      if (officialDomain && (u.includes(officialDomain) || l.includes(officialDomain) || u.includes('galaxy.tf') || u.includes('tambourine.com') || u.includes('symphony.cdn'))) return 100;
       if (u.includes('tripadvisor.com') || l.includes('tripadvisor.com') || u.includes('media-cdn.tripadvisor.com')) return 80;
       if (u.includes('instagram.com') || l.includes('instagram.com') || u.includes('facebook.com') || l.includes('facebook.com')) return 60;
       return 40;
@@ -425,7 +448,7 @@ async function fetchAmenityPhotosForHotel(hotelName, city, neighborhood = '') {
 
     const sortBySource = (arr) => [...arr].sort((a, b) => scoreSource(b) - scoreSource(a));
 
-    const validSocial = sortBySource((resSocial.images || []).filter(isValidAmenityPhoto))
+    const validSocial = sortBySource((resSocial.images || []).filter(isValidDiningPhoto))
       .map(img => ({ ...img, detectedCategory: 'SOCIAL', sourceAuthority: scoreSource(img) }));
 
     const validSpa = sortBySource((resSpa.images || []).filter(isValidSpaPhoto))
@@ -440,10 +463,21 @@ async function fetchAmenityPhotosForHotel(hotelName, city, neighborhood = '') {
     const validBedroom = sortBySource((resBedroom.images || []).filter(isValidAmenityPhoto))
       .map(img => ({ ...img, detectedCategory: 'BEDROOM', sourceAuthority: scoreSource(img) }));
 
-    const validBath = sortBySource((resBath.images || []).filter(isValidAmenityPhoto))
+    const validBath = sortBySource((resBath.images || []).filter(isValidBathPhoto))
       .map(img => ({ ...img, detectedCategory: 'BATHROOM', sourceAuthority: scoreSource(img) }));
 
-    const combined = [...validSocial, ...validSpa, ...validLobby, ...validExterior, ...validBedroom, ...validBath];
+    const validTripAdvisor = (resTripAdvisor?.images || [])
+      .filter(img => img?.imageUrl && !isLowQualityDomain(img.imageUrl, img.title))
+      .map(img => {
+        const s = `${img.title || ''} ${img.imageUrl || ''}`.toLowerCase();
+        let cat = 'AMENITY';
+        if (s.includes('bath') || s.includes('tub') || s.includes('shower')) cat = 'BATHROOM';
+        else if (s.includes('food') || s.includes('restaurant') || s.includes('bar') || s.includes('cocktail')) cat = 'SOCIAL';
+        else if (s.includes('exterior') || s.includes('facade') || s.includes('entrance')) cat = 'EXTERIOR';
+        return { ...img, detectedCategory: cat, sourceAuthority: scoreSource(img) };
+      });
+
+    const combined = [...validBath, ...validSocial, ...validSpa, ...validLobby, ...validExterior, ...validBedroom, ...validTripAdvisor];
 
     return combined.map(img => ({
       title: img.title || '',
@@ -471,8 +505,13 @@ function matchBestImageForSubject(subjectText, category, liveBookingPhotos = [],
     return s.includes('exterior') || s.includes('facade') || s.includes('façade') || s.includes('building') || s.includes('outside') || s.includes('aerial') || s.includes('marina') || s.includes('entrance');
   };
 
+  const isMeetingOrConference = (p) => {
+    const s = `${p.title || ''} ${p.imageUrl || ''}`.toLowerCase();
+    return s.includes('meeting') || s.includes('conference') || s.includes('boardroom') || s.includes('event space') || s.includes('banquet') || s.includes('seminar');
+  };
+
   const findMatch = (pool, predicate) => {
-    const match = pool.find(p => p?.imageUrl && !setUsed.has(p.imageUrl) && predicate(p));
+    const match = pool.find(p => p?.imageUrl && !setUsed.has(p.imageUrl) && !isMeetingOrConference(p) && predicate(p));
     if (match) {
       setUsed.add(match.imageUrl);
       return match.imageUrl;
@@ -497,8 +536,28 @@ function matchBestImageForSubject(subjectText, category, liveBookingPhotos = [],
     if (amenityMatch) return amenityMatch;
   }
 
-  // 2. Spa / Wellness OR Grand Lobby / Ballroom / Historic Public Space
-  if (cat === 'WELLNESS_SPA_LOBBY' || (cat === 'HERO_CULTURAL_MAGNET' && (text.includes('spa') || text.includes('pool') || text.includes('thermal') || text.includes('wellness') || text.includes('lobby') || text.includes('ballroom'))) || text.includes('spa') || text.includes('wellness') || text.includes('pool') || text.includes('treatment') || text.includes('sauna') || text.includes('bathhouse') || text.includes('lobby') || text.includes('ballroom') || text.includes('drawing room') || text.includes('reception') || text.includes('grand hall') || text.includes('palm court')) {
+  // 2. Spa / Wellness OR Grand Lobby / Ballroom / Pool / Historic Public Space
+  if (cat === 'WELLNESS_SPA_LOBBY' || (cat === 'HERO_CULTURAL_MAGNET' && (text.includes('spa') || text.includes('pool') || text.includes('thermal') || text.includes('wellness') || text.includes('lobby') || text.includes('ballroom'))) || text.includes('spa') || text.includes('wellness') || text.includes('pool') || text.includes('swimming') || text.includes('treatment') || text.includes('sauna') || text.includes('bathhouse') || text.includes('lobby') || text.includes('ballroom') || text.includes('drawing room') || text.includes('reception') || text.includes('grand hall') || text.includes('palm court')) {
+    
+    // Check if specifically looking for pool
+    const isPoolSearch = text.includes('pool') || text.includes('swimming') || text.includes('sunbed') || text.includes('cabana');
+    if (isPoolSearch) {
+      const livePool = findMatch(poolLive, p => {
+        if (isExterior(p)) return false;
+        const t = (p.title || '').toLowerCase();
+        const u = (p.imageUrl || '').toLowerCase();
+        return t.includes('pool') || t.includes('swim') || t.includes('sunbed') || t.includes('lounger') || u.includes('pool');
+      });
+      if (livePool) return livePool;
+
+      const amenityPool = findMatch(poolAmenity, p => {
+        const t = (p.title || '').toLowerCase();
+        const u = (p.imageUrl || '').toLowerCase();
+        return t.includes('pool') || t.includes('swim') || u.includes('pool');
+      });
+      if (amenityPool) return amenityPool;
+    }
+
     // Check if specifically looking for lobby/ballroom/public space
     const isLobbySearch = text.includes('lobby') || text.includes('ballroom') || text.includes('drawing') || text.includes('reception') || text.includes('hall') || text.includes('palm court') || text.includes('public space');
 
@@ -545,26 +604,55 @@ function matchBestImageForSubject(subjectText, category, liveBookingPhotos = [],
 
   // 3. Design Bathroom Category (Slot 5 / Bathroom)
   if (cat === 'SECONDARY_ROOM_BATHROOM' || text.includes('bathroom') || text.includes('bath') || text.includes('tub') || text.includes('shower') || text.includes('washroom')) {
+    const isBathroomCandidate = (p) => {
+      const u = (p.imageUrl || '').toLowerCase();
+      const t = (p.title || '').toLowerCase();
+      if (u.includes('bath') || u.includes('tub') || u.includes('shower') || u.includes('vanity')) return true;
+      if (p.detectedCategory === 'BATHROOM') return true;
+      const hasBathTitle = t.includes('bathroom') || t.includes('soaking tub') || t.includes('clawfoot') || t.includes('freestanding tub') || t.includes('walk-in shower') || t.includes('shower') || t.includes('bathtub');
+      const isBedroomWithBed = t.includes('bedroom with a bed') || t.includes('room with a bed') || t.includes('double room with private bath') || t.includes('double room with private bathroom') || t.includes('king room with shower');
+      return hasBathTitle && !isBedroomWithBed;
+    };
+
+    // Priority 1: Check amenity photos for signature luxury tub / wide bathroom shots (like obts-bath_wide.jpg)
+    const tubMatch = findMatch(poolAmenity, p => {
+      if (isExterior(p)) return false;
+      const u = (p.imageUrl || '').toLowerCase();
+      const t = (p.title || '').toLowerCase();
+      return (u.includes('bath_wide') || u.includes('tub') || t.includes('soaking tub') || t.includes('clawfoot') || t.includes('freestanding tub')) && !t.includes('bedroom with a bed');
+    });
+    if (tubMatch) return tubMatch;
+
+    // Priority 2: General amenity bathroom photos
+    const amenityMatch = findMatch(poolAmenity, p => {
+      if (isExterior(p)) return false;
+      return isBathroomCandidate(p);
+    });
+    if (amenityMatch) return amenityMatch;
+
+    // Priority 3: Check live booking photos (strictly non-bedroom bathroom shots)
     const liveMatch = findMatch(poolLive, p => {
       if (isExterior(p)) return false;
-      const t = (p.title || '').toLowerCase();
-      const u = (p.imageUrl || '').toLowerCase();
-      return t.includes('bathroom') || t.includes('bath') || t.includes('tub') || t.includes('shower') || t.includes('washroom') || u.includes('bath') || u.includes('shower');
+      return isBathroomCandidate(p);
     });
     if (liveMatch) return liveMatch;
 
-    const amenityMatch = findMatch(poolAmenity, p => {
+    // Priority 4: Fallback amenity photo that is non-bedroom (e.g. spa/lounge) rather than a bedroom
+    const nonBedroomAmenity = findMatch(poolAmenity, p => {
       if (isExterior(p)) return false;
       const t = (p.title || '').toLowerCase();
-      return p.detectedCategory === 'BATHROOM' || t.includes('bathroom') || t.includes('bath') || t.includes('tub') || t.includes('shower');
+      const u = (p.imageUrl || '').toLowerCase();
+      return !t.includes('bed') && !t.includes('room') && !u.includes('bed');
     });
-    if (amenityMatch) return amenityMatch;
+    if (nonBedroomAmenity) return nonBedroomAmenity;
   }
 
-  // 4. Exterior / Facade / Building Landmark (STRICTLY NON-POOL, NON-BEDROOM)
+  // 4. Exterior / Facade / Building Landmark (STRICTLY NON-POOL CLOSEUPS, NON-BEDROOM)
   if (cat === 'EXTERIOR_LANDMARK' || text.includes('facade') || text.includes('façade') || text.includes('exterior') || text.includes('entrance') || text.includes('landmark facade')) {
     const isPool = (p) => {
       const s = `${p.title || ''} ${p.imageUrl || ''}`.toLowerCase();
+      // Allow primary exterior building shot even if courtyard pool is in the frame, but exclude pure pool lounger closeups
+      if (s.includes('building') || s.includes('facade') || s.includes('façade') || s.includes('entrance') || s.includes('street view')) return false;
       return s.includes('pool') || s.includes('swimming') || s.includes('sunbed') || s.includes('lounger');
     };
     const isRoomOrBath = (p) => {
@@ -641,6 +729,10 @@ function matchBestImageForSubject(subjectText, category, liveBookingPhotos = [],
   if (isIndoorSlot) {
     for (const p of allPool) {
       if (p?.imageUrl && !setUsed.has(p.imageUrl) && !isExterior(p)) {
+        if (cat === 'SECONDARY_ROOM_BATHROOM') {
+          const s = `${p.title || ''} ${p.imageUrl || ''}`.toLowerCase();
+          if (s.includes('bedroom') || s.includes('double room') || s.includes('bedq') || (s.includes('bed') && !s.includes('bath'))) continue;
+        }
         setUsed.add(p.imageUrl);
         return p.imageUrl;
       }
@@ -658,7 +750,92 @@ function matchBestImageForSubject(subjectText, category, liveBookingPhotos = [],
   return poolLive[defaultIndex]?.imageUrl || allPool[0]?.imageUrl || null;
 }
 
-export default async function handler(req, res) {
+// -------------------------------------------------------------
+// PHASE 2: Dedicated Photo Resolution with Gemini Vision Checks
+// -------------------------------------------------------------
+export async function resolveAuditPhotos(hotelName, city, neighborhood = '', strategySlots = null) {
+  console.log(`[Photo Gatekeeper] Starting visual asset resolution for "${hotelName}" in "${city}"...`);
+  
+  // 1. Fetch live Booking.com photos (Playwright) + Signature Amenity photos (Serper)
+  const [liveBookingPhotos, amenityPhotos] = await Promise.all([
+    fetchBookingPhotosForHotel(hotelName, city, neighborhood),
+    fetchAmenityPhotosForHotel(hotelName, city, neighborhood)
+  ]);
+
+  const isListedOnBooking = liveBookingPhotos && liveBookingPhotos.length >= 3;
+  const usedUrls = new Set();
+  
+  // Default 5 slots if not provided from Phase 1
+  const targetSlots = strategySlots || [
+    { slot: 1, category: "HERO_CULTURAL_MAGNET", photo_subject: "Hero Cultural Magnet" },
+    { slot: 2, category: "EXTERIOR_LANDMARK", photo_subject: "Historic Landmark Architectural Facade" },
+    { slot: 3, category: "SIGNATURE_SUITE_BEDROOM", photo_subject: "Signature Suite Bedroom" },
+    { slot: 4, category: "SOCIAL_FB_ROOFTOP", photo_subject: "Signature Culinary Dining Room & Cocktail Bar" },
+    { slot: 5, category: "SECONDARY_ROOM_BATHROOM", photo_subject: "Design Bathroom & Walk-in Shower" }
+  ];
+
+  const resolvedSequence = targetSlots.map((item, idx) => {
+    const targetSlot = item.slot || (idx + 1);
+    let photoUrl = matchBestImageForSubject(item.photo_subject, item.category, liveBookingPhotos, amenityPhotos, usedUrls, idx);
+    let actualLiveSlot = null;
+
+    if (photoUrl) {
+      const liveIdx = liveBookingPhotos.findIndex(lp => lp.imageUrl === photoUrl);
+      actualLiveSlot = liveIdx !== -1 ? (liveIdx + 1) : null;
+    }
+
+    const isRetained = actualLiveSlot === targetSlot;
+    const isMoved = actualLiveSlot !== null && actualLiveSlot !== targetSlot;
+    const isSwappedIn = actualLiveSlot === null;
+
+    let action = item.action || 'RE_SEQUENCE';
+    let actionLabel = item.action_label;
+
+    if (!isListedOnBooking) {
+      action = targetSlot === 1 ? 'HERO_CULTURAL_MAGNET' : 'CURATED_ASSET';
+      actionLabel = targetSlot === 1 
+        ? `⚡ HERO CULTURAL MAGNET: ${item.photo_subject || 'SIGNATURE ASSET'} (SLOT #1)`
+        : `PRE-LISTING ASSET: ${item.photo_subject || 'SIGNATURE ASSET'} (SLOT #${targetSlot})`;
+    } else if (item.category === 'HERO_CULTURAL_MAGNET' || item.action === 'HERO_CULTURAL_MAGNET' || item.action === 'MAGNET_OVERRIDE') {
+      action = 'HERO_CULTURAL_MAGNET';
+      actionLabel = item.action_label || `⚡ HERO CULTURAL MAGNET: ${item.photo_subject || 'SIGNATURE ASSET'} (SLOT #1)`;
+    } else if (isRetained) {
+      action = targetSlot === 1 ? 'KEEP_HERO' : 'RETAIN';
+      actionLabel = targetSlot === 1 ? 'KEEP AS HERO (SLOT #1)' : `RETAIN IN SLOT #${targetSlot}`;
+    } else if (isMoved) {
+      action = actualLiveSlot > targetSlot ? 'PROMOTE' : 'RE_SEQUENCE';
+      actionLabel = actualLiveSlot > targetSlot ? `PROMOTE FROM SLOT #${actualLiveSlot}` : `MOVE FROM SLOT #${actualLiveSlot}`;
+    } else if (isSwappedIn) {
+      action = 'SWAP_IN';
+      if (!actionLabel || !actionLabel.toUpperCase().includes('SWAP')) {
+        actionLabel = `SWAP IN NEW ASSET (SLOT #${targetSlot})`;
+      }
+    }
+
+    return {
+      ...item,
+      slot: targetSlot,
+      photo_url: upgradePhotoResolution(photoUrl),
+      current_slot: actualLiveSlot,
+      is_retained: isRetained,
+      is_moved: isMoved,
+      is_swapped_in: isSwappedIn,
+      action: action,
+      action_label: actionLabel,
+      current_photo: actualLiveSlot ? liveBookingPhotos[actualLiveSlot - 1] : null
+    };
+  });
+
+  return {
+    is_listed_on_booking: isListedOnBooking,
+    listing_status: isListedOnBooking ? 'ACTIVE_ON_BOOKING' : 'NOT_LISTED_ON_BOOKING',
+    live_photos: liveBookingPhotos,
+    optimal_5_photo_sequence: resolvedSequence,
+    photos_status: 'RESOLVED'
+  };
+}
+
+export async function resolveAuditPhotosHandler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST,GET,OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
@@ -669,118 +846,71 @@ export default async function handler(req, res) {
     let hotelName = req.body.hotelName || req.query.hotelName || req.body.propertyName || req.query.propertyName || 'The Plymouth Hotel';
     let city = req.body.city || req.query.city || req.body.location || req.query.location || 'Miami';
     let neighborhood = (req.body.neighborhood !== undefined) ? req.body.neighborhood : (req.query.neighborhood || '');
+    let strategySlots = req.body.strategySlots || null;
 
     if (city.toLowerCase().includes('south beach') && !neighborhood) {
       neighborhood = 'South Beach';
       city = city.replace(/south beach/i, '').replace(/,/g, '').trim() || 'Miami';
     }
 
-    console.log(`[Master Vibe Audit API] Running for: "${hotelName}" in "${city}" ${neighborhood ? `(${neighborhood})` : ''}`);
+    const photoResults = await resolveAuditPhotos(hotelName, city, neighborhood, strategySlots);
+    return res.status(200).json(photoResults);
+  } catch (err) {
+    console.error('[Photo Gatekeeper API] Error:', err);
+    return res.status(500).json({ error: err.message });
+  }
+}
 
-    // 1. Fetch Venue Corpus from Serper with neighborhood precision
+export default async function handler(req, res) {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'POST,GET,OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+  if (req.method === 'OPTIONS') return res.status(200).end();
+
+  try {
+    let hotelName = req.body?.hotelName || req.query?.hotelName || req.body?.propertyName || req.query?.propertyName || 'The Plymouth Hotel';
+    let city = req.body?.city || req.query?.city || req.body?.location || req.query?.location || 'Miami';
+    let neighborhood = (req.body?.neighborhood !== undefined) ? req.body.neighborhood : (req.query?.neighborhood || '');
+    const isPhase1Only = req.query?.phase === '1' || req.body?.phase === 1 || req.body?.phase === '1' || req.query?.fast === 'true' || req.path?.includes('master-vibe-manifest') || req.url?.includes('master-vibe-manifest');
+
+    if (city.toLowerCase().includes('south beach') && !neighborhood) {
+      neighborhood = 'South Beach';
+      city = city.replace(/south beach/i, '').replace(/,/g, '').trim() || 'Miami';
+    }
+
+    console.log(`[Master Vibe Audit API] Running for: "${hotelName}" in "${city}" ${neighborhood ? `(${neighborhood})` : ''} [Phase 1 Fast: ${isPhase1Only}]`);
+
+    // 1. Fetch Venue Corpus from Serper with neighborhood precision (High Speed)
     const { rawCorpus } = await fetchVenueCorpus(hotelName, city, neighborhood);
 
-    // 2. Fetch Live Booking.com Photos + Signature Amenity Photos concurrently with neighborhood precision
-    const [liveBookingPhotos, amenityPhotos] = await Promise.all([
-      fetchBookingPhotosForHotel(hotelName, city, neighborhood),
-      fetchAmenityPhotosForHotel(hotelName, city, neighborhood)
-    ]);
+    // 2. Synthesize Venue Vibe Manifest & Strategic 5-Slot Recommendations
+    const auditResult = await runStructuredVibeAudit(hotelName, city, rawCorpus, [], [], neighborhood);
 
-    // 3. Run Structured Gemini Analysis with multimodal vision
-    const auditResult = await runStructuredVibeAudit(hotelName, city, rawCorpus, liveBookingPhotos, amenityPhotos, neighborhood);
-
-    // 4. Map the exact corresponding photos to each re-sequenced recommendation
-    if (auditResult.ota_conversion_audit) {
-      const isListedOnBooking = liveBookingPhotos && liveBookingPhotos.length >= 3;
-      auditResult.ota_conversion_audit.live_photos = liveBookingPhotos;
-      auditResult.ota_conversion_audit.is_listed_on_booking = isListedOnBooking;
-      auditResult.ota_conversion_audit.listing_status = isListedOnBooking ? 'ACTIVE_ON_BOOKING' : 'NOT_LISTED_ON_BOOKING';
-      
-      if (auditResult.ota_conversion_audit.optimal_5_photo_sequence) {
-        const usedUrls = new Set();
-        auditResult.ota_conversion_audit.optimal_5_photo_sequence = auditResult.ota_conversion_audit.optimal_5_photo_sequence.map((item, idx) => {
-          const targetSlot = item.slot || (idx + 1);
-          let photoUrl = null;
-          let actualLiveSlot = null;
-
-          // 1. Direct Resolution via Gemini's Multimodal Visual Selection (with duplicate prevention)
-          if (item.source_type === 'LIVE_PHOTO' && item.source_index && liveBookingPhotos[item.source_index - 1]) {
-            const candidate = liveBookingPhotos[item.source_index - 1].imageUrl;
-            if (!usedUrls.has(candidate)) {
-              photoUrl = candidate;
-              actualLiveSlot = item.source_index;
-              usedUrls.add(photoUrl);
-            }
-          } else if (item.source_type === 'AMENITY_ASSET' && item.source_index && amenityPhotos[item.source_index - 1]) {
-            const candObj = amenityPhotos[item.source_index - 1];
-            const candidate = candObj.imageUrl;
-            const candTitle = (candObj.title || '').toLowerCase();
-            const isSlotPool = item.category === 'HERO_CULTURAL_MAGNET' && (item.photo_subject || '').toLowerCase().includes('pool');
-            const candidateIsPool = candTitle.includes('pool') || candidate.toLowerCase().includes('pool');
-            const isSlotExterior = item.category === 'EXTERIOR_LANDMARK';
-            const candidateIsExterior = candObj.detectedCategory === 'EXTERIOR';
-
-            // Validate that we do not put pool into exterior/lobby or exterior into pool
-            const isValid = (isSlotPool && candidateIsPool) || (isSlotExterior && candidateIsExterior && !candidateIsPool) || (!isSlotExterior && !isSlotPool && !candidateIsPool);
-
-            if (isValid && !usedUrls.has(candidate)) {
-              photoUrl = candidate;
-              actualLiveSlot = null;
-              usedUrls.add(photoUrl);
-            }
-          }
-
-          // 2. Fallback matching if source_index was not found or candidate was already assigned
-          if (!photoUrl) {
-            photoUrl = matchBestImageForSubject(item.photo_subject, item.category, liveBookingPhotos, amenityPhotos, usedUrls, idx);
-            if (photoUrl) {
-              const liveIdx = liveBookingPhotos.findIndex(lp => lp.imageUrl === photoUrl);
-              actualLiveSlot = liveIdx !== -1 ? (liveIdx + 1) : null;
-            }
-          }
-
-          const isRetained = actualLiveSlot === targetSlot;
-          const isMoved = actualLiveSlot !== null && actualLiveSlot !== targetSlot;
-          const isSwappedIn = actualLiveSlot === null;
-
-          let action = item.action || 'RE_SEQUENCE';
-          let actionLabel = item.action_label;
-
-          if (!isListedOnBooking) {
-            action = targetSlot === 1 ? 'HERO_CULTURAL_MAGNET' : 'CURATED_ASSET';
-            actionLabel = targetSlot === 1 
-              ? `⚡ HERO CULTURAL MAGNET: ${item.photo_subject || 'SIGNATURE ASSET'} (SLOT #1)`
-              : `PRE-LISTING ASSET: ${item.photo_subject || 'SIGNATURE ASSET'} (SLOT #${targetSlot})`;
-          } else if (item.category === 'HERO_CULTURAL_MAGNET' || item.action === 'HERO_CULTURAL_MAGNET' || item.action === 'MAGNET_OVERRIDE') {
-            action = 'HERO_CULTURAL_MAGNET';
-            actionLabel = item.action_label || `⚡ HERO CULTURAL MAGNET: ${item.photo_subject || 'SIGNATURE ASSET'} (SLOT #1)`;
-          } else if (isRetained) {
-            action = targetSlot === 1 ? 'KEEP_HERO' : 'RETAIN';
-            actionLabel = targetSlot === 1 ? 'KEEP AS HERO (SLOT #1)' : `RETAIN IN SLOT #${targetSlot}`;
-          } else if (isMoved) {
-            action = actualLiveSlot > targetSlot ? 'PROMOTE' : 'RE_SEQUENCE';
-            actionLabel = actualLiveSlot > targetSlot ? `PROMOTE FROM SLOT #${actualLiveSlot}` : `MOVE FROM SLOT #${actualLiveSlot}`;
-          } else if (isSwappedIn) {
-            action = 'SWAP_IN';
-            if (!actionLabel || !actionLabel.toUpperCase().includes('SWAP')) {
-              actionLabel = `SWAP IN NEW ASSET (SLOT #${targetSlot})`;
-            }
-          }
-          
-          return {
+    // If Phase 1 is requested, return the full manifest immediately (~2s) with photos_status: PENDING
+    if (isPhase1Only) {
+      if (auditResult.ota_conversion_audit) {
+        auditResult.ota_conversion_audit.photos_status = 'PENDING';
+        auditResult.ota_conversion_audit.live_photos = [];
+        if (auditResult.ota_conversion_audit.optimal_5_photo_sequence) {
+          auditResult.ota_conversion_audit.optimal_5_photo_sequence = auditResult.ota_conversion_audit.optimal_5_photo_sequence.map(item => ({
             ...item,
-            slot: targetSlot,
-            photo_url: upgradePhotoResolution(photoUrl),
-            current_slot: actualLiveSlot,
-            is_retained: isRetained,
-            is_moved: isMoved,
-            is_swapped_in: isSwappedIn,
-            action: action,
-            action_label: actionLabel,
-            current_photo: actualLiveSlot ? liveBookingPhotos[actualLiveSlot - 1] : null
-          };
-        });
+            photo_url: null,
+            status: 'PENDING'
+          }));
+        }
       }
+      return res.status(200).json(auditResult);
+    }
+
+    // Default Synchronous Mode: Resolve photos in full
+    const photoResults = await resolveAuditPhotos(hotelName, city, neighborhood, auditResult.ota_conversion_audit?.optimal_5_photo_sequence);
+    if (auditResult.ota_conversion_audit) {
+      auditResult.ota_conversion_audit.is_listed_on_booking = photoResults.is_listed_on_booking;
+      auditResult.ota_conversion_audit.listing_status = photoResults.listing_status;
+      auditResult.ota_conversion_audit.live_photos = photoResults.live_photos;
+      auditResult.ota_conversion_audit.optimal_5_photo_sequence = photoResults.optimal_5_photo_sequence;
+      auditResult.ota_conversion_audit.photos_status = 'RESOLVED';
     }
 
     return res.status(200).json(auditResult);

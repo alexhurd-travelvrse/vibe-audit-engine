@@ -259,7 +259,7 @@ export default function BookingOtaAuditCard({ otaData, hotelName, isUnlocked, on
         </div>
       </div>
 
-      {/* SECTION: Recommended Photos Grid */}
+      {/* SECTION: Recommended Photos Grid OR Pending Status Card */}
       {viewMode === 'recommended' && (
         <div style={{ marginBottom: '2.5rem' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1.25rem' }}>
@@ -267,9 +267,55 @@ export default function BookingOtaAuditCard({ otaData, hotelName, isUnlocked, on
             <h3 style={{ fontSize: '1.3rem', fontWeight: 900, textTransform: 'uppercase', margin: 0 }}>
               Recommended Photos
             </h3>
+            {((otaData.photos_status === 'PENDING') || (photos.length > 0 && photos.every(p => !p.photo_url))) && (
+              <span style={{ fontSize: '11px', background: 'rgba(0,229,255,0.15)', color: '#00e5ff', padding: '3px 10px', borderRadius: '12px', fontWeight: 700, marginLeft: '0.5rem' }}>
+                Analyzing Live Assets...
+              </span>
+            )}
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.25rem' }}>
+          {((otaData.photos_status === 'PENDING') || (photos.length > 0 && photos.every(p => !p.photo_url))) ? (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              style={{
+                background: 'linear-gradient(135deg, rgba(0, 229, 255, 0.05) 0%, rgba(139, 92, 246, 0.06) 100%)',
+                border: '1px solid rgba(0, 229, 255, 0.3)',
+                borderRadius: '1.5rem',
+                padding: '3rem 2rem',
+                textAlign: 'center',
+                boxShadow: '0 10px 40px rgba(0, 0, 0, 0.5), inset 0 0 30px rgba(0, 229, 255, 0.03)'
+              }}
+            >
+              <div style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '56px', height: '56px', borderRadius: '50%', background: 'rgba(0, 229, 255, 0.15)', border: '1px solid rgba(0, 229, 255, 0.4)', marginBottom: '1.25rem' }}>
+                <RefreshCw size={26} color="#00e5ff" className="animate-spin" style={{ animationDuration: '3s' }} />
+              </div>
+
+              <h4 style={{ fontSize: '1.2rem', fontWeight: 900, color: '#ffffff', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.5rem' }}>
+                ✨ Visual Quality Gatekeeper Active
+              </h4>
+              
+              <p style={{ fontSize: '13px', color: 'rgba(255, 255, 255, 0.8)', maxWidth: '640px', margin: '0 auto 1.75rem', lineHeight: 1.6 }}>
+                Scraping live Booking.com gallery assets and harvesting high-resolution venue media. Running multimodal visual verification to guarantee 100% photo-to-recommendation alignment without hallucinations.
+              </p>
+
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '1.25rem', flexWrap: 'wrap' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(0,0,0,0.5)', padding: '6px 14px', borderRadius: '20px', border: '1px solid rgba(16,185,129,0.5)' }}>
+                  <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#10b981' }}></span>
+                  <span style={{ fontSize: '11px', fontWeight: 700, color: '#ffffff' }}>1. Live Gallery Scraped</span>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(0,0,0,0.5)', padding: '6px 14px', borderRadius: '20px', border: '1px solid rgba(0,229,255,0.5)' }}>
+                  <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#00e5ff' }}></span>
+                  <span style={{ fontSize: '11px', fontWeight: 700, color: '#00e5ff' }}>2. Inspecting Visual Subjects</span>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(0,0,0,0.5)', padding: '6px 14px', borderRadius: '20px', border: '1px solid rgba(255,255,255,0.1)' }}>
+                  <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'rgba(255,255,255,0.3)' }}></span>
+                  <span style={{ fontSize: '11px', fontWeight: 700, color: 'rgba(255,255,255,0.6)' }}>3. Finalizing Sequence</span>
+                </div>
+              </div>
+            </motion.div>
+          ) : (
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.25rem' }}>
             {photos.map((item, idx) => {
               const photoImg = item.photo_url || item.current_photo?.imageUrl;
               const badge = getActionBadge(item.action, item.action_label);
@@ -411,7 +457,7 @@ export default function BookingOtaAuditCard({ otaData, hotelName, isUnlocked, on
                           lineHeight: 1.4
                         }}>
                           <strong style={{ color: '#f59e0b', textTransform: 'uppercase', fontSize: '10px', letterSpacing: '0.05em', display: 'block', marginBottom: '2px' }}>
-                            ✨ Asset Upgrade Justification:
+                            ✨ Asset Justification:
                           </strong>
                           {item.upgrade_rationale}
                         </div>
@@ -449,6 +495,7 @@ export default function BookingOtaAuditCard({ otaData, hotelName, isUnlocked, on
               );
             })}
           </div>
+          )}
         </div>
       )}
 

@@ -126,7 +126,7 @@ ${venueCorpus}
 Synthesize this live data and return the complete Master Vibe Audit JSON payload matching the schema exactly.`;
 
   console.log(`[Gemini] Preparing multimodal extraction request for ${hotelName}...`);
-  const parts = [{ text: systemPrompt }];
+  const parts = [{ text: `${systemPrompt}\n\nCRITICAL OUTPUT FORMAT: Return a valid JSON object strictly matching this schema:\n${JSON.stringify(masterVibeSchema)}` }];
 
   // Helper for parallel image fetching with magic bytes validation and fast 1.2s timeout
   const downloadImageBase64 = async (url) => {
@@ -231,7 +231,6 @@ Synthesize this live data and return the complete Master Vibe Audit JSON payload
     model: modelName,
     generationConfig: {
       responseMimeType: 'application/json',
-      responseSchema: masterVibeSchema,
       temperature: 0.2,
     }
   });
@@ -254,13 +253,12 @@ Synthesize this live data and return the complete Master Vibe Audit JSON payload
   try {
     let result;
     try {
-      // Execute multimodal vision call with robust 25-second timeout
-      result = await generateWithFallback(parts, 25000);
+      // Execute primary Gemini generation with 45-second timeout
+      result = await generateWithFallback(parts, 45000);
     } catch (multimodalErr) {
-      console.warn(`[Gemini] Multimodal inline image generation fallback (${multimodalErr.message}), executing high-speed metadata generation...`);
+      console.warn(`[Gemini] Primary generation fallback (${multimodalErr.message}), executing high-speed metadata generation...`);
       
       const textOnlyParts = [
-        { text: systemPrompt },
         { 
           text: `\n=== CURRENT LIVE BOOKING.COM PHOTOS METADATA ===\n` + 
             (livePhotos || []).slice(0, 20).map((p, i) => `Live Photo #${p.slot || (i + 1)}: "${p.title || 'Hotel Photo'}" (URL: ${p.imageUrl})`).join('\n')
@@ -271,7 +269,7 @@ Synthesize this live data and return the complete Master Vibe Audit JSON payload
         },
         { text: userPrompt }
       ];
-      result = await generateWithFallback(textOnlyParts, 20000);
+      result = await generateWithFallback(textOnlyParts, 30000);
     }
 
     const responseText = result.response.text();
@@ -354,17 +352,36 @@ function synthesizeVibeAuditFromCorpus(hotelName, city, neighborhood, venueCorpu
     return idx !== -1 ? (idx + 1) : 1;
   };
 
-  // Check if live gallery already has an exterior shot
-  const liveExteriorIdx = (livePhotos || []).findIndex((p, i) => {
+  // Check if live gallery already has a pool shot
+  const livePoolIdx = (livePhotos || []).findIndex((p) => {
     const t = (p.title || '').toLowerCase();
     const u = (p.imageUrl || '').toLowerCase();
-    return (t.includes('building') || t.includes('exterior') || t.includes('outside') || t.includes('tall building') || u.includes('exterior')) && !t.includes('pool');
+    return t.includes('pool') || t.includes('swim') || u.includes('pool') || t.includes('sunbed') || t.includes('lounger');
   });
+  const livePoolSlot = livePoolIdx !== -1 ? (livePoolIdx + 1) : null;
 
+  // Check if live gallery already has a dining/bar shot
+  const liveDiningIdx = (livePhotos || []).findIndex((p) => {
+    const t = (p.title || '').toLowerCase();
+    const u = (p.imageUrl || '').toLowerCase();
+    const isRoom = t.includes('bedroom') || t.includes('suite') || (t.includes('bed') && !t.includes('sunbed'));
+    const isPool = t.includes('pool') || t.includes('swim') || u.includes('pool');
+    return (t.includes('restaurant') || t.includes('sushi') || t.includes('dining') || t.includes('bar') || t.includes('grill') || t.includes('bistro') || t.includes('lounge')) && !isRoom && !isPool;
+  });
+  const liveDiningSlot = liveDiningIdx !== -1 ? (liveDiningIdx + 1) : null;
+
+  // Check if live gallery already has an exterior shot
+  const liveExteriorIdx = (livePhotos || []).findIndex((p) => {
+    const t = (p.title || '').toLowerCase();
+    const u = (p.imageUrl || '').toLowerCase();
+    const isRoom = t.includes('bedroom') || t.includes('suite') || t.includes('room') || t.includes('bed') || t.includes('living') || t.includes('couch');
+    const isPool = t.includes('pool') || t.includes('swim') || u.includes('pool');
+    return (t.includes('building') || t.includes('exterior') || t.includes('outside') || t.includes('facade') || t.includes('entrance') || u.includes('exterior') || u.includes('facade')) && !isRoom && !isPool;
+  });
   const liveExtSlot = liveExteriorIdx !== -1 ? (liveExteriorIdx + 1) : null;
 
   // Check if live gallery has an authentic bedroom / suite shot
-  const liveBedroomIdx = (livePhotos || []).findIndex((p, i) => {
+  const liveBedroomIdx = (livePhotos || []).findIndex((p) => {
     const t = (p.title || '').toLowerCase();
     const u = (p.imageUrl || '').toLowerCase();
     const isPool = t.includes('pool') || t.includes('swim') || u.includes('pool') || t.includes('sunbed') || t.includes('lounger');
@@ -373,8 +390,18 @@ function synthesizeVibeAuditFromCorpus(hotelName, city, neighborhood, venueCorpu
     const isBed = t.includes('bedroom') || t.includes('suite') || (t.includes('bed') && !t.includes('sunbed')) || u.includes('bed') || (t.includes('room') && !t.includes('living room'));
     return isBed && !isPool && !isBath && !isExt;
   });
-
   const liveBedSlot = liveBedroomIdx !== -1 ? (liveBedroomIdx + 1) : null;
+
+  // Check if live gallery has an authentic bathroom shot
+  const liveBathroomIdx = (livePhotos || []).findIndex((p) => {
+    const t = (p.title || '').toLowerCase();
+    const u = (p.imageUrl || '').toLowerCase();
+    const isPrimaryBed = t.includes('bedroom with a bed') || t.includes('bed and');
+    const isBath = t.includes('bathroom') || t.includes('shower') || t.includes('washroom') || t.includes('soaking tub') || u.includes('bathroom') || u.includes('shower');
+    return isBath && !isPrimaryBed;
+  });
+  const liveBathSlot = liveBathroomIdx !== -1 ? (liveBathroomIdx + 1) : null;
+
   const poolOrSpaIdx = findAmenityIdx('SPA') || 1;
   const socialIdx = findAmenityIdx('SOCIAL') || 1;
   const lobbyIdx = findAmenityIdx('LOBBY') || 1;
@@ -383,21 +410,24 @@ function synthesizeVibeAuditFromCorpus(hotelName, city, neighborhood, venueCorpu
   const bathIdx = findAmenityIdx('BATHROOM') || 1;
 
   const isRooftopOrSocialMagnet = hasRooftop || (hasGrillOrDining && !hasPool);
-  const slot1SourceIdx = isRooftopOrSocialMagnet ? (socialIdx || 1) : (poolOrSpaIdx || 1);
+  const slot1SourceType = (hasPool && livePoolSlot) ? "LIVE_PHOTO" : "AMENITY_ASSET";
+  const slot1SourceIdx = (hasPool && livePoolSlot) ? livePoolSlot : (isRooftopOrSocialMagnet ? (socialIdx || 1) : (poolOrSpaIdx || 1));
   const hasDedicatedSpa = hasSpa || corpus.includes('spa') || corpus.includes('agua') || corpus.includes('aveda') || name.toLowerCase().includes('spa');
+  
+  const slot4SourceType = (!hasDedicatedSpa && hasGrillOrDining && liveDiningSlot) ? "LIVE_PHOTO" : "AMENITY_ASSET";
   const slot4SourceIdx = (hasDedicatedSpa && !isRooftopOrSocialMagnet) 
     ? (socialIdx || lobbyIdx) 
-    : (hasDedicatedSpa ? (poolOrSpaIdx || lobbyIdx) : (socialIdx || lobbyIdx));
+    : (hasDedicatedSpa ? (poolOrSpaIdx || lobbyIdx) : (liveDiningSlot || socialIdx || lobbyIdx));
 
   // Build authentic 5-slot sequence with rich, multidimensional upgrade justifications
   const optimalSequence = isMagnetOverride ? [
     {
       slot: 1,
       category: "HERO_CULTURAL_MAGNET",
-      source_type: "AMENITY_ASSET",
+      source_type: slot1SourceType,
       source_index: slot1SourceIdx,
       photo_subject: `${heroTitle} with distinctive ambient lighting and design furniture`,
-      action: "HERO_CULTURAL_MAGNET",
+      action: slot1SourceType === "LIVE_PHOTO" ? (livePoolSlot === 1 ? "KEEP_HERO" : "HERO_CULTURAL_MAGNET") : "HERO_CULTURAL_MAGNET",
       action_label: `⚡ HERO CULTURAL MAGNET: ${heroTitle.toUpperCase()} (SLOT #1)`,
       upgrade_rationale: "Disrupts standard OTA search fatigue by elevating the property's highest-gravity cultural asset to Slot #1, capturing high-intent lifestyle search volume within 1.5 seconds.",
       bullet_points: [
@@ -442,15 +472,15 @@ function synthesizeVibeAuditFromCorpus(hotelName, city, neighborhood, venueCorpu
     {
       slot: 4,
       category: (hasDedicatedSpa && isRooftopOrSocialMagnet) ? "WELLNESS_SPA_LOBBY" : (hasGrillOrDining ? "SOCIAL_FB_ROOFTOP" : "WELLNESS_SPA_LOBBY"),
-      source_type: "AMENITY_ASSET",
+      source_type: slot4SourceType,
       source_index: slot4SourceIdx,
       photo_subject: hasDedicatedSpa && isRooftopOrSocialMagnet 
         ? spaTitle 
         : (hasGrillOrDining ? diningTitle : `Grand Arrival Lobby with bespoke lounge seating and signature art`),
-      action: "SWAP_IN",
+      action: slot4SourceType === "LIVE_PHOTO" ? (liveDiningSlot === 4 ? "RETAIN" : "PROMOTE") : "SWAP_IN",
       action_label: hasDedicatedSpa && isRooftopOrSocialMagnet
         ? `SWAP IN SPA & WELLNESS SANCTUARY (SLOT #4)`
-        : (hasGrillOrDining ? `SWAP IN DESTINATION DINING & BAR (SLOT #4)` : `SWAP IN GRAND LOBBY (SLOT #4)`),
+        : (hasGrillOrDining ? (slot4SourceType === "LIVE_PHOTO" ? `PROMOTE DESTINATION DINING & BAR FROM SLOT #${liveDiningSlot}` : `SWAP IN DESTINATION DINING & BAR (SLOT #4)`) : `SWAP IN GRAND LOBBY (SLOT #4)`),
       upgrade_rationale: hasDedicatedSpa
         ? "Showcases the multi-room holistic thermal spa and wellness treatment sanctuary to establish 5-star lifestyle resort depth."
         : "Showcases the vibrant on-site social and cocktail dimension to demonstrate full property depth and evening energy.",
@@ -466,11 +496,11 @@ function synthesizeVibeAuditFromCorpus(hotelName, city, neighborhood, venueCorpu
     {
       slot: 5,
       category: "SECONDARY_ROOM_BATHROOM",
-      source_type: "AMENITY_ASSET",
-      source_index: bathIdx,
+      source_type: liveBathSlot ? "LIVE_PHOTO" : "AMENITY_ASSET",
+      source_index: liveBathSlot || bathIdx,
       photo_subject: `Luxury spa-inspired bathroom featuring glass walk-in rainfall shower, marble vanity, and botanical amenities`,
-      action: "SWAP_IN",
-      action_label: "DESIGN BATHROOM (SLOT #5 - HYGIENE & LUXURY FINISH)",
+      action: liveBathSlot ? (liveBathSlot === 5 ? "RETAIN" : "PROMOTE") : "SWAP_IN",
+      action_label: liveBathSlot ? (liveBathSlot === 5 ? "RETAIN BATHROOM (SLOT #5)" : `PROMOTE BATHROOM FROM SLOT #${liveBathSlot}`) : "DESIGN BATHROOM (SLOT #5 - HYGIENE & LUXURY FINISH)",
       upgrade_rationale: "Upgrades from a dim, off-axis crop of a dark vanity to a sunlit glass walk-in rainfall shower with marble tiling, eliminating the #1 hidden hygiene hesitation.",
       bullet_points: [
         "Visual Upgrade: Bright architectural wide-angle showing clean glass shower enclosure, chrome rain fixtures, and premium botanical amenities over cramped vanity crops.",

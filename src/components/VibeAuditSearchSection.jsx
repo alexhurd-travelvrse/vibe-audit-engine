@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { Search, MapPin, Sparkles, ArrowRight, ShieldCheck, Zap, Globe } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { scrapeLocalSignals, fetchMasterVibeAudit } from '../personaEngine';
+import { scrapeLocalSignals, fetchMasterVibeAudit, fetchMasterVibeAuditManifest, fetchMasterVibeAuditPhotos } from '../personaEngine';
 import HotelVibeManifestCard from './HotelVibeManifestCard';
 import BookingOtaAuditCard from './BookingOtaAuditCard';
 import InteractiveQuizCard from './InteractiveQuizCard';
@@ -77,23 +77,55 @@ const VibeAuditSearchSection = () => {
     setProcessingStage(1);
 
     try {
-      const [signals, masterAudit] = await Promise.all([
-        scrapeLocalSignals(formData.city || 'London', formData.neighborhood || 'Southbank').catch(err => {
-          console.warn('Local signals fetch error:', err);
-          return { categories: {} };
-        }),
-        fetchMasterVibeAudit(
+      // 1. PHASE 1: Fetch and render Manifest FIRST and ONLY Manifest first
+      const masterAudit = await fetchMasterVibeAuditManifest(
+        formData.propertyName || 'Sea Containers London',
+        formData.city || 'London',
+        formData.neighborhood || 'Southbank'
+      );
+
+      // Render the complete Manifest & strategic text immediately!
+      setAnalysis({ signals: { categories: {} }, masterAudit });
+      setLoading(false);
+
+      // Background supplemental signals fetch
+      scrapeLocalSignals(formData.city || 'London', formData.neighborhood || 'Southbank').then(sig => {
+        if (sig && sig.categories) {
+          setAnalysis(prev => prev ? { ...prev, signals: sig } : prev);
+        }
+      }).catch(err => console.warn('Supplemental signals error:', err));
+
+      // 2. PHASE 2: Background Visual Photo Resolution & Quality Checks
+      if (masterAudit && masterAudit.ota_conversion_audit) {
+        fetchMasterVibeAuditPhotos(
           formData.propertyName || 'Sea Containers London',
           formData.city || 'London',
-          formData.neighborhood || 'Southbank'
-        ).catch(err => {
-          console.warn('Master Vibe Audit fetch error:', err);
-          return null;
-        })
-      ]);
-
-      setAnalysis({ signals, masterAudit });
-      setLoading(false);
+          formData.neighborhood || 'Southbank',
+          masterAudit.ota_conversion_audit.optimal_5_photo_sequence
+        ).then(photoResults => {
+          if (photoResults && photoResults.optimal_5_photo_sequence) {
+            setAnalysis(prev => {
+              if (!prev || !prev.masterAudit) return prev;
+              return {
+                ...prev,
+                masterAudit: {
+                  ...prev.masterAudit,
+                  ota_conversion_audit: {
+                    ...prev.masterAudit.ota_conversion_audit,
+                    is_listed_on_booking: photoResults.is_listed_on_booking,
+                    listing_status: photoResults.listing_status,
+                    live_photos: photoResults.live_photos,
+                    optimal_5_photo_sequence: photoResults.optimal_5_photo_sequence,
+                    photos_status: 'RESOLVED'
+                  }
+                }
+              };
+            });
+          }
+        }).catch(photoErr => {
+          console.warn('[Photo Gatekeeper] Phase 2 resolution error:', photoErr);
+        });
+      }
     } catch (err) {
       console.error('Audit engine failure:', err);
       setLoading(false);

@@ -6,7 +6,9 @@ import {
   scrapeLocalSignals, 
   auditDiscoverability, 
   generatePropulsionQuest,
-  fetchMasterVibeAudit
+  fetchMasterVibeAudit,
+  fetchMasterVibeAuditManifest,
+  fetchMasterVibeAuditPhotos
 } from './personaEngine';
 import HotelVibeManifestCard from './components/HotelVibeManifestCard';
 import InteractiveQuizCard from './components/InteractiveQuizCard';
@@ -65,7 +67,7 @@ const PROCESSING_PHASES = [
     badge: "STAGE 3/5 • VISUAL MERCHANDISING"
   },
   {
-    title: "Multimodal Gemini Vibe Synthesis",
+    title: "Multimodal Neural Vibe Synthesis",
     detail: "Evaluating 5-slot sequence psychology and revenue conversion triggers...",
     percentage: 88,
     badge: "STAGE 4/5 • AI PROPULSION MODEL"
@@ -194,23 +196,56 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
     setProcessingStage(1);
     
     try {
-      // Execute in parallel:
-      // 1. Local signals (Macro/Micro subcultures & top venues)
-      // 2. Master Vibe Audit (5-dim manifest, quiz, Booking.com audit)
-      const [signals, masterAudit] = await Promise.all([
-        scrapeLocalSignals(formData.city, formData.neighborhood).catch(err => {
-          console.warn("Local signals fetch error:", err);
-          return { categories: {} };
-        }),
-        fetchMasterVibeAudit(formData.propertyName || 'Sea Containers London', formData.city, formData.neighborhood).catch(err => {
-          console.warn("Master Vibe Audit fetch error:", err);
-          return null;
-        })
-      ]);
+      // 1. PHASE 1: Fast Manifest FIRST and ONLY the Manifest first
+      const masterAudit = await fetchMasterVibeAuditManifest(
+        formData.propertyName || 'Sea Containers London', 
+        formData.city, 
+        formData.neighborhood
+      );
       
-      setAnalysis({ signals, masterAudit, auditResults: null, challenge: null });
+      // Render results immediately!
+      setAnalysis({ signals: { categories: {} }, masterAudit, auditResults: null, challenge: null });
       setStep('results');
       setCurrentPhase(1);
+
+      // Background non-blocking load of supplemental category signals
+      scrapeLocalSignals(formData.city, formData.neighborhood).then(sig => {
+        if (sig && sig.categories) {
+          setAnalysis(prev => prev ? { ...prev, signals: sig } : prev);
+        }
+      }).catch(err => console.warn("Supplemental signals error:", err));
+
+      // 2. PHASE 2: Background Gemini Vision Photo Resolution & Verification
+      if (masterAudit && masterAudit.ota_conversion_audit) {
+        fetchMasterVibeAuditPhotos(
+          formData.propertyName || 'Sea Containers London',
+          formData.city,
+          formData.neighborhood,
+          masterAudit.ota_conversion_audit.optimal_5_photo_sequence
+        ).then(photoResults => {
+          if (photoResults && photoResults.optimal_5_photo_sequence) {
+            setAnalysis(prev => {
+              if (!prev || !prev.masterAudit) return prev;
+              return {
+                ...prev,
+                masterAudit: {
+                  ...prev.masterAudit,
+                  ota_conversion_audit: {
+                    ...prev.masterAudit.ota_conversion_audit,
+                    is_listed_on_booking: photoResults.is_listed_on_booking,
+                    listing_status: photoResults.listing_status,
+                    live_photos: photoResults.live_photos,
+                    optimal_5_photo_sequence: photoResults.optimal_5_photo_sequence,
+                    photos_status: 'RESOLVED'
+                  }
+                }
+              };
+            });
+          }
+        }).catch(photoErr => {
+          console.warn('[Photo Gatekeeper] Phase 2 resolution error:', photoErr);
+        });
+      }
 
     } catch (err) {
       console.error("Analysis launch failed", err);
@@ -788,7 +823,7 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                         🌍 Local Subcultures
                       </div>
                       <div style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.85rem', lineHeight: 1.4 }}>
-                        Serper + Gemini deep neighborhood venues & social trend velocity.
+                        Deep neighborhood venue radar & social trend velocity.
                       </div>
                     </div>
 
@@ -915,7 +950,7 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                             {/* LEFT COLUMN: VIBES & INTENT */}
                             <div>
                               <h4 style={{ fontSize: '1rem', fontWeight: 800, color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '1.5rem' }}>
-                                Top Subcultures (Gemini AI)
+                                Top Subcultures (AtmosVibe AI)
                               </h4>
                               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginBottom: '2.5rem' }}>
                                 {Top3Vibes?.map((vibe, i) => (

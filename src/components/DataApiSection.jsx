@@ -132,7 +132,7 @@ console.log(\`Acoustic DNA: \${manifest.vibe_manifest.acoustic_dna.curated_sound
             </div>
             <h3 className="api-feature-title">Hyper-Local Subcultural Graph</h3>
             <p className="api-feature-desc">
-              Continuous Serper Places and Gemini multimodal intelligence streams tracking trending nightlife, gastronomy, and cultural magnets around each property to connect guest intent with local gravity.
+              Continuous real-time geospatial and multimodal intelligence streams tracking trending nightlife, gastronomy, and cultural magnets around each property to connect guest intent with local gravity.
             </p>
           </div>
 

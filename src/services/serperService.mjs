@@ -24,7 +24,8 @@ export async function fetchVenueCorpus(hotelName, city, neighborhood = '') {
     body: JSON.stringify({
       q: `${hotelName} ${locationContext}`,
       num: 5
-    })
+    }),
+    signal: AbortSignal.timeout(3000)
   }).then(r => r.json()).catch(err => {
     console.warn('[Serper] Places query error:', err.message);
     return {};
@@ -37,7 +38,8 @@ export async function fetchVenueCorpus(hotelName, city, neighborhood = '') {
     body: JSON.stringify({
       q: `"${hotelName}" ${locationContext} review (site:timeout.com OR site:theinfatuation.com OR site:cntraveller.com OR site:telegraph.co.uk OR site:standard.co.uk OR "vibe" OR "atmosphere")`,
       num: 10
-    })
+    }),
+    signal: AbortSignal.timeout(3000)
   }).then(r => r.json()).catch(err => {
     console.warn('[Serper] Editorial search query error:', err.message);
     return {};
@@ -50,7 +52,8 @@ export async function fetchVenueCorpus(hotelName, city, neighborhood = '') {
     body: JSON.stringify({
       q: `"${hotelName}" ${locationContext} ("bar" OR "music" OR "interior design" OR "cocktail" OR "lobby" OR "crowd")`,
       num: 8
-    })
+    }),
+    signal: AbortSignal.timeout(3000)
   }).then(r => r.json()).catch(err => {
     console.warn('[Serper] Atmosphere search query error:', err.message);
     return {};
