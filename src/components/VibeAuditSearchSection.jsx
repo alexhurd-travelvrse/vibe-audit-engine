@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { Search, MapPin, Sparkles, ArrowRight, ShieldCheck, Zap, Globe } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { scrapeLocalSignals, fetchMasterVibeAudit, fetchMasterVibeAuditManifest, fetchMasterVibeAuditPhotos } from '../personaEngine';
+import { scrapeLocalSignals, fetchMasterVibeAudit, fetchMasterVibeAuditManifest, fetchMasterVibeAuditPhotos, lookupHotelCandidates } from '../personaEngine';
 import HotelVibeManifestCard from './HotelVibeManifestCard';
 import BookingOtaAuditCard from './BookingOtaAuditCard';
 import InteractiveQuizCard from './InteractiveQuizCard';
@@ -52,36 +52,28 @@ const VibeAuditSearchSection = () => {
   const [loading, setLoading] = useState(false);
   const [processingStage, setProcessingStage] = useState(0);
   const [analysis, setAnalysis] = useState(null);
+  const [ambiguousCandidates, setAmbiguousCandidates] = useState(null);
+  const activePhase2AbortRef = useRef(null);
 
-  const handleLaunch = async (e) => {
-    e.preventDefault();
-    setEmailError('');
-
-    // Require valid work email on live production environments
-    if (isLiveProduction) {
-      if (!formData.email || !formData.email.trim()) {
-        setEmailError('Please enter your work email to generate your Vibe Audit.');
-        return;
-      }
-      if (!formData.email.includes('@') || !formData.email.includes('.')) {
-        setEmailError('Please enter a valid work email address (e.g. alex@hotelgroup.com).');
-        return;
-      }
-    }
-
-    if (formData.email && formData.email.includes('@')) {
-      submitLeadToFormspree(formData);
-    }
-
+  const executeAudit = async (targetHotel, targetCity, targetNeighborhood, directBookingUrl = null) => {
+    setAmbiguousCandidates(null);
     setLoading(true);
     setProcessingStage(1);
+
+    // Abort any obsolete Phase 2 in-flight request if user submits a new property search
+    if (activePhase2AbortRef.current) {
+      console.log('[Client] Aborting previous Phase 2 request due to new hotel audit submission.');
+      activePhase2AbortRef.current.abort();
+    }
+    const abortController = new AbortController();
+    activePhase2AbortRef.current = abortController;
 
     try {
       // 1. PHASE 1: Fetch and render Manifest FIRST and ONLY Manifest first
       const masterAudit = await fetchMasterVibeAuditManifest(
-        formData.propertyName || 'Sea Containers London',
-        formData.city || 'London',
-        formData.neighborhood || 'Southbank'
+        targetHotel,
+        targetCity,
+        targetNeighborhood
       );
 
       // Render the complete Manifest & strategic text immediately!
@@ -89,7 +81,7 @@ const VibeAuditSearchSection = () => {
       setLoading(false);
 
       // Background supplemental signals fetch
-      scrapeLocalSignals(formData.city || 'London', formData.neighborhood || 'Southbank').then(sig => {
+      scrapeLocalSignals(targetCity, targetNeighborhood).then(sig => {
         if (sig && sig.categories) {
           setAnalysis(prev => prev ? { ...prev, signals: sig } : prev);
         }
@@ -98,10 +90,12 @@ const VibeAuditSearchSection = () => {
       // 2. PHASE 2: Background Visual Photo Resolution & Quality Checks
       if (masterAudit && masterAudit.ota_conversion_audit) {
         fetchMasterVibeAuditPhotos(
-          formData.propertyName || 'Sea Containers London',
-          formData.city || 'London',
-          formData.neighborhood || 'Southbank',
-          masterAudit.ota_conversion_audit.optimal_5_photo_sequence
+          targetHotel,
+          targetCity,
+          targetNeighborhood,
+          masterAudit.ota_conversion_audit.optimal_5_photo_sequence,
+          abortController.signal,
+          directBookingUrl
         ).then(photoResults => {
           if (photoResults && photoResults.optimal_5_photo_sequence) {
             setAnalysis(prev => {
@@ -123,6 +117,10 @@ const VibeAuditSearchSection = () => {
             });
           }
         }).catch(photoErr => {
+          if (photoErr.name === 'AbortError') {
+            console.log('[Photo Gatekeeper] Previous Phase 2 request successfully aborted.');
+            return;
+          }
           console.warn('[Photo Gatekeeper] Phase 2 resolution error:', photoErr);
         });
       }
@@ -131,6 +129,62 @@ const VibeAuditSearchSection = () => {
       setLoading(false);
       alert('Analysis engine encountered a timeout. Please try again.');
     }
+  };
+
+  const handleLaunch = async (e) => {
+    e.preventDefault();
+    setEmailError('');
+
+    // Require valid work email on live production environments
+    if (isLiveProduction) {
+      if (!formData.email || !formData.email.trim()) {
+        setEmailError('Please enter your work email to generate your Vibe Audit.');
+        return;
+      }
+      if (!formData.email.includes('@') || !formData.email.includes('.')) {
+        setEmailError('Please enter a valid work email address (e.g. alex@hotelgroup.com).');
+        return;
+      }
+    }
+
+    if (formData.email && formData.email.includes('@')) {
+      submitLeadToFormspree(formData);
+    }
+
+    const targetHotel = formData.propertyName || 'Sea Containers London';
+    const targetCity = formData.city || 'London';
+    const targetNeighborhood = formData.neighborhood || '';
+
+    setLoading(true);
+    setProcessingStage(1);
+
+    try {
+      const lookup = await lookupHotelCandidates(targetHotel, targetCity, targetNeighborhood);
+      if (lookup.requiresClarification && lookup.candidates && lookup.candidates.length > 1) {
+        setAmbiguousCandidates(lookup.candidates);
+        setLoading(false);
+        return;
+      }
+
+      await executeAudit(
+        lookup.selected?.title || targetHotel,
+        targetCity,
+        targetNeighborhood,
+        lookup.selected?.url || null
+      );
+    } catch (err) {
+      console.warn('[Candidate Gatekeeper] Direct audit fallback:', err.message);
+      await executeAudit(targetHotel, targetCity, targetNeighborhood, null);
+    }
+  };
+
+  const handleSelectCandidate = (candidate) => {
+    const selectedTitle = candidate.title || formData.propertyName;
+    setFormData(prev => ({
+      ...prev,
+      propertyName: selectedTitle
+    }));
+    executeAudit(selectedTitle, formData.city || 'London', formData.neighborhood || '', candidate.url);
   };
 
   return (
@@ -252,6 +306,59 @@ const VibeAuditSearchSection = () => {
           </div>
         </div>
 
+        {/* Ambiguous Property Disambiguation Selector */}
+        <AnimatePresence>
+          {ambiguousCandidates && (
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              className="disambiguation-container glass-card"
+            >
+              <div className="disambiguation-header">
+                <span className="disambiguation-pill">SELECT EXACT PROPERTY</span>
+                <h3 className="disambiguation-title">Multiple Matching Properties Found</h3>
+                <p className="disambiguation-subtitle">
+                  We found {ambiguousCandidates.length} properties matching "{formData.propertyName}" in {formData.city}. Which property would you like to audit?
+                </p>
+              </div>
+              <div className="disambiguation-cards-grid">
+                {ambiguousCandidates.map((c, idx) => (
+                  <div 
+                    key={c.slug || idx} 
+                    className="disambiguation-card"
+                    onClick={() => handleSelectCandidate(c)}
+                  >
+                    <div className="disambiguation-card-header">
+                      <span className="disambiguation-card-num">Option #{idx + 1}</span>
+                      <span className="disambiguation-card-tag">Verified Hotel</span>
+                    </div>
+                    <h4 className="disambiguation-card-name">{c.title}</h4>
+                    {c.snippet && (
+                      <p className="disambiguation-card-snippet">{c.snippet}</p>
+                    )}
+                    <button 
+                      type="button" 
+                      className="btn btn-outline disambiguation-select-btn"
+                    >
+                      Audit This Hotel →
+                    </button>
+                  </div>
+                ))}
+              </div>
+              <div className="disambiguation-actions">
+                <button 
+                  type="button" 
+                  className="btn btn-ghost-cancel"
+                  onClick={() => setAmbiguousCandidates(null)}
+                >
+                  ✕ Cancel & Refine Search
+                </button>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
         {/* Live Loading State */}
         <AnimatePresence>
           {loading && (
@@ -263,8 +370,8 @@ const VibeAuditSearchSection = () => {
             >
               <div className="spinner-glow" />
               <div className="loading-text">
-                <h3>Analyzing Local Cultural & Acoustic Signals</h3>
-                <p>Synthesizing hospitality sentiment, Booking.com OTA visibility gaps, and TikTok/Instagram subcultures for <strong>{formData.propertyName || 'Property'}</strong> in {formData.neighborhood}, {formData.city}...</p>
+                <h3>Synthesizing Hotel Vibe Manifest & Acoustic DNA</h3>
+                <p>Synthesizing cultural gravity, acoustic architecture, and design manifest for <strong>{formData.propertyName || 'Property'}</strong> in {formData.neighborhood}, {formData.city}...</p>
               </div>
             </motion.div>
           )}

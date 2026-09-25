@@ -274,48 +274,70 @@ export default function BookingOtaAuditCard({ otaData, hotelName, isUnlocked, on
             )}
           </div>
 
+          {/* Live Phase 2 Status Banner */}
           {((otaData.photos_status === 'PENDING') || (photos.length > 0 && photos.every(p => !p.photo_url))) ? (
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
               style={{
-                background: 'linear-gradient(135deg, rgba(0, 229, 255, 0.05) 0%, rgba(139, 92, 246, 0.06) 100%)',
-                border: '1px solid rgba(0, 229, 255, 0.3)',
-                borderRadius: '1.5rem',
-                padding: '3rem 2rem',
-                textAlign: 'center',
-                boxShadow: '0 10px 40px rgba(0, 0, 0, 0.5), inset 0 0 30px rgba(0, 229, 255, 0.03)'
+                background: 'linear-gradient(135deg, rgba(0, 229, 255, 0.08) 0%, rgba(139, 92, 246, 0.08) 100%)',
+                border: '1px solid rgba(0, 229, 255, 0.4)',
+                borderRadius: '1.25rem',
+                padding: '1.25rem 1.75rem',
+                marginBottom: '1.5rem',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                flexWrap: 'wrap',
+                gap: '1rem',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.4)'
               }}
             >
-              <div style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '56px', height: '56px', borderRadius: '50%', background: 'rgba(0, 229, 255, 0.15)', border: '1px solid rgba(0, 229, 255, 0.4)', marginBottom: '1.25rem' }}>
-                <RefreshCw size={26} color="#00e5ff" className="animate-spin" style={{ animationDuration: '3s' }} />
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                <div style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '42px', height: '42px', borderRadius: '50%', background: 'rgba(0, 229, 255, 0.15)', border: '1px solid rgba(0, 229, 255, 0.4)' }}>
+                  <RefreshCw size={20} color="#00e5ff" className="animate-spin" style={{ animationDuration: '3s' }} />
+                </div>
+                <div>
+                  <div style={{ fontSize: '13px', fontWeight: 900, color: '#ffffff', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                    ⚡ Phase 2 Active: Scraping & Resolving Live Visual Assets
+                  </div>
+                  <div style={{ fontSize: '12px', color: 'rgba(255, 255, 255, 0.75)', marginTop: '2px' }}>
+                    Manifest synthesized. Now extracting live Booking.com gallery assets & verified venue photos to populate slots below.
+                  </div>
+                </div>
               </div>
 
-              <h4 style={{ fontSize: '1.2rem', fontWeight: 900, color: '#ffffff', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.5rem' }}>
-                ✨ Visual Quality Gatekeeper Active
-              </h4>
-              
-              <p style={{ fontSize: '13px', color: 'rgba(255, 255, 255, 0.8)', maxWidth: '640px', margin: '0 auto 1.75rem', lineHeight: 1.6 }}>
-                Scraping live Booking.com gallery assets and harvesting high-resolution venue media. Running multimodal visual verification to guarantee 100% photo-to-recommendation alignment without hallucinations.
-              </p>
-
-              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '1.25rem', flexWrap: 'wrap' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(0,0,0,0.5)', padding: '6px 14px', borderRadius: '20px', border: '1px solid rgba(16,185,129,0.5)' }}>
-                  <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#10b981' }}></span>
-                  <span style={{ fontSize: '11px', fontWeight: 700, color: '#ffffff' }}>1. Live Gallery Scraped</span>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(0,0,0,0.5)', padding: '6px 14px', borderRadius: '20px', border: '1px solid rgba(0,229,255,0.5)' }}>
-                  <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#00e5ff' }}></span>
-                  <span style={{ fontSize: '11px', fontWeight: 700, color: '#00e5ff' }}>2. Inspecting Visual Subjects</span>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(0,0,0,0.5)', padding: '6px 14px', borderRadius: '20px', border: '1px solid rgba(255,255,255,0.1)' }}>
-                  <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'rgba(255,255,255,0.3)' }}></span>
-                  <span style={{ fontSize: '11px', fontWeight: 700, color: 'rgba(255,255,255,0.6)' }}>3. Finalizing Sequence</span>
-                </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(0,0,0,0.6)', padding: '5px 12px', borderRadius: '20px', border: '1px solid rgba(0,229,255,0.4)' }}>
+                <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#00e5ff', boxShadow: '0 0 8px #00e5ff' }}></span>
+                <span style={{ fontSize: '11px', fontWeight: 800, color: '#00e5ff', fontFamily: 'monospace' }}>ASSET GROUNDING IN PROGRESS</span>
               </div>
             </motion.div>
           ) : (
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.25rem' }}>
+            <div style={{
+              background: 'rgba(16, 185, 129, 0.08)',
+              border: '1px solid rgba(16, 185, 129, 0.3)',
+              borderRadius: '1rem',
+              padding: '0.75rem 1.25rem',
+              marginBottom: '1.5rem',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              flexWrap: 'wrap',
+              gap: '0.75rem'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <Check size={16} color="#10b981" />
+                <span style={{ fontSize: '12px', fontWeight: 800, color: '#10b981', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                  Phase 2 Verified: 100% Asset-Grounded Visual Merchandising Sequence
+                </span>
+              </div>
+              <span style={{ fontSize: '11px', color: 'rgba(255, 255, 255, 0.6)' }}>
+                All 5 slots verified with authentic gallery & venue media
+              </span>
+            </div>
+          )}
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.25rem' }}>
             {photos.map((item, idx) => {
               const photoImg = item.photo_url || item.current_photo?.imageUrl;
               const badge = getActionBadge(item.action, item.action_label);
@@ -420,20 +442,69 @@ export default function BookingOtaAuditCard({ otaData, hotelName, isUnlocked, on
                       </div>
                     </div>
                   ) : (
-                    <div style={{ padding: '1rem', background: 'rgba(255,255,255,0.04)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                      <span style={{ 
-                        background: isRetained ? '#00e5ff' : 'rgba(255,255,255,0.1)', 
-                        color: isRetained ? '#000' : '#fff', 
+                    <div style={{ 
+                      position: 'relative', 
+                      width: '100%', 
+                      height: '170px', 
+                      background: 'linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(0,229,255,0.05) 100%)', 
+                      borderBottom: '1px solid rgba(255,255,255,0.08)',
+                      display: 'flex', 
+                      flexDirection: 'column', 
+                      alignItems: 'center', 
+                      justifyContent: 'center',
+                      gap: '8px'
+                    }}>
+                      {/* Target Slot Badge */}
+                      <div style={{ 
+                        position: 'absolute', 
+                        top: '8px', 
+                        left: '8px', 
+                        background: 'rgba(0,0,0,0.85)', 
+                        backdropFilter: 'blur(10px)',
+                        color: isRetained ? '#00e5ff' : '#ffffff', 
                         fontSize: '11px', 
                         fontWeight: 900, 
                         padding: '4px 10px', 
-                        borderRadius: '8px' 
+                        borderRadius: '8px',
+                        border: isRetained ? '1px solid rgba(0,229,255,0.5)' : '1px solid rgba(255,255,255,0.2)'
                       }}>
                         {isRetained ? `SLOT #${slotNum}` : `NEW SLOT #${slotNum}`}
-                      </span>
-                      <span style={{ fontSize: '10px', color: '#00e5ff', fontWeight: 800 }}>
+                      </div>
+
+                      {/* Action Directive Badge */}
+                      <div style={{ 
+                        position: 'absolute', 
+                        bottom: '8px', 
+                        left: '8px', 
+                        background: badge.bg, 
+                        color: badge.color, 
+                        fontSize: '10px', 
+                        fontWeight: 900, 
+                        padding: '3px 8px', 
+                        borderRadius: '6px',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.05em'
+                      }}>
                         {badge.text}
-                      </span>
+                      </div>
+
+                      <div style={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        gap: '6px',
+                        padding: '0 1rem',
+                        textAlign: 'center'
+                      }}>
+                        <RefreshCw size={22} color="#00e5ff" className="animate-spin" style={{ animationDuration: '3s' }} />
+                        <span style={{ fontSize: '11px', fontWeight: 800, color: '#00e5ff', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                          Resolving High-Res Asset...
+                        </span>
+                        <span style={{ fontSize: '10px', color: 'rgba(255,255,255,0.55)' }}>
+                          Scraping verified {item.category ? item.category.replace(/_/g, ' ') : 'visual'} photo
+                        </span>
+                      </div>
                     </div>
                   )}
 
@@ -495,7 +566,6 @@ export default function BookingOtaAuditCard({ otaData, hotelName, isUnlocked, on
               );
             })}
           </div>
-          )}
         </div>
       )}
 

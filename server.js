@@ -32,7 +32,7 @@ app.post('/api/hotel-audit', async (req, res) => {
     await hotelAuditHandler(req, res);
 });
 
-import masterVibeAuditHandler, { resolveAuditPhotosHandler } from './api/master-vibe-audit.js';
+import masterVibeAuditHandler, { resolveAuditPhotosHandler, lookupHotelCandidatesHandler } from './api/master-vibe-audit.js';
 app.all('/api/master-vibe-audit', async (req, res) => {
     await masterVibeAuditHandler(req, res);
 });
@@ -40,6 +40,10 @@ app.all('/api/master-vibe-audit', async (req, res) => {
 app.all('/api/master-vibe-manifest', async (req, res) => {
     req.query.phase = '1';
     await masterVibeAuditHandler(req, res);
+});
+
+app.all('/api/lookup-hotel-candidates', async (req, res) => {
+    await lookupHotelCandidatesHandler(req, res);
 });
 
 app.all('/api/resolve-audit-photos', async (req, res) => {
@@ -53,18 +57,23 @@ app.get('/api/proxy-image', async (req, res) => {
     const fetchResp = await fetch(targetUrl, {
       headers: {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
-        'Accept': 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+        'Accept': 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8',
+        'Referer': targetUrl
       },
-      signal: AbortSignal.timeout(8000)
+      signal: AbortSignal.timeout(6000)
     });
-    if (!fetchResp.ok) return res.status(fetchResp.status).send('Failed to fetch image');
+    if (!fetchResp.ok) {
+      // WAF Circuit Breaker: If remote server blocks proxy (403/429/503), redirect directly
+      return res.redirect(targetUrl);
+    }
     const contentType = fetchResp.headers.get('content-type') || 'image/jpeg';
     res.setHeader('Content-Type', contentType);
     res.setHeader('Cache-Control', 'public, max-age=86400');
     const buffer = Buffer.from(await fetchResp.arrayBuffer());
     return res.send(buffer);
   } catch (err) {
-    return res.status(500).send('Proxy error: ' + err.message);
+    // Resilient fallback: redirect browser directly to target URL
+    return res.redirect(targetUrl);
   }
 });
 

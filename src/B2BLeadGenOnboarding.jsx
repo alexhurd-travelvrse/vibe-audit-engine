@@ -8,7 +8,8 @@ import {
   generatePropulsionQuest,
   fetchMasterVibeAudit,
   fetchMasterVibeAuditManifest,
-  fetchMasterVibeAuditPhotos
+  fetchMasterVibeAuditPhotos,
+  lookupHotelCandidates
 } from './personaEngine';
 import HotelVibeManifestCard from './components/HotelVibeManifestCard';
 import InteractiveQuizCard from './components/InteractiveQuizCard';
@@ -51,32 +52,26 @@ const PROCESSING_PHASES = [
   {
     title: "Scanning Local Micro-District Gravity",
     detail: "Indexing Google Places & neighborhood subculture search momentum...",
-    percentage: 22,
-    badge: "STAGE 1/5 • GEOSPATIAL RADAR"
+    percentage: 25,
+    badge: "STAGE 1/4 • GEOSPATIAL RADAR"
   },
   {
     title: "Auditing Social & Editorial Citations",
-    detail: "Synthesizing viral mentions, TikTok velocity, Time Out & local reviews...",
-    percentage: 46,
-    badge: "STAGE 2/5 • SOCIAL VELOCITY"
+    detail: "Synthesizing architectural reviews, editorial critique & local press...",
+    percentage: 50,
+    badge: "STAGE 2/4 • CULTURAL CITATIONS"
   },
   {
-    title: "Ingesting Live Booking.com Visual Slots",
-    detail: "Resolving property gallery slots and extracting signature visual assets...",
-    percentage: 70,
-    badge: "STAGE 3/5 • VISUAL MERCHANDISING"
+    title: "Synthesizing Vibe Manifest & Acoustic DNA",
+    detail: "Evaluating soundscape profiles, sensory palette, and design archetypes...",
+    percentage: 75,
+    badge: "STAGE 3/4 • SENSORY ARCHITECTURE"
   },
   {
-    title: "Multimodal Neural Vibe Synthesis",
-    detail: "Evaluating 5-slot sequence psychology and revenue conversion triggers...",
-    percentage: 88,
-    badge: "STAGE 4/5 • AI PROPULSION MODEL"
-  },
-  {
-    title: "Finalizing Master Vibe Audit Report",
-    detail: "Compiling acoustic DNA scorecard, optimal gallery & interactive challenge...",
-    percentage: 97,
-    badge: "STAGE 5/5 • REPORT SYNTHESIS"
+    title: "Finalizing Vibe Manifest & Conversion Strategy",
+    detail: "Compiling cultural gravity manifest and 5-slot visual conversion blueprint...",
+    percentage: 95,
+    badge: "STAGE 4/4 • MANIFEST SYNTHESIS"
   }
 ];
 
@@ -85,6 +80,7 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
   const [processingStage, setProcessingStage] = useState(0);
   const [phaseIndex, setPhaseIndex] = useState(0);
   const [emailError, setEmailError] = useState('');
+  const [ambiguousCandidates, setAmbiguousCandidates] = useState(null);
   const [formData, setFormData] = useState({
     email: '',
     propertyName: '',
@@ -173,34 +169,35 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
     return () => clearInterval(interval);
   }, [step]);
 
+  const handleSelectCandidate = (candidate) => {
+    const selectedTitle = candidate.title || formData.propertyName;
+    setFormData(prev => ({ ...prev, propertyName: selectedTitle }));
+    setAmbiguousCandidates(null);
+    startAnalysis();
+  };
+
   const startAnalysis = async () => {
     setEmailError('');
-
-    // Require valid work email on live production environments
-    if (isLiveProduction) {
-      if (!formData.email || !formData.email.trim()) {
-        setEmailError('Please enter your work email to receive and launch your Vibe Audit.');
-        return;
-      }
-      if (!formData.email.includes('@') || !formData.email.includes('.')) {
-        setEmailError('Please enter a valid work email address (e.g. alex@hotelgroup.com).');
-        return;
-      }
-    }
 
     if (formData.email && formData.email.includes('@')) {
       submitLeadToFormspree(formData);
     }
 
+    const targetHotel = formData.propertyName || 'Mandarin Oriental';
+    const targetCity = formData.city || 'London';
+    const targetNeighborhood = formData.neighborhood || '';
+
+    // 1. Immediately switch to processing view on click (manifest first!)
+    setAmbiguousCandidates(null);
     setStep('processing');
     setProcessingStage(1);
-    
+
     try {
-      // 1. PHASE 1: Fast Manifest FIRST and ONLY the Manifest first
+      // 2. PHASE 1: Fast Manifest FIRST and ONLY the Manifest first
       const masterAudit = await fetchMasterVibeAuditManifest(
-        formData.propertyName || 'Sea Containers London', 
-        formData.city, 
-        formData.neighborhood
+        targetHotel, 
+        targetCity, 
+        targetNeighborhood
       );
       
       // Render results immediately!
@@ -209,20 +206,26 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
       setCurrentPhase(1);
 
       // Background non-blocking load of supplemental category signals
-      scrapeLocalSignals(formData.city, formData.neighborhood).then(sig => {
+      scrapeLocalSignals(targetCity, targetNeighborhood).then(sig => {
         if (sig && sig.categories) {
           setAnalysis(prev => prev ? { ...prev, signals: sig } : prev);
         }
       }).catch(err => console.warn("Supplemental signals error:", err));
 
-      // 2. PHASE 2: Background Gemini Vision Photo Resolution & Verification
+      // 3. PHASE 2: Background Gemini Vision Photo Resolution & Verification
       if (masterAudit && masterAudit.ota_conversion_audit) {
-        fetchMasterVibeAuditPhotos(
-          formData.propertyName || 'Sea Containers London',
-          formData.city,
-          formData.neighborhood,
-          masterAudit.ota_conversion_audit.optimal_5_photo_sequence
-        ).then(photoResults => {
+        lookupHotelCandidates(targetHotel, targetCity, targetNeighborhood).then(lookup => {
+          const directBookingUrl = lookup?.selected?.url || null;
+          const resolvedHotelName = lookup?.selected?.title || targetHotel;
+          return fetchMasterVibeAuditPhotos(
+            resolvedHotelName,
+            targetCity,
+            targetNeighborhood,
+            masterAudit.ota_conversion_audit.optimal_5_photo_sequence,
+            null,
+            directBookingUrl
+          );
+        }).then(photoResults => {
           if (photoResults && photoResults.optimal_5_photo_sequence) {
             setAnalysis(prev => {
               if (!prev || !prev.masterAudit) return prev;
@@ -615,6 +618,85 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                   </p>
                 </div>
               </div>
+
+              {/* Ambiguous Property Disambiguation Selector */}
+              <AnimatePresence>
+                {ambiguousCandidates && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 15 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    style={{
+                      marginTop: '2rem',
+                      padding: '2rem',
+                      borderRadius: '1.5rem',
+                      background: 'rgba(5, 15, 30, 0.95)',
+                      border: '1px solid rgba(0, 229, 255, 0.4)',
+                      boxShadow: '0 20px 50px rgba(0,0,0,0.6)'
+                    }}
+                  >
+                    <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
+                      <span style={{ fontSize: '11px', fontWeight: 900, color: '#00e5ff', letterSpacing: '0.15em', textTransform: 'uppercase', background: 'rgba(0, 229, 255, 0.12)', padding: '4px 12px', borderRadius: '20px' }}>
+                        SELECT EXACT PROPERTY
+                      </span>
+                      <h3 style={{ fontSize: '1.5rem', fontWeight: 900, color: '#ffffff', textTransform: 'uppercase', marginTop: '0.75rem', marginBottom: '0.5rem' }}>
+                        Multiple Matching Properties Found
+                      </h3>
+                      <p style={{ fontSize: '13px', color: 'rgba(255, 255, 255, 0.7)', maxWidth: '600px', margin: '0 auto' }}>
+                        We found {ambiguousCandidates.length} properties matching "{formData.propertyName}". Which property would you like to audit?
+                      </p>
+                    </div>
+
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1rem', marginBottom: '1.5rem' }}>
+                      {ambiguousCandidates.map((c, idx) => (
+                        <div 
+                          key={c.slug || idx} 
+                          onClick={() => handleSelectCandidate(c)}
+                          style={{
+                            background: 'rgba(255, 255, 255, 0.03)',
+                            border: '1px solid rgba(0, 229, 255, 0.25)',
+                            borderRadius: '1rem',
+                            padding: '1.25rem',
+                            cursor: 'pointer',
+                            transition: 'all 0.2s ease',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            justifyContent: 'space-between'
+                          }}
+                        >
+                          <div>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
+                              <span style={{ fontSize: '10px', color: 'rgba(255, 255, 255, 0.5)', fontWeight: 800 }}>Option #{idx + 1}</span>
+                              <span style={{ fontSize: '10px', color: '#10b981', fontWeight: 800, background: 'rgba(16, 185, 129, 0.15)', padding: '2px 8px', borderRadius: '10px' }}>Verified Hotel</span>
+                            </div>
+                            <h4 style={{ fontSize: '1rem', fontWeight: 800, color: '#ffffff', margin: '0 0 0.5rem 0' }}>{c.title}</h4>
+                            {c.snippet && (
+                              <p style={{ fontSize: '12px', color: 'rgba(255, 255, 255, 0.65)', lineHeight: 1.4, margin: '0 0 1rem 0' }}>{c.snippet}</p>
+                            )}
+                          </div>
+                          <button 
+                            type="button" 
+                            className="launch-button"
+                            style={{ padding: '0.6rem 1rem', fontSize: '12px', fontWeight: 800, marginTop: 'auto' }}
+                          >
+                            Audit This Hotel →
+                          </button>
+                        </div>
+                      ))}
+                    </div>
+
+                    <div style={{ textAlign: 'center' }}>
+                      <button 
+                        type="button" 
+                        onClick={() => setAmbiguousCandidates(null)}
+                        style={{ background: 'transparent', border: 'none', color: 'rgba(255, 255, 255, 0.6)', cursor: 'pointer', fontSize: '12px' }}
+                      >
+                        ✕ Cancel & Refine Search
+                      </button>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </motion.div>
           )}
 
@@ -626,6 +708,24 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
               exit={{ opacity: 0 }}
               style={{ textAlign: 'center', padding: '4rem 1rem 8rem', maxWidth: '800px', margin: '0 auto' }}
             >
+              {/* 2-Tier Pipeline Info Banner */}
+              <div style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                padding: '6px 18px',
+                background: 'rgba(0, 229, 255, 0.08)',
+                border: '1px solid rgba(0, 229, 255, 0.3)',
+                borderRadius: '50px',
+                color: '#00e5ff',
+                fontSize: '11.5px',
+                fontWeight: 800,
+                letterSpacing: '1px',
+                textTransform: 'uppercase',
+                marginBottom: '2rem'
+              }}>
+                <Zap size={14} /> Phase 1: Synthesizing Vibe Manifest First
+              </div>
               {/* Dual-Ring Cyber Radar */}
               <div style={{ position: 'relative', width: '120px', height: '120px', margin: '0 auto 2.5rem' }}>
                 <div style={{

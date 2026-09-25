@@ -250,12 +250,18 @@ Synthesize this live data and return the complete Master Vibe Audit JSON payload
     }
   };
 
+  const isFastManifestOnly = (!livePhotos || livePhotos.length === 0) && (!amenityPhotos || amenityPhotos.length === 0);
+  const primaryTimeout = isFastManifestOnly ? 18000 : 35000;
+
   try {
     let result;
     try {
-      // Execute primary Gemini generation with 45-second timeout
-      result = await generateWithFallback(parts, 45000);
+      result = await generateWithFallback(parts, primaryTimeout);
     } catch (multimodalErr) {
+      if (isFastManifestOnly) {
+        console.warn(`[Gemini] Phase 1 fast manifest timed out (${multimodalErr.message}). Switching directly to resilient corpus synthesizer...`);
+        return synthesizeVibeAuditFromCorpus(hotelName, city, neighborhood, venueCorpus, livePhotos, amenityPhotos);
+      }
       console.warn(`[Gemini] Primary generation fallback (${multimodalErr.message}), executing high-speed metadata generation...`);
       
       const textOnlyParts = [
@@ -269,7 +275,7 @@ Synthesize this live data and return the complete Master Vibe Audit JSON payload
         },
         { text: userPrompt }
       ];
-      result = await generateWithFallback(textOnlyParts, 30000);
+      result = await generateWithFallback(textOnlyParts, 20000);
     }
 
     const responseText = result.response.text();

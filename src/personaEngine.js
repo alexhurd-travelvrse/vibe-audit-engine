@@ -99,12 +99,27 @@ export async function fetchMasterVibeAuditManifest(hotelName, city, neighborhood
   return await response.json();
 }
 
-export async function fetchMasterVibeAuditPhotos(hotelName, city, neighborhood, strategySlots = null) {
+export async function lookupHotelCandidates(hotelName, city, neighborhood = '') {
+  console.log(`[Candidate Lookup] Checking property matches for "${hotelName}" in "${city}"...`);
+  const response = await fetch('/api/lookup-hotel-candidates', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ hotelName, city, neighborhood })
+  });
+  if (!response.ok) {
+    console.warn(`[Candidate Lookup] API returned ${response.status}`);
+    return { status: 'none', candidates: [] };
+  }
+  return await response.json();
+}
+
+export async function fetchMasterVibeAuditPhotos(hotelName, city, neighborhood, strategySlots = null, signal = null, bookingUrl = null) {
   console.log(`[Master Vibe Phase 2] Resolving and verifying visual photo assets for ${hotelName}...`);
   const response = await fetch('/api/resolve-audit-photos', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ hotelName, city, neighborhood, strategySlots })
+    body: JSON.stringify({ hotelName, city, neighborhood, strategySlots, bookingUrl }),
+    signal: signal || undefined
   });
   if (!response.ok) {
     throw new Error(`Photo Resolution API returned ${response.status}: ${await response.text()}`);
