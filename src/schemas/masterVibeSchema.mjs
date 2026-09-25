@@ -63,7 +63,46 @@ export const masterVibeSchema = {
           type: "object",
           properties: {
             best_time_to_visit: { type: "string", description: "e.g. 4:30 PM for fireside relaxation; 8:30 PM for peak atmospheric buzz" },
-            peak_atmospheric_window: { type: "string", description: "e.g. Late Afternoon Golden Hour" }
+            peak_atmospheric_window: { type: "string", description: "e.g. Late Afternoon Golden Hour" },
+            diurnal_rhythm: {
+              type: "object",
+              properties: {
+                working: {
+                  type: "object",
+                  properties: {
+                    window: { type: "string" },
+                    focus: { type: "string" },
+                    score: { type: "number" }
+                  }
+                },
+                chilling: {
+                  type: "object",
+                  properties: {
+                    window: { type: "string" },
+                    focus: { type: "string" },
+                    score: { type: "number" }
+                  }
+                },
+                playing: {
+                  type: "object",
+                  properties: {
+                    window: { type: "string" },
+                    focus: { type: "string" },
+                    score: { type: "number" }
+                  }
+                }
+              }
+            },
+            content_readiness: {
+              type: "object",
+              properties: {
+                score: { type: "number" },
+                verdict: { type: "string" },
+                flattery_note: { type: "string" },
+                top_creator_spot: { type: "string" },
+                aesthetic_subculture: { type: "string" }
+              }
+            }
           }
         },
         hyper_local_proximity: {

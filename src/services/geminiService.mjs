@@ -433,8 +433,56 @@ function synthesizeVibeAuditFromCorpus(hotelName, city, neighborhood, venueCorpu
     ? (socialIdx || lobbyIdx) 
     : (hasDedicatedSpa ? (poolOrSpaIdx || lobbyIdx) : (liveDiningSlot || socialIdx || lobbyIdx));
 
-  // Build authentic 5-slot sequence with rich, multidimensional upgrade justifications
-  const optimalSequence = isMagnetOverride ? [
+  // Phase 1 provides scanning archetype slots awaiting live visual asset resolution in Phase 2
+  const optimalSequence = [
+    {
+      slot: 1,
+      category: "HERO_CULTURAL_MAGNET",
+      photo_url: null,
+      status: "PENDING",
+      photo_subject: "Scanning live inventory for signature experiential hook...",
+      action_label: "SCANNING LIVE ASSET INVENTORY (SLOT #1)...",
+      why_it_converts: "Disrupts standard search fatigue by evaluating and elevating the property's highest-gravity cultural asset to Slot #1."
+    },
+    {
+      slot: 2,
+      category: "EXTERIOR_LANDMARK",
+      photo_url: null,
+      status: "PENDING",
+      photo_subject: "Scanning live inventory for architectural facade grounding...",
+      action_label: "SCANNING LIVE ASSET INVENTORY (SLOT #2)...",
+      why_it_converts: "Grounds geographic location and architectural authenticity immediately after the emotional hook."
+    },
+    {
+      slot: 3,
+      category: "SIGNATURE_SUITE_BEDROOM",
+      photo_url: null,
+      status: "PENDING",
+      photo_subject: "Scanning live inventory for signature suite accommodation...",
+      action_label: "SCANNING LIVE ASSET INVENTORY (SLOT #3)...",
+      why_it_converts: "Validates high-spec private sleeping accommodations with rich textural framing."
+    },
+    {
+      slot: 4,
+      category: "SOCIAL_FB_ROOFTOP",
+      photo_url: null,
+      status: "PENDING",
+      photo_subject: "Scanning live inventory for destination dining or wellness...",
+      action_label: "SCANNING LIVE ASSET INVENTORY (SLOT #4)...",
+      why_it_converts: "Showcases full property depth and evening social or wellness energy."
+    },
+    {
+      slot: 5,
+      category: "SECONDARY_ROOM_BATHROOM",
+      photo_url: null,
+      status: "PENDING",
+      photo_subject: "Scanning live inventory for hygiene & luxury finish validation...",
+      action_label: "SCANNING LIVE ASSET INVENTORY (SLOT #5)...",
+      why_it_converts: "Eliminates the #1 hidden guest hesitation by validating luxury bathroom specifications."
+    }
+  ];
+
+  const _legacySequence = isMagnetOverride ? [
     {
       slot: 1,
       category: "HERO_CULTURAL_MAGNET",
@@ -703,7 +751,49 @@ function synthesizeVibeAuditFromCorpus(hotelName, city, neighborhood, venueCorpu
               : (isMiami 
                   ? "3:30 PM for sunlit courtyard cocktails; 8:30 PM for candlelit dinner & music"
                   : "4:30 PM for tranquil aperitivo; 8:30 PM for peak atmospheric buzz")),
-        peak_atmospheric_window: "Golden Hour to Late Evening Aperitivo"
+        peak_atmospheric_window: "Golden Hour to Late Evening Aperitivo",
+        diurnal_rhythm: {
+          working: {
+            window: "9:00 AM – 3:30 PM",
+            focus: isLondon 
+              ? "Bright diffused Thames daylight, quiet acoustic hum & spacious laptop banquettes in river lounge."
+              : (isMiami 
+                  ? "Shaded tropical courtyard patio with fast Wi-Fi and natural daylight."
+                  : "Sunlit lobby sanctuary with high conversational clarity & quiet coffee service."),
+            score: 91
+          },
+          chilling: {
+            window: "4:00 PM – 7:00 PM",
+            focus: isLondon
+              ? "The 4:00 PM Twilight Pivot: stepless shift to 2400K amber glow, Thames golden hour & tranquil aperitivo."
+              : (isMiami
+                  ? "Golden hour poolside lounger transition with gentle acoustic downtempo and pastel sunset reflections."
+                  : "Gulf sunset terrace with calming sea breeze, shaded daybeds & pre-dinner botanical cocktails."),
+            score: 97
+          },
+          playing: {
+            window: "7:30 PM – Late",
+            focus: isLondon
+              ? "Seductive 2200K low-lux amber, 12th Knot panoramic skyline energy & buzzing mixology crowd."
+              : (isMiami
+                  ? "Candlelit courtyard & Hyde Beach social magnetism, lively DJ sets & vibrant cocktail crowd."
+                  : "Intimate Duke's Bar legendary martini rituals, low-Kelvin table lamps & sophisticated banter."),
+            score: 95
+          }
+        },
+        content_readiness: {
+          score: isLondon ? 96 : (isMiami ? 97 : 94),
+          verdict: "Zero Downlight Raccoon Eyes",
+          flattery_note: "Flattering diffuse eye-level bounce & warm 2400K skin-tone illumination",
+          top_creator_spot: isLondon 
+            ? "12th Knot Glass Corner Banquette during Thames Golden Hour"
+            : (isMiami 
+                ? "Courtyard Poolside Sanctuary Loungers framed by historic Palms"
+                : "Duke's Bar intimate leather banquettes with backlit martini trolley"),
+          aesthetic_subculture: isLondon 
+            ? "Moody Maritime Chiaroscuro" 
+            : (isMiami ? "Sun-Drenched Pastel Art Deco" : "Classic British Heritage Chiaroscuro")
+        }
       },
       hyper_local_proximity: {
         key_anchors: isLondon && nameLower.includes('sea containers')

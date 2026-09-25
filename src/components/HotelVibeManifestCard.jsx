@@ -1,5 +1,5 @@
-import React, { useRef } from 'react';
-import { Zap, Music, Users, Sparkles, CheckCircle2, AlertTriangle, Disc, MapPin, Compass, Volume2, ShieldCheck, Sun, Clock, Eye, ChevronLeft, ChevronRight, Key, Flame } from 'lucide-react';
+import React, { useRef, useState } from 'react';
+import { Zap, Music, Users, Sparkles, CheckCircle2, AlertTriangle, Disc, MapPin, Compass, Volume2, ShieldCheck, Sun, Clock, Eye, ChevronLeft, ChevronRight, Key, Flame, Briefcase, Coffee, Camera, Laptop, Moon } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function HotelVibeManifestCard({ manifest, hotelName, location }) {
@@ -27,6 +27,46 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
   const auth = v.authenticity_and_materials || {};
   const temporal = v.temporal_dynamics || {};
   const secrets = v.insider_secrets || {};
+
+  const [activeDiurnalTab, setActiveDiurnalTab] = useState('chilling');
+
+  const diurnal = temporal.diurnal_rhythm || {
+    working: {
+      window: '9:00 AM – 3:30 PM',
+      focus: (manifest.venue_name || '').toLowerCase().includes('sea containers')
+        ? 'Bright diffused Thames daylight, quiet acoustic hum & spacious laptop banquettes.'
+        : 'Natural diffused daylight, low acoustic distractions, and spacious laptop banquettes.',
+      score: 91
+    },
+    chilling: {
+      window: '4:00 PM – 7:00 PM',
+      focus: (manifest.venue_name || '').toLowerCase().includes('sea containers')
+        ? 'The 4:00 PM Twilight Pivot: stepless shift to 2400K amber glow, Thames golden hour & tranquil aperitivo.'
+        : 'The 4:00 PM Twilight Pivot: stepless transition to warm 2400K amber glow & tranquil aperitivo.',
+      score: 97
+    },
+    playing: {
+      window: '7:30 PM – Late',
+      focus: (manifest.venue_name || '').toLowerCase().includes('sea containers')
+        ? 'Seductive 2200K low-lux amber, 12th Knot panoramic skyline energy & buzzing mixology crowd.'
+        : 'Seductive 2200K low-lux candlelight, buzzing craft mixology & high-energy magnetic crowd.',
+      score: 95
+    }
+  };
+
+  const contentReady = temporal.content_readiness || {
+    score: 96,
+    verdict: 'Zero Downlight Raccoon Eyes',
+    flattery_note: 'Flattering diffuse eye-level bounce & warm 2400K skin-tone illumination',
+    top_creator_spot: (manifest.venue_name || '').toLowerCase().includes('sea containers')
+      ? '12th Knot Glass Corner Banquette during Thames Golden Hour'
+      : ((manifest.venue_name || '').toLowerCase().includes('sls')
+        ? 'Courtyard Poolside Sanctuary Loungers framed by historic Palms'
+        : 'Signature terrace lounge banquette during golden hour'),
+    aesthetic_subculture: (manifest.venue_name || '').toLowerCase().includes('sea containers')
+      ? 'Moody Maritime Chiaroscuro'
+      : ((manifest.venue_name || '').toLowerCase().includes('sls') ? 'Sun-Drenched Pastel Art Deco' : 'Curated Architectural Warmth')
+  };
   
   // Calibrated Metrics with intelligent fallbacks
   const energy = v.energy_score || 85;
@@ -401,64 +441,122 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
           </div>
 
           {/* ========================================================================= */}
-          {/* CONTAINER 4: Lighting & Peak Window                                       */}
+          {/* ========================================================================= */}
+          {/* CONTAINER 4: Time of Day & Content Ready Analysis                         */}
           {/* ========================================================================= */}
           <div style={{ flex: '0 0 350px', minWidth: '350px', maxWidth: '370px', scrollSnapAlign: 'start', background: 'rgba(0,0,0,0.55)', padding: '1.5rem', borderRadius: '1.25rem', border: '1px solid rgba(0, 229, 255, 0.35)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxSizing: 'border-box' }}>
             <div>
               {/* Category Badge */}
               <div style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center' }}>
                 <span style={{ fontSize: '11px', fontWeight: 900, color: '#00e5ff', letterSpacing: '0.08em', textTransform: 'uppercase', display: 'flex', alignItems: 'center', gap: '5px' }}>
-                  <Sun size={13} /> Lighting & Mood
+                  <Sun size={13} /> Time of Day & Lighting Arc
                 </span>
               </div>
 
               <h3 style={{ fontSize: '16px', fontWeight: 900, color: '#ffffff', height: '44px', minHeight: '44px', maxHeight: '44px', lineHeight: 1.3, margin: '0 0 0.85rem 0', overflow: 'hidden' }}>
-                Evening Vibe & Best Time to Visit
+                Working, Chilling & Playing Rhythm
               </h3>
 
-              {/* Standardized Scale Bar Container */}
-              <div style={{ background: 'rgba(0,0,0,0.45)', padding: '10px 12px', borderRadius: '10px', border: '1px solid rgba(255,255,255,0.08)', marginBottom: '1rem', height: '76px', minHeight: '76px', maxHeight: '76px', boxSizing: 'border-box', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '9.5px', fontWeight: 800, textTransform: 'uppercase', color: 'rgba(255,255,255,0.6)', whiteSpace: 'nowrap' }}>
-                  <span style={{ color: '#93c5fd' }}>Daylight</span>
-                  <span style={{ color: '#38bdf8' }}>Sunset</span>
-                  <span style={{ color: '#f59e0b' }}>Candlelight</span>
-                </div>
-                {/* Scale Track with Pin */}
-                <div style={{ position: 'relative', width: '100%', height: '8px', background: 'linear-gradient(90deg, #93c5fd 0%, #38bdf8 45%, #f59e0b 100%)', borderRadius: '4px' }}>
-                  <div style={{ 
-                    position: 'absolute', 
-                    top: '50%', 
-                    left: '85%', 
-                    transform: 'translate(-50%, -50%)', 
-                    width: '14px', 
-                    height: '14px', 
-                    borderRadius: '50%', 
-                    background: '#ffffff', 
-                    boxShadow: '0 0 8px rgba(0,0,0,0.8), 0 0 10px #00e5ff',
-                    border: '2px solid #050b14' 
-                  }} />
-                </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '10.5px', fontWeight: 700, whiteSpace: 'nowrap' }}>
-                  <span style={{ color: '#00e5ff' }}>{lightingTemp.split(' ')[0] || '2200K'} Amber Glow</span>
-                  <span style={{ color: '#f59e0b', flexShrink: 0 }}>Warm Filament</span>
-                </div>
+              {/* 3 User Benefit Mode Tabs: Working | Chilling | Playing */}
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '6px', marginBottom: '0.85rem' }}>
+                {[
+                  { id: 'working', label: 'Working', icon: Briefcase, color: '#38bdf8' },
+                  { id: 'chilling', label: 'Chilling', icon: Coffee, color: '#f59e0b' },
+                  { id: 'playing', label: 'Playing', icon: Flame, color: '#ec4899' }
+                ].map(tab => {
+                  const isActive = activeDiurnalTab === tab.id;
+                  const Icon = tab.icon;
+                  return (
+                    <button
+                      key={tab.id}
+                      type="button"
+                      onClick={() => setActiveDiurnalTab(tab.id)}
+                      style={{
+                        background: isActive ? `rgba(${tab.id === 'working' ? '56, 189, 248' : tab.id === 'chilling' ? '245, 158, 11' : '236, 72, 153'}, 0.2)` : 'rgba(0,0,0,0.4)',
+                        border: isActive ? `1.5px solid ${tab.color}` : '1px solid rgba(255,255,255,0.1)',
+                        borderRadius: '8px',
+                        padding: '6px 4px',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        gap: '3px',
+                        cursor: 'pointer',
+                        transition: 'all 0.2s ease',
+                        boxShadow: isActive ? `0 0 10px ${tab.color}40` : 'none'
+                      }}
+                    >
+                      <Icon size={13} color={isActive ? tab.color : 'rgba(255,255,255,0.6)'} />
+                      <span style={{ fontSize: '10.5px', fontWeight: 800, color: isActive ? '#ffffff' : 'rgba(255,255,255,0.6)', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+                        {tab.label}
+                      </span>
+                    </button>
+                  );
+                })}
               </div>
 
-              <div style={{ fontSize: '13px', fontWeight: 800, color: '#ffffff', height: '38px', minHeight: '38px', maxHeight: '38px', lineHeight: 1.35, marginBottom: '0.5rem', display: 'flex', alignItems: 'flex-start', overflow: 'hidden' }}>
-                <span><span style={{ color: '#00e5ff' }}>Peak Window:</span> {(bestTimeToVisit || '8:30 PM for peak buzz').split(';')[0].replace(/\s*[-—–].*$/, '').trim()}</span>
+              {/* Dynamic Benefit Panel based on Selected Mode */}
+              <div style={{ background: 'rgba(0,0,0,0.45)', padding: '10px 12px', borderRadius: '10px', border: '1px solid rgba(255,255,255,0.08)', marginBottom: '0.85rem', minHeight: '66px' }}>
+                {activeDiurnalTab === 'working' && (
+                  <div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4px' }}>
+                      <span style={{ fontSize: '11px', fontWeight: 800, color: '#38bdf8' }}>☀️ {diurnal.working?.window || '9:00 AM – 3:30 PM'}</span>
+                      <span style={{ fontSize: '10px', fontWeight: 800, background: 'rgba(56, 189, 248, 0.15)', color: '#38bdf8', padding: '1px 6px', borderRadius: '6px' }}>FOCUS: {diurnal.working?.score || 91}%</span>
+                    </div>
+                    <p style={{ fontSize: '11px', color: 'rgba(255,255,255,0.85)', margin: 0, lineHeight: 1.35 }}>
+                      {diurnal.working?.focus || 'Natural diffused daylight, low acoustic distractions, and spacious laptop banquettes.'}
+                    </p>
+                  </div>
+                )}
+                {activeDiurnalTab === 'chilling' && (
+                  <div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4px' }}>
+                      <span style={{ fontSize: '11px', fontWeight: 800, color: '#f59e0b' }}>🌅 {diurnal.chilling?.window || '4:00 PM – 7:00 PM'}</span>
+                      <span style={{ fontSize: '10px', fontWeight: 800, background: 'rgba(245, 158, 11, 0.15)', color: '#f59e0b', padding: '1px 6px', borderRadius: '6px' }}>TWILIGHT: {diurnal.chilling?.score || 97}%</span>
+                    </div>
+                    <p style={{ fontSize: '11px', color: 'rgba(255,255,255,0.85)', margin: 0, lineHeight: 1.35 }}>
+                      {diurnal.chilling?.focus || 'The 4:00 PM Twilight Pivot: stepless transition to warm 2400K amber glow, waterfront reflection & tranquil aperitivo.'}
+                    </p>
+                  </div>
+                )}
+                {activeDiurnalTab === 'playing' && (
+                  <div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4px' }}>
+                      <span style={{ fontSize: '11px', fontWeight: 800, color: '#ec4899' }}>🍸 {diurnal.playing?.window || '7:30 PM – LATE'}</span>
+                      <span style={{ fontSize: '10px', fontWeight: 800, background: 'rgba(236, 72, 153, 0.15)', color: '#ec4899', padding: '1px 6px', borderRadius: '6px' }}>VIBE: {diurnal.playing?.score || 95}%</span>
+                    </div>
+                    <p style={{ fontSize: '11px', color: 'rgba(255,255,255,0.85)', margin: 0, lineHeight: 1.35 }}>
+                      {diurnal.playing?.focus || 'Seductive 2200K low-lux candlelight, buzzing craft mixology & high-energy magnetic social crowd.'}
+                    </p>
+                  </div>
+                )}
               </div>
-
-              <div style={{ fontSize: '11.5px', color: 'rgba(255,255,255,0.7)', marginBottom: '0.75rem', height: '24px', minHeight: '24px', maxHeight: '24px', display: 'flex', alignItems: 'center', overflow: 'hidden', whiteSpace: 'nowrap' }}>
-                <strong style={{ color: '#00e5ff', marginRight: '6px', flexShrink: 0 }}>Atmosphere:</strong> Candlelit aperitivo transition
-              </div>
-
-              <p style={{ fontSize: '11.5px', color: 'rgba(255,255,255,0.65)', lineHeight: 1.4, margin: '0 0 0.75rem 0', height: '38px', minHeight: '38px', maxHeight: '38px', overflow: 'hidden' }}>
-                Transitions seamlessly from afternoon coffee into warm candlelit aperitivo and evening buzz.
-              </p>
             </div>
 
-            <div style={{ marginTop: '1.25rem', background: 'rgba(0, 229, 255, 0.08)', padding: '10px 12px', borderRadius: '10px', border: '1px solid rgba(0, 229, 255, 0.2)', fontSize: '11px', color: 'rgba(255,255,255,0.85)' }}>
-              ☀️ <strong>Golden Hour:</strong> Optimal visual transitions occur 45 mins before sunset.
+            {/* Fun Section: Content Ready Analysis */}
+            <div style={{ 
+              marginTop: '0.5rem', 
+              background: 'linear-gradient(135deg, rgba(0, 229, 255, 0.08) 0%, rgba(192, 132, 252, 0.08) 100%)', 
+              padding: '10px 12px', 
+              borderRadius: '10px', 
+              border: '1px solid rgba(0, 229, 255, 0.3)',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '4px'
+            }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <span style={{ fontSize: '10.5px', fontWeight: 900, color: '#00e5ff', textTransform: 'uppercase', letterSpacing: '0.06em', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                  <Camera size={13} color="#00e5ff" /> Content Ready Analysis
+                </span>
+                <span style={{ fontSize: '10px', fontWeight: 800, background: 'rgba(0, 229, 255, 0.2)', color: '#00e5ff', padding: '2px 7px', borderRadius: '8px', border: '1px solid rgba(0, 229, 255, 0.4)' }}>
+                  📸 {contentReady.score || 96}/10 FLATTING
+                </span>
+              </div>
+              <div style={{ fontSize: '11px', color: '#ffffff', fontWeight: 700 }}>
+                {contentReady.verdict || 'Zero Downlight Raccoon Eyes • Diffuse Ambient Glow'}
+              </div>
+              <div style={{ fontSize: '10.5px', color: 'rgba(255,255,255,0.7)', lineHeight: 1.3 }}>
+                <strong style={{ color: '#c084fc' }}>Top Spot:</strong> {contentReady.top_creator_spot || 'Glass corner banquette during golden hour'}
+              </div>
             </div>
           </div>
 

@@ -967,7 +967,8 @@ function classifyAssetAndDeriveRecommendation(asset, hotelName = '') {
 }
 
 // -------------------------------------------------------------
-// PHASE 2: Dedicated Photo Resolution with Gemini Vision Checks
+// -------------------------------------------------------------
+// PHASE 2: Dedicated Photo Resolution with Asset-First Intelligence
 // -------------------------------------------------------------
 export async function resolveAuditPhotos(hotelName, city, neighborhood = '', strategySlots = null, bookingUrl = null) {
   console.log(`[Photo Gatekeeper] Starting visual asset resolution for "${hotelName}" in "${city}"${bookingUrl ? ` (Direct URL: ${bookingUrl})` : ''}...`);
@@ -987,47 +988,105 @@ export async function resolveAuditPhotos(hotelName, city, neighborhood = '', str
     const s = `${p.title || ''} ${p.imageUrl || ''}`.toLowerCase();
     return s.includes('meeting') || s.includes('conference') || s.includes('boardroom') || s.includes('event space') || s.includes('banquet') || s.includes('seminar');
   };
-  
-  // Default 5 slots if not provided from Phase 1
-  const targetSlots = strategySlots || [
-    { slot: 1, category: "HERO_CULTURAL_MAGNET", photo_subject: "Hero Cultural Magnet" },
-    { slot: 2, category: "EXTERIOR_LANDMARK", photo_subject: "Historic Landmark Architectural Facade" },
-    { slot: 3, category: "SIGNATURE_SUITE_BEDROOM", photo_subject: "Signature Suite Bedroom" },
-    { slot: 4, category: "SOCIAL_FB_ROOFTOP", photo_subject: "Signature Culinary Dining Room & Cocktail Bar" },
-    { slot: 5, category: "SECONDARY_ROOM_BATHROOM", photo_subject: "Design Bathroom & Walk-in Shower" }
+
+  const isTightFoodMacro = (p) => {
+    const s = `${p.title || ''} ${p.imageUrl || ''}`.toLowerCase();
+    return s.includes('food_') || s.includes('_food') || s.includes('fruits_de_mer') || s.includes('boeuf') || s.includes('steak') || s.includes('dessert') || s.includes('burger') || s.includes('oyster') || s.includes('dish') || s.includes('plate') || s.includes('tartare') || s.includes('pasta');
+  };
+
+  const isExterior = (p) => {
+    const s = `${p.title || ''} ${p.imageUrl || ''}`.toLowerCase();
+    return s.includes('exterior') || s.includes('facade') || s.includes('façade') || s.includes('building') || s.includes('outside') || s.includes('aerial') || s.includes('marina') || s.includes('entrance');
+  };
+
+  const isBedroomLike = (p) => {
+    const s = `${p.title || ''} ${p.imageUrl || ''}`.toLowerCase();
+    return s.includes('bedroom') || s.includes('suite') || (s.includes('bed') && !s.includes('sunbed') && !s.includes('daybed'));
+  };
+
+  const isBath = (p) => {
+    const s = `${p.title || ''} ${p.imageUrl || ''}`.toLowerCase();
+    return s.includes('bathroom') || s.includes('shower') || s.includes('bath') || s.includes('tub');
+  };
+
+  const isPoolLike = (p) => {
+    const s = `${p.title || ''} ${p.imageUrl || ''}`.toLowerCase();
+    return s.includes('pool') || s.includes('swim') || s.includes('sunbed') || s.includes('cabana') || s.includes('day club') || s.includes('hyde');
+  };
+
+  const isRooftopOrBar = (p) => {
+    const s = `${p.title || ''} ${p.imageUrl || ''}`.toLowerCase();
+    return s.includes('rooftop') || s.includes('12th knot') || s.includes('sky bar') || s.includes('skybar') || s.includes('cocktail') || s.includes('bar') || s.includes('lyaness') || s.includes('aubrey') || s.includes('lounge');
+  };
+
+  const findFirst = (pool, predicate) => {
+    const found = pool.find(p => p?.imageUrl && !usedUrls.has(p.imageUrl) && !isMeetingOrConference(p) && !isTightFoodMacro(p) && predicate(p));
+    if (found) {
+      usedUrls.add(found.imageUrl);
+      return found;
+    }
+    return null;
+  };
+
+  // ASSET-FIRST SELECTION:
+  // Slot 1: Hero Experiential Magnet (Rooftop Bar, Pool Deck, or World-Class Cocktail Bar)
+  let slot1Asset = findFirst(poolAmenity, p => (isRooftopOrBar(p) || isPoolLike(p)) && !isBedroomLike(p) && !isBath(p) && !isExterior(p));
+  if (!slot1Asset) {
+    slot1Asset = findFirst(poolLive, p => (isRooftopOrBar(p) || isPoolLike(p)) && !isBedroomLike(p) && !isBath(p) && !isExterior(p));
+  }
+  if (!slot1Asset) {
+    slot1Asset = findFirst(poolAmenity, p => p.detectedCategory === 'SOCIAL' && !isBedroomLike(p) && !isBath(p) && !isExterior(p));
+  }
+  if (!slot1Asset && poolAmenity.length > 0) {
+    slot1Asset = findFirst(poolAmenity, p => !isBedroomLike(p) && !isBath(p) && !isExterior(p));
+  }
+
+  // Slot 2: Exterior Architectural Landmark
+  let slot2Asset = findFirst(poolAmenity, p => isExterior(p) && !isBedroomLike(p) && !isBath(p) && !isPoolLike(p));
+  if (!slot2Asset) {
+    slot2Asset = findFirst(poolLive, p => isExterior(p) && !isBedroomLike(p) && !isBath(p) && !isPoolLike(p));
+  }
+
+  // Slot 3: Signature Suite / Bedroom
+  let slot3Asset = findFirst(poolAmenity, p => isBedroomLike(p) && !isBath(p) && !isExterior(p));
+  if (!slot3Asset) {
+    slot3Asset = findFirst(poolLive, p => isBedroomLike(p) && !isBath(p) && !isExterior(p));
+  }
+
+  // Slot 4: Signature Destination Amenity (Spa Sanctuary OR Dining Room OR Grand Lobby)
+  let slot4Asset = findFirst(poolAmenity, p => (p.detectedCategory === 'SPA' || p.detectedCategory === 'LOBBY' || p.detectedCategory === 'SOCIAL' || isRooftopOrBar(p)) && !isBedroomLike(p) && !isBath(p) && !isExterior(p));
+  if (!slot4Asset) {
+    slot4Asset = findFirst(poolLive, p => !isBedroomLike(p) && !isBath(p) && !isExterior(p));
+  }
+
+  // Slot 5: Hygiene & Luxury Finish (Design Bathroom & Soaking Tub OR Secondary Sanctuary)
+  let slot5Asset = findFirst(poolAmenity, p => isBath(p) && !isExterior(p));
+  if (!slot5Asset) {
+    slot5Asset = findFirst(poolLive, p => isBath(p) && !isExterior(p));
+  }
+  if (!slot5Asset) {
+    // If hotel has no bathroom photo in inventory, dynamically use next best signature amenity
+    slot5Asset = findFirst(poolAmenity, p => !isBedroomLike(p) && !isExterior(p)) || findFirst(poolLive, p => !isBedroomLike(p) && !isExterior(p));
+  }
+
+  const winningAssets = [
+    { targetSlot: 1, defaultCat: 'HERO_CULTURAL_MAGNET', asset: slot1Asset },
+    { targetSlot: 2, defaultCat: 'EXTERIOR_LANDMARK', asset: slot2Asset },
+    { targetSlot: 3, defaultCat: 'SIGNATURE_SUITE_BEDROOM', asset: slot3Asset },
+    { targetSlot: 4, defaultCat: 'SOCIAL_FB_ROOFTOP', asset: slot4Asset },
+    { targetSlot: 5, defaultCat: 'SECONDARY_ROOM_BATHROOM', asset: slot5Asset }
   ];
 
-  const resolvedSequence = targetSlots.map((item, idx) => {
-    const targetSlot = item.slot || (idx + 1);
-    let photoUrl = matchBestImageForSubject(item.photo_subject, item.category, liveBookingPhotos, amenityPhotos, usedUrls, idx);
-    let adaptedCategory = item.category;
-    let adaptedSubject = item.photo_subject;
-    let adaptedWhy = item.why_it_converts;
-    let adaptedTrigger = item.recommended_trigger;
-    let adaptedBullets = item.bullet_points || null;
-
-    // Dynamic Asset-Grounded Alignment:
-    // If a slot has no authentic asset matching its category (e.g. property has no bathroom photo),
-    // NEVER force a mismatched photo into it. Instead, adapt the slot to an authentic signature asset!
-    if (!photoUrl) {
-      const unusedAsset = poolAmenity.find(p => p?.imageUrl && !usedUrls.has(p.imageUrl) && !isMeetingOrConference(p))
-        || poolLive.find(p => p?.imageUrl && !usedUrls.has(p.imageUrl) && !isMeetingOrConference(p));
-
-      if (unusedAsset) {
-        photoUrl = unusedAsset.imageUrl;
-        usedUrls.add(photoUrl);
-
-        const assetInfo = classifyAssetAndDeriveRecommendation(unusedAsset, hotelName);
-        adaptedCategory = assetInfo.category;
-        adaptedSubject = assetInfo.subject;
-        adaptedWhy = assetInfo.why;
-        adaptedTrigger = assetInfo.trigger;
-        adaptedBullets = assetInfo.bullets;
-      }
-    }
+  const resolvedSequence = winningAssets.map(({ targetSlot, defaultCat, asset }) => {
+    let photoUrl = asset?.imageUrl || null;
+    let rec = classifyAssetAndDeriveRecommendation(asset, hotelName);
+    let category = rec.category || defaultCat;
+    let photoSubject = rec.subject;
+    let why = rec.why;
+    let trigger = rec.trigger;
+    let bullets = rec.bullets;
 
     let actualLiveSlot = null;
-
     if (photoUrl) {
       const liveIdx = liveBookingPhotos.findIndex(lp => lp.imageUrl === photoUrl);
       actualLiveSlot = liveIdx !== -1 ? (liveIdx + 1) : null;
@@ -1037,58 +1096,51 @@ export async function resolveAuditPhotos(hotelName, city, neighborhood = '', str
     const isMoved = actualLiveSlot !== null && actualLiveSlot !== targetSlot;
     const isSwappedIn = actualLiveSlot === null;
 
-    let action = item.action || 'RE_SEQUENCE';
-    let actionLabel = item.action_label;
+    let action = 'RE_SEQUENCE';
+    let actionLabel = '';
 
     if (!isListedOnBooking) {
       action = targetSlot === 1 ? 'HERO_CULTURAL_MAGNET' : 'CURATED_ASSET';
       actionLabel = targetSlot === 1 
-        ? `⚡ HERO CULTURAL MAGNET: ${adaptedSubject || 'SIGNATURE ASSET'} (SLOT #1)`
-        : `PRE-LISTING ASSET: ${adaptedSubject || 'SIGNATURE ASSET'} (SLOT #${targetSlot})`;
-    } else if (adaptedCategory === 'HERO_CULTURAL_MAGNET' || item.action === 'HERO_CULTURAL_MAGNET' || item.action === 'MAGNET_OVERRIDE') {
+        ? `⚡ HERO CULTURAL MAGNET: ${photoSubject.toUpperCase()} (SLOT #1)`
+        : `PRE-LISTING ASSET: ${photoSubject.toUpperCase()} (SLOT #${targetSlot})`;
+    } else if (targetSlot === 1 || category === 'HERO_CULTURAL_MAGNET') {
       action = 'HERO_CULTURAL_MAGNET';
-      actionLabel = item.action_label || `⚡ HERO CULTURAL MAGNET: ${adaptedSubject || 'SIGNATURE ASSET'} (SLOT #1)`;
+      actionLabel = `⚡ HERO CULTURAL MAGNET: ${photoSubject.toUpperCase()} (SLOT #1)`;
     } else if (isRetained) {
-      action = targetSlot === 1 ? 'KEEP_HERO' : 'RETAIN';
-      actionLabel = targetSlot === 1 ? 'KEEP AS HERO (SLOT #1)' : `RETAIN IN SLOT #${targetSlot}`;
+      action = 'RETAIN';
+      actionLabel = `RETAIN IN SLOT #${targetSlot}`;
     } else if (isMoved) {
       action = actualLiveSlot > targetSlot ? 'PROMOTE' : 'RE_SEQUENCE';
       actionLabel = actualLiveSlot > targetSlot ? `PROMOTE FROM SLOT #${actualLiveSlot}` : `MOVE FROM SLOT #${actualLiveSlot}`;
     } else if (isSwappedIn) {
       action = 'SWAP_IN';
-      if (!actionLabel || !actionLabel.toUpperCase().includes('SWAP')) {
-        actionLabel = `SWAP IN NEW ASSET (SLOT #${targetSlot})`;
+      if (category === 'SECONDARY_ROOM_BATHROOM') {
+        actionLabel = `DESIGN BATHROOM (SLOT #5 - HYGIENE & LUXURY FINISH)`;
+      } else if (category === 'EXTERIOR_LANDMARK') {
+        actionLabel = `EXTERIOR LANDMARK (SLOT #2 - MANDATORY GROUNDING)`;
+      } else if (category === 'SIGNATURE_SUITE_BEDROOM') {
+        actionLabel = `SIGNATURE SUITE (SLOT #3 - PRIVATE SANCTUARY)`;
+      } else {
+        actionLabel = `SWAP IN SIGNATURE ASSET (SLOT #${targetSlot})`;
       }
     }
 
-    const derivedDefaults = (!adaptedWhy || !adaptedBullets || !adaptedTrigger) 
-      ? classifyAssetAndDeriveRecommendation({ title: adaptedSubject, detectedCategory: adaptedCategory }, hotelName) 
-      : null;
-
-    const finalWhy = adaptedWhy || item.why_it_converts || derivedDefaults?.why || 'Grounds signature property atmosphere to drive direct conversions.';
-    const finalTrigger = adaptedTrigger || item.recommended_trigger || item.psychological_conversion_trigger || derivedDefaults?.trigger || 'Cultural Distinction & Sensory Prestige';
-    const finalBullets = adaptedBullets || item.bullet_points || derivedDefaults?.bullets || [
-      `Visual Upgrade: Distinctive high-finish perspective of ${adaptedSubject}.`,
-      `Local Synergy: Connects directly with prime local neighborhood demand.`,
-      `Conversion Trigger: Validates authentic hotel identity and private comfort.`
-    ];
-
     return {
-      ...item,
-      category: adaptedCategory,
-      photo_subject: adaptedSubject,
-      why_it_converts: finalWhy,
-      upgrade_rationale: finalWhy,
-      bullet_points: finalBullets,
-      psychological_conversion_trigger: finalTrigger,
-      recommended_trigger: finalTrigger,
       slot: targetSlot,
+      category,
+      photo_subject: photoSubject,
       photo_url: upgradePhotoResolution(photoUrl),
+      why_it_converts: why,
+      upgrade_rationale: why,
+      bullet_points: bullets,
+      psychological_conversion_trigger: trigger,
+      recommended_trigger: trigger,
       current_slot: actualLiveSlot,
       is_retained: isRetained,
       is_moved: isMoved,
       is_swapped_in: isSwappedIn,
-      action: action,
+      action,
       action_label: actionLabel,
       current_photo: actualLiveSlot ? liveBookingPhotos[actualLiveSlot - 1] : null
     };
@@ -1232,13 +1284,53 @@ export default async function handler(req, res) {
         if (auditResult.ota_conversion_audit) {
           auditResult.ota_conversion_audit.photos_status = 'PENDING';
           auditResult.ota_conversion_audit.live_photos = [];
-          if (auditResult.ota_conversion_audit.optimal_5_photo_sequence) {
-            auditResult.ota_conversion_audit.optimal_5_photo_sequence = auditResult.ota_conversion_audit.optimal_5_photo_sequence.map(item => ({
-              ...item,
+          auditResult.ota_conversion_audit.optimal_5_photo_sequence = [
+            {
+              slot: 1,
+              category: "HERO_CULTURAL_MAGNET",
               photo_url: null,
-              status: 'PENDING'
-            }));
-          }
+              status: "PENDING",
+              photo_subject: "Scanning live inventory for signature experiential hook...",
+              action_label: "SCANNING LIVE ASSET INVENTORY (SLOT #1)...",
+              why_it_converts: "Disrupts standard search fatigue by evaluating and elevating the property's highest-gravity cultural asset to Slot #1."
+            },
+            {
+              slot: 2,
+              category: "EXTERIOR_LANDMARK",
+              photo_url: null,
+              status: "PENDING",
+              photo_subject: "Scanning live inventory for architectural facade grounding...",
+              action_label: "SCANNING LIVE ASSET INVENTORY (SLOT #2)...",
+              why_it_converts: "Grounds geographic location and architectural authenticity immediately after the emotional hook."
+            },
+            {
+              slot: 3,
+              category: "SIGNATURE_SUITE_BEDROOM",
+              photo_url: null,
+              status: "PENDING",
+              photo_subject: "Scanning live inventory for signature suite accommodation...",
+              action_label: "SCANNING LIVE ASSET INVENTORY (SLOT #3)...",
+              why_it_converts: "Validates high-spec private sleeping accommodations with rich textural framing."
+            },
+            {
+              slot: 4,
+              category: "SOCIAL_FB_ROOFTOP",
+              photo_url: null,
+              status: "PENDING",
+              photo_subject: "Scanning live inventory for destination dining or wellness...",
+              action_label: "SCANNING LIVE ASSET INVENTORY (SLOT #4)...",
+              why_it_converts: "Showcases full property depth and evening social or wellness energy."
+            },
+            {
+              slot: 5,
+              category: "SECONDARY_ROOM_BATHROOM",
+              photo_url: null,
+              status: "PENDING",
+              photo_subject: "Scanning live inventory for hygiene & luxury finish validation...",
+              action_label: "SCANNING LIVE ASSET INVENTORY (SLOT #5)...",
+              why_it_converts: "Eliminates the #1 hidden guest hesitation by validating luxury bathroom specifications."
+            }
+          ];
         }
         manifestCache.set(manifestKey, { timestamp: Date.now(), data: auditResult });
         return auditResult;
