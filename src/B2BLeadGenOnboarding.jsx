@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, ChevronRight, Send, Star, MapPin, TrendingUp, Search, Globe, Zap, CheckCircle2, BarChart3, ExternalLink, Gift, RefreshCw, Activity, Info, Compass, Radio, Layers, Cpu, Sparkles, Lock, Unlock, Key, ShieldCheck, X, Mail, Phone, Building } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -93,6 +93,7 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
   });
   const [analysis, setAnalysis] = useState(null);
   const [currentPhase, setCurrentPhase] = useState(1);
+  const activePhase2AbortRef = useRef(null);
 
   // Pro Intelligence Gate & Modal States
   const [isProUnlocked, setIsProUnlocked] = useState(() => {
@@ -187,8 +188,16 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
     const targetCity = formData.city || 'London';
     const targetNeighborhood = formData.neighborhood || '';
 
-    // 1. Immediately switch to processing view on click (manifest first!)
+    // 1. Immediately abort any prior in-flight Phase 2 resolution & reset analysis state
+    if (activePhase2AbortRef.current) {
+      console.log('[Client] Aborting previous in-flight Phase 2 photo resolution due to new search.');
+      activePhase2AbortRef.current.abort();
+    }
+    const abortController = new AbortController();
+    activePhase2AbortRef.current = abortController;
+
     setAmbiguousCandidates(null);
+    setAnalysis(null);
     setStep('processing');
     setProcessingStage(1);
 
@@ -200,6 +209,8 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
         targetNeighborhood
       );
       
+      if (abortController.signal.aborted) return;
+
       // Render results immediately!
       setAnalysis({ signals: { categories: {} }, masterAudit, auditResults: null, challenge: null });
       setStep('results');
@@ -207,28 +218,31 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
 
       // Background non-blocking load of supplemental category signals
       scrapeLocalSignals(targetCity, targetNeighborhood).then(sig => {
+        if (abortController.signal.aborted) return;
         if (sig && sig.categories) {
-          setAnalysis(prev => prev ? { ...prev, signals: sig } : prev);
+          setAnalysis(prev => (prev && prev.masterAudit?.venue_id === masterAudit?.venue_id) ? { ...prev, signals: sig } : prev);
         }
       }).catch(err => console.warn("Supplemental signals error:", err));
 
       // 3. PHASE 2: Background Gemini Vision Photo Resolution & Verification
       if (masterAudit && masterAudit.ota_conversion_audit) {
         lookupHotelCandidates(targetHotel, targetCity, targetNeighborhood).then(lookup => {
+          if (abortController.signal.aborted) return null;
           const directBookingUrl = lookup?.selected?.url || null;
-          const resolvedHotelName = lookup?.selected?.title || targetHotel;
+          const resolvedHotelName = targetHotel || lookup?.selected?.title;
           return fetchMasterVibeAuditPhotos(
             resolvedHotelName,
             targetCity,
             targetNeighborhood,
             masterAudit.ota_conversion_audit.optimal_5_photo_sequence,
-            null,
+            abortController.signal,
             directBookingUrl
           );
         }).then(photoResults => {
+          if (abortController.signal.aborted || !photoResults) return;
           if (photoResults && photoResults.optimal_5_photo_sequence) {
             setAnalysis(prev => {
-              if (!prev || !prev.masterAudit) return prev;
+              if (!prev || !prev.masterAudit || prev.masterAudit.venue_id !== masterAudit.venue_id) return prev;
               return {
                 ...prev,
                 masterAudit: {
@@ -246,14 +260,18 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
             });
           }
         }).catch(photoErr => {
-          console.warn('[Photo Gatekeeper] Phase 2 resolution error:', photoErr);
+          if (!abortController.signal.aborted) {
+            console.warn('[Photo Gatekeeper] Phase 2 resolution error:', photoErr);
+          }
         });
       }
 
     } catch (err) {
-      console.error("Analysis launch failed", err);
-      setStep('input');
-      alert("Analysis engine encountered a timeout. Please try a broader neighborhood or city.");
+      if (!abortController.signal.aborted) {
+        console.error("Analysis launch failed", err);
+        setStep('input');
+        alert("Analysis engine encountered an error. Please try a broader neighborhood or city.");
+      }
     }
   };
 

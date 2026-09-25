@@ -55,7 +55,7 @@ const NON_HOTEL_PATTERNS = [
   'bed-and-breakfast', 'b-and-b', 'flat-in', 'studio-in', 'penthouse-in', 'room-in',
   'designer-1br', 'designer-2br', 'designer-3br', '-1br', '-2br', '-3br', '-4br', 'condo',
   'villa', 'villas', 'suites-at', '-suites-at', 'lux-suites', 'luxury-suites', 'aparthotel',
-  'apart-hotel', 'condo-hotel', 'condos', 'aluna-lux'
+  'apart-hotel', 'condo-hotel', 'condos', 'aluna-lux', 'monthly-lease', 'lease'
 ];
 
 export function scoreBookingCandidate(item, hotelName, city, neighborhood, brandTokens) {
@@ -69,8 +69,10 @@ export function scoreBookingCandidate(item, hotelName, city, neighborhood, brand
   if (NON_HOTEL_PATTERNS.some(p => slug.includes(p) || title.includes(p.replace(/-/g, ' ')))) {
     return -1000;
   }
-  // Filter out individual apartment / condo unit numbers e.g. "palms-811" or "unit-302"
-  if (/-\d{3,}/.test(slug) || /\b\d{3,}\b/.test(title)) {
+  // Filter out individual apartment / condo unit numbers e.g. "palms-811" or "unit-302" (excluding review/pricing years 19xx/20xx)
+  const titleWithoutYears = title.replace(/\b(19|20)\d\d\b/g, '');
+  const slugWithoutYears = slug.replace(/-(19|20)\d\d\b/g, '');
+  if (/-(?:unit|apt|room)?\d{3,}/.test(slugWithoutYears) || /\b(?:unit|apt|apartment|suite|#|room)\s*\d{2,}\b/i.test(titleWithoutYears)) {
     return -1000;
   }
 
@@ -192,13 +194,14 @@ export async function lookupHotelCandidates(hotelName, city, neighborhood = '') 
         .replace(/\s*[-–|].*Booking\.com.*/i, '')
         .replace(/\s*[-–|].*prices.*/i, '')
         .replace(/\s*[-–|].*Updated.*202\d.*/i, '')
-        .replace(/\s*\(.*?\)\s*$/, '')
+        .replace(/\s*[\(（].*?[\)）]/g, '')
+        .replace(/[,，].*$/, '')
         .trim();
 
       candidateMap.set(slug, {
         slug,
         url: cleanUrl,
-        title: cleanTitle || item.title,
+        title: cleanTitle || hotelName,
         snippet: item.snippet || '',
         score
       });
@@ -369,8 +372,16 @@ export async function fetchBookingPhotosForHotel(hotelName, city, neighborhood =
 // Dynamic Amenity Photo Fetcher: Strictly pulls ONLY from Official Hotel Website, TripAdvisor, and Official Social Posts
 export async function fetchAmenityPhotosForHotel(hotelName, city, neighborhood = '') {
   try {
+    const cleanHotelName = (hotelName || '')
+      .replace(/\s*[-–|].*Booking\.com.*/i, '')
+      .replace(/\s*[-–|].*prices.*/i, '')
+      .replace(/\s*[-–|].*Updated.*202\d.*/i, '')
+      .replace(/\s*[\(（].*?[\)）]/g, '')
+      .replace(/[,，].*$/, '')
+      .trim();
+
     const locationContext = neighborhood && neighborhood.trim() ? `${neighborhood.trim()} ${city}` : city;
-    const tokens = getDistinctiveTokens(hotelName);
+    const tokens = getDistinctiveTokens(cleanHotelName);
 
     // 1. Dynamically resolve the official hotel website domain
     let officialDomain = '';
@@ -378,7 +389,7 @@ export async function fetchAmenityPhotosForHotel(hotelName, city, neighborhood =
       const searchRes = await fetch('https://google.serper.dev/search', {
         method: 'POST',
         headers: { 'X-API-KEY': SERPER_API_KEY, 'Content-Type': 'application/json' },
-        body: JSON.stringify({ q: `"${hotelName}" ${locationContext} official website`, num: 6 })
+        body: JSON.stringify({ q: `"${cleanHotelName}" ${locationContext} official website`, num: 6 })
       });
       const searchData = await searchRes.json();
       for (const item of searchData.organic || []) {
@@ -394,8 +405,8 @@ export async function fetchAmenityPhotosForHotel(hotelName, city, neighborhood =
       console.warn('[Master Vibe] Domain resolution error:', e.message);
     }
 
-    const specificHotelQuery = `"${hotelName}" ${locationContext}`;
-    const tripAdvisorClause = `site:tripadvisor.com "${hotelName}" ${neighborhood || city}`;
+    const specificHotelQuery = `"${cleanHotelName}" ${locationContext}`;
+    const tripAdvisorClause = `site:tripadvisor.com "${cleanHotelName}" ${neighborhood || city}`;
     
     // Concurrently fetch specific categories: Dining/Social, Spa/Wellness, Grand Lobby/Ballroom/Interior, Exterior Facade, Suite/Bedroom, and Bathroom
     const [resSocial, resSpa, resLobby, resExterior, resBedroom, resBath, resTripAdvisor] = await Promise.all([
@@ -609,6 +620,16 @@ export function matchBestImageForSubject(subjectText, category, liveBookingPhoto
     return s.includes('exterior') || s.includes('facade') || s.includes('façade') || s.includes('building') || s.includes('outside') || s.includes('aerial') || s.includes('marina') || s.includes('entrance');
   };
 
+  const isBedroomLike = (p) => {
+    const s = `${p.title || ''} ${p.imageUrl || ''}`.toLowerCase();
+    return s.includes('bedroom') || s.includes('suite') || (s.includes('bed') && !s.includes('sunbed') && !s.includes('daybed'));
+  };
+
+  const isBath = (p) => {
+    const s = `${p.title || ''} ${p.imageUrl || ''}`.toLowerCase();
+    return s.includes('bathroom') || s.includes('shower') || s.includes('bath') || s.includes('tub');
+  };
+
   const isMeetingOrConference = (p) => {
     const s = `${p.title || ''} ${p.imageUrl || ''}`.toLowerCase();
     return s.includes('meeting') || s.includes('conference') || s.includes('boardroom') || s.includes('event space') || s.includes('banquet') || s.includes('seminar');
@@ -658,11 +679,26 @@ export function matchBestImageForSubject(subjectText, category, liveBookingPhoto
   }
 
   // 2. Social F&B / Fine Dining / Restaurant / Cocktail Bar
-  if (cat === 'SOCIAL_FB_ROOFTOP' || text.includes('restaurant') || text.includes('dining') || text.includes('brasserie') || text.includes('bar') || text.includes('cocktail') || text.includes('bistro') || text.includes('lounge') || text.includes('culinary') || text.includes('grill') || text.includes('w xyz')) {
+  if (cat === 'SOCIAL_FB_ROOFTOP' || text.includes('restaurant') || text.includes('dining') || text.includes('brasserie') || text.includes('bar') || text.includes('cocktail') || text.includes('bistro') || text.includes('lounge') || text.includes('culinary') || text.includes('grill') || text.includes('w xyz') || text.includes('rooftop')) {
+    // Priority: If specifically searching for a rooftop venue (e.g. 12th Knot Rooftop Bar), match exact rooftop photos first!
+    if (text.includes('rooftop') || text.includes('12th knot') || text.includes('sky bar') || text.includes('skybar')) {
+      const rooftopAmenity = findMatch(poolAmenity, p => {
+        const s = `${p.title || ''} ${p.imageUrl || ''}`.toLowerCase();
+        return (s.includes('rooftop') || s.includes('12th knot') || s.includes('sky bar') || s.includes('skybar')) && !isBedroomLike(p) && !isExterior(p);
+      });
+      if (rooftopAmenity) return rooftopAmenity;
+
+      const liveRooftop = findMatch(poolLive, p => {
+        const s = `${p.title || ''} ${p.imageUrl || ''}`.toLowerCase();
+        return (s.includes('rooftop') || s.includes('12th knot') || s.includes('sky bar')) && !isBedroomLike(p) && !isExterior(p);
+      });
+      if (liveRooftop) return liveRooftop;
+    }
+
     const isPositiveBarDining = (p) => {
       const s = `${p.title || ''} ${p.imageUrl || ''}`.toLowerCase();
-      if (isExterior(p) || s.includes('exterior') || s.includes('pool') || s.includes('swimming') || s.endsWith('aloft-miami-brickell.jpg')) return false;
-      return p.detectedCategory === 'SOCIAL' || s.includes('bar') || s.includes('cocktail') || s.includes('lounge') || s.includes('restaurant') || s.includes('dining') || s.includes('sushi') || s.includes('food') || s.includes('drink') || s.includes('grill') || s.includes('bistro') || s.includes('wine') || s.includes('beer') || s.includes('wxyz') || s.includes('table') || s.includes('seating') || s.includes('mixology');
+      if (isExterior(p) || isBedroomLike(p) || isBath(p) || s.includes('exterior') || s.includes('pool') || s.includes('swimming') || s.endsWith('aloft-miami-brickell.jpg')) return false;
+      return p.detectedCategory === 'SOCIAL' || s.includes('bar') || s.includes('cocktail') || s.includes('lounge') || s.includes('restaurant') || s.includes('dining') || s.includes('sushi') || s.includes('food') || s.includes('drink') || s.includes('grill') || s.includes('bistro') || s.includes('wine') || s.includes('beer') || s.includes('wxyz') || s.includes('mixology') || s.includes('rooftop');
     };
 
     const liveMatch = findMatch(poolLive, isPositiveBarDining);
@@ -681,7 +717,7 @@ export function matchBestImageForSubject(subjectText, category, liveBookingPhoto
     const isPoolSearch = text.includes('pool') || text.includes('swimming') || text.includes('sunbed') || text.includes('cabana') || text.includes('day club') || text.includes('hyde');
     if (isPoolSearch) {
       const livePool = findMatch(poolLive, p => {
-        if (isExterior(p)) return false;
+        if (isExterior(p) || isBedroomLike(p) || isBath(p)) return false;
         const t = (p.title || '').toLowerCase();
         const u = (p.imageUrl || '').toLowerCase();
         return t.includes('pool') || t.includes('swim') || t.includes('sunbed') || t.includes('lounger') || u.includes('pool');
@@ -689,6 +725,7 @@ export function matchBestImageForSubject(subjectText, category, liveBookingPhoto
       if (livePool) return livePool;
 
       const amenityPool = findMatch(poolAmenity, p => {
+        if (isBedroomLike(p) || isBath(p)) return false;
         const t = (p.title || '').toLowerCase();
         const u = (p.imageUrl || '').toLowerCase();
         return t.includes('pool') || t.includes('swim') || t.includes('sunbed') || t.includes('cabana') || t.includes('hyde') || u.includes('pool');
@@ -701,7 +738,7 @@ export function matchBestImageForSubject(subjectText, category, liveBookingPhoto
 
     if (isLobbySearch) {
       const liveLobby = findMatch(poolLive, p => {
-        if (isExterior(p)) return false;
+        if (isExterior(p) || isBedroomLike(p) || isBath(p)) return false;
         const t = `${p.title || ''} ${p.imageUrl || ''}`.toLowerCase();
         if (t.includes('pool') || t.includes('swimming')) return false;
         return t.includes('lobby') || t.includes('reception') || t.includes('ballroom') || t.includes('hall') || t.includes('lounge') || t.includes('drawing') || t.includes('interior');
@@ -709,7 +746,7 @@ export function matchBestImageForSubject(subjectText, category, liveBookingPhoto
       if (liveLobby) return liveLobby;
 
       const amenityLobby = findMatch(poolAmenity, p => {
-        if (isExterior(p)) return false;
+        if (isExterior(p) || isBedroomLike(p) || isBath(p)) return false;
         const t = `${p.title || ''} ${p.imageUrl || ''}`.toLowerCase();
         if (t.includes('pool') || t.includes('swimming')) return false;
         return p.detectedCategory === 'LOBBY' || p.detectedCategory === 'SOCIAL' || t.includes('lobby') || t.includes('reception') || t.includes('ballroom') || t.includes('drawing') || t.includes('hall') || t.includes('lounge') || t.includes('salon');

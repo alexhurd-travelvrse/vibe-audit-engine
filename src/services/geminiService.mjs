@@ -235,7 +235,7 @@ Synthesize this live data and return the complete Master Vibe Audit JSON payload
     }
   });
 
-  const generateWithFallback = async (contentParts, timeoutMs = 25000) => {
+  const generateWithFallback = async (contentParts, timeoutMs = 48000) => {
     try {
       const mInstance = createModelInstance('gemini-2.5-flash');
       const timeoutPromise = new Promise((_, reject) => 
@@ -251,7 +251,7 @@ Synthesize this live data and return the complete Master Vibe Audit JSON payload
   };
 
   const isFastManifestOnly = (!livePhotos || livePhotos.length === 0) && (!amenityPhotos || amenityPhotos.length === 0);
-  const primaryTimeout = isFastManifestOnly ? 18000 : 35000;
+  const primaryTimeout = 48000;
 
   try {
     let result;
@@ -303,12 +303,20 @@ function synthesizeVibeAuditFromCorpus(hotelName, city, neighborhood, venueCorpu
   const loc = neighborhood ? `${neighborhood}, ${city}` : city;
   const venueId = name.toLowerCase().replace(/[^a-z0-9]+/g, '_') + '_' + city.toLowerCase().replace(/[^a-z0-9]+/g, '_');
 
+  const cityLower = (city || '').toLowerCase();
+  const locLower = (loc || '').toLowerCase();
+  const nameLower = (name || '').toLowerCase();
+
+  const isLondon = cityLower.includes('london') || locLower.includes('london') || locLower.includes('south bank') || locLower.includes('mayfair') || locLower.includes('knightsbridge') || locLower.includes('soho') || locLower.includes('covent garden');
+  const isDubai = cityLower.includes('dubai') || locLower.includes('palm') || locLower.includes('jumeirah') || locLower.includes('marina');
+  const isMiami = (cityLower.includes('miami') || locLower.includes('south beach') || locLower.includes('brickell')) && !isLondon;
+
   // Intelligent feature detection from live corpus
   const hasPool = corpus.includes('pool') || corpus.includes('swimming') || corpus.includes('courtyard pool');
   const hasSpa = corpus.includes('spa') || corpus.includes('wellness') || corpus.includes('treatment') || corpus.includes('sauna') || corpus.includes('vitality pool') || corpus.includes('agua');
   const hasRooftop = corpus.includes('rooftop') || corpus.includes('sky bar') || corpus.includes('terrace') || corpus.includes('12th knot');
   const hasGrillOrDining = corpus.includes('grill') || corpus.includes('fine dining') || corpus.includes('michelin') || corpus.includes('sushi') || corpus.includes('bistro') || corpus.includes('restaurant') || corpus.includes('dinner by heston') || corpus.includes('rosebery') || corpus.includes('essensia') || corpus.includes('blue ribbon');
-  const isArtDeco = corpus.includes('art deco') || corpus.includes('art moderne') || corpus.includes('south beach');
+  const isArtDeco = isMiami && (corpus.includes('art deco') || corpus.includes('art moderne') || corpus.includes('south beach'));
 
   // Extract authentic dining title from corpus
   let diningTitle = `Signature Culinary Dining Room & Cocktail Bar`;
@@ -604,65 +612,133 @@ function synthesizeVibeAuditFromCorpus(hotelName, city, neighborhood, venueCorpu
     location: loc,
     audit_timestamp: new Date().toISOString(),
     vibe_signature: {
-      energy_score: isArtDeco || hasPool ? 88 : 82,
-      social_pacing: isArtDeco || hasPool ? "High-Paced Social Vibrancy & Poolside Lounging" : "Refined Heritage Pacing & Intimate Cocktails",
-      headline: isArtDeco 
-        ? "Art Deco poolside sanctuary where 1940s glamour meets vibrant contemporary mixology."
-        : `A defining cultural and lifestyle anchor in ${loc}.`,
+      energy_score: isMiami ? 88 : (isLondon ? 85 : (isDubai ? 80 : 82)),
+      social_pacing: isMiami 
+        ? "High-Paced Social Vibrancy & Poolside Lounging" 
+        : (isLondon 
+            ? "Vibrant Riverside Mixology & Curated Cultural Conversations" 
+            : (isDubai 
+                ? "Refined Beachfront Leisure & Afternoon High Tea" 
+                : "Curated Cultural Pacing & Intimate Cocktails")),
+      headline: isLondon && nameLower.includes('sea containers')
+        ? "A design-led riverside cultural anchor along the Thames, where cinematic river views meet vibrant social mixology and creative energy."
+        : (isDubai && (nameLower.includes('dukes') || locLower.includes('palm'))
+            ? "A refined British heritage haven on Palm Jumeirah, combining classic Mayfair hospitality with private Gulf beachfront leisure."
+            : (isMiami 
+                ? "Art Deco poolside sanctuary where 1940s glamour meets vibrant contemporary mixology."
+                : `A defining cultural and lifestyle anchor in ${loc}.`)),
       acoustic_dna: {
-        soundscape_genre: isArtDeco ? "Deep Tropical House, Bossa Nova & Sunset Downtempo" : "Vinyl Jazz, Soul & Ambient Acoustic",
-        anchor_artists: isArtDeco ? ["Poolside", "Sofi Tukker", "Kaytranada"] : ["Leon Bridges", "Khruangbin", "Miles Davis"],
-        spotify_query: isArtDeco ? "South Beach Poolside Lounge" : "Intimate Speakeasy Vinyl Jazz",
+        soundscape_genre: isLondon && nameLower.includes('sea containers')
+          ? "Boutique Vinyl Downtempo, Nu-Soul & Thames Sunset Beats"
+          : (isDubai 
+              ? "Deep Desert Downtempo, Ambient Melodic House & Heritage Nu-Jazz"
+              : (isMiami 
+                  ? "Deep Tropical House, Bossa Nova & Sunset Downtempo" 
+                  : "Vinyl Jazz, Soul & Ambient Acoustic")),
+        anchor_artists: isLondon && nameLower.includes('sea containers')
+          ? ["Bonobo", "Floating Points", "Joy Orbison"]
+          : (isDubai 
+              ? ["Thievery Corporation", "Maribou State", "Tinariwen"]
+              : (isMiami 
+                  ? ["Poolside", "Sofi Tukker", "Kaytranada"] 
+                  : ["Leon Bridges", "Khruangbin", "Miles Davis"])),
+        spotify_query: isLondon && nameLower.includes('sea containers')
+          ? "South Bank Thames Sunset Lounge"
+          : (isDubai 
+              ? "Palm Jumeirah Sunset Sanctuary"
+              : (isMiami 
+                  ? "South Beach Poolside Lounge" 
+                  : "Intimate Speakeasy Vinyl Jazz")),
         sound_texture: "Warm acoustic resonance with conversational clarity and gentle rhythmic bass undercurrents.",
-        decibel_level: isArtDeco ? "64 dB (Lively Poolside Hum)" : "54 dB (Intimate Sanctuary)",
-        conversation_clarity_score: isArtDeco ? 86 : 94,
-        conversation_verdict: isArtDeco ? "Effortless Social Banter" : "Effortless Intimate Chat"
+        decibel_level: isMiami ? "64 dB (Lively Poolside Hum)" : (isLondon ? "66 dB (Vibrant Riverside Buzz)" : "56 dB (Intimate Sanctuary)"),
+        conversation_clarity_score: isMiami ? 86 : (isLondon ? 89 : 94),
+        conversation_verdict: isMiami ? "Effortless Social Banter" : (isLondon ? "Effortless Social & Creative Banter" : "Effortless Intimate Chat")
       },
       authenticity_and_materials: {
-        authenticity_score: isArtDeco ? 94 : 91,
-        material_palette: isArtDeco 
-          ? "Original 1940s terrazzo, curved Art Moderne plaster, coral stone, brass, French velvet"
-          : "Hand-hewn timber, aged brass, tactile stone, fluted glass",
-        material_verdict: isArtDeco ? "Authentic Art Moderne Heritage — Zero Faux Decor" : "Authentic Craftsmanship & Historic Integrity"
+        authenticity_score: isMiami ? 94 : (isLondon ? 93 : 91),
+        material_palette: isLondon && nameLower.includes('sea containers')
+          ? "Curved Warren Platner brass, copper hull cladding, maritime navy velvet, ribbed glass"
+          : (isDubai 
+              ? "Polished English walnut, aged brass, patterned marble, bespoke British textiles"
+              : (isMiami 
+                  ? "Original 1940s terrazzo, curved Art Moderne plaster, coral stone, brass, French velvet"
+                  : "Hand-hewn timber, aged brass, tactile stone, fluted glass")),
+        material_verdict: isLondon && nameLower.includes('sea containers')
+          ? "Iconic Transatlantic Cruise Liner Heritage — Zero Faux Decor"
+          : (isDubai 
+              ? "Authentic British Heritage & Palm Luxury — Zero Faux Decor"
+              : (isMiami 
+                  ? "Authentic Art Moderne Heritage — Zero Faux Decor" 
+                  : "Authentic Craftsmanship & Historic Integrity"))
       },
       crowd_archetype: {
-        primary: "Design-conscious creatives, neighborhood regulars & international tastemakers",
+        primary: isLondon && nameLower.includes('sea containers')
+          ? "Tate Modern curators, creative directors, South Bank theatergoers & international tastemakers"
+          : (isDubai 
+              ? "Discerning international travelers, expatriate professionals & beachfront resort guests"
+              : (isMiami 
+                  ? "Design-conscious creatives, neighborhood regulars & international tastemakers"
+                  : "Design-conscious travelers & cultural regulars")),
         social_density: "Curated & High-Velocity",
-        dress_code: isArtDeco ? "Miami Chic & Resortwear" : "Smart Casual & Refined",
-        local_ratio: isArtDeco ? 68 : 74,
-        tourist_ratio: isArtDeco ? 32 : 26,
-        energy_verdict: isArtDeco ? "Sunlit Social Magnet & Evening Buzz" : "Neighborhood Sanctuary & Cultural Hub",
+        dress_code: isLondon ? "Smart Creative & Effortlessly Tailored" : (isDubai ? "Resort Elegance & Smart Casual" : (isMiami ? "Miami Chic & Resortwear" : "Smart Casual & Refined")),
+        local_ratio: isLondon ? 66 : (isDubai ? 42 : (isMiami ? 68 : 74)),
+        tourist_ratio: isLondon ? 34 : (isDubai ? 58 : (isMiami ? 32 : 26)),
+        energy_verdict: isLondon ? "Riverside Creative Magnet & Sunset Buzz" : (isDubai ? "Prestigious Island Sanctuary" : (isMiami ? "Sunlit Social Magnet & Evening Buzz" : "Neighborhood Sanctuary & Cultural Hub")),
         tourist_trap_verdict: "Authentic Local Magnet — Zero Tourist Trap"
       },
       lighting_and_sensory: {
-        atmosphere: "Seductive day-to-night lighting transitions from sun-drenched pool reflections to amber candlelight and soft architectural uplighting.",
-        lighting_temperature: "2200K Warm Filament Amber & Golden Hour Sun",
+        atmosphere: isLondon 
+          ? "Cinematic day-to-night lighting transitions from soft Thames river reflections to amber candlelight and panoramic skyline illumination."
+          : (isDubai 
+              ? "Sun-kissed Arabian Gulf reflections transitioning to candlelit terrace glow and soft palm uplighting."
+              : "Seductive day-to-night lighting transitions from sun-drenched reflections to amber candlelight and soft architectural uplighting."),
+        lighting_temperature: isLondon ? "2400K Warm Filament Amber & Thames Twilight" : "2200K Warm Filament Amber & Golden Hour Sun",
         sensory_intensity: "Sensory Warmth & Tactile Elegance"
       },
       temporal_dynamics: {
-        best_time_to_visit: isArtDeco 
-          ? "3:30 PM for sunlit courtyard cocktails; 8:30 PM for candlelit dinner & music"
-          : "4:30 PM for tranquil aperitivo; 8:30 PM for peak atmospheric buzz",
+        best_time_to_visit: isLondon 
+          ? "5:00 PM for golden-hour Thames terrace cocktails; 8:30 PM for 12th Knot panoramic rooftop buzz"
+          : (isDubai 
+              ? "4:30 PM for sunset beachfront aperitivo; 8:00 PM for dinner & cocktails"
+              : (isMiami 
+                  ? "3:30 PM for sunlit courtyard cocktails; 8:30 PM for candlelit dinner & music"
+                  : "4:30 PM for tranquil aperitivo; 8:30 PM for peak atmospheric buzz")),
         peak_atmospheric_window: "Golden Hour to Late Evening Aperitivo"
       },
       hyper_local_proximity: {
-        key_anchors: [
-          isArtDeco ? "Collins Park Cultural Precinct" : "District Cultural Center",
-          isArtDeco ? "The Bass Museum of Art" : "Historic Promenade",
-          isArtDeco ? "South Beach Oceanfront" : "Artisan Dining Enclave"
-        ],
-        insider_lore: `Positioned directly in the sweet spot of ${loc}, offering immediate pedestrian access to the neighborhood's finest cultural institutions.`
+        key_anchors: isLondon && nameLower.includes('sea containers')
+          ? ["Tate Modern & Bankside Gallery", "National Theatre & Southbank Centre", "Borough Market Gastronomy Enclave"]
+          : (isDubai 
+              ? ["The View at The Palm", "Nakheel Mall & Monorail", "Palm West Beach Promenade"]
+              : (isMiami 
+                  ? ["Collins Park Cultural Precinct", "The Bass Museum of Art", "South Beach Oceanfront"]
+                  : ["District Cultural Center", "Historic Promenade", "Artisan Dining Enclave"])),
+        insider_lore: `Positioned directly in the sweet spot of ${loc}, offering immediate pedestrian access to the destination's finest cultural anchors.`
       },
       insider_secrets: {
-        secret_title: isArtDeco ? "The Off-Menu Lychee Highball & Courtyard Nook" : "The Hidden Snug & Off-Menu Highball",
-        secret_lore: isArtDeco 
-          ? "Ask the head bartender for the off-menu Blue Ribbon signature infusion, or snag the private curved banquette in the courtyard corner behind the palms."
-          : "Ask the lead mixologist for the off-menu seasonal botanical infusion, available exclusively upon request.",
-        off_menu_perk: "Access to off-menu signature cocktail infusion & private garden nook",
+        secret_title: isLondon && nameLower.includes('sea containers')
+          ? "12th Knot Riverfront Sunset Nook & The Off-Menu Lyaness Highball"
+          : (isDubai && nameLower.includes('dukes')
+              ? "Dukes Bar Personalized Martini Trolley & Private Palm Cabana"
+              : (isMiami 
+                  ? "The Off-Menu Lychee Highball & Courtyard Nook" 
+                  : "The Hidden Snug & Off-Menu Highball")),
+        secret_lore: isLondon && nameLower.includes('sea containers')
+          ? "Arrive at 12th Knot 25 minutes before twilight for the glass-fronted Thames corner banquette, and ask the Lyaness cocktail team for the off-menu single-batch botanical infusion."
+          : (isDubai && nameLower.includes('dukes')
+              ? "Visit Dukes Bar for the legendary personalized martini trolley ritual, immortalized by Ian Fleming's heritage inspirations."
+              : (isMiami 
+                  ? "Ask the head bartender for the off-menu Blue Ribbon signature infusion, or snag the private curved banquette in the courtyard corner behind the palms."
+                  : "Ask the lead mixologist for the off-menu seasonal botanical infusion, available exclusively upon request.")),
+        off_menu_perk: isLondon ? "Access to off-menu single-batch botanical infusion & 12th Knot riverfront banquette" : "Access to off-menu signature cocktail infusion & private garden nook",
         insider_badge: "Head Bartender & Local Regular Lore"
       },
       qualification_test: {
-        you_will_love_if: "You appreciate authentic design heritage, bespoke mixology, and a stylish courtyard sanctuary away from generic mass-market resorts.",
+        you_will_love_if: isLondon 
+          ? "You appreciate bold transatlantic maritime design, panoramic Thames skyline cocktails at 12th Knot, and direct access to South Bank's creative corridor."
+          : (isDubai 
+              ? "You value classic British hospitality elegance, private Palm Jumeirah beachfront relaxation, and iconic martini rituals."
+              : "You appreciate authentic design heritage, bespoke mixology, and a stylish courtyard sanctuary away from generic mass-market resorts."),
         skip_if: "You prefer gigantic mega-resorts with noisy waterparks, generic buffet halls, and standard corporate chain decor."
       }
     },
