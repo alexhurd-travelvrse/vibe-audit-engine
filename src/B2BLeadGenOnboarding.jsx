@@ -48,6 +48,43 @@ const submitLeadToFormspree = async (data) => {
   }
 };
 
+export function parseBookingUrl(input) {
+  if (!input || typeof input !== 'string') return null;
+  const match = input.match(/booking\.com\/hotel\/([a-z]{2})\/([a-zA-Z0-9-_]+)(?:\.[a-z]{2,3}(?:-[a-z]{2,4})?)?\.html/i);
+  if (!match) return null;
+  const country = match[1].toLowerCase();
+  const slug = match[2].toLowerCase();
+  const cleanUrl = `https://www.booking.com/hotel/${country}/${slug}.html`;
+
+  let cleanTitle = slug
+    .replace(/-/g, ' ')
+    .replace(/\b(the|hotel|resort|spa|suites|and|&)\b/gi, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .replace(/\b\w/g, c => c.toUpperCase());
+  if (!cleanTitle) cleanTitle = slug.replace(/-/g, ' ');
+
+  let inferredCity = '';
+  let inferredNeighborhood = '';
+  if (slug.includes('miami-beach') || slug.includes('south-beach') || slug.includes('plymouth')) {
+    inferredCity = 'Miami';
+    inferredNeighborhood = 'South Beach';
+  } else if (slug.includes('london')) {
+    inferredCity = 'London';
+  } else if (slug.includes('dubai')) {
+    inferredCity = 'Dubai';
+  }
+
+  return {
+    cleanUrl,
+    country,
+    slug,
+    cleanTitle,
+    inferredCity,
+    inferredNeighborhood
+  };
+}
+
 const PROCESSING_PHASES = [
   {
     title: "Scanning Local Micro-District Gravity",
@@ -184,9 +221,33 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
       submitLeadToFormspree(formData);
     }
 
-    const targetHotel = formData.propertyName || 'Mandarin Oriental';
-    const targetCity = formData.city || 'London';
-    const targetNeighborhood = formData.neighborhood || '';
+    let targetHotel = formData.propertyName || 'Mandarin Oriental';
+    let targetCity = formData.city || 'London';
+    let targetNeighborhood = formData.neighborhood || '';
+    let directBookingUrl = formData.propertyUrl && formData.propertyUrl.includes('booking.com/hotel/') ? formData.propertyUrl : null;
+
+    // Detect if propertyName or propertyUrl contains a Booking.com URL
+    const urlCheck = [targetHotel, formData.propertyUrl].find(s => typeof s === 'string' && s.includes('booking.com/hotel/'));
+    if (urlCheck) {
+      const parsed = parseBookingUrl(urlCheck);
+      if (parsed) {
+        directBookingUrl = parsed.cleanUrl;
+        targetHotel = parsed.cleanTitle;
+        if (parsed.inferredCity && (!targetCity || targetCity === 'London' || targetCity === 'Miami')) {
+          targetCity = parsed.inferredCity;
+        }
+        if (parsed.inferredNeighborhood && !targetNeighborhood) {
+          targetNeighborhood = parsed.inferredNeighborhood;
+        }
+        setFormData(prev => ({
+          ...prev,
+          propertyName: parsed.cleanTitle,
+          city: targetCity,
+          neighborhood: targetNeighborhood,
+          propertyUrl: parsed.cleanUrl
+        }));
+      }
+    }
 
     // 1. Immediately abort any prior in-flight Phase 2 resolution & reset analysis state
     if (activePhase2AbortRef.current) {
@@ -206,7 +267,8 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
       const masterAudit = await fetchMasterVibeAuditManifest(
         targetHotel, 
         targetCity, 
-        targetNeighborhood
+        targetNeighborhood,
+        directBookingUrl
       );
       
       if (abortController.signal.aborted) return;
@@ -226,9 +288,9 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
 
       // 3. PHASE 2: Background Gemini Vision Photo Resolution & Verification
       if (masterAudit && masterAudit.ota_conversion_audit) {
-        lookupHotelCandidates(targetHotel, targetCity, targetNeighborhood).then(lookup => {
+        lookupHotelCandidates(targetHotel, targetCity, targetNeighborhood, directBookingUrl).then(lookup => {
           if (abortController.signal.aborted) return null;
-          const directBookingUrl = lookup?.selected?.url || null;
+          const resolvedBookingUrl = directBookingUrl || lookup?.selected?.url || null;
           const resolvedHotelName = targetHotel || lookup?.selected?.title;
           return fetchMasterVibeAuditPhotos(
             resolvedHotelName,
@@ -236,7 +298,7 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
             targetNeighborhood,
             masterAudit.ota_conversion_audit.optimal_5_photo_sequence,
             abortController.signal,
-            directBookingUrl
+            resolvedBookingUrl
           );
         }).then(photoResults => {
           if (abortController.signal.aborted || !photoResults) return;
@@ -579,7 +641,30 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
               <div className="glass-card" style={{ padding: '2.5rem', borderRadius: '2rem' }}>
                 <div className="input-group" style={{ marginBottom: '1.5rem' }}>
                   <label className="input-label" style={{ marginBottom: '0.75rem' }}>Property Identity</label>
-                  <input type="text" className="form-input" style={{ fontSize: '1.1rem', padding: '1rem 1.5rem' }} value={formData.propertyName} placeholder="Enter Hotel Name" onChange={e => setFormData({...formData, propertyName: e.target.value})} />
+                  <input 
+                    type="text" 
+                    className="form-input" 
+                    style={{ fontSize: '1.1rem', padding: '1rem 1.5rem' }} 
+                    value={formData.propertyName} 
+                    placeholder="Enter Hotel Name or paste Booking.com URL" 
+                    onChange={e => {
+                      const val = e.target.value;
+                      if (val.includes('booking.com/hotel/')) {
+                        const parsed = parseBookingUrl(val);
+                        if (parsed) {
+                          setFormData(prev => ({
+                            ...prev,
+                            propertyName: parsed.cleanTitle,
+                            propertyUrl: parsed.cleanUrl,
+                            city: parsed.inferredCity || prev.city,
+                            neighborhood: parsed.inferredNeighborhood || prev.neighborhood
+                          }));
+                          return;
+                        }
+                      }
+                      setFormData({...formData, propertyName: val});
+                    }} 
+                  />
                 </div>
                 
                 <div className="grid-2" style={{ gap: '1.5rem' }}>
