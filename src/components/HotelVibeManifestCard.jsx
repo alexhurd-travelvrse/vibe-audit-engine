@@ -180,23 +180,20 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
           {/* ========================================================================= */}
           <div style={{ flex: '0 0 350px', minWidth: '350px', maxWidth: '370px', scrollSnapAlign: 'start', background: 'rgba(0,0,0,0.55)', padding: '1.5rem', borderRadius: '1.25rem', border: '1px solid rgba(29, 185, 84, 0.35)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxSizing: 'border-box' }}>
             <div>
-              {/* Category Badge & Title */}
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.4rem' }}>
+              {/* Category Badge */}
+              <div style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center' }}>
                 <span style={{ fontSize: '11px', fontWeight: 900, color: '#1DB954', letterSpacing: '0.08em', textTransform: 'uppercase', display: 'flex', alignItems: 'center', gap: '5px' }}>
                   <Volume2 size={13} /> Acoustic DNA
                 </span>
-                <span style={{ fontSize: '11px', fontWeight: 800, color: 'rgba(255,255,255,0.7)', background: 'rgba(29, 185, 84, 0.15)', padding: '2px 8px', borderRadius: '6px', border: '1px solid rgba(29, 185, 84, 0.3)' }}>
-                  {clarityScore}% Clarity
-                </span>
               </div>
 
-              <h3 style={{ fontSize: '16px', fontWeight: 900, color: '#ffffff', margin: '0 0 0.85rem 0' }}>
+              <h3 style={{ fontSize: '16px', fontWeight: 900, color: '#ffffff', height: '44px', minHeight: '44px', maxHeight: '44px', lineHeight: 1.3, margin: '0 0 0.85rem 0', overflow: 'hidden' }}>
                 Social Hub or Quiet Sanctuary?
               </h3>
 
               {/* Standardized Scale Bar Container */}
-              <div style={{ background: 'rgba(0,0,0,0.45)', padding: '10px 12px', borderRadius: '10px', border: '1px solid rgba(255,255,255,0.08)', marginBottom: '1rem' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '9.5px', fontWeight: 800, textTransform: 'uppercase', color: 'rgba(255,255,255,0.6)', marginBottom: '6px' }}>
+              <div style={{ background: 'rgba(0,0,0,0.45)', padding: '10px 12px', borderRadius: '10px', border: '1px solid rgba(255,255,255,0.08)', marginBottom: '1rem', height: '76px', minHeight: '76px', maxHeight: '76px', boxSizing: 'border-box', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '9.5px', fontWeight: 800, textTransform: 'uppercase', color: 'rgba(255,255,255,0.6)', whiteSpace: 'nowrap' }}>
                   <span style={{ color: '#10b981' }}>🌿 Sanctuary</span>
                   <span style={{ color: '#00e5ff' }}>💬 Bistro</span>
                   <span style={{ color: '#f59e0b' }}>⚡ Social Hub</span>
@@ -216,17 +213,17 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
                     border: '2px solid #050b14' 
                   }} />
                 </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '6px', fontSize: '10.5px', fontWeight: 700 }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '10.5px', fontWeight: 700, whiteSpace: 'nowrap' }}>
                   <span style={{ color: '#1DB954' }}>{clarityVerdict}</span>
                   <span style={{ color: 'rgba(255,255,255,0.8)', fontFamily: 'monospace' }}>{decibels}</span>
                 </div>
               </div>
 
-              <div style={{ fontSize: '13px', fontWeight: 800, color: '#ffffff', marginBottom: '0.4rem' }}>
-                {dna.soundscape_genre || 'Curated Soundscape'}
+              <div style={{ fontSize: '13px', fontWeight: 800, color: '#ffffff', height: '38px', minHeight: '38px', maxHeight: '38px', lineHeight: 1.35, marginBottom: '0.5rem', display: 'flex', alignItems: 'flex-start', overflow: 'hidden' }}>
+                <span>{dna.soundscape_genre || 'Curated Soundscape'}</span>
               </div>
 
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '5px', marginBottom: '0.75rem' }}>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '5px', marginBottom: '0.75rem', height: '24px', minHeight: '24px', maxHeight: '24px', alignItems: 'center', overflow: 'hidden' }}>
                 {(dna.anchor_artists || []).map((artist, i) => (
                   <a 
                     key={i} 
@@ -241,7 +238,8 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
                       padding: '2px 7px', 
                       borderRadius: '10px', 
                       textDecoration: 'none', 
-                      border: '1px solid rgba(29, 185, 84, 0.25)' 
+                      border: '1px solid rgba(29, 185, 84, 0.25)',
+                      whiteSpace: 'nowrap'
                     }}
                     title={`Listen to ${artist} on Spotify`}
                   >
@@ -250,8 +248,8 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
                 ))}
               </div>
 
-              <p style={{ fontSize: '11.5px', color: 'rgba(255,255,255,0.65)', lineHeight: 1.4, margin: '0 0 0.75rem 0' }}>
-                {dna.sound_texture || 'Atmospheric acoustic layering with comfortable conversational resonance.'}
+              <p style={{ fontSize: '11.5px', color: 'rgba(255,255,255,0.65)', lineHeight: 1.4, margin: '0 0 0.75rem 0', height: '38px', minHeight: '38px', maxHeight: '38px', overflow: 'hidden' }}>
+                {(dna.sound_texture || 'Atmospheric acoustic layering with comfortable conversational resonance.').split('.')[0] + '.'}
               </p>
             </div>
 
@@ -284,26 +282,23 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
           {/* ========================================================================= */}
           <div style={{ flex: '0 0 350px', minWidth: '350px', maxWidth: '370px', scrollSnapAlign: 'start', background: 'rgba(0,0,0,0.55)', padding: '1.5rem', borderRadius: '1.25rem', border: '1px solid rgba(255, 215, 0, 0.35)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxSizing: 'border-box' }}>
             <div>
-              {/* Category Badge & Title */}
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.4rem' }}>
+              {/* Category Badge */}
+              <div style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center' }}>
                 <span style={{ fontSize: '11px', fontWeight: 900, color: '#ffd700', letterSpacing: '0.08em', textTransform: 'uppercase', display: 'flex', alignItems: 'center', gap: '5px' }}>
                   <ShieldCheck size={13} /> Authenticity
                 </span>
-                <span style={{ fontSize: '11px', fontWeight: 800, color: 'rgba(255,255,255,0.7)', background: 'rgba(255, 215, 0, 0.15)', padding: '2px 8px', borderRadius: '6px', border: '1px solid rgba(255, 215, 0, 0.3)' }}>
-                  {authenticityScore}/100 Index
-                </span>
               </div>
 
-              <h3 style={{ fontSize: '16px', fontWeight: 900, color: '#ffffff', margin: '0 0 0.85rem 0' }}>
+              <h3 style={{ fontSize: '16px', fontWeight: 900, color: '#ffffff', height: '44px', minHeight: '44px', maxHeight: '44px', lineHeight: 1.3, margin: '0 0 0.85rem 0', overflow: 'hidden' }}>
                 Real Soul or Corporate Generic?
               </h3>
 
               {/* Standardized Scale Bar Container */}
-              <div style={{ background: 'rgba(0,0,0,0.45)', padding: '10px 12px', borderRadius: '10px', border: '1px solid rgba(255,255,255,0.08)', marginBottom: '1rem' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '9.5px', fontWeight: 800, textTransform: 'uppercase', color: 'rgba(255,255,255,0.6)', marginBottom: '6px' }}>
-                  <span style={{ color: '#94a3b8' }}>Corporate Generic</span>
-                  <span style={{ color: '#fbbf24' }}>Curated Design</span>
-                  <span style={{ color: '#ffd700' }}>Handcrafted Soul</span>
+              <div style={{ background: 'rgba(0,0,0,0.45)', padding: '10px 12px', borderRadius: '10px', border: '1px solid rgba(255,255,255,0.08)', marginBottom: '1rem', height: '76px', minHeight: '76px', maxHeight: '76px', boxSizing: 'border-box', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '9.5px', fontWeight: 800, textTransform: 'uppercase', color: 'rgba(255,255,255,0.6)', whiteSpace: 'nowrap' }}>
+                  <span style={{ color: '#94a3b8' }}>Corporate</span>
+                  <span style={{ color: '#fbbf24' }}>Curated</span>
+                  <span style={{ color: '#ffd700' }}>Handcrafted</span>
                 </div>
                 {/* Scale Track with Pin */}
                 <div style={{ position: 'relative', width: '100%', height: '8px', background: 'linear-gradient(90deg, #64748b 0%, #eab308 60%, #ffd700 100%)', borderRadius: '4px' }}>
@@ -320,18 +315,22 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
                     border: '2px solid #050b14' 
                   }} />
                 </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '6px', fontSize: '10.5px', fontWeight: 700 }}>
-                  <span style={{ color: '#ffd700' }}>{materialVerdict}</span>
-                  <span style={{ color: '#10b981' }}>Zero Faux Decor</span>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '10.5px', fontWeight: 700, whiteSpace: 'nowrap' }}>
+                  <span style={{ color: '#ffd700' }}>{materialVerdict ? materialVerdict.replace(/\s*[-—–].*$/, '').trim() : 'Authentic Heritage'}</span>
+                  <span style={{ color: '#10b981', flexShrink: 0 }}>Zero Faux Decor</span>
                 </div>
               </div>
 
-              <div style={{ fontSize: '11.5px', color: 'rgba(255,255,255,0.7)', marginBottom: '0.75rem' }}>
-                <strong style={{ color: '#ffd700' }}>Palette:</strong> {materialPalette}
+              <div style={{ fontSize: '13px', fontWeight: 800, color: '#ffffff', height: '38px', minHeight: '38px', maxHeight: '38px', lineHeight: 1.35, marginBottom: '0.5rem', display: 'flex', alignItems: 'flex-start', overflow: 'hidden' }}>
+                <span><span style={{ color: '#ffd700' }}>Palette:</span> {materialPalette ? materialPalette.split(',').slice(0, 3).join(', ') : 'Tactile stone, aged brass & timber'}</span>
               </div>
 
-              <p style={{ fontSize: '11.5px', color: 'rgba(255,255,255,0.65)', lineHeight: 1.4, margin: 0 }}>
-                Tactile textures and heritage elements eliminate hospitality sterility. Grounded in genuine craftsmanship that modern travelers actively seek.
+              <div style={{ fontSize: '11.5px', color: 'rgba(255,255,255,0.7)', marginBottom: '0.75rem', height: '24px', minHeight: '24px', maxHeight: '24px', display: 'flex', alignItems: 'center', overflow: 'hidden', whiteSpace: 'nowrap' }}>
+                <strong style={{ color: '#ffd700', marginRight: '6px', flexShrink: 0 }}>Materials:</strong> Authentic handcrafted finishes
+              </div>
+
+              <p style={{ fontSize: '11.5px', color: 'rgba(255,255,255,0.65)', lineHeight: 1.4, margin: '0 0 0.75rem 0', height: '38px', minHeight: '38px', maxHeight: '38px', overflow: 'hidden' }}>
+                Tactile textures and heritage elements eliminate generic hospitality sterility.
               </p>
             </div>
 
@@ -345,23 +344,20 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
           {/* ========================================================================= */}
           <div style={{ flex: '0 0 350px', minWidth: '350px', maxWidth: '370px', scrollSnapAlign: 'start', background: 'rgba(0,0,0,0.55)', padding: '1.5rem', borderRadius: '1.25rem', border: '1px solid rgba(192, 132, 252, 0.35)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxSizing: 'border-box' }}>
             <div>
-              {/* Category Badge & Title */}
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.4rem' }}>
+              {/* Category Badge */}
+              <div style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center' }}>
                 <span style={{ fontSize: '11px', fontWeight: 900, color: '#c084fc', letterSpacing: '0.08em', textTransform: 'uppercase', display: 'flex', alignItems: 'center', gap: '5px' }}>
                   <Users size={13} /> Crowd Gravity
                 </span>
-                <span style={{ fontSize: '11px', fontWeight: 800, color: 'rgba(255,255,255,0.7)', background: 'rgba(192, 132, 252, 0.15)', padding: '2px 8px', borderRadius: '6px', border: '1px solid rgba(192, 132, 252, 0.3)' }}>
-                  {localRatio}% Local Ratio
-                </span>
               </div>
 
-              <h3 style={{ fontSize: '16px', fontWeight: 900, color: '#ffffff', margin: '0 0 0.85rem 0' }}>
+              <h3 style={{ fontSize: '16px', fontWeight: 900, color: '#ffffff', height: '44px', minHeight: '44px', maxHeight: '44px', lineHeight: 1.3, margin: '0 0 0.85rem 0', overflow: 'hidden' }}>
                 Local Magnet or Tourist Trap?
               </h3>
 
               {/* Standardized Scale Bar Container */}
-              <div style={{ background: 'rgba(0,0,0,0.45)', padding: '10px 12px', borderRadius: '10px', border: '1px solid rgba(255,255,255,0.08)', marginBottom: '1rem' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '9.5px', fontWeight: 800, textTransform: 'uppercase', color: 'rgba(255,255,255,0.6)', marginBottom: '6px' }}>
+              <div style={{ background: 'rgba(0,0,0,0.45)', padding: '10px 12px', borderRadius: '10px', border: '1px solid rgba(255,255,255,0.08)', marginBottom: '1rem', height: '76px', minHeight: '76px', maxHeight: '76px', boxSizing: 'border-box', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '9.5px', fontWeight: 800, textTransform: 'uppercase', color: 'rgba(255,255,255,0.6)', whiteSpace: 'nowrap' }}>
                   <span style={{ color: '#c084fc' }}>📍 Locals ({localRatio}%)</span>
                   <span style={{ color: '#38bdf8' }}>✈️ Travelers ({touristRatio}%)</span>
                 </div>
@@ -380,21 +376,22 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
                     border: '2px solid #050b14' 
                   }} />
                 </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '6px', fontSize: '10.5px', fontWeight: 700 }}>
-                  <span style={{ color: '#c084fc' }}>{touristTrapVerdict}</span>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '10.5px', fontWeight: 700, whiteSpace: 'nowrap' }}>
+                  <span style={{ color: '#c084fc' }}>{touristTrapVerdict ? touristTrapVerdict.replace(/\s*[-—–].*$/, '').trim() : 'Authentic Local Magnet'}</span>
+                  <span style={{ color: 'rgba(255,255,255,0.7)', fontFamily: 'monospace', flexShrink: 0 }}>{localRatio}% Local</span>
                 </div>
               </div>
 
-              <div style={{ fontSize: '13px', fontWeight: 800, color: '#ffffff', marginBottom: '0.3rem' }}>
-                {crowd.primary || 'Cosmopolitan Creatives'}
+              <div style={{ fontSize: '13px', fontWeight: 800, color: '#ffffff', height: '38px', minHeight: '38px', maxHeight: '38px', lineHeight: 1.35, marginBottom: '0.5rem', display: 'flex', alignItems: 'flex-start', overflow: 'hidden' }}>
+                <span>{(crowd.primary || 'Cosmopolitan Creatives').replace(/\s*[-—–].*$/, '').trim()}</span>
               </div>
 
-              <div style={{ fontSize: '11.5px', color: 'rgba(255,255,255,0.7)', marginBottom: '0.4rem' }}>
-                <strong style={{ color: '#c084fc' }}>Dress Code:</strong> {crowd.dress_code || 'Smart Casual Chic'}
+              <div style={{ fontSize: '11.5px', color: 'rgba(255,255,255,0.7)', marginBottom: '0.75rem', height: '24px', minHeight: '24px', maxHeight: '24px', display: 'flex', alignItems: 'center', overflow: 'hidden', whiteSpace: 'nowrap' }}>
+                <strong style={{ color: '#c084fc', marginRight: '6px', flexShrink: 0 }}>Dress Code:</strong> {(crowd.dress_code || 'Smart Casual Chic').replace(/\s*[-—–].*$/, '').trim()}
               </div>
 
-              <p style={{ fontSize: '11.5px', color: 'rgba(255,255,255,0.65)', lineHeight: 1.4, margin: 0 }}>
-                {lighting.atmosphere || 'Active social hub where neighborhood regulars and international creatives mix seamlessly.'}
+              <p style={{ fontSize: '11.5px', color: 'rgba(255,255,255,0.65)', lineHeight: 1.4, margin: '0 0 0.75rem 0', height: '38px', minHeight: '38px', maxHeight: '38px', overflow: 'hidden' }}>
+                {(lighting.atmosphere || 'Active social hub where neighborhood regulars and international creatives mix.').split('.')[0] + '.'}
               </p>
             </div>
 
@@ -408,26 +405,23 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
           {/* ========================================================================= */}
           <div style={{ flex: '0 0 350px', minWidth: '350px', maxWidth: '370px', scrollSnapAlign: 'start', background: 'rgba(0,0,0,0.55)', padding: '1.5rem', borderRadius: '1.25rem', border: '1px solid rgba(0, 229, 255, 0.35)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxSizing: 'border-box' }}>
             <div>
-              {/* Category Badge & Title */}
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.4rem' }}>
+              {/* Category Badge */}
+              <div style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center' }}>
                 <span style={{ fontSize: '11px', fontWeight: 900, color: '#00e5ff', letterSpacing: '0.08em', textTransform: 'uppercase', display: 'flex', alignItems: 'center', gap: '5px' }}>
                   <Sun size={13} /> Lighting & Mood
                 </span>
-                <span style={{ fontSize: '11px', fontWeight: 800, color: 'rgba(255,255,255,0.7)', background: 'rgba(0, 229, 255, 0.15)', padding: '2px 8px', borderRadius: '6px', border: '1px solid rgba(0, 229, 255, 0.3)' }}>
-                  2200K Glow
-                </span>
               </div>
 
-              <h3 style={{ fontSize: '16px', fontWeight: 900, color: '#ffffff', margin: '0 0 0.85rem 0' }}>
+              <h3 style={{ fontSize: '16px', fontWeight: 900, color: '#ffffff', height: '44px', minHeight: '44px', maxHeight: '44px', lineHeight: 1.3, margin: '0 0 0.85rem 0', overflow: 'hidden' }}>
                 Evening Vibe & Best Time to Visit
               </h3>
 
               {/* Standardized Scale Bar Container */}
-              <div style={{ background: 'rgba(0,0,0,0.45)', padding: '10px 12px', borderRadius: '10px', border: '1px solid rgba(255,255,255,0.08)', marginBottom: '1rem' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '9.5px', fontWeight: 800, textTransform: 'uppercase', color: 'rgba(255,255,255,0.6)', marginBottom: '6px' }}>
-                  <span style={{ color: '#93c5fd' }}>Daylight Crisp</span>
-                  <span style={{ color: '#38bdf8' }}>Sunset Transition</span>
-                  <span style={{ color: '#f59e0b' }}>Amber Candlelight</span>
+              <div style={{ background: 'rgba(0,0,0,0.45)', padding: '10px 12px', borderRadius: '10px', border: '1px solid rgba(255,255,255,0.08)', marginBottom: '1rem', height: '76px', minHeight: '76px', maxHeight: '76px', boxSizing: 'border-box', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '9.5px', fontWeight: 800, textTransform: 'uppercase', color: 'rgba(255,255,255,0.6)', whiteSpace: 'nowrap' }}>
+                  <span style={{ color: '#93c5fd' }}>Daylight</span>
+                  <span style={{ color: '#38bdf8' }}>Sunset</span>
+                  <span style={{ color: '#f59e0b' }}>Candlelight</span>
                 </div>
                 {/* Scale Track with Pin */}
                 <div style={{ position: 'relative', width: '100%', height: '8px', background: 'linear-gradient(90deg, #93c5fd 0%, #38bdf8 45%, #f59e0b 100%)', borderRadius: '4px' }}>
@@ -444,23 +438,22 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
                     border: '2px solid #050b14' 
                   }} />
                 </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '6px', fontSize: '10.5px', fontWeight: 700 }}>
-                  <span style={{ color: '#00e5ff' }}>{lightingTemp}</span>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '10.5px', fontWeight: 700, whiteSpace: 'nowrap' }}>
+                  <span style={{ color: '#00e5ff' }}>{lightingTemp.split(' ')[0] || '2200K'} Amber Glow</span>
+                  <span style={{ color: '#f59e0b', flexShrink: 0 }}>Warm Filament</span>
                 </div>
               </div>
 
-              <div style={{ background: 'rgba(0, 229, 255, 0.08)', padding: '10px 12px', borderRadius: '10px', border: '1px solid rgba(0, 229, 255, 0.25)', marginBottom: '0.75rem' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '5px', color: '#00e5ff', fontSize: '10.5px', fontWeight: 800, textTransform: 'uppercase', marginBottom: '3px' }}>
-                  <Clock size={13} /> Peak Atmospheric Window:
-                </div>
-                <div style={{ fontSize: '12px', color: '#ffffff', lineHeight: 1.4, fontWeight: 700 }}>
-                  {bestTimeToVisit}
-                </div>
+              <div style={{ fontSize: '13px', fontWeight: 800, color: '#ffffff', height: '38px', minHeight: '38px', maxHeight: '38px', lineHeight: 1.35, marginBottom: '0.5rem', display: 'flex', alignItems: 'flex-start', overflow: 'hidden' }}>
+                <span><span style={{ color: '#00e5ff' }}>Peak Window:</span> {(bestTimeToVisit || '8:30 PM for peak buzz').split(';')[0].replace(/\s*[-—–].*$/, '').trim()}</span>
               </div>
 
-              <p style={{ fontSize: '11.5px', color: 'rgba(255,255,255,0.65)', lineHeight: 1.4, margin: 0 }}>
-                {lighting.sensory_intensity ? `Sensory Level: ${lighting.sensory_intensity}. ` : ''}
-                Atmosphere naturally evolves from relaxed afternoon coffee & co-working into warm candlelit aperitivo and evening buzz.
+              <div style={{ fontSize: '11.5px', color: 'rgba(255,255,255,0.7)', marginBottom: '0.75rem', height: '24px', minHeight: '24px', maxHeight: '24px', display: 'flex', alignItems: 'center', overflow: 'hidden', whiteSpace: 'nowrap' }}>
+                <strong style={{ color: '#00e5ff', marginRight: '6px', flexShrink: 0 }}>Atmosphere:</strong> Candlelit aperitivo transition
+              </div>
+
+              <p style={{ fontSize: '11.5px', color: 'rgba(255,255,255,0.65)', lineHeight: 1.4, margin: '0 0 0.75rem 0', height: '38px', minHeight: '38px', maxHeight: '38px', overflow: 'hidden' }}>
+                Transitions seamlessly from afternoon coffee into warm candlelit aperitivo and evening buzz.
               </p>
             </div>
 
@@ -474,26 +467,23 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
           {/* ========================================================================= */}
           <div style={{ flex: '0 0 350px', minWidth: '350px', maxWidth: '370px', scrollSnapAlign: 'start', background: 'rgba(0,0,0,0.55)', padding: '1.5rem', borderRadius: '1.25rem', border: '1px solid rgba(255, 179, 0, 0.35)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxSizing: 'border-box' }}>
             <div>
-              {/* Category Badge & Title */}
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.4rem' }}>
+              {/* Category Badge */}
+              <div style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center' }}>
                 <span style={{ fontSize: '11px', fontWeight: 900, color: '#ffb300', letterSpacing: '0.08em', textTransform: 'uppercase', display: 'flex', alignItems: 'center', gap: '5px' }}>
                   <MapPin size={13} /> Location Pulse
                 </span>
-                <span style={{ fontSize: '11px', fontWeight: 800, color: 'rgba(255,255,255,0.7)', background: 'rgba(255, 179, 0, 0.15)', padding: '2px 8px', borderRadius: '6px', border: '1px solid rgba(255, 179, 0, 0.3)' }}>
-                  100% Walkable
-                </span>
               </div>
 
-              <h3 style={{ fontSize: '16px', fontWeight: 900, color: '#ffffff', margin: '0 0 0.85rem 0' }}>
+              <h3 style={{ fontSize: '16px', fontWeight: 900, color: '#ffffff', height: '44px', minHeight: '44px', maxHeight: '44px', lineHeight: 1.3, margin: '0 0 0.85rem 0', overflow: 'hidden' }}>
                 Right on the Doorstep of Trending Spots
               </h3>
 
               {/* Standardized Scale Bar Container */}
-              <div style={{ background: 'rgba(0,0,0,0.45)', padding: '10px 12px', borderRadius: '10px', border: '1px solid rgba(255,255,255,0.08)', marginBottom: '1rem' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '9.5px', fontWeight: 800, textTransform: 'uppercase', color: 'rgba(255,255,255,0.6)', marginBottom: '6px' }}>
-                  <span style={{ color: '#94a3b8' }}>Quiet Outskirts</span>
-                  <span style={{ color: '#fbbf24' }}>Active District</span>
-                  <span style={{ color: '#ffb300' }}>Cultural Epicenter</span>
+              <div style={{ background: 'rgba(0,0,0,0.45)', padding: '10px 12px', borderRadius: '10px', border: '1px solid rgba(255,255,255,0.08)', marginBottom: '1rem', height: '76px', minHeight: '76px', maxHeight: '76px', boxSizing: 'border-box', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '9.5px', fontWeight: 800, textTransform: 'uppercase', color: 'rgba(255,255,255,0.6)', whiteSpace: 'nowrap' }}>
+                  <span style={{ color: '#94a3b8' }}>Quiet</span>
+                  <span style={{ color: '#fbbf24' }}>Active</span>
+                  <span style={{ color: '#ffb300' }}>Epicenter</span>
                 </div>
                 {/* Scale Track with Pin */}
                 <div style={{ position: 'relative', width: '100%', height: '8px', background: 'linear-gradient(90deg, #64748b 0%, #fbbf24 50%, #ffb300 100%)', borderRadius: '4px' }}>
@@ -510,22 +500,26 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
                     border: '2px solid #050b14' 
                   }} />
                 </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '6px', fontSize: '10.5px', fontWeight: 700 }}>
-                  <span style={{ color: '#ffb300' }}>Immediate Doorstep Access</span>
-                  <span style={{ color: '#10b981' }}>0 Min Walk</span>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '10.5px', fontWeight: 700, whiteSpace: 'nowrap' }}>
+                  <span style={{ color: '#ffb300' }}>Immediate Doorstep</span>
+                  <span style={{ color: '#10b981', flexShrink: 0 }}>0 Min Walk</span>
                 </div>
               </div>
 
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '0.75rem' }}>
-                {(proximity.key_anchors || ['Neighborhood Cultural Hub', 'Riverside Promenade', 'Artisan Dining']).map((anchor, i) => (
-                  <span key={i} style={{ background: 'rgba(255, 179, 0, 0.12)', color: '#ffb300', fontSize: '10.5px', fontWeight: 700, padding: '3px 8px', borderRadius: '10px', border: '1px solid rgba(255, 179, 0, 0.25)' }}>
+              <div style={{ fontSize: '13px', fontWeight: 800, color: '#ffffff', height: '38px', minHeight: '38px', maxHeight: '38px', lineHeight: 1.35, marginBottom: '0.5rem', display: 'flex', alignItems: 'flex-start', overflow: 'hidden' }}>
+                <span><span style={{ color: '#ffb300' }}>District Anchors:</span> {(proximity.key_anchors && proximity.key_anchors.length > 0) ? proximity.key_anchors.slice(0, 2).join(' • ') : 'Cultural Epicenter & Boutiques'}</span>
+              </div>
+
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '0.75rem', height: '24px', minHeight: '24px', maxHeight: '24px', alignItems: 'center', overflow: 'hidden' }}>
+                {(proximity.key_anchors || ['Neighborhood Cultural Hub', 'Riverside Promenade', 'Artisan Dining']).slice(0, 2).map((anchor, i) => (
+                  <span key={i} style={{ background: 'rgba(255, 179, 0, 0.12)', color: '#ffb300', fontSize: '10.5px', fontWeight: 700, padding: '2px 8px', borderRadius: '10px', border: '1px solid rgba(255, 179, 0, 0.25)', whiteSpace: 'nowrap' }}>
                     📍 {anchor}
                   </span>
                 ))}
               </div>
 
-              <p style={{ fontSize: '11.5px', color: 'rgba(255,255,255,0.75)', lineHeight: 1.4, margin: '0 0 0.75rem 0' }}>
-                {proximity.insider_lore || 'Positioned directly within the cultural epicenter with immediate access to independent boutiques and gastronomy.'}
+              <p style={{ fontSize: '11.5px', color: 'rgba(255,255,255,0.75)', lineHeight: 1.4, margin: '0 0 0.75rem 0', height: '38px', minHeight: '38px', maxHeight: '38px', overflow: 'hidden' }}>
+                {(proximity.insider_lore || 'Positioned directly within the cultural epicenter with immediate access to independent boutiques.').split('.')[0] + '.'}
               </p>
             </div>
 
@@ -539,26 +533,23 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
           {/* ========================================================================= */}
           <div style={{ flex: '0 0 350px', minWidth: '350px', maxWidth: '370px', scrollSnapAlign: 'start', background: 'rgba(0,0,0,0.55)', padding: '1.5rem', borderRadius: '1.25rem', border: '1px solid rgba(236, 72, 153, 0.4)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxSizing: 'border-box' }}>
             <div>
-              {/* Category Badge & Title */}
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.4rem' }}>
+              {/* Category Badge */}
+              <div style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center' }}>
                 <span style={{ fontSize: '11px', fontWeight: 900, color: '#f472b6', letterSpacing: '0.08em', textTransform: 'uppercase', display: 'flex', alignItems: 'center', gap: '5px' }}>
                   <Key size={13} /> Insider Access
                 </span>
-                <span style={{ fontSize: '11px', fontWeight: 800, color: 'rgba(255,255,255,0.7)', background: 'rgba(236, 72, 153, 0.15)', padding: '2px 8px', borderRadius: '6px', border: '1px solid rgba(236, 72, 153, 0.3)' }}>
-                  Verified Lore
-                </span>
               </div>
 
-              <h3 style={{ fontSize: '16px', fontWeight: 900, color: '#ffffff', margin: '0 0 0.85rem 0' }}>
+              <h3 style={{ fontSize: '16px', fontWeight: 900, color: '#ffffff', height: '44px', minHeight: '44px', maxHeight: '44px', lineHeight: 1.3, margin: '0 0 0.85rem 0', overflow: 'hidden' }}>
                 Off-Menu Secrets & Local Lore
               </h3>
 
               {/* Standardized Scale Bar Container */}
-              <div style={{ background: 'rgba(0,0,0,0.45)', padding: '10px 12px', borderRadius: '10px', border: '1px solid rgba(255,255,255,0.08)', marginBottom: '1rem' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '9.5px', fontWeight: 800, textTransform: 'uppercase', color: 'rgba(255,255,255,0.6)', marginBottom: '6px' }}>
-                  <span style={{ color: '#94a3b8' }}>Standard Guidebook</span>
-                  <span style={{ color: '#ec4899' }}>Curated Tip</span>
-                  <span style={{ color: '#f472b6' }}>Deep Regular Lore</span>
+              <div style={{ background: 'rgba(0,0,0,0.45)', padding: '10px 12px', borderRadius: '10px', border: '1px solid rgba(255,255,255,0.08)', marginBottom: '1rem', height: '76px', minHeight: '76px', maxHeight: '76px', boxSizing: 'border-box', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '9.5px', fontWeight: 800, textTransform: 'uppercase', color: 'rgba(255,255,255,0.6)', whiteSpace: 'nowrap' }}>
+                  <span style={{ color: '#94a3b8' }}>Guidebook</span>
+                  <span style={{ color: '#ec4899' }}>Curated</span>
+                  <span style={{ color: '#f472b6' }}>Insider Lore</span>
                 </div>
                 {/* Scale Track with Pin */}
                 <div style={{ position: 'relative', width: '100%', height: '8px', background: 'linear-gradient(90deg, #6366f1 0%, #ec4899 50%, #f472b6 100%)', borderRadius: '4px' }}>
@@ -575,22 +566,22 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
                     border: '2px solid #050b14' 
                   }} />
                 </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '6px', fontSize: '10.5px', fontWeight: 700 }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '10.5px', fontWeight: 700, whiteSpace: 'nowrap' }}>
                   <span style={{ color: '#f472b6' }}>{secrets.insider_badge || 'Head Bartender Lore'}</span>
+                  <span style={{ color: '#ec4899', flexShrink: 0 }}>Verified Secret</span>
                 </div>
               </div>
 
-              <div style={{ background: 'rgba(236, 72, 153, 0.08)', padding: '10px 12px', borderRadius: '10px', border: '1px solid rgba(236, 72, 153, 0.25)', marginBottom: '0.75rem' }}>
-                <div style={{ color: '#ffd700', fontSize: '12px', fontWeight: 800, marginBottom: '3px' }}>
-                  🗝️ {secrets.secret_title || 'The Off-Menu Highball & Hidden Snug'}
-                </div>
-                <div style={{ fontSize: '11.5px', color: 'rgba(255,255,255,0.85)', lineHeight: 1.4 }}>
-                  {secrets.secret_lore || secrets.off_menu_perk || 'Ask the head bartender for the off-menu botanical infusion drink or seek out the hidden courtyard archway for private seating.'}
-                </div>
+              <div style={{ fontSize: '13px', fontWeight: 800, color: '#ffffff', height: '38px', minHeight: '38px', maxHeight: '38px', lineHeight: 1.35, marginBottom: '0.5rem', display: 'flex', alignItems: 'flex-start', overflow: 'hidden' }}>
+                <span><span style={{ color: '#f472b6' }}>Secret Lore:</span> {(secrets.secret_title || 'The Off-Menu Highball & Hidden Snug').replace(/\s*[-—–].*$/, '').trim()}</span>
               </div>
 
-              <p style={{ fontSize: '11.5px', color: 'rgba(255,255,255,0.65)', lineHeight: 1.4, margin: 0 }}>
-                Insider perks and hidden architectural details known only to neighborhood regulars and vetted concierges.
+              <div style={{ fontSize: '11.5px', color: 'rgba(255,255,255,0.85)', marginBottom: '0.75rem', height: '24px', minHeight: '24px', maxHeight: '24px', display: 'flex', alignItems: 'center', overflow: 'hidden', whiteSpace: 'nowrap' }}>
+                <strong style={{ color: '#ffd700', marginRight: '6px', flexShrink: 0 }}>🗝️ Off-Menu:</strong> <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{(secrets.off_menu_perk || secrets.secret_lore || 'Ask head bartender for botanical infusion.').split('.')[0] + '.'}</span>
+              </div>
+
+              <p style={{ fontSize: '11.5px', color: 'rgba(255,255,255,0.65)', lineHeight: 1.4, margin: '0 0 0.75rem 0', height: '38px', minHeight: '38px', maxHeight: '38px', overflow: 'hidden' }}>
+                Insider perks and hidden architectural details known only to neighborhood regulars.
               </p>
             </div>
 
