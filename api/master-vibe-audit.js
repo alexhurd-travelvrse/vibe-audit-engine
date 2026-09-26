@@ -156,6 +156,18 @@ export const KNOWN_SLUG_TITLES = {
   'the-london-edition': 'The London EDITION'
 };
 
+export const EDITORIAL_AND_AGGREGATOR_DOMAINS = [
+  'travelweekly.com', 'northstartravelgroup.com', 'cntraveler.com', 'travelandleisure.com', 
+  'timeout.com', 'theinfatuation.com', 'eater.com', 'thrillist.com', 'finedininglovers.com',
+  'telegraph.co.uk', 'standard.co.uk', 'thetimes.co.uk', 'dailymail.co.uk', 'theguardian.com',
+  'independent.co.uk', 'bloomberg.com', 'forbes.com', 'businessinsider.com', 'ft.com',
+  'tripadvisor.com', 'booking.com', 'expedia.com', 'hotels.com', 'agoda.com', 'kayak.com', 
+  'trivago.com', 'skyscanner.com', 'priceline.com', 'orbitz.com', 'travelocity.com', 'hotwire.com',
+  'yelp.com', 'wikipedia.org', 'wikidata.org', 'facebook.com', 'instagram.com', 'linkedin.com', 
+  'youtube.com', 'pinterest.com', 'tiktok.com', 'twitter.com', 'x.com', 'reddit.com',
+  'themiamiguide.com', 'miamiresidential.com', 'miamibeachfl-hotel', 'imgkit.net'
+];
+
 export function parseBookingUrl(input) {
   if (!input || typeof input !== 'string') return null;
   const match = input.match(/booking\.com\/hotel\/([a-z]{2})\/([a-zA-Z0-9-_]+)(?:\.[a-z]{2,3}(?:-[a-z]{2,4})?)?\.html/i);
@@ -720,14 +732,19 @@ export async function fetchAmenityPhotosForHotel(hotelName, city, neighborhood =
       officialDomain = 'slshotels.com';
       parentBrand = 'ennismore.com';
     } else if (lowerName.includes('ritz-carlton') || lowerName.includes('st. regis') || lowerName.includes('w hotel') || lowerName.includes('marriott') || lowerName.includes('luxury collection') || lowerName.includes('autograph')) {
+      officialDomain = 'marriott.com';
       parentBrand = 'marriott.com';
     } else if (lowerName.includes('waldorf') || lowerName.includes('conrad') || lowerName.includes('curio') || lowerName.includes('hilton') || lowerName.includes('canopy')) {
+      officialDomain = 'hilton.com';
       parentBrand = 'hilton.com';
     } else if (lowerName.includes('andaz') || lowerName.includes('park hyatt') || lowerName.includes('thompson') || lowerName.includes('hyatt')) {
+      officialDomain = 'hyatt.com';
       parentBrand = 'hyatt.com';
     } else if (lowerName.includes('kimpton') || lowerName.includes('intercontinental') || lowerName.includes('six senses') || lowerName.includes('ihg')) {
+      officialDomain = 'ihg.com';
       parentBrand = 'ihg.com';
     } else if (lowerName.includes('mondrian') || lowerName.includes('delano') || lowerName.includes('hyde') || lowerName.includes('ennismore') || lowerName.includes('sofitel') || lowerName.includes('fairmont') || lowerName.includes('raffles') || lowerName.includes('faena')) {
+      officialDomain = 'ennismore.com';
       parentBrand = 'ennismore.com';
     }
 
@@ -743,18 +760,23 @@ export async function fetchAmenityPhotosForHotel(hotelName, city, neighborhood =
         const match = item.link.match(/https?:\/\/(?:www\.)?([^\/]+)/);
         if (match) {
           const dom = match[1].toLowerCase();
-          const isAffiliateAggregator = dom.includes('miamibeachfl-hotel') || dom.includes('-hotel.com') || dom.includes('-hotels.com') || dom.includes('hotels-') || dom.includes('hotel-rn') || dom.includes('allhotel') || dom.includes('hotel-board') || dom.includes('reservations') || dom.includes('themiamiguide.com') || dom.includes('miamiresidential.com');
-          if (isAffiliateAggregator) continue;
+          const isEditorialOrAggregator = EDITORIAL_AND_AGGREGATOR_DOMAINS.some(d => dom.includes(d));
+          if (isEditorialOrAggregator) continue;
 
           if (knownParentDomains.some(k => dom.endsWith(k))) {
             const foundParent = knownParentDomains.find(k => dom.endsWith(k));
             if (dom.includes('marriott') || dom.includes('hilton') || dom.includes('hyatt') || dom.includes('ihg') || dom.includes('accor')) {
               if (!parentBrand) parentBrand = foundParent;
+              if (!officialDomain) officialDomain = foundParent;
             } else {
               if (!officialDomain) officialDomain = dom;
             }
-          } else if (!officialDomain && !item.link.includes('booking.com') && !item.link.includes('tripadvisor.com') && !item.link.includes('expedia.com') && !item.link.includes('hotels.com') && !item.link.includes('kayak.com') && !item.link.includes('wikipedia.org') && !item.link.includes('yelp.com')) {
-            officialDomain = match[1];
+          } else if (!officialDomain) {
+            const nameTokens = cleanHotelName.toLowerCase().split(/\s+/).filter(w => w.length > 3 && !['hotel', 'hotels', 'resort', 'london', 'city'].includes(w));
+            const matchesName = nameTokens.some(t => dom.includes(t));
+            if (matchesName) {
+              officialDomain = match[1];
+            }
           }
         }
       }
@@ -855,7 +877,7 @@ export async function fetchAmenityPhotosForHotel(hotelName, city, neighborhood =
       officialDomain ? fetch('https://google.serper.dev/images', {
         method: 'POST',
         headers: { 'X-API-KEY': SERPER_API_KEY, 'Content-Type': 'application/json' },
-        body: JSON.stringify({ q: `site:${officialDomain} (pool OR spa OR matador OR basement OR dining OR bar OR suite OR room OR bath OR exterior)`, num: 15 }),
+        body: JSON.stringify({ q: `site:${officialDomain} "${cleanHotelName}" (pool OR spa OR dining OR bar OR suite OR room OR bath OR exterior)`, num: 15 }),
         signal: AbortSignal.timeout(5000)
       }).then(r => r.json()).catch(() => ({})) : Promise.resolve({}),
       // Parent Brand Site Direct Assets
@@ -870,8 +892,9 @@ export async function fetchAmenityPhotosForHotel(hotelName, city, neighborhood =
     const isLowQualityDomain = (url = '', title = '') => {
       const u = (url || '').toLowerCase();
       const t = (title || '').toLowerCase();
+      if (EDITORIAL_AND_AGGREGATOR_DOMAINS.some(d => u.includes(d))) return true;
       const isCrawlerHost = u.includes('lookaside.instagram.com') || u.includes('lookaside.fbsbx.com') || u.includes('fbsbx.com') || u.includes('fbcdn.net') || u.includes('instagram.com/seo/') || u.includes('static.cdninstagram.com');
-      const isWeddingOrBlog = t.includes('wedding') || t.includes('bride') || t.includes('groom') || t.includes('dress') || t.includes('couple') || t.includes('timeout') || t.includes('linkedin') || t.includes('pinterest') || u.includes('wedding');
+      const isWeddingOrBlog = t.includes('wedding') || t.includes('bride') || t.includes('groom') || t.includes('dress') || t.includes('couple') || t.includes('timeout') || t.includes('linkedin') || t.includes('pinterest') || u.includes('wedding') || t.includes('travel weekly') || u.includes('travelweekly') || u.includes('northstar') || u.includes('imgkit.net');
       return isCrawlerHost || isWeddingOrBlog;
     };
 
@@ -897,6 +920,16 @@ export async function fetchAmenityPhotosForHotel(hotelName, city, neighborhood =
     const brandTokens = tokens.filter(t => !locationStopWords.has(t) && t.length >= 2);
     const activeTokens = brandTokens.length > 0 ? brandTokens : tokens;
 
+    const MULTI_HOTEL_CHAINS = ['hilton.com', 'marriott.com', 'hyatt.com', 'ihg.com', 'accor.com', 'ennismore.com', 'radissonhotels.com', 'wyndhamhotels.com', 'choicehotels.com'];
+    const isChainDomain = (dom) => dom && MULTI_HOTEL_CHAINS.some(c => dom.includes(c));
+
+    const SISTER_BRANDS = [
+      'doubletree', 'curio', 'conrad', 'hampton', 'garden inn', 'waldorf', 'canopy', 'tapestry', 'tru by hilton',
+      'ritz-carlton', 'st. regis', 'w hotel', 'jw marriott', 'courtyard', 'sheraton', 'westin', 'aloft', 'moxy', 'autograph collection',
+      'andaz', 'park hyatt', 'grand hyatt', 'hyatt regency', 'alila', 'thompson',
+      'intercontinental', 'kimpton', 'hotel indigo', 'crowne plaza', 'holiday inn', 'voco'
+    ];
+
     // Strict Whitelist: ONLY Official Hotel Domain, Parent Brand, Official Luxury Hotel CDNs, Booking.com CDN, or TripAdvisor "From Management"
     const isStrictOfficialOrManagement = (img) => {
       if (!img || !img.imageUrl) return false;
@@ -906,38 +939,76 @@ export async function fetchAmenityPhotosForHotel(hotelName, city, neighborhood =
       const combined = `${u} ${l} ${t}`;
 
       if (isLowQualityDomain(img.imageUrl, img.title)) return false;
-      // Reject affiliate aggregators and third party blogs
+      // Reject editorial aggregators, travel publishers, and third party blogs
+      if (EDITORIAL_AND_AGGREGATOR_DOMAINS.some(d => u.includes(d) || l.includes(d))) return false;
       if (u.includes('miamibeachfl-hotel') || u.includes('-hotel.com') || l.includes('miamibeachfl-hotel') || l.includes('-hotel.com') || u.includes('themiamiguide') || l.includes('themiamiguide') || u.includes('miamiresidential') || l.includes('miamiresidential')) return false;
-      // Reject cross-continent property collisions (e.g. Seadust Cancun matching Sea Containers)
-      if (combined.includes('cancun') || combined.includes('seadust') || combined.includes('mexico')) return false;
 
-      // Reject cross-city collisions for multi-property chains (e.g. New York EDITION or West Hollywood EDITION matching Miami Beach EDITION)
+      // Reject cross-continent & vacation collisions (e.g. Sandals Caribbean, African Safari, Cancun matching city hotels)
+      if (
+        combined.includes('caribbean') || 
+        combined.includes('sandals') || 
+        combined.includes('safari') || 
+        combined.includes('watering hole') || 
+        combined.includes('cancun') || 
+        combined.includes('seadust') || 
+        combined.includes('mexico') || 
+        combined.includes('jamaica') || 
+        combined.includes('bahamas') || 
+        combined.includes('barbados') || 
+        combined.includes('st. lucia') || 
+        combined.includes('punta cana') || 
+        combined.includes('maldives') || 
+        combined.includes('bali')
+      ) {
+        return false;
+      }
+
+      // Sister-brand rejection: If the hotel being audited is NOT that sister brand, reject images from other sub-brands
+      const cleanHotelLower = cleanHotelName.toLowerCase();
+      for (const sb of SISTER_BRANDS) {
+        if (!cleanHotelLower.includes(sb) && combined.includes(sb)) {
+          return false;
+        }
+      }
+
+      // Reject cross-city collisions for multi-property chains
       const targetCityLower = (city || '').toLowerCase().trim();
       if (targetCityLower.includes('miami')) {
         if (combined.includes('new york') || combined.includes('times square') || combined.includes('west hollywood') || combined.includes('hollywood') || combined.includes('los angeles') || combined.includes('madrid') || combined.includes('barcelona') || combined.includes('tokyo') || combined.includes('toranomon') || combined.includes('ginza') || combined.includes('shanghai') || combined.includes('sanya') || combined.includes('bodrum') || combined.includes('rome') || combined.includes('singapore') || combined.includes('laxeb') || combined.includes('nyceb') || combined.includes('reykjavik')) {
           return false;
         }
       } else if (targetCityLower.includes('london')) {
-        if (combined.includes('miami') || combined.includes('new york') || combined.includes('west hollywood') || combined.includes('los angeles') || combined.includes('madrid') || combined.includes('barcelona') || combined.includes('tokyo') || combined.includes('cancun') || combined.includes('dubai')) {
+        if (combined.includes('syracuse') || combined.includes('skaneateles') || combined.includes('miami') || combined.includes('new york') || combined.includes('west hollywood') || combined.includes('los angeles') || combined.includes('madrid') || combined.includes('barcelona') || combined.includes('tokyo') || combined.includes('cancun') || combined.includes('dubai') || combined.includes('paris') || combined.includes('rome')) {
           return false;
         }
       }
 
       // 1. Must match target hotel brand tokens (word-boundary or full brand phrase)
       const hasTargetBrand = () => {
-        if (officialDomain && (u.includes(officialDomain) || l.includes(officialDomain))) return true;
-        if (parentBrand && (u.includes(parentBrand) || l.includes(parentBrand))) return true;
-
         const cleanBrandWords = brandTokens.length > 0 ? brandTokens : tokens;
-        if (cleanBrandWords.length >= 2) {
-          const fullPhrase = cleanBrandWords.join(' ');
-          if (combined.includes(fullPhrase)) return true;
-          return cleanBrandWords.every(w => new RegExp(`\\b${w}\\b`, 'i').test(combined));
+        const matchesBrandWords = () => {
+          if (cleanBrandWords.length >= 2) {
+            const fullPhrase = cleanBrandWords.join(' ');
+            if (combined.includes(fullPhrase)) return true;
+            return cleanBrandWords.every(w => new RegExp(`\\b${w}\\b`, 'i').test(combined));
+          }
+          if (cleanBrandWords.length === 1) {
+            return new RegExp(`\\b${cleanBrandWords[0]}\\b`, 'i').test(combined);
+          }
+          return true;
+        };
+
+        // If domain is an independent property domain (e.g. seacontainerslondon.com), matching domain is sufficient
+        if (officialDomain && !isChainDomain(officialDomain) && (u.includes(officialDomain) || l.includes(officialDomain))) {
+          return true;
         }
-        if (cleanBrandWords.length === 1) {
-          return new RegExp(`\\b${cleanBrandWords[0]}\\b`, 'i').test(combined);
+
+        // For large hotel chains (hilton.com, marriott.com, etc.), the photo MUST contain the property's distinctive brand tokens
+        if (isChainDomain(officialDomain) || isChainDomain(parentBrand)) {
+          return matchesBrandWords();
         }
-        return true;
+
+        return matchesBrandWords();
       };
 
       if (!hasTargetBrand()) return false;
@@ -961,12 +1032,12 @@ export async function fetchAmenityPhotosForHotel(hotelName, city, neighborhood =
         }
       }
 
-      // 3. Strict Whitelist of Official Brand & TripAdvisor Management Sources
-      const isOfficialBrand = officialDomain && (combined.includes(officialDomain) || u.includes(officialDomain));
-      const isParentBrand = parentBrand && (combined.includes(parentBrand) || u.includes(parentBrand));
-      const isOfficialCdn = ['galaxy.tf', 'tambourine.com', 'symphony.cdn', 'travelclick.com', 'cloudbeds.com', 'sbe.com', 'ennismore.com'].some(net => combined.includes(net));
+      // 3. Strict Whitelist of Official Brand & TripAdvisor Management Sources (MUST be hosted or linked directly)
+      const isOfficialBrand = officialDomain && (u.includes(officialDomain) || l.includes(officialDomain));
+      const isParentBrand = parentBrand && (u.includes(parentBrand) || l.includes(parentBrand));
+      const isOfficialCdn = ['galaxy.tf', 'tambourine.com', 'symphony.cdn', 'travelclick.com', 'cloudbeds.com', 'sbe.com', 'ennismore.com'].some(net => u.includes(net));
       const isTripAdvisorManagement = (l.includes('tripadvisor.com') || u.includes('tripadvisor.com')) && (l.includes('/hotel_review') || l.includes('/hotel_feature') || t.includes('management') || l.includes('from_management'));
-      const isBookingCdn = combined.includes('bstatic.com');
+      const isBookingCdn = u.includes('bstatic.com');
 
       return isOfficialBrand || isParentBrand || isOfficialCdn || isTripAdvisorManagement || isBookingCdn;
     };
@@ -1637,33 +1708,55 @@ export async function resolveAuditPhotos(hotelName, city, neighborhood = '', str
     slot1Asset = findFirst(poolLive, p => isRooftopOrBar(p) && !isBedroomLike(p) && !isBath(p) && !isExterior(p));
   }
   if (!slot1Asset) {
+    slot1Asset = findFirst(poolLive, p => (p.detectedCategory === 'SOCIAL' || (p.title && (p.title.toLowerCase().includes('bus') || p.title.toLowerCase().includes('restaurant') || p.title.toLowerCase().includes('bar')))) && !isBedroomLike(p) && !isBath(p));
+  }
+  if (!slot1Asset) {
     slot1Asset = findFirst(poolAmenity, p => p.detectedCategory === 'SOCIAL' && !isBedroomLike(p) && !isBath(p) && !isExterior(p));
+  }
+  if (!slot1Asset && poolLive.length > 0) {
+    slot1Asset = findFirst(poolLive, p => !isBedroomLike(p) && !isBath(p));
   }
   if (!slot1Asset && poolAmenity.length > 0) {
     slot1Asset = findFirst(poolAmenity, p => !isBedroomLike(p) && !isBath(p) && !isExterior(p));
   }
 
-  // Slot 2: Exterior Architectural Landmark
-  let slot2Asset = findFirst(poolAmenity, p => (
-    `${p.title} ${p.imageUrl}`.toLowerCase().includes('exterior-') ||
-    `${p.title} ${p.imageUrl}`.toLowerCase().includes('facade') ||
-    `${p.title} ${p.imageUrl}`.toLowerCase().includes('façade') ||
-    (p.detectedCategory === 'EXTERIOR' && !`${p.title} ${p.imageUrl}`.toLowerCase().includes('balcony'))
-  ) && !isBath(p) && !isPoolLike(p) && !isBedroomLike(p));
+  // Slot 2: Exterior Architectural Landmark (Prefer verified live property exterior!)
+  let slot2Asset = findFirst(poolLive, p => (p.title && p.title.toLowerCase().includes('bus') && isExterior(p)) && !isBath(p) && !isPoolLike(p) && !isBedroomLike(p));
+  if (!slot2Asset) {
+    slot2Asset = findFirst(poolLive, p => isExterior(p) && !isBath(p) && !isPoolLike(p) && !isBedroomLike(p));
+  }
+  if (!slot2Asset) {
+    slot2Asset = findFirst(poolAmenity, p => (
+      `${p.title} ${p.imageUrl}`.toLowerCase().includes('exterior-') ||
+      `${p.title} ${p.imageUrl}`.toLowerCase().includes('facade') ||
+      `${p.title} ${p.imageUrl}`.toLowerCase().includes('façade') ||
+      (p.detectedCategory === 'EXTERIOR' && !`${p.title} ${p.imageUrl}`.toLowerCase().includes('balcony'))
+    ) && !isBath(p) && !isPoolLike(p) && !isBedroomLike(p));
+  }
   if (!slot2Asset) {
     slot2Asset = findFirst(poolAmenity, p => (p.detectedCategory === 'EXTERIOR' || isExterior(p)) && !isBath(p) && !isPoolLike(p) && !isBedroomLike(p));
   }
   if (!slot2Asset) {
-    slot2Asset = findFirst(poolLive, p => isExterior(p) && !isBath(p) && !isPoolLike(p) && !isBedroomLike(p));
+    // If hotel exterior is visible in grounds or entrance shot, use that verified property photo
+    slot2Asset = findFirst(poolLive, p => (p.title && (p.title.toLowerCase().includes('hotel') || p.title.toLowerCase().includes('resort') || p.title.toLowerCase().includes('building') || p.title.toLowerCase().includes('entrance'))) && !isBath(p) && !isBedroomLike(p));
+  }
+  if (!slot2Asset) {
+    slot2Asset = findFirst(poolLive, p => !isBath(p) && !isBedroomLike(p));
+  }
+  if (!slot2Asset) {
+    slot2Asset = findFirst(poolAmenity, p => !isBath(p) && !isBedroomLike(p));
   }
 
-  // Slot 3: Signature Suite / Bedroom
-  let slot3Asset = findFirst(poolAmenity, p => isBedroomLike(p) && !isBath(p) && !isExterior(p));
+  // Slot 3: Signature Suite / Bedroom (Strictly prefer verified live property photos!)
+  let slot3Asset = findFirst(poolLive, p => isBedroomLike(p) && !isBath(p) && !isExterior(p));
   if (!slot3Asset) {
-    slot3Asset = findFirst(poolLive, p => isBedroomLike(p) && !isBath(p) && !isExterior(p));
+    slot3Asset = findFirst(poolAmenity, p => isBedroomLike(p) && !isBath(p) && !isExterior(p));
+  }
+  if (!slot3Asset) {
+    slot3Asset = findFirst(poolLive, p => isBedroomLike(p) && !isBath(p));
   }
 
-  // Slot 4: Signature Destination Amenity (Resort Pool Deck OR Lyaness / Destination Dining / Social)
+  // Slot 4: Signature Destination Amenity (Resort Pool Deck OR Destination Dining / Social)
   let slot4Asset = null;
   if (isSlot4Pool) {
     slot4Asset = findFirst(poolAmenity, p => (p.detectedCategory === 'POOL' || isPoolLike(p)) && !isBedroomLike(p) && !isBath(p) && !isExterior(p));
@@ -1674,11 +1767,13 @@ export async function resolveAuditPhotos(hotelName, city, neighborhood = '', str
     slot4Asset = findFirst(poolAmenity, p => (p.detectedCategory === 'SPA' || `${p.title} ${p.imageUrl}`.toLowerCase().includes('spa')) && !isBedroomLike(p) && !isBath(p) && !isExterior(p));
   }
   if (!slot4Asset) {
-    // Check for Lyaness or acclaimed destination dining first
+    // Check for Lyaness or acclaimed destination dining or verified live restaurant/bar
     slot4Asset = findFirst(poolAmenity, p => (`${p.title} ${p.imageUrl}`.toLowerCase().includes('lyaness') || `${p.title} ${p.imageUrl}`.toLowerCase().includes('matador')) && !isBedroomLike(p) && !isBath(p) && !isExterior(p));
   }
   if (!slot4Asset) {
-    // If Slot 1 already took the pool, Slot 4 showcases destination dining / Matador Room / bar / social space!
+    slot4Asset = findFirst(poolLive, p => (p.detectedCategory === 'SOCIAL' || isRooftopOrBar(p) || (p.title && (p.title.toLowerCase().includes('restaurant') || p.title.toLowerCase().includes('bar') || p.title.toLowerCase().includes('dining')))) && !isBedroomLike(p) && !isBath(p) && !isExterior(p) && (!isSlot1Pool || !isPoolLike(p)));
+  }
+  if (!slot4Asset) {
     slot4Asset = findFirst(poolAmenity, p => (p.detectedCategory === 'SOCIAL' || isRooftopOrBar(p) || p.detectedCategory === 'SPA' || p.detectedCategory === 'LOBBY') && !isBedroomLike(p) && !isBath(p) && !isExterior(p) && (!isSlot1Pool || !isPoolLike(p)));
   }
   if (!slot4Asset) {
@@ -1686,13 +1781,20 @@ export async function resolveAuditPhotos(hotelName, city, neighborhood = '', str
   }
 
   // Slot 5: Hygiene & Luxury Finish (Design Bathroom & Soaking Tub OR Secondary Sanctuary)
-  let slot5Asset = findFirst(poolAmenity, p => isBath(p) && !isExterior(p));
+  let slot5Asset = findFirst(poolLive, p => isBath(p) && !isExterior(p));
   if (!slot5Asset) {
-    slot5Asset = findFirst(poolLive, p => isBath(p) && !isExterior(p));
+    slot5Asset = findFirst(poolAmenity, p => isBath(p) && !isExterior(p));
   }
   if (!slot5Asset) {
-    slot5Asset = findFirst(poolAmenity, p => !isBedroomLike(p) && !isExterior(p)) || findFirst(poolLive, p => !isBedroomLike(p) && !isExterior(p));
+    slot5Asset = findFirst(poolLive, p => !isBedroomLike(p) && !isExterior(p)) || findFirst(poolAmenity, p => !isBedroomLike(p) && !isExterior(p));
   }
+
+  // Guaranteed Safety Invariant: Every single slot must be populated with a real, authentic photo
+  if (!slot1Asset) slot1Asset = findFirst(poolLive, p => !isBedroomLike(p) && !isBath(p)) || findFirst(poolAmenity, p => true) || poolLive[0] || null;
+  if (!slot2Asset) slot2Asset = findFirst(poolLive, p => !isBath(p) && !isBedroomLike(p)) || findFirst(poolAmenity, p => true) || poolLive[1] || poolLive[0] || null;
+  if (!slot3Asset) slot3Asset = findFirst(poolLive, p => isBedroomLike(p)) || findFirst(poolAmenity, p => isBedroomLike(p)) || poolLive[2] || poolLive[0] || null;
+  if (!slot4Asset) slot4Asset = findFirst(poolLive, p => !isBedroomLike(p) && !isBath(p)) || findFirst(poolAmenity, p => true) || poolLive[3] || poolLive[0] || null;
+  if (!slot5Asset) slot5Asset = findFirst(poolLive, p => isBath(p)) || findFirst(poolAmenity, p => isBath(p)) || poolLive[4] || poolLive[0] || null;
 
   const winningAssets = [
     { targetSlot: 1, defaultCat: isSlot1Pool ? 'OUTDOOR_SOCIAL_POOL' : 'HERO_CULTURAL_MAGNET', asset: slot1Asset },

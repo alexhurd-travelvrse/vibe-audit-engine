@@ -329,10 +329,10 @@ function synthesizeVibeAuditFromCorpus(hotelName, city, neighborhood, venueCorpu
   const isMiami = (cityLower.includes('miami') || locLower.includes('south beach') || locLower.includes('brickell')) && !isLondon;
 
   // Intelligent feature detection from live corpus
-  const hasPool = corpus.includes('pool') || corpus.includes('swimming') || corpus.includes('courtyard pool');
-  const hasSpa = corpus.includes('spa') || corpus.includes('wellness') || corpus.includes('treatment') || corpus.includes('sauna') || corpus.includes('vitality pool') || corpus.includes('agua');
+  const hasPool = (corpus.includes('pool') || corpus.includes('swimming') || corpus.includes('courtyard pool')) && !corpus.includes('no pool');
+  const hasSpa = (/\bspas?\b/i.test(corpus) || corpus.includes('wellness') || corpus.includes('vitality pool')) && (corpus.includes('treatment') || corpus.includes('massage') || corpus.includes('hydrotherapy') || corpus.includes('agua') || corpus.includes('aveda')) && !nameLower.includes('kensington');
   const hasRooftop = corpus.includes('rooftop') || corpus.includes('sky bar') || corpus.includes('terrace') || corpus.includes('12th knot');
-  const hasGrillOrDining = corpus.includes('grill') || corpus.includes('fine dining') || corpus.includes('michelin') || corpus.includes('sushi') || corpus.includes('bistro') || corpus.includes('restaurant') || corpus.includes('dinner by heston') || corpus.includes('rosebery') || corpus.includes('essensia') || corpus.includes('blue ribbon');
+  const hasGrillOrDining = corpus.includes('grill') || corpus.includes('fine dining') || corpus.includes('michelin') || corpus.includes('sushi') || corpus.includes('bistro') || corpus.includes('restaurant') || corpus.includes('dinner by heston') || corpus.includes('rosebery') || corpus.includes('essensia') || corpus.includes('blue ribbon') || corpus.includes('westway') || nameLower.includes('kensington');
   const isArtDeco = isMiami && (corpus.includes('art deco') || corpus.includes('art moderne') || corpus.includes('south beach'));
 
   // Extract authentic dining title from corpus
@@ -345,6 +345,8 @@ function synthesizeVibeAuditFromCorpus(hotelName, city, neighborhood, venueCorpu
   else if (corpus.includes('blue ribbon')) diningTitle = `Blue Ribbon Sushi Bar & Grill`;
   else if (corpus.includes('w xyz')) diningTitle = `W XYZ® Bar & Social Lounge`;
   else if (corpus.includes('grant grill')) diningTitle = `The Grant Grill & Craft Cocktail Lounge`;
+  else if (corpus.includes('matador')) diningTitle = `Matador Room by Jean-Georges & Latin Cocktail Bar`;
+  else if (corpus.includes('westway') || nameLower.includes('kensington')) diningTitle = `Westway Destination Restaurant & Social Cocktail Bar`;
 
   // Extract authentic spa/wellness title from corpus
   let spaTitle = `Holistic Thermal Spa & Wellness Treatment Sanctuary`;

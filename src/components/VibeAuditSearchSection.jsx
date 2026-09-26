@@ -72,16 +72,18 @@ const VibeAuditSearchSection = () => {
     activePhase2AbortRef.current = abortController;
 
     try {
-      // 1. PHASE 1: Fetch and render Manifest FIRST and ONLY Manifest first
-      const masterAudit = await fetchMasterVibeAuditManifest(
+      // Execute the unified 4-step sequential pipeline:
+      const masterAudit = await fetchMasterVibeAudit(
         targetHotel,
         targetCity,
         targetNeighborhood,
-        directBookingUrl,
-        bookingId
+        bookingId,
+        directBookingUrl
       );
 
-      // Render the complete Manifest & strategic text immediately!
+      if (abortController.signal.aborted) return;
+
+      // Render verified results with fully resolved photos
       setAnalysis({ signals: { categories: {} }, masterAudit });
       setLoading(false);
 
@@ -91,46 +93,6 @@ const VibeAuditSearchSection = () => {
           setAnalysis(prev => prev ? { ...prev, signals: sig } : prev);
         }
       }).catch(err => console.warn('Supplemental signals error:', err));
-
-      // 2. PHASE 2: Background Visual Photo Resolution & Quality Checks
-      if (masterAudit && masterAudit.ota_conversion_audit) {
-        fetchMasterVibeAuditPhotos(
-          targetHotel,
-          targetCity,
-          targetNeighborhood,
-          masterAudit.ota_conversion_audit.optimal_5_photo_sequence,
-          abortController.signal,
-          directBookingUrl,
-          masterAudit.ota_conversion_audit.key_strategic_shifts,
-          bookingId
-        ).then(photoResults => {
-          if (photoResults && photoResults.optimal_5_photo_sequence) {
-            setAnalysis(prev => {
-              if (!prev || !prev.masterAudit) return prev;
-              return {
-                ...prev,
-                masterAudit: {
-                  ...prev.masterAudit,
-                  ota_conversion_audit: {
-                    ...prev.masterAudit.ota_conversion_audit,
-                    is_listed_on_booking: photoResults.is_listed_on_booking,
-                    listing_status: photoResults.listing_status,
-                    live_photos: photoResults.live_photos,
-                    optimal_5_photo_sequence: photoResults.optimal_5_photo_sequence,
-                    photos_status: 'RESOLVED'
-                  }
-                }
-              };
-            });
-          }
-        }).catch(photoErr => {
-          if (photoErr.name === 'AbortError') {
-            console.log('[Photo Gatekeeper] Previous Phase 2 request successfully aborted.');
-            return;
-          }
-          console.warn('[Photo Gatekeeper] Phase 2 resolution error:', photoErr);
-        });
-      }
     } catch (err) {
       console.error('Audit engine failure:', err);
       setLoading(false);

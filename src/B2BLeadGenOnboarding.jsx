@@ -101,28 +101,28 @@ export function parseBookingUrl(input) {
 
 const PROCESSING_PHASES = [
   {
-    title: "Scanning Local Micro-District Gravity",
-    detail: "Indexing Google Places & neighborhood subculture search momentum...",
+    title: "1) Manifest First: Synthesizing Hotel DNA & Demand",
+    detail: "Extracting venue architecture, sensory scores & neighborhood subcultural gravity...",
     percentage: 25,
-    badge: "STAGE 1/4 • GEOSPATIAL RADAR"
+    badge: "STEP 1/4 • MANIFEST FIRST"
   },
   {
-    title: "Auditing Social & Editorial Citations",
-    detail: "Synthesizing architectural reviews, editorial critique & local press...",
+    title: "2) Discovering Images (Site, TripAdvisor & Booking.com)",
+    detail: "Scanning live Booking.com gallery, official brand domains & TripAdvisor management photos...",
     percentage: 50,
-    badge: "STAGE 2/4 • CULTURAL CITATIONS"
+    badge: "STEP 2/4 • VISUAL INVENTORY"
   },
   {
-    title: "Synthesizing Vibe Manifest & Acoustic DNA",
-    detail: "Evaluating soundscape profiles, sensory palette, and design archetypes...",
+    title: "3) Formulating Strategic Shifts & 5-Slot Blueprint",
+    detail: "Bridging Hotel DNA with traveler search demand & setting the 5-slot conversion strategy...",
     percentage: 75,
-    badge: "STAGE 3/4 • SENSORY ARCHITECTURE"
+    badge: "STEP 3/4 • STRATEGY BLUEPRINT"
   },
   {
-    title: "Finalizing Vibe Manifest & Conversion Strategy",
-    detail: "Compiling cultural gravity manifest and 5-slot visual conversion blueprint...",
-    percentage: 95,
-    badge: "STAGE 4/4 • MANIFEST SYNTHESIS"
+    title: "4) Re-ordering & Verifying Optimal 5-Slot Gallery",
+    detail: "Binding verified high-res assets into Slots 1–5 and passing all quality checks...",
+    percentage: 98,
+    badge: "STEP 4/4 • RE-ORDER & VERIFICATION"
   }
 ];
 
@@ -281,9 +281,9 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
   };
 
   const executeAudit = async (targetHotel, targetCity, targetNeighborhood, directBookingUrl, bookingId = null) => {
-    // 1. Immediately abort any prior in-flight Phase 2 resolution & reset analysis state
+    // 1. Immediately abort any prior in-flight resolution & reset analysis state
     if (activePhase2AbortRef.current) {
-      console.log('[Client] Aborting previous in-flight Phase 2 photo resolution due to new search.');
+      console.log('[Client] Aborting previous in-flight audit request due to new search.');
       activePhase2AbortRef.current.abort();
     }
     const abortController = new AbortController();
@@ -292,21 +292,31 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
     setAmbiguousCandidates(null);
     setAnalysis(null);
     setStep('processing');
-    setProcessingStage(1);
+    setPhaseIndex(0);
 
     try {
-      // 2. PHASE 1: Fast Manifest FIRST and ONLY the Manifest first
-      const masterAudit = await fetchMasterVibeAuditManifest(
+      // Execute the unified 4-step sequential pipeline:
+      // 1) Manifest first
+      // 2) Get available images (Site, TripAdvisor Management, Booking.com)
+      // 3) Set strategy
+      // 4) Re-order and verify
+      const auditPromise = fetchMasterVibeAudit(
         targetHotel, 
         targetCity, 
         targetNeighborhood,
-        directBookingUrl,
-        bookingId
+        bookingId,
+        directBookingUrl
       );
-      
+
+      const masterAudit = await auditPromise;
       if (abortController.signal.aborted) return;
 
-      // Render results immediately!
+      // Ensure stage 4 is completed visibly
+      setPhaseIndex(3);
+      await new Promise(r => setTimeout(r, 600));
+      if (abortController.signal.aborted) return;
+
+      // Render verified results with fully resolved photos
       setAnalysis({ signals: { categories: {} }, masterAudit, auditResults: null, challenge: null });
       setStep('results');
       setCurrentPhase(1);
@@ -318,54 +328,6 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
           setAnalysis(prev => (prev && prev.masterAudit?.venue_id === masterAudit?.venue_id) ? { ...prev, signals: sig } : prev);
         }
       }).catch(err => console.warn("Supplemental signals error:", err));
-
-      // 3. PHASE 2: Background Gemini Vision Photo Resolution & Verification
-      if (masterAudit && masterAudit.ota_conversion_audit) {
-        const photoPromise = directBookingUrl
-          ? Promise.resolve({ selected: { url: directBookingUrl, title: targetHotel } })
-          : lookupHotelCandidates(targetHotel, targetCity, targetNeighborhood, directBookingUrl, bookingId);
-
-        photoPromise.then(lookup => {
-          if (abortController.signal.aborted) return null;
-          const resolvedBookingUrl = directBookingUrl || lookup?.selected?.url || null;
-          const resolvedHotelName = targetHotel || lookup?.selected?.title;
-          return fetchMasterVibeAuditPhotos(
-            resolvedHotelName,
-            targetCity,
-            targetNeighborhood,
-            masterAudit.ota_conversion_audit.optimal_5_photo_sequence,
-            abortController.signal,
-            resolvedBookingUrl,
-            masterAudit.ota_conversion_audit.key_strategic_shifts,
-            bookingId
-          );
-        }).then(photoResults => {
-          if (abortController.signal.aborted || !photoResults) return;
-          if (photoResults && photoResults.optimal_5_photo_sequence) {
-            setAnalysis(prev => {
-              if (!prev || !prev.masterAudit || prev.masterAudit.venue_id !== masterAudit.venue_id) return prev;
-              return {
-                ...prev,
-                masterAudit: {
-                  ...prev.masterAudit,
-                  ota_conversion_audit: {
-                    ...prev.masterAudit.ota_conversion_audit,
-                    is_listed_on_booking: photoResults.is_listed_on_booking,
-                    listing_status: photoResults.listing_status,
-                    live_photos: photoResults.live_photos,
-                    optimal_5_photo_sequence: photoResults.optimal_5_photo_sequence,
-                    photos_status: 'RESOLVED'
-                  }
-                }
-              };
-            });
-          }
-        }).catch(photoErr => {
-          if (!abortController.signal.aborted) {
-            console.warn('[Photo Gatekeeper] Phase 2 resolution error:', photoErr);
-          }
-        });
-      }
 
     } catch (err) {
       if (!abortController.signal.aborted) {
@@ -923,7 +885,7 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                 textTransform: 'uppercase',
                 marginBottom: '2rem'
               }}>
-                <Zap size={14} /> Phase 1: Synthesizing Vibe Manifest First
+                <Zap size={14} /> 4-Step Pipeline: Manifest ➔ Image Discovery ➔ Strategy ➔ Re-Order
               </div>
               {/* Dual-Ring Cyber Radar */}
               <div style={{ position: 'relative', width: '120px', height: '120px', margin: '0 auto 2.5rem' }}>
