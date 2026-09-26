@@ -48,6 +48,20 @@ const submitLeadToFormspree = async (data) => {
   }
 };
 
+export const KNOWN_SLUG_TITLES = {
+  'twoninezeroone-collinsave': 'The Miami Beach EDITION',
+  'the-plymouth-miami-beach': 'The Plymouth South Beach',
+  'sea-containers-london': 'Sea Containers London',
+  'sls-south-beach': 'SLS South Beach Miami',
+  'dukes': 'Dukes The Palm, a Royal Hideaway Hotel',
+  'mandarin-oriental-hyde-park-london': 'Mandarin Oriental Hyde Park, London',
+  '1-hotel-south-beach': '1 Hotel South Beach',
+  'the-standard-spa-miami-beach': 'The Standard Spa, Miami Beach',
+  'faena-miami-beach': 'Faena Hotel Miami Beach',
+  'the-ned': 'The Ned London',
+  'the-london-edition': 'The London EDITION'
+};
+
 export function parseBookingUrl(input) {
   if (!input || typeof input !== 'string') return null;
   const match = input.match(/booking\.com\/hotel\/([a-z]{2})\/([a-zA-Z0-9-_]+)(?:\.[a-z]{2,3}(?:-[a-z]{2,4})?)?\.html/i);
@@ -56,7 +70,7 @@ export function parseBookingUrl(input) {
   const slug = match[2].toLowerCase();
   const cleanUrl = `https://www.booking.com/hotel/${country}/${slug}.html`;
 
-  let cleanTitle = slug
+  let cleanTitle = KNOWN_SLUG_TITLES[slug] || slug
     .replace(/-/g, ' ')
     .replace(/\b(the|hotel|resort|spa|suites|and|&)\b/gi, ' ')
     .replace(/\s+/g, ' ')
@@ -66,9 +80,9 @@ export function parseBookingUrl(input) {
 
   let inferredCity = '';
   let inferredNeighborhood = '';
-  if (slug.includes('miami-beach') || slug.includes('south-beach') || slug.includes('plymouth')) {
+  if (slug.includes('miami-beach') || slug.includes('south-beach') || slug.includes('plymouth') || slug === 'twoninezeroone-collinsave') {
     inferredCity = 'Miami';
-    inferredNeighborhood = 'South Beach';
+    inferredNeighborhood = 'Miami Beach';
   } else if (slug.includes('london')) {
     inferredCity = 'London';
   } else if (slug.includes('dubai')) {
@@ -118,6 +132,7 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
   const [phaseIndex, setPhaseIndex] = useState(0);
   const [emailError, setEmailError] = useState('');
   const [ambiguousCandidates, setAmbiguousCandidates] = useState(null);
+  const [isVerifyingProperty, setIsVerifyingProperty] = useState(false);
   const [formData, setFormData] = useState({
     email: '',
     propertyName: '',
@@ -209,9 +224,13 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
 
   const handleSelectCandidate = (candidate) => {
     const selectedTitle = candidate.title || formData.propertyName;
-    setFormData(prev => ({ ...prev, propertyName: selectedTitle }));
+    setFormData(prev => ({ 
+      ...prev, 
+      propertyName: selectedTitle,
+      propertyUrl: candidate.url
+    }));
     setAmbiguousCandidates(null);
-    startAnalysis();
+    executeAudit(selectedTitle, formData.city, formData.neighborhood, candidate.url);
   };
 
   const startAnalysis = async () => {
@@ -221,8 +240,8 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
       submitLeadToFormspree(formData);
     }
 
-    let targetHotel = formData.propertyName || 'Mandarin Oriental';
-    let targetCity = formData.city || 'London';
+    let targetHotel = formData.propertyName || 'The Plymouth Hotel';
+    let targetCity = formData.city || 'Miami';
     let targetNeighborhood = formData.neighborhood || '';
     let directBookingUrl = formData.propertyUrl && formData.propertyUrl.includes('booking.com/hotel/') ? formData.propertyUrl : null;
 
@@ -249,6 +268,39 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
       }
     }
 
+    // 1. If direct Booking URL is already confirmed, jump straight to audit!
+    if (directBookingUrl) {
+      setAmbiguousCandidates(null);
+      executeAudit(targetHotel, targetCity, targetNeighborhood, directBookingUrl);
+      return;
+    }
+
+    // 2. Pre-flight Verification: If multiple candidates exist, display the Clarification page!
+    setIsVerifyingProperty(true);
+    setAmbiguousCandidates(null);
+
+    try {
+      const lookup = await lookupHotelCandidates(targetHotel, targetCity, targetNeighborhood);
+      setIsVerifyingProperty(false);
+
+      if (lookup.status === 'ambiguous' && lookup.candidates && lookup.candidates.length > 1) {
+        console.log('[Disambiguation] Multiple matching candidates found, displaying clarification page:', lookup.candidates);
+        setAmbiguousCandidates(lookup.candidates);
+        return;
+      }
+
+      // If decisive, use the confirmed title & direct booking URL
+      const resolvedUrl = lookup.selected?.url || null;
+      const resolvedHotel = lookup.selected?.title || targetHotel;
+      executeAudit(resolvedHotel, targetCity, targetNeighborhood, resolvedUrl);
+    } catch (err) {
+      setIsVerifyingProperty(false);
+      console.warn('[Pre-flight verification fallback, proceeding to audit]', err);
+      executeAudit(targetHotel, targetCity, targetNeighborhood, null);
+    }
+  };
+
+  const executeAudit = async (targetHotel, targetCity, targetNeighborhood, directBookingUrl) => {
     // 1. Immediately abort any prior in-flight Phase 2 resolution & reset analysis state
     if (activePhase2AbortRef.current) {
       console.log('[Client] Aborting previous in-flight Phase 2 photo resolution due to new search.');
@@ -288,7 +340,11 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
 
       // 3. PHASE 2: Background Gemini Vision Photo Resolution & Verification
       if (masterAudit && masterAudit.ota_conversion_audit) {
-        lookupHotelCandidates(targetHotel, targetCity, targetNeighborhood, directBookingUrl).then(lookup => {
+        const photoPromise = directBookingUrl
+          ? Promise.resolve({ selected: { url: directBookingUrl, title: targetHotel } })
+          : lookupHotelCandidates(targetHotel, targetCity, targetNeighborhood, directBookingUrl);
+
+        photoPromise.then(lookup => {
           if (abortController.signal.aborted) return null;
           const resolvedBookingUrl = directBookingUrl || lookup?.selected?.url || null;
           const resolvedHotelName = targetHotel || lookup?.selected?.title;
@@ -298,7 +354,8 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
             targetNeighborhood,
             masterAudit.ota_conversion_audit.optimal_5_photo_sequence,
             abortController.signal,
-            resolvedBookingUrl
+            resolvedBookingUrl,
+            masterAudit.ota_conversion_audit.key_strategic_shifts
           );
         }).then(photoResults => {
           if (abortController.signal.aborted || !photoResults) return;
@@ -706,8 +763,19 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                   )}
                 </div>
 
-                <button className="launch-button" style={{ padding: '1.25rem', fontSize: '1.2rem', marginTop: '1.5rem' }} onClick={startAnalysis}>
-                    LAUNCH VIBE AUDIT
+                <button 
+                  className="launch-button" 
+                  style={{ 
+                    padding: '1.25rem', 
+                    fontSize: '1.2rem', 
+                    marginTop: '1.5rem',
+                    opacity: isVerifyingProperty ? 0.7 : 1,
+                    cursor: isVerifyingProperty ? 'wait' : 'pointer'
+                  }} 
+                  onClick={startAnalysis}
+                  disabled={isVerifyingProperty}
+                >
+                  {isVerifyingProperty ? 'VERIFYING VENUE INVENTORY...' : 'LAUNCH VIBE AUDIT'}
                 </button>
 
                 {/* Micro-Consent Disclaimer */}

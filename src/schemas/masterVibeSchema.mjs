@@ -249,9 +249,24 @@ export const masterVibeSchema = {
             property_overview_150_words: { type: "string" }
           },
           required: ["ota_headline", "property_overview_150_words"]
+        },
+        photographic_gap_analysis: {
+          type: "array",
+          items: {
+            type: "object",
+            properties: {
+              missing_shot_title: { type: "string", description: "Name of missing shot e.g. 'Twilight Cocktail Hour on Matador Terrace'" },
+              category: { type: "string", description: "Category e.g. 'CULINARY_SOCIAL', 'ATMOSPHERIC_TWILIGHT', 'CREATOR_BATHROOM'" },
+              why_needed: { type: "string", description: "Why this shot is currently missing from all channels and what traveler intent it captures" },
+              recommended_framing_and_lighting: { type: "string", description: "Specific composition, angle, photometrics e.g. '2400K warm eye-level glow, diffused fill, glassware reflection'" },
+              projected_adr_impact: { type: "string", description: "Expected impact on direct booking and ADR e.g. '+8% higher suite booking velocity'" }
+            },
+            required: ["missing_shot_title", "category", "why_needed", "recommended_framing_and_lighting"]
+          },
+          description: "2 to 3 high-impact photographic gaps: specific photos the property does NOT currently have on any official channel or OTA, but should commission to capture unmet traveler search demand"
         }
       },
-      required: ["channel", "before_merchandising_score", "after_merchandising_score", "projected_conversion_uplift", "current_drop_off_flaw", "key_strategic_shifts", "optimal_5_photo_sequence", "anti_commodity_copy_rewrite"]
+      required: ["channel", "before_merchandising_score", "after_merchandising_score", "projected_conversion_uplift", "current_drop_off_flaw", "key_strategic_shifts", "optimal_5_photo_sequence", "anti_commodity_copy_rewrite", "photographic_gap_analysis"]
     }
   },
   required: ["venue_id", "venue_name", "location", "vibe_signature", "interactive_quiz_challenge", "ota_conversion_audit"]

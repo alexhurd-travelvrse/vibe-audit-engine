@@ -113,12 +113,12 @@ export async function lookupHotelCandidates(hotelName, city, neighborhood = '', 
   return await response.json();
 }
 
-export async function fetchMasterVibeAuditPhotos(hotelName, city, neighborhood, strategySlots = null, signal = null, bookingUrl = null) {
+export async function fetchMasterVibeAuditPhotos(hotelName, city, neighborhood, strategySlots = null, signal = null, bookingUrl = null, strategicShifts = null) {
   console.log(`[Master Vibe Phase 2] Resolving and verifying visual photo assets for ${hotelName}...`);
   const response = await fetch('/api/resolve-audit-photos', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ hotelName, city, neighborhood, strategySlots, bookingUrl }),
+    body: JSON.stringify({ hotelName, city, neighborhood, strategySlots, bookingUrl, strategicShifts }),
     signal: signal || undefined
   });
   if (!response.ok) {

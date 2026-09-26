@@ -1,0 +1,1960 @@
+[
+  {
+    "hotel": {
+      "name": "The Miami Beach EDITION",
+      "city": "Miami Beach",
+      "neighborhood": "South Beach",
+      "bookingUrl": "https://www.booking.com/hotel/us/twoninezeroone-collinsave.en-gb.html"
+    },
+    "data": {
+      "venue_id": "the_miami_beach_edition_miami_beach",
+      "venue_name": "The Miami Beach EDITION",
+      "location": "South Beach, Miami Beach",
+      "audit_timestamp": "2026-09-26T09:48:37.182Z",
+      "vibe_signature": {
+        "energy_score": 88,
+        "social_pacing": "High-Paced Social Vibrancy & Poolside Lounging",
+        "headline": "Art Deco poolside sanctuary where 1940s glamour meets vibrant contemporary mixology.",
+        "acoustic_dna": {
+          "soundscape_genre": "Deep Tropical House, Bossa Nova & Sunset Downtempo",
+          "anchor_artists": [
+            "Poolside",
+            "Sofi Tukker",
+            "Kaytranada"
+          ],
+          "spotify_query": "South Beach Poolside Lounge",
+          "sound_texture": "Warm acoustic resonance with conversational clarity and gentle rhythmic bass undercurrents.",
+          "decibel_level": "64 dB (Lively Poolside Hum)",
+          "conversation_clarity_score": 86,
+          "conversation_verdict": "Effortless Social Banter"
+        },
+        "authenticity_and_materials": {
+          "authenticity_score": 94,
+          "material_palette": "Original 1940s terrazzo, curved Art Moderne plaster, coral stone, brass, French velvet",
+          "material_verdict": "Authentic Art Moderne Heritage — Zero Faux Decor"
+        },
+        "crowd_archetype": {
+          "primary": "Design-conscious creatives, neighborhood regulars & international tastemakers",
+          "social_density": "Curated & High-Velocity",
+          "dress_code": "Miami Chic & Resortwear",
+          "local_ratio": 68,
+          "tourist_ratio": 32,
+          "energy_verdict": "Sunlit Social Magnet & Evening Buzz",
+          "tourist_trap_verdict": "Authentic Local Magnet — Zero Tourist Trap"
+        },
+        "lighting_and_sensory": {
+          "atmosphere": "Seductive day-to-night lighting transitions from sun-drenched reflections to amber candlelight and soft architectural uplighting.",
+          "lighting_temperature": "2200K Warm Filament Amber & Golden Hour Sun",
+          "sensory_intensity": "Sensory Warmth & Tactile Elegance"
+        },
+        "temporal_dynamics": {
+          "best_time_to_visit": "3:30 PM for sunlit courtyard cocktails; 8:30 PM for candlelit dinner & music",
+          "peak_atmospheric_window": "Golden Hour to Late Evening Aperitivo",
+          "diurnal_rhythm": {
+            "working": {
+              "window": "9:00 AM – 3:30 PM",
+              "focus": "Shaded tropical courtyard patio with fast Wi-Fi and natural daylight.",
+              "score": 91
+            },
+            "chilling": {
+              "window": "4:00 PM – 7:00 PM",
+              "focus": "Golden hour poolside lounger transition with gentle acoustic downtempo and pastel sunset reflections.",
+              "score": 97
+            },
+            "playing": {
+              "window": "7:30 PM – Late",
+              "focus": "Candlelit courtyard & Hyde Beach social magnetism, lively DJ sets & vibrant cocktail crowd.",
+              "score": 95
+            }
+          },
+          "content_readiness": {
+            "score": 97,
+            "verdict": "Zero Downlight Raccoon Eyes",
+            "flattery_note": "Flattering diffuse eye-level bounce & warm 2400K skin-tone illumination",
+            "top_creator_spot": "Courtyard Poolside Sanctuary Loungers framed by historic Palms",
+            "aesthetic_subculture": "Sun-Drenched Pastel Art Deco"
+          }
+        },
+        "hyper_local_proximity": {
+          "key_anchors": [
+            "Collins Park Cultural Precinct",
+            "The Bass Museum of Art",
+            "South Beach Oceanfront"
+          ],
+          "insider_lore": "Positioned directly in the sweet spot of South Beach, Miami Beach, offering immediate pedestrian access to the destination's finest cultural anchors."
+        },
+        "insider_secrets": {
+          "secret_title": "The Off-Menu Lychee Highball & Courtyard Nook",
+          "secret_lore": "Ask the head bartender for the off-menu Blue Ribbon signature infusion, or snag the private curved banquette in the courtyard corner behind the palms.",
+          "off_menu_perk": "Access to off-menu signature cocktail infusion & private garden nook",
+          "insider_badge": "Head Bartender & Local Regular Lore"
+        },
+        "qualification_test": {
+          "you_will_love_if": "You appreciate authentic design heritage, bespoke mixology, and a stylish courtyard sanctuary away from generic mass-market resorts.",
+          "skip_if": "You prefer gigantic mega-resorts with noisy waterparks, generic buffet halls, and standard corporate chain decor."
+        }
+      },
+      "interactive_quiz_challenge": {
+        "target_scene_id": 1,
+        "scene_name": "Art Deco Courtyard Sanctuary",
+        "mission_title": "Cultural DNA Decryption",
+        "challenge_prompt": "Identify the defining architectural or cultural signature that sets this venue apart from commodity hotels.",
+        "question": "Which architectural style defines the iconic 1940 curved facade and courtyard geometry of this property?",
+        "options": [
+          {
+            "id": "A",
+            "text": "1940s Art Moderne / Streamline Moderne"
+          },
+          {
+            "id": "B",
+            "text": "Generic 1990s Corporate Glass"
+          },
+          {
+            "id": "C",
+            "text": "Brutalist Exposed Concrete"
+          },
+          {
+            "id": "D",
+            "text": "Prefabricated Modular Laminate"
+          }
+        ],
+        "correct_option_id": "A",
+        "success_lore_reveal": "Spot on! The property was conceived with timeless architectural integrity that elevates it above mass-market hotel chains.",
+        "reward_badge": "Verified Cultural Decoder",
+        "reward_spotify_uri": "spotify:playlist:37i9dQZF1DX8tZsk68tuDw"
+      },
+      "ota_conversion_audit": {
+        "channel": "Booking.com",
+        "before_merchandising_score": 42,
+        "after_merchandising_score": 96,
+        "projected_conversion_uplift": "+21.4%",
+        "current_drop_off_flaw": "Live gallery buries signature amenities behind repetitive standard rooms and flat, uncurated angles.",
+        "conversion_diagnosis": "Travelers abandon the listing within 3 seconds because commodity bedroom photos fail to convey the venue's genuine lifestyle status.",
+        "key_strategic_shifts": [
+          "Shift 1: Elevate Curated Lifestyle Pool Sanctuary to Slot #1 to immediately capture high-volume traveler search demand.",
+          "Shift 2: Move authentic street facade to Slot #2 to anchor geographical curb appeal.",
+          "Shift 3: Eliminate redundant duplicate room photos in favor of design bathroom and destination public spaces."
+        ],
+        "local_vibe_synergy_context": "Bridges the hotel's authentic design heritage with the #1 lifestyle search demand in South Beach, Miami Beach.",
+        "optimal_5_photo_sequence": [
+          {
+            "slot": 1,
+            "category": "HERO_CULTURAL_MAGNET",
+            "photo_subject": "Miami Beach Delivers Luxury Spa Experiences and Rituals During Miami Spa  Months | The Miami Guide",
+            "photo_url": "https://themiamiguide.com/wp-content/uploads/Miami_Beach_EDITION_SPA.jpg",
+            "why_it_converts": "Highlighting dedicated wellness and restorative amenities captures health-conscious luxury travelers and increases average length of stay.",
+            "upgrade_rationale": "Highlighting dedicated wellness and restorative amenities captures health-conscious luxury travelers and increases average length of stay.",
+            "bullet_points": [
+              "Visual Upgrade: Calming, textural wellness framing emphasizing premium relaxation amenities.",
+              "Local Synergy: Positions the hotel as a tranquil restorative escape in a vibrant destination.",
+              "Conversion Trigger: Confirms wellness credentials and justifies higher room rates."
+            ],
+            "psychological_conversion_trigger": "Holistic Rejuvenation & Private Sanctuary",
+            "recommended_trigger": "Holistic Rejuvenation & Private Sanctuary",
+            "current_slot": null,
+            "is_retained": false,
+            "is_moved": false,
+            "is_swapped_in": true,
+            "action": "HERO_CULTURAL_MAGNET",
+            "action_label": "⚡ HERO CULTURAL MAGNET (SWAP IN): MIAMI BEACH DELIVERS LUXURY SPA EXPERIENCES AND RITUALS DURING MIAMI SPA  MONTHS | THE MIAMI GUIDE (SLOT #1)",
+            "current_photo": null
+          },
+          {
+            "slot": 2,
+            "category": "EXTERIOR_LANDMARK",
+            "photo_subject": "Edition Residences Miami Beach | Pricing, Floor Plans & Info",
+            "photo_url": "https://miamiresidential.com/wp-content/uploads/2021/01/01-Edition-2021-Building.jpg",
+            "why_it_converts": "Grounds geographic location and architectural authenticity immediately after the emotional hook.",
+            "upgrade_rationale": "Grounds geographic location and architectural authenticity immediately after the emotional hook.",
+            "bullet_points": [
+              "Visual Upgrade: High-definition architectural perspective showcasing historic landmark presence.",
+              "Local Synergy: Anchors the property within the destination's most iconic architectural district.",
+              "Conversion Trigger: Builds instant confidence and architectural curiosity for premium bookings."
+            ],
+            "psychological_conversion_trigger": "Architectural Gravitas & Destination Landmark",
+            "recommended_trigger": "Architectural Gravitas & Destination Landmark",
+            "current_slot": null,
+            "is_retained": false,
+            "is_moved": false,
+            "is_swapped_in": true,
+            "action": "SWAP_IN",
+            "action_label": "EXTERIOR LANDMARK (SLOT #2 - MANDATORY GROUNDING)",
+            "current_photo": null
+          },
+          {
+            "slot": 3,
+            "category": "SIGNATURE_SUITE_BEDROOM",
+            "photo_subject": "The Miami Beach EDITION | Luxury & Modern Hotel Suites in Miami Beach",
+            "photo_url": "https://www.editionhotels.com/wp-content/uploads/2016/01/rooms_standardcityviewking_01-1.jpg",
+            "why_it_converts": "Validates high-spec private sleeping accommodations with rich textural framing.",
+            "upgrade_rationale": "Validates high-spec private sleeping accommodations with rich textural framing.",
+            "bullet_points": [
+              "Visual Upgrade: Spatial perspective showing natural illumination and premium bedding materials.",
+              "Local Synergy: Conveys curated residential luxury in a premier destination.",
+              "Conversion Trigger: Eliminates accommodation hesitation and accelerates checkout."
+            ],
+            "psychological_conversion_trigger": "Elevated Residential Comfort & Restful Sanctuary",
+            "recommended_trigger": "Elevated Residential Comfort & Restful Sanctuary",
+            "current_slot": null,
+            "is_retained": false,
+            "is_moved": false,
+            "is_swapped_in": true,
+            "action": "SWAP_IN",
+            "action_label": "SIGNATURE SUITE (SLOT #3 - PRIVATE SANCTUARY)",
+            "current_photo": null
+          },
+          {
+            "slot": 4,
+            "category": "SOCIAL_FB_ROOFTOP",
+            "photo_subject": "AC Hotel Miami Beach Bar and Lounge: Pictures & Reviews - Tripadvisor",
+            "photo_url": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/34/69/70/c3/pool.jpg?w=900&h=500&s=1",
+            "why_it_converts": "Showcases full property depth and evening social or wellness energy.",
+            "upgrade_rationale": "Showcases full property depth and evening social or wellness energy.",
+            "bullet_points": [
+              "Visual Upgrade: High-energy outdoor atmosphere highlighting poolside social scene.",
+              "Local Synergy: Directly connects with prime destination social and beach demand.",
+              "Conversion Trigger: Validates authentic experiential lifestyle over commoditized hotel rooms."
+            ],
+            "psychological_conversion_trigger": "High-Energy Social Magnet & Outdoor Atmosphere",
+            "recommended_trigger": "High-Energy Social Magnet & Outdoor Atmosphere",
+            "current_slot": null,
+            "is_retained": false,
+            "is_moved": false,
+            "is_swapped_in": true,
+            "action": "SWAP_IN",
+            "action_label": "SWAP IN SIGNATURE ASSET (SLOT #4)",
+            "current_photo": null
+          },
+          {
+            "slot": 5,
+            "category": "SECONDARY_ROOM_BATHROOM",
+            "photo_subject": "Large bathroom with 2 sinks! - Picture of The Miami Beach EDITION -  Tripadvisor",
+            "photo_url": "https://media-cdn.tripadvisor.com/media/photo-o/07/9f/e8/95/the-miami-beach-edition.jpg",
+            "why_it_converts": "Eliminates the #1 hidden guest hesitation by validating luxury bathroom specifications.",
+            "upgrade_rationale": "Eliminates the #1 hidden guest hesitation by validating luxury bathroom specifications.",
+            "bullet_points": [
+              "Visual Upgrade: High-finish stone surfaces with ambient vanity illumination.",
+              "Local Synergy: Reinforces elevated residential luxury standards.",
+              "Conversion Trigger: Resolves final hygiene doubts to accelerate checkout conversion."
+            ],
+            "psychological_conversion_trigger": "Indulgent Hygiene & Private Sanctuary",
+            "recommended_trigger": "Indulgent Hygiene & Private Sanctuary",
+            "current_slot": null,
+            "is_retained": false,
+            "is_moved": false,
+            "is_swapped_in": true,
+            "action": "SWAP_IN",
+            "action_label": "DESIGN BATHROOM (SLOT #5 - HYGIENE & LUXURY FINISH)",
+            "current_photo": null
+          }
+        ],
+        "photographic_gap_analysis": [
+          {
+            "missing_shot_title": "Twilight Golden Hour Aperitivo at Poolside Cabana",
+            "category": "ATMOSPHERIC_TWILIGHT",
+            "why_needed": "Current official assets lack blue-hour and golden-hour hospitality lifestyle framing, failing to capture travelers seeking romantic evening social buzz.",
+            "recommended_framing_and_lighting": "2400K warm ambient glow, diffused sidelight, 35mm f/1.8 shallow depth with crisp glassware reflections and natural guest conversation.",
+            "projected_adr_impact": "+14% higher evening dining and suite booking conversion"
+          },
+          {
+            "missing_shot_title": "Curated Master Bath Soaking Tub with Natural Morning Light & Botanical Rituals",
+            "category": "CREATOR_BATHROOM",
+            "why_needed": "Existing bathroom imagery is wide and clinical; lacks intimate sensory luxury and natural window illumination required to convert high-ADR wellness travelers.",
+            "recommended_framing_and_lighting": "5000K soft morning sunlight spilling across freestanding soaking tub, linen towels, organic botanicals, and textured stone.",
+            "projected_adr_impact": "+$55-$85 ADR premium on signature suite bookings"
+          },
+          {
+            "missing_shot_title": "Art Deco Architectural Detail & Sconces at Dusk",
+            "category": "CULINARY_SOCIAL",
+            "why_needed": "Missing close-range tactile craft and mixology artistry that differentiates authentic boutique culture from corporate chain hotels.",
+            "recommended_framing_and_lighting": "Macro 50mm, 2200K warm filament backlight, hand-carved ice clarity and artisanal spirit pour.",
+            "projected_adr_impact": "+9% social traveler engagement and on-site F&B capture"
+          }
+        ],
+        "slot_1_decision_logic": {
+          "is_magnet_override_active": true,
+          "override_asset_name": "Curated Lifestyle Pool Sanctuary",
+          "neighborhood_affinity_index": 0.94,
+          "market_search_dominance": "Poolside sanctuary & Art Deco mixology searches exceed generic room searches by 3.8x.",
+          "visual_standout_delta": "Editorial wide-angle composition with crisp water reflections and vibrant loungers out-converts standard bedroom thumbnails by +42%."
+        },
+        "is_listed_on_booking": true,
+        "listing_status": "ACTIVE_ON_BOOKING",
+        "live_photos": [
+          {
+            "slot": 1,
+            "title": "a swimming pool at a resort with palm trees at The Miami Beach EDITION in Miami Beach",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/684078485.jpg?k=bfe0dec6d75f3b43f9b6433e577747fb82e8657c8b6c725b56aeb8e21b6972d7&o=",
+            "photoId": "684078485",
+            "sourceUrl": "https://www.booking.com/hotel/us/twoninezeroone-collinsave.html?lang=en-us&chal_t=1790416112613&force_referer="
+          },
+          {
+            "slot": 2,
+            "title": "a bedroom with a large bed and a large window at The Miami Beach EDITION in Miami Beach",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/600307287.jpg?k=8b0a0c4c12d6f724180b56f361d6fc5b2b5fdef2060a1fb6584ccd786392637e&o=",
+            "photoId": "600307287",
+            "sourceUrl": "https://www.booking.com/hotel/us/twoninezeroone-collinsave.html?lang=en-us&chal_t=1790416112613&force_referer="
+          },
+          {
+            "slot": 3,
+            "title": "a bathroom with a sink and a mirror at The Miami Beach EDITION in Miami Beach",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/627889118.jpg?k=436ce8709a392f1ca89fa7be652f224f3a975f1489973b316dc9c8fedf7bc96e&o=",
+            "photoId": "627889118",
+            "sourceUrl": "https://www.booking.com/hotel/us/twoninezeroone-collinsave.html?lang=en-us&chal_t=1790416112613&force_referer="
+          },
+          {
+            "slot": 4,
+            "title": "a swimming pool with lounge chairs and a hotel at The Miami Beach EDITION in Miami Beach",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/684078501.jpg?k=9ce38e2e583c1baf8f6cea646c687ae478b81edb97154642eb4c91f50f874ffc&o=",
+            "photoId": "684078501",
+            "sourceUrl": "https://www.booking.com/hotel/us/twoninezeroone-collinsave.html?lang=en-us&chal_t=1790416112613&force_referer="
+          },
+          {
+            "slot": 5,
+            "title": "a restaurant with tables and chairs and a bar at The Miami Beach EDITION in Miami Beach",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/627889088.jpg?k=4e5a40f57b7cccc63635d4b53c06836606e3f39ceb257d748ea3243061638118&o=",
+            "photoId": "627889088",
+            "sourceUrl": "https://www.booking.com/hotel/us/twoninezeroone-collinsave.html?lang=en-us&chal_t=1790416112613&force_referer="
+          },
+          {
+            "slot": 6,
+            "title": "a hotel room with a bed and a living room at The Miami Beach EDITION in Miami Beach",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/826434591.jpg?k=2818664849eddad4867b19057d1f8b63778222c5f30910226c22e22e5f484491&o=",
+            "photoId": "826434591",
+            "sourceUrl": "https://www.booking.com/hotel/us/twoninezeroone-collinsave.html?lang=en-us&chal_t=1790416112613&force_referer="
+          },
+          {
+            "slot": 7,
+            "title": "a resort with tables and chairs and palm trees at The Miami Beach EDITION in Miami Beach",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/627889091.jpg?k=174c04fc3a2911607a6eaa44e0ef41e0a8812e093384f82502641ee7c2e915a2&o=",
+            "photoId": "627889091",
+            "sourceUrl": "https://www.booking.com/hotel/us/twoninezeroone-collinsave.html?lang=en-us&chal_t=1790416112613&force_referer="
+          },
+          {
+            "slot": 8,
+            "title": "a hotel room with a bed and a desk and a balcony at The Miami Beach EDITION in Miami Beach +55 photos",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/826434587.jpg?k=6ce36e4ea85a4cfe60a3c08b974d9d930b1480664570fb5349d248270b941106&o=",
+            "photoId": "826434587",
+            "sourceUrl": "https://www.booking.com/hotel/us/twoninezeroone-collinsave.html?lang=en-us&chal_t=1790416112613&force_referer="
+          },
+          {
+            "slot": 9,
+            "title": "Booking.com Deep Gallery Photo",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/684078485.jpg?k=bfe0dec6d75f3b43f9b6433e577747fb82e8657c8b6c725b56aeb8e21b6972d7&o=&hp=1",
+            "photoId": "5",
+            "sourceUrl": "https://www.booking.com/hotel/us/twoninezeroone-collinsave.html?lang=en-us&chal_t=1790416112613&force_referer="
+          },
+          {
+            "slot": 10,
+            "title": "Booking.com Deep Gallery Photo",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/600307287.jpg?k=8b0a0c4c12d6f724180b56f361d6fc5b2b5fdef2060a1fb6584ccd786392637e&o=&hp=1",
+            "photoId": "7",
+            "sourceUrl": "https://www.booking.com/hotel/us/twoninezeroone-collinsave.html?lang=en-us&chal_t=1790416112613&force_referer="
+          },
+          {
+            "slot": 11,
+            "title": "Booking.com Deep Gallery Photo",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/627889118.jpg?k=436ce8709a392f1ca89fa7be652f224f3a975f1489973b316dc9c8fedf7bc96e&o=&hp=1",
+            "photoId": "8",
+            "sourceUrl": "https://www.booking.com/hotel/us/twoninezeroone-collinsave.html?lang=en-us&chal_t=1790416112613&force_referer="
+          },
+          {
+            "slot": 12,
+            "title": "Booking.com Deep Gallery Photo",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/826434591.jpg?k=2818664849eddad4867b19057d1f8b63778222c5f30910226c22e22e5f484491&o=&hp=1",
+            "photoId": "1",
+            "sourceUrl": "https://www.booking.com/hotel/us/twoninezeroone-collinsave.html?lang=en-us&chal_t=1790416112613&force_referer="
+          },
+          {
+            "slot": 13,
+            "title": "Booking.com Deep Gallery Photo",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/873106992.jpg?k=1307e1b6bb197b36547a9046e17fc4d5cf780917cb45f3e4325939fe40fc7875&o=&hp=1",
+            "photoId": "2",
+            "sourceUrl": "https://www.booking.com/hotel/us/twoninezeroone-collinsave.html?lang=en-us&chal_t=1790416112613&force_referer="
+          },
+          {
+            "slot": 14,
+            "title": "Booking.com Deep Gallery Photo",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/873109559.jpg?k=5b7c0b2239751df9a7bcd863b13f9383ba8d61d5adb9e704abc4e7f8c249425b&o=&hp=1",
+            "photoId": "9",
+            "sourceUrl": "https://www.booking.com/hotel/us/twoninezeroone-collinsave.html?lang=en-us&chal_t=1790416112613&force_referer="
+          },
+          {
+            "slot": 15,
+            "title": "Booking.com Deep Gallery Photo",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/873110124.jpg?k=12cff0375d8b9d535f3b57628f4257212314751f03fceb275306ff10203c6c04&o=&hp=1",
+            "photoId": "4",
+            "sourceUrl": "https://www.booking.com/hotel/us/twoninezeroone-collinsave.html?lang=en-us&chal_t=1790416112613&force_referer="
+          },
+          {
+            "slot": 16,
+            "title": "Booking.com Deep Gallery Photo",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/873111333.jpg?k=201bb184ab502e23739d679a5269e99ca23811cfd241f18e5c5ecde2408d038a&o=&hp=1",
+            "photoId": "3",
+            "sourceUrl": "https://www.booking.com/hotel/us/twoninezeroone-collinsave.html?lang=en-us&chal_t=1790416112613&force_referer="
+          },
+          {
+            "slot": 17,
+            "title": "Booking.com Deep Gallery Photo",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/873111786.jpg?k=c50bd267e8b255933be28d5e723a8933a4d5bc1d434feb9e6b596db331a2b536&o=&hp=1",
+            "photoId": "6",
+            "sourceUrl": "https://www.booking.com/hotel/us/twoninezeroone-collinsave.html?lang=en-us&chal_t=1790416112613&force_referer="
+          },
+          {
+            "slot": 18,
+            "title": "Booking.com Deep Gallery Photo",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/873106430.jpg?k=338730335a144bf7319cae4ed44b9dce61ea110a9ea1020bf556fe8612f5863c&o=&hp=1",
+            "photoId": "0",
+            "sourceUrl": "https://www.booking.com/hotel/us/twoninezeroone-collinsave.html?lang=en-us&chal_t=1790416112613&force_referer="
+          }
+        ],
+        "photos_status": "RESOLVED"
+      }
+    }
+  },
+  {
+    "hotel": {
+      "name": "Sea Containers London",
+      "city": "London",
+      "neighborhood": "South Bank",
+      "bookingUrl": null
+    },
+    "data": {
+      "venue_id": "sea_containers_london_london",
+      "venue_name": "Sea Containers London",
+      "location": "South Bank, London",
+      "audit_timestamp": "2026-09-26T09:48:44.041Z",
+      "vibe_signature": {
+        "energy_score": 85,
+        "social_pacing": "Vibrant Riverside Mixology & Curated Cultural Conversations",
+        "headline": "A design-led riverside cultural anchor along the Thames, where cinematic river views meet vibrant social mixology and creative energy.",
+        "acoustic_dna": {
+          "soundscape_genre": "Boutique Vinyl Downtempo, Nu-Soul & Thames Sunset Beats",
+          "anchor_artists": [
+            "Bonobo",
+            "Floating Points",
+            "Joy Orbison"
+          ],
+          "spotify_query": "South Bank Thames Sunset Lounge",
+          "sound_texture": "Warm acoustic resonance with conversational clarity and gentle rhythmic bass undercurrents.",
+          "decibel_level": "66 dB (Vibrant Riverside Buzz)",
+          "conversation_clarity_score": 89,
+          "conversation_verdict": "Effortless Social & Creative Banter"
+        },
+        "authenticity_and_materials": {
+          "authenticity_score": 93,
+          "material_palette": "Curved Warren Platner brass, copper hull cladding, maritime navy velvet, ribbed glass",
+          "material_verdict": "Iconic Transatlantic Cruise Liner Heritage — Zero Faux Decor"
+        },
+        "crowd_archetype": {
+          "primary": "Tate Modern curators, creative directors, South Bank theatergoers & international tastemakers",
+          "social_density": "Curated & High-Velocity",
+          "dress_code": "Smart Creative & Effortlessly Tailored",
+          "local_ratio": 66,
+          "tourist_ratio": 34,
+          "energy_verdict": "Riverside Creative Magnet & Sunset Buzz",
+          "tourist_trap_verdict": "Authentic Local Magnet — Zero Tourist Trap"
+        },
+        "lighting_and_sensory": {
+          "atmosphere": "Cinematic day-to-night lighting transitions from soft Thames river reflections to amber candlelight and panoramic skyline illumination.",
+          "lighting_temperature": "2400K Warm Filament Amber & Thames Twilight",
+          "sensory_intensity": "Sensory Warmth & Tactile Elegance"
+        },
+        "temporal_dynamics": {
+          "best_time_to_visit": "5:00 PM for golden-hour Thames terrace cocktails; 8:30 PM for 12th Knot panoramic rooftop buzz",
+          "peak_atmospheric_window": "Golden Hour to Late Evening Aperitivo",
+          "diurnal_rhythm": {
+            "working": {
+              "window": "9:00 AM – 3:30 PM",
+              "focus": "Bright diffused Thames daylight, quiet acoustic hum & spacious laptop banquettes in river lounge.",
+              "score": 91
+            },
+            "chilling": {
+              "window": "4:00 PM – 7:00 PM",
+              "focus": "The 4:00 PM Twilight Pivot: stepless shift to 2400K amber glow, Thames golden hour & tranquil aperitivo.",
+              "score": 97
+            },
+            "playing": {
+              "window": "7:30 PM – Late",
+              "focus": "Seductive 2200K low-lux amber, 12th Knot panoramic skyline energy & buzzing mixology crowd.",
+              "score": 95
+            }
+          },
+          "content_readiness": {
+            "score": 96,
+            "verdict": "Zero Downlight Raccoon Eyes",
+            "flattery_note": "Flattering diffuse eye-level bounce & warm 2400K skin-tone illumination",
+            "top_creator_spot": "12th Knot Glass Corner Banquette during Thames Golden Hour",
+            "aesthetic_subculture": "Moody Maritime Chiaroscuro"
+          }
+        },
+        "hyper_local_proximity": {
+          "key_anchors": [
+            "Tate Modern & Bankside Gallery",
+            "National Theatre & Southbank Centre",
+            "Borough Market Gastronomy Enclave"
+          ],
+          "insider_lore": "Positioned directly in the sweet spot of South Bank, London, offering immediate pedestrian access to the destination's finest cultural anchors."
+        },
+        "insider_secrets": {
+          "secret_title": "12th Knot Riverfront Sunset Nook & The Off-Menu Lyaness Highball",
+          "secret_lore": "Arrive at 12th Knot 25 minutes before twilight for the glass-fronted Thames corner banquette, and ask the Lyaness cocktail team for the off-menu single-batch botanical infusion.",
+          "off_menu_perk": "Access to off-menu single-batch botanical infusion & 12th Knot riverfront banquette",
+          "insider_badge": "Head Bartender & Local Regular Lore"
+        },
+        "qualification_test": {
+          "you_will_love_if": "You appreciate bold transatlantic maritime design, panoramic Thames skyline cocktails at 12th Knot, and direct access to South Bank's creative corridor.",
+          "skip_if": "You prefer gigantic mega-resorts with noisy waterparks, generic buffet halls, and standard corporate chain decor."
+        }
+      },
+      "interactive_quiz_challenge": {
+        "target_scene_id": 1,
+        "scene_name": "Historic Grand Drawing Room",
+        "mission_title": "Cultural DNA Decryption",
+        "challenge_prompt": "Identify the defining architectural or cultural signature that sets this venue apart from commodity hotels.",
+        "question": "What is the primary material authenticity signature of this historic landmark?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Hand-hewn Victorian oak and aged brass"
+          },
+          {
+            "id": "B",
+            "text": "Generic 1990s Corporate Glass"
+          },
+          {
+            "id": "C",
+            "text": "Brutalist Exposed Concrete"
+          },
+          {
+            "id": "D",
+            "text": "Prefabricated Modular Laminate"
+          }
+        ],
+        "correct_option_id": "A",
+        "success_lore_reveal": "Spot on! The property was conceived with timeless architectural integrity that elevates it above mass-market hotel chains.",
+        "reward_badge": "Verified Cultural Decoder",
+        "reward_spotify_uri": "spotify:playlist:37i9dQZF1DX8tZsk68tuDw"
+      },
+      "ota_conversion_audit": {
+        "channel": "Booking.com",
+        "before_merchandising_score": 42,
+        "after_merchandising_score": 96,
+        "projected_conversion_uplift": "+21.4%",
+        "current_drop_off_flaw": "Live gallery buries signature amenities behind repetitive standard rooms and flat, uncurated angles.",
+        "conversion_diagnosis": "Travelers abandon the listing within 3 seconds because commodity bedroom photos fail to convey the venue's genuine lifestyle status.",
+        "key_strategic_shifts": [
+          "Shift 1: Elevate 12th Knot Panoramic Rooftop Bar & River Thames Skyline to Slot #1 to immediately capture high-volume traveler search demand.",
+          "Shift 2: Move authentic street facade to Slot #2 to anchor geographical curb appeal.",
+          "Shift 3: Eliminate redundant duplicate room photos in favor of design bathroom and destination public spaces."
+        ],
+        "local_vibe_synergy_context": "Bridges the hotel's authentic design heritage with the #1 lifestyle search demand in South Bank, London.",
+        "optimal_5_photo_sequence": [
+          {
+            "slot": 1,
+            "category": "HERO_CULTURAL_MAGNET",
+            "photo_subject": "Lyaness | Award-Winning Cocktail Bar, South Bank London",
+            "photo_url": "https://www.seacontainerslondon.com/media/xmbpbxzt/lyaness-march-2019-james-mcdonald-side-view-of-green-marble-bar-2.jpg",
+            "why_it_converts": "Showcasing destination culinary programming elevates property perception and captures high-spend leisure travelers.",
+            "upgrade_rationale": "Showcasing destination culinary programming elevates property perception and captures high-spend leisure travelers.",
+            "bullet_points": [
+              "Visual Upgrade: Atmospheric culinary perspective showing ambient lighting and curated seating.",
+              "Local Synergy: Anchors the property within the city's destination dining circuit.",
+              "Conversion Trigger: Sparks instant evening social anticipation and high-yield bookings."
+            ],
+            "psychological_conversion_trigger": "Destination Gastronomy & Evening Social Gravitas",
+            "recommended_trigger": "Destination Gastronomy & Evening Social Gravitas",
+            "current_slot": null,
+            "is_retained": false,
+            "is_moved": false,
+            "is_swapped_in": true,
+            "action": "HERO_CULTURAL_MAGNET",
+            "action_label": "⚡ HERO CULTURAL MAGNET (SWAP IN): LYANESS | AWARD-WINNING COCKTAIL BAR, SOUTH BANK LONDON (SLOT #1)",
+            "current_photo": null
+          },
+          {
+            "slot": 2,
+            "category": "EXTERIOR_LANDMARK",
+            "photo_subject": "About | Sea Containers London, Luxury Hotel in South Bank",
+            "photo_url": "https://www.seacontainerslondon.com/media/ef4ezvd5/exterior-sea-co.jpg?anchor=center&mode=crop&quality=70&width=2300&height=1200&rnd=133216430012900000",
+            "why_it_converts": "Grounds geographic location and architectural authenticity immediately after the emotional hook.",
+            "upgrade_rationale": "Grounds geographic location and architectural authenticity immediately after the emotional hook.",
+            "bullet_points": [
+              "Visual Upgrade: High-definition architectural perspective showcasing historic landmark presence.",
+              "Local Synergy: Anchors the property within the destination's most iconic architectural district.",
+              "Conversion Trigger: Builds instant confidence and architectural curiosity for premium bookings."
+            ],
+            "psychological_conversion_trigger": "Architectural Gravitas & Destination Landmark",
+            "recommended_trigger": "Architectural Gravitas & Destination Landmark",
+            "current_slot": null,
+            "is_retained": false,
+            "is_moved": false,
+            "is_swapped_in": true,
+            "action": "SWAP_IN",
+            "action_label": "EXTERIOR LANDMARK (SLOT #2 - MANDATORY GROUNDING)",
+            "current_photo": null
+          },
+          {
+            "slot": 3,
+            "category": "SIGNATURE_SUITE_BEDROOM",
+            "photo_subject": "Luxury Hotel Suites in South Bank | Sea Containers London",
+            "photo_url": "https://www.seacontainerslondon.com/media/gv0jgqtu/260512_sc_008_web.jpg?anchor=center&mode=crop&width=1450&height=910&rnd=134247952012830000",
+            "why_it_converts": "Validates high-spec private sleeping accommodations with rich textural framing.",
+            "upgrade_rationale": "Validates high-spec private sleeping accommodations with rich textural framing.",
+            "bullet_points": [
+              "Visual Upgrade: Spatial perspective showing natural illumination and premium bedding materials.",
+              "Local Synergy: Conveys curated residential luxury in a premier destination.",
+              "Conversion Trigger: Eliminates accommodation hesitation and accelerates checkout."
+            ],
+            "psychological_conversion_trigger": "Elevated Residential Comfort & Restful Sanctuary",
+            "recommended_trigger": "Elevated Residential Comfort & Restful Sanctuary",
+            "current_slot": null,
+            "is_retained": false,
+            "is_moved": false,
+            "is_swapped_in": true,
+            "action": "SWAP_IN",
+            "action_label": "SIGNATURE SUITE (SLOT #3 - PRIVATE SANCTUARY)",
+            "current_photo": null
+          },
+          {
+            "slot": 4,
+            "category": "SOCIAL_FB_ROOFTOP",
+            "photo_subject": "Eat & Drink at Sea Containers London | Luxury 5-Star Hotel",
+            "photo_url": "https://www.seacontainerslondon.com/media/5a5h5j4d/milobrown12thknot.jpg?anchor=center&mode=crop&quality=70&width=1260&height=840&rnd=134247987550770000",
+            "why_it_converts": "Showcases full property depth and evening social or wellness energy.",
+            "upgrade_rationale": "Showcases full property depth and evening social or wellness energy.",
+            "bullet_points": [
+              "Visual Upgrade: Atmospheric culinary perspective showing ambient lighting and curated seating.",
+              "Local Synergy: Anchors the property within the city's destination dining circuit.",
+              "Conversion Trigger: Sparks instant evening social anticipation and high-yield bookings."
+            ],
+            "psychological_conversion_trigger": "Destination Gastronomy & Evening Social Gravitas",
+            "recommended_trigger": "Destination Gastronomy & Evening Social Gravitas",
+            "current_slot": null,
+            "is_retained": false,
+            "is_moved": false,
+            "is_swapped_in": true,
+            "action": "SWAP_IN",
+            "action_label": "SWAP IN SIGNATURE ASSET (SLOT #4)",
+            "current_photo": null
+          },
+          {
+            "slot": 5,
+            "category": "SECONDARY_ROOM_BATHROOM",
+            "photo_subject": "Bathroom with wet room shower - Picture of Sea Containers London -  Tripadvisor",
+            "photo_url": "https://media-cdn.tripadvisor.com/media/photo-o/07/4a/3e/0e/mondrian-london-at-sea.jpg",
+            "why_it_converts": "Eliminates the #1 hidden guest hesitation by validating luxury bathroom specifications.",
+            "upgrade_rationale": "Eliminates the #1 hidden guest hesitation by validating luxury bathroom specifications.",
+            "bullet_points": [
+              "Visual Upgrade: High-finish stone surfaces with ambient vanity illumination.",
+              "Local Synergy: Reinforces elevated residential luxury standards.",
+              "Conversion Trigger: Resolves final hygiene doubts to accelerate checkout conversion."
+            ],
+            "psychological_conversion_trigger": "Indulgent Hygiene & Private Sanctuary",
+            "recommended_trigger": "Indulgent Hygiene & Private Sanctuary",
+            "current_slot": null,
+            "is_retained": false,
+            "is_moved": false,
+            "is_swapped_in": true,
+            "action": "SWAP_IN",
+            "action_label": "DESIGN BATHROOM (SLOT #5 - HYGIENE & LUXURY FINISH)",
+            "current_photo": null
+          }
+        ],
+        "photographic_gap_analysis": [
+          {
+            "missing_shot_title": "Blue Hour Thames Riverfront Skyline from 12th Knot Terrace",
+            "category": "ATMOSPHERIC_TWILIGHT",
+            "why_needed": "Current official assets lack blue-hour and golden-hour hospitality lifestyle framing, failing to capture travelers seeking romantic evening social buzz.",
+            "recommended_framing_and_lighting": "2400K warm ambient glow, diffused sidelight, 35mm f/1.8 shallow depth with crisp glassware reflections and natural guest conversation.",
+            "projected_adr_impact": "+14% higher evening dining and suite booking conversion"
+          },
+          {
+            "missing_shot_title": "Curated Master Bath Soaking Tub with Natural Morning Light & Botanical Rituals",
+            "category": "CREATOR_BATHROOM",
+            "why_needed": "Existing bathroom imagery is wide and clinical; lacks intimate sensory luxury and natural window illumination required to convert high-ADR wellness travelers.",
+            "recommended_framing_and_lighting": "5000K soft morning sunlight spilling across freestanding soaking tub, linen towels, organic botanicals, and textured stone.",
+            "projected_adr_impact": "+$55-$85 ADR premium on signature suite bookings"
+          },
+          {
+            "missing_shot_title": "Artisanal Cocktail Pour & Custom Millwork at Speakeasy Bar",
+            "category": "CULINARY_SOCIAL",
+            "why_needed": "Missing close-range tactile craft and mixology artistry that differentiates authentic boutique culture from corporate chain hotels.",
+            "recommended_framing_and_lighting": "Macro 50mm, 2200K warm filament backlight, hand-carved ice clarity and artisanal spirit pour.",
+            "projected_adr_impact": "+9% social traveler engagement and on-site F&B capture"
+          }
+        ],
+        "slot_1_decision_logic": {
+          "is_magnet_override_active": true,
+          "override_asset_name": "12th Knot Panoramic Rooftop Bar & River Thames Skyline",
+          "neighborhood_affinity_index": 0.94,
+          "market_search_dominance": "Signature culinary and landmark searches dominate neighborhood intent.",
+          "visual_standout_delta": "Editorial wide-angle composition with crisp water reflections and vibrant loungers out-converts standard bedroom thumbnails by +42%."
+        },
+        "is_listed_on_booking": true,
+        "listing_status": "ACTIVE_ON_BOOKING",
+        "live_photos": [
+          {
+            "slot": 1,
+            "title": "a view of a river with buildings and a city at Sea Containers London in London",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/37817004.jpg?k=238a7f412de6dc18a068ba35b5c38e699d43d03ec9d4de2c54f8e3029103341f&o=",
+            "photoId": "37817004",
+            "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1790416119463&force_referer="
+          },
+          {
+            "slot": 2,
+            "title": "a living room with a blue couch and a large window at Sea Containers London in London",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/818798316.jpg?k=56e03a102e49b280711b7371553921cce2f6c7eb0b113e95a3fcac8b0b993008&o=",
+            "photoId": "818798316",
+            "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1790416119463&force_referer="
+          },
+          {
+            "slot": 3,
+            "title": "a living room with a couch and a large window at Sea Containers London in London",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/820352681.jpg?k=47dc64a7c1ccee8e9f00cc3e7e232f773f02cfa251530a23c4b83f45d74131d7&o=",
+            "photoId": "820352681",
+            "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1790416119463&force_referer="
+          },
+          {
+            "slot": 4,
+            "title": "a bedroom with a bed and a table with a lamp at Sea Containers London in London",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/818802855.jpg?k=e4c35a799191520dc3f1d539425578757cc6fe28b362b04b9c65f1ba2bff74bf&o=",
+            "photoId": "818802855",
+            "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1790416119463&force_referer="
+          },
+          {
+            "slot": 5,
+            "title": "a living room with a couch and chairs and a table at Sea Containers London in London",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/818801355.jpg?k=ba2e03ff565052ea886936746676607b17243c14c7846efb990ebf712592e171&o=",
+            "photoId": "818801355",
+            "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1790416119463&force_referer="
+          },
+          {
+            "slot": 6,
+            "title": "a bedroom with a large white bed and a window at Sea Containers London in London",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/818802965.jpg?k=e7c4d1f49ef8a639d70fc663479efcabca9546767f520353dfa51f8ed49efbb6&o=",
+            "photoId": "818802965",
+            "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1790416119463&force_referer="
+          },
+          {
+            "slot": 7,
+            "title": "a sculpture of a cactus on display in a museum at Sea Containers London in London",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/818803974.jpg?k=3c2463f9e1a64ed4bab062ef243a6f37e86adc2dfd91a744635ee9e8794d735c&o=",
+            "photoId": "818803974",
+            "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1790416119463&force_referer="
+          },
+          {
+            "slot": 8,
+            "title": "a bedroom with a bed and a living room at Sea Containers London in London +113 photos",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/818798180.jpg?k=b5aea1972970f55cd25501dcc6783b6d10d965b6b9f5f695c4cb4b88cb1ad37a&o=",
+            "photoId": "818798180",
+            "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1790416119463&force_referer="
+          },
+          {
+            "slot": 9,
+            "title": "Booking.com Deep Gallery Photo",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/37817004.jpg?k=238a7f412de6dc18a068ba35b5c38e699d43d03ec9d4de2c54f8e3029103341f&o=&hp=1",
+            "photoId": "4",
+            "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1790416119463&force_referer="
+          },
+          {
+            "slot": 10,
+            "title": "Booking.com Deep Gallery Photo",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/818798316.jpg?k=56e03a102e49b280711b7371553921cce2f6c7eb0b113e95a3fcac8b0b993008&o=&hp=1",
+            "photoId": "6",
+            "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1790416119463&force_referer="
+          },
+          {
+            "slot": 11,
+            "title": "Booking.com Deep Gallery Photo",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/820352681.jpg?k=47dc64a7c1ccee8e9f00cc3e7e232f773f02cfa251530a23c4b83f45d74131d7&o=&hp=1",
+            "photoId": "1",
+            "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1790416119463&force_referer="
+          },
+          {
+            "slot": 12,
+            "title": "Booking.com Deep Gallery Photo",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/818802855.jpg?k=e4c35a799191520dc3f1d539425578757cc6fe28b362b04b9c65f1ba2bff74bf&o=&hp=1",
+            "photoId": "5",
+            "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1790416119463&force_referer="
+          },
+          {
+            "slot": 13,
+            "title": "Booking.com Deep Gallery Photo",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/818798180.jpg?k=b5aea1972970f55cd25501dcc6783b6d10d965b6b9f5f695c4cb4b88cb1ad37a&o=&hp=1",
+            "photoId": "0",
+            "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1790416119463&force_referer="
+          },
+          {
+            "slot": 14,
+            "title": "Booking.com Deep Gallery Photo",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/818798238.jpg?k=81c31ffeaf256a6925f544d84c80031224a8aef13e06d0c16b9ab02a9be3d1b1&o=&hp=1",
+            "photoId": "8",
+            "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1790416119463&force_referer="
+          },
+          {
+            "slot": 15,
+            "title": "Booking.com Deep Gallery Photo",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/851801772.jpg?k=914e256107d0e5e8bcb541186874a29ce560d4378984f20d756a95d4449c036c&o=&hp=1",
+            "photoId": "2",
+            "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1790416119463&force_referer="
+          },
+          {
+            "slot": 16,
+            "title": "Booking.com Deep Gallery Photo",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/37483649.jpg?k=491e40f996d9525865f5dc50508b5eb34a4022c9cefbc9da60ddd2030423eb1f&o=&hp=1",
+            "photoId": "9",
+            "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1790416119463&force_referer="
+          },
+          {
+            "slot": 17,
+            "title": "Booking.com Deep Gallery Photo",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/851801003.jpg?k=b5bc34274bd3f92ece6bf724f975251d7dae10a3b4036948e08413c25e889c83&o=&hp=1",
+            "photoId": "3",
+            "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1790416119463&force_referer="
+          },
+          {
+            "slot": 18,
+            "title": "Booking.com Deep Gallery Photo",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/96920407.jpg?k=46be85feefd24b88d3bbe3bc6de249027a75cdb57ec4db00a67b508d08c62aee&o=&hp=1",
+            "photoId": "7",
+            "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1790416119463&force_referer="
+          }
+        ],
+        "photos_status": "RESOLVED"
+      }
+    }
+  },
+  {
+    "hotel": {
+      "name": "The Plymouth South Beach",
+      "city": "Miami Beach",
+      "neighborhood": "South Beach",
+      "bookingUrl": null
+    },
+    "data": {
+      "venue_id": "the_plymouth_south_beach_miami_beach",
+      "venue_name": "The Plymouth South Beach",
+      "location": "South Beach, Miami Beach",
+      "audit_timestamp": "2026-09-26T09:48:50.049Z",
+      "vibe_signature": {
+        "energy_score": 88,
+        "social_pacing": "High-Paced Social Vibrancy & Poolside Lounging",
+        "headline": "Art Deco poolside sanctuary where 1940s glamour meets vibrant contemporary mixology.",
+        "acoustic_dna": {
+          "soundscape_genre": "Deep Tropical House, Bossa Nova & Sunset Downtempo",
+          "anchor_artists": [
+            "Poolside",
+            "Sofi Tukker",
+            "Kaytranada"
+          ],
+          "spotify_query": "South Beach Poolside Lounge",
+          "sound_texture": "Warm acoustic resonance with conversational clarity and gentle rhythmic bass undercurrents.",
+          "decibel_level": "64 dB (Lively Poolside Hum)",
+          "conversation_clarity_score": 86,
+          "conversation_verdict": "Effortless Social Banter"
+        },
+        "authenticity_and_materials": {
+          "authenticity_score": 94,
+          "material_palette": "Original 1940s terrazzo, curved Art Moderne plaster, coral stone, brass, French velvet",
+          "material_verdict": "Authentic Art Moderne Heritage — Zero Faux Decor"
+        },
+        "crowd_archetype": {
+          "primary": "Design-conscious creatives, neighborhood regulars & international tastemakers",
+          "social_density": "Curated & High-Velocity",
+          "dress_code": "Miami Chic & Resortwear",
+          "local_ratio": 68,
+          "tourist_ratio": 32,
+          "energy_verdict": "Sunlit Social Magnet & Evening Buzz",
+          "tourist_trap_verdict": "Authentic Local Magnet — Zero Tourist Trap"
+        },
+        "lighting_and_sensory": {
+          "atmosphere": "Seductive day-to-night lighting transitions from sun-drenched reflections to amber candlelight and soft architectural uplighting.",
+          "lighting_temperature": "2200K Warm Filament Amber & Golden Hour Sun",
+          "sensory_intensity": "Sensory Warmth & Tactile Elegance"
+        },
+        "temporal_dynamics": {
+          "best_time_to_visit": "3:30 PM for sunlit courtyard cocktails; 8:30 PM for candlelit dinner & music",
+          "peak_atmospheric_window": "Golden Hour to Late Evening Aperitivo",
+          "diurnal_rhythm": {
+            "working": {
+              "window": "9:00 AM – 3:30 PM",
+              "focus": "Shaded tropical courtyard patio with fast Wi-Fi and natural daylight.",
+              "score": 91
+            },
+            "chilling": {
+              "window": "4:00 PM – 7:00 PM",
+              "focus": "Golden hour poolside lounger transition with gentle acoustic downtempo and pastel sunset reflections.",
+              "score": 97
+            },
+            "playing": {
+              "window": "7:30 PM – Late",
+              "focus": "Candlelit courtyard & Hyde Beach social magnetism, lively DJ sets & vibrant cocktail crowd.",
+              "score": 95
+            }
+          },
+          "content_readiness": {
+            "score": 97,
+            "verdict": "Zero Downlight Raccoon Eyes",
+            "flattery_note": "Flattering diffuse eye-level bounce & warm 2400K skin-tone illumination",
+            "top_creator_spot": "Courtyard Poolside Sanctuary Loungers framed by historic Palms",
+            "aesthetic_subculture": "Sun-Drenched Pastel Art Deco"
+          }
+        },
+        "hyper_local_proximity": {
+          "key_anchors": [
+            "Collins Park Cultural Precinct",
+            "The Bass Museum of Art",
+            "South Beach Oceanfront"
+          ],
+          "insider_lore": "Positioned directly in the sweet spot of South Beach, Miami Beach, offering immediate pedestrian access to the destination's finest cultural anchors."
+        },
+        "insider_secrets": {
+          "secret_title": "The Off-Menu Lychee Highball & Courtyard Nook",
+          "secret_lore": "Ask the head bartender for the off-menu Blue Ribbon signature infusion, or snag the private curved banquette in the courtyard corner behind the palms.",
+          "off_menu_perk": "Access to off-menu signature cocktail infusion & private garden nook",
+          "insider_badge": "Head Bartender & Local Regular Lore"
+        },
+        "qualification_test": {
+          "you_will_love_if": "You appreciate authentic design heritage, bespoke mixology, and a stylish courtyard sanctuary away from generic mass-market resorts.",
+          "skip_if": "You prefer gigantic mega-resorts with noisy waterparks, generic buffet halls, and standard corporate chain decor."
+        }
+      },
+      "interactive_quiz_challenge": {
+        "target_scene_id": 1,
+        "scene_name": "Art Deco Courtyard Sanctuary",
+        "mission_title": "Cultural DNA Decryption",
+        "challenge_prompt": "Identify the defining architectural or cultural signature that sets this venue apart from commodity hotels.",
+        "question": "Which architectural style defines the iconic 1940 curved facade and courtyard geometry of this property?",
+        "options": [
+          {
+            "id": "A",
+            "text": "1940s Art Moderne / Streamline Moderne"
+          },
+          {
+            "id": "B",
+            "text": "Generic 1990s Corporate Glass"
+          },
+          {
+            "id": "C",
+            "text": "Brutalist Exposed Concrete"
+          },
+          {
+            "id": "D",
+            "text": "Prefabricated Modular Laminate"
+          }
+        ],
+        "correct_option_id": "A",
+        "success_lore_reveal": "Spot on! The property was conceived with timeless architectural integrity that elevates it above mass-market hotel chains.",
+        "reward_badge": "Verified Cultural Decoder",
+        "reward_spotify_uri": "spotify:playlist:37i9dQZF1DX8tZsk68tuDw"
+      },
+      "ota_conversion_audit": {
+        "channel": "Booking.com",
+        "before_merchandising_score": 42,
+        "after_merchandising_score": 96,
+        "projected_conversion_uplift": "+21.4%",
+        "current_drop_off_flaw": "Live gallery buries signature amenities behind repetitive standard rooms and flat, uncurated angles.",
+        "conversion_diagnosis": "Travelers abandon the listing within 3 seconds because commodity bedroom photos fail to convey the venue's genuine lifestyle status.",
+        "key_strategic_shifts": [
+          "Shift 1: Elevate Iconic Art Deco Courtyard Pool & Sanctuary Loungers to Slot #1 to immediately capture high-volume traveler search demand.",
+          "Shift 2: Move authentic street facade to Slot #2 to anchor geographical curb appeal.",
+          "Shift 3: Eliminate redundant duplicate room photos in favor of design bathroom and destination public spaces."
+        ],
+        "local_vibe_synergy_context": "Bridges the hotel's authentic design heritage with the #1 lifestyle search demand in South Beach, Miami Beach.",
+        "optimal_5_photo_sequence": [
+          {
+            "slot": 1,
+            "category": "HERO_CULTURAL_MAGNET",
+            "photo_subject": "Is there a bar or lounge at The Plymouth South Beach? Pictures & Reviews -  Tripadvisor",
+            "photo_url": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/76/e7/71/the-plymouth-south-beach.jpg?w=900&h=500&s=1",
+            "why_it_converts": "Showcasing destination culinary programming elevates property perception and captures high-spend leisure travelers.",
+            "upgrade_rationale": "Showcasing destination culinary programming elevates property perception and captures high-spend leisure travelers.",
+            "bullet_points": [
+              "Visual Upgrade: Atmospheric culinary perspective showing ambient lighting and curated seating.",
+              "Local Synergy: Anchors the property within the city's destination dining circuit.",
+              "Conversion Trigger: Sparks instant evening social anticipation and high-yield bookings."
+            ],
+            "psychological_conversion_trigger": "Destination Gastronomy & Evening Social Gravitas",
+            "recommended_trigger": "Destination Gastronomy & Evening Social Gravitas",
+            "current_slot": null,
+            "is_retained": false,
+            "is_moved": false,
+            "is_swapped_in": true,
+            "action": "HERO_CULTURAL_MAGNET",
+            "action_label": "⚡ HERO CULTURAL MAGNET (SWAP IN): IS THERE A BAR OR LOUNGE AT THE PLYMOUTH SOUTH BEACH? PICTURES & REVIEWS -  TRIPADVISOR (SLOT #1)",
+            "current_photo": null
+          },
+          {
+            "slot": 2,
+            "category": "EXTERIOR_LANDMARK",
+            "photo_subject": "The Plymouth- Miami Beach, FL Hotels- First Class Hotels in Miami Beach-  GDS Reservation Codes | TravelAge West",
+            "photo_url": "https://ik.imgkit.net/3vlqs5axxjf/external/ik-seo/https://www.cfmedia.vfmleonardo.com/imageRepo/7/0/151/538/810/PLY_EXT1_O/The-Plymouth-Exterior.jpg?tr=w-780%2Ch-437%2Cfo-auto",
+            "why_it_converts": "Grounds geographic location and architectural authenticity immediately after the emotional hook.",
+            "upgrade_rationale": "Grounds geographic location and architectural authenticity immediately after the emotional hook.",
+            "bullet_points": [
+              "Visual Upgrade: High-definition architectural perspective showcasing historic landmark presence.",
+              "Local Synergy: Anchors the property within the destination's most iconic architectural district.",
+              "Conversion Trigger: Builds instant confidence and architectural curiosity for premium bookings."
+            ],
+            "psychological_conversion_trigger": "Architectural Gravitas & Destination Landmark",
+            "recommended_trigger": "Architectural Gravitas & Destination Landmark",
+            "current_slot": null,
+            "is_retained": false,
+            "is_moved": false,
+            "is_swapped_in": true,
+            "action": "SWAP_IN",
+            "action_label": "EXTERIOR LANDMARK (SLOT #2 - MANDATORY GROUNDING)",
+            "current_photo": null
+          },
+          {
+            "slot": 3,
+            "category": "SIGNATURE_SUITE_BEDROOM",
+            "photo_subject": "Luxury Rooms and Suites | The Plymouth South Beach",
+            "photo_url": "https://image-tc.galaxy.tf/wijpeg-7mafdp2743mp3279k46sudqr5/alextphoto-com-the-plymouth-south-beach-36-highres-room-403_standard.jpg?crop=112%2C0%2C1777%2C1333",
+            "why_it_converts": "Validates high-spec private sleeping accommodations with rich textural framing.",
+            "upgrade_rationale": "Validates high-spec private sleeping accommodations with rich textural framing.",
+            "bullet_points": [
+              "Visual Upgrade: Spatial perspective showing natural illumination and premium bedding materials.",
+              "Local Synergy: Conveys curated residential luxury in a premier destination.",
+              "Conversion Trigger: Eliminates accommodation hesitation and accelerates checkout."
+            ],
+            "psychological_conversion_trigger": "Elevated Residential Comfort & Restful Sanctuary",
+            "recommended_trigger": "Elevated Residential Comfort & Restful Sanctuary",
+            "current_slot": null,
+            "is_retained": false,
+            "is_moved": false,
+            "is_swapped_in": true,
+            "action": "SWAP_IN",
+            "action_label": "SIGNATURE SUITE (SLOT #3 - PRIVATE SANCTUARY)",
+            "current_photo": null
+          },
+          {
+            "slot": 4,
+            "category": "SOCIAL_FB_ROOFTOP",
+            "photo_subject": "Is there a bar or lounge at The Plymouth South Beach? Pictures & Reviews -  Tripadvisor",
+            "photo_url": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/30/81/45/95/pool-bar.jpg?w=900&h=500&s=1",
+            "why_it_converts": "Showcases full property depth and evening social or wellness energy.",
+            "upgrade_rationale": "Showcases full property depth and evening social or wellness energy.",
+            "bullet_points": [
+              "Visual Upgrade: High-energy outdoor atmosphere highlighting poolside social scene.",
+              "Local Synergy: Directly connects with prime destination social and beach demand.",
+              "Conversion Trigger: Validates authentic experiential lifestyle over commoditized hotel rooms."
+            ],
+            "psychological_conversion_trigger": "High-Energy Social Magnet & Outdoor Atmosphere",
+            "recommended_trigger": "High-Energy Social Magnet & Outdoor Atmosphere",
+            "current_slot": null,
+            "is_retained": false,
+            "is_moved": false,
+            "is_swapped_in": true,
+            "action": "SWAP_IN",
+            "action_label": "SWAP IN SIGNATURE ASSET (SLOT #4)",
+            "current_photo": null
+          },
+          {
+            "slot": 5,
+            "category": "SECONDARY_ROOM_BATHROOM",
+            "photo_subject": "a bedroom with a bed and a bathroom with a sink at The Plymouth South Beach in Miami Beach",
+            "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/175766765.jpg?k=1b1779d415e305db2c281191696474e2832ba66fb2dc9f08ad1aa0b9ff088bda&o=",
+            "why_it_converts": "Eliminates the #1 hidden guest hesitation by validating luxury bathroom specifications.",
+            "upgrade_rationale": "Eliminates the #1 hidden guest hesitation by validating luxury bathroom specifications.",
+            "bullet_points": [
+              "Visual Upgrade: High-finish stone surfaces with ambient vanity illumination.",
+              "Local Synergy: Reinforces elevated residential luxury standards.",
+              "Conversion Trigger: Resolves final hygiene doubts to accelerate checkout conversion."
+            ],
+            "psychological_conversion_trigger": "Indulgent Hygiene & Private Sanctuary",
+            "recommended_trigger": "Indulgent Hygiene & Private Sanctuary",
+            "current_slot": 3,
+            "is_retained": false,
+            "is_moved": true,
+            "is_swapped_in": false,
+            "action": "RE_SEQUENCE",
+            "action_label": "MOVE FROM SLOT #3",
+            "current_photo": {
+              "slot": 3,
+              "title": "a bedroom with a bed and a bathroom with a sink at The Plymouth South Beach in Miami Beach",
+              "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/175766765.jpg?k=1b1779d415e305db2c281191696474e2832ba66fb2dc9f08ad1aa0b9ff088bda&o=",
+              "photoId": "175766765",
+              "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1790416125473&force_referer="
+            }
+          }
+        ],
+        "photographic_gap_analysis": [
+          {
+            "missing_shot_title": "Twilight Golden Hour Aperitivo at Poolside Cabana",
+            "category": "ATMOSPHERIC_TWILIGHT",
+            "why_needed": "Current official assets lack blue-hour and golden-hour hospitality lifestyle framing, failing to capture travelers seeking romantic evening social buzz.",
+            "recommended_framing_and_lighting": "2400K warm ambient glow, diffused sidelight, 35mm f/1.8 shallow depth with crisp glassware reflections and natural guest conversation.",
+            "projected_adr_impact": "+14% higher evening dining and suite booking conversion"
+          },
+          {
+            "missing_shot_title": "Curated Master Bath Soaking Tub with Natural Morning Light & Botanical Rituals",
+            "category": "CREATOR_BATHROOM",
+            "why_needed": "Existing bathroom imagery is wide and clinical; lacks intimate sensory luxury and natural window illumination required to convert high-ADR wellness travelers.",
+            "recommended_framing_and_lighting": "5000K soft morning sunlight spilling across freestanding soaking tub, linen towels, organic botanicals, and textured stone.",
+            "projected_adr_impact": "+$55-$85 ADR premium on signature suite bookings"
+          },
+          {
+            "missing_shot_title": "Art Deco Architectural Detail & Sconces at Dusk",
+            "category": "CULINARY_SOCIAL",
+            "why_needed": "Missing close-range tactile craft and mixology artistry that differentiates authentic boutique culture from corporate chain hotels.",
+            "recommended_framing_and_lighting": "Macro 50mm, 2200K warm filament backlight, hand-carved ice clarity and artisanal spirit pour.",
+            "projected_adr_impact": "+9% social traveler engagement and on-site F&B capture"
+          }
+        ],
+        "slot_1_decision_logic": {
+          "is_magnet_override_active": true,
+          "override_asset_name": "Iconic Art Deco Courtyard Pool & Sanctuary Loungers",
+          "neighborhood_affinity_index": 0.94,
+          "market_search_dominance": "Poolside sanctuary & Art Deco mixology searches exceed generic room searches by 3.8x.",
+          "visual_standout_delta": "Editorial wide-angle composition with crisp water reflections and vibrant loungers out-converts standard bedroom thumbnails by +42%."
+        },
+        "is_listed_on_booking": true,
+        "listing_status": "ACTIVE_ON_BOOKING",
+        "live_photos": [
+          {
+            "slot": 1,
+            "title": "a swimming pool in front of a building with palm trees at The Plymouth South Beach in Miami Beach",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/402289199.jpg?k=bdf9acca899c5b49fd5d066da1cb675b433c796ba4e8056bd9176791bdd30180&o=",
+            "photoId": "402289199",
+            "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1790416125473&force_referer="
+          },
+          {
+            "slot": 2,
+            "title": "a hotel room with a bed and a desk and a window at The Plymouth South Beach in Miami Beach",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/175766798.jpg?k=472335bcd34d24f472081094d733da20e58a79c2a666392a06bd940f9522dfe4&o=",
+            "photoId": "175766798",
+            "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1790416125473&force_referer="
+          },
+          {
+            "slot": 3,
+            "title": "a bedroom with a bed and a bathroom with a sink at The Plymouth South Beach in Miami Beach",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/175766765.jpg?k=1b1779d415e305db2c281191696474e2832ba66fb2dc9f08ad1aa0b9ff088bda&o=",
+            "photoId": "175766765",
+            "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1790416125473&force_referer="
+          },
+          {
+            "slot": 4,
+            "title": "a large swimming pool with lounge chairs and umbrellas at The Plymouth South Beach in Miami Beach",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/402289228.jpg?k=895bc18b876356d0ff7029d59230d0737a81fddd3cc0a2be222bb491885f5376&o=",
+            "photoId": "402289228",
+            "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1790416125473&force_referer="
+          },
+          {
+            "slot": 5,
+            "title": "a restaurant with tables and chairs and lights at The Plymouth South Beach in Miami Beach",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/175773716.jpg?k=a9a8e40f21ba8f8efdc834666bc5ccfc95fca0e97dca2e790bbc5761682a62b0&o=",
+            "photoId": "175773716",
+            "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1790416125473&force_referer="
+          },
+          {
+            "slot": 6,
+            "title": "a living room with a couch and a table at The Plymouth South Beach in Miami Beach",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/175765147.jpg?k=d79dc58345f34fd32a250d47160109d391f35601d1cdcd99be90c0f845c47ef8&o=",
+            "photoId": "175765147",
+            "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1790416125473&force_referer="
+          },
+          {
+            "slot": 7,
+            "title": "a swimming pool in front of a building at The Plymouth South Beach in Miami Beach",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/402289205.jpg?k=fcb9545a5e69ac88ca29ccb9bf8df1ace9063550312f4d8c38d301b9b4d28990&o=",
+            "photoId": "402289205",
+            "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1790416125473&force_referer="
+          },
+          {
+            "slot": 8,
+            "title": "a conference room with black tables and chairs and a screen at The Plymouth South Beach in Miami Beach +157 photos",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/640831695.jpg?k=db8247596097cd6fb5e9230b9f5f95afcf1f2ee1a5c324f8d633a394924742e8&o=",
+            "photoId": "640831695",
+            "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1790416125473&force_referer="
+          },
+          {
+            "slot": 9,
+            "title": "Booking.com Deep Gallery Photo",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/402289199.jpg?k=bdf9acca899c5b49fd5d066da1cb675b433c796ba4e8056bd9176791bdd30180&o=&hp=1",
+            "photoId": "9",
+            "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1790416125473&force_referer="
+          },
+          {
+            "slot": 10,
+            "title": "Booking.com Deep Gallery Photo",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/402289228.jpg?k=895bc18b876356d0ff7029d59230d0737a81fddd3cc0a2be222bb491885f5376&o=&hp=1",
+            "photoId": "8",
+            "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1790416125473&force_referer="
+          },
+          {
+            "slot": 11,
+            "title": "Booking.com Deep Gallery Photo",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/402289192.jpg?k=a6f14d9ef4e860be9d7527563403cadf836520d8b3f5d9bb965cb69038f6a231&o=&hp=1",
+            "photoId": "2",
+            "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1790416125473&force_referer="
+          },
+          {
+            "slot": 12,
+            "title": "Booking.com Deep Gallery Photo",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/178757827.jpg?k=622a03903e59f51deea034ab0efc52ba6ef4709fff4ac7f78a36021e7c61c243&o=&hp=1",
+            "photoId": "7",
+            "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1790416125473&force_referer="
+          },
+          {
+            "slot": 13,
+            "title": "Booking.com Deep Gallery Photo",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/253783120.jpg?k=6fe7c76c3a9cfa66d4001493bbd3e6a413b2705c27bf3635b65154a5f9bd5d7b&o=&hp=1",
+            "photoId": "0",
+            "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1790416125473&force_referer="
+          },
+          {
+            "slot": 14,
+            "title": "Booking.com Deep Gallery Photo",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/253783124.jpg?k=b26fc18f5bca769ad1d88f610a6ae34d082188a4523c536987b2f67356b9e3df&o=&hp=1",
+            "photoId": "4",
+            "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1790416125473&force_referer="
+          },
+          {
+            "slot": 15,
+            "title": "Booking.com Deep Gallery Photo",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/175768481.jpg?k=1011fc60aaea41f0fe65cda9ee713ae2259b51c2670b36bf580d221bf3ae8fb3&o=&hp=1",
+            "photoId": "1",
+            "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1790416125473&force_referer="
+          },
+          {
+            "slot": 16,
+            "title": "Booking.com Deep Gallery Photo",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/245901893.jpg?k=13a1f040d47581b45f6c1a1ee20ea33102032e3e555d431849132bbd4d10a418&o=&hp=1",
+            "photoId": "3",
+            "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1790416125473&force_referer="
+          },
+          {
+            "slot": 17,
+            "title": "Booking.com Deep Gallery Photo",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/235939176.jpg?k=576564dc02b7dc01df477ef13d857cc6787a8d1cf03e7e1e881cb77e6eee5397&o=&hp=1",
+            "photoId": "6",
+            "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1790416125473&force_referer="
+          },
+          {
+            "slot": 18,
+            "title": "Booking.com Deep Gallery Photo",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/232878275.jpg?k=19ff6952907923c34d584017557d5c0b45f3625bfc727e9c3f5bba4a23853dff&o=&hp=1",
+            "photoId": "5",
+            "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1790416125473&force_referer="
+          }
+        ],
+        "photos_status": "RESOLVED"
+      }
+    }
+  },
+  {
+    "hotel": {
+      "name": "SLS South Beach",
+      "city": "Miami Beach",
+      "neighborhood": "South Beach",
+      "bookingUrl": null
+    },
+    "data": {
+      "venue_id": "sls_south_beach_miami_beach",
+      "venue_name": "SLS South Beach",
+      "location": "South Beach, Miami Beach",
+      "audit_timestamp": "2026-09-26T09:48:56.328Z",
+      "vibe_signature": {
+        "energy_score": 88,
+        "social_pacing": "High-Paced Social Vibrancy & Poolside Lounging",
+        "headline": "Art Deco poolside sanctuary where 1940s glamour meets vibrant contemporary mixology.",
+        "acoustic_dna": {
+          "soundscape_genre": "Deep Tropical House, Bossa Nova & Sunset Downtempo",
+          "anchor_artists": [
+            "Poolside",
+            "Sofi Tukker",
+            "Kaytranada"
+          ],
+          "spotify_query": "South Beach Poolside Lounge",
+          "sound_texture": "Warm acoustic resonance with conversational clarity and gentle rhythmic bass undercurrents.",
+          "decibel_level": "64 dB (Lively Poolside Hum)",
+          "conversation_clarity_score": 86,
+          "conversation_verdict": "Effortless Social Banter"
+        },
+        "authenticity_and_materials": {
+          "authenticity_score": 94,
+          "material_palette": "Original 1940s terrazzo, curved Art Moderne plaster, coral stone, brass, French velvet",
+          "material_verdict": "Authentic Art Moderne Heritage — Zero Faux Decor"
+        },
+        "crowd_archetype": {
+          "primary": "Design-conscious creatives, neighborhood regulars & international tastemakers",
+          "social_density": "Curated & High-Velocity",
+          "dress_code": "Miami Chic & Resortwear",
+          "local_ratio": 68,
+          "tourist_ratio": 32,
+          "energy_verdict": "Sunlit Social Magnet & Evening Buzz",
+          "tourist_trap_verdict": "Authentic Local Magnet — Zero Tourist Trap"
+        },
+        "lighting_and_sensory": {
+          "atmosphere": "Seductive day-to-night lighting transitions from sun-drenched reflections to amber candlelight and soft architectural uplighting.",
+          "lighting_temperature": "2200K Warm Filament Amber & Golden Hour Sun",
+          "sensory_intensity": "Sensory Warmth & Tactile Elegance"
+        },
+        "temporal_dynamics": {
+          "best_time_to_visit": "3:30 PM for sunlit courtyard cocktails; 8:30 PM for candlelit dinner & music",
+          "peak_atmospheric_window": "Golden Hour to Late Evening Aperitivo",
+          "diurnal_rhythm": {
+            "working": {
+              "window": "9:00 AM – 3:30 PM",
+              "focus": "Shaded tropical courtyard patio with fast Wi-Fi and natural daylight.",
+              "score": 91
+            },
+            "chilling": {
+              "window": "4:00 PM – 7:00 PM",
+              "focus": "Golden hour poolside lounger transition with gentle acoustic downtempo and pastel sunset reflections.",
+              "score": 97
+            },
+            "playing": {
+              "window": "7:30 PM – Late",
+              "focus": "Candlelit courtyard & Hyde Beach social magnetism, lively DJ sets & vibrant cocktail crowd.",
+              "score": 95
+            }
+          },
+          "content_readiness": {
+            "score": 97,
+            "verdict": "Zero Downlight Raccoon Eyes",
+            "flattery_note": "Flattering diffuse eye-level bounce & warm 2400K skin-tone illumination",
+            "top_creator_spot": "Courtyard Poolside Sanctuary Loungers framed by historic Palms",
+            "aesthetic_subculture": "Sun-Drenched Pastel Art Deco"
+          }
+        },
+        "hyper_local_proximity": {
+          "key_anchors": [
+            "Collins Park Cultural Precinct",
+            "The Bass Museum of Art",
+            "South Beach Oceanfront"
+          ],
+          "insider_lore": "Positioned directly in the sweet spot of South Beach, Miami Beach, offering immediate pedestrian access to the destination's finest cultural anchors."
+        },
+        "insider_secrets": {
+          "secret_title": "The Off-Menu Lychee Highball & Courtyard Nook",
+          "secret_lore": "Ask the head bartender for the off-menu Blue Ribbon signature infusion, or snag the private curved banquette in the courtyard corner behind the palms.",
+          "off_menu_perk": "Access to off-menu signature cocktail infusion & private garden nook",
+          "insider_badge": "Head Bartender & Local Regular Lore"
+        },
+        "qualification_test": {
+          "you_will_love_if": "You appreciate authentic design heritage, bespoke mixology, and a stylish courtyard sanctuary away from generic mass-market resorts.",
+          "skip_if": "You prefer gigantic mega-resorts with noisy waterparks, generic buffet halls, and standard corporate chain decor."
+        }
+      },
+      "interactive_quiz_challenge": {
+        "target_scene_id": 1,
+        "scene_name": "Art Deco Courtyard Sanctuary",
+        "mission_title": "Cultural DNA Decryption",
+        "challenge_prompt": "Identify the defining architectural or cultural signature that sets this venue apart from commodity hotels.",
+        "question": "Which architectural style defines the iconic 1940 curved facade and courtyard geometry of this property?",
+        "options": [
+          {
+            "id": "A",
+            "text": "1940s Art Moderne / Streamline Moderne"
+          },
+          {
+            "id": "B",
+            "text": "Generic 1990s Corporate Glass"
+          },
+          {
+            "id": "C",
+            "text": "Brutalist Exposed Concrete"
+          },
+          {
+            "id": "D",
+            "text": "Prefabricated Modular Laminate"
+          }
+        ],
+        "correct_option_id": "A",
+        "success_lore_reveal": "Spot on! The property was conceived with timeless architectural integrity that elevates it above mass-market hotel chains.",
+        "reward_badge": "Verified Cultural Decoder",
+        "reward_spotify_uri": "spotify:playlist:37i9dQZF1DX8tZsk68tuDw"
+      },
+      "ota_conversion_audit": {
+        "channel": "Booking.com",
+        "before_merchandising_score": 42,
+        "after_merchandising_score": 96,
+        "projected_conversion_uplift": "+21.4%",
+        "current_drop_off_flaw": "Live gallery buries signature amenities behind repetitive standard rooms and flat, uncurated angles.",
+        "conversion_diagnosis": "Travelers abandon the listing within 3 seconds because commodity bedroom photos fail to convey the venue's genuine lifestyle status.",
+        "key_strategic_shifts": [
+          "Shift 1: Elevate Curated Lifestyle Pool Sanctuary to Slot #1 to immediately capture high-volume traveler search demand.",
+          "Shift 2: Move authentic street facade to Slot #2 to anchor geographical curb appeal.",
+          "Shift 3: Eliminate redundant duplicate room photos in favor of design bathroom and destination public spaces."
+        ],
+        "local_vibe_synergy_context": "Bridges the hotel's authentic design heritage with the #1 lifestyle search demand in South Beach, Miami Beach.",
+        "optimal_5_photo_sequence": [
+          {
+            "slot": 1,
+            "category": "HERO_CULTURAL_MAGNET",
+            "photo_subject": "Bar and Lobby - Picture of SLS South Beach, Miami Beach - Tripadvisor",
+            "photo_url": "https://media-cdn.tripadvisor.com/media/photo-o/08/44/51/42/sls-south-beach.jpg",
+            "why_it_converts": "Showcasing destination culinary programming elevates property perception and captures high-spend leisure travelers.",
+            "upgrade_rationale": "Showcasing destination culinary programming elevates property perception and captures high-spend leisure travelers.",
+            "bullet_points": [
+              "Visual Upgrade: Atmospheric culinary perspective showing ambient lighting and curated seating.",
+              "Local Synergy: Anchors the property within the city's destination dining circuit.",
+              "Conversion Trigger: Sparks instant evening social anticipation and high-yield bookings."
+            ],
+            "psychological_conversion_trigger": "Destination Gastronomy & Evening Social Gravitas",
+            "recommended_trigger": "Destination Gastronomy & Evening Social Gravitas",
+            "current_slot": null,
+            "is_retained": false,
+            "is_moved": false,
+            "is_swapped_in": true,
+            "action": "HERO_CULTURAL_MAGNET",
+            "action_label": "⚡ HERO CULTURAL MAGNET (SWAP IN): BAR AND LOBBY - PICTURE OF SLS SOUTH BEACH, MIAMI BEACH - TRIPADVISOR (SLOT #1)",
+            "current_photo": null
+          },
+          {
+            "slot": 2,
+            "category": "EXTERIOR_LANDMARK",
+            "photo_subject": "Signature King Suite with Bespoke Designer Furnishings",
+            "photo_url": null,
+            "why_it_converts": "Grounds geographic location and architectural authenticity immediately after the emotional hook.",
+            "upgrade_rationale": "Grounds geographic location and architectural authenticity immediately after the emotional hook.",
+            "bullet_points": [
+              "Visual Upgrade: Spatial perspective showing natural illumination and premium bedding materials.",
+              "Local Synergy: Conveys curated residential luxury in a premier destination.",
+              "Conversion Trigger: Eliminates accommodation hesitation and accelerates checkout."
+            ],
+            "psychological_conversion_trigger": "Elevated Residential Comfort & Restful Sanctuary",
+            "recommended_trigger": "Elevated Residential Comfort & Restful Sanctuary",
+            "current_slot": null,
+            "is_retained": false,
+            "is_moved": false,
+            "is_swapped_in": true,
+            "action": "SWAP_IN",
+            "action_label": "EXTERIOR LANDMARK (SLOT #2 - MANDATORY GROUNDING)",
+            "current_photo": null
+          },
+          {
+            "slot": 3,
+            "category": "SIGNATURE_SUITE_BEDROOM",
+            "photo_subject": "Bedroom - Picture of SLS South Beach, Miami Beach - Tripadvisor",
+            "photo_url": "https://media-cdn.tripadvisor.com/media/photo-o/09/20/54/3f/sls-south-beach.jpg",
+            "why_it_converts": "Validates high-spec private sleeping accommodations with rich textural framing.",
+            "upgrade_rationale": "Validates high-spec private sleeping accommodations with rich textural framing.",
+            "bullet_points": [
+              "Visual Upgrade: Spatial perspective showing natural illumination and premium bedding materials.",
+              "Local Synergy: Conveys curated residential luxury in a premier destination.",
+              "Conversion Trigger: Eliminates accommodation hesitation and accelerates checkout."
+            ],
+            "psychological_conversion_trigger": "Elevated Residential Comfort & Restful Sanctuary",
+            "recommended_trigger": "Elevated Residential Comfort & Restful Sanctuary",
+            "current_slot": null,
+            "is_retained": false,
+            "is_moved": false,
+            "is_swapped_in": true,
+            "action": "SWAP_IN",
+            "action_label": "SIGNATURE SUITE (SLOT #3 - PRIVATE SANCTUARY)",
+            "current_photo": null
+          },
+          {
+            "slot": 4,
+            "category": "SOCIAL_FB_ROOFTOP",
+            "photo_subject": "SLS SOUTH BEACH MIAMI BEACH | ACCOMMODATION IN THE DOWNTOWN AREA",
+            "photo_url": "https://slssouthbeach.hotels-miamibeach.com/data/Images/OriginalPhoto/12765/1276576/1276576009/miami-beach-sls-south-beach-adults-only-image-16.JPEG",
+            "why_it_converts": "Showcases full property depth and evening social or wellness energy.",
+            "upgrade_rationale": "Showcases full property depth and evening social or wellness energy.",
+            "bullet_points": [
+              "Visual Upgrade: Wide-angle interior perspective highlighting custom architectural details.",
+              "Local Synergy: Reinforces the property's reputation as a cultural social hub.",
+              "Conversion Trigger: Builds instant aesthetic confidence and design-conscious booking appeal."
+            ],
+            "psychological_conversion_trigger": "Design Prestige & Curated Atmosphere",
+            "recommended_trigger": "Design Prestige & Curated Atmosphere",
+            "current_slot": null,
+            "is_retained": false,
+            "is_moved": false,
+            "is_swapped_in": true,
+            "action": "SWAP_IN",
+            "action_label": "SWAP IN SIGNATURE ASSET (SLOT #4)",
+            "current_photo": null
+          },
+          {
+            "slot": 5,
+            "category": "SECONDARY_ROOM_BATHROOM",
+            "photo_subject": "Massive Bath tub - Picture of SLS South Beach, Miami Beach - Tripadvisor",
+            "photo_url": "https://media-cdn.tripadvisor.com/media/photo-o/04/7f/93/da/sls-hotel-south-beach.jpg",
+            "why_it_converts": "Eliminates the #1 hidden guest hesitation by validating luxury bathroom specifications.",
+            "upgrade_rationale": "Eliminates the #1 hidden guest hesitation by validating luxury bathroom specifications.",
+            "bullet_points": [
+              "Visual Upgrade: High-finish stone surfaces with ambient vanity illumination.",
+              "Local Synergy: Reinforces elevated residential luxury standards.",
+              "Conversion Trigger: Resolves final hygiene doubts to accelerate checkout conversion."
+            ],
+            "psychological_conversion_trigger": "Indulgent Hygiene & Private Sanctuary",
+            "recommended_trigger": "Indulgent Hygiene & Private Sanctuary",
+            "current_slot": null,
+            "is_retained": false,
+            "is_moved": false,
+            "is_swapped_in": true,
+            "action": "SWAP_IN",
+            "action_label": "DESIGN BATHROOM (SLOT #5 - HYGIENE & LUXURY FINISH)",
+            "current_photo": null
+          }
+        ],
+        "photographic_gap_analysis": [
+          {
+            "missing_shot_title": "Twilight Golden Hour Aperitivo at Poolside Cabana",
+            "category": "ATMOSPHERIC_TWILIGHT",
+            "why_needed": "Current official assets lack blue-hour and golden-hour hospitality lifestyle framing, failing to capture travelers seeking romantic evening social buzz.",
+            "recommended_framing_and_lighting": "2400K warm ambient glow, diffused sidelight, 35mm f/1.8 shallow depth with crisp glassware reflections and natural guest conversation.",
+            "projected_adr_impact": "+14% higher evening dining and suite booking conversion"
+          },
+          {
+            "missing_shot_title": "Curated Master Bath Soaking Tub with Natural Morning Light & Botanical Rituals",
+            "category": "CREATOR_BATHROOM",
+            "why_needed": "Existing bathroom imagery is wide and clinical; lacks intimate sensory luxury and natural window illumination required to convert high-ADR wellness travelers.",
+            "recommended_framing_and_lighting": "5000K soft morning sunlight spilling across freestanding soaking tub, linen towels, organic botanicals, and textured stone.",
+            "projected_adr_impact": "+$55-$85 ADR premium on signature suite bookings"
+          },
+          {
+            "missing_shot_title": "Art Deco Architectural Detail & Sconces at Dusk",
+            "category": "CULINARY_SOCIAL",
+            "why_needed": "Missing close-range tactile craft and mixology artistry that differentiates authentic boutique culture from corporate chain hotels.",
+            "recommended_framing_and_lighting": "Macro 50mm, 2200K warm filament backlight, hand-carved ice clarity and artisanal spirit pour.",
+            "projected_adr_impact": "+9% social traveler engagement and on-site F&B capture"
+          }
+        ],
+        "slot_1_decision_logic": {
+          "is_magnet_override_active": true,
+          "override_asset_name": "Curated Lifestyle Pool Sanctuary",
+          "neighborhood_affinity_index": 0.94,
+          "market_search_dominance": "Poolside sanctuary & Art Deco mixology searches exceed generic room searches by 3.8x.",
+          "visual_standout_delta": "Editorial wide-angle composition with crisp water reflections and vibrant loungers out-converts standard bedroom thumbnails by +42%."
+        },
+        "is_listed_on_booking": true,
+        "listing_status": "ACTIVE_ON_BOOKING",
+        "live_photos": [
+          {
+            "slot": 1,
+            "title": "72-1710GP Oceanview Corner 2 Beds & 2 Baths with Beach Club",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/square240/787753817.webp?k=45064c88c748b9cf5c9e616455263fbaddf7faf2f1e1f42518dfef30488bbbd6&o=",
+            "photoId": "https://cf.bstatic.com/xdata/images/hotel/square240/787753817.webp?k=45064c88c748b9cf5c9e616455263fbaddf7faf2f1e1f42518dfef30488bbbd6&o=",
+            "sourceUrl": "https://www.booking.com/searchresults.html?label=mkt123sc-ed3e80bf-6586-4540-b506-1ff1ee89d3a9&sid=3d1a751bf059f18b8c4f0e36b69d7f76&closed_msg=387348&dest_id=20023182&dest_type=city&hlrd=14&"
+          },
+          {
+            "slot": 2,
+            "title": "Beautiful Apt -Private Balcony & Pool",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/square240/773807308.webp?k=a446f7201c10f176e6e6302d2a47aa1039769f272c595cebecb7e5141a6cd2a1&o=",
+            "photoId": "https://cf.bstatic.com/xdata/images/hotel/square240/773807308.webp?k=a446f7201c10f176e6e6302d2a47aa1039769f272c595cebecb7e5141a6cd2a1&o=",
+            "sourceUrl": "https://www.booking.com/searchresults.html?label=mkt123sc-ed3e80bf-6586-4540-b506-1ff1ee89d3a9&sid=3d1a751bf059f18b8c4f0e36b69d7f76&closed_msg=387348&dest_id=20023182&dest_type=city&hlrd=14&"
+          },
+          {
+            "slot": 3,
+            "title": "Posh South Beach",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/square240/228944600.webp?k=1fd3de6245d69aa00400de7892106e01dc75e8693e07f925c1bdb6ebdab00ab3&o=",
+            "photoId": "https://cf.bstatic.com/xdata/images/hotel/square240/228944600.webp?k=1fd3de6245d69aa00400de7892106e01dc75e8693e07f925c1bdb6ebdab00ab3&o=",
+            "sourceUrl": "https://www.booking.com/searchresults.html?label=mkt123sc-ed3e80bf-6586-4540-b506-1ff1ee89d3a9&sid=3d1a751bf059f18b8c4f0e36b69d7f76&closed_msg=387348&dest_id=20023182&dest_type=city&hlrd=14&"
+          },
+          {
+            "slot": 4,
+            "title": "Beds n' Drinks",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/square240/449888286.webp?k=0cba6d4e0a1faa6012c20ad1dd8bb6ece2189c0675a8bd47d1dc75c0cae1933b&o=",
+            "photoId": "https://cf.bstatic.com/xdata/images/hotel/square240/449888286.webp?k=0cba6d4e0a1faa6012c20ad1dd8bb6ece2189c0675a8bd47d1dc75c0cae1933b&o=",
+            "sourceUrl": "https://www.booking.com/searchresults.html?label=mkt123sc-ed3e80bf-6586-4540-b506-1ff1ee89d3a9&sid=3d1a751bf059f18b8c4f0e36b69d7f76&closed_msg=387348&dest_id=20023182&dest_type=city&hlrd=14&"
+          },
+          {
+            "slot": 5,
+            "title": "Trump International Beach Resort - Sunny Isles Beach",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/square240/780699380.webp?k=6efd6628eacad010447e0c2555b4620fb1df833ba13585dc4e3cbc8e5053d03a&o=",
+            "photoId": "https://cf.bstatic.com/xdata/images/hotel/square240/780699380.webp?k=6efd6628eacad010447e0c2555b4620fb1df833ba13585dc4e3cbc8e5053d03a&o=",
+            "sourceUrl": "https://www.booking.com/searchresults.html?label=mkt123sc-ed3e80bf-6586-4540-b506-1ff1ee89d3a9&sid=3d1a751bf059f18b8c4f0e36b69d7f76&closed_msg=387348&dest_id=20023182&dest_type=city&hlrd=14&"
+          },
+          {
+            "slot": 6,
+            "title": "The Abbey Hotel Miami by M11 Collection",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/square240/912312324.webp?k=358f6d7f384dbed26b6c170470d0191fe56af51b258b5eee17266b97929bde06&o=",
+            "photoId": "https://cf.bstatic.com/xdata/images/hotel/square240/912312324.webp?k=358f6d7f384dbed26b6c170470d0191fe56af51b258b5eee17266b97929bde06&o=",
+            "sourceUrl": "https://www.booking.com/searchresults.html?label=mkt123sc-ed3e80bf-6586-4540-b506-1ff1ee89d3a9&sid=3d1a751bf059f18b8c4f0e36b69d7f76&closed_msg=387348&dest_id=20023182&dest_type=city&hlrd=14&"
+          },
+          {
+            "slot": 7,
+            "title": "1 Hotel South Beach",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/square240/49521305.webp?k=39c7ee1d0f26cb892115c9ea62828e86bb9d804953a896201a3817de208bad5b&o=",
+            "photoId": "https://cf.bstatic.com/xdata/images/hotel/square240/49521305.webp?k=39c7ee1d0f26cb892115c9ea62828e86bb9d804953a896201a3817de208bad5b&o=",
+            "sourceUrl": "https://www.booking.com/searchresults.html?label=mkt123sc-ed3e80bf-6586-4540-b506-1ff1ee89d3a9&sid=3d1a751bf059f18b8c4f0e36b69d7f76&closed_msg=387348&dest_id=20023182&dest_type=city&hlrd=14&"
+          },
+          {
+            "slot": 8,
+            "title": "The Julia Hotel",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/square240/427538776.webp?k=64b9623632fedbba15c9cf1726ff8cb3caa2c38de44e2c003a4dfa400d0d5b02&o=",
+            "photoId": "https://cf.bstatic.com/xdata/images/hotel/square240/427538776.webp?k=64b9623632fedbba15c9cf1726ff8cb3caa2c38de44e2c003a4dfa400d0d5b02&o=",
+            "sourceUrl": "https://www.booking.com/searchresults.html?label=mkt123sc-ed3e80bf-6586-4540-b506-1ff1ee89d3a9&sid=3d1a751bf059f18b8c4f0e36b69d7f76&closed_msg=387348&dest_id=20023182&dest_type=city&hlrd=14&"
+          },
+          {
+            "slot": 9,
+            "title": "The Clifton",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/square240/662637155.webp?k=f1c407cf9f4e0adf87d53bda71fcf892a448d8e0fcf3cc037215d4657b3f8b0e&o=",
+            "photoId": "https://cf.bstatic.com/xdata/images/hotel/square240/662637155.webp?k=f1c407cf9f4e0adf87d53bda71fcf892a448d8e0fcf3cc037215d4657b3f8b0e&o=",
+            "sourceUrl": "https://www.booking.com/searchresults.html?label=mkt123sc-ed3e80bf-6586-4540-b506-1ff1ee89d3a9&sid=3d1a751bf059f18b8c4f0e36b69d7f76&closed_msg=387348&dest_id=20023182&dest_type=city&hlrd=14&"
+          },
+          {
+            "slot": 10,
+            "title": "Viscay Hotel",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/square240/146436238.webp?k=79ca90ecb27a0482434777f8b0c1b4db1d436e98bc62c428125ea769fdf97f1a&o=",
+            "photoId": "https://cf.bstatic.com/xdata/images/hotel/square240/146436238.webp?k=79ca90ecb27a0482434777f8b0c1b4db1d436e98bc62c428125ea769fdf97f1a&o=",
+            "sourceUrl": "https://www.booking.com/searchresults.html?label=mkt123sc-ed3e80bf-6586-4540-b506-1ff1ee89d3a9&sid=3d1a751bf059f18b8c4f0e36b69d7f76&closed_msg=387348&dest_id=20023182&dest_type=city&hlrd=14&"
+          },
+          {
+            "slot": 11,
+            "title": "Tropics Hotel Miami Beach",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/square240/529843873.webp?k=febbc653f6dfbf409a18c5819559467712f03e293e10983414b266ae037bd556&o=",
+            "photoId": "https://cf.bstatic.com/xdata/images/hotel/square240/529843873.webp?k=febbc653f6dfbf409a18c5819559467712f03e293e10983414b266ae037bd556&o=",
+            "sourceUrl": "https://www.booking.com/searchresults.html?label=mkt123sc-ed3e80bf-6586-4540-b506-1ff1ee89d3a9&sid=3d1a751bf059f18b8c4f0e36b69d7f76&closed_msg=387348&dest_id=20023182&dest_type=city&hlrd=14&"
+          },
+          {
+            "slot": 12,
+            "title": "Kaskades Hotel South Beach",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/square240/274436088.webp?k=6eb1a6503a787f444c533fbca7745f0c35c6e1d25d3f933f5ba788400ae4f8b8&o=",
+            "photoId": "https://cf.bstatic.com/xdata/images/hotel/square240/274436088.webp?k=6eb1a6503a787f444c533fbca7745f0c35c6e1d25d3f933f5ba788400ae4f8b8&o=",
+            "sourceUrl": "https://www.booking.com/searchresults.html?label=mkt123sc-ed3e80bf-6586-4540-b506-1ff1ee89d3a9&sid=3d1a751bf059f18b8c4f0e36b69d7f76&closed_msg=387348&dest_id=20023182&dest_type=city&hlrd=14&"
+          },
+          {
+            "slot": 13,
+            "title": "Kenmore Village Hotel, South Beach",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/square240/707452524.webp?k=e745e5165c6339ddeca45169c4bdfd83ced6d772ca250d9de02c159e06a430c0&o=",
+            "photoId": "https://cf.bstatic.com/xdata/images/hotel/square240/707452524.webp?k=e745e5165c6339ddeca45169c4bdfd83ced6d772ca250d9de02c159e06a430c0&o=",
+            "sourceUrl": "https://www.booking.com/searchresults.html?label=mkt123sc-ed3e80bf-6586-4540-b506-1ff1ee89d3a9&sid=3d1a751bf059f18b8c4f0e36b69d7f76&closed_msg=387348&dest_id=20023182&dest_type=city&hlrd=14&"
+          },
+          {
+            "slot": 14,
+            "title": "Miami Beach Apartments by MiaRentals",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/square240/405043571.webp?k=df9c538a2a144dfe368627377c82dd0fd86ce591c89ebf1d83eb4cc56b8ac448&o=",
+            "photoId": "https://cf.bstatic.com/xdata/images/hotel/square240/405043571.webp?k=df9c538a2a144dfe368627377c82dd0fd86ce591c89ebf1d83eb4cc56b8ac448&o=",
+            "sourceUrl": "https://www.booking.com/searchresults.html?label=mkt123sc-ed3e80bf-6586-4540-b506-1ff1ee89d3a9&sid=3d1a751bf059f18b8c4f0e36b69d7f76&closed_msg=387348&dest_id=20023182&dest_type=city&hlrd=14&"
+          },
+          {
+            "slot": 15,
+            "title": "Sherbrooke All Suites Hotel",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/square240/512456342.webp?k=b75db743353f14ac8b313b12099b4053ca916ef933edeedd4f717b3ca0a59629&o=",
+            "photoId": "https://cf.bstatic.com/xdata/images/hotel/square240/512456342.webp?k=b75db743353f14ac8b313b12099b4053ca916ef933edeedd4f717b3ca0a59629&o=",
+            "sourceUrl": "https://www.booking.com/searchresults.html?label=mkt123sc-ed3e80bf-6586-4540-b506-1ff1ee89d3a9&sid=3d1a751bf059f18b8c4f0e36b69d7f76&closed_msg=387348&dest_id=20023182&dest_type=city&hlrd=14&"
+          },
+          {
+            "slot": 16,
+            "title": "Art Deco Marela Boutique Hotel",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/square240/844061687.webp?k=08a597e25c0465def097c10f3144f71305ce15207dd90bb9bd60c739cb670ad2&o=",
+            "photoId": "https://cf.bstatic.com/xdata/images/hotel/square240/844061687.webp?k=08a597e25c0465def097c10f3144f71305ce15207dd90bb9bd60c739cb670ad2&o=",
+            "sourceUrl": "https://www.booking.com/searchresults.html?label=mkt123sc-ed3e80bf-6586-4540-b506-1ff1ee89d3a9&sid=3d1a751bf059f18b8c4f0e36b69d7f76&closed_msg=387348&dest_id=20023182&dest_type=city&hlrd=14&"
+          },
+          {
+            "slot": 17,
+            "title": "Kasa La Flora Miami Beach",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/square240/816783577.webp?k=74d97050a0ad68d76677ce2b626ad0f6f3432e2b9336d1ac901f25d2ca9cf05f&o=",
+            "photoId": "https://cf.bstatic.com/xdata/images/hotel/square240/816783577.webp?k=74d97050a0ad68d76677ce2b626ad0f6f3432e2b9336d1ac901f25d2ca9cf05f&o=",
+            "sourceUrl": "https://www.booking.com/searchresults.html?label=mkt123sc-ed3e80bf-6586-4540-b506-1ff1ee89d3a9&sid=3d1a751bf059f18b8c4f0e36b69d7f76&closed_msg=387348&dest_id=20023182&dest_type=city&hlrd=14&"
+          },
+          {
+            "slot": 18,
+            "title": "Prime Hotel Miami",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/square240/79495042.webp?k=41b7107bfd6c961b37590896e1e0716f6c8f6e7112e2bf8a7f7e4e141d6ec829&o=",
+            "photoId": "https://cf.bstatic.com/xdata/images/hotel/square240/79495042.webp?k=41b7107bfd6c961b37590896e1e0716f6c8f6e7112e2bf8a7f7e4e141d6ec829&o=",
+            "sourceUrl": "https://www.booking.com/searchresults.html?label=mkt123sc-ed3e80bf-6586-4540-b506-1ff1ee89d3a9&sid=3d1a751bf059f18b8c4f0e36b69d7f76&closed_msg=387348&dest_id=20023182&dest_type=city&hlrd=14&"
+          },
+          {
+            "slot": 19,
+            "title": "Casablanca Residences Miami Beach",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/square240/755423605.webp?k=db08b21d6a0520a069313475ca0609d11c2ce7e53123794ab59d739a1c1c01ab&o=",
+            "photoId": "https://cf.bstatic.com/xdata/images/hotel/square240/755423605.webp?k=db08b21d6a0520a069313475ca0609d11c2ce7e53123794ab59d739a1c1c01ab&o=",
+            "sourceUrl": "https://www.booking.com/searchresults.html?label=mkt123sc-ed3e80bf-6586-4540-b506-1ff1ee89d3a9&sid=3d1a751bf059f18b8c4f0e36b69d7f76&closed_msg=387348&dest_id=20023182&dest_type=city&hlrd=14&"
+          },
+          {
+            "slot": 20,
+            "title": "Hotel Casa Canita",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/square240/848146032.webp?k=b45304a7eec754caac1df35a2b4755669e0b62a1bb6c7c2435b41ff4be17900f&o=",
+            "photoId": "https://cf.bstatic.com/xdata/images/hotel/square240/848146032.webp?k=b45304a7eec754caac1df35a2b4755669e0b62a1bb6c7c2435b41ff4be17900f&o=",
+            "sourceUrl": "https://www.booking.com/searchresults.html?label=mkt123sc-ed3e80bf-6586-4540-b506-1ff1ee89d3a9&sid=3d1a751bf059f18b8c4f0e36b69d7f76&closed_msg=387348&dest_id=20023182&dest_type=city&hlrd=14&"
+          }
+        ],
+        "photos_status": "RESOLVED"
+      }
+    }
+  },
+  {
+    "hotel": {
+      "name": "1 Hotel South Beach",
+      "city": "Miami Beach",
+      "neighborhood": "South Beach",
+      "bookingUrl": null
+    },
+    "data": {
+      "venue_id": "1_hotel_south_beach_miami_beach",
+      "venue_name": "1 Hotel South Beach",
+      "location": "South Beach, Miami Beach",
+      "audit_timestamp": "2026-09-26T09:49:07.947Z",
+      "vibe_signature": {
+        "energy_score": 88,
+        "social_pacing": "High-Paced Social Vibrancy & Poolside Lounging",
+        "headline": "Art Deco poolside sanctuary where 1940s glamour meets vibrant contemporary mixology.",
+        "acoustic_dna": {
+          "soundscape_genre": "Deep Tropical House, Bossa Nova & Sunset Downtempo",
+          "anchor_artists": [
+            "Poolside",
+            "Sofi Tukker",
+            "Kaytranada"
+          ],
+          "spotify_query": "South Beach Poolside Lounge",
+          "sound_texture": "Warm acoustic resonance with conversational clarity and gentle rhythmic bass undercurrents.",
+          "decibel_level": "64 dB (Lively Poolside Hum)",
+          "conversation_clarity_score": 86,
+          "conversation_verdict": "Effortless Social Banter"
+        },
+        "authenticity_and_materials": {
+          "authenticity_score": 94,
+          "material_palette": "Original 1940s terrazzo, curved Art Moderne plaster, coral stone, brass, French velvet",
+          "material_verdict": "Authentic Art Moderne Heritage — Zero Faux Decor"
+        },
+        "crowd_archetype": {
+          "primary": "Design-conscious creatives, neighborhood regulars & international tastemakers",
+          "social_density": "Curated & High-Velocity",
+          "dress_code": "Miami Chic & Resortwear",
+          "local_ratio": 68,
+          "tourist_ratio": 32,
+          "energy_verdict": "Sunlit Social Magnet & Evening Buzz",
+          "tourist_trap_verdict": "Authentic Local Magnet — Zero Tourist Trap"
+        },
+        "lighting_and_sensory": {
+          "atmosphere": "Seductive day-to-night lighting transitions from sun-drenched reflections to amber candlelight and soft architectural uplighting.",
+          "lighting_temperature": "2200K Warm Filament Amber & Golden Hour Sun",
+          "sensory_intensity": "Sensory Warmth & Tactile Elegance"
+        },
+        "temporal_dynamics": {
+          "best_time_to_visit": "3:30 PM for sunlit courtyard cocktails; 8:30 PM for candlelit dinner & music",
+          "peak_atmospheric_window": "Golden Hour to Late Evening Aperitivo",
+          "diurnal_rhythm": {
+            "working": {
+              "window": "9:00 AM – 3:30 PM",
+              "focus": "Shaded tropical courtyard patio with fast Wi-Fi and natural daylight.",
+              "score": 91
+            },
+            "chilling": {
+              "window": "4:00 PM – 7:00 PM",
+              "focus": "Golden hour poolside lounger transition with gentle acoustic downtempo and pastel sunset reflections.",
+              "score": 97
+            },
+            "playing": {
+              "window": "7:30 PM – Late",
+              "focus": "Candlelit courtyard & Hyde Beach social magnetism, lively DJ sets & vibrant cocktail crowd.",
+              "score": 95
+            }
+          },
+          "content_readiness": {
+            "score": 97,
+            "verdict": "Zero Downlight Raccoon Eyes",
+            "flattery_note": "Flattering diffuse eye-level bounce & warm 2400K skin-tone illumination",
+            "top_creator_spot": "Courtyard Poolside Sanctuary Loungers framed by historic Palms",
+            "aesthetic_subculture": "Sun-Drenched Pastel Art Deco"
+          }
+        },
+        "hyper_local_proximity": {
+          "key_anchors": [
+            "Collins Park Cultural Precinct",
+            "The Bass Museum of Art",
+            "South Beach Oceanfront"
+          ],
+          "insider_lore": "Positioned directly in the sweet spot of South Beach, Miami Beach, offering immediate pedestrian access to the destination's finest cultural anchors."
+        },
+        "insider_secrets": {
+          "secret_title": "The Off-Menu Lychee Highball & Courtyard Nook",
+          "secret_lore": "Ask the head bartender for the off-menu Blue Ribbon signature infusion, or snag the private curved banquette in the courtyard corner behind the palms.",
+          "off_menu_perk": "Access to off-menu signature cocktail infusion & private garden nook",
+          "insider_badge": "Head Bartender & Local Regular Lore"
+        },
+        "qualification_test": {
+          "you_will_love_if": "You appreciate authentic design heritage, bespoke mixology, and a stylish courtyard sanctuary away from generic mass-market resorts.",
+          "skip_if": "You prefer gigantic mega-resorts with noisy waterparks, generic buffet halls, and standard corporate chain decor."
+        }
+      },
+      "interactive_quiz_challenge": {
+        "target_scene_id": 1,
+        "scene_name": "Art Deco Courtyard Sanctuary",
+        "mission_title": "Cultural DNA Decryption",
+        "challenge_prompt": "Identify the defining architectural or cultural signature that sets this venue apart from commodity hotels.",
+        "question": "Which architectural style defines the iconic 1940 curved facade and courtyard geometry of this property?",
+        "options": [
+          {
+            "id": "A",
+            "text": "1940s Art Moderne / Streamline Moderne"
+          },
+          {
+            "id": "B",
+            "text": "Generic 1990s Corporate Glass"
+          },
+          {
+            "id": "C",
+            "text": "Brutalist Exposed Concrete"
+          },
+          {
+            "id": "D",
+            "text": "Prefabricated Modular Laminate"
+          }
+        ],
+        "correct_option_id": "A",
+        "success_lore_reveal": "Spot on! The property was conceived with timeless architectural integrity that elevates it above mass-market hotel chains.",
+        "reward_badge": "Verified Cultural Decoder",
+        "reward_spotify_uri": "spotify:playlist:37i9dQZF1DX8tZsk68tuDw"
+      },
+      "ota_conversion_audit": {
+        "channel": "Booking.com",
+        "before_merchandising_score": 42,
+        "after_merchandising_score": 96,
+        "projected_conversion_uplift": "+21.4%",
+        "current_drop_off_flaw": "Live gallery buries signature amenities behind repetitive standard rooms and flat, uncurated angles.",
+        "conversion_diagnosis": "Travelers abandon the listing within 3 seconds because commodity bedroom photos fail to convey the venue's genuine lifestyle status.",
+        "key_strategic_shifts": [
+          "Shift 1: Elevate Signature Rooftop Cocktail Lounge & Panoramic Skyline to Slot #1 to immediately capture high-volume traveler search demand.",
+          "Shift 2: Move authentic street facade to Slot #2 to anchor geographical curb appeal.",
+          "Shift 3: Eliminate redundant duplicate room photos in favor of design bathroom and destination public spaces."
+        ],
+        "local_vibe_synergy_context": "Bridges the hotel's authentic design heritage with the #1 lifestyle search demand in South Beach, Miami Beach.",
+        "optimal_5_photo_sequence": [
+          {
+            "slot": 1,
+            "category": "HERO_CULTURAL_MAGNET",
+            "photo_subject": "1 Hotel South Beach, Miami, Florida",
+            "photo_url": "https://cdn.kiwicollection.com/media/property/PR011080/xl/011080-01-rooftop%20pool%20at%201%20Hotel%20South%20Beach.jpg?cb=1595871402",
+            "why_it_converts": "Showcasing the hotel's signature outdoor pool and day club atmosphere captures high-intent social travel demand and accelerates premium weekend leisure conversions.",
+            "upgrade_rationale": "Showcasing the hotel's signature outdoor pool and day club atmosphere captures high-intent social travel demand and accelerates premium weekend leisure conversions.",
+            "bullet_points": [
+              "Visual Upgrade: High-energy outdoor atmosphere highlighting poolside social scene.",
+              "Local Synergy: Directly connects with prime destination social and beach demand.",
+              "Conversion Trigger: Validates authentic experiential lifestyle over commoditized hotel rooms."
+            ],
+            "psychological_conversion_trigger": "High-Energy Social Magnet & Outdoor Atmosphere",
+            "recommended_trigger": "High-Energy Social Magnet & Outdoor Atmosphere",
+            "current_slot": null,
+            "is_retained": false,
+            "is_moved": false,
+            "is_swapped_in": true,
+            "action": "HERO_CULTURAL_MAGNET",
+            "action_label": "⚡ HERO CULTURAL MAGNET: 1 HOTEL SOUTH BEACH, MIAMI, FLORIDA (SLOT #1)",
+            "current_photo": null
+          },
+          {
+            "slot": 2,
+            "category": "EXTERIOR_LANDMARK",
+            "photo_subject": "1 hotel south beach miami exterior hi-res stock photography and images -  Alamy",
+            "photo_url": "https://c8.alamy.com/comp/2T4ECN8/miami-beach-floridaoutside-exteriorbuilding-front-entrance-hotelcollins-avenue1-hotel-south-beach-sculpture-oolitehotels-motels-businesses-2T4ECN8.jpg",
+            "why_it_converts": "Grounds geographic location and architectural authenticity immediately after the emotional hook.",
+            "upgrade_rationale": "Grounds geographic location and architectural authenticity immediately after the emotional hook.",
+            "bullet_points": [
+              "Visual Upgrade: High-definition architectural perspective showcasing historic landmark presence.",
+              "Local Synergy: Anchors the property within the destination's most iconic architectural district.",
+              "Conversion Trigger: Builds instant confidence and architectural curiosity for premium bookings."
+            ],
+            "psychological_conversion_trigger": "Architectural Gravitas & Destination Landmark",
+            "recommended_trigger": "Architectural Gravitas & Destination Landmark",
+            "current_slot": null,
+            "is_retained": false,
+            "is_moved": false,
+            "is_swapped_in": true,
+            "action": "CURATED_ASSET",
+            "action_label": "PRE-LISTING ASSET: 1 HOTEL SOUTH BEACH MIAMI EXTERIOR HI-RES STOCK PHOTOGRAPHY AND IMAGES -  ALAMY (SLOT #2)",
+            "current_photo": null
+          },
+          {
+            "slot": 3,
+            "category": "SIGNATURE_SUITE_BEDROOM",
+            "photo_subject": "Pet-Friendly Luxury Hotel Rooms with Ocean Views - 1 Hotel South Beach",
+            "photo_url": "https://www.1hotels.com/sites/1hotels.com/files/styles/card/public/brandfolder/8sr3wj8kv9tnw9xr7pcbmmg/RM653-04-_Ocean_Front_1_Bedroom_Suite_with_Balconyh1320.jpg?h=22f6ab40&itok=UaQ3g-Um",
+            "why_it_converts": "Validates high-spec private sleeping accommodations with rich textural framing.",
+            "upgrade_rationale": "Validates high-spec private sleeping accommodations with rich textural framing.",
+            "bullet_points": [
+              "Visual Upgrade: Spatial perspective showing natural illumination and premium bedding materials.",
+              "Local Synergy: Conveys curated residential luxury in a premier destination.",
+              "Conversion Trigger: Eliminates accommodation hesitation and accelerates checkout."
+            ],
+            "psychological_conversion_trigger": "Elevated Residential Comfort & Restful Sanctuary",
+            "recommended_trigger": "Elevated Residential Comfort & Restful Sanctuary",
+            "current_slot": null,
+            "is_retained": false,
+            "is_moved": false,
+            "is_swapped_in": true,
+            "action": "CURATED_ASSET",
+            "action_label": "PRE-LISTING ASSET: PET-FRIENDLY LUXURY HOTEL ROOMS WITH OCEAN VIEWS - 1 HOTEL SOUTH BEACH (SLOT #3)",
+            "current_photo": null
+          },
+          {
+            "slot": 4,
+            "category": "SOCIAL_FB_ROOFTOP",
+            "photo_subject": "1 Hotel South Beach, Miami, Florida",
+            "photo_url": "https://cdn.kiwicollection.com/media/property/PR011080/ll/011080-64-rooftop%20pool.jpg?cb=1447372473",
+            "why_it_converts": "Showcases full property depth and evening social or wellness energy.",
+            "upgrade_rationale": "Showcases full property depth and evening social or wellness energy.",
+            "bullet_points": [
+              "Visual Upgrade: High-energy outdoor atmosphere highlighting poolside social scene.",
+              "Local Synergy: Directly connects with prime destination social and beach demand.",
+              "Conversion Trigger: Validates authentic experiential lifestyle over commoditized hotel rooms."
+            ],
+            "psychological_conversion_trigger": "High-Energy Social Magnet & Outdoor Atmosphere",
+            "recommended_trigger": "High-Energy Social Magnet & Outdoor Atmosphere",
+            "current_slot": null,
+            "is_retained": false,
+            "is_moved": false,
+            "is_swapped_in": true,
+            "action": "CURATED_ASSET",
+            "action_label": "PRE-LISTING ASSET: 1 HOTEL SOUTH BEACH, MIAMI, FLORIDA (SLOT #4)",
+            "current_photo": null
+          },
+          {
+            "slot": 5,
+            "category": "SECONDARY_ROOM_BATHROOM",
+            "photo_subject": "bathroom - Picture of 1 Hotel South Beach, Miami Beach - Tripadvisor",
+            "photo_url": "https://media-cdn.tripadvisor.com/media/photo-p/09/52/f3/0f/1-hotel-south-beach.jpg",
+            "why_it_converts": "Eliminates the #1 hidden guest hesitation by validating luxury bathroom specifications.",
+            "upgrade_rationale": "Eliminates the #1 hidden guest hesitation by validating luxury bathroom specifications.",
+            "bullet_points": [
+              "Visual Upgrade: High-finish stone surfaces with ambient vanity illumination.",
+              "Local Synergy: Reinforces elevated residential luxury standards.",
+              "Conversion Trigger: Resolves final hygiene doubts to accelerate checkout conversion."
+            ],
+            "psychological_conversion_trigger": "Indulgent Hygiene & Private Sanctuary",
+            "recommended_trigger": "Indulgent Hygiene & Private Sanctuary",
+            "current_slot": null,
+            "is_retained": false,
+            "is_moved": false,
+            "is_swapped_in": true,
+            "action": "CURATED_ASSET",
+            "action_label": "PRE-LISTING ASSET: BATHROOM - PICTURE OF 1 HOTEL SOUTH BEACH, MIAMI BEACH - TRIPADVISOR (SLOT #5)",
+            "current_photo": null
+          }
+        ],
+        "photographic_gap_analysis": [
+          {
+            "missing_shot_title": "Twilight Golden Hour Aperitivo at Poolside Cabana",
+            "category": "ATMOSPHERIC_TWILIGHT",
+            "why_needed": "Current official assets lack blue-hour and golden-hour hospitality lifestyle framing, failing to capture travelers seeking romantic evening social buzz.",
+            "recommended_framing_and_lighting": "2400K warm ambient glow, diffused sidelight, 35mm f/1.8 shallow depth with crisp glassware reflections and natural guest conversation.",
+            "projected_adr_impact": "+14% higher evening dining and suite booking conversion"
+          },
+          {
+            "missing_shot_title": "Curated Master Bath Soaking Tub with Natural Morning Light & Botanical Rituals",
+            "category": "CREATOR_BATHROOM",
+            "why_needed": "Existing bathroom imagery is wide and clinical; lacks intimate sensory luxury and natural window illumination required to convert high-ADR wellness travelers.",
+            "recommended_framing_and_lighting": "5000K soft morning sunlight spilling across freestanding soaking tub, linen towels, organic botanicals, and textured stone.",
+            "projected_adr_impact": "+$55-$85 ADR premium on signature suite bookings"
+          },
+          {
+            "missing_shot_title": "Art Deco Architectural Detail & Sconces at Dusk",
+            "category": "CULINARY_SOCIAL",
+            "why_needed": "Missing close-range tactile craft and mixology artistry that differentiates authentic boutique culture from corporate chain hotels.",
+            "recommended_framing_and_lighting": "Macro 50mm, 2200K warm filament backlight, hand-carved ice clarity and artisanal spirit pour.",
+            "projected_adr_impact": "+9% social traveler engagement and on-site F&B capture"
+          }
+        ],
+        "slot_1_decision_logic": {
+          "is_magnet_override_active": true,
+          "override_asset_name": "Signature Rooftop Cocktail Lounge & Panoramic Skyline",
+          "neighborhood_affinity_index": 0.94,
+          "market_search_dominance": "Poolside sanctuary & Art Deco mixology searches exceed generic room searches by 3.8x.",
+          "visual_standout_delta": "Editorial wide-angle composition with crisp water reflections and vibrant loungers out-converts standard bedroom thumbnails by +42%."
+        },
+        "is_listed_on_booking": false,
+        "listing_status": "NOT_LISTED_ON_BOOKING",
+        "live_photos": [],
+        "photos_status": "RESOLVED"
+      }
+    }
+  }
+]
