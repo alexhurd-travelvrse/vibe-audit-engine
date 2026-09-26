@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { Search, MapPin, Sparkles, ArrowRight, ShieldCheck, Zap, Globe } from 'lucide-react';
+import { Search, MapPin, Sparkles, ArrowRight, ShieldCheck, Zap, Globe, Hash } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { scrapeLocalSignals, fetchMasterVibeAudit, fetchMasterVibeAuditManifest, fetchMasterVibeAuditPhotos, lookupHotelCandidates } from '../personaEngine';
 import HotelVibeManifestCard from './HotelVibeManifestCard';
@@ -28,6 +28,7 @@ const submitLeadToFormspree = async (data) => {
         hotelName: data.propertyName,
         city: data.city,
         neighborhood: data.neighborhood,
+        bookingId: data.bookingId,
         websiteUrl: data.propertyUrl,
         timestamp: new Date().toISOString(),
         source: 'Main Page Search Engine - Lead Gen'
@@ -45,9 +46,11 @@ const VibeAuditSearchSection = () => {
     propertyName: '',
     city: 'London',
     neighborhood: '',
+    bookingId: '',
     email: '',
     propertyUrl: ''
   });
+  const [fieldErrors, setFieldErrors] = useState({});
   const [emailError, setEmailError] = useState('');
   const [loading, setLoading] = useState(false);
   const [processingStage, setProcessingStage] = useState(0);
@@ -55,7 +58,7 @@ const VibeAuditSearchSection = () => {
   const [ambiguousCandidates, setAmbiguousCandidates] = useState(null);
   const activePhase2AbortRef = useRef(null);
 
-  const executeAudit = async (targetHotel, targetCity, targetNeighborhood, directBookingUrl = null) => {
+  const executeAudit = async (targetHotel, targetCity, targetNeighborhood, directBookingUrl = null, bookingId = null) => {
     setAmbiguousCandidates(null);
     setLoading(true);
     setProcessingStage(1);
@@ -73,7 +76,9 @@ const VibeAuditSearchSection = () => {
       const masterAudit = await fetchMasterVibeAuditManifest(
         targetHotel,
         targetCity,
-        targetNeighborhood
+        targetNeighborhood,
+        directBookingUrl,
+        bookingId
       );
 
       // Render the complete Manifest & strategic text immediately!
@@ -95,7 +100,9 @@ const VibeAuditSearchSection = () => {
           targetNeighborhood,
           masterAudit.ota_conversion_audit.optimal_5_photo_sequence,
           abortController.signal,
-          directBookingUrl
+          directBookingUrl,
+          masterAudit.ota_conversion_audit.key_strategic_shifts,
+          bookingId
         ).then(photoResults => {
           if (photoResults && photoResults.optimal_5_photo_sequence) {
             setAnalysis(prev => {
@@ -134,48 +141,59 @@ const VibeAuditSearchSection = () => {
   const handleLaunch = async (e) => {
     e.preventDefault();
     setEmailError('');
+    const errors = {};
+
+    if (!formData.propertyName || !formData.propertyName.trim()) {
+      errors.propertyName = 'Hotel Name is required';
+    }
+    if (!formData.city || !formData.city.trim()) {
+      errors.city = 'City / Primary Market is required';
+    }
+    const rawBooking = String(formData.bookingId || '').trim();
+    if (!rawBooking) {
+      errors.bookingId = 'Booking.com ID or URL is required';
+    }
 
     // Require valid work email on live production environments
     if (isLiveProduction) {
       if (!formData.email || !formData.email.trim()) {
-        setEmailError('Please enter your work email to generate your Vibe Audit.');
-        return;
+        errors.email = 'Please enter your work email to generate your Vibe Audit.';
+      } else if (!formData.email.includes('@') || !formData.email.includes('.')) {
+        errors.email = 'Please enter a valid work email address.';
       }
-      if (!formData.email.includes('@') || !formData.email.includes('.')) {
-        setEmailError('Please enter a valid work email address (e.g. alex@hotelgroup.com).');
-        return;
+    }
+
+    if (Object.keys(errors).length > 0) {
+      setFieldErrors(errors);
+      return;
+    }
+    setFieldErrors({});
+
+    let targetHotel = formData.propertyName.trim();
+    let targetCity = formData.city.trim();
+    let targetNeighborhood = formData.neighborhood ? formData.neighborhood.trim() : '';
+
+    let directBookingUrl = null;
+    let cleanId = null;
+
+    if (rawBooking.includes('booking.com')) {
+      directBookingUrl = rawBooking;
+    } else {
+      cleanId = rawBooking.replace(/[^\d]/g, '');
+      if (cleanId && cleanId !== '357028') {
+        directBookingUrl = `https://www.booking.com/hotel.html?hotel_id=${cleanId}`;
       }
     }
 
     if (formData.email && formData.email.includes('@')) {
-      submitLeadToFormspree(formData);
+      submitLeadToFormspree({ ...formData, bookingId: cleanId || rawBooking });
     }
-
-    const targetHotel = formData.propertyName || 'Sea Containers London';
-    const targetCity = formData.city || 'London';
-    const targetNeighborhood = formData.neighborhood || '';
 
     setLoading(true);
     setProcessingStage(1);
+    setAmbiguousCandidates(null);
 
-    try {
-      const lookup = await lookupHotelCandidates(targetHotel, targetCity, targetNeighborhood);
-      if (lookup.requiresClarification && lookup.candidates && lookup.candidates.length > 1) {
-        setAmbiguousCandidates(lookup.candidates);
-        setLoading(false);
-        return;
-      }
-
-      await executeAudit(
-        lookup.selected?.title || targetHotel,
-        targetCity,
-        targetNeighborhood,
-        lookup.selected?.url || null
-      );
-    } catch (err) {
-      console.warn('[Candidate Gatekeeper] Direct audit fallback:', err.message);
-      await executeAudit(targetHotel, targetCity, targetNeighborhood, null);
-    }
+    await executeAudit(targetHotel, targetCity, targetNeighborhood, directBookingUrl, cleanId);
   };
 
   const handleSelectCandidate = (candidate) => {
@@ -207,45 +225,78 @@ const VibeAuditSearchSection = () => {
             <form onSubmit={handleLaunch} className="vibe-search-form">
               
               <div className="vibe-form-grid">
-                {/* Property Identity */}
+                {/* Hotel Name */}
                 <div className="vibe-input-field">
-                  <label className="vibe-label">Property Identity</label>
+                  <label className="vibe-label">
+                    Hotel Name <span style={{ color: '#ef4444', fontWeight: 900 }}>*</span>
+                  </label>
                   <div className="vibe-input-wrapper">
                     <Search size={18} className="vibe-input-icon text-cyan" />
                     <input 
                       type="text" 
-                      className="vibe-input" 
+                      className={`vibe-input ${fieldErrors.propertyName ? 'input-error' : ''}`}
                       placeholder="e.g. Sea Containers London"
                       value={formData.propertyName}
-                      onChange={e => setFormData({ ...formData, propertyName: e.target.value })}
+                      onChange={e => {
+                        setFieldErrors(prev => ({ ...prev, propertyName: '' }));
+                        setFormData({ ...formData, propertyName: e.target.value });
+                      }}
                     />
                   </div>
+                  {fieldErrors.propertyName && <span className="error-message">⚠️ {fieldErrors.propertyName}</span>}
                 </div>
 
-                {/* Primary Market */}
+                {/* Primary Market / City */}
                 <div className="vibe-input-field">
-                  <label className="vibe-label">Primary Market</label>
+                  <label className="vibe-label">
+                    Primary Market / City <span style={{ color: '#ef4444', fontWeight: 900 }}>*</span>
+                  </label>
                   <div className="vibe-input-wrapper">
                     <MapPin size={18} className="vibe-input-icon text-gold" />
                     <input 
                       type="text" 
-                      className="vibe-input" 
-                      placeholder="e.g. London, Barcelona, Paris"
+                      className={`vibe-input ${fieldErrors.city ? 'input-error' : ''}`}
+                      placeholder="e.g. London, Miami, Paris"
                       value={formData.city}
-                      onChange={e => setFormData({ ...formData, city: e.target.value })}
+                      onChange={e => {
+                        setFieldErrors(prev => ({ ...prev, city: '' }));
+                        setFormData({ ...formData, city: e.target.value });
+                      }}
                     />
                   </div>
+                  {fieldErrors.city && <span className="error-message">⚠️ {fieldErrors.city}</span>}
                 </div>
 
-                {/* Neighborhood */}
+                {/* Booking.com Property ID or URL */}
                 <div className="vibe-input-field">
-                  <label className="vibe-label">Neighborhood / District</label>
+                  <label className="vibe-label">
+                    Booking.com ID or URL <span style={{ color: '#ef4444', fontWeight: 900 }}>*</span>
+                  </label>
                   <div className="vibe-input-wrapper">
-                    <Globe size={18} className="vibe-input-icon text-cyan" />
+                    <Hash size={18} className="vibe-input-icon text-cyan" />
+                    <input 
+                      type="text" 
+                      className={`vibe-input ${fieldErrors.bookingId ? 'input-error' : ''}`}
+                      placeholder="e.g. 1048291 or Booking.com URL"
+                      value={formData.bookingId}
+                      onChange={e => {
+                        setFieldErrors(prev => ({ ...prev, bookingId: '' }));
+                        setFormData({ ...formData, bookingId: e.target.value });
+                      }}
+                    />
+                  </div>
+                  {fieldErrors.bookingId && <span className="error-message">⚠️ {fieldErrors.bookingId}</span>}
+                </div>
+
+                {/* Neighborhood (Optional) */}
+                <div className="vibe-input-field">
+                  <label className="vibe-label">Neighborhood (Optional)</label>
+                  <div className="vibe-input-wrapper">
+                    <Globe size={18} className="vibe-input-icon text-gold" />
                     <input 
                       type="text" 
                       className="vibe-input" 
-                      placeholder="e.g. Southbank, Soho, Eixample"
+                      placeholder="e.g. South Bank, Soho"
                       value={formData.neighborhood}
                       onChange={e => setFormData({ ...formData, neighborhood: e.target.value })}
                     />
@@ -258,19 +309,20 @@ const VibeAuditSearchSection = () => {
                     Work Email {isLiveProduction ? <span style={{ color: '#ef4444', fontWeight: 900 }}>*</span> : <span className="optional-tag">(Optional in Dev)</span>}
                   </label>
                   <div className="vibe-input-wrapper">
-                    <Zap size={18} className="vibe-input-icon text-gold" />
+                    <Zap size={18} className="vibe-input-icon text-cyan" />
                     <input 
                       type="email" 
-                      className={`vibe-input ${emailError ? 'input-error' : ''}`}
+                      className={`vibe-input ${fieldErrors.email || emailError ? 'input-error' : ''}`}
                       placeholder="name@hotelgroup.com"
                       value={formData.email}
                       onChange={e => {
                         setEmailError('');
+                        setFieldErrors(prev => ({ ...prev, email: '' }));
                         setFormData({ ...formData, email: e.target.value });
                       }}
                     />
                   </div>
-                  {emailError && <span className="error-message">⚠️ {emailError}</span>}
+                  {(fieldErrors.email || emailError) && <span className="error-message">⚠️ {fieldErrors.email || emailError}</span>}
                 </div>
               </div>
 

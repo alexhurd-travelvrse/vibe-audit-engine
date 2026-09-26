@@ -265,7 +265,7 @@ export const KNOWN_BENCHMARK_PROPERTIES = [
     title: 'The London EDITION'
   },
   {
-    aliases: ['edition miami beach', 'the miami beach edition', 'edition miami', 'the edition miami', 'the edition miami beach'],
+    aliases: ['edition miami beach', 'the miami beach edition', 'edition miami', 'the edition miami', 'the edition miami beach', 'edition', 'the edition', 'edition south beach', 'the edition south beach', 'the edition in south beach miami', 'edition in south beach miami', 'twoninezeroone-collinsave'],
     city: 'miami',
     slug: 'twoninezeroone-collinsave',
     url: 'https://www.booking.com/hotel/us/twoninezeroone-collinsave.html',
@@ -273,10 +273,33 @@ export const KNOWN_BENCHMARK_PROPERTIES = [
   }
 ];
 
-// Universal Candidate Lookup Engine (Direct URL + Benchmark Dictionary + Serper + Playwright Fallback)
-export async function lookupHotelCandidates(hotelName, city = '', neighborhood = '', directBookingUrl = null) {
-  // 1. Direct Booking URL detection across all input strings
-  const urlCandidate = [directBookingUrl, hotelName, city, neighborhood].find(s => typeof s === 'string' && s.includes('booking.com/hotel/'));
+// Helper to reliably sanitize Booking.com targets from URLs or numeric Extranet IDs
+export function extractCleanBookingTarget(input) {
+  if (!input || typeof input !== 'string') return { url: null, id: null };
+  const str = input.trim();
+  if (str.includes('booking.com')) {
+    const parsed = parseBookingUrl(str);
+    if (parsed) {
+      return { url: parsed.cleanUrl, id: null, title: parsed.cleanTitle };
+    }
+    const match = str.match(/https?:\/\/[^\s"']+/);
+    if (match) {
+      const clean = match[0].replace(/\.[a-z]{2,3}(?:-[a-z]{2,4})?\.html/i, '.html').split('?')[0];
+      return { url: clean, id: null };
+    }
+  }
+  const cleanId = str.replace(/[^\d]/g, '');
+  // Ignore known generic affiliate IDs like 357028 (Booking.com global affiliate ID) or invalid lengths
+  if (cleanId && cleanId !== '357028' && cleanId.length >= 4 && cleanId.length <= 10) {
+    return { url: `https://www.booking.com/hotel.html?hotel_id=${cleanId}`, id: cleanId };
+  }
+  return { url: null, id: null };
+}
+
+// Universal Candidate Lookup Engine (Booking.com ID + Direct URL + Benchmark Dictionary + Serper + Playwright Fallback)
+export async function lookupHotelCandidates(hotelName, city = '', neighborhood = '', directBookingUrl = null, bookingId = null) {
+  // 0. Direct Booking URL detection across all input strings (HIGHEST PRIORITY - preserves full slug and prevents URL truncation)
+  const urlCandidate = [directBookingUrl, bookingId, hotelName, city, neighborhood].find(s => typeof s === 'string' && s.includes('booking.com'));
   if (urlCandidate) {
     const parsed = parseBookingUrl(urlCandidate);
     if (parsed) {
@@ -287,20 +310,49 @@ export async function lookupHotelCandidates(hotelName, city = '', neighborhood =
         selected: {
           slug: parsed.slug,
           url: parsed.cleanUrl,
-          title: parsed.cleanTitle,
+          title: parsed.cleanTitle || hotelName,
           snippet: 'Direct Booking.com Listing',
-          score: 100
+          score: 200
         },
         candidates: [{
           slug: parsed.slug,
           url: parsed.cleanUrl,
-          title: parsed.cleanTitle,
+          title: parsed.cleanTitle || hotelName,
           snippet: 'Direct Booking.com Listing',
-          score: 100
+          score: 200
         }]
       };
     }
   }
+
+  // 1. Direct Booking ID detection (100% precision - zero name collisions, ignores affiliate IDs like 357028)
+  const bookingTarget = extractCleanBookingTarget(bookingId);
+  if (bookingTarget.id) {
+    const cleanId = bookingTarget.id;
+    const idUrl = bookingTarget.url;
+    console.log(`[Master Vibe] Decisively matched Booking.com Property ID: ${cleanId} -> ${idUrl}`);
+    return {
+      status: 'decisive',
+      requiresClarification: false,
+      selected: {
+        slug: `hotel-id-${cleanId}`,
+        url: idUrl,
+        title: hotelName,
+        bookingId: cleanId,
+        snippet: `Verified Booking.com Property ID: ${cleanId}`,
+        score: 200
+      },
+      candidates: [{
+        slug: `hotel-id-${cleanId}`,
+        url: idUrl,
+        title: hotelName,
+        bookingId: cleanId,
+        snippet: `Verified Booking.com Property ID: ${cleanId}`,
+        score: 200
+      }]
+    };
+  }
+
 
   // 2. High-Priority Verified Benchmark Property Dictionary
   const nameLower = (hotelName || '').toLowerCase().trim();
@@ -485,13 +537,18 @@ export async function lookupHotelCandidates(hotelName, city = '', neighborhood =
 }
 
 // Live Booking.com direct scraper via Playwright (with Serper fallback & strict disambiguation)
-export async function fetchBookingPhotosForHotel(hotelName, city, neighborhood = '', directBookingUrl = null) {
+export async function fetchBookingPhotosForHotel(hotelName, city, neighborhood = '', directBookingUrl = null, bookingId = null) {
   try {
     const locationContext = neighborhood && neighborhood.trim() ? `${neighborhood.trim()} ${city}` : city;
-    let cleanUrl = directBookingUrl;
+    let cleanUrl = null;
+
+    const target = extractCleanBookingTarget(directBookingUrl || bookingId);
+    if (target.url) {
+      cleanUrl = target.url;
+    }
 
     if (!cleanUrl) {
-      const lookup = await lookupHotelCandidates(hotelName, city, neighborhood);
+      const lookup = await lookupHotelCandidates(hotelName, city, neighborhood, directBookingUrl, bookingId);
       if (lookup.selected) {
         cleanUrl = lookup.selected.url;
       } else if (lookup.candidates && lookup.candidates.length > 0) {
@@ -499,7 +556,7 @@ export async function fetchBookingPhotosForHotel(hotelName, city, neighborhood =
       }
     }
 
-    if (cleanUrl && cleanUrl.includes('booking.com/hotel/')) {
+    if (cleanUrl && (cleanUrl.includes('booking.com/hotel/') || cleanUrl.includes('booking.com/hotel.html'))) {
       cleanUrl = cleanUrl.replace(/\.[a-z]{2,3}(-[a-z]{2,4})?\.html/i, '.html');
       try {
         const parsed = new URL(cleanUrl);
@@ -602,6 +659,17 @@ export async function fetchBookingPhotosForHotel(hotelName, city, neighborhood =
             photoId: p.photoId,
             sourceUrl: p.sourceUrl
           }));
+        } else {
+          console.log(`[Master Vibe] URL "${cleanUrl}" returned 0 or insufficient photos (${photos.length}).`);
+          // If cleanUrl was an ID redirect or direct attempt that failed, fall back to searching candidates by name & city!
+          if (cleanUrl.includes('hotel_id=') || cleanUrl.includes('.html')) {
+            console.log(`[Master Vibe] Attempting candidate discovery fallback for "${hotelName}" in "${city}"...`);
+            const fallbackLookup = await lookupHotelCandidates(hotelName, city, neighborhood, null, null);
+            if (fallbackLookup?.selected?.url && fallbackLookup.selected.url !== cleanUrl && !fallbackLookup.selected.url.includes('hotel.html?hotel_id=')) {
+              console.log(`[Master Vibe] Retrying photo scrape with fallback URL: ${fallbackLookup.selected.url}`);
+              return await fetchBookingPhotosForHotel(hotelName, city, neighborhood, fallbackLookup.selected.url, null);
+            }
+          }
         }
       } catch (browserErr) {
         console.warn('[Master Vibe] Headless browser scrape warning:', browserErr.message);
@@ -842,6 +910,18 @@ export async function fetchAmenityPhotosForHotel(hotelName, city, neighborhood =
       if (u.includes('miamibeachfl-hotel') || u.includes('-hotel.com') || l.includes('miamibeachfl-hotel') || l.includes('-hotel.com') || u.includes('themiamiguide') || l.includes('themiamiguide') || u.includes('miamiresidential') || l.includes('miamiresidential')) return false;
       // Reject cross-continent property collisions (e.g. Seadust Cancun matching Sea Containers)
       if (combined.includes('cancun') || combined.includes('seadust') || combined.includes('mexico')) return false;
+
+      // Reject cross-city collisions for multi-property chains (e.g. New York EDITION or West Hollywood EDITION matching Miami Beach EDITION)
+      const targetCityLower = (city || '').toLowerCase().trim();
+      if (targetCityLower.includes('miami')) {
+        if (combined.includes('new york') || combined.includes('times square') || combined.includes('west hollywood') || combined.includes('hollywood') || combined.includes('los angeles') || combined.includes('madrid') || combined.includes('barcelona') || combined.includes('tokyo') || combined.includes('toranomon') || combined.includes('ginza') || combined.includes('shanghai') || combined.includes('sanya') || combined.includes('bodrum') || combined.includes('rome') || combined.includes('singapore') || combined.includes('laxeb') || combined.includes('nyceb') || combined.includes('reykjavik')) {
+          return false;
+        }
+      } else if (targetCityLower.includes('london')) {
+        if (combined.includes('miami') || combined.includes('new york') || combined.includes('west hollywood') || combined.includes('los angeles') || combined.includes('madrid') || combined.includes('barcelona') || combined.includes('tokyo') || combined.includes('cancun') || combined.includes('dubai')) {
+          return false;
+        }
+      }
 
       // 1. Must match target hotel brand tokens (word-boundary or full brand phrase)
       const hasTargetBrand = () => {
@@ -1817,6 +1897,13 @@ export async function resolveAuditPhotosHandler(req, res) {
     let strategySlots = req.body.strategySlots || null;
     let strategicShifts = req.body.strategicShifts || req.body.keyStrategicShifts || null;
     let bookingUrl = req.body.bookingUrl || req.query.bookingUrl || req.body.directBookingUrl || req.query.directBookingUrl || null;
+    let bookingId = req.body.bookingId || req.query.bookingId || req.body.hotelId || req.query.hotelId || null;
+
+    const bookingTarget = extractCleanBookingTarget(bookingUrl || bookingId);
+    if (bookingTarget.url) {
+      bookingUrl = bookingTarget.url;
+      if (bookingTarget.id) bookingId = bookingTarget.id;
+    }
 
     // Check if hotelName is actually a direct Booking.com URL
     if (typeof hotelName === 'string' && hotelName.includes('booking.com/hotel/')) {
@@ -1902,6 +1989,13 @@ export default async function handler(req, res) {
     let city = req.body?.city || req.query?.city || req.body?.location || req.query?.location || 'Miami';
     let neighborhood = (req.body?.neighborhood !== undefined) ? req.body.neighborhood : (req.query?.neighborhood || '');
     let bookingUrl = req.body?.bookingUrl || req.query?.bookingUrl || req.body?.directBookingUrl || req.query?.directBookingUrl || null;
+    let bookingId = req.body?.bookingId || req.query?.bookingId || req.body?.hotelId || req.query?.hotelId || null;
+
+    const bookingTarget = extractCleanBookingTarget(bookingUrl || bookingId);
+    if (bookingTarget.url) {
+      bookingUrl = bookingTarget.url;
+      if (bookingTarget.id) bookingId = bookingTarget.id;
+    }
 
     // Check if hotelName is actually a direct Booking.com URL
     if (typeof hotelName === 'string' && hotelName.includes('booking.com/hotel/')) {
@@ -1919,7 +2013,7 @@ export default async function handler(req, res) {
       city = city.replace(/south beach/i, '').replace(/,/g, '').trim() || 'Miami';
     }
 
-    console.log(`[Master Vibe Audit API] Running 4-Step Pipeline for: "${hotelName}" in "${city}" ${neighborhood ? `(${neighborhood})` : ''} ${bookingUrl ? `(URL: ${bookingUrl})` : ''}`);
+    console.log(`[Master Vibe Audit API] Running 4-Step Pipeline for: "${hotelName}" in "${city}" ${neighborhood ? `(${neighborhood})` : ''} ${bookingId ? `[Booking ID: ${bookingId}]` : ''} ${bookingUrl ? `(URL: ${bookingUrl})` : ''}`);
 
     const manifestKey = getResolutionKey(hotelName, city, neighborhood);
     const isFresh = req.query.fresh === 'true' || req.body?.fresh === true;
@@ -1956,7 +2050,7 @@ export default async function handler(req, res) {
       // Step 2: Get available images from site, TripAdvisor (From Management only), and Booking.com
       console.log(`[Master Vibe API] 2) Get available images from official site, TripAdvisor (From Management only), and Booking.com...`);
       const [liveBookingPhotos, amenityPhotos] = await Promise.all([
-        fetchBookingPhotosForHotel(hotelName, city, neighborhood, bookingUrl),
+        fetchBookingPhotosForHotel(hotelName, city, neighborhood, bookingUrl, bookingId),
         fetchAmenityPhotosForHotel(hotelName, city, neighborhood)
       ]);
       console.log(`[Master Vibe API] Inventory discovered: ${liveBookingPhotos?.length || 0} live OTA photos, ${amenityPhotos?.length || 0} official/TripAdvisor management assets.`);

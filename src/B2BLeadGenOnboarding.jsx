@@ -133,10 +133,12 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
   const [emailError, setEmailError] = useState('');
   const [ambiguousCandidates, setAmbiguousCandidates] = useState(null);
   const [isVerifyingProperty, setIsVerifyingProperty] = useState(false);
+  const [fieldErrors, setFieldErrors] = useState({});
   const [formData, setFormData] = useState({
     email: '',
     propertyName: '',
     propertyUrl: '',
+    bookingId: '',
     instagramUrl: '',
     city: 'London',
     neighborhood: '',
@@ -235,72 +237,50 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
 
   const startAnalysis = async () => {
     setEmailError('');
+    const errors = {};
 
-    if (formData.email && formData.email.includes('@')) {
-      submitLeadToFormspree(formData);
+    if (!formData.propertyName || !formData.propertyName.trim()) {
+      errors.propertyName = 'Hotel Name is required';
+    }
+    if (!formData.city || !formData.city.trim()) {
+      errors.city = 'City / Primary Market is required';
+    }
+    const rawBooking = String(formData.bookingId || '').trim();
+    if (!rawBooking) {
+      errors.bookingId = 'Booking.com Property ID or Listing URL is required';
     }
 
-    let targetHotel = formData.propertyName || 'The Plymouth Hotel';
-    let targetCity = formData.city || 'Miami';
-    let targetNeighborhood = formData.neighborhood || '';
-    let directBookingUrl = formData.propertyUrl && formData.propertyUrl.includes('booking.com/hotel/') ? formData.propertyUrl : null;
-
-    // Detect if propertyName or propertyUrl contains a Booking.com URL
-    const urlCheck = [targetHotel, formData.propertyUrl].find(s => typeof s === 'string' && s.includes('booking.com/hotel/'));
-    if (urlCheck) {
-      const parsed = parseBookingUrl(urlCheck);
-      if (parsed) {
-        directBookingUrl = parsed.cleanUrl;
-        targetHotel = parsed.cleanTitle;
-        if (parsed.inferredCity && (!targetCity || targetCity === 'London' || targetCity === 'Miami')) {
-          targetCity = parsed.inferredCity;
-        }
-        if (parsed.inferredNeighborhood && !targetNeighborhood) {
-          targetNeighborhood = parsed.inferredNeighborhood;
-        }
-        setFormData(prev => ({
-          ...prev,
-          propertyName: parsed.cleanTitle,
-          city: targetCity,
-          neighborhood: targetNeighborhood,
-          propertyUrl: parsed.cleanUrl
-        }));
-      }
-    }
-
-    // 1. If direct Booking URL is already confirmed, jump straight to audit!
-    if (directBookingUrl) {
-      setAmbiguousCandidates(null);
-      executeAudit(targetHotel, targetCity, targetNeighborhood, directBookingUrl);
+    if (Object.keys(errors).length > 0) {
+      setFieldErrors(errors);
       return;
     }
+    setFieldErrors({});
 
-    // 2. Pre-flight Verification: If multiple candidates exist, display the Clarification page!
-    setIsVerifyingProperty(true);
-    setAmbiguousCandidates(null);
+    let targetHotel = formData.propertyName.trim();
+    let targetCity = formData.city.trim();
+    let targetNeighborhood = formData.neighborhood ? formData.neighborhood.trim() : '';
+    
+    let directBookingUrl = null;
+    let cleanId = null;
 
-    try {
-      const lookup = await lookupHotelCandidates(targetHotel, targetCity, targetNeighborhood);
-      setIsVerifyingProperty(false);
-
-      if (lookup.status === 'ambiguous' && lookup.candidates && lookup.candidates.length > 1) {
-        console.log('[Disambiguation] Multiple matching candidates found, displaying clarification page:', lookup.candidates);
-        setAmbiguousCandidates(lookup.candidates);
-        return;
+    if (rawBooking.includes('booking.com')) {
+      directBookingUrl = rawBooking;
+    } else {
+      cleanId = rawBooking.replace(/[^\d]/g, '');
+      if (cleanId && cleanId !== '357028') {
+        directBookingUrl = `https://www.booking.com/hotel.html?hotel_id=${cleanId}`;
       }
-
-      // If decisive, use the confirmed title & direct booking URL
-      const resolvedUrl = lookup.selected?.url || null;
-      const resolvedHotel = lookup.selected?.title || targetHotel;
-      executeAudit(resolvedHotel, targetCity, targetNeighborhood, resolvedUrl);
-    } catch (err) {
-      setIsVerifyingProperty(false);
-      console.warn('[Pre-flight verification fallback, proceeding to audit]', err);
-      executeAudit(targetHotel, targetCity, targetNeighborhood, null);
     }
+
+    if (formData.email && formData.email.includes('@')) {
+      submitLeadToFormspree({ ...formData, bookingId: cleanId || rawBooking });
+    }
+
+    setAmbiguousCandidates(null);
+    executeAudit(targetHotel, targetCity, targetNeighborhood, directBookingUrl, cleanId);
   };
 
-  const executeAudit = async (targetHotel, targetCity, targetNeighborhood, directBookingUrl) => {
+  const executeAudit = async (targetHotel, targetCity, targetNeighborhood, directBookingUrl, bookingId = null) => {
     // 1. Immediately abort any prior in-flight Phase 2 resolution & reset analysis state
     if (activePhase2AbortRef.current) {
       console.log('[Client] Aborting previous in-flight Phase 2 photo resolution due to new search.');
@@ -320,7 +300,8 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
         targetHotel, 
         targetCity, 
         targetNeighborhood,
-        directBookingUrl
+        directBookingUrl,
+        bookingId
       );
       
       if (abortController.signal.aborted) return;
@@ -342,7 +323,7 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
       if (masterAudit && masterAudit.ota_conversion_audit) {
         const photoPromise = directBookingUrl
           ? Promise.resolve({ selected: { url: directBookingUrl, title: targetHotel } })
-          : lookupHotelCandidates(targetHotel, targetCity, targetNeighborhood, directBookingUrl);
+          : lookupHotelCandidates(targetHotel, targetCity, targetNeighborhood, directBookingUrl, bookingId);
 
         photoPromise.then(lookup => {
           if (abortController.signal.aborted) return null;
@@ -355,7 +336,8 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
             masterAudit.ota_conversion_audit.optimal_5_photo_sequence,
             abortController.signal,
             resolvedBookingUrl,
-            masterAudit.ota_conversion_audit.key_strategic_shifts
+            masterAudit.ota_conversion_audit.key_strategic_shifts,
+            bookingId
           );
         }).then(photoResults => {
           if (abortController.signal.aborted || !photoResults) return;
@@ -697,42 +679,88 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
 
               <div className="glass-card" style={{ padding: '2.5rem', borderRadius: '2rem' }}>
                 <div className="input-group" style={{ marginBottom: '1.5rem' }}>
-                  <label className="input-label" style={{ marginBottom: '0.75rem' }}>Property Identity</label>
+                  <label className="input-label" style={{ marginBottom: '0.75rem' }}>
+                    Hotel Name <span style={{ color: '#ef4444', fontWeight: 900 }}>*</span>
+                  </label>
                   <input 
                     type="text" 
                     className="form-input" 
-                    style={{ fontSize: '1.1rem', padding: '1rem 1.5rem' }} 
+                    style={{ 
+                      fontSize: '1.1rem', 
+                      padding: '1rem 1.5rem',
+                      border: fieldErrors.propertyName ? '1px solid #ef4444' : undefined 
+                    }} 
                     value={formData.propertyName} 
-                    placeholder="Enter Hotel Name or paste Booking.com URL" 
+                    placeholder="e.g. Sea Containers London" 
                     onChange={e => {
-                      const val = e.target.value;
-                      if (val.includes('booking.com/hotel/')) {
-                        const parsed = parseBookingUrl(val);
-                        if (parsed) {
-                          setFormData(prev => ({
-                            ...prev,
-                            propertyName: parsed.cleanTitle,
-                            propertyUrl: parsed.cleanUrl,
-                            city: parsed.inferredCity || prev.city,
-                            neighborhood: parsed.inferredNeighborhood || prev.neighborhood
-                          }));
-                          return;
-                        }
-                      }
-                      setFormData({...formData, propertyName: val});
+                      setFieldErrors(prev => ({ ...prev, propertyName: '' }));
+                      setFormData({...formData, propertyName: e.target.value});
                     }} 
                   />
+                  {fieldErrors.propertyName && (
+                    <div style={{ color: '#ef4444', fontSize: '12px', fontWeight: 700, marginTop: '6px' }}>
+                      ⚠️ {fieldErrors.propertyName}
+                    </div>
+                  )}
                 </div>
                 
                 <div className="grid-2" style={{ gap: '1.5rem' }}>
                     <div className="input-group" style={{ marginBottom: '1.5rem' }}>
-                        <label className="input-label" style={{ marginBottom: '0.75rem' }}>Primary Market</label>
-                        <input type="text" className="form-input" style={{ fontSize: '1.1rem', padding: '1rem 1.5rem' }} value={formData.city} placeholder="e.g. London" onChange={e => setFormData({...formData, city: e.target.value})} />
+                        <label className="input-label" style={{ marginBottom: '0.75rem' }}>
+                          Primary Market / City <span style={{ color: '#ef4444', fontWeight: 900 }}>*</span>
+                        </label>
+                        <input 
+                          type="text" 
+                          className="form-input" 
+                          style={{ 
+                            fontSize: '1.1rem', 
+                            padding: '1rem 1.5rem',
+                            border: fieldErrors.city ? '1px solid #ef4444' : undefined 
+                          }} 
+                          value={formData.city} 
+                          placeholder="e.g. London" 
+                          onChange={e => {
+                            setFieldErrors(prev => ({ ...prev, city: '' }));
+                            setFormData({...formData, city: e.target.value});
+                          }} 
+                        />
+                        {fieldErrors.city && (
+                          <div style={{ color: '#ef4444', fontSize: '12px', fontWeight: 700, marginTop: '6px' }}>
+                            ⚠️ {fieldErrors.city}
+                          </div>
+                        )}
                     </div>
                     <div className="input-group" style={{ marginBottom: '1.5rem' }}>
-                        <label className="input-label" style={{ marginBottom: '0.75rem' }}>Neighborhood</label>
-                        <input type="text" className="form-input" style={{ fontSize: '1.1rem', padding: '1rem 1.5rem' }} value={formData.neighborhood} placeholder="e.g. Soho" onChange={e => setFormData({...formData, neighborhood: e.target.value})} />
+                        <label className="input-label" style={{ marginBottom: '0.75rem' }}>Neighborhood (Optional)</label>
+                        <input type="text" className="form-input" style={{ fontSize: '1.1rem', padding: '1rem 1.5rem' }} value={formData.neighborhood} placeholder="e.g. South Bank" onChange={e => setFormData({...formData, neighborhood: e.target.value})} />
                     </div>
+                </div>
+
+                <div className="input-group" style={{ marginBottom: '1.5rem' }}>
+                  <label className="input-label" style={{ marginBottom: '0.75rem' }}>
+                    Booking.com ID or URL <span style={{ color: '#ef4444', fontWeight: 900 }}>*</span>
+                  </label>
+                  <input 
+                    type="text" 
+                    className="form-input" 
+                    style={{ 
+                      fontSize: '1.05rem', 
+                      padding: '1rem 1.5rem',
+                      border: fieldErrors.bookingId ? '1px solid #ef4444' : undefined,
+                      letterSpacing: '0.02em'
+                    }} 
+                    value={formData.bookingId} 
+                    placeholder="e.g. 1048291 or Booking.com URL" 
+                    onChange={e => {
+                      setFieldErrors(prev => ({ ...prev, bookingId: '' }));
+                      setFormData({...formData, bookingId: e.target.value});
+                    }} 
+                  />
+                  {fieldErrors.bookingId && (
+                    <div style={{ color: '#ef4444', fontSize: '12px', fontWeight: 700, marginTop: '6px' }}>
+                      ⚠️ {fieldErrors.bookingId}
+                    </div>
+                  )}
                 </div>
 
                 <div className="input-group" style={{ marginBottom: '1.5rem' }}>

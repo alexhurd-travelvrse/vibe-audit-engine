@@ -73,12 +73,12 @@ export function generatePropulsionQuest(auditResults, propertyName, reward) {
     return { title: "Vibe Quest", description: "Optimize local SEO." };
 }
 
-export async function fetchMasterVibeAudit(hotelName, city, neighborhood) {
+export async function fetchMasterVibeAudit(hotelName, city, neighborhood, bookingId = null) {
   console.log(`[Master Vibe] Fetching comprehensive vibe manifest for ${hotelName} in ${city}...`);
   const response = await fetch('/api/master-vibe-audit', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ hotelName, city, neighborhood })
+    body: JSON.stringify({ hotelName, city, neighborhood, bookingId })
   });
   if (!response.ok) {
     throw new Error(`Master Vibe Audit API returned ${response.status}: ${await response.text()}`);
@@ -86,12 +86,12 @@ export async function fetchMasterVibeAudit(hotelName, city, neighborhood) {
   return await response.json();
 }
 
-export async function fetchMasterVibeAuditManifest(hotelName, city, neighborhood, directBookingUrl = null) {
+export async function fetchMasterVibeAuditManifest(hotelName, city, neighborhood, directBookingUrl = null, bookingId = null) {
   console.log(`[Master Vibe Phase 1] Fetching instant vibe manifest & strategy text for ${hotelName} in ${city}...`);
   const response = await fetch('/api/master-vibe-audit?phase=1', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ hotelName, city, neighborhood, phase: 1, bookingUrl: directBookingUrl })
+    body: JSON.stringify({ hotelName, city, neighborhood, phase: 1, bookingUrl: directBookingUrl, bookingId })
   });
   if (!response.ok) {
     throw new Error(`Master Vibe Manifest API returned ${response.status}: ${await response.text()}`);
@@ -99,12 +99,12 @@ export async function fetchMasterVibeAuditManifest(hotelName, city, neighborhood
   return await response.json();
 }
 
-export async function lookupHotelCandidates(hotelName, city, neighborhood = '', directBookingUrl = null) {
+export async function lookupHotelCandidates(hotelName, city, neighborhood = '', directBookingUrl = null, bookingId = null) {
   console.log(`[Candidate Lookup] Checking property matches for "${hotelName}" in "${city}"...`);
   const response = await fetch('/api/lookup-hotel-candidates', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ hotelName, city, neighborhood, bookingUrl: directBookingUrl })
+    body: JSON.stringify({ hotelName, city, neighborhood, bookingUrl: directBookingUrl, bookingId })
   });
   if (!response.ok) {
     console.warn(`[Candidate Lookup] API returned ${response.status}`);
@@ -113,12 +113,12 @@ export async function lookupHotelCandidates(hotelName, city, neighborhood = '', 
   return await response.json();
 }
 
-export async function fetchMasterVibeAuditPhotos(hotelName, city, neighborhood, strategySlots = null, signal = null, bookingUrl = null, strategicShifts = null) {
+export async function fetchMasterVibeAuditPhotos(hotelName, city, neighborhood, strategySlots = null, signal = null, bookingUrl = null, strategicShifts = null, bookingId = null) {
   console.log(`[Master Vibe Phase 2] Resolving and verifying visual photo assets for ${hotelName}...`);
   const response = await fetch('/api/resolve-audit-photos', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ hotelName, city, neighborhood, strategySlots, bookingUrl, strategicShifts }),
+    body: JSON.stringify({ hotelName, city, neighborhood, strategySlots, bookingUrl, strategicShifts, bookingId }),
     signal: signal || undefined
   });
   if (!response.ok) {
