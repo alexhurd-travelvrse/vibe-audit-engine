@@ -10,12 +10,12 @@ const SERPER_API_KEY = process.env.VITE_SERPER_API_KEY || process.env.SERPER_API
 // In-Flight Phase 2 Concurrency Mutex & Cache
 const activeResolutions = new Map();
 const resolutionCache = new Map();
-const RESOLUTION_CACHE_TTL_MS = 2 * 60 * 1000; // 2 minutes TTL
+const RESOLUTION_CACHE_TTL_MS = 15 * 1000; // 15 seconds debounce TTL
 
 // In-Flight Phase 1 Concurrency Mutex & Cache
 const activeManifests = new Map();
 const manifestCache = new Map();
-const MANIFEST_CACHE_TTL_MS = 60 * 60 * 1000; // 60 minutes TTL
+const MANIFEST_CACHE_TTL_MS = 15 * 1000; // 15 seconds debounce TTL
 
 function getResolutionKey(hotelName, city, neighborhood = '') {
   return `${String(hotelName || '').toLowerCase().trim()}:::${String(city || '').toLowerCase().trim()}:::${String(neighborhood || '').toLowerCase().trim()}`;
@@ -840,12 +840,27 @@ export async function fetchAmenityPhotosForHotel(hotelName, city, neighborhood =
       if (isLowQualityDomain(img.imageUrl, img.title)) return false;
       // Reject affiliate aggregators and third party blogs
       if (u.includes('miamibeachfl-hotel') || u.includes('-hotel.com') || l.includes('miamibeachfl-hotel') || l.includes('-hotel.com') || u.includes('themiamiguide') || l.includes('themiamiguide') || u.includes('miamiresidential') || l.includes('miamiresidential')) return false;
+      // Reject cross-continent property collisions (e.g. Seadust Cancun matching Sea Containers)
+      if (combined.includes('cancun') || combined.includes('seadust') || combined.includes('mexico')) return false;
 
-      // 1. Must match target hotel brand tokens
-      if (activeTokens.length > 0) {
-        const matchesTarget = activeTokens.some(tok => combined.includes(tok)) || (officialDomain && combined.includes(officialDomain)) || (parentBrand && combined.includes(parentBrand));
-        if (!matchesTarget) return false;
-      }
+      // 1. Must match target hotel brand tokens (word-boundary or full brand phrase)
+      const hasTargetBrand = () => {
+        if (officialDomain && (u.includes(officialDomain) || l.includes(officialDomain))) return true;
+        if (parentBrand && (u.includes(parentBrand) || l.includes(parentBrand))) return true;
+
+        const cleanBrandWords = brandTokens.length > 0 ? brandTokens : tokens;
+        if (cleanBrandWords.length >= 2) {
+          const fullPhrase = cleanBrandWords.join(' ');
+          if (combined.includes(fullPhrase)) return true;
+          return cleanBrandWords.every(w => new RegExp(`\\b${w}\\b`, 'i').test(combined));
+        }
+        if (cleanBrandWords.length === 1) {
+          return new RegExp(`\\b${cleanBrandWords[0]}\\b`, 'i').test(combined);
+        }
+        return true;
+      };
+
+      if (!hasTargetBrand()) return false;
 
       // 2. Reject traveler review photos on TripAdvisor (strictly exclude guest phone uploads)
       if (l.includes('tripadvisor.com') || u.includes('tripadvisor.com')) {
@@ -861,7 +876,7 @@ export async function fetchAmenityPhotosForHotel(hotelName, city, neighborhood =
           return false; // Traveler photo! Exclude!
         }
         // TripAdvisor URL or title MUST contain the target hotel's brand token
-        if (activeTokens.length > 0 && !activeTokens.some(tok => combined.includes(tok))) {
+        if (!hasTargetBrand()) {
           return false;
         }
       }
@@ -889,7 +904,7 @@ export async function fetchAmenityPhotosForHotel(hotelName, city, neighborhood =
       if (isRoomLike(img.title, img.imageUrl) || isRoomLike(img.link, '') || s.includes('social-space') || s.includes('party-venue') || s.includes('meeting') || s.includes('event')) {
         return false;
       }
-      return s.includes('spa') || s.includes('wellness') || s.includes('treatment') || s.includes('sauna') || s.includes('vitality') || s.includes('massage') || s.includes('bathhouse') || s.includes('hydrotherapy') || s.includes('ciel') || s.includes('agua');
+      return /\bspas?\b/i.test(s) || s.includes('wellness') || s.includes('treatment') || s.includes('sauna') || s.includes('vitality') || s.includes('massage') || s.includes('bathhouse') || s.includes('hydrotherapy') || s.includes('ciel') || s.includes('agua');
     };
 
     const isValidExteriorPhoto = (img) => {
@@ -1412,7 +1427,8 @@ export async function resolveAuditPhotos(hotelName, city, neighborhood = '', str
 
   const isExterior = (p) => {
     const s = `${p.title || ''} ${p.imageUrl || ''}`.toLowerCase();
-    return p.detectedCategory === 'EXTERIOR' || s.includes('exterior') || s.includes('facade') || s.includes('façade') || s.includes('building') || s.includes('outside') || s.includes('aerial') || s.includes('marina') || s.includes('entrance');
+    if (s.includes('balcony-suite') || s.includes('suite-') || s.includes('room-') || s.includes('bedroom')) return false;
+    return p.detectedCategory === 'EXTERIOR' || s.includes('exterior') || s.includes('facade') || s.includes('façade') || s.includes('building') || (s.includes('outside') && !s.includes('balcony')) || s.includes('aerial') || s.includes('marina') || s.includes('entrance') || s.includes('street view');
   };
 
   const isBedroomLike = (p) => {
@@ -1433,7 +1449,7 @@ export async function resolveAuditPhotos(hotelName, city, neighborhood = '', str
 
   const isRooftopOrBar = (p) => {
     const s = `${p.title || ''} ${p.imageUrl || ''}`.toLowerCase();
-    return s.includes('rooftop') || s.includes('12th knot') || s.includes('sky bar') || s.includes('skybar') || s.includes('cocktail') || s.includes('bar') || s.includes('lyaness') || s.includes('aubrey') || s.includes('lounge') || s.includes('basement') || s.includes('nightclub') || s.includes('bowling');
+    return s.includes('rooftop') || s.includes('12th knot') || s.includes('12thknot') || s.includes('knot') || s.includes('sky bar') || s.includes('skybar') || s.includes('cocktail') || /\bbar\b/i.test(s) || s.includes('lyaness') || s.includes('aubrey') || s.includes('lounge') || s.includes('basement') || s.includes('nightclub') || s.includes('bowling');
   };
 
   const findFirst = (pool, predicate) => {
@@ -1457,15 +1473,23 @@ export async function resolveAuditPhotos(hotelName, city, neighborhood = '', str
   const strat1Str = `${stratSlot1?.category || ''} ${stratSlot1?.photo_subject || ''} ${stratSlot1?.why_it_converts || ''}`.toLowerCase();
   const strat4Str = `${stratSlot4?.category || ''} ${stratSlot4?.photo_subject || ''} ${stratSlot4?.why_it_converts || ''}`.toLowerCase();
 
-  // Slot 1 mandates: check if Shift 1 or Slot 1 strategy calls for Pool, Spa, or Nightlife
-  const isSlot1Pool = (
+  // Slot 1 mandates: check if Shift 1 or Slot 1 strategy calls for Rooftop/Bar, Pool, Spa, or Nightlife
+  const isSlot1RooftopBar = (
+    shift1Str.includes('rooftop') || shift1Str.includes('12th knot') || shift1Str.includes('12th') || shift1Str.includes('knot') || shift1Str.includes('skyline') || shift1Str.includes('sky bar') || shift1Str.includes('lyaness') ||
+    strat1Str.includes('rooftop') || strat1Str.includes('12th knot') || strat1Str.includes('12th') || strat1Str.includes('knot') || strat1Str.includes('skyline') || strat1Str.includes('lyaness') ||
+    stratSlot1?.category === 'SOCIAL_FB_ROOFTOP' ||
+    (allShifts.includes('slot 1') && (allShifts.includes('rooftop') || allShifts.includes('12th knot') || allShifts.includes('skyline'))) ||
+    (allShifts.includes('slot #1') && (allShifts.includes('rooftop') || allShifts.includes('12th knot') || allShifts.includes('skyline')))
+  );
+
+  const isSlot1Pool = !isSlot1RooftopBar && (
     shift1Str.includes('pool') || 
     (allShifts.includes('slot 1') && allShifts.includes('pool')) || 
     (allShifts.includes('slot #1') && allShifts.includes('pool')) ||
     strat1Str.includes('pool')
   );
-  const isSlot1Spa = (shift1Str.includes('spa') || strat1Str.includes('spa'));
-  const isSlot1Nightlife = (
+  const isSlot1Spa = !isSlot1RooftopBar && (shift1Str.includes('spa') || strat1Str.includes('spa'));
+  const isSlot1Nightlife = !isSlot1RooftopBar && (
     shift1Str.includes('basement') || shift1Str.includes('nightclub') || shift1Str.includes('club') || shift1Str.includes('bowling') || 
     strat1Str.includes('basement') || strat1Str.includes('nightclub')
   );
@@ -1480,18 +1504,31 @@ export async function resolveAuditPhotos(hotelName, city, neighborhood = '', str
 
   // Strategy keywords for Slot 1 Hero Cultural Magnet
   const slot1Subject = String(stratSlot1?.photo_subject || '').toLowerCase();
-  const slot1Keywords = slot1Subject.replace(/[^a-z0-9\s]/g, ' ').split(/\s+/).filter(w => w.length > 3 && !['hero', 'cultural', 'magnet', 'slot', 'signature', 'with', 'iconic'].includes(w));
+  const slot1Keywords = slot1Subject.replace(/[^a-z0-9\s]/g, ' ').split(/\s+/).filter(w => w.length > 3 && !['hero', 'cultural', 'magnet', 'slot', 'signature', 'with', 'iconic', 'views', 'view', 'pictures', 'reviews'].includes(w));
 
   const matchesSlot1Magnet = (p) => {
     if (p.isSignatureMagnet) return true;
     const s = `${p.title || ''} ${p.imageUrl || ''}`.toLowerCase();
-    return slot1Keywords.some(kw => s.includes(kw));
+    return slot1Keywords.some(kw => new RegExp(`\\b${kw}\\b`, 'i').test(s));
   };
 
   // ASSET-FIRST SELECTION:
-  // Slot 1: Hero Cultural Magnet / Curated Pool / Signature Venue
+  // Slot 1: Hero Cultural Magnet / Curated Pool / Signature Venue / 12th Knot Rooftop
   let slot1Asset = null;
-  if (isSlot1Pool) {
+  if (isSlot1RooftopBar) {
+    // Priority 1: Explicit 12th Knot / Rooftop Bar / Skyline asset
+    slot1Asset = findFirst(poolAmenity, p => {
+      const s = `${p.title || ''} ${p.imageUrl || ''}`.toLowerCase();
+      return (s.includes('12th') || s.includes('knot') || s.includes('rooftop') || s.includes('skyline')) && !isBedroomLike(p) && !isBath(p) && !isExterior(p);
+    });
+    // Priority 2: General rooftop or cocktail bar
+    if (!slot1Asset) {
+      slot1Asset = findFirst(poolAmenity, p => isRooftopOrBar(p) && !isBedroomLike(p) && !isBath(p) && !isExterior(p));
+    }
+    if (!slot1Asset) {
+      slot1Asset = findFirst(poolLive, p => isRooftopOrBar(p) && !isBedroomLike(p) && !isBath(p) && !isExterior(p));
+    }
+  } else if (isSlot1Pool) {
     slot1Asset = findFirst(poolAmenity, p => (p.detectedCategory === 'POOL' || isPoolLike(p)) && !isBedroomLike(p) && !isBath(p) && !isExterior(p));
     if (!slot1Asset) {
       slot1Asset = findFirst(poolLive, p => isPoolLike(p) && !isBedroomLike(p) && !isBath(p) && !isExterior(p));
@@ -1509,11 +1546,9 @@ export async function resolveAuditPhotos(hotelName, city, neighborhood = '', str
   }
 
   // Fallbacks for Slot 1 if not yet resolved:
-  if (!slot1Asset) {
-    if (!isSlot4Pool) {
-      slot1Asset = findFirst(poolAmenity, p => isPoolLike(p) && !isBedroomLike(p) && !isBath(p) && !isExterior(p));
-      if (!slot1Asset) slot1Asset = findFirst(poolLive, p => isPoolLike(p) && !isBedroomLike(p) && !isBath(p) && !isExterior(p));
-    }
+  if (!slot1Asset && isSlot1Pool) {
+    slot1Asset = findFirst(poolAmenity, p => isPoolLike(p) && !isBedroomLike(p) && !isBath(p) && !isExterior(p));
+    if (!slot1Asset) slot1Asset = findFirst(poolLive, p => isPoolLike(p) && !isBedroomLike(p) && !isBath(p) && !isExterior(p));
   }
   if (!slot1Asset) {
     slot1Asset = findFirst(poolAmenity, p => isRooftopOrBar(p) && !isBedroomLike(p) && !isBath(p) && !isExterior(p));
@@ -1529,9 +1564,17 @@ export async function resolveAuditPhotos(hotelName, city, neighborhood = '', str
   }
 
   // Slot 2: Exterior Architectural Landmark
-  let slot2Asset = findFirst(poolAmenity, p => (p.detectedCategory === 'EXTERIOR' || isExterior(p)) && !isBath(p) && !isPoolLike(p));
+  let slot2Asset = findFirst(poolAmenity, p => (
+    `${p.title} ${p.imageUrl}`.toLowerCase().includes('exterior-') ||
+    `${p.title} ${p.imageUrl}`.toLowerCase().includes('facade') ||
+    `${p.title} ${p.imageUrl}`.toLowerCase().includes('façade') ||
+    (p.detectedCategory === 'EXTERIOR' && !`${p.title} ${p.imageUrl}`.toLowerCase().includes('balcony'))
+  ) && !isBath(p) && !isPoolLike(p) && !isBedroomLike(p));
   if (!slot2Asset) {
-    slot2Asset = findFirst(poolLive, p => isExterior(p) && !isBath(p) && !isPoolLike(p));
+    slot2Asset = findFirst(poolAmenity, p => (p.detectedCategory === 'EXTERIOR' || isExterior(p)) && !isBath(p) && !isPoolLike(p) && !isBedroomLike(p));
+  }
+  if (!slot2Asset) {
+    slot2Asset = findFirst(poolLive, p => isExterior(p) && !isBath(p) && !isPoolLike(p) && !isBedroomLike(p));
   }
 
   // Slot 3: Signature Suite / Bedroom
@@ -1540,7 +1583,7 @@ export async function resolveAuditPhotos(hotelName, city, neighborhood = '', str
     slot3Asset = findFirst(poolLive, p => isBedroomLike(p) && !isBath(p) && !isExterior(p));
   }
 
-  // Slot 4: Signature Destination Amenity (Resort Pool Deck OR Spa Sanctuary OR Dining Room)
+  // Slot 4: Signature Destination Amenity (Resort Pool Deck OR Lyaness / Destination Dining / Social)
   let slot4Asset = null;
   if (isSlot4Pool) {
     slot4Asset = findFirst(poolAmenity, p => (p.detectedCategory === 'POOL' || isPoolLike(p)) && !isBedroomLike(p) && !isBath(p) && !isExterior(p));
@@ -1549,6 +1592,10 @@ export async function resolveAuditPhotos(hotelName, city, neighborhood = '', str
     }
   } else if (stratSlot4?.category === 'SPA' || String(stratSlot4?.photo_subject || '').toLowerCase().includes('spa')) {
     slot4Asset = findFirst(poolAmenity, p => (p.detectedCategory === 'SPA' || `${p.title} ${p.imageUrl}`.toLowerCase().includes('spa')) && !isBedroomLike(p) && !isBath(p) && !isExterior(p));
+  }
+  if (!slot4Asset) {
+    // Check for Lyaness or acclaimed destination dining first
+    slot4Asset = findFirst(poolAmenity, p => (`${p.title} ${p.imageUrl}`.toLowerCase().includes('lyaness') || `${p.title} ${p.imageUrl}`.toLowerCase().includes('matador')) && !isBedroomLike(p) && !isBath(p) && !isExterior(p));
   }
   if (!slot4Asset) {
     // If Slot 1 already took the pool, Slot 4 showcases destination dining / Matador Room / bar / social space!
@@ -1582,6 +1629,8 @@ export async function resolveAuditPhotos(hotelName, city, neighborhood = '', str
     let category = stratSlot?.category || defaultCat;
     if (targetSlot === 1 && isSlot1Pool) {
       category = 'OUTDOOR_SOCIAL_POOL';
+    } else if (targetSlot === 1 && isSlot1RooftopBar) {
+      category = 'HERO_CULTURAL_MAGNET';
     } else if (targetSlot === 4 && isSlot1Pool && !isSlot4Pool) {
       category = 'SOCIAL_FB_ROOFTOP';
     }
@@ -1590,8 +1639,16 @@ export async function resolveAuditPhotos(hotelName, city, neighborhood = '', str
     if (!photoSubject || photoSubject.toLowerCase().includes('scanning') || (targetSlot === 1 && isSlot1Pool && !photoSubject.toLowerCase().includes('pool'))) {
       if (targetSlot === 1 && isSlot1Pool) {
         photoSubject = (asset?.title && asset.title.toLowerCase().includes('pool')) ? asset.title : 'Curated Oceanfront Resort Pool & Cabana Sanctuary';
+      } else if (targetSlot === 1 && isSlot1RooftopBar) {
+        photoSubject = (stratSlot?.photo_subject && (stratSlot.photo_subject.toLowerCase().includes('12th') || stratSlot.photo_subject.toLowerCase().includes('rooftop')))
+          ? stratSlot.photo_subject
+          : '12th Knot Panoramic Rooftop Bar & River Thames Skyline';
       } else if (targetSlot === 4 && isSlot1Pool && !isSlot4Pool) {
         photoSubject = (asset?.title && (asset.title.toLowerCase().includes('matador') || asset.title.toLowerCase().includes('dining') || asset.title.toLowerCase().includes('restaurant') || asset.title.toLowerCase().includes('bar'))) ? asset.title : 'Matador Room Destination Dining & Jean-Georges Culinary Experience';
+      } else if (targetSlot === 4 && isSlot1RooftopBar) {
+        photoSubject = (asset?.title && asset.title.toLowerCase().includes('lyaness'))
+          ? 'Lyaness Award-Winning Cocktail Bar & Social Lounge'
+          : (stratSlot?.photo_subject || asset?.title || 'Lyaness Destination Social Lounge');
       } else {
         photoSubject = asset?.title || '';
       }
@@ -1600,6 +1657,8 @@ export async function resolveAuditPhotos(hotelName, city, neighborhood = '', str
     let why = stratSlot?.why_it_converts || stratSlot?.upgrade_rationale || '';
     if (targetSlot === 1 && isSlot1Pool && (!why || !why.toLowerCase().includes('pool'))) {
       why = "Showcasing the hotel's iconic oceanfront resort pool deck directly targets Miami Beach's #1 leisure search demand, establishing instant aspirational lifestyle appeal within the crucial 3-second first impression window.";
+    } else if (targetSlot === 1 && isSlot1RooftopBar && (!why || (!why.toLowerCase().includes('rooftop') && !why.toLowerCase().includes('12th')))) {
+      why = "Elevating the 12th Knot panoramic rooftop bar directly to Slot #1 captures South Bank's #1 leisure and nightlife search demand, establishing instant skyline prestige and Thames riverfront vitality.";
     } else if (targetSlot === 4 && isSlot1Pool && !isSlot4Pool && (!why || why.toLowerCase().includes('pool'))) {
       why = "Showcasing the property's acclaimed culinary destination provides high-margin experiential depth, confirming world-class dining and evening social vitality beyond guest rooms.";
     }
@@ -1608,6 +1667,8 @@ export async function resolveAuditPhotos(hotelName, city, neighborhood = '', str
     let trigger = stratSlot?.psychological_conversion_trigger || stratSlot?.recommended_trigger || '';
     if (targetSlot === 1 && isSlot1Pool) {
       trigger = 'Curated Leisure Lifestyle & Oceanfront Sanctuary';
+    } else if (targetSlot === 1 && isSlot1RooftopBar) {
+      trigger = 'Iconic River Thames Skyline & Rooftop Social Magnet';
     } else if (targetSlot === 4 && isSlot1Pool && !isSlot4Pool) {
       trigger = 'Destination Dining & High-Energy Evening Vitality';
     }
@@ -1618,6 +1679,12 @@ export async function resolveAuditPhotos(hotelName, city, neighborhood = '', str
         'Aspirational Anchor: Immediate exposure to premier sunbeds, signature palms, and oceanfront atmosphere.',
         'Market Alignment: Directly addresses South Beach leisure search intent before guest room consideration.',
         'Immediate Lift: Replaces standard lobby or corridor visuals with high-conversion lifestyle assets.'
+      ];
+    } else if (targetSlot === 1 && isSlot1RooftopBar && bullets.length === 0) {
+      bullets = [
+        'Aspirational Anchor: Immediate exposure to panoramic London skyline views and iconic glass-enclosed rooftop lounge.',
+        'Market Alignment: Directly addresses South Bank leisure and rooftop bar search demand before guest room consideration.',
+        'High-Impact Hook: Replaces generic corridor or standard room angles with world-class hospitality architecture.'
       ];
     } else if (targetSlot === 4 && isSlot1Pool && !isSlot4Pool && bullets.length === 0) {
       bullets = [
@@ -1852,41 +1919,54 @@ export default async function handler(req, res) {
       city = city.replace(/south beach/i, '').replace(/,/g, '').trim() || 'Miami';
     }
 
-    console.log(`[Master Vibe Audit API] Running for: "${hotelName}" in "${city}" ${neighborhood ? `(${neighborhood})` : ''} [Asset-First / Scan-First]${bookingUrl ? ` (URL: ${bookingUrl})` : ''}`);
+    console.log(`[Master Vibe Audit API] Running 4-Step Pipeline for: "${hotelName}" in "${city}" ${neighborhood ? `(${neighborhood})` : ''} ${bookingUrl ? `(URL: ${bookingUrl})` : ''}`);
 
     const manifestKey = getResolutionKey(hotelName, city, neighborhood);
+    const isFresh = req.query.fresh === 'true' || req.body?.fresh === true;
+    if (isFresh) {
+      manifestCache.delete(manifestKey);
+      resolutionCache.delete(manifestKey);
+    }
 
-    // 1. Check in-memory manifest cache
-    const cached = manifestCache.get(manifestKey);
+    // 1. Check in-memory manifest cache (15s debounce only)
+    const cached = isFresh ? null : manifestCache.get(manifestKey);
     if (cached && (Date.now() - cached.timestamp < MANIFEST_CACHE_TTL_MS)) {
-      console.log(`[Master Vibe API] Serving cached Asset-First manifest for "${manifestKey}"`);
+      console.log(`[Master Vibe API] Serving debounced manifest for "${manifestKey}"`);
       return res.status(200).json(cached.data);
     }
 
     // 2. Check in-flight promise (prevent duplicate concurrent Gemini calls)
     if (activeManifests.has(manifestKey)) {
-      console.log(`[Master Vibe API] Joining in-flight Asset-First manifest generation for "${manifestKey}"`);
+      console.log(`[Master Vibe API] Joining in-flight manifest generation for "${manifestKey}"`);
       const manifest = await activeManifests.get(manifestKey);
       return res.status(200).json(manifest);
     }
 
-    // 3. Initiate Asset-First / Scan-First Audit
+    // 3. Initiate 4-Step Process:
+    // 1) Manifest first
+    // 2) Get available images from site, TripAdvisor (From Management only), and Booking.com
+    // 3) Set strategy
+    // 4) Re-order
     const manifestPromise = (async () => {
-      // Step A: Concurrently fetch venue intelligence corpus + live Booking.com photos + official amenity/TripAdvisor photos FIRST!
-      console.log(`[Master Vibe API] Step 1: Scanning live photos & official visual assets first for "${hotelName}"...`);
-      const [corpusData, liveBookingPhotos, amenityPhotos] = await Promise.all([
-        fetchVenueCorpus(hotelName, city, neighborhood),
+      // Step 1: Manifest First (Hotel DNA, sensory profile, local neighborhood search demand)
+      console.log(`[Master Vibe API] 1) Manifest first: Gathering venue intelligence & hotel DNA for "${hotelName}"...`);
+      const corpusData = await fetchVenueCorpus(hotelName, city, neighborhood);
+      const rawCorpus = corpusData.rawCorpus;
+
+      // Step 2: Get available images from site, TripAdvisor (From Management only), and Booking.com
+      console.log(`[Master Vibe API] 2) Get available images from official site, TripAdvisor (From Management only), and Booking.com...`);
+      const [liveBookingPhotos, amenityPhotos] = await Promise.all([
         fetchBookingPhotosForHotel(hotelName, city, neighborhood, bookingUrl),
         fetchAmenityPhotosForHotel(hotelName, city, neighborhood)
       ]);
-      const rawCorpus = corpusData.rawCorpus;
+      console.log(`[Master Vibe API] Inventory discovered: ${liveBookingPhotos?.length || 0} live OTA photos, ${amenityPhotos?.length || 0} official/TripAdvisor management assets.`);
 
-      console.log(`[Master Vibe API] Step 2: Visual inventory scanned: ${liveBookingPhotos?.length || 0} live OTA photos, ${amenityPhotos?.length || 0} official/TripAdvisor assets. Synthesizing recommendations...`);
-
-      // Step B: Pass scanned visual catalog directly into Gemini
+      // Step 3: Set strategy
+      console.log(`[Master Vibe API] 3) Set strategy: Synthesizing Key Strategic Shifts & 5-slot blueprint bridging Hotel DNA ⟷ Neighborhood Demand with discovered inventory...`);
       const auditResult = await runStructuredVibeAudit(hotelName, city, rawCorpus, liveBookingPhotos || [], amenityPhotos || [], neighborhood);
 
-      // Step C: Resolve visual photo sequence immediately (matching strategy 100%)
+      // Step 4: Re-order
+      console.log(`[Master Vibe API] 4) Re-order: Binding and sequencing authentic photos to match strategic shifts 100% into Slots 1-5...`);
       const photoResults = await resolveAuditPhotos(
         hotelName, 
         city, 
