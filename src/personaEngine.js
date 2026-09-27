@@ -73,12 +73,12 @@ export function generatePropulsionQuest(auditResults, propertyName, reward) {
     return { title: "Vibe Quest", description: "Optimize local SEO." };
 }
 
-export async function fetchMasterVibeAudit(hotelName, city, neighborhood, bookingId = null) {
+export async function fetchMasterVibeAudit(hotelName, city, neighborhood, bookingId = null, directBookingUrl = null) {
   console.log(`[Master Vibe] Fetching comprehensive vibe manifest for ${hotelName} in ${city}...`);
   const response = await fetch('/api/master-vibe-audit', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ hotelName, city, neighborhood, bookingId })
+    body: JSON.stringify({ hotelName, city, neighborhood, bookingId, bookingUrl: directBookingUrl, directBookingUrl })
   });
   if (!response.ok) {
     throw new Error(`Master Vibe Audit API returned ${response.status}: ${await response.text()}`);

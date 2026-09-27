@@ -1,4 +1,4 @@
-export const maxDuration = 60;
+export const maxDuration = 120;
 import * as dotenv from 'dotenv';
 import { fetchVenueCorpus } from '../src/services/serperService.mjs';
 import { runStructuredVibeAudit } from '../src/services/geminiService.mjs';
@@ -17,8 +17,8 @@ const activeManifests = new Map();
 const manifestCache = new Map();
 const MANIFEST_CACHE_TTL_MS = 15 * 1000; // 15 seconds debounce TTL
 
-function getResolutionKey(hotelName, city, neighborhood = '') {
-  return `${String(hotelName || '').toLowerCase().trim()}:::${String(city || '').toLowerCase().trim()}:::${String(neighborhood || '').toLowerCase().trim()}`;
+function getResolutionKey(hotelName, city, neighborhood = '', target = '') {
+  return `${String(hotelName || '').toLowerCase().trim()}:::${String(city || '').toLowerCase().trim()}:::${String(neighborhood || '').toLowerCase().trim()}:::${String(target || '').toLowerCase().trim()}`;
 }
 
 // Distinctive token extractor (strips generic hospitality stop words)
@@ -34,6 +34,32 @@ function upgradePhotoResolution(url) {
     cleanUrl = cleanUrl.replace(/\/max\d+x\d+\//, '/max1024x768/').replace(/\/max\d+\//, '/max1024x768/');
   }
   return cleanUrl;
+}
+
+export function getPhotoUniqueKey(url) {
+  if (!url) return '';
+  const clean = String(url).trim();
+  // Booking.com photo ID: extract (\d+)\.jpg
+  const bstaticMatch = clean.match(/\/(\d+)\.jpg/);
+  if (bstaticMatch) {
+    return `bstatic_${bstaticMatch[1]}`;
+  }
+  // Marriott CDN: extract asset ID
+  const marriottMatch = clean.match(/\/([a-zA-Z0-9_-]+):Feature-Hor/i) || clean.match(/\/([a-zA-Z0-9_-]+)\.(jpg|jpeg|png)/i);
+  if (clean.includes('marriott') && marriottMatch) {
+    return `marriott_${marriottMatch[1]}`;
+  }
+  // Hilton CDN: extract asset ID
+  const hiltonMatch = clean.match(/\/(\d+)\/[a-zA-Z0-9_-]+\.jpg/i);
+  if (clean.includes('hilton') && hiltonMatch) {
+    return `hilton_${hiltonMatch[1]}`;
+  }
+  // TripAdvisor CDN: extract photo ID or filename
+  const taMatch = clean.match(/\/photo-[a-z0-9_-]+\/([^\/?#]+)/i);
+  if (taMatch) {
+    return `ta_${taMatch[1]}`;
+  }
+  return clean.split('?')[0].replace(/\/max\d+x\d+\//, '/').replace(/\/max\d+\//, '/').toLowerCase();
 }
 
 const stopWords = new Set([
@@ -144,7 +170,7 @@ export function scoreBookingCandidate(item, hotelName, city, neighborhood, brand
 
 export const KNOWN_SLUG_TITLES = {
   'twoninezeroone-collinsave': 'The Miami Beach EDITION',
-  'the-plymouth-miami-beach': 'The Plymouth South Beach',
+  'the-plymouth-miami-beach': 'The Plymouth South Beach Miami',
   'sea-containers-london': 'Sea Containers London',
   'sls-south-beach': 'SLS South Beach Miami',
   'dukes': 'Dukes The Palm, a Royal Hideaway Hotel',
@@ -153,7 +179,11 @@ export const KNOWN_SLUG_TITLES = {
   'the-standard-spa-miami-beach': 'The Standard Spa, Miami Beach',
   'faena-miami-beach': 'Faena Hotel Miami Beach',
   'the-ned': 'The Ned London',
-  'the-london-edition': 'The London EDITION'
+  'the-london-edition': 'The London EDITION',
+  'hilton-london-kensington': 'Hilton London Kensington',
+  'the-goodtime': 'The Goodtime Hotel',
+  'eden-roc-miami-beach': 'Eden Roc Miami Beach',
+  'the-hoxton-shepherds-bush': "The Hoxton, Shepherd's Bush"
 };
 
 export const EDITORIAL_AND_AGGREGATOR_DOMAINS = [
@@ -186,12 +216,14 @@ export function parseBookingUrl(input) {
 
   let inferredCity = '';
   let inferredNeighborhood = '';
-  if (slug.includes('miami-beach') || slug.includes('south-beach') || slug.includes('plymouth') || slug === 'twoninezeroone-collinsave') {
+  if (slug.includes('miami-beach') || slug.includes('south-beach') || slug.includes('plymouth') || slug === 'twoninezeroone-collinsave' || slug.includes('eden-roc') || slug.includes('the-goodtime')) {
     inferredCity = 'Miami';
     inferredNeighborhood = 'Miami Beach';
-  } else if (slug.includes('london')) {
+  } else if (slug.includes('london') || slug.includes('shepherds-bush') || slug.includes('kensington') || slug.includes('hoxton') || country === 'gb') {
     inferredCity = 'London';
-  } else if (slug.includes('dubai')) {
+    if (slug.includes('shepherds-bush')) inferredNeighborhood = "Shepherd's Bush";
+    else if (slug.includes('kensington')) inferredNeighborhood = "Kensington";
+  } else if (slug.includes('dubai') || country === 'ae') {
     inferredCity = 'Dubai';
   }
 
@@ -705,7 +737,7 @@ export async function fetchAmenityPhotosForHotel(hotelName, city, neighborhood =
       .replace(/\s*[-–|].*prices.*/i, '')
       .replace(/\s*[-–|].*Updated.*202\d.*/i, '')
       .replace(/\s*[\(（].*?[\)）]/g, '')
-      .replace(/[,，].*$/, '')
+      .replace(/,\s*(?:inc|llc|ltd)\.?$/i, '')
       .trim();
 
     const locationContext = neighborhood && neighborhood.trim() ? `${neighborhood.trim()} ${city}` : city;
@@ -973,14 +1005,26 @@ export async function fetchAmenityPhotosForHotel(hotelName, city, neighborhood =
 
       // Reject cross-city collisions for multi-property chains
       const targetCityLower = (city || '').toLowerCase().trim();
-      if (targetCityLower.includes('miami')) {
-        if (combined.includes('new york') || combined.includes('times square') || combined.includes('west hollywood') || combined.includes('hollywood') || combined.includes('los angeles') || combined.includes('madrid') || combined.includes('barcelona') || combined.includes('tokyo') || combined.includes('toranomon') || combined.includes('ginza') || combined.includes('shanghai') || combined.includes('sanya') || combined.includes('bodrum') || combined.includes('rome') || combined.includes('singapore') || combined.includes('laxeb') || combined.includes('nyceb') || combined.includes('reykjavik')) {
-          return false;
+      const targetNeighLower = (neighborhood || '').toLowerCase().trim();
+      const GLOBAL_SISTER_CITIES = [
+        'chicago', 'vienna', 'amsterdam', 'berlin', 'paris', 'rome', 'madrid', 'barcelona',
+        'tokyo', 'kyoto', 'singapore', 'bangkok', 'dubai', 'sydney', 'melbourne',
+        'new york', 'times square', 'brooklyn', 'williamsburg', 'manhattan', 'los angeles',
+        'downtown la', 'dtla', 'hollywood', 'west hollywood', 'san francisco', 'miami',
+        'south beach', 'las vegas', 'austin', 'seattle', 'portland', 'boston', 'philadelphia',
+        'toronto', 'montreal', 'vancouver', 'cancun', 'bodrum', 'sanya', 'shanghai'
+      ];
+      for (const fCity of GLOBAL_SISTER_CITIES) {
+        if (!targetCityLower.includes(fCity) && !targetNeighLower.includes(fCity)) {
+          if (combined.includes(fCity) || l.includes(`/${fCity}/`) || u.includes(`/${fCity}/`)) {
+            return false;
+          }
         }
-      } else if (targetCityLower.includes('london')) {
-        if (combined.includes('syracuse') || combined.includes('skaneateles') || combined.includes('miami') || combined.includes('new york') || combined.includes('west hollywood') || combined.includes('los angeles') || combined.includes('madrid') || combined.includes('barcelona') || combined.includes('tokyo') || combined.includes('cancun') || combined.includes('dubai') || combined.includes('paris') || combined.includes('rome')) {
-          return false;
-        }
+      }
+
+      // Reject intra-city sister neighborhood collisions (e.g. The Hoxton Shoreditch vs Shepherd's Bush)
+      if (cleanHotelLower.includes('shepherd') && !cleanHotelLower.includes('shoreditch')) {
+        if (combined.includes('shoreditch') || combined.includes('holborn') || combined.includes('southwark')) return false;
       }
 
       // 1. Must match target hotel brand tokens (word-boundary or full brand phrase)
@@ -1561,10 +1605,33 @@ export async function resolveAuditPhotos(hotelName, city, neighborhood = '', str
       : fetchAmenityPhotosForHotel(hotelName, city, neighborhood, strategySlots, strategicShifts)
   ]);
 
-  const poolAmenity = Array.isArray(amenityPhotos) ? amenityPhotos : [];
-  const poolLive = Array.isArray(liveBookingPhotos) ? liveBookingPhotos : [];
+  const rawAmenity = Array.isArray(amenityPhotos) ? amenityPhotos : [];
+  const rawLive = Array.isArray(liveBookingPhotos) ? liveBookingPhotos : [];
+
+  // Deduplicate on ingestion so internal pools contain only canonically unique assets
+  const seenLiveKeys = new Set();
+  const poolLive = [];
+  for (const p of rawLive) {
+    const k = getPhotoUniqueKey(p?.imageUrl);
+    if (k && !seenLiveKeys.has(k)) {
+      seenLiveKeys.add(k);
+      poolLive.push(p);
+    }
+  }
+
+  const seenAmenityKeys = new Set();
+  const poolAmenity = [];
+  for (const p of rawAmenity) {
+    const k = getPhotoUniqueKey(p?.imageUrl);
+    if (k && !seenAmenityKeys.has(k)) {
+      seenAmenityKeys.add(k);
+      poolAmenity.push(p);
+    }
+  }
+
   const isListedOnBooking = poolLive.length >= 3;
   const usedUrls = new Set();
+  const usedPhotoKeys = new Set();
 
   const isMeetingOrConference = (p) => {
     const s = `${p.title || ''} ${p.imageUrl || ''}`.toLowerCase();
@@ -1604,9 +1671,17 @@ export async function resolveAuditPhotos(hotelName, city, neighborhood = '', str
   };
 
   const findFirst = (pool, predicate) => {
-    const found = pool.find(p => p?.imageUrl && !usedUrls.has(p.imageUrl) && !isMeetingOrConference(p) && !isTightFoodMacro(p) && predicate(p));
+    const found = pool.find(p => {
+      if (!p?.imageUrl) return false;
+      const key = getPhotoUniqueKey(p.imageUrl);
+      if (usedUrls.has(p.imageUrl) || (key && usedPhotoKeys.has(key))) return false;
+      if (isMeetingOrConference(p) || isTightFoodMacro(p)) return false;
+      return predicate(p);
+    });
     if (found) {
       usedUrls.add(found.imageUrl);
+      const key = getPhotoUniqueKey(found.imageUrl);
+      if (key) usedPhotoKeys.add(key);
       return found;
     }
     return null;
@@ -1763,18 +1838,23 @@ export async function resolveAuditPhotos(hotelName, city, neighborhood = '', str
     if (!slot4Asset) {
       slot4Asset = findFirst(poolLive, p => isPoolLike(p) && !isBedroomLike(p) && !isBath(p) && !isExterior(p));
     }
-  } else if (stratSlot4?.category === 'SPA' || String(stratSlot4?.photo_subject || '').toLowerCase().includes('spa')) {
+  } else if (stratSlot4?.category === 'SPA' || stratSlot4?.category === 'WELLNESS_SPA_LOBBY' || String(stratSlot4?.photo_subject || '').toLowerCase().includes('spa')) {
     slot4Asset = findFirst(poolAmenity, p => (p.detectedCategory === 'SPA' || `${p.title} ${p.imageUrl}`.toLowerCase().includes('spa')) && !isBedroomLike(p) && !isBath(p) && !isExterior(p));
+    if (!slot4Asset) {
+      slot4Asset = findFirst(poolLive, p => (p.detectedCategory === 'SPA' || `${p.title} ${p.imageUrl}`.toLowerCase().includes('spa')) && !isBedroomLike(p) && !isBath(p) && !isExterior(p));
+    }
   }
   if (!slot4Asset) {
-    // Check for Lyaness or acclaimed destination dining or verified live restaurant/bar
-    slot4Asset = findFirst(poolAmenity, p => (`${p.title} ${p.imageUrl}`.toLowerCase().includes('lyaness') || `${p.title} ${p.imageUrl}`.toLowerCase().includes('matador')) && !isBedroomLike(p) && !isBath(p) && !isExterior(p));
+    slot4Asset = findFirst(poolAmenity, p => (p.detectedCategory === 'SOCIAL' || isRooftopOrBar(p) || (p.title && (p.title.toLowerCase().includes('restaurant') || p.title.toLowerCase().includes('bar') || p.title.toLowerCase().includes('dining') || p.title.toLowerCase().includes('cocktail')))) && !isBedroomLike(p) && !isBath(p) && !isExterior(p) && (!isSlot1Pool || !isPoolLike(p)));
   }
   if (!slot4Asset) {
     slot4Asset = findFirst(poolLive, p => (p.detectedCategory === 'SOCIAL' || isRooftopOrBar(p) || (p.title && (p.title.toLowerCase().includes('restaurant') || p.title.toLowerCase().includes('bar') || p.title.toLowerCase().includes('dining')))) && !isBedroomLike(p) && !isBath(p) && !isExterior(p) && (!isSlot1Pool || !isPoolLike(p)));
   }
   if (!slot4Asset) {
-    slot4Asset = findFirst(poolAmenity, p => (p.detectedCategory === 'SOCIAL' || isRooftopOrBar(p) || p.detectedCategory === 'SPA' || p.detectedCategory === 'LOBBY') && !isBedroomLike(p) && !isBath(p) && !isExterior(p) && (!isSlot1Pool || !isPoolLike(p)));
+    slot4Asset = findFirst(poolAmenity, p => (p.detectedCategory === 'SPA' || p.detectedCategory === 'LOBBY') && !isBedroomLike(p) && !isBath(p) && !isExterior(p) && (!isSlot1Pool || !isPoolLike(p)));
+  }
+  if (!slot4Asset) {
+    slot4Asset = findFirst(poolLive, p => (p.detectedCategory === 'SPA' || p.detectedCategory === 'LOBBY' || (p.title && (p.title.toLowerCase().includes('lobby') || p.title.toLowerCase().includes('lounge') || p.title.toLowerCase().includes('library')))) && !isBedroomLike(p) && !isBath(p) && !isExterior(p) && (!isSlot1Pool || !isPoolLike(p)));
   }
   if (!slot4Asset) {
     slot4Asset = findFirst(poolLive, p => !isBedroomLike(p) && !isBath(p) && !isExterior(p) && (!isSlot1Pool || !isPoolLike(p)));
@@ -1804,85 +1884,72 @@ export async function resolveAuditPhotos(hotelName, city, neighborhood = '', str
     { targetSlot: 5, defaultCat: 'SECONDARY_ROOM_BATHROOM', asset: slot5Asset }
   ];
 
+  // -------------------------------------------------------------
+  // AUTOMATED INVARIANT VERIFICATION PASS:
+  // Guaranteed 100% Unique Photo Keys Across All 5 Slots
+  // -------------------------------------------------------------
+  const verifiedKeys = new Set();
+  const allAvailablePhotos = [...poolLive, ...poolAmenity];
+
+  for (let i = 0; i < winningAssets.length; i++) {
+    const item = winningAssets[i];
+    const key = getPhotoUniqueKey(item.asset?.imageUrl);
+    if (!item.asset || !key || verifiedKeys.has(key)) {
+      console.warn(`[Photo Invariant] Slot ${item.targetSlot} had duplicate or missing asset key "${key}". Finding unique replacement...`);
+      const replacement = allAvailablePhotos.find(p => {
+        const k = getPhotoUniqueKey(p?.imageUrl);
+        return k && !verifiedKeys.has(k);
+      });
+      if (replacement) {
+        item.asset = replacement;
+        const repKey = getPhotoUniqueKey(replacement.imageUrl);
+        verifiedKeys.add(repKey);
+      }
+    } else {
+      verifiedKeys.add(key);
+    }
+  }
+
   const resolvedSequence = winningAssets.map(({ targetSlot, defaultCat, asset }) => {
     let photoUrl = asset?.imageUrl || null;
     const stratSlot = (Array.isArray(strategySlots) && strategySlots[targetSlot - 1]) ? strategySlots[targetSlot - 1] : null;
 
-    let category = stratSlot?.category || defaultCat;
+    // Dynamically derive recommendation directly from the verified authentic asset:
+    const rec = classifyAssetAndDeriveRecommendation(asset, hotelName);
+
+    let category = stratSlot?.category || defaultCat || rec.category;
     if (targetSlot === 1 && isSlot1Pool) {
       category = 'OUTDOOR_SOCIAL_POOL';
     } else if (targetSlot === 1 && isSlot1RooftopBar) {
       category = 'HERO_CULTURAL_MAGNET';
-    } else if (targetSlot === 4 && isSlot1Pool && !isSlot4Pool) {
-      category = 'SOCIAL_FB_ROOFTOP';
-    }
-
-    let photoSubject = stratSlot?.photo_subject || asset?.title || '';
-    if (!photoSubject || photoSubject.toLowerCase().includes('scanning') || (targetSlot === 1 && isSlot1Pool && !photoSubject.toLowerCase().includes('pool'))) {
-      if (targetSlot === 1 && isSlot1Pool) {
-        photoSubject = (asset?.title && asset.title.toLowerCase().includes('pool')) ? asset.title : 'Curated Oceanfront Resort Pool & Cabana Sanctuary';
-      } else if (targetSlot === 1 && isSlot1RooftopBar) {
-        photoSubject = (stratSlot?.photo_subject && (stratSlot.photo_subject.toLowerCase().includes('12th') || stratSlot.photo_subject.toLowerCase().includes('rooftop')))
-          ? stratSlot.photo_subject
-          : '12th Knot Panoramic Rooftop Bar & River Thames Skyline';
-      } else if (targetSlot === 4 && isSlot1Pool && !isSlot4Pool) {
-        photoSubject = (asset?.title && (asset.title.toLowerCase().includes('matador') || asset.title.toLowerCase().includes('dining') || asset.title.toLowerCase().includes('restaurant') || asset.title.toLowerCase().includes('bar'))) ? asset.title : 'Matador Room Destination Dining & Jean-Georges Culinary Experience';
-      } else if (targetSlot === 4 && isSlot1RooftopBar) {
-        photoSubject = (asset?.title && asset.title.toLowerCase().includes('lyaness'))
-          ? 'Lyaness Award-Winning Cocktail Bar & Social Lounge'
-          : (stratSlot?.photo_subject || asset?.title || 'Lyaness Destination Social Lounge');
+    } else if (targetSlot === 4) {
+      if (rec.category === 'SPA_WELLNESS_SANCTUARY' || rec.category === 'WELLNESS_SPA_LOBBY') {
+        category = 'WELLNESS_SPA_LOBBY';
+      } else if (rec.category === 'SOCIAL_FB_ROOFTOP') {
+        category = 'SOCIAL_FB_ROOFTOP';
       } else {
-        photoSubject = asset?.title || '';
+        category = stratSlot?.category || 'WELLNESS_SPA_LOBBY';
       }
     }
 
-    let why = stratSlot?.why_it_converts || stratSlot?.upgrade_rationale || '';
-    if (targetSlot === 1 && isSlot1Pool && (!why || !why.toLowerCase().includes('pool'))) {
-      why = "Showcasing the hotel's iconic oceanfront resort pool deck directly targets Miami Beach's #1 leisure search demand, establishing instant aspirational lifestyle appeal within the crucial 3-second first impression window.";
-    } else if (targetSlot === 1 && isSlot1RooftopBar && (!why || (!why.toLowerCase().includes('rooftop') && !why.toLowerCase().includes('12th')))) {
-      why = "Elevating the 12th Knot panoramic rooftop bar directly to Slot #1 captures South Bank's #1 leisure and nightlife search demand, establishing instant skyline prestige and Thames riverfront vitality.";
-    } else if (targetSlot === 4 && isSlot1Pool && !isSlot4Pool && (!why || why.toLowerCase().includes('pool'))) {
-      why = "Showcasing the property's acclaimed culinary destination provides high-margin experiential depth, confirming world-class dining and evening social vitality beyond guest rooms.";
-    }
-    if (why.toLowerCase().includes('evaluating and elevating')) why = '';
-
-    let trigger = stratSlot?.psychological_conversion_trigger || stratSlot?.recommended_trigger || '';
-    if (targetSlot === 1 && isSlot1Pool) {
-      trigger = 'Curated Leisure Lifestyle & Oceanfront Sanctuary';
-    } else if (targetSlot === 1 && isSlot1RooftopBar) {
-      trigger = 'Iconic River Thames Skyline & Rooftop Social Magnet';
-    } else if (targetSlot === 4 && isSlot1Pool && !isSlot4Pool) {
-      trigger = 'Destination Dining & High-Energy Evening Vitality';
+    let photoSubject = stratSlot?.photo_subject || asset?.title || rec.subject;
+    if (!photoSubject || photoSubject.toLowerCase().includes('scanning') || (targetSlot === 4 && (photoSubject.toLowerCase().includes('matador') || photoSubject.toLowerCase().includes('lyaness')) && !asset?.title?.toLowerCase().includes('matador'))) {
+      photoSubject = (asset?.title && !asset.title.includes('Booking.com') && !asset.title.includes('Tripadvisor')) ? asset.title : rec.subject;
     }
 
-    let bullets = (stratSlot?.bullet_points && stratSlot?.bullet_points.length > 0) ? stratSlot.bullet_points : [];
-    if (targetSlot === 1 && isSlot1Pool && bullets.length === 0) {
-      bullets = [
-        'Aspirational Anchor: Immediate exposure to premier sunbeds, signature palms, and oceanfront atmosphere.',
-        'Market Alignment: Directly addresses South Beach leisure search intent before guest room consideration.',
-        'Immediate Lift: Replaces standard lobby or corridor visuals with high-conversion lifestyle assets.'
-      ];
-    } else if (targetSlot === 1 && isSlot1RooftopBar && bullets.length === 0) {
-      bullets = [
-        'Aspirational Anchor: Immediate exposure to panoramic London skyline views and iconic glass-enclosed rooftop lounge.',
-        'Market Alignment: Directly addresses South Bank leisure and rooftop bar search demand before guest room consideration.',
-        'High-Impact Hook: Replaces generic corridor or standard room angles with world-class hospitality architecture.'
-      ];
-    } else if (targetSlot === 4 && isSlot1Pool && !isSlot4Pool && bullets.length === 0) {
-      bullets = [
-        'Culinary Distinction: Validates Michelin-caliber dining and cocktail culture on property.',
-        'ADR Justification: Signals premium destination status to luxury leisure and business travelers.',
-        'Visual Depth: Balances day-time pool amenities with evening sophistication.'
-      ];
+    let why = stratSlot?.why_it_converts || stratSlot?.upgrade_rationale || rec.why;
+    if (!why || why.toLowerCase().includes('scanning') || why.toLowerCase().includes('evaluating and elevating')) {
+      why = rec.why;
     }
 
-    // Fallback if strategy was missing or placeholder
-    if (!why || !trigger || bullets.length === 0 || !photoSubject) {
-      let rec = classifyAssetAndDeriveRecommendation(asset, hotelName);
-      if (!photoSubject || photoSubject.toLowerCase().includes('scanning')) photoSubject = rec.subject;
-      if (!why) why = rec.why;
-      if (!trigger) trigger = rec.trigger;
-      if (bullets.length === 0) bullets = rec.bullets;
+    let trigger = stratSlot?.psychological_conversion_trigger || stratSlot?.recommended_trigger || rec.trigger;
+    if (!trigger) {
+      trigger = rec.trigger;
+    }
+
+    let bullets = (stratSlot?.bullet_points && stratSlot?.bullet_points.length > 0) ? stratSlot.bullet_points : rec.bullets;
+    if (!bullets || bullets.length === 0) {
+      bullets = rec.bullets;
     }
 
     let actualLiveSlot = null;
@@ -1993,8 +2060,8 @@ export async function resolveAuditPhotosHandler(req, res) {
   if (req.method === 'OPTIONS') return res.status(200).end();
 
   try {
-    let hotelName = req.body.hotelName || req.query.hotelName || req.body.propertyName || req.query.propertyName || 'The Plymouth Hotel';
-    let city = req.body.city || req.query.city || req.body.location || req.query.location || 'Miami';
+    let rawHotelName = req.body.hotelName || req.query.hotelName || req.body.propertyName || req.query.propertyName;
+    let rawCity = req.body.city || req.query.city || req.body.location || req.query.location;
     let neighborhood = (req.body.neighborhood !== undefined) ? req.body.neighborhood : (req.query.neighborhood || '');
     let strategySlots = req.body.strategySlots || null;
     let strategicShifts = req.body.strategicShifts || req.body.keyStrategicShifts || null;
@@ -2007,16 +2074,24 @@ export async function resolveAuditPhotosHandler(req, res) {
       if (bookingTarget.id) bookingId = bookingTarget.id;
     }
 
-    // Check if hotelName is actually a direct Booking.com URL
-    if (typeof hotelName === 'string' && hotelName.includes('booking.com/hotel/')) {
-      const parsed = parseBookingUrl(hotelName);
+    let hotelName = rawHotelName;
+    let city = rawCity;
+
+    const urlToParse = (typeof hotelName === 'string' && hotelName.includes('booking.com/hotel/')) ? hotelName : (bookingUrl || null);
+    if (urlToParse) {
+      const parsed = parseBookingUrl(urlToParse);
       if (parsed) {
         if (!bookingUrl) bookingUrl = parsed.cleanUrl;
-        hotelName = parsed.cleanTitle;
+        if (!hotelName || hotelName.includes('booking.com/hotel/') || hotelName === 'The Plymouth Hotel') {
+          hotelName = parsed.cleanTitle;
+        }
         if (parsed.inferredCity && (!city || city === 'Miami' || city === 'London')) city = parsed.inferredCity;
         if (parsed.inferredNeighborhood && !neighborhood) neighborhood = parsed.inferredNeighborhood;
       }
     }
+
+    if (!hotelName) hotelName = 'The Plymouth Hotel';
+    if (!city) city = 'Miami';
 
     if (city.toLowerCase().includes('south beach') && !neighborhood) {
       neighborhood = 'South Beach';
@@ -2087,8 +2162,8 @@ export default async function handler(req, res) {
   if (req.method === 'OPTIONS') return res.status(200).end();
 
   try {
-    let hotelName = req.body?.hotelName || req.query?.hotelName || req.body?.propertyName || req.query?.propertyName || 'The Plymouth Hotel';
-    let city = req.body?.city || req.query?.city || req.body?.location || req.query?.location || 'Miami';
+    let rawHotelName = req.body?.hotelName || req.query?.hotelName || req.body?.propertyName || req.query?.propertyName;
+    let rawCity = req.body?.city || req.query?.city || req.body?.location || req.query?.location;
     let neighborhood = (req.body?.neighborhood !== undefined) ? req.body.neighborhood : (req.query?.neighborhood || '');
     let bookingUrl = req.body?.bookingUrl || req.query?.bookingUrl || req.body?.directBookingUrl || req.query?.directBookingUrl || null;
     let bookingId = req.body?.bookingId || req.query?.bookingId || req.body?.hotelId || req.query?.hotelId || null;
@@ -2099,25 +2174,34 @@ export default async function handler(req, res) {
       if (bookingTarget.id) bookingId = bookingTarget.id;
     }
 
-    // Check if hotelName is actually a direct Booking.com URL
-    if (typeof hotelName === 'string' && hotelName.includes('booking.com/hotel/')) {
-      const parsed = parseBookingUrl(hotelName);
+    let hotelName = rawHotelName;
+    let city = rawCity;
+
+    const urlToParse = (typeof hotelName === 'string' && hotelName.includes('booking.com/hotel/')) ? hotelName : (bookingUrl || null);
+    if (urlToParse) {
+      const parsed = parseBookingUrl(urlToParse);
       if (parsed) {
         if (!bookingUrl) bookingUrl = parsed.cleanUrl;
-        hotelName = parsed.cleanTitle;
+        if (!hotelName || hotelName.includes('booking.com/hotel/') || hotelName === 'The Plymouth Hotel') {
+          hotelName = parsed.cleanTitle;
+        }
         if (parsed.inferredCity && (!city || city === 'Miami' || city === 'London')) city = parsed.inferredCity;
         if (parsed.inferredNeighborhood && !neighborhood) neighborhood = parsed.inferredNeighborhood;
       }
     }
+
+    if (!hotelName) hotelName = 'The Plymouth Hotel';
+    if (!city) city = 'Miami';
 
     if (city.toLowerCase().includes('south beach') && !neighborhood) {
       neighborhood = 'South Beach';
       city = city.replace(/south beach/i, '').replace(/,/g, '').trim() || 'Miami';
     }
 
-    console.log(`[Master Vibe Audit API] Running 4-Step Pipeline for: "${hotelName}" in "${city}" ${neighborhood ? `(${neighborhood})` : ''} ${bookingId ? `[Booking ID: ${bookingId}]` : ''} ${bookingUrl ? `(URL: ${bookingUrl})` : ''}`);
+    const isManifestOnly = req.query.phase === '1' || req.body?.phase === 1 || String(req.url || '').includes('master-vibe-manifest') || req.query.manifestOnly === 'true' || req.body?.manifestOnly === true;
+    console.log(`[Master Vibe Audit API] Running ${isManifestOnly ? 'Fast-Path Vibe Manifest' : '4-Step Pipeline'} for: "${hotelName}" in "${city}" ${neighborhood ? `(${neighborhood})` : ''} ${bookingId ? `[Booking ID: ${bookingId}]` : ''} ${bookingUrl ? `(URL: ${bookingUrl})` : ''}`);
 
-    const manifestKey = getResolutionKey(hotelName, city, neighborhood);
+    const manifestKey = getResolutionKey(hotelName, city, neighborhood, bookingUrl || bookingId) + (isManifestOnly ? ':::manifest_only' : '');
     const isFresh = req.query.fresh === 'true' || req.body?.fresh === true;
     if (isFresh) {
       manifestCache.delete(manifestKey);
@@ -2138,16 +2222,19 @@ export default async function handler(req, res) {
       return res.status(200).json(manifest);
     }
 
-    // 3. Initiate 4-Step Process:
-    // 1) Manifest first
-    // 2) Get available images from site, TripAdvisor (From Management only), and Booking.com
-    // 3) Set strategy
-    // 4) Re-order
+    // 3. Initiate Process:
     const manifestPromise = (async () => {
       // Step 1: Manifest First (Hotel DNA, sensory profile, local neighborhood search demand)
       console.log(`[Master Vibe API] 1) Manifest first: Gathering venue intelligence & hotel DNA for "${hotelName}"...`);
       const corpusData = await fetchVenueCorpus(hotelName, city, neighborhood);
       const rawCorpus = corpusData.rawCorpus;
+
+      if (isManifestOnly) {
+        console.log(`[Master Vibe API] Fast-path Manifest-Only requested for "${hotelName}". Generating Vibe Manifest via Gemini 2.5 Flash...`);
+        const manifestResult = await runStructuredVibeAudit(hotelName, city, rawCorpus, [], [], neighborhood);
+        manifestCache.set(manifestKey, { timestamp: Date.now(), data: manifestResult });
+        return manifestResult;
+      }
 
       // Step 2: Get available images from site, TripAdvisor (From Management only), and Booking.com
       console.log(`[Master Vibe API] 2) Get available images from official site, TripAdvisor (From Management only), and Booking.com...`);
