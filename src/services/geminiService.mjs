@@ -6,6 +6,146 @@ dotenv.config();
 
 const getApiKey = () => process.env.GEMINI_API_KEY || process.env.VITE_GEMINI_API_KEY;
 
+// Top-level helper for parallel image fetching with magic bytes validation and fast timeout
+export const downloadImageBase64 = async (url, timeoutMs = 2500) => {
+  try {
+    if (!url || typeof url !== 'string' || !url.startsWith('http')) return null;
+    const resp = await fetch(url, { 
+      headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' },
+      signal: AbortSignal.timeout(timeoutMs) 
+    });
+    if (!resp.ok) return null;
+    
+    const buffer = Buffer.from(await resp.arrayBuffer());
+    if (buffer.length < 1200) return null; // Ignore tiny icons / 1x1 pixels / empty shells
+
+    // Detect standard image types by magic bytes
+    let mimeType = null;
+    if (buffer[0] === 0xFF && buffer[1] === 0xD8 && buffer[2] === 0xFF) {
+      mimeType = 'image/jpeg';
+    } else if (buffer[0] === 0x89 && buffer[1] === 0x50 && buffer[2] === 0x4E && buffer[3] === 0x47) {
+      mimeType = 'image/png';
+    } else if (buffer[0] === 0x52 && buffer[1] === 0x49 && buffer[2] === 0x46 && buffer[3] === 0x46 && buffer.toString('ascii', 8, 12) === 'WEBP') {
+      mimeType = 'image/webp';
+    }
+
+    if (!mimeType) return null;
+
+    return {
+      base64: buffer.toString('base64'),
+      mimeType
+    };
+  } catch (err) {
+    // Quiet timeout or network issue
+  }
+  return null;
+};
+
+// Batched Gemini Multimodal Gatekeeper (Pass 2 of Two-Pass Filter)
+export async function runMultimodalImageClassification(candidatePhotos, hotelName = '') {
+  const apiKey = getApiKey();
+  if (!apiKey || apiKey.length < 20 || !Array.isArray(candidatePhotos) || candidatePhotos.length === 0) {
+    return new Map();
+  }
+
+  const genAI = new GoogleGenerativeAI(apiKey);
+  const model = genAI.getGenerativeModel({
+    model: 'gemini-2.5-flash',
+    generationConfig: {
+      responseMimeType: 'application/json',
+      responseSchema: {
+        type: 'OBJECT',
+        properties: {
+          classifications: {
+            type: 'ARRAY',
+            items: {
+              type: 'OBJECT',
+              properties: {
+                candidate_id: { type: 'INTEGER' },
+                primary_category: { type: 'STRING' },
+                is_exterior: { type: 'BOOLEAN' },
+                is_dining_or_bar: { type: 'BOOLEAN' },
+                has_bed: { type: 'BOOLEAN' },
+                has_bath: { type: 'BOOLEAN' },
+                has_window_light: { type: 'BOOLEAN' },
+                is_tight_food_macro: { type: 'BOOLEAN' },
+                best_fit_slot: { type: 'STRING' },
+                brief_visual_description: { type: 'STRING' }
+              },
+              required: ['candidate_id', 'primary_category', 'is_exterior', 'is_dining_or_bar', 'has_bed', 'has_bath', 'has_window_light', 'is_tight_food_macro', 'best_fit_slot', 'brief_visual_description']
+            }
+          }
+        },
+        required: ['classifications']
+      },
+      temperature: 0.1
+    }
+  });
+
+  // Limit to at most 16 candidates to optimize latency
+  const subset = candidatePhotos.slice(0, 16);
+  // Download thumbnails in parallel (downscale max1024x768 to max500 for fast ~150ms download)
+  const downloaded = await Promise.all(
+    subset.map(c => {
+      const thumbUrl = (c.imageUrl || c.url || '').replace(/\/max\d+x\d+\//, '/max500/');
+      return downloadImageBase64(thumbUrl, 2500);
+    })
+  );
+
+  const promptParts = [
+    {
+      text: `You are an expert hospitality visual gatekeeper for ${hotelName || 'this hotel'}.
+Analyze each of the following ${subset.length} hotel images and classify their true architectural and spatial nature based purely on VISUAL CONTENT.
+
+For each image, output an object with:
+- candidate_id (1-indexed matching image number)
+- primary_category: one of ["EXTERIOR_FACADE", "COURTYARD_OUTDOOR", "ROOFTOP_SKYLINE", "POOL_DECK", "RESTAURANT_DINING", "BAR_LOUNGE", "LOBBY_SOCIAL", "BEDROOM", "BATHROOM", "MEETING_CONFERENCE", "TIGHT_FOOD_MACRO", "GENERIC_OTHER"]
+- is_exterior: boolean (true ONLY if outdoors showing street, building facade, courtyard, grounds, or open sky)
+- is_dining_or_bar: boolean (true if restaurant, bar, cocktail lounge, dining room)
+- has_bed: boolean (true if sleeping bed is present)
+- has_bath: boolean (true if bathroom, tub, or shower is present)
+- has_window_light: boolean (true if natural daylight/window is visible)
+- is_tight_food_macro: boolean (true if camera is focused closely on food plates rather than the room)
+- best_fit_slot: one of ["SLOT_1_HERO_MAGNET", "SLOT_2_EXTERIOR", "SLOT_3_SUITE_BEDROOM", "SLOT_4_DINING_SOCIAL", "SLOT_5_BATHROOM", "DISQUALIFIED"]
+- brief_visual_description: string (e.g. "Indoor glass atrium dining room with tables and greenery")
+
+CRITICAL RULES:
+- An indoor dining room or restaurant with tables and chairs is NEVER an exterior, even if inside a historic building.
+- A street facade, courtyard, or outdoor building elevation IS an exterior.
+- A meeting room with a long boardroom table is MEETING_CONFERENCE, NOT a restaurant.
+- Disqualify meeting/conference rooms and tight food macro close-ups.`
+    }
+  ];
+
+  subset.forEach((c, idx) => {
+    const item = downloaded[idx];
+    promptParts.push({ text: `\n[IMAGE #${idx + 1} (Original Alt: "${c.title || ''}")]:` });
+    if (item && item.base64 && item.mimeType) {
+      promptParts.push({ inlineData: { data: item.base64, mimeType: item.mimeType } });
+    }
+  });
+
+  try {
+    const result = await model.generateContent(promptParts);
+    const parsed = JSON.parse(result.response.text());
+    const classificationMap = new Map();
+    if (Array.isArray(parsed.classifications)) {
+      parsed.classifications.forEach(cl => {
+        const orig = subset[cl.candidate_id - 1];
+        if (orig) {
+          const key = orig.imageUrl || orig.url;
+          classificationMap.set(key, cl);
+          if (orig.photoId) classificationMap.set(orig.photoId, cl);
+        }
+      });
+    }
+    return classificationMap;
+  } catch (err) {
+    console.warn('[Gemini Vision Gatekeeper] Error during classification:', err.message);
+    return new Map();
+  }
+}
+
 export async function runStructuredVibeAudit(hotelName, city, venueCorpus, livePhotos = [], amenityPhotos = [], neighborhood = '') {
   const apiKey = getApiKey();
   if (!apiKey || apiKey.length < 20) {
@@ -144,43 +284,6 @@ Synthesize this live data and return the complete Master Vibe Audit JSON payload
 
   console.log(`[Gemini] Preparing multimodal extraction request for ${hotelName}...`);
   const parts = [{ text: `${systemPrompt}\n\nCRITICAL OUTPUT FORMAT: Return a valid JSON object strictly conforming to the response schema.` }];
-
-  // Helper for parallel image fetching with magic bytes validation and fast 1.2s timeout
-  const downloadImageBase64 = async (url) => {
-    try {
-      if (!url || typeof url !== 'string' || !url.startsWith('http')) return null;
-      const resp = await fetch(url, { 
-        headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' },
-        signal: AbortSignal.timeout(1200) 
-      });
-      if (!resp.ok) return null;
-      
-      const buffer = Buffer.from(await resp.arrayBuffer());
-      if (buffer.length < 1200) return null; // Ignore tiny icons / 1x1 pixels / empty shells
-
-      // Detect standard image types by magic bytes
-      let mimeType = null;
-      if (buffer[0] === 0xFF && buffer[1] === 0xD8 && buffer[2] === 0xFF) {
-        mimeType = 'image/jpeg';
-      } else if (buffer[0] === 0x89 && buffer[1] === 0x50 && buffer[2] === 0x4E && buffer[3] === 0x47) {
-        mimeType = 'image/png';
-      } else if (buffer[0] === 0x52 && buffer[1] === 0x49 && buffer[2] === 0x46 && buffer[3] === 0x46 && buffer.toString('ascii', 8, 12) === 'WEBP') {
-        mimeType = 'image/webp';
-      }
-
-      if (!mimeType) {
-        return null;
-      }
-
-      return {
-        base64: buffer.toString('base64'),
-        mimeType
-      };
-    } catch (err) {
-      // Quiet timeout or network issue
-    }
-    return null;
-  };
 
   // 1. Concurrently fetch and attach Top Live Booking.com Photos for Multimodal Vision
   if (livePhotos && livePhotos.length > 0) {
