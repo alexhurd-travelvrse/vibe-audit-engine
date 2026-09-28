@@ -435,11 +435,23 @@ export default function BookingOtaAuditCard({ otaData, hotelName, isUnlocked, on
                         padding: '3px 8px', 
                         borderRadius: '6px'
                       }}>
-                        {isRetained 
-                          ? `Currently Slot #${wasSlot || slotNum}` 
-                          : wasSlot 
-                            ? `Was: Slot #${wasSlot}` 
-                            : 'Brand Media (New to OTA)'}
+                        {item.source_display_label || (
+                          isRetained 
+                            ? `Currently Slot #${wasSlot || slotNum}` 
+                            : wasSlot 
+                              ? `Was: Slot #${wasSlot} (Booking.com)` 
+                              : (() => {
+                                  try {
+                                    const u = new URL(photoImg);
+                                    const host = u.hostname.replace(/^www\./, '').toLowerCase();
+                                    if (host.includes('bstatic.com')) return wasSlot ? `Was: Slot #${wasSlot}` : 'Booking.com Live Gallery';
+                                    if (host.includes('tripadvisor.com')) return 'TripAdvisor (Management)';
+                                    return `Official Site (${host})`;
+                                  } catch (e) {
+                                    return 'Official Brand Asset';
+                                  }
+                                })()
+                        )}
                       </div>
                     </div>
                   ) : (

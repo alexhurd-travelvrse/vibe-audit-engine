@@ -85,13 +85,20 @@ MERCHANDISING SCORES & READABILITY BULLETS:
    - "projected_conversion_uplift": Calculated uplift estimate (e.g. "+18.5%" to "+24.0%").
 2. "key_strategic_shifts" (Overview Bullets):
    - Provide 3-4 high-impact, scannable bullet points explaining what is changing and WHY, explicitly linking the hotel's cultural DNA with neighborhood traveler search volume (e.g., "Shift 1: Elevate Subterranean Vinyl Hi-Fi Lounge to capture Soho's #1 nightlife search demand", "Shift 2: Move exterior facade to Slot #2 to anchor geographic orientation").
-3. "upgrade_rationale" & "bullet_points" (Visual Upgrade Justification):
-   - Whenever you bring in a new photo (source_type: "AMENITY_ASSET") or upgrade/replace an existing live photo:
+3. "upgrade_rationale" & "bullet_points" (Visual Upgrade & Re-sequencing Justification):
+   - IF source_type is "AMENITY_ASSET" (bringing in a new photo not on Booking.com):
      • "upgrade_rationale": Provide a direct, compelling 1-2 sentence explanation detailing EXACTLY why this new asset is visually and psychologically superior to what currently sits on Booking.com (e.g. "Upgrades from a flat, clinical side-angle with overhead fluorescent glare to a warm, sunlit central perspective with crisp reflections and luxury loungers that immediately convey 5-star sanctuary tranquility").
-     • In "bullet_points", format the 3 bullets as:
-       - Bullet 1: "Visual Upgrade: [Clear comparison of why this asset is superior in lighting, composition, emotional warmth, or architectural clarity over the live OTA photo]" (or "Strategic Placement: [Reason for re-sequencing]" if retaining a live photo).
-       - Bullet 2: "Local Synergy: [How this visual connects the property's authentic DNA with what travelers search for in this specific neighborhood]".
-       - Bullet 3: "Conversion Trigger: [The psychological mechanism triggering higher booking intent]".
+     • Bullet 1: "Visual Upgrade: [Clear comparison of why this asset is superior in lighting, composition, emotional warmth, or architectural clarity over the live OTA photo]".
+     • Bullet 2: "Local Synergy: [How this visual connects the property's authentic DNA with what travelers search for in this specific neighborhood]".
+     • Bullet 3: "Conversion Trigger: [The psychological mechanism triggering higher booking intent]".
+   - IF source_type is "LIVE_PHOTO" (retaining or re-sequencing an existing Booking.com photo, e.g. moving Live Photo #1 to Slot #2):
+     • CRITICAL: NEVER state that this photo is "superior to Live Photo #1" or "from a wider angle" when it literally IS Live Photo #1!
+     • "upgrade_rationale": Explain the STRATEGIC REPOSITIONING (e.g. "Strategic Repositioning (Moved from Live Slot #1): By elevating the signature cultural magnet to Slot #1, moving the hotel's authentic exterior facade to Slot #2 immediately grounds location and eliminates booking hesitation while preserving architectural prestige.").
+     • Bullet 1: "Strategic Placement: [Explain why moving or retaining this verified live photo in this exact slot improves user journey pacing]".
+     • Bullet 2: "Local Synergy: [How this visual connects the property's authentic DNA with what travelers search for in this specific neighborhood]".
+     • Bullet 3: "Conversion Trigger: [The psychological mechanism triggering higher booking intent]".
+   - CRITICAL BEDROOM / SUITE (SLOT #3) FIDELITY:
+     • Inspect the actual title and visual content of the chosen live photo. NEVER claim the photo has a "balcony", "panoramic river view", or is a "studio suite" unless the live photo title or image explicitly shows a window, balcony, or suite! If the photo depicts a king bed, accurately describe it (e.g. "Signature King Bedroom with Curated Textural Finishes & Ambient Lighting").
 
 PHOTOGRAPHIC GAP ANALYSIS (CREATIVE COMMISSIONING SCOPE):
 In addition to reordering and upgrading existing official visual assets into the optimal 5-photo sequence, analyze what high-conversion photographic assets are CURRENTLY MISSING from the hotel's entire visual ecosystem (official brand channels, TripAdvisor, and OTAs).

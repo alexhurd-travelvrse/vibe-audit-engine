@@ -1646,7 +1646,14 @@ export async function resolveAuditPhotos(hotelName, city, neighborhood = '', str
   const isExterior = (p) => {
     const s = `${p.title || ''} ${p.imageUrl || ''}`.toLowerCase();
     if (s.includes('balcony-suite') || s.includes('suite-') || s.includes('room-') || s.includes('bedroom')) return false;
-    return p.detectedCategory === 'EXTERIOR' || s.includes('exterior') || s.includes('facade') || s.includes('façade') || s.includes('building') || (s.includes('outside') && !s.includes('balcony')) || s.includes('aerial') || s.includes('marina') || s.includes('entrance') || s.includes('street view');
+    if (
+      s.includes('restaurant') || s.includes('dining') || s.includes('tables and chairs') ||
+      s.includes('table') || s.includes('chair') || s.includes('bar') || s.includes('cocktail') ||
+      s.includes('lounge') || s.includes('cafe') || s.includes('café') || s.includes('conference') ||
+      s.includes('meeting') || s.includes('kitchen') || s.includes('buffet') || s.includes('breakfast') ||
+      s.includes('lobby')
+    ) return false;
+    return p.detectedCategory === 'EXTERIOR' || s.includes('exterior') || s.includes('facade') || s.includes('façade') || s.includes('courtyard') || s.includes('grounds') || (s.includes('building') && !s.includes('in a building') && !s.includes('inside a building')) || (s.includes('outside') && !s.includes('balcony')) || s.includes('aerial') || s.includes('marina') || s.includes('entrance') || s.includes('street view');
   };
 
   const isBedroomLike = (p) => {
@@ -1812,8 +1819,8 @@ export async function resolveAuditPhotos(hotelName, city, neighborhood = '', str
     slot2Asset = findFirst(poolAmenity, p => (p.detectedCategory === 'EXTERIOR' || isExterior(p)) && !isBath(p) && !isPoolLike(p) && !isBedroomLike(p));
   }
   if (!slot2Asset) {
-    // If hotel exterior is visible in grounds or entrance shot, use that verified property photo
-    slot2Asset = findFirst(poolLive, p => (p.title && (p.title.toLowerCase().includes('hotel') || p.title.toLowerCase().includes('resort') || p.title.toLowerCase().includes('building') || p.title.toLowerCase().includes('entrance'))) && !isBath(p) && !isBedroomLike(p));
+    // If hotel exterior is visible in grounds, courtyard, or entrance shot, use that verified property photo
+    slot2Asset = findFirst(poolLive, p => (p.title && (p.title.toLowerCase().includes('courtyard') || p.title.toLowerCase().includes('grounds') || p.title.toLowerCase().includes('entrance') || p.title.toLowerCase().includes('street'))) && !isBath(p) && !isBedroomLike(p) && !isMeetingOrConference(p) && !isTightFoodMacro(p));
   }
   if (!slot2Asset) {
     slot2Asset = findFirst(poolLive, p => !isBath(p) && !isBedroomLike(p));
@@ -1822,8 +1829,16 @@ export async function resolveAuditPhotos(hotelName, city, neighborhood = '', str
     slot2Asset = findFirst(poolAmenity, p => !isBath(p) && !isBedroomLike(p));
   }
 
-  // Slot 3: Signature Suite / Bedroom (Strictly prefer verified live property photos!)
-  let slot3Asset = findFirst(poolLive, p => isBedroomLike(p) && !isBath(p) && !isExterior(p));
+  // Slot 3: Signature Suite / Bedroom (Strictly prefer verified live property photos with natural light / windows!)
+  // Priority 1: Verified bedroom or suite with window, view, balcony, or deluxe/signature tags
+  let slot3Asset = findFirst(poolLive, p => isBedroomLike(p) && (p.title || '').toLowerCase().match(/window|view|suite|balcony|terrace|river|deluxe|superior|signature/i) && !isBath(p) && !isExterior(p));
+  if (!slot3Asset) {
+    // Priority 2: Primary king/queen bedroom
+    slot3Asset = findFirst(poolLive, p => isBedroomLike(p) && (p.title || '').toLowerCase().match(/bedroom|king|queen|large|bed/i) && !isBath(p) && !isExterior(p));
+  }
+  if (!slot3Asset) {
+    slot3Asset = findFirst(poolLive, p => isBedroomLike(p) && !isBath(p) && !isExterior(p));
+  }
   if (!slot3Asset) {
     slot3Asset = findFirst(poolAmenity, p => isBedroomLike(p) && !isBath(p) && !isExterior(p));
   }
@@ -1937,6 +1952,16 @@ export async function resolveAuditPhotos(hotelName, city, neighborhood = '', str
       photoSubject = (asset?.title && !asset.title.includes('Booking.com') && !asset.title.includes('Tripadvisor')) ? asset.title : rec.subject;
     }
 
+    // Ground Slot 3 Subject: If asset does not have a balcony/riverview, avoid hallucinating balcony in title
+    if (targetSlot === 3) {
+      const assetTxt = `${asset?.title || ''} ${photoUrl || ''}`.toLowerCase();
+      if (!assetTxt.includes('balcony') && !assetTxt.includes('river') && photoSubject.toLowerCase().includes('balcony')) {
+        photoSubject = assetTxt.includes('window') 
+          ? 'Signature King Bedroom with Window & Natural Light'
+          : 'Signature King Bedroom with Curated Textural Finishes';
+      }
+    }
+
     let why = stratSlot?.why_it_converts || stratSlot?.upgrade_rationale || rec.why;
     if (!why || why.toLowerCase().includes('scanning') || why.toLowerCase().includes('evaluating and elevating')) {
       why = rec.why;
@@ -1947,15 +1972,36 @@ export async function resolveAuditPhotos(hotelName, city, neighborhood = '', str
       trigger = rec.trigger;
     }
 
-    let bullets = (stratSlot?.bullet_points && stratSlot?.bullet_points.length > 0) ? stratSlot.bullet_points : rec.bullets;
+    let bullets = (stratSlot?.bullet_points && stratSlot?.bullet_points.length > 0) ? [...stratSlot.bullet_points] : [...rec.bullets];
     if (!bullets || bullets.length === 0) {
-      bullets = rec.bullets;
+      bullets = [...rec.bullets];
     }
 
     let actualLiveSlot = null;
     if (photoUrl) {
       const liveIdx = liveBookingPhotos.findIndex(lp => lp.imageUrl === photoUrl);
       actualLiveSlot = liveIdx !== -1 ? (liveIdx + 1) : null;
+    }
+
+    // Fix Slot 2 Logic Paradox: If moving Live Photo #1 to Slot #2, sanitize rationale
+    if (targetSlot === 2 && actualLiveSlot === 1) {
+      if (why.toLowerCase().includes('superior to') || why.toLowerCase().includes('wider angle') || why.toLowerCase().includes('live photo #1')) {
+        why = "Strategic Repositioning (Moved from Live Slot #1): By elevating the signature cultural magnet to Slot #1, moving the hotel's authentic exterior facade to Slot #2 immediately grounds location and eliminates booking hesitation while preserving architectural prestige.";
+      }
+      if (bullets && bullets.length > 0 && (bullets[0].toLowerCase().includes('superior to') || bullets[0].toLowerCase().includes('wider angle'))) {
+        bullets[0] = "Strategic Placement: Repositioned from Live Slot #1 to Slot #2 to immediately resolve location anxiety right after the experiential hook.";
+      }
+    }
+
+    // Fix Slot 3 Logic Paradox: If bedroom has no balcony/riverview, avoid claiming balcony/riverview in rationale
+    if (targetSlot === 3) {
+      const assetTxt = `${asset?.title || ''} ${photoUrl || ''}`.toLowerCase();
+      if (!assetTxt.includes('balcony') && !assetTxt.includes('river') && (why.toLowerCase().includes('balcony') || why.toLowerCase().includes('river view'))) {
+        why = "Showcases the hotel's signature guest room with natural light and bespoke design finishes, confirming private sanctuary comfort and finish quality.";
+        if (bullets && bullets.length > 0) {
+          bullets[0] = "Visual Upgrade: Showcases a spacious, design-forward signature bedroom highlighting private comfort and finish quality.";
+        }
+      }
     }
 
     const isRetained = actualLiveSlot === targetSlot;
@@ -1998,6 +2044,28 @@ export async function resolveAuditPhotos(hotelName, city, neighborhood = '', str
       }
     }
 
+    // Precise Source Attribution
+    let sourceDisplayLabel = '';
+    let sourceDomain = '';
+    if (actualLiveSlot) {
+      sourceDisplayLabel = `Was: Slot #${actualLiveSlot} (Booking.com)`;
+      sourceDomain = 'booking.com';
+    } else if (photoUrl) {
+      try {
+        const parsed = new URL(photoUrl);
+        sourceDomain = parsed.hostname.replace(/^www\./, '').toLowerCase();
+        if (sourceDomain.includes('bstatic.com')) {
+          sourceDisplayLabel = actualLiveSlot ? `Was: Slot #${actualLiveSlot}` : 'Booking.com Live Gallery';
+        } else if (sourceDomain.includes('tripadvisor.com')) {
+          sourceDisplayLabel = 'TripAdvisor (Management)';
+        } else {
+          sourceDisplayLabel = `Official Site (${sourceDomain})`;
+        }
+      } catch (e) {
+        sourceDisplayLabel = 'Official Brand Site';
+      }
+    }
+
     return {
       slot: targetSlot,
       category,
@@ -2014,6 +2082,8 @@ export async function resolveAuditPhotos(hotelName, city, neighborhood = '', str
       is_swapped_in: isSwappedIn,
       action,
       action_label: actionLabel,
+      source_display_label: sourceDisplayLabel,
+      source_domain: sourceDomain,
       current_photo: actualLiveSlot ? liveBookingPhotos[actualLiveSlot - 1] : null
     };
   });
