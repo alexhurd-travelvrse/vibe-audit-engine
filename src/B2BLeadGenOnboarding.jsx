@@ -213,6 +213,50 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
     setStep(initialStep);
   }, [initialStep]);
 
+  // Handle URL query parameter auto-execution (e.g. from Hero Action Box)
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const params = new URLSearchParams(window.location.search);
+    const urlParam = params.get('bookingUrl') || params.get('url') || params.get('q');
+    if (!urlParam) return;
+
+    const parsed = parseBookingUrl(urlParam);
+    let targetHotel = '';
+    let targetCity = 'London';
+    let targetNeighborhood = '';
+    let directBookingUrl = null;
+
+    if (parsed) {
+      targetHotel = parsed.cleanTitle;
+      targetCity = parsed.inferredCity || 'London';
+      targetNeighborhood = parsed.inferredNeighborhood || '';
+      directBookingUrl = parsed.cleanUrl;
+    } else if (urlParam.startsWith('http')) {
+      directBookingUrl = urlParam;
+      targetHotel = urlParam;
+    } else {
+      targetHotel = urlParam.trim();
+    }
+
+    setFormData(prev => ({
+      ...prev,
+      propertyName: targetHotel || prev.propertyName,
+      city: targetCity || prev.city,
+      neighborhood: targetNeighborhood || prev.neighborhood,
+      bookingId: directBookingUrl || urlParam || prev.bookingId
+    }));
+
+    if (targetHotel || directBookingUrl) {
+      executeAudit(
+        targetHotel || 'Featured Hotel',
+        targetCity,
+        targetNeighborhood,
+        directBookingUrl,
+        null
+      );
+    }
+  }, []);
+
   useEffect(() => {
     let interval;
     if (step === 'processing') {

@@ -246,7 +246,7 @@ export const KNOWN_BENCHMARK_PROPERTIES = [
     title: 'The Plymouth South Beach Miami'
   },
   {
-    aliases: ['sea containers', 'sea containers london', 'seacontainers'],
+    aliases: ['sea containers', 'sea containers london', 'seacontainers', 'sea conainers', 'sea conainers london', 'sea conainer'],
     city: 'london',
     slug: 'sea-containers-london',
     url: 'https://www.booking.com/hotel/gb/sea-containers-london.html',
@@ -732,7 +732,7 @@ export async function fetchBookingPhotosForHotel(hotelName, city, neighborhood =
 // Dynamic Amenity Photo Fetcher: Strictly pulls ONLY from Official Hotel Website, TripAdvisor, and Official Social Posts
 export async function fetchAmenityPhotosForHotel(hotelName, city, neighborhood = '', strategySlots = null, strategicShifts = null) {
   try {
-    const cleanHotelName = (hotelName || '')
+    let cleanHotelName = (hotelName || '')
       .replace(/\s*[-–|].*Booking\.com.*/i, '')
       .replace(/\s*[-–|].*prices.*/i, '')
       .replace(/\s*[-–|].*Updated.*202\d.*/i, '')
@@ -755,8 +755,9 @@ export async function fetchAmenityPhotosForHotel(hotelName, city, neighborhood =
       parentBrand = 'marriott.com';
     } else if (lowerName.includes('plymouth')) {
       officialDomain = 'theplymouth.com';
-    } else if (lowerName.includes('sea containers') || lowerName.includes('seacontainers')) {
+    } else if (lowerName.includes('sea container') || lowerName.includes('sea conainer') || lowerName.includes('seacontainer')) {
       officialDomain = 'seacontainerslondon.com';
+      cleanHotelName = 'Sea Containers London';
     } else if (lowerName.includes('1 hotel')) {
       officialDomain = '1hotels.com';
       parentBrand = '1hotels.com';
@@ -2028,6 +2029,68 @@ export async function resolveAuditPhotos(hotelName, city, neighborhood = '', str
       }
     }
 
+    // Truth-in-Labeling Guards: Never label a fallback photo with an unverified strategy title
+    const v = getVisual(asset);
+    const assetTitleLower = (asset?.title || '').toLowerCase();
+
+    // Slot 1: If strategy called for Rooftop/Bar, but asset is NOT a bar/rooftop (e.g. river view)
+    if (targetSlot === 1 && isSlot1RooftopBar) {
+      const isActuallyBar = (v && (v.primary_category === 'BAR_LOUNGE' || v.primary_category === 'ROOFTOP_SKYLINE' || v.is_dining_or_bar)) ||
+                            assetTitleLower.includes('bar') || assetTitleLower.includes('rooftop') || assetTitleLower.includes('12th') || assetTitleLower.includes('knot') || assetTitleLower.includes('cocktail') || assetTitleLower.includes('lyaness');
+      if (!isActuallyBar) {
+        if (v && v.brief_visual_description) {
+          photoSubject = v.brief_visual_description;
+        } else if (asset?.title && !asset.title.includes('Booking.com')) {
+          photoSubject = asset.title.replace(/\s*at\s+.*$/i, '').trim();
+        } else {
+          photoSubject = 'Signature Panoramic Destination Setting';
+        }
+      }
+    }
+
+    // Slot 2: If strategy called for Exterior, but asset is NOT exterior
+    if (targetSlot === 2) {
+      const isActuallyExt = isExterior(asset);
+      if (!isActuallyExt) {
+        if (v && v.brief_visual_description) {
+          photoSubject = v.brief_visual_description;
+        } else if (asset?.title && !asset.title.includes('Booking.com')) {
+          photoSubject = asset.title.replace(/\s*at\s+.*$/i, '').trim();
+        } else {
+          photoSubject = 'Signature Interior Design & Arrival Space';
+        }
+      }
+    }
+
+    // Slot 4: If strategy called for Spa or Lobby, but asset is generic
+    if (targetSlot === 4) {
+      const isActuallySpaOrLobby = (v && (v.primary_category === 'LOBBY_SOCIAL' || v.primary_category === 'WELLNESS_SPA_LOBBY')) ||
+                                   assetTitleLower.includes('spa') || assetTitleLower.includes('lobby') || assetTitleLower.includes('reception') || assetTitleLower.includes('bar') || assetTitleLower.includes('restaurant') || assetTitleLower.includes('dining');
+      if (!isActuallySpaOrLobby) {
+        if (v && v.brief_visual_description) {
+          photoSubject = v.brief_visual_description;
+        } else if (asset?.title && !asset.title.includes('Booking.com')) {
+          photoSubject = asset.title.replace(/\s*at\s+.*$/i, '').trim();
+        } else {
+          photoSubject = 'Curated Lounge & Public Living Space';
+        }
+      }
+    }
+
+    // Slot 5: If strategy called for Luxury Bathroom, but asset has NO bathroom
+    if (targetSlot === 5) {
+      const isActuallyBath = (v && v.has_bath) || assetTitleLower.includes('bath') || assetTitleLower.includes('shower') || assetTitleLower.includes('tub');
+      if (!isActuallyBath) {
+        if (v && v.brief_visual_description) {
+          photoSubject = v.brief_visual_description;
+        } else if (asset?.title && !asset.title.includes('Booking.com')) {
+          photoSubject = asset.title.replace(/\s*at\s+.*$/i, '').trim();
+        } else {
+          photoSubject = 'Curated Living Space & Guest Sanctuary';
+        }
+      }
+    }
+
     let why = stratSlot?.why_it_converts || stratSlot?.upgrade_rationale || rec.why;
     if (!why || why.toLowerCase().includes('scanning') || why.toLowerCase().includes('evaluating and elevating')) {
       why = rec.why;
@@ -2220,9 +2283,25 @@ export async function resolveAuditPhotosHandler(req, res) {
         if (!bookingUrl) bookingUrl = parsed.cleanUrl;
         if (!hotelName || hotelName.includes('booking.com/hotel/') || hotelName === 'The Plymouth Hotel') {
           hotelName = parsed.cleanTitle;
+        } else {
+          const normInput = (hotelName || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+          const normTitle = (parsed.cleanTitle || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+          const normSlug = (parsed.slug || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+          if (normTitle.includes(normInput) || normSlug.includes(normInput) || normInput.includes(normSlug) || normInput.includes('seaconain') || normInput.includes('seacontain')) {
+            hotelName = parsed.cleanTitle;
+          }
         }
         if (parsed.inferredCity && (!city || city === 'Miami' || city === 'London')) city = parsed.inferredCity;
         if (parsed.inferredNeighborhood && !neighborhood) neighborhood = parsed.inferredNeighborhood;
+      }
+    }
+
+    for (const prop of KNOWN_BENCHMARK_PROPERTIES) {
+      const nameLower = (hotelName || '').toLowerCase().trim();
+      if (prop.aliases.some(a => nameLower.includes(a) || a.includes(nameLower))) {
+        hotelName = prop.title;
+        if (!bookingUrl) bookingUrl = prop.url;
+        break;
       }
     }
 
@@ -2320,9 +2399,25 @@ export default async function handler(req, res) {
         if (!bookingUrl) bookingUrl = parsed.cleanUrl;
         if (!hotelName || hotelName.includes('booking.com/hotel/') || hotelName === 'The Plymouth Hotel') {
           hotelName = parsed.cleanTitle;
+        } else {
+          const normInput = (hotelName || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+          const normTitle = (parsed.cleanTitle || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+          const normSlug = (parsed.slug || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+          if (normTitle.includes(normInput) || normSlug.includes(normInput) || normInput.includes(normSlug) || normInput.includes('seaconain') || normInput.includes('seacontain')) {
+            hotelName = parsed.cleanTitle;
+          }
         }
         if (parsed.inferredCity && (!city || city === 'Miami' || city === 'London')) city = parsed.inferredCity;
         if (parsed.inferredNeighborhood && !neighborhood) neighborhood = parsed.inferredNeighborhood;
+      }
+    }
+
+    for (const prop of KNOWN_BENCHMARK_PROPERTIES) {
+      const nameLower = (hotelName || '').toLowerCase().trim();
+      if (prop.aliases.some(a => nameLower.includes(a) || a.includes(nameLower))) {
+        hotelName = prop.title;
+        if (!bookingUrl) bookingUrl = prop.url;
+        break;
       }
     }
 

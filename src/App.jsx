@@ -3,8 +3,11 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import { HelmetProvider } from 'react-helmet-async';
 import Layout from './components/Layout';
 import Hero from './components/Hero';
-import ServiceOfferingSection from './components/ServiceOfferingSection';
-import DataApiSection from './components/DataApiSection';
+import HookTeaserSection from './components/HookTeaserSection';
+import ProblemSection from './components/ProblemSection';
+import HowItWorksSection from './components/HowItWorksSection';
+import ComparisonBlock from './components/ComparisonBlock';
+import MidPageCta from './components/MidPageCta';
 import MarketsSection from './components/MarketsSection';
 import BlogJournal from './components/BlogJournal';
 import TeamSection from './components/TeamSection';
@@ -31,25 +34,34 @@ const ScrollToTop = () => {
 const B2BHome = () => {
   return (
     <Layout>
-      {/* 1. Hero */}
+      {/* 1. Hero Section (The Photo Wedge Hook & Frictionless Input) */}
       <Hero />
-      
-      {/* 2. Service Offering, Transformation Graphic & Dual Tables */}
-      <ServiceOfferingSection />
 
-      {/* 3. Enterprise Data API & Travelvrse Case Study */}
-      <DataApiSection />
+      {/* 2. The Hook Teaser: What Gets Unlocked (Instant Free vs Full Vibe Fingerprint) */}
+      <HookTeaserSection />
 
-      {/* 4. Global Market Intelligence & Vibe Benchmarks */}
+      {/* 3. The Problem: The First 5 Photos Kill Your Conversion (74% & 80% stats) */}
+      <ProblemSection />
+
+      {/* 4. How It Works (3-Step Flow) */}
+      <HowItWorksSection />
+
+      {/* 5. Proof / Comparison Block (Option B: Magnet Override) */}
+      <ComparisonBlock />
+
+      {/* 6. Mid-Page Call to Action */}
+      <MidPageCta />
+
+      {/* 7. Global Market Intelligence & Vibe Benchmarks */}
       <MarketsSection />
 
-      {/* 5. Journal */}
+      {/* 8. Journal */}
       <BlogJournal />
       
-      {/* 6. Team */}
+      {/* 9. Team */}
       <TeamSection />
       
-      {/* 7. Footer */}
+      {/* 10. Footer */}
       <Footer />
     </Layout>
   );

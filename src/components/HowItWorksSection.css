@@ -1,30 +1,172 @@
-.how-it-works-section {
-    background-color: #050b14;
-    position: relative;
+.how-it-works-streamlined {
+  padding: 6rem 1.5rem;
+  background: linear-gradient(180deg, #050b14 0%, #081528 50%, #050b14 100%);
+  position: relative;
 }
 
-.responsive-grid-reversed {
-    display: flex;
-    flex-direction: column-reverse;
-    gap: 40px;
-    align-items: center;
+.hiw-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 3.5rem auto;
 }
 
-@media (min-width: 992px) {
-    .responsive-grid-reversed {
-        display: grid;
-        grid-template-columns: 1fr 1.2fr;
-        gap: 80px;
-    }
+.hiw-badge {
+  display: inline-block;
+  padding: 4px 14px;
+  background: rgba(0, 229, 255, 0.08);
+  border: 1px solid rgba(0, 229, 255, 0.25);
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--color-cyan-neon, #00e5ff);
+  margin-bottom: 1rem;
 }
 
-.section-title {
-    font-size: 2.2rem;
-    line-height: 1.2;
+.hiw-title {
+  font-size: clamp(2rem, 4.2vw, 3rem);
+  font-weight: 800;
+  line-height: 1.2;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.hiw-subtitle {
+  font-size: 1.05rem;
+  color: rgba(230, 241, 255, 0.7);
+  line-height: 1.5;
+}
+
+.hiw-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
+  max-width: 1100px;
+  margin: 0 auto 3.5rem auto;
 }
 
 @media (min-width: 768px) {
-    .section-title {
-        font-size: 2.5rem;
-    }
+  .hiw-cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.hiw-step-card {
+  background: rgba(10, 25, 47, 0.65);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 20px;
+  padding: 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hiw-step-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(0, 229, 255, 0.35);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 25px rgba(0, 229, 255, 0.1);
+}
+
+.step-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.step-number {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.2);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.step-type-badge {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(230, 241, 255, 0.7);
+}
+
+.step-icon-bubble {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.step-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.step-body {
+  font-size: 0.95rem;
+  color: rgba(230, 241, 255, 0.72);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.hiw-action-strip {
+  max-width: 800px;
+  margin: 0 auto;
+  background: rgba(0, 229, 255, 0.05);
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  border-radius: 16px;
+  padding: 1.25rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  .hiw-action-strip {
+    flex-direction: row;
+    text-align: left;
+  }
+}
+
+.strip-text {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.strip-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.75rem 1.4rem;
+  background: var(--color-cyan-neon, #00e5ff);
+  color: #050b14;
+  border-radius: 10px;
+  font-size: 0.92rem;
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 15px rgba(0, 229, 255, 0.3);
+}
+
+.strip-cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(0, 229, 255, 0.5);
+  background: #33ebff;
 }
