@@ -50,6 +50,18 @@ const Hero = () => {
                     <div className="hero-eyebrow-badge">
                         <Sparkles size={14} className="text-cyan" />
                         <span>ATMOSVIBE // VIBE CONVERSION FOR HOTELS &amp; TRAVEL BRANDS</span>
+                        <span style={{
+                            fontSize: '0.62rem',
+                            fontWeight: '900',
+                            letterSpacing: '1.5px',
+                            color: '#050b14',
+                            background: 'var(--color-gold, #ffd700)',
+                            padding: '2px 7px',
+                            borderRadius: '4px',
+                            textTransform: 'uppercase',
+                            marginLeft: '6px',
+                            boxShadow: '0 0 10px rgba(255, 215, 0, 0.4)'
+                        }}>BETA</span>
                     </div>
 
                     <h1 className="hero-headline">
@@ -105,8 +117,8 @@ const Hero = () => {
                         <button type="button" onClick={() => handleQuickTry('https://www.booking.com/hotel/us/the-plymouth-miami-beach.html')} className="sample-chip">
                             The Plymouth Miami Beach
                         </button>
-                        <button type="button" onClick={() => handleQuickTry('https://www.booking.com/hotel/us/twoninezeroone-collinsave.html')} className="sample-chip">
-                            The Miami Beach EDITION
+                        <button type="button" onClick={() => handleQuickTry('https://www.booking.com/hotel/dk/25hours-indre-by.html')} className="sample-chip">
+                            25hours Hotel Copenhagen
                         </button>
                     </div>
                 </div>

@@ -310,6 +310,13 @@ export const KNOWN_BENCHMARK_PROPERTIES = [
     title: 'SLS South Beach Miami'
   },
   {
+    aliases: ['25hours', '25 hours', '25hours copenhagen', '25 hours copenhagen', '25hours hotel copenhagen', '25hours hotel indre by', '25hours indre by'],
+    city: 'copenhagen',
+    slug: '25hours-indre-by',
+    url: 'https://www.booking.com/hotel/dk/25hours-indre-by.html',
+    title: '25hours Hotel Indre By Copenhagen'
+  },
+  {
     aliases: ['dukes the palm', 'dukes dubai', 'dukes palm', 'dukes'],
     city: 'dubai',
     slug: 'dukes',
