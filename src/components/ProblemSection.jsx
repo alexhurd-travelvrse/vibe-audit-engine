@@ -70,7 +70,7 @@ export default function ProblemSection() {
           </div>
           <div className="banner-action-col">
             <Link to="/audit" className="banner-fix-btn">
-              <span>Fix Your Order</span>
+              <span>Make My Listing Stand Out</span>
               <ArrowRight size={16} />
             </Link>
           </div>

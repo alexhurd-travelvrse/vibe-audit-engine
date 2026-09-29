@@ -3,9 +3,22 @@ import auditHandler from './api/audit.js';
 import auditHotelHandler from './api/audit-hotel.js';
 import cors from 'cors';
 
+import masterVibeAuditHandler, { resolveAuditPhotosHandler, lookupHotelCandidatesHandler, verifyBotAndRateLimit } from './api/master-vibe-audit.js';
+import hotelAuditHandler from './api/hotel-audit.js';
+
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+// Global Bot & Rate Limit Defense Middleware
+app.use((req, res, next) => {
+    if (req.path.startsWith('/api/proxy-image') || req.path === '/') return next();
+    if (req.path.startsWith('/api/')) {
+        const allowed = verifyBotAndRateLimit(req, res);
+        if (!allowed) return;
+    }
+    next();
+});
 
 process.on('uncaughtException', (err) => {
     console.error('[Server Uncaught Exception]:', err.message);
@@ -27,12 +40,10 @@ app.post('/api/audit', async (req, res) => {
     await auditHandler(req, res);
 });
 
-import hotelAuditHandler from './api/hotel-audit.js';
 app.post('/api/hotel-audit', async (req, res) => {
     await hotelAuditHandler(req, res);
 });
 
-import masterVibeAuditHandler, { resolveAuditPhotosHandler, lookupHotelCandidatesHandler } from './api/master-vibe-audit.js';
 app.all('/api/master-vibe-audit', async (req, res) => {
     await masterVibeAuditHandler(req, res);
 });

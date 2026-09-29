@@ -7,21 +7,21 @@ const STEPS = [
   {
     num: "01",
     title: "Paste Your Listing",
-    body: "Drop in your Booking.com or OTA URL.",
+    body: "Drop in your Booking.com or OTA listing URL.",
     icon: <Link2 size={24} className="text-cyan" />,
     badge: "INSTANT INPUT"
   },
   {
     num: "02",
-    title: "AI Vibe & Visual Re-Sequence",
-    body: "Our engine analyzes your imagery against emotional dwell metrics and re-sequences your gallery to lead with high-vibe sensory anchors.",
+    title: "Map to Local Dynamics",
+    body: "Our engine analyzes your imagery against local neighborhood rhythms and emotional dwell metrics, re-sequencing your gallery to lead with high-vibe sensory anchors.",
     icon: <Cpu size={24} className="text-gold" />,
-    badge: "SENSORY ANALYSIS"
+    badge: "LOCAL DYNAMICS"
   },
   {
     num: "03",
-    title: "Unlock Your Vibe Fingerprint™",
-    body: "See your top visual fix immediately, then unlock your full multi-channel conversion pack—from direct booking copy to AI travel search indexing.",
+    title: "Unlock Your Vibe Signature",
+    body: "Preview your top visual re-sequence immediately, then unlock the full multi-channel content pack that makes your brand stand out across direct web, pre-stay comms, and AI travel search.",
     icon: <Sparkles size={24} className="text-cyan" />,
     badge: "MULTI-CHANNEL PACK"
   }
@@ -39,7 +39,7 @@ export default function HowItWorksSection() {
             How It <span className="text-cyan">Works</span>
           </h2>
           <p className="hiw-subtitle">
-            From raw listing URL to high-converting photo order in three simple steps.
+            From commodity listing to a standout, multi-channel Vibe Signature in three simple steps.
           </p>
         </div>
 
@@ -66,7 +66,7 @@ export default function HowItWorksSection() {
             Ready to test your property? It takes under 60 seconds.
           </div>
           <Link to="/audit" className="strip-cta-btn">
-            <span>Test My Listing Now</span>
+            <span>Unlock My Vibe Signature</span>
             <ArrowRight size={16} />
           </Link>
         </div>

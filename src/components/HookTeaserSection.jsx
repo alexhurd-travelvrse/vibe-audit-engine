@@ -18,7 +18,7 @@ export default function HookTeaserSection() {
             The Hook Teaser: <span className="text-gold-gradient">What Gets Unlocked</span>
           </h2>
           <p className="teaser-description">
-            Start with an immediate visual fix for your OTA scroll rate, then claim your hotel to unlock full multi-channel vibe intelligence.
+            Start by re-sequencing your visual anchors, then unlock your complete Vibe Signature mapped to local dynamics to make your brand stand out across all channels.
           </p>
         </div>
 
@@ -34,7 +34,7 @@ export default function HookTeaserSection() {
 
             <div className="tier-content">
               <h3 className="tier-heading">The OTA Photo Sequence Fix</h3>
-              <p className="tier-subtext">Immediate diagnostic results generated in seconds directly from your live listing URL.</p>
+              <p className="tier-subtext">Immediate sensory photo re-sequencing mapped to local neighborhood search demand.</p>
 
               <div className="tree-structure">
                 <div className="tree-item">
@@ -69,7 +69,7 @@ export default function HookTeaserSection() {
 
             <div className="card-footer">
               <Link to="/audit" className="tier-cta-btn free-btn">
-                <span>Run Instant Free Audit</span>
+                <span>Preview My Vibe Signature Free</span>
                 <ArrowRight size={16} />
               </Link>
             </div>
@@ -83,8 +83,8 @@ export default function HookTeaserSection() {
             </div>
 
             <div className="tier-content">
-              <h3 className="tier-heading">The Full Conversion Engine</h3>
-              <p className="tier-subtext">Comprehensive acoustic, narrative, and AI search assets to power direct bookings across channels.</p>
+              <h3 className="tier-heading">The Full Multi-Channel Engine</h3>
+              <p className="tier-subtext">Comprehensive acoustic, narrative, and AI search assets to make your brand stand out and power direct bookings across channels.</p>
 
               <div className="tree-structure">
                 <div className="tree-item">
@@ -131,7 +131,7 @@ export default function HookTeaserSection() {
 
             <div className="card-footer">
               <Link to="/audit" className="tier-cta-btn pro-btn">
-                <span>Preview &amp; Claim Property</span>
+                <span>Unlock Full Vibe Fingerprint™</span>
                 <ArrowRight size={16} />
               </Link>
             </div>

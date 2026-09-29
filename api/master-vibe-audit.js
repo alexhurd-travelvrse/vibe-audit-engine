@@ -7,15 +7,65 @@ dotenv.config();
 
 const SERPER_API_KEY = process.env.VITE_SERPER_API_KEY || process.env.SERPER_API_KEY;
 
-// In-Flight Phase 2 Concurrency Mutex & Cache
+// In-Flight Phase 2 Concurrency Mutex & Cache (24-Hour Persistence)
 const activeResolutions = new Map();
 const resolutionCache = new Map();
-const RESOLUTION_CACHE_TTL_MS = 15 * 1000; // 15 seconds debounce TTL
+const RESOLUTION_CACHE_TTL_MS = 24 * 60 * 60 * 1000; // 24-hour persistent cache
 
-// In-Flight Phase 1 Concurrency Mutex & Cache
+// In-Flight Phase 1 Concurrency Mutex & Cache (24-Hour Persistence)
 const activeManifests = new Map();
 const manifestCache = new Map();
-const MANIFEST_CACHE_TTL_MS = 15 * 1000; // 15 seconds debounce TTL
+const MANIFEST_CACHE_TTL_MS = 24 * 60 * 60 * 1000; // 24-hour persistent cache
+
+// --- BOT DEFENSE & IP RATE LIMITING GUARD ---
+const ipRequestHistory = new Map();
+const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000; // 10 minutes rolling window
+const MAX_REQUESTS_PER_WINDOW = 12; // Max 12 audits per 10 mins per IP
+
+export function verifyBotAndRateLimit(req, res) {
+  // 1. Honeypot Verification:
+  const hp = req.body?.b2b_website_hp || req.body?.hp || req.body?.b2b_lead_hp || req.query?.hp;
+  if (hp && String(hp).trim().length > 0) {
+    console.warn(`[Bot Guard] Honeypot triggered by client.`);
+    if (res && typeof res.status === 'function') {
+      res.status(400).json({ error: 'Automated submission detected.' });
+    }
+    return false;
+  }
+
+  // 2. Block known scraping / headless user agents:
+  const ua = (req.headers && req.headers['user-agent'] ? req.headers['user-agent'] : '').toLowerCase();
+  const suspiciousAgents = ['python-requests', 'aiohttp', 'scrapy', 'curl/', 'wget/', 'go-http-client', 'httpclient', 'libwww-perl'];
+  if (suspiciousAgents.some(agent => ua.includes(agent))) {
+    console.warn(`[Bot Guard] Blocked automated scraper user-agent: ${ua}`);
+    if (res && typeof res.status === 'function') {
+      res.status(403).json({ error: 'Automated user agent blocked.' });
+    }
+    return false;
+  }
+
+  // 3. Sliding Window IP Rate Limiter:
+  const clientIp = (req.headers && req.headers['x-forwarded-for'] 
+    ? req.headers['x-forwarded-for'] 
+    : req.socket?.remoteAddress || '127.0.0.1').split(',')[0].trim();
+  const now = Date.now();
+  const history = ipRequestHistory.get(clientIp) || [];
+  const validHistory = history.filter(timestamp => (now - timestamp) < RATE_LIMIT_WINDOW_MS);
+
+  if (validHistory.length >= MAX_REQUESTS_PER_WINDOW) {
+    console.warn(`[Bot Guard] Rate limit reached for IP: ${clientIp} (${validHistory.length} requests in 10 mins)`);
+    if (res && typeof res.status === 'function') {
+      res.status(429).json({ 
+        error: 'Rate limit exceeded. To protect API resources, please wait a few minutes before analyzing another listing.' 
+      });
+    }
+    return false;
+  }
+
+  validHistory.push(now);
+  ipRequestHistory.set(clientIp, validHistory);
+  return true;
+}
 
 function getResolutionKey(hotelName, city, neighborhood = '', target = '') {
   return `${String(hotelName || '').toLowerCase().trim()}:::${String(city || '').toLowerCase().trim()}:::${String(neighborhood || '').toLowerCase().trim()}:::${String(target || '').toLowerCase().trim()}`;
@@ -1757,33 +1807,61 @@ export async function resolveAuditPhotos(hotelName, city, neighborhood = '', str
   const strat1Str = `${stratSlot1?.category || ''} ${stratSlot1?.photo_subject || ''} ${stratSlot1?.why_it_converts || ''}`.toLowerCase();
   const strat4Str = `${stratSlot4?.category || ''} ${stratSlot4?.photo_subject || ''} ${stratSlot4?.why_it_converts || ''}`.toLowerCase();
 
-  // Slot 1 mandates: check if Shift 1 or Slot 1 strategy calls for Rooftop/Bar, Pool, Spa, or Nightlife
-  const isSlot1RooftopBar = (
-    shift1Str.includes('rooftop') || shift1Str.includes('12th knot') || shift1Str.includes('12th') || shift1Str.includes('knot') || shift1Str.includes('skyline') || shift1Str.includes('sky bar') || shift1Str.includes('lyaness') ||
-    strat1Str.includes('rooftop') || strat1Str.includes('12th knot') || strat1Str.includes('12th') || strat1Str.includes('knot') || strat1Str.includes('skyline') || strat1Str.includes('lyaness') ||
+  // Precise category intent extraction for Slot 1 (strictly examining Slot 1 and Shift 1 only)
+  const slot1TargetText = `${shift1Str} ${strat1Str}`.toLowerCase();
+  
+  const isSlot1DiningOrBar = (
     stratSlot1?.category === 'SOCIAL_FB_ROOFTOP' ||
-    (allShifts.includes('slot 1') && (allShifts.includes('rooftop') || allShifts.includes('12th knot') || allShifts.includes('skyline'))) ||
-    (allShifts.includes('slot #1') && (allShifts.includes('rooftop') || allShifts.includes('12th knot') || allShifts.includes('skyline')))
+    slot1TargetText.includes('restaurant') || slot1TargetText.includes('sushi') || slot1TargetText.includes('dining') ||
+    slot1TargetText.includes('grill') || slot1TargetText.includes('bar') || slot1TargetText.includes('lounge') ||
+    slot1TargetText.includes('bistro') || slot1TargetText.includes('culinary') || slot1TargetText.includes('cocktail') ||
+    slot1TargetText.includes('omakase') || slot1TargetText.includes('blue ribbon') || slot1TargetText.includes('food') ||
+    slot1TargetText.includes('rooftop') || slot1TargetText.includes('12th knot') || slot1TargetText.includes('skyline') ||
+    slot1TargetText.includes('sky bar') || slot1TargetText.includes('lyaness')
   );
 
-  const isSlot1Pool = !isSlot1RooftopBar && (
-    shift1Str.includes('pool') || 
-    (allShifts.includes('slot 1') && allShifts.includes('pool')) || 
-    (allShifts.includes('slot #1') && allShifts.includes('pool')) ||
-    strat1Str.includes('pool')
+  const isSlot1Pool = !isSlot1DiningOrBar && (
+    stratSlot1?.category === 'OUTDOOR_SOCIAL_POOL' ||
+    /(?:slot\s*#?1\b|shift\s*1\b)[^.]*?\b(pool|swim|cabana)\b/i.test(shift1Str) ||
+    strat1Str.includes('pool') || strat1Str.includes('cabana')
   );
-  const isSlot1Spa = !isSlot1RooftopBar && (shift1Str.includes('spa') || strat1Str.includes('spa'));
-  const isSlot1Nightlife = !isSlot1RooftopBar && (
+
+  const isSlot1Spa = !isSlot1DiningOrBar && !isSlot1Pool && (
+    stratSlot1?.category === 'SPA' ||
+    stratSlot1?.category === 'WELLNESS_SPA_LOBBY' ||
+    /(?:slot\s*#?1\b|shift\s*1\b)[^.]*?\b(spa|thermal|wellness)\b/i.test(shift1Str) ||
+    strat1Str.includes('spa') || strat1Str.includes('thermal') || strat1Str.includes('wellness')
+  );
+
+  const isSlot1Nightlife = !isSlot1DiningOrBar && !isSlot1Pool && !isSlot1Spa && (
     shift1Str.includes('basement') || shift1Str.includes('nightclub') || shift1Str.includes('club') || shift1Str.includes('bowling') || 
     strat1Str.includes('basement') || strat1Str.includes('nightclub')
   );
 
-  // Slot 4 mandates: only Pool if Slot 1 is NOT Pool!
+  // Precise category intent extraction for Slot 4 (strictly examining Slot 4, not global shifts)
+  const shift4Str = (Array.isArray(strategicShifts) && strategicShifts[3]) ? String(strategicShifts[3]).toLowerCase() : '';
+  const shift3Str = (Array.isArray(strategicShifts) && strategicShifts[2]) ? String(strategicShifts[2]).toLowerCase() : '';
+  const explicitSlot4Shift = (Array.isArray(strategicShifts) ? strategicShifts : []).find(s => /slot\s*#?4\b/i.test(s)) || '';
+  const slot4TargetText = `${shift4Str} ${shift3Str} ${explicitSlot4Shift.toLowerCase()} ${strat4Str}`.toLowerCase();
+
   const isSlot4Pool = !isSlot1Pool && (
-    stratSlot4?.category === 'OUTDOOR_SOCIAL_POOL' || 
-    strat4Str.includes('pool') || 
-    (allShifts.includes('slot 4') && allShifts.includes('pool')) || 
-    (allShifts.includes('slot #4') && allShifts.includes('pool'))
+    stratSlot4?.category === 'OUTDOOR_SOCIAL_POOL' ||
+    /slot\s*#?4[^.]*?\b(pool|swim|cabana)\b/i.test(slot4TargetText) ||
+    strat4Str.includes('pool') || strat4Str.includes('cabana') ||
+    (isSlot1DiningOrBar && (slot4TargetText.includes('pool') || slot4TargetText.includes('cabana')))
+  );
+
+  const isSlot4DiningOrBar = !isSlot1DiningOrBar && (
+    stratSlot4?.category === 'SOCIAL_FB_ROOFTOP' ||
+    /slot\s*#?4[^.]*?\b(restaurant|dining|sushi|grill|bar|culinary|cocktail)\b/i.test(slot4TargetText) ||
+    strat4Str.includes('restaurant') || strat4Str.includes('sushi') || strat4Str.includes('dining') || strat4Str.includes('bar') ||
+    (isSlot1Pool && (slot4TargetText.includes('restaurant') || slot4TargetText.includes('sushi') || slot4TargetText.includes('dining') || slot4TargetText.includes('blue ribbon')))
+  );
+
+  const isSlot4Spa = !isSlot1Spa && !isSlot4Pool && !isSlot4DiningOrBar && (
+    stratSlot4?.category === 'SPA' ||
+    stratSlot4?.category === 'WELLNESS_SPA_LOBBY' ||
+    strat4Str.includes('spa') || strat4Str.includes('wellness') || strat4Str.includes('thermal')
   );
 
   // Strategy keywords for Slot 1 Hero Cultural Magnet
@@ -1797,20 +1875,32 @@ export async function resolveAuditPhotos(hotelName, city, neighborhood = '', str
   };
 
   // ASSET-FIRST SELECTION:
-  // Slot 1: Hero Cultural Magnet / Curated Pool / Signature Venue / 12th Knot Rooftop
+  // Slot 1: Hero Cultural Magnet / Curated Pool / Signature Venue / 12th Knot Rooftop / Blue Ribbon Sushi
   let slot1Asset = null;
-  if (isSlot1RooftopBar) {
-    // Priority 1: Explicit 12th Knot / Rooftop Bar / Skyline asset
-    slot1Asset = findFirst(poolAmenity, p => {
-      const s = `${p.title || ''} ${p.imageUrl || ''}`.toLowerCase();
-      return (s.includes('12th') || s.includes('knot') || s.includes('rooftop') || s.includes('skyline')) && !isBedroomLike(p) && !isBath(p) && !isExterior(p);
-    });
-    // Priority 2: General rooftop or cocktail bar
+  if (isSlot1DiningOrBar) {
+    // Priority 1: Match slot 1 keywords (e.g. "sushi", "blue ribbon", "12th knot", "rooftop")
+    if (slot1Keywords.length > 0) {
+      slot1Asset = findFirst(poolAmenity, p => matchesSlot1Magnet(p) && !isBedroomLike(p) && !isBath(p) && !isExterior(p));
+      if (!slot1Asset) {
+        slot1Asset = findFirst(poolLive, p => matchesSlot1Magnet(p) && !isBedroomLike(p) && !isBath(p) && !isExterior(p));
+      }
+    }
+    // Priority 2: Verified dining or cocktail bar
     if (!slot1Asset) {
-      slot1Asset = findFirst(poolAmenity, p => isRooftopOrBar(p) && !isBedroomLike(p) && !isBath(p) && !isExterior(p));
+      slot1Asset = findFirst(poolAmenity, p => {
+        const v = getVisual(p);
+        if (v) return (v.is_dining_or_bar === true || v.primary_category === 'RESTAURANT_DINING' || v.primary_category === 'BAR_LOUNGE') && !v.is_tight_food_macro && !v.has_bed && !v.has_bath;
+        const s = `${p.title || ''} ${p.imageUrl || ''}`.toLowerCase();
+        return (p.detectedCategory === 'SOCIAL' || isRooftopOrBar(p) || s.includes('restaurant') || s.includes('sushi') || s.includes('dining') || s.includes('bar') || s.includes('grill')) && !isBedroomLike(p) && !isBath(p) && !isExterior(p);
+      });
     }
     if (!slot1Asset) {
-      slot1Asset = findFirst(poolLive, p => isRooftopOrBar(p) && !isBedroomLike(p) && !isBath(p) && !isExterior(p));
+      slot1Asset = findFirst(poolLive, p => {
+        const v = getVisual(p);
+        if (v) return (v.is_dining_or_bar === true || v.primary_category === 'RESTAURANT_DINING' || v.primary_category === 'BAR_LOUNGE') && !v.is_tight_food_macro && !v.has_bed && !v.has_bath;
+        const s = `${p.title || ''} ${p.imageUrl || ''}`.toLowerCase();
+        return (p.detectedCategory === 'SOCIAL' || isRooftopOrBar(p) || s.includes('restaurant') || s.includes('sushi') || s.includes('dining') || s.includes('bar') || s.includes('grill')) && !isBedroomLike(p) && !isBath(p) && !isExterior(p);
+      });
     }
   } else if (isSlot1Pool) {
     slot1Asset = findFirst(poolAmenity, p => (p.detectedCategory === 'POOL' || isPoolLike(p)) && !isBedroomLike(p) && !isBath(p) && !isExterior(p));
@@ -1912,6 +2002,21 @@ export async function resolveAuditPhotos(hotelName, city, neighborhood = '', str
     if (!slot4Asset) {
       slot4Asset = findFirst(poolLive, p => isPoolLike(p) && !isBedroomLike(p) && !isBath(p) && !isExterior(p));
     }
+  } else if (isSlot4DiningOrBar) {
+    slot4Asset = findFirst(poolAmenity, p => {
+      const v = getVisual(p);
+      if (v) return (v.is_dining_or_bar === true || v.primary_category === 'RESTAURANT_DINING' || v.primary_category === 'BAR_LOUNGE') && !v.is_tight_food_macro && !v.has_bed && !v.has_bath && v.primary_category !== 'EXTERIOR_FACADE';
+      const s = `${p.title || ''} ${p.imageUrl || ''}`.toLowerCase();
+      return (p.detectedCategory === 'SOCIAL' || isRooftopOrBar(p) || (p.title && (p.title.toLowerCase().includes('restaurant') || p.title.toLowerCase().includes('sushi') || p.title.toLowerCase().includes('bar') || p.title.toLowerCase().includes('dining')))) && !isBedroomLike(p) && !isBath(p) && !isExterior(p) && (!isSlot1Pool || !isPoolLike(p));
+    });
+    if (!slot4Asset) {
+      slot4Asset = findFirst(poolLive, p => {
+        const v = getVisual(p);
+        if (v) return (v.is_dining_or_bar === true || v.primary_category === 'RESTAURANT_DINING' || v.primary_category === 'BAR_LOUNGE') && !v.is_tight_food_macro && !v.has_bed && !v.has_bath && v.primary_category !== 'EXTERIOR_FACADE';
+        const s = `${p.title || ''} ${p.imageUrl || ''}`.toLowerCase();
+        return (p.detectedCategory === 'SOCIAL' || isRooftopOrBar(p) || (p.title && (p.title.toLowerCase().includes('restaurant') || p.title.toLowerCase().includes('sushi') || p.title.toLowerCase().includes('bar') || p.title.toLowerCase().includes('dining')))) && !isBedroomLike(p) && !isBath(p) && !isExterior(p) && (!isSlot1Pool || !isPoolLike(p));
+      });
+    }
   } else if (stratSlot4?.category === 'SPA' || stratSlot4?.category === 'WELLNESS_SPA_LOBBY' || String(stratSlot4?.photo_subject || '').toLowerCase().includes('spa')) {
     slot4Asset = findFirst(poolAmenity, p => (p.detectedCategory === 'SPA' || `${p.title} ${p.imageUrl}`.toLowerCase().includes('spa')) && !isBedroomLike(p) && !isBath(p) && !isExterior(p));
     if (!slot4Asset) {
@@ -1958,11 +2063,33 @@ export async function resolveAuditPhotos(hotelName, city, neighborhood = '', str
   if (!slot4Asset) slot4Asset = findFirst(poolLive, p => !isBedroomLike(p) && !isBath(p)) || findFirst(poolAmenity, p => true) || poolLive[3] || poolLive[0] || null;
   if (!slot5Asset) slot5Asset = findFirst(poolLive, p => isBath(p)) || findFirst(poolAmenity, p => isBath(p)) || poolLive[4] || poolLive[0] || null;
 
+  // Cross-Slot Sanity Enforcer for Slots 1 & 4 (Guaranteed Non-Inversion)
+  const isSlot1PhotoPool = isPoolLike(slot1Asset);
+  const isSlot4PhotoPool = isPoolLike(slot4Asset);
+  const isSlot1PhotoDining = slot1Asset && ((getVisual(slot1Asset)?.is_dining_or_bar) || /sushi|restaurant|dining|bar|grill|cocktail|lounge/i.test(`${slot1Asset.title || ''} ${slot1Asset.imageUrl || ''}`));
+  const isSlot4PhotoDining = slot4Asset && ((getVisual(slot4Asset)?.is_dining_or_bar) || /sushi|restaurant|dining|bar|grill|cocktail|lounge/i.test(`${slot4Asset.title || ''} ${slot4Asset.imageUrl || ''}`));
+
+  if (isSlot1DiningOrBar && isSlot4Pool) {
+    if (isSlot1PhotoPool && isSlot4PhotoDining) {
+      console.log('[Sanity Enforcer] Correcting crossed assets: Slot 1 (Dining) was given Pool, and Slot 4 (Pool) was given Dining. Swapping...');
+      const temp = slot1Asset;
+      slot1Asset = slot4Asset;
+      slot4Asset = temp;
+    }
+  } else if (isSlot1Pool && (isSlot4DiningOrBar || !isSlot4Pool)) {
+    if (isSlot1PhotoDining && isSlot4PhotoPool) {
+      console.log('[Sanity Enforcer] Correcting crossed assets: Slot 1 (Pool) was given Dining, and Slot 4 (Dining) was given Pool. Swapping...');
+      const temp = slot1Asset;
+      slot1Asset = slot4Asset;
+      slot4Asset = temp;
+    }
+  }
+
   const winningAssets = [
     { targetSlot: 1, defaultCat: isSlot1Pool ? 'OUTDOOR_SOCIAL_POOL' : 'HERO_CULTURAL_MAGNET', asset: slot1Asset },
     { targetSlot: 2, defaultCat: 'EXTERIOR_LANDMARK', asset: slot2Asset },
     { targetSlot: 3, defaultCat: 'SIGNATURE_SUITE_BEDROOM', asset: slot3Asset },
-    { targetSlot: 4, defaultCat: isSlot4Pool ? 'OUTDOOR_SOCIAL_POOL' : 'SOCIAL_FB_ROOFTOP', asset: slot4Asset },
+    { targetSlot: 4, defaultCat: isSlot4Pool ? 'OUTDOOR_SOCIAL_POOL' : (isSlot4DiningOrBar ? 'SOCIAL_FB_ROOFTOP' : 'WELLNESS_SPA_LOBBY'), asset: slot4Asset },
     { targetSlot: 5, defaultCat: 'SECONDARY_ROOM_BATHROOM', asset: slot5Asset }
   ];
 
@@ -2000,21 +2127,45 @@ export async function resolveAuditPhotos(hotelName, city, neighborhood = '', str
     const rec = classifyAssetAndDeriveRecommendation(asset, hotelName);
 
     let category = stratSlot?.category || defaultCat || rec.category;
-    if (targetSlot === 1 && isSlot1Pool) {
-      category = 'OUTDOOR_SOCIAL_POOL';
-    } else if (targetSlot === 1 && isSlot1RooftopBar) {
-      category = 'HERO_CULTURAL_MAGNET';
+    if (targetSlot === 1) {
+      category = isSlot1Pool ? 'OUTDOOR_SOCIAL_POOL' : 'HERO_CULTURAL_MAGNET';
     } else if (targetSlot === 4) {
-      if (rec.category === 'SPA_WELLNESS_SANCTUARY' || rec.category === 'WELLNESS_SPA_LOBBY') {
-        category = 'WELLNESS_SPA_LOBBY';
-      } else if (rec.category === 'SOCIAL_FB_ROOFTOP') {
+      if (isSlot4Pool) {
+        category = 'OUTDOOR_SOCIAL_POOL';
+      } else if (isSlot4DiningOrBar || rec.category === 'SOCIAL_FB_ROOFTOP') {
         category = 'SOCIAL_FB_ROOFTOP';
-      } else {
-        category = stratSlot?.category || 'WELLNESS_SPA_LOBBY';
+      } else if (isSlot4Spa || rec.category === 'SPA_WELLNESS_SANCTUARY' || rec.category === 'WELLNESS_SPA_LOBBY') {
+        category = 'WELLNESS_SPA_LOBBY';
       }
     }
 
     let photoSubject = stratSlot?.photo_subject || asset?.title || rec.subject;
+    if (!photoSubject || photoSubject.toLowerCase().includes('scanning') || (targetSlot === 4 && (photoSubject.toLowerCase().includes('matador') || photoSubject.toLowerCase().includes('lyaness')) && !asset?.title?.toLowerCase().includes('matador'))) {
+      photoSubject = (asset?.title && !asset.title.includes('Booking.com') && !asset.title.includes('Tripadvisor')) ? asset.title : rec.subject;
+    }
+
+    // Truth-in-Labeling: Ensure photoSubject aligns with the actual visual asset in Slot 1 and Slot 4
+    if (targetSlot === 1) {
+      if (isSlot1Pool || isPoolLike(asset)) {
+        if (!photoSubject.toLowerCase().includes('pool') && !photoSubject.toLowerCase().includes('cabana')) {
+          photoSubject = 'Art Deco Courtyard Swimming Pool & Cabanas';
+        }
+      } else if (isSlot1DiningOrBar) {
+        if (photoSubject.toLowerCase().includes('pool') && !isPoolLike(asset)) {
+          photoSubject = (asset?.title && !asset.title.includes('Booking.com')) ? asset.title : 'Blue Ribbon Sushi Bar & Grill Dining Experience';
+        }
+      }
+    } else if (targetSlot === 4) {
+      if (isSlot4Pool || isPoolLike(asset)) {
+        if (!photoSubject.toLowerCase().includes('pool') && !photoSubject.toLowerCase().includes('cabana')) {
+          photoSubject = 'Art Deco Courtyard Swimming Pool & Private Cabanas';
+        }
+      } else if (isSlot4DiningOrBar) {
+        if (photoSubject.toLowerCase().includes('pool') && !isPoolLike(asset)) {
+          photoSubject = (asset?.title && !asset.title.includes('Booking.com')) ? asset.title : 'Blue Ribbon Sushi Bar & Grill Dining Experience';
+        }
+      }
+    }
     if (!photoSubject || photoSubject.toLowerCase().includes('scanning') || (targetSlot === 4 && (photoSubject.toLowerCase().includes('matador') || photoSubject.toLowerCase().includes('lyaness')) && !asset?.title?.toLowerCase().includes('matador'))) {
       photoSubject = (asset?.title && !asset.title.includes('Booking.com') && !asset.title.includes('Tripadvisor')) ? asset.title : rec.subject;
     }
@@ -2033,8 +2184,8 @@ export async function resolveAuditPhotos(hotelName, city, neighborhood = '', str
     const v = getVisual(asset);
     const assetTitleLower = (asset?.title || '').toLowerCase();
 
-    // Slot 1: If strategy called for Rooftop/Bar, but asset is NOT a bar/rooftop (e.g. river view)
-    if (targetSlot === 1 && isSlot1RooftopBar) {
+    // Slot 1: If strategy called for Rooftop/Bar/Dining, but asset is NOT a bar/rooftop/dining (e.g. river view)
+    if (targetSlot === 1 && isSlot1DiningOrBar) {
       const isActuallyBar = (v && (v.primary_category === 'BAR_LOUNGE' || v.primary_category === 'ROOFTOP_SKYLINE' || v.is_dining_or_bar)) ||
                             assetTitleLower.includes('bar') || assetTitleLower.includes('rooftop') || assetTitleLower.includes('12th') || assetTitleLower.includes('knot') || assetTitleLower.includes('cocktail') || assetTitleLower.includes('lyaness');
       if (!isActuallyBar) {
@@ -2233,6 +2384,9 @@ export async function lookupHotelCandidatesHandler(req, res) {
 
   if (req.method === 'OPTIONS') return res.status(200).end();
 
+  // --- BOT & RATE LIMIT DEFENSE CHECK ---
+  if (!verifyBotAndRateLimit(req, res)) return;
+
   try {
     let hotelName = req.body?.hotelName || req.query?.hotelName || req.body?.propertyName || req.query?.propertyName || '';
     let city = req.body?.city || req.query?.city || req.body?.location || req.query?.location || '';
@@ -2257,6 +2411,9 @@ export async function resolveAuditPhotosHandler(req, res) {
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
   if (req.method === 'OPTIONS') return res.status(200).end();
+
+  // --- BOT & RATE LIMIT DEFENSE CHECK ---
+  if (!verifyBotAndRateLimit(req, res)) return;
 
   try {
     let rawHotelName = req.body.hotelName || req.query.hotelName || req.body.propertyName || req.query.propertyName;
@@ -2375,6 +2532,9 @@ export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
   if (req.method === 'OPTIONS') return res.status(200).end();
+
+  // --- BOT & RATE LIMIT DEFENSE CHECK ---
+  if (!verifyBotAndRateLimit(req, res)) return;
 
   try {
     let rawHotelName = req.body?.hotelName || req.query?.hotelName || req.body?.propertyName || req.query?.propertyName;

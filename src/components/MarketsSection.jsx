@@ -33,7 +33,7 @@ const MARKETS_DATA = [
       'Modernist Courtyard Sanctuaries',
       'Biophilic Light Atriums & Plunge Pools'
     ],
-    researchSummary: 'In Barcelona, atmosphere is overwhelmingly driven by outdoor courtyard sanctuaries and sunset terrace social velocity. Audits show properties that bridge their internal design with the local Catalan micro-bar subculture capture 26.8% higher direct conversion.',
+    researchSummary: 'In Barcelona, atmosphere is overwhelmingly driven by outdoor courtyard sanctuaries and sunset terrace social velocity. Vibe Signature mapping shows properties that bridge their internal design with local Catalan micro-bar dynamics capture 26.8% higher direct conversion.',
     keyInsight: 'Acoustic clarity and outdoor patio visual hierarchy reduced drop-off rates on mobile booking funnels by 31% across independent hotel partners.',
     commodityPenaltyScore: 'Critical (54/100 commodity penalty when failing to depict outdoor/rooftop social life)'
   },
@@ -196,8 +196,8 @@ export default function MarketsSection() {
 
             <div className="market-stat-box">
               <div className="market-stat-num" style={{ color: '#ffd700' }}>{selectedMarket.auditedCount}+</div>
-              <div className="market-stat-label">Properties Audited & Mapped</div>
-              <div className="market-stat-desc">Continuous real-time geospatial & multimodal intelligence dataset.</div>
+              <div className="market-stat-label">Properties Mapped &amp; Standout Optimized</div>
+              <div className="market-stat-desc">Continuous real-time geospatial &amp; multimodal intelligence dataset.</div>
             </div>
 
             <div className="market-stat-box">
@@ -220,7 +220,7 @@ export default function MarketsSection() {
               <div className="mini-city-country">{market.country}</div>
               <div className="mini-city-stat">{market.avgUplift}</div>
               <div className="mini-city-desc">
-                {market.auditedCount}+ audited venues across {market.districts.split(',')[0]} & more.
+                {market.auditedCount}+ venues mapped to local dynamics across {market.districts.split(',')[0]} &amp; more.
               </div>
             </div>
           ))}
@@ -240,7 +240,7 @@ export default function MarketsSection() {
           </button>
           
           <a href="/audit" className="api-secondary-btn">
-            <span>RUN AN AUDIT FOR YOUR PROPERTY</span>
+            <span>MAP YOUR PROPERTY'S VIBE SIGNATURE</span>
             <ArrowRight size={16} />
           </a>
         </div>

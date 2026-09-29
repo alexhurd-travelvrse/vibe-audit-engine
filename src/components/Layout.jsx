@@ -32,7 +32,7 @@ const Layout = ({ children }) => {
 
                     <nav className={`header-nav ${isMenuOpen ? 'open' : ''}`}>
                         <Link to="/audit" className="nav-link nav-highlight-btn" onClick={() => setIsMenuOpen(false)}>
-                            FREE BOOKING.COM PHOTO REVIEW
+                            FREE VIBE SIGNATURE PREVIEW
                         </Link>
                         <a href="/#solution" className="nav-link" onClick={() => setIsMenuOpen(false)}>VIBE CONVERSION</a>
                         <a href="/#data-api" className="nav-link" onClick={() => setIsMenuOpen(false)}>DATA API</a>

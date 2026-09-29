@@ -6,10 +6,15 @@ import './Hero.css';
 
 const Hero = () => {
     const [otaUrl, setOtaUrl] = useState('');
+    const [honeypot, setHoneypot] = useState('');
     const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        if (honeypot) {
+            console.warn('[Bot Detector] Honeypot triggered.');
+            return;
+        }
         const trimmed = otaUrl.trim();
         if (trimmed) {
             navigate(`/audit?bookingUrl=${encodeURIComponent(trimmed)}`);
@@ -26,7 +31,7 @@ const Hero = () => {
         <section className="hero-section">
             <Helmet>
                 <title>Atmosvibe | Vibe Conversion for Hotels &amp; Travel Brands</title>
-                <meta name="description" content="Turn Atmosphere into Bookings. Start by fixing your photo sequence. Atmosvibe audits your visual and atmospheric signature." />
+                <meta name="description" content="Turn Atmosphere into Bookings. Start by fixing your photo sequence. Next-gen travelers don’t book features—they book a vibe. Atmosvibe creates a unique vibe signature, unlocking content that makes you stand out across all channels." />
             </Helmet>
             <div className="hero-bg-container">
                 <video 
@@ -48,18 +53,28 @@ const Hero = () => {
                     </div>
 
                     <h1 className="hero-headline">
-                        Turn Atmosphere into Bookings.<br />
-                        <span className="hero-headline-gradient">Start by fixing your photo sequence.</span>
+                        Turn Atmosphere into Bookings<br />
+                        <span className="hero-headline-gradient">Start by fixing your photo sequence</span>
                     </h1>
 
                     <p className="hero-subheadline">
-                        Next-gen travelers don’t book features—they book a feeling. Atmosvibe audits your property’s visual and atmospheric signature, instantly re-ordering your photos to hook high-intent guests and stop OTA scroll fatigue.
+                        Next-gen travelers don’t book features—they book a vibe. Atmosvibe creates a unique vibe signature, unlocking content that makes you stand out across all channels
                     </p>
                 </div>
 
                 {/* The Action Box (Frictionless Input) */}
                 <div className="hero-action-box animate-fade-up">
                     <form onSubmit={handleSubmit} className="action-box-form">
+                        {/* Hidden Honeypot Field for Bot Defense */}
+                        <input 
+                            type="text" 
+                            name="b2b_website_hp" 
+                            value={honeypot} 
+                            onChange={(e) => setHoneypot(e.target.value)} 
+                            style={{ display: 'none', position: 'absolute', left: '-9999px', opacity: 0, pointerEvents: 'none' }} 
+                            tabIndex={-1} 
+                            autoComplete="off" 
+                        />
                         <div className="action-input-wrapper">
                             <Camera className="action-input-icon" size={20} />
                             <input 
@@ -71,17 +86,15 @@ const Hero = () => {
                             />
                         </div>
                         <button type="submit" className="action-submit-btn">
-                            <span>Re-Sequence My Photos &amp; Preview Vibe Score</span>
+                            <span>Re-Sequence Photos &amp; Unlock Vibe Signature</span>
                             <ArrowRight size={18} />
                         </button>
                     </form>
 
                     <div className="action-box-microcopy">
-                        <span className="micro-highlight">Free instant audit</span>
+                        <span className="micro-highlight">Free instant Vibe Signature preview</span>
                         <span className="micro-dot">•</span>
-                        <span>For Hotels, Hostels, Resorts &amp; Tour Operators</span>
-                        <span className="micro-dot">•</span>
-                        <span>No sign-up required to preview</span>
+                        <span>No sign-up required</span>
                     </div>
 
                     <div className="action-box-samples">

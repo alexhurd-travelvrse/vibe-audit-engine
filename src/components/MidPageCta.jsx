@@ -5,10 +5,15 @@ import './MidPageCta.css';
 
 export default function MidPageCta() {
   const [url, setUrl] = useState('');
+  const [honeypot, setHoneypot] = useState('');
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (honeypot) {
+      console.warn('[Bot Detector] Honeypot triggered.');
+      return;
+    }
     const trimmed = url.trim();
     if (trimmed) {
       navigate(`/audit?bookingUrl=${encodeURIComponent(trimmed)}`);
@@ -25,7 +30,7 @@ export default function MidPageCta() {
           
           <div className="cta-badge">
             <Sparkles size={14} className="text-gold" />
-            <span>60-SECOND CONVERSION DIAGNOSTIC</span>
+            <span>60-SECOND VIBE SIGNATURE PREVIEW</span>
           </div>
 
           <h2 className="cta-headline">
@@ -33,10 +38,20 @@ export default function MidPageCta() {
           </h2>
 
           <p className="cta-body">
-            See how your property ranks against modern traveler sentiment in 60 seconds.
+            Map your property's vibe signature against local neighborhood dynamics to unlock content that makes your listing stand out across every channel.
           </p>
 
           <form onSubmit={handleSubmit} className="mid-cta-form">
+            {/* Hidden Honeypot Field for Bot Defense */}
+            <input 
+              type="text" 
+              name="b2b_website_hp" 
+              value={honeypot} 
+              onChange={(e) => setHoneypot(e.target.value)} 
+              style={{ display: 'none', position: 'absolute', left: '-9999px', opacity: 0, pointerEvents: 'none' }} 
+              tabIndex={-1} 
+              autoComplete="off" 
+            />
             <div className="mid-input-wrapper">
               <Camera size={18} className="mid-input-icon" />
               <input 
@@ -48,7 +63,7 @@ export default function MidPageCta() {
               />
             </div>
             <button type="submit" className="mid-cta-btn">
-              <span>Audit My Booking.com Listing Free</span>
+              <span>Unlock My Vibe Signature Free</span>
               <ArrowRight size={18} />
             </button>
           </form>
