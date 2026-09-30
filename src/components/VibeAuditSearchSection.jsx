@@ -384,8 +384,8 @@ const VibeAuditSearchSection = () => {
             >
               <div className="spinner-glow" />
               <div className="loading-text">
-                <h3>Synthesizing Hotel Vibe Manifest & Acoustic DNA</h3>
-                <p>Synthesizing cultural gravity, acoustic architecture, and design manifest for <strong>{formData.propertyName || 'Property'}</strong> in {formData.neighborhood}, {formData.city}...</p>
+                <h3>Synthesizing Hotel Vibe Signature & Acoustic DNA</h3>
+                <p>Synthesizing cultural gravity, acoustic architecture, and design signature for <strong>{formData.propertyName || 'Property'}</strong> in {formData.neighborhood}, {formData.city}...</p>
               </div>
             </motion.div>
           )}

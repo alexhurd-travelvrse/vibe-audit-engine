@@ -79,17 +79,17 @@ export default function ServiceOfferingSection() {
             <div className="morph-header">
               <h4>
                 <Zap size={16} color="#00e5ff" />
-                Vibe Manifest ➔ Booking.com Resequencing
+                Vibe Signature ➔ Booking.com Resequencing
               </h4>
               <span style={{ fontSize: '11px', color: '#10b981', fontWeight: 800, background: 'rgba(16,185,129,0.15)', padding: '2px 8px', borderRadius: '10px' }}>
                 LIVE PIPELINE
               </span>
             </div>
 
-            {/* STAGE 1: Venue Vibe Manifest (Top) */}
+            {/* STAGE 1: Venue Vibe Signature (Top) */}
             <div className="mini-manifest-box">
               <div className="mini-manifest-top">
-                <span className="mini-manifest-title">1. Venue Vibe Manifest</span>
+                <span className="mini-manifest-title">1. Venue Vibe Signature</span>
                 <span className="mini-energy-badge">Energy: 85/100</span>
               </div>
               <div className="mini-manifest-meta">
@@ -187,7 +187,7 @@ export default function ServiceOfferingSection() {
               <ul className="feature-list">
                 <li className="feature-item">
                   <div className="feature-icon-wrap"><CheckCircle2 size={16} /></div>
-                  <span><strong>Your Analysis</strong> — Full Venue Vibe Manifest & Acoustic DNA diagnostic</span>
+                  <span><strong>Your Analysis</strong> — Full Venue Vibe Signature & Acoustic DNA diagnostic</span>
                 </li>
                 <li className="feature-item">
                   <div className="feature-icon-wrap"><CheckCircle2 size={16} /></div>

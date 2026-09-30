@@ -120,7 +120,7 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
             textTransform: 'uppercase',
             boxShadow: '0 0 15px rgba(0, 229, 255, 0.3)'
           }}>
-            ⭐ Official Venue Vibe Manifest
+            ⭐ Official Venue Vibe Signature
           </span>
           <span style={{ fontSize: '11px', color: 'rgba(255,255,255,0.5)', fontFamily: 'monospace' }}>
             ID: {manifest.venue_id || 'vibe_node_01'}

@@ -53,6 +53,7 @@ export const KNOWN_SLUG_TITLES = {
   'the-plymouth-miami-beach': 'The Plymouth South Beach',
   'sea-containers-london': 'Sea Containers London',
   'sls-south-beach': 'SLS South Beach Miami',
+  '25hours-indre-by': '25hours Hotel Indre By Copenhagen',
   'dukes': 'Dukes The Palm, a Royal Hideaway Hotel',
   'mandarin-oriental-hyde-park-london': 'Mandarin Oriental Hyde Park, London',
   '1-hotel-south-beach': '1 Hotel South Beach',
@@ -83,10 +84,15 @@ export function parseBookingUrl(input) {
   if (slug.includes('miami-beach') || slug.includes('south-beach') || slug.includes('plymouth') || slug === 'twoninezeroone-collinsave') {
     inferredCity = 'Miami';
     inferredNeighborhood = 'Miami Beach';
-  } else if (slug.includes('london')) {
+  } else if (slug.includes('copenhagen') || slug.includes('indre-by') || country === 'dk') {
+    inferredCity = 'Copenhagen';
+    inferredNeighborhood = 'Indre By';
+  } else if (slug.includes('london') || slug.includes('sea-containers')) {
     inferredCity = 'London';
-  } else if (slug.includes('dubai')) {
+    inferredNeighborhood = 'South Bank';
+  } else if (slug.includes('dubai') || country === 'ae') {
     inferredCity = 'Dubai';
+    inferredNeighborhood = 'Palm Jumeirah';
   }
 
   return {
@@ -101,10 +107,10 @@ export function parseBookingUrl(input) {
 
 const PROCESSING_PHASES = [
   {
-    title: "1) Manifest First: Synthesizing Hotel DNA & Demand",
+    title: "1) Creating Property and Local Area Vibe Signatures",
     detail: "Extracting venue architecture, sensory scores & neighborhood subcultural gravity...",
     percentage: 25,
-    badge: "STEP 1/4 • MANIFEST FIRST"
+    badge: "STEP 1/4 • VIBE SIGNATURE"
   },
   {
     title: "2) Discovering Images (Site, TripAdvisor & Booking.com)",
@@ -929,7 +935,7 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                 textTransform: 'uppercase',
                 marginBottom: '2rem'
               }}>
-                <Zap size={14} /> 4-Step Pipeline: Manifest ➔ Image Discovery ➔ Strategy ➔ Re-Order
+                <Zap size={14} /> 4-Step Pipeline: Vibe Signature ➔ Image Discovery ➔ Strategy ➔ Re-Order
               </div>
               {/* Dual-Ring Cyber Radar */}
               <div style={{ position: 'relative', width: '120px', height: '120px', margin: '0 auto 2.5rem' }}>

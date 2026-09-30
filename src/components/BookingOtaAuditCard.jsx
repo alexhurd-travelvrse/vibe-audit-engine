@@ -303,7 +303,7 @@ export default function BookingOtaAuditCard({ otaData, hotelName, isUnlocked, on
                     ⚡ Phase 2 Active: Scraping & Resolving Live Visual Assets
                   </div>
                   <div style={{ fontSize: '12px', color: 'rgba(255, 255, 255, 0.75)', marginTop: '2px' }}>
-                    Manifest synthesized. Now extracting live Booking.com gallery assets & verified venue photos to populate slots below.
+                    Vibe Signature synthesized. Now extracting live Booking.com gallery assets & verified venue photos to populate slots below.
                   </div>
                 </div>
               </div>
@@ -777,7 +777,7 @@ export default function BookingOtaAuditCard({ otaData, hotelName, isUnlocked, on
               </h5>
 
               <p style={{ fontSize: '12.5px', color: 'rgba(255,255,255,0.7)', maxWidth: '520px', margin: '0 0 1.25rem 0', lineHeight: 1.5 }}>
-                The free tier includes your full Vibe Manifest & 5-Photo Resequencing. Log in with your client password or enquire about the Pro Suite to reveal and copy your custom 150-word Booking.com overview.
+                The free tier includes your full Vibe Signature & 5-Photo Resequencing. Log in with your client password or enquire about the Pro Suite to reveal and copy your custom 150-word Booking.com overview.
               </p>
 
               <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', justifyContent: 'center' }}>
