@@ -1,5 +1,5 @@
 import React from 'react';
-import { Camera, Sparkles, Music, Share2, Search, ArrowRight, CheckCircle2, ShieldCheck, Zap } from 'lucide-react';
+import { Camera, Sparkles, ArrowRight, CheckCircle2, ShieldCheck, Zap, Volume2, Share2, Bot, TrendingUp } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import './HookTeaserSection.css';
 
@@ -36,33 +36,93 @@ export default function HookTeaserSection() {
               <h3 className="tier-heading">The OTA Photo Reorder</h3>
               <p className="tier-subtext">Instant photo recommendations that map your unique property features to neighborhood search demand</p>
 
-              <div className="tree-structure">
-                <div className="tree-item">
-                  <div className="tree-node-icon cyan-icon">
-                    <Camera size={18} />
-                  </div>
-                  <div className="tree-node-details">
-                    <div className="tree-node-title">Reordered Top 5 Hero Photos</div>
-                    <div className="tree-node-meta">Sequenced so your hotel totally stands out and stops the scroll</div>
+              {/* Visual Interactive Showcase: 5-Photo Strip + Headline Vibe Signature */}
+              <div className="visual-photo-reorder">
+                
+                {/* Hero Slot (#1 - The "Hook Photo") */}
+                <div className="reorder-hero-slot">
+                  <div className="hero-img-wrap">
+                    <img 
+                      src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80" 
+                      alt="Recommended Slot 1 Hero Photo - Lively Social Space" 
+                      className="hero-img"
+                    />
+                    <div className="hero-slot-badge-left">
+                      <Zap size={11} />
+                      <span>SLOT #1: SOCIAL MAGNET</span>
+                    </div>
+                    <div className="hero-slot-badge-right">
+                      <TrendingUp size={11} />
+                      <span>+4.2s Dwell Time</span>
+                    </div>
+                    <div className="hero-slot-caption">
+                      <span>Stops the scroll with high-energy social atmosphere</span>
+                    </div>
                   </div>
                 </div>
 
-                <div className="tree-branch-line"></div>
-
-                <div className="tree-item">
-                  <div className="tree-node-icon cyan-icon">
-                    <Sparkles size={18} />
+                {/* Thumbnails Row: Slots #2 - #5 */}
+                <div className="reorder-thumbnails-row">
+                  <div className="reorder-thumb-item">
+                    <div className="thumb-img-wrap">
+                      <img 
+                        src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=300&q=80" 
+                        alt="Slot 2 Design Bed" 
+                      />
+                      <span className="thumb-badge">#2 Design</span>
+                    </div>
                   </div>
-                  <div className="tree-node-details">
-                    <div className="tree-node-title">Headline Vibe Signature</div>
-                    <div className="tree-node-meta">The defining atmospheric hook for your property &mdash; e.g. Sea Containers: "Maritime Glamour &amp; Thameside Buzz", Plymouth Hotel: "Art Deco Oasis &amp; Retro Glamour", 25hours Hotel: "Bohemian Design &amp; Vinyl Social Hub"</div>
+                  <div className="reorder-thumb-item">
+                    <div className="thumb-img-wrap">
+                      <img 
+                        src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=300&q=80" 
+                        alt="Slot 3 Vinyl Lounge" 
+                      />
+                      <span className="thumb-badge">#3 Lounge</span>
+                    </div>
+                  </div>
+                  <div className="reorder-thumb-item">
+                    <div className="thumb-img-wrap">
+                      <img 
+                        src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=300&q=80" 
+                        alt="Slot 4 Craft Velocity" 
+                      />
+                      <span className="thumb-badge">#4 Bar</span>
+                    </div>
+                  </div>
+                  <div className="reorder-thumb-item">
+                    <div className="thumb-img-wrap">
+                      <img 
+                        src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=300&q=80" 
+                        alt="Slot 5 Wellness" 
+                      />
+                      <span className="thumb-badge">#5 Wellness</span>
+                    </div>
                   </div>
                 </div>
+
+                {/* Headline Vibe Signature Glass Pill */}
+                <div className="headline-vibe-box">
+                  <div className="headline-vibe-header">
+                    <Sparkles size={13} className="cyan-sparkle" />
+                    <span className="headline-vibe-label">HEADLINE VIBE SIGNATURE</span>
+                  </div>
+                  <div className="headline-vibe-quote">
+                    "Maritime Glamour &amp; Thameside Buzz"
+                  </div>
+                  <div className="headline-vibe-examples">
+                    <span className="vibe-example-chip">Sea Containers: Maritime Glamour</span>
+                    <span className="vibe-example-chip">Plymouth: Art Deco Oasis</span>
+                    <span className="vibe-example-chip">25hours: Vinyl Social Hub</span>
+                  </div>
+                </div>
+
               </div>
 
               <div className="tier-badge-strip">
                 <span className="feature-pill"><CheckCircle2 size={13} /> 60-Second Run</span>
                 <span className="feature-pill"><CheckCircle2 size={13} /> Live Visual Preview</span>
+                <span className="feature-pill"><CheckCircle2 size={13} /> Zero Setup</span>
               </div>
             </div>
 
@@ -85,46 +145,79 @@ export default function HookTeaserSection() {
               <h3 className="tier-heading">The Full Multi-Channel Engine</h3>
               <p className="tier-subtext">Comprehensive acoustic, narrative, and AI search assets powered by our proprietary Vibe Fingerprinting engine to make your brand stand out across all channels</p>
 
-              <div className="tree-structure">
-                <div className="tree-item">
-                  <div className="tree-node-icon gold-icon">
-                    <Music size={18} />
+              {/* Visual Micro-UI Asset Suite: 3 Interactive Product Snippets */}
+              <div className="visual-pro-suite">
+                
+                {/* Micro-UI 1: Acoustic & Soundscape */}
+                <div className="pro-micro-card acoustic-card">
+                  <div className="micro-card-top">
+                    <div className="micro-card-title-row">
+                      <div className="micro-icon gold-micro-icon">
+                        <Volume2 size={14} />
+                      </div>
+                      <span className="micro-label">ACOUSTIC &amp; NEIGHBORHOOD RHYTHM</span>
+                    </div>
+                    <div className="sound-eq-visual" aria-hidden="true">
+                      <span className="eq-bar bar-1"></span>
+                      <span className="eq-bar bar-2"></span>
+                      <span className="eq-bar bar-3"></span>
+                      <span className="eq-bar bar-4"></span>
+                      <span className="eq-bar bar-5"></span>
+                    </div>
                   </div>
-                  <div className="tree-node-details">
-                    <div className="tree-node-title">Acoustic &amp; Neighborhood Rhythm Index</div>
-                    <div className="tree-node-meta">Soundscape profiling, local decibel curves, micro-culture tempo &amp; ambient playlists</div>
+                  <div className="micro-card-content">
+                    <div className="sound-stat-line">
+                      <span className="sound-db-badge">64 dB</span>
+                      <span className="sound-profile-name">Warm Vinyl Hum &amp; Neighborhood Tempo</span>
+                    </div>
+                    <div className="micro-meta-tag">Curated ambient tempo &amp; local micro-culture soundscape</div>
+                  </div>
+                </div>
+
+                {/* Micro-UI 2: Multi-Channel Copy Hooks */}
+                <div className="pro-micro-card copy-card">
+                  <div className="micro-card-top">
+                    <div className="micro-card-title-row">
+                      <div className="micro-icon gold-micro-icon">
+                        <Share2 size={14} />
+                      </div>
+                      <span className="micro-label">HIGH-RESONANCE COPY HOOKS</span>
+                    </div>
+                    <span className="copy-channel-badge">Direct + Social</span>
+                  </div>
+                  <div className="micro-card-content">
+                    <div className="quote-snippet">
+                      "Mid-century maritime design meets South Bank cocktail velocity &mdash; where Thames views meet vinyl rhythm"
+                    </div>
+                    <div className="micro-meta-tag">Optimized for Direct Website hero copy, Instagram bio &amp; pre-stay comms</div>
                   </div>
                 </div>
 
-                <div className="tree-branch-line gold-line"></div>
-
-                <div className="tree-item">
-                  <div className="tree-node-icon gold-icon">
-                    <Share2 size={18} />
+                {/* Micro-UI 3: AI Search & GEO Tags */}
+                <div className="pro-micro-card ai-geo-card">
+                  <div className="micro-card-top">
+                    <div className="micro-card-title-row">
+                      <div className="micro-icon gold-micro-icon">
+                        <Bot size={14} />
+                      </div>
+                      <span className="micro-label">AI SEARCH ENGINE OPTIMIZATION (GEO TAGS)</span>
+                    </div>
+                    <span className="ai-verified-badge">Perplexity &amp; ChatGPT</span>
                   </div>
-                  <div className="tree-node-details">
-                    <div className="tree-node-title">High-Resonance Copy Hooks</div>
-                    <div className="tree-node-meta">For Direct Website hero copy, Instagram bio, &amp; pre-stay concierge comms</div>
-                  </div>
-                </div>
-
-                <div className="tree-branch-line gold-line"></div>
-
-                <div className="tree-item">
-                  <div className="tree-node-icon gold-icon">
-                    <Search size={18} />
-                  </div>
-                  <div className="tree-node-details">
-                    <div className="tree-node-title">Generative AI Search Optimization (GEO Tags)</div>
-                    <div className="tree-node-meta">Structured schema &amp; context tags so ChatGPT, Perplexity &amp; Gemini recommend your vibe</div>
+                  <div className="micro-card-content">
+                    <div className="ai-citation-bubble">
+                      <span className="ai-prompt-indicator">AI Citation:</span> "Recommended hotel for travelers seeking curated vinyl lounges, rooftop Thames views, and craft mixology"
+                    </div>
+                    <div className="micro-meta-tag">Structured schema &amp; context tags so AI engines actively recommend your vibe</div>
                   </div>
                 </div>
+
               </div>
 
               <div className="tier-badge-strip">
                 <span className="feature-pill gold-pill"><ShieldCheck size={13} /> Verified Ownership</span>
                 <span className="feature-pill gold-pill"><Zap size={13} /> Multi-Channel Boost</span>
-                <span className="feature-pill gold-pill"><Search size={13} /> AI Engine Discoverability</span>
+                <span className="feature-pill gold-pill"><Bot size={13} /> AI Engine Discoverability</span>
               </div>
             </div>
 
