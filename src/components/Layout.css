@@ -85,14 +85,16 @@
         background: transparent;
         backdrop-filter: none;
         flex-direction: row;
-        gap: 30px;
+        gap: 38px;
         padding: 0;
         z-index: auto;
         transition: none;
+        margin-left: auto;
     }
 
     .nav-link {
-        font-size: 13px;
+        font-size: 13.5px;
+        letter-spacing: 1.2px;
     }
 
     .nav-highlight-btn {

@@ -1,5 +1,8 @@
 export const maxDuration = 120;
 import * as dotenv from 'dotenv';
+import fs from 'fs';
+import path from 'path';
+import crypto from 'crypto';
 import { fetchVenueCorpus } from '../src/services/serperService.mjs';
 import { runStructuredVibeAudit, runMultimodalImageClassification } from '../src/services/geminiService.mjs';
 
@@ -7,6 +10,62 @@ dotenv.config();
 
 const SERPER_API_KEY = process.env.VITE_SERPER_API_KEY || process.env.SERPER_API_KEY;
 const APIFY_API_TOKEN = process.env.APIFY_API_TOKEN;
+
+// --- PERSISTENT DAILY DISK CACHE (24-Hour TTL across server restarts) ---
+const DISK_CACHE_DIR = path.join(process.cwd(), '.cache', 'vibe_audits');
+try {
+  if (!fs.existsSync(DISK_CACHE_DIR)) {
+    fs.mkdirSync(DISK_CACHE_DIR, { recursive: true });
+  }
+} catch (e) {
+  console.warn('[Disk Cache] Init directory notice:', e.message);
+}
+
+function getCacheFilePath(key) {
+  const safeName = String(key || '').replace(/[^a-zA-Z0-9_-]/g, '_').slice(0, 70);
+  const hash = crypto.createHash('md5').update(String(key || '')).digest('hex').slice(0, 10);
+  return path.join(DISK_CACHE_DIR, `${safeName}_${hash}.json`);
+}
+
+function readDailyDiskCache(key) {
+  try {
+    const filePath = getCacheFilePath(key);
+    if (!fs.existsSync(filePath)) return null;
+    const content = fs.readFileSync(filePath, 'utf8');
+    const record = JSON.parse(content);
+    if (record && record.timestamp && (Date.now() - record.timestamp < MANIFEST_CACHE_TTL_MS)) {
+      return record.data;
+    }
+  } catch (err) {
+    console.warn('[Disk Cache] Read warning:', err.message);
+  }
+  return null;
+}
+
+function writeDailyDiskCache(key, data) {
+  try {
+    const filePath = getCacheFilePath(key);
+    const record = {
+      key,
+      timestamp: Date.now(),
+      data
+    };
+    fs.writeFileSync(filePath, JSON.stringify(record, null, 2), 'utf8');
+    console.log(`[Disk Cache] Saved daily cache to ${path.basename(filePath)}`);
+  } catch (err) {
+    console.warn('[Disk Cache] Write warning:', err.message);
+  }
+}
+
+function clearDailyDiskCache(key) {
+  try {
+    const filePath = getCacheFilePath(key);
+    if (fs.existsSync(filePath)) {
+      fs.unlinkSync(filePath);
+      console.log(`[Disk Cache] Invalidated daily cache file for ${key}`);
+    }
+  } catch (err) {}
+}
 
 // In-Flight Phase 2 Concurrency Mutex & Cache (24-Hour Persistence)
 const activeResolutions = new Map();
@@ -2848,6 +2907,7 @@ export async function resolveAuditPhotosHandler(req, res) {
     const isFresh = req.query.fresh === 'true' || req.body?.fresh === true;
     if (isFresh) {
       resolutionCache.delete(cacheKey);
+      clearDailyDiskCache(cacheKey);
     }
 
     // 0. Check if full manifest cache already has the resolved photos for this hotel
@@ -2872,6 +2932,16 @@ export async function resolveAuditPhotosHandler(req, res) {
       return res.status(200).json(cached.data);
     }
 
+    // 1b. Check persistent 24-hour disk cache (Survives server restarts)
+    if (!isFresh) {
+      const diskData = readDailyDiskCache(cacheKey);
+      if (diskData) {
+        console.log(`[Photo Gatekeeper API] Serving 24-hour daily disk cache for "${cacheKey}" (instant hit)`);
+        resolutionCache.set(cacheKey, { timestamp: Date.now(), data: diskData });
+        return res.status(200).json(diskData);
+      }
+    }
+
     // 2. Check In-Flight Concurrency Mutex (Idempotency Lock: prevents duplicate Playwright instances)
     if (activeResolutions.has(cacheKey)) {
       console.log(`[Photo Gatekeeper API] Joining existing in-flight resolution for "${cacheKey}" (idempotency lock)`);
@@ -2884,6 +2954,7 @@ export async function resolveAuditPhotosHandler(req, res) {
     const resolutionPromise = resolveAuditPhotos(hotelName, city, neighborhood, strategySlots, bookingUrl, strategicShifts)
       .then(results => {
         resolutionCache.set(cacheKey, { timestamp: Date.now(), data: results });
+        writeDailyDiskCache(cacheKey, results);
         return results;
       })
       .finally(() => {
@@ -2972,13 +3043,24 @@ export default async function handler(req, res) {
     if (isFresh) {
       manifestCache.delete(manifestKey);
       resolutionCache.delete(manifestKey);
+      clearDailyDiskCache(manifestKey);
     }
 
-    // 1. Check in-memory manifest cache (15s debounce only)
+    // 1. Check in-memory manifest cache (RAM)
     const cached = isFresh ? null : manifestCache.get(manifestKey);
     if (cached && (Date.now() - cached.timestamp < MANIFEST_CACHE_TTL_MS)) {
-      console.log(`[Master Vibe API] Serving debounced manifest for "${manifestKey}"`);
+      console.log(`[Master Vibe API] Serving RAM cached manifest for "${manifestKey}"`);
       return res.status(200).json(cached.data);
+    }
+
+    // 1b. Check persistent 24-hour disk cache (Survives server restarts)
+    if (!isFresh) {
+      const diskData = readDailyDiskCache(manifestKey);
+      if (diskData) {
+        console.log(`[Master Vibe API] Serving 24-hour daily disk cache for "${manifestKey}" (instant hit)`);
+        manifestCache.set(manifestKey, { timestamp: Date.now(), data: diskData });
+        return res.status(200).json(diskData);
+      }
     }
 
     // 2. Check in-flight promise (prevent duplicate concurrent Gemini calls)
@@ -2999,6 +3081,7 @@ export default async function handler(req, res) {
         console.log(`[Master Vibe API] Fast-path Manifest-Only requested for "${hotelName}". Generating Vibe Manifest via Gemini 2.5 Flash...`);
         const manifestResult = await runStructuredVibeAudit(hotelName, city, rawCorpus, [], [], neighborhood);
         manifestCache.set(manifestKey, { timestamp: Date.now(), data: manifestResult });
+        writeDailyDiskCache(manifestKey, manifestResult);
         return manifestResult;
       }
 
@@ -3092,6 +3175,7 @@ export default async function handler(req, res) {
       }
 
       manifestCache.set(manifestKey, { timestamp: Date.now(), data: auditResult });
+      writeDailyDiskCache(manifestKey, auditResult);
       return auditResult;
     })().finally(() => {
       activeManifests.delete(manifestKey);

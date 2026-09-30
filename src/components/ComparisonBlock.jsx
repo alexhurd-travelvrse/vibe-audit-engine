@@ -148,7 +148,7 @@ export default function ComparisonBlock() {
                 <Flame size={14} />
                 OPTION B: MAGNET OVERRIDE
               </div>
-              <h3 className="col-heading text-cyan">The Atmosvibe Re-Sequence</h3>
+              <h3 className="col-heading text-cyan">The Atmosvibe Reorder</h3>
               <p className="col-subheading">Sensory dwell engineering that sells atmosphere and lifts ADR.</p>
             </div>
 

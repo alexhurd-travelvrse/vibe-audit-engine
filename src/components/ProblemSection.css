@@ -1,5 +1,5 @@
 .problem-conversion-section {
-  padding: 6rem 1.5rem;
+  padding: 8.5rem 1.5rem;
   background: #050b14;
   position: relative;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -8,7 +8,7 @@
 .problem-header {
   text-align: center;
   max-width: 860px;
-  margin: 0 auto 3.5rem auto;
+  margin: 0 auto 4.5rem auto;
 }
 
 .problem-badge {

@@ -38,7 +38,7 @@ export default function MidPageCta() {
           </h2>
 
           <p className="cta-body">
-            Map your property's vibe signature against local neighborhood dynamics to unlock content that makes your listing stand out across every channel.
+            Map your property's Vibe Signature against local neighborhood dynamics to unlock content that makes your listing stand out across every channel.
           </p>
 
           <form onSubmit={handleSubmit} className="mid-cta-form">

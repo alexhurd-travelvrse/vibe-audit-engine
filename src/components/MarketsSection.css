@@ -1,6 +1,6 @@
 /* Markets Section Styling */
 .markets-section {
-  padding: 6rem 0;
+  padding: 8.5rem 0;
   background: radial-gradient(circle at 50% 30%, rgba(245, 158, 11, 0.04) 0%, #030712 85%);
   position: relative;
   overflow: hidden;
@@ -17,7 +17,7 @@
 .markets-header {
   text-align: center;
   max-width: 920px;
-  margin: 0 auto 3.5rem auto;
+  margin: 0 auto 4.5rem auto;
 }
 
 .markets-pill {

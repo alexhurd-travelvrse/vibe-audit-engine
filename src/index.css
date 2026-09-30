@@ -105,7 +105,7 @@ select,
 }
 
 .section-padding {
-  padding: clamp(4rem, 10vw, 8rem) 0;
+  padding: clamp(5.5rem, 11vw, 9.5rem) 0;
 }
 
 .glass-card {

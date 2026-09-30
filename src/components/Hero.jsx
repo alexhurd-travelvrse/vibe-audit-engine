@@ -31,7 +31,7 @@ const Hero = () => {
         <section className="hero-section">
             <Helmet>
                 <title>Atmosvibe | Vibe Conversion for Hotels &amp; Travel Brands</title>
-                <meta name="description" content="Turn Atmosphere into Bookings. Start by fixing your photo sequence. Next-gen travelers don’t book features—they book a vibe. Atmosvibe creates a unique vibe signature, unlocking content that makes you stand out across all channels." />
+                <meta name="description" content="Turn Atmosphere into Bookings. Start by optimising your OTA photos. Next-gen travelers don’t book features—they book a vibe. Atmosvibe creates your unique Vibe Signature, unlocking content that makes you stand out across all channels." />
             </Helmet>
             <div className="hero-bg-container">
                 <video 
@@ -50,27 +50,15 @@ const Hero = () => {
                     <div className="hero-eyebrow-badge">
                         <Sparkles size={14} className="text-cyan" />
                         <span>ATMOSVIBE // VIBE CONVERSION FOR HOTELS &amp; TRAVEL BRANDS</span>
-                        <span style={{
-                            fontSize: '0.62rem',
-                            fontWeight: '900',
-                            letterSpacing: '1.5px',
-                            color: '#050b14',
-                            background: 'var(--color-gold, #ffd700)',
-                            padding: '2px 7px',
-                            borderRadius: '4px',
-                            textTransform: 'uppercase',
-                            marginLeft: '6px',
-                            boxShadow: '0 0 10px rgba(255, 215, 0, 0.4)'
-                        }}>BETA</span>
                     </div>
 
                     <h1 className="hero-headline">
                         Turn Atmosphere into Bookings<br />
-                        <span className="hero-headline-gradient">Start by fixing your photo sequence</span>
+                        <span className="hero-headline-gradient">Start by optimising your OTA photos</span>
                     </h1>
 
                     <p className="hero-subheadline">
-                        Next-gen travelers don’t book features—they book a vibe. Atmosvibe creates a unique vibe signature, unlocking content that makes you stand out across all channels
+                        Next-gen travelers don’t book features—they book a vibe. Atmosvibe creates your unique Vibe Signature, unlocking content that makes you stand out across all channels
                     </p>
                 </div>
 
@@ -98,16 +86,10 @@ const Hero = () => {
                             />
                         </div>
                         <button type="submit" className="action-submit-btn">
-                            <span>Re-Sequence Photos &amp; Unlock Vibe Signature</span>
+                            <span>Reorder Photos &amp; Unlock Vibe Signature</span>
                             <ArrowRight size={18} />
                         </button>
                     </form>
-
-                    <div className="action-box-microcopy">
-                        <span className="micro-highlight">Free instant Vibe Signature preview</span>
-                        <span className="micro-dot">•</span>
-                        <span>No sign-up required</span>
-                    </div>
 
                     <div className="action-box-samples">
                         <span className="samples-label">Instant Previews:</span>

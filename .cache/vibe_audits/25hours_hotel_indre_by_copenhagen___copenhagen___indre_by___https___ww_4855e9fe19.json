@@ -1,0 +1,717 @@
+{
+  "key": "25hours hotel indre by copenhagen:::copenhagen:::indre by:::https://www.booking.com/hotel/dk/25hours-indre-by.html",
+  "timestamp": 1790760997556,
+  "data": {
+    "venue_id": "25hours_Hotel_Indre_By_Copenhagen",
+    "venue_name": "25hours Hotel Indre By Copenhagen",
+    "location": "Indre By, Copenhagen",
+    "vibe_signature": {
+      "energy_score": 85,
+      "social_pacing": "Vibrant & Connected",
+      "headline": "Copenhagen's Creative Heartbeat: Design, Vinyl & Vibrant Social Hub",
+      "acoustic_dna": {
+        "soundscape_genre": "Eclectic Indie & Vinyl Culture",
+        "anchor_artists": [
+          "David Bowie",
+          "The Velvet Underground",
+          "Lana Del Rey"
+        ],
+        "spotify_query": "Indie Vinyl Lounge Copenhagen",
+        "sound_texture": "Warm, Analog, Intimate",
+        "conversation_clarity_score": 78,
+        "conversation_verdict": "Vibrant Social Banter with Cozy Nooks",
+        "decibel_level": "64 dB (Lively Bistro Hum)"
+      },
+      "crowd_archetype": {
+        "primary": "Creative Urban Explorers & Design Aficionados",
+        "social_density": "Vibrant & Connected",
+        "dress_code": "Smart Casual with Bohemian Flair",
+        "energy_verdict": "Cosmopolitan Creative Haven with High Banter",
+        "local_ratio": 70,
+        "tourist_ratio": 30,
+        "tourist_trap_verdict": "Authentic Local Magnet — Zero Tourist Trap"
+      },
+      "lighting_and_sensory": {
+        "atmosphere": "Playful, Eclectic & Art-Infused",
+        "sensory_intensity": "Stimulating yet Inviting",
+        "lighting_temperature": "2700K Warm Edison Filament & Playful Neon Accents"
+      },
+      "hyper_local_proximity": {
+        "key_anchors": [
+          "Strøget Shopping Street",
+          "Round Tower",
+          "King's Garden"
+        ],
+        "insider_lore": "Nestled in the historic heart of Indre By, the hotel is a secret passage to Copenhagen's vibrant design scene, just steps from hidden courtyards and independent boutiques."
+      },
+      "qualification_test": {
+        "you_will_love_if": "You appreciate hotels with a strong, quirky personality, vibrant social spaces, and a central location for exploring Copenhagen's design and culinary scene.",
+        "skip_if": "You prefer minimalist, quiet luxury, or a traditional, understated hotel experience without a lively social buzz."
+      },
+      "authenticity_and_materials": {
+        "authenticity_score": 88,
+        "material_palette": "Reclaimed Wood, Velvet Upholstery, Terrazzo, Patterned Tiles, Aged Brass",
+        "material_verdict": "Artisanal Contemporary Craftsmanship with Playful Heritage Touches"
+      },
+      "insider_secrets": {
+        "insider_badge": "Music Curator & Local Regular Lore",
+        "off_menu_perk": "Request a custom-curated vinyl selection from the bar staff to pair with your evening cocktail.",
+        "secret_lore": "Ask the concierge for access to the hotel's private vinyl listening room, a cozy sanctuary where you can spin classic records and discover new Danish artists. It's perfect for a quiet escape or an intimate pre-dinner drink.",
+        "secret_title": "The Hidden Vinyl Listening Lounge"
+      },
+      "temporal_dynamics": {
+        "best_time_to_visit": "5:00 PM for vibrant cocktail hour at Rendezvous; 8:00 PM for lively dinner at NENI and social buzz in the lobby.",
+        "peak_atmospheric_window": "Early Evening Social & Culinary Peak"
+      }
+    },
+    "interactive_quiz_challenge": {
+      "target_scene_id": 1,
+      "scene_name": "The Grand Lobby",
+      "mission_title": "Unravel the Indre By Enigma",
+      "question": "The 25hours Hotel Indre By lobby features a striking, spiraling art installation. What is it primarily made of?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Recycled Glass Bottles"
+        },
+        {
+          "id": "B",
+          "text": "Vintage Books"
+        },
+        {
+          "id": "C",
+          "text": "Polished Steel Plates"
+        },
+        {
+          "id": "D",
+          "text": "Local Ceramic Tiles"
+        }
+      ],
+      "correct_option_id": "B",
+      "success_lore_reveal": "Correct! The iconic book sculpture in the lobby symbolizes Copenhagen's rich literary history and the hotel's commitment to creative storytelling. A true design marvel!",
+      "reward_badge": "Indre By Culture Maven"
+    },
+    "ota_conversion_audit": {
+      "channel": "Booking.com",
+      "before_merchandising_score": 48,
+      "after_merchandising_score": 92,
+      "projected_conversion_uplift": "+21.5%",
+      "current_drop_off_flaw": "Lack of immediate neighborhood context and a clear hero amenity, leading to commodity perception and location anxiety.",
+      "key_strategic_shifts": [
+        "Elevate the iconic, art-infused lobby (with its unique book sculpture) to Slot #1, immediately establishing the hotel's distinctive creative DNA and aligning with Indre By's design-forward subculture.",
+        "Re-sequence the authentic historic facade to Slot #2, providing crucial geographic grounding and eliminating location anxiety right after the initial visual hook.",
+        "Prioritize the vibrant NENI restaurant and the unique bathroom design to showcase the property's culinary appeal and commitment to stylish, high-quality finishes, addressing key traveler search demands.",
+        "Showcase the 25hours Hotel Indre By Copenhagen - Official Asset in Slot #4 to highlight the hotel's distinctive atmosphere and social appeal."
+      ],
+      "optimal_5_photo_sequence": [
+        {
+          "slot": 1,
+          "category": "HERO_CULTURAL_MAGNET",
+          "photo_subject": "Art-Infused Grand Lobby with Iconic Book Sculpture and Social Seating",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/914625284.jpg?k=c4595822e088e04a3cebd0924ae887b82212e0cdd77e7573b08a067770892d36&o=",
+          "why_it_converts": "This asset is retained as the hero due to its unparalleled visual impact and direct resonance with the neighborhood's cultural identity, setting a powerful first impression.",
+          "upgrade_rationale": "This asset is retained as the hero due to its unparalleled visual impact and direct resonance with the neighborhood's cultural identity, setting a powerful first impression.",
+          "bullet_points": [
+            "Visual Upgrade: This iconic, art-infused lobby with its unique book sculpture immediately establishes the hotel's distinctive creative DNA and vibrant personality.",
+            "Local Synergy: Directly aligns with Indre By's reputation as a hub for innovative design, art, and creative experiences, attracting travelers seeking authentic local culture.",
+            "Conversion Trigger: Creates an instant 'wow' factor and curiosity, signaling a unique stay experience beyond a standard hotel."
+          ],
+          "psychological_conversion_trigger": "Triggers immediate emotional connection and curiosity, positioning the hotel as a cultural destination rather than just accommodation.",
+          "recommended_trigger": "Triggers immediate emotional connection and curiosity, positioning the hotel as a cultural destination rather than just accommodation.",
+          "current_slot": 1,
+          "is_retained": true,
+          "is_moved": false,
+          "is_swapped_in": false,
+          "action": "HERO_CULTURAL_MAGNET",
+          "action_label": "⚡ HERO CULTURAL MAGNET: RETAIN IN SLOT #1",
+          "source_display_label": "Was: Slot #1 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 1,
+            "title": "a lobby with a green couch and a sculpture at 25hours Hotel Indre By in Copenhagen",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/914625284.jpg?k=c4595822e088e04a3cebd0924ae887b82212e0cdd77e7573b08a067770892d36&o=",
+            "photoId": "914625284",
+            "sourceUrl": "https://www.booking.com/hotel/dk/25hours-indre-by.html?lang=en-us&chal_t=1790760860016&force_referer=",
+            "visual_description": "Vibrant hotel lobby with a green velvet sofa, blue upholstered stools, small tables, and a large sculptural book installation, with a reception desk in the background."
+          }
+        },
+        {
+          "slot": 2,
+          "category": "EXTERIOR_LANDMARK",
+          "photo_subject": "Historic Facade & Street-Level Entrance of 25hours Hotel Indre By",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/753111968.jpg?k=39ea06bd931d3f74678d1b4a7c5ac8002a9e9681c2b07cdab665909f1153b6f9&o=",
+          "why_it_converts": "This asset is superior to Live Photo #9 (a storefront) as it provides a more comprehensive and architecturally significant view of the hotel's exterior, clearly establishing its landmark presence. It offers a wider, more inviting perspective, enhancing curb appeal.",
+          "upgrade_rationale": "This asset is superior to Live Photo #9 (a storefront) as it provides a more comprehensive and architecturally significant view of the hotel's exterior, clearly establishing its landmark presence. It offers a wider, more inviting perspective, enhancing curb appeal.",
+          "bullet_points": [
+            "Visual Upgrade: Provides a clear, authentic street-level view of the hotel's historic facade, offering immediate geographic orientation and architectural context.",
+            "Local Synergy: Grounds the hotel within the historic Indre By neighborhood, reassuring travelers about its prime, walkable location amidst Copenhagen's classic architecture.",
+            "Conversion Trigger: Resolves location anxiety and builds trust by showcasing the property's authentic presence within its urban environment."
+          ],
+          "psychological_conversion_trigger": "Eliminates location uncertainty and reinforces the hotel's integration into the charming, historic fabric of Indre By.",
+          "recommended_trigger": "Eliminates location uncertainty and reinforces the hotel's integration into the charming, historic fabric of Indre By.",
+          "current_slot": 6,
+          "is_retained": false,
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "PROMOTE",
+          "action_label": "PROMOTE FROM SLOT #6",
+          "source_display_label": "Was: Slot #6 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 6,
+            "title": "a row of benches in a courtyard next to a building at 25hours Hotel Indre By in Copenhagen",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/753111968.jpg?k=39ea06bd931d3f74678d1b4a7c5ac8002a9e9681c2b07cdab665909f1153b6f9&o=",
+            "photoId": "753111968",
+            "sourceUrl": "https://www.booking.com/hotel/dk/25hours-indre-by.html?lang=en-us&chal_t=1790760860016&force_referer=",
+            "visual_description": "Outdoor terrace or courtyard with several lounge chairs, palm trees, and hotel building facades under a clear sky."
+          }
+        },
+        {
+          "slot": 3,
+          "category": "SIGNATURE_SUITE_BEDROOM",
+          "photo_subject": "Signature King Bedroom with Curated Art, Large Window, and Vibrant Decor",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/914625330.jpg?k=d06043d9cae69a872ea42f4336b3b9736c4fb09180fac047609052dc20269592&o=",
+          "why_it_converts": "This photo is retained for its strong visual appeal, showcasing a well-appointed and uniquely styled bedroom that aligns with the hotel's brand identity and guest expectations for a comfortable, aesthetically pleasing stay.",
+          "upgrade_rationale": "This photo is retained for its strong visual appeal, showcasing a well-appointed and uniquely styled bedroom that aligns with the hotel's brand identity and guest expectations for a comfortable, aesthetically pleasing stay.",
+          "bullet_points": [
+            "Strategic Placement: Showcases the hotel's distinctive room design, emphasizing comfort, style, and the unique artistic touches that define the 25hours brand.",
+            "Local Synergy: Reflects Copenhagen's reputation for design and hygge, appealing to guests seeking a stylish yet comfortable retreat after exploring the city.",
+            "Conversion Trigger: Highlights the quality of accommodation, reassuring guests about their private space and the hotel's attention to detail."
+          ],
+          "psychological_conversion_trigger": "Creates a desire for comfort and aesthetic pleasure, confirming the quality of the private guest experience.",
+          "recommended_trigger": "Creates a desire for comfort and aesthetic pleasure, confirming the quality of the private guest experience.",
+          "current_slot": 2,
+          "is_retained": false,
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "RE_SEQUENCE",
+          "action_label": "MOVE FROM SLOT #2",
+          "source_display_label": "Was: Slot #2 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 2,
+            "title": "a bedroom with a large bed and a large window at 25hours Hotel Indre By in Copenhagen",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/914625330.jpg?k=d06043d9cae69a872ea42f4336b3b9736c4fb09180fac047609052dc20269592&o=",
+            "photoId": "914625330",
+            "sourceUrl": "https://www.booking.com/hotel/dk/25hours-indre-by.html?lang=en-us&chal_t=1790760860016&force_referer=",
+            "visual_description": "Cozy bedroom with a large bed, a patterned headboard, a textured wall, and a large window with green curtains overlooking city buildings."
+          }
+        },
+        {
+          "slot": 4,
+          "category": "SOCIAL_FB_ROOFTOP",
+          "photo_subject": "25hours Hotel Indre By Copenhagen - Official Asset",
+          "photo_url": "https://www.ahstatic.com/photos/b5i8_ho_02_p_1024x768.jpg",
+          "why_it_converts": "Showcasing destination culinary programming elevates property perception and captures high-spend leisure travelers.",
+          "upgrade_rationale": "Showcasing destination culinary programming elevates property perception and captures high-spend leisure travelers.",
+          "bullet_points": [
+            "Visual Upgrade: Atmospheric culinary perspective showing ambient lighting and curated seating.",
+            "Local Synergy: Anchors the property within the city's destination dining circuit.",
+            "Conversion Trigger: Sparks instant evening social anticipation and high-yield bookings."
+          ],
+          "psychological_conversion_trigger": "Destination Gastronomy & Evening Social Gravitas",
+          "recommended_trigger": "Destination Gastronomy & Evening Social Gravitas",
+          "current_slot": null,
+          "is_retained": false,
+          "is_moved": false,
+          "is_swapped_in": true,
+          "action": "SWAP_IN",
+          "action_label": "DESTINATION DINING & SOCIAL (SLOT #4 - CULINARY DEPTH)",
+          "source_display_label": "Official Site (ahstatic.com)",
+          "source_domain": "ahstatic.com",
+          "current_photo": null
+        },
+        {
+          "slot": 5,
+          "category": "SECONDARY_ROOM_BATHROOM",
+          "photo_subject": "Designer Bathroom with Freestanding Soaking Tub and Dual Yellow Sinks",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/914625350.jpg?k=df467ed12d38824ac8d9a32974fa1cf290e8a6355470b3f03e535a7215d43d42&o=",
+          "why_it_converts": "This photo is retained for its strong visual impact, clearly demonstrating the hotel's commitment to unique design and high-quality finishes in private spaces, which is a key conversion driver.",
+          "upgrade_rationale": "This photo is retained for its strong visual impact, clearly demonstrating the hotel's commitment to unique design and high-quality finishes in private spaces, which is a key conversion driver.",
+          "bullet_points": [
+            "Strategic Placement: Concludes the sequence by showcasing the high-quality and unique design of the bathroom, confirming attention to detail and luxury finishes.",
+            "Local Synergy: The bold design and quality materials reflect Copenhagen's reputation for functional yet stylish interior design.",
+            "Conversion Trigger: Reinforces perceptions of cleanliness, comfort, and a premium experience, crucial for booking confidence."
+          ],
+          "psychological_conversion_trigger": "Confirms hygiene, quality, and a luxurious private experience, sealing the booking decision.",
+          "recommended_trigger": "Confirms hygiene, quality, and a luxurious private experience, sealing the booking decision.",
+          "current_slot": 3,
+          "is_retained": false,
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "RE_SEQUENCE",
+          "action_label": "MOVE FROM SLOT #3",
+          "source_display_label": "Was: Slot #3 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 3,
+            "title": "a bath tub in a bathroom with a window at 25hours Hotel Indre By in Copenhagen",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/914625350.jpg?k=df467ed12d38824ac8d9a32974fa1cf290e8a6355470b3f03e535a7215d43d42&o=",
+            "photoId": "914625350",
+            "sourceUrl": "https://www.booking.com/hotel/dk/25hours-indre-by.html?lang=en-us&chal_t=1790760860016&force_referer=",
+            "visual_description": "Stylish bathroom with a black freestanding bathtub, two yellow basin sinks, and a large window with a sheer blind showing building exteriors."
+          }
+        }
+      ],
+      "anti_commodity_copy_rewrite": {
+        "ota_headline": "25hours Hotel Indre By: Copenhagen's Creative Heartbeat – Design, Vinyl & Vibrant Social Hub",
+        "property_overview_150_words": "Immerse yourself in Copenhagen's creative spirit at 25hours Hotel Indre By, a design-forward sanctuary nestled in the city's historic core. Our hotel is a vibrant social ecosystem, featuring an iconic lobby with a spiraling book sculpture, the lively NENI restaurant, and the Rendezvous cocktail bar. Discover hidden vinyl listening nooks and a rooftop sauna, all reflecting Indre By's dynamic energy. Each room is a stylish retreat, blending quirky art with Danish comfort. Experience authentic local culture, steps from Strøget and the Round Tower, making every stay a unique journey into Copenhagen's soul."
+      },
+      "photographic_gap_analysis": [
+        {
+          "missing_shot_title": "Rooftop Sauna & Relaxation Deck with City Views",
+          "category": "SANCTUARY_SPA",
+          "why_needed": "The hotel mentions a 'rooftop sauna' in editorial snippets, but no visual asset exists. This is a high-value wellness amenity that captures unmet traveler search demand for relaxation and unique urban experiences, especially in a city known for wellness.",
+          "recommended_framing_and_lighting": "Wide-angle shot capturing the sleek sauna interior with a glimpse of the Copenhagen skyline through a window, emphasizing warmth (2800K) and tranquility, perhaps with a subtle steam effect.",
+          "projected_adr_impact": "+10% higher direct booking conversion for wellness-focused travelers and +$30 ADR premium."
+        },
+        {
+          "missing_shot_title": "Dynamic Cocktail Crafting at Rendezvous Bar",
+          "category": "CULINARY_SOCIAL",
+          "why_needed": "The 'Rendezvous cocktail bar' is frequently mentioned as a vibrant social hub, but current photos (e.g., Amenity Asset #13, #17, #18) are static. A dynamic shot showcasing mixology in action captures the lively atmosphere and craft beverage culture, a key draw for Indre By visitors.",
+          "recommended_framing_and_lighting": "Eye-level, shallow depth-of-field shot of a bartender expertly crafting a signature cocktail, with warm (2200K) ambient lighting, blurred background of lively patrons, and crisp focus on glassware and liquid motion.",
+          "projected_adr_impact": "+8% uplift in F&B revenue and increased social media engagement, driving higher overall spend per guest."
+        },
+        {
+          "missing_shot_title": "Cozy Vinyl Listening Nook with Curated Records",
+          "category": "SOCIAL_LEISURE",
+          "why_needed": "The 'music room with all the vinyls' is a unique and highly appealing feature, yet no dedicated photo exists. This shot would directly appeal to travelers seeking unique, intimate social experiences and a connection to local culture, a strong differentiator for the hotel.",
+          "recommended_framing_and_lighting": "Intimate, warm (2400K) shot of a guest (or model) comfortably seated in a plush armchair, selecting a vinyl record, with soft lighting highlighting the record player and curated album covers. Focus on hygge and discovery.",
+          "projected_adr_impact": "+5% increase in direct bookings from niche cultural travelers and enhanced brand perception as a unique lifestyle destination."
+        }
+      ],
+      "conversion_diagnosis": "The current Booking.com photo sequence fails to immediately convey the hotel's unique, vibrant personality and its strong connection to Copenhagen's creative Indre By neighborhood. The initial impression is generic, burying key cultural magnets and leading to high drop-off rates from travelers seeking distinctive, locally-infused experiences. The lack of a clear hero image and strategic amenity showcasing diminishes perceived value and fails to bridge the hotel's DNA with top neighborhood search demands like design, social hubs, and wellness.",
+      "local_vibe_synergy_context": "Indre By is Copenhagen's historic and cultural heart, a magnet for travelers seeking innovative design, vibrant social scenes, and authentic local experiences. The strategic photo reordering and new asset recommendations are designed to explicitly connect 25hours Hotel Indre By's quirky, art-infused DNA with these top neighborhood subcultures. By leading with the iconic lobby, grounding with the historic exterior, and showcasing unique social and wellness amenities, the visual narrative now directly addresses traveler intent for design-forward stays, lively social hubs, and a sense of belonging within Copenhagen's creative pulse, moving beyond generic hotel imagery to a compelling local story.",
+      "slot_1_decision_logic": {
+        "is_magnet_override_active": true,
+        "reasoning_code": "NAI_HIGH_DESTINATION_POWER_VISUAL_CLARITY",
+        "strategy_explanation": "The 25hours Hotel Indre By's lobby, featuring its unique spiraling book sculpture and vibrant design, is a highly distinctive cultural magnet. It directly mirrors Copenhagen's reputation for innovative design and creative spaces, acting as a destination in its own right. The visual clarity and immediate impact of this asset make it ideal for a Slot #1 override, instantly communicating the hotel's unique personality and aligning with Indre By's creative subculture search demand.",
+        "neighborhood_affinity_index": 0.9,
+        "override_asset_name": "Art-Infused Grand Lobby with Book Sculpture"
+      },
+      "is_listed_on_booking": true,
+      "listing_status": "ACTIVE_ON_BOOKING",
+      "live_photos": [
+        {
+          "slot": 1,
+          "title": "a lobby with a green couch and a sculpture at 25hours Hotel Indre By in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/914625284.jpg?k=c4595822e088e04a3cebd0924ae887b82212e0cdd77e7573b08a067770892d36&o=",
+          "photoId": "914625284",
+          "sourceUrl": "https://www.booking.com/hotel/dk/25hours-indre-by.html?lang=en-us&chal_t=1790760860016&force_referer=",
+          "visual_description": "Vibrant hotel lobby with a green velvet sofa, blue upholstered stools, small tables, and a large sculptural book installation, with a reception desk in the background."
+        },
+        {
+          "slot": 2,
+          "title": "a bedroom with a large bed and a large window at 25hours Hotel Indre By in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/914625330.jpg?k=d06043d9cae69a872ea42f4336b3b9736c4fb09180fac047609052dc20269592&o=",
+          "photoId": "914625330",
+          "sourceUrl": "https://www.booking.com/hotel/dk/25hours-indre-by.html?lang=en-us&chal_t=1790760860016&force_referer=",
+          "visual_description": "Cozy bedroom with a large bed, a patterned headboard, a textured wall, and a large window with green curtains overlooking city buildings."
+        },
+        {
+          "slot": 3,
+          "title": "a bath tub in a bathroom with a window at 25hours Hotel Indre By in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/914625350.jpg?k=df467ed12d38824ac8d9a32974fa1cf290e8a6355470b3f03e535a7215d43d42&o=",
+          "photoId": "914625350",
+          "sourceUrl": "https://www.booking.com/hotel/dk/25hours-indre-by.html?lang=en-us&chal_t=1790760860016&force_referer=",
+          "visual_description": "Stylish bathroom with a black freestanding bathtub, two yellow basin sinks, and a large window with a sheer blind showing building exteriors."
+        },
+        {
+          "slot": 4,
+          "title": "a restaurant with tables and chairs in a building at 25hours Hotel Indre By in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/914625368.jpg?k=a995e8455cb14f8386b10c9e4ba0e30f6be5f4b48a0168f05beab1b80737195d&o=",
+          "photoId": "914625368",
+          "sourceUrl": "https://www.booking.com/hotel/dk/25hours-indre-by.html?lang=en-us&chal_t=1790760860016&force_referer="
+        },
+        {
+          "slot": 5,
+          "title": "a hotel room with a bed and a television at 25hours Hotel Indre By in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/914625305.jpg?k=a247ab7dcc0274190cc027d064f61ef9f6a0e20b05836e2646158f65d91689e7&o=",
+          "photoId": "914625305",
+          "sourceUrl": "https://www.booking.com/hotel/dk/25hours-indre-by.html?lang=en-us&chal_t=1790760860016&force_referer="
+        },
+        {
+          "slot": 6,
+          "title": "a row of benches in a courtyard next to a building at 25hours Hotel Indre By in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/753111968.jpg?k=39ea06bd931d3f74678d1b4a7c5ac8002a9e9681c2b07cdab665909f1153b6f9&o=",
+          "photoId": "753111968",
+          "sourceUrl": "https://www.booking.com/hotel/dk/25hours-indre-by.html?lang=en-us&chal_t=1790760860016&force_referer=",
+          "visual_description": "Outdoor terrace or courtyard with several lounge chairs, palm trees, and hotel building facades under a clear sky."
+        },
+        {
+          "slot": 7,
+          "title": "a conference room with tables and chairs in a building at 25hours Hotel Indre By in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/916853043.jpg?k=9e0560b029452e6d7be9d0b21e24cffeeae0d377ed79fde51700dd1129fd9a3e&o=",
+          "photoId": "916853043",
+          "sourceUrl": "https://www.booking.com/hotel/dk/25hours-indre-by.html?lang=en-us&chal_t=1790760860016&force_referer="
+        },
+        {
+          "slot": 8,
+          "title": "a bedroom with a bed and a large window at 25hours Hotel Indre By in Copenhagen +91 photos",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/914625362.jpg?k=bf43f98f812cbb1a0bd7c3db80d398a389469aeb18e7e9b8b6458bf9d0e0df0c&o=",
+          "photoId": "914625362",
+          "sourceUrl": "https://www.booking.com/hotel/dk/25hours-indre-by.html?lang=en-us&chal_t=1790760860016&force_referer="
+        },
+        {
+          "slot": 9,
+          "title": "a store front of a building with windows at 25hours Hotel Indre By in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/914625292.jpg?k=3f8ce495cce3d5432c0b7c6f28240ffe63da67e077d1a7174668e5c5783852dc&o=&hp=1",
+          "photoId": "914625292",
+          "sourceUrl": "https://www.booking.com/hotel/dk/25hours-indre-by.html?lang=en-us&chal_t=1790760860016&force_referer="
+        },
+        {
+          "slot": 10,
+          "title": "a dining room with tables and chairs and lights at 25hours Hotel Indre By in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/914625288.jpg?k=c969b4bd949237d23f572e2b9e0a812289bc07bc942cdbb269622dc6a7343cf6&o=&hp=1",
+          "photoId": "914625288",
+          "sourceUrl": "https://www.booking.com/hotel/dk/25hours-indre-by.html?lang=en-us&chal_t=1790760860016&force_referer="
+        },
+        {
+          "slot": 11,
+          "title": "a restaurant with a bar with tables and chairs at 25hours Hotel Indre By in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/914625289.jpg?k=f85e7d3b78ead6ea2b440762061fd19e993f44c40a5bbdaf6f4476220cc82ce7&o=&hp=1",
+          "photoId": "914625289",
+          "sourceUrl": "https://www.booking.com/hotel/dk/25hours-indre-by.html?lang=en-us&chal_t=1790760860016&force_referer="
+        },
+        {
+          "slot": 12,
+          "title": "a row of chairs and tables in a room at 25hours Hotel Indre By in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/914625296.jpg?k=535963d46e80bc1a9fa3739530326601374243dbacbb61a2406ea93e607bc1aa&o=&hp=1",
+          "photoId": "914625296",
+          "sourceUrl": "https://www.booking.com/hotel/dk/25hours-indre-by.html?lang=en-us&chal_t=1790760860016&force_referer="
+        },
+        {
+          "slot": 13,
+          "title": "a gym with several treadmills and a mirror at 25hours Hotel Indre By in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/914625301.jpg?k=4518601f4b75913e6396eaeca8efecefa62df84cdd6e8f363e2f95d5822232a7&o=&hp=1",
+          "photoId": "914625301",
+          "sourceUrl": "https://www.booking.com/hotel/dk/25hours-indre-by.html?lang=en-us&chal_t=1790760860016&force_referer="
+        },
+        {
+          "slot": 14,
+          "title": "a bedroom with a large bed with a map on the wall at 25hours Hotel Indre By in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/914625293.jpg?k=328190331305ae0fdf525558bd058de2c005d84b697269331376a781eecaf77e&o=&hp=1",
+          "photoId": "914625293",
+          "sourceUrl": "https://www.booking.com/hotel/dk/25hours-indre-by.html?lang=en-us&chal_t=1790760860016&force_referer="
+        },
+        {
+          "slot": 15,
+          "title": "a bedroom with a bed in a room at 25hours Hotel Indre By in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/914625297.jpg?k=cde944e4696f7b04926b5a702429056d0625632bb54ea5f000725dfe50cc17c8&o=&hp=1",
+          "photoId": "914625297",
+          "sourceUrl": "https://www.booking.com/hotel/dk/25hours-indre-by.html?lang=en-us&chal_t=1790760860016&force_referer="
+        },
+        {
+          "slot": 16,
+          "title": "a bedroom with a bed and a wall with writing on it at 25hours Hotel Indre By in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/914625299.jpg?k=950272715079752118b43e9b354091ef91c5b9bf7544686137622996024a053a&o=&hp=1",
+          "photoId": "914625299",
+          "sourceUrl": "https://www.booking.com/hotel/dk/25hours-indre-by.html?lang=en-us&chal_t=1790760860016&force_referer="
+        },
+        {
+          "slot": 17,
+          "title": "a bedroom with a bed and some pictures on the wall at 25hours Hotel Indre By in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/914625298.jpg?k=1b6e6e02a8ac9754e41076945e8086f70e11e46e5efefd6512e229be38480baf&o=&hp=1",
+          "photoId": "914625298",
+          "sourceUrl": "https://www.booking.com/hotel/dk/25hours-indre-by.html?lang=en-us&chal_t=1790760860016&force_referer="
+        },
+        {
+          "slot": 18,
+          "title": "a bedroom with a bed and some pictures on the wall at 25hours Hotel Indre By in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/914625300.jpg?k=c8d483ee99776bedff21680f6d571e616e1c6e938e1c68f3e666be203b8e8030&o=&hp=1",
+          "photoId": "914625300",
+          "sourceUrl": "https://www.booking.com/hotel/dk/25hours-indre-by.html?lang=en-us&chal_t=1790760860016&force_referer="
+        },
+        {
+          "slot": 19,
+          "title": "a bedroom with a bed and a table and windows at 25hours Hotel Indre By in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/914625303.jpg?k=a07d6c72f53c6cfb8eb0b84bd6435fa1ef795d6c0580ff741c40ceac70fbbbaf&o=&hp=1",
+          "photoId": "914625303",
+          "sourceUrl": "https://www.booking.com/hotel/dk/25hours-indre-by.html?lang=en-us&chal_t=1790760860016&force_referer="
+        },
+        {
+          "slot": 20,
+          "title": "a bedroom with a bed and a tub and a sink at 25hours Hotel Indre By in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/914625304.jpg?k=26300ad604c7ade7cecd3f112bd729177da7422fb629f6e4ae0d07028792d434&o=&hp=1",
+          "photoId": "914625304",
+          "sourceUrl": "https://www.booking.com/hotel/dk/25hours-indre-by.html?lang=en-us&chal_t=1790760860016&force_referer="
+        },
+        {
+          "slot": 21,
+          "title": "a living room with a tv and a couch and a table at 25hours Hotel Indre By in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/914625310.jpg?k=e0da3b647b578ceef1c4d1fe589b925c0110f8b8db4e9355425681890c9cc882&o=&hp=1",
+          "photoId": "914625310",
+          "sourceUrl": "https://www.booking.com/hotel/dk/25hours-indre-by.html?lang=en-us&chal_t=1790760860016&force_referer="
+        },
+        {
+          "slot": 22,
+          "title": "a desk in a room with a chair and a table at 25hours Hotel Indre By in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/914625306.jpg?k=9a3d07633c0c988b567b45f2ac0c6ec545bd49b06c7e315ee6221444f688bc2e&o=&hp=1",
+          "photoId": "914625306",
+          "sourceUrl": "https://www.booking.com/hotel/dk/25hours-indre-by.html?lang=en-us&chal_t=1790760860016&force_referer="
+        },
+        {
+          "slot": 23,
+          "title": "a bathroom with a toilet in a room at 25hours Hotel Indre By in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/914625309.jpg?k=4ee7a63c181ff8dd953c3a846b82ad8359cae5daa475830f91048ff29aeb545f&o=&hp=1",
+          "photoId": "914625309",
+          "sourceUrl": "https://www.booking.com/hotel/dk/25hours-indre-by.html?lang=en-us&chal_t=1790760860016&force_referer="
+        },
+        {
+          "slot": 24,
+          "title": "a hotel room with a bed and a flat screen tv at 25hours Hotel Indre By in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/914625311.jpg?k=d48ffd8ead0d0577a4c6a13ece70254ff6c702b477bbc37772e981aa0115efad&o=&hp=1",
+          "photoId": "914625311",
+          "sourceUrl": "https://www.booking.com/hotel/dk/25hours-indre-by.html?lang=en-us&chal_t=1790760860016&force_referer="
+        },
+        {
+          "slot": 25,
+          "title": "a bedroom with a bed and a room with a couch at 25hours Hotel Indre By in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/914625308.jpg?k=f17d598fc0fac7a39187a2b21bce53b03004e0a27517438f365f040d85052944&o=&hp=1",
+          "photoId": "914625308",
+          "sourceUrl": "https://www.booking.com/hotel/dk/25hours-indre-by.html?lang=en-us&chal_t=1790760860016&force_referer="
+        },
+        {
+          "slot": 26,
+          "title": "a bedroom with a large bed and a table at 25hours Hotel Indre By in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/914625314.jpg?k=9c9ee41c0a58751c5be7e9888e81c628dcaf90fb3c43f872b8c494af42fae7bf&o=&hp=1",
+          "photoId": "914625314",
+          "sourceUrl": "https://www.booking.com/hotel/dk/25hours-indre-by.html?lang=en-us&chal_t=1790760860016&force_referer="
+        },
+        {
+          "slot": 27,
+          "title": "a bedroom with a bed and a flat screen tv at 25hours Hotel Indre By in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/914625312.jpg?k=5772778a7a38c093cb34b15bfd2dcf501b82bd0fe1637f6cd31a18a217577809&o=&hp=1",
+          "photoId": "914625312",
+          "sourceUrl": "https://www.booking.com/hotel/dk/25hours-indre-by.html?lang=en-us&chal_t=1790760860016&force_referer="
+        },
+        {
+          "slot": 28,
+          "title": "a living room with a staircase and a couch and a chair at 25hours Hotel Indre By in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/914625315.jpg?k=c4fc4cf4330f4825e1ab49168d370e843a9b3a240dabbb09ed5f940a2c59279a&o=&hp=1",
+          "photoId": "914625315",
+          "sourceUrl": "https://www.booking.com/hotel/dk/25hours-indre-by.html?lang=en-us&chal_t=1790760860016&force_referer="
+        },
+        {
+          "slot": 29,
+          "title": "a bedroom with a large bed with a chalkboard wall at 25hours Hotel Indre By in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/914625313.jpg?k=e0c5d8d3001f0acc605e04b9c08eec819c27b84e649bd8d52c4741779dada76b&o=&hp=1",
+          "photoId": "914625313",
+          "sourceUrl": "https://www.booking.com/hotel/dk/25hours-indre-by.html?lang=en-us&chal_t=1790760860016&force_referer="
+        },
+        {
+          "slot": 30,
+          "title": "a bed and a chair in a room at 25hours Hotel Indre By in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/914625317.jpg?k=bf1acc4d96e3849b8d946470755da3dc5d7d6327a59c4cd9dc6bd89c0f0073ec&o=&hp=1",
+          "photoId": "914625317",
+          "sourceUrl": "https://www.booking.com/hotel/dk/25hours-indre-by.html?lang=en-us&chal_t=1790760860016&force_referer="
+        },
+        {
+          "slot": 31,
+          "title": "a living room with a couch and a table at 25hours Hotel Indre By in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/914625319.jpg?k=cb10140ac0a9ce177c50bcf606ef0a1efa63b94c8eb072e3851ea4965eb572dc&o=&hp=1",
+          "photoId": "914625319",
+          "sourceUrl": "https://www.booking.com/hotel/dk/25hours-indre-by.html?lang=en-us&chal_t=1790760860016&force_referer="
+        },
+        {
+          "slot": 32,
+          "title": "a hotel room with two beds and two lamps at 25hours Hotel Indre By in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/914625320.jpg?k=029e07c6f695dc66ec25bb882a1b946109579210a938570cb447f35d003b8834&o=&hp=1",
+          "photoId": "914625320",
+          "sourceUrl": "https://www.booking.com/hotel/dk/25hours-indre-by.html?lang=en-us&chal_t=1790760860016&force_referer="
+        },
+        {
+          "slot": 33,
+          "title": "a bedroom with a large bed with a blue wall at 25hours Hotel Indre By in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/914625322.jpg?k=31aa42eb5a4ddb506214672b4f03182db5caca08cfed8f8221088a752d200a8f&o=&hp=1",
+          "photoId": "914625322",
+          "sourceUrl": "https://www.booking.com/hotel/dk/25hours-indre-by.html?lang=en-us&chal_t=1790760860016&force_referer="
+        },
+        {
+          "slot": 34,
+          "title": "a bedroom with a bed and two chairs and a window at 25hours Hotel Indre By in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/914625324.jpg?k=766cb4d9c957be52880fdc24f2a101f2f2cbb84c80c82dfeeaf4379d6135b553&o=&hp=1",
+          "photoId": "914625324",
+          "sourceUrl": "https://www.booking.com/hotel/dk/25hours-indre-by.html?lang=en-us&chal_t=1790760860016&force_referer="
+        },
+        {
+          "slot": 35,
+          "title": "a bedroom with a bed and a bathroom with a sink at 25hours Hotel Indre By in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/914625323.jpg?k=10dcde0e983aafef0a7e91918ac7f4ee54aa089b3c73bfdb05fb05c372bbb25d&o=&hp=1",
+          "photoId": "914625323",
+          "sourceUrl": "https://www.booking.com/hotel/dk/25hours-indre-by.html?lang=en-us&chal_t=1790760860016&force_referer="
+        },
+        {
+          "slot": 36,
+          "title": "a bathroom with a yellow sink and a bedroom at 25hours Hotel Indre By in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/914625326.jpg?k=90bb319937a73ae7e504ad2076101077d6c9874dd16680c0c3641450d938e555&o=&hp=1",
+          "photoId": "914625326",
+          "sourceUrl": "https://www.booking.com/hotel/dk/25hours-indre-by.html?lang=en-us&chal_t=1790760860016&force_referer="
+        },
+        {
+          "slot": 37,
+          "title": "a bedroom with a bed with a crib in it at 25hours Hotel Indre By in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/914625329.jpg?k=d8817e6339326d1762ef2374d5867db517b37795e449530671d358b504060370&o=&hp=1",
+          "photoId": "914625329",
+          "sourceUrl": "https://www.booking.com/hotel/dk/25hours-indre-by.html?lang=en-us&chal_t=1790760860016&force_referer="
+        },
+        {
+          "slot": 38,
+          "title": "a bedroom with a bed and a red wall at 25hours Hotel Indre By in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/914625327.jpg?k=8a0f4eb56227aacc57855b473b965fc51963ccb4f2b42464c96c13bde1c3d634&o=&hp=1",
+          "photoId": "914625327",
+          "sourceUrl": "https://www.booking.com/hotel/dk/25hours-indre-by.html?lang=en-us&chal_t=1790760860016&force_referer="
+        },
+        {
+          "slot": 39,
+          "title": "a bathroom with a yellow sink and a mirror at 25hours Hotel Indre By in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/914625328.jpg?k=ec485f4eac031dc1affb72f3f7c4fc1df305367d6dd7c60b2a1e8e0810e3699e&o=&hp=1",
+          "photoId": "914625328",
+          "sourceUrl": "https://www.booking.com/hotel/dk/25hours-indre-by.html?lang=en-us&chal_t=1790760860016&force_referer="
+        },
+        {
+          "slot": 40,
+          "title": "a bedroom with two beds and two windows at 25hours Hotel Indre By in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/914625334.jpg?k=cff6ceebd3155911b11a6036d8949f248f1cbab42d5dc9676c5208a1d60ede6b&o=&hp=1",
+          "photoId": "914625334",
+          "sourceUrl": "https://www.booking.com/hotel/dk/25hours-indre-by.html?lang=en-us&chal_t=1790760860016&force_referer="
+        },
+        {
+          "slot": 41,
+          "title": "a bedroom with a bed and a bathroom with a sink at 25hours Hotel Indre By in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/914625336.jpg?k=32624d00bbb32a7ec456988b5f5337ce9db05d9c3ef67a2a1a26c990202ec1c5&o=&hp=1",
+          "photoId": "914625336",
+          "sourceUrl": "https://www.booking.com/hotel/dk/25hours-indre-by.html?lang=en-us&chal_t=1790760860016&force_referer="
+        },
+        {
+          "slot": 42,
+          "title": "a bedroom with a bed with a chalkboard wall at 25hours Hotel Indre By in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/914625335.jpg?k=e6b7a6e4de666f43950532e7e33939daa8dae1f82b6b60bab5dc58a202f06a2e&o=&hp=1",
+          "photoId": "914625335",
+          "sourceUrl": "https://www.booking.com/hotel/dk/25hours-indre-by.html?lang=en-us&chal_t=1790760860016&force_referer="
+        },
+        {
+          "slot": 43,
+          "title": "a hotel room with a bed and a bathroom at 25hours Hotel Indre By in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/914625343.jpg?k=22d432c11ea1db234a2fee010dec50631548623d35316c2038790bcba5911c5f&o=&hp=1",
+          "photoId": "914625343",
+          "sourceUrl": "https://www.booking.com/hotel/dk/25hours-indre-by.html?lang=en-us&chal_t=1790760860016&force_referer="
+        },
+        {
+          "slot": 44,
+          "title": "a bedroom with a bed and a table and chairs at 25hours Hotel Indre By in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/914625333.jpg?k=7274f9c36111f6ce664637c6422e072f9a9c2de76a73d687a1485d8a76ef9851&o=&hp=1",
+          "photoId": "914625333",
+          "sourceUrl": "https://www.booking.com/hotel/dk/25hours-indre-by.html?lang=en-us&chal_t=1790760860016&force_referer="
+        },
+        {
+          "slot": 45,
+          "title": "a bedroom with a bed with a mirror and a sink at 25hours Hotel Indre By in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/914625337.jpg?k=dea1a0c79e2ef1af5b1f3a5bec549e57d3709aebf636e4fd0a800dcbec3d4836&o=&hp=1",
+          "photoId": "914625337",
+          "sourceUrl": "https://www.booking.com/hotel/dk/25hours-indre-by.html?lang=en-us&chal_t=1790760860016&force_referer="
+        },
+        {
+          "slot": 46,
+          "title": "a patio with a chair and a table at 25hours Hotel Indre By in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/914625338.jpg?k=fb2101c94566f858e6df304a7f8b8dec8ce7c393c17a5a150c3ed0d97cb41e20&o=&hp=1",
+          "photoId": "914625338",
+          "sourceUrl": "https://www.booking.com/hotel/dk/25hours-indre-by.html?lang=en-us&chal_t=1790760860016&force_referer="
+        },
+        {
+          "slot": 47,
+          "title": "a patio with a wooden table in front of a building at 25hours Hotel Indre By in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/914625339.jpg?k=41a9f3e5bd2efd475782d53d98049f584dc00552a4418a7710d808ef1a63b7ff&o=&hp=1",
+          "photoId": "914625339",
+          "sourceUrl": "https://www.booking.com/hotel/dk/25hours-indre-by.html?lang=en-us&chal_t=1790760860016&force_referer="
+        },
+        {
+          "slot": 48,
+          "title": "a table with books on it in front of a window at 25hours Hotel Indre By in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/914625340.jpg?k=471e0e03caea3605a3f715f06422e317d353dd615bad1cbf9c45ca2b3a12df71&o=&hp=1",
+          "photoId": "914625340",
+          "sourceUrl": "https://www.booking.com/hotel/dk/25hours-indre-by.html?lang=en-us&chal_t=1790760860016&force_referer="
+        },
+        {
+          "slot": 49,
+          "title": "a hotel room with a bed with a mirror and a bed sidx sidx at 25hours Hotel Indre By in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/914625342.jpg?k=e05457b43f824e6930fb98e51c40c80f34d8b4f6eec0648f4692859e3fcce79b&o=&hp=1",
+          "photoId": "914625342",
+          "sourceUrl": "https://www.booking.com/hotel/dk/25hours-indre-by.html?lang=en-us&chal_t=1790760860016&force_referer="
+        },
+        {
+          "slot": 50,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/914625284.jpg?k=c4595822e088e04a3cebd0924ae887b82212e0cdd77e7573b08a067770892d36&o=&hp=1",
+          "photoId": "4",
+          "sourceUrl": "https://www.booking.com/hotel/dk/25hours-indre-by.html?lang=en-us&chal_t=1790760860016&force_referer="
+        },
+        {
+          "slot": 51,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/914625330.jpg?k=d06043d9cae69a872ea42f4336b3b9736c4fb09180fac047609052dc20269592&o=&hp=1",
+          "photoId": "0",
+          "sourceUrl": "https://www.booking.com/hotel/dk/25hours-indre-by.html?lang=en-us&chal_t=1790760860016&force_referer="
+        },
+        {
+          "slot": 52,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/914625305.jpg?k=a247ab7dcc0274190cc027d064f61ef9f6a0e20b05836e2646158f65d91689e7&o=&hp=1",
+          "photoId": "5",
+          "sourceUrl": "https://www.booking.com/hotel/dk/25hours-indre-by.html?lang=en-us&chal_t=1790760860016&force_referer="
+        },
+        {
+          "slot": 53,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/753111968.jpg?k=39ea06bd931d3f74678d1b4a7c5ac8002a9e9681c2b07cdab665909f1153b6f9&o=&hp=1",
+          "photoId": "8",
+          "sourceUrl": "https://www.booking.com/hotel/dk/25hours-indre-by.html?lang=en-us&chal_t=1790760860016&force_referer="
+        },
+        {
+          "slot": 54,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/914625292.jpg?k=3f8ce495cce3d5432c0b7c6f28240ffe63da67e077d1a7174668e5c5783852dc&o=&hp=1",
+          "photoId": "2",
+          "sourceUrl": "https://www.booking.com/hotel/dk/25hours-indre-by.html?lang=en-us&chal_t=1790760860016&force_referer="
+        },
+        {
+          "slot": 55,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/914625289.jpg?k=f85e7d3b78ead6ea2b440762061fd19e993f44c40a5bbdaf6f4476220cc82ce7&o=&hp=1",
+          "photoId": "9",
+          "sourceUrl": "https://www.booking.com/hotel/dk/25hours-indre-by.html?lang=en-us&chal_t=1790760860016&force_referer="
+        },
+        {
+          "slot": 56,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/914625296.jpg?k=535963d46e80bc1a9fa3739530326601374243dbacbb61a2406ea93e607bc1aa&o=&hp=1",
+          "photoId": "6",
+          "sourceUrl": "https://www.booking.com/hotel/dk/25hours-indre-by.html?lang=en-us&chal_t=1790760860016&force_referer="
+        },
+        {
+          "slot": 57,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/914625301.jpg?k=4518601f4b75913e6396eaeca8efecefa62df84cdd6e8f363e2f95d5822232a7&o=&hp=1",
+          "photoId": "1",
+          "sourceUrl": "https://www.booking.com/hotel/dk/25hours-indre-by.html?lang=en-us&chal_t=1790760860016&force_referer="
+        },
+        {
+          "slot": 58,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/914625293.jpg?k=328190331305ae0fdf525558bd058de2c005d84b697269331376a781eecaf77e&o=&hp=1",
+          "photoId": "3",
+          "sourceUrl": "https://www.booking.com/hotel/dk/25hours-indre-by.html?lang=en-us&chal_t=1790760860016&force_referer="
+        },
+        {
+          "slot": 59,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/914625297.jpg?k=cde944e4696f7b04926b5a702429056d0625632bb54ea5f000725dfe50cc17c8&o=&hp=1",
+          "photoId": "7",
+          "sourceUrl": "https://www.booking.com/hotel/dk/25hours-indre-by.html?lang=en-us&chal_t=1790760860016&force_referer="
+        }
+      ],
+      "photos_status": "RESOLVED"
+    },
+    "audit_timestamp": "2026-09-30T09:35:27.733Z"
+  }
+}

@@ -73,17 +73,40 @@ export function generatePropulsionQuest(auditResults, propertyName, reward) {
     return { title: "Vibe Quest", description: "Optimize local SEO." };
 }
 
-export async function fetchMasterVibeAudit(hotelName, city, neighborhood, bookingId = null, directBookingUrl = null) {
+const CLIENT_CACHE_TTL_MS = 24 * 60 * 60 * 1000; // 24 hours
+
+export async function fetchMasterVibeAudit(hotelName, city, neighborhood, bookingId = null, directBookingUrl = null, isFresh = false) {
+  const cacheKey = `atmosvibe_audit_${String(hotelName || '').toLowerCase().trim()}:::${String(city || '').toLowerCase().trim()}:::${String(neighborhood || '').toLowerCase().trim()}:::${String(directBookingUrl || bookingId || '').toLowerCase().trim()}`;
+
+  if (!isFresh && typeof window !== 'undefined' && window.sessionStorage) {
+    try {
+      const cached = window.sessionStorage.getItem(cacheKey);
+      if (cached) {
+        const parsed = JSON.parse(cached);
+        if (parsed && parsed.timestamp && (Date.now() - parsed.timestamp < CLIENT_CACHE_TTL_MS)) {
+          console.log(`[PersonaEngine] Serving 24-hour client cached audit for "${hotelName}"`);
+          return parsed.data;
+        }
+      }
+    } catch (e) {}
+  }
+
   console.log(`[Master Vibe] Fetching comprehensive vibe manifest for ${hotelName} in ${city}...`);
-  const response = await fetch('/api/master-vibe-audit', {
+  const response = await fetch('/api/master-vibe-audit' + (isFresh ? '?fresh=true' : ''), {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ hotelName, city, neighborhood, bookingId, bookingUrl: directBookingUrl, directBookingUrl })
+    body: JSON.stringify({ hotelName, city, neighborhood, bookingId, bookingUrl: directBookingUrl, directBookingUrl, fresh: isFresh })
   });
   if (!response.ok) {
     throw new Error(`Master Vibe Audit API returned ${response.status}: ${await response.text()}`);
   }
-  return await response.json();
+  const data = await response.json();
+  if (typeof window !== 'undefined' && window.sessionStorage) {
+    try {
+      window.sessionStorage.setItem(cacheKey, JSON.stringify({ timestamp: Date.now(), data }));
+    } catch (e) {}
+  }
+  return data;
 }
 
 export async function fetchMasterVibeAuditManifest(hotelName, city, neighborhood, directBookingUrl = null, bookingId = null) {

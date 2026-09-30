@@ -1,5 +1,5 @@
 .how-it-works-streamlined {
-  padding: 6rem 1.5rem;
+  padding: 8.5rem 1.5rem;
   background: linear-gradient(180deg, #050b14 0%, #081528 50%, #050b14 100%);
   position: relative;
 }
@@ -7,7 +7,7 @@
 .hiw-header {
   text-align: center;
   max-width: 720px;
-  margin: 0 auto 3.5rem auto;
+  margin: 0 auto 4.5rem auto;
 }
 
 .hiw-badge {

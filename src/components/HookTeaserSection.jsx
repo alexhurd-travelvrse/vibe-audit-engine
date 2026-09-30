@@ -5,20 +5,16 @@ import './HookTeaserSection.css';
 
 export default function HookTeaserSection() {
   return (
-    <section className="hook-teaser-section" id="what-gets-unlocked">
+    <section className="hook-teaser-section" id="vibe-signatures">
       <div className="container">
         
         {/* Section Header */}
         <div className="hook-teaser-header animate-fade-up">
-          <div className="teaser-eyebrow">
-            <Zap size={14} className="text-cyan" />
-            <span>VALUE ARCHITECTURE</span>
-          </div>
           <h2 className="teaser-title">
-            The Hook Teaser: <span className="text-gold-gradient">What Gets Unlocked</span>
+            Vibe Signatures: <span className="text-gold-gradient">What Gets Unlocked</span>
           </h2>
           <p className="teaser-description">
-            Start by re-sequencing your visual anchors, then unlock your complete Vibe Signature mapped to local dynamics to make your brand stand out across all channels.
+            Start by reordering your visual anchors, then unlock your complete Vibe Signature mapped to local dynamics to make your brand stand out across all channels.
           </p>
         </div>
 
@@ -33,8 +29,8 @@ export default function HookTeaserSection() {
             </div>
 
             <div className="tier-content">
-              <h3 className="tier-heading">The OTA Photo Sequence Fix</h3>
-              <p className="tier-subtext">Immediate sensory photo re-sequencing mapped to local neighborhood search demand.</p>
+              <h3 className="tier-heading">The OTA Photo Reorder</h3>
+              <p className="tier-subtext">Immediate sensory photo reordering mapped to local neighborhood search demand.</p>
 
               <div className="tree-structure">
                 <div className="tree-item">
@@ -42,7 +38,7 @@ export default function HookTeaserSection() {
                     <Camera size={18} />
                   </div>
                   <div className="tree-node-details">
-                    <div className="tree-node-title">Re-sequenced Top 5 Hero Photos</div>
+                    <div className="tree-node-title">Reordered Top 5 Hero Photos</div>
                     <div className="tree-node-meta">Ordered by emotional dwell time &amp; traveler hook rate</div>
                   </div>
                 </div>
@@ -61,7 +57,6 @@ export default function HookTeaserSection() {
               </div>
 
               <div className="tier-badge-strip">
-                <span className="feature-pill"><CheckCircle2 size={13} /> No Sign-Up Needed</span>
                 <span className="feature-pill"><CheckCircle2 size={13} /> 60-Second Run</span>
                 <span className="feature-pill"><CheckCircle2 size={13} /> Live Visual Preview</span>
               </div>
