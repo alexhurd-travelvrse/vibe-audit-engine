@@ -80,7 +80,7 @@ const Hero = () => {
                             <input 
                                 type="text"
                                 className="action-input-field"
-                                placeholder="Paste Booking.com or OTA listing URL..."
+                                placeholder="Enter Booking.com URL or client Id"
                                 value={otaUrl}
                                 onChange={(e) => setOtaUrl(e.target.value)}
                             />

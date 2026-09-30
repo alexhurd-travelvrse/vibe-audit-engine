@@ -56,7 +56,7 @@ export default function MidPageCta() {
               <Camera size={18} className="mid-input-icon" />
               <input 
                 type="text"
-                placeholder="Paste Booking.com listing URL or hotel name..."
+                placeholder="Enter Booking.com URL or client Id"
                 value={url}
                 onChange={(e) => setUrl(e.target.value)}
                 className="mid-input-field"

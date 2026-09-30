@@ -52,21 +52,22 @@
 }
 
 .hiw-step-card {
-  background: rgba(10, 25, 47, 0.65);
+  background: rgba(14, 18, 27, 0.8);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.09);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 20px;
   padding: 2rem 1.75rem;
   display: flex;
   flex-direction: column;
   position: relative;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 16px 40px rgba(0, 0, 0, 0.4);
   transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .hiw-step-card:hover {
   transform: translateY(-5px);
-  border-color: rgba(0, 229, 255, 0.35);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 25px rgba(0, 229, 255, 0.1);
+  border-color: rgba(0, 229, 255, 0.25);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 20px 48px rgba(0, 0, 0, 0.55), 0 0 20px rgba(0, 229, 255, 0.06);
 }
 
 .step-card-header {

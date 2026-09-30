@@ -26,6 +26,34 @@
   --glass-bg: rgba(17, 34, 64, 0.6);
   --glass-border: 1px solid rgba(212, 175, 55, 0.15);
   --site-padding-x: clamp(1rem, 4vw, 3rem);
+
+  /* Quiet Luxury Institutional Container Tokens */
+  --bg-deep-obsidian: #080c14;
+  --bg-surface-primary: #0e121b;
+  --bg-surface-secondary: #141a27;
+  --bg-surface-tertiary: #0a0e17;
+  --bg-surface-card: rgba(14, 18, 27, 0.85);
+
+  --border-muted: rgba(255, 255, 255, 0.08);
+  --border-subtle: rgba(255, 255, 255, 0.12);
+  --border-accent-cyan: rgba(0, 229, 255, 0.18);
+  --border-accent-cyan-strong: rgba(0, 229, 255, 0.3);
+  --border-accent-gold: rgba(218, 165, 32, 0.28);
+  --border-caution-subtle: rgba(180, 50, 50, 0.22);
+
+  --shadow-luxury-md: 0 4px 16px rgba(0, 0, 0, 0.35), 0 1px 3px rgba(0, 0, 0, 0.2);
+  --shadow-luxury-lg: 0 12px 32px rgba(0, 0, 0, 0.45), 0 2px 6px rgba(0, 0, 0, 0.25);
+  --shadow-luxury-xl: 0 20px 50px rgba(0, 0, 0, 0.6), 0 4px 12px rgba(0, 0, 0, 0.35);
+  --shadow-luxury-cyan: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 229, 255, 0.08);
+  --shadow-luxury-gold: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 20px rgba(255, 215, 0, 0.08);
+
+  --highlight-specular: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  --highlight-specular-subtle: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+  --radius-sm: 12px;
+  --radius-md: 16px;
+  --radius-lg: 20px;
+  --radius-xl: 24px;
 }
 
 * {

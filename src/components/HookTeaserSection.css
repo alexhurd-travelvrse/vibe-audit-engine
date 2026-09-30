@@ -15,15 +15,17 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 4px 14px;
+  padding: 5px 16px;
   background: rgba(0, 229, 255, 0.08);
-  border: 1px solid rgba(0, 229, 255, 0.25);
+  border: 1px solid rgba(0, 229, 255, 0.22);
   border-radius: 999px;
   font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
+  font-weight: 800;
+  letter-spacing: 0.14em;
   color: var(--color-cyan-neon, #00e5ff);
-  margin-bottom: 1rem;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 .teaser-title {
@@ -62,10 +64,10 @@
 }
 
 .unlock-card {
-  background: rgba(10, 25, 47, 0.7);
+  background: rgba(14, 18, 27, 0.85);
   backdrop-filter: blur(12px);
   border-radius: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -79,24 +81,24 @@
 }
 
 .free-tier-card {
-  border-color: rgba(0, 229, 255, 0.25);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 229, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 16px 45px rgba(0, 0, 0, 0.5);
 }
 
 .free-tier-card:hover {
-  border-color: rgba(0, 229, 255, 0.5);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 40px rgba(0, 229, 255, 0.15);
+  border-color: rgba(0, 229, 255, 0.28);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 25px rgba(0, 229, 255, 0.08);
 }
 
 .pro-tier-card {
-  border-color: rgba(255, 215, 0, 0.3);
-  background: radial-gradient(circle at top right, rgba(255, 215, 0, 0.08) 0%, rgba(10, 25, 47, 0.85) 60%);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5), 0 0 35px rgba(255, 215, 0, 0.1);
+  border-color: rgba(218, 165, 32, 0.26);
+  background: radial-gradient(circle at top right, rgba(218, 165, 32, 0.05) 0%, rgba(14, 18, 27, 0.95) 60%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 25px rgba(255, 215, 0, 0.06);
 }
 
 .pro-tier-card:hover {
-  border-color: rgba(255, 215, 0, 0.6);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 45px rgba(255, 215, 0, 0.2);
+  border-color: rgba(218, 165, 32, 0.45);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 25px 60px rgba(0, 0, 0, 0.7), 0 0 35px rgba(255, 215, 0, 0.1);
 }
 
 .card-top-bar {
@@ -104,8 +106,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 1.25rem 1.75rem;
-  background: rgba(5, 11, 20, 0.4);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  background: rgba(8, 12, 20, 0.6);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .step-tag {

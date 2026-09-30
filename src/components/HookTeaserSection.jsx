@@ -10,11 +10,15 @@ export default function HookTeaserSection() {
         
         {/* Section Header */}
         <div className="hook-teaser-header animate-fade-up">
+          <div className="teaser-eyebrow">
+            <Sparkles size={14} />
+            <span>VIBE SIGNATURES</span>
+          </div>
           <h2 className="teaser-title">
-            Vibe Signatures: <span className="text-gold-gradient">What Gets Unlocked</span>
+            <span className="text-gold-gradient">Stand Out From the Crowd</span>
           </h2>
           <p className="teaser-description">
-            Start by reordering your visual anchors, then unlock your complete Vibe Signature mapped to local dynamics to make your brand stand out across all channels.
+            Prove your hotel is more than just a room. Map your authentic design, energy, lighting, and proximity to local hotspots directly to what next-gen travelers are searching for.
           </p>
         </div>
 
@@ -79,7 +83,7 @@ export default function HookTeaserSection() {
 
             <div className="tier-content">
               <h3 className="tier-heading">The Full Multi-Channel Engine</h3>
-              <p className="tier-subtext">Comprehensive acoustic, narrative, and AI search assets to make your brand stand out and power direct bookings across channels.</p>
+              <p className="tier-subtext">Comprehensive acoustic, narrative, and AI search assets to make your brand stand out and power bookings across all channels.</p>
 
               <div className="tree-structure">
                 <div className="tree-item">
