@@ -31,7 +31,7 @@ const Hero = () => {
         <section className="hero-section">
             <Helmet>
                 <title>Atmosvibe | Vibe Conversion for Hotels &amp; Travel Brands</title>
-                <meta name="description" content="Turn Atmosphere into Bookings. Start by optimising your OTA photos. Next-gen travelers don’t book features—they book a vibe. Atmosvibe creates your unique Vibe Signature, unlocking content that makes you stand out across all channels." />
+                <meta name="description" content="Turn Atmosphere into Bookings. Start by Optimising Your OTA Photos. Next-gen travelers don’t book features—they book a vibe. Atmosvibe creates your unique Vibe Signature, unlocking content that makes you stand out across all channels." />
             </Helmet>
             <div className="hero-bg-container">
                 <video 
@@ -54,11 +54,11 @@ const Hero = () => {
 
                     <h1 className="hero-headline">
                         Turn Atmosphere into Bookings<br />
-                        <span className="hero-headline-gradient">Start by optimising your OTA photos</span>
+                        <span className="hero-headline-gradient">Start by Optimising Your OTA Photos</span>
                     </h1>
 
                     <p className="hero-subheadline">
-                        Next-gen travelers don’t book features—they book a vibe. Atmosvibe creates your unique Vibe Signature, unlocking content that makes you stand out across all channels
+                        Next-gen travelers don’t book features—they book a vibe. Atmosvibe creates your unique Vibe Signature, unlocking content that makes you stand out across all channels.
                     </p>
                 </div>
 
