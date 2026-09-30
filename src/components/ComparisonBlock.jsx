@@ -91,10 +91,10 @@ export default function ComparisonBlock() {
             <span>PROOF &amp; SEQUENCE SCIENCE</span>
           </div>
           <h2 className="comparison-title">
-            The Proof: <span className="text-cyan">Standard OTA Sequence vs. Atmosvibe Option B</span>
+            The Proof: <span className="text-cyan">Standard OTA Sequence vs. AtmosVibe Reorder</span>
           </h2>
           <p className="comparison-sub">
-            OTAs default to a sterile commodity sequence that kills conversion. The Atmosvibe Magnet Override sequence captures high-value dwell time and turns casual lookers into direct bookers.
+            OTAs default to a sterile commodity sequence that hurts conversion. The AtmosVibe Reorder sequence captures high-value dwell time and converts casual lookers into bookings
           </p>
         </div>
 
@@ -106,10 +106,10 @@ export default function ComparisonBlock() {
             <div className="col-top loser-top">
               <div className="col-status-tag loser-tag">
                 <AlertOctagon size={14} />
-                LOSING DIRECT BOOKINGS
+                LEAKING ATTENTION &amp; CONVERSION
               </div>
               <h3 className="col-heading">The Standard OTA Sequence</h3>
-              <p className="col-subheading">Algorithm-driven default order that drives price shopping.</p>
+              <p className="col-subheading">Algorithm-driven default order that drives price shopping</p>
             </div>
 
             <div className="slot-list">
@@ -135,21 +135,21 @@ export default function ComparisonBlock() {
 
             <div className="col-bottom loser-bottom">
               <div className="bottom-metric-loser">
-                <span className="metric-callout">-15% Direct Conversion</span>
+                <span className="metric-callout">-15% Dwell &amp; Conversion</span>
                 <span className="metric-note">Forces race-to-the-bottom discounting</span>
               </div>
             </div>
           </div>
 
-          {/* RIGHT: Atmosvibe Option B Sequence */}
+          {/* RIGHT: AtmosVibe Reorder Sequence */}
           <div className="sequence-column winner-column animate-fade-up">
             <div className="col-top winner-top">
               <div className="col-status-tag winner-tag">
                 <Flame size={14} />
-                OPTION B: MAGNET OVERRIDE
+                ATMOSVIBE REORDER
               </div>
-              <h3 className="col-heading text-cyan">The Atmosvibe Reorder</h3>
-              <p className="col-subheading">Sensory dwell engineering that sells atmosphere and lifts ADR.</p>
+              <h3 className="col-heading text-cyan">The AtmosVibe Reorder</h3>
+              <p className="col-subheading">Sensory dwell engineering that sells atmosphere and lifts ADR</p>
             </div>
 
             <div className="slot-list">

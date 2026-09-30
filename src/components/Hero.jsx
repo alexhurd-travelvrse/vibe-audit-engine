@@ -30,8 +30,8 @@ const Hero = () => {
     return (
         <section className="hero-section">
             <Helmet>
-                <title>Atmosvibe | Vibe Conversion for Hotels &amp; Travel Brands</title>
-                <meta name="description" content="Turn Atmosphere into Bookings. Start by Optimising Your OTA Photos. Next-gen travelers don’t book features—they book a vibe. Atmosvibe creates your unique Vibe Signature, unlocking content that makes you stand out across all channels." />
+                <title>AtmosVibe | Vibe Signatures &amp; Visual Intelligence for Hotels</title>
+                <meta name="description" content="Turn Atmosphere into Bookings. Start by Optimising Your OTA Photos. Next-gen travelers don’t book features—they book a vibe. AtmosVibe creates your unique Vibe Signature, unlocking content that makes you stand out across all channels." />
             </Helmet>
             <div className="hero-bg-container">
                 <video 
@@ -49,7 +49,7 @@ const Hero = () => {
                 <div className="hero-header-group animate-fade-up">
                     <div className="hero-eyebrow-badge">
                         <Sparkles size={14} className="text-cyan" />
-                        <span>ATMOSVIBE // VIBE CONVERSION FOR HOTELS &amp; TRAVEL BRANDS</span>
+                        <span>ATMOSVIBE // VIBE SIGNATURES FOR HOTELS &amp; TRAVEL BRANDS</span>
                     </div>
 
                     <h1 className="hero-headline">
@@ -58,7 +58,7 @@ const Hero = () => {
                     </h1>
 
                     <p className="hero-subheadline">
-                        Next-gen travelers don’t book features—they book a vibe. Atmosvibe creates your unique Vibe Signature, unlocking content that makes you stand out across all channels.
+                        Next-gen travelers don’t book features—they book a vibe. AtmosVibe creates your unique Vibe Signature, unlocking content that makes you stand out across all channels
                     </p>
                 </div>
 

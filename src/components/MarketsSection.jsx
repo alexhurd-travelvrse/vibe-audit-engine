@@ -16,7 +16,7 @@ const MARKETS_DATA = [
       'Subterranean Social Wellness & Bathhouses',
       'Historic Drawing Rooms with Modernist Lighting'
     ],
-    researchSummary: 'Our London benchmark across 142 boutique and lifestyle properties reveals that 76% of modern travelers search for culinary and acoustic neighborhood subcultures FIRST before selecting their accommodation. When properties prominently showcase their social F&B or cultural magnet in Slot #1 (rather than commodity bedrooms), direct booking intent rises by 22.4%.',
+    researchSummary: 'Our London benchmark across 142 boutique and lifestyle properties reveals that 76% of modern travelers search for culinary and acoustic neighborhood subcultures FIRST before selecting their accommodation. When properties prominently showcase their social F&B or cultural magnet in Slot #1 (rather than commodity bedrooms), booking intent rises by 22.4%.',
     keyInsight: 'In Wandsworth and East Hill, authentic gastro-pub heritage and acoustic warmth outperformed generic corporate room listings by 3.1x in organic OTA engagement.',
     commodityPenaltyScore: 'High (48/100 commodity penalty when leading with standard bed shots)'
   },
@@ -33,7 +33,7 @@ const MARKETS_DATA = [
       'Modernist Courtyard Sanctuaries',
       'Biophilic Light Atriums & Plunge Pools'
     ],
-    researchSummary: 'In Barcelona, atmosphere is overwhelmingly driven by outdoor courtyard sanctuaries and sunset terrace social velocity. Vibe Signature mapping shows properties that bridge their internal design with local Catalan micro-bar dynamics capture 26.8% higher direct conversion.',
+    researchSummary: 'In Barcelona, atmosphere is overwhelmingly driven by outdoor courtyard sanctuaries and sunset terrace social velocity. Vibe Signature mapping shows properties that bridge their internal design with local Catalan micro-bar dynamics capture 26.8% higher conversion.',
     keyInsight: 'Acoustic clarity and outdoor patio visual hierarchy reduced drop-off rates on mobile booking funnels by 31% across independent hotel partners.',
     commodityPenaltyScore: 'Critical (54/100 commodity penalty when failing to depict outdoor/rooftop social life)'
   },

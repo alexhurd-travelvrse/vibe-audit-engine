@@ -18,7 +18,7 @@ export default function HookTeaserSection() {
             <span className="text-gold-gradient">Stand Out From the Crowd</span>
           </h2>
           <p className="teaser-description">
-            Prove your hotel is more than just a room. Map your authentic design, energy, lighting, and proximity to local hotspots directly to what next-gen travelers are searching for.
+            Prove your hotel is more than just a room. Map your authentic design, energy, lighting, and proximity to local hotspots directly to what next-gen travelers are searching for
           </p>
         </div>
 
@@ -34,7 +34,7 @@ export default function HookTeaserSection() {
 
             <div className="tier-content">
               <h3 className="tier-heading">The OTA Photo Reorder</h3>
-              <p className="tier-subtext">Immediate sensory photo reordering mapped to local neighborhood search demand.</p>
+              <p className="tier-subtext">Instant photo recommendations that map your unique property features to neighborhood search demand</p>
 
               <div className="tree-structure">
                 <div className="tree-item">
@@ -43,7 +43,7 @@ export default function HookTeaserSection() {
                   </div>
                   <div className="tree-node-details">
                     <div className="tree-node-title">Reordered Top 5 Hero Photos</div>
-                    <div className="tree-node-meta">Ordered by emotional dwell time &amp; traveler hook rate</div>
+                    <div className="tree-node-meta">Sequenced so your hotel totally stands out and stops the scroll</div>
                   </div>
                 </div>
 
@@ -54,8 +54,8 @@ export default function HookTeaserSection() {
                     <Sparkles size={18} />
                   </div>
                   <div className="tree-node-details">
-                    <div className="tree-node-title">Primary Vibe Archetype</div>
-                    <div className="tree-node-meta">e.g., "Golden-Hour Socialite", "Sanctuary Minimalist", or "Maritime Neo-Classic"</div>
+                    <div className="tree-node-title">Headline Vibe Signature</div>
+                    <div className="tree-node-meta">The defining atmospheric hook for your property &mdash; e.g. Sea Containers: "Maritime Glamour &amp; Thameside Buzz", Plymouth Hotel: "Art Deco Oasis &amp; Retro Glamour", 25hours Hotel: "Bohemian Design &amp; Vinyl Social Hub"</div>
                   </div>
                 </div>
               </div>
@@ -74,16 +74,16 @@ export default function HookTeaserSection() {
             </div>
           </div>
 
-          {/* TIER 2: The Full Vibe Fingerprint™ */}
+          {/* TIER 2: The Complete Vibe Signature™ */}
           <div className="unlock-card pro-tier-card animate-fade-up">
             <div className="card-top-bar">
-              <div className="step-tag pro-tag">STEP 2: FULL VIBE FINGERPRINT™</div>
+              <div className="step-tag pro-tag">STEP 2: COMPLETE VIBE SIGNATURE™</div>
               <span className="price-tag pro-price">CLAIM PROPERTY</span>
             </div>
 
             <div className="tier-content">
               <h3 className="tier-heading">The Full Multi-Channel Engine</h3>
-              <p className="tier-subtext">Comprehensive acoustic, narrative, and AI search assets to make your brand stand out and power bookings across all channels.</p>
+              <p className="tier-subtext">Comprehensive acoustic, narrative, and AI search assets powered by our proprietary Vibe Fingerprinting engine to make your brand stand out across all channels</p>
 
               <div className="tree-structure">
                 <div className="tree-item">
@@ -123,14 +123,14 @@ export default function HookTeaserSection() {
 
               <div className="tier-badge-strip">
                 <span className="feature-pill gold-pill"><ShieldCheck size={13} /> Verified Ownership</span>
-                <span className="feature-pill gold-pill"><Zap size={13} /> Direct Site Boost</span>
+                <span className="feature-pill gold-pill"><Zap size={13} /> Multi-Channel Boost</span>
                 <span className="feature-pill gold-pill"><Search size={13} /> AI Engine Discoverability</span>
               </div>
             </div>
 
             <div className="card-footer">
               <Link to="/audit" className="tier-cta-btn pro-btn">
-                <span>Unlock Full Vibe Fingerprint™</span>
+                <span>Unlock Complete Vibe Signature™</span>
                 <ArrowRight size={16} />
               </Link>
             </div>

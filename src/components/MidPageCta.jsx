@@ -34,11 +34,11 @@ export default function MidPageCta() {
           </div>
 
           <h2 className="cta-headline">
-            Don't let a bad photo order cost you <span className="cta-headline-red">15% in direct conversion.</span>
+            Don't let a bad photo order cost you <span className="cta-headline-red">15% in listing conversion</span>
           </h2>
 
           <p className="cta-body">
-            Map your property's Vibe Signature against local neighborhood dynamics to unlock content that makes your listing stand out across every channel.
+            Map your property's Vibe Signature against local neighborhood dynamics to unlock content that makes your listing stand out across every channel
           </p>
 
           <form onSubmit={handleSubmit} className="mid-cta-form">
