@@ -5,7 +5,6 @@ import Layout from './components/Layout';
 import Hero from './components/Hero';
 import HookTeaserSection from './components/HookTeaserSection';
 import ProblemSection from './components/ProblemSection';
-import HowItWorksSection from './components/HowItWorksSection';
 import ComparisonBlock from './components/ComparisonBlock';
 import MidPageCta from './components/MidPageCta';
 import DataApiSection from './components/DataApiSection';
@@ -41,23 +40,20 @@ const B2BHome = () => {
       {/* 2. The Hook Teaser: What Gets Unlocked (Instant Free vs Full Vibe Fingerprint) */}
       <HookTeaserSection />
 
-      {/* 3. The Problem: The First 5 Photos Kill Your Conversion (74% & 80% stats) */}
-      <ProblemSection />
-
-      {/* 4. How It Works (3-Step Flow) */}
-      <HowItWorksSection />
-
-      {/* 5. Proof / Comparison Block (Option B: Magnet Override) */}
-      <ComparisonBlock />
-
-      {/* 6. Mid-Page Call to Action */}
-      <MidPageCta />
-
-      {/* 7. Enterprise Vibe API */}
+      {/* 3. Enterprise Vibe API */}
       <DataApiSection />
 
-      {/* 8. Global Market Intelligence & Vibe Benchmarks */}
+      {/* 4. Vibe Insights (Global Market Intelligence & Benchmarks) */}
       <MarketsSection />
+
+      {/* 5. The Problem: The First 5 Photos Kill Your Conversion (74% & 80% stats) */}
+      <ProblemSection />
+
+      {/* 6. Proof / Comparison Block (Option B: Magnet Override) */}
+      <ComparisonBlock />
+
+      {/* 7. Mid-Page Call to Action */}
+      <MidPageCta />
 
       {/* 8. Journal */}
       <BlogJournal />

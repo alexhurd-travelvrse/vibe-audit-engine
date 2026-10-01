@@ -1,5 +1,5 @@
 import React from 'react';
-import { Camera, Sparkles, ArrowRight, CheckCircle2, ShieldCheck, Zap, Volume2, Share2, Bot, TrendingUp, Music, Compass } from 'lucide-react';
+import { Sparkles, ArrowRight, Compass, Zap, TrendingUp } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import './HookTeaserSection.css';
 
@@ -118,12 +118,6 @@ export default function HookTeaserSection() {
                 </div>
 
               </div>
-
-              <div className="tier-badge-strip">
-                <span className="feature-pill"><CheckCircle2 size={13} /> 60-Second Run</span>
-                <span className="feature-pill"><CheckCircle2 size={13} /> Live Visual Preview</span>
-                <span className="feature-pill"><CheckCircle2 size={13} /> Zero Setup</span>
-              </div>
             </div>
 
             <div className="card-footer">
@@ -142,8 +136,8 @@ export default function HookTeaserSection() {
             </div>
 
             <div className="tier-content">
-              <h3 className="tier-heading">The Full Market Multi-Channel Engine</h3>
-              <p className="tier-subtext">Deploy your unique Vibe Signature across 7 turn-key deliverables engineered to win bookings across every channel</p>
+              <h3 className="tier-heading">The Multi-Channel Conversion Engine</h3>
+              <p className="tier-subtext">Deploy your unique Vibe Signature across turn-key deliverables engineered to win bookings across every channel</p>
 
               {/* 3-Pillar Executive Deliverable Matrix */}
               <div className="pro-pillars-suite">
@@ -160,15 +154,8 @@ export default function HookTeaserSection() {
                     <li className="deliverable-item">
                       <span className="deliverable-bullet">•</span>
                       <div className="deliverable-content">
-                        <span className="deliverable-name">Full OTA Copy Rewrite</span>
-                        <span className="deliverable-desc">&mdash; High-converting narratives for Booking.com &amp; Expedia</span>
-                      </div>
-                    </li>
-                    <li className="deliverable-item">
-                      <span className="deliverable-bullet">•</span>
-                      <div className="deliverable-content">
-                        <span className="deliverable-name">Website Photo &amp; Copy Overhaul</span>
-                        <span className="deliverable-desc">&mdash; Direct booking hero copy and visual re-sequencing</span>
+                        <span className="deliverable-name">Full OTA and Website Photo and Copy Overhaul</span>
+                        <span className="deliverable-desc">&mdash; High-converting narratives, direct booking copy and visual re-sequencing</span>
                       </div>
                     </li>
                     <li className="deliverable-item">
@@ -176,51 +163,6 @@ export default function HookTeaserSection() {
                       <div className="deliverable-content">
                         <span className="deliverable-name">Local Launchpad Pack</span>
                         <span className="deliverable-desc">&mdash; On-site guides, social hooks and pre-stay email series</span>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-
-                {/* Pillar 2: Atmosphere & Sound */}
-                <div className="pillar-block">
-                  <div className="pillar-top">
-                    <div className="pillar-icon">
-                      <Music size={13} />
-                    </div>
-                    <span className="pillar-title">Atmosphere &amp; Sound</span>
-                  </div>
-                  <ul className="pillar-deliverables-list">
-                    <li className="deliverable-item">
-                      <span className="deliverable-bullet">•</span>
-                      <div className="deliverable-content">
-                        <span className="deliverable-name">Curated Spotify Playlist</span>
-                        <span className="deliverable-desc">&mdash; Bespoke ambient soundtrack matched to your spaces</span>
-                      </div>
-                    </li>
-                    <li className="deliverable-item">
-                      <span className="deliverable-bullet">•</span>
-                      <div className="deliverable-content">
-                        <span className="deliverable-name">Local Trending Vibes</span>
-                        <span className="deliverable-desc">&mdash; Hyperlocal micro-culture and nightlife demand signals</span>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-
-                {/* Pillar 3: Market Edge & AI Discoverability */}
-                <div className="pillar-block">
-                  <div className="pillar-top">
-                    <div className="pillar-icon">
-                      <Compass size={13} />
-                    </div>
-                    <span className="pillar-title">Market Edge &amp; AI Discoverability</span>
-                  </div>
-                  <ul className="pillar-deliverables-list">
-                    <li className="deliverable-item">
-                      <span className="deliverable-bullet">•</span>
-                      <div className="deliverable-content">
-                        <span className="deliverable-name">Competitor Benchmarking</span>
-                        <span className="deliverable-desc">&mdash; Atmospheric gap analysis against key local rivals</span>
                       </div>
                     </li>
                     <li className="deliverable-item">
@@ -233,12 +175,32 @@ export default function HookTeaserSection() {
                   </ul>
                 </div>
 
-              </div>
+                {/* Pillar 2: Market Edge & Competitor Intelligence */}
+                <div className="pillar-block">
+                  <div className="pillar-top">
+                    <div className="pillar-icon">
+                      <Compass size={13} />
+                    </div>
+                    <span className="pillar-title">Market Edge &amp; Competitor Intelligence</span>
+                  </div>
+                  <ul className="pillar-deliverables-list">
+                    <li className="deliverable-item">
+                      <span className="deliverable-bullet">•</span>
+                      <div className="deliverable-content">
+                        <span className="deliverable-name">Competitor Benchmarking</span>
+                        <span className="deliverable-desc">&mdash; Atmospheric gap analysis against key local rivals</span>
+                      </div>
+                    </li>
+                    <li className="deliverable-item">
+                      <span className="deliverable-bullet">•</span>
+                      <div className="deliverable-content">
+                        <span className="deliverable-name">Local Trending Vibes</span>
+                        <span className="deliverable-desc">&mdash; Hyperlocal micro-culture and nightlife demand signals</span>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
 
-              <div className="tier-badge-strip">
-                <span className="feature-pill gold-pill"><ShieldCheck size={13} /> 7 Turn-Key Deliverables</span>
-                <span className="feature-pill gold-pill"><Zap size={13} /> Multi-Channel Boost</span>
-                <span className="feature-pill gold-pill"><Bot size={13} /> AI Engine Discoverability</span>
               </div>
             </div>
 

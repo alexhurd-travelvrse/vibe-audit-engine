@@ -121,7 +121,7 @@ export default function MarketsSection() {
         {/* Section Header */}
         <div className="markets-header">
           <div className="markets-pill">
-            <Globe2 size={13} /> GLOBAL VIBE RESEARCH & BENCHMARKS
+            <Globe2 size={13} /> VIBE INSIGHTS
           </div>
           <h2 className="markets-headline">
             MARKET INTELLIGENCE & <span style={{ background: 'linear-gradient(90deg, #ffd700, #00e5ff)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>SUB-CULTURAL VIBE MAPS</span>

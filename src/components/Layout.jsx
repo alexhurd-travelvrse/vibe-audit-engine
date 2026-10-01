@@ -33,7 +33,7 @@ const Layout = ({ children }) => {
                     <nav className={`header-nav ${isMenuOpen ? 'open' : ''}`}>
                         <a href="/#vibe-signatures" className="nav-link" onClick={() => setIsMenuOpen(false)}>VIBE SIGNATURES</a>
                         <a href="/#vibe-api" className="nav-link" onClick={() => setIsMenuOpen(false)}>VIBE API</a>
-                        <a href="/#markets" className="nav-link" onClick={() => setIsMenuOpen(false)}>INSIGHTS</a>
+                        <a href="/#markets" className="nav-link" onClick={() => setIsMenuOpen(false)}>VIBE INSIGHTS</a>
                         <a href="/#journal" className="nav-link" onClick={() => setIsMenuOpen(false)}>JOURNAL</a>
                     </nav>
                 </div>

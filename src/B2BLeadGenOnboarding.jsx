@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, ChevronRight, Send, Star, MapPin, TrendingUp, Search, Globe, Zap, CheckCircle2, BarChart3, ExternalLink, Gift, RefreshCw, Activity, Info, Compass, Radio, Layers, Cpu, Sparkles, Lock, Unlock, Key, ShieldCheck, X, Mail, Phone, Building } from 'lucide-react';
+import { ArrowLeft, ChevronRight, Send, Star, MapPin, TrendingUp, Search, Globe, Zap, CheckCircle2, BarChart3, ExternalLink, Gift, RefreshCw, Activity, Info, Compass, Radio, Layers, Cpu, Sparkles, Lock, Unlock, Key, ShieldCheck, X, Mail, Phone, Building, Link2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   scrapeLocalSignals, 
@@ -505,12 +505,69 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
           {step === 'input' && (
             <motion.div key="input" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="form-section">
               <div style={{ textAlign: 'center', marginBottom: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                <h2 style={{ fontSize: 'clamp(2rem, 4vw, 2.75rem)', fontWeight: 900, color: '#ffffff', letterSpacing: '-0.02em', margin: '0 0 0.75rem 0', textTransform: 'uppercase' }}>
-                  VIBE <span style={{ color: '#00e5ff', background: 'linear-gradient(90deg, #00e5ff, #ffd700)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>MATTERS</span>
+                <div style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  padding: '4px 14px',
+                  background: 'rgba(0, 229, 255, 0.08)',
+                  border: '1px solid rgba(0, 229, 255, 0.25)',
+                  borderRadius: '999px',
+                  fontSize: '0.75rem',
+                  fontWeight: 800,
+                  letterSpacing: '0.12em',
+                  color: '#00e5ff',
+                  textTransform: 'uppercase',
+                  marginBottom: '0.85rem'
+                }}>
+                  <Sparkles size={13} />
+                  <span>THE WORKFLOW</span>
+                </div>
+                <h2 style={{ fontSize: 'clamp(2rem, 4vw, 2.75rem)', fontWeight: 900, color: '#ffffff', letterSpacing: '-0.02em', margin: '0 0 0.65rem 0', textTransform: 'uppercase' }}>
+                  HOW IT <span style={{ color: '#00e5ff', background: 'linear-gradient(90deg, #00e5ff, #ffd700)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>WORKS</span>
                 </h2>
-                <p style={{ color: 'rgba(230, 241, 255, 0.85)', fontSize: '15px', lineHeight: 1.65, maxWidth: '720px', margin: '0 auto 1.75rem auto' }}>
-                  Today's high-intent guests book atmospheres, not just square footage. Atmospheric visual merchandising captures subcultural gravity, eliminates bounce rates, and converts casual browsers into direct bookings.
+                <p style={{ color: 'rgba(230, 241, 255, 0.85)', fontSize: '15px', lineHeight: 1.6, maxWidth: '720px', margin: '0 auto 1.75rem auto' }}>
+                  From commodity listing to a standout, multi-channel Vibe Signature in three simple steps
                 </p>
+
+                {/* 3-Step Workflow Pipeline Grid */}
+                <div className="audit-workflow-grid">
+                  <div className="audit-workflow-card active-step">
+                    <div className="audit-step-top">
+                      <span className="audit-step-num">01</span>
+                      <span className="audit-step-badge">INSTANT INPUT</span>
+                    </div>
+                    <div className="audit-step-icon-wrap">
+                      <Link2 size={20} style={{ color: '#00e5ff' }} />
+                    </div>
+                    <h3 className="audit-step-title">Paste Your Listing</h3>
+                    <p className="audit-step-desc">Drop in your hotel details or Booking.com URL in the form below</p>
+                  </div>
+
+                  <div className="audit-workflow-card">
+                    <div className="audit-step-top">
+                      <span className="audit-step-num">02</span>
+                      <span className="audit-step-badge">LOCAL DYNAMICS</span>
+                    </div>
+                    <div className="audit-step-icon-wrap">
+                      <Cpu size={20} style={{ color: '#ffd700' }} />
+                    </div>
+                    <h3 className="audit-step-title">Map to Local Dynamics</h3>
+                    <p className="audit-step-desc">Machine vision re-sequences your gallery to lead with high-vibe sensory anchors</p>
+                  </div>
+
+                  <div className="audit-workflow-card">
+                    <div className="audit-step-top">
+                      <span className="audit-step-num">03</span>
+                      <span className="audit-step-badge">MULTI-CHANNEL PACK</span>
+                    </div>
+                    <div className="audit-step-icon-wrap">
+                      <Sparkles size={20} style={{ color: '#00e5ff' }} />
+                    </div>
+                    <h3 className="audit-step-title">Unlock Vibe Signature</h3>
+                    <p className="audit-step-desc">Preview your 5-slot reorder instantly, then claim turn-key copy and AI search tags</p>
+                  </div>
+                </div>
 
                 {/* High-Conversion 5-Slot OTA Resequencing Preview Card */}
                 <div style={{
@@ -525,7 +582,7 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                 }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem', flexWrap: 'wrap', gap: '0.5rem' }}>
                     <span style={{ fontSize: '13px', fontWeight: 900, textTransform: 'uppercase', color: '#ffd700', letterSpacing: '0.06em' }}>
-                      2. HIGH-CONVERSION 5-SLOT OTA RESEQUENCING
+                      STEP 2 LIVE PREVIEW: HIGH-CONVERSION 5-SLOT OTA RESEQUENCING
                     </span>
                     <span style={{ 
                       background: 'rgba(0, 229, 255, 0.12)', 
@@ -690,6 +747,16 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
               </div>
 
               <div className="glass-card" style={{ padding: '2.5rem', borderRadius: '2rem' }}>
+                <div style={{ marginBottom: '1.75rem', paddingBottom: '1rem', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
+                  <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '11px', fontWeight: 800, color: '#00e5ff', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '0.35rem' }}>
+                    <Link2 size={13} />
+                    <span>STEP 1 // PROPERTY INPUT</span>
+                  </div>
+                  <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#ffffff', margin: 0 }}>
+                    Enter Your Hotel Details to Launch Audit
+                  </h3>
+                </div>
+
                 <div className="input-group" style={{ marginBottom: '1.5rem' }}>
                   <label className="input-label" style={{ marginBottom: '0.75rem' }}>
                     Hotel Name <span style={{ color: '#ef4444', fontWeight: 900 }}>*</span>
