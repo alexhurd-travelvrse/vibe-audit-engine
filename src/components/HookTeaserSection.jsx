@@ -1,5 +1,5 @@
 import React from 'react';
-import { Camera, Sparkles, ArrowRight, CheckCircle2, ShieldCheck, Zap, Volume2, Share2, Bot, TrendingUp } from 'lucide-react';
+import { Camera, Sparkles, ArrowRight, CheckCircle2, ShieldCheck, Zap, Volume2, Share2, Bot, TrendingUp, Music, Compass } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import './HookTeaserSection.css';
 
@@ -142,80 +142,101 @@ export default function HookTeaserSection() {
             </div>
 
             <div className="tier-content">
-              <h3 className="tier-heading">The Full Multi-Channel Engine</h3>
-              <p className="tier-subtext">Comprehensive acoustic, narrative and AI search assets powered by our proprietary Vibe Fingerprinting engine to make your brand stand out across all channels</p>
+              <h3 className="tier-heading">The Full Market Multi-Channel Engine</h3>
+              <p className="tier-subtext">Deploy your unique Vibe Signature across 7 turn-key deliverables engineered to win bookings across every channel</p>
 
-              {/* Visual Micro-UI Asset Suite: 3 Interactive Product Snippets */}
-              <div className="visual-pro-suite">
+              {/* 3-Pillar Executive Deliverable Matrix */}
+              <div className="pro-pillars-suite">
                 
-                {/* Micro-UI 1: Acoustic & Soundscape */}
-                <div className="pro-micro-card acoustic-card">
-                  <div className="micro-card-top">
-                    <div className="micro-card-title-row">
-                      <div className="micro-icon gold-micro-icon">
-                        <Volume2 size={14} />
+                {/* Pillar 1: Conversion Copy & Visuals */}
+                <div className="pillar-block">
+                  <div className="pillar-top">
+                    <div className="pillar-icon">
+                      <Sparkles size={13} />
+                    </div>
+                    <span className="pillar-title">Conversion Copy &amp; Visuals</span>
+                  </div>
+                  <ul className="pillar-deliverables-list">
+                    <li className="deliverable-item">
+                      <span className="deliverable-bullet">•</span>
+                      <div className="deliverable-content">
+                        <span className="deliverable-name">Full OTA Copy Rewrite</span>
+                        <span className="deliverable-desc">&mdash; High-converting narratives for Booking.com &amp; Expedia</span>
                       </div>
-                      <span className="micro-label">ACOUSTIC &amp; NEIGHBORHOOD RHYTHM</span>
-                    </div>
-                    <div className="sound-eq-visual" aria-hidden="true">
-                      <span className="eq-bar bar-1"></span>
-                      <span className="eq-bar bar-2"></span>
-                      <span className="eq-bar bar-3"></span>
-                      <span className="eq-bar bar-4"></span>
-                      <span className="eq-bar bar-5"></span>
-                    </div>
-                  </div>
-                  <div className="micro-card-content">
-                    <div className="sound-stat-line">
-                      <span className="sound-db-badge">64 dB</span>
-                      <span className="sound-profile-name">Warm Vinyl Hum &amp; Neighborhood Tempo</span>
-                    </div>
-                    <div className="micro-meta-tag">Curated ambient tempo &amp; local micro-culture soundscape</div>
-                  </div>
+                    </li>
+                    <li className="deliverable-item">
+                      <span className="deliverable-bullet">•</span>
+                      <div className="deliverable-content">
+                        <span className="deliverable-name">Website Photo &amp; Copy Overhaul</span>
+                        <span className="deliverable-desc">&mdash; Direct booking hero copy and visual re-sequencing</span>
+                      </div>
+                    </li>
+                    <li className="deliverable-item">
+                      <span className="deliverable-bullet">•</span>
+                      <div className="deliverable-content">
+                        <span className="deliverable-name">Local Launchpad Pack</span>
+                        <span className="deliverable-desc">&mdash; On-site guides, social hooks and pre-stay email series</span>
+                      </div>
+                    </li>
+                  </ul>
                 </div>
 
-                {/* Micro-UI 2: Multi-Channel Copy Hooks */}
-                <div className="pro-micro-card copy-card">
-                  <div className="micro-card-top">
-                    <div className="micro-card-title-row">
-                      <div className="micro-icon gold-micro-icon">
-                        <Share2 size={14} />
+                {/* Pillar 2: Atmosphere & Sound */}
+                <div className="pillar-block">
+                  <div className="pillar-top">
+                    <div className="pillar-icon">
+                      <Music size={13} />
+                    </div>
+                    <span className="pillar-title">Atmosphere &amp; Sound</span>
+                  </div>
+                  <ul className="pillar-deliverables-list">
+                    <li className="deliverable-item">
+                      <span className="deliverable-bullet">•</span>
+                      <div className="deliverable-content">
+                        <span className="deliverable-name">Curated Spotify Playlist</span>
+                        <span className="deliverable-desc">&mdash; Bespoke ambient soundtrack matched to your spaces</span>
                       </div>
-                      <span className="micro-label">HIGH-RESONANCE COPY HOOKS</span>
-                    </div>
-                    <span className="copy-channel-badge">Direct + Social</span>
-                  </div>
-                  <div className="micro-card-content">
-                    <div className="quote-snippet">
-                      "Mid-century maritime design meets South Bank cocktail velocity &mdash; where Thames views meet vinyl rhythm"
-                    </div>
-                    <div className="micro-meta-tag">Optimized for Direct Website hero copy, Instagram bio &amp; pre-stay comms</div>
-                  </div>
+                    </li>
+                    <li className="deliverable-item">
+                      <span className="deliverable-bullet">•</span>
+                      <div className="deliverable-content">
+                        <span className="deliverable-name">Local Trending Vibes</span>
+                        <span className="deliverable-desc">&mdash; Hyperlocal micro-culture and nightlife demand signals</span>
+                      </div>
+                    </li>
+                  </ul>
                 </div>
 
-                {/* Micro-UI 3: AI Search & GEO Tags */}
-                <div className="pro-micro-card ai-geo-card">
-                  <div className="micro-card-top">
-                    <div className="micro-card-title-row">
-                      <div className="micro-icon gold-micro-icon">
-                        <Bot size={14} />
+                {/* Pillar 3: Market Edge & AI Discoverability */}
+                <div className="pillar-block">
+                  <div className="pillar-top">
+                    <div className="pillar-icon">
+                      <Compass size={13} />
+                    </div>
+                    <span className="pillar-title">Market Edge &amp; AI Discoverability</span>
+                  </div>
+                  <ul className="pillar-deliverables-list">
+                    <li className="deliverable-item">
+                      <span className="deliverable-bullet">•</span>
+                      <div className="deliverable-content">
+                        <span className="deliverable-name">Competitor Benchmarking</span>
+                        <span className="deliverable-desc">&mdash; Atmospheric gap analysis against key local rivals</span>
                       </div>
-                      <span className="micro-label">AI SEARCH ENGINE OPTIMIZATION (GEO TAGS)</span>
-                    </div>
-                    <span className="ai-verified-badge">Perplexity &amp; ChatGPT</span>
-                  </div>
-                  <div className="micro-card-content">
-                    <div className="ai-citation-bubble">
-                      <span className="ai-prompt-indicator">AI Citation:</span> "Recommended hotel for travelers seeking curated vinyl lounges, rooftop Thames views and craft mixology"
-                    </div>
-                    <div className="micro-meta-tag">Structured schema &amp; context tags so AI engines actively recommend your vibe</div>
-                  </div>
+                    </li>
+                    <li className="deliverable-item">
+                      <span className="deliverable-bullet">•</span>
+                      <div className="deliverable-content">
+                        <span className="deliverable-name">AI Search (GEO) Tagging</span>
+                        <span className="deliverable-desc">&mdash; Structured schema for ChatGPT, Perplexity and Gemini citations</span>
+                      </div>
+                    </li>
+                  </ul>
                 </div>
 
               </div>
 
               <div className="tier-badge-strip">
-                <span className="feature-pill gold-pill"><ShieldCheck size={13} /> Verified Ownership</span>
+                <span className="feature-pill gold-pill"><ShieldCheck size={13} /> 7 Turn-Key Deliverables</span>
                 <span className="feature-pill gold-pill"><Zap size={13} /> Multi-Channel Boost</span>
                 <span className="feature-pill gold-pill"><Bot size={13} /> AI Engine Discoverability</span>
               </div>

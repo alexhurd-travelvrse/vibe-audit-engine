@@ -342,155 +342,96 @@
   border-radius: 6px;
 }
 
-/* Visual Complete Vibe Signature Suite (Card 2) */
-.visual-pro-suite {
+/* 3-Pillar Executive Deliverable Matrix (Card 2) */
+.pro-pillars-suite {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
   margin-bottom: 1.5rem;
 }
 
-.pro-micro-card {
+.pillar-block {
   background: rgba(255, 255, 255, 0.025);
-  border: 1px solid rgba(255, 215, 0, 0.18);
+  border: 1px solid rgba(255, 215, 0, 0.16);
   border-radius: 12px;
-  padding: 0.85rem 1rem;
+  padding: 0.85rem 1.05rem;
   transition: all 0.25s ease;
 }
 
-.pro-micro-card:hover {
+.pillar-block:hover {
   background: rgba(255, 215, 0, 0.04);
   border-color: rgba(255, 215, 0, 0.32);
 }
 
-.micro-card-top {
+.pillar-top {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-bottom: 0.45rem;
+  gap: 8px;
+  margin-bottom: 0.65rem;
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-.micro-card-title-row {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-}
-
-.micro-icon {
+.pillar-icon {
   width: 22px;
   height: 22px;
   border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
-}
-
-.gold-micro-icon {
   background: rgba(255, 215, 0, 0.12);
   color: var(--color-gold, #ffd700);
   border: 1px solid rgba(255, 215, 0, 0.3);
+  flex-shrink: 0;
 }
 
-.micro-label {
-  font-size: 0.67rem;
+.pillar-title {
+  font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 0.08em;
   color: var(--color-gold, #ffd700);
+  text-transform: uppercase;
 }
 
-/* EQ animation */
-.sound-eq-visual {
+.pillar-deliverables-list {
   display: flex;
-  align-items: flex-end;
-  gap: 2px;
-  height: 14px;
+  flex-direction: column;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.eq-bar {
-  width: 3px;
-  background: linear-gradient(180deg, #ffd700 0%, #ff8c00 100%);
-  border-radius: 2px;
-  animation: soundBounce 1.2s ease-in-out infinite alternate;
-}
-
-.bar-1 { height: 6px; animation-delay: 0.1s; }
-.bar-2 { height: 13px; animation-delay: 0.3s; }
-.bar-3 { height: 8px; animation-delay: 0.2s; }
-.bar-4 { height: 14px; animation-delay: 0.4s; }
-.bar-5 { height: 7px; animation-delay: 0.15s; }
-
-@keyframes soundBounce {
-  0% { transform: scaleY(0.35); }
-  100% { transform: scaleY(1); }
-}
-
-.sound-stat-line {
+.deliverable-item {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 8px;
-  margin-bottom: 0.25rem;
 }
 
-.sound-db-badge {
-  font-size: 0.72rem;
-  font-weight: 800;
-  color: #050b14;
-  background: var(--color-gold, #ffd700);
-  padding: 1px 6px;
-  border-radius: 4px;
-}
-
-.sound-profile-name {
-  font-size: 0.82rem;
-  font-weight: 700;
-  color: #ffffff;
-}
-
-.copy-channel-badge,
-.ai-verified-badge {
-  font-size: 0.65rem;
-  font-weight: 700;
-  padding: 2px 7px;
-  border-radius: 999px;
-  background: rgba(255, 215, 0, 0.1);
-  border: 1px solid rgba(255, 215, 0, 0.25);
-  color: rgba(255, 235, 170, 0.95);
-}
-
-.quote-snippet {
-  font-size: 0.82rem;
-  line-height: 1.4;
-  font-style: italic;
-  color: #ffffff;
-  padding: 4px 8px;
-  background: rgba(255, 255, 255, 0.03);
-  border-left: 2px solid var(--color-gold, #ffd700);
-  border-radius: 0 6px 6px 0;
-  margin-bottom: 0.25rem;
-}
-
-.ai-citation-bubble {
-  font-size: 0.8rem;
-  line-height: 1.4;
-  color: rgba(230, 241, 255, 0.9);
-  padding: 6px 10px;
-  background: rgba(255, 255, 255, 0.04);
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  margin-bottom: 0.25rem;
-}
-
-.ai-prompt-indicator {
-  font-weight: 700;
+.deliverable-bullet {
   color: var(--color-gold, #ffd700);
-  margin-right: 4px;
+  font-size: 0.85rem;
+  line-height: 1.35;
+  flex-shrink: 0;
 }
 
-.micro-meta-tag {
-  font-size: 0.72rem;
-  color: rgba(230, 241, 255, 0.55);
-  line-height: 1.35;
+.deliverable-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 3px 6px;
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+
+.deliverable-name {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.deliverable-desc {
+  color: rgba(230, 241, 255, 0.65);
+  font-size: 0.78rem;
 }
 
 .tier-badge-strip {
