@@ -84,7 +84,7 @@ console.log(\`Acoustic DNA: \${manifest.vibe_manifest.acoustic_dna.curated_sound
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify({
           ...formData,
-          form_type: 'AtmosVibe Enterprise Data API Licensing Enquiry',
+          form_type: 'AtmosVibe Enterprise VIBE API Licensing Enquiry',
           submitted_at: new Date().toISOString()
         })
       });
@@ -98,13 +98,13 @@ console.log(\`Acoustic DNA: \${manifest.vibe_manifest.acoustic_dna.curated_sound
   };
 
   return (
-    <section className="data-api-section" id="data-api">
+    <section className="data-api-section" id="vibe-api">
       <div className="data-api-container">
         
         {/* Header */}
         <div className="data-api-header">
           <div className="data-api-pill">
-            <Zap size={13} /> ATMOSVIBE ENTERPRISE DATA API
+            <Zap size={13} /> ATMOSVIBE ENTERPRISE VIBE API
           </div>
           <h2 className="data-api-headline">
             LICENSE REAL-TIME VIBE DATA FOR <span style={{ background: 'linear-gradient(90deg, #00e5ff, #ffd700)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>YOUR DIRECT PLATFORM</span>
@@ -242,11 +242,11 @@ console.log(\`Acoustic DNA: \${manifest.vibe_manifest.acoustic_dna.curated_sound
             {/* Left Content */}
             <div>
               <h3 className="case-study-title">
-                How Travelvrse Powers 3D Spatial Travel Discovery with the AtmosVibe Data API
+                How Travelvrse Powers 3D Spatial Travel Discovery with the AtmosVibe VIBE API
               </h3>
               
               <p className="case-study-narrative">
-                <strong>Travelvrse</strong>, the pioneering 3D spatial travel exploration platform, integrated AtmosVibe's real-time Data API to power their virtual city districts in Barcelona and London. By streaming live acoustic signatures, diurnal time-of-day soundscapes, and neighborhood subcultural hotspots directly into 3D environments, Travelvrse transformed static hotel listings into interactive spatial discoveries.
+                <strong>Travelvrse</strong>, the pioneering 3D spatial travel exploration platform, integrated AtmosVibe's real-time VIBE API to power their virtual city districts in Barcelona and London. By streaming live acoustic signatures, diurnal time-of-day soundscapes, and neighborhood subcultural hotspots directly into 3D environments, Travelvrse transformed static hotel listings into interactive spatial discoveries.
               </p>
 
               <ul className="case-study-highlights">
@@ -266,7 +266,7 @@ console.log(\`Acoustic DNA: \${manifest.vibe_manifest.acoustic_dna.curated_sound
 
               <div className="case-quote-box">
                 <p className="case-quote-text">
-                  "By licensing AtmosVibe's Data API, we bridged raw hotel metadata with dynamic local subcultures, giving travelers the emotional confidence to book directly from our 3D spatial metaverse."
+                  "By licensing AtmosVibe's VIBE API, we bridged raw hotel metadata with dynamic local subcultures, giving travelers the emotional confidence to book directly from our 3D spatial metaverse."
                 </p>
                 <div className="case-quote-author">
                   — Travelvrse Engineering & Metaverse Operations
@@ -324,7 +324,7 @@ console.log(\`Acoustic DNA: \${manifest.vibe_manifest.acoustic_dna.curated_sound
               <>
                 <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
                   <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', color: '#00e5ff', fontSize: '11px', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.5rem' }}>
-                    <Database size={14} /> AtmosVibe Data API Licensing
+                    <Database size={14} /> AtmosVibe VIBE API Licensing
                   </div>
                   <h3 style={{ fontSize: '1.75rem', fontWeight: 900, color: '#ffffff', margin: 0 }}>
                     Request API Documentation & Sandbox Key

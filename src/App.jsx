@@ -8,6 +8,7 @@ import ProblemSection from './components/ProblemSection';
 import HowItWorksSection from './components/HowItWorksSection';
 import ComparisonBlock from './components/ComparisonBlock';
 import MidPageCta from './components/MidPageCta';
+import DataApiSection from './components/DataApiSection';
 import MarketsSection from './components/MarketsSection';
 import BlogJournal from './components/BlogJournal';
 import TeamSection from './components/TeamSection';
@@ -52,7 +53,10 @@ const B2BHome = () => {
       {/* 6. Mid-Page Call to Action */}
       <MidPageCta />
 
-      {/* 7. Global Market Intelligence & Vibe Benchmarks */}
+      {/* 7. Enterprise Vibe API */}
+      <DataApiSection />
+
+      {/* 8. Global Market Intelligence & Vibe Benchmarks */}
       <MarketsSection />
 
       {/* 8. Journal */}

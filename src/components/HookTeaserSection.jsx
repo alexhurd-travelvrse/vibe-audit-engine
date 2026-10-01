@@ -18,7 +18,7 @@ export default function HookTeaserSection() {
             <span className="text-gold-gradient">Stand Out From the Crowd</span>
           </h2>
           <p className="teaser-description">
-            Prove your hotel is more than just a room. Map your authentic design, energy, lighting, and proximity to local hotspots directly to what next-gen travelers are searching for
+            Prove your hotel is more than just a room. Map your authentic design, energy, lighting and proximity to local hotspots directly to what next-gen travelers are searching for
           </p>
         </div>
 
@@ -143,7 +143,7 @@ export default function HookTeaserSection() {
 
             <div className="tier-content">
               <h3 className="tier-heading">The Full Multi-Channel Engine</h3>
-              <p className="tier-subtext">Comprehensive acoustic, narrative, and AI search assets powered by our proprietary Vibe Fingerprinting engine to make your brand stand out across all channels</p>
+              <p className="tier-subtext">Comprehensive acoustic, narrative and AI search assets powered by our proprietary Vibe Fingerprinting engine to make your brand stand out across all channels</p>
 
               {/* Visual Micro-UI Asset Suite: 3 Interactive Product Snippets */}
               <div className="visual-pro-suite">
@@ -206,7 +206,7 @@ export default function HookTeaserSection() {
                   </div>
                   <div className="micro-card-content">
                     <div className="ai-citation-bubble">
-                      <span className="ai-prompt-indicator">AI Citation:</span> "Recommended hotel for travelers seeking curated vinyl lounges, rooftop Thames views, and craft mixology"
+                      <span className="ai-prompt-indicator">AI Citation:</span> "Recommended hotel for travelers seeking curated vinyl lounges, rooftop Thames views and craft mixology"
                     </div>
                     <div className="micro-meta-tag">Structured schema &amp; context tags so AI engines actively recommend your vibe</div>
                   </div>
