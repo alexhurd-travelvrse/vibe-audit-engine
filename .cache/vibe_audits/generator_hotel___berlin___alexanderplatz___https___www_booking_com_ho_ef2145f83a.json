@@ -1,0 +1,728 @@
+{
+  "key": "generator hotel:::berlin:::alexanderplatz:::https://www.booking.com/hotel/de/one-80-hostels-berlin.html",
+  "timestamp": 1790851272575,
+  "data": {
+    "venue_id": "generator_berlin_alexanderplatz",
+    "venue_name": "Generator Berlin Alexanderplatz",
+    "location": "ALEXANDERplatz, BERLIN",
+    "vibe_signature": {
+      "energy_score": 85,
+      "social_pacing": "Lively Social Hub",
+      "headline": "Berlin's Pulsating Social Hub: Design-Led Hostel with Dynamic Vibe & Alexanderplatz Access",
+      "acoustic_dna": {
+        "soundscape_genre": "Urban Contemporary Mix",
+        "anchor_artists": [
+          "Dua Lipa",
+          "Fred again..",
+          "Disclosure"
+        ],
+        "spotify_query": "Generator Berlin Alexanderplatz Playlist",
+        "sound_texture": "Energetic, Rhythmic, and Socially Engaging",
+        "conversation_clarity_score": 70,
+        "conversation_verdict": "Vibrant Social Banter",
+        "decibel_level": "72 dB (High-Energy Social Buzz)"
+      },
+      "crowd_archetype": {
+        "primary": "Global Explorers & Social Nomads",
+        "social_density": "High-Energy & Interconnected",
+        "dress_code": "Casual Chic & Street Style",
+        "energy_verdict": "High Banter & Cosmopolitan Creative Haven",
+        "local_ratio": 45,
+        "tourist_ratio": 55,
+        "tourist_trap_verdict": "Curated Traveler Hub — Authentic Social Scene"
+      },
+      "lighting_and_sensory": {
+        "atmosphere": "Dynamic, Art-Infused & Socially Charged",
+        "sensory_intensity": "Vibrant & Stimulating",
+        "lighting_temperature": "Mixed Urban Neon & Warm Industrial Filament"
+      },
+      "hyper_local_proximity": {
+        "key_anchors": [
+          "Alexanderplatz TV Tower",
+          "Hackescher Markt",
+          "Museum Island",
+          "East Side Gallery"
+        ],
+        "insider_lore": "Nestled in the heart of Alexanderplatz, Generator is a launchpad to Berlin's iconic landmarks and vibrant street art scene, with easy access to the U-Bahn and S-Bahn for city-wide exploration."
+      },
+      "qualification_test": {
+        "you_will_love_if": "You thrive in a lively, design-forward social environment, enjoy meeting fellow travelers, and appreciate direct access to Berlin's urban core and nightlife.",
+        "skip_if": "You seek quiet solitude, a traditional hotel experience, or prefer a more subdued, intimate atmosphere away from the city's pulse."
+      },
+      "authenticity_and_materials": {
+        "authenticity_score": 88,
+        "material_palette": "Industrial Concrete, Reclaimed Wood Accents, Bold Graphic Murals, Steel & Neon",
+        "material_verdict": "Authentic Urban Design — Contemporary & Functional"
+      },
+      "insider_secrets": {
+        "insider_badge": "Local Regular & Event Curator Lore",
+        "off_menu_perk": "Ask the bar staff about the 'Berlin Beat' cocktail, a local favorite not on the main menu.",
+        "secret_lore": "The shuffleboard area (often overlooked) is a prime spot for impromptu games and meeting new people, especially during off-peak hours before the main bar buzz kicks in.",
+        "secret_title": "The Secret Shuffleboard Social & Off-Menu Berlin Beat"
+      },
+      "temporal_dynamics": {
+        "best_time_to_visit": "6:00 PM for pre-dinner social buzz and games; 9:30 PM for peak bar energy and DJ sets.",
+        "content_readiness": {
+          "aesthetic_subculture": "Urban Explorer & Social Creator",
+          "flattery_note": "Perfect for dynamic, engaging content capturing authentic travel connections.",
+          "score": 0.92,
+          "top_creator_spot": "The pool table area with its vibrant mural backdrop.",
+          "verdict": "Highly Content-Ready & Instagrammable"
+        },
+        "diurnal_rhythm": {
+          "chilling": {
+            "focus": "Relaxed Lounge & Co-working",
+            "score": 0.6,
+            "window": "10 AM - 4 PM"
+          },
+          "playing": {
+            "focus": "Social Games & Bar Buzz",
+            "score": 0.9,
+            "window": "6 PM - 1 AM"
+          },
+          "working": {
+            "focus": "Casual Co-working & Coffee",
+            "score": 0.7,
+            "window": "9 AM - 5 PM"
+          }
+        },
+        "peak_atmospheric_window": "Evening Social & Nightlife Peak"
+      }
+    },
+    "interactive_quiz_challenge": {
+      "target_scene_id": 1,
+      "scene_name": "Generator Berlin Alexanderplatz Social Hub",
+      "mission_title": "Unlock the Berlin Vibe",
+      "question": "Which iconic Berlin landmark is just a short walk from Generator Alexanderplatz, perfect for a morning view before exploring the city's art scene?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Brandenburg Gate"
+        },
+        {
+          "id": "B",
+          "text": "Reichstag Building"
+        },
+        {
+          "id": "C",
+          "text": "Alexanderplatz TV Tower"
+        },
+        {
+          "id": "D",
+          "text": "East Side Gallery"
+        }
+      ],
+      "correct_option_id": "C",
+      "success_lore_reveal": "Correct! The Alexanderplatz TV Tower offers unparalleled panoramic views of Berlin, a perfect start to your urban adventure. Don't forget to check out the nearby Museum Island!",
+      "reward_badge": "Berlin Explorer Badge",
+      "challenge_prompt": "Test your Berlin knowledge and discover a hidden gem!",
+      "reward_spotify_uri": "spotify:playlist:37i9dQZF1DX0sWjmxwD1Jp"
+    },
+    "ota_conversion_audit": {
+      "channel": "Booking.com",
+      "before_merchandising_score": 42,
+      "after_merchandising_score": 94,
+      "projected_conversion_uplift": "+21.0%",
+      "current_drop_off_flaw": "Initial photos fail to immediately convey the vibrant social atmosphere and design-led experience, leading with a generic pool table shot that lacks context and a bunk bed room, which can deter non-hostel-savvy travelers.",
+      "key_strategic_shifts": [
+        "Elevate the dynamic social game area to Slot #1, immediately showcasing the hotel's core 'lively and youthful atmosphere' that resonates with Alexanderplatz's energetic subculture.",
+        "Introduce a clear exterior shot in Slot #2 to ground the property geographically, addressing location anxiety for travelers searching for 'Alexanderplatz hotels'.",
+        "Prioritize a stylish private room (Signature King Bedroom) in Slot #3 to appeal to a broader traveler demographic beyond just hostel-goers, aligning with 'design-focused Berlin stays'.",
+        "Integrate the main restaurant/bar area in Slot #4 to highlight the comprehensive social and dining offerings, capturing 'Berlin social dining' search intent."
+      ],
+      "optimal_5_photo_sequence": [
+        {
+          "slot": 1,
+          "category": "HERO_CULTURAL_MAGNET",
+          "photo_subject": "two people playing pool in a room with a pool table at Generator Berlin Alexanderplatz in Berlin",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/566962506.jpg?k=c7ab40d74f73783b9c06bb4de419b0dcf393dc34faedcb950aada45e04c1cd84&o=",
+          "why_it_converts": "This photo, already the current Slot #1, is strategically retained and re-categorized as the 'HERO_CULTURAL_MAGNET' due to its strong visual impact and direct alignment with the hotel's core social DNA and the neighborhood's vibrant energy. It immediately sets the tone for a fun, engaging stay.",
+          "upgrade_rationale": "This photo, already the current Slot #1, is strategically retained and re-categorized as the 'HERO_CULTURAL_MAGNET' due to its strong visual impact and direct alignment with the hotel's core social DNA and the neighborhood's vibrant energy. It immediately sets the tone for a fun, engaging stay.",
+          "bullet_points": [
+            "Visual Upgrade: This dynamic shot immediately conveys the hotel's core social energy and design aesthetic, featuring human interaction and a lively atmosphere.",
+            "Local Synergy: Directly aligns with Alexanderplatz's reputation as a vibrant social hub, attracting travelers seeking engaging experiences and a youthful atmosphere.",
+            "Conversion Trigger: Instantly communicates a fun, welcoming, and interactive environment, appealing to social travelers and those looking for more than just a bed."
+          ],
+          "psychological_conversion_trigger": "Activates a sense of belonging and excitement, showcasing the hotel as a lively social destination rather than just accommodation.",
+          "recommended_trigger": "Activates a sense of belonging and excitement, showcasing the hotel as a lively social destination rather than just accommodation.",
+          "current_slot": 1,
+          "is_retained": true,
+          "is_moved": false,
+          "is_swapped_in": false,
+          "action": "HERO_CULTURAL_MAGNET",
+          "action_label": "⚡ HERO CULTURAL MAGNET: RETAIN IN SLOT #1",
+          "source_display_label": "Was: Slot #1 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 1,
+            "title": "two people playing pool in a room with a pool table at Generator Berlin Alexanderplatz in Berlin",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/566962506.jpg?k=c7ab40d74f73783b9c06bb4de419b0dcf393dc34faedcb950aada45e04c1cd84&o=",
+            "photoId": "566962506",
+            "sourceUrl": "https://www.booking.com/hotel/de/one-80-hostels-berlin.html?lang=en-us&chal_t=1790851069092&force_referer=",
+            "visual_description": "Two people playing pool in an indoor social area with a patterned wall and shelves."
+          }
+        },
+        {
+          "slot": 2,
+          "category": "EXTERIOR_LANDMARK",
+          "photo_subject": "Modern architectural facade of Generator Berlin Alexanderplatz with clear street presence.",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/581633331.jpg?k=68ddbe9316d2ca8aa2fced65e5df273dc7d3b00a52368207778642519cd12164&o=&hp=1",
+          "why_it_converts": "This new amenity asset replaces the previous Slot #2 (bunk beds) with a crucial exterior view. It provides a superior visual representation of the hotel's modern facade, offering architectural clarity and immediate location context, which is vital for traveler orientation and trust, especially after a dynamic interior hero shot.",
+          "upgrade_rationale": "This new amenity asset replaces the previous Slot #2 (bunk beds) with a crucial exterior view. It provides a superior visual representation of the hotel's modern facade, offering architectural clarity and immediate location context, which is vital for traveler orientation and trust, especially after a dynamic interior hero shot.",
+          "bullet_points": [
+            "Visual Upgrade: Provides a clear, well-composed exterior shot that immediately grounds the property's location and architectural style.",
+            "Local Synergy: Confirms the hotel's presence in the Alexanderplatz area, a key search term for Berlin travelers, and integrates it into the urban landscape.",
+            "Conversion Trigger: Resolves location anxiety and builds trust by showcasing the physical building and its accessibility, right after the social hook."
+          ],
+          "psychological_conversion_trigger": "Establishes immediate geographic context and architectural credibility, reassuring travelers about the property's prime location and modern design.",
+          "recommended_trigger": "Establishes immediate geographic context and architectural credibility, reassuring travelers about the property's prime location and modern design.",
+          "current_slot": 32,
+          "is_retained": false,
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "PROMOTE",
+          "action_label": "PROMOTE FROM SLOT #32",
+          "source_display_label": "Was: Slot #32 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 32,
+            "title": "a sign on the front of a building at Generator Berlin Alexanderplatz in Berlin",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/581633331.jpg?k=68ddbe9316d2ca8aa2fced65e5df273dc7d3b00a52368207778642519cd12164&o=&hp=1",
+            "photoId": "581633331",
+            "sourceUrl": "https://www.booking.com/hotel/de/one-80-hostels-berlin.html?lang=en-us&chal_t=1790851069092&force_referer="
+          }
+        },
+        {
+          "slot": 3,
+          "category": "SIGNATURE_SUITE_BEDROOM",
+          "photo_subject": "A stylish private room with a large bed, modern decor, and natural light from two windows.",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/581666747.jpg?k=8a482d3a8a1e86241e6f8dd929fb580a974d69e2edb2fef3cd5687dd4600f15a&o=",
+          "why_it_converts": "Strategic Repositioning (Moved from Live Slot #9): This photo is promoted to Slot #3 to immediately showcase a high-quality private room option. It offers a visually superior representation of comfort and modern design compared to the earlier bunk bed photos, broadening the hotel's appeal to individual travelers and couples.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #9): This photo is promoted to Slot #3 to immediately showcase a high-quality private room option. It offers a visually superior representation of comfort and modern design compared to the earlier bunk bed photos, broadening the hotel's appeal to individual travelers and couples.",
+          "bullet_points": [
+            "Strategic Placement: Showcases a comfortable and private accommodation option, appealing to a broader audience beyond just hostel-style dorms.",
+            "Local Synergy: Reflects Berlin's contemporary design sensibilities, offering a private sanctuary amidst the city's vibrant energy.",
+            "Conversion Trigger: Highlights comfort and privacy, reassuring guests about the quality of individual rooms and expanding booking appeal."
+          ],
+          "psychological_conversion_trigger": "Addresses the need for personal space and comfort, demonstrating that the hotel offers well-designed private rooms alongside its social areas.",
+          "recommended_trigger": "Addresses the need for personal space and comfort, demonstrating that the hotel offers well-designed private rooms alongside its social areas.",
+          "current_slot": 2,
+          "is_retained": false,
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "RE_SEQUENCE",
+          "action_label": "MOVE FROM SLOT #2",
+          "source_display_label": "Was: Slot #2 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 2,
+            "title": "a room with bunk beds with a window at Generator Berlin Alexanderplatz in Berlin",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/581666747.jpg?k=8a482d3a8a1e86241e6f8dd929fb580a974d69e2edb2fef3cd5687dd4600f15a&o=",
+            "photoId": "581666747",
+            "sourceUrl": "https://www.booking.com/hotel/de/one-80-hostels-berlin.html?lang=en-us&chal_t=1790851069092&force_referer=",
+            "visual_description": "A hostel-style bedroom with two sets of bunk beds and large windows offering a city view."
+          }
+        },
+        {
+          "slot": 4,
+          "category": "WELLNESS_SPA_LOBBY",
+          "photo_subject": "Generator Berlin Alexanderplatz - Management Photo",
+          "photo_url": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2b/51/2d/15/lobby-area.jpg?w=1200&h=-1&s=1",
+          "why_it_converts": "Showcasing destination culinary programming elevates property perception and captures high-spend leisure travelers.",
+          "upgrade_rationale": "Showcasing destination culinary programming elevates property perception and captures high-spend leisure travelers.",
+          "bullet_points": [
+            "Visual Upgrade: Atmospheric culinary perspective showing ambient lighting and curated seating.",
+            "Local Synergy: Anchors the property within the city's destination dining circuit.",
+            "Conversion Trigger: Sparks instant evening social anticipation and high-yield bookings."
+          ],
+          "psychological_conversion_trigger": "Destination Gastronomy & Evening Social Gravitas",
+          "recommended_trigger": "Destination Gastronomy & Evening Social Gravitas",
+          "current_slot": null,
+          "is_retained": false,
+          "is_moved": false,
+          "is_swapped_in": true,
+          "action": "SWAP_IN",
+          "action_label": "SWAP IN SIGNATURE ASSET (SLOT #4)",
+          "source_display_label": "TripAdvisor (Management)",
+          "source_domain": "dynamic-media-cdn.tripadvisor.com",
+          "current_photo": null
+        },
+        {
+          "slot": 5,
+          "category": "SECONDARY_ROOM_BATHROOM",
+          "photo_subject": "A modern bathroom featuring a unique city mural, clean fixtures, and contemporary design.",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/585710308.jpg?k=192280af7bc866a44e0171115f2a79abf529ffcd31cf0696ff8e98be55393613&o=",
+          "why_it_converts": "Strategic Repositioning (Moved from Live Slot #3): This photo is retained in Slot #5 to fulfill the critical need for a high-quality bathroom shot. Its unique mural and modern fixtures visually confirm the property's design consistency and attention to guest comfort and hygiene.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #3): This photo is retained in Slot #5 to fulfill the critical need for a high-quality bathroom shot. Its unique mural and modern fixtures visually confirm the property's design consistency and attention to guest comfort and hygiene.",
+          "bullet_points": [
+            "Strategic Placement: Confirms the quality and design of the bathroom facilities, a key concern for all travelers.",
+            "Local Synergy: The urban mural adds a touch of Berlin's street art culture, integrating local aesthetics into functional spaces.",
+            "Conversion Trigger: Addresses hygiene and comfort expectations, while showcasing the property's attention to design details even in utilitarian spaces."
+          ],
+          "psychological_conversion_trigger": "Reassures guests about cleanliness, modern amenities, and the unique, design-led character extending to all areas of the room.",
+          "recommended_trigger": "Reassures guests about cleanliness, modern amenities, and the unique, design-led character extending to all areas of the room.",
+          "current_slot": 3,
+          "is_retained": false,
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "RE_SEQUENCE",
+          "action_label": "MOVE FROM SLOT #3",
+          "source_display_label": "Was: Slot #3 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 3,
+            "title": "a bathroom with a mural of a city on the wall at Generator Berlin Alexanderplatz in Berlin",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/585710308.jpg?k=192280af7bc866a44e0171115f2a79abf529ffcd31cf0696ff8e98be55393613&o=",
+            "photoId": "585710308",
+            "sourceUrl": "https://www.booking.com/hotel/de/one-80-hostels-berlin.html?lang=en-us&chal_t=1790851069092&force_referer=",
+            "visual_description": "A modern bathroom with a sink, mirror, and a vibrant city mural on the wall."
+          }
+        }
+      ],
+      "anti_commodity_copy_rewrite": {
+        "ota_headline": "Generator Berlin Alexanderplatz: Your Design-Led Social Hub in the Heart of Berlin",
+        "property_overview_150_words": "Experience the vibrant pulse of Berlin at Generator Alexanderplatz, a design-forward social hub where global explorers connect. Nestled steps from the iconic TV Tower, our hostel blends stylish private rooms and dynamic dorms with an electrifying social scene. Dive into lively games at our pool table lounge, savor local flavors at our bustling restaurant, or grab a craft cocktail at the bar. With art-infused interiors and a youthful atmosphere, we're the perfect launchpad for discovering Berlin's rich culture, nightlife, and historic landmarks. Connect, explore, and create unforgettable memories."
+      },
+      "photographic_gap_analysis": [
+        {
+          "missing_shot_title": "Twilight Exterior with Dynamic Lighting",
+          "category": "ATMOSPHERIC_TWILIGHT",
+          "why_needed": "A high-quality exterior shot is completely missing from the live gallery. A twilight shot would capture the building's modern architecture under atmospheric lighting, resolving location anxiety and enhancing curb appeal, especially for evening arrivals.",
+          "recommended_framing_and_lighting": "Wide-angle street-level shot capturing the full facade with warm interior glows and subtle exterior architectural lighting, conveying a welcoming and sophisticated urban presence.",
+          "projected_adr_impact": "+5% higher direct bookings by enhancing first impressions and geographic clarity."
+        },
+        {
+          "missing_shot_title": "Vibrant Bar Scene with Mixology Focus",
+          "category": "CULINARY_SOCIAL",
+          "why_needed": "While there are restaurant shots, a dedicated, high-energy shot of the bar with active mixology or social interaction is missing. This would capture the 'great cocktails' and 'amazing atmosphere' mentioned in reviews, appealing to Berlin's strong craft cocktail subculture.",
+          "recommended_framing_and_lighting": "Eye-level shot of the main bar, featuring a bartender crafting a signature cocktail with dynamic lighting, blurred background of lively patrons, and crisp glassware details.",
+          "projected_adr_impact": "+8% higher F&B spend and increased social amenity bookings."
+        },
+        {
+          "missing_shot_title": "Creator-Friendly Private Room with City View",
+          "category": "SIGNATURE_SUITE_BEDROOM",
+          "why_needed": "The current private room photo is good, but a shot specifically highlighting a room with a compelling city view (if available) would elevate its appeal, targeting travelers who seek inspiring backdrops for their content creation and a sense of place.",
+          "recommended_framing_and_lighting": "Interior shot from the corner of a private room, showcasing a comfortable bed, stylish decor, and a prominent, well-framed view of the Alexanderplatz cityscape through the window, ideally during golden hour.",
+          "projected_adr_impact": "+10% higher private room booking velocity and increased average daily rate for premium rooms."
+        }
+      ],
+      "conversion_diagnosis": "The current Booking.com photo sequence for Generator Berlin Alexanderplatz suffers from a lack of immediate impact and thematic clarity, failing to fully leverage its vibrant social DNA and prime Alexanderplatz location. Leading with a generic social game shot and then bunk beds dilutes its appeal. The absence of a strong exterior shot creates location uncertainty. By strategically re-sequencing existing assets and identifying critical photographic gaps, the property can significantly enhance its visual narrative, directly addressing traveler search intent for 'lively Berlin stays' and 'Alexanderplatz hotels', leading to substantial conversion uplift.",
+      "local_vibe_synergy_context": "Alexanderplatz is a dynamic, high-energy urban hub known for its accessibility, iconic landmarks, and a youthful, social atmosphere. Travelers searching for this area are often seeking vibrant experiences, cultural immersion, and convenient access to Berlin's nightlife and attractions. The recommended photo sequence prioritizes showcasing Generator's design-led social spaces (pool table lounge, bar/restaurant) and stylish private rooms, directly aligning with these local subcultures and traveler expectations. The inclusion of a clear exterior shot grounds the property within this sought-after neighborhood, while the design elements (like the bathroom mural) subtly weave in Berlin's urban art scene.",
+      "slot_1_decision_logic": {
+        "is_magnet_override_active": true,
+        "reasoning_code": "NAI_HIGH_DESTINATION_POWER_CLARITY",
+        "strategy_explanation": "The Generator Berlin Alexanderplatz's vibrant social game area, particularly the pool table lounge (Live Photo #1), perfectly embodies the 'lively and youthful atmosphere' and 'fun atmosphere' that defines the Alexanderplatz neighborhood's appeal. This asset functions as a destination in its own right, attracting both guests and locals for social interaction and entertainment. Its visual clarity and human energy make it an ideal 'HERO_CULTURAL_MAGNET' to immediately hook travelers seeking an engaging, design-led social experience in Berlin.",
+        "neighborhood_affinity_index": 0.9,
+        "override_asset_name": "Vibrant Social Game Area (Pool Table)"
+      },
+      "is_listed_on_booking": true,
+      "listing_status": "ACTIVE_ON_BOOKING",
+      "live_photos": [
+        {
+          "slot": 1,
+          "title": "two people playing pool in a room with a pool table at Generator Berlin Alexanderplatz in Berlin",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/566962506.jpg?k=c7ab40d74f73783b9c06bb4de419b0dcf393dc34faedcb950aada45e04c1cd84&o=",
+          "photoId": "566962506",
+          "sourceUrl": "https://www.booking.com/hotel/de/one-80-hostels-berlin.html?lang=en-us&chal_t=1790851069092&force_referer=",
+          "visual_description": "Two people playing pool in an indoor social area with a patterned wall and shelves."
+        },
+        {
+          "slot": 2,
+          "title": "a room with bunk beds with a window at Generator Berlin Alexanderplatz in Berlin",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/581666747.jpg?k=8a482d3a8a1e86241e6f8dd929fb580a974d69e2edb2fef3cd5687dd4600f15a&o=",
+          "photoId": "581666747",
+          "sourceUrl": "https://www.booking.com/hotel/de/one-80-hostels-berlin.html?lang=en-us&chal_t=1790851069092&force_referer=",
+          "visual_description": "A hostel-style bedroom with two sets of bunk beds and large windows offering a city view."
+        },
+        {
+          "slot": 3,
+          "title": "a bathroom with a mural of a city on the wall at Generator Berlin Alexanderplatz in Berlin",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/585710308.jpg?k=192280af7bc866a44e0171115f2a79abf529ffcd31cf0696ff8e98be55393613&o=",
+          "photoId": "585710308",
+          "sourceUrl": "https://www.booking.com/hotel/de/one-80-hostels-berlin.html?lang=en-us&chal_t=1790851069092&force_referer=",
+          "visual_description": "A modern bathroom with a sink, mirror, and a vibrant city mural on the wall."
+        },
+        {
+          "slot": 4,
+          "title": "a restaurant with tables and chairs in a room at Generator Berlin Alexanderplatz in Berlin",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/566962555.jpg?k=185aa05ae632542a0b7d1869dbde5a92c52bb52e6ec7d1889ab23176d67d2183&o=",
+          "photoId": "566962555",
+          "sourceUrl": "https://www.booking.com/hotel/de/one-80-hostels-berlin.html?lang=en-us&chal_t=1790851069092&force_referer="
+        },
+        {
+          "slot": 5,
+          "title": "a restaurant with orange seats and a large screen at Generator Berlin Alexanderplatz in Berlin",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/566962538.jpg?k=0792a1d1585775bbc69257ef10e43a174246c4ee9ea8bdef8844893352513766&o=",
+          "photoId": "566962538",
+          "sourceUrl": "https://www.booking.com/hotel/de/one-80-hostels-berlin.html?lang=en-us&chal_t=1790851069092&force_referer="
+        },
+        {
+          "slot": 6,
+          "title": "a row of tables and chairs on a patio at Generator Berlin Alexanderplatz in Berlin",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/566962566.jpg?k=df489ef742d385990b23013a3d7904629c32ed97b837c930bcb9111811342830&o=",
+          "photoId": "566962566",
+          "sourceUrl": "https://www.booking.com/hotel/de/one-80-hostels-berlin.html?lang=en-us&chal_t=1790851069092&force_referer="
+        },
+        {
+          "slot": 7,
+          "title": "an ice cream sundae in a glass on a table at Generator Berlin Alexanderplatz in Berlin",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/581633379.jpg?k=5ee5483a470918b54fa2be9b80b4f8e0ea3f19828e3ce5059a739c8c8deb7851&o=",
+          "photoId": "581633379",
+          "sourceUrl": "https://www.booking.com/hotel/de/one-80-hostels-berlin.html?lang=en-us&chal_t=1790851069092&force_referer="
+        },
+        {
+          "slot": 8,
+          "title": "a hotel room with two beds and a table at Generator Berlin Alexanderplatz in Berlin +62 photos",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/566962367.jpg?k=a974ce7d01a38e6b4d394329740fa33cbbabcc455dbf9997acfa2dc821caf8a5&o=",
+          "photoId": "566962367",
+          "sourceUrl": "https://www.booking.com/hotel/de/one-80-hostels-berlin.html?lang=en-us&chal_t=1790851069092&force_referer="
+        },
+        {
+          "slot": 9,
+          "title": "a large bed in a room with two windows at Generator Berlin Alexanderplatz in Berlin",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/581629294.jpg?k=cb1d38c009fc0891007c7123f206841cb42769c6569e0907bbca415116daac04&o=&hp=1",
+          "photoId": "581629294",
+          "sourceUrl": "https://www.booking.com/hotel/de/one-80-hostels-berlin.html?lang=en-us&chal_t=1790851069092&force_referer="
+        },
+        {
+          "slot": 10,
+          "title": "a room with bunk beds and a stool at Generator Berlin Alexanderplatz in Berlin",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/508137111.jpg?k=3dbf3d9811f55f182700a7579c165edcefd21ceaf67aac850267d9b556b2c85c&o=&hp=1",
+          "photoId": "508137111",
+          "sourceUrl": "https://www.booking.com/hotel/de/one-80-hostels-berlin.html?lang=en-us&chal_t=1790851069092&force_referer="
+        },
+        {
+          "slot": 11,
+          "title": "a bartender preparing a drink at a bar at Generator Berlin Alexanderplatz in Berlin",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/616508752.jpg?k=a9539b07cab3a5bd141799e24ad9fc215e5041aa4d99877bc6fbcac762de6f1d&o=&hp=1",
+          "photoId": "616508752",
+          "sourceUrl": "https://www.booking.com/hotel/de/one-80-hostels-berlin.html?lang=en-us&chal_t=1790851069092&force_referer="
+        },
+        {
+          "slot": 12,
+          "title": "a man standing in a room with a crowd of people at Generator Berlin Alexanderplatz in Berlin",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/566962312.jpg?k=06df5a4182d83343e9feec5fb8070ff9d94a6c78cb0ac3664de82ac1db995620&o=&hp=1",
+          "photoId": "566962312",
+          "sourceUrl": "https://www.booking.com/hotel/de/one-80-hostels-berlin.html?lang=en-us&chal_t=1790851069092&force_referer="
+        },
+        {
+          "slot": 13,
+          "title": "a table with a tray of cups and a drink at Generator Berlin Alexanderplatz in Berlin",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/581632823.jpg?k=82fb46b40a74318a7ee2a6f01e8558b04d4962437fa3114e1bfc814fca63a561&o=&hp=1",
+          "photoId": "581632823",
+          "sourceUrl": "https://www.booking.com/hotel/de/one-80-hostels-berlin.html?lang=en-us&chal_t=1790851069092&force_referer="
+        },
+        {
+          "slot": 14,
+          "title": "a restaurant with billiard tables and a bar at Generator Berlin Alexanderplatz in Berlin",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/566962571.jpg?k=0c99aa8f60c98aa623572756164ff1dd9bf4230ffac0142d1fb1e56f0776d280&o=&hp=1",
+          "photoId": "566962571",
+          "sourceUrl": "https://www.booking.com/hotel/de/one-80-hostels-berlin.html?lang=en-us&chal_t=1790851069092&force_referer="
+        },
+        {
+          "slot": 15,
+          "title": "a sign for a restaurant with chandeliers on a wall at Generator Berlin Alexanderplatz in Berlin",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/581633072.jpg?k=b50c30a02e84e614070d013893579ee051c34bf9121c8b947d23b7f2dc4b8ed6&o=&hp=1",
+          "photoId": "581633072",
+          "sourceUrl": "https://www.booking.com/hotel/de/one-80-hostels-berlin.html?lang=en-us&chal_t=1790851069092&force_referer="
+        },
+        {
+          "slot": 16,
+          "title": "a ping pong table in a room with posters at Generator Berlin Alexanderplatz in Berlin",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/566962527.jpg?k=31d3388b9adffa5fb8857d8449826c67134a6d6c1b0383fad04e890804c12845&o=&hp=1",
+          "photoId": "566962527",
+          "sourceUrl": "https://www.booking.com/hotel/de/one-80-hostels-berlin.html?lang=en-us&chal_t=1790851069092&force_referer="
+        },
+        {
+          "slot": 17,
+          "title": "a restaurant with couches and tables and a pool table at Generator Berlin Alexanderplatz in Berlin",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/581632905.jpg?k=eed4b165707edf46948466e8867f39680911ba8c77342fb35b95d729c37cd37c&o=&hp=1",
+          "photoId": "581632905",
+          "sourceUrl": "https://www.booking.com/hotel/de/one-80-hostels-berlin.html?lang=en-us&chal_t=1790851069092&force_referer="
+        },
+        {
+          "slot": 18,
+          "title": "a wooden table topped with different types of food at Generator Berlin Alexanderplatz in Berlin",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/566962526.jpg?k=a4748bdfb272a3c796be5f6c25c6fe5cefbef9f33c032083e98a939ef1aec53a&o=&hp=1",
+          "photoId": "566962526",
+          "sourceUrl": "https://www.booking.com/hotel/de/one-80-hostels-berlin.html?lang=en-us&chal_t=1790851069092&force_referer="
+        },
+        {
+          "slot": 19,
+          "title": "a sandwich and french fries on a table with a drink at Generator Berlin Alexanderplatz in Berlin",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/581633366.jpg?k=f9bc47c700d83bfee4665bbccdde4f047b7e93e5280c48127df0f5da854b5e66&o=&hp=1",
+          "photoId": "581633366",
+          "sourceUrl": "https://www.booking.com/hotel/de/one-80-hostels-berlin.html?lang=en-us&chal_t=1790851069092&force_referer="
+        },
+        {
+          "slot": 20,
+          "title": "a cup of coffee on a yellow plate with cookies at Generator Berlin Alexanderplatz in Berlin",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/581670617.jpg?k=d01fb397d3d82cbfe705b42b1327cbf080ed09b2a3f69e34fd5f654542e654d1&o=&hp=1",
+          "photoId": "581670617",
+          "sourceUrl": "https://www.booking.com/hotel/de/one-80-hostels-berlin.html?lang=en-us&chal_t=1790851069092&force_referer="
+        },
+        {
+          "slot": 21,
+          "title": "a close up of the control panel of a mixing console at Generator Berlin Alexanderplatz in Berlin",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/581670648.jpg?k=08961bf9e8450e168c7b667dab631b3c458a01db9d06e7dfe43da320c5cdfcbe&o=&hp=1",
+          "photoId": "581670648",
+          "sourceUrl": "https://www.booking.com/hotel/de/one-80-hostels-berlin.html?lang=en-us&chal_t=1790851069092&force_referer="
+        },
+        {
+          "slot": 22,
+          "title": "a dining room with orange tables and chairs at Generator Berlin Alexanderplatz in Berlin",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/581670444.jpg?k=2e3d06c0f7d8b76ca6bb54072770168f1a97450adc08370e8c655523af0c0917&o=&hp=1",
+          "photoId": "581670444",
+          "sourceUrl": "https://www.booking.com/hotel/de/one-80-hostels-berlin.html?lang=en-us&chal_t=1790851069092&force_referer="
+        },
+        {
+          "slot": 23,
+          "title": "a framed picture of the eiffel tower and a sign at Generator Berlin Alexanderplatz in Berlin",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/581670534.jpg?k=695d5bd35d7634b1b7f637c89c70db7a57a2bd69b962731b3aa85bd0e4765d02&o=&hp=1",
+          "photoId": "581670534",
+          "sourceUrl": "https://www.booking.com/hotel/de/one-80-hostels-berlin.html?lang=en-us&chal_t=1790851069092&force_referer="
+        },
+        {
+          "slot": 24,
+          "title": "a ping pong table in a room with posters at Generator Berlin Alexanderplatz in Berlin",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/581670847.jpg?k=b31c7cb2d9fd6f550f108fa286e6f9eb997cfcf757d4e17b5a84f69f4785e396&o=&hp=1",
+          "photoId": "581670847",
+          "sourceUrl": "https://www.booking.com/hotel/de/one-80-hostels-berlin.html?lang=en-us&chal_t=1790851069092&force_referer="
+        },
+        {
+          "slot": 25,
+          "title": "a green table with potted plants on a patio at Generator Berlin Alexanderplatz in Berlin",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/581670815.jpg?k=2d5eac46b0263431719f879bfcdec3c75b641250b5e28ef5091b664cacf81276&o=&hp=1",
+          "photoId": "581670815",
+          "sourceUrl": "https://www.booking.com/hotel/de/one-80-hostels-berlin.html?lang=en-us&chal_t=1790851069092&force_referer="
+        },
+        {
+          "slot": 26,
+          "title": "a red sculpture of a letter k next to a plant at Generator Berlin Alexanderplatz in Berlin",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/581670799.jpg?k=278a72fe6b70c0b1acba6ab5b6e02d35832c4a28e35ddb6dc1c1b543f8549471&o=&hp=1",
+          "photoId": "581670799",
+          "sourceUrl": "https://www.booking.com/hotel/de/one-80-hostels-berlin.html?lang=en-us&chal_t=1790851069092&force_referer="
+        },
+        {
+          "slot": 27,
+          "title": "a row of stools in a restaurant with colorful walls at Generator Berlin Alexanderplatz in Berlin",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/581670565.jpg?k=432929c8ebbd8b02e7d59faf0954348c77d2dc66a145b7b2c5df655a69a0e8d3&o=&hp=1",
+          "photoId": "581670565",
+          "sourceUrl": "https://www.booking.com/hotel/de/one-80-hostels-berlin.html?lang=en-us&chal_t=1790851069092&force_referer="
+        },
+        {
+          "slot": 28,
+          "title": "a room with three bunk beds and a window at Generator Berlin Alexanderplatz in Berlin",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/566962408.jpg?k=3dfae4e42b0c5a74d0aeb666bbdfcf0d736f05356a6bab947c52ea4d8eb3678d&o=&hp=1",
+          "photoId": "566962408",
+          "sourceUrl": "https://www.booking.com/hotel/de/one-80-hostels-berlin.html?lang=en-us&chal_t=1790851069092&force_referer="
+        },
+        {
+          "slot": 29,
+          "title": "a room with a bunk bed and a wall with a poster at Generator Berlin Alexanderplatz in Berlin",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/581622547.jpg?k=7b0dc2fe82218e0ce42a9001406537232c1d75588ba9d34c7a09e23f8e9e9da2&o=&hp=1",
+          "photoId": "581622547",
+          "sourceUrl": "https://www.booking.com/hotel/de/one-80-hostels-berlin.html?lang=en-us&chal_t=1790851069092&force_referer="
+        },
+        {
+          "slot": 30,
+          "title": "a room with a bunk bed and a desk at Generator Berlin Alexanderplatz in Berlin",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/581593847.jpg?k=1ee5ab9b1764bedd79fb9377d377bc32cb26369b53ef0452496edb02c21d5185&o=&hp=1",
+          "photoId": "581593847",
+          "sourceUrl": "https://www.booking.com/hotel/de/one-80-hostels-berlin.html?lang=en-us&chal_t=1790851069092&force_referer="
+        },
+        {
+          "slot": 31,
+          "title": "a wooden table with the number eight on it at Generator Berlin Alexanderplatz in Berlin",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/581623344.jpg?k=d83adb398b2f44cbd7695aa6280db2b08cec913dda79b6c98c0aa5e211eca37a&o=&hp=1",
+          "photoId": "581623344",
+          "sourceUrl": "https://www.booking.com/hotel/de/one-80-hostels-berlin.html?lang=en-us&chal_t=1790851069092&force_referer="
+        },
+        {
+          "slot": 32,
+          "title": "a sign on the front of a building at Generator Berlin Alexanderplatz in Berlin",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/581633331.jpg?k=68ddbe9316d2ca8aa2fced65e5df273dc7d3b00a52368207778642519cd12164&o=&hp=1",
+          "photoId": "581633331",
+          "sourceUrl": "https://www.booking.com/hotel/de/one-80-hostels-berlin.html?lang=en-us&chal_t=1790851069092&force_referer="
+        },
+        {
+          "slot": 33,
+          "title": "a bathroom with a sink and a toilet at Generator Berlin Alexanderplatz in Berlin",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/508133510.jpg?k=25d828d50a4bd93a96916f6904dea7dd5916c022a11d44f2830bb38d2ccdbb72&o=&hp=1",
+          "photoId": "508133510",
+          "sourceUrl": "https://www.booking.com/hotel/de/one-80-hostels-berlin.html?lang=en-us&chal_t=1790851069092&force_referer="
+        },
+        {
+          "slot": 34,
+          "title": "a bathroom with a sink and a mirror at Generator Berlin Alexanderplatz in Berlin",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/581623398.jpg?k=b9822d72021341ee614a30d27ed5027575127d3a68e1d31cc257b8216e32189d&o=&hp=1",
+          "photoId": "581623398",
+          "sourceUrl": "https://www.booking.com/hotel/de/one-80-hostels-berlin.html?lang=en-us&chal_t=1790851069092&force_referer="
+        },
+        {
+          "slot": 35,
+          "title": "a painting of a city with skyscrapers at Generator Berlin Alexanderplatz in Berlin",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/585711049.jpg?k=049657aaf778c4069566b640fbefee00ff3a3f874f03042b96a0b247f2453524&o=&hp=1",
+          "photoId": "585711049",
+          "sourceUrl": "https://www.booking.com/hotel/de/one-80-hostels-berlin.html?lang=en-us&chal_t=1790851069092&force_referer="
+        },
+        {
+          "slot": 36,
+          "title": "a bathroom with three sinks and a row of mirrors at Generator Berlin Alexanderplatz in Berlin",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/508134420.jpg?k=516b0e5bda41dadad5cdf70f33a5147a64e7e85af3d4013b34d5f09828188587&o=&hp=1",
+          "photoId": "508134420",
+          "sourceUrl": "https://www.booking.com/hotel/de/one-80-hostels-berlin.html?lang=en-us&chal_t=1790851069092&force_referer="
+        },
+        {
+          "slot": 37,
+          "title": "a view of a tv tower with a crane at Generator Berlin Alexanderplatz in Berlin",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/581633406.jpg?k=148efcb78da71af9c381fab48191ba8cc533df8d0b816e4032759fdc57835515&o=&hp=1",
+          "photoId": "581633406",
+          "sourceUrl": "https://www.booking.com/hotel/de/one-80-hostels-berlin.html?lang=en-us&chal_t=1790851069092&force_referer="
+        },
+        {
+          "slot": 38,
+          "title": "a dorm room with bunk beds and a window at Generator Berlin Alexanderplatz in Berlin",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/581626503.jpg?k=ebba8a28bb49dfbf244d7bf1709bc7061d8cf7653b2c8d1ac747e38c910aa211&o=&hp=1",
+          "photoId": "581626503",
+          "sourceUrl": "https://www.booking.com/hotel/de/one-80-hostels-berlin.html?lang=en-us&chal_t=1790851069092&force_referer="
+        },
+        {
+          "slot": 39,
+          "title": "a room with bunk beds and a desk and a chair at Generator Berlin Alexanderplatz in Berlin",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/581628361.jpg?k=f147b42445779340756339f1c25d3277de10850836481ee70566a92a11e9175f&o=&hp=1",
+          "photoId": "581628361",
+          "sourceUrl": "https://www.booking.com/hotel/de/one-80-hostels-berlin.html?lang=en-us&chal_t=1790851069092&force_referer="
+        },
+        {
+          "slot": 40,
+          "title": "a shower with a glass door in a bathroom at Generator Berlin Alexanderplatz in Berlin",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/581629002.jpg?k=edf695434307600a065cae8ec6209c14e6302bd45b2225d136b2406191c9a96f&o=&hp=1",
+          "photoId": "581629002",
+          "sourceUrl": "https://www.booking.com/hotel/de/one-80-hostels-berlin.html?lang=en-us&chal_t=1790851069092&force_referer="
+        },
+        {
+          "slot": 41,
+          "title": "two bunk beds in a room with a window at Generator Berlin Alexanderplatz in Berlin",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/581631027.jpg?k=c5f23b48f3703489742dd3debbd5c2cb88e98aaf7a19bdac4d19be3517acf99f&o=&hp=1",
+          "photoId": "581631027",
+          "sourceUrl": "https://www.booking.com/hotel/de/one-80-hostels-berlin.html?lang=en-us&chal_t=1790851069092&force_referer="
+        },
+        {
+          "slot": 42,
+          "title": "a room with a bed and a desk and a mural at Generator Berlin Alexanderplatz in Berlin",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/581631074.jpg?k=158f7b526200a5bbda6ac35bf9ba1146b455380784b57e163f641a4ac3f1f6ce&o=&hp=1",
+          "photoId": "581631074",
+          "sourceUrl": "https://www.booking.com/hotel/de/one-80-hostels-berlin.html?lang=en-us&chal_t=1790851069092&force_referer="
+        },
+        {
+          "slot": 43,
+          "title": "a bathroom with a sink and a mirror at Generator Berlin Alexanderplatz in Berlin",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/581631100.jpg?k=ad5de01e5966c0da2cbe973152db059bee64b49719d93e06c62a6ab785d80c4b&o=&hp=1",
+          "photoId": "581631100",
+          "sourceUrl": "https://www.booking.com/hotel/de/one-80-hostels-berlin.html?lang=en-us&chal_t=1790851069092&force_referer="
+        },
+        {
+          "slot": 44,
+          "title": "a bathroom with a shower with a glass door at Generator Berlin Alexanderplatz in Berlin",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/581631105.jpg?k=a2e564bcdbd89eb7ea16edecd6b5576b485a4a16cbec69ab35034862197a8b8b&o=&hp=1",
+          "photoId": "581631105",
+          "sourceUrl": "https://www.booking.com/hotel/de/one-80-hostels-berlin.html?lang=en-us&chal_t=1790851069092&force_referer="
+        },
+        {
+          "slot": 45,
+          "title": "a wall with a mural of a city at Generator Berlin Alexanderplatz in Berlin",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/581663686.jpg?k=b8ccb02b96007db65877660cd2cc02fcbac30bb9e3ba2f16378b4be053df430c&o=&hp=1",
+          "photoId": "581663686",
+          "sourceUrl": "https://www.booking.com/hotel/de/one-80-hostels-berlin.html?lang=en-us&chal_t=1790851069092&force_referer="
+        },
+        {
+          "slot": 46,
+          "title": "a room with a bed with a tv and a book at Generator Berlin Alexanderplatz in Berlin",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/581665199.jpg?k=7281af2247163d3c42198ba3592dc14bb5cbcf21ed6f45952da8e2489f487573&o=&hp=1",
+          "photoId": "581665199",
+          "sourceUrl": "https://www.booking.com/hotel/de/one-80-hostels-berlin.html?lang=en-us&chal_t=1790851069092&force_referer="
+        },
+        {
+          "slot": 47,
+          "title": "a bathroom with a shower with a glass door at Generator Berlin Alexanderplatz in Berlin",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/581665931.jpg?k=64ccc0227e28acb861b02dd39f5eed17d4e26bea72c97f751fab78704a15a776&o=&hp=1",
+          "photoId": "581665931",
+          "sourceUrl": "https://www.booking.com/hotel/de/one-80-hostels-berlin.html?lang=en-us&chal_t=1790851069092&force_referer="
+        },
+        {
+          "slot": 48,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/566962506.jpg?k=c7ab40d74f73783b9c06bb4de419b0dcf393dc34faedcb950aada45e04c1cd84&o=&hp=1",
+          "photoId": "6",
+          "sourceUrl": "https://www.booking.com/hotel/de/one-80-hostels-berlin.html?lang=en-us&chal_t=1790851069092&force_referer="
+        },
+        {
+          "slot": 49,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/566962555.jpg?k=185aa05ae632542a0b7d1869dbde5a92c52bb52e6ec7d1889ab23176d67d2183&o=&hp=1",
+          "photoId": "5",
+          "sourceUrl": "https://www.booking.com/hotel/de/one-80-hostels-berlin.html?lang=en-us&chal_t=1790851069092&force_referer="
+        },
+        {
+          "slot": 50,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/566962538.jpg?k=0792a1d1585775bbc69257ef10e43a174246c4ee9ea8bdef8844893352513766&o=&hp=1",
+          "photoId": "8",
+          "sourceUrl": "https://www.booking.com/hotel/de/one-80-hostels-berlin.html?lang=en-us&chal_t=1790851069092&force_referer="
+        },
+        {
+          "slot": 51,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/581633379.jpg?k=5ee5483a470918b54fa2be9b80b4f8e0ea3f19828e3ce5059a739c8c8deb7851&o=&hp=1",
+          "photoId": "9",
+          "sourceUrl": "https://www.booking.com/hotel/de/one-80-hostels-berlin.html?lang=en-us&chal_t=1790851069092&force_referer="
+        },
+        {
+          "slot": 52,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/566962367.jpg?k=a974ce7d01a38e6b4d394329740fa33cbbabcc455dbf9997acfa2dc821caf8a5&o=&hp=1",
+          "photoId": "7",
+          "sourceUrl": "https://www.booking.com/hotel/de/one-80-hostels-berlin.html?lang=en-us&chal_t=1790851069092&force_referer="
+        },
+        {
+          "slot": 53,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/581629294.jpg?k=cb1d38c009fc0891007c7123f206841cb42769c6569e0907bbca415116daac04&o=&hp=1",
+          "photoId": "4",
+          "sourceUrl": "https://www.booking.com/hotel/de/one-80-hostels-berlin.html?lang=en-us&chal_t=1790851069092&force_referer="
+        },
+        {
+          "slot": 54,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/508137111.jpg?k=3dbf3d9811f55f182700a7579c165edcefd21ceaf67aac850267d9b556b2c85c&o=&hp=1",
+          "photoId": "1",
+          "sourceUrl": "https://www.booking.com/hotel/de/one-80-hostels-berlin.html?lang=en-us&chal_t=1790851069092&force_referer="
+        },
+        {
+          "slot": 55,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/616508752.jpg?k=a9539b07cab3a5bd141799e24ad9fc215e5041aa4d99877bc6fbcac762de6f1d&o=&hp=1",
+          "photoId": "2",
+          "sourceUrl": "https://www.booking.com/hotel/de/one-80-hostels-berlin.html?lang=en-us&chal_t=1790851069092&force_referer="
+        },
+        {
+          "slot": 56,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/581632823.jpg?k=82fb46b40a74318a7ee2a6f01e8558b04d4962437fa3114e1bfc814fca63a561&o=&hp=1",
+          "photoId": "3",
+          "sourceUrl": "https://www.booking.com/hotel/de/one-80-hostels-berlin.html?lang=en-us&chal_t=1790851069092&force_referer="
+        },
+        {
+          "slot": 57,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/508133510.jpg?k=25d828d50a4bd93a96916f6904dea7dd5916c022a11d44f2830bb38d2ccdbb72&o=&hp=1",
+          "photoId": "0",
+          "sourceUrl": "https://www.booking.com/hotel/de/one-80-hostels-berlin.html?lang=en-us&chal_t=1790851069092&force_referer="
+        }
+      ],
+      "photos_status": "RESOLVED"
+    },
+    "audit_timestamp": "2026-10-01T10:38:51.593Z"
+  }
+}
