@@ -30,6 +30,22 @@ export default function BookingOtaAuditCard({ otaData, hotelName, isUnlocked, on
         'Activate high-conversion storytelling: Ground destination authenticity with dedicated dining, exterior architecture, and design atmosphere proof-points.'
       ];
 
+  const handleSignUp = () => {
+    if (onRequestAccessClick) {
+      onRequestAccessClick();
+    } else if (typeof window !== 'undefined') {
+      window.location.href = '/audit';
+    }
+  };
+
+  const handleLogin = () => {
+    if (onUnlockClick) {
+      onUnlockClick();
+    } else if (typeof window !== 'undefined') {
+      window.location.href = '/audit';
+    }
+  };
+
   const handleCopy = () => {
     if (copyRewrite.property_overview_150_words) {
       navigator.clipboard.writeText(
@@ -232,6 +248,92 @@ export default function BookingOtaAuditCard({ otaData, hotelName, isUnlocked, on
             </span>
           </div>
         </div>
+
+        {/* Missing Photos Alert in Core Dashboard */}
+        {photographicGaps && photographicGaps.length > 0 && (
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: '1rem',
+            marginBottom: '1.25rem',
+            background: 'linear-gradient(90deg, rgba(245, 158, 11, 0.14) 0%, rgba(245, 158, 11, 0.05) 100%)',
+            padding: '12px 18px',
+            borderRadius: '12px',
+            border: '1px solid rgba(245, 158, 11, 0.4)',
+            flexWrap: 'wrap'
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flex: '1 1 300px' }}>
+              <div style={{
+                width: '32px',
+                height: '32px',
+                borderRadius: '8px',
+                background: 'rgba(245, 158, 11, 0.2)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: '#fbbf24',
+                flexShrink: 0
+              }}>
+                <Camera size={18} />
+              </div>
+              <div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
+                  <span style={{
+                    fontSize: '10.5px',
+                    fontWeight: 900,
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.08em',
+                    color: '#fbbf24'
+                  }}>
+                    ⚠️ Visual Deficit Alert: {photographicGaps.length} Key Photos Missing
+                  </span>
+                  <span style={{
+                    fontSize: '9.5px',
+                    fontWeight: 800,
+                    background: 'rgba(239, 68, 68, 0.2)',
+                    color: '#ef4444',
+                    padding: '1px 6px',
+                    borderRadius: '4px'
+                  }}>
+                    Depresses Direct ADR
+                  </span>
+                </div>
+                <div style={{ fontSize: '12.5px', color: '#ffffff', fontWeight: 600, marginTop: '2px', lineHeight: 1.35 }}>
+                  {hotelName || 'This property'} lacks official photography for <span style={{ color: '#fbbf24' }}>"{photographicGaps[0]?.missing_shot_title}"</span>{photographicGaps.length > 1 ? ` and ${photographicGaps.length - 1} other high-conversion spaces` : ''}.
+                </div>
+              </div>
+            </div>
+
+            <button
+              onClick={() => {
+                if (!unlocked) {
+                  handleSignUp();
+                } else if (typeof window !== 'undefined') {
+                  const el = document.getElementById('photographic-gap-section');
+                  if (el) el.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+              style={{
+                background: 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)',
+                color: '#050b14',
+                border: 'none',
+                borderRadius: '24px',
+                padding: '8px 16px',
+                fontSize: '11.5px',
+                fontWeight: 900,
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '6px',
+                cursor: 'pointer',
+                boxShadow: '0 4px 14px rgba(245, 158, 11, 0.3)',
+                whiteSpace: 'nowrap'
+              }}
+            >
+              {!unlocked ? 'Unlock Photo Gap Analysis (Sign Up)' : 'View Photo Gap Analysis'} <ArrowRight size={13} />
+            </button>
+          </div>
+        )}
 
         {/* Key Strategic Shifts Bullets */}
         <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '1.25rem' }}>
@@ -621,97 +723,237 @@ export default function BookingOtaAuditCard({ otaData, hotelName, isUnlocked, on
         </div>
       )}
 
-      {/* SECTION: Photographic Gap Analysis (Creative Commissioning Scope) */}
+      {/* SECTION: Photographic Gap Analysis (Creative Commissioning Scope) - PRO / PAID FEATURE */}
       {photographicGaps && photographicGaps.length > 0 && (
-        <div style={{
+        <div id="photographic-gap-section" style={{
           marginBottom: '2.5rem',
-          background: 'linear-gradient(135deg, rgba(245, 158, 11, 0.05) 0%, rgba(15, 23, 42, 0.6) 100%)',
+          background: 'linear-gradient(135deg, rgba(245, 158, 11, 0.05) 0%, rgba(15, 23, 42, 0.8) 100%)',
           borderRadius: '1.25rem',
-          padding: '1.75rem',
-          border: '1px solid rgba(245, 158, 11, 0.25)',
-          boxShadow: '0 10px 25px rgba(0, 0, 0, 0.4)'
+          padding: '2rem',
+          border: '1px solid rgba(245, 158, 11, 0.3)',
+          position: 'relative',
+          overflow: 'hidden',
+          boxShadow: '0 10px 30px rgba(0, 0, 0, 0.5)'
         }}>
+          {/* Header */}
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem', flexWrap: 'wrap', gap: '0.75rem' }}>
             <div>
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '11px', fontWeight: 900, color: '#f59e0b', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
-                <Camera size={13} /> Visual Portfolio Gap Scope • Creative Commissioning
+              <div style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '6px',
+                fontSize: '11px',
+                fontWeight: 900,
+                color: '#f59e0b',
+                textTransform: 'uppercase',
+                letterSpacing: '0.1em',
+                background: 'rgba(245, 158, 11, 0.12)',
+                padding: '3px 10px',
+                borderRadius: '20px',
+                border: '1px solid rgba(245, 158, 11, 0.3)'
+              }}>
+                <Camera size={12} /> {unlocked ? 'PRO UNLOCKED • VISUAL PORTFOLIO GAP SCOPE' : 'PRO CLIENT SUITE • PAID FEATURE'}
               </div>
-              <h4 style={{ fontSize: '1.2rem', fontWeight: 900, color: '#ffffff', margin: '4px 0 0 0' }}>
+              <h4 style={{ fontSize: '1.25rem', fontWeight: 900, color: '#ffffff', margin: '8px 0 0 0' }}>
                 High-Conversion Visual Assets Missing from Official Channels
               </h4>
             </div>
-            <div style={{ fontSize: '11px', color: 'rgba(255,255,255,0.6)', maxWidth: '380px', lineHeight: 1.4 }}>
-              Beyond reordering existing photography, these missing shots capture high-value unmet guest search demand to lift direct ADR.
+            <div style={{ fontSize: '11.5px', color: 'rgba(255,255,255,0.6)', maxWidth: '380px', lineHeight: 1.4 }}>
+              Beyond reordering existing photography, our diagnostic identified {photographicGaps.length} missing shots needed to unlock peak ADR.
             </div>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem' }}>
-            {photographicGaps.map((gap, gIdx) => (
-              <div 
-                key={gIdx}
-                style={{
-                  background: 'rgba(0, 0, 0, 0.45)',
-                  borderRadius: '1rem',
-                  padding: '1.25rem',
-                  border: '1px solid rgba(255, 255, 255, 0.08)',
+          {!unlocked ? (
+            /* LOCKED TEASER STATE */
+            <div style={{ position: 'relative', borderRadius: '1rem', overflow: 'hidden', minHeight: '260px' }}>
+              {/* Blurred Background Teaser Cards */}
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+                gap: '1rem',
+                filter: 'blur(7px)',
+                opacity: 0.35,
+                userSelect: 'none',
+                pointerEvents: 'none'
+              }}>
+                {photographicGaps.map((gap, gIdx) => (
+                  <div 
+                    key={gIdx}
+                    style={{
+                      background: 'rgba(0, 0, 0, 0.55)',
+                      borderRadius: '1rem',
+                      padding: '1.25rem',
+                      border: '1px solid rgba(255, 255, 255, 0.1)'
+                    }}
+                  >
+                    <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
+                      <span style={{ background: '#f59e0b', color: '#000', fontSize: '10px', fontWeight: 800, padding: '2px 8px', borderRadius: '4px' }}>
+                        {gap.category || 'VISUAL GAP'}
+                      </span>
+                      <span style={{ color: '#10b981', fontSize: '11px', fontWeight: 800 }}>
+                        {gap.projected_adr_impact || '+10% ADR'}
+                      </span>
+                    </div>
+                    <h5 style={{ fontSize: '14px', color: '#fff', margin: '0 0 6px 0' }}>
+                      {gap.missing_shot_title || 'Signature Twilight Dining Scene'}
+                    </h5>
+                    <p style={{ fontSize: '11.5px', color: '#ccc', margin: '0 0 10px 0' }}>
+                      {gap.why_needed || 'Currently missing dedicated photography capturing high-intent traveler demand.'}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
+              {/* Centered Lock Call-to-Action */}
+              <div style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center',
+                padding: '2rem',
+                textAlign: 'center',
+                background: 'radial-gradient(circle at center, rgba(15, 23, 42, 0.94) 0%, rgba(2, 6, 23, 0.98) 100%)'
+              }}>
+                <div style={{
+                  width: '46px',
+                  height: '46px',
+                  borderRadius: '50%',
+                  background: 'rgba(245, 158, 11, 0.15)',
+                  border: '1px solid rgba(245, 158, 11, 0.4)',
                   display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between'
-                }}
-              >
-                <div>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '8px', gap: '8px' }}>
-                    <span style={{
-                      background: 'rgba(245, 158, 11, 0.15)',
-                      color: '#fbbf24',
-                      fontSize: '10px',
-                      fontWeight: 800,
-                      padding: '2px 8px',
-                      borderRadius: '4px',
-                      letterSpacing: '0.05em'
-                    }}>
-                      {gap.category ? gap.category.replace(/_/g, ' ') : 'VISUAL GAP'}
-                    </span>
-                    {gap.projected_adr_impact && (
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  color: '#fbbf24',
+                  marginBottom: '0.75rem'
+                }}>
+                  <Lock size={22} />
+                </div>
+
+                <h5 style={{ fontSize: '1.2rem', fontWeight: 900, color: '#ffffff', margin: '0 0 6px 0', letterSpacing: '-0.2px' }}>
+                  Unlock Full Photographic Gap Analysis & Creative Scope
+                </h5>
+
+                <p style={{ fontSize: '12.5px', color: 'rgba(255,255,255,0.75)', maxWidth: '540px', margin: '0 0 1.25rem 0', lineHeight: 1.55 }}>
+                  The free tier includes your full Vibe Signature & 5-Photo Resequencing. Upgrade to the Pro Suite or log in to reveal complete architectural framing recommendations, lighting photometrics, and ADR revenue impact forecasts for all {photographicGaps.length} missing assets.
+                </p>
+
+                <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', justifyContent: 'center' }}>
+                  <button
+                    onClick={handleSignUp}
+                    style={{
+                      background: 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)',
+                      color: '#050b14',
+                      border: 'none',
+                      borderRadius: '30px',
+                      padding: '9px 22px',
+                      fontSize: '12px',
+                      fontWeight: 900,
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '6px',
+                      cursor: 'pointer',
+                      boxShadow: '0 4px 15px rgba(245, 158, 11, 0.35)'
+                    }}
+                  >
+                    <Sparkles size={14} /> Sign Up for Pro Suite
+                  </button>
+
+                  <button
+                    onClick={handleLogin}
+                    style={{
+                      background: 'rgba(255, 255, 255, 0.08)',
+                      color: '#ffffff',
+                      border: '1px solid rgba(255, 255, 255, 0.25)',
+                      borderRadius: '30px',
+                      padding: '9px 20px',
+                      fontSize: '12px',
+                      fontWeight: 700,
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '6px',
+                      cursor: 'pointer'
+                    }}
+                  >
+                    <Key size={14} /> Client Log In
+                  </button>
+                </div>
+              </div>
+            </div>
+          ) : (
+            /* UNLOCKED FULL GRID */
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem' }}>
+              {photographicGaps.map((gap, gIdx) => (
+                <div 
+                  key={gIdx}
+                  style={{
+                    background: 'rgba(0, 0, 0, 0.45)',
+                    borderRadius: '1rem',
+                    padding: '1.25rem',
+                    border: '1px solid rgba(255, 255, 255, 0.08)',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-between'
+                  }}
+                >
+                  <div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '8px', gap: '8px' }}>
                       <span style={{
-                        background: 'rgba(16, 185, 129, 0.15)',
-                        color: '#34d399',
+                        background: 'rgba(245, 158, 11, 0.15)',
+                        color: '#fbbf24',
                         fontSize: '10px',
                         fontWeight: 800,
                         padding: '2px 8px',
-                        borderRadius: '4px'
+                        borderRadius: '4px',
+                        letterSpacing: '0.05em'
                       }}>
-                        {gap.projected_adr_impact}
+                        {gap.category ? gap.category.replace(/_/g, ' ') : 'VISUAL GAP'}
                       </span>
-                    )}
+                      {gap.projected_adr_impact && (
+                        <span style={{
+                          background: 'rgba(16, 185, 129, 0.15)',
+                          color: '#34d399',
+                          fontSize: '10px',
+                          fontWeight: 800,
+                          padding: '2px 8px',
+                          borderRadius: '4px'
+                        }}>
+                          {gap.projected_adr_impact}
+                        </span>
+                      )}
+                    </div>
+
+                    <h5 style={{ fontSize: '13px', fontWeight: 800, color: '#ffffff', margin: '0 0 6px 0', lineHeight: 1.4 }}>
+                      {gap.missing_shot_title}
+                    </h5>
+
+                    <p style={{ fontSize: '11.5px', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.5, margin: '0 0 10px 0' }}>
+                      {gap.why_needed}
+                    </p>
                   </div>
 
-                  <h5 style={{ fontSize: '13px', fontWeight: 800, color: '#ffffff', margin: '0 0 6px 0', lineHeight: 1.4 }}>
-                    {gap.missing_shot_title}
-                  </h5>
-
-                  <p style={{ fontSize: '11.5px', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.5, margin: '0 0 10px 0' }}>
-                    {gap.why_needed}
-                  </p>
+                  <div style={{
+                    background: 'rgba(255, 255, 255, 0.04)',
+                    borderRadius: '8px',
+                    padding: '8px 10px',
+                    border: '1px solid rgba(255, 255, 255, 0.05)',
+                    fontSize: '11px',
+                    color: '#00e5ff',
+                    lineHeight: 1.4
+                  }}>
+                    <strong style={{ color: '#00e5ff', fontSize: '10px', textTransform: 'uppercase', display: 'block', marginBottom: '2px', letterSpacing: '0.05em' }}>
+                      🎬 Framing & Photometrics:
+                    </strong>
+                    {gap.recommended_framing_and_lighting}
+                  </div>
                 </div>
-
-                <div style={{
-                  background: 'rgba(255, 255, 255, 0.04)',
-                  borderRadius: '8px',
-                  padding: '8px 10px',
-                  border: '1px solid rgba(255, 255, 255, 0.05)',
-                  fontSize: '11px',
-                  color: '#00e5ff',
-                  lineHeight: 1.4
-                }}>
-                  <strong style={{ color: '#00e5ff', fontSize: '10px', textTransform: 'uppercase', display: 'block', marginBottom: '2px', letterSpacing: '0.05em' }}>
-                    🎬 Framing & Photometrics:
-                  </strong>
-                  {gap.recommended_framing_and_lighting}
-                </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
         </div>
       )}
 
