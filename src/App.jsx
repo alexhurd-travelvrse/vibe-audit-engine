@@ -4,9 +4,6 @@ import { HelmetProvider } from 'react-helmet-async';
 import Layout from './components/Layout';
 import Hero from './components/Hero';
 import HookTeaserSection from './components/HookTeaserSection';
-import ProblemSection from './components/ProblemSection';
-import ComparisonBlock from './components/ComparisonBlock';
-import MidPageCta from './components/MidPageCta';
 import DataApiSection from './components/DataApiSection';
 import MarketsSection from './components/MarketsSection';
 import BlogJournal from './components/BlogJournal';
@@ -46,22 +43,13 @@ const B2BHome = () => {
       {/* 4. Vibe Insights (Global Market Intelligence & Benchmarks) */}
       <MarketsSection />
 
-      {/* 5. The Problem: The First 5 Photos Kill Your Conversion (74% & 80% stats) */}
-      <ProblemSection />
-
-      {/* 6. Proof / Comparison Block (Option B: Magnet Override) */}
-      <ComparisonBlock />
-
-      {/* 7. Mid-Page Call to Action */}
-      <MidPageCta />
-
-      {/* 8. Journal */}
+      {/* 5. Journal */}
       <BlogJournal />
       
-      {/* 9. Team */}
+      {/* 6. Team */}
       <TeamSection />
       
-      {/* 10. Footer */}
+      {/* 7. Footer */}
       <Footer />
     </Layout>
   );

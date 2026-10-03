@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Database, Code2, Globe, ArrowRight, CheckCircle2, Copy, Check, Send, X, Sparkles, ExternalLink, Zap, Compass, Users } from 'lucide-react';
+import { Database, Globe, ArrowRight, CheckCircle2, Send, X, Zap, Compass, Users } from 'lucide-react';
 import './DataApiSection.css';
 
 export default function DataApiSection() {
-  const [activeTab, setActiveTab] = useState('json'); // 'json' | 'curl' | 'js'
-  const [copied, setCopied] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -18,59 +16,6 @@ export default function DataApiSection() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const sampleJson = `{
-  "venue_id": "the_alma_wandsworth_london",
-  "venue_name": "The Alma",
-  "location": "East Hill, Wandsworth, London",
-  "vibe_manifest": {
-    "composite_vibe_score": 92,
-    "acoustic_dna": {
-      "reverberation_index": "Warm Wood Resonant",
-      "chatter_density_db": 68,
-      "curated_soundtrack_style": "British Indie Vinyl & Eclectic Soul",
-      "diurnal_vibe_shift": "Sunlit Brunch -> Golden Hour Gastro -> Hi-Fi Social Night"
-    },
-    "subcultural_gravity": {
-      "neighborhood_affinity_index": 0.94,
-      "primary_subculture": "Artisan Craft Gastronomy & Craft Ale Sanctuary",
-      "destination_power_score": 88
-    },
-    "optimal_5_photo_sequence": [
-      { "slot": 1, "category": "HERO_CULTURAL_MAGNET", "subject": "The Alma Dining Room" },
-      { "slot": 2, "category": "EXTERIOR_LANDMARK", "subject": "Corner Architectural Facade" },
-      { "slot": 3, "category": "SIGNATURE_SUITE_BEDROOM", "subject": "Boutique Heritage Bedroom" },
-      { "slot": 4, "category": "WELLNESS_SPA_LOBBY", "subject": "Boutique Arrival & Living Lounge" },
-      { "slot": 5, "category": "SECONDARY_ROOM_BATHROOM", "subject": "Contemporary Luxury Bathroom" }
-    ]
-  }
-}`;
-
-  const sampleCurl = `curl -X GET "https://api.atmosvibe.com/v1/venue/the_alma_wandsworth_london/vibe-manifest" \\
-  -H "Authorization: Bearer YOUR_API_KEY" \\
-  -H "Accept: application/json"`;
-
-  const sampleJs = `import { AtmosVibeClient } from '@atmosvibe/sdk';
-
-const client = new AtmosVibeClient({ apiKey: process.env.ATMOSVIBE_API_KEY });
-
-// Retrieve real-time Vibe Manifest & Acoustic DNA
-const manifest = await client.venues.getVibeManifest('the_alma_wandsworth_london');
-
-console.log(\`Composite Vibe Score: \${manifest.vibe_manifest.composite_vibe_score}\`);
-console.log(\`Acoustic DNA: \${manifest.vibe_manifest.acoustic_dna.curated_soundtrack_style}\`);`;
-
-  const getActiveCode = () => {
-    if (activeTab === 'curl') return sampleCurl;
-    if (activeTab === 'js') return sampleJs;
-    return sampleJson;
-  };
-
-  const handleCopyCode = () => {
-    navigator.clipboard.writeText(getActiveCode());
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
 
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -235,215 +180,36 @@ console.log(\`Acoustic DNA: \${manifest.vibe_manifest.acoustic_dna.curated_sound
           </div>
         </div>
 
-        {/* ========================================================================= */}
-        {/* COMBINED CASE STUDY SECTION: TRAVELVRSE */}
-        {/* ========================================================================= */}
-        <div className="case-study-card">
-          <div className="case-study-top-strip">
-            <div className="case-study-badge">
-              <img src="/models/travelvrse_logo_main.svg" alt="Travelvrse" className="travelvrse-pill-logo" />
-              <span>CASE STUDY: TRAVELVRSE SPATIAL PLATFORM</span>
+        {/* Case Study Widget: Positioned Under Vibe API */}
+        <div className="api-case-study-widget-wrap">
+          <Link to="/partner" className="api-case-study-widget" title="Read Travelvrse Case Study & Partner Program">
+            <div className="widget-logo-col">
+              <span className="widget-kicker">FEATURED CASE STUDY</span>
+              <img src="/models/travelvrse_logo_main.svg" alt="Travelvrse" className="api-partner-logo" />
             </div>
 
-            <Link to="/partner" className="case-study-direct-link">
-              <span>Read Full Case Study &amp; Partner Program</span>
-              <ArrowRight size={14} />
-            </Link>
-          </div>
-
-          <div className="case-study-grid">
-            {/* Left Content */}
-            <div>
-              <h3 className="case-study-title">
+            <div className="widget-content-col">
+              <div className="widget-title">
                 How Travelvrse Powers 3D Spatial Travel Discovery with the AtmosVibe VIBE API
-              </h3>
-              
-              <p className="case-study-narrative">
-                <strong>Travelvrse</strong>, the pioneering 3D spatial travel exploration platform, integrated AtmosVibe's real-time VIBE API to power their virtual city districts in Barcelona and London. By streaming live acoustic signatures, diurnal time-of-day soundscapes, and neighborhood subcultural hotspots directly into 3D environments, Travelvrse transformed static hotel listings into interactive spatial discoveries
-              </p>
-
-              <ul className="case-study-highlights">
-                <li>
-                  <CheckCircle2 size={16} className="check-icon" />
-                  <span><strong>Real-Time Soundscape Generation:</strong> Ingests diurnal acoustic profiles to synthesize time-of-day audio atmospheres with automatic creator voiceover ducking</span>
-                </li>
-                <li>
-                  <CheckCircle2 size={16} className="check-icon" />
-                  <span><strong>Gamified Spatial Radar:</strong> Powers the interactive 3D Radar HUD and sensory micro-tag cards with live hotel amenity ratings and verified photography</span>
-                </li>
-                <li>
-                  <CheckCircle2 size={16} className="check-icon" />
-                  <span><strong>Direct Booking Resonance:</strong> Elevates boutique hotel partners with zero commodity clutter, driving direct booking intent straight from the virtual exploration feed</span>
-                </li>
-              </ul>
-
-              <div className="case-quote-box">
-                <p className="case-quote-text">
-                  "By licensing AtmosVibe's VIBE API, we bridged raw hotel metadata with dynamic local subcultures, giving travelers the emotional confidence to book directly from our 3D spatial metaverse"
-                </p>
-                <div className="case-quote-author">
-                  — Travelvrse Engineering &amp; Metaverse Operations
-                </div>
               </div>
-
-              {/* Action Buttons: Become a Partner & Case Study */}
-              <div className="case-study-action-row">
-                <Link to="/partner" className="case-study-partner-btn">
-                  <Sparkles size={16} />
-                  <span>Become a Partner</span>
-                </Link>
-
-                <Link to="/partner" className="case-study-enquire-btn">
-                  <ExternalLink size={16} />
-                  <span>Read Full Case Study</span>
-                </Link>
-
-                <button 
-                  onClick={() => setIsModalOpen(true)}
-                  className="api-secondary-btn"
-                  style={{ padding: '0.85rem 1.4rem', fontSize: '0.9rem' }}
-                >
-                  <Code2 size={15} />
-                  <span>Request API Sandbox</span>
-                </button>
+              <div className="widget-metrics-inline">
+                <span className="widget-pill"><strong>+34%</strong> Direct Booking Intent</span>
+                <span className="widget-pill"><strong>2.8x</strong> Session Duration</span>
+                <span className="widget-pill"><strong>&lt;120ms</strong> Real-Time Sync</span>
               </div>
             </div>
 
-            {/* Right Visual & Metric Impact Cards */}
-            <div className="case-metrics-wrap">
-              {/* Spatial Visual Preview Card Linking Off to Case Study */}
-              <Link to="/partner" className="spatial-preview-slot" title="View Travelvrse Case Study">
-                <div className="spatial-img-wrap">
-                  <img 
-                    src="/models/Screenshothomepage.png" 
-                    alt="Travelvrse 3D Spatial Travel Platform" 
-                    className="spatial-img"
-                  />
-                  <div className="spatial-overlay-badge">
-                    <span className="live-dot" />
-                    <span>LIVE 3D SPATIAL RADAR HUD</span>
-                  </div>
-                  <div className="spatial-hover-chip">
-                    <span>Explore Case Study</span>
-                    <ArrowRight size={13} />
-                  </div>
-                </div>
-              </Link>
-
-              {/* 3 Metrics Row */}
-              <div className="metrics-row-grid">
-                <Link to="/partner" className="clickable-metric-box">
-                  <div className="metric-value">+34%</div>
-                  <div className="metric-label">Direct Booking Intent</div>
-                  <div className="metric-desc">Pre-checkout atmosphere and acoustic verification</div>
-                </Link>
-
-                <Link to="/partner" className="clickable-metric-box">
-                  <div className="metric-value" style={{ color: '#ffd700' }}>2.8x</div>
-                  <div className="metric-label">Session Duration</div>
-                  <div className="metric-desc">Explorers actively engaging with 3D Radar micro-cards</div>
-                </Link>
-
-                <Link to="/partner" className="clickable-metric-box">
-                  <div className="metric-value" style={{ color: '#10b981' }}>&lt;120ms</div>
-                  <div className="metric-label">Data Sync</div>
-                  <div className="metric-desc">Synchronized acoustic feeds across web and 3D</div>
-                </Link>
-              </div>
+            <div className="widget-cta-col">
+              <span className="widget-cta-btn">
+                <span>View Case Study &amp; Partner Program</span>
+                <ArrowRight size={14} />
+              </span>
             </div>
-          </div>
-        </div>
-
-        {/* API Interactive Demo & Code Terminal */}
-        <div className="api-demo-grid">
-          <div className="api-demo-info">
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', color: '#00e5ff', fontSize: '11px', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.75rem' }}>
-              <Code2 size={14} /> Developer-Ready SDK &amp; Webhooks
-            </div>
-            <h3>Embed Structured Atmosphere Diagnostics in Minutes</h3>
-            <p>
-              Integrate with our lightweight SDK or query our REST API directly. Every response delivers validated JSON with complete sensory manifests, acoustic decay rates, and optimal visual re-sequencing tags
-            </p>
-
-            <div className="api-pill-list">
-              <span className="api-mini-pill">⚡ &lt;120ms Latency</span>
-              <span className="api-mini-pill">🔒 99.9% Enterprise SLA</span>
-              <span className="api-mini-pill">📦 REST / GraphQL / Webhooks</span>
-              <span className="api-mini-pill">🛡️ Strict Rate Limit Shield</span>
-            </div>
-
-            <button 
-              onClick={() => setIsModalOpen(true)}
-              className="api-primary-btn"
-              style={{ fontSize: '0.95rem', padding: '0.9rem 1.8rem' }}
-            >
-              <span>REQUEST API SANDBOX KEY</span>
-              <ArrowRight size={16} />
-            </button>
-          </div>
-
-          {/* Terminal Window */}
-          <div className="terminal-window">
-            <div className="terminal-header">
-              <div className="terminal-dots">
-                <div className="terminal-dot" style={{ background: '#ef4444' }} />
-                <div className="terminal-dot" style={{ background: '#f59e0b' }} />
-                <div className="terminal-dot" style={{ background: '#10b981' }} />
-              </div>
-
-              <div className="terminal-tabs">
-                <button 
-                  className={`terminal-tab ${activeTab === 'json' ? 'active' : ''}`}
-                  onClick={() => setActiveTab('json')}
-                >
-                  JSON Response
-                </button>
-                <button 
-                  className={`terminal-tab ${activeTab === 'curl' ? 'active' : ''}`}
-                  onClick={() => setActiveTab('curl')}
-                >
-                  cURL
-                </button>
-                <button 
-                  className={`terminal-tab ${activeTab === 'js' ? 'active' : ''}`}
-                  onClick={() => setActiveTab('js')}
-                >
-                  Node SDK
-                </button>
-              </div>
-
-              <button 
-                onClick={handleCopyCode}
-                style={{
-                  background: 'transparent',
-                  border: 'none',
-                  color: copied ? '#10b981' : 'rgba(255,255,255,0.6)',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '4px',
-                  fontSize: '11px',
-                  fontWeight: 700
-                }}
-              >
-                {copied ? <Check size={13} /> : <Copy size={13} />}
-                {copied ? 'Copied' : 'Copy'}
-              </button>
-            </div>
-
-            <pre className="terminal-body">
-              <code>{getActiveCode()}</code>
-            </pre>
-          </div>
+          </Link>
         </div>
 
         {/* Bottom CTA Bar */}
         <div className="api-cta-bar">
-          <Link to="/partner" className="case-study-partner-btn" style={{ padding: '1.1rem 2.2rem', fontSize: '1rem', borderRadius: '35px' }}>
-            <Sparkles size={18} />
-            <span>BECOME A PARTNER</span>
-          </Link>
-
           <button onClick={() => setIsModalOpen(true)} className="api-primary-btn">
             <Send size={18} />
             <span>ENQUIRE ABOUT API LICENSING</span>
