@@ -10,6 +10,10 @@ const getApiKey = () => process.env.GEMINI_API_KEY || process.env.VITE_GEMINI_AP
 export const downloadImageBase64 = async (url, timeoutMs = 2500) => {
   try {
     if (!url || typeof url !== 'string' || !url.startsWith('http')) return null;
+    const lower = url.toLowerCase();
+    if (lower.includes('fact-sheet') || lower.includes('placeholder') || lower.includes('logo') || lower.includes('.svg') || lower.includes('icon') || lower.includes('badge') || lower.includes('banner')) {
+      return null;
+    }
     const resp = await fetch(url, { 
       headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' },
       signal: AbortSignal.timeout(timeoutMs) 
@@ -17,7 +21,7 @@ export const downloadImageBase64 = async (url, timeoutMs = 2500) => {
     if (!resp.ok) return null;
     
     const buffer = Buffer.from(await resp.arrayBuffer());
-    if (buffer.length < 1200) return null; // Ignore tiny icons / 1x1 pixels / empty shells
+    if (buffer.length < 2500) return null; // Ignore tiny icons / 1x1 pixels / empty shells (under 2.5KB)
 
     // Detect standard image types by magic bytes
     let mimeType = null;
@@ -113,7 +117,8 @@ CRITICAL RULES:
 - An indoor dining room or restaurant with tables and chairs is NEVER an exterior, even if inside a historic building.
 - A street facade, courtyard, or outdoor building elevation IS an exterior.
 - A meeting room with a long boardroom table is MEETING_CONFERENCE, NOT a restaurant.
-- Disqualify meeting/conference rooms and tight food macro close-ups.`
+- A close-up of a coffee machine, espresso maker, kettle, appliance, counter, or object is GENERIC_OTHER and MUST have is_dining_or_bar: false and best_fit_slot: "DISQUALIFIED". It is NOT a bar or lounge.
+- Disqualify meeting/conference rooms, coffee machines/appliances, and tight food macro close-ups.`
     }
   ];
 

@@ -14,15 +14,11 @@ import {
 import HotelVibeManifestCard from './components/HotelVibeManifestCard';
 import InteractiveQuizCard from './components/InteractiveQuizCard';
 import BookingOtaAuditCard from './components/BookingOtaAuditCard';
+import { validateWorkEmail, isLocalhostEnvironment } from './utils/workEmailValidator';
 import './B2BLeadGenOnboarding.css';
 
 // Environment detector: Enforce email on live Vercel/Production, bypass on localhost
-const isLocalhost = typeof window !== 'undefined' && (
-  window.location.hostname === 'localhost' ||
-  window.location.hostname === '127.0.0.1' ||
-  window.location.hostname.includes('192.168.') ||
-  window.location.hostname.endsWith('.local')
-);
+const isLocalhost = isLocalhostEnvironment();
 const isLiveProduction = !isLocalhost;
 
 const submitLeadToFormspree = async (data) => {
@@ -65,44 +61,64 @@ export const KNOWN_SLUG_TITLES = {
 
 export function parseBookingUrl(input) {
   if (!input || typeof input !== 'string') return null;
-  const match = input.match(/booking\.com\/hotel\/([a-z]{2})\/([a-zA-Z0-9-_]+)(?:\.[a-z]{2,3}(?:-[a-z]{2,4})?)?\.html/i);
-  if (!match) return null;
-  const country = match[1].toLowerCase();
-  const slug = match[2].toLowerCase();
-  const cleanUrl = `https://www.booking.com/hotel/${country}/${slug}.html`;
+  const trimmed = input.trim();
+  const match = trimmed.match(/booking\.com\/hotel\/([a-z]{2})\/([a-zA-Z0-9-_]+)(?:\.[a-z]{2,3}(?:-[a-z]{2,4})?)?\.html/i);
+  if (match) {
+    const country = match[1].toLowerCase();
+    const slug = match[2].toLowerCase();
+    const cleanUrl = `https://www.booking.com/hotel/${country}/${slug}.html`;
 
-  let cleanTitle = KNOWN_SLUG_TITLES[slug] || slug
-    .replace(/-/g, ' ')
-    .replace(/\b(the|hotel|resort|spa|suites|and|&)\b/gi, ' ')
-    .replace(/\s+/g, ' ')
-    .trim()
-    .replace(/\b\w/g, c => c.toUpperCase());
-  if (!cleanTitle) cleanTitle = slug.replace(/-/g, ' ');
+    let cleanTitle = KNOWN_SLUG_TITLES[slug] || slug
+      .replace(/-/g, ' ')
+      .replace(/\b(the|hotel|resort|spa|suites|and|&)\b/gi, ' ')
+      .replace(/\s+/g, ' ')
+      .trim()
+      .replace(/\b\w/g, c => c.toUpperCase());
+    if (!cleanTitle) cleanTitle = slug.replace(/-/g, ' ');
 
-  let inferredCity = '';
-  let inferredNeighborhood = '';
-  if (slug.includes('miami-beach') || slug.includes('south-beach') || slug.includes('plymouth') || slug === 'twoninezeroone-collinsave') {
-    inferredCity = 'Miami';
-    inferredNeighborhood = 'Miami Beach';
-  } else if (slug.includes('copenhagen') || slug.includes('indre-by') || country === 'dk') {
-    inferredCity = 'Copenhagen';
-    inferredNeighborhood = 'Indre By';
-  } else if (slug.includes('london') || slug.includes('sea-containers')) {
-    inferredCity = 'London';
-    inferredNeighborhood = 'South Bank';
-  } else if (slug.includes('dubai') || country === 'ae') {
-    inferredCity = 'Dubai';
-    inferredNeighborhood = 'Palm Jumeirah';
+    let inferredCity = '';
+    let inferredNeighborhood = '';
+    if (slug.includes('miami-beach') || slug.includes('south-beach') || slug.includes('plymouth') || slug === 'twoninezeroone-collinsave') {
+      inferredCity = 'Miami';
+      inferredNeighborhood = 'Miami Beach';
+    } else if (slug.includes('copenhagen') || slug.includes('indre-by') || country === 'dk') {
+      inferredCity = 'Copenhagen';
+      inferredNeighborhood = 'Indre By';
+    } else if (slug.includes('london') || slug.includes('sea-containers')) {
+      inferredCity = 'London';
+      inferredNeighborhood = 'South Bank';
+    } else if (slug.includes('dubai') || country === 'ae') {
+      inferredCity = 'Dubai';
+      inferredNeighborhood = 'Palm Jumeirah';
+    }
+
+    return {
+      cleanUrl,
+      country,
+      slug,
+      cleanTitle,
+      inferredCity,
+      inferredNeighborhood
+    };
   }
 
-  return {
-    cleanUrl,
-    country,
-    slug,
-    cleanTitle,
-    inferredCity,
-    inferredNeighborhood
-  };
+  // Support Booking.com Hotel / Client ID (e.g. 1048291, or URL with hotel_id=...)
+  const hotelIdMatch = trimmed.match(/[?&]hotel_id=(\d+)/i);
+  const numericIdMatch = trimmed.match(/^\D*(\d{5,12})\D*$/);
+  const cleanId = hotelIdMatch ? hotelIdMatch[1] : (numericIdMatch ? numericIdMatch[1] : null);
+  if (cleanId) {
+    return {
+      cleanUrl: `https://www.booking.com/hotel.html?hotel_id=${cleanId}`,
+      bookingId: cleanId,
+      country: '',
+      slug: `hotel-${cleanId}`,
+      cleanTitle: `Booking.com Property #${cleanId}`,
+      inferredCity: '',
+      inferredNeighborhood: ''
+    };
+  }
+
+  return null;
 }
 
 const PROCESSING_PHASES = [
@@ -224,6 +240,7 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
     if (typeof window === 'undefined') return;
     const params = new URLSearchParams(window.location.search);
     const urlParam = params.get('bookingUrl') || params.get('url') || params.get('q');
+    const emailParam = params.get('email') || '';
     if (!urlParam) return;
 
     const parsed = parseBookingUrl(urlParam);
@@ -249,16 +266,34 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
       propertyName: targetHotel || prev.propertyName,
       city: targetCity || prev.city,
       neighborhood: targetNeighborhood || prev.neighborhood,
-      bookingId: directBookingUrl || urlParam || prev.bookingId
+      bookingId: directBookingUrl || urlParam || prev.bookingId,
+      email: emailParam || prev.email
     }));
 
     if (targetHotel || directBookingUrl) {
+      const emailCheck = validateWorkEmail(emailParam, { allowEmpty: isLocalhost });
+      if (!emailCheck.isValid) {
+        setEmailError(emailCheck.error);
+        setStep('input');
+        return;
+      }
+
+      if (emailParam && emailParam.includes('@')) {
+        submitLeadToFormspree({
+          propertyName: targetHotel,
+          city: targetCity,
+          neighborhood: targetNeighborhood,
+          email: emailParam,
+          bookingId: directBookingUrl || urlParam
+        });
+      }
+
       executeAudit(
         targetHotel || 'Featured Hotel',
         targetCity,
         targetNeighborhood,
         directBookingUrl,
-        null
+        parsed?.bookingId || null
       );
     }
   }, []);
@@ -306,6 +341,12 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
     }
     setFieldErrors({});
 
+    const emailCheck = validateWorkEmail(formData.email, { allowEmpty: isLocalhost });
+    if (!emailCheck.isValid) {
+      setEmailError(emailCheck.error);
+      return;
+    }
+
     let targetHotel = formData.propertyName.trim();
     let targetCity = formData.city.trim();
     let targetNeighborhood = formData.neighborhood ? formData.neighborhood.trim() : '';
@@ -322,7 +363,7 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
       }
     }
 
-    if (formData.email && formData.email.includes('@')) {
+    if (formData.email && formData.email.trim()) {
       submitLeadToFormspree({ ...formData, bookingId: cleanId || rawBooking });
     }
 
