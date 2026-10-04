@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800;900&display=swap');
+
 .hero-section {
     position: relative;
     min-height: 100dvh;
@@ -71,21 +73,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.85rem;
-    font-size: clamp(2.1rem, 4vw, 3.1rem);
+    font-family: 'Outfit', system-ui, -apple-system, sans-serif;
+    font-size: clamp(2.8rem, 5.8vw, 4.5rem);
     font-weight: 800;
-    line-height: 1.18;
+    line-height: 1.08;
     letter-spacing: -0.03em;
     color: #ffffff;
-    text-shadow: 0 4px 28px rgba(0, 0, 0, 0.9);
+    text-align: center;
     margin: 0;
-}
-
-.hero-headline-primary {
-    display: block;
-    background: linear-gradient(180deg, #ffffff 40%, rgba(225, 242, 255, 0.92) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    text-shadow: 0 4px 28px rgba(0, 0, 0, 0.95), 0 2px 10px rgba(0, 0, 0, 0.9);
 }
 
 .hero-subheadline {
@@ -119,25 +115,125 @@
     text-shadow: 0 0 16px rgba(0, 229, 255, 0.35);
 }
 
-/* The Action Box (Frictionless Input) */
+/* The Action Box (Frictionless Input & Morphing Glass Capsule) */
 .hero-action-box {
     width: 100%;
+    margin-top: 0.5rem;
+    transition: max-width 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                padding 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                border-radius 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                background 0.35s ease,
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+/* Collapsed Capsule State: Compact, Disguised, Highly Inviting */
+.hero-action-box.is-capsule {
+    max-width: 590px;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    align-items: center;
+}
+
+.hero-capsule-trigger {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.85rem;
+    padding: 0.4rem 0.45rem 0.4rem 1.25rem;
+    background: rgba(14, 18, 27, 0.82);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(0, 229, 255, 0.28);
+    border-radius: 999px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55), 0 0 20px rgba(0, 229, 255, 0.08);
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.hero-capsule-trigger:hover {
+    border-color: rgba(0, 229, 255, 0.6);
+    background: rgba(18, 24, 38, 0.92);
+    box-shadow: 0 14px 38px rgba(0, 0, 0, 0.65), 0 0 30px rgba(0, 229, 255, 0.22);
+    transform: translateY(-2px);
+}
+
+.hero-capsule-trigger:active {
+    transform: translateY(0);
+}
+
+.capsule-trigger-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    overflow: hidden;
+    text-align: left;
+}
+
+.capsule-trigger-icon {
+    color: var(--color-cyan-neon, #00e5ff);
+    flex-shrink: 0;
+    filter: drop-shadow(0 0 6px rgba(0, 229, 255, 0.5));
+}
+
+.capsule-trigger-text {
+    font-size: 0.95rem;
+    color: rgba(230, 241, 255, 0.7);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    transition: color 0.2s ease;
+}
+
+.hero-capsule-trigger:hover .capsule-trigger-text {
+    color: #ffffff;
+}
+
+.capsule-trigger-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0.55rem 1.25rem;
+    background: linear-gradient(135deg, #00e5ff 0%, #00b0ff 100%);
+    border-radius: 999px;
+    color: #050b14;
+    font-size: 0.88rem;
+    font-weight: 800;
+    box-shadow: 0 2px 10px rgba(0, 229, 255, 0.35);
+    flex-shrink: 0;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hero-capsule-trigger:hover .capsule-trigger-cta {
+    transform: translateX(2px);
+    box-shadow: 0 4px 18px rgba(0, 229, 255, 0.55);
+}
+
+/* Expanded State: Full Action Box */
+.hero-action-box.is-expanded {
     max-width: 760px;
     background: rgba(14, 18, 27, 0.85);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(0, 229, 255, 0.2);
+    border: 1px solid rgba(0, 229, 255, 0.25);
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 25px rgba(0, 229, 255, 0.08);
     border-radius: 24px;
     padding: 1.6rem 1.75rem;
     display: flex;
     flex-direction: column;
     gap: 1.15rem;
-    margin-top: 0.5rem;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.hero-action-box:focus-within {
+.hero-action-box.is-expanded:focus-within {
     border-color: rgba(0, 229, 255, 0.45);
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 24px 60px rgba(0, 0, 0, 0.7), 0 0 35px rgba(0, 229, 255, 0.12);
 }
@@ -145,108 +241,53 @@
 .action-box-form {
     display: flex;
     flex-direction: column;
-    gap: 0.85rem;
+    gap: 0.9rem;
     width: 100%;
 }
 
-/* Step 1: Single input + Get Started button */
-.action-step1-container {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    width: 100%;
-}
-
-@media (min-width: 640px) {
-    .action-step1-container {
-        flex-direction: row;
-        align-items: stretch;
-    }
-    .action-step1-container .action-input-wrapper {
-        flex: 1;
-    }
-    .action-step1-btn {
-        flex-shrink: 0;
-        min-width: 165px;
-    }
-}
-
-/* Step 2: Verified Property Confirmation Pill */
-.step2-property-pill {
+.action-box-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 1rem;
-    padding: 0.75rem 1rem;
-    background: rgba(0, 229, 255, 0.06);
-    border: 1px solid rgba(0, 229, 255, 0.28);
-    border-radius: 12px;
-    box-shadow: 0 0 16px rgba(0, 229, 255, 0.08);
+    padding-bottom: 0.65rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    margin-bottom: 0.15rem;
 }
 
-.property-pill-left {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-    text-align: left;
-    overflow: hidden;
-}
-
-.property-pill-status {
+.action-box-header-title {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    font-size: 0.68rem;
+    gap: 8px;
+    font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--color-cyan-neon, #00e5ff);
 }
 
-.pill-status-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: #10b981;
-    box-shadow: 0 0 8px #10b981;
-}
-
-.property-pill-title {
+.action-box-close-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: rgba(230, 241, 255, 0.65);
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 8px;
     display: flex;
     align-items: center;
-    gap: 6px;
-    font-size: 0.94rem;
-    font-weight: 700;
-    color: #ffffff;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.property-pill-change-btn {
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    color: rgba(230, 241, 255, 0.85);
-    padding: 5px 12px;
-    border-radius: 8px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    cursor: pointer;
+    justify-content: center;
     transition: all 0.2s ease;
-    flex-shrink: 0;
 }
 
-.property-pill-change-btn:hover {
+.action-box-close-btn:hover {
+    color: #ffffff;
     background: rgba(0, 229, 255, 0.15);
     border-color: rgba(0, 229, 255, 0.4);
-    color: #ffffff;
 }
 
-/* Step 2: Work Email & Submit Group */
-.action-step2-input-group {
+.action-field-block {
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 0.35rem;
     width: 100%;
 }
 
@@ -439,8 +480,19 @@
     .hero-section {
         padding: 5.5rem 1rem 3.5rem;
     }
-    .hero-action-box {
+    .hero-action-box.is-expanded {
         padding: 1.25rem 1rem;
+    }
+    .hero-capsule-trigger {
+        padding: 0.35rem 0.4rem 0.35rem 0.9rem;
+        gap: 0.5rem;
+    }
+    .capsule-trigger-text {
+        font-size: 0.84rem;
+    }
+    .capsule-trigger-cta {
+        padding: 0.5rem 0.85rem;
+        font-size: 0.8rem;
     }
     .action-submit-btn {
         width: 100%;

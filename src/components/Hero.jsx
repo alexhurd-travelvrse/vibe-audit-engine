@@ -1,60 +1,28 @@
-import React, { useState } from 'react';
-import { ArrowRight, Sparkles, Building2, Mail, AlertCircle } from 'lucide-react';
+import React, { useState, useRef, useEffect } from 'react';
+import { ArrowRight, Sparkles, Building2, Mail, AlertCircle, X } from 'lucide-react';
 import { useNavigate, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { validateWorkEmail, isLocalhostEnvironment } from '../utils/workEmailValidator';
 import './Hero.css';
 
-const getPropertyDisplayTitle = (input) => {
-    if (!input) return '';
-    const trimmed = input.trim();
-    if (trimmed.includes('sea-containers')) return 'Sea Containers London';
-    if (trimmed.includes('plymouth')) return 'The Plymouth Miami Beach';
-    if (trimmed.includes('25hours')) return '25hours Hotel Copenhagen';
-    const match = trimmed.match(/booking\.com\/hotel\/([a-z]{2})\/([a-zA-Z0-9-_]+)/i);
-    if (match) {
-        const slug = match[2];
-        const title = slug
-            .replace(/-/g, ' ')
-            .replace(/\b(the|hotel|resort|spa|suites|and|&)\b/gi, ' ')
-            .replace(/\s+/g, ' ')
-            .trim()
-            .replace(/\b\w/g, c => c.toUpperCase());
-        return title || slug;
-    }
-    const cleanId = trimmed.replace(/[^\d]/g, '');
-    if (cleanId && cleanId.length >= 5) {
-        return `Booking.com Property #${cleanId}`;
-    }
-    return trimmed;
-};
-
 const Hero = () => {
-    const [step, setStep] = useState(1);
+    const [isExpanded, setIsExpanded] = useState(false);
     const [otaUrl, setOtaUrl] = useState('');
     const [workEmail, setWorkEmail] = useState('');
     const [emailError, setEmailError] = useState('');
     const [inputError, setInputError] = useState('');
     const [honeypot, setHoneypot] = useState('');
+    const inputRef = useRef(null);
+    const emailInputRef = useRef(null);
     const navigate = useNavigate();
 
     const isLocal = isLocalhostEnvironment();
 
-    const handleProceedToStep2 = (e) => {
-        if (e) e.preventDefault();
-        if (honeypot) {
-            console.warn('[Bot Detector] Honeypot triggered.');
-            return;
+    useEffect(() => {
+        if (isExpanded && inputRef.current) {
+            inputRef.current.focus();
         }
-
-        const trimmedUrl = otaUrl.trim();
-        if (!trimmedUrl) {
-            setInputError('Please enter your Hotel Name or Booking.com URL');
-            return;
-        }
-        setInputError('');
-        setStep(2);
-    };
+    }, [isExpanded]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -65,7 +33,6 @@ const Hero = () => {
 
         const trimmedUrl = otaUrl.trim();
         if (!trimmedUrl) {
-            setStep(1);
             setInputError('Please enter your Hotel Name or Booking.com URL');
             return;
         }
@@ -90,7 +57,12 @@ const Hero = () => {
         setOtaUrl(sample);
         setInputError('');
         setEmailError('');
-        setStep(2);
+        setIsExpanded(true);
+        setTimeout(() => {
+            if (emailInputRef.current) {
+                emailInputRef.current.focus();
+            }
+        }, 50);
     };
 
     return (
@@ -120,7 +92,7 @@ const Hero = () => {
                     </div>
 
                     <h1 className="hero-headline">
-                        <span className="hero-headline-primary">Turn Atmosphere into Bookings</span>
+                        Turn Atmosphere into Bookings
                     </h1>
 
                     <p className="hero-subheadline">
@@ -132,51 +104,31 @@ const Hero = () => {
                     </div>
                 </div>
 
-                {/* The Action Box (Sequenced 2-Step Progressive Disclosure) */}
-                <div className="hero-action-box animate-fade-up">
-                    {step === 1 ? (
-                        <form onSubmit={handleProceedToStep2} className="action-box-form">
-                            {/* Hidden Honeypot Field for Bot Defense */}
-                            <input 
-                                type="text" 
-                                name="b2b_website_hp" 
-                                value={honeypot} 
-                                onChange={(e) => setHoneypot(e.target.value)} 
-                                style={{ display: 'none', position: 'absolute', left: '-9999px', opacity: 0, pointerEvents: 'none' }} 
-                                tabIndex={-1} 
-                                autoComplete="off" 
-                            />
-
-                            <div className="action-step1-container">
-                                <div className={`action-input-wrapper ${inputError ? 'action-input-error' : ''}`}>
-                                    <Building2 className="action-input-icon" size={19} />
-                                    <input 
-                                        type="text"
-                                        className="action-input-field"
-                                        placeholder="Hotel Name or Booking.com URL"
-                                        value={otaUrl}
-                                        onChange={(e) => {
-                                            setOtaUrl(e.target.value);
-                                            if (inputError) setInputError('');
-                                        }}
-                                        autoFocus
-                                    />
-                                </div>
-
-                                <button type="submit" className="action-submit-btn action-step1-btn">
-                                    <span>Get Started</span>
-                                    <ArrowRight size={18} />
-                                </button>
+                {/* The Action Box (Sequenced 2-Step Progressive Disclosure with Morphing Glass Capsule) */}
+                {/* The Action Box (Morphing Glass Capsule -> Full Search Box with Email & Terms) */}
+                <div className={`hero-action-box ${isExpanded ? 'is-expanded' : 'is-capsule'} animate-fade-up`}>
+                    {!isExpanded ? (
+                        <div 
+                            className="hero-capsule-trigger"
+                            onClick={() => setIsExpanded(true)}
+                            role="button"
+                            tabIndex={0}
+                            onKeyDown={(e) => {
+                                if (e.key === 'Enter' || e.key === ' ') {
+                                    e.preventDefault();
+                                    setIsExpanded(true);
+                                }
+                            }}
+                        >
+                            <div className="capsule-trigger-left">
+                                <Building2 className="capsule-trigger-icon" size={18} />
+                                <span className="capsule-trigger-text">Enter Hotel Name or Booking.com URL</span>
                             </div>
-
-                            {/* Error Message Alert */}
-                            {inputError && (
-                                <div className="action-box-error-badge animate-fade-in">
-                                    <AlertCircle size={16} />
-                                    <span>{inputError}</span>
-                                </div>
-                            )}
-                        </form>
+                            <div className="capsule-trigger-cta">
+                                <span>Get Started</span>
+                                <ArrowRight size={15} />
+                            </div>
+                        </div>
                     ) : (
                         <form onSubmit={handleSubmit} className="action-box-form animate-fade-in">
                             {/* Hidden Honeypot Field for Bot Defense */}
@@ -190,33 +142,53 @@ const Hero = () => {
                                 autoComplete="off" 
                             />
 
-                            {/* Step 2 Verified Property Confirmation Pill */}
-                            <div className="step2-property-pill">
-                                <div className="property-pill-left">
-                                    <div className="property-pill-status">
-                                        <span className="pill-status-dot"></span>
-                                        <span className="pill-status-label">Property Selected</span>
-                                    </div>
-                                    <div className="property-pill-title">
-                                        <Building2 size={14} className="text-cyan" />
-                                        <span>{getPropertyDisplayTitle(otaUrl)}</span>
-                                    </div>
+                            {/* Header row with Title & Close button */}
+                            <div className="action-box-header">
+                                <div className="action-box-header-title">
+                                    <Sparkles size={14} className="text-cyan" />
+                                    <span>Optimise Your Hotel OTA Photos</span>
                                 </div>
-                                <button 
-                                    type="button" 
-                                    onClick={() => { setStep(1); setInputError(''); setEmailError(''); }} 
-                                    className="property-pill-change-btn"
-                                    title="Change property URL"
+                                <button
+                                    type="button"
+                                    onClick={() => { setIsExpanded(false); setInputError(''); setEmailError(''); }}
+                                    className="action-box-close-btn"
+                                    title="Close search"
+                                    aria-label="Close search"
                                 >
-                                    Change
+                                    <X size={16} />
                                 </button>
                             </div>
 
-                            {/* Step 2 Work Email Input & Final CTA */}
-                            <div className="action-step2-input-group">
+                            {/* Field 1: Hotel Name or Booking.com URL */}
+                            <div className="action-field-block">
+                                <div className={`action-input-wrapper ${inputError ? 'action-input-error' : ''}`}>
+                                    <Building2 className="action-input-icon" size={19} />
+                                    <input 
+                                        ref={inputRef}
+                                        type="text"
+                                        className="action-input-field"
+                                        placeholder="Hotel Name or Booking.com URL"
+                                        value={otaUrl}
+                                        onChange={(e) => {
+                                            setOtaUrl(e.target.value);
+                                            if (inputError) setInputError('');
+                                        }}
+                                    />
+                                </div>
+                                {inputError && (
+                                    <div className="action-box-error-badge animate-fade-in">
+                                        <AlertCircle size={16} />
+                                        <span>{inputError}</span>
+                                    </div>
+                                )}
+                            </div>
+
+                            {/* Field 2: Corporate Work Email */}
+                            <div className="action-field-block">
                                 <div className={`action-input-wrapper ${emailError ? 'action-input-error' : ''}`}>
                                     <Mail className="action-input-icon" size={19} />
                                     <input 
+                                        ref={emailInputRef}
                                         type="email"
                                         className="action-input-field"
                                         placeholder={isLocal ? "Corporate Work Email (Optional in Local Dev)" : "Corporate Work Email (name@hotel.com)"}
@@ -225,22 +197,21 @@ const Hero = () => {
                                             setWorkEmail(e.target.value);
                                             if (emailError) setEmailError('');
                                         }}
-                                        autoFocus
                                     />
                                 </div>
-
                                 {emailError && (
                                     <div className="action-box-error-badge animate-fade-in">
                                         <AlertCircle size={16} />
                                         <span>{emailError}</span>
                                     </div>
                                 )}
-
-                                <button type="submit" className="action-submit-btn">
-                                    <span>Reorder Photos &amp; Unlock Vibe Signature</span>
-                                    <ArrowRight size={18} />
-                                </button>
                             </div>
+
+                            {/* Submit CTA */}
+                            <button type="submit" className="action-submit-btn">
+                                <span>Reorder Photos &amp; Unlock Vibe Signature</span>
+                                <ArrowRight size={18} />
+                            </button>
 
                             {/* Micro-Consent Disclaimer */}
                             <div className="hero-micro-consent">
@@ -251,21 +222,22 @@ const Hero = () => {
                                     <Link to="/privacy">Privacy Policy</Link>
                                 </p>
                             </div>
+
+                            {/* Instant Previews inside the expanded box */}
+                            <div className="action-box-samples">
+                                <span className="samples-label">Instant Previews:</span>
+                                <button type="button" onClick={() => handleQuickTry('https://www.booking.com/hotel/gb/sea-containers-london.html')} className="sample-chip">
+                                    Sea Containers London
+                                </button>
+                                <button type="button" onClick={() => handleQuickTry('https://www.booking.com/hotel/us/the-plymouth-miami-beach.html')} className="sample-chip">
+                                    The Plymouth Miami Beach
+                                </button>
+                                <button type="button" onClick={() => handleQuickTry('https://www.booking.com/hotel/dk/25hours-indre-by.html')} className="sample-chip">
+                                    25hours Hotel Copenhagen
+                                </button>
+                            </div>
                         </form>
                     )}
-
-                    <div className="action-box-samples">
-                        <span className="samples-label">Instant Previews:</span>
-                        <button type="button" onClick={() => handleQuickTry('https://www.booking.com/hotel/gb/sea-containers-london.html')} className="sample-chip">
-                            Sea Containers London
-                        </button>
-                        <button type="button" onClick={() => handleQuickTry('https://www.booking.com/hotel/us/the-plymouth-miami-beach.html')} className="sample-chip">
-                            The Plymouth Miami Beach
-                        </button>
-                        <button type="button" onClick={() => handleQuickTry('https://www.booking.com/hotel/dk/25hours-indre-by.html')} className="sample-chip">
-                            25hours Hotel Copenhagen
-                        </button>
-                    </div>
                 </div>
             </div>
 

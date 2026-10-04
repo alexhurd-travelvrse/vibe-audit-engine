@@ -155,7 +155,13 @@ export default function HookTeaserSection() {
                     <li className="deliverable-item">
                       <span className="deliverable-bullet">•</span>
                       <div className="deliverable-content">
-                        <span className="deliverable-name">Local Launchpad Pack</span>
+                        <span className="deliverable-name">Positioning as Local Launchpad</span>
+                      </div>
+                    </li>
+                    <li className="deliverable-item">
+                      <span className="deliverable-bullet">•</span>
+                      <div className="deliverable-content">
+                        <span className="deliverable-name">Social Media Positioning</span>
                       </div>
                     </li>
                     <li className="deliverable-item">

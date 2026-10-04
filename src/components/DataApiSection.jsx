@@ -56,7 +56,7 @@ export default function DataApiSection() {
             PUT VIBE AT THE <span style={{ background: 'linear-gradient(90deg, #00e5ff, #ffd700)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>FRONT OF YOUR BUSINESS</span>
           </h2>
           <p className="data-api-narrative">
-            License AtmosVibe's deep hospitality intelligence layer to embed real-time Vibe Manifests, acoustic DNA diagnostics, local subcultural trend vectors, and visual re-sequencing algorithms directly into your direct booking engine, mobile app, travel metaverse, or OTA portal
+            Make Your App more relevant by licensing Vibe data
           </p>
         </div>
 
