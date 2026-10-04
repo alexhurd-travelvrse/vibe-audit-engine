@@ -72,24 +72,20 @@
     flex-direction: column;
     align-items: center;
     gap: 0.85rem;
-    font-size: clamp(1.6rem, 2.7vw, 2.35rem);
+    font-size: clamp(2.1rem, 4vw, 3.1rem);
     font-weight: 800;
-    line-height: 1.25;
-    letter-spacing: -0.02em;
+    line-height: 1.18;
+    letter-spacing: -0.03em;
     color: #ffffff;
-    text-shadow: 0 3px 20px rgba(0, 0, 0, 0.8);
+    text-shadow: 0 4px 28px rgba(0, 0, 0, 0.9);
     margin: 0;
 }
 
 .hero-headline-primary {
     display: block;
-}
-
-.hero-headline-gradient {
-    background: linear-gradient(135deg, #ffffff 0%, var(--color-gold, #ffd700) 60%, #ffec8b 100%);
+    background: linear-gradient(180deg, #ffffff 40%, rgba(225, 242, 255, 0.92) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    display: inline-block;
 }
 
 .hero-subheadline {
@@ -100,6 +96,27 @@
     margin: 0.5rem auto 0;
     font-weight: 400;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+/* Action Kicker: Subdued, clean cyber-cyan action cue with zero competing yellow */
+.hero-action-kicker {
+    margin-top: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: clamp(0.88rem, 1.25vw, 1.02rem);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-cyan-neon, #00e5ff);
+}
+
+.kicker-gradient {
+    color: var(--color-cyan-neon, #00e5ff);
+    background: none;
+    -webkit-background-clip: initial;
+    -webkit-text-fill-color: initial;
+    text-shadow: 0 0 16px rgba(0, 229, 255, 0.35);
 }
 
 /* The Action Box (Frictionless Input) */
@@ -132,17 +149,105 @@
     width: 100%;
 }
 
-.action-inputs-container {
-    display: grid;
-    grid-template-columns: 1fr;
+/* Step 1: Single input + Get Started button */
+.action-step1-container {
+    display: flex;
+    flex-direction: column;
     gap: 0.75rem;
     width: 100%;
 }
 
 @media (min-width: 640px) {
-    .action-inputs-container {
-        grid-template-columns: 1.15fr 1fr;
+    .action-step1-container {
+        flex-direction: row;
+        align-items: stretch;
     }
+    .action-step1-container .action-input-wrapper {
+        flex: 1;
+    }
+    .action-step1-btn {
+        flex-shrink: 0;
+        min-width: 165px;
+    }
+}
+
+/* Step 2: Verified Property Confirmation Pill */
+.step2-property-pill {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    background: rgba(0, 229, 255, 0.06);
+    border: 1px solid rgba(0, 229, 255, 0.28);
+    border-radius: 12px;
+    box-shadow: 0 0 16px rgba(0, 229, 255, 0.08);
+}
+
+.property-pill-left {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    text-align: left;
+    overflow: hidden;
+}
+
+.property-pill-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-cyan-neon, #00e5ff);
+}
+
+.pill-status-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #10b981;
+    box-shadow: 0 0 8px #10b981;
+}
+
+.property-pill-title {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.94rem;
+    font-weight: 700;
+    color: #ffffff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.property-pill-change-btn {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: rgba(230, 241, 255, 0.85);
+    padding: 5px 12px;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.property-pill-change-btn:hover {
+    background: rgba(0, 229, 255, 0.15);
+    border-color: rgba(0, 229, 255, 0.4);
+    color: #ffffff;
+}
+
+/* Step 2: Work Email & Submit Group */
+.action-step2-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
 }
 
 .action-input-wrapper {

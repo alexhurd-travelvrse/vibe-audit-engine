@@ -311,8 +311,7 @@ const VibeAuditSearchSection = () => {
                   🔒 By clicking <strong>Launch Vibe Audit</strong>, you agree to our{' '}
                   <Link to="/terms" style={{ color: '#00e5ff', textDecoration: 'underline' }}>Terms & Conditions</Link>{' '}
                   and acknowledge our{' '}
-                  <Link to="/privacy" style={{ color: '#00e5ff', textDecoration: 'underline' }}>Privacy Policy</Link>. 
-                  Your work email is used to authenticate your audit and deliver diagnostic reports. We never spam.
+                  <Link to="/privacy" style={{ color: '#00e5ff', textDecoration: 'underline' }}>Privacy Policy</Link>
                 </p>
               </div>
 

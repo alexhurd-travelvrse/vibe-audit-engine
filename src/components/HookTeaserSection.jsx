@@ -33,7 +33,7 @@ export default function HookTeaserSection() {
             </div>
 
             <div className="tier-content">
-              <h3 className="tier-heading">The OTA Photo Reorder</h3>
+              <h3 className="tier-heading">OTA Photos</h3>
               <p className="tier-subtext">Instant photo recommendations that map your unique property features to neighborhood search demand</p>
 
               {/* Visual Interactive Showcase: 5-Photo Strip + Headline Vibe Signature */}
@@ -110,11 +110,6 @@ export default function HookTeaserSection() {
                   <div className="headline-vibe-quote">
                     "Maritime Glamour &amp; Thameside Buzz"
                   </div>
-                  <div className="headline-vibe-examples">
-                    <span className="vibe-example-chip">Sea Containers: Maritime Glamour</span>
-                    <span className="vibe-example-chip">Plymouth: Art Deco Oasis</span>
-                    <span className="vibe-example-chip">25hours: Vinyl Social Hub</span>
-                  </div>
                 </div>
 
               </div>
@@ -136,8 +131,8 @@ export default function HookTeaserSection() {
             </div>
 
             <div className="tier-content">
-              <h3 className="tier-heading">The Multi-Channel Conversion Engine</h3>
-              <p className="tier-subtext">Deploy your unique Vibe Signature across turn-key deliverables engineered to win bookings across every channel</p>
+              <h3 className="tier-heading">Multi-Channel Conversion</h3>
+              <p className="tier-subtext">Deploy your unique Vibe Signature to win bookings across every channel</p>
 
               {/* 3-Pillar Executive Deliverable Matrix */}
               <div className="pro-pillars-suite">
@@ -154,22 +149,19 @@ export default function HookTeaserSection() {
                     <li className="deliverable-item">
                       <span className="deliverable-bullet">•</span>
                       <div className="deliverable-content">
-                        <span className="deliverable-name">Full OTA and Website Photo and Copy Overhaul</span>
-                        <span className="deliverable-desc">&mdash; High-converting narratives, direct booking copy and visual re-sequencing</span>
+                        <span className="deliverable-name">Full OTA and Website Photo and Copy</span>
                       </div>
                     </li>
                     <li className="deliverable-item">
                       <span className="deliverable-bullet">•</span>
                       <div className="deliverable-content">
                         <span className="deliverable-name">Local Launchpad Pack</span>
-                        <span className="deliverable-desc">&mdash; On-site guides, social hooks and pre-stay email series</span>
                       </div>
                     </li>
                     <li className="deliverable-item">
                       <span className="deliverable-bullet">•</span>
                       <div className="deliverable-content">
                         <span className="deliverable-name">AI Search (GEO) Tagging</span>
-                        <span className="deliverable-desc">&mdash; Structured schema for ChatGPT, Perplexity and Gemini citations</span>
                       </div>
                     </li>
                   </ul>
@@ -188,14 +180,12 @@ export default function HookTeaserSection() {
                       <span className="deliverable-bullet">•</span>
                       <div className="deliverable-content">
                         <span className="deliverable-name">Competitor Benchmarking</span>
-                        <span className="deliverable-desc">&mdash; Atmospheric gap analysis against key local rivals</span>
                       </div>
                     </li>
                     <li className="deliverable-item">
                       <span className="deliverable-bullet">•</span>
                       <div className="deliverable-content">
                         <span className="deliverable-name">Local Trending Vibes</span>
-                        <span className="deliverable-desc">&mdash; Hyperlocal micro-culture and nightlife demand signals</span>
                       </div>
                     </li>
                   </ul>
