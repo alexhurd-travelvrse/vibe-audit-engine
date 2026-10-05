@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Database, Globe, ArrowRight, CheckCircle2, Send, X, Zap, Compass, Users } from 'lucide-react';
+import { Database, Globe, ArrowRight, CheckCircle2, Send, X, Zap, Compass, Users, Sparkles, Lock } from 'lucide-react';
+import { useAuthGate } from './GatedSectionAuth';
 import './DataApiSection.css';
 
 export default function DataApiSection() {
+  const { lock } = useAuthGate();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -47,6 +49,16 @@ export default function DataApiSection() {
     <section className="data-api-section" id="vibe-api">
       <div className="data-api-container">
         
+        {/* Unlocked Client Status Bar */}
+        <div className="auth-unlocked-banner">
+          <div className="auth-unlocked-tag">
+            <Sparkles size={13} /> CLIENT ACCESS UNLOCKED — ENTERPRISE VIBE API
+          </div>
+          <button onClick={lock} className="auth-relock-btn" title="Lock section again">
+            <Lock size={12} /> Log Out
+          </button>
+        </div>
+
         {/* Header */}
         <div className="data-api-header">
           <div className="data-api-pill">
@@ -55,6 +67,9 @@ export default function DataApiSection() {
           <h2 className="data-api-headline">
             PUT VIBE AT THE <span style={{ background: 'linear-gradient(90deg, #00e5ff, #ffd700)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>FRONT OF YOUR BUSINESS</span>
           </h2>
+          <div className="section-coming-soon-badge">
+            <span className="pulse-dot" /> COMING SOON
+          </div>
           <p className="data-api-narrative">
             Make Your App more relevant by licensing Vibe data
           </p>

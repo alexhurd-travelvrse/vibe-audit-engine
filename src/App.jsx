@@ -6,7 +6,6 @@ import Hero from './components/Hero';
 import HookTeaserSection from './components/HookTeaserSection';
 import DataApiSection from './components/DataApiSection';
 import MarketsSection from './components/MarketsSection';
-import BlogJournal from './components/BlogJournal';
 import TeamSection from './components/TeamSection';
 import Footer from './components/Footer';
 import MarketplacePage from './pages/MarketplacePage';
@@ -19,6 +18,8 @@ import TermsPage from './pages/TermsPage';
 import B2BLeadGenOnboarding from './B2BLeadGenOnboarding';
 import './B2BLeadGenOnboarding.css';
 
+import { useAuthGate, AuthModals } from './components/GatedSectionAuth';
+
 // ScrollToTop component ensures we start at the top when navigating between pages
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -29,6 +30,21 @@ const ScrollToTop = () => {
 };
 
 const B2BHome = () => {
+  const { isUnlocked } = useAuthGate();
+  const [isRegisterOpen, setIsRegisterOpen] = React.useState(false);
+  const [isLoginOpen, setIsLoginOpen] = React.useState(false);
+
+  React.useEffect(() => {
+    const handleOpenRegister = () => setIsRegisterOpen(true);
+    const handleOpenLogin = () => setIsLoginOpen(true);
+    window.addEventListener('atmosvibe-open-register', handleOpenRegister);
+    window.addEventListener('atmosvibe-open-login', handleOpenLogin);
+    return () => {
+      window.removeEventListener('atmosvibe-open-register', handleOpenRegister);
+      window.removeEventListener('atmosvibe-open-login', handleOpenLogin);
+    };
+  }, []);
+
   return (
     <Layout>
       {/* 1. Hero Section (The Photo Wedge Hook & Frictionless Input) */}
@@ -37,20 +53,32 @@ const B2BHome = () => {
       {/* 2. The Hook Teaser: What Gets Unlocked (Instant Free vs Full Vibe Fingerprint) */}
       <HookTeaserSection />
 
-      {/* 3. Enterprise Vibe API */}
-      <DataApiSection />
-
-      {/* 4. Vibe Insights (Global Market Intelligence & Benchmarks) */}
-      <MarketsSection />
-
-      {/* 5. Journal */}
-      <BlogJournal />
+      {/* 3. Enterprise Vibe API & Vibe Insights (BEHIND LOGIN) */}
+      {isUnlocked && (
+        <>
+          <DataApiSection />
+          <MarketsSection />
+        </>
+      )}
       
-      {/* 6. Team */}
+      {/* 4. Team */}
       <TeamSection />
       
-      {/* 7. Footer */}
+      {/* 5. Footer */}
       <Footer />
+
+      <AuthModals
+        isRegisterOpen={isRegisterOpen}
+        isLoginOpen={isLoginOpen}
+        onClose={() => {
+          setIsRegisterOpen(false);
+          setIsLoginOpen(false);
+        }}
+        onSuccess={() => {
+          setIsRegisterOpen(false);
+          setIsLoginOpen(false);
+        }}
+      />
     </Layout>
   );
 };

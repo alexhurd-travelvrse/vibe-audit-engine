@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import { Globe2, TrendingUp, MapPin, BarChart3, Compass, CheckCircle2, ArrowRight, ShieldCheck, Sparkles, Building2, Send, X } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Globe2, TrendingUp, MapPin, BarChart3, Compass, CheckCircle2, ArrowRight, ShieldCheck, Sparkles, Building2, Send, X, Lock } from 'lucide-react';
+import { useAuthGate, GatedSectionLock, AuthModals } from './GatedSectionAuth';
 import './MarketsSection.css';
 
 const MARKETS_DATA = [
@@ -74,6 +75,7 @@ const MARKETS_DATA = [
 ];
 
 export default function MarketsSection() {
+  const { lock } = useAuthGate();
   const [selectedMarketId, setSelectedMarketId] = useState('london');
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [formData, setFormData] = useState({
@@ -118,6 +120,16 @@ export default function MarketsSection() {
     <section className="markets-section" id="markets">
       <div className="markets-container">
         
+        {/* Unlocked Client Status Bar */}
+        <div className="auth-unlocked-banner">
+          <div className="auth-unlocked-tag">
+            <Sparkles size={13} /> CLIENT ACCESS UNLOCKED — VIBE INSIGHTS DOSSIERS
+          </div>
+          <button onClick={lock} className="auth-relock-btn" title="Lock section again">
+            <Lock size={12} /> Log Out
+          </button>
+        </div>
+
         {/* Section Header */}
         <div className="markets-header">
           <div className="markets-pill">
@@ -126,6 +138,9 @@ export default function MarketsSection() {
           <h2 className="markets-headline">
             MARKET INTELLIGENCE & <span style={{ background: 'linear-gradient(90deg, #ffd700, #00e5ff)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>SUB-CULTURAL VIBE MAPS</span>
           </h2>
+          <div className="section-coming-soon-badge gold-badge">
+            <span className="pulse-dot gold-dot" /> COMING SOON
+          </div>
           <p className="markets-narrative">
             Explore our proprietary acoustic and subcultural research across key international hospitality hubs. See how traveler search demand, neighborhood gravity, and visual merchandising conversion vary across global cities.
           </p>

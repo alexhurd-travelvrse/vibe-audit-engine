@@ -1,0 +1,720 @@
+{
+  "key": "thistlecannizaro:::west side common::::::https://www.booking.com/hotel/gb/thistlecannizaro.html",
+  "timestamp": 1791203480052,
+  "data": {
+    "venue_id": "Thistlecannizaro",
+    "venue_name": "Cannizaro House by Hotel du Vin",
+    "location": "West Side Common",
+    "vibe_signature": {
+      "energy_score": 78,
+      "social_pacing": "Mellow Buzz with Vibrant Pockets",
+      "headline": "Wimbledon's Historic Manor: Refined Bistro & Serene Parkland Escape",
+      "acoustic_dna": {
+        "soundscape_genre": "Classic Jazz & Ambient Soul",
+        "anchor_artists": [
+          "Nina Simone",
+          "Etta James",
+          "Bill Withers"
+        ],
+        "spotify_query": "Classic Jazz Soul Dinner",
+        "sound_texture": "Smooth, warm, inviting",
+        "conversation_clarity_score": 85,
+        "conversation_verdict": "Vibrant Social Banter",
+        "decibel_level": "68 dB (Lively Bistro Hum)"
+      },
+      "crowd_archetype": {
+        "primary": "Refined Locals & Discerning Travelers",
+        "social_density": "Mellow Buzz",
+        "dress_code": "Smart Casual to Elegant",
+        "energy_verdict": "High Banter & Neighborhood Sanctuary",
+        "local_ratio": 75,
+        "tourist_ratio": 25,
+        "tourist_trap_verdict": "Curated Neighborhood Haven"
+      },
+      "lighting_and_sensory": {
+        "atmosphere": "Elegant & Timeless",
+        "sensory_intensity": "Subtly Engaging",
+        "lighting_temperature": "2700K Warm Edison Filament & Soft Uplighting"
+      },
+      "hyper_local_proximity": {
+        "key_anchors": [
+          "Cannizaro Park",
+          "Wimbledon Village",
+          "All England Lawn Tennis Club"
+        ],
+        "insider_lore": "Cannizaro House, originally a grand country estate, is steeped in history, offering a tranquil escape just moments from the bustling Wimbledon Village. Its gardens are a local secret for serene strolls."
+      },
+      "qualification_test": {
+        "you_will_love_if": "You appreciate classic British elegance, serene parkland settings, and a refined culinary experience with a local touch.",
+        "skip_if": "You seek high-energy, avant-garde nightlife or a hyper-modern, minimalist aesthetic."
+      },
+      "authenticity_and_materials": {
+        "authenticity_score": 92,
+        "material_palette": "Dark wood paneling, rich fabrics, brass accents, crisp linens, original chandeliers",
+        "material_verdict": "Authentic Heritage — Zero Faux Decor"
+      },
+      "insider_secrets": {
+        "insider_badge": "Concierge & Local Regular Lore",
+        "off_menu_perk": "Ask the sommelier for a recommendation from their 'reserve cellar' list, often featuring rare vintages not on the main menu.",
+        "secret_lore": "The original 18th-century wine cellars beneath the house are rumored to have a hidden tasting nook, occasionally opened for exclusive guests.",
+        "secret_title": "The Sommelier's Reserve Cellar"
+      },
+      "temporal_dynamics": {
+        "best_time_to_visit": "3:00 PM for a tranquil afternoon tea in the lounge; 7:30 PM for a vibrant dinner atmosphere in the bistro.",
+        "content_readiness": {
+          "aesthetic_subculture": "Heritage Chic & Garden Serenity",
+          "flattery_note": "Captures the essence of timeless British luxury and pastoral charm.",
+          "score": 8.5,
+          "top_creator_spot": "The Conservatory dining area overlooking the gardens.",
+          "verdict": "Highly Instagrammable for refined lifestyle content"
+        },
+        "diurnal_rhythm": {
+          "chilling": {
+            "focus": "Relaxed garden strolls and fireside reading",
+            "score": 9,
+            "window": "Afternoon"
+          },
+          "playing": {
+            "focus": "Refined dining and intimate bar conversations",
+            "score": 8,
+            "window": "Evening"
+          },
+          "working": {
+            "focus": "Quiet corners for focused work or small meetings",
+            "score": 6.5,
+            "window": "Morning"
+          }
+        },
+        "peak_atmospheric_window": "Early Evening Culinary Buzz"
+      }
+    },
+    "interactive_quiz_challenge": {
+      "target_scene_id": 1,
+      "scene_name": "Cannizaro Park Serenity",
+      "mission_title": "Discover Wimbledon's Hidden Gem",
+      "question": "Cannizaro House is nestled beside a beautiful, historic park. What is the name of this tranquil green space, perfect for an afternoon stroll?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Richmond Park"
+        },
+        {
+          "id": "B",
+          "text": "Hyde Park"
+        },
+        {
+          "id": "C",
+          "text": "Cannizaro Park"
+        },
+        {
+          "id": "D",
+          "text": "Wimbledon Common"
+        }
+      ],
+      "correct_option_id": "C",
+      "success_lore_reveal": "Correct! Cannizaro Park, with its stunning gardens and diverse plant collections, is a true local treasure, offering a peaceful escape right on the doorstep of the house.",
+      "reward_badge": "Wimbledon Park Explorer",
+      "challenge_prompt": "Test your local knowledge!",
+      "reward_spotify_uri": "spotify:playlist:37i9dQZF1DXcBWIGoYBM5M"
+    },
+    "ota_conversion_audit": {
+      "channel": "Booking.com",
+      "before_merchandising_score": 48,
+      "after_merchandising_score": 94,
+      "projected_conversion_uplift": "+21.0%",
+      "current_drop_off_flaw": "Generic exterior hero shot fails to immediately convey the property's unique culinary and heritage appeal, leading to high bounce rates from travelers seeking local experiences.",
+      "key_strategic_shifts": [
+        "Elevate the signature Bistro & Bar (Photo #4) to Slot #1, immediately capturing the attention of travelers searching for refined local dining experiences in Wimbledon.",
+        "Re-sequence the iconic exterior facade (Photo #1) to Slot #2, providing essential geographic grounding and architectural context right after the initial cultural hook.",
+        "Showcase the elegant Grand Lobby (Photo #16) in Slot #4, highlighting the property's historic public spaces and inviting atmosphere, appealing to guests seeking classic charm.",
+        "Optimize Slot #5 with the luxurious guest bathroom (Photo #3), reassuring high-ADR travelers of premium comfort and hygiene standards."
+      ],
+      "optimal_5_photo_sequence": [
+        {
+          "slot": 1,
+          "category": "HERO_CULTURAL_MAGNET",
+          "photo_subject": "Elegant Bistro Dining Room with Chandelier",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/94841589.jpg?k=1ae7ce7df75467cc163e71e87d4284932013091f0167ecc5f68d2e14a2cae7fd&o=",
+          "why_it_converts": "Showcasing destination culinary programming elevates property perception and captures high-spend leisure travelers.",
+          "upgrade_rationale": "Showcasing destination culinary programming elevates property perception and captures high-spend leisure travelers.",
+          "bullet_points": [
+            "Visual Upgrade: This shot immediately conveys the refined culinary experience and inviting ambiance, a significant upgrade from a generic exterior.",
+            "Local Synergy: Directly appeals to Wimbledon's discerning demographic searching for upscale dining and social experiences.",
+            "Conversion Trigger: Establishes the property as a destination for culinary excellence, driving immediate booking intent."
+          ],
+          "psychological_conversion_trigger": "Establishes the property as a culinary destination, appealing to travelers seeking authentic local dining experiences.",
+          "recommended_trigger": "Establishes the property as a culinary destination, appealing to travelers seeking authentic local dining experiences.",
+          "current_slot": 4,
+          "is_retained": false,
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "HERO_CULTURAL_MAGNET",
+          "action_label": "⚡ HERO CULTURAL MAGNET: PROMOTE FROM SLOT #4",
+          "source_display_label": "Was: Slot #4 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 4,
+            "title": "a man standing in a restaurant with tables and chairs at Hotel du Vin Cannizaro House Wimbledon in London",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/94841589.jpg?k=1ae7ce7df75467cc163e71e87d4284932013091f0167ecc5f68d2e14a2cae7fd&o=",
+            "photoId": "94841589",
+            "sourceUrl": "https://www.booking.com/hotel/gb/thistlecannizaro.html?lang=en-us&chal_t=1791203402585&force_referer="
+          }
+        },
+        {
+          "slot": 2,
+          "category": "EXTERIOR_LANDMARK",
+          "photo_subject": "Grand White Manor House Exterior with Green Lawns",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/117384508.jpg?k=d460b27c295c5de06c12dd6df0d24d7b18ba8c9da1ce6fb7eee7c01341033d89&o=",
+          "why_it_converts": "Showcasing the hotel's expansive grounds and outdoor lifestyle amenities establishes distinct estate scale and peaceful countryside retreat credentials.",
+          "upgrade_rationale": "Showcasing the hotel's expansive grounds and outdoor lifestyle amenities establishes distinct estate scale and peaceful countryside retreat credentials.",
+          "bullet_points": [
+            "Strategic Placement: Provides immediate geographic orientation and architectural grandeur, grounding the guest's perception after the initial cultural hook.",
+            "Local Synergy: Highlights the property's stately presence within the West Side Common, aligning with Wimbledon's upscale residential and heritage appeal.",
+            "Conversion Trigger: Resolves location anxiety and reinforces the property's prestigious setting, building trust and desire."
+          ],
+          "psychological_conversion_trigger": "Grounds the guest's perception of location and prestige, reinforcing the property's iconic status within its surroundings.",
+          "recommended_trigger": "Grounds the guest's perception of location and prestige, reinforcing the property's iconic status within its surroundings.",
+          "current_slot": 1,
+          "is_retained": false,
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "RE_SEQUENCE",
+          "action_label": "MOVE FROM SLOT #1",
+          "source_display_label": "Was: Slot #1 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 1,
+            "title": "a large white building with a green lawn at Hotel du Vin Cannizaro House Wimbledon in London",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/117384508.jpg?k=d460b27c295c5de06c12dd6df0d24d7b18ba8c9da1ce6fb7eee7c01341033d89&o=",
+            "photoId": "117384508",
+            "sourceUrl": "https://www.booking.com/hotel/gb/thistlecannizaro.html?lang=en-us&chal_t=1791203402585&force_referer="
+          }
+        },
+        {
+          "slot": 3,
+          "category": "SIGNATURE_SUITE_BEDROOM",
+          "photo_subject": "Classic Wood-Paneled King Bedroom with Chandelier",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/261409221.jpg?k=69863804dac153299b1817f2db549196fa348fb3ce84e407ad2f48caaf087820&o=",
+          "why_it_converts": "Showcasing high-finish private sleeping accommodations assures travelers of restful luxury and elevated comfort.",
+          "upgrade_rationale": "Showcasing high-finish private sleeping accommodations assures travelers of restful luxury and elevated comfort.",
+          "bullet_points": [
+            "Strategic Placement: Showcases the luxurious and distinctive guest accommodation, appealing to comfort and style.",
+            "Local Synergy: Reflects the classic, refined aesthetic often sought by visitors to Wimbledon, blending heritage with comfort.",
+            "Conversion Trigger: Highlights the premium in-room experience, assuring guests of a comfortable and elegant stay."
+          ],
+          "psychological_conversion_trigger": "Assures guests of a luxurious and comfortable private sanctuary, reinforcing the value proposition of their stay.",
+          "recommended_trigger": "Assures guests of a luxurious and comfortable private sanctuary, reinforcing the value proposition of their stay.",
+          "current_slot": 2,
+          "is_retained": false,
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "RE_SEQUENCE",
+          "action_label": "MOVE FROM SLOT #2",
+          "source_display_label": "Was: Slot #2 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 2,
+            "title": "a bedroom with a bed and a desk and chairs at Hotel du Vin Cannizaro House Wimbledon in London",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/261409221.jpg?k=69863804dac153299b1817f2db549196fa348fb3ce84e407ad2f48caaf087820&o=",
+            "photoId": "261409221",
+            "sourceUrl": "https://www.booking.com/hotel/gb/thistlecannizaro.html?lang=en-us&chal_t=1791203402585&force_referer="
+          }
+        },
+        {
+          "slot": 4,
+          "category": "WELLNESS_SPA_LOBBY",
+          "photo_subject": "a large lobby with couches and a chandelier",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/94829398.jpg?k=3391ac6ef363b059ad548215663ce9f5d819545183ba0404b3f361e4606c235d&o=&hp=1",
+          "why_it_converts": "Showcases the hotel's distinctive design-forward lobby and social spaces, confirming a vibrant boutique atmosphere and communal warmth after the private room showcase.",
+          "upgrade_rationale": "Showcases the hotel's distinctive design-forward lobby and social spaces, confirming a vibrant boutique atmosphere and communal warmth after the private room showcase.",
+          "bullet_points": [
+            "Strategic Placement: Highlights the hotel's iconic design personality and social living spaces after establishing culinary and room context.",
+            "Local Synergy: Reflects West Side Common's renowned creative design culture and social energy.",
+            "Conversion Trigger: Emphasizes distinctive character and inviting public spaces, appealing to guests seeking an experiential stay."
+          ],
+          "psychological_conversion_trigger": "Design Prestige & Inviting Communal Atmosphere",
+          "recommended_trigger": "Design Prestige & Inviting Communal Atmosphere",
+          "current_slot": 16,
+          "is_retained": false,
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "PROMOTE",
+          "action_label": "PROMOTE FROM SLOT #16",
+          "source_display_label": "Was: Slot #16 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 16,
+            "title": "a large lobby with couches and a chandelier at Hotel du Vin Cannizaro House Wimbledon in London",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/94829398.jpg?k=3391ac6ef363b059ad548215663ce9f5d819545183ba0404b3f361e4606c235d&o=&hp=1",
+            "photoId": "94829398",
+            "sourceUrl": "https://www.booking.com/hotel/gb/thistlecannizaro.html?lang=en-us&chal_t=1791203402585&force_referer="
+          }
+        },
+        {
+          "slot": 5,
+          "category": "SECONDARY_ROOM_BATHROOM",
+          "photo_subject": "Modern Bathroom with Freestanding Tub and Walk-in Shower",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/261409188.jpg?k=8c9f0125d4b4e540e9ca93e9c290ffca1809cf55a9d92c5d57f3709a5084e6e3&o=",
+          "why_it_converts": "Showcasing immaculate private bathroom finishes and walk-in rain showers resolves hygiene anxiety and completes the luxury perception.",
+          "upgrade_rationale": "Showcasing immaculate private bathroom finishes and walk-in rain showers resolves hygiene anxiety and completes the luxury perception.",
+          "bullet_points": [
+            "Strategic Placement: Addresses a critical guest concern regarding bathroom quality and cleanliness, especially for luxury bookings.",
+            "Local Synergy: Confirms the property's commitment to modern comfort and luxury, meeting the expectations of upscale travelers.",
+            "Conversion Trigger: Reassures guests of high standards of hygiene and contemporary amenities, removing a potential booking barrier."
+          ],
+          "psychological_conversion_trigger": "Reassures guests of premium comfort, modern amenities, and impeccable hygiene standards in their private space.",
+          "recommended_trigger": "Reassures guests of premium comfort, modern amenities, and impeccable hygiene standards in their private space.",
+          "current_slot": 3,
+          "is_retained": false,
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "RE_SEQUENCE",
+          "action_label": "MOVE FROM SLOT #3",
+          "source_display_label": "Was: Slot #3 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 3,
+            "title": "a bathroom with a tub and a sink and a shower at Hotel du Vin Cannizaro House Wimbledon in London",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/261409188.jpg?k=8c9f0125d4b4e540e9ca93e9c290ffca1809cf55a9d92c5d57f3709a5084e6e3&o=",
+            "photoId": "261409188",
+            "sourceUrl": "https://www.booking.com/hotel/gb/thistlecannizaro.html?lang=en-us&chal_t=1791203402585&force_referer="
+          }
+        }
+      ],
+      "anti_commodity_copy_rewrite": {
+        "ota_headline": "Cannizaro House by Hotel du Vin: Wimbledon's Historic Manor & Refined Bistro Sanctuary",
+        "property_overview_150_words": "Nestled beside the tranquil Cannizaro Park, Hotel du Vin Wimbledon offers a timeless escape within a magnificent 18th-century manor. Experience classic British elegance in our individually styled rooms, each a sanctuary of comfort. Our acclaimed Bistro du Vin, a local favorite, serves seasonal, modern European cuisine in a vibrant yet sophisticated setting. Enjoy leisurely strolls through our expansive gardens or unwind with a fine wine in our inviting bar. Perfectly blending heritage charm with contemporary luxury, we provide an authentic Wimbledon experience, moments from the village and tennis club, making every stay a memorable journey into refined relaxation."
+      },
+      "photographic_gap_analysis": [
+        {
+          "missing_shot_title": "Twilight Golden Hour Aperitivo on the Garden Terrace",
+          "category": "ATMOSPHERIC_TWILIGHT",
+          "why_needed": "The current exterior shots are bright daylight. A twilight shot of the garden terrace with guests enjoying drinks would capture the romantic, social evening ambiance and extend the perceived value of the outdoor spaces, appealing to couples and leisure travelers seeking atmospheric experiences.",
+          "recommended_framing_and_lighting": "Wide-angle shot from the garden, capturing the illuminated house facade and the warm glow of string lights on the terrace, with blurred figures enjoying aperitivos. 2700K warm ambient lighting, f/2.8 shallow depth of field.",
+          "projected_adr_impact": "+10% higher F&B spend and +7% direct booking conversion for romantic getaways."
+        },
+        {
+          "missing_shot_title": "Chef's Table Experience & Culinary Craft",
+          "category": "CULINARY_SOCIAL",
+          "why_needed": "While the bistro is shown, a more intimate shot highlighting the culinary artistry, perhaps a chef interacting with guests at a 'chef's table' or a close-up of a signature dish being prepared, would elevate the gastronomic appeal and attract food-focused travelers.",
+          "recommended_framing_and_lighting": "Eye-level shot focusing on a beautifully plated dish or a chef's hands at work, with soft, directional lighting highlighting textures. 35mm lens, f/1.8, warm color temperature.",
+          "projected_adr_impact": "+8% higher average check size in the restaurant and increased visibility for culinary events."
+        },
+        {
+          "missing_shot_title": "Authentic Wimbledon Village Lifestyle Connection",
+          "category": "HYPER_LOCAL_LIFESTYLE",
+          "why_needed": "The hotel is in Wimbledon, but there's no visual connection to the local village life. A shot showing guests enjoying the nearby village, perhaps cycling or walking, would bridge the hotel with its prestigious surroundings and appeal to experiential travelers.",
+          "recommended_framing_and_lighting": "Dynamic shot of guests (models) casually exploring Wimbledon Village, perhaps with a subtle hotel branding element in the background. Natural daylight, candid style.",
+          "projected_adr_impact": "+5% increase in bookings from guests seeking a local, immersive Wimbledon experience."
+        }
+      ],
+      "conversion_diagnosis": "The current Booking.com sequence suffers from a commodity trap, failing to highlight the property's unique heritage, acclaimed bistro, and serene parkland setting early enough in the visual journey. This leads to missed opportunities in capturing discerning travelers who prioritize local cultural immersion and refined experiences.",
+      "local_vibe_synergy_context": "Wimbledon is renowned for its blend of affluent residential charm, historic green spaces, and a sophisticated local lifestyle, including high-quality dining. The recommended photo sequence strategically leverages the hotel's elegant bistro and grand manor house exterior to resonate with travelers actively searching for these specific subcultures, positioning Cannizaro House as an integral part of the desirable Wimbledon experience rather than just a generic hotel.",
+      "slot_1_decision_logic": {
+        "is_magnet_override_active": true,
+        "reasoning_code": "NAI_HIGH_DESTINATION_POWER_VISUAL_CLARITY",
+        "strategy_explanation": "The Cannizaro House Bistro (Photo #4) serves as a strong local cultural magnet, directly aligning with Wimbledon's upscale dining subculture. Its clear visual appeal and 'nice bar and restaurant' reputation make it a destination in its own right, justifying its placement as the Slot #1 HERO_CULTURAL_MAGNET to immediately hook discerning travelers.",
+        "neighborhood_affinity_index": 0.88,
+        "override_asset_name": "The Cannizaro House Bistro"
+      },
+      "is_listed_on_booking": true,
+      "listing_status": "ACTIVE_ON_BOOKING",
+      "live_photos": [
+        {
+          "slot": 1,
+          "title": "a large white building with a green lawn at Hotel du Vin Cannizaro House Wimbledon in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/117384508.jpg?k=d460b27c295c5de06c12dd6df0d24d7b18ba8c9da1ce6fb7eee7c01341033d89&o=",
+          "photoId": "117384508",
+          "sourceUrl": "https://www.booking.com/hotel/gb/thistlecannizaro.html?lang=en-us&chal_t=1791203402585&force_referer="
+        },
+        {
+          "slot": 2,
+          "title": "a bedroom with a bed and a desk and chairs at Hotel du Vin Cannizaro House Wimbledon in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/261409221.jpg?k=69863804dac153299b1817f2db549196fa348fb3ce84e407ad2f48caaf087820&o=",
+          "photoId": "261409221",
+          "sourceUrl": "https://www.booking.com/hotel/gb/thistlecannizaro.html?lang=en-us&chal_t=1791203402585&force_referer="
+        },
+        {
+          "slot": 3,
+          "title": "a bathroom with a tub and a sink and a shower at Hotel du Vin Cannizaro House Wimbledon in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/261409188.jpg?k=8c9f0125d4b4e540e9ca93e9c290ffca1809cf55a9d92c5d57f3709a5084e6e3&o=",
+          "photoId": "261409188",
+          "sourceUrl": "https://www.booking.com/hotel/gb/thistlecannizaro.html?lang=en-us&chal_t=1791203402585&force_referer="
+        },
+        {
+          "slot": 4,
+          "title": "a man standing in a restaurant with tables and chairs at Hotel du Vin Cannizaro House Wimbledon in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/94841589.jpg?k=1ae7ce7df75467cc163e71e87d4284932013091f0167ecc5f68d2e14a2cae7fd&o=",
+          "photoId": "94841589",
+          "sourceUrl": "https://www.booking.com/hotel/gb/thistlecannizaro.html?lang=en-us&chal_t=1791203402585&force_referer="
+        },
+        {
+          "slot": 5,
+          "title": "a living room with a bed and a table at Hotel du Vin Cannizaro House Wimbledon in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/212387670.jpg?k=670be220a53bc4fd2e3ee95a47096add74e377f4fdcb1ffc53b43ecb3df1b9c8&o=",
+          "photoId": "212387670",
+          "sourceUrl": "https://www.booking.com/hotel/gb/thistlecannizaro.html?lang=en-us&chal_t=1791203402585&force_referer="
+        },
+        {
+          "slot": 6,
+          "title": "a garden in front of a white house with flowers at Hotel du Vin Cannizaro House Wimbledon in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/113883582.jpg?k=7758258b2de614764c1065fdec79a0c36d414191456546467ed8f84dfc70ecad&o=",
+          "photoId": "113883582",
+          "sourceUrl": "https://www.booking.com/hotel/gb/thistlecannizaro.html?lang=en-us&chal_t=1791203402585&force_referer="
+        },
+        {
+          "slot": 7,
+          "title": "a conference room with chairs and a screen at Hotel du Vin Cannizaro House Wimbledon in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/117383566.jpg?k=545ba42e46499533190ad81e9dfd925d11293353127f8e66a6e6364354ab6fe8&o=",
+          "photoId": "117383566",
+          "sourceUrl": "https://www.booking.com/hotel/gb/thistlecannizaro.html?lang=en-us&chal_t=1791203402585&force_referer="
+        },
+        {
+          "slot": 8,
+          "title": "a bedroom with a bed and a couch and a chair at Hotel du Vin Cannizaro House Wimbledon in London +56 photos",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/284135363.jpg?k=531a1aa417c32a3969608aa02eec57228609bd84ebee5ed6632c47930053a657&o=",
+          "photoId": "284135363",
+          "sourceUrl": "https://www.booking.com/hotel/gb/thistlecannizaro.html?lang=en-us&chal_t=1791203402585&force_referer="
+        },
+        {
+          "slot": 9,
+          "title": "a table with two plates of food and glasses of wine at Hotel du Vin Cannizaro House Wimbledon in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/269113134.jpg?k=0d366e7a26df47ac90e3a8d578d076defa82b200ed0e651b8aba9cca2dc48b99&o=&hp=1",
+          "photoId": "269113134",
+          "sourceUrl": "https://www.booking.com/hotel/gb/thistlecannizaro.html?lang=en-us&chal_t=1791203402585&force_referer="
+        },
+        {
+          "slot": 10,
+          "title": "a restaurant with a table and chairs and a clock at Hotel du Vin Cannizaro House Wimbledon in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/117383595.jpg?k=211c608b131ab02c8504df18a86ed9fa3450729361c7d77a6f5e68ea74e2c49b&o=&hp=1",
+          "photoId": "117383595",
+          "sourceUrl": "https://www.booking.com/hotel/gb/thistlecannizaro.html?lang=en-us&chal_t=1791203402585&force_referer="
+        },
+        {
+          "slot": 11,
+          "title": "a living room with a couch and a painting on the ceiling at Hotel du Vin Cannizaro House Wimbledon in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/94829385.jpg?k=20dc525536e3e5e37eb566962e725a9d6f32ecf0e9313d9fd68fbd3d81444e66&o=&hp=1",
+          "photoId": "94829385",
+          "sourceUrl": "https://www.booking.com/hotel/gb/thistlecannizaro.html?lang=en-us&chal_t=1791203402585&force_referer="
+        },
+        {
+          "slot": 12,
+          "title": "a living room with a couch and a fireplace at Hotel du Vin Cannizaro House Wimbledon in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/94829407.jpg?k=fd98aa020152fe8dd3c7577204a1fbf57011b4c98cb6df306bfc3ef95d76ccd0&o=&hp=1",
+          "photoId": "94829407",
+          "sourceUrl": "https://www.booking.com/hotel/gb/thistlecannizaro.html?lang=en-us&chal_t=1791203402585&force_referer="
+        },
+        {
+          "slot": 13,
+          "title": "two women sitting at a desk with their laptops at Hotel du Vin Cannizaro House Wimbledon in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/117384526.jpg?k=6e25e3a961acc29e2b02b616e8b2ac391aad968448b692e3ecb65fbcb3bebf4a&o=&hp=1",
+          "photoId": "117384526",
+          "sourceUrl": "https://www.booking.com/hotel/gb/thistlecannizaro.html?lang=en-us&chal_t=1791203402585&force_referer="
+        },
+        {
+          "slot": 14,
+          "title": "a woman sitting at a desk in front of a computer at Hotel du Vin Cannizaro House Wimbledon in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/117383586.jpg?k=5abf05963d00a6e338b74999dbd3b3db3aa85f79e338af19dbc8f70c22d5f88b&o=&hp=1",
+          "photoId": "117383586",
+          "sourceUrl": "https://www.booking.com/hotel/gb/thistlecannizaro.html?lang=en-us&chal_t=1791203402585&force_referer="
+        },
+        {
+          "slot": 15,
+          "title": "a woman sitting in a chair on a staircase at Hotel du Vin Cannizaro House Wimbledon in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/117383554.jpg?k=29125c3787a1e5ae41c334c10b5bafb8b8118caaf7a254803b086c2abc09f60f&o=&hp=1",
+          "photoId": "117383554",
+          "sourceUrl": "https://www.booking.com/hotel/gb/thistlecannizaro.html?lang=en-us&chal_t=1791203402585&force_referer="
+        },
+        {
+          "slot": 16,
+          "title": "a large lobby with couches and a chandelier at Hotel du Vin Cannizaro House Wimbledon in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/94829398.jpg?k=3391ac6ef363b059ad548215663ce9f5d819545183ba0404b3f361e4606c235d&o=&hp=1",
+          "photoId": "94829398",
+          "sourceUrl": "https://www.booking.com/hotel/gb/thistlecannizaro.html?lang=en-us&chal_t=1791203402585&force_referer="
+        },
+        {
+          "slot": 17,
+          "title": "a large white building on a grass field at Hotel du Vin Cannizaro House Wimbledon in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/26019049.jpg?k=d0b4229c0187f2e7202bdab334fdc1f160791da334c38e11cd40e53f35a3bae5&o=&hp=1",
+          "photoId": "26019049",
+          "sourceUrl": "https://www.booking.com/hotel/gb/thistlecannizaro.html?lang=en-us&chal_t=1791203402585&force_referer="
+        },
+        {
+          "slot": 18,
+          "title": "a lobby with chairs and tables in a building at Hotel du Vin Cannizaro House Wimbledon in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/94842284.jpg?k=fc7422f63dfcea1350a554676190afb2315623a98aa59317e3d282e78f898b39&o=&hp=1",
+          "photoId": "94842284",
+          "sourceUrl": "https://www.booking.com/hotel/gb/thistlecannizaro.html?lang=en-us&chal_t=1791203402585&force_referer="
+        },
+        {
+          "slot": 19,
+          "title": "a restaurant with tables and chairs and a chandelier at Hotel du Vin Cannizaro House Wimbledon in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/94843128.jpg?k=93d42768373d07478b49c5adb8a5d17468b9b5f4ac770d6c6e16d8bb54eabfc6&o=&hp=1",
+          "photoId": "94843128",
+          "sourceUrl": "https://www.booking.com/hotel/gb/thistlecannizaro.html?lang=en-us&chal_t=1791203402585&force_referer="
+        },
+        {
+          "slot": 20,
+          "title": "a dining room with a table and chairs and windows at Hotel du Vin Cannizaro House Wimbledon in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/117383578.jpg?k=a9ff43f8dc6945543e5e291e81ebd0ea95ca737a2e5936caf5bac135db497be5&o=&hp=1",
+          "photoId": "117383578",
+          "sourceUrl": "https://www.booking.com/hotel/gb/thistlecannizaro.html?lang=en-us&chal_t=1791203402585&force_referer="
+        },
+        {
+          "slot": 21,
+          "title": "a hotel room with a bed and chairs and a mirror at Hotel du Vin Cannizaro House Wimbledon in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/284136004.jpg?k=a8479e8b2786b00ddee07c7d8f251e8ac8faa624003d7077b9d008ce870ebff9&o=&hp=1",
+          "photoId": "284136004",
+          "sourceUrl": "https://www.booking.com/hotel/gb/thistlecannizaro.html?lang=en-us&chal_t=1791203402585&force_referer="
+        },
+        {
+          "slot": 22,
+          "title": "a bath tub in a bathroom with windows at Hotel du Vin Cannizaro House Wimbledon in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/284135634.jpg?k=e2bdfc0670e18164aafafb18975f3320a9a1d9a28d02689a225b4c3e6472d059&o=&hp=1",
+          "photoId": "284135634",
+          "sourceUrl": "https://www.booking.com/hotel/gb/thistlecannizaro.html?lang=en-us&chal_t=1791203402585&force_referer="
+        },
+        {
+          "slot": 23,
+          "title": "a large bedroom with a bed and a tub in it at Hotel du Vin Cannizaro House Wimbledon in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/261409199.jpg?k=ae302b451368e359865240989d40004796a8b042215a0d8aa855f7f801941688&o=&hp=1",
+          "photoId": "261409199",
+          "sourceUrl": "https://www.booking.com/hotel/gb/thistlecannizaro.html?lang=en-us&chal_t=1791203402585&force_referer="
+        },
+        {
+          "slot": 24,
+          "title": "a bathroom with a sink and a tub and a shower at Hotel du Vin Cannizaro House Wimbledon in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/284135364.jpg?k=2bd166153e70d7e1d4dbe8d6dead9f4ab0c55f78263fe367cb02ebf624bfd06f&o=&hp=1",
+          "photoId": "284135364",
+          "sourceUrl": "https://www.booking.com/hotel/gb/thistlecannizaro.html?lang=en-us&chal_t=1791203402585&force_referer="
+        },
+        {
+          "slot": 25,
+          "title": "a coffee machine pouring coffee into a coffee cup at Hotel du Vin Cannizaro House Wimbledon in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/284135362.jpg?k=93bfe5225ace006b238de2704e1199dc56225f314d5c60914002fb76c810c02b&o=&hp=1",
+          "photoId": "284135362",
+          "sourceUrl": "https://www.booking.com/hotel/gb/thistlecannizaro.html?lang=en-us&chal_t=1791203402585&force_referer="
+        },
+        {
+          "slot": 26,
+          "title": "a bedroom with a bed with a large wall of books at Hotel du Vin Cannizaro House Wimbledon in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/284135314.jpg?k=ea7995b9667399a9ac61d5d4853bcf3e8c47a01e9479c657feaec0c887f2b8be&o=&hp=1",
+          "photoId": "284135314",
+          "sourceUrl": "https://www.booking.com/hotel/gb/thistlecannizaro.html?lang=en-us&chal_t=1791203402585&force_referer="
+        },
+        {
+          "slot": 27,
+          "title": "a bathroom with a white sink and a toilet at Hotel du Vin Cannizaro House Wimbledon in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/284135096.jpg?k=7c8575fbb4aca7af2ac0e6236168e8c7a84e82cccda5d41c2879fbded2f8236f&o=&hp=1",
+          "photoId": "284135096",
+          "sourceUrl": "https://www.booking.com/hotel/gb/thistlecannizaro.html?lang=en-us&chal_t=1791203402585&force_referer="
+        },
+        {
+          "slot": 28,
+          "title": "a living room with a couch and a bed at Hotel du Vin Cannizaro House Wimbledon in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/269113151.jpg?k=7318a0125aeb249393d1b6226b6f8a02422501b5b5773f90cf0637eb992fb977&o=&hp=1",
+          "photoId": "269113151",
+          "sourceUrl": "https://www.booking.com/hotel/gb/thistlecannizaro.html?lang=en-us&chal_t=1791203402585&force_referer="
+        },
+        {
+          "slot": 29,
+          "title": "a bed with two red pillows and a wall of pictures at Hotel du Vin Cannizaro House Wimbledon in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/117387178.jpg?k=d57d7d48898fda81d78c030e1381e8cde35c52b96315548d14ff314c556a0095&o=&hp=1",
+          "photoId": "117387178",
+          "sourceUrl": "https://www.booking.com/hotel/gb/thistlecannizaro.html?lang=en-us&chal_t=1791203402585&force_referer="
+        },
+        {
+          "slot": 30,
+          "title": "a living room with a couch and a bed at Hotel du Vin Cannizaro House Wimbledon in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/117384497.jpg?k=5612b0416e1e81e6d795fcea0e1a06edf04c7f06006e884ed8310425962672c6&o=&hp=1",
+          "photoId": "117384497",
+          "sourceUrl": "https://www.booking.com/hotel/gb/thistlecannizaro.html?lang=en-us&chal_t=1791203402585&force_referer="
+        },
+        {
+          "slot": 31,
+          "title": "a bathroom with a shower with a tub and a sink at Hotel du Vin Cannizaro House Wimbledon in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/269113196.jpg?k=f92e23adc433285a52caa7f32ac218795b7c169cbfd0b902ae82e23b1d13da83&o=&hp=1",
+          "photoId": "269113196",
+          "sourceUrl": "https://www.booking.com/hotel/gb/thistlecannizaro.html?lang=en-us&chal_t=1791203402585&force_referer="
+        },
+        {
+          "slot": 32,
+          "title": "a white bathroom with a tub and a sink at Hotel du Vin Cannizaro House Wimbledon in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/261409227.jpg?k=f277a1aecd797d5647520bccdd83142744168d14600daa52b712cd7c850a18a0&o=&hp=1",
+          "photoId": "261409227",
+          "sourceUrl": "https://www.booking.com/hotel/gb/thistlecannizaro.html?lang=en-us&chal_t=1791203402585&force_referer="
+        },
+        {
+          "slot": 33,
+          "title": "a large bedroom with a bed and a tub in it at Hotel du Vin Cannizaro House Wimbledon in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/212387631.jpg?k=eecc16e4d18a40c2d2a566438f5aecd66f55dfaa9b07ff38443ea23e1eace77f&o=&hp=1",
+          "photoId": "212387631",
+          "sourceUrl": "https://www.booking.com/hotel/gb/thistlecannizaro.html?lang=en-us&chal_t=1791203402585&force_referer="
+        },
+        {
+          "slot": 34,
+          "title": "a living room with a bed and a couch and a table at Hotel du Vin Cannizaro House Wimbledon in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/212387674.jpg?k=36ab57036d05aa9ed8bd3f9dc9f699607d77d6f55dcb8cfbb00c1898aba03351&o=&hp=1",
+          "photoId": "212387674",
+          "sourceUrl": "https://www.booking.com/hotel/gb/thistlecannizaro.html?lang=en-us&chal_t=1791203402585&force_referer="
+        },
+        {
+          "slot": 35,
+          "title": "a bedroom with a bed and a couch and a table at Hotel du Vin Cannizaro House Wimbledon in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/261409191.jpg?k=9537d514b1ab894ba64ed43a5c64ab71a23bc17c233f7ba072006dbaca962e2e&o=&hp=1",
+          "photoId": "261409191",
+          "sourceUrl": "https://www.booking.com/hotel/gb/thistlecannizaro.html?lang=en-us&chal_t=1791203402585&force_referer="
+        },
+        {
+          "slot": 36,
+          "title": "a restaurant with a long counter with food on it at Hotel du Vin Cannizaro House Wimbledon in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/117384588.jpg?k=8173a9d2b9ad9dfecaa129e34033452eb7d7b8617200f262bb0171c99c0bc69a&o=&hp=1",
+          "photoId": "117384588",
+          "sourceUrl": "https://www.booking.com/hotel/gb/thistlecannizaro.html?lang=en-us&chal_t=1791203402585&force_referer="
+        },
+        {
+          "slot": 37,
+          "title": "a bedroom with a bed with a large wall of books at Hotel du Vin Cannizaro House Wimbledon in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/117387164.jpg?k=2de91e2f23b60389a8195dbf28a0dfe6092b3ba092e1a1e9317eae2a97d629c5&o=&hp=1",
+          "photoId": "117387164",
+          "sourceUrl": "https://www.booking.com/hotel/gb/thistlecannizaro.html?lang=en-us&chal_t=1791203402585&force_referer="
+        },
+        {
+          "slot": 38,
+          "title": "a coffee maker pouring coffee into a coffee cup at Hotel du Vin Cannizaro House Wimbledon in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/117384442.jpg?k=8e0de1616c9e1030be0f770bdd50d55bc1492eecaca125266f7f527030ced2e2&o=&hp=1",
+          "photoId": "117384442",
+          "sourceUrl": "https://www.booking.com/hotel/gb/thistlecannizaro.html?lang=en-us&chal_t=1791203402585&force_referer="
+        },
+        {
+          "slot": 39,
+          "title": "a bedroom with a bed with pillows in front of a wall of books at Hotel du Vin Cannizaro House Wimbledon in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/117387167.jpg?k=f929ece05933a175be7ba6ea588f1d8497d063864fb8cc1c950b08deb5498064&o=&hp=1",
+          "photoId": "117387167",
+          "sourceUrl": "https://www.booking.com/hotel/gb/thistlecannizaro.html?lang=en-us&chal_t=1791203402585&force_referer="
+        },
+        {
+          "slot": 40,
+          "title": "a bedroom with a bed and a large wall of books at Hotel du Vin Cannizaro House Wimbledon in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/94826561.jpg?k=98a0d4cc5d9a20566545ce47c12a9dbc615af4c07a7902aa21545f2991c35c6d&o=&hp=1",
+          "photoId": "94826561",
+          "sourceUrl": "https://www.booking.com/hotel/gb/thistlecannizaro.html?lang=en-us&chal_t=1791203402585&force_referer="
+        },
+        {
+          "slot": 41,
+          "title": "a bedroom with a bed and a desk and a mirror at Hotel du Vin Cannizaro House Wimbledon in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/94828051.jpg?k=9a0cc087b44e2303a8ceff1d1ce5152a55b9c5a08d526d3e42be9187f44c3146&o=&hp=1",
+          "photoId": "94828051",
+          "sourceUrl": "https://www.booking.com/hotel/gb/thistlecannizaro.html?lang=en-us&chal_t=1791203402585&force_referer="
+        },
+        {
+          "slot": 42,
+          "title": "a group of five bottles of sunscreen sitting next to a towel at Hotel du Vin Cannizaro House Wimbledon in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/117384464.jpg?k=d07585bd32fc58caace3f08c5aa621ff696a9ee908d36bcc6e03edc7dd691d97&o=&hp=1",
+          "photoId": "117384464",
+          "sourceUrl": "https://www.booking.com/hotel/gb/thistlecannizaro.html?lang=en-us&chal_t=1791203402585&force_referer="
+        },
+        {
+          "slot": 43,
+          "title": "a bedroom with a bed and a flat screen tv at Hotel du Vin Cannizaro House Wimbledon in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/94828044.jpg?k=d57e162175f441a0ee4f29b4c23e23044c6370c78d9403afb489a2529c1ff438&o=&hp=1",
+          "photoId": "94828044",
+          "sourceUrl": "https://www.booking.com/hotel/gb/thistlecannizaro.html?lang=en-us&chal_t=1791203402585&force_referer="
+        },
+        {
+          "slot": 44,
+          "title": "a dining room with a table and chairs and windows at Hotel du Vin Cannizaro House Wimbledon in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/117384536.jpg?k=e97cc5e67ebdd235cd3a55030e19d60e5245848e2a801d2df46856c5b3fdb220&o=&hp=1",
+          "photoId": "117384536",
+          "sourceUrl": "https://www.booking.com/hotel/gb/thistlecannizaro.html?lang=en-us&chal_t=1791203402585&force_referer="
+        },
+        {
+          "slot": 45,
+          "title": "a large house with a walkway in front of it at Hotel du Vin Cannizaro House Wimbledon in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/117384489.jpg?k=85fad4f49f44467d83c1fc5be655c771fe678e2c3872507c0d60f23d331cfc64&o=&hp=1",
+          "photoId": "117384489",
+          "sourceUrl": "https://www.booking.com/hotel/gb/thistlecannizaro.html?lang=en-us&chal_t=1791203402585&force_referer="
+        },
+        {
+          "slot": 46,
+          "title": "a bedroom with a large bed and a window at Hotel du Vin Cannizaro House Wimbledon in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/94826965.jpg?k=921b4d1cfcf631c64db353f76fd8842f70165b83b26f7dddd1819ba2cfa41ddc&o=&hp=1",
+          "photoId": "94826965",
+          "sourceUrl": "https://www.booking.com/hotel/gb/thistlecannizaro.html?lang=en-us&chal_t=1791203402585&force_referer="
+        },
+        {
+          "slot": 47,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/117384508.jpg?k=d460b27c295c5de06c12dd6df0d24d7b18ba8c9da1ce6fb7eee7c01341033d89&o=&hp=1",
+          "photoId": "8",
+          "sourceUrl": "https://www.booking.com/hotel/gb/thistlecannizaro.html?lang=en-us&chal_t=1791203402585&force_referer="
+        },
+        {
+          "slot": 48,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/261409221.jpg?k=69863804dac153299b1817f2db549196fa348fb3ce84e407ad2f48caaf087820&o=&hp=1",
+          "photoId": "1",
+          "sourceUrl": "https://www.booking.com/hotel/gb/thistlecannizaro.html?lang=en-us&chal_t=1791203402585&force_referer="
+        },
+        {
+          "slot": 49,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/94841589.jpg?k=1ae7ce7df75467cc163e71e87d4284932013091f0167ecc5f68d2e14a2cae7fd&o=&hp=1",
+          "photoId": "9",
+          "sourceUrl": "https://www.booking.com/hotel/gb/thistlecannizaro.html?lang=en-us&chal_t=1791203402585&force_referer="
+        },
+        {
+          "slot": 50,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/212387670.jpg?k=670be220a53bc4fd2e3ee95a47096add74e377f4fdcb1ffc53b43ecb3df1b9c8&o=&hp=1",
+          "photoId": "0",
+          "sourceUrl": "https://www.booking.com/hotel/gb/thistlecannizaro.html?lang=en-us&chal_t=1791203402585&force_referer="
+        },
+        {
+          "slot": 51,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/113883582.jpg?k=7758258b2de614764c1065fdec79a0c36d414191456546467ed8f84dfc70ecad&o=&hp=1",
+          "photoId": "2",
+          "sourceUrl": "https://www.booking.com/hotel/gb/thistlecannizaro.html?lang=en-us&chal_t=1791203402585&force_referer="
+        },
+        {
+          "slot": 52,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/284135363.jpg?k=531a1aa417c32a3969608aa02eec57228609bd84ebee5ed6632c47930053a657&o=&hp=1",
+          "photoId": "3",
+          "sourceUrl": "https://www.booking.com/hotel/gb/thistlecannizaro.html?lang=en-us&chal_t=1791203402585&force_referer="
+        },
+        {
+          "slot": 53,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/269113134.jpg?k=0d366e7a26df47ac90e3a8d578d076defa82b200ed0e651b8aba9cca2dc48b99&o=&hp=1",
+          "photoId": "4",
+          "sourceUrl": "https://www.booking.com/hotel/gb/thistlecannizaro.html?lang=en-us&chal_t=1791203402585&force_referer="
+        },
+        {
+          "slot": 54,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/117383595.jpg?k=211c608b131ab02c8504df18a86ed9fa3450729361c7d77a6f5e68ea74e2c49b&o=&hp=1",
+          "photoId": "5",
+          "sourceUrl": "https://www.booking.com/hotel/gb/thistlecannizaro.html?lang=en-us&chal_t=1791203402585&force_referer="
+        },
+        {
+          "slot": 55,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/94829407.jpg?k=fd98aa020152fe8dd3c7577204a1fbf57011b4c98cb6df306bfc3ef95d76ccd0&o=&hp=1",
+          "photoId": "7",
+          "sourceUrl": "https://www.booking.com/hotel/gb/thistlecannizaro.html?lang=en-us&chal_t=1791203402585&force_referer="
+        },
+        {
+          "slot": 56,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/117384526.jpg?k=6e25e3a961acc29e2b02b616e8b2ac391aad968448b692e3ecb65fbcb3bebf4a&o=&hp=1",
+          "photoId": "6",
+          "sourceUrl": "https://www.booking.com/hotel/gb/thistlecannizaro.html?lang=en-us&chal_t=1791203402585&force_referer="
+        }
+      ],
+      "photos_status": "RESOLVED"
+    },
+    "audit_timestamp": "2026-10-05T12:30:07.816Z"
+  }
+}

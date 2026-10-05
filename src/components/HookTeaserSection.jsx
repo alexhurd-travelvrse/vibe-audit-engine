@@ -18,7 +18,7 @@ export default function HookTeaserSection() {
             <span className="text-gold-gradient">Stand Out From the Crowd</span>
           </h2>
           <p className="teaser-description">
-            Prove your hotel is more than just a room. Map your authentic design, energy, lighting and proximity to local hotspots directly to what next-gen travelers are searching for
+            74% of next-gen travelers research local experiences first. Prove your property is their natural launchpad. Map your authentic design, social energy, lighting, and proximity to local hotspots directly to what guests are searching for
           </p>
         </div>
 
