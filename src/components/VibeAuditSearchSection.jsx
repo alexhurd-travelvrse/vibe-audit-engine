@@ -258,7 +258,7 @@ const VibeAuditSearchSection = () => {
                     <input 
                       type="text" 
                       className="vibe-input" 
-                      placeholder="e.g. South Bank, Soho"
+                      placeholder="e.g. Mayfair, Soho, Westminster (or auto-detect)"
                       value={formData.neighborhood}
                       onChange={e => setFormData({ ...formData, neighborhood: e.target.value })}
                     />

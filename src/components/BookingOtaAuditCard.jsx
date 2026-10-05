@@ -200,25 +200,6 @@ export default function BookingOtaAuditCard({ otaData, hotelName, isUnlocked, on
               High Cultural Resonance
             </div>
           </div>
-
-          {/* Conversion Lift */}
-          <div style={{ 
-            background: 'linear-gradient(135deg, rgba(0, 229, 255, 0.12) 0%, rgba(0, 229, 255, 0.04) 100%)', 
-            border: '1px solid rgba(0, 229, 255, 0.4)', 
-            borderRadius: '1.15rem', 
-            padding: '1.1rem', 
-            textAlign: 'center' 
-          }}>
-            <div style={{ fontSize: '10px', fontWeight: 900, textTransform: 'uppercase', color: '#00e5ff', letterSpacing: '0.1em', marginBottom: '4px' }}>
-              {isListedOnBooking ? 'Projected Conversion Uplift' : 'Direct Booking Velocity'}
-            </div>
-            <div style={{ fontSize: '32px', fontWeight: 900, color: '#00e5ff', fontFamily: 'monospace', lineHeight: 1 }}>
-              {uplift}
-            </div>
-            <div style={{ fontSize: '11px', color: 'rgba(0,229,255,0.85)', fontWeight: 700, marginTop: '6px' }}>
-              Multi-Channel Discovery
-            </div>
-          </div>
         </div>
 
         {/* Identified Drop-Off Flaw or Pre-Listing Notice Bar */}
