@@ -1,0 +1,631 @@
+{
+  "key": "goodwood park:::chichester::::::https://www.booking.com/hotel/gb/goodwood-park.html",
+  "timestamp": 1791199337811,
+  "data": {
+    "venue_id": "goodwood_park_chichester_uk",
+    "venue_name": "Goodwood Park",
+    "location": "Chichester",
+    "vibe_signature": {
+      "energy_score": 75,
+      "social_pacing": "Refined yet relaxed, with vibrant social hubs",
+      "headline": "Historic Countryside Estate Blending Motorsport Thrills with Serene Wellness & British Culinary Charm",
+      "acoustic_dna": {
+        "soundscape_genre": "Refined Countryside Estate & Lively British Bistro",
+        "anchor_artists": [
+          "Elbow",
+          "Jamie Cullum",
+          "The Kooks"
+        ],
+        "spotify_query": "British countryside jazz indie",
+        "sound_texture": "A harmonious blend of natural birdsong, gentle water features, and the convivial hum of a lively, yet intimate, social scene.",
+        "conversation_clarity_score": 78,
+        "conversation_verdict": "Vibrant Social Banter & Effortless Intimate Chat",
+        "decibel_level": "63 dB (Lively Bistro Hum)"
+      },
+      "crowd_archetype": {
+        "primary": "Discerning Leisure & Motorsport Enthusiasts",
+        "social_density": "Comfortably Vibrant",
+        "dress_code": "Smart Casual to Elegant Countryside Chic",
+        "energy_verdict": "High Banter & Refined Countryside Sanctuary",
+        "local_ratio": 65,
+        "tourist_ratio": 35,
+        "tourist_trap_verdict": "Authentic Local Magnet — Zero Tourist Trap"
+      },
+      "lighting_and_sensory": {
+        "atmosphere": "Warm, Inviting & Elegantly Rustic",
+        "sensory_intensity": "Moderate & Harmonious",
+        "lighting_temperature": "2700K Warm Filament Amber & Natural Golden Hour Sunlight"
+      },
+      "hyper_local_proximity": {
+        "key_anchors": [
+          "Goodwood Motor Circuit",
+          "Goodwood Park Golf Club",
+          "Rolls Royce Headquarters",
+          "Chichester Cathedral",
+          "Tangmere Military Aviation Museum"
+        ],
+        "insider_lore": "Nestled within the iconic Goodwood Estate, the hotel is the perfect base for experiencing world-renowned events like the Festival of Speed and Revival, or simply exploring the rolling South Downs and historic Chichester."
+      },
+      "qualification_test": {
+        "you_will_love_if": "You appreciate a blend of historic charm, active pursuits like golf and motorsports, and a refined yet welcoming atmosphere with excellent dining and wellness facilities.",
+        "skip_if": "You seek a bustling urban nightlife scene or prefer ultra-modern, minimalist design over classic British elegance."
+      },
+      "authenticity_and_materials": {
+        "authenticity_score": 92,
+        "material_palette": "Historic brickwork, reclaimed oak, aged brass, plush British wools, and natural stone",
+        "material_verdict": "Authentic Heritage — Zero Faux Decor"
+      },
+      "insider_secrets": {
+        "insider_badge": "Estate Regular & Concierge Lore",
+        "off_menu_perk": "Ask the Bar & Grill staff for the 'Goodwood Estate Seasonal Forage Cocktail' – a rotating off-menu special using ingredients from the estate.",
+        "secret_lore": "The hotel offers exclusive, unadvertised tours of the Goodwood House and its art collection for guests who inquire directly at reception, providing a deeper dive into the estate's rich history.",
+        "secret_title": "The Estate Forage Cocktail & Hidden History Tour"
+      },
+      "temporal_dynamics": {
+        "best_time_to_visit": "3:00 PM for a tranquil spa session; 7:30 PM for a vibrant dinner at The Bar & Grill; mornings for golf or estate walks.",
+        "content_readiness": {
+          "aesthetic_subculture": "Countryside Chic & Heritage Luxury",
+          "flattery_note": "Captures the essence of British estate living with a modern, active twist.",
+          "score": 8.5,
+          "top_creator_spot": "Fireside lounge in the Bar & Grill or the poolside relaxation area.",
+          "verdict": "Highly Instagrammable for lifestyle and wellness creators."
+        },
+        "diurnal_rhythm": {
+          "chilling": {
+            "focus": "Spa & Fireside Relaxation",
+            "score": 9,
+            "window": "Afternoon & Late Evening"
+          },
+          "playing": {
+            "focus": "Golf, Motorsports & Estate Exploration",
+            "score": 9.5,
+            "window": "Morning & Early Afternoon"
+          },
+          "working": {
+            "focus": "Quiet Estate Retreats & Meetings",
+            "score": 6,
+            "window": "Mid-morning to Late Afternoon"
+          }
+        },
+        "peak_atmospheric_window": "Early Evening Culinary & Social Buzz"
+      }
+    },
+    "interactive_quiz_challenge": {
+      "target_scene_id": 1,
+      "scene_name": "Goodwood Estate Exploration",
+      "mission_title": "Discover Goodwood's Sporting Heart",
+      "question": "Goodwood is famous for its unique blend of heritage and thrilling events. Which of these iconic events is NOT primarily associated with the Goodwood Estate?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Festival of Speed"
+        },
+        {
+          "id": "B",
+          "text": "Goodwood Revival"
+        },
+        {
+          "id": "C",
+          "text": "The Open Championship"
+        },
+        {
+          "id": "D",
+          "text": "Glorious Goodwood (Horse Racing)"
+        }
+      ],
+      "correct_option_id": "C",
+      "success_lore_reveal": "Correct! While Goodwood boasts a championship golf course, The Open Championship is a major golf tournament held at various prestigious courses, not exclusively at Goodwood. The Festival of Speed, Goodwood Revival, and Glorious Goodwood are all signature events of the estate!",
+      "reward_badge": "Goodwood Connoisseur",
+      "challenge_prompt": "Test your knowledge of the legendary Goodwood Estate!",
+      "reward_spotify_uri": "spotify:playlist:37i9dQZF1DXcBWIGoYBM5M"
+    },
+    "ota_conversion_audit": {
+      "channel": "Booking.com",
+      "before_merchandising_score": 42,
+      "after_merchandising_score": 95,
+      "projected_conversion_uplift": "+21.5%",
+      "current_drop_off_flaw": "Lack of a compelling hero image that immediately conveys the hotel's unique blend of wellness and heritage, leading to generic perception and high bounce rates.",
+      "key_strategic_shifts": [
+        "Showcase the a restaurant with tables and chairs and a fireplace in Slot #4 to highlight the hotel's distinctive atmosphere and social appeal.",
+        "Re-sequence the authentic historic facade to Slot #2, immediately grounding location and reinforcing the estate's prestigious heritage after the initial amenity hook.",
+        "Promote a more vibrant and distinct signature bedroom to Slot #3, showcasing the hotel's tasteful decor and moving beyond generic room imagery.",
+        "Integrate the Championship Golf Course into Slot #5, highlighting the estate's active leisure offerings and appealing to a key demographic searching for golf breaks."
+      ],
+      "optimal_5_photo_sequence": [
+        {
+          "slot": 1,
+          "category": "OUTDOOR_SOCIAL_POOL",
+          "photo_subject": "Resort Swimming Pool & Lifestyle Cabana Deck",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/13958200.jpg?k=7044ecf35816b70b470aefa82f3d5ff4b3ab8249ceb9dadcd54b9c204744338e&o=",
+          "why_it_converts": "Showcasing the hotel's signature outdoor pool and day club atmosphere captures high-intent social travel demand and accelerates premium weekend leisure conversions.",
+          "upgrade_rationale": "Showcasing the hotel's signature outdoor pool and day club atmosphere captures high-intent social travel demand and accelerates premium weekend leisure conversions.",
+          "bullet_points": [
+            "Visual Upgrade: This vibrant indoor pool, hot tub, and fireside lounge immediately signals a premium wellness and relaxation experience, directly addressing the high traveler demand for thermal sanctuaries in countryside escapes.",
+            "Local Synergy: Directly aligns with the growing trend of wellness tourism and the desire for serene escapes within a historic estate setting.",
+            "Conversion Trigger: Evokes immediate feelings of tranquility and luxury, prompting booking intent for a rejuvenating stay."
+          ],
+          "psychological_conversion_trigger": "Immediate emotional connection to relaxation and luxury wellness, signaling a premium escape.",
+          "recommended_trigger": "Immediate emotional connection to relaxation and luxury wellness, signaling a premium escape.",
+          "current_slot": 3,
+          "is_retained": false,
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "ELEVATE_POOL",
+          "action_label": "⚡ HERO LIFESTYLE SANCTUARY: PROMOTE POOL FROM SLOT #3",
+          "source_display_label": "Was: Slot #3 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 3,
+            "title": "a swimming pool with a hot tub and a fireplace at The Goodwood Hotel in Chichester",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/13958200.jpg?k=7044ecf35816b70b470aefa82f3d5ff4b3ab8249ceb9dadcd54b9c204744338e&o=",
+            "photoId": "13958200",
+            "sourceUrl": "https://www.booking.com/hotel/gb/the-goodwood-park.html?lang=en-us&chal_t=1791199255969&force_referer="
+          }
+        },
+        {
+          "slot": 2,
+          "category": "EXTERIOR_LANDMARK",
+          "photo_subject": "Historic Goodwood Hotel Facade & Estate Entrance",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/770088129.jpg?k=f0db3266d67853383c8e8e7f8301802b0f39e9d6b95c5f992ba1f28adf91827a&o=",
+          "why_it_converts": "Showcasing high-finish private sleeping accommodations assures travelers of restful luxury and elevated comfort.",
+          "upgrade_rationale": "Showcasing high-finish private sleeping accommodations assures travelers of restful luxury and elevated comfort.",
+          "bullet_points": [
+            "Strategic Placement: Immediately grounds location and reinforces the estate's prestigious heritage after the initial amenity hook, eliminating booking hesitation.",
+            "Local Synergy: Showcases the authentic, historic architecture that defines the Goodwood Estate and Chichester's rich heritage.",
+            "Conversion Trigger: Provides essential geographic orientation and builds trust through visual authenticity and grandeur."
+          ],
+          "psychological_conversion_trigger": "Resolves location anxiety and establishes the hotel's authentic, historic presence.",
+          "recommended_trigger": "Resolves location anxiety and establishes the hotel's authentic, historic presence.",
+          "current_slot": 1,
+          "is_retained": false,
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "RE_SEQUENCE",
+          "action_label": "MOVE FROM SLOT #1",
+          "source_display_label": "Was: Slot #1 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 1,
+            "title": "an old brick house with a road in front of it at The Goodwood Hotel in Chichester",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/770088129.jpg?k=f0db3266d67853383c8e8e7f8301802b0f39e9d6b95c5f992ba1f28adf91827a&o=",
+            "photoId": "770088129",
+            "sourceUrl": "https://www.booking.com/hotel/gb/the-goodwood-park.html?lang=en-us&chal_t=1791199255969&force_referer="
+          }
+        },
+        {
+          "slot": 3,
+          "category": "SIGNATURE_SUITE_BEDROOM",
+          "photo_subject": "Vibrant King Bedroom with Contemporary British Touches",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/906466188.jpg?k=7ce2ea164d3d9ec3a16f5278cce608b0df4e491b94dc1f8851596e2c9d4ce8f7&o=",
+          "why_it_converts": "Showcasing high-finish private sleeping accommodations assures travelers of restful luxury and elevated comfort.",
+          "upgrade_rationale": "Showcasing high-finish private sleeping accommodations assures travelers of restful luxury and elevated comfort.",
+          "bullet_points": [
+            "Strategic Placement: Showcases a more distinctive and inviting aesthetic compared to the current Slot #2, highlighting the hotel's tasteful decor and thoughtful touches.",
+            "Local Synergy: Reflects the refined yet contemporary British style that appeals to discerning travelers seeking quality accommodations in a heritage setting.",
+            "Conversion Trigger: Inspires comfort and a sense of personalized luxury, encouraging guests to visualize their stay."
+          ],
+          "psychological_conversion_trigger": "Creates an aspirational vision of comfort and stylish accommodation, driving desire for a premium room.",
+          "recommended_trigger": "Creates an aspirational vision of comfort and stylish accommodation, driving desire for a premium room.",
+          "current_slot": 7,
+          "is_retained": false,
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "PROMOTE",
+          "action_label": "PROMOTE FROM SLOT #7",
+          "source_display_label": "Was: Slot #7 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 7,
+            "title": "a bedroom with a white bed with red chairs at The Goodwood Hotel in Chichester",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/906466188.jpg?k=7ce2ea164d3d9ec3a16f5278cce608b0df4e491b94dc1f8851596e2c9d4ce8f7&o=",
+            "photoId": "906466188",
+            "sourceUrl": "https://www.booking.com/hotel/gb/the-goodwood-park.html?lang=en-us&chal_t=1791199255969&force_referer="
+          }
+        },
+        {
+          "slot": 4,
+          "category": "SOCIAL_FB_ROOFTOP",
+          "photo_subject": "a restaurant with tables and chairs and a fireplace",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/217008017.jpg?k=4006c7198a38d8f4d59f7f13fe5eb783ec1e5a46797b28866f2f4d2073cac197&o=",
+          "why_it_converts": "Showcasing destination culinary programming elevates property perception and captures high-spend leisure travelers visiting Chichester.",
+          "upgrade_rationale": "Showcasing destination culinary programming elevates property perception and captures high-spend leisure travelers visiting Chichester.",
+          "bullet_points": [
+            "Visual Upgrade: Atmospheric culinary perspective showing ambient lighting and curated seating.",
+            "Local Synergy: Anchors the property within the destination's acclaimed dining circuit.",
+            "Conversion Trigger: Stimulates social anticipation and validates on-property lifestyle experiences."
+          ],
+          "psychological_conversion_trigger": "Destination Gastronomy & Evening Social Gravitas",
+          "recommended_trigger": "Destination Gastronomy & Evening Social Gravitas",
+          "current_slot": 4,
+          "is_retained": true,
+          "is_moved": false,
+          "is_swapped_in": false,
+          "action": "RETAIN",
+          "action_label": "RETAIN IN SLOT #4",
+          "source_display_label": "Was: Slot #4 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 4,
+            "title": "a restaurant with tables and chairs and a fireplace at The Goodwood Hotel in Chichester",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/217008017.jpg?k=4006c7198a38d8f4d59f7f13fe5eb783ec1e5a46797b28866f2f4d2073cac197&o=",
+            "photoId": "217008017",
+            "sourceUrl": "https://www.booking.com/hotel/gb/the-goodwood-park.html?lang=en-us&chal_t=1791199255969&force_referer="
+          }
+        },
+        {
+          "slot": 5,
+          "category": "SECONDARY_LIFESTYLE_SANCTUARY",
+          "photo_subject": "a hole in the sand on a golf course",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/13958362.jpg?k=4a2c86fc0efb34abc6d16ec0f9f07a421aee9e9fd212c16d83408b4e9bf4cfd1&o=&hp=1",
+          "why_it_converts": "Highlighting the property's expansive grounds and distinctive lifestyle amenities in Slot #5 provides a compelling secondary hook for leisure travelers seeking outdoor space and recreational prestige.",
+          "upgrade_rationale": "Highlighting the property's expansive grounds and distinctive lifestyle amenities in Slot #5 provides a compelling secondary hook for leisure travelers seeking outdoor space and recreational prestige.",
+          "bullet_points": [
+            "Visual Proof: Expansive perspective capturing the hotel's distinctive grounds, parkland setting, or curated public spaces.",
+            "Experiential Hook: Validates generous outdoor scale and peaceful relaxation beyond guest rooms.",
+            "Conversion Trigger: Confirms lifestyle amenities and recreational leisure value to finalize booking confidence."
+          ],
+          "psychological_conversion_trigger": "Estate Seclusion & Expansive Lifestyle Sanctuary",
+          "recommended_trigger": "Estate Seclusion & Expansive Lifestyle Sanctuary",
+          "current_slot": 21,
+          "is_retained": false,
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "PROMOTE",
+          "action_label": "PROMOTE FROM SLOT #21",
+          "source_display_label": "Was: Slot #21 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 21,
+            "title": "a hole in the sand on a golf course at The Goodwood Hotel in Chichester",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/13958362.jpg?k=4a2c86fc0efb34abc6d16ec0f9f07a421aee9e9fd212c16d83408b4e9bf4cfd1&o=&hp=1",
+            "photoId": "13958362",
+            "sourceUrl": "https://www.booking.com/hotel/gb/the-goodwood-park.html?lang=en-us&chal_t=1791199255969&force_referer="
+          }
+        }
+      ],
+      "anti_commodity_copy_rewrite": {
+        "ota_headline": "The Goodwood Hotel: Historic Estate Retreat with Championship Golf, Thermal Wellness & British Culinary Charm",
+        "property_overview_150_words": "Nestled within the iconic Goodwood Estate, The Goodwood Hotel offers a unique blend of heritage and contemporary luxury. Guests can immerse themselves in championship golf, unwind in the serene thermal wellness sanctuary, or savor exquisite British cuisine at The Bar & Grill. With a rich history and proximity to world-class motorsport events, the hotel provides a refined yet relaxed escape, perfect for discerning travelers seeking active leisure, cultural exploration, and tranquil relaxation in the heart of Chichester's picturesque countryside."
+      },
+      "photographic_gap_analysis": [
+        {
+          "missing_shot_title": "Curated Master Bathroom Soaking Tub & Walk-in Shower",
+          "category": "CREATOR_BATHROOM",
+          "why_needed": "The absence of a high-quality guest bathroom photo creates a significant conversion drop-off, as discerning travelers prioritize luxury finish quality, hygiene, and a spa-like experience in their private accommodations. This shot is crucial for high-ADR bookings.",
+          "recommended_framing_and_lighting": "Wide-angle shot capturing a spacious soaking tub with natural light from a window, complemented by a walk-in rain shower, showcasing premium fixtures and thoughtful amenities. Soft, warm lighting (3000K) with diffused fill.",
+          "projected_adr_impact": "+10% higher suite booking velocity and +$50 ADR premium for luxury room categories."
+        },
+        {
+          "missing_shot_title": "Twilight Golden Hour Aperitivo at The Kennels Terrace",
+          "category": "ATMOSPHERIC_TWILIGHT",
+          "why_needed": "The Kennels is a key amenity (private members' clubhouse) but lacks dedicated visual representation. A twilight shot captures the sophisticated social atmosphere, appealing to travelers seeking exclusive evening experiences and local cultural immersion.",
+          "recommended_framing_and_lighting": "Eye-level shot of guests enjoying aperitivos on The Kennels terrace during golden hour, with warm ambient lighting (2400K) on glassware and subtle architectural uplighting, conveying exclusivity and relaxed elegance.",
+          "projected_adr_impact": "+8% increase in F&B revenue and enhanced perception of exclusive amenities, driving direct bookings."
+        },
+        {
+          "missing_shot_title": "Active Golfers on the Championship Course with Estate Views",
+          "category": "LIFESTYLE_ACTIVE",
+          "why_needed": "While a static golf course photo exists, a dynamic shot featuring active golfers captures the aspirational lifestyle associated with Goodwood's renowned golf facilities, directly appealing to the active leisure traveler segment.",
+          "recommended_framing_and_lighting": "Mid-distance shot of a golfer mid-swing on a scenic hole, with the Goodwood Estate or rolling hills in the background, under clear daylight. Emphasize the expansive, well-maintained course and the joy of the sport.",
+          "projected_adr_impact": "+5% increase in golf package bookings and stronger appeal to sports tourism markets."
+        }
+      ],
+      "conversion_diagnosis": "The current Booking.com photo sequence fails to immediately highlight the hotel's most compelling and unique cultural magnets (wellness, culinary, active estate life), leading to a perception of a generic countryside hotel rather than a vibrant, multi-faceted destination. The lack of a luxury bathroom photo is a critical flaw for high-value bookings.",
+      "local_vibe_synergy_context": "Chichester and the Goodwood Estate are synonymous with heritage, active leisure (motorsport, golf), and refined countryside living. The optimized photo sequence strategically leads with the thermal wellness sanctuary, a key draw for relaxation, followed by the historic exterior, vibrant dining, and the championship golf course. This directly aligns the hotel's unique DNA with the top local subcultures and traveler search intents for a quintessential British estate experience.",
+      "slot_1_decision_logic": {
+        "is_magnet_override_active": true,
+        "reasoning_code": "NAI_WELLNESS_DESTINATION_POWER",
+        "strategy_explanation": "The Indoor Pool & Thermal Sanctuary (Live Photo #3) serves as a powerful 'Hero Cultural Magnet' due to its strong alignment with the high traveler demand for wellness and relaxation in countryside destinations (NAI 0.90). This amenity is a destination in its own right, offering clear visual appeal and conveying a sense of luxury and tranquility. Placing it in Slot #1 immediately captures attention and communicates a key value proposition, while the historic exterior is strategically moved to Slot #2 to provide essential geographic grounding.",
+        "neighborhood_affinity_index": 0.9,
+        "override_asset_name": "Indoor Pool & Thermal Sanctuary"
+      },
+      "is_listed_on_booking": true,
+      "listing_status": "ACTIVE_ON_BOOKING",
+      "live_photos": [
+        {
+          "slot": 1,
+          "title": "an old brick house with a road in front of it at The Goodwood Hotel in Chichester",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/770088129.jpg?k=f0db3266d67853383c8e8e7f8301802b0f39e9d6b95c5f992ba1f28adf91827a&o=",
+          "photoId": "770088129",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-goodwood-park.html?lang=en-us&chal_t=1791199255969&force_referer="
+        },
+        {
+          "slot": 2,
+          "title": "a hotel room with a bed and a green chair at The Goodwood Hotel in Chichester",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/13958139.jpg?k=cb76b52d2e1c30c7c5967100060b325d12d855917b7a6d859b8f3c3789dadc0c&o=",
+          "photoId": "13958139",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-goodwood-park.html?lang=en-us&chal_t=1791199255969&force_referer="
+        },
+        {
+          "slot": 3,
+          "title": "a swimming pool with a hot tub and a fireplace at The Goodwood Hotel in Chichester",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/13958200.jpg?k=7044ecf35816b70b470aefa82f3d5ff4b3ab8249ceb9dadcd54b9c204744338e&o=",
+          "photoId": "13958200",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-goodwood-park.html?lang=en-us&chal_t=1791199255969&force_referer="
+        },
+        {
+          "slot": 4,
+          "title": "a restaurant with tables and chairs and a fireplace at The Goodwood Hotel in Chichester",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/217008017.jpg?k=4006c7198a38d8f4d59f7f13fe5eb783ec1e5a46797b28866f2f4d2073cac197&o=",
+          "photoId": "217008017",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-goodwood-park.html?lang=en-us&chal_t=1791199255969&force_referer="
+        },
+        {
+          "slot": 5,
+          "title": "a group of people playing golf on a golf course at The Goodwood Hotel in Chichester",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/35193114.jpg?k=748f95e012c56c3463e43a5b1c0dd8ef40205d405150e001f96ac398eabe727b&o=",
+          "photoId": "35193114",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-goodwood-park.html?lang=en-us&chal_t=1791199255969&force_referer="
+        },
+        {
+          "slot": 6,
+          "title": "an old brick house on the side of a road at The Goodwood Hotel in Chichester",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/217008146.jpg?k=63ab5a7611f09002ebef9f8e2d8c121579d9b00ceb86c8e6336b7efdc3d1b3a8&o=",
+          "photoId": "217008146",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-goodwood-park.html?lang=en-us&chal_t=1791199255969&force_referer="
+        },
+        {
+          "slot": 7,
+          "title": "a bedroom with a white bed with red chairs at The Goodwood Hotel in Chichester",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/906466188.jpg?k=7ce2ea164d3d9ec3a16f5278cce608b0df4e491b94dc1f8851596e2c9d4ce8f7&o=",
+          "photoId": "906466188",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-goodwood-park.html?lang=en-us&chal_t=1791199255969&force_referer="
+        },
+        {
+          "slot": 8,
+          "title": "a bar with stools and a counter in a room at The Goodwood Hotel in Chichester +25 photos",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/217008165.jpg?k=64efe1f971820505da22e75c3890f38754b4c27db626362d0974520ec8b2cd7f&o=",
+          "photoId": "217008165",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-goodwood-park.html?lang=en-us&chal_t=1791199255969&force_referer="
+        },
+        {
+          "slot": 9,
+          "title": "a living room with a fireplace and red chairs at The Goodwood Hotel in Chichester",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/217007898.jpg?k=c19729ecaeeedc783e52735d30956f196542d242ca09337f5dd491df050f1923&o=&hp=1",
+          "photoId": "217007898",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-goodwood-park.html?lang=en-us&chal_t=1791199255969&force_referer="
+        },
+        {
+          "slot": 10,
+          "title": "a bar in a restaurant with tables and chairs at The Goodwood Hotel in Chichester",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/217008038.jpg?k=153351e91b4d3228676f52336668afd9c42986dcbca3ad305c9dd301acd48758&o=&hp=1",
+          "photoId": "217008038",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-goodwood-park.html?lang=en-us&chal_t=1791199255969&force_referer="
+        },
+        {
+          "slot": 11,
+          "title": "a bedroom with a bed and some pictures on the wall at The Goodwood Hotel in Chichester",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/13973511.jpg?k=5840f55ad87b6aa69087e541ff0d42f99adcea6612745a8d38aa45a8141666c6&o=&hp=1",
+          "photoId": "13973511",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-goodwood-park.html?lang=en-us&chal_t=1791199255969&force_referer="
+        },
+        {
+          "slot": 12,
+          "title": "a bedroom with a white bed with pink pillows at The Goodwood Hotel in Chichester",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/13973510.jpg?k=08c6d6afacac5b09f89efd3e98e914bc514a2420e7a39ea5938edb10853e6384&o=&hp=1",
+          "photoId": "13973510",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-goodwood-park.html?lang=en-us&chal_t=1791199255969&force_referer="
+        },
+        {
+          "slot": 13,
+          "title": "a bedroom with a large bed and a window at The Goodwood Hotel in Chichester",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/35223077.jpg?k=992e8acc20b9d783620d8b3c0b34538a11c2ed9f8fed91bdec1a7fb79396fc7d&o=&hp=1",
+          "photoId": "35223077",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-goodwood-park.html?lang=en-us&chal_t=1791199255969&force_referer="
+        },
+        {
+          "slot": 14,
+          "title": "a living room with a couch and a chair at The Goodwood Hotel in Chichester",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/13958140.jpg?k=0644f2b5418427ccaf0af0538ae0ee1a51da5d2d5e09ddba38f272a121b371dd&o=&hp=1",
+          "photoId": "13958140",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-goodwood-park.html?lang=en-us&chal_t=1791199255969&force_referer="
+        },
+        {
+          "slot": 15,
+          "title": "a tray with a plate of food with a sandwich and salad at The Goodwood Hotel in Chichester",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/217003035.jpg?k=b9eeabd9ba4492801643c094dd0b955dd92a28c1e45c2bc4db48759d76467390&o=&hp=1",
+          "photoId": "217003035",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-goodwood-park.html?lang=en-us&chal_t=1791199255969&force_referer="
+        },
+        {
+          "slot": 16,
+          "title": "a plate of food with a bowl of salad and crackers at The Goodwood Hotel in Chichester",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/217003007.jpg?k=9181bfd3469a252d51b685a5b35c7154dbcce7702faf2d99647c0ad973937a2b&o=&hp=1",
+          "photoId": "217003007",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-goodwood-park.html?lang=en-us&chal_t=1791199255969&force_referer="
+        },
+        {
+          "slot": 17,
+          "title": "a plate of food with meat and vegetables on a table at The Goodwood Hotel in Chichester",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/217003116.jpg?k=1194ec08ae7f6faa1c6a3b2e50c49b00e1fa0731a4c5914582c06f643ab1bdb4&o=&hp=1",
+          "photoId": "217003116",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-goodwood-park.html?lang=en-us&chal_t=1791199255969&force_referer="
+        },
+        {
+          "slot": 18,
+          "title": "a piece of bread with some food on it at The Goodwood Hotel in Chichester",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/217010611.jpg?k=db4da0cb0694620508d40573535a850b013f6d5defb840ee79eeecb26372a32c&o=&hp=1",
+          "photoId": "217010611",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-goodwood-park.html?lang=en-us&chal_t=1791199255969&force_referer="
+        },
+        {
+          "slot": 19,
+          "title": "a woman getting her hair cut with three spa stones at The Goodwood Hotel in Chichester",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/13958358.jpg?k=f004b14b79d9806b180cfdfb085e782eee085f7895a54d74ab7c5c14f72c9c54&o=&hp=1",
+          "photoId": "13958358",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-goodwood-park.html?lang=en-us&chal_t=1791199255969&force_referer="
+        },
+        {
+          "slot": 20,
+          "title": "a house in the middle of a field with trees at The Goodwood Hotel in Chichester",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/217007495.jpg?k=170ad0847cef091b67434e53695cbe578b9ff08258f32a1bd19588ff7b38bee2&o=&hp=1",
+          "photoId": "217007495",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-goodwood-park.html?lang=en-us&chal_t=1791199255969&force_referer="
+        },
+        {
+          "slot": 21,
+          "title": "a hole in the sand on a golf course at The Goodwood Hotel in Chichester",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/13958362.jpg?k=4a2c86fc0efb34abc6d16ec0f9f07a421aee9e9fd212c16d83408b4e9bf4cfd1&o=&hp=1",
+          "photoId": "13958362",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-goodwood-park.html?lang=en-us&chal_t=1791199255969&force_referer="
+        },
+        {
+          "slot": 22,
+          "title": "a view of a golf course with a tree at The Goodwood Hotel in Chichester",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/13957969.jpg?k=3de2b9194ef25528932d8dc02330dc5781d0508b2f32e1a30239adf06fa6d81a&o=&hp=1",
+          "photoId": "13957969",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-goodwood-park.html?lang=en-us&chal_t=1791199255969&force_referer="
+        },
+        {
+          "slot": 23,
+          "title": "a small plane is flying over a house at The Goodwood Hotel in Chichester",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/13958199.jpg?k=6bb007a93305a8c9e53f7a91662355bd68028e473118d4e4e73e4d0e6e79f045&o=&hp=1",
+          "photoId": "13958199",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-goodwood-park.html?lang=en-us&chal_t=1791199255969&force_referer="
+        },
+        {
+          "slot": 24,
+          "title": "a race car in front of the gateway arch at The Goodwood Hotel in Chichester",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/217007535.jpg?k=9519230bcb142dc8362bcb0811e724305b7e444371d2f640a064db679d215911&o=&hp=1",
+          "photoId": "217007535",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-goodwood-park.html?lang=en-us&chal_t=1791199255969&force_referer="
+        },
+        {
+          "slot": 25,
+          "title": "a hotel room with a bed and a desk and chairs at The Goodwood Hotel in Chichester",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/402688565.jpg?k=821477149982767a292f5f63add3fbbeaf4a902ef43fe5a5ec81e1c22d5bf78b&o=&hp=1",
+          "photoId": "402688565",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-goodwood-park.html?lang=en-us&chal_t=1791199255969&force_referer="
+        },
+        {
+          "slot": 26,
+          "title": "a dressing table with green chairs and a mirror at The Goodwood Hotel in Chichester",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/770103804.jpg?k=ea81164656b12559e2bb549ad6da8f8f3824f1187710c628d1c829c36465ada7&o=&hp=1",
+          "photoId": "770103804",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-goodwood-park.html?lang=en-us&chal_t=1791199255969&force_referer="
+        },
+        {
+          "slot": 27,
+          "title": "a bedroom with a large bed with two lamps at The Goodwood Hotel in Chichester",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/906465848.jpg?k=a9173032bd85bd4193674183bf37fdf89ac43ea6126070249a77866eec7b36dd&o=&hp=1",
+          "photoId": "906465848",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-goodwood-park.html?lang=en-us&chal_t=1791199255969&force_referer="
+        },
+        {
+          "slot": 28,
+          "title": "a living room with a couch and a chair at The Goodwood Hotel in Chichester",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/906466620.jpg?k=d2b5531caa6fc2201eb92878c5f39c089c0b8c1610240a30a1e8f701311f6a82&o=&hp=1",
+          "photoId": "906466620",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-goodwood-park.html?lang=en-us&chal_t=1791199255969&force_referer="
+        },
+        {
+          "slot": 29,
+          "title": "a living room with a couch and a table at The Goodwood Hotel in Chichester",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/906466618.jpg?k=cbfea6bd76e36198f090f0cde85b3d5a18fbf3430f268ec0d11457331c29e4e3&o=&hp=1",
+          "photoId": "906466618",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-goodwood-park.html?lang=en-us&chal_t=1791199255969&force_referer="
+        },
+        {
+          "slot": 30,
+          "title": "a bedroom with a bed with pink pillows and a chair at The Goodwood Hotel in Chichester",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/906466610.jpg?k=b061a24fe83e2629f3776993c1065d9844d07eca03107137fa75350d8e1db0da&o=&hp=1",
+          "photoId": "906466610",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-goodwood-park.html?lang=en-us&chal_t=1791199255969&force_referer="
+        },
+        {
+          "slot": 31,
+          "title": "a brick house with chairs and a table in front of it at The Goodwood Hotel in Chichester",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/906468116.jpg?k=76f788ab136f8e3122bca5480981f2e1d8c251e6e59f55399beb8ff7f756aec1&o=&hp=1",
+          "photoId": "906468116",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-goodwood-park.html?lang=en-us&chal_t=1791199255969&force_referer="
+        },
+        {
+          "slot": 32,
+          "title": "an open door with a view of a garden from a bedroom at The Goodwood Hotel in Chichester",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/906468119.jpg?k=10f54e991718ae43ad9abeffc63fe842ae0bc54b29e28470d4224b086e85ded8&o=&hp=1",
+          "photoId": "906468119",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-goodwood-park.html?lang=en-us&chal_t=1791199255969&force_referer="
+        },
+        {
+          "slot": 33,
+          "title": "a red brick house with chairs and a white door at The Goodwood Hotel in Chichester",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/906468123.jpg?k=b4c45b02c8caa9f10abb6cbf910c5a2485c2648d4dc3106313cb59c16ccf6d72&o=&hp=1",
+          "photoId": "906468123",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-goodwood-park.html?lang=en-us&chal_t=1791199255969&force_referer="
+        },
+        {
+          "slot": 34,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/770088129.jpg?k=f0db3266d67853383c8e8e7f8301802b0f39e9d6b95c5f992ba1f28adf91827a&o=&hp=1",
+          "photoId": "9",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-goodwood-park.html?lang=en-us&chal_t=1791199255969&force_referer="
+        },
+        {
+          "slot": 35,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/13958200.jpg?k=7044ecf35816b70b470aefa82f3d5ff4b3ab8249ceb9dadcd54b9c204744338e&o=&hp=1",
+          "photoId": "0",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-goodwood-park.html?lang=en-us&chal_t=1791199255969&force_referer="
+        },
+        {
+          "slot": 36,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/217008017.jpg?k=4006c7198a38d8f4d59f7f13fe5eb783ec1e5a46797b28866f2f4d2073cac197&o=&hp=1",
+          "photoId": "7",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-goodwood-park.html?lang=en-us&chal_t=1791199255969&force_referer="
+        },
+        {
+          "slot": 37,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/35193114.jpg?k=748f95e012c56c3463e43a5b1c0dd8ef40205d405150e001f96ac398eabe727b&o=&hp=1",
+          "photoId": "4",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-goodwood-park.html?lang=en-us&chal_t=1791199255969&force_referer="
+        },
+        {
+          "slot": 38,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/217008146.jpg?k=63ab5a7611f09002ebef9f8e2d8c121579d9b00ceb86c8e6336b7efdc3d1b3a8&o=&hp=1",
+          "photoId": "6",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-goodwood-park.html?lang=en-us&chal_t=1791199255969&force_referer="
+        },
+        {
+          "slot": 39,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/906466188.jpg?k=7ce2ea164d3d9ec3a16f5278cce608b0df4e491b94dc1f8851596e2c9d4ce8f7&o=&hp=1",
+          "photoId": "8",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-goodwood-park.html?lang=en-us&chal_t=1791199255969&force_referer="
+        },
+        {
+          "slot": 40,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/217008165.jpg?k=64efe1f971820505da22e75c3890f38754b4c27db626362d0974520ec8b2cd7f&o=&hp=1",
+          "photoId": "5",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-goodwood-park.html?lang=en-us&chal_t=1791199255969&force_referer="
+        },
+        {
+          "slot": 41,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/13973511.jpg?k=5840f55ad87b6aa69087e541ff0d42f99adcea6612745a8d38aa45a8141666c6&o=&hp=1",
+          "photoId": "1",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-goodwood-park.html?lang=en-us&chal_t=1791199255969&force_referer="
+        },
+        {
+          "slot": 42,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/13958362.jpg?k=4a2c86fc0efb34abc6d16ec0f9f07a421aee9e9fd212c16d83408b4e9bf4cfd1&o=&hp=1",
+          "photoId": "2",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-goodwood-park.html?lang=en-us&chal_t=1791199255969&force_referer="
+        },
+        {
+          "slot": 43,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/906468123.jpg?k=b4c45b02c8caa9f10abb6cbf910c5a2485c2648d4dc3106313cb59c16ccf6d72&o=&hp=1",
+          "photoId": "3",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-goodwood-park.html?lang=en-us&chal_t=1791199255969&force_referer="
+        }
+      ],
+      "photos_status": "RESOLVED"
+    },
+    "audit_timestamp": "2026-10-05T11:21:02.575Z"
+  }
+}

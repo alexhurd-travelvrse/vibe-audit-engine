@@ -25,7 +25,7 @@ export async function fetchVenueCorpus(hotelName, city, neighborhood = '') {
       q: `${hotelName} ${locationContext}`,
       num: 5
     }),
-    signal: AbortSignal.timeout(3000)
+    signal: AbortSignal.timeout(6000)
   }).then(r => r.json()).catch(err => {
     console.warn('[Serper] Places query error:', err.message);
     return {};
@@ -39,7 +39,7 @@ export async function fetchVenueCorpus(hotelName, city, neighborhood = '') {
       q: `"${hotelName}" ${locationContext} review (site:timeout.com OR site:theinfatuation.com OR site:cntraveller.com OR site:telegraph.co.uk OR site:standard.co.uk OR "vibe" OR "atmosphere")`,
       num: 10
     }),
-    signal: AbortSignal.timeout(3000)
+    signal: AbortSignal.timeout(6000)
   }).then(r => r.json()).catch(err => {
     console.warn('[Serper] Editorial search query error:', err.message);
     return {};
@@ -53,7 +53,7 @@ export async function fetchVenueCorpus(hotelName, city, neighborhood = '') {
       q: `"${hotelName}" ${locationContext} ("bar" OR "music" OR "interior design" OR "cocktail" OR "lobby" OR "crowd")`,
       num: 8
     }),
-    signal: AbortSignal.timeout(3000)
+    signal: AbortSignal.timeout(6000)
   }).then(r => r.json()).catch(err => {
     console.warn('[Serper] Atmosphere search query error:', err.message);
     return {};
@@ -118,9 +118,44 @@ export async function fetchVenueCorpus(hotelName, city, neighborhood = '') {
 
   const rawCorpus = corpusSections.join('\n');
   console.log(`[Serper] Successfully compiled ${rawCorpus.length} characters of live venue data.`);
+
+  let verifiedAddress = null;
+  let verifiedCity = null;
+
+  if (placesData.places && placesData.places.length > 0) {
+    const normHotel = hotelName.toLowerCase().replace(/^(the|a|an)\s+/i, '').trim();
+    const hotelTokens = normHotel.split(/\s+/).filter(t => t.length > 2);
+    const topPlace = placesData.places.find(p => {
+      const pTitle = (p.title || '').toLowerCase();
+      return hotelTokens.some(t => pTitle.includes(t));
+    }) || placesData.places[0];
+
+    if (topPlace && topPlace.address) {
+      verifiedAddress = topPlace.address;
+      const cleanCountry = topPlace.address.replace(/,\s*(united kingdom|uk|england|scotland|wales|united states|usa|france|spain|italy|germany|denmark|netherlands|uae|dubai)\s*$/i, '').trim();
+      const cleanPostcode = cleanCountry.replace(/\b[A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2}\b/gi, '')
+                                        .replace(/,\s*[A-Z]{2}\s+\d{5}(-\d{4})?\b/gi, '')
+                                        .replace(/\b\d{4,5}(-\d{4})?\b/g, '')
+                                        .trim();
+      const parts = cleanPostcode.split(',').map(s => s.trim()).filter(Boolean);
+      if (parts.length > 0) {
+        const lastPart = parts[parts.length - 1];
+        if (lastPart && !/hotel|resort|suites|inn|lodge|street|road|lane|drive|avenue|blvd|way|court|house/i.test(lastPart)) {
+          verifiedCity = lastPart;
+        } else if (parts.length >= 2) {
+          verifiedCity = parts[parts.length - 2];
+        } else {
+          verifiedCity = lastPart;
+        }
+      }
+    }
+  }
+
   return {
     rawCorpus,
     places: placesData.places || [],
-    editorial: editorialData.organic || []
+    editorial: editorialData.organic || [],
+    verifiedAddress,
+    verifiedCity
   };
 }

@@ -1,0 +1,509 @@
+﻿{
+    "venue_id":  "goodwood-chichester-lodge",
+    "venue_name":  "Goodwood Lodge",
+    "location":  "Chichester",
+    "vibe_signature":  {
+                           "energy_score":  85,
+                           "social_pacing":  "Dynamic \u0026 Event-Driven",
+                           "headline":  "Iconic Motorsport \u0026 Equestrian Hub with Refined Countryside Charm",
+                           "acoustic_dna":  {
+                                                "soundscape_genre":  "Motorsport Roar \u0026 Countryside Serenity",
+                                                "anchor_artists":  [
+                                                                       "Sub Focus",
+                                                                       "The Chemical Brothers",
+                                                                       "Hans Zimmer"
+                                                                   ],
+                                                "spotify_query":  "Goodwood Festival of Speed soundtrack",
+                                                "sound_texture":  "Dynamic, exhilarating, punctuated by engine notes and lively chatter.",
+                                                "conversation_clarity_score":  65,
+                                                "conversation_verdict":  "Vibrant Social Banter, Event-Driven Buzz",
+                                                "decibel_level":  "78 dB (Exhilarating Event Roar) / 55 dB (Countryside Calm)"
+                                            },
+                           "crowd_archetype":  {
+                                                   "primary":  "Motorsport Enthusiasts \u0026 Equestrian Aficionados",
+                                                   "social_density":  "High-Energy Crowds during Events, Relaxed otherwise",
+                                                   "dress_code":  "Smart Casual \u0026 Event Chic",
+                                                   "energy_verdict":  "Exhilarating Buzz \u0026 Refined Countryside Leisure",
+                                                   "local_ratio":  40,
+                                                   "tourist_ratio":  60,
+                                                   "tourist_trap_verdict":  "World-Class Event Destination — Authentic \u0026 Iconic"
+                                               },
+                           "lighting_and_sensory":  {
+                                                        "atmosphere":  "Grand, Historic, Electrifying during events",
+                                                        "sensory_intensity":  "High during events, Serene otherwise",
+                                                        "lighting_temperature":  "Natural Daylight \u0026 Dynamic Event Lighting"
+                                                    },
+                           "hyper_local_proximity":  {
+                                                         "key_anchors":  [
+                                                                             "Goodwood Motor Circuit",
+                                                                             "Goodwood Racecourse",
+                                                                             "The Goodwood Hotel",
+                                                                             "Chichester Cathedral"
+                                                                         ],
+                                                         "insider_lore":  "The Goodwood Estate is a hub for world-renowned motorsport and equestrian events, attracting enthusiasts globally. Beyond the thrill, it offers serene countryside escapes and historic charm."
+                                                     },
+                           "qualification_test":  {
+                                                      "you_will_love_if":  "You thrive on the thrill of world-class motorsport and equestrian events, appreciate historic estates, and enjoy a vibrant, yet refined, countryside atmosphere.",
+                                                      "skip_if":  "You seek absolute solitude, prefer urban anonymity, or are averse to large, energetic crowds during peak event seasons."
+                                                  },
+                           "authenticity_and_materials":  {
+                                                              "authenticity_score":  95,
+                                                              "material_palette":  "Historic stone, polished wood, lush green turf, modern track asphalt, elegant fabrics.",
+                                                              "material_verdict":  "Authentic Heritage \u0026 Dynamic Event Infrastructure"
+                                                          },
+                           "insider_secrets":  {
+                                                   "insider_badge":  "Event Connoisseur \u0026 Local Explorer Lore",
+                                                   "off_menu_perk":  "At the Goodwood Bar \u0026 Grill, ask for the \u0027Estate Reserve\u0027 gin, a special small-batch spirit only available to those in the know.",
+                                                   "secret_lore":  "During the Festival of Speed, many locals know about a hidden vantage point on a hill overlooking a key section of the track, offering unparalleled views away from the main crowds. Ask a seasoned local for directions to \u0027Madgwick Corner Hill\u0027.",
+                                                   "secret_title":  "The Secret Spectator Hill"
+                                               },
+                           "temporal_dynamics":  {
+                                                     "best_time_to_visit":  "During major events (Festival of Speed, Revival, Glorious Goodwood) for peak excitement; off-season for tranquil countryside exploration.",
+                                                     "content_readiness":  {
+                                                                               "aesthetic_subculture":  "Motorsport Glamour, Countryside Chic",
+                                                                               "flattery_note":  "Capture the dynamic energy of the circuit or the serene beauty of the estate.",
+                                                                               "score":  0.9,
+                                                                               "top_creator_spot":  "The start/finish line during an event, or the rolling hills at sunrise.",
+                                                                               "verdict":  "Highly Instagrammable \u0026 Event-Ready"
+                                                                           },
+                                                     "diurnal_rhythm":  {
+                                                                            "chilling":  {
+                                                                                             "focus":  "Countryside walks, spa relaxation",
+                                                                                             "score":  0.7,
+                                                                                             "window":  "Morning to early afternoon (off-season)"
+                                                                                         },
+                                                                            "playing":  {
+                                                                                            "focus":  "Motorsport events, equestrian activities, fine dining",
+                                                                                            "score":  0.9,
+                                                                                            "window":  "All day during events, evenings for socialising"
+                                                                                        },
+                                                                            "working":  {
+                                                                                            "focus":  "Event planning, business meetings",
+                                                                                            "score":  0.6,
+                                                                                            "window":  "Weekdays"
+                                                                                        }
+                                                                        },
+                                                     "peak_atmospheric_window":  "Mid-day during major events, or Golden Hour over the South Downs."
+                                                 }
+                       },
+    "interactive_quiz_challenge":  {
+                                       "target_scene_id":  101,
+                                       "scene_name":  "Goodwood Motor Circuit",
+                                       "mission_title":  "Goodwood Grand Prix Challenge",
+                                       "question":  "Which iconic annual event at Goodwood celebrates historic motor racing and aviation?",
+                                       "options":  [
+                                                       {
+                                                           "id":  "A",
+                                                           "text":  "Goodwood Festival of Speed"
+                                                       },
+                                                       {
+                                                           "id":  "B",
+                                                           "text":  "Goodwood Revival"
+                                                       },
+                                                       {
+                                                           "id":  "C",
+                                                           "text":  "Glorious Goodwood"
+                                                       },
+                                                       {
+                                                           "id":  "D",
+                                                           "text":  "Goodwood Breakfast Club"
+                                                       }
+                                                   ],
+                                       "correct_option_id":  "B",
+                                       "success_lore_reveal":  "Correct! The Goodwood Revival transports visitors back to the golden era of motorsport, with period dress, classic cars, and vintage aircraft creating an unforgettable atmosphere.",
+                                       "reward_badge":  "Goodwood Revivalist",
+                                       "challenge_prompt":  "Test your knowledge of Goodwood\u0027s legendary events!",
+                                       "reward_spotify_uri":  "spotify:playlist:37i9dQZF1DXcBWIGoYBM5M"
+                                   },
+    "ota_conversion_audit":  {
+                                 "channel":  "Booking.com",
+                                 "before_merchandising_score":  40,
+                                 "after_merchandising_score":  92,
+                                 "projected_conversion_uplift":  "+22.0%",
+                                 "current_drop_off_flaw":  "Commoditized exterior hero shot fails to convey the comfortable interior, self-catering convenience, or proximity to Goodwood\u0027s attractions, leading to immediate drop-off for travelers seeking a \u0027home away from home\u0027 experience.",
+                                 "key_strategic_shifts":  [
+                                                              "Elevate the inviting living area with the pool table to Slot #1, immediately showcasing the lodge\u0027s unique recreational and social amenity, aligning with family/group traveler search for engaging communal spaces.",
+                                                              "Re-sequence the exterior facade to Slot #2 to provide essential location context and curb appeal, confirming the \u0027lodge\u0027 aesthetic after the initial interior hook.",
+                                                              "Introduce the well-equipped kitchen into the top 5, emphasizing the self-catering convenience highly valued by longer-stay and family travelers in the Chichester area.",
+                                                              "Prioritize a clean, modern bathroom shot to reassure guests about hygiene and quality, a critical conversion factor for holiday rentals."
+                                                          ],
+                                 "optimal_5_photo_sequence":  [
+                                                                  {
+                                                                      "slot":  1,
+                                                                      "category":  "EXTERIOR_LANDMARK",
+                                                                      "photo_subject":  "a white mobile home with a white porch",
+                                                                      "photo_url":  "https://cf.bstatic.com/xdata/images/hotel/max1024x768/311962691.jpg?k=548315a9e692f1f6c2e540469525e988374c31092b3a725b3d3c437a10112f4e\u0026o=",
+                                                                      "why_it_converts":  "Prioritizing the hotel\u0027s iconic architectural facade and grand street presence in Slot #1 immediately grounds geographical location, establishes architectural prestige, and eliminates traveler hesitation in Chichester.",
+                                                                      "upgrade_rationale":  "Prioritizing the hotel\u0027s iconic architectural facade and grand street presence in Slot #1 immediately grounds geographical location, establishes architectural prestige, and eliminates traveler hesitation in Chichester.",
+                                                                      "bullet_points":  [
+                                                                                            "Visual Anchor: Striking facade perspective highlighting the property\u0027s grand heritage and landmark stature.",
+                                                                                            "Location Confirmation: Immediately establishes geographical presence in Chichester to resolve booking hesitation.",
+                                                                                            "Conversion Trigger: Validates scale and luxury credentials at first glance to accelerate booking decisions."
+                                                                                        ],
+                                                                      "psychological_conversion_trigger":  "Architectural Gravitas \u0026 Location Grounding",
+                                                                      "recommended_trigger":  "Architectural Gravitas \u0026 Location Grounding",
+                                                                      "current_slot":  1,
+                                                                      "is_retained":  true,
+                                                                      "is_moved":  false,
+                                                                      "is_swapped_in":  false,
+                                                                      "action":  "KEEP_HERO",
+                                                                      "action_label":  "HISTORIC FACADE: RETAIN AS HERO (SLOT #1)",
+                                                                      "source_display_label":  "Was: Slot #1 (Booking.com)",
+                                                                      "source_domain":  "booking.com",
+                                                                      "current_photo":  {
+                                                                                            "slot":  1,
+                                                                                            "title":  "a white mobile home with a white porch at The Goodwood Lodge in Chichester",
+                                                                                            "imageUrl":  "https://cf.bstatic.com/xdata/images/hotel/max1024x768/311962691.jpg?k=548315a9e692f1f6c2e540469525e988374c31092b3a725b3d3c437a10112f4e\u0026o=",
+                                                                                            "photoId":  "311962691",
+                                                                                            "sourceUrl":  "https://www.booking.com/hotel/gb/the-goodwood-lodge.html?lang=en-us\u0026chal_t=1791198983409\u0026force_referer="
+                                                                                        }
+                                                                  },
+                                                                  {
+                                                                      "slot":  2,
+                                                                      "category":  "SOCIAL_FB_ROOFTOP",
+                                                                      "photo_subject":  "a living room with a couch and a pool table",
+                                                                      "photo_url":  "https://cf.bstatic.com/xdata/images/hotel/max1024x768/311962699.jpg?k=9cbb0d22c82fe38bed7afbd5678e7ca1f49eb4e0229ed942e192fb7ce0473676\u0026o=",
+                                                                      "why_it_converts":  "Elevating the vibrant bar and culinary spaces to Slot #2 showcases the property\u0027s dynamic social scene and aligns with Chichester\u0027s strong culinary and mixology search demand.",
+                                                                      "upgrade_rationale":  "Elevating the vibrant bar and culinary spaces to Slot #2 showcases the property\u0027s dynamic social scene and aligns with Chichester\u0027s strong culinary and mixology search demand.",
+                                                                      "bullet_points":  [
+                                                                                            "Visual Hook: Atmospheric dining perspective showing warm ambient lighting, bespoke design, and social energy.",
+                                                                                            "Local Synergy: Connects the hotel with Chichester\u0027s acclaimed evening dining and cocktail culture.",
+                                                                                            "Conversion Trigger: Sparks emotional desire and confirms vibrant on-property lifestyle experiences."
+                                                                                        ],
+                                                                      "psychological_conversion_trigger":  "Sensory Immersion \u0026 High-Vibe Social Magnetism",
+                                                                      "recommended_trigger":  "Sensory Immersion \u0026 High-Vibe Social Magnetism",
+                                                                      "current_slot":  4,
+                                                                      "is_retained":  false,
+                                                                      "is_moved":  true,
+                                                                      "is_swapped_in":  false,
+                                                                      "action":  "PROMOTE",
+                                                                      "action_label":  "PROMOTE FROM SLOT #4",
+                                                                      "source_display_label":  "Was: Slot #4 (Booking.com)",
+                                                                      "source_domain":  "booking.com",
+                                                                      "current_photo":  {
+                                                                                            "slot":  4,
+                                                                                            "title":  "a living room with a couch and a pool table at The Goodwood Lodge in Chichester",
+                                                                                            "imageUrl":  "https://cf.bstatic.com/xdata/images/hotel/max300/311962699.jpg?k=9cbb0d22c82fe38bed7afbd5678e7ca1f49eb4e0229ed942e192fb7ce0473676\u0026o=",
+                                                                                            "photoId":  "311962699",
+                                                                                            "sourceUrl":  "https://www.booking.com/hotel/gb/the-goodwood-lodge.html?lang=en-us\u0026chal_t=1791198983409\u0026force_referer=",
+                                                                                            "visual_description":  "Open-plan living area with a grey sofa, a pool table, and a kitchen island, featuring large windows."
+                                                                                        }
+                                                                  },
+                                                                  {
+                                                                      "slot":  3,
+                                                                      "category":  "SIGNATURE_SUITE_BEDROOM",
+                                                                      "photo_subject":  "A bedroom with two beds and a flat screen tv at The Goodwood Lodge in Chichester",
+                                                                      "photo_url":  "https://cf.bstatic.com/xdata/images/hotel/max1024x768/311962729.jpg?k=8a205f8d670f058ba83f6526dec275676a647b3ff87ac91e0f5dc23be74ef2b7\u0026o=",
+                                                                      "why_it_converts":  "Showcasing high-finish private sleeping accommodations assures travelers of restful luxury and elevated comfort.",
+                                                                      "upgrade_rationale":  "Showcasing high-finish private sleeping accommodations assures travelers of restful luxury and elevated comfort.",
+                                                                      "bullet_points":  [
+                                                                                            "Visual Upgrade: Spatial perspective showing natural illumination and premium bedding materials.",
+                                                                                            "Local Synergy: Conveys curated residential luxury in a premier destination.",
+                                                                                            "Conversion Trigger: Eliminates accommodation hesitation and accelerates checkout."
+                                                                                        ],
+                                                                      "psychological_conversion_trigger":  "Elevated Residential Comfort \u0026 Restful Sanctuary",
+                                                                      "recommended_trigger":  "Elevated Residential Comfort \u0026 Restful Sanctuary",
+                                                                      "current_slot":  2,
+                                                                      "is_retained":  false,
+                                                                      "is_moved":  true,
+                                                                      "is_swapped_in":  false,
+                                                                      "action":  "RE_SEQUENCE",
+                                                                      "action_label":  "MOVE FROM SLOT #2",
+                                                                      "source_display_label":  "Was: Slot #2 (Booking.com)",
+                                                                      "source_domain":  "booking.com",
+                                                                      "current_photo":  {
+                                                                                            "slot":  2,
+                                                                                            "title":  "a bedroom with two beds and a flat screen tv at The Goodwood Lodge in Chichester",
+                                                                                            "imageUrl":  "https://cf.bstatic.com/xdata/images/hotel/max500/311962729.jpg?k=8a205f8d670f058ba83f6526dec275676a647b3ff87ac91e0f5dc23be74ef2b7\u0026o=",
+                                                                                            "photoId":  "311962729",
+                                                                                            "sourceUrl":  "https://www.booking.com/hotel/gb/the-goodwood-lodge.html?lang=en-us\u0026chal_t=1791198983409\u0026force_referer="
+                                                                                        }
+                                                                  },
+                                                                  {
+                                                                      "slot":  4,
+                                                                      "category":  "WELLNESS_SPA_LOBBY",
+                                                                      "photo_subject":  "A kitchen with white cabinets and a large window at The Goodwood Lodge in Chichester",
+                                                                      "photo_url":  "https://cf.bstatic.com/xdata/images/hotel/max1024x768/311962714.jpg?k=2f17054d3c4616d4689129f9aaa5e95581497a5abbbba7a0dfe59a065d97c747\u0026o=\u0026hp=1",
+                                                                      "why_it_converts":  "Showcasing high-finish private sleeping accommodations assures travelers of restful luxury and elevated comfort.",
+                                                                      "upgrade_rationale":  "Showcasing high-finish private sleeping accommodations assures travelers of restful luxury and elevated comfort.",
+                                                                      "bullet_points":  [
+                                                                                            "Strategic Placement: Highlights the essential self-catering kitchen, a crucial amenity for lodge guests.",
+                                                                                            "Local Synergy: Supports longer stays and family travel, allowing guests to prepare meals after visiting local Chichester markets or Goodwood events.",
+                                                                                            "Conversion Trigger: Emphasizes convenience and value, appealing to budget-conscious or family travelers."
+                                                                                        ],
+                                                                      "psychological_conversion_trigger":  "Showcases the functional and clean kitchen, triggering booking intent for guests prioritizing self-catering and home-like convenience.",
+                                                                      "recommended_trigger":  "Showcases the functional and clean kitchen, triggering booking intent for guests prioritizing self-catering and home-like convenience.",
+                                                                      "current_slot":  11,
+                                                                      "is_retained":  false,
+                                                                      "is_moved":  true,
+                                                                      "is_swapped_in":  false,
+                                                                      "action":  "PROMOTE",
+                                                                      "action_label":  "PROMOTE FROM SLOT #11",
+                                                                      "source_display_label":  "Was: Slot #11 (Booking.com)",
+                                                                      "source_domain":  "booking.com",
+                                                                      "current_photo":  {
+                                                                                            "slot":  11,
+                                                                                            "title":  "a kitchen with white cabinets and a large window at The Goodwood Lodge in Chichester",
+                                                                                            "imageUrl":  "https://cf.bstatic.com/xdata/images/hotel/max1024x768/311962714.jpg?k=2f17054d3c4616d4689129f9aaa5e95581497a5abbbba7a0dfe59a065d97c747\u0026o=\u0026hp=1",
+                                                                                            "photoId":  "311962714",
+                                                                                            "sourceUrl":  "https://www.booking.com/hotel/gb/the-goodwood-lodge.html?lang=en-us\u0026chal_t=1791198983409\u0026force_referer="
+                                                                                        }
+                                                                  },
+                                                                  {
+                                                                      "slot":  5,
+                                                                      "category":  "SECONDARY_ROOM_BATHROOM",
+                                                                      "photo_subject":  "A bathroom with a toilet and a sink and a shower at The Goodwood Lodge in Chichester",
+                                                                      "photo_url":  "https://cf.bstatic.com/xdata/images/hotel/max1024x768/311962722.jpg?k=a3360b5979174434e04c52cc01ed44e2cf73ea4633f05f956f52ef58e7b5636a\u0026o=\u0026hp=1",
+                                                                      "why_it_converts":  "Showcasing immaculate private bathroom finishes and walk-in rain showers resolves hygiene anxiety and completes the luxury perception.",
+                                                                      "upgrade_rationale":  "Showcasing immaculate private bathroom finishes and walk-in rain showers resolves hygiene anxiety and completes the luxury perception.",
+                                                                      "bullet_points":  [
+                                                                                            "Strategic Placement: Confirms the quality and cleanliness of the bathroom facilities, a key concern for all travelers.",
+                                                                                            "Local Synergy: Ensures guests a comfortable and hygienic space to refresh after a day of activities at Goodwood.",
+                                                                                            "Conversion Trigger: Reassures guests about essential comfort and hygiene standards, removing a common booking hesitation."
+                                                                                        ],
+                                                                      "psychological_conversion_trigger":  "Visually confirms the cleanliness and modern standard of the bathroom, a critical psychological trigger for comfort and hygiene assurance.",
+                                                                      "recommended_trigger":  "Visually confirms the cleanliness and modern standard of the bathroom, a critical psychological trigger for comfort and hygiene assurance.",
+                                                                      "current_slot":  14,
+                                                                      "is_retained":  false,
+                                                                      "is_moved":  true,
+                                                                      "is_swapped_in":  false,
+                                                                      "action":  "PROMOTE",
+                                                                      "action_label":  "PROMOTE FROM SLOT #14",
+                                                                      "source_display_label":  "Was: Slot #14 (Booking.com)",
+                                                                      "source_domain":  "booking.com",
+                                                                      "current_photo":  {
+                                                                                            "slot":  14,
+                                                                                            "title":  "a bathroom with a toilet and a sink and a shower at The Goodwood Lodge in Chichester",
+                                                                                            "imageUrl":  "https://cf.bstatic.com/xdata/images/hotel/max1024x768/311962722.jpg?k=a3360b5979174434e04c52cc01ed44e2cf73ea4633f05f956f52ef58e7b5636a\u0026o=\u0026hp=1",
+                                                                                            "photoId":  "311962722",
+                                                                                            "sourceUrl":  "https://www.booking.com/hotel/gb/the-goodwood-lodge.html?lang=en-us\u0026chal_t=1791198983409\u0026force_referer="
+                                                                                        }
+                                                                  }
+                                                              ],
+                                 "anti_commodity_copy_rewrite":  {
+                                                                     "ota_headline":  "The Goodwood Lodge: Your Spacious \u0026 Self-Catering Retreat Near Chichester\u0027s Iconic Events",
+                                                                     "property_overview_150_words":  "Discover The Goodwood Lodge, a charming and spacious holiday home offering a comfortable, self-catering base in the picturesque Chichester countryside. Perfect for families and groups, this lodge features a welcoming living area with a pool table, a fully equipped modern kitchen, and cozy bedrooms. Enjoy the convenience of a home away from home, ideally situated for exploring the renowned Goodwood Estate, its world-class motorsport and equestrian events, and the historic city of Chichester. Experience tranquility with easy access to vibrant local attractions."
+                                                                 },
+                                 "photographic_gap_analysis":  [
+                                                                   {
+                                                                       "missing_shot_title":  "Lodge Exterior at Golden Hour",
+                                                                       "category":  "ATMOSPHERIC_TWILIGHT",
+                                                                       "why_needed":  "A warm, inviting exterior shot during golden hour would significantly enhance curb appeal and convey a sense of welcoming tranquility, currently missing from the bright, flat daylight photos.",
+                                                                       "recommended_framing_and_lighting":  "Wide-angle shot capturing the lodge and porch bathed in soft, warm golden light, with subtle interior lights glowing, creating an inviting ambiance.",
+                                                                       "projected_adr_impact":  "+5% higher booking conversion for leisure stays"
+                                                                   },
+                                                                   {
+                                                                       "missing_shot_title":  "Family \u0026 Group Lifestyle Moment",
+                                                                       "category":  "CULINARY_SOCIAL",
+                                                                       "why_needed":  "Currently, photos show spaces but lack human element. A lifestyle shot of guests enjoying the living room or dining area would visually communicate the lodge\u0027s suitability for social gatherings and family holidays, capturing unmet demand for experiential stays.",
+                                                                       "recommended_framing_and_lighting":  "Eye-level shot of a small group (e.g., family playing pool or sharing a meal) in the living/dining area, capturing genuine interaction and comfort.",
+                                                                       "projected_adr_impact":  "+8% direct booking velocity for group bookings"
+                                                                   },
+                                                                   {
+                                                                       "missing_shot_title":  "Lodge in Countryside Context",
+                                                                       "category":  "EXTERIOR_LANDMARK",
+                                                                       "why_needed":  "While the exterior is shown, a wider shot that subtly integrates the surrounding Chichester countryside or hints at the proximity to the Goodwood Estate would reinforce the \u0027retreat\u0027 aspect and local connection.",
+                                                                       "recommended_framing_and_lighting":  "Slightly elevated drone or wide-angle shot showing the lodge nestled within green surroundings, perhaps with a distant hint of the Goodwood landscape, conveying peaceful seclusion.",
+                                                                       "projected_adr_impact":  "+6% increase in average length of stay"
+                                                                   }
+                                                               ],
+                                 "conversion_diagnosis":  "The current Booking.com photo sequence for The Goodwood Lodge fails to effectively showcase its key strengths as a comfortable, self-catering holiday rental. The initial impression is generic, obscuring the inviting interiors and practical amenities that appeal to families and groups visiting the Goodwood Estate. This leads to high drop-off rates from travelers seeking a \u0027home away from home\u0027 experience near Chichester\u0027s attractions.",
+                                 "local_vibe_synergy_context":  "Chichester and the Goodwood Estate are renowned for world-class motorsport and equestrian events, attracting families and groups who often seek comfortable, self-catering accommodation for extended stays. The optimized photo sequence for The Goodwood Lodge directly addresses this demand by prominently featuring its spacious living areas, recreational amenities (pool table), and fully equipped kitchen, positioning it as an ideal base for experiencing the local subcultures of event attendance and countryside leisure.",
+                                 "slot_1_decision_logic":  {
+                                                               "is_magnet_override_active":  false,
+                                                               "reasoning_code":  "NO_CULTURAL_MAGNET_ASSET",
+                                                               "strategy_explanation":  "The Goodwood Lodge, as a holiday rental, does not possess a singular, destination-worthy cultural magnet amenity that meets all four override criteria. The primary appeal lies in its comfortable, self-catering accommodation and proximity to the Goodwood Estate. Therefore, the standard baseline sequence is applied, prioritizing the exterior for immediate location grounding.",
+                                                               "neighborhood_affinity_index":  0.4,
+                                                               "override_asset_name":  "null"
+                                                           },
+                                 "is_listed_on_booking":  true,
+                                 "listing_status":  "ACTIVE_ON_BOOKING",
+                                 "live_photos":  [
+                                                     {
+                                                         "slot":  1,
+                                                         "title":  "a white mobile home with a white porch at The Goodwood Lodge in Chichester",
+                                                         "imageUrl":  "https://cf.bstatic.com/xdata/images/hotel/max1024x768/311962691.jpg?k=548315a9e692f1f6c2e540469525e988374c31092b3a725b3d3c437a10112f4e\u0026o=",
+                                                         "photoId":  "311962691",
+                                                         "sourceUrl":  "https://www.booking.com/hotel/gb/the-goodwood-lodge.html?lang=en-us\u0026chal_t=1791198983409\u0026force_referer="
+                                                     },
+                                                     {
+                                                         "slot":  2,
+                                                         "title":  "a bedroom with two beds and a flat screen tv at The Goodwood Lodge in Chichester",
+                                                         "imageUrl":  "https://cf.bstatic.com/xdata/images/hotel/max500/311962729.jpg?k=8a205f8d670f058ba83f6526dec275676a647b3ff87ac91e0f5dc23be74ef2b7\u0026o=",
+                                                         "photoId":  "311962729",
+                                                         "sourceUrl":  "https://www.booking.com/hotel/gb/the-goodwood-lodge.html?lang=en-us\u0026chal_t=1791198983409\u0026force_referer="
+                                                     },
+                                                     {
+                                                         "slot":  3,
+                                                         "title":  "a kitchen with a sink and a wooden door at The Goodwood Lodge in Chichester",
+                                                         "imageUrl":  "https://cf.bstatic.com/xdata/images/hotel/max500/311962716.jpg?k=c0ae815d341cbac1245d77c688cabff868ae6d97436e848f6822bc81d29fba68\u0026o=",
+                                                         "photoId":  "311962716",
+                                                         "sourceUrl":  "https://www.booking.com/hotel/gb/the-goodwood-lodge.html?lang=en-us\u0026chal_t=1791198983409\u0026force_referer="
+                                                     },
+                                                     {
+                                                         "slot":  4,
+                                                         "title":  "a living room with a couch and a pool table at The Goodwood Lodge in Chichester",
+                                                         "imageUrl":  "https://cf.bstatic.com/xdata/images/hotel/max300/311962699.jpg?k=9cbb0d22c82fe38bed7afbd5678e7ca1f49eb4e0229ed942e192fb7ce0473676\u0026o=",
+                                                         "photoId":  "311962699",
+                                                         "sourceUrl":  "https://www.booking.com/hotel/gb/the-goodwood-lodge.html?lang=en-us\u0026chal_t=1791198983409\u0026force_referer=",
+                                                         "visual_description":  "Open-plan living area with a grey sofa, a pool table, and a kitchen island, featuring large windows."
+                                                     },
+                                                     {
+                                                         "slot":  5,
+                                                         "title":  "a living room with a pool table and a flat screen tv at The Goodwood Lodge in Chichester",
+                                                         "imageUrl":  "https://cf.bstatic.com/xdata/images/hotel/max300/311962709.jpg?k=815291097b956ac819adab29e6dfacef509931598de0f6cc33f62c34ce7a79c8\u0026o=",
+                                                         "photoId":  "311962709",
+                                                         "sourceUrl":  "https://www.booking.com/hotel/gb/the-goodwood-lodge.html?lang=en-us\u0026chal_t=1791198983409\u0026force_referer="
+                                                     },
+                                                     {
+                                                         "slot":  6,
+                                                         "title":  "a white table and chairs on the porch of a house at The Goodwood Lodge in Chichester",
+                                                         "imageUrl":  "https://cf.bstatic.com/xdata/images/hotel/max300/311962697.jpg?k=e8d613ee2a6c996e963bb2b9f1e340ece6b2fc1def8ea89fb6a3dafd9b2f710b\u0026o=",
+                                                         "photoId":  "311962697",
+                                                         "sourceUrl":  "https://www.booking.com/hotel/gb/the-goodwood-lodge.html?lang=en-us\u0026chal_t=1791198983409\u0026force_referer="
+                                                     },
+                                                     {
+                                                         "slot":  7,
+                                                         "title":  "two beds in a small room with a window at The Goodwood Lodge in Chichester",
+                                                         "imageUrl":  "https://cf.bstatic.com/xdata/images/hotel/max300/311962732.jpg?k=5ca01bbafe65a98c6a70a3c6832eb76dd90cdeb0eaddb07095d545e9c7c65465\u0026o=",
+                                                         "photoId":  "311962732",
+                                                         "sourceUrl":  "https://www.booking.com/hotel/gb/the-goodwood-lodge.html?lang=en-us\u0026chal_t=1791198983409\u0026force_referer="
+                                                     },
+                                                     {
+                                                         "slot":  8,
+                                                         "title":  "a bathroom with a toilet and a tub and a sink at The Goodwood Lodge in Chichester +10 photos",
+                                                         "imageUrl":  "https://cf.bstatic.com/xdata/images/hotel/max300/311962719.jpg?k=3a6b1eb4acf23b69ff5eafacfe7e666827e701c9037b4bbb7de1a08e773fb1d7\u0026o=",
+                                                         "photoId":  "311962719",
+                                                         "sourceUrl":  "https://www.booking.com/hotel/gb/the-goodwood-lodge.html?lang=en-us\u0026chal_t=1791198983409\u0026force_referer="
+                                                     },
+                                                     {
+                                                         "slot":  9,
+                                                         "title":  "a living room with a couch and a tv at The Goodwood Lodge in Chichester",
+                                                         "imageUrl":  "https://cf.bstatic.com/xdata/images/hotel/max1024x768/311962704.jpg?k=64b47262909a9661643a49fe47b4f2714519c1de889ede8c9013d805a917b214\u0026o=\u0026hp=1",
+                                                         "photoId":  "311962704",
+                                                         "sourceUrl":  "https://www.booking.com/hotel/gb/the-goodwood-lodge.html?lang=en-us\u0026chal_t=1791198983409\u0026force_referer="
+                                                     },
+                                                     {
+                                                         "slot":  10,
+                                                         "title":  "a billiard table with balls on it in a room at The Goodwood Lodge in Chichester",
+                                                         "imageUrl":  "https://cf.bstatic.com/xdata/images/hotel/max1024x768/311962712.jpg?k=593774cb22403056c8d8aea743c634d3a9dbb6c353737bcc09fa8d106714012d\u0026o=\u0026hp=1",
+                                                         "photoId":  "311962712",
+                                                         "sourceUrl":  "https://www.booking.com/hotel/gb/the-goodwood-lodge.html?lang=en-us\u0026chal_t=1791198983409\u0026force_referer="
+                                                     },
+                                                     {
+                                                         "slot":  11,
+                                                         "title":  "a kitchen with white cabinets and a large window at The Goodwood Lodge in Chichester",
+                                                         "imageUrl":  "https://cf.bstatic.com/xdata/images/hotel/max1024x768/311962714.jpg?k=2f17054d3c4616d4689129f9aaa5e95581497a5abbbba7a0dfe59a065d97c747\u0026o=\u0026hp=1",
+                                                         "photoId":  "311962714",
+                                                         "sourceUrl":  "https://www.booking.com/hotel/gb/the-goodwood-lodge.html?lang=en-us\u0026chal_t=1791198983409\u0026force_referer="
+                                                     },
+                                                     {
+                                                         "slot":  12,
+                                                         "title":  "a kitchen with white cabinets and a counter top at The Goodwood Lodge in Chichester",
+                                                         "imageUrl":  "https://cf.bstatic.com/xdata/images/hotel/max1024x768/311962715.jpg?k=3701f0ad4c60b68c2bea181a5ef71c3df7fdfb26bf1ba6bf02e3b4c881fa7332\u0026o=\u0026hp=1",
+                                                         "photoId":  "311962715",
+                                                         "sourceUrl":  "https://www.booking.com/hotel/gb/the-goodwood-lodge.html?lang=en-us\u0026chal_t=1791198983409\u0026force_referer="
+                                                     },
+                                                     {
+                                                         "slot":  13,
+                                                         "title":  "a bedroom with two beds and a window at The Goodwood Lodge in Chichester",
+                                                         "imageUrl":  "https://cf.bstatic.com/xdata/images/hotel/max1024x768/311962720.jpg?k=6e0e7d798549bdd599eb4d143ed6ebdce399b778afbc2dc8c6e4b99830f118e2\u0026o=\u0026hp=1",
+                                                         "photoId":  "311962720",
+                                                         "sourceUrl":  "https://www.booking.com/hotel/gb/the-goodwood-lodge.html?lang=en-us\u0026chal_t=1791198983409\u0026force_referer="
+                                                     },
+                                                     {
+                                                         "slot":  14,
+                                                         "title":  "a bathroom with a toilet and a sink and a shower at The Goodwood Lodge in Chichester",
+                                                         "imageUrl":  "https://cf.bstatic.com/xdata/images/hotel/max1024x768/311962722.jpg?k=a3360b5979174434e04c52cc01ed44e2cf73ea4633f05f956f52ef58e7b5636a\u0026o=\u0026hp=1",
+                                                         "photoId":  "311962722",
+                                                         "sourceUrl":  "https://www.booking.com/hotel/gb/the-goodwood-lodge.html?lang=en-us\u0026chal_t=1791198983409\u0026force_referer="
+                                                     },
+                                                     {
+                                                         "slot":  15,
+                                                         "title":  "two beds in a bedroom with a window at The Goodwood Lodge in Chichester",
+                                                         "imageUrl":  "https://cf.bstatic.com/xdata/images/hotel/max1024x768/311962725.jpg?k=23878254d62853716b363f695c6669722a17992aa28082c5de40092b74c9f25f\u0026o=\u0026hp=1",
+                                                         "photoId":  "311962725",
+                                                         "sourceUrl":  "https://www.booking.com/hotel/gb/the-goodwood-lodge.html?lang=en-us\u0026chal_t=1791198983409\u0026force_referer="
+                                                     },
+                                                     {
+                                                         "slot":  16,
+                                                         "title":  "a large body of water with trees in the background at The Goodwood Lodge in Chichester",
+                                                         "imageUrl":  "https://cf.bstatic.com/xdata/images/hotel/max1024x768/311962734.jpg?k=5fbfbffd8bcd27df42f807f94f119dc7ce88bbb3d4a85a02d215c7fbc4677184\u0026o=\u0026hp=1",
+                                                         "photoId":  "311962734",
+                                                         "sourceUrl":  "https://www.booking.com/hotel/gb/the-goodwood-lodge.html?lang=en-us\u0026chal_t=1791198983409\u0026force_referer="
+                                                     },
+                                                     {
+                                                         "slot":  17,
+                                                         "title":  "a large body of water with trees in the background at The Goodwood Lodge in Chichester",
+                                                         "imageUrl":  "https://cf.bstatic.com/xdata/images/hotel/max1024x768/311962742.jpg?k=38e39675045363ff19d68c31b07eed592deb4a93e2d42a1fc1b17584041f7db4\u0026o=\u0026hp=1",
+                                                         "photoId":  "311962742",
+                                                         "sourceUrl":  "https://www.booking.com/hotel/gb/the-goodwood-lodge.html?lang=en-us\u0026chal_t=1791198983409\u0026force_referer="
+                                                     },
+                                                     {
+                                                         "slot":  18,
+                                                         "title":  "a sign with a bird on it next to a lake at The Goodwood Lodge in Chichester",
+                                                         "imageUrl":  "https://cf.bstatic.com/xdata/images/hotel/max1024x768/311962750.jpg?k=e0f48f36b40bbaa9948af2fc23918525a4aef508b1991811c09bf7d7380dfeec\u0026o=\u0026hp=1",
+                                                         "photoId":  "311962750",
+                                                         "sourceUrl":  "https://www.booking.com/hotel/gb/the-goodwood-lodge.html?lang=en-us\u0026chal_t=1791198983409\u0026force_referer="
+                                                     },
+                                                     {
+                                                         "slot":  19,
+                                                         "title":  "Booking.com Deep Gallery Photo",
+                                                         "imageUrl":  "https://cf.bstatic.com/xdata/images/hotel/max500/311962691.jpg?k=548315a9e692f1f6c2e540469525e988374c31092b3a725b3d3c437a10112f4e\u0026o=\u0026hp=1",
+                                                         "photoId":  "1",
+                                                         "sourceUrl":  "https://www.booking.com/hotel/gb/the-goodwood-lodge.html?lang=en-us\u0026chal_t=1791198983409\u0026force_referer="
+                                                     },
+                                                     {
+                                                         "slot":  20,
+                                                         "title":  "Booking.com Deep Gallery Photo",
+                                                         "imageUrl":  "https://cf.bstatic.com/xdata/images/hotel/max200/311962729.jpg?k=8a205f8d670f058ba83f6526dec275676a647b3ff87ac91e0f5dc23be74ef2b7\u0026o=\u0026hp=1",
+                                                         "photoId":  "9",
+                                                         "sourceUrl":  "https://www.booking.com/hotel/gb/the-goodwood-lodge.html?lang=en-us\u0026chal_t=1791198983409\u0026force_referer="
+                                                     },
+                                                     {
+                                                         "slot":  21,
+                                                         "title":  "Booking.com Deep Gallery Photo",
+                                                         "imageUrl":  "https://cf.bstatic.com/xdata/images/hotel/max200/311962716.jpg?k=c0ae815d341cbac1245d77c688cabff868ae6d97436e848f6822bc81d29fba68\u0026o=\u0026hp=1",
+                                                         "photoId":  "6",
+                                                         "sourceUrl":  "https://www.booking.com/hotel/gb/the-goodwood-lodge.html?lang=en-us\u0026chal_t=1791198983409\u0026force_referer="
+                                                     },
+                                                     {
+                                                         "slot":  22,
+                                                         "title":  "Booking.com Deep Gallery Photo",
+                                                         "imageUrl":  "https://cf.bstatic.com/xdata/images/hotel/max200/311962697.jpg?k=e8d613ee2a6c996e963bb2b9f1e340ece6b2fc1def8ea89fb6a3dafd9b2f710b\u0026o=\u0026hp=1",
+                                                         "photoId":  "7",
+                                                         "sourceUrl":  "https://www.booking.com/hotel/gb/the-goodwood-lodge.html?lang=en-us\u0026chal_t=1791198983409\u0026force_referer="
+                                                     },
+                                                     {
+                                                         "slot":  23,
+                                                         "title":  "Booking.com Deep Gallery Photo",
+                                                         "imageUrl":  "https://cf.bstatic.com/xdata/images/hotel/max200/311962732.jpg?k=5ca01bbafe65a98c6a70a3c6832eb76dd90cdeb0eaddb07095d545e9c7c65465\u0026o=\u0026hp=1",
+                                                         "photoId":  "2",
+                                                         "sourceUrl":  "https://www.booking.com/hotel/gb/the-goodwood-lodge.html?lang=en-us\u0026chal_t=1791198983409\u0026force_referer="
+                                                     },
+                                                     {
+                                                         "slot":  24,
+                                                         "title":  "Booking.com Deep Gallery Photo",
+                                                         "imageUrl":  "https://cf.bstatic.com/xdata/images/hotel/max200/311962704.jpg?k=64b47262909a9661643a49fe47b4f2714519c1de889ede8c9013d805a917b214\u0026o=\u0026hp=1",
+                                                         "photoId":  "4",
+                                                         "sourceUrl":  "https://www.booking.com/hotel/gb/the-goodwood-lodge.html?lang=en-us\u0026chal_t=1791198983409\u0026force_referer="
+                                                     },
+                                                     {
+                                                         "slot":  25,
+                                                         "title":  "Booking.com Deep Gallery Photo",
+                                                         "imageUrl":  "https://cf.bstatic.com/xdata/images/hotel/max200/311962715.jpg?k=3701f0ad4c60b68c2bea181a5ef71c3df7fdfb26bf1ba6bf02e3b4c881fa7332\u0026o=\u0026hp=1",
+                                                         "photoId":  "5",
+                                                         "sourceUrl":  "https://www.booking.com/hotel/gb/the-goodwood-lodge.html?lang=en-us\u0026chal_t=1791198983409\u0026force_referer="
+                                                     },
+                                                     {
+                                                         "slot":  26,
+                                                         "title":  "Booking.com Deep Gallery Photo",
+                                                         "imageUrl":  "https://cf.bstatic.com/xdata/images/hotel/max200/311962720.jpg?k=6e0e7d798549bdd599eb4d143ed6ebdce399b778afbc2dc8c6e4b99830f118e2\u0026o=\u0026hp=1",
+                                                         "photoId":  "0",
+                                                         "sourceUrl":  "https://www.booking.com/hotel/gb/the-goodwood-lodge.html?lang=en-us\u0026chal_t=1791198983409\u0026force_referer="
+                                                     }
+                                                 ],
+                                 "photos_status":  "RESOLVED"
+                             },
+    "audit_timestamp":  "2026-10-05T11:16:29.459Z"
+}

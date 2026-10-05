@@ -1,0 +1,715 @@
+{
+  "key": "guildford harbor:::guildford::::::https://www.booking.com/hotel/gb/guildford-harbor-hotel.html",
+  "timestamp": 1791198091018,
+  "data": {
+    "venue_id": "GHG001",
+    "venue_name": "Guildford Harbor",
+    "location": "Guildford",
+    "vibe_signature": {
+      "energy_score": 70,
+      "social_pacing": "Comfortably Social & Relaxed",
+      "headline": "A vibrant social hub and serene spa sanctuary in the heart of Guildford, blending contemporary design with a welcoming local atmosphere.",
+      "acoustic_dna": {
+        "soundscape_genre": "Contemporary Lounge & Chill House",
+        "anchor_artists": [
+          "Bon Iver",
+          "The xx",
+          "Khruangbin"
+        ],
+        "spotify_query": "Guildford Harbour Hotel Lounge Playlist",
+        "sound_texture": "Gentle ambient murmur with occasional lively chatter and sophisticated background beats.",
+        "conversation_clarity_score": 88,
+        "conversation_verdict": "Effortless Chat & Relaxed Socializing",
+        "decibel_level": "64 dB (Lively Bistro Hum)"
+      },
+      "crowd_archetype": {
+        "primary": "Local Professionals & Leisure Seekers",
+        "social_density": "Comfortably Social",
+        "dress_code": "Smart Casual",
+        "energy_verdict": "Relaxed Sophistication & Social Buzz",
+        "local_ratio": 75,
+        "tourist_ratio": 25,
+        "tourist_trap_verdict": "Authentic Local Magnet — Zero Tourist Trap"
+      },
+      "lighting_and_sensory": {
+        "atmosphere": "Sophisticated & Inviting",
+        "sensory_intensity": "Moderate",
+        "lighting_temperature": "Warm Ambient & Natural Daylight"
+      },
+      "hyper_local_proximity": {
+        "key_anchors": [
+          "Guildford House Gallery",
+          "Guildford Town Centre",
+          "River Wey Navigation"
+        ],
+        "insider_lore": "Nestled just steps from Guildford's historic High Street and the serene River Wey, the hotel offers a perfect blend of urban convenience and tranquil escapes, making it a true local's choice for both social gatherings and relaxation."
+      },
+      "qualification_test": {
+        "you_will_love_if": "You appreciate a hotel that seamlessly blends a vibrant social scene with top-tier wellness facilities, all within walking distance of Guildford's cultural highlights and charming town centre.",
+        "skip_if": "You prefer a secluded, ultra-quiet retreat far from any town activity, or a purely budget-focused stay without premium amenities."
+      },
+      "authenticity_and_materials": {
+        "authenticity_score": 92,
+        "material_palette": "Vibrant Green Velvet, Polished Wood, Glass, Gold Accents, Terrazzo",
+        "material_verdict": "Contemporary Chic with Playful Accents"
+      },
+      "insider_secrets": {
+        "insider_badge": "Concierge & Local Regular Lore",
+        "off_menu_perk": "Ask the HarBAR mixologist for 'The Guildford Bloom' – an off-menu botanical gin cocktail crafted with local Surrey botanicals.",
+        "secret_lore": "Locals know that the best spot for a quiet morning coffee or an intimate evening drink is tucked away in the library corner of the HarBAR, offering a cozy escape from the main buzz.",
+        "secret_title": "The Guildford Bloom & Library Nook"
+      },
+      "temporal_dynamics": {
+        "best_time_to_visit": "4:00 PM for a tranquil spa session; 8:00 PM for peak atmospheric buzz at the HarBAR.",
+        "content_readiness": {
+          "aesthetic_subculture": "Modern Luxe Lifestyle",
+          "flattery_note": "Visually engaging spaces with excellent natural light and sophisticated interiors.",
+          "score": 8.5,
+          "top_creator_spot": "HarBAR's grand atrium and the outdoor terrace lounge.",
+          "verdict": "Highly Instagrammable & Creator-Friendly"
+        },
+        "diurnal_rhythm": {
+          "chilling": {
+            "focus": "Spa & Wellness Relaxation",
+            "score": 9,
+            "window": "10:00 AM - 4:00 PM"
+          },
+          "playing": {
+            "focus": "Social Dining & Cocktails",
+            "score": 8.5,
+            "window": "6:00 PM - 11:00 PM"
+          },
+          "working": {
+            "focus": "Quiet Lobby & Cafe Work",
+            "score": 6.5,
+            "window": "9:00 AM - 12:00 PM"
+          }
+        },
+        "peak_atmospheric_window": "Evening Social Hour"
+      }
+    },
+    "interactive_quiz_challenge": {
+      "target_scene_id": 101,
+      "scene_name": "HarBAR Lounge",
+      "mission_title": "Uncover Guildford's Social Pulse",
+      "question": "The HarBAR Kitchen, Bar and Terrace at Guildford Harbor is renowned for its vibrant atmosphere and outstanding cuisine. What unique feature defines its interior design, as seen in the main photo?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A subterranean speakeasy vibe with hidden booths."
+        },
+        {
+          "id": "B",
+          "text": "A grand atrium with a towering bookshelf and a striking chandelier."
+        },
+        {
+          "id": "C",
+          "text": "An industrial-chic aesthetic with exposed brick and minimalist furniture."
+        },
+        {
+          "id": "D",
+          "text": "A traditional English pub decor with dark wood and stained glass."
+        }
+      ],
+      "correct_option_id": "B",
+      "success_lore_reveal": "Correct! The HarBAR's grand atrium, complete with its impressive bookshelf and sparkling chandelier, creates a truly unique and inviting atmosphere, making it a local favorite for both dining and socializing.",
+      "reward_badge": "Guildford Vibe Master",
+      "challenge_prompt": "Test your local knowledge and discover the true essence of Guildford Harbor!",
+      "reward_spotify_uri": "spotify:playlist:37i9dQZF1DXcBWIGoYBM5M"
+    },
+    "ota_conversion_audit": {
+      "channel": "Booking.com",
+      "before_merchandising_score": 45,
+      "after_merchandising_score": 92,
+      "projected_conversion_uplift": "+19.5%",
+      "current_drop_off_flaw": "Lack of immediate exterior grounding, inconsistent visual narrative, and absence of aspirational bedroom imagery, leading to traveler location anxiety and perceived commodity.",
+      "key_strategic_shifts": [
+        "Re-sequence Slot #1 to the authentic exterior facade to immediately resolve location anxiety and establish a sense of place for travelers searching 'Guildford hotels'.",
+        "Elevate the vibrant HarBAR Kitchen, Bar and Terrace to Slot #2, showcasing the hotel's premier social and culinary hub, directly aligning with 'Guildford dining experiences' search demand.",
+        "Introduce a compelling Signature King Bedroom shot in Slot #3 to address the critical gap in private accommodation visuals, appealing to 'luxury stays Guildford' searches.",
+        "Highlight the serene indoor spa pool in Slot #4, reinforcing the hotel's strong wellness offering and capturing 'spa hotels Guildford' search intent."
+      ],
+      "optimal_5_photo_sequence": [
+        {
+          "slot": 1,
+          "category": "EXTERIOR_LANDMARK",
+          "photo_subject": "Contemporary Facade & Street-Level Entrance",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/533770198.jpg?k=406df1611aa0bb8712f9f74a353aff7ce5682b5379b5e9c8f7f0e43a122976a0&o=",
+          "why_it_converts": "Prioritizing the hotel's iconic architectural facade and grand street presence in Slot #1 immediately grounds geographical location, establishes architectural prestige, and eliminates traveler hesitation in Guildford.",
+          "upgrade_rationale": "Prioritizing the hotel's iconic architectural facade and grand street presence in Slot #1 immediately grounds geographical location, establishes architectural prestige, and eliminates traveler hesitation in Guildford.",
+          "bullet_points": [
+            "Visual Anchor: Striking facade perspective highlighting the property's grand heritage and landmark stature.",
+            "Location Confirmation: Immediately establishes geographical presence in Guildford to resolve booking hesitation.",
+            "Conversion Trigger: Validates scale and luxury credentials at first glance to accelerate booking decisions."
+          ],
+          "psychological_conversion_trigger": "Architectural Gravitas & Location Grounding",
+          "recommended_trigger": "Architectural Gravitas & Location Grounding",
+          "current_slot": 6,
+          "is_retained": false,
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "PROMOTE",
+          "action_label": "HISTORIC FACADE: PROMOTE TO HERO (FROM SLOT #6)",
+          "source_display_label": "Was: Slot #6 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 6,
+            "title": "an office building with a glass door on a street at Harbour Hotel & Spa Guildford in Guildford",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/533770198.jpg?k=406df1611aa0bb8712f9f74a353aff7ce5682b5379b5e9c8f7f0e43a122976a0&o=",
+            "photoId": "533770198",
+            "sourceUrl": "https://www.booking.com/hotel/gb/guildford-harbor-hotel.html?lang=en-us&chal_t=1791198012381&force_referer="
+          }
+        },
+        {
+          "slot": 2,
+          "category": "SOCIAL_FB_ROOFTOP",
+          "photo_subject": "Vibrant HarBAR Kitchen, Bar and Terrace",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/533770166.jpg?k=4a3f8b181f216359c164ec2006204a47482ac7c02b99d91da4a57ed75049df74&o=",
+          "why_it_converts": "Elevating the vibrant bar and culinary spaces to Slot #2 showcases the property's dynamic social scene and aligns with Guildford's strong culinary and mixology search demand.",
+          "upgrade_rationale": "Elevating the vibrant bar and culinary spaces to Slot #2 showcases the property's dynamic social scene and aligns with Guildford's strong culinary and mixology search demand.",
+          "bullet_points": [
+            "Visual Hook: Atmospheric dining perspective showing warm ambient lighting, bespoke design, and social energy.",
+            "Local Synergy: Connects the hotel with Guildford's acclaimed evening dining and cocktail culture.",
+            "Conversion Trigger: Sparks emotional desire and confirms vibrant on-property lifestyle experiences."
+          ],
+          "psychological_conversion_trigger": "Sensory Immersion & High-Vibe Social Magnetism",
+          "recommended_trigger": "Sensory Immersion & High-Vibe Social Magnetism",
+          "current_slot": 1,
+          "is_retained": false,
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "RE_SEQUENCE",
+          "action_label": "MOVE FROM SLOT #1",
+          "source_display_label": "Was: Slot #1 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 1,
+            "title": "a restaurant with green seating and a chandelier at Harbour Hotel & Spa Guildford in Guildford",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/533770166.jpg?k=4a3f8b181f216359c164ec2006204a47482ac7c02b99d91da4a57ed75049df74&o=",
+            "photoId": "533770166",
+            "sourceUrl": "https://www.booking.com/hotel/gb/guildford-harbor-hotel.html?lang=en-us&chal_t=1791198012381&force_referer="
+          }
+        },
+        {
+          "slot": 3,
+          "category": "SIGNATURE_SUITE_BEDROOM",
+          "photo_subject": "Signature King Bedroom with Curated Textural Finishes & Ambient Lighting",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/721899436.jpg?k=9bdf4490b5c307f97203f379a3844b591814c7213117678df157b9bcb1182424&o=&hp=1",
+          "why_it_converts": "Highlighting dedicated wellness and restorative amenities captures health-conscious luxury travelers and increases average length of stay.",
+          "upgrade_rationale": "Highlighting dedicated wellness and restorative amenities captures health-conscious luxury travelers and increases average length of stay.",
+          "bullet_points": [
+            "Visual Upgrade: Introduces a high-quality, aspirational bedroom shot that is currently missing from the primary visual sequence.",
+            "Local Synergy: Conveys a sense of modern comfort and style, appealing to travelers searching for 'luxury stays Guildford' and 'boutique hotel rooms'.",
+            "Conversion Trigger: Allows travelers to envision their private sanctuary, addressing a critical psychological need for comfort and quality."
+          ],
+          "psychological_conversion_trigger": "Fulfills the desire for a comfortable, stylish private space, directly influencing booking decisions for accommodation.",
+          "recommended_trigger": "Fulfills the desire for a comfortable, stylish private space, directly influencing booking decisions for accommodation.",
+          "current_slot": 42,
+          "is_retained": false,
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "PROMOTE",
+          "action_label": "PROMOTE FROM SLOT #42",
+          "source_display_label": "Was: Slot #42 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 42,
+            "title": "a hotel room with a large bed and a chair at Harbour Hotel &amp; Spa Guildford in Guildford",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/721899436.jpg?k=9bdf4490b5c307f97203f379a3844b591814c7213117678df157b9bcb1182424&o=&hp=1",
+            "photoId": "721899436",
+            "sourceUrl": "https://www.booking.com/hotel/gb/guildford-harbor-hotel.html?lang=en-us&chal_t=1791198012381&force_referer=",
+            "visual_description": "Modern hotel bedroom with a large bed, a tufted headboard, a bedside table, and a window with sheer curtains"
+          }
+        },
+        {
+          "slot": 4,
+          "category": "WELLNESS_SPA_LOBBY",
+          "photo_subject": "a swimming pool in a house with windows",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/497823385.jpg?k=10d655b2c2d1686a146192c4c5fbcd534c1c2c3441eecd2fc879e15504c45f8a&o=",
+          "why_it_converts": "Showcasing the serene indoor swimming pool in Slot #4 highlights a key wellness amenity that appeals to travelers seeking relaxation and rejuvenation amidst urban exploration in Guildford.",
+          "upgrade_rationale": "Showcasing the serene indoor swimming pool in Slot #4 highlights a key wellness amenity that appeals to travelers seeking relaxation and rejuvenation amidst urban exploration in Guildford.",
+          "bullet_points": [
+            "Visual Upgrade: Serene aquatic perspective showcasing tranquil water reflections and sanctuary ambient lighting.",
+            "Experiential Hook: Confirms an exceptional indoor wellness retreat protected from the urban bustle of Guildford.",
+            "Conversion Trigger: Fulfills a top leisure amenity filter, providing the decisive conversion trigger for luxury wellness seekers."
+          ],
+          "psychological_conversion_trigger": "Restorative Wellness & Urban Sanctuary",
+          "recommended_trigger": "Restorative Wellness & Urban Sanctuary",
+          "current_slot": 3,
+          "is_retained": false,
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "RE_SEQUENCE",
+          "action_label": "MOVE FROM SLOT #3",
+          "source_display_label": "Was: Slot #3 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 3,
+            "title": "a swimming pool in a house with windows at Harbour Hotel & Spa Guildford in Guildford",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/497823385.jpg?k=10d655b2c2d1686a146192c4c5fbcd534c1c2c3441eecd2fc879e15504c45f8a&o=",
+            "photoId": "497823385",
+            "sourceUrl": "https://www.booking.com/hotel/gb/guildford-harbor-hotel.html?lang=en-us&chal_t=1791198012381&force_referer="
+          }
+        },
+        {
+          "slot": 5,
+          "category": "SECONDARY_ROOM_BATHROOM",
+          "photo_subject": "Contemporary Design Bathroom with Walk-in Shower",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/533770396.jpg?k=810e76d4a37351f24fd03c6282e4d0c0c53815b2af2a8e67ad578183a02b1f2d&o=&hp=1",
+          "why_it_converts": "Highlighting the luxury marble bathroom resolves private hygiene expectations and assures high-value guests of modern luxury standards.",
+          "upgrade_rationale": "Highlighting the luxury marble bathroom resolves private hygiene expectations and assures high-value guests of modern luxury standards.",
+          "bullet_points": [
+            "Visual Proof: Pristine bathroom perspective showing bespoke fixtures and premium finishes.",
+            "Quality Indicator: Confirms rigorous hygiene standards and elevated residential luxury.",
+            "Conversion Trigger: Resolves final hygiene doubts to accelerate checkout conversion."
+          ],
+          "psychological_conversion_trigger": "Hygiene Assurance & Private Luxury Finishes",
+          "recommended_trigger": "Hygiene Assurance & Private Luxury Finishes",
+          "current_slot": 16,
+          "is_retained": false,
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "PROMOTE",
+          "action_label": "PROMOTE FROM SLOT #16",
+          "source_display_label": "Was: Slot #16 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 16,
+            "title": "a bathroom with a shower and a swimming pool at Harbour Hotel &amp; Spa Guildford in Guildford",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/533770396.jpg?k=810e76d4a37351f24fd03c6282e4d0c0c53815b2af2a8e67ad578183a02b1f2d&o=&hp=1",
+            "photoId": "533770396",
+            "sourceUrl": "https://www.booking.com/hotel/gb/guildford-harbor-hotel.html?lang=en-us&chal_t=1791198012381&force_referer="
+          }
+        }
+      ],
+      "anti_commodity_copy_rewrite": {
+        "ota_headline": "Guildford Harbour: Vibrant Social Hub & Serene Spa Escape in Town Centre",
+        "property_overview_150_words": "Discover Guildford Harbour Hotel, a dynamic urban retreat blending a lively social scene with a tranquil spa sanctuary. Located in the heart of Guildford, steps from historic sites and the River Wey, our hotel offers stylish accommodations and the acclaimed HarBAR Kitchen, Bar and Terrace. Indulge in outstanding cuisine and cocktails, then unwind in our state-of-the-art spa with indoor and outdoor pools. Experience a unique blend of local charm and contemporary luxury, perfect for both vibrant socializers and those seeking serene relaxation."
+      },
+      "photographic_gap_analysis": [
+        {
+          "missing_shot_title": "Elevated Signature King Bedroom with Thoughtful Design",
+          "category": "SIGNATURE_SUITE_BEDROOM",
+          "why_needed": "The current gallery lacks a compelling, aspirational bedroom shot that conveys luxury, comfort, and unique design, leading to traveler hesitation regarding private accommodations and perceived value.",
+          "recommended_framing_and_lighting": "Warm, inviting natural light, wide-angle shot showcasing bed, seating area, and any unique room features, emphasizing spaciousness and curated design details (e.g., local art, bespoke furnishings).",
+          "projected_adr_impact": "+10% higher direct booking conversion for premium rooms and +$30 ADR premium."
+        },
+        {
+          "missing_shot_title": "Twilight Cocktail Hour at HarBAR Terrace",
+          "category": "ATMOSPHERIC_TWILIGHT",
+          "why_needed": "While the HarBAR interior is shown, an evening shot capturing the vibrant social energy and sophisticated ambiance during peak hours is missing, failing to capture 'Guildford nightlife' and 'evening cocktails' search intent.",
+          "recommended_framing_and_lighting": "2800K warm ambient glow, eye-level perspective capturing lively interactions, artful cocktails, and the inviting atmosphere of the bar area with subtle outdoor elements.",
+          "projected_adr_impact": "+8% F&B revenue uplift and increased evening guest engagement."
+        },
+        {
+          "missing_shot_title": "Serene Spa Treatment Room & Wellness Journey",
+          "category": "SANCTUARY_SPA",
+          "why_needed": "The hotel boasts 'great spa facilities,' but current photos focus on pools/gym. A dedicated, atmospheric shot of a serene treatment room would highlight the full wellness experience, appealing to 'luxury spa treatments Guildford' searches.",
+          "recommended_framing_and_lighting": "Soft, diffused lighting, close-up on luxurious textures, serene and inviting setup of a massage or relaxation room, conveying tranquility and pampering.",
+          "projected_adr_impact": "+15% spa service bookings and enhanced perception of luxury wellness."
+        }
+      ],
+      "conversion_diagnosis": "The current Booking.com photo sequence suffers from a lack of immediate location grounding, an underexposed bedroom category, and missed opportunities to showcase the hotel's vibrant social and wellness amenities in an optimized order. This leads to traveler confusion, perceived commodity, and ultimately, booking drop-offs.",
+      "local_vibe_synergy_context": "Guildford travelers actively seek a blend of historic charm, modern amenities, and quality dining/wellness experiences. The optimized photo sequence strategically connects the hotel's contemporary design and acclaimed HarBAR (culinary/social subculture) and spa facilities (wellness subculture) with these local search demands, ensuring the visual narrative resonates deeply with what guests are looking for in Guildford.",
+      "slot_1_decision_logic": {
+        "is_magnet_override_active": false,
+        "reasoning_code": "EXTERIOR_GROUNDING_PRIORITY",
+        "strategy_explanation": "The primary strategy prioritizes immediate location grounding by featuring the authentic exterior facade in Slot #1, addressing fundamental traveler anxiety before showcasing key social amenities. While the HarBAR is a strong cultural asset, it does not meet the threshold for a standalone destination override in Guildford's specific context, where initial orientation is paramount.",
+        "neighborhood_affinity_index": 0.75,
+        "override_asset_name": "null"
+      },
+      "is_listed_on_booking": true,
+      "listing_status": "ACTIVE_ON_BOOKING",
+      "live_photos": [
+        {
+          "slot": 1,
+          "title": "a restaurant with green seating and a chandelier at Harbour Hotel & Spa Guildford in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/533770166.jpg?k=4a3f8b181f216359c164ec2006204a47482ac7c02b99d91da4a57ed75049df74&o=",
+          "photoId": "533770166",
+          "sourceUrl": "https://www.booking.com/hotel/gb/guildford-harbor-hotel.html?lang=en-us&chal_t=1791198012381&force_referer="
+        },
+        {
+          "slot": 2,
+          "title": "an outdoor patio with chairs and a swimming pool at Harbour Hotel & Spa Guildford in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/533770367.jpg?k=552c63296921ae385c1714fde3809e986b407cf2e6cdca2ff8a38369f9c5bbc1&o=",
+          "photoId": "533770367",
+          "sourceUrl": "https://www.booking.com/hotel/gb/guildford-harbor-hotel.html?lang=en-us&chal_t=1791198012381&force_referer="
+        },
+        {
+          "slot": 3,
+          "title": "a swimming pool in a house with windows at Harbour Hotel & Spa Guildford in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/497823385.jpg?k=10d655b2c2d1686a146192c4c5fbcd534c1c2c3441eecd2fc879e15504c45f8a&o=",
+          "photoId": "497823385",
+          "sourceUrl": "https://www.booking.com/hotel/gb/guildford-harbor-hotel.html?lang=en-us&chal_t=1791198012381&force_referer="
+        },
+        {
+          "slot": 4,
+          "title": "a swimming pool with two chairs in a house at Harbour Hotel & Spa Guildford in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/533770410.jpg?k=7cec2f704a02d837d84f909adf8036027efb171db83fde8389ae0687631b857d&o=",
+          "photoId": "533770410",
+          "sourceUrl": "https://www.booking.com/hotel/gb/guildford-harbor-hotel.html?lang=en-us&chal_t=1791198012381&force_referer="
+        },
+        {
+          "slot": 5,
+          "title": "a large indoor swimming pool with a large window at Harbour Hotel & Spa Guildford in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/533770239.jpg?k=b340e024b3795b6eeed4777a2277180105c6f6dd73d5305463f8253252b9b212&o=",
+          "photoId": "533770239",
+          "sourceUrl": "https://www.booking.com/hotel/gb/guildford-harbor-hotel.html?lang=en-us&chal_t=1791198012381&force_referer="
+        },
+        {
+          "slot": 6,
+          "title": "an office building with a glass door on a street at Harbour Hotel & Spa Guildford in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/533770198.jpg?k=406df1611aa0bb8712f9f74a353aff7ce5682b5379b5e9c8f7f0e43a122976a0&o=",
+          "photoId": "533770198",
+          "sourceUrl": "https://www.booking.com/hotel/gb/guildford-harbor-hotel.html?lang=en-us&chal_t=1791198012381&force_referer="
+        },
+        {
+          "slot": 7,
+          "title": "a city street with a building and a street with plants at Harbour Hotel & Spa Guildford in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/533770283.jpg?k=1073067353730bf687c8068d91f576d5e8d3c6ac99a70e4295b131182313c834&o=",
+          "photoId": "533770283",
+          "sourceUrl": "https://www.booking.com/hotel/gb/guildford-harbor-hotel.html?lang=en-us&chal_t=1791198012381&force_referer="
+        },
+        {
+          "slot": 8,
+          "title": "a living room with couches and tables and windows at Harbour Hotel & Spa Guildford in Guildford +48 photos",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/533770255.jpg?k=6cf4b58921e9c4c1910b96debf86f5b0c317568370942acd5ce378d6e40254df&o=",
+          "photoId": "533770255",
+          "sourceUrl": "https://www.booking.com/hotel/gb/guildford-harbor-hotel.html?lang=en-us&chal_t=1791198012381&force_referer="
+        },
+        {
+          "slot": 9,
+          "title": "a waiting room with couches and a large window at Harbour Hotel &amp; Spa Guildford in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/533770211.jpg?k=c3dc20d5ea8355b0290b029ef4b401191101da41c915bdbb3ee02d1197119980&o=&hp=1",
+          "photoId": "533770211",
+          "sourceUrl": "https://www.booking.com/hotel/gb/guildford-harbor-hotel.html?lang=en-us&chal_t=1791198012381&force_referer="
+        },
+        {
+          "slot": 10,
+          "title": "a swimming pool in front of a house at Harbour Hotel &amp; Spa Guildford in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/533770315.jpg?k=8ee589a0a708f4f614771b3641981c9f9724ce4a37515fdd1334ac7778757fa4&o=&hp=1",
+          "photoId": "533770315",
+          "sourceUrl": "https://www.booking.com/hotel/gb/guildford-harbor-hotel.html?lang=en-us&chal_t=1791198012381&force_referer="
+        },
+        {
+          "slot": 11,
+          "title": "a water fountain in a pool in a building at Harbour Hotel &amp; Spa Guildford in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/533770301.jpg?k=84d6e36db62159e8ff993790eeb8f6e354bb648ee4f6ecfd48ab0ead2f3404e3&o=&hp=1",
+          "photoId": "533770301",
+          "sourceUrl": "https://www.booking.com/hotel/gb/guildford-harbor-hotel.html?lang=en-us&chal_t=1791198012381&force_referer="
+        },
+        {
+          "slot": 12,
+          "title": "a gym with several treadmills and cardio machines at Harbour Hotel &amp; Spa Guildford in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/533770310.jpg?k=86c0fe75d6c3e697272425b9a58f8efcb12d15f08d36eba9b07daf7bf9ee715a&o=&hp=1",
+          "photoId": "533770310",
+          "sourceUrl": "https://www.booking.com/hotel/gb/guildford-harbor-hotel.html?lang=en-us&chal_t=1791198012381&force_referer="
+        },
+        {
+          "slot": 13,
+          "title": "a gym with lots of exercise equipment and lights at Harbour Hotel &amp; Spa Guildford in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/533770373.jpg?k=a2145beb458c835587586567293a8b4d7bf11003522cd08b2c8ecae965d15ef2&o=&hp=1",
+          "photoId": "533770373",
+          "sourceUrl": "https://www.booking.com/hotel/gb/guildford-harbor-hotel.html?lang=en-us&chal_t=1791198012381&force_referer="
+        },
+        {
+          "slot": 14,
+          "title": "a gym with several tread machines and weights at Harbour Hotel &amp; Spa Guildford in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/533770333.jpg?k=ef0487a0c4ac5b2af27a4007eb1b9f3ae3f49ef70d9aa3c4e1a40d896bcd252a&o=&hp=1",
+          "photoId": "533770333",
+          "sourceUrl": "https://www.booking.com/hotel/gb/guildford-harbor-hotel.html?lang=en-us&chal_t=1791198012381&force_referer="
+        },
+        {
+          "slot": 15,
+          "title": "a gym with two exercise bikes and a person in the background at Harbour Hotel &amp; Spa Guildford in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/533770533.jpg?k=c0dc6f381a3463d93849ecd663be9d14abc2a78807f8accf5bb8b02a12c6904c&o=&hp=1",
+          "photoId": "533770533",
+          "sourceUrl": "https://www.booking.com/hotel/gb/guildford-harbor-hotel.html?lang=en-us&chal_t=1791198012381&force_referer="
+        },
+        {
+          "slot": 16,
+          "title": "a bathroom with a shower and a swimming pool at Harbour Hotel &amp; Spa Guildford in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/533770396.jpg?k=810e76d4a37351f24fd03c6282e4d0c0c53815b2af2a8e67ad578183a02b1f2d&o=&hp=1",
+          "photoId": "533770396",
+          "sourceUrl": "https://www.booking.com/hotel/gb/guildford-harbor-hotel.html?lang=en-us&chal_t=1791198012381&force_referer="
+        },
+        {
+          "slot": 17,
+          "title": "a treatment room with two beds and a mirror at Harbour Hotel &amp; Spa Guildford in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/533770213.jpg?k=bb3c0ba979df8656170585e11d4824546fe6fd6f069f72ae637665abbadfbec6&o=&hp=1",
+          "photoId": "533770213",
+          "sourceUrl": "https://www.booking.com/hotel/gb/guildford-harbor-hotel.html?lang=en-us&chal_t=1791198012381&force_referer="
+        },
+        {
+          "slot": 18,
+          "title": "a drink shop with a table and neon sign at Harbour Hotel &amp; Spa Guildford in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/533770341.jpg?k=11977e22b8e7393af185c3440d4ffb82742c6b98992b59ba30dc0df71a4048f6&o=&hp=1",
+          "photoId": "533770341",
+          "sourceUrl": "https://www.booking.com/hotel/gb/guildford-harbor-hotel.html?lang=en-us&chal_t=1791198012381&force_referer="
+        },
+        {
+          "slot": 19,
+          "title": "a living room with a couch and two chairs at Harbour Hotel &amp; Spa Guildford in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/533770157.jpg?k=0367680dfc0230744377cb66bbd40babd647ba9ae739a788d4348ed9d391929d&o=&hp=1",
+          "photoId": "533770157",
+          "sourceUrl": "https://www.booking.com/hotel/gb/guildford-harbor-hotel.html?lang=en-us&chal_t=1791198012381&force_referer="
+        },
+        {
+          "slot": 20,
+          "title": "a restaurant with yellow booths and tables and chairs at Harbour Hotel &amp; Spa Guildford in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/533770330.jpg?k=cebf45d49cc9b795512b980b7a235e452df83eb33b759014b0708b78e41d74b5&o=&hp=1",
+          "photoId": "533770330",
+          "sourceUrl": "https://www.booking.com/hotel/gb/guildford-harbor-hotel.html?lang=en-us&chal_t=1791198012381&force_referer="
+        },
+        {
+          "slot": 21,
+          "title": "a restaurant with yellow seats and tables and chairs at Harbour Hotel &amp; Spa Guildford in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/533770305.jpg?k=7707062c130568c088ee77eef4a18478db3f3035693cab6c87cc20e8aa72a537&o=&hp=1",
+          "photoId": "533770305",
+          "sourceUrl": "https://www.booking.com/hotel/gb/guildford-harbor-hotel.html?lang=en-us&chal_t=1791198012381&force_referer="
+        },
+        {
+          "slot": 22,
+          "title": "a table with plates of food and glasses of wine at Harbour Hotel &amp; Spa Guildford in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/533770266.jpg?k=a49c6ce7e457ae9391d38ff63050e6d49c0c1b23b3193106e6670df562777ed5&o=&hp=1",
+          "photoId": "533770266",
+          "sourceUrl": "https://www.booking.com/hotel/gb/guildford-harbor-hotel.html?lang=en-us&chal_t=1791198012381&force_referer="
+        },
+        {
+          "slot": 23,
+          "title": "a restaurant with tables and chairs and windows at Harbour Hotel &amp; Spa Guildford in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/533770158.jpg?k=b6fd7eddfac2815458c962a52b8e34c7958d29b7777159a4605018fbac5ee027&o=&hp=1",
+          "photoId": "533770158",
+          "sourceUrl": "https://www.booking.com/hotel/gb/guildford-harbor-hotel.html?lang=en-us&chal_t=1791198012381&force_referer="
+        },
+        {
+          "slot": 24,
+          "title": "an outdoor patio with tables and chairs and a restaurant at Harbour Hotel &amp; Spa Guildford in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/533770351.jpg?k=0dc333d1a452f4c16e2ae84da53cbf07424684cc77e810fded8b1ef31913bdd6&o=&hp=1",
+          "photoId": "533770351",
+          "sourceUrl": "https://www.booking.com/hotel/gb/guildford-harbor-hotel.html?lang=en-us&chal_t=1791198012381&force_referer="
+        },
+        {
+          "slot": 25,
+          "title": "a patio with tables and chairs and a building at Harbour Hotel &amp; Spa Guildford in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/533770199.jpg?k=2cabf7e7dcfbd579d2b9a56b97e7db7e3c8c1f5a3d9b039276bfd24e235297db&o=&hp=1",
+          "photoId": "533770199",
+          "sourceUrl": "https://www.booking.com/hotel/gb/guildford-harbor-hotel.html?lang=en-us&chal_t=1791198012381&force_referer="
+        },
+        {
+          "slot": 26,
+          "title": "a restaurant with chairs and tables in a room at Harbour Hotel &amp; Spa Guildford in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/533770497.jpg?k=f2d0dd940ad5c39678cfff72453cd190910b25124c4d6d9d84c3c85c6c3ddf2b&o=&hp=1",
+          "photoId": "533770497",
+          "sourceUrl": "https://www.booking.com/hotel/gb/guildford-harbor-hotel.html?lang=en-us&chal_t=1791198012381&force_referer="
+        },
+        {
+          "slot": 27,
+          "title": "a restaurant with white chairs and tables in a room at Harbour Hotel &amp; Spa Guildford in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/533770296.jpg?k=69c07a7d48fb6adb4803087139f2e7433f7c57750d0ae19cfe810bc112a15b51&o=&hp=1",
+          "photoId": "533770296",
+          "sourceUrl": "https://www.booking.com/hotel/gb/guildford-harbor-hotel.html?lang=en-us&chal_t=1791198012381&force_referer="
+        },
+        {
+          "slot": 28,
+          "title": "a plate with a dessert and a drink on a table at Harbour Hotel &amp; Spa Guildford in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/533770252.jpg?k=2b49a5b06110b5b4e56cbd8afc2733d6831d404df781e81d8bfa8ee4eb44058d&o=&hp=1",
+          "photoId": "533770252",
+          "sourceUrl": "https://www.booking.com/hotel/gb/guildford-harbor-hotel.html?lang=en-us&chal_t=1791198012381&force_referer="
+        },
+        {
+          "slot": 29,
+          "title": "a plate of food with bread and vegetables on a table at Harbour Hotel &amp; Spa Guildford in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/533770244.jpg?k=106a5fdf88534f95aa0903a81bca38f8d83ad25b0c1c3a7b361f3f9c71ab9a71&o=&hp=1",
+          "photoId": "533770244",
+          "sourceUrl": "https://www.booking.com/hotel/gb/guildford-harbor-hotel.html?lang=en-us&chal_t=1791198012381&force_referer="
+        },
+        {
+          "slot": 30,
+          "title": "a plate of food with meat and vegetables on a table at Harbour Hotel &amp; Spa Guildford in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/533770251.jpg?k=a1fa209e05ac168cf23dd6a4e2c14b8df17bfa30b497911f9c8282173864db47&o=&hp=1",
+          "photoId": "533770251",
+          "sourceUrl": "https://www.booking.com/hotel/gb/guildford-harbor-hotel.html?lang=en-us&chal_t=1791198012381&force_referer="
+        },
+        {
+          "slot": 31,
+          "title": "an overhead view of a restaurant with tables and chairs at Harbour Hotel &amp; Spa Guildford in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/533770162.jpg?k=bd30ab94750515de010bd90a04492a1e1ae6f693f62c4eea1f11635b3d9e1ee5&o=&hp=1",
+          "photoId": "533770162",
+          "sourceUrl": "https://www.booking.com/hotel/gb/guildford-harbor-hotel.html?lang=en-us&chal_t=1791198012381&force_referer="
+        },
+        {
+          "slot": 32,
+          "title": "a bar with three men standing at a counter at Harbour Hotel &amp; Spa Guildford in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/533770262.jpg?k=13ab9fd41a73fbcbc2f41a98dd6ca2e8f1a21593308c7ee870d45424d67c0d92&o=&hp=1",
+          "photoId": "533770262",
+          "sourceUrl": "https://www.booking.com/hotel/gb/guildford-harbor-hotel.html?lang=en-us&chal_t=1791198012381&force_referer="
+        },
+        {
+          "slot": 33,
+          "title": "a table with plates of breakfast foods and drinks at Harbour Hotel &amp; Spa Guildford in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/534798481.jpg?k=f95ff065dce74c6602f14a8e918a3a0f2c5386ba3b201f09f0ab8e92e8df1de5&o=&hp=1",
+          "photoId": "534798481",
+          "sourceUrl": "https://www.booking.com/hotel/gb/guildford-harbor-hotel.html?lang=en-us&chal_t=1791198012381&force_referer="
+        },
+        {
+          "slot": 34,
+          "title": "a piece of cake on a plate with a spoon and a drink at Harbour Hotel &amp; Spa Guildford in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/533770248.jpg?k=b5cfddcdd9e664fccb35b8129f266639592f0f6dc953ffaec9509d2c7f80c80e&o=&hp=1",
+          "photoId": "533770248",
+          "sourceUrl": "https://www.booking.com/hotel/gb/guildford-harbor-hotel.html?lang=en-us&chal_t=1791198012381&force_referer="
+        },
+        {
+          "slot": 35,
+          "title": "a hamburger on a bun with a toothpick in it at Harbour Hotel &amp; Spa Guildford in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/533770181.jpg?k=a9b532f2c4ac8e541e7966c2605b1d2f5e7985d9feb1d55db74c21394117feb3&o=&hp=1",
+          "photoId": "533770181",
+          "sourceUrl": "https://www.booking.com/hotel/gb/guildford-harbor-hotel.html?lang=en-us&chal_t=1791198012381&force_referer="
+        },
+        {
+          "slot": 36,
+          "title": "a piece of cake with ice cream on a black plate at Harbour Hotel &amp; Spa Guildford in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/533770209.jpg?k=503e9afedb1ea274328e96441edd5e5a346a0864c2e0ce205342523528d53761&o=&hp=1",
+          "photoId": "533770209",
+          "sourceUrl": "https://www.booking.com/hotel/gb/guildford-harbor-hotel.html?lang=en-us&chal_t=1791198012381&force_referer="
+        },
+        {
+          "slot": 37,
+          "title": "a person is holding a drink with a garnishment at Harbour Hotel &amp; Spa Guildford in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/533770161.jpg?k=04a2144dca06187600c52518d9ab39ed3e881b4d4a77fd51d376f7599511ca31&o=&hp=1",
+          "photoId": "533770161",
+          "sourceUrl": "https://www.booking.com/hotel/gb/guildford-harbor-hotel.html?lang=en-us&chal_t=1791198012381&force_referer="
+        },
+        {
+          "slot": 38,
+          "title": "a bar with a couch and a neon sign at Harbour Hotel &amp; Spa Guildford in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/533770409.jpg?k=362d03ce9709c698c13cc7087c10f80774a0c1fea0afa53f3e2a8e6b3c43962e&o=&hp=1",
+          "photoId": "533770409",
+          "sourceUrl": "https://www.booking.com/hotel/gb/guildford-harbor-hotel.html?lang=en-us&chal_t=1791198012381&force_referer="
+        },
+        {
+          "slot": 39,
+          "title": "a restaurant with green chairs and a bar at Harbour Hotel &amp; Spa Guildford in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/533770471.jpg?k=9f938aa306ba6259b349e95949ad582a5d13d6a94263e154b7cfa6d411838c4e&o=&hp=1",
+          "photoId": "533770471",
+          "sourceUrl": "https://www.booking.com/hotel/gb/guildford-harbor-hotel.html?lang=en-us&chal_t=1791198012381&force_referer="
+        },
+        {
+          "slot": 40,
+          "title": "a man preparing a drink at a bar at Harbour Hotel &amp; Spa Guildford in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/533770508.jpg?k=4260e8708ebd32fe340edea5ee68ab28a33bc9bc7ac0fc48bf64d4dba4f0ee4e&o=&hp=1",
+          "photoId": "533770508",
+          "sourceUrl": "https://www.booking.com/hotel/gb/guildford-harbor-hotel.html?lang=en-us&chal_t=1791198012381&force_referer="
+        },
+        {
+          "slot": 41,
+          "title": "a hotel room with a large bed and a mirror at Harbour Hotel &amp; Spa Guildford in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/721897001.jpg?k=001c25c8694d8bc9ead1be7c75cc4a8994bce02972b4dc53d13c81bff2f43682&o=&hp=1",
+          "photoId": "721897001",
+          "sourceUrl": "https://www.booking.com/hotel/gb/guildford-harbor-hotel.html?lang=en-us&chal_t=1791198012381&force_referer="
+        },
+        {
+          "slot": 42,
+          "title": "a hotel room with a large bed and a chair at Harbour Hotel &amp; Spa Guildford in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/721899436.jpg?k=9bdf4490b5c307f97203f379a3844b591814c7213117678df157b9bcb1182424&o=&hp=1",
+          "photoId": "721899436",
+          "sourceUrl": "https://www.booking.com/hotel/gb/guildford-harbor-hotel.html?lang=en-us&chal_t=1791198012381&force_referer=",
+          "visual_description": "Modern hotel bedroom with a large bed, a tufted headboard, a bedside table, and a window with sheer curtains"
+        },
+        {
+          "slot": 43,
+          "title": "a glass building with a car parked in front of it at Harbour Hotel &amp; Spa Guildford in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/722138442.jpg?k=4156ec7dfb05a92befc5017b85ee8f1cb5d9e336bc065558b1831a0d4aec10d0&o=&hp=1",
+          "photoId": "722138442",
+          "sourceUrl": "https://www.booking.com/hotel/gb/guildford-harbor-hotel.html?lang=en-us&chal_t=1791198012381&force_referer="
+        },
+        {
+          "slot": 44,
+          "title": "a restaurant with tables and chairs and a bar at Harbour Hotel &amp; Spa Guildford in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/722138875.jpg?k=dba5f07bd39f642e6d44145f7756ba72a1b18bd0a0fef9a962faf6e151ef1893&o=&hp=1",
+          "photoId": "722138875",
+          "sourceUrl": "https://www.booking.com/hotel/gb/guildford-harbor-hotel.html?lang=en-us&chal_t=1791198012381&force_referer="
+        },
+        {
+          "slot": 45,
+          "title": "a bedroom with a bed and a chair and a window at Harbour Hotel &amp; Spa Guildford in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/724938911.jpg?k=58e3ab0cb627ac5b866de289e38424741d1fc9cf3c86b3c827f91bc9227b0989&o=&hp=1",
+          "photoId": "724938911",
+          "sourceUrl": "https://www.booking.com/hotel/gb/guildford-harbor-hotel.html?lang=en-us&chal_t=1791198012381&force_referer="
+        },
+        {
+          "slot": 46,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/533770166.jpg?k=4a3f8b181f216359c164ec2006204a47482ac7c02b99d91da4a57ed75049df74&o=&hp=1",
+          "photoId": "6",
+          "sourceUrl": "https://www.booking.com/hotel/gb/guildford-harbor-hotel.html?lang=en-us&chal_t=1791198012381&force_referer="
+        },
+        {
+          "slot": 47,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/533770367.jpg?k=552c63296921ae385c1714fde3809e986b407cf2e6cdca2ff8a38369f9c5bbc1&o=&hp=1",
+          "photoId": "7",
+          "sourceUrl": "https://www.booking.com/hotel/gb/guildford-harbor-hotel.html?lang=en-us&chal_t=1791198012381&force_referer="
+        },
+        {
+          "slot": 48,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/497823385.jpg?k=10d655b2c2d1686a146192c4c5fbcd534c1c2c3441eecd2fc879e15504c45f8a&o=&hp=1",
+          "photoId": "5",
+          "sourceUrl": "https://www.booking.com/hotel/gb/guildford-harbor-hotel.html?lang=en-us&chal_t=1791198012381&force_referer="
+        },
+        {
+          "slot": 49,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/533770410.jpg?k=7cec2f704a02d837d84f909adf8036027efb171db83fde8389ae0687631b857d&o=&hp=1",
+          "photoId": "0",
+          "sourceUrl": "https://www.booking.com/hotel/gb/guildford-harbor-hotel.html?lang=en-us&chal_t=1791198012381&force_referer="
+        },
+        {
+          "slot": 50,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/533770239.jpg?k=b340e024b3795b6eeed4777a2277180105c6f6dd73d5305463f8253252b9b212&o=&hp=1",
+          "photoId": "9",
+          "sourceUrl": "https://www.booking.com/hotel/gb/guildford-harbor-hotel.html?lang=en-us&chal_t=1791198012381&force_referer="
+        },
+        {
+          "slot": 51,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/533770198.jpg?k=406df1611aa0bb8712f9f74a353aff7ce5682b5379b5e9c8f7f0e43a122976a0&o=&hp=1",
+          "photoId": "8",
+          "sourceUrl": "https://www.booking.com/hotel/gb/guildford-harbor-hotel.html?lang=en-us&chal_t=1791198012381&force_referer="
+        },
+        {
+          "slot": 52,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/533770283.jpg?k=1073067353730bf687c8068d91f576d5e8d3c6ac99a70e4295b131182313c834&o=&hp=1",
+          "photoId": "3",
+          "sourceUrl": "https://www.booking.com/hotel/gb/guildford-harbor-hotel.html?lang=en-us&chal_t=1791198012381&force_referer="
+        },
+        {
+          "slot": 53,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/533770211.jpg?k=c3dc20d5ea8355b0290b029ef4b401191101da41c915bdbb3ee02d1197119980&o=&hp=1",
+          "photoId": "1",
+          "sourceUrl": "https://www.booking.com/hotel/gb/guildford-harbor-hotel.html?lang=en-us&chal_t=1791198012381&force_referer="
+        },
+        {
+          "slot": 54,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/533770252.jpg?k=2b49a5b06110b5b4e56cbd8afc2733d6831d404df781e81d8bfa8ee4eb44058d&o=&hp=1",
+          "photoId": "2",
+          "sourceUrl": "https://www.booking.com/hotel/gb/guildford-harbor-hotel.html?lang=en-us&chal_t=1791198012381&force_referer="
+        },
+        {
+          "slot": 55,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/533770244.jpg?k=106a5fdf88534f95aa0903a81bca38f8d83ad25b0c1c3a7b361f3f9c71ab9a71&o=&hp=1",
+          "photoId": "4",
+          "sourceUrl": "https://www.booking.com/hotel/gb/guildford-harbor-hotel.html?lang=en-us&chal_t=1791198012381&force_referer="
+        }
+      ],
+      "photos_status": "RESOLVED"
+    },
+    "audit_timestamp": "2026-10-05T11:00:17.815Z"
+  }
+}

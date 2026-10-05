@@ -340,15 +340,17 @@ export function parseBookingUrl(input) {
   if (slug.includes('miami-beach') || slug.includes('south-beach') || slug.includes('plymouth') || slug === 'twoninezeroone-collinsave' || slug.includes('eden-roc') || slug.includes('the-goodtime')) {
     inferredCity = 'Miami';
     inferredNeighborhood = 'Miami Beach';
-  } else if (slug.includes('copenhagen') || slug.includes('indre-by') || country === 'dk') {
+  } else if (slug.includes('copenhagen') || slug.includes('indre-by')) {
     inferredCity = 'Copenhagen';
     inferredNeighborhood = 'Indre By';
-  } else if (slug.includes('london') || slug.includes('shepherds-bush') || slug.includes('kensington') || slug.includes('hoxton') || country === 'gb') {
+  } else if (slug.includes('guildford')) {
+    inferredCity = 'Guildford';
+  } else if (slug.includes('london') || slug.includes('shepherds-bush') || slug.includes('kensington') || slug.includes('hoxton')) {
     inferredCity = 'London';
     if (slug.includes('shepherds-bush')) inferredNeighborhood = "Shepherd's Bush";
     else if (slug.includes('kensington')) inferredNeighborhood = "Kensington";
     else if (slug.includes('owo') || slug.includes('whitehall')) inferredNeighborhood = "Whitehall";
-  } else if (slug.includes('dubai') || country === 'ae') {
+  } else if (slug.includes('dubai')) {
     inferredCity = 'Dubai';
   }
 
@@ -1669,9 +1671,15 @@ export function matchBestImageForSubject(subjectText, category, liveBookingPhoto
     return s.includes('bedroom') || s.includes('suite') || (s.includes('bed') && !s.includes('sunbed') && !s.includes('daybed'));
   };
 
+  const isSpaOrPoolLike = (p) => {
+    const s = `${p?.title || ''} ${p?.imageUrl || ''}`.toLowerCase();
+    return s.includes('spa') || s.includes('wellness') || s.includes('pool') || s.includes('swim') || s.includes('sauna') || s.includes('jacuzzi') || s.includes('hot tub') || s.includes('fitness') || s.includes('gym') || s.includes('locker') || s.includes('changing room');
+  };
+
   const isBath = (p) => {
-    const s = `${p.title || ''} ${p.imageUrl || ''}`.toLowerCase();
-    return s.includes('bathroom') || s.includes('shower') || s.includes('bath') || s.includes('tub');
+    if (isSpaOrPoolLike(p)) return false;
+    const s = `${p?.title || ''} ${p?.imageUrl || ''}`.toLowerCase();
+    return s.includes('bathroom') || s.includes('washroom') || s.includes('ensuite') || s.includes('en-suite') || (s.includes('soaking tub') && !s.includes('hot tub')) || s.includes('freestanding tub') || (s.includes('walk-in shower') && !s.includes('pool'));
   };
 
   const isMeetingOrConference = (p) => {
@@ -1689,24 +1697,24 @@ export function matchBestImageForSubject(subjectText, category, liveBookingPhoto
   };
 
   // 1. Design Bathroom Category (Slot 5 / Bathroom) - Evaluated first to prevent interception by Spa
-  if (cat === 'SECONDARY_ROOM_BATHROOM' || text.includes('bathroom') || text.includes('bathtub') || text.includes('washroom') || (text.includes('shower') && !text.includes('bridal shower')) || (text.includes('bath') && !text.includes('bathhouse') && !text.includes('sunbathing'))) {
+  if (cat === 'SECONDARY_ROOM_BATHROOM' || text.includes('bathroom') || text.includes('bathtub') || text.includes('washroom') || (text.includes('shower') && !text.includes('bridal shower') && !text.includes('spa') && !text.includes('pool')) || (text.includes('bath') && !text.includes('bathhouse') && !text.includes('sunbathing') && !text.includes('spa'))) {
     const isBathroomCandidate = (p) => {
-      if (isExterior(p) || isMeetingOrConference(p)) return false;
+      if (isExterior(p) || isMeetingOrConference(p) || isSpaOrPoolLike(p)) return false;
       const u = (p.imageUrl || '').toLowerCase();
       const t = (p.title || '').toLowerCase();
-      if (u.includes('bath') || u.includes('tub') || u.includes('shower') || u.includes('vanity')) return true;
       if (p.detectedCategory === 'BATHROOM') return true;
-      const hasBathTitle = t.includes('bathroom') || t.includes('soaking tub') || t.includes('clawfoot') || t.includes('freestanding tub') || t.includes('walk-in shower') || t.includes('shower') || t.includes('bathtub');
+      if (u.includes('bathroom') || u.includes('washroom') || u.includes('vanity') || u.includes('soaking_tub') || u.includes('bath_wide')) return true;
+      const hasBathTitle = t.includes('bathroom') || t.includes('washroom') || t.includes('soaking tub') || t.includes('clawfoot') || t.includes('freestanding tub') || t.includes('walk-in shower') || t.includes('bathtub') || t.includes('ensuite') || t.includes('en-suite');
       const isBedroomWithBed = t.includes('bedroom with a bed') || t.includes('room with a bed') || t.includes('double room with private bath') || t.includes('double room with private bathroom') || t.includes('king room with shower');
       return hasBathTitle && !isBedroomWithBed;
     };
 
     // Priority 1: Check amenity photos for signature luxury tub / wide bathroom shots (like obts-bath_wide.jpg)
     const tubMatch = findMatch(poolAmenity, p => {
-      if (isExterior(p)) return false;
+      if (isExterior(p) || isSpaOrPoolLike(p)) return false;
       const u = (p.imageUrl || '').toLowerCase();
       const t = (p.title || '').toLowerCase();
-      return (u.includes('bath_wide') || u.includes('tub') || t.includes('soaking tub') || t.includes('clawfoot') || t.includes('freestanding tub')) && !t.includes('bedroom with a bed');
+      return (u.includes('bath_wide') || u.includes('soaking_tub') || t.includes('soaking tub') || t.includes('clawfoot') || t.includes('freestanding tub')) && !t.includes('bedroom with a bed');
     });
     if (tubMatch) return tubMatch;
 
@@ -1720,6 +1728,21 @@ export function matchBestImageForSubject(subjectText, category, liveBookingPhoto
 
     // Strict integrity: If no authentic bathroom photo exists, return null so recommendation adapts
     return null;
+  }
+
+  // 1.1 Secondary Lifestyle Sanctuary / Estate Grounds / Parkland / Golf / Courtyard
+  if (cat === 'SECONDARY_LIFESTYLE_SANCTUARY' || text.includes('estate') || text.includes('grounds') || text.includes('parkland') || text.includes('golf') || text.includes('courtyard')) {
+    const isGroundsOrLifestyle = (p) => {
+      if (isBedroomLike(p) || isBath(p) || isMeetingOrConference(p)) return false;
+      const s = `${p.title || ''} ${p.imageUrl || ''}`.toLowerCase();
+      return s.includes('ground') || s.includes('parkland') || s.includes('estate') || s.includes('garden') || s.includes('golf') || s.includes('terrace') || s.includes('courtyard') || s.includes('lawn') || s.includes('outdoor') || s.includes('patio');
+    };
+    const groundsLive = findMatch(poolLive, isGroundsOrLifestyle);
+    if (groundsLive) return groundsLive;
+    const groundsAmenity = findMatch(poolAmenity, isGroundsOrLifestyle);
+    if (groundsAmenity) return groundsAmenity;
+    const generalLifestyleLive = findMatch(poolLive, p => !isBedroomLike(p) && !isBath(p) && !isExterior(p));
+    if (generalLifestyleLive) return generalLifestyleLive;
   }
 
   // 2. Social F&B / Fine Dining / Restaurant / Cocktail Bar
@@ -1897,8 +1920,9 @@ function classifyAssetAndDeriveRecommendation(asset, hotelName = '') {
   const cat = (asset?.detectedCategory || '').toUpperCase();
   const text = `${title} ${asset?.imageUrl || ''}`.toLowerCase();
 
-  // 0. Design Bathroom / Luxury Tub / Walk-in Shower
-  if (cat === 'BATHROOM' || text.includes('bathroom') || text.includes('bath tub') || text.includes('bathtub') || text.includes('soaking tub') || text.includes('clawfoot') || (text.includes('shower') && !text.includes('bridal shower'))) {
+  // 0. Design Bathroom / Luxury Tub / Walk-in Shower (Strictly exclude spa, pool, wellness, gym, locker rooms)
+  const isSpaOrPoolLike = text.includes('spa') || text.includes('sauna') || text.includes('wellness') || text.includes('pool') || text.includes('swim') || text.includes('gym') || text.includes('fitness') || text.includes('locker') || text.includes('changing room') || text.includes('hot tub') || text.includes('jacuzzi');
+  if (!isSpaOrPoolLike && (cat === 'BATHROOM' || text.includes('bathroom') || text.includes('bath tub') || text.includes('bathtub') || text.includes('soaking tub') || text.includes('clawfoot') || text.includes('en-suite') || text.includes('ensuite') || (text.includes('shower') && !text.includes('bridal shower')))) {
     return {
       category: 'SECONDARY_ROOM_BATHROOM',
       subject: title && !title.includes('Tripadvisor') && title.length <= 60 ? title : 'Design Bathroom with Freestanding Tub & Walk-in Shower',
@@ -1908,6 +1932,24 @@ function classifyAssetAndDeriveRecommendation(asset, hotelName = '') {
         'Visual Upgrade: High-finish stone surfaces with ambient vanity illumination.',
         'Local Synergy: Reinforces elevated residential luxury standards.',
         'Conversion Trigger: Resolves final hygiene doubts to accelerate checkout conversion.'
+      ]
+    };
+  }
+
+  // 0.1 Secondary Lifestyle Sanctuary / Estate Grounds / Parkland / Golf / Terrace / Courtyard
+  if (cat === 'SECONDARY_LIFESTYLE_SANCTUARY' || text.includes('ground') || text.includes('parkland') || text.includes('estate') || text.includes('garden') || text.includes('golf') || text.includes('lawn') || (text.includes('terrace') && !text.includes('rooftop')) || text.includes('courtyard')) {
+    const subject = (title && title.length >= 10 && title.length <= 60 && !title.includes('Tripadvisor') && !title.includes('Booking.com') && !title.includes('Picture of'))
+      ? title.replace(/\s*at\s+.*$/i, '').trim()
+      : 'Idyllic Estate Grounds & Parkland Lifestyle Sanctuary';
+    return {
+      category: 'SECONDARY_LIFESTYLE_SANCTUARY',
+      subject,
+      why: 'Showcasing the hotel\'s expansive grounds and outdoor lifestyle amenities establishes distinct estate scale and peaceful countryside retreat credentials.',
+      trigger: 'Estate Seclusion & Expansive Lifestyle Sanctuary',
+      bullets: [
+        'Visual Upgrade: Expansive perspective capturing lush parkland landscape and outdoor recreational appeal.',
+        'Local Synergy: Anchors the property as a premier countryside retreat and sporting estate.',
+        'Conversion Trigger: Highlights wide-open space and peaceful escapism to justify premium leisure rates.'
       ]
     };
   }
@@ -2020,15 +2062,19 @@ function classifyAssetAndDeriveRecommendation(asset, hotelName = '') {
 export async function resolveAuditPhotos(hotelName, city, neighborhood = '', strategySlots = null, bookingUrl = null, strategicShifts = null, prefetchedLivePhotos = null, prefetchedAmenityPhotos = null) {
   console.log(`[Photo Gatekeeper] Starting visual asset resolution for "${hotelName}" in "${city}"${bookingUrl ? ` (Direct URL: ${bookingUrl})` : ''}...`);
   
-  // 1. Fetch live Booking.com photos (Playwright) + Signature Amenity photos (Serper) if not already prefetched
-  const [liveBookingPhotos, amenityPhotos] = await Promise.all([
-    (Array.isArray(prefetchedLivePhotos) && prefetchedLivePhotos.length > 0)
-      ? prefetchedLivePhotos
-      : fetchBookingPhotosForHotel(hotelName, city, neighborhood, bookingUrl),
-    (Array.isArray(prefetchedAmenityPhotos) && prefetchedAmenityPhotos.length > 0)
-      ? prefetchedAmenityPhotos
-      : fetchAmenityPhotosForHotel(hotelName, city, neighborhood, strategySlots, strategicShifts)
-  ]);
+  // 1. Fetch live Booking.com photos (Playwright) if not already prefetched
+  const liveBookingPhotos = (Array.isArray(prefetchedLivePhotos) && prefetchedLivePhotos.length > 0)
+    ? prefetchedLivePhotos
+    : await fetchBookingPhotosForHotel(hotelName, city, neighborhood, bookingUrl);
+
+  // If live Booking.com photos exist (>= 5), strictly re-order them - zero external scraping needed
+  let amenityPhotos = [];
+  if (Array.isArray(prefetchedAmenityPhotos) && prefetchedAmenityPhotos.length > 0) {
+    amenityPhotos = prefetchedAmenityPhotos;
+  } else if (!liveBookingPhotos || liveBookingPhotos.length < 5) {
+    console.log(`[Photo Gatekeeper] Under 5 live photos on Booking.com. Engaging emergency fallback...`);
+    amenityPhotos = await fetchAmenityPhotosForHotel(hotelName, city, neighborhood, strategySlots, strategicShifts);
+  }
 
   const rawAmenity = Array.isArray(amenityPhotos) ? amenityPhotos : [];
   const rawLive = Array.isArray(liveBookingPhotos) ? liveBookingPhotos : [];
@@ -2173,10 +2219,13 @@ export async function resolveAuditPhotos(hotelName, city, neighborhood = '', str
   };
 
   const isBath = (p) => {
+    if (!p) return false;
+    const s = `${p.title || ''} ${p.imageUrl || ''}`.toLowerCase();
+    if (s.includes('spa') || s.includes('sauna') || s.includes('wellness') || s.includes('pool') || s.includes('swim') || s.includes('gym') || s.includes('fitness') || s.includes('locker') || s.includes('changing room') || s.includes('hot tub') || s.includes('jacuzzi')) return false;
     const v = getVisual(p);
     if (v) return v.has_bath === true && !v.is_exterior;
-    const s = `${p.title || ''} ${p.imageUrl || ''}`.toLowerCase();
-    return s.includes('bathroom') || s.includes('shower') || s.includes('bath') || s.includes('tub');
+    if (p.detectedCategory === 'BATHROOM') return true;
+    return s.includes('bathroom') || s.includes('washroom') || s.includes('ensuite') || s.includes('en-suite') || (s.includes('soaking tub') && !s.includes('hot tub')) || s.includes('freestanding tub') || (s.includes('walk-in shower') && !s.includes('pool'));
   };
 
   const isPoolLike = (p) => {
@@ -2723,6 +2772,15 @@ export async function resolveAuditPhotos(hotelName, city, neighborhood = '', str
   if (!slot5Asset) {
     slot5Asset = findFirst(effectiveAmenityPool, p => isBath(p) && !isExterior(p));
   }
+  // Adaptive Slot 5: If no authentic bathroom exists, prioritize Estate Grounds / Parkland / Golf / Terrace / Courtyard
+  if (!slot5Asset) {
+    const isGroundsOrLifestyle = (p) => {
+      const s = `${p?.title || ''} ${p?.imageUrl || ''}`.toLowerCase();
+      return s.includes('ground') || s.includes('parkland') || s.includes('estate') || s.includes('garden') || s.includes('golf') || s.includes('terrace') || s.includes('courtyard') || s.includes('lawn');
+    };
+    slot5Asset = findFirst(poolLive, p => isGroundsOrLifestyle(p) && !isBedroomLike(p) && !isExterior(p)) ||
+                 findFirst(effectiveAmenityPool, p => isGroundsOrLifestyle(p) && !isBedroomLike(p) && !isExterior(p));
+  }
   if (!slot5Asset) {
     slot5Asset = findFirst(poolLive, p => !isBedroomLike(p) && !isExterior(p)) || findFirst(effectiveAmenityPool, p => !isBedroomLike(p) && !isExterior(p));
   }
@@ -2782,7 +2840,7 @@ export async function resolveAuditPhotos(hotelName, city, neighborhood = '', str
     { targetSlot: 2, defaultCat: isSlot1Exterior ? 'SOCIAL_FB_ROOFTOP' : 'EXTERIOR_LANDMARK', asset: slot2Asset },
     { targetSlot: 3, defaultCat: 'SIGNATURE_SUITE_BEDROOM', asset: slot3Asset },
     { targetSlot: 4, defaultCat: (isSlot4Pool || isPoolLike(slot4Asset)) ? 'WELLNESS_SPA_LOBBY' : (isSlot4DiningOrBar ? 'SOCIAL_FB_ROOFTOP' : 'WELLNESS_SPA_LOBBY'), asset: slot4Asset },
-    { targetSlot: 5, defaultCat: 'SECONDARY_ROOM_BATHROOM', asset: slot5Asset }
+    { targetSlot: 5, defaultCat: isBath(slot5Asset) ? 'SECONDARY_ROOM_BATHROOM' : 'SECONDARY_LIFESTYLE_SANCTUARY', asset: slot5Asset }
   ];
 
   // -------------------------------------------------------------
@@ -2834,7 +2892,7 @@ export async function resolveAuditPhotos(hotelName, city, neighborhood = '', str
         category = 'WELLNESS_SPA_LOBBY';
       }
     } else if (targetSlot === 5) {
-      category = 'SECONDARY_ROOM_BATHROOM';
+      category = isBath(asset) ? 'SECONDARY_ROOM_BATHROOM' : 'SECONDARY_LIFESTYLE_SANCTUARY';
     }
 
     let photoSubject = stratSlot?.photo_subject || asset?.title || rec.subject;
@@ -3119,17 +3177,17 @@ export async function resolveAuditPhotos(hotelName, city, neighborhood = '', str
       }
     }
 
-    // Slot 5: Luxury Bathroom & Hygiene Assurance
+    // Slot 5: Luxury Bathroom & Hygiene Assurance OR Secondary Lifestyle Sanctuary
     if (targetSlot === 5) {
-      const isActuallyBath = (v && v.has_bath) || assetTitleLower.includes('bath') || assetTitleLower.includes('shower') || assetTitleLower.includes('tub');
+      const isActuallyBath = isBath(asset);
       if (isActuallyBath) {
         category = 'SECONDARY_ROOM_BATHROOM';
-        if (!photoSubject || /bedroom|suite|dining|restaurant|bar|exterior|facade/i.test(photoSubject)) {
+        if (!photoSubject || /bedroom|suite|dining|restaurant|bar|exterior|facade|estate|grounds/i.test(photoSubject)) {
           photoSubject = (v && v.brief_visual_description) 
             ? v.brief_visual_description 
             : ((asset?.title && !asset.title.includes('Booking.com') && !asset.title.includes('Tripadvisor')) ? asset.title.replace(/\s*at\s+.*$/i, '').trim() : 'Design-Forward Marble Bathroom with Soaking Tub');
         }
-        if (hasCategoryConflict || !why || /dining|restaurant|bar|exterior|facade|bed|lobby/i.test(why)) {
+        if (hasCategoryConflict || !why || /dining|restaurant|bar|exterior|facade|bed|lobby|estate|grounds/i.test(why)) {
           why = `Highlighting the luxury marble bathroom resolves private hygiene expectations and assures high-value guests of modern luxury standards.`;
           trigger = 'Hygiene Assurance & Private Luxury Finishes';
           bullets = [
@@ -3139,13 +3197,18 @@ export async function resolveAuditPhotos(hotelName, city, neighborhood = '', str
           ];
         }
       } else {
-        if (v && v.brief_visual_description) {
-          photoSubject = v.brief_visual_description;
-        } else if (asset?.title && !asset.title.includes('Booking.com')) {
-          photoSubject = asset.title.replace(/\s*at\s+.*$/i, '').trim();
-        } else {
-          photoSubject = 'Curated Living Space & Guest Sanctuary';
-        }
+        // Adaptive Slot 5: When no guest bathroom exists, adapt to Secondary Lifestyle Sanctuary / Estate Grounds
+        category = 'SECONDARY_LIFESTYLE_SANCTUARY';
+        photoSubject = (asset?.title && !asset.title.includes('Booking.com') && !asset.title.includes('Tripadvisor')) 
+          ? asset.title.replace(/\s*at\s+.*$/i, '').trim() 
+          : (v?.brief_visual_description || 'Estate Grounds & Outdoor Lifestyle Sanctuary');
+        why = `Highlighting the property's expansive grounds and distinctive lifestyle amenities in Slot #5 provides a compelling secondary hook for leisure travelers seeking outdoor space and recreational prestige.`;
+        trigger = 'Estate Seclusion & Expansive Lifestyle Sanctuary';
+        bullets = [
+          `Visual Proof: Expansive perspective capturing the hotel's distinctive grounds, parkland setting, or curated public spaces.`,
+          `Experiential Hook: Validates generous outdoor scale and peaceful relaxation beyond guest rooms.`,
+          `Conversion Trigger: Confirms lifestyle amenities and recreational leisure value to finalize booking confidence.`
+        ];
       }
     }
     if (!bullets || bullets.length === 0) {
@@ -3208,6 +3271,8 @@ export async function resolveAuditPhotos(hotelName, city, neighborhood = '', str
       action = 'SWAP_IN';
       if (category === 'SECONDARY_ROOM_BATHROOM') {
         actionLabel = `DESIGN BATHROOM (SLOT #5 - HYGIENE & LUXURY FINISH)`;
+      } else if (category === 'SECONDARY_LIFESTYLE_SANCTUARY') {
+        actionLabel = `SECONDARY LIFESTYLE SANCTUARY (SLOT #5 - ESTATE & GROUNDS)`;
       } else if (category === 'EXTERIOR_LANDMARK') {
         actionLabel = `EXTERIOR LANDMARK (SLOT #2 - MANDATORY GROUNDING)`;
       } else if (category === 'SIGNATURE_SUITE_BEDROOM') {
@@ -3480,8 +3545,10 @@ export default async function handler(req, res) {
             hotelName = parsed.cleanTitle;
           }
         }
-        if (parsed.inferredCity) city = parsed.inferredCity;
-        if (parsed.inferredNeighborhood) neighborhood = parsed.inferredNeighborhood;
+        if (parsed.inferredCity && (!city || (city.toLowerCase() === 'london' && parsed.inferredCity.toLowerCase() !== 'london'))) {
+          city = parsed.inferredCity;
+        }
+        if (!neighborhood && parsed.inferredNeighborhood) neighborhood = parsed.inferredNeighborhood;
       }
     }
 
@@ -3507,7 +3574,7 @@ export default async function handler(req, res) {
     const isManifestOnly = req.query.phase === '1' || req.body?.phase === 1 || String(req.url || '').includes('master-vibe-manifest') || req.query.manifestOnly === 'true' || req.body?.manifestOnly === true;
     console.log(`[Master Vibe Audit API] Running ${isManifestOnly ? 'Fast-Path Vibe Manifest' : '4-Step Pipeline'} for: "${hotelName}" in "${city}" ${neighborhood ? `(${neighborhood})` : ''} ${bookingId ? `[Booking ID: ${bookingId}]` : ''} ${bookingUrl ? `(URL: ${bookingUrl})` : ''}`);
 
-    const manifestKey = getResolutionKey(hotelName, city, neighborhood, bookingUrl || bookingId) + (isManifestOnly ? ':::manifest_only' : '');
+    let manifestKey = getResolutionKey(hotelName, city, neighborhood, bookingUrl || bookingId) + (isManifestOnly ? ':::manifest_only' : '');
     const isFresh = req.query.fresh === 'true' || req.body?.fresh === true;
     if (isFresh) {
       manifestCache.delete(manifestKey);
@@ -3546,6 +3613,24 @@ export default async function handler(req, res) {
       const corpusData = await fetchVenueCorpus(hotelName, city, neighborhood);
       const rawCorpus = corpusData.rawCorpus;
 
+      if (corpusData.verifiedCity) {
+        const verifiedLower = corpusData.verifiedCity.toLowerCase();
+        const currentLower = (city || '').toLowerCase().trim();
+        if (!city || (currentLower === 'london' && verifiedLower !== 'london') || (currentLower === 'miami' && !verifiedLower.includes('miami'))) {
+          console.log(`[Master Vibe API] Auto-calibrating city from Google Places: "${city}" -> "${corpusData.verifiedCity}"`);
+          city = corpusData.verifiedCity;
+          manifestKey = getResolutionKey(hotelName, city, neighborhood, bookingUrl || bookingId) + (isManifestOnly ? ':::manifest_only' : '');
+          if (!isFresh) {
+            const calibratedDisk = readDailyDiskCache(manifestKey);
+            if (calibratedDisk) {
+              console.log(`[Master Vibe API] Serving calibrated daily disk cache for "${manifestKey}"`);
+              manifestCache.set(manifestKey, { timestamp: Date.now(), data: calibratedDisk });
+              return calibratedDisk;
+            }
+          }
+        }
+      }
+
       if (isManifestOnly) {
         console.log(`[Master Vibe API] Fast-path Manifest-Only requested for "${hotelName}". Generating Vibe Manifest via Gemini 2.5 Flash...`);
         const manifestResult = await runStructuredVibeAudit(hotelName, city, rawCorpus, [], [], neighborhood);
@@ -3554,13 +3639,18 @@ export default async function handler(req, res) {
         return manifestResult;
       }
 
-      // Step 2: Get available images from site, TripAdvisor (From Management only), and Booking.com
-      console.log(`[Master Vibe API] 2) Get available images from official site, TripAdvisor (From Management only), and Booking.com...`);
-      const [liveBookingPhotos, amenityPhotos] = await Promise.all([
-        fetchBookingPhotosForHotel(hotelName, city, neighborhood, bookingUrl, bookingId),
-        fetchAmenityPhotosForHotel(hotelName, city, neighborhood)
-      ]);
-      console.log(`[Master Vibe API] Inventory discovered: ${liveBookingPhotos?.length || 0} live OTA photos, ${amenityPhotos?.length || 0} official/TripAdvisor management assets.`);
+      // Step 2: Fast-Path: Extract authentic live Booking.com gallery directly
+      console.log(`[Master Vibe API] 2) Fast-Path: Extracting authentic live Booking.com gallery for "${hotelName}"...`);
+      const liveBookingPhotos = await fetchBookingPhotosForHotel(hotelName, city, neighborhood, bookingUrl, bookingId);
+      
+      let amenityPhotos = [];
+      if (!liveBookingPhotos || liveBookingPhotos.length === 0) {
+        console.log(`[Master Vibe API] 0 live Booking.com photos discovered. Engaging emergency TripAdvisor/Official fallback...`);
+        amenityPhotos = await fetchAmenityPhotosForHotel(hotelName, city, neighborhood);
+      } else {
+        console.log(`[Master Vibe API] Successfully captured ${liveBookingPhotos.length} verified live Booking.com photos. Skipping external TripAdvisor/Official scrapers.`);
+      }
+      console.log(`[Master Vibe API] Inventory ready: ${liveBookingPhotos?.length || 0} live OTA photos, ${amenityPhotos?.length || 0} fallback assets.`);
 
       // Step 3: Set strategy
       console.log(`[Master Vibe API] 3) Set strategy: Synthesizing Key Strategic Shifts & 5-slot blueprint bridging Hotel DNA ⟷ Neighborhood Demand with discovered inventory...`);
@@ -3627,6 +3717,15 @@ export default async function handler(req, res) {
               }
               return `Highlight verified public lifestyle spaces in Slot #4 to complement private guest accommodations.`;
             }
+            // Slot 5 synchronization: If shift promises a bathroom but finalSeq has no bathroom in Slot 5
+            const slot5 = finalSeq.find(s => s.slot === 5);
+            const hasBathInSlot5 = slot5 && (slot5.category === 'SECONDARY_ROOM_BATHROOM' || /bathroom|washroom|soaking tub|clawfoot|en-suite/i.test(`${slot5.photo_subject}`));
+            if (/bathroom|washroom|soaking tub|shower shot|luxury bathroom/i.test(shift) && !hasBathInSlot5) {
+              if (slot5 && slot5.photo_subject) {
+                return `Feature the ${slot5.photo_subject} in Slot #5 to showcase the property's distinctive estate grounds and lifestyle amenities.`;
+              }
+              return `Feature the hotel's distinctive estate grounds and lifestyle spaces in Slot #5 to showcase expansive guest amenities.`;
+            }
             // Purge cross-city leakage (e.g. London mentioned for Copenhagen or Miami):
             if (city && city.toLowerCase() !== 'london') {
               shift = shift.replace(/\b(London's|in London|within London's urban context|within London's charming streetscape|London)\b/gi, city);
@@ -3636,7 +3735,25 @@ export default async function handler(req, res) {
         }
 
         // Automatic Photographic Gap Analysis Injection:
-        // If the hotel features a signature amenity in text (e.g. sauna) but lacks photos in the inventory:
+        // 1. If hotel has zero authentic guest room bathroom photos in final sequence:
+        const hasBathInSeq = finalSeq.some(s => s.category === 'SECONDARY_ROOM_BATHROOM' || /bathroom|washroom|soaking tub|clawfoot/i.test(`${s.category} ${s.photo_subject}`));
+        if (!hasBathInSeq) {
+          if (!Array.isArray(auditResult.ota_conversion_audit.photographic_gap_analysis)) {
+            auditResult.ota_conversion_audit.photographic_gap_analysis = [];
+          }
+          const alreadyHasBathGap = auditResult.ota_conversion_audit.photographic_gap_analysis.some(g => /bath|tub|shower/i.test(g.missing_shot_title || ''));
+          if (!alreadyHasBathGap) {
+            auditResult.ota_conversion_audit.photographic_gap_analysis.unshift({
+              missing_shot_title: 'Curated Master Bathroom Soaking Tub & Walk-in Rain Shower',
+              category: 'SECONDARY_ROOM_BATHROOM',
+              why_needed: `Zero authentic guest room bathroom photos are currently visible in ${hotelName}'s live OTA gallery. Luxury and high-ADR travelers consider bathroom finish quality and hygiene a non-negotiable booking confirmation trigger.`,
+              recommended_framing_and_lighting: 'Bright, pristine eye-level wide perspective showcasing freestanding soaking tub, frameless glass rain shower enclosure, marble vanity, and luxury botanical amenities under warm, natural lighting.',
+              projected_adr_impact: '+14% checkout conversion uplift and elimination of private hygiene booking friction'
+            });
+          }
+        }
+
+        // 2. If the hotel features a signature amenity in text (e.g. sauna) but lacks photos in the inventory:
         const mentionsSaunaInCorpus = /sauna|wellness studio|thermal suite|vitality pool/i.test(rawCorpus || '');
         if (mentionsSaunaInCorpus && !hasSpaInSeq) {
           if (!Array.isArray(auditResult.ota_conversion_audit.photographic_gap_analysis)) {

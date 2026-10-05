@@ -129,8 +129,8 @@ const PROCESSING_PHASES = [
     badge: "STEP 1/4 • VIBE SIGNATURE"
   },
   {
-    title: "2) Discovering Images (Site, TripAdvisor & Booking.com)",
-    detail: "Scanning live Booking.com gallery, official brand domains & TripAdvisor management photos...",
+    title: "2) Discovering Images (Booking.com)",
+    detail: "Scanning live Booking.com gallery & authentic hotel photo assets...",
     percentage: 50,
     badge: "STEP 2/4 • VISUAL INVENTORY"
   },
@@ -388,7 +388,7 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
     try {
       // Execute the unified 4-step sequential pipeline:
       // 1) Manifest first
-      // 2) Get available images (Site, TripAdvisor Management, Booking.com)
+      // 2) Get available images (Booking.com)
       // 3) Set strategy
       // 4) Re-order and verify
       const auditPromise = fetchMasterVibeAudit(

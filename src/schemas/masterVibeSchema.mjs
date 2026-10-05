@@ -196,7 +196,8 @@ export const masterVibeSchema = {
                   "SOCIAL_FB_ROOFTOP",
                   "SIGNATURE_SUITE_BEDROOM",
                   "WELLNESS_SPA_LOBBY",
-                  "SECONDARY_ROOM_BATHROOM"
+                  "SECONDARY_ROOM_BATHROOM",
+                  "SECONDARY_LIFESTYLE_SANCTUARY"
                 ],
                 description: "Strict visual merchandising category for this slot"
               },

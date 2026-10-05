@@ -44,7 +44,7 @@ const VibeAuditSearchSection = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     propertyName: '',
-    city: 'London',
+    city: '',
     neighborhood: '',
     bookingId: '',
     email: '',
@@ -63,17 +63,28 @@ const VibeAuditSearchSection = () => {
     setLoading(true);
     setProcessingStage(1);
 
-    // Abort any obsolete Phase 2 in-flight request if user submits a new property search
+    // Abort any obsolete in-flight request if user submits a new property search
     if (activePhase2AbortRef.current) {
-      console.log('[Client] Aborting previous Phase 2 request due to new hotel audit submission.');
+      console.log('[Client] Aborting previous in-flight request due to new hotel audit submission.');
       activePhase2AbortRef.current.abort();
     }
     const abortController = new AbortController();
     activePhase2AbortRef.current = abortController;
 
     try {
-      // Execute the unified 4-step sequential pipeline:
-      const masterAudit = await fetchMasterVibeAudit(
+      // STAGE 1: Rapid Vibe Manifest (Vibe Signature in ~6-8 seconds)
+      console.log('[Audit Engine] Launching Stage 1: Fast-Path Vibe Manifest...');
+      const manifestPromise = fetchMasterVibeAuditManifest(
+        targetHotel,
+        targetCity,
+        targetNeighborhood,
+        directBookingUrl,
+        bookingId
+      );
+
+      // STAGE 2: Full Audit Pipeline with verified Booking.com inventory (~15-18 seconds)
+      console.log('[Audit Engine] Launching Stage 2: Verified Photo & Strategy Pipeline...');
+      const fullAuditPromise = fetchMasterVibeAudit(
         targetHotel,
         targetCity,
         targetNeighborhood,
@@ -81,10 +92,30 @@ const VibeAuditSearchSection = () => {
         directBookingUrl
       );
 
+      // Hydrate Stage 1 immediately once Vibe Signature is ready
+      manifestPromise.then(manifestData => {
+        if (abortController.signal.aborted) return;
+        console.log('[Audit Engine] Stage 1 Manifest ready. Rendering Vibe Signature immediately.');
+        setAnalysis(prev => ({
+          signals: prev?.signals || { categories: {} },
+          masterAudit: manifestData,
+          isOtaHydrating: true
+        }));
+        setLoading(false);
+      }).catch(err => {
+        console.warn('[Audit Engine] Stage 1 fast manifest notice:', err.message);
+      });
+
+      // Hydrate Stage 2 (Photos + Strategy) once full pipeline completes
+      const fullAudit = await fullAuditPromise;
       if (abortController.signal.aborted) return;
 
-      // Render verified results with fully resolved photos
-      setAnalysis({ signals: { categories: {} }, masterAudit });
+      console.log('[Audit Engine] Stage 2 Complete. Hydrating full visual audit & photo sequence.');
+      setAnalysis(prev => ({
+        signals: prev?.signals || { categories: {} },
+        masterAudit: fullAudit,
+        isOtaHydrating: false
+      }));
       setLoading(false);
 
       // Background supplemental signals fetch
@@ -94,6 +125,7 @@ const VibeAuditSearchSection = () => {
         }
       }).catch(err => console.warn('Supplemental signals error:', err));
     } catch (err) {
+      if (abortController.signal.aborted) return;
       console.error('Audit engine failure:', err);
       setLoading(false);
       alert('Analysis engine encountered a timeout. Please try again.');
@@ -108,10 +140,12 @@ const VibeAuditSearchSection = () => {
     if (!formData.propertyName || !formData.propertyName.trim()) {
       errors.propertyName = 'Hotel Name is required';
     }
-    if (!formData.city || !formData.city.trim()) {
-      errors.city = 'City / Primary Market is required';
-    }
     const rawBooking = String(formData.bookingId || '').trim();
+    if (!formData.city || !formData.city.trim()) {
+      if (!rawBooking.includes('booking.com')) {
+        errors.city = 'City / Primary Market is required (or provide a Booking.com URL to auto-detect)';
+      }
+    }
     if (!rawBooking) {
       errors.bookingId = 'Booking.com ID or URL is required';
     }
@@ -164,7 +198,7 @@ const VibeAuditSearchSection = () => {
       ...prev,
       propertyName: selectedTitle
     }));
-    executeAudit(selectedTitle, formData.city || 'London', formData.neighborhood || '', candidate.url);
+    executeAudit(selectedTitle, formData.city || '', formData.neighborhood || '', candidate.url);
   };
 
   return (
@@ -218,7 +252,7 @@ const VibeAuditSearchSection = () => {
                     <input 
                       type="text" 
                       className={`vibe-input ${fieldErrors.city ? 'input-error' : ''}`}
-                      placeholder="e.g. London, Miami, Paris"
+                      placeholder="e.g. London, Miami, Guildford (or auto-detect)"
                       value={formData.city}
                       onChange={e => {
                         setFieldErrors(prev => ({ ...prev, city: '' }));
@@ -426,6 +460,35 @@ const VibeAuditSearchSection = () => {
                     location={`${formData.neighborhood}, ${formData.city}`} 
                   />
                 </div>
+              )}
+
+              {/* Progressive Hydration Banner for OTA Visual Strategy */}
+              {analysis.isOtaHydrating && (
+                <motion.div 
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="glass-card"
+                  style={{ 
+                    padding: '1.75rem', 
+                    marginBottom: '2.5rem', 
+                    borderRadius: '16px',
+                    border: '1px solid rgba(0, 229, 255, 0.35)',
+                    background: 'linear-gradient(135deg, rgba(0, 229, 255, 0.08), rgba(15, 23, 42, 0.85))',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '1.25rem'
+                  }}
+                >
+                  <div className="spinner-mini" style={{ width: '28px', height: '28px', borderColor: '#00e5ff', borderTopColor: 'transparent', flexShrink: 0 }} />
+                  <div>
+                    <h4 style={{ color: '#00e5ff', margin: '0 0 4px 0', fontSize: '1.05rem', fontWeight: 700, letterSpacing: '0.02em' }}>
+                      ⚡ ANALYZING LIVE BOOKING.COM INVENTORY...
+                    </h4>
+                    <p style={{ color: 'rgba(255, 255, 255, 0.75)', margin: 0, fontSize: '0.85rem' }}>
+                      Synthesizing 5-slot visual merchandising strategy and sequencing authentic gallery photos...
+                    </p>
+                  </div>
+                </motion.div>
               )}
 
               {/* Booking.com OTA Conversion Audit */}

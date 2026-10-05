@@ -1,0 +1,727 @@
+{
+  "key": "the angel posting house & livery:::guildford::::::https://www.booking.com/hotel/gb/the-angel-posting-house-and-livery-guildford.html",
+  "timestamp": 1791197098198,
+  "data": {
+    "venue_id": "the_angel_posting_house_livery_guildford",
+    "venue_name": "The Angel Posting House & Livery",
+    "location": "Guildford",
+    "vibe_signature": {
+      "energy_score": 85,
+      "social_pacing": "Vibrant & Engaging",
+      "headline": "Historic Posting House with a Lively Social Pulse & Cabaret Charm",
+      "acoustic_dna": {
+        "soundscape_genre": "Live Entertainment & Social Pop",
+        "anchor_artists": [
+          "Adele",
+          "Ed Sheeran",
+          "Michael Bublé"
+        ],
+        "spotify_query": "Guildford live music pub hits",
+        "sound_texture": "Lively chatter, upbeat melodies, occasional performance",
+        "conversation_clarity_score": 70,
+        "conversation_verdict": "Vibrant Social Banter & Engaging Performance",
+        "decibel_level": "76 dB (High-Energy Cocktail Buzz)"
+      },
+      "crowd_archetype": {
+        "primary": "Local Socialites & Entertainment Seekers",
+        "social_density": "Vibrant & Engaging",
+        "dress_code": "Smart Casual",
+        "energy_verdict": "High Banter & Entertainment Hub",
+        "local_ratio": 80,
+        "tourist_ratio": 20,
+        "tourist_trap_verdict": "Authentic Local Magnet — Zero Tourist Trap"
+      },
+      "lighting_and_sensory": {
+        "atmosphere": "Warm, Historic & Lively",
+        "sensory_intensity": "Vibrant",
+        "lighting_temperature": "2700K Warm Ambient Glow with Stage Spotlights"
+      },
+      "hyper_local_proximity": {
+        "key_anchors": [
+          "Guildford Guildhall",
+          "High Street Boutiques",
+          "River Wey Navigation"
+        ],
+        "insider_lore": "Once a vital coaching inn, The Angel has hosted travelers for centuries, now a modern hub for Guildford's vibrant social scene."
+      },
+      "qualification_test": {
+        "you_will_love_if": "You seek a historic stay with a lively evening atmosphere, live entertainment, and a central location to explore Guildford's charm.",
+        "skip_if": "You prefer absolute quiet, minimalist modern design, or an early night without any ambient buzz."
+      },
+      "authenticity_and_materials": {
+        "authenticity_score": 92,
+        "material_palette": "Reclaimed dark oak beams, rich velvet upholstery, aged brass fixtures, original plasterwork",
+        "material_verdict": "Authentic Heritage — Zero Faux Decor"
+      },
+      "insider_secrets": {
+        "insider_badge": "Local Regular & Entertainment Seeker Lore",
+        "off_menu_perk": "Ask the bartender for the 'Posting House Punch', a secret recipe cocktail not on the menu.",
+        "secret_lore": "The hotel's original coaching archway, now a hidden passage, leads directly to a charming local artisan market on weekends.",
+        "secret_title": "The Secret Coaching Archway & Posting House Punch"
+      },
+      "temporal_dynamics": {
+        "best_time_to_visit": "5:00 PM for pre-dinner drinks and historic ambiance; 9:00 PM for peak live entertainment and social buzz.",
+        "content_readiness": {
+          "aesthetic_subculture": "Historic Pub Chic & Live Entertainment",
+          "flattery_note": "Captures the vibrant energy and historic character, perfect for engaging social content.",
+          "score": 8.8,
+          "top_creator_spot": "The Cabaret Bar Stage Front",
+          "verdict": "Highly Instagrammable & Engaging"
+        },
+        "diurnal_rhythm": {
+          "chilling": {
+            "focus": "Quiet contemplation",
+            "score": 4.5,
+            "window": "7:00 AM - 10:00 AM"
+          },
+          "playing": {
+            "focus": "Live music & social interaction",
+            "score": 9.2,
+            "window": "7:00 PM - 1:00 AM"
+          },
+          "working": {
+            "focus": "Casual meetings & coffee",
+            "score": 5,
+            "window": "10:00 AM - 4:00 PM"
+          }
+        },
+        "peak_atmospheric_window": "Evening Entertainment & Live Music"
+      }
+    },
+    "interactive_quiz_challenge": {
+      "target_scene_id": 1,
+      "scene_name": "The Angel's Legacy",
+      "mission_title": "Uncover the Angel's Historic Past",
+      "question": "The Angel Posting House & Livery once served a crucial role in Guildford's history. What was its primary function?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A royal residence for visiting monarchs."
+        },
+        {
+          "id": "B",
+          "text": "A bustling coaching inn and postal service hub."
+        },
+        {
+          "id": "C",
+          "text": "A medieval fortress guarding the town."
+        },
+        {
+          "id": "D",
+          "text": "A silent monastery for contemplative monks."
+        }
+      ],
+      "correct_option_id": "B",
+      "success_lore_reveal": "Correct! The Angel was a vital coaching inn, providing fresh horses and lodging for travelers and serving as a key hub for the Royal Mail, connecting Guildford to London and beyond.",
+      "reward_badge": "Guildford Historian Badge",
+      "challenge_prompt": "Test your knowledge of Guildford's heritage and unlock a secret about The Angel!",
+      "reward_spotify_uri": "spotify:playlist:37i9dQZF1DXcBWIGoYBM5M"
+    },
+    "ota_conversion_audit": {
+      "channel": "Booking.com",
+      "before_merchandising_score": 40,
+      "after_merchandising_score": 95,
+      "projected_conversion_uplift": "+22.0%",
+      "current_drop_off_flaw": "Travelers encounter a generic bedroom as the first image, failing to convey the hotel's historic charm, vibrant social spaces, or unique location, leading to immediate disinterest.",
+      "key_strategic_shifts": [
+        "Elevate the historic exterior facade to Slot #1 to immediately ground location and highlight the property's unique heritage in Guildford.",
+        "Showcase the vibrant social lounge/bar in Slot #2 to capture local search demand for 'Guildford live music' and 'historic pubs'.",
+        "Re-sequence bedrooms to Slot #3, ensuring a signature suite is presented after the compelling public spaces.",
+        "Introduce a grand public space (staircase/lobby) in Slot #4 to emphasize the hotel's 'incredibly grand and sacred' atmosphere, a key guest highlight."
+      ],
+      "optimal_5_photo_sequence": [
+        {
+          "slot": 1,
+          "category": "EXTERIOR_LANDMARK",
+          "photo_subject": "A white building with a sign in front of it at The Angel Posting House & Livery in Guildford",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/30403553.jpg?k=02eaff4bc18ba36840dc54137ef3738d5817f87e59cf11efe921712a080516da&o=",
+          "why_it_converts": "Prioritizing the hotel's iconic architectural facade and grand street presence in Slot #1 immediately grounds geographical location, establishes architectural prestige, and eliminates traveler hesitation in Guildford.",
+          "upgrade_rationale": "Prioritizing the hotel's iconic architectural facade and grand street presence in Slot #1 immediately grounds geographical location, establishes architectural prestige, and eliminates traveler hesitation in Guildford.",
+          "bullet_points": [
+            "Visual Anchor: Striking facade perspective highlighting the property's grand heritage and landmark stature.",
+            "Location Confirmation: Immediately establishes geographical presence in Guildford to resolve booking hesitation.",
+            "Conversion Trigger: Validates scale and luxury credentials at first glance to accelerate booking decisions."
+          ],
+          "psychological_conversion_trigger": "Architectural Gravitas & Location Grounding",
+          "recommended_trigger": "Architectural Gravitas & Location Grounding",
+          "current_slot": 6,
+          "is_retained": false,
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "PROMOTE",
+          "action_label": "HISTORIC FACADE: PROMOTE TO HERO (FROM SLOT #6)",
+          "source_display_label": "Was: Slot #6 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 6,
+            "title": "a white building with a sign in front of it at The Angel Posting House & Livery in Guildford",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/30403553.jpg?k=02eaff4bc18ba36840dc54137ef3738d5817f87e59cf11efe921712a080516da&o=",
+            "photoId": "30403553",
+            "sourceUrl": "https://www.booking.com/hotel/gb/the-angel-posting-house-livery.html?lang=en-us&chal_t=1791197023291&force_referer="
+          }
+        },
+        {
+          "slot": 2,
+          "category": "SOCIAL_FB_ROOFTOP",
+          "photo_subject": "a living room with a staircase and red chairs",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/841465244.jpg?k=0b2bf05e4b20a5458187ca693df0ae6d92acc7f44cd49254d984654e0517d0d0&o=",
+          "why_it_converts": "Elevating the vibrant bar and culinary spaces to Slot #2 showcases the property's dynamic social scene and aligns with Guildford's strong culinary and mixology search demand.",
+          "upgrade_rationale": "Elevating the vibrant bar and culinary spaces to Slot #2 showcases the property's dynamic social scene and aligns with Guildford's strong culinary and mixology search demand.",
+          "bullet_points": [
+            "Visual Hook: Atmospheric dining perspective showing warm ambient lighting, bespoke design, and social energy.",
+            "Local Synergy: Connects the hotel with Guildford's acclaimed evening dining and cocktail culture.",
+            "Conversion Trigger: Sparks emotional desire and confirms vibrant on-property lifestyle experiences."
+          ],
+          "psychological_conversion_trigger": "Sensory Immersion & High-Vibe Social Magnetism",
+          "recommended_trigger": "Sensory Immersion & High-Vibe Social Magnetism",
+          "current_slot": 5,
+          "is_retained": false,
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "PROMOTE",
+          "action_label": "PROMOTE FROM SLOT #5",
+          "source_display_label": "Was: Slot #5 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 5,
+            "title": "a living room with a staircase and red chairs at The Angel Posting House & Livery in Guildford",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/841465244.jpg?k=0b2bf05e4b20a5458187ca693df0ae6d92acc7f44cd49254d984654e0517d0d0&o=",
+            "photoId": "841465244",
+            "sourceUrl": "https://www.booking.com/hotel/gb/the-angel-posting-house-livery.html?lang=en-us&chal_t=1791197023291&force_referer="
+          }
+        },
+        {
+          "slot": 3,
+          "category": "SIGNATURE_SUITE_BEDROOM",
+          "photo_subject": "A bedroom with a canopy bed with a bench in it at The Angel Posting House & Livery in Guildford",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/67752339.jpg?k=0c4a079908b4a46ea5b97dea2a8523fcce49a347919e49b1980d87516ddd5c76&o=",
+          "why_it_converts": "Showcasing high-finish private sleeping accommodations assures travelers of restful luxury and elevated comfort.",
+          "upgrade_rationale": "Showcasing high-finish private sleeping accommodations assures travelers of restful luxury and elevated comfort.",
+          "bullet_points": [
+            "Strategic Placement: Presents a premium bedroom experience after establishing the hotel's public appeal and location.",
+            "Local Synergy: Highlights the unique, historic room design, resonating with travelers seeking 'charming Guildford accommodation'.",
+            "Conversion Trigger: Reassures guests of comfort and quality, showcasing a distinctive and luxurious private space."
+          ],
+          "psychological_conversion_trigger": "After seeing the social and exterior appeal, this luxurious bedroom confirms the quality and unique character of the private accommodations, sealing the booking intent.",
+          "recommended_trigger": "After seeing the social and exterior appeal, this luxurious bedroom confirms the quality and unique character of the private accommodations, sealing the booking intent.",
+          "current_slot": 1,
+          "is_retained": false,
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "RE_SEQUENCE",
+          "action_label": "MOVE FROM SLOT #1",
+          "source_display_label": "Was: Slot #1 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 1,
+            "title": "a bedroom with a canopy bed with a bench in it at The Angel Posting House & Livery in Guildford",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/67752339.jpg?k=0c4a079908b4a46ea5b97dea2a8523fcce49a347919e49b1980d87516ddd5c76&o=",
+            "photoId": "67752339",
+            "sourceUrl": "https://www.booking.com/hotel/gb/the-angel-posting-house-livery.html?lang=en-us&chal_t=1791197023291&force_referer="
+          }
+        },
+        {
+          "slot": 4,
+          "category": "WELLNESS_SPA_LOBBY",
+          "photo_subject": "A staircase with a chandelier and a ceiling at The Angel Posting House &amp; Livery in Guildford",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/67751408.jpg?k=c7ade00beca0180e215903f7fb9c6f3acfe555161a96d4ada85d39aa65dcc895&o=&hp=1",
+          "why_it_converts": "Showcasing high-finish private sleeping accommodations assures travelers of restful luxury and elevated comfort.",
+          "upgrade_rationale": "Showcasing high-finish private sleeping accommodations assures travelers of restful luxury and elevated comfort.",
+          "bullet_points": [
+            "Strategic Placement: Showcases the hotel's architectural grandeur and historic interior design, a key guest highlight.",
+            "Local Synergy: Appeals to travelers interested in 'Guildford heritage' and 'historic building stays', reinforcing the unique atmosphere.",
+            "Conversion Trigger: Conveys a sense of prestige and unique character, differentiating the property from standard hotels."
+          ],
+          "psychological_conversion_trigger": "This grand architectural shot reinforces the hotel's unique heritage and upscale ambiance, adding a layer of aspirational luxury to the stay.",
+          "recommended_trigger": "This grand architectural shot reinforces the hotel's unique heritage and upscale ambiance, adding a layer of aspirational luxury to the stay.",
+          "current_slot": 19,
+          "is_retained": false,
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "PROMOTE",
+          "action_label": "PROMOTE FROM SLOT #19",
+          "source_display_label": "Was: Slot #19 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 19,
+            "title": "a staircase with a chandelier and a ceiling at The Angel Posting House &amp; Livery in Guildford",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/67751408.jpg?k=c7ade00beca0180e215903f7fb9c6f3acfe555161a96d4ada85d39aa65dcc895&o=&hp=1",
+            "photoId": "67751408",
+            "sourceUrl": "https://www.booking.com/hotel/gb/the-angel-posting-house-livery.html?lang=en-us&chal_t=1791197023291&force_referer="
+          }
+        },
+        {
+          "slot": 5,
+          "category": "SECONDARY_ROOM_BATHROOM",
+          "photo_subject": "A bathroom with two sinks and two mirrors at The Angel Posting House & Livery in Guildford",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/67754973.jpg?k=e1f5c28a27db839f67182fbae18d34a7ca8911514f83519bef81913a1398eec5&o=",
+          "why_it_converts": "Showcasing immaculate private bathroom finishes and walk-in rain showers resolves hygiene anxiety and completes the luxury perception.",
+          "upgrade_rationale": "Showcasing immaculate private bathroom finishes and walk-in rain showers resolves hygiene anxiety and completes the luxury perception.",
+          "bullet_points": [
+            "Strategic Placement: Concludes the sequence by assuring guests of high-quality, clean, and well-designed private facilities.",
+            "Local Synergy: Meets the expectation of 'boutique hotel amenities' and 'quality accommodation' in Guildford.",
+            "Conversion Trigger: Addresses hygiene and comfort concerns, a key psychological factor in booking decisions."
+          ],
+          "psychological_conversion_trigger": "A pristine and well-appointed bathroom is a universal sign of quality and comfort, providing a final reassurance of a luxurious stay.",
+          "recommended_trigger": "A pristine and well-appointed bathroom is a universal sign of quality and comfort, providing a final reassurance of a luxurious stay.",
+          "current_slot": 3,
+          "is_retained": false,
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "RE_SEQUENCE",
+          "action_label": "MOVE FROM SLOT #3",
+          "source_display_label": "Was: Slot #3 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 3,
+            "title": "a bathroom with two sinks and two mirrors at The Angel Posting House & Livery in Guildford",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/67754973.jpg?k=e1f5c28a27db839f67182fbae18d34a7ca8911514f83519bef81913a1398eec5&o=",
+            "photoId": "67754973",
+            "sourceUrl": "https://www.booking.com/hotel/gb/the-angel-posting-house-livery.html?lang=en-us&chal_t=1791197023291&force_referer="
+          }
+        }
+      ],
+      "anti_commodity_copy_rewrite": {
+        "ota_headline": "The Angel Posting House & Livery: Historic Guildford Charm Meets Vibrant Social Hub",
+        "property_overview_150_words": "Step into history at The Angel Posting House & Livery, a beautifully restored coaching inn on Guildford's bustling High Street. Blending centuries of heritage with a lively contemporary pulse, our hotel offers uniquely decorated rooms, a welcoming bar, and a vibrant atmosphere with live entertainment. Perfect for explorers seeking authentic local experiences and social connections, The Angel is your gateway to Guildford's charm, from historic Guildhall to riverside strolls, ensuring a memorable stay where history comes alive."
+      },
+      "photographic_gap_analysis": [
+        {
+          "missing_shot_title": "Vibrant Cabaret Bar & Live Performance",
+          "category": "CULINARY_SOCIAL",
+          "why_needed": "The hotel actively promotes live music, karaoke, and a cabaret bar, yet lacks a high-energy, clear visual of this key amenity. This shot would capture the hotel's unique entertainment value and appeal to travelers searching for 'Guildford nightlife' and 'live music venues'.",
+          "recommended_framing_and_lighting": "Wide-angle shot of the bar area during a live performance, capturing warm stage lighting, engaged guests, and a mixologist crafting drinks. Focus on dynamic energy and inviting atmosphere (2700K warm glow, diffused fill).",
+          "projected_adr_impact": "+10% higher F&B revenue and +$30 ADR premium for entertainment-seeking guests."
+        },
+        {
+          "missing_shot_title": "Twilight Exterior with Inviting Glow",
+          "category": "ATMOSPHERIC_TWILIGHT",
+          "why_needed": "While an exterior photo exists, a twilight shot would dramatically enhance the hotel's curb appeal, conveying warmth and an inviting evening ambiance, crucial for attracting guests arriving after dark or seeking evening activities. It would highlight the 'Posting House' charm at its most evocative.",
+          "recommended_framing_and_lighting": "Exterior facade at blue hour, with warm interior lights spilling from windows, subtle streetlamp glow, and a hint of activity within. Architectural symmetry, 35mm lens, f/8, 2400K warm amber.",
+          "projected_adr_impact": "+8% direct booking conversion for evening arrivals and enhanced brand perception."
+        },
+        {
+          "missing_shot_title": "Signature Dish & Craft Cocktail Presentation",
+          "category": "CULINARY_SOCIAL",
+          "why_needed": "The hotel mentions a restaurant and bar, but no specific food or drink imagery. High-quality culinary shots are essential for attracting 'foodie' travelers and showcasing the quality of the F&B offerings, driving direct restaurant bookings.",
+          "recommended_framing_and_lighting": "Close-up, artfully composed shot of a signature dish and a craft cocktail on a rustic wooden table, with soft, natural light and a blurred background of the restaurant/bar ambiance. Shallow depth of field, 50mm f/1.4.",
+          "projected_adr_impact": "+15% increase in restaurant reservations and +$25 average check value."
+        }
+      ],
+      "conversion_diagnosis": "The current Booking.com photo sequence is highly commoditized, leading with generic bedroom shots that fail to communicate The Angel's unique historic character, vibrant social spaces, and prime Guildford location. This results in high bounce rates as travelers cannot quickly discern the property's true value proposition or local appeal.",
+      "local_vibe_synergy_context": "Guildford travelers actively seek historic charm, vibrant social hubs, and authentic local experiences. The optimized photo sequence strategically highlights The Angel's historic exterior, lively lounge/bar, and unique heritage rooms, directly aligning with search demand for 'historic hotels Guildford', 'Guildford pubs with atmosphere', and 'boutique stays in Surrey', thereby bridging the hotel's DNA with the neighborhood's top cultural subcultures.",
+      "slot_1_decision_logic": {
+        "is_magnet_override_active": false,
+        "reasoning_code": "NAI_BELOW_THRESHOLD_NO_CLEAR_HERO_ASSET",
+        "strategy_explanation": "While The Angel boasts a lively cabaret bar and live entertainment, no single existing photo asset meets all four 'Hero Cultural Magnet' criteria for split-second clarity, destination power, and neighborhood affinity. The current visual inventory lacks a high-impact, unambiguous shot of the vibrant bar/performance space. Therefore, the default strategy of leading with the Exterior Landmark is adopted to immediately establish location and historic presence.",
+        "neighborhood_affinity_index": 0.75,
+        "override_asset_name": ""
+      },
+      "is_listed_on_booking": true,
+      "listing_status": "ACTIVE_ON_BOOKING",
+      "live_photos": [
+        {
+          "slot": 1,
+          "title": "a bedroom with a canopy bed with a bench in it at The Angel Posting House & Livery in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/67752339.jpg?k=0c4a079908b4a46ea5b97dea2a8523fcce49a347919e49b1980d87516ddd5c76&o=",
+          "photoId": "67752339",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-angel-posting-house-livery.html?lang=en-us&chal_t=1791197023291&force_referer="
+        },
+        {
+          "slot": 2,
+          "title": "a couch in front of a bed in a bedroom at The Angel Posting House & Livery in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/841465250.jpg?k=b6e3bdd1f0654d37143b07a032ece77454ccf095dd3ba324d9ab2e97986133bc&o=",
+          "photoId": "841465250",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-angel-posting-house-livery.html?lang=en-us&chal_t=1791197023291&force_referer="
+        },
+        {
+          "slot": 3,
+          "title": "a bathroom with two sinks and two mirrors at The Angel Posting House & Livery in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/67754973.jpg?k=e1f5c28a27db839f67182fbae18d34a7ca8911514f83519bef81913a1398eec5&o=",
+          "photoId": "67754973",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-angel-posting-house-livery.html?lang=en-us&chal_t=1791197023291&force_referer="
+        },
+        {
+          "slot": 4,
+          "title": "a living room with green chairs and a mirror at The Angel Posting House & Livery in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/841465237.jpg?k=4650f75d192950126ff5d311ac9821bf4739c7ed076bfdcb41dd344b71a7668c&o=",
+          "photoId": "841465237",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-angel-posting-house-livery.html?lang=en-us&chal_t=1791197023291&force_referer="
+        },
+        {
+          "slot": 5,
+          "title": "a living room with a staircase and red chairs at The Angel Posting House & Livery in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/841465244.jpg?k=0b2bf05e4b20a5458187ca693df0ae6d92acc7f44cd49254d984654e0517d0d0&o=",
+          "photoId": "841465244",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-angel-posting-house-livery.html?lang=en-us&chal_t=1791197023291&force_referer="
+        },
+        {
+          "slot": 6,
+          "title": "a white building with a sign in front of it at The Angel Posting House & Livery in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/30403553.jpg?k=02eaff4bc18ba36840dc54137ef3738d5817f87e59cf11efe921712a080516da&o=",
+          "photoId": "30403553",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-angel-posting-house-livery.html?lang=en-us&chal_t=1791197023291&force_referer="
+        },
+        {
+          "slot": 7,
+          "title": "a girl in a dress standing next to a piano at The Angel Posting House & Livery in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/593029855.jpg?k=fe5765f07e354c851fbcfb22b1304a1f1da0721904c8fc99827b9e60eef105ca&o=",
+          "photoId": "593029855",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-angel-posting-house-livery.html?lang=en-us&chal_t=1791197023291&force_referer="
+        },
+        {
+          "slot": 8,
+          "title": "a bedroom with a canopy bed with a desk and a desk at The Angel Posting House & Livery in Guildford +54 photos",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/593021912.jpg?k=66c4e64b46d9f26a73bee9a6dc8f651f8ab5f2fee4e2a523c88e1001f262332b&o=",
+          "photoId": "593021912",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-angel-posting-house-livery.html?lang=en-us&chal_t=1791197023291&force_referer="
+        },
+        {
+          "slot": 9,
+          "title": "a living room with a green couch and a table at The Angel Posting House &amp; Livery in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/841465239.jpg?k=444219a00ad141a17b55af2c7df377e6eca48777786f5efc22b0cbd53c25e00b&o=&hp=1",
+          "photoId": "841465239",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-angel-posting-house-livery.html?lang=en-us&chal_t=1791197023291&force_referer="
+        },
+        {
+          "slot": 10,
+          "title": "a blue couch in a living room with a bed at The Angel Posting House &amp; Livery in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/841465243.jpg?k=dcd5e99bc3016c0217924741aea799c3da19a5981fe9e9148c977ba8c74091eb&o=&hp=1",
+          "photoId": "841465243",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-angel-posting-house-livery.html?lang=en-us&chal_t=1791197023291&force_referer="
+        },
+        {
+          "slot": 11,
+          "title": "a bedroom with a large bed with two lamps at The Angel Posting House &amp; Livery in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/841465236.jpg?k=85ce2ceb660708c95295eb42b69409bf96a66dce28feb51981ff13025c9cd71f&o=&hp=1",
+          "photoId": "841465236",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-angel-posting-house-livery.html?lang=en-us&chal_t=1791197023291&force_referer="
+        },
+        {
+          "slot": 12,
+          "title": "a bedroom with a bed with a mirror and a window at The Angel Posting House &amp; Livery in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/288539269.jpg?k=7873bc665ef23f1e3854d5e8dceb87a7466f89ee542c46ca36b5bdc9deaa80b4&o=&hp=1",
+          "photoId": "288539269",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-angel-posting-house-livery.html?lang=en-us&chal_t=1791197023291&force_referer="
+        },
+        {
+          "slot": 13,
+          "title": "two green chairs and a table in a room at The Angel Posting House &amp; Livery in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/841465240.jpg?k=1b6e83396452c71701c67ab4d3ee120db81b02940dcaaf1442369d3f66ede9b4&o=&hp=1",
+          "photoId": "841465240",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-angel-posting-house-livery.html?lang=en-us&chal_t=1791197023291&force_referer="
+        },
+        {
+          "slot": 14,
+          "title": "a door with a large red bow tie on it at The Angel Posting House &amp; Livery in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/841465246.jpg?k=63b723193223a77001321da7db76db675089e50aff441be3bfa1c067e1d9179e&o=&hp=1",
+          "photoId": "841465246",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-angel-posting-house-livery.html?lang=en-us&chal_t=1791197023291&force_referer="
+        },
+        {
+          "slot": 15,
+          "title": "a bedroom with a bed and a chair and windows at The Angel Posting House &amp; Livery in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/112143864.jpg?k=0c09c76173c33b304cc604977e3e984b1f053a553b7029d2568bc3ad2886bf5a&o=&hp=1",
+          "photoId": "112143864",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-angel-posting-house-livery.html?lang=en-us&chal_t=1791197023291&force_referer="
+        },
+        {
+          "slot": 16,
+          "title": "a bathroom with two sinks and a tub and a shower at The Angel Posting House &amp; Livery in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/67751214.jpg?k=851296c23dcf6a881bdcb586373334341fd78e59aa925cf333fadbb4ac7aa567&o=&hp=1",
+          "photoId": "67751214",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-angel-posting-house-livery.html?lang=en-us&chal_t=1791197023291&force_referer="
+        },
+        {
+          "slot": 17,
+          "title": "a canopy bed in a bedroom with red walls at The Angel Posting House &amp; Livery in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/67752426.jpg?k=86dcc660b0a482aa2c20112a6e637fe220d0da04054dd8aeccc10e9396b7d623&o=&hp=1",
+          "photoId": "67752426",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-angel-posting-house-livery.html?lang=en-us&chal_t=1791197023291&force_referer="
+        },
+        {
+          "slot": 18,
+          "title": "a living room with two couches and a table at The Angel Posting House &amp; Livery in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/67752575.jpg?k=75f46ff88a91e24ed70678a326c221dd47402fee448eafd59b05f6c5d2c3a32e&o=&hp=1",
+          "photoId": "67752575",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-angel-posting-house-livery.html?lang=en-us&chal_t=1791197023291&force_referer="
+        },
+        {
+          "slot": 19,
+          "title": "a staircase with a chandelier and a ceiling at The Angel Posting House &amp; Livery in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/67751408.jpg?k=c7ade00beca0180e215903f7fb9c6f3acfe555161a96d4ada85d39aa65dcc895&o=&hp=1",
+          "photoId": "67751408",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-angel-posting-house-livery.html?lang=en-us&chal_t=1791197023291&force_referer="
+        },
+        {
+          "slot": 20,
+          "title": "a bathroom with a toilet and a glass shower at The Angel Posting House &amp; Livery in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/112143928.jpg?k=84d3cee2b6c76440ad8292d2760ad37d9e69ada70c2d17d436c3daf30f998e62&o=&hp=1",
+          "photoId": "112143928",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-angel-posting-house-livery.html?lang=en-us&chal_t=1791197023291&force_referer="
+        },
+        {
+          "slot": 21,
+          "title": "a bedroom with a bed and two chairs and a mirror at The Angel Posting House &amp; Livery in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/89222187.jpg?k=144edc2eab0e5c8bf40b2632ba9107bc93401f696fb1bcc826904645065ad4eb&o=&hp=1",
+          "photoId": "89222187",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-angel-posting-house-livery.html?lang=en-us&chal_t=1791197023291&force_referer="
+        },
+        {
+          "slot": 22,
+          "title": "a bedroom with a large white bed with a mirror at The Angel Posting House &amp; Livery in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/89222189.jpg?k=fbccc655195f583be493af394f2216a79b38b2efbb3de52c90792e6f8ff46e34&o=&hp=1",
+          "photoId": "89222189",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-angel-posting-house-livery.html?lang=en-us&chal_t=1791197023291&force_referer="
+        },
+        {
+          "slot": 23,
+          "title": "a living room with a blue couch and a tv at The Angel Posting House &amp; Livery in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/67756018.jpg?k=0adac7ac2357ec2d7cee669510f2c5e270d86ee19af0dd91c73082774bc1497e&o=&hp=1",
+          "photoId": "67756018",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-angel-posting-house-livery.html?lang=en-us&chal_t=1791197023291&force_referer="
+        },
+        {
+          "slot": 24,
+          "title": "a bedroom with a desk and a chair and a mirror at The Angel Posting House &amp; Livery in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/67756114.jpg?k=686fe814ac6d34758e999cdaec8b9d6ba037d7494a65f3c149a4d41a01588182&o=&hp=1",
+          "photoId": "67756114",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-angel-posting-house-livery.html?lang=en-us&chal_t=1791197023291&force_referer="
+        },
+        {
+          "slot": 25,
+          "title": "a bedroom with a white bed with red walls at The Angel Posting House &amp; Livery in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/67756397.jpg?k=56a840a8b1a7e8631b4292f40741f3cc13464dfdf758bf47952a752d18478bde&o=&hp=1",
+          "photoId": "67756397",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-angel-posting-house-livery.html?lang=en-us&chal_t=1791197023291&force_referer="
+        },
+        {
+          "slot": 26,
+          "title": "a bathroom with two sinks and two mirrors at The Angel Posting House &amp; Livery in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/288534603.jpg?k=02997d7a0490b78b82156f559d36e120a4f0da21977bb5385df830e9ca5c187c&o=&hp=1",
+          "photoId": "288534603",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-angel-posting-house-livery.html?lang=en-us&chal_t=1791197023291&force_referer="
+        },
+        {
+          "slot": 27,
+          "title": "a living room with a chair and a lamp at The Angel Posting House &amp; Livery in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/288534565.jpg?k=6845c7c7b4b224b976004dbca0bb12ea48580cb611e288b6956e8372c74d3005&o=&hp=1",
+          "photoId": "288534565",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-angel-posting-house-livery.html?lang=en-us&chal_t=1791197023291&force_referer="
+        },
+        {
+          "slot": 28,
+          "title": "a bedroom with a canopy bed and a chair at The Angel Posting House &amp; Livery in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/288535627.jpg?k=4e67b7678cb2190513c24c68dd3c44b6a8b6df2a176b886727a0afc09be2c08a&o=&hp=1",
+          "photoId": "288535627",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-angel-posting-house-livery.html?lang=en-us&chal_t=1791197023291&force_referer="
+        },
+        {
+          "slot": 29,
+          "title": "a living room with a couch and a table at The Angel Posting House &amp; Livery in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/288535623.jpg?k=966324b5fcc3515d54cf06eabf3d48da7dfcc8f939530d293f5eca711621a5c3&o=&hp=1",
+          "photoId": "288535623",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-angel-posting-house-livery.html?lang=en-us&chal_t=1791197023291&force_referer="
+        },
+        {
+          "slot": 30,
+          "title": "a bedroom with a bed with blue pillows and a lamp at The Angel Posting House &amp; Livery in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/288535622.jpg?k=2352711b2dbabc6f62f39fdc0199335954519056d61afcb4ece94bfe54df8336&o=&hp=1",
+          "photoId": "288535622",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-angel-posting-house-livery.html?lang=en-us&chal_t=1791197023291&force_referer="
+        },
+        {
+          "slot": 31,
+          "title": "a living room with a couch and a bed at The Angel Posting House &amp; Livery in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/288535712.jpg?k=44dc98518fa7a778295a2667433596e9de2a689b57c0b184664857e3c7bdfb8b&o=&hp=1",
+          "photoId": "288535712",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-angel-posting-house-livery.html?lang=en-us&chal_t=1791197023291&force_referer="
+        },
+        {
+          "slot": 32,
+          "title": "a bed with a pile of towels on top of it at The Angel Posting House &amp; Livery in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/288536224.jpg?k=09d81b245dfdaa14760f2d5b5fc7e2c3763db660d2ba74f74a43d48bfa39f398&o=&hp=1",
+          "photoId": "288536224",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-angel-posting-house-livery.html?lang=en-us&chal_t=1791197023291&force_referer="
+        },
+        {
+          "slot": 33,
+          "title": "a bedroom with a bed and a table and two chairs at The Angel Posting House &amp; Livery in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/288536175.jpg?k=ea38e27b0a71f054332548389798eff8e8ed86cf7ced534a7da9aa129987785b&o=&hp=1",
+          "photoId": "288536175",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-angel-posting-house-livery.html?lang=en-us&chal_t=1791197023291&force_referer="
+        },
+        {
+          "slot": 34,
+          "title": "a bedroom with a bed and a mirror and a desk at The Angel Posting House &amp; Livery in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/288536174.jpg?k=4dbcdbd824c9d2f9696e5faaee12b3f70ff7ca0ec46b6d6591646195f74cd658&o=&hp=1",
+          "photoId": "288536174",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-angel-posting-house-livery.html?lang=en-us&chal_t=1791197023291&force_referer="
+        },
+        {
+          "slot": 35,
+          "title": "a bedroom with a bed with a red blanket on it at The Angel Posting House &amp; Livery in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/288537294.jpg?k=0fbab8cdae5646c9ca017af1ff97b77809bdad77e0b3dab8e222d8b512958835&o=&hp=1",
+          "photoId": "288537294",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-angel-posting-house-livery.html?lang=en-us&chal_t=1791197023291&force_referer="
+        },
+        {
+          "slot": 36,
+          "title": "a bedroom with a large bed with red and white pillows at The Angel Posting House &amp; Livery in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/288537283.jpg?k=e111e33586cd7a9451801ca4aea45de8882710697d52d54e3ab1415a2b9ab460&o=&hp=1",
+          "photoId": "288537283",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-angel-posting-house-livery.html?lang=en-us&chal_t=1791197023291&force_referer="
+        },
+        {
+          "slot": 37,
+          "title": "a bedroom with a bed and a tree on the wall at The Angel Posting House &amp; Livery in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/288537276.jpg?k=c03430f476e7ab1c7f6b67059ebe3bdd9c375b8f57774e23ca361e87e908d6ae&o=&hp=1",
+          "photoId": "288537276",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-angel-posting-house-livery.html?lang=en-us&chal_t=1791197023291&force_referer="
+        },
+        {
+          "slot": 38,
+          "title": "a bedroom with a large bed with blue pillows at The Angel Posting House &amp; Livery in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/288539515.jpg?k=5e31c6a8714768130f6c303ccf90aed3bd80890af9533cd4bfbfd1c94ea395e6&o=&hp=1",
+          "photoId": "288539515",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-angel-posting-house-livery.html?lang=en-us&chal_t=1791197023291&force_referer="
+        },
+        {
+          "slot": 39,
+          "title": "a bedroom with a large bed with blue pillows at The Angel Posting House &amp; Livery in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/593017067.jpg?k=6d5ccfb26110d0e83855d490396ff5a2ea1cfc55cd0b6afa1a2452a8e0a062c1&o=&hp=1",
+          "photoId": "593017067",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-angel-posting-house-livery.html?lang=en-us&chal_t=1791197023291&force_referer="
+        },
+        {
+          "slot": 40,
+          "title": "a bathroom with a shower and a toilet and a sink at The Angel Posting House &amp; Livery in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/593017065.jpg?k=e8999779f1c3d7583a30f7c36d4fb2bf2077c4f6265392b3b45f9bf5b672aa2a&o=&hp=1",
+          "photoId": "593017065",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-angel-posting-house-livery.html?lang=en-us&chal_t=1791197023291&force_referer="
+        },
+        {
+          "slot": 41,
+          "title": "a bedroom with a bed with blue curtains and a table at The Angel Posting House &amp; Livery in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/593017063.jpg?k=500293c2687ecc305d3e4488bc87280ef95935629303c5bca7644f2fd3108fb1&o=&hp=1",
+          "photoId": "593017063",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-angel-posting-house-livery.html?lang=en-us&chal_t=1791197023291&force_referer="
+        },
+        {
+          "slot": 42,
+          "title": "a living room with a couch and a flat screen tv at The Angel Posting House &amp; Livery in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/593017115.jpg?k=b056a081572cc880cd0e2325bb01d02d94a50e115c42916e3d7af1609df066ca&o=&hp=1",
+          "photoId": "593017115",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-angel-posting-house-livery.html?lang=en-us&chal_t=1791197023291&force_referer="
+        },
+        {
+          "slot": 43,
+          "title": "a living room with a chair and a window at The Angel Posting House &amp; Livery in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/593017116.jpg?k=cfe243e9c90dd8ace1fcfbabd7348c124aba11894f22ef763efe603f3c06da65&o=&hp=1",
+          "photoId": "593017116",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-angel-posting-house-livery.html?lang=en-us&chal_t=1791197023291&force_referer="
+        },
+        {
+          "slot": 44,
+          "title": "a living room with a couch and a tv on the wall at The Angel Posting House &amp; Livery in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/593017114.jpg?k=170e82e2ed1d14a442013b76d4e60a1c1b6905e083d32873150814321985b604&o=&hp=1",
+          "photoId": "593017114",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-angel-posting-house-livery.html?lang=en-us&chal_t=1791197023291&force_referer="
+        },
+        {
+          "slot": 45,
+          "title": "a bedroom with a large bed with blue pillows at The Angel Posting House &amp; Livery in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/593017112.jpg?k=9ff6961ffe59374a3c52f58f9968e9ad84f87cf0487c0f076214cd9177573aab&o=&hp=1",
+          "photoId": "593017112",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-angel-posting-house-livery.html?lang=en-us&chal_t=1791197023291&force_referer="
+        },
+        {
+          "slot": 46,
+          "title": "a living room with a blue couch and a table at The Angel Posting House &amp; Livery in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/593017118.jpg?k=d45e9c179604617324f93f73e4e0dc1610097850cafcf690bb0384711297b4c0&o=&hp=1",
+          "photoId": "593017118",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-angel-posting-house-livery.html?lang=en-us&chal_t=1791197023291&force_referer="
+        },
+        {
+          "slot": 47,
+          "title": "a room with a television on a wall with a red cabinet at The Angel Posting House &amp; Livery in Guildford",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/593017101.jpg?k=292c9b12e429b63f16ffd74d9a5ec030751b6eee591d4562ad65374fee8595aa&o=&hp=1",
+          "photoId": "593017101",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-angel-posting-house-livery.html?lang=en-us&chal_t=1791197023291&force_referer="
+        },
+        {
+          "slot": 48,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/67752339.jpg?k=0c4a079908b4a46ea5b97dea2a8523fcce49a347919e49b1980d87516ddd5c76&o=&hp=1",
+          "photoId": "9",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-angel-posting-house-livery.html?lang=en-us&chal_t=1791197023291&force_referer="
+        },
+        {
+          "slot": 49,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/841465250.jpg?k=b6e3bdd1f0654d37143b07a032ece77454ccf095dd3ba324d9ab2e97986133bc&o=&hp=1",
+          "photoId": "0",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-angel-posting-house-livery.html?lang=en-us&chal_t=1791197023291&force_referer="
+        },
+        {
+          "slot": 50,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/67754973.jpg?k=e1f5c28a27db839f67182fbae18d34a7ca8911514f83519bef81913a1398eec5&o=&hp=1",
+          "photoId": "3",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-angel-posting-house-livery.html?lang=en-us&chal_t=1791197023291&force_referer="
+        },
+        {
+          "slot": 51,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/841465237.jpg?k=4650f75d192950126ff5d311ac9821bf4739c7ed076bfdcb41dd344b71a7668c&o=&hp=1",
+          "photoId": "7",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-angel-posting-house-livery.html?lang=en-us&chal_t=1791197023291&force_referer="
+        },
+        {
+          "slot": 52,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/841465244.jpg?k=0b2bf05e4b20a5458187ca693df0ae6d92acc7f44cd49254d984654e0517d0d0&o=&hp=1",
+          "photoId": "4",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-angel-posting-house-livery.html?lang=en-us&chal_t=1791197023291&force_referer="
+        },
+        {
+          "slot": 53,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/841465236.jpg?k=85ce2ceb660708c95295eb42b69409bf96a66dce28feb51981ff13025c9cd71f&o=&hp=1",
+          "photoId": "6",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-angel-posting-house-livery.html?lang=en-us&chal_t=1791197023291&force_referer="
+        },
+        {
+          "slot": 54,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/67752575.jpg?k=75f46ff88a91e24ed70678a326c221dd47402fee448eafd59b05f6c5d2c3a32e&o=&hp=1",
+          "photoId": "5",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-angel-posting-house-livery.html?lang=en-us&chal_t=1791197023291&force_referer="
+        },
+        {
+          "slot": 55,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/67751408.jpg?k=c7ade00beca0180e215903f7fb9c6f3acfe555161a96d4ada85d39aa65dcc895&o=&hp=1",
+          "photoId": "8",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-angel-posting-house-livery.html?lang=en-us&chal_t=1791197023291&force_referer="
+        },
+        {
+          "slot": 56,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/288535622.jpg?k=2352711b2dbabc6f62f39fdc0199335954519056d61afcb4ece94bfe54df8336&o=&hp=1",
+          "photoId": "2",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-angel-posting-house-livery.html?lang=en-us&chal_t=1791197023291&force_referer="
+        },
+        {
+          "slot": 57,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/593017101.jpg?k=292c9b12e429b63f16ffd74d9a5ec030751b6eee591d4562ad65374fee8595aa&o=&hp=1",
+          "photoId": "1",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-angel-posting-house-livery.html?lang=en-us&chal_t=1791197023291&force_referer="
+        }
+      ],
+      "photos_status": "RESOLVED"
+    },
+    "audit_timestamp": "2026-10-05T10:43:48.808Z"
+  }
+}

@@ -1,0 +1,260 @@
+{
+  "key": "the angel posting house & livery:::guildford::::::https://www.booking.com/hotel/gb/the-angel-posting-house-and-livery-guildford.html:::manifest_only",
+  "timestamp": 1791195951429,
+  "data": {
+    "venue_id": "TheAngelPostingHouseLiveryGuildford",
+    "venue_name": "The Angel Posting House & Livery",
+    "location": "Guildford",
+    "vibe_signature": {
+      "energy_score": 78,
+      "social_pacing": "Vibrant Social Banter",
+      "headline": "Guildford's Historic Hub for Lively Entertainment & Gastronomy",
+      "acoustic_dna": {
+        "soundscape_genre": "Live Music & Classic Pub Anthems",
+        "anchor_artists": [
+          "Queen",
+          "Oasis",
+          "Ed Sheeran"
+        ],
+        "spotify_query": "Lively UK Pub Anthems",
+        "sound_texture": "Warm, Resonant & Engaging",
+        "conversation_clarity_score": 72,
+        "conversation_verdict": "Vibrant Social Banter",
+        "decibel_level": "74 dB (Vibrant Social Hub)"
+      },
+      "crowd_archetype": {
+        "primary": "Local Socialites & Entertainment Seekers",
+        "social_density": "Bustling & Engaging",
+        "dress_code": "Smart Casual",
+        "energy_verdict": "High Banter & Neighborhood Sanctuary",
+        "local_ratio": 85,
+        "tourist_ratio": 15,
+        "tourist_trap_verdict": "Authentic Local Magnet — Zero Tourist Trap"
+      },
+      "lighting_and_sensory": {
+        "atmosphere": "Warm, Inviting & Theatrical",
+        "sensory_intensity": "Medium-High",
+        "lighting_temperature": "2700K Warm Edison Filament & Stage Spotlights"
+      },
+      "hyper_local_proximity": {
+        "key_anchors": [
+          "Guildford Guildhall",
+          "Castle Ground's bandstand",
+          "High Street shops"
+        ],
+        "insider_lore": "A historic coaching inn, it's been a social hub for centuries, now blending heritage with modern entertainment."
+      },
+      "qualification_test": {
+        "you_will_love_if": "You seek a historic venue with lively entertainment, great food, and a vibrant local atmosphere.",
+        "skip_if": "You prefer quiet, minimalist spaces or a strictly formal dining experience."
+      },
+      "authenticity_and_materials": {
+        "authenticity_score": 90,
+        "material_palette": "Aged timber beams, rich upholstery, polished brass, historic brickwork",
+        "material_verdict": "Authentic Heritage — Zero Faux Decor"
+      },
+      "insider_secrets": {
+        "insider_badge": "Local Regular & Entertainment Aficionado Lore",
+        "off_menu_perk": "Ask the bar staff for their 'Fallen Angel' cocktail, a local favorite not always on the main menu.",
+        "secret_lore": "The 'Fallen Angel' cocktail is a nod to the venue's historic name and its modern cabaret bar. It's a secret blend of local spirits and seasonal fruits, perfected by the resident mixologist.",
+        "secret_title": "The Fallen Angel's Secret Elixir"
+      },
+      "temporal_dynamics": {
+        "best_time_to_visit": "6:00 PM for pre-dinner drinks and early buzz; 9:00 PM for peak live entertainment and social energy.",
+        "content_readiness": {
+          "aesthetic_subculture": "Historic Pubcore & Live Entertainment",
+          "flattery_note": "Captures the essence of a lively, historic British pub experience.",
+          "score": 8.5,
+          "top_creator_spot": "The Cabaret Bar stage during a live performance",
+          "verdict": "Highly engaging for content creators seeking authentic local entertainment."
+        },
+        "diurnal_rhythm": {
+          "chilling": {
+            "focus": "Relaxed drinks by the bar",
+            "score": 6.5,
+            "window": "3:00 PM - 6:00 PM"
+          },
+          "playing": {
+            "focus": "Live music, karaoke, social events",
+            "score": 9,
+            "window": "7:00 PM - 11:00 PM"
+          },
+          "working": {
+            "focus": "Casual meetings in the lounge",
+            "score": 4,
+            "window": "10:00 AM - 2:00 PM"
+          }
+        },
+        "peak_atmospheric_window": "Evening Live Entertainment"
+      }
+    },
+    "interactive_quiz_challenge": {
+      "target_scene_id": 1,
+      "scene_name": "The Angel's Lively Heart",
+      "mission_title": "Uncover the Angel's Hidden Talent",
+      "question": "The Angel Posting House & Livery is known for its vibrant atmosphere. Which of these activities is a regular feature, making it a local entertainment hotspot?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Silent Disco Yoga"
+        },
+        {
+          "id": "B",
+          "text": "Live Music & Karaoke Nights"
+        },
+        {
+          "id": "C",
+          "text": "Classical Poetry Readings"
+        },
+        {
+          "id": "D",
+          "text": "Competitive Chess Tournaments"
+        }
+      ],
+      "correct_option_id": "B",
+      "success_lore_reveal": "You've hit the right note! The Angel truly comes alive with live music and karaoke, making it a beloved spot for local entertainment.",
+      "reward_badge": "Guildford's Entertainment Guru",
+      "challenge_prompt": "Test your knowledge of Guildford's most vibrant historic hub!",
+      "reward_spotify_uri": "spotify:playlist:37i9dQZF1DXcBWIGoYBM5M"
+    },
+    "ota_conversion_audit": {
+      "channel": "Booking.com",
+      "before_merchandising_score": 45,
+      "after_merchandising_score": 92,
+      "projected_conversion_uplift": "+21.0%",
+      "current_drop_off_flaw": "Lack of immediate visual connection to the vibrant local entertainment and dining scene, leading to perception as a generic hotel.",
+      "key_strategic_shifts": [
+        "Elevate the dynamic Cabaret Bar/Restaurant to Slot #1 to immediately capture Guildford's strong search demand for lively dining and entertainment venues.",
+        "Re-sequence the historic exterior facade to Slot #2 to ground location and reinforce the venue's heritage immediately after the cultural hook.",
+        "Introduce a high-quality bathroom shot in Slot #5 to assure guests of modern comfort and hygiene within a historic setting.",
+        "Strategically position the main dining area in Slot #4 to showcase the full gastronomic experience, complementing the entertainment focus."
+      ],
+      "optimal_5_photo_sequence": [
+        {
+          "slot": 1,
+          "category": "HERO_CULTURAL_MAGNET",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 5,
+          "photo_subject": "Vibrant Cabaret Bar & Lounge with Live Entertainment Setup",
+          "bullet_points": [
+            "Visual Upgrade: Showcases the hotel's unique selling proposition as a lively entertainment hub, immediately differentiating it from competitors.",
+            "Local Synergy: Directly aligns with Guildford's search demand for vibrant nightlife, live music, and quality dining experiences.",
+            "Conversion Trigger: Creates an immediate emotional connection, signaling a memorable and engaging stay beyond just a room."
+          ],
+          "psychological_conversion_trigger": "This image instantly conveys a dynamic social experience, appealing to travelers seeking local entertainment and a lively atmosphere, converting passive browsers into engaged bookers.",
+          "action": "HERO_CULTURAL_MAGNET",
+          "action_label": "⚡ HERO CULTURAL MAGNET: VIBRANT CABARET BAR & LOUNGE (SLOT #1)",
+          "current_slot": 5,
+          "local_vibe_connection": "Directly showcases the hotel's role as a premier destination for live music, karaoke, and social gatherings, a key draw for Guildford locals and visitors.",
+          "upgrade_rationale": "This photo, currently buried, is strategically elevated to Slot #1 to immediately highlight the hotel's unique cultural magnet – its vibrant cabaret bar and entertainment offerings – which is a primary driver for local search demand in Guildford. It replaces a generic exterior shot with an experience-driven hero."
+        },
+        {
+          "slot": 2,
+          "category": "EXTERIOR_LANDMARK",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 1,
+          "photo_subject": "Historic Angel Posting House Facade on High Street",
+          "bullet_points": [
+            "Strategic Placement: Immediately grounds the guest's location, resolving anxiety and reinforcing the hotel's prominent High Street presence.",
+            "Local Synergy: Highlights the historic architecture, connecting to Guildford's rich heritage and charming streetscapes.",
+            "Conversion Trigger: Provides essential geographic context and a sense of place, building trust and confidence in the booking decision."
+          ],
+          "psychological_conversion_trigger": "By immediately following the cultural magnet, this exterior shot provides crucial location context and reinforces the hotel's historic charm, reassuring guests of its prime position.",
+          "action": "RE_SEQUENCE",
+          "action_label": "EXTERIOR LANDMARK (SLOT #2 - MANDATORY GROUNDING)",
+          "current_slot": 1,
+          "local_vibe_connection": "Showcases the hotel's iconic presence on Guildford's historic High Street, a central point for shopping, dining, and local exploration.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #1): By elevating the signature cultural magnet to Slot #1, moving the hotel's authentic exterior facade to Slot #2 immediately grounds location and eliminates booking hesitation while preserving architectural prestige."
+        },
+        {
+          "slot": 3,
+          "category": "SIGNATURE_SUITE_BEDROOM",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 8,
+          "photo_subject": "Elegant Junior Suite with Heritage Touches & Modern Comfort",
+          "bullet_points": [
+            "Visual Upgrade: Presents a spacious and well-appointed room, emphasizing comfort and the blend of historic charm with modern amenities.",
+            "Local Synergy: Reflects the sophisticated yet comfortable aesthetic desired by travelers exploring historic English towns.",
+            "Conversion Trigger: Appeals to the desire for a comfortable, stylish retreat after a day of exploring, enhancing perceived value."
+          ],
+          "psychological_conversion_trigger": "This image assures guests of a comfortable and aesthetically pleasing private space, reinforcing the quality of their stay and justifying the price point.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE ELEGANT JUNIOR SUITE (FROM SLOT #8)",
+          "current_slot": 8,
+          "local_vibe_connection": "Offers a tranquil and stylish retreat that complements the historic and charming character of Guildford, appealing to those seeking comfort and local flair.",
+          "upgrade_rationale": "This existing high-quality junior suite photo is promoted to Slot #3 to prominently feature the guest accommodation, ensuring travelers see the comfort and style of the rooms early in the visual journey, which is crucial for conversion."
+        },
+        {
+          "slot": 4,
+          "category": "WELLNESS_SPA_LOBBY",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 2,
+          "photo_subject": "Grand Historic Lobby & Arrival Hall",
+          "bullet_points": [
+            "Visual Upgrade: Showcases the impressive scale and historic grandeur of the hotel's public spaces, enhancing the overall luxury perception.",
+            "Local Synergy: Connects to the architectural heritage of Guildford, offering a sense of arrival that matches the town's historic gravitas.",
+            "Conversion Trigger: Conveys a welcoming and sophisticated atmosphere, suggesting a premium guest experience from the moment of arrival."
+          ],
+          "psychological_conversion_trigger": "This photo highlights the hotel's impressive public areas, signaling a high-quality, welcoming environment that extends beyond the private rooms.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE GRAND HISTORIC LOBBY (FROM SLOT #2)",
+          "current_slot": 2,
+          "local_vibe_connection": "Emphasizes the hotel's historical significance and elegant public spaces, resonating with travelers who appreciate the heritage and charm of Guildford.",
+          "upgrade_rationale": "This photo of the grand lobby is promoted to Slot #4 to showcase the hotel's impressive public areas and architectural heritage, providing a complementary view to the entertainment and accommodation, and reinforcing the overall premium experience."
+        },
+        {
+          "slot": 5,
+          "category": "SECONDARY_ROOM_BATHROOM",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 10,
+          "photo_subject": "Luxurious Modern Bathroom with Walk-in Shower",
+          "bullet_points": [
+            "Visual Upgrade: Confirms high standards of cleanliness, modern fixtures, and design quality, addressing a key guest concern.",
+            "Local Synergy: Demonstrates the blend of historic property with contemporary comfort, a balance sought by discerning travelers.",
+            "Conversion Trigger: Reassures guests about hygiene and modern amenities, removing a common point of hesitation in older properties."
+          ],
+          "psychological_conversion_trigger": "A high-quality bathroom shot is a critical trust signal, assuring guests of cleanliness, modern amenities, and comfort, which is vital for booking conversion.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE LUXURIOUS MODERN BATHROOM (FROM SLOT #10)",
+          "current_slot": 10,
+          "local_vibe_connection": "Highlights the modern comforts and attention to detail within a historic setting, appealing to travelers who value both heritage and contemporary luxury in Guildford.",
+          "upgrade_rationale": "This existing bathroom photo is promoted to the crucial Slot #5 position to explicitly showcase the quality and modernity of the private facilities, a key factor in guest satisfaction and booking confidence, especially for historic properties."
+        }
+      ],
+      "anti_commodity_copy_rewrite": {
+        "ota_headline": "The Angel Posting House & Livery: Guildford's Historic Hub for Live Entertainment & Gastronomy",
+        "property_overview_150_words": "Step into The Angel Posting House & Livery, a historic gem on Guildford's vibrant High Street, where centuries of charm meet modern revelry. Experience our acclaimed Cabaret Bar with live music and karaoke, savor traditional favorites in our inviting restaurant, and unwind in elegantly appointed rooms. Perfectly positioned to explore Guildford Guildhall and Castle Grounds, we offer a unique blend of heritage, lively entertainment, and warm hospitality, making every stay a memorable journey into local culture."
+      },
+      "photographic_gap_analysis": [
+        {
+          "missing_shot_title": "Twilight Golden Hour Aperitivo at the Courtyard Terrace",
+          "category": "ATMOSPHERIC_TWILIGHT",
+          "why_needed": "Currently, there are no photos capturing the hotel's outdoor spaces during the magical twilight hours, missing an opportunity to showcase a relaxed, sophisticated social setting that appeals to evening leisure seekers.",
+          "recommended_framing_and_lighting": "Wide-angle shot of a beautifully lit courtyard or terrace, with soft 2400K warm ambient lighting, diffused fill, and artfully arranged aperitivo drinks, capturing natural guest interaction."
+        },
+        {
+          "missing_shot_title": "Close-up of Signature Dishes & Craft Cocktails in the Restaurant",
+          "category": "CULINARY_SOCIAL",
+          "why_needed": "While the restaurant is mentioned, there are no dedicated, high-quality close-up shots of the actual food and signature cocktails, which are crucial for attracting culinary-focused travelers and showcasing gastronomic quality.",
+          "recommended_framing_and_lighting": "Macro lens, shallow depth of field, natural overhead lighting highlighting texture and color of 2-3 hero dishes and a signature cocktail, with subtle background blur of the dining room."
+        },
+        {
+          "missing_shot_title": "Creator-Friendly Junior Suite with Natural Light & Local Art",
+          "category": "CREATOR_BEDROOM",
+          "why_needed": "Existing room photos are functional but lack the 'Instagrammable' aesthetic that appeals to modern content creators and discerning travelers seeking unique, photogenic spaces.",
+          "recommended_framing_and_lighting": "Eye-level shot from a corner, emphasizing natural window light, curated local art, and textural details, with a subtle human element (e.g., a hand holding a coffee cup)."
+        }
+      ],
+      "conversion_diagnosis": "The Angel Posting House & Livery suffers from a commodity visual presentation on OTAs, failing to highlight its unique blend of historic charm and vibrant entertainment. The current photo sequence does not immediately convey its strong local cultural magnet, leading to missed conversion opportunities among travelers actively seeking authentic, lively experiences in Guildford.",
+      "local_vibe_synergy_context": "Guildford travelers actively seek venues that offer a blend of historic charm, quality gastronomy, and lively entertainment. The proposed visual strategy prioritizes showcasing the hotel's Cabaret Bar and restaurant, which are central to the local social scene, followed by its iconic exterior and elegant interiors, directly addressing these top neighborhood search demands and positioning the hotel as a cultural anchor.",
+      "slot_1_decision_logic": {
+        "is_magnet_override_active": true,
+        "reasoning_code": "NAI_HIGH_DESTINATION_POWER_VISUAL_CLARITY_MET",
+        "strategy_explanation": "The Angel Posting House & Livery possesses a highly unique and locally celebrated Cabaret Bar and entertainment offering, which serves as a significant cultural magnet in Guildford. This asset directly aligns with the top local search demands for lively dining and entertainment, functions as a standalone destination, and is visually compelling. Therefore, a Magnet Override is activated to position this experience-driven asset in Slot #1, immediately followed by the exterior to ground location.",
+        "neighborhood_affinity_index": 0.9,
+        "override_asset_name": "Vibrant Cabaret Bar & Lounge"
+      }
+    },
+    "audit_timestamp": "2026-10-05T10:25:11.721Z"
+  }
+}

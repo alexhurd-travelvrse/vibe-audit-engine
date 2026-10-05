@@ -201,7 +201,10 @@ A) STANDARD BASELINE SEQUENCE (Default when no asset qualifies for override):
 - Slot 2 (SOCIAL_FB_ROOFTOP): Signature cocktail bar, rooftop lounge, or restaurant. (Action: "SWAP_IN" or "PROMOTE")
 - Slot 3 (SIGNATURE_SUITE_BEDROOM): Most stylish signature king suite/room with local texture. (Action: "KEEP" or "RETAIN")
 - Slot 4 (WELLNESS_SPA_LOBBY): SIGNATURE DESTINATION AMENITY / HISTORIC GRAND PUBLIC SPACE / WELLNESS. If property has a Spa or Pool, feature it. If property has NO spa or pool (e.g. historic landmarks like The US Grant, boutique urban heritage hotels), Slot 4 MUST feature the Historic Grand Arrival Lobby, Crystal Ballroom, Heritage Drawing Room, or Iconic Lounge. Category: "WELLNESS_SPA_LOBBY".
-- Slot 5 (SECONDARY_ROOM_BATHROOM): MUST depict a design bathroom, freestanding soaking tub, marble washroom, or luxury rain shower (to confirm finish quality and hygiene). Category: "SECONDARY_ROOM_BATHROOM".
+- Slot 5 (SECONDARY_ROOM_BATHROOM or SECONDARY_LIFESTYLE_SANCTUARY):
+  * IF an authentic guest bedroom bathroom, soaking tub, or walk-in shower photo EXISTS: Slot 5 MUST feature it (Category: "SECONDARY_ROOM_BATHROOM", confirming luxury finish quality and hygiene).
+  * IF NO authentic guest room bathroom photo exists in the inventory (NEVER substitute a public spa shower, locker room shower, or pool): Slot 5 gracefully adapts to showcase an authentic SECONDARY LIFESTYLE SANCTUARY / ESTATE ASSET (e.g. Estate Grounds, Parkland, Championship Golf Terrace, Historic Library, or Courtyard Lounge; Category: "SECONDARY_LIFESTYLE_SANCTUARY").
+  * CRITICAL: If no guest bathroom exists, you MUST explicitly add "Curated Master Bathroom Soaking Tub & Walk-in Shower" as the #1 priority missing shot in 'photographic_gap_analysis', warning that the absence of bathroom imagery creates a conversion drop for high-ADR travelers.
 
 B) MAGNET OVERRIDE SEQUENCE (When NAI >= 0.85 and Asset passes all 4 rules):
 - Slot 1 (HERO_CULTURAL_MAGNET): The unique asset (e.g., Hartwell Spa Indoor Pool, The Grant Grill, 12th Knot Rooftop Bar, Subterranean Hi-Fi Bar). Category: "HERO_CULTURAL_MAGNET", Action: "HERO_CULTURAL_MAGNET", Action Label: "⚡ HERO CULTURAL MAGNET: [ASSET NAME] (SLOT #1)".
@@ -217,7 +220,9 @@ B) MAGNET OVERRIDE SEQUENCE (When NAI >= 0.85 and Asset passes all 4 rules):
   * IF Slot 1 was a Social/Bar/Dining asset AND hotel HAS a verified spa/pool photo -> Slot 4 features the Spa/Wellness facility (Category: "WELLNESS_SPA_LOBBY").
   * IF Slot 1 was a Social/Bar/Dining asset AND hotel lacks a spa/pool photo -> Slot 4 MUST feature the Grand Arrival Lobby, Art Lounge, Library, Courtyard, or Heritage Drawing Room (Category: "WELLNESS_SPA_LOBBY"). NEVER invent or assign a photo-less spa or restaurant.
   * IF Slot 1 was a Spa/Pool or Lobby asset -> Slot 4 features the Destination Restaurant / Culinary Dining / Cocktail Lounge (Category: "SOCIAL_FB_ROOFTOP") ONLY IF a verified dining/bar photo exists. If no dining photo exists, Slot 4 features the Grand Arrival Lobby, Art Lounge, or Courtyard.
-- Slot 5 (SECONDARY_ROOM_BATHROOM): MUST depict a design bathroom, freestanding soaking tub, marble washroom, or luxury rain shower. Category: "SECONDARY_ROOM_BATHROOM".
+- Slot 5 (SECONDARY_ROOM_BATHROOM or SECONDARY_LIFESTYLE_SANCTUARY):
+  * IF an authentic guest bathroom photo exists: feature it in Slot 5 (Category: "SECONDARY_ROOM_BATHROOM").
+  * IF NO authentic guest room bathroom exists: Slot 5 adapts to showcase an authentic SECONDARY LIFESTYLE SANCTUARY / ESTATE ASSET (Category: "SECONDARY_LIFESTYLE_SANCTUARY"), and delegate the missing bathroom to 'photographic_gap_analysis'.
 
 STRICT SLOT INTEGRITY & DEDUPLICATION RULES:
 - POOL VS BAR/DINING DISAMBIGUATION: If an image depicts a swimming pool (even if named 'Poolside Bar', 'Tiki Bar', or 'pool next to a bar'), its primary visual subject is POOL. DO NOT classify it as a dining/culinary restaurant asset! If selected for Slot 1, it must be labeled and treated as a pool/lifestyle sanctuary (e.g. 'Art Deco Courtyard Swimming Pool & Cabanas'), NEVER claiming it is a dining or culinary room.
@@ -226,8 +231,8 @@ STRICT SLOT INTEGRITY & DEDUPLICATION RULES:
 - LIVE PHOTO SELECTION PRIORITY: Always inspect "CURRENT LIVE BOOKING.COM PHOTOS" first! If an asset of the required category (e.g. Grand Lobby, Spa Pool, Signature Bedroom, Exterior, Restaurant, Bathroom) is ALREADY present in the live gallery (e.g. Live Photo #4 is the Grand Lobby or Spa), you MUST select source_type: "LIVE_PHOTO", source_index: [1-indexed slot], and action: "PROMOTE" / "RE_SEQUENCE" / "KEEP". ONLY select "AMENITY_ASSET" if the live gallery completely lacks a photo of that amenity.
 - RESTAURANT / CULINARY FIDELITY: When recommending Slot 4 (or Slot 2) for Social F&B / Restaurant (Category: "SOCIAL_FB_ROOFTOP"), the photo subject MUST depict an authentic indoor dining room, table setting, gastronomy dishes, cocktail bar, or lounge interior. It must NEVER be an exterior building, marina, facade, or street view.
 - NEVER repeat the same theme across slots (e.g., NEVER put Pool/Exterior in Slot 1 AND Slot 2; NEVER put Bedroom in Slot 3 AND Bedroom in Slot 5).
-- Slot 5 MUST feature a luxury bathroom/tub/shower.
-- Strict 5 distinct thematic slots at all times (Magnet ➔ Exterior ➔ Suite ➔ Complementary Public Space/Spa/Dining ➔ Luxury Bathroom).
+- Slot 5 ADAPTIVE FIDELITY: Features a luxury guest bathroom IF an authentic bathroom photo exists. If NO guest bathroom photo exists in the gallery, Slot 5 features a distinct Secondary Lifestyle Sanctuary / Estate Grounds / Library, and the missing bathroom is delegated to 'photographic_gap_analysis' as a priority commission recommendation. NEVER classify a public spa shower or pool as a guest bathroom.
+- Strict 5 distinct thematic slots at all times (Magnet ➔ Exterior ➔ Suite ➔ Complementary Public Space/Spa/Dining ➔ Luxury Bathroom OR Secondary Lifestyle Sanctuary).
 - Populate "slot_1_decision_logic" explaining whether Magnet Override was triggered or why default was retained.
 
 MERCHANDISING SCORES & READABILITY BULLETS:
@@ -554,15 +559,19 @@ function synthesizeVibeAuditFromCorpus(hotelName, city, neighborhood, venueCorpu
   });
   const liveBedSlot = liveBedroomIdx !== -1 ? (liveBedroomIdx + 1) : null;
 
-  // Check if live gallery has an authentic bathroom shot
+  // Check if live gallery has an authentic guest bathroom shot (strictly exclude spa, wellness, pool, gym, locker rooms)
   const liveBathroomIdx = (livePhotos || []).findIndex((p) => {
     const t = (p.title || '').toLowerCase();
     const u = (p.imageUrl || '').toLowerCase();
+    const isSpaOrPool = t.includes('spa') || t.includes('pool') || t.includes('swim') || t.includes('wellness') || t.includes('gym') || t.includes('fitness') || t.includes('locker') || t.includes('changing room') || t.includes('sauna') || t.includes('jacuzzi') || t.includes('hot tub');
+    if (isSpaOrPool) return false;
     const isPrimaryBed = t.includes('bedroom with a bed') || t.includes('bed and');
-    const isBath = t.includes('bathroom') || t.includes('shower') || t.includes('washroom') || t.includes('soaking tub') || u.includes('bathroom') || u.includes('shower');
+    const isBath = t.includes('bathroom') || t.includes('washroom') || t.includes('soaking tub') || t.includes('clawfoot') || t.includes('ensuite') || t.includes('en-suite') || (t.includes('shower') && !t.includes('spa')) || u.includes('bathroom');
     return isBath && !isPrimaryBed;
   });
   const liveBathSlot = liveBathroomIdx !== -1 ? (liveBathroomIdx + 1) : null;
+  const hasBathAmenity = (amenityPhotos || []).some(a => a.detectedCategory === 'BATHROOM' || ((a.title || '').toLowerCase().includes('bathroom') && !(a.title || '').toLowerCase().includes('spa')));
+  const hasAuthenticBath = Boolean(liveBathSlot || hasBathAmenity);
 
   const poolOrSpaIdx = findAmenityIdx('SPA') || 1;
   const socialIdx = findAmenityIdx('SOCIAL') || 1;
@@ -699,22 +708,38 @@ function synthesizeVibeAuditFromCorpus(hotelName, city, neighborhood, venueCorpu
     },
     {
       slot: 5,
-      category: "SECONDARY_ROOM_BATHROOM",
+      category: hasAuthenticBath ? "SECONDARY_ROOM_BATHROOM" : "SECONDARY_LIFESTYLE_SANCTUARY",
       source_type: liveBathSlot ? "LIVE_PHOTO" : "AMENITY_ASSET",
-      source_index: liveBathSlot || bathIdx,
+      source_index: liveBathSlot || (hasBathAmenity ? bathIdx : (exteriorIdx || 1)),
       photo_url: null,
       status: "PENDING",
-      photo_subject: `Luxury design bathroom featuring glass walk-in rainfall shower, marble vanity, and botanical amenities`,
+      photo_subject: hasAuthenticBath 
+        ? `Luxury design bathroom featuring glass walk-in rainfall shower, marble vanity, and botanical amenities`
+        : `Expansive Estate Grounds & Parkland Lifestyle Sanctuary at ${name}`,
       action: liveBathSlot ? (liveBathSlot === 5 ? "RETAIN" : "PROMOTE") : "SWAP_IN",
-      action_label: "DESIGN BATHROOM (SLOT #5 - HYGIENE & LUXURY FINISH)",
-      why_it_converts: "Upgrades from a dim vanity crop to a sunlit glass walk-in shower with marble tiling, eliminating the #1 hidden hygiene hesitation.",
-      upgrade_rationale: "Upgrades from a dim vanity crop to a sunlit glass walk-in shower with marble tiling, eliminating the #1 hidden hygiene hesitation.",
-      bullet_points: [
-        "Visual Upgrade: Bright architectural wide-angle showing clean glass shower enclosure and premium fixtures.",
-        "Consumer Psychology: In OTA UX benchmarks, bathroom quality is the #1 proxy guests inspect before non-refundable bookings.",
-        "Conversion Trigger: Eliminates final drop-off friction by providing indisputable proof of immaculate hygiene."
-      ],
-      psychological_conversion_trigger: "Provides definitive proof of immaculate hygiene, modern renovation, and luxury specification."
+      action_label: hasAuthenticBath 
+        ? (liveBathSlot ? (liveBathSlot === 5 ? "RETAIN BATHROOM (SLOT #5)" : `PROMOTE BATHROOM FROM SLOT #${liveBathSlot}`) : "DESIGN BATHROOM (SLOT #5 - HYGIENE & LUXURY FINISH)")
+        : "SECONDARY LIFESTYLE SANCTUARY (SLOT #5 - ESTATE & GROUNDS)",
+      why_it_converts: hasAuthenticBath
+        ? "Upgrades from a dim vanity crop to a sunlit glass walk-in shower with marble tiling, eliminating the #1 hidden hygiene hesitation."
+        : "Showcases the property's expansive grounds, parkland setting, and outdoor lifestyle amenities, establishing distinct estate scale and peaceful countryside retreat credentials.",
+      upgrade_rationale: hasAuthenticBath
+        ? "Upgrades from a dim vanity crop to a sunlit glass walk-in shower with marble tiling, eliminating the #1 hidden hygiene hesitation."
+        : "Showcases the property's expansive grounds, parkland setting, and outdoor lifestyle amenities, establishing distinct estate scale and peaceful countryside retreat credentials.",
+      bullet_points: hasAuthenticBath
+        ? [
+            "Visual Upgrade: Bright architectural wide-angle showing clean glass shower enclosure and premium fixtures.",
+            "Consumer Psychology: In OTA UX benchmarks, bathroom quality is the #1 proxy guests inspect before non-refundable bookings.",
+            "Conversion Trigger: Eliminates final drop-off friction by providing indisputable proof of immaculate hygiene."
+          ]
+        : [
+            "Visual Proof: Expansive perspective capturing the hotel's distinctive grounds, parkland setting, or curated public spaces.",
+            "Experiential Hook: Validates generous outdoor scale and peaceful relaxation beyond guest rooms.",
+            "Conversion Trigger: Confirms lifestyle amenities and recreational leisure value to finalize booking confidence."
+          ],
+      psychological_conversion_trigger: hasAuthenticBath
+        ? "Provides definitive proof of immaculate hygiene, modern renovation, and luxury specification."
+        : "Estate Seclusion & Expansive Lifestyle Sanctuary"
     }
   ];
 
@@ -793,19 +818,33 @@ function synthesizeVibeAuditFromCorpus(hotelName, city, neighborhood, venueCorpu
     },
     {
       slot: 5,
-      category: "SECONDARY_ROOM_BATHROOM",
+      category: hasAuthenticBath ? "SECONDARY_ROOM_BATHROOM" : "SECONDARY_LIFESTYLE_SANCTUARY",
       source_type: liveBathSlot ? "LIVE_PHOTO" : "AMENITY_ASSET",
-      source_index: liveBathSlot || bathIdx,
-      photo_subject: `Luxury spa-inspired bathroom featuring glass walk-in rainfall shower, marble vanity, and botanical amenities`,
+      source_index: liveBathSlot || (hasBathAmenity ? bathIdx : (exteriorIdx || 1)),
+      photo_subject: hasAuthenticBath 
+        ? `Luxury spa-inspired bathroom featuring glass walk-in rainfall shower, marble vanity, and botanical amenities`
+        : `Expansive Estate Grounds & Parkland Lifestyle Sanctuary at ${name}`,
       action: liveBathSlot ? (liveBathSlot === 5 ? "RETAIN" : "PROMOTE") : "SWAP_IN",
-      action_label: liveBathSlot ? (liveBathSlot === 5 ? "RETAIN BATHROOM (SLOT #5)" : `PROMOTE BATHROOM FROM SLOT #${liveBathSlot}`) : "DESIGN BATHROOM (SLOT #5 - HYGIENE & LUXURY FINISH)",
-      upgrade_rationale: "Upgrades from a dim, off-axis crop of a dark vanity to a sunlit glass walk-in rainfall shower with marble tiling, eliminating the #1 hidden hygiene hesitation.",
-      bullet_points: [
-        "Visual Upgrade: Bright architectural wide-angle showing clean glass shower enclosure, chrome rain fixtures, and premium botanical amenities over cramped vanity crops.",
-        "Consumer Psychology: In OTA UX benchmarks, bathroom quality is the #1 proxy guests inspect to verify immaculate cleanliness and renovation age before non-refundable bookings.",
-        "Conversion Trigger: Eliminates final drop-off friction by providing indisputable proof of immaculate hygiene and luxury specification."
-      ],
-      psychological_conversion_trigger: "Provides definitive proof of immaculate hygiene, modern renovation, and luxury specification."
+      action_label: hasAuthenticBath 
+        ? (liveBathSlot ? (liveBathSlot === 5 ? "RETAIN BATHROOM (SLOT #5)" : `PROMOTE BATHROOM FROM SLOT #${liveBathSlot}`) : "DESIGN BATHROOM (SLOT #5 - HYGIENE & LUXURY FINISH)")
+        : "SECONDARY LIFESTYLE SANCTUARY (SLOT #5 - ESTATE & GROUNDS)",
+      upgrade_rationale: hasAuthenticBath
+        ? "Upgrades from a dim, off-axis crop of a dark vanity to a sunlit glass walk-in rainfall shower with marble tiling, eliminating the #1 hidden hygiene hesitation."
+        : "Showcases the property's expansive grounds, parkland setting, and outdoor lifestyle amenities, establishing distinct estate scale and peaceful countryside retreat credentials.",
+      bullet_points: hasAuthenticBath
+        ? [
+            "Visual Upgrade: Bright architectural wide-angle showing clean glass shower enclosure, chrome rain fixtures, and premium botanical amenities over cramped vanity crops.",
+            "Consumer Psychology: In OTA UX benchmarks, bathroom quality is the #1 proxy guests inspect to verify immaculate cleanliness and renovation age before non-refundable bookings.",
+            "Conversion Trigger: Eliminates final drop-off friction by providing indisputable proof of immaculate hygiene and luxury specification."
+          ]
+        : [
+            "Visual Proof: Expansive perspective capturing the hotel's distinctive grounds, parkland setting, or curated public spaces.",
+            "Experiential Hook: Validates generous outdoor scale and peaceful relaxation beyond guest rooms.",
+            "Conversion Trigger: Confirms lifestyle amenities and recreational leisure value to finalize booking confidence."
+          ],
+      psychological_conversion_trigger: hasAuthenticBath
+        ? "Provides definitive proof of immaculate hygiene, modern renovation, and luxury specification."
+        : "Estate Seclusion & Expansive Lifestyle Sanctuary"
     }
   ] : [
     {
@@ -874,19 +913,23 @@ function synthesizeVibeAuditFromCorpus(hotelName, city, neighborhood, venueCorpu
     },
     {
       slot: 5,
-      category: "SECONDARY_ROOM_BATHROOM",
+      category: hasAuthenticBath ? "SECONDARY_ROOM_BATHROOM" : "SECONDARY_LIFESTYLE_SANCTUARY",
       source_type: "AMENITY_ASSET",
-      source_index: bathIdx,
-      photo_subject: `Design bathroom with luxury stone washroom and rain shower`,
+      source_index: hasAuthenticBath ? bathIdx : (exteriorIdx || 1),
+      photo_subject: hasAuthenticBath ? `Design bathroom with luxury stone washroom and rain shower` : `Expansive Estate Grounds & Parkland Lifestyle Sanctuary at ${name}`,
       action: "SWAP_IN",
-      action_label: "DESIGN BATHROOM (SLOT #5)",
-      upgrade_rationale: "Concludes sequence with indisputable hygiene and finish excellence.",
-      bullet_points: [
+      action_label: hasAuthenticBath ? "DESIGN BATHROOM (SLOT #5)" : "SECONDARY LIFESTYLE SANCTUARY (SLOT #5 - ESTATE & GROUNDS)",
+      upgrade_rationale: hasAuthenticBath ? "Concludes sequence with indisputable hygiene and finish excellence." : "Showcases the property's expansive grounds, parkland setting, and outdoor lifestyle amenities, establishing distinct estate scale and peaceful countryside retreat credentials.",
+      bullet_points: hasAuthenticBath ? [
         "Visual Upgrade: Crisp, clean detailing with premium luxury vanity.",
         "Local Synergy: Upgrades from uncurated live gallery shots.",
         "Conversion Trigger: Resolves traveler hygiene and amenity doubts."
+      ] : [
+        "Visual Proof: Expansive perspective capturing the hotel's distinctive grounds, parkland setting, or curated public spaces.",
+        "Experiential Hook: Validates generous outdoor scale and peaceful relaxation beyond guest rooms.",
+        "Conversion Trigger: Confirms lifestyle amenities and recreational leisure value to finalize booking confidence."
       ],
-      psychological_conversion_trigger: "Assures effortless hygiene and modern luxury."
+      psychological_conversion_trigger: hasAuthenticBath ? "Assures effortless hygiene and modern luxury." : "Estate Seclusion & Expansive Lifestyle Sanctuary"
     }
   ];
 
