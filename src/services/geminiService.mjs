@@ -324,7 +324,7 @@ Synthesize this live data and return the complete Master Vibe Audit JSON payload
     if (livePhotos.length > 4) {
       parts.push({ 
         text: `\n[ADDITIONAL LIVE GALLERY PHOTOS METADATA]:\n` + 
-          livePhotos.slice(4, 20).map((p, i) => `Photo #${p.slot || (i + 5)}: "${p.title || 'Hotel Photo'}" (URL: ${p.imageUrl})`).join('\n') 
+          livePhotos.slice(4, 50).map((p, i) => `Photo #${p.slot || (i + 5)}: "${p.title || 'Hotel Photo'}" (URL: ${p.imageUrl})`).join('\n') 
       });
     }
   }
@@ -406,7 +406,7 @@ Synthesize this live data and return the complete Master Vibe Audit JSON payload
         { text: `${systemPrompt}\n\nCRITICAL OUTPUT FORMAT: Return a valid JSON object strictly conforming to the response schema.` },
         { 
           text: `\n=== CURRENT LIVE BOOKING.COM PHOTOS METADATA ===\n` + 
-            (livePhotos || []).slice(0, 20).map((p, i) => `Live Photo #${p.slot || (i + 1)}: "${p.title || 'Hotel Photo'}" (URL: ${p.imageUrl})`).join('\n')
+            (livePhotos || []).slice(0, 50).map((p, i) => `Live Photo #${p.slot || (i + 1)}: "${p.title || 'Hotel Photo'}" (URL: ${p.imageUrl})`).join('\n')
         },
         { 
           text: `\n=== SIGNATURE AMENITY CANDIDATES METADATA ===\n` + 

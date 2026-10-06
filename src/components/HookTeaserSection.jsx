@@ -18,7 +18,7 @@ export default function HookTeaserSection() {
             <span className="text-gold-gradient">Stand Out From the Crowd</span>
           </h2>
           <p className="teaser-description">
-            74% of next-gen travelers research local experiences first. Prove your property is their natural launchpad. Map your authentic design, social energy, lighting, and proximity to local hotspots directly to what guests are searching for
+            74% of next-gen travelers research local experiences first. Prove your property is their natural Gateway
           </p>
         </div>
 
@@ -117,7 +117,7 @@ export default function HookTeaserSection() {
 
             <div className="card-footer">
               <Link to="/audit" className="tier-cta-btn free-btn">
-                <span>Preview My Vibe Signature Free</span>
+                <span>Review My OTA Photos Free</span>
                 <ArrowRight size={16} />
               </Link>
             </div>
@@ -132,7 +132,7 @@ export default function HookTeaserSection() {
 
             <div className="tier-content">
               <h3 className="tier-heading">Multi-Channel Conversion</h3>
-              <p className="tier-subtext">Deploy your unique Vibe Signature to win bookings across every channel</p>
+              <p className="tier-subtext">Map your authentic design, social energy, lighting, and proximity to local hotspots across every channel</p>
 
               {/* 3-Pillar Executive Deliverable Matrix */}
               <div className="pro-pillars-suite">
@@ -155,7 +155,7 @@ export default function HookTeaserSection() {
                     <li className="deliverable-item">
                       <span className="deliverable-bullet">•</span>
                       <div className="deliverable-content">
-                        <span className="deliverable-name">Positioning as Local Launchpad</span>
+                        <span className="deliverable-name">Positioning as Local Gateway</span>
                       </div>
                     </li>
                     <li className="deliverable-item">

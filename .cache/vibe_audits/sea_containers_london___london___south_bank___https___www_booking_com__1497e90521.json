@@ -1,6 +1,6 @@
 {
   "key": "sea containers london:::london:::south bank:::https://www.booking.com/hotel/gb/sea-containers-london.html",
-  "timestamp": 1791062615462,
+  "timestamp": 1791284703507,
   "data": {
     "venue_id": "sea_containers_london",
     "venue_name": "Sea Containers London",
@@ -8,22 +8,22 @@
     "vibe_signature": {
       "energy_score": 78,
       "social_pacing": "Vibrant yet relaxed",
-      "headline": "Riverside Chic: A Dynamic Hub of Culture, Cocktails & Cutting-Edge Design on South Bank",
+      "headline": "Riverside Design Icon with Panoramic Social Energy",
       "acoustic_dna": {
-        "soundscape_genre": "Eclectic Soulful House & Nu-Jazz",
+        "soundscape_genre": "Contemporary Soul & Eclectic Jazz",
         "anchor_artists": [
-          "Bonobo",
-          "Thievery Corporation",
-          "Khruangbin"
+          "Jungle",
+          "Khruangbin",
+          "Bon Iver"
         ],
         "spotify_query": "Sea Containers London Vibe Playlist",
-        "sound_texture": "Smooth, layered, with a subtle bassline",
+        "sound_texture": "Smooth, layered, with occasional vibrant peaks",
         "conversation_clarity_score": 75,
-        "conversation_verdict": "Vibrant Social Banter & Intimate Whispers",
+        "conversation_verdict": "Vibrant Social Banter & Intimate Murmur",
         "decibel_level": "72 dB (Vibrant Social Hub)"
       },
       "crowd_archetype": {
-        "primary": "Cosmopolitan Creatives & Savvy Travelers",
+        "primary": "Cosmopolitan Creatives & Design Enthusiasts",
         "social_density": "Dynamic & Engaging",
         "dress_code": "Smart Casual to Chic Evening Wear",
         "energy_verdict": "High Banter & Cosmopolitan Creative Haven",
@@ -32,72 +32,72 @@
         "tourist_trap_verdict": "Curated Neighborhood Haven — Authentic London Experience"
       },
       "lighting_and_sensory": {
-        "atmosphere": "Sophisticated, Playful & Artfully Lit",
-        "sensory_intensity": "Medium-High, Engaging",
-        "lighting_temperature": "2700K Warm Amber & Strategic Spotlighting"
+        "atmosphere": "Sophisticated, Playful & Art-Infused",
+        "sensory_intensity": "Moderately Stimulating",
+        "lighting_temperature": "2700K Warm Golden Glow & Dynamic Feature Lighting"
       },
       "hyper_local_proximity": {
         "key_anchors": [
           "Tate Modern",
           "Shakespeare's Globe",
           "Borough Market",
-          "London Eye"
+          "Southbank Centre"
         ],
-        "insider_lore": "Nestled on the vibrant South Bank, Sea Containers London offers unparalleled access to London's cultural heart, from world-class art at Tate Modern to the bustling culinary scene of Borough Market, all within a scenic riverside stroll."
+        "insider_lore": "Nestled on the vibrant South Bank, Sea Containers London offers unparalleled access to London's cultural heart, from world-class art at Tate Modern to the bustling Borough Market, all within a short stroll along the Thames."
       },
       "qualification_test": {
-        "you_will_love_if": "You seek a design-led hotel with a vibrant social scene, award-winning cocktails, and direct access to London's cultural South Bank.",
-        "skip_if": "You prefer a quiet, traditional hotel experience or are looking for budget accommodation away from the city's buzz."
+        "you_will_love_if": "You seek a design-led hotel with a vibrant social scene, iconic river views, and direct access to London's cultural South Bank attractions.",
+        "skip_if": "You prefer a traditional, quiet, and understated hotel experience away from bustling social energy and modern design."
       },
       "authenticity_and_materials": {
-        "authenticity_score": 92,
-        "material_palette": "Polished concrete, marine-inspired brass accents, rich velvet upholstery, dark wood, marble",
-        "material_verdict": "Contemporary Maritime Chic — Thoughtfully Curated Design"
+        "authenticity_score": 88,
+        "material_palette": "Polished Concrete, Aged Brass, Velvet Upholstery, Reclaimed Timber Accents",
+        "material_verdict": "Contemporary Design with Nautical Heritage Echoes"
       },
       "insider_secrets": {
         "insider_badge": "Head Bartender & Local Regular Lore",
-        "off_menu_perk": "Ask the Lyaness bartenders for their 'River Serpent' — an off-menu botanical concoction inspired by the Thames.",
-        "secret_lore": "The award-winning Lyaness bar often experiments with unique, unlisted cocktails. Engaging with the mixologists about their latest creations can unlock a bespoke drink experience not found on the menu.",
-        "secret_title": "The River Serpent: Lyaness's Secret Concoction"
+        "off_menu_perk": "Ask the Lyaness bar staff for their 'Thames Tide' off-menu botanical cocktail, a refreshing blend inspired by the river.",
+        "secret_lore": "The Lyaness bar, helmed by Mr Lyan, often has experimental 'off-menu' cocktails that are only known to regulars and those who ask. These are often seasonal and showcase unique ingredients.",
+        "secret_title": "The Thames Tide Off-Menu Cocktail at Lyaness"
       },
       "temporal_dynamics": {
-        "best_time_to_visit": "5:00 PM for pre-dinner cocktails at Lyaness; 9:00 PM for peak atmospheric buzz at 12th Knot with skyline views.",
+        "best_time_to_visit": "5:00 PM for golden hour cocktails at 12th Knot; 8:30 PM for peak atmospheric buzz at Lyaness and dinner at Sea Containers Restaurant.",
         "content_readiness": {
-          "aesthetic_subculture": "Urban Chic, Modernist Maritime, Socialite Glam",
-          "flattery_note": "Perfect for capturing sophisticated social content with iconic London backdrops and vibrant interior design.",
-          "score": 0.92,
+          "aesthetic_subculture": "Modern Nautical Chic / Urban Glamour",
+          "flattery_note": "Your feed will glow with iconic London views and sophisticated interiors.",
+          "score": 9.2,
           "top_creator_spot": "12th Knot Rooftop Terrace at sunset",
           "verdict": "Highly Instagrammable & Creator-Ready"
         },
         "diurnal_rhythm": {
           "chilling": {
-            "focus": "Riverside relaxation, spa treatments",
-            "score": 0.7,
-            "window": "Morning to early afternoon"
+            "focus": "Riverside views & lounge relaxation",
+            "score": 8,
+            "window": "10 AM - 4 PM"
           },
           "playing": {
-            "focus": "Cocktail culture, rooftop views, social dining",
-            "score": 0.9,
-            "window": "Evening to late night"
+            "focus": "Cocktail culture & vibrant dining",
+            "score": 9,
+            "window": "6 PM - 1 AM"
           },
           "working": {
-            "focus": "Business meetings, quiet lobby work",
-            "score": 0.6,
-            "window": "Mid-morning to late afternoon"
+            "focus": "Lobby co-working & quiet corners",
+            "score": 6.5,
+            "window": "9 AM - 5 PM"
           }
         },
-        "peak_atmospheric_window": "Early Evening to Late Night Social"
+        "peak_atmospheric_window": "Late Afternoon Golden Hour to Evening Buzz"
       }
     },
     "interactive_quiz_challenge": {
-      "target_scene_id": 101,
-      "scene_name": "South Bank Socialite",
-      "mission_title": "Uncover the South Bank's Best-Kept Secret",
-      "question": "Sea Containers London is home to an award-winning cocktail bar known for its innovative drinks and stylish ambiance. Which bar is it?",
+      "target_scene_id": 121,
+      "scene_name": "The South Bank Socialite",
+      "mission_title": "Uncover Sea Containers' Hidden Gem",
+      "question": "Sea Containers London is renowned for its vibrant social spaces. Which of these award-winning bars, known for its innovative cocktails, is located within the hotel and overlooks the River Thames?",
       "options": [
         {
           "id": "A",
-          "text": "Rumpus Room"
+          "text": "The Shard Bar"
         },
         {
           "id": "B",
@@ -105,201 +105,219 @@
         },
         {
           "id": "C",
-          "text": "12th Knot"
+          "text": "Sky Garden Bar"
         },
         {
           "id": "D",
-          "text": "Dandelyan"
+          "text": "The American Bar"
         }
       ],
       "correct_option_id": "B",
-      "success_lore_reveal": "Correct! Lyaness, led by the renowned Mr Lyan, is a true gem on the South Bank, celebrated for its groundbreaking cocktails and chic riverside setting. It's a destination in itself!",
-      "reward_badge": "South Bank Mixologist",
-      "challenge_prompt": "Test your knowledge of London's vibrant South Bank and Sea Containers' hidden gems!",
+      "success_lore_reveal": "Correct! Lyaness, created by the multi-award-winning Mr Lyan, is an iconic cocktail bar within Sea Containers London, celebrated for its innovative drinks and stunning Thames views. It's a true South Bank gem!",
+      "reward_badge": "South Bank Socialite Badge",
+      "challenge_prompt": "Prove your London insider knowledge!",
       "reward_spotify_uri": "spotify:playlist:37i9dQZF1DXcBWIGoYBM5M"
     },
     "ota_conversion_audit": {
       "channel": "Booking.com",
       "before_merchandising_score": 48,
-      "after_merchandising_score": 95,
-      "projected_conversion_uplift": "+22.0%",
-      "current_drop_off_flaw": "Current sequence fails to immediately showcase the hotel's unique cultural magnets and neighborhood synergy, leading to commodity perception and high bounce rates.",
+      "after_merchandising_score": 93,
+      "projected_conversion_uplift": "+21.5%",
+      "current_drop_off_flaw": "Generic exterior hero shot fails to immediately convey the hotel's vibrant social DNA and iconic internal cultural magnets, leading to high bounce rates from experience-seeking travelers.",
       "key_strategic_shifts": [
-        "Elevate the award-winning Lyaness Cocktail Bar to Slot #1, directly addressing South Bank's high search demand for sophisticated nightlife and unique social experiences.",
-        "Re-sequence the iconic exterior facade to Slot #2, immediately grounding the hotel's prime riverside location and eliminating traveler location anxiety after the initial cultural hook.",
-        "Integrate the tranquil Agua Spa into Slot #4, showcasing a key wellness amenity that appeals to discerning travelers seeking relaxation amidst the urban buzz.",
-        "Ensure Slot #5 features a luxury bathroom, confirming the high-quality finishes and hygiene standards expected by 5-star guests."
+        "Elevate the iconic 12th Knot Rooftop Bar to Slot #1, immediately capturing South Bank's #1 search demand for vibrant social experiences and panoramic river views.",
+        "Re-sequence the hotel's distinctive riverside facade to Slot #2, providing essential geographic grounding and eliminating location anxiety right after the initial hook.",
+        "Integrate diverse F&B visuals (rooftop bar, main restaurant) to showcase the hotel's comprehensive culinary and social offerings, appealing to London's gastronomic subculture.",
+        "Feature the a living room with a blue couch and a large window in Slot #5 to showcase the property's distinctive estate grounds and lifestyle amenities."
       ],
       "optimal_5_photo_sequence": [
         {
           "slot": 1,
           "category": "HERO_CULTURAL_MAGNET",
-          "photo_subject": "Lyaness Award-Winning Cocktail Bar Interior",
-          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/851801426.jpg?k=3cd45e8a360b3a55a186c5e870ae39900830fc831926205ae5c068d57a3d209f&o=&hp=1",
-          "why_it_converts": "This asset provides a clear, high-impact visual of a globally recognized, award-winning cocktail bar, immediately establishing the hotel's unique cultural magnet. It replaces a generic exterior shot with a vibrant, human-centric experience that resonates with modern traveler intent.",
-          "upgrade_rationale": "This asset provides a clear, high-impact visual of a globally recognized, award-winning cocktail bar, immediately establishing the hotel's unique cultural magnet. It replaces a generic exterior shot with a vibrant, human-centric experience that resonates with modern traveler intent.",
+          "photo_subject": "12th Knot Rooftop Bar & Terrace with St Paul's View",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/96897270.jpg?k=4d099a525541fde9f4eaac3aa8e62d7efd39f64dbb760c526b66ecf46c226a4b&o=",
+          "why_it_converts": "Showcasing destination culinary programming elevates property perception and captures high-spend leisure travelers.",
+          "upgrade_rationale": "Showcasing destination culinary programming elevates property perception and captures high-spend leisure travelers.",
           "bullet_points": [
-            "Visual Upgrade: Showcases the bar's unique, stylish design and inviting ambiance, far superior to generic hotel amenity shots.",
-            "Local Synergy: Directly aligns with South Bank's vibrant social scene and high demand for acclaimed cocktail experiences.",
-            "Conversion Trigger: Establishes the hotel as a destination in itself, attracting guests seeking unique, high-quality social experiences."
+            "Visual Upgrade: Immediately showcases the hotel's most iconic social magnet, a vibrant rooftop bar with panoramic city views, setting a sophisticated and lively tone.",
+            "Local Synergy: Directly taps into South Bank's demand for high-energy social venues and iconic London skyline experiences, drawing in culture-seeking travelers.",
+            "Conversion Trigger: Creates instant FOMO and aspirational lifestyle appeal, positioning the hotel as a destination for memorable London experiences."
           ],
-          "psychological_conversion_trigger": "This image immediately positions Sea Containers London as a cultural hotspot, appealing to travelers who prioritize unique social experiences and award-winning mixology, bridging the hotel's DNA with South Bank's dynamic nightlife.",
-          "recommended_trigger": "This image immediately positions Sea Containers London as a cultural hotspot, appealing to travelers who prioritize unique social experiences and award-winning mixology, bridging the hotel's DNA with South Bank's dynamic nightlife.",
-          "current_slot": 19,
+          "psychological_conversion_trigger": "Ignites aspirational booking intent by showcasing a vibrant social hub with iconic London views, aligning with traveler desire for unique experiences.",
+          "recommended_trigger": "Ignites aspirational booking intent by showcasing a vibrant social hub with iconic London views, aligning with traveler desire for unique experiences.",
+          "current_slot": 14,
           "is_retained": false,
           "is_moved": true,
           "is_swapped_in": false,
           "action": "HERO_CULTURAL_MAGNET",
-          "action_label": "⚡ HERO CULTURAL MAGNET: PROMOTE FROM SLOT #19",
-          "source_display_label": "Was: Slot #19 (Booking.com)",
+          "action_label": "⚡ HERO CULTURAL MAGNET: PROMOTE FROM SLOT #14",
+          "source_display_label": "Was: Slot #14 (Booking.com)",
           "source_domain": "booking.com",
           "current_photo": {
-            "slot": 19,
-            "title": "a restaurant with tables and chairs and a large mirror at Sea Containers London in London",
-            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/851801426.jpg?k=3cd45e8a360b3a55a186c5e870ae39900830fc831926205ae5c068d57a3d209f&o=&hp=1",
-            "photoId": "851801426",
-            "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791062474009&force_referer=",
-            "visual_description": "Stylish indoor restaurant dining area with yellow booth seating, dark round tables set with glassware, and decorative metal screens."
+            "slot": 14,
+            "title": "a restaurant with tables and chairs and a view of the city at Sea Containers London in London",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/96897270.jpg?k=4d099a525541fde9f4eaac3aa8e62d7efd39f64dbb760c526b66ecf46c226a4b&o=",
+            "photoId": "96897270",
+            "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791284623107&force_referer="
           }
         },
         {
           "slot": 2,
           "category": "EXTERIOR_LANDMARK",
-          "photo_subject": "Sea Containers London Riverside Facade",
-          "photo_url": "https://www.seacontainerslondon.com/media/ef4ezvd5/exterior-sea-co.jpg?anchor=center&mode=crop&quality=70&width=2300&height=1200&rnd=133216430012900000",
-          "why_it_converts": "Strategic Repositioning: While Live Photo #1 shows the river, Amenity Asset #1 provides a clearer, more direct architectural facade shot, which is essential for immediate location grounding. This asset is superior for its directness and architectural focus.",
-          "upgrade_rationale": "Strategic Repositioning: While Live Photo #1 shows the river, Amenity Asset #1 provides a clearer, more direct architectural facade shot, which is essential for immediate location grounding. This asset is superior for its directness and architectural focus.",
+          "photo_subject": "Sea Containers London Exterior on River Thames at Twilight",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/37817004.jpg?k=238a7f412de6dc18a068ba35b5c38e699d43d03ec9d4de2c54f8e3029103341f&o=",
+          "why_it_converts": "Establishing definitive architectural prestige and iconic street presence builds instant brand credibility.",
+          "upgrade_rationale": "Establishing definitive architectural prestige and iconic street presence builds instant brand credibility.",
           "bullet_points": [
-            "Strategic Placement: Immediately grounds the hotel's prime riverside location, resolving location anxiety after the cultural hook.",
-            "Local Synergy: Highlights the hotel's iconic presence on the Thames, a key visual identifier for London's South Bank.",
-            "Conversion Trigger: Provides essential geographic context and reinforces the hotel's landmark status, building trust and confidence."
+            "Strategic Placement: Immediately follows the cultural magnet, grounding the property's prime riverside location and distinctive architectural presence.",
+            "Local Synergy: Confirms the hotel's direct connection to the Thames and South Bank's iconic cityscape, a key search driver for London visitors.",
+            "Conversion Trigger: Eliminates location anxiety and reinforces the premium, landmark status of the property."
           ],
-          "psychological_conversion_trigger": "By placing the exterior facade in Slot #2, the sequence effectively balances the initial 'wow' factor of the cultural magnet with crucial geographical orientation, reassuring travelers about the hotel's prime location.",
-          "recommended_trigger": "By placing the exterior facade in Slot #2, the sequence effectively balances the initial 'wow' factor of the cultural magnet with crucial geographical orientation, reassuring travelers about the hotel's prime location.",
-          "current_slot": null,
+          "psychological_conversion_trigger": "Resolves location uncertainty by showcasing the hotel's prominent riverside facade, confirming its iconic South Bank presence.",
+          "recommended_trigger": "Resolves location uncertainty by showcasing the hotel's prominent riverside facade, confirming its iconic South Bank presence.",
+          "current_slot": 1,
           "is_retained": false,
-          "is_moved": false,
-          "is_swapped_in": true,
-          "action": "SWAP_IN",
-          "action_label": "EXTERIOR LANDMARK (SLOT #2 - MANDATORY GROUNDING)",
-          "source_display_label": "Official Site (seacontainerslondon.com)",
-          "source_domain": "seacontainerslondon.com",
-          "current_photo": null
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "RE_SEQUENCE",
+          "action_label": "MOVE FROM SLOT #1",
+          "source_display_label": "Was: Slot #1 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 1,
+            "title": "a view of a river with buildings and a city at Sea Containers London in London",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/37817004.jpg?k=238a7f412de6dc18a068ba35b5c38e699d43d03ec9d4de2c54f8e3029103341f&o=",
+            "photoId": "37817004",
+            "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791284623107&force_referer="
+          }
         },
         {
           "slot": 3,
           "category": "SIGNATURE_SUITE_BEDROOM",
           "photo_subject": "Signature King Bedroom with Curated Textural Finishes & Ambient Lighting",
-          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/818802965.jpg?k=e7c4d1f49ef8a639d70fc663479efcabca9546767f520353dfa51f8ed49efbb6&o=",
-          "why_it_converts": "Strategic Repositioning (Moved from Live Slot #6): This photo is an excellent representation of a signature bedroom, and its promotion to Slot #3 ensures that the core accommodation offering is presented early in the visual journey, after the initial cultural and location anchors.",
-          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #6): This photo is an excellent representation of a signature bedroom, and its promotion to Slot #3 ensures that the core accommodation offering is presented early in the visual journey, after the initial cultural and location anchors.",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/818802855.jpg?k=e4c35a799191520dc3f1d539425578757cc6fe28b362b04b9c65f1ba2bff74bf&o=",
+          "why_it_converts": "Showcasing high-finish private sleeping accommodations assures travelers of restful luxury and elevated comfort.",
+          "upgrade_rationale": "Showcasing high-finish private sleeping accommodations assures travelers of restful luxury and elevated comfort.",
           "bullet_points": [
-            "Strategic Placement: Showcases the primary guest experience, emphasizing comfort and design aesthetics.",
-            "Local Synergy: Reflects the hotel's modern, sophisticated design ethos, appealing to travelers seeking stylish urban accommodations.",
-            "Conversion Trigger: Highlights the quality of the private space, reassuring guests of a luxurious and comfortable stay."
+            "Strategic Placement: Showcases the comfort and design aesthetic of the private guest experience after establishing social and location appeal.",
+            "Local Synergy: Reflects the contemporary, design-forward aesthetic sought by travelers looking for stylish London accommodations.",
+            "Conversion Trigger: Appeals to the desire for comfort, luxury, and a well-designed personal sanctuary."
           ],
-          "psychological_conversion_trigger": "This image directly addresses the traveler's core need for a comfortable and aesthetically pleasing private sanctuary, showcasing the quality and design of the guest rooms.",
-          "recommended_trigger": "This image directly addresses the traveler's core need for a comfortable and aesthetically pleasing private sanctuary, showcasing the quality and design of the guest rooms.",
-          "current_slot": 6,
+          "psychological_conversion_trigger": "Highlights the private luxury and design integrity of the guest rooms, assuring comfort and style for discerning travelers.",
+          "recommended_trigger": "Highlights the private luxury and design integrity of the guest rooms, assuring comfort and style for discerning travelers.",
+          "current_slot": 4,
           "is_retained": false,
           "is_moved": true,
           "is_swapped_in": false,
           "action": "PROMOTE",
-          "action_label": "PROMOTE FROM SLOT #6",
-          "source_display_label": "Was: Slot #6 (Booking.com)",
+          "action_label": "PROMOTE FROM SLOT #4",
+          "source_display_label": "Was: Slot #4 (Booking.com)",
           "source_domain": "booking.com",
           "current_photo": {
-            "slot": 6,
-            "title": "a bedroom with a large white bed and a window at Sea Containers London in London",
-            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/818802965.jpg?k=e7c4d1f49ef8a639d70fc663479efcabca9546767f520353dfa51f8ed49efbb6&o=",
-            "photoId": "818802965",
-            "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791062474009&force_referer="
+            "slot": 4,
+            "title": "a bedroom with a bed and a table with a lamp at Sea Containers London in London",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/818802855.jpg?k=e4c35a799191520dc3f1d539425578757cc6fe28b362b04b9c65f1ba2bff74bf&o=",
+            "photoId": "818802855",
+            "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791284623107&force_referer="
           }
         },
         {
           "slot": 4,
-          "category": "WELLNESS_SPA_LOBBY",
-          "photo_subject": "Signature Wellness Spa & Sanctuary",
-          "photo_url": "https://www.seacontainerslondon.com/media/lgwozhos/241203_agua023_1.jpg",
-          "why_it_converts": "This asset introduces a crucial wellness amenity that is currently underrepresented or missing from the top Booking.com photos. It provides a visually stunning and tranquil scene, conveying luxury and an opportunity for relaxation, which is a strong conversion driver.",
-          "upgrade_rationale": "This asset introduces a crucial wellness amenity that is currently underrepresented or missing from the top Booking.com photos. It provides a visually stunning and tranquil scene, conveying luxury and an opportunity for relaxation, which is a strong conversion driver.",
+          "category": "SOCIAL_FB_ROOFTOP",
+          "photo_subject": "a row of tables and chairs",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/851801422.jpg?k=117dab824089b9bf199abbcb6ad459b3515f1ebccb678e9cb389163075b2d8a8&o=",
+          "why_it_converts": "Showcasing destination culinary programming elevates property perception and captures high-spend leisure travelers visiting London.",
+          "upgrade_rationale": "Showcasing destination culinary programming elevates property perception and captures high-spend leisure travelers visiting London.",
           "bullet_points": [
-            "Visual Upgrade: Presents a serene and luxurious spa environment, a key amenity for relaxation and rejuvenation.",
-            "Local Synergy: Appeals to the growing demand for urban wellness experiences, offering a tranquil escape within the bustling South Bank.",
-            "Conversion Trigger: Highlights a premium amenity that enhances the overall guest experience and justifies a higher ADR."
+            "Visual Upgrade: Atmospheric culinary perspective showing ambient lighting and curated seating.",
+            "Local Synergy: Anchors the property within the destination's acclaimed dining circuit.",
+            "Conversion Trigger: Stimulates social anticipation and validates on-property lifestyle experiences."
           ],
-          "psychological_conversion_trigger": "This image taps into the traveler's desire for relaxation and self-care, positioning the hotel as a holistic destination that offers both vibrant social experiences and serene wellness retreats.",
-          "recommended_trigger": "This image taps into the traveler's desire for relaxation and self-care, positioning the hotel as a holistic destination that offers both vibrant social experiences and serene wellness retreats.",
-          "current_slot": null,
+          "psychological_conversion_trigger": "Destination Gastronomy & Evening Social Gravitas",
+          "recommended_trigger": "Destination Gastronomy & Evening Social Gravitas",
+          "current_slot": 12,
           "is_retained": false,
-          "is_moved": false,
-          "is_swapped_in": true,
-          "action": "SWAP_IN",
-          "action_label": "ICONIC DESIGN LOBBY & CULTURAL SALON (SLOT #4)",
-          "source_display_label": "Official Site (seacontainerslondon.com)",
-          "source_domain": "seacontainerslondon.com",
-          "current_photo": null
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "PROMOTE",
+          "action_label": "PROMOTE FROM SLOT #12",
+          "source_display_label": "Was: Slot #12 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 12,
+            "title": "a row of tables and chairs at a restaurant at Sea Containers London in London",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/851801422.jpg?k=117dab824089b9bf199abbcb6ad459b3515f1ebccb678e9cb389163075b2d8a8&o=",
+            "photoId": "851801422",
+            "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791284623107&force_referer="
+          }
         },
         {
           "slot": 5,
-          "category": "SECONDARY_ROOM_BATHROOM",
-          "photo_subject": "Luxury Bathroom with Freestanding Soaking Tub and Marble Finishes",
-          "photo_url": "https://www.seacontainerslondon.com/media/utvpd5uj/studio-_-sea-containers-london-_-niall-clutton.jpg?anchor=center&mode=crop&width=1450&height=910&rnd=133825566679770000",
-          "why_it_converts": "This asset provides a clear, high-quality visual of a luxurious bathroom, which is essential for conveying the overall standard of the hotel's private spaces. It directly addresses traveler concerns about hygiene and modern amenities, which are often overlooked in current OTA sequences.",
-          "upgrade_rationale": "This asset provides a clear, high-quality visual of a luxurious bathroom, which is essential for conveying the overall standard of the hotel's private spaces. It directly addresses traveler concerns about hygiene and modern amenities, which are often overlooked in current OTA sequences.",
+          "category": "SECONDARY_LIFESTYLE_SANCTUARY",
+          "photo_subject": "a living room with a blue couch and a large window",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/818798316.jpg?k=56e03a102e49b280711b7371553921cce2f6c7eb0b113e95a3fcac8b0b993008&o=",
+          "why_it_converts": "Highlighting the property's expansive grounds and distinctive lifestyle amenities in Slot #5 provides a compelling secondary hook for leisure travelers seeking outdoor space and recreational prestige.",
+          "upgrade_rationale": "Highlighting the property's expansive grounds and distinctive lifestyle amenities in Slot #5 provides a compelling secondary hook for leisure travelers seeking outdoor space and recreational prestige.",
           "bullet_points": [
-            "Visual Upgrade: Showcases high-quality design and finishes, emphasizing luxury and attention to detail.",
-            "Local Synergy: Reinforces the hotel's commitment to modern luxury and comfort, a key expectation for South Bank visitors.",
-            "Conversion Trigger: Confirms hygiene, quality, and luxury in a critical private space, reducing booking hesitation."
+            "Visual Proof: Expansive perspective capturing the hotel's distinctive grounds, parkland setting, or curated public spaces.",
+            "Experiential Hook: Validates generous outdoor scale and peaceful relaxation beyond guest rooms.",
+            "Conversion Trigger: Confirms lifestyle amenities and recreational leisure value to finalize booking confidence."
           ],
-          "psychological_conversion_trigger": "This photo addresses a key psychological need for cleanliness, luxury, and comfort in the bathroom, a critical factor in guest satisfaction and booking decisions.",
-          "recommended_trigger": "This photo addresses a key psychological need for cleanliness, luxury, and comfort in the bathroom, a critical factor in guest satisfaction and booking decisions.",
-          "current_slot": null,
+          "psychological_conversion_trigger": "Estate Seclusion & Expansive Lifestyle Sanctuary",
+          "recommended_trigger": "Estate Seclusion & Expansive Lifestyle Sanctuary",
+          "current_slot": 2,
           "is_retained": false,
-          "is_moved": false,
-          "is_swapped_in": true,
-          "action": "SWAP_IN",
-          "action_label": "DESIGN BATHROOM (SLOT #5 - HYGIENE & LUXURY FINISH)",
-          "source_display_label": "Official Site (seacontainerslondon.com)",
-          "source_domain": "seacontainerslondon.com",
-          "current_photo": null
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "RE_SEQUENCE",
+          "action_label": "MOVE FROM SLOT #2",
+          "source_display_label": "Was: Slot #2 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 2,
+            "title": "a living room with a blue couch and a large window at Sea Containers London in London",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/818798316.jpg?k=56e03a102e49b280711b7371553921cce2f6c7eb0b113e95a3fcac8b0b993008&o=",
+            "photoId": "818798316",
+            "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791284623107&force_referer=",
+            "visual_description": "Modern living room in a suite with a large blue sectional sofa, round coffee table, and floor-to-ceiling windows offering a city view."
+          }
         }
       ],
       "anti_commodity_copy_rewrite": {
-        "ota_headline": "Sea Containers London: Iconic Riverside Design Hotel with Award-Winning Bars & Spa on South Bank",
-        "property_overview_150_words": "Experience Sea Containers London, a design-led riverside hotel on the vibrant South Bank, blending transatlantic style with London's creative energy. Home to the award-winning Lyaness cocktail bar and the tranquil Agua Spa, our hotel offers a dynamic social hub alongside luxurious accommodations. Enjoy stunning Thames views, exceptional dining, and unparalleled access to cultural landmarks like Tate Modern and Borough Market. Immerse yourself in a sophisticated yet playful atmosphere, perfect for discerning travelers seeking an authentic and engaging London experience."
+        "ota_headline": "Sea Containers London: Iconic Riverside Design, Rooftop Views & South Bank Social Hub",
+        "property_overview_150_words": "Experience Sea Containers London, a design-led riverside icon on the vibrant South Bank. Fusing transatlantic style with a playful nautical flair, our hotel offers panoramic Thames views from the 12th Knot rooftop bar, award-winning cocktails at Lyaness, and diverse culinary journeys at Sea Containers Restaurant. Immerse yourself in a dynamic social scene, steps from Tate Modern and Shakespeare's Globe. Our stylish rooms and suites provide a sophisticated sanctuary, reflecting London's contemporary creative spirit. Discover a destination where culture, comfort, and captivating views converge for an unforgettable stay."
       },
       "photographic_gap_analysis": [
         {
-          "missing_shot_title": "Twilight Rooftop Buzz at 12th Knot with St Paul's View",
-          "category": "ATMOSPHERIC_TWILIGHT",
-          "why_needed": "Currently, there isn't a high-impact twilight shot of the 12th Knot rooftop bar that truly captures its vibrant evening atmosphere and iconic views of St Paul's, a major draw for social travelers. This misses a key opportunity to showcase a prime social amenity at its most appealing time.",
-          "recommended_framing_and_lighting": "Wide-angle shot capturing the lively terrace, guests enjoying cocktails, and the illuminated St Paul's Cathedral in the background. Warm 2700K ambient lighting, with subtle rim lighting on guests and crisp reflections in glassware.",
-          "projected_adr_impact": "+10% higher F&B revenue and +$30 ADR premium for river view rooms."
+          "missing_shot_title": "Curated Master Bathroom Soaking Tub & Walk-in Shower",
+          "category": "CREATOR_BATHROOM",
+          "why_needed": "The absence of a high-quality guest bathroom photo creates a significant conversion drop-off, as discerning travelers equate luxury bathrooms with overall room quality, hygiene, and a premium stay experience. This is a critical visual trust signal.",
+          "recommended_framing_and_lighting": "Wide-angle shot capturing a spacious, well-lit bathroom with a freestanding soaking tub, walk-in rain shower, and luxury amenities, emphasizing natural light and pristine finishes (e.g., 3000K warm ambient lighting, diffused fill, crisp reflections).",
+          "projected_adr_impact": "+10% higher suite booking velocity and +$30 ADR premium due2 to enhanced perceived luxury and trust."
         },
         {
-          "missing_shot_title": "Dynamic Culinary Scene at Sea Containers Restaurant",
+          "missing_shot_title": "Lyaness Bar - Innovative Cocktail Crafting & Interior",
           "category": "CULINARY_SOCIAL",
-          "why_needed": "Despite mentions of 'Sea Containers Restaurant' and 'great food', there are no compelling, high-quality photos showcasing the actual dining experience, signature dishes, or the restaurant's ambiance. This leaves a significant gap for food-focused travelers.",
-          "recommended_framing_and_lighting": "Eye-level shot of a beautifully plated signature dish on a table, with soft, natural light illuminating the food and a subtly blurred background showing the restaurant's inviting interior and happy diners. Focus on texture and color.",
-          "projected_adr_impact": "+8% direct booking conversion for culinary enthusiasts and increased average spend per guest."
+          "why_needed": "While 12th Knot is featured, the award-winning Lyaness bar, a significant cultural magnet, is not visually represented. This misses an opportunity to showcase another unique, high-value F&B offering that attracts locals and hotel guests alike.",
+          "recommended_framing_and_lighting": "Eye-level shot capturing the sophisticated interior of Lyaness, focusing on the bar area with a mixologist crafting a signature cocktail, showcasing the unique design elements and ambient lighting (e.g., 2400K warm, intimate glow, shallow depth of field highlighting glassware and ingredients).",
+          "projected_adr_impact": "+8% increase in F&B revenue and enhanced brand perception as a leading cocktail destination."
         },
         {
-          "missing_shot_title": "Lobby Art Installation & Social Hub with Guests",
+          "missing_shot_title": "The Lobby - Abstract Anchor & Arrival Experience",
           "category": "ARRIVALS_ARCHITECTURE",
-          "why_needed": "While the lobby is mentioned as 'the heart of Sea Containers London' with an 'abstract anchor' art piece, there isn't a dynamic, human-centric photo that captures its grandeur, design, and role as a social hub. Current lobby photos are either too static or don't highlight the art.",
-          "recommended_framing_and_lighting": "Mid-angle shot from a slightly elevated perspective, showcasing the 'Where We Land' art installation as a focal point, with diverse guests (couples, business travelers) subtly interacting in the lounge areas. Soft, warm ambient lighting (2400K) to create an inviting, sophisticated mood.",
-          "projected_adr_impact": "+5% improved first impression and enhanced brand perception, reducing early funnel drop-offs."
+          "why_needed": "The lobby is described as 'the heart' of the hotel with a unique 'abstract anchor' art piece, yet no dedicated photo exists. This misses an opportunity to convey the hotel's distinctive design ethos and grand sense of arrival.",
+          "recommended_framing_and_lighting": "Wide, inviting shot of the main lobby, featuring the 'Where We Land' abstract anchor, showcasing the spaciousness, design details, and welcoming atmosphere, potentially with subtle human presence (e.g., 2700K warm, inviting light, architectural symmetry).",
+          "projected_adr_impact": "+5% improvement in first impressions and overall guest satisfaction scores."
         }
       ],
-      "conversion_diagnosis": "The current Booking.com photo sequence for Sea Containers London suffers from a lack of immediate impact and fails to highlight the property's unique cultural and social amenities. The initial exterior shot, while providing location, doesn't capture the hotel's vibrant personality or its strong connection to South Bank's dynamic subcultures. This leads to a commoditized perception, missing opportunities to engage travelers who prioritize unique experiences, award-winning F&B, and sophisticated design.",
-      "local_vibe_synergy_context": "South Bank is a vibrant cultural and social hub, attracting travelers interested in art, theater, fine dining, and sophisticated nightlife. Our strategic photo re-sequencing directly addresses these key traveler search intents. By leading with the award-winning Lyaness cocktail bar, we immediately connect the hotel to the neighborhood's acclaimed mixology scene. The exterior shot grounds the property within the iconic Thames riverside landscape, a central element of South Bank's appeal. The inclusion of the Agua Spa caters to the growing demand for urban wellness, while the luxury bedroom and bathroom photos reinforce the high-end design and comfort expected by discerning visitors to this cosmopolitan district.",
+      "conversion_diagnosis": "The current visual sequence buries the hotel's most compelling social and experiential assets, failing to resonate with modern travelers who prioritize neighborhood subcultures and unique experiences. The lack of a dedicated luxury bathroom shot further erodes perceived value for discerning guests.",
+      "local_vibe_synergy_context": "South Bank is a dynamic hub for culture, gastronomy, and social experiences. Travelers actively seek out venues that offer iconic views, innovative cocktails, and a sophisticated yet lively atmosphere. The proposed photo sequence strategically foregrounds Sea Containers London's 12th Knot rooftop bar and diverse dining, directly aligning the hotel's DNA with these high-intent local search demands, positioning it as a premier destination within this vibrant neighborhood.",
       "slot_1_decision_logic": {
         "is_magnet_override_active": true,
-        "reasoning_code": "NAI_HIGH_DESTINATION_POWER_CLARITY_MET",
-        "strategy_explanation": "The Lyaness Cocktail Bar (Amenity Asset #7) is an award-winning, standalone destination that perfectly embodies South Bank's sophisticated social and culinary subculture. Its visual clarity and strong neighborhood affinity (NAI > 0.85) make it an ideal Hero Cultural Magnet to immediately capture high-value traveler intent. This override positions the hotel as a vibrant cultural hub from the first impression.",
-        "neighborhood_affinity_index": 0.9,
-        "override_asset_name": "Lyaness Award-Winning Cocktail Bar"
+        "reasoning_code": "NAI_DESTINATION_CLARITY_MET",
+        "strategy_explanation": "The 12th Knot Rooftop Bar with its panoramic city views is a powerful cultural magnet that directly aligns with South Bank's top traveler search demands for vibrant social experiences and iconic London vistas. It functions as a standalone destination, offers split-second visual clarity, and warrants an override to immediately capture attention and drive booking intent. The exterior is then strategically placed in Slot #2 for essential geographic grounding.",
+        "neighborhood_affinity_index": 0.92,
+        "override_asset_name": "12th Knot Rooftop Bar"
       },
       "is_listed_on_booking": true,
       "listing_status": "ACTIVE_ON_BOOKING",
@@ -309,390 +327,404 @@
           "title": "a view of a river with buildings and a city at Sea Containers London in London",
           "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/37817004.jpg?k=238a7f412de6dc18a068ba35b5c38e699d43d03ec9d4de2c54f8e3029103341f&o=",
           "photoId": "37817004",
-          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791062474009&force_referer="
+          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791284623107&force_referer="
         },
         {
           "slot": 2,
           "title": "a living room with a blue couch and a large window at Sea Containers London in London",
           "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/818798316.jpg?k=56e03a102e49b280711b7371553921cce2f6c7eb0b113e95a3fcac8b0b993008&o=",
           "photoId": "818798316",
-          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791062474009&force_referer="
+          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791284623107&force_referer=",
+          "visual_description": "Modern living room in a suite with a large blue sectional sofa, round coffee table, and floor-to-ceiling windows offering a city view."
         },
         {
           "slot": 3,
           "title": "a living room with a couch and a large window at Sea Containers London in London",
           "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/820352681.jpg?k=47dc64a7c1ccee8e9f00cc3e7e232f773f02cfa251530a23c4b83f45d74131d7&o=",
           "photoId": "820352681",
-          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791062474009&force_referer="
+          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791284623107&force_referer="
         },
         {
           "slot": 4,
           "title": "a bedroom with a bed and a table with a lamp at Sea Containers London in London",
           "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/818802855.jpg?k=e4c35a799191520dc3f1d539425578757cc6fe28b362b04b9c65f1ba2bff74bf&o=",
           "photoId": "818802855",
-          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791062474009&force_referer="
+          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791284623107&force_referer="
         },
         {
           "slot": 5,
           "title": "a living room with a couch and chairs and a table at Sea Containers London in London",
           "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/818801355.jpg?k=ba2e03ff565052ea886936746676607b17243c14c7846efb990ebf712592e171&o=",
           "photoId": "818801355",
-          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791062474009&force_referer="
+          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791284623107&force_referer="
         },
         {
           "slot": 6,
           "title": "a bedroom with a large white bed and a window at Sea Containers London in London",
           "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/818802965.jpg?k=e7c4d1f49ef8a639d70fc663479efcabca9546767f520353dfa51f8ed49efbb6&o=",
           "photoId": "818802965",
-          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791062474009&force_referer="
+          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791284623107&force_referer="
         },
         {
           "slot": 7,
           "title": "a sculpture of a cactus on display in a museum at Sea Containers London in London",
           "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/818803974.jpg?k=3c2463f9e1a64ed4bab062ef243a6f37e86adc2dfd91a744635ee9e8794d735c&o=",
           "photoId": "818803974",
-          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791062474009&force_referer="
+          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791284623107&force_referer="
         },
         {
           "slot": 8,
           "title": "a bedroom with a bed and a living room at Sea Containers London in London +113 photos",
           "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/818798180.jpg?k=b5aea1972970f55cd25501dcc6783b6d10d965b6b9f5f695c4cb4b88cb1ad37a&o=",
           "photoId": "818798180",
-          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791062474009&force_referer="
+          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791284623107&force_referer="
         },
         {
           "slot": 9,
-          "title": "a table with a bowl of fruit on top at Sea Containers London in London",
-          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/818798125.jpg?k=2407c96db19a26db91782f0444c6dba2bff3d48425761c06b55c666de651def6&o=&hp=1",
-          "photoId": "818798125",
-          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791062474009&force_referer="
+          "title": "a table with plates of breakfast foods and drinks at Sea Containers London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/589299505.jpg?k=13647cc5837fa4fd2a40724c565a827937259efc6a49a191f8aa47bb1590654f&o=",
+          "photoId": "589299505",
+          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791284623107&force_referer="
         },
         {
           "slot": 10,
-          "title": "a living room with a couch and a table in a room at Sea Containers London in London",
-          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/818798238.jpg?k=81c31ffeaf256a6925f544d84c80031224a8aef13e06d0c16b9ab02a9be3d1b1&o=&hp=1",
-          "photoId": "818798238",
-          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791062474009&force_referer="
+          "title": "a table with two plates of food and a glass of orange juice at Sea Containers London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/589299626.jpg?k=e066da90962c1edf0716476ebe4cdcb83851a9a77ba89219ccb1bcda7bae7fa6&o=",
+          "photoId": "589299626",
+          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791284623107&force_referer="
         },
         {
           "slot": 11,
-          "title": "a city lit up with red and purple lights at night at Sea Containers London in London",
-          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/851801721.jpg?k=f75853f1126975cd9f2afeafba111c617ccc8c13865d9137bbfb11c5d5623e03&o=&hp=1",
-          "photoId": "851801721",
-          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791062474009&force_referer="
+          "title": "a woman holding a child in front of a counter at Sea Containers London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/851801152.jpg?k=b54d606f4b2503c233fc3b93f66456324b69e696af392439bbfc803e76d87c8b&o=",
+          "photoId": "851801152",
+          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791284623107&force_referer="
         },
         {
           "slot": 12,
-          "title": "a young child walking in front of a london sign at Sea Containers London in London",
-          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/851801906.jpg?k=d6d8371a01a7898f690f6747c27134168f874f65997c9280277fdc50374c2940&o=&hp=1",
-          "photoId": "851801906",
-          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791062474009&force_referer="
+          "title": "a row of tables and chairs at a restaurant at Sea Containers London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/851801422.jpg?k=117dab824089b9bf199abbcb6ad459b3515f1ebccb678e9cb389163075b2d8a8&o=",
+          "photoId": "851801422",
+          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791284623107&force_referer="
         },
         {
           "slot": 13,
-          "title": "people walking on a sidewalk near big ben and big clock tower at Sea Containers London in London",
-          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/851801772.jpg?k=914e256107d0e5e8bcb541186874a29ce560d4378984f20d756a95d4449c036c&o=&hp=1",
-          "photoId": "851801772",
-          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791062474009&force_referer="
+          "title": "a balcony with tables and chairs on a building at Sea Containers London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/570881905.jpg?k=24e05e6087dbbfc72afe3d215d23e14b902e986da7e24b5f3e622c1ee5545c47&o=",
+          "photoId": "570881905",
+          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791284623107&force_referer="
         },
         {
           "slot": 14,
-          "title": "a bedroom with a bed and a couch and a window at Sea Containers London in London",
-          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/820352424.jpg?k=eb26f5cc4e055518bb9924cc199a5265d5911e9ff5276941c61d70591d228136&o=&hp=1",
-          "photoId": "820352424",
-          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791062474009&force_referer="
+          "title": "a restaurant with tables and chairs and a view of the city at Sea Containers London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/96897270.jpg?k=4d099a525541fde9f4eaac3aa8e62d7efd39f64dbb760c526b66ecf46c226a4b&o=",
+          "photoId": "96897270",
+          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791284623107&force_referer="
         },
         {
           "slot": 15,
-          "title": "a lobby with a large blue couch and tables and chairs at Sea Containers London in London",
-          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/851801208.jpg?k=82e1a2415348efb86096e5b16b8e2c53e5626cd5063b4f65c95d2771475da87e&o=&hp=1",
-          "photoId": "851801208",
-          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791062474009&force_referer="
+          "title": "a table with a bowl of fruit on top at Sea Containers London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/818798125.jpg?k=2407c96db19a26db91782f0444c6dba2bff3d48425761c06b55c666de651def6&o=&hp=1",
+          "photoId": "818798125",
+          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791284623107&force_referer="
         },
         {
           "slot": 16,
-          "title": "a tunnel with a light at the end of it at Sea Containers London in London",
-          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/37483649.jpg?k=491e40f996d9525865f5dc50508b5eb34a4022c9cefbc9da60ddd2030423eb1f&o=&hp=1",
-          "photoId": "37483649",
-          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791062474009&force_referer="
+          "title": "a living room with a couch and a table in a room at Sea Containers London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/818798238.jpg?k=81c31ffeaf256a6925f544d84c80031224a8aef13e06d0c16b9ab02a9be3d1b1&o=&hp=1",
+          "photoId": "818798238",
+          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791284623107&force_referer="
         },
         {
           "slot": 17,
-          "title": "a table with plates of breakfast foods and drinks at Sea Containers London in London",
-          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/589299505.jpg?k=13647cc5837fa4fd2a40724c565a827937259efc6a49a191f8aa47bb1590654f&o=&hp=1",
-          "photoId": "589299505",
-          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791062474009&force_referer="
+          "title": "a city lit up with red and purple lights at night at Sea Containers London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/851801721.jpg?k=f75853f1126975cd9f2afeafba111c617ccc8c13865d9137bbfb11c5d5623e03&o=&hp=1",
+          "photoId": "851801721",
+          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791284623107&force_referer="
         },
         {
           "slot": 18,
-          "title": "a woman and a child sitting at a table at Sea Containers London in London",
-          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/851801464.jpg?k=c95c99114a5185013bbd77e7a25f5b51a8d0a3b2483f48941877a9fe186815e9&o=&hp=1",
-          "photoId": "851801464",
-          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791062474009&force_referer="
+          "title": "a young child walking in front of a london sign at Sea Containers London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/851801906.jpg?k=d6d8371a01a7898f690f6747c27134168f874f65997c9280277fdc50374c2940&o=&hp=1",
+          "photoId": "851801906",
+          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791284623107&force_referer="
         },
         {
           "slot": 19,
-          "title": "a restaurant with tables and chairs and a large mirror at Sea Containers London in London",
-          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/851801426.jpg?k=3cd45e8a360b3a55a186c5e870ae39900830fc831926205ae5c068d57a3d209f&o=&hp=1",
-          "photoId": "851801426",
-          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791062474009&force_referer=",
-          "visual_description": "Stylish indoor restaurant dining area with yellow booth seating, dark round tables set with glassware, and decorative metal screens."
+          "title": "people walking on a sidewalk near big ben and big clock tower at Sea Containers London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/851801772.jpg?k=914e256107d0e5e8bcb541186874a29ce560d4378984f20d756a95d4449c036c&o=&hp=1",
+          "photoId": "851801772",
+          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791284623107&force_referer="
         },
         {
           "slot": 20,
-          "title": "a row of tables and chairs at a restaurant at Sea Containers London in London",
-          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/851801422.jpg?k=117dab824089b9bf199abbcb6ad459b3515f1ebccb678e9cb389163075b2d8a8&o=&hp=1",
-          "photoId": "851801422",
-          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791062474009&force_referer="
+          "title": "a bedroom with a bed and a couch and a window at Sea Containers London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/820352424.jpg?k=eb26f5cc4e055518bb9924cc199a5265d5911e9ff5276941c61d70591d228136&o=&hp=1",
+          "photoId": "820352424",
+          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791284623107&force_referer="
         },
         {
           "slot": 21,
-          "title": "a woman and a man sitting at a table with a baby at Sea Containers London in London",
-          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/851801214.jpg?k=2287f720a159d9cf36faa06234e5c8a3b5b8f44874e81abe13f992a3602ff110&o=&hp=1",
-          "photoId": "851801214",
-          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791062474009&force_referer="
+          "title": "a lobby with a large blue couch and tables and chairs at Sea Containers London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/851801208.jpg?k=82e1a2415348efb86096e5b16b8e2c53e5626cd5063b4f65c95d2771475da87e&o=&hp=1",
+          "photoId": "851801208",
+          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791284623107&force_referer="
         },
         {
           "slot": 22,
-          "title": "a balcony with tables and chairs and a view of the city at Sea Containers London in London",
-          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/851801396.jpg?k=10352fab3075fe13b9ea3c07a10286ceda2edbf94cc13eecf2d32a62a3e7544e&o=&hp=1",
-          "photoId": "851801396",
-          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791062474009&force_referer="
+          "title": "a tunnel with a light at the end of it at Sea Containers London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/37483649.jpg?k=491e40f996d9525865f5dc50508b5eb34a4022c9cefbc9da60ddd2030423eb1f&o=&hp=1",
+          "photoId": "37483649",
+          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791284623107&force_referer="
         },
         {
           "slot": 23,
-          "title": "a person sitting at a table eating food with a spoon at Sea Containers London in London",
-          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/851801281.jpg?k=3476697b053756e957e96a122e4e38ac59104b213c9da802a5dccff83543dadd&o=&hp=1",
-          "photoId": "851801281",
-          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791062474009&force_referer="
+          "title": "a woman and a child sitting at a table at Sea Containers London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/851801464.jpg?k=c95c99114a5185013bbd77e7a25f5b51a8d0a3b2483f48941877a9fe186815e9&o=&hp=1",
+          "photoId": "851801464",
+          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791284623107&force_referer="
         },
         {
           "slot": 24,
-          "title": "a restaurant with a view of the city at night at Sea Containers London in London",
-          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/851801494.jpg?k=c89556f58e3108941b31cc6bff1b8b9020c7021aee0ef3af086b85fa0a8124b4&o=&hp=1",
-          "photoId": "851801494",
-          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791062474009&force_referer="
+          "title": "a restaurant with tables and chairs and a large mirror at Sea Containers London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/851801426.jpg?k=3cd45e8a360b3a55a186c5e870ae39900830fc831926205ae5c068d57a3d209f&o=&hp=1",
+          "photoId": "851801426",
+          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791284623107&force_referer="
         },
         {
           "slot": 25,
-          "title": "a bridge over a river with a building at Sea Containers London in London",
-          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/851801265.jpg?k=ba7ce0cf26840f86ff38f0502117cf044e1ae5cf511691a376d784cb0e4f5519&o=&hp=1",
-          "photoId": "851801265",
-          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791062474009&force_referer="
+          "title": "a woman and a man sitting at a table with a baby at Sea Containers London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/851801214.jpg?k=2287f720a159d9cf36faa06234e5c8a3b5b8f44874e81abe13f992a3602ff110&o=&hp=1",
+          "photoId": "851801214",
+          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791284623107&force_referer="
         },
         {
           "slot": 26,
-          "title": "a man sitting at a bar pouring a drink at Sea Containers London in London",
-          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/851801638.jpg?k=82611973e2bfdf3d777046fd5159d389a579cdb7b5a93b880f2fa0322f4225a2&o=&hp=1",
-          "photoId": "851801638",
-          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791062474009&force_referer="
+          "title": "a balcony with tables and chairs and a view of the city at Sea Containers London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/851801396.jpg?k=10352fab3075fe13b9ea3c07a10286ceda2edbf94cc13eecf2d32a62a3e7544e&o=&hp=1",
+          "photoId": "851801396",
+          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791284623107&force_referer="
         },
         {
           "slot": 27,
-          "title": "a bar with blue chairs and a table andools at Sea Containers London in London",
-          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/209696632.jpg?k=b96433eec893162b47b80b6ca3964eff39978df8971883f43c55f655393052d2&o=&hp=1",
-          "photoId": "209696632",
-          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791062474009&force_referer="
+          "title": "a person sitting at a table eating food with a spoon at Sea Containers London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/851801281.jpg?k=3476697b053756e957e96a122e4e38ac59104b213c9da802a5dccff83543dadd&o=&hp=1",
+          "photoId": "851801281",
+          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791284623107&force_referer="
         },
         {
           "slot": 28,
-          "title": "a woman sitting at a table in a restaurant at Sea Containers London in London",
-          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/851801003.jpg?k=b5bc34274bd3f92ece6bf724f975251d7dae10a3b4036948e08413c25e889c83&o=&hp=1",
-          "photoId": "851801003",
-          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791062474009&force_referer="
+          "title": "a restaurant with a view of the city at night at Sea Containers London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/851801494.jpg?k=c89556f58e3108941b31cc6bff1b8b9020c7021aee0ef3af086b85fa0a8124b4&o=&hp=1",
+          "photoId": "851801494",
+          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791284623107&force_referer="
         },
         {
           "slot": 29,
-          "title": "a restaurant with purple seating and stairs at Sea Containers London in London",
-          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/570881866.jpg?k=36d24017d6f57149feb02cdbfa13e673ca788d18bd404cb74f92002c7f849c22&o=&hp=1",
-          "photoId": "570881866",
-          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791062474009&force_referer="
+          "title": "a bridge over a river with a building at Sea Containers London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/851801265.jpg?k=ba7ce0cf26840f86ff38f0502117cf044e1ae5cf511691a376d784cb0e4f5519&o=&hp=1",
+          "photoId": "851801265",
+          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791284623107&force_referer="
         },
         {
           "slot": 30,
-          "title": "a table with two plates of food and a glass of orange juice at Sea Containers London in London",
-          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/589299626.jpg?k=e066da90962c1edf0716476ebe4cdcb83851a9a77ba89219ccb1bcda7bae7fa6&o=&hp=1",
-          "photoId": "589299626",
-          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791062474009&force_referer="
+          "title": "a man sitting at a bar pouring a drink at Sea Containers London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/851801638.jpg?k=82611973e2bfdf3d777046fd5159d389a579cdb7b5a93b880f2fa0322f4225a2&o=&hp=1",
+          "photoId": "851801638",
+          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791284623107&force_referer="
         },
         {
           "slot": 31,
-          "title": "a group of people sitting at a table with drinks at Sea Containers London in London",
-          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/851801126.jpg?k=d3fe9845a9621ebc31853bb15e871b432cb6847315c5ec6bc3d94b085df286d8&o=&hp=1",
-          "photoId": "851801126",
-          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791062474009&force_referer="
+          "title": "a bar with blue chairs and a table andools at Sea Containers London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/209696632.jpg?k=b96433eec893162b47b80b6ca3964eff39978df8971883f43c55f655393052d2&o=&hp=1",
+          "photoId": "209696632",
+          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791284623107&force_referer="
         },
         {
           "slot": 32,
-          "title": "a vase in the middle of a room at Sea Containers London in London",
-          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/851801430.jpg?k=de54f5c5dab36ad486a3f0bd81f54059ad70d611233136403e8d329dca6e6a38&o=&hp=1",
-          "photoId": "851801430",
-          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791062474009&force_referer="
+          "title": "a woman sitting at a table in a restaurant at Sea Containers London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/851801003.jpg?k=b5bc34274bd3f92ece6bf724f975251d7dae10a3b4036948e08413c25e889c83&o=&hp=1",
+          "photoId": "851801003",
+          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791284623107&force_referer="
         },
         {
           "slot": 33,
-          "title": "a woman is reflected in a mirror at Sea Containers London in London",
-          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/851800981.jpg?k=06c346e8c340f60829e0cbcebc0cff03b48f7d767b13e8216365263a92ed9c9b&o=&hp=1",
-          "photoId": "851800981",
-          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791062474009&force_referer="
+          "title": "a restaurant with purple seating and stairs at Sea Containers London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/570881866.jpg?k=36d24017d6f57149feb02cdbfa13e673ca788d18bd404cb74f92002c7f849c22&o=&hp=1",
+          "photoId": "570881866",
+          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791284623107&force_referer="
         },
         {
           "slot": 34,
-          "title": "a woman in a dress sitting on a bench at Sea Containers London in London",
-          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/851801203.jpg?k=3e2e41c5212b25938fc6ee3af445a434f7c7a974a8b6cbcb4373e04898ac826e&o=&hp=1",
-          "photoId": "851801203",
-          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791062474009&force_referer="
+          "title": "a group of people sitting at a table with drinks at Sea Containers London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/851801126.jpg?k=d3fe9845a9621ebc31853bb15e871b432cb6847315c5ec6bc3d94b085df286d8&o=&hp=1",
+          "photoId": "851801126",
+          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791284623107&force_referer="
         },
         {
           "slot": 35,
-          "title": "a view of the capitol building from a bridge at Sea Containers London in London",
-          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/851801226.jpg?k=6ebb8bc24ba7c440db6e7ec703ebd9103149739e8ed36a5cff02f6dc9c2150d4&o=&hp=1",
-          "photoId": "851801226",
-          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791062474009&force_referer="
+          "title": "a vase in the middle of a room at Sea Containers London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/851801430.jpg?k=de54f5c5dab36ad486a3f0bd81f54059ad70d611233136403e8d329dca6e6a38&o=&hp=1",
+          "photoId": "851801430",
+          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791284623107&force_referer="
         },
         {
           "slot": 36,
-          "title": "a cinema room with blue chairs and a white screen at Sea Containers London in London",
-          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/96920407.jpg?k=46be85feefd24b88d3bbe3bc6de249027a75cdb57ec4db00a67b508d08c62aee&o=&hp=1",
-          "photoId": "96920407",
-          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791062474009&force_referer="
+          "title": "a woman is reflected in a mirror at Sea Containers London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/851800981.jpg?k=06c346e8c340f60829e0cbcebc0cff03b48f7d767b13e8216365263a92ed9c9b&o=&hp=1",
+          "photoId": "851800981",
+          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791284623107&force_referer="
         },
         {
           "slot": 37,
-          "title": "a view of a city with a bridge over a river at Sea Containers London in London",
-          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/773327296.jpg?k=61fd948ba8ecebff2dd2b33d0d3509227c2b1a77e5e3d23062475a9398a02276&o=&hp=1",
-          "photoId": "773327296",
-          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791062474009&force_referer="
+          "title": "a woman in a dress sitting on a bench at Sea Containers London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/851801203.jpg?k=3e2e41c5212b25938fc6ee3af445a434f7c7a974a8b6cbcb4373e04898ac826e&o=&hp=1",
+          "photoId": "851801203",
+          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791284623107&force_referer="
         },
         {
           "slot": 38,
-          "title": "a living room with blue chairs and a couch at Sea Containers London in London",
-          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/818802884.jpg?k=18f14f37ab77abe51772d763212694f953f5257fa329544a5b1656f51babb0c1&o=&hp=1",
-          "photoId": "818802884",
-          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791062474009&force_referer="
+          "title": "a view of the capitol building from a bridge at Sea Containers London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/851801226.jpg?k=6ebb8bc24ba7c440db6e7ec703ebd9103149739e8ed36a5cff02f6dc9c2150d4&o=&hp=1",
+          "photoId": "851801226",
+          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791284623107&force_referer="
         },
         {
           "slot": 39,
-          "title": "a bar at a hotel with a view of the building at Sea Containers London in London",
-          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/96899306.jpg?k=ffc2d7e4d2ac42445b9dca8cf594afef597ff22fe2911e1692fa48b76ed404b0&o=&hp=1",
-          "photoId": "96899306",
-          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791062474009&force_referer="
+          "title": "a cinema room with blue chairs and a white screen at Sea Containers London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/96920407.jpg?k=46be85feefd24b88d3bbe3bc6de249027a75cdb57ec4db00a67b508d08c62aee&o=&hp=1",
+          "photoId": "96920407",
+          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791284623107&force_referer="
         },
         {
           "slot": 40,
-          "title": "a woman in a leather jacket standing at a podium at Sea Containers London in London",
-          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/851801443.jpg?k=71c970da02ed62afe1b6fb15bb374c2d404ad30eab01b4187973064ac9adc56a&o=&hp=1",
-          "photoId": "851801443",
-          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791062474009&force_referer="
+          "title": "a view of a city with a bridge over a river at Sea Containers London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/773327296.jpg?k=61fd948ba8ecebff2dd2b33d0d3509227c2b1a77e5e3d23062475a9398a02276&o=&hp=1",
+          "photoId": "773327296",
+          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791284623107&force_referer="
         },
         {
           "slot": 41,
-          "title": "a balcony with tables and chairs on a building at Sea Containers London in London",
-          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/570881905.jpg?k=24e05e6087dbbfc72afe3d215d23e14b902e986da7e24b5f3e622c1ee5545c47&o=&hp=1",
-          "photoId": "570881905",
-          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791062474009&force_referer="
+          "title": "a living room with blue chairs and a couch at Sea Containers London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/818802884.jpg?k=18f14f37ab77abe51772d763212694f953f5257fa329544a5b1656f51babb0c1&o=&hp=1",
+          "photoId": "818802884",
+          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791284623107&force_referer="
         },
         {
           "slot": 42,
-          "title": "a lobby with a blue couch and two tables at Sea Containers London in London",
-          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/851801312.jpg?k=390e24e585ea6f7bb79243c1d4d6763968c0db8b841dbcc12ef351dcfffc0fa3&o=&hp=1",
-          "photoId": "851801312",
-          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791062474009&force_referer="
+          "title": "a bar at a hotel with a view of the building at Sea Containers London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/96899306.jpg?k=ffc2d7e4d2ac42445b9dca8cf594afef597ff22fe2911e1692fa48b76ed404b0&o=&hp=1",
+          "photoId": "96899306",
+          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791284623107&force_referer="
         },
         {
           "slot": 43,
-          "title": "a glass of tea with an orange object in it at Sea Containers London in London",
-          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/851801177.jpg?k=d01c8697e52c51e0db4b070bd293cc364410bca83e0c85e9b2b5333b28185dc6&o=&hp=1",
-          "photoId": "851801177",
-          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791062474009&force_referer="
+          "title": "a woman in a leather jacket standing at a podium at Sea Containers London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/851801443.jpg?k=71c970da02ed62afe1b6fb15bb374c2d404ad30eab01b4187973064ac9adc56a&o=&hp=1",
+          "photoId": "851801443",
+          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791284623107&force_referer="
         },
         {
           "slot": 44,
-          "title": "a man and woman sitting at a table in a restaurant at Sea Containers London in London",
-          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/851801717.jpg?k=64c339063020945dc4ce9ab7dece487da93b5d89e3a73ec0afec7c5b6239848f&o=&hp=1",
-          "photoId": "851801717",
-          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791062474009&force_referer="
+          "title": "a lobby with a blue couch and two tables at Sea Containers London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/851801312.jpg?k=390e24e585ea6f7bb79243c1d4d6763968c0db8b841dbcc12ef351dcfffc0fa3&o=&hp=1",
+          "photoId": "851801312",
+          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791284623107&force_referer="
         },
         {
           "slot": 45,
-          "title": "a bar with chairs and tables and the building at Sea Containers London in London",
-          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/209696622.jpg?k=51d55e290dbcf081d333a885e8c58bc66c3f508ed62c04009887e827f74bf186&o=&hp=1",
-          "photoId": "209696622",
-          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791062474009&force_referer="
+          "title": "a glass of tea with an orange object in it at Sea Containers London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/851801177.jpg?k=d01c8697e52c51e0db4b070bd293cc364410bca83e0c85e9b2b5333b28185dc6&o=&hp=1",
+          "photoId": "851801177",
+          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791284623107&force_referer="
         },
         {
           "slot": 46,
-          "title": "Booking.com Deep Gallery Photo",
-          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/37817004.jpg?k=238a7f412de6dc18a068ba35b5c38e699d43d03ec9d4de2c54f8e3029103341f&o=&hp=1",
-          "photoId": "4",
-          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791062474009&force_referer="
+          "title": "a man and woman sitting at a table in a restaurant at Sea Containers London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/851801717.jpg?k=64c339063020945dc4ce9ab7dece487da93b5d89e3a73ec0afec7c5b6239848f&o=&hp=1",
+          "photoId": "851801717",
+          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791284623107&force_referer="
         },
         {
           "slot": 47,
-          "title": "Booking.com Deep Gallery Photo",
-          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/818798316.jpg?k=56e03a102e49b280711b7371553921cce2f6c7eb0b113e95a3fcac8b0b993008&o=&hp=1",
-          "photoId": "6",
-          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791062474009&force_referer="
+          "title": "a bar with chairs and tables and the building at Sea Containers London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/209696622.jpg?k=51d55e290dbcf081d333a885e8c58bc66c3f508ed62c04009887e827f74bf186&o=&hp=1",
+          "photoId": "209696622",
+          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791284623107&force_referer="
         },
         {
           "slot": 48,
           "title": "Booking.com Deep Gallery Photo",
-          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/820352681.jpg?k=47dc64a7c1ccee8e9f00cc3e7e232f773f02cfa251530a23c4b83f45d74131d7&o=&hp=1",
-          "photoId": "1",
-          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791062474009&force_referer="
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/37817004.jpg?k=238a7f412de6dc18a068ba35b5c38e699d43d03ec9d4de2c54f8e3029103341f&o=&hp=1",
+          "photoId": "4",
+          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791284623107&force_referer="
         },
         {
           "slot": 49,
           "title": "Booking.com Deep Gallery Photo",
-          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/818802855.jpg?k=e4c35a799191520dc3f1d539425578757cc6fe28b362b04b9c65f1ba2bff74bf&o=&hp=1",
-          "photoId": "5",
-          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791062474009&force_referer="
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/818798316.jpg?k=56e03a102e49b280711b7371553921cce2f6c7eb0b113e95a3fcac8b0b993008&o=&hp=1",
+          "photoId": "6",
+          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791284623107&force_referer="
         },
         {
           "slot": 50,
           "title": "Booking.com Deep Gallery Photo",
-          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/818798180.jpg?k=b5aea1972970f55cd25501dcc6783b6d10d965b6b9f5f695c4cb4b88cb1ad37a&o=&hp=1",
-          "photoId": "0",
-          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791062474009&force_referer="
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/820352681.jpg?k=47dc64a7c1ccee8e9f00cc3e7e232f773f02cfa251530a23c4b83f45d74131d7&o=&hp=1",
+          "photoId": "1",
+          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791284623107&force_referer="
         },
         {
           "slot": 51,
           "title": "Booking.com Deep Gallery Photo",
-          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/818798238.jpg?k=81c31ffeaf256a6925f544d84c80031224a8aef13e06d0c16b9ab02a9be3d1b1&o=&hp=1",
-          "photoId": "8",
-          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791062474009&force_referer="
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/818802855.jpg?k=e4c35a799191520dc3f1d539425578757cc6fe28b362b04b9c65f1ba2bff74bf&o=&hp=1",
+          "photoId": "5",
+          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791284623107&force_referer="
         },
         {
           "slot": 52,
           "title": "Booking.com Deep Gallery Photo",
-          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/851801772.jpg?k=914e256107d0e5e8bcb541186874a29ce560d4378984f20d756a95d4449c036c&o=&hp=1",
-          "photoId": "2",
-          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791062474009&force_referer="
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/818798180.jpg?k=b5aea1972970f55cd25501dcc6783b6d10d965b6b9f5f695c4cb4b88cb1ad37a&o=&hp=1",
+          "photoId": "0",
+          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791284623107&force_referer="
         },
         {
           "slot": 53,
           "title": "Booking.com Deep Gallery Photo",
-          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/37483649.jpg?k=491e40f996d9525865f5dc50508b5eb34a4022c9cefbc9da60ddd2030423eb1f&o=&hp=1",
-          "photoId": "9",
-          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791062474009&force_referer="
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/818798238.jpg?k=81c31ffeaf256a6925f544d84c80031224a8aef13e06d0c16b9ab02a9be3d1b1&o=&hp=1",
+          "photoId": "8",
+          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791284623107&force_referer="
         },
         {
           "slot": 54,
           "title": "Booking.com Deep Gallery Photo",
-          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/851801003.jpg?k=b5bc34274bd3f92ece6bf724f975251d7dae10a3b4036948e08413c25e889c83&o=&hp=1",
-          "photoId": "3",
-          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791062474009&force_referer="
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/851801772.jpg?k=914e256107d0e5e8bcb541186874a29ce560d4378984f20d756a95d4449c036c&o=&hp=1",
+          "photoId": "2",
+          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791284623107&force_referer="
         },
         {
           "slot": 55,
           "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/37483649.jpg?k=491e40f996d9525865f5dc50508b5eb34a4022c9cefbc9da60ddd2030423eb1f&o=&hp=1",
+          "photoId": "9",
+          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791284623107&force_referer="
+        },
+        {
+          "slot": 56,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/851801003.jpg?k=b5bc34274bd3f92ece6bf724f975251d7dae10a3b4036948e08413c25e889c83&o=&hp=1",
+          "photoId": "3",
+          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791284623107&force_referer="
+        },
+        {
+          "slot": 57,
+          "title": "Booking.com Deep Gallery Photo",
           "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/96920407.jpg?k=46be85feefd24b88d3bbe3bc6de249027a75cdb57ec4db00a67b508d08c62aee&o=&hp=1",
           "photoId": "7",
-          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791062474009&force_referer="
+          "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1791284623107&force_referer="
         }
       ],
       "photos_status": "RESOLVED"
     },
-    "audit_timestamp": "2026-10-03T21:22:01.206Z"
+    "audit_timestamp": "2026-10-06T11:03:48.080Z"
   }
 }

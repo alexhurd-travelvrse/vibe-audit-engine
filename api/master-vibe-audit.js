@@ -2114,13 +2114,14 @@ export async function resolveAuditPhotos(hotelName, city, neighborhood = '', str
   // Select candidates: if useStrictBookingReorder is true, poolLive provides 100% of candidates
   const liveDining = poolLive.filter(p => /restaurant|dining|bar\b|cocktail|bistro|sushi|grill|boilerman|neni|cafe|tea/i.test(`${p.title || ''} ${p.imageUrl || ''}`)).slice(0, 4);
   const liveExt = poolLive.filter(p => /exterior|facade|façade|building|street|store front|entrance|courtyard|tower|dome|palace|landmark/i.test(`${p.title || ''} ${p.imageUrl || ''}`)).slice(0, 4);
+  const liveSpa = poolLive.filter(p => /spa|wellness|sauna|treatment|massage|steam|hydrotherapy|agua|bathhouse|vase|sculpture|tear/i.test(`${p.title || ''} ${p.imageUrl || ''}`)).slice(0, 3);
   const liveLobby = poolLive.filter(p => /lobby|reception|sculpture|salon|lounge|hall|atrium|foyer|living/i.test(`${p.title || ''} ${p.imageUrl || ''}`)).slice(0, 3);
   const liveBed = poolLive.filter(p => /bedroom|bed|suite/i.test(`${p.title || ''} ${p.imageUrl || ''}`)).slice(0, 3);
   const liveBath = poolLive.filter(p => /bath|tub|shower/i.test(`${p.title || ''} ${p.imageUrl || ''}`)).slice(0, 2);
   const livePool = poolLive.filter(p => /pool|swim/i.test(`${p.title || ''} ${p.imageUrl || ''}`)).slice(0, 2);
   const liveHeroes = poolLive.slice(0, 4);
   
-  const selectedLiveCandidates = Array.from(new Set([...liveHeroes, ...liveDining, ...liveExt, ...liveLobby, ...liveBed, ...liveBath, ...livePool, ...poolLive.slice(0, 16)])).slice(0, 16);
+  const selectedLiveCandidates = Array.from(new Set([...liveHeroes, ...liveDining, ...liveExt, ...liveSpa, ...liveLobby, ...liveBed, ...liveBath, ...livePool, ...poolLive.slice(0, 16)])).slice(0, 18);
 
   // Diverse category representation from poolAmenity (strictly non-placeholder, used only if not strict Booking reorder)
   const validAmenity = effectiveAmenityPool.filter(a => {
@@ -2168,6 +2169,7 @@ export async function resolveAuditPhotos(hotelName, city, neighborhood = '', str
     const v = getVisual(p);
     if (v && v.primary_category === 'GENERIC_OTHER' && !v.is_dining_or_bar) return true;
     const s = `${p.title || ''} ${p.imageUrl || ''}`.toLowerCase();
+    if (/sculpture|art piece|basin|water|bench/i.test(s)) return false;
     return /coffee|kettle|machine|appliance|teapot|cup|countertop|detail|mug|espresso|toiletries|amenity kit/i.test(s);
   };
 
@@ -2241,7 +2243,11 @@ export async function resolveAuditPhotos(hotelName, city, neighborhood = '', str
     if (!p) return false;
     if (p.detectedCategory === 'SPA') return true;
     const v = getVisual(p);
-    if (v && (v.primary_category === 'SPA' || v.primary_category === 'WELLNESS_SPA_LOBBY')) return true;
+    if (v && (
+      v.primary_category === 'SPA' || 
+      v.primary_category === 'WELLNESS_SPA_LOBBY' || 
+      (v.brief_visual_description && /relaxation lounge|water basin|copper art piece|treatment|massage|spa\b/i.test(v.brief_visual_description))
+    )) return true;
     const s = `${p.title || ''} ${p.imageUrl || ''}`.toLowerCase();
     return s.includes('agua') || s.includes('spa') || s.includes('sauna') || s.includes('wellness') || s.includes('massage') || s.includes('treatment') || s.includes('vitality') || s.includes('bathhouse') || s.includes('thermal') || s.includes('pool') || s.includes('swim');
   };

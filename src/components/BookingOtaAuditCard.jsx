@@ -25,9 +25,9 @@ export default function BookingOtaAuditCard({ otaData, hotelName, isUnlocked, on
   const strategicShifts = (otaData.key_strategic_shifts && otaData.key_strategic_shifts.length > 0)
     ? otaData.key_strategic_shifts
     : [
-        `Align visual sequence with top local search drivers: ${otaData.local_vibe_synergy_context || 'Highlight signature F&B and atmosphere over generic imagery.'}`,
-        `Eliminate drop-off friction: ${otaData.conversion_diagnosis || 'Resolve geographic and amenities clarity in the first 5 slots.'}`,
-        'Activate high-conversion storytelling: Ground destination authenticity with dedicated dining, exterior architecture, and design atmosphere proof-points.'
+        `Align visual sequence with top local search drivers: ${otaData.local_vibe_synergy_context || 'Highlight signature F&B and atmosphere over generic imagery'}`,
+        `Accelerate booking confidence: ${otaData.conversion_diagnosis || 'Deliver clear geographic and amenity confirmation in the first 5 slots'}`,
+        'Activate high-conversion storytelling: Ground destination authenticity with dedicated dining, exterior architecture, and design atmosphere proof-points'
       ];
 
   const handleSignUp = () => {
@@ -164,21 +164,21 @@ export default function BookingOtaAuditCard({ otaData, hotelName, isUnlocked, on
           {/* Current Baseline Score / Status */}
           <div style={{ 
             background: isListedOnBooking 
-              ? 'linear-gradient(135deg, rgba(239, 68, 68, 0.12) 0%, rgba(239, 68, 68, 0.04) 100%)' 
+              ? 'linear-gradient(135deg, rgba(56, 189, 248, 0.1) 0%, rgba(56, 189, 248, 0.03) 100%)' 
               : 'linear-gradient(135deg, rgba(245, 158, 11, 0.12) 0%, rgba(245, 158, 11, 0.04) 100%)', 
-            border: `1px solid ${isListedOnBooking ? 'rgba(239, 68, 68, 0.35)' : 'rgba(245, 158, 11, 0.35)'}`, 
+            border: `1px solid ${isListedOnBooking ? 'rgba(56, 189, 248, 0.3)' : 'rgba(245, 158, 11, 0.35)'}`, 
             borderRadius: '1.15rem', 
             padding: '1.1rem', 
             textAlign: 'center' 
           }}>
-            <div style={{ fontSize: '10px', fontWeight: 900, textTransform: 'uppercase', color: isListedOnBooking ? '#ef4444' : '#f59e0b', letterSpacing: '0.1em', marginBottom: '4px' }}>
-              {isListedOnBooking ? 'Current OTA Score' : 'OTA Listing Status'}
+            <div style={{ fontSize: '10px', fontWeight: 900, textTransform: 'uppercase', color: isListedOnBooking ? '#38bdf8' : '#f59e0b', letterSpacing: '0.1em', marginBottom: '4px' }}>
+              {isListedOnBooking ? 'Current Visual Baseline' : 'OTA Listing Status'}
             </div>
-            <div style={{ fontSize: isListedOnBooking ? '32px' : '22px', fontWeight: 900, color: isListedOnBooking ? '#ef4444' : '#f59e0b', fontFamily: isListedOnBooking ? 'monospace' : 'inherit', lineHeight: 1.1, paddingTop: isListedOnBooking ? '0' : '5px' }}>
-              {isListedOnBooking ? (<>{beforeScore}<span style={{ fontSize: '16px', color: 'rgba(239,68,68,0.6)' }}>/100</span></>) : 'UNLISTED'}
+            <div style={{ fontSize: isListedOnBooking ? '32px' : '22px', fontWeight: 900, color: isListedOnBooking ? '#38bdf8' : '#f59e0b', fontFamily: isListedOnBooking ? 'monospace' : 'inherit', lineHeight: 1.1, paddingTop: isListedOnBooking ? '0' : '5px' }}>
+              {isListedOnBooking ? (<>{beforeScore}<span style={{ fontSize: '16px', color: 'rgba(56,189,248,0.6)' }}>/100</span></>) : 'UNLISTED'}
             </div>
-            <div style={{ fontSize: '11px', color: 'rgba(255,255,255,0.6)', marginTop: '6px' }}>
-              {isListedOnBooking ? 'Commodity Friction & Drop-Off' : 'Independent / Direct Venue'}
+            <div style={{ fontSize: '11px', color: 'rgba(255,255,255,0.65)', marginTop: '6px' }}>
+              {isListedOnBooking ? 'Direct Conversion Potential' : 'Independent / Direct Venue'}
             </div>
           </div>
 
@@ -191,155 +191,112 @@ export default function BookingOtaAuditCard({ otaData, hotelName, isUnlocked, on
             textAlign: 'center' 
           }}>
             <div style={{ fontSize: '10px', fontWeight: 900, textTransform: 'uppercase', color: '#10b981', letterSpacing: '0.1em', marginBottom: '4px' }}>
-              {isListedOnBooking ? 'Optimized Sequence Score' : 'Target Launch Score'}
+              {isListedOnBooking ? 'Optimized Vibe Sequence' : 'Target Launch Score'}
             </div>
             <div style={{ fontSize: '32px', fontWeight: 900, color: '#10b981', fontFamily: 'monospace', lineHeight: 1 }}>
               {afterScore}<span style={{ fontSize: '16px', color: 'rgba(16,185,129,0.6)' }}>/100</span>
             </div>
             <div style={{ fontSize: '11px', color: '#10b981', fontWeight: 700, marginTop: '6px' }}>
-              High Cultural Resonance
+              Peak Cultural Resonance & Direct ADR Lift
             </div>
           </div>
         </div>
 
-        {/* Identified Drop-Off Flaw or Pre-Listing Notice Bar */}
-        <div style={{ 
-          display: 'flex', 
-          alignItems: 'center', 
-          gap: '0.75rem', 
-          marginBottom: '1.25rem', 
-          background: isListedOnBooking ? 'rgba(239, 68, 68, 0.08)' : 'rgba(0, 229, 255, 0.08)', 
-          padding: '10px 16px', 
-          borderRadius: '12px', 
-          border: `1px solid ${isListedOnBooking ? 'rgba(239, 68, 68, 0.25)' : 'rgba(0, 229, 255, 0.25)'}` 
-        }}>
-          {isListedOnBooking ? (
-            <AlertCircle size={18} color="#ef4444" style={{ flexShrink: 0 }} />
-          ) : (
-            <Sparkles size={18} color="#00e5ff" style={{ flexShrink: 0 }} />
-          )}
-          <div style={{ fontSize: '13px', lineHeight: 1.4 }}>
-            <strong style={{ color: isListedOnBooking ? '#ef4444' : '#00e5ff', textTransform: 'uppercase', fontSize: '11px', letterSpacing: '0.05em' }}>
-              {isListedOnBooking ? 'Identified Flaw: ' : 'Pre-Listing Visual Strategy: '}
-            </strong>
-            <span style={{ color: '#ffffff', fontWeight: 600 }}>
-              {isListedOnBooking 
-                ? (otaData.current_drop_off_flaw || 'Leading with generic corporate imagery that dampens lifestyle appeal.')
-                : `No active room listing on Booking.com. Below is the curated 5-asset hierarchy to maximize direct website engagement and future OTA launch velocity.`}
-            </span>
-          </div>
-        </div>
-
-        {/* Missing Photos Alert in Core Dashboard */}
-        {photographicGaps && photographicGaps.length > 0 && (
-          <div style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            gap: '1rem',
-            marginBottom: '1.25rem',
-            background: 'linear-gradient(90deg, rgba(245, 158, 11, 0.14) 0%, rgba(245, 158, 11, 0.05) 100%)',
-            padding: '12px 18px',
-            borderRadius: '12px',
-            border: '1px solid rgba(245, 158, 11, 0.4)',
-            flexWrap: 'wrap'
-          }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flex: '1 1 300px' }}>
-              <div style={{
-                width: '32px',
-                height: '32px',
-                borderRadius: '8px',
-                background: 'rgba(245, 158, 11, 0.2)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                color: '#fbbf24',
-                flexShrink: 0
-              }}>
-                <Camera size={18} />
-              </div>
-              <div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
-                  <span style={{
-                    fontSize: '10.5px',
-                    fontWeight: 900,
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.08em',
-                    color: '#fbbf24'
-                  }}>
-                    ⚠️ Visual Deficit Alert: {photographicGaps.length} Key Photos Missing
-                  </span>
-                  <span style={{
-                    fontSize: '9.5px',
-                    fontWeight: 800,
-                    background: 'rgba(239, 68, 68, 0.2)',
-                    color: '#ef4444',
-                    padding: '1px 6px',
-                    borderRadius: '4px'
-                  }}>
-                    Depresses Direct ADR
-                  </span>
-                </div>
-                <div style={{ fontSize: '12.5px', color: '#ffffff', fontWeight: 600, marginTop: '2px', lineHeight: 1.35 }}>
-                  {hotelName || 'This property'} lacks official photography for <span style={{ color: '#fbbf24' }}>"{photographicGaps[0]?.missing_shot_title}"</span>{photographicGaps.length > 1 ? ` and ${photographicGaps.length - 1} other high-conversion spaces` : ''}.
-                </div>
-              </div>
-            </div>
-
-            <button
-              onClick={() => {
-                if (!unlocked) {
-                  handleSignUp();
-                } else if (typeof window !== 'undefined') {
-                  const el = document.getElementById('photographic-gap-section');
-                  if (el) el.scrollIntoView({ behavior: 'smooth' });
-                }
-              }}
-              style={{
-                background: 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)',
-                color: '#050b14',
-                border: 'none',
-                borderRadius: '24px',
-                padding: '8px 16px',
-                fontSize: '11.5px',
-                fontWeight: 900,
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '6px',
-                cursor: 'pointer',
-                boxShadow: '0 4px 14px rgba(245, 158, 11, 0.3)',
-                whiteSpace: 'nowrap'
-              }}
-            >
-              {!unlocked ? 'Unlock Photo Gap Analysis (Sign Up)' : 'View Photo Gap Analysis'} <ArrowRight size={13} />
-            </button>
-          </div>
-        )}
-
-        {/* Key Strategic Shifts Bullets */}
+        {/* Neighborhood Demand Gravity ⟷ Key Strategic Shifts */}
         <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '1.25rem' }}>
-          <div style={{ 
-            fontSize: '11px', 
-            fontWeight: 900, 
-            color: '#00e5ff', 
-            textTransform: 'uppercase', 
-            letterSpacing: '0.08em', 
-            marginBottom: '0.75rem', 
-            display: 'flex', 
-            alignItems: 'center', 
-            gap: '6px' 
-          }}>
-            <Sparkles size={14} color="#00e5ff" />
-            Key Strategic Shifts (Hotel DNA ⟷ Neighborhood Search Demand)
-          </div>
+          {/* Neighborhood Demand Narrative */}
+          {otaData.local_vibe_synergy_context && (
+            <div style={{
+              background: 'linear-gradient(135deg, rgba(0, 229, 255, 0.08) 0%, rgba(139, 92, 246, 0.06) 100%)',
+              border: '1px solid rgba(0, 229, 255, 0.25)',
+              borderRadius: '1rem',
+              padding: '1rem 1.25rem',
+              marginBottom: '1.25rem'
+            }}>
+              <div style={{ 
+                display: 'flex', 
+                alignItems: 'center', 
+                gap: '8px', 
+                marginBottom: '6px' 
+              }}>
+                <Sparkles size={15} color="#00e5ff" />
+                <span style={{ 
+                  fontSize: '11px', 
+                  fontWeight: 900, 
+                  color: '#00e5ff', 
+                  textTransform: 'uppercase', 
+                  letterSpacing: '0.08em' 
+                }}>
+                  Neighborhood Demand Gravity
+                </span>
+                <span style={{ 
+                  fontSize: '10px', 
+                  background: 'rgba(0, 229, 255, 0.15)', 
+                  color: '#00e5ff', 
+                  padding: '2px 8px', 
+                  borderRadius: '12px', 
+                  fontWeight: 700 
+                }}>
+                  Search Drivers
+                </span>
+              </div>
+              <div style={{ fontSize: '13px', color: 'rgba(255, 255, 255, 0.92)', lineHeight: 1.55 }}>
+                {otaData.local_vibe_synergy_context}
+              </div>
+            </div>
+          )}
 
-          <ul style={{ margin: 0, paddingLeft: '1.2rem', display: 'flex', flexDirection: 'column', gap: '8px' }}>
-            {strategicShifts.map((shift, sIdx) => (
-              <li key={sIdx} style={{ fontSize: '12.5px', color: 'rgba(255,255,255,0.85)', lineHeight: 1.5 }}>
-                {shift}
-              </li>
-            ))}
-          </ul>
+          {/* Key Strategic Shifts */}
+          <div>
+            <div style={{ 
+              fontSize: '11px', 
+              fontWeight: 900, 
+              color: '#38bdf8', 
+              textTransform: 'uppercase', 
+              letterSpacing: '0.08em', 
+              marginBottom: '0.75rem', 
+              display: 'flex', 
+              alignItems: 'center', 
+              gap: '6px' 
+            }}>
+              <TrendingUp size={14} color="#38bdf8" />
+              Key Strategic Shifts Driven by Neighborhood Demand
+            </div>
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+              {strategicShifts.map((shift, sIdx) => (
+                <div 
+                  key={sIdx} 
+                  style={{ 
+                    display: 'flex', 
+                    alignItems: 'flex-start', 
+                    gap: '10px',
+                    background: 'rgba(255, 255, 255, 0.03)',
+                    border: '1px solid rgba(255, 255, 255, 0.06)',
+                    borderRadius: '10px',
+                    padding: '10px 14px'
+                  }}
+                >
+                  <span style={{ 
+                    background: 'rgba(0, 229, 255, 0.15)', 
+                    color: '#00e5ff', 
+                    fontSize: '10.5px', 
+                    fontWeight: 900, 
+                    borderRadius: '6px', 
+                    padding: '2px 7px',
+                    flexShrink: 0,
+                    marginTop: '2px',
+                    fontFamily: 'monospace'
+                  }}>
+                    SHIFT {sIdx + 1}
+                  </span>
+                  <span style={{ fontSize: '12.5px', color: 'rgba(255,255,255,0.88)', lineHeight: 1.5 }}>
+                    {shift}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
 
@@ -661,6 +618,146 @@ export default function BookingOtaAuditCard({ otaData, hotelName, isUnlocked, on
                 </div>
               );
             })}
+
+            {/* 6th Slot in Grid: Visual Opportunity (Missing High-Impact Photos) */}
+            {photographicGaps && photographicGaps.length > 0 && (
+              <div 
+                style={{
+                  background: 'linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(15, 23, 42, 0.6) 100%)',
+                  borderRadius: '1.25rem',
+                  border: '1.5px dashed rgba(245, 158, 11, 0.45)',
+                  overflow: 'hidden',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  boxShadow: '0 8px 30px rgba(0,0,0,0.3)',
+                  position: 'relative'
+                }}
+              >
+                {/* Visual Header / Missing Asset Frame */}
+                <div style={{ 
+                  position: 'relative', 
+                  width: '100%', 
+                  height: '170px', 
+                  background: 'linear-gradient(135deg, rgba(245, 158, 11, 0.15) 0%, rgba(0, 0, 0, 0.7) 100%)',
+                  borderBottom: '1px solid rgba(245, 158, 11, 0.25)',
+                  display: 'flex', 
+                  flexDirection: 'column', 
+                  alignItems: 'center', 
+                  justifyContent: 'center',
+                  padding: '1.25rem',
+                  textAlign: 'center',
+                  gap: '8px'
+                }}>
+                  {/* Visual Opportunity Badge */}
+                  <div style={{ 
+                    position: 'absolute', 
+                    top: '8px', 
+                    left: '8px', 
+                    background: 'rgba(245, 158, 11, 0.95)', 
+                    color: '#050b14', 
+                    fontSize: '10.5px', 
+                    fontWeight: 900, 
+                    padding: '3px 9px', 
+                    borderRadius: '8px',
+                    letterSpacing: '0.05em'
+                  }}>
+                    VISUAL OPPORTUNITY
+                  </div>
+
+                  {/* Revenue Growth Badge */}
+                  <div style={{ 
+                    position: 'absolute', 
+                    top: '8px', 
+                    right: '8px', 
+                    background: 'rgba(16, 185, 129, 0.2)', 
+                    color: '#10b981', 
+                    fontSize: '10px', 
+                    fontWeight: 800, 
+                    padding: '3px 8px', 
+                    borderRadius: '6px',
+                    border: '1px solid rgba(16, 185, 129, 0.4)'
+                  }}>
+                    UNLOCKS PEAK ADR
+                  </div>
+
+                  <div style={{
+                    width: '42px',
+                    height: '42px',
+                    borderRadius: '50%',
+                    background: 'rgba(245, 158, 11, 0.2)',
+                    border: '1px solid rgba(245, 158, 11, 0.5)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    color: '#fbbf24',
+                    marginTop: '10px'
+                  }}>
+                    <Camera size={22} />
+                  </div>
+
+                  <div style={{ fontSize: '12px', fontWeight: 900, color: '#fbbf24', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                    + High-Impact Photo to Add
+                  </div>
+                  <div style={{ fontSize: '11px', color: 'rgba(255,255,255,0.7)', maxWidth: '240px', lineHeight: 1.3 }}>
+                    {photographicGaps[0]?.missing_shot_title || 'Signature Lifestyle Space'}
+                  </div>
+                </div>
+
+                {/* Card Body */}
+                <div style={{ padding: '1.25rem', display: 'flex', flexDirection: 'column', flex: 1, justifyContent: 'space-between', gap: '12px' }}>
+                  <div>
+                    <div style={{ fontSize: '10.5px', fontWeight: 900, textTransform: 'uppercase', color: '#fbbf24', letterSpacing: '0.08em', marginBottom: '4px' }}>
+                      Photographic Gap Analysis
+                    </div>
+                    <h4 style={{ fontSize: '13.5px', fontWeight: 800, color: '#ffffff', margin: '0 0 8px 0', lineHeight: 1.4 }}>
+                      {photographicGaps[0]?.missing_shot_title}
+                    </h4>
+                    <p style={{ fontSize: '11.5px', color: 'rgba(255,255,255,0.8)', lineHeight: 1.5, margin: '0 0 10px 0' }}>
+                      {photographicGaps[0]?.why_it_matters || 'Adding high-definition imagery of this core space answers active traveler search intent and eliminates hesitation before booking.'}
+                    </p>
+
+                    {/* Bullet Highlights */}
+                    <ul style={{ margin: 0, paddingLeft: '1.15rem', display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                      <li style={{ fontSize: '11px', color: '#fbbf24', lineHeight: 1.4 }}>
+                        <strong>Neighborhood Alignment:</strong> Matches high-volume searches for experiential lifestyle venues
+                      </li>
+                      <li style={{ fontSize: '11px', color: 'rgba(0, 229, 255, 0.95)', lineHeight: 1.4 }}>
+                        <strong>Direct Lift:</strong> {photographicGaps.length} total photographic gaps identified to maximize direct ADR
+                      </li>
+                    </ul>
+                  </div>
+
+                  <button
+                    onClick={() => {
+                      if (!unlocked) {
+                        handleSignUp();
+                      } else if (typeof window !== 'undefined') {
+                        const el = document.getElementById('photographic-gap-section');
+                        if (el) el.scrollIntoView({ behavior: 'smooth' });
+                      }
+                    }}
+                    style={{
+                      background: 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)',
+                      color: '#050b14',
+                      border: 'none',
+                      borderRadius: '10px',
+                      padding: '10px 14px',
+                      fontSize: '11.5px',
+                      fontWeight: 900,
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      gap: '6px',
+                      cursor: 'pointer',
+                      boxShadow: '0 4px 14px rgba(245, 158, 11, 0.25)',
+                      marginTop: '4px'
+                    }}
+                  >
+                    {!unlocked ? 'Unlock Full Photo Gap Report (Free)' : 'View Detailed Gap Breakdown'} <ArrowRight size={14} />
+                  </button>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       )}
