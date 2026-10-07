@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import { HelmetProvider } from 'react-helmet-async';
 import Layout from './components/Layout';
 import Hero from './components/Hero';
+import VibeDimensionsSection from './components/VibeDimensionsSection';
 import HookTeaserSection from './components/HookTeaserSection';
 import DataApiSection from './components/DataApiSection';
 import MarketsSection from './components/MarketsSection';
@@ -50,7 +51,10 @@ const B2BHome = () => {
       {/* 1. Hero Section (The Photo Wedge Hook & Frictionless Input) */}
       <Hero />
 
-      {/* 2. The Hook Teaser: What Gets Unlocked (Instant Free vs Full Vibe Fingerprint) */}
+      {/* 2. Vibe Signatures: The 5 Sensory Dimensions & Gateway Blueprint */}
+      <VibeDimensionsSection />
+
+      {/* 3. The 2-Step Conversion Engine: OTA Photos + Multi-Channel */}
       <HookTeaserSection />
 
       {/* 3. Enterprise Vibe API & Vibe Insights (BEHIND LOGIN) */}

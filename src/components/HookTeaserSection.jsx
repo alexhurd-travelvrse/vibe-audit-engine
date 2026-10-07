@@ -5,20 +5,20 @@ import './HookTeaserSection.css';
 
 export default function HookTeaserSection() {
   return (
-    <section className="hook-teaser-section" id="vibe-signatures">
+    <section className="hook-teaser-section" id="how-we-use-it">
       <div className="container">
         
         {/* Section Header */}
         <div className="hook-teaser-header animate-fade-up">
           <div className="teaser-eyebrow">
             <Sparkles size={14} />
-            <span>HOW VIBE SIGNATURES WORK</span>
+            <span>HOW WE USE IT</span>
           </div>
           <h2 className="teaser-title">
-            <span className="text-gold-gradient">Turn Your Local Atmosphere into Bookings</span>
+            <span className="text-gold-gradient">Turn Local Demand into Bookings</span>
           </h2>
           <p className="teaser-description">
-            Travelers book the neighborhood experience first. We match what your hotel does best to local search demand, proving you are their natural Gateway
+            We connect what travelers are actively searching for in your neighbourhood directly to your booking channels
           </p>
         </div>
 
@@ -34,7 +34,7 @@ export default function HookTeaserSection() {
 
             <div className="tier-content">
               <h3 className="tier-heading">Optimise Your OTA Photos</h3>
-              <p className="tier-subtext">Gemini AI re-orders your top 5 photos to showcase your property as the area's premier gateway based on local search demand</p>
+              <p className="tier-subtext">Maps neighbourhood search demand to your top 5 photo slots to hook high-intent travelers</p>
 
               {/* Visual Interactive Showcase: 5-Photo Strip + Headline Vibe Signature */}
               <div className="visual-photo-reorder">
@@ -138,17 +138,17 @@ export default function HookTeaserSection() {
 
             <div className="tier-content">
               <h3 className="tier-heading">Stand Out Across All Channels</h3>
-              <p className="tier-subtext">Scale your local gateway positioning into direct bookings across OTAs, direct website, social media, and AI search</p>
+              <p className="tier-subtext">Scale your local gateway positioning to maximise bookings across OTAs, your website, social media, and AI search</p>
 
               {/* Distribution Channel Pill Strip */}
               <div className="channel-distribution-strip">
                 <span className="channel-tag">OTAs</span>
-                <span className="channel-tag">Direct Website</span>
+                <span className="channel-tag">Hotel Website</span>
                 <span className="channel-tag">Social Media</span>
                 <span className="channel-tag">AI Search (GEO)</span>
               </div>
 
-              {/* 2-Pillar Gateway Blueprint */}
+              {/* 2-Pillar Deliverable Matrix */}
               <div className="pro-pillars-suite">
                 
                 {/* Pillar 1: Gateway Conversion Assets */}
@@ -162,24 +162,15 @@ export default function HookTeaserSection() {
                   <ul className="pillar-deliverables-list">
                     <li className="deliverable-item">
                       <span className="deliverable-bullet">•</span>
-                      <div className="deliverable-content">
-                        <span className="deliverable-name">High-converting photo sequencing</span>
-                        <span className="deliverable-desc">Mirrors neighborhood search intent</span>
-                      </div>
+                      <span className="deliverable-name">High-converting photo sequencing</span>
                     </li>
                     <li className="deliverable-item">
                       <span className="deliverable-bullet">•</span>
-                      <div className="deliverable-content">
-                        <span className="deliverable-name">Local gateway narrative</span>
-                        <span className="deliverable-desc">Tailored copy establishing your hotel as the local base</span>
-                      </div>
+                      <span className="deliverable-name">Local gateway narrative</span>
                     </li>
                     <li className="deliverable-item">
                       <span className="deliverable-bullet">•</span>
-                      <div className="deliverable-content">
-                        <span className="deliverable-name">AI Search (GEO) entity tags</span>
-                        <span className="deliverable-desc">Optimized for ChatGPT, Gemini &amp; Perplexity recommendations</span>
-                      </div>
+                      <span className="deliverable-name">AI Search (GEO) entity tags</span>
                     </li>
                   </ul>
                 </div>
@@ -195,17 +186,11 @@ export default function HookTeaserSection() {
                   <ul className="pillar-deliverables-list">
                     <li className="deliverable-item">
                       <span className="deliverable-bullet">•</span>
-                      <div className="deliverable-content">
-                        <span className="deliverable-name">Neighborhood vibe radar</span>
-                        <span className="deliverable-desc">Real-time local demand and search trends</span>
-                      </div>
+                      <span className="deliverable-name">Neighborhood vibe radar</span>
                     </li>
                     <li className="deliverable-item">
                       <span className="deliverable-bullet">•</span>
-                      <div className="deliverable-content">
-                        <span className="deliverable-name">Competitor vibe benchmarking</span>
-                        <span className="deliverable-desc">Spot gaps where nearby properties miss local appeal</span>
-                      </div>
+                      <span className="deliverable-name">Competitor vibe benchmarking</span>
                     </li>
                   </ul>
                 </div>
