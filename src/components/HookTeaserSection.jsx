@@ -12,13 +12,13 @@ export default function HookTeaserSection() {
         <div className="hook-teaser-header animate-fade-up">
           <div className="teaser-eyebrow">
             <Sparkles size={14} />
-            <span>VIBE SIGNATURES</span>
+            <span>HOW VIBE SIGNATURES WORK</span>
           </div>
           <h2 className="teaser-title">
-            <span className="text-gold-gradient">Stand Out From the Crowd</span>
+            <span className="text-gold-gradient">Turn Your Local Atmosphere into Bookings</span>
           </h2>
           <p className="teaser-description">
-            74% of next-gen travelers research local experiences first. Prove your property is their natural Gateway
+            Travelers book the neighborhood experience first. We match what your hotel does best to local search demand, proving you are their natural Gateway
           </p>
         </div>
 
@@ -33,30 +33,36 @@ export default function HookTeaserSection() {
             </div>
 
             <div className="tier-content">
-              <h3 className="tier-heading">OTA Photos</h3>
-              <p className="tier-subtext">Instant photo recommendations that map your unique property features to neighborhood search demand</p>
+              <h3 className="tier-heading">Optimise Your OTA Photos</h3>
+              <p className="tier-subtext">Gemini AI re-orders your top 5 photos to showcase your property as the area's premier gateway based on local search demand</p>
 
               {/* Visual Interactive Showcase: 5-Photo Strip + Headline Vibe Signature */}
               <div className="visual-photo-reorder">
                 
+                {/* Local Area Search Pulse Indicator */}
+                <div className="area-demand-pulse">
+                  <span className="pulse-dot"></span>
+                  <span className="pulse-text">Trending in your area: <strong>Riverside terrace &amp; artisan social spots</strong></span>
+                </div>
+
                 {/* Hero Slot (#1 - The "Hook Photo") */}
                 <div className="reorder-hero-slot">
                   <div className="hero-img-wrap">
                     <img 
-                      src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80" 
-                      alt="Recommended Slot 1 Hero Photo - Lively Social Space" 
+                      src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=800&q=80" 
+                      alt="Recommended Slot 1 Hero Photo - Riverside Gateway Terrace" 
                       className="hero-img"
                     />
                     <div className="hero-slot-badge-left">
                       <Zap size={11} />
-                      <span>SLOT #1: SOCIAL MAGNET</span>
+                      <span>SLOT #1: LOCAL GATEWAY HOOK</span>
                     </div>
                     <div className="hero-slot-badge-right">
                       <TrendingUp size={11} />
                       <span>+4.2s Dwell Time</span>
                     </div>
                     <div className="hero-slot-caption">
-                      <span>Stops the scroll with high-energy social atmosphere</span>
+                      <span>Stops the scroll by leading with your hotel's best match to local demand</span>
                     </div>
                   </div>
                 </div>
@@ -66,37 +72,37 @@ export default function HookTeaserSection() {
                   <div className="reorder-thumb-item">
                     <div className="thumb-img-wrap">
                       <img 
-                        src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=300&q=80" 
-                        alt="Slot 2 Design Bed" 
+                        src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=300&q=80" 
+                        alt="Slot 2 Local Design" 
                       />
-                      <span className="thumb-badge">#2 Design</span>
+                      <span className="thumb-badge">#2 Local Design</span>
                     </div>
                   </div>
                   <div className="reorder-thumb-item">
                     <div className="thumb-img-wrap">
                       <img 
-                        src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=300&q=80" 
-                        alt="Slot 3 Vinyl Lounge" 
+                        src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=300&q=80" 
+                        alt="Slot 3 Sunset Terrace" 
                       />
-                      <span className="thumb-badge">#3 Lounge</span>
+                      <span className="thumb-badge">#3 Sunset Terrace</span>
                     </div>
                   </div>
                   <div className="reorder-thumb-item">
                     <div className="thumb-img-wrap">
                       <img 
                         src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=300&q=80" 
-                        alt="Slot 4 Craft Velocity" 
+                        alt="Slot 4 Neighborhood Bar" 
                       />
-                      <span className="thumb-badge">#4 Bar</span>
+                      <span className="thumb-badge">#4 Local Bar</span>
                     </div>
                   </div>
                   <div className="reorder-thumb-item">
                     <div className="thumb-img-wrap">
                       <img 
                         src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=300&q=80" 
-                        alt="Slot 5 Wellness" 
+                        alt="Slot 5 Serene Retreat" 
                       />
-                      <span className="thumb-badge">#5 Wellness</span>
+                      <span className="thumb-badge">#5 Serene Retreat</span>
                     </div>
                   </div>
                 </div>
@@ -105,7 +111,7 @@ export default function HookTeaserSection() {
                 <div className="headline-vibe-box">
                   <div className="headline-vibe-header">
                     <Sparkles size={13} className="cyan-sparkle" />
-                    <span className="headline-vibe-label">HEADLINE VIBE SIGNATURE</span>
+                    <span className="headline-vibe-label">YOUR VIBE SIGNATURE™</span>
                   </div>
                   <div className="headline-vibe-quote">
                     "Maritime Glamour &amp; Thameside Buzz"
@@ -117,7 +123,7 @@ export default function HookTeaserSection() {
 
             <div className="card-footer">
               <Link to="/audit" className="tier-cta-btn free-btn">
-                <span>Review My OTA Photos Free</span>
+                <span>Optimise My OTA Photos Free</span>
                 <ArrowRight size={16} />
               </Link>
             </div>
@@ -131,67 +137,74 @@ export default function HookTeaserSection() {
             </div>
 
             <div className="tier-content">
-              <h3 className="tier-heading">Multi-Channel Conversion</h3>
-              <p className="tier-subtext">Map your authentic design, social energy, lighting, and proximity to local hotspots across every channel</p>
+              <h3 className="tier-heading">Stand Out Across All Channels</h3>
+              <p className="tier-subtext">Scale your local gateway positioning into direct bookings across OTAs, direct website, social media, and AI search</p>
 
-              {/* 3-Pillar Executive Deliverable Matrix */}
+              {/* Distribution Channel Pill Strip */}
+              <div className="channel-distribution-strip">
+                <span className="channel-tag">OTAs</span>
+                <span className="channel-tag">Direct Website</span>
+                <span className="channel-tag">Social Media</span>
+                <span className="channel-tag">AI Search (GEO)</span>
+              </div>
+
+              {/* 2-Pillar Gateway Blueprint */}
               <div className="pro-pillars-suite">
                 
-                {/* Pillar 1: Conversion Copy & Visuals */}
+                {/* Pillar 1: Gateway Conversion Assets */}
                 <div className="pillar-block">
                   <div className="pillar-top">
                     <div className="pillar-icon">
                       <Sparkles size={13} />
                     </div>
-                    <span className="pillar-title">Conversion Copy &amp; Visuals</span>
+                    <span className="pillar-title">Gateway Conversion Assets</span>
                   </div>
                   <ul className="pillar-deliverables-list">
                     <li className="deliverable-item">
                       <span className="deliverable-bullet">•</span>
                       <div className="deliverable-content">
-                        <span className="deliverable-name">Full OTA and Website Photo and Copy</span>
+                        <span className="deliverable-name">High-converting photo sequencing</span>
+                        <span className="deliverable-desc">Mirrors neighborhood search intent</span>
                       </div>
                     </li>
                     <li className="deliverable-item">
                       <span className="deliverable-bullet">•</span>
                       <div className="deliverable-content">
-                        <span className="deliverable-name">Positioning as Local Gateway</span>
+                        <span className="deliverable-name">Local gateway narrative</span>
+                        <span className="deliverable-desc">Tailored copy establishing your hotel as the local base</span>
                       </div>
                     </li>
                     <li className="deliverable-item">
                       <span className="deliverable-bullet">•</span>
                       <div className="deliverable-content">
-                        <span className="deliverable-name">Social Media Positioning</span>
-                      </div>
-                    </li>
-                    <li className="deliverable-item">
-                      <span className="deliverable-bullet">•</span>
-                      <div className="deliverable-content">
-                        <span className="deliverable-name">AI Search (GEO) Tagging</span>
+                        <span className="deliverable-name">AI Search (GEO) entity tags</span>
+                        <span className="deliverable-desc">Optimized for ChatGPT, Gemini &amp; Perplexity recommendations</span>
                       </div>
                     </li>
                   </ul>
                 </div>
 
-                {/* Pillar 2: Market Edge & Competitor Intelligence */}
+                {/* Pillar 2: Local Market Intelligence */}
                 <div className="pillar-block">
                   <div className="pillar-top">
                     <div className="pillar-icon">
                       <Compass size={13} />
                     </div>
-                    <span className="pillar-title">Market Edge &amp; Competitor Intelligence</span>
+                    <span className="pillar-title">Local Market Intelligence</span>
                   </div>
                   <ul className="pillar-deliverables-list">
                     <li className="deliverable-item">
                       <span className="deliverable-bullet">•</span>
                       <div className="deliverable-content">
-                        <span className="deliverable-name">Competitor Benchmarking</span>
+                        <span className="deliverable-name">Neighborhood vibe radar</span>
+                        <span className="deliverable-desc">Real-time local demand and search trends</span>
                       </div>
                     </li>
                     <li className="deliverable-item">
                       <span className="deliverable-bullet">•</span>
                       <div className="deliverable-content">
-                        <span className="deliverable-name">Local Trending Vibes</span>
+                        <span className="deliverable-name">Competitor vibe benchmarking</span>
+                        <span className="deliverable-desc">Spot gaps where nearby properties miss local appeal</span>
                       </div>
                     </li>
                   </ul>

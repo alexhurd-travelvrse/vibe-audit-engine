@@ -178,6 +178,50 @@
   margin-bottom: 0.5rem;
 }
 
+/* Local Area Demand Pulse */
+.area-demand-pulse {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0, 229, 255, 0.06);
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 0.72rem;
+  color: rgba(230, 241, 255, 0.85);
+}
+
+.pulse-dot {
+  width: 7px;
+  height: 7px;
+  background-color: var(--color-cyan-neon, #00e5ff);
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 8px var(--color-cyan-neon, #00e5ff);
+  animation: pulse-glow 2s infinite ease-in-out;
+  flex-shrink: 0;
+}
+
+@keyframes pulse-glow {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 229, 255, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 6px rgba(0, 229, 255, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 229, 255, 0);
+  }
+}
+
+.pulse-text strong {
+  color: #ffffff;
+  font-weight: 700;
+}
+
 .reorder-hero-slot {
   position: relative;
   border-radius: 14px;
@@ -349,7 +393,33 @@
   border-radius: 6px;
 }
 
-/* 3-Pillar Executive Deliverable Matrix (Card 2) */
+/* Channel Distribution Pill Strip */
+.channel-distribution-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: 1.1rem;
+}
+
+.channel-tag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: rgba(255, 215, 0, 0.9);
+  background: rgba(255, 215, 0, 0.08);
+  border: 1px solid rgba(255, 215, 0, 0.22);
+  padding: 3px 8px;
+  border-radius: 6px;
+  letter-spacing: 0.04em;
+  transition: all 0.2s ease;
+}
+
+.channel-tag:hover {
+  background: rgba(255, 215, 0, 0.16);
+  border-color: rgba(255, 215, 0, 0.4);
+  transform: translateY(-1px);
+}
+
+/* 2-Pillar Gateway Blueprint (Card 2) */
 .pro-pillars-suite {
   display: flex;
   flex-direction: column;

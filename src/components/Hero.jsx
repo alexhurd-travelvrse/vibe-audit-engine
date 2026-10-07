@@ -69,7 +69,7 @@ const Hero = () => {
         <section className="hero-section">
             <Helmet>
                 <title>Turn Atmosphere into Bookings | Optimise Your Hotel OTA Photos | AtmosVibe</title>
-                <meta name="description" content="Turn Atmosphere into Bookings. Start by Optimising Your OTA Photos. Next-gen travelers don’t book features—they book a vibe. AtmosVibe creates your unique Vibe Signature unlocking content that makes you stand out across all channels." />
+                <meta name="description" content="Turn Atmosphere into Bookings. Start by Optimising Your OTA Photos. Next-Gen travelers don’t book features—they book a vibe. AtmosVibe creates your unique Vibe Signature unlocking content that makes you stand out across all channels." />
             </Helmet>
 
             <div className="hero-bg-container">
@@ -96,7 +96,7 @@ const Hero = () => {
                     </h1>
 
                     <p className="hero-subheadline">
-                        Next-gen travelers don’t book features—they book a vibe. AtmosVibe creates your unique Vibe Signature unlocking content that makes you stand out across all channels
+                        Next-Gen travelers don’t book features—they book a vibe. AtmosVibe creates your unique Vibe Signature unlocking content that makes you stand out across all channels
                     </p>
 
                     <div className="hero-action-kicker">
