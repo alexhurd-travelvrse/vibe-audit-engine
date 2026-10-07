@@ -1,0 +1,753 @@
+{
+  "key": "the plymouth south beach miami:::miami:::miami beach:::https://www.booking.com/hotel/us/the-plymouth-miami-beach.html",
+  "timestamp": 1791372228639,
+  "data": {
+    "venue_id": "the_plymouth_south_beach_miami",
+    "venue_name": "The Plymouth South Beach Miami",
+    "location": "Miami Beach, Miami",
+    "vibe_signature": {
+      "energy_score": 75,
+      "social_pacing": "Vibrant Social Flow",
+      "headline": "Art Deco Oasis with a Lively Poolside Scene & Culinary Gem",
+      "acoustic_dna": {
+        "soundscape_genre": "Tropical Lounge & Nu-Disco",
+        "anchor_artists": [
+          "Khruangbin",
+          "Poolside",
+          "FKJ"
+        ],
+        "spotify_query": "Miami Beach Poolside Chill & Lively Lounge",
+        "sound_texture": "Smooth grooves with a vibrant undercurrent of conversation and clinking glasses",
+        "conversation_clarity_score": 70,
+        "conversation_verdict": "Vibrant Social Banter",
+        "decibel_level": "72 dB (Vibrant Social Buzz)"
+      },
+      "crowd_archetype": {
+        "primary": "Cosmopolitan Trendsetters & Relaxed Explorers",
+        "social_density": "Comfortably Bustling",
+        "dress_code": "Chic Resort Casual",
+        "energy_verdict": "High Banter & Tropical Sanctuary",
+        "local_ratio": 60,
+        "tourist_ratio": 40,
+        "tourist_trap_verdict": "Curated Neighborhood Haven"
+      },
+      "lighting_and_sensory": {
+        "atmosphere": "Sun-drenched Art Deco Glamour with Evening Glow",
+        "sensory_intensity": "Medium-High, Engaging",
+        "lighting_temperature": "3000K Warm White & Golden Hour Sunlight"
+      },
+      "hyper_local_proximity": {
+        "key_anchors": [
+          "Miami Beach Convention Center",
+          "Bass Museum of Art",
+          "Collins Park",
+          "South Beach"
+        ],
+        "insider_lore": "Just a short stroll from the hotel, Collins Park offers a serene escape and often hosts outdoor art installations, a perfect pre-dinner walk."
+      },
+      "qualification_test": {
+        "you_will_love_if": "You seek a stylish Art Deco retreat with a vibrant pool scene, acclaimed dining, and easy access to Miami Beach's cultural and nightlife pulse.",
+        "skip_if": "You prefer secluded, ultra-quiet resorts or a strictly business-oriented environment without a lively social atmosphere."
+      },
+      "authenticity_and_materials": {
+        "authenticity_score": 88,
+        "material_palette": "White Terrazzo, Polished Chrome, Tropical Hardwoods, Tufted Velvet",
+        "material_verdict": "Modern Art Deco Revival with Authentic Touches"
+      },
+      "insider_secrets": {
+        "insider_badge": "Culinary Connoisseur & Local Foodie Lore",
+        "off_menu_perk": "Ask the Blue Ribbon Sushi chef for their daily off-menu Omakase selection for a truly unique culinary journey.",
+        "secret_lore": "The Blue Ribbon Sushi Bar & Grill, a destination in itself, offers an exclusive Omakase experience that's not always advertised. Engaging with the sushi chefs can unlock a personalized tasting menu of the freshest catches and seasonal specialties, a true local's delight.",
+        "secret_title": "The Blue Ribbon Sushi Omakase Experience"
+      },
+      "temporal_dynamics": {
+        "best_time_to_visit": "3:00 PM for a relaxed poolside lounge; 8:00 PM for a vibrant happy hour at the lobby bar and dinner at Blue Ribbon Sushi.",
+        "content_readiness": {
+          "aesthetic_subculture": "Art Deco Glamour & Tropical Chic",
+          "flattery_note": "Your content will shine against the vibrant backdrop of this iconic South Beach gem.",
+          "score": 8.5,
+          "top_creator_spot": "Poolside Cabanas & Blue Ribbon Sushi Bar",
+          "verdict": "Highly Instagrammable & TikTok-Ready"
+        },
+        "diurnal_rhythm": {
+          "chilling": {
+            "focus": "Poolside relaxation & quiet lobby moments",
+            "score": 7.5,
+            "window": "10 AM - 3 PM"
+          },
+          "playing": {
+            "focus": "Lively pool scene, happy hour & dining",
+            "score": 8.8,
+            "window": "3 PM - 11 PM"
+          },
+          "working": {
+            "focus": "Casual meetings in lobby lounge",
+            "score": 5,
+            "window": "9 AM - 5 PM"
+          }
+        },
+        "peak_atmospheric_window": "Late Afternoon to Evening Social Hour"
+      }
+    },
+    "interactive_quiz_challenge": {
+      "target_scene_id": 1,
+      "scene_name": "The Plymouth Poolside",
+      "mission_title": "Discover Your South Beach Vibe",
+      "question": "The Plymouth South Beach is renowned for its vibrant poolside scene. Which iconic Miami Beach architectural style defines the hotel's aesthetic?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mediterranean Revival"
+        },
+        {
+          "id": "B",
+          "text": "Art Deco"
+        },
+        {
+          "id": "C",
+          "text": "Spanish Colonial"
+        },
+        {
+          "id": "D",
+          "text": "Mid-Century Modern"
+        }
+      ],
+      "correct_option_id": "B",
+      "success_lore_reveal": "Correct! The Plymouth South Beach beautifully embodies the Art Deco glamour of Miami Beach, blending historic charm with modern luxury, especially around its iconic pool area.",
+      "reward_badge": "Art Deco Aficionado",
+      "challenge_prompt": "Test your knowledge of Miami Beach's iconic style!",
+      "reward_spotify_uri": "spotify:playlist:37i9dQZF1DX0sWqj3l0Q98"
+    },
+    "ota_conversion_audit": {
+      "channel": "Booking.com",
+      "before_merchandising_score": 48,
+      "after_merchandising_score": 92,
+      "projected_conversion_uplift": "+21.0%",
+      "current_drop_off_flaw": "Commoditized photo sequence starting with a generic pool shot, followed by repetitive bedroom images, failing to highlight unique cultural magnets and neighborhood synergy.",
+      "key_strategic_shifts": [
+        "Elevate the iconic Art Deco Courtyard Pool & Cabanas to Slot #1, immediately capturing Miami Beach's #1 social leisure search demand and setting a vibrant, luxurious tone.",
+        "Re-sequence the authentic Art Deco exterior facade to Slot #2, providing crucial geographic grounding and architectural context right after the initial 'wow' factor.",
+        "Showcase the a restaurant with wooden tables and chairs and a checkered floor in Slot #4 to highlight the hotel's distinctive atmosphere and social appeal.",
+        "Introduce a high-quality guest bathroom photo in Slot #5 to address luxury traveler expectations for hygiene and modern amenities, a common conversion blocker."
+      ],
+      "optimal_5_photo_sequence": [
+        {
+          "slot": 1,
+          "category": "OUTDOOR_SOCIAL_POOL",
+          "photo_subject": "Resort Swimming Pool & Lifestyle Cabana Deck",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/402289199.jpg?k=bdf9acca899c5b49fd5d066da1cb675b433c796ba4e8056bd9176791bdd30180&o=",
+          "why_it_converts": "Showcasing the hotel's signature outdoor pool and day club atmosphere captures high-intent social travel demand and accelerates premium weekend leisure conversions.",
+          "upgrade_rationale": "Showcasing the hotel's signature outdoor pool and day club atmosphere captures high-intent social travel demand and accelerates premium weekend leisure conversions.",
+          "bullet_points": [
+            "Visual Upgrade: Captures the vibrant, luxurious essence of the hotel's central social hub with inviting cabanas and lush palms.",
+            "Local Synergy: Directly aligns with Miami Beach's top search intent for iconic pools, social scenes, and resort-style relaxation.",
+            "Conversion Trigger: Instantly communicates a desirable, high-energy leisure experience, drawing travelers into the South Beach lifestyle."
+          ],
+          "psychological_conversion_trigger": "This image immediately immerses the traveler in the quintessential Miami Beach luxury resort experience, triggering aspirational booking intent for a vibrant, social getaway.",
+          "recommended_trigger": "This image immediately immerses the traveler in the quintessential Miami Beach luxury resort experience, triggering aspirational booking intent for a vibrant, social getaway.",
+          "current_slot": 1,
+          "is_retained": true,
+          "is_moved": false,
+          "is_swapped_in": false,
+          "action": "ELEVATE_POOL",
+          "action_label": "⚡ HERO LIFESTYLE SANCTUARY: RETAIN POOL IN SLOT #1",
+          "source_display_label": "Was: Slot #1 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 1,
+            "title": "a swimming pool in front of a building with palm trees at The Plymouth South Beach in Miami Beach",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/402289199.jpg?k=bdf9acca899c5b49fd5d066da1cb675b433c796ba4e8056bd9176791bdd30180&o=",
+            "photoId": "402289199",
+            "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1791372144850&force_referer="
+          }
+        },
+        {
+          "slot": 2,
+          "category": "EXTERIOR_LANDMARK",
+          "photo_subject": "Historic Art Deco Facade on 21st Street",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/175776590.jpg?k=0a6114a1ffed96338504c47041c1455c6c4c2efea0dfc393cd0632975855ad1a&o=&hp=1",
+          "why_it_converts": "Establishing definitive architectural prestige and iconic street presence builds instant brand credibility.",
+          "upgrade_rationale": "Establishing definitive architectural prestige and iconic street presence builds instant brand credibility.",
+          "bullet_points": [
+            "Strategic Placement: Immediately grounds the property's location and architectural identity after the initial cultural hook, resolving location anxiety.",
+            "Local Synergy: Showcases the authentic Art Deco architecture, a key cultural identifier for Miami Beach, appealing to heritage and design-conscious travelers.",
+            "Conversion Trigger: Provides a sense of place and authenticity, reassuring travelers of the hotel's prime location and iconic design."
+          ],
+          "psychological_conversion_trigger": "By presenting the authentic exterior facade in Slot #2, the sequence quickly resolves location and architectural style queries, building trust and reducing booking hesitation.",
+          "recommended_trigger": "By presenting the authentic exterior facade in Slot #2, the sequence quickly resolves location and architectural style queries, building trust and reducing booking hesitation.",
+          "current_slot": 43,
+          "is_retained": false,
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "PROMOTE",
+          "action_label": "PROMOTE FROM SLOT #43",
+          "source_display_label": "Was: Slot #43 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 43,
+            "title": "a white building on a street with cars parked in front at The Plymouth South Beach in Miami Beach",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/175776590.jpg?k=0a6114a1ffed96338504c47041c1455c6c4c2efea0dfc393cd0632975855ad1a&o=&hp=1",
+            "photoId": "175776590",
+            "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1791372144850&force_referer="
+          }
+        },
+        {
+          "slot": 3,
+          "category": "SIGNATURE_SUITE_BEDROOM",
+          "photo_subject": "Signature King Bedroom with Tufted Headboard & Tropical Views",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/175766798.jpg?k=472335bcd34d24f472081094d733da20e58a79c2a666392a06bd940f9522dfe4&o=",
+          "why_it_converts": "Showcasing high-finish private sleeping accommodations assures travelers of restful luxury and elevated comfort.",
+          "upgrade_rationale": "Showcasing high-finish private sleeping accommodations assures travelers of restful luxury and elevated comfort.",
+          "bullet_points": [
+            "Strategic Placement: Showcases the primary guest experience, emphasizing comfort and stylish design.",
+            "Local Synergy: The room's bright, airy feel and tropical window view resonate with Miami Beach's indoor-outdoor lifestyle.",
+            "Conversion Trigger: Highlights the quality of accommodation, reassuring guests of a comfortable and aesthetically pleasing stay."
+          ],
+          "psychological_conversion_trigger": "This photo directly addresses the core need for comfortable, stylish accommodation, allowing travelers to visualize their personal sanctuary within the vibrant South Beach setting.",
+          "recommended_trigger": "This photo directly addresses the core need for comfortable, stylish accommodation, allowing travelers to visualize their personal sanctuary within the vibrant South Beach setting.",
+          "current_slot": 2,
+          "is_retained": false,
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "RE_SEQUENCE",
+          "action_label": "MOVE FROM SLOT #2",
+          "source_display_label": "Was: Slot #2 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 2,
+            "title": "a hotel room with a bed and a desk and a window at The Plymouth South Beach in Miami Beach",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/175766798.jpg?k=472335bcd34d24f472081094d733da20e58a79c2a666392a06bd940f9522dfe4&o=",
+            "photoId": "175766798",
+            "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1791372144850&force_referer="
+          }
+        },
+        {
+          "slot": 4,
+          "category": "SOCIAL_FB_ROOFTOP",
+          "photo_subject": "a restaurant with wooden tables and chairs and a checkered floor",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/245901930.jpg?k=91060963f27bca28c8cc4a0ffc9959be5ca5cb20b72f2884f0ce100ba5c72921&o=&hp=1",
+          "why_it_converts": "Showcasing destination culinary programming elevates property perception and captures high-spend leisure travelers visiting Miami.",
+          "upgrade_rationale": "Showcasing destination culinary programming elevates property perception and captures high-spend leisure travelers visiting Miami.",
+          "bullet_points": [
+            "Visual Upgrade: Atmospheric culinary perspective showing ambient lighting and curated seating.",
+            "Local Synergy: Anchors the property within the destination's acclaimed dining circuit.",
+            "Conversion Trigger: Stimulates social anticipation and validates on-property lifestyle experiences."
+          ],
+          "psychological_conversion_trigger": "Destination Gastronomy & Evening Social Gravitas",
+          "recommended_trigger": "Destination Gastronomy & Evening Social Gravitas",
+          "current_slot": 21,
+          "is_retained": false,
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "PROMOTE",
+          "action_label": "PROMOTE FROM SLOT #21",
+          "source_display_label": "Was: Slot #21 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 21,
+            "title": "a restaurant with wooden tables and chairs and a checkered floor at The Plymouth South Beach in Miami Beach",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/245901930.jpg?k=91060963f27bca28c8cc4a0ffc9959be5ca5cb20b72f2884f0ce100ba5c72921&o=&hp=1",
+            "photoId": "245901930",
+            "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1791372144850&force_referer="
+          }
+        },
+        {
+          "slot": 5,
+          "category": "SECONDARY_ROOM_BATHROOM",
+          "photo_subject": "Modern Guest Bathroom with Walk-in Shower",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/175768481.jpg?k=1011fc60aaea41f0fe65cda9ee713ae2259b51c2670b36bf580d221bf3ae8fb3&o=&hp=1",
+          "why_it_converts": "Showcasing immaculate private bathroom finishes and walk-in rain showers resolves hygiene anxiety and completes the luxury perception.",
+          "upgrade_rationale": "Showcasing immaculate private bathroom finishes and walk-in rain showers resolves hygiene anxiety and completes the luxury perception.",
+          "bullet_points": [
+            "Strategic Placement: Addresses a critical guest concern regarding bathroom quality and hygiene, often a conversion blocker if missing.",
+            "Local Synergy: Reflects the modern luxury expected in Miami Beach accommodations, ensuring a seamless guest experience.",
+            "Conversion Trigger: Reassures travelers of high standards in essential amenities, confirming comfort and cleanliness."
+          ],
+          "psychological_conversion_trigger": "A clear, appealing bathroom shot eliminates a common point of anxiety for travelers, confirming the hotel's commitment to modern comfort and hygiene, thus boosting booking confidence.",
+          "recommended_trigger": "A clear, appealing bathroom shot eliminates a common point of anxiety for travelers, confirming the hotel's commitment to modern comfort and hygiene, thus boosting booking confidence.",
+          "current_slot": 16,
+          "is_retained": false,
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "PROMOTE",
+          "action_label": "PROMOTE FROM SLOT #16",
+          "source_display_label": "Was: Slot #16 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 16,
+            "title": "a bathroom with a shower with a glass door at The Plymouth South Beach in Miami Beach",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/175768481.jpg?k=1011fc60aaea41f0fe65cda9ee713ae2259b51c2670b36bf580d221bf3ae8fb3&o=&hp=1",
+            "photoId": "175768481",
+            "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1791372144850&force_referer="
+          }
+        }
+      ],
+      "anti_commodity_copy_rewrite": {
+        "ota_headline": "The Plymouth South Beach: Art Deco Glamour Meets Vibrant Poolside Luxury & Acclaimed Sushi",
+        "property_overview_150_words": "Experience the quintessential Miami Beach lifestyle at The Plymouth, an iconic Art Deco gem blending historic charm with modern sophistication. Our vibrant courtyard pool, complete with stylish cabanas and a lively tiki bar, serves as the social heart of the hotel, inviting guests to relax and mingle under the Florida sun. Indulge in world-class Japanese cuisine at the acclaimed Blue Ribbon Sushi Bar & Grill, a destination in itself. Nestled in a prime location, The Plymouth offers effortless access to South Beach's cultural landmarks, pristine sands, and dynamic nightlife, making it the perfect sanctuary for discerning travelers seeking both relaxation and exhilaration."
+      },
+      "photographic_gap_analysis": [
+        {
+          "missing_shot_title": "Twilight Poolside Tiki Bar & Cocktail Hour",
+          "category": "ATMOSPHERIC_TWILIGHT",
+          "why_needed": "Currently, the pool photos are bright daytime shots. A twilight shot of the 'lively poolside tiki bar' would capture the evening social energy and cocktail culture, appealing to nightlife-seeking travelers.",
+          "recommended_framing_and_lighting": "Eye-level shot capturing the vibrant bar, illuminated cocktails, and subtle human interaction, with warm 2700K ambient lighting and a soft, golden hour sky in the background."
+        },
+        {
+          "missing_shot_title": "Creator-Friendly Master Bathroom Soaking Tub",
+          "category": "CREATOR_BATHROOM",
+          "why_needed": "While a shower photo exists, a dedicated shot of a luxurious soaking tub (if available in higher room categories) is missing. This appeals to luxury travelers and content creators seeking aspirational wellness moments.",
+          "recommended_framing_and_lighting": "Wide-angle shot of a freestanding tub with natural light, high-end bath amenities, and a subtle, inviting steam effect, emphasizing tranquility and indulgence."
+        },
+        {
+          "missing_shot_title": "Art Deco Lobby Lounge & Happy Hour",
+          "category": "SOCIAL_FB_ROOFTOP",
+          "why_needed": "The lobby bar is mentioned as 'great for happy hour' but lacks a dedicated, high-quality visual. This shot would capture the sophisticated social atmosphere and appeal to travelers seeking a chic pre-dinner or evening lounge experience.",
+          "recommended_framing_and_lighting": "Mid-range shot showcasing the elegant lobby bar with expertly crafted cocktails, warm 2200K lighting, and subtle guest interaction, highlighting the 'boutique-like Miami vibe'."
+        }
+      ],
+      "conversion_diagnosis": "The Plymouth South Beach currently underperforms on Booking.com due to a commoditized photo sequence that fails to leverage its unique Art Deco charm, vibrant poolside social scene, and acclaimed culinary offerings. The lack of strategic visual storytelling means travelers miss the hotel's true local vibe and destination appeal, leading to higher drop-off rates.",
+      "local_vibe_synergy_context": "Miami Beach travelers actively seek vibrant social scenes, iconic Art Deco aesthetics, and sophisticated culinary experiences. The optimized photo sequence directly addresses these desires by leading with the hotel's lively pool, grounding it with its historic facade, and showcasing its destination sushi bar, creating a compelling narrative that resonates with the neighborhood's top subcultures.",
+      "slot_1_decision_logic": {
+        "is_magnet_override_active": true,
+        "reasoning_code": "NAI_HIGH_DESTINATION_POWER_VISUAL_CLARITY",
+        "strategy_explanation": "The Plymouth's Art Deco Courtyard Pool with its lively tiki bar and cabanas is a quintessential Miami Beach social magnet. It meets all four override criteria: high neighborhood affinity for vibrant pool scenes (NAI > 0.85), acts as a standalone destination for locals, offers split-second visual clarity of a desirable experience, and mandates the exterior facade to Slot #2 for immediate geographic grounding.",
+        "neighborhood_affinity_index": 0.92,
+        "override_asset_name": "Art Deco Courtyard Swimming Pool & Cabanas"
+      },
+      "is_listed_on_booking": true,
+      "listing_status": "ACTIVE_ON_BOOKING",
+      "live_photos": [
+        {
+          "slot": 1,
+          "title": "a swimming pool in front of a building with palm trees at The Plymouth South Beach in Miami Beach",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/402289199.jpg?k=bdf9acca899c5b49fd5d066da1cb675b433c796ba4e8056bd9176791bdd30180&o=",
+          "photoId": "402289199",
+          "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1791372144850&force_referer="
+        },
+        {
+          "slot": 2,
+          "title": "a hotel room with a bed and a desk and a window at The Plymouth South Beach in Miami Beach",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/175766798.jpg?k=472335bcd34d24f472081094d733da20e58a79c2a666392a06bd940f9522dfe4&o=",
+          "photoId": "175766798",
+          "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1791372144850&force_referer="
+        },
+        {
+          "slot": 3,
+          "title": "a bedroom with a bed and a bathroom with a sink at The Plymouth South Beach in Miami Beach",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/175766765.jpg?k=1b1779d415e305db2c281191696474e2832ba66fb2dc9f08ad1aa0b9ff088bda&o=",
+          "photoId": "175766765",
+          "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1791372144850&force_referer="
+        },
+        {
+          "slot": 4,
+          "title": "a large swimming pool with lounge chairs and umbrellas at The Plymouth South Beach in Miami Beach",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/402289228.jpg?k=895bc18b876356d0ff7029d59230d0737a81fddd3cc0a2be222bb491885f5376&o=",
+          "photoId": "402289228",
+          "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1791372144850&force_referer="
+        },
+        {
+          "slot": 5,
+          "title": "a restaurant with tables and chairs and lights at The Plymouth South Beach in Miami Beach",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/175773716.jpg?k=a9a8e40f21ba8f8efdc834666bc5ccfc95fca0e97dca2e790bbc5761682a62b0&o=",
+          "photoId": "175773716",
+          "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1791372144850&force_referer="
+        },
+        {
+          "slot": 6,
+          "title": "a living room with a couch and a table at The Plymouth South Beach in Miami Beach",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/175765147.jpg?k=d79dc58345f34fd32a250d47160109d391f35601d1cdcd99be90c0f845c47ef8&o=",
+          "photoId": "175765147",
+          "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1791372144850&force_referer="
+        },
+        {
+          "slot": 7,
+          "title": "a swimming pool in front of a building at The Plymouth South Beach in Miami Beach",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/402289205.jpg?k=fcb9545a5e69ac88ca29ccb9bf8df1ace9063550312f4d8c38d301b9b4d28990&o=",
+          "photoId": "402289205",
+          "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1791372144850&force_referer="
+        },
+        {
+          "slot": 8,
+          "title": "a conference room with black tables and chairs and a screen at The Plymouth South Beach in Miami Beach +157 photos",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/640831695.jpg?k=db8247596097cd6fb5e9230b9f5f95afcf1f2ee1a5c324f8d633a394924742e8&o=",
+          "photoId": "640831695",
+          "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1791372144850&force_referer="
+        },
+        {
+          "slot": 9,
+          "title": "two chairs and an umbrella on a beach at The Plymouth South Beach in Miami Beach",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/402289192.jpg?k=a6f14d9ef4e860be9d7527563403cadf836520d8b3f5d9bb965cb69038f6a231&o=&hp=1",
+          "photoId": "402289192",
+          "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1791372144850&force_referer="
+        },
+        {
+          "slot": 10,
+          "title": "a patio with tables and chairs and a bar at The Plymouth South Beach in Miami Beach",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/402289229.jpg?k=c2c55fb440bf3426eb666ba454b0de7f6785d10165072da87aed7c21769178ff&o=&hp=1",
+          "photoId": "402289229",
+          "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1791372144850&force_referer="
+        },
+        {
+          "slot": 11,
+          "title": "a group of chefs preparing food in a restaurant kitchen at The Plymouth South Beach in Miami Beach",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/178757827.jpg?k=622a03903e59f51deea034ab0efc52ba6ef4709fff4ac7f78a36021e7c61c243&o=&hp=1",
+          "photoId": "178757827",
+          "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1791372144850&force_referer="
+        },
+        {
+          "slot": 12,
+          "title": "a bedroom with a large bed and a ceiling fan at The Plymouth South Beach in Miami Beach",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/253783120.jpg?k=6fe7c76c3a9cfa66d4001493bbd3e6a413b2705c27bf3635b65154a5f9bd5d7b&o=&hp=1",
+          "photoId": "253783120",
+          "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1791372144850&force_referer="
+        },
+        {
+          "slot": 13,
+          "title": "a bedroom with a bed and a desk and a window at The Plymouth South Beach in Miami Beach",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/253783124.jpg?k=b26fc18f5bca769ad1d88f610a6ae34d082188a4523c536987b2f67356b9e3df&o=&hp=1",
+          "photoId": "253783124",
+          "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1791372144850&force_referer="
+        },
+        {
+          "slot": 14,
+          "title": "a bedroom with two beds and a large mirror at The Plymouth South Beach in Miami Beach",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/253783129.jpg?k=7da92b56005f339f0b79dda8c40a4d0598f829669cdde68cca0cd868e00cb3b5&o=&hp=1",
+          "photoId": "253783129",
+          "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1791372144850&force_referer="
+        },
+        {
+          "slot": 15,
+          "title": "a bathroom with a bed and a sink and a mirror at The Plymouth South Beach in Miami Beach",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/253783134.jpg?k=3aec33ef20e450de22143cdb0b66374c0f991dcc6e9f5584066837f6a752fd55&o=&hp=1",
+          "photoId": "253783134",
+          "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1791372144850&force_referer="
+        },
+        {
+          "slot": 16,
+          "title": "a bathroom with a shower with a glass door at The Plymouth South Beach in Miami Beach",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/175768481.jpg?k=1011fc60aaea41f0fe65cda9ee713ae2259b51c2670b36bf580d221bf3ae8fb3&o=&hp=1",
+          "photoId": "175768481",
+          "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1791372144850&force_referer="
+        },
+        {
+          "slot": 17,
+          "title": "a bedroom with a bed and a crib with a stuffed animal at The Plymouth South Beach in Miami Beach",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/245901893.jpg?k=13a1f040d47581b45f6c1a1ee20ea33102032e3e555d431849132bbd4d10a418&o=&hp=1",
+          "photoId": "245901893",
+          "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1791372144850&force_referer="
+        },
+        {
+          "slot": 18,
+          "title": "a hotel room with a bed and a couch at The Plymouth South Beach in Miami Beach",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/245901904.jpg?k=64e422e354139841ec9225fee515562db8bcf96f5ef0dacd921b55c56822236a&o=&hp=1",
+          "photoId": "245901904",
+          "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1791372144850&force_referer="
+        },
+        {
+          "slot": 19,
+          "title": "a bedroom with a bed and a room with balloons at The Plymouth South Beach in Miami Beach",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/245901912.jpg?k=aa2ac49dedd4fa0440cc4eebf4b104f11a90bb086b693e20efb86a651a170a68&o=&hp=1",
+          "photoId": "245901912",
+          "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1791372144850&force_referer="
+        },
+        {
+          "slot": 20,
+          "title": "a bowl of food with meat and rice on a table at The Plymouth South Beach in Miami Beach",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/245902789.jpg?k=4294fe991e4b33dac7bcbbb3c2e719716ba60b14614cc550626508eee600b349&o=&hp=1",
+          "photoId": "245902789",
+          "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1791372144850&force_referer="
+        },
+        {
+          "slot": 21,
+          "title": "a restaurant with wooden tables and chairs and a checkered floor at The Plymouth South Beach in Miami Beach",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/245901930.jpg?k=91060963f27bca28c8cc4a0ffc9959be5ca5cb20b72f2884f0ce100ba5c72921&o=&hp=1",
+          "photoId": "245901930",
+          "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1791372144850&force_referer="
+        },
+        {
+          "slot": 22,
+          "title": "a hotel lobby with chairs and tables and a ceiling at The Plymouth South Beach in Miami Beach",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/245901938.jpg?k=70d5c0008700911287e9a494ae5a9de36356305d74fb8ecf6300713bb6de5d7f&o=&hp=1",
+          "photoId": "245901938",
+          "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1791372144850&force_referer="
+        },
+        {
+          "slot": 23,
+          "title": "three cocktails sitting on top of a bar at The Plymouth South Beach in Miami Beach",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/245902912.jpg?k=84f6b9ac1474861bb1af5884535ad9c6666e8831828f5960fda6604e48c9a945&o=&hp=1",
+          "photoId": "245902912",
+          "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1791372144850&force_referer="
+        },
+        {
+          "slot": 24,
+          "title": "a bar with a lot of bottles of alcohol at The Plymouth South Beach in Miami Beach",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/245901949.jpg?k=f8bda96487ed1222076ab50ded32dac4212a769adb46b3b2822684e6fc764308&o=&hp=1",
+          "photoId": "245901949",
+          "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1791372144850&force_referer="
+        },
+        {
+          "slot": 25,
+          "title": "a building with a walkway in front of it at The Plymouth South Beach in Miami Beach",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/232878247.jpg?k=ec05ddbbff0d481c9bfb08adcf05fd524004be0c28a071311e9d4e3b43f674a9&o=&hp=1",
+          "photoId": "232878247",
+          "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1791372144850&force_referer="
+        },
+        {
+          "slot": 26,
+          "title": "a person is sprinkling seasoning on a plate of food at The Plymouth South Beach in Miami Beach",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/245902860.jpg?k=d0914e8cf00f750f0270fdb1f6fb14e95b1ca04d5154afbae11658bcb3156dc0&o=&hp=1",
+          "photoId": "245902860",
+          "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1791372144850&force_referer="
+        },
+        {
+          "slot": 27,
+          "title": "a plate of food with dumplings and greens on it at The Plymouth South Beach in Miami Beach",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/245902883.jpg?k=f71ab3a751d2a92c6e1ba280b257b905695cb5eefcb2c8919151b2469ca6d945&o=&hp=1",
+          "photoId": "245902883",
+          "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1791372144850&force_referer="
+        },
+        {
+          "slot": 28,
+          "title": "a plate of sushi and other foods on a table at The Plymouth South Beach in Miami Beach",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/235939177.jpg?k=6fb1f19fc5a022c37a241510339021f187860d5dc9482b0c64d8c1f56406cb4e&o=&hp=1",
+          "photoId": "235939177",
+          "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1791372144850&force_referer="
+        },
+        {
+          "slot": 29,
+          "title": "a group of four cocktails sitting on a bar at The Plymouth South Beach in Miami Beach",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/235939176.jpg?k=576564dc02b7dc01df477ef13d857cc6787a8d1cf03e7e1e881cb77e6eee5397&o=&hp=1",
+          "photoId": "235939176",
+          "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1791372144850&force_referer="
+        },
+        {
+          "slot": 30,
+          "title": "a table topped with plates of sushi and vegetables at The Plymouth South Beach in Miami Beach",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/245902820.jpg?k=ba367e49b31eb4c269084468b95e4e553abfff077fb89d23a56c67b6df0f4225&o=&hp=1",
+          "photoId": "245902820",
+          "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1791372144850&force_referer="
+        },
+        {
+          "slot": 31,
+          "title": "a table topped with bowls of food and drinks at The Plymouth South Beach in Miami Beach",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/245902778.jpg?k=d3e3a1a0d002b79e5ba8c26b49b8b2a5722c7d2d1224a5afa05914fa63bd016f&o=&hp=1",
+          "photoId": "245902778",
+          "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1791372144850&force_referer="
+        },
+        {
+          "slot": 32,
+          "title": "a table with a plate of food and a glass of wine at The Plymouth South Beach in Miami Beach",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/245902874.jpg?k=f8af03cbc9230f50371c19b7d2b7e43278caa1ca7c22298468c63e11de752de1&o=&hp=1",
+          "photoId": "245902874",
+          "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1791372144850&force_referer="
+        },
+        {
+          "slot": 33,
+          "title": "a table with two plates of food and drinks at The Plymouth South Beach in Miami Beach",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/245902794.jpg?k=73ae19591d065a7972c74678b1fcdb0fee4dfb5a888540cf3b09a03a27f58b36&o=&hp=1",
+          "photoId": "245902794",
+          "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1791372144850&force_referer="
+        },
+        {
+          "slot": 34,
+          "title": "a living room with a couch and some plants at The Plymouth South Beach in Miami Beach",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/232878264.jpg?k=71d735e976b2a098a74eb09b53b22b5c0fa59c30abbdc27558ae10b6a0d9d965&o=&hp=1",
+          "photoId": "232878264",
+          "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1791372144850&force_referer="
+        },
+        {
+          "slot": 35,
+          "title": "a wooden table with plates of food on it at The Plymouth South Beach in Miami Beach",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/245902763.jpg?k=18dd7e790cf095a19fcc02bf58b016afb7fbc954ccb30a686ddb18708e201e1c&o=&hp=1",
+          "photoId": "245902763",
+          "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1791372144850&force_referer="
+        },
+        {
+          "slot": 36,
+          "title": "a buffet line with food on display in a restaurant at The Plymouth South Beach in Miami Beach",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/232878271.jpg?k=b526d0a45f1bfae4c5f62a4e868b3c947e488e0ed0213297da6cc3fa903e41bd&o=&hp=1",
+          "photoId": "232878271",
+          "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1791372144850&force_referer="
+        },
+        {
+          "slot": 37,
+          "title": "a large white building on a city street at The Plymouth South Beach in Miami Beach",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/232878275.jpg?k=19ff6952907923c34d584017557d5c0b45f3625bfc727e9c3f5bba4a23853dff&o=&hp=1",
+          "photoId": "232878275",
+          "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1791372144850&force_referer="
+        },
+        {
+          "slot": 38,
+          "title": "a plate of fried food on a table with bowls of food at The Plymouth South Beach in Miami Beach",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/245902898.jpg?k=fb8fe4acea4f0b1afa9c30c7df041c153e8332dde1b7018c7cdb8ee45a7b0003&o=&hp=1",
+          "photoId": "245902898",
+          "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1791372144850&force_referer="
+        },
+        {
+          "slot": 39,
+          "title": "a hotel room with a bed and a couch at The Plymouth South Beach in Miami Beach",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/210474140.jpg?k=5276c02c7c86b320f2dd684d6ef4c7d05db02f4ff808ffd301295f3ca7da5c1d&o=&hp=1",
+          "photoId": "210474140",
+          "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1791372144850&force_referer="
+        },
+        {
+          "slot": 40,
+          "title": "a chef holding a plate of food on a table at The Plymouth South Beach in Miami Beach",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/245902836.jpg?k=0d46994ef09a079ab3f49a65ca2436eb7c86d7298d43dd31de488e2a476efeb5&o=&hp=1",
+          "photoId": "245902836",
+          "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1791372144850&force_referer="
+        },
+        {
+          "slot": 41,
+          "title": "a bedroom with a couch and a living room with a view at The Plymouth South Beach in Miami Beach",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/210474145.jpg?k=025de03fc7402233917af101ea30ac4eb702819beb2429929f744c3f68eb7ffd&o=&hp=1",
+          "photoId": "210474145",
+          "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1791372144850&force_referer="
+        },
+        {
+          "slot": 42,
+          "title": "an aerial view of a city with the ocean at The Plymouth South Beach in Miami Beach",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/232878283.jpg?k=30d99a5f03c2e58a045c98956d037c7e18839b48610d9a9d3a585ebceab75aca&o=&hp=1",
+          "photoId": "232878283",
+          "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1791372144850&force_referer="
+        },
+        {
+          "slot": 43,
+          "title": "a white building on a street with cars parked in front at The Plymouth South Beach in Miami Beach",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/175776590.jpg?k=0a6114a1ffed96338504c47041c1455c6c4c2efea0dfc393cd0632975855ad1a&o=&hp=1",
+          "photoId": "175776590",
+          "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1791372144850&force_referer="
+        },
+        {
+          "slot": 44,
+          "title": "a bowl of salad and a drink on a table at The Plymouth South Beach in Miami Beach",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/245902803.jpg?k=ffc9e5735a98bdeeeb6104dc50765fd423aa47bcd65f7665969f17835bed461f&o=&hp=1",
+          "photoId": "245902803",
+          "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1791372144850&force_referer="
+        },
+        {
+          "slot": 45,
+          "title": "an aerial view of a city with tall buildings at The Plymouth South Beach in Miami Beach",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/232878279.jpg?k=efe894729d3d701afb0bdddcea7d677afc4effc17cec6ee33a32dd8a4c5a919e&o=&hp=1",
+          "photoId": "232878279",
+          "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1791372144850&force_referer="
+        },
+        {
+          "slot": 46,
+          "title": "a large bar with chairs in a restaurant at The Plymouth South Beach in Miami Beach",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/175776022.jpg?k=7f4947e9ec8b5d894ca675339c78edcf1c3d2ca46378dfba9df560dbf65bfdd8&o=&hp=1",
+          "photoId": "175776022",
+          "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1791372144850&force_referer="
+        },
+        {
+          "slot": 47,
+          "title": "a white building with a sign in front of it at The Plymouth South Beach in Miami Beach",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/175776562.jpg?k=17ddb502997295380c0a6eb306c82514c02570ccdf5ec819d54450f382b1efed&o=&hp=1",
+          "photoId": "175776562",
+          "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1791372144850&force_referer="
+        },
+        {
+          "slot": 48,
+          "title": "a gym with several treadmills and exercise bikes at The Plymouth South Beach in Miami Beach",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/175775079.jpg?k=afbb27c3738526abbb40276bf39643c6cb090186db11c419fa258b57fb80d994&o=&hp=1",
+          "photoId": "175775079",
+          "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1791372144850&force_referer="
+        },
+        {
+          "slot": 49,
+          "title": "a woman sitting in a chair in front of a mirror at The Plymouth South Beach in Miami Beach",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/175775408.jpg?k=623c9a8cb156c098d1fe1b984dc23b64a7b27af147a16c2ff9a811d9ab08a9c9&o=&hp=1",
+          "photoId": "175775408",
+          "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1791372144850&force_referer="
+        },
+        {
+          "slot": 50,
+          "title": "a man laying on a bed getting a massage at The Plymouth South Beach in Miami Beach",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/175775524.jpg?k=8e8a779c50563c8b4f2817f05aac74dccd80944164e9b1530e33ea2828aa2ed3&o=&hp=1",
+          "photoId": "175775524",
+          "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1791372144850&force_referer="
+        },
+        {
+          "slot": 51,
+          "title": "a sign for a restaurant with asian writing on it at The Plymouth South Beach in Miami Beach",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/176086444.jpg?k=6fa60964aea57d59fb6f67e219ca8b297c26be2f26ed0cecdf99f08f31e3c805&o=&hp=1",
+          "photoId": "176086444",
+          "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1791372144850&force_referer="
+        },
+        {
+          "slot": 52,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/402289199.jpg?k=bdf9acca899c5b49fd5d066da1cb675b433c796ba4e8056bd9176791bdd30180&o=&hp=1",
+          "photoId": "9",
+          "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1791372144850&force_referer="
+        },
+        {
+          "slot": 53,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/402289228.jpg?k=895bc18b876356d0ff7029d59230d0737a81fddd3cc0a2be222bb491885f5376&o=&hp=1",
+          "photoId": "8",
+          "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1791372144850&force_referer="
+        },
+        {
+          "slot": 54,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/402289192.jpg?k=a6f14d9ef4e860be9d7527563403cadf836520d8b3f5d9bb965cb69038f6a231&o=&hp=1",
+          "photoId": "2",
+          "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1791372144850&force_referer="
+        },
+        {
+          "slot": 55,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/178757827.jpg?k=622a03903e59f51deea034ab0efc52ba6ef4709fff4ac7f78a36021e7c61c243&o=&hp=1",
+          "photoId": "7",
+          "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1791372144850&force_referer="
+        },
+        {
+          "slot": 56,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/253783120.jpg?k=6fe7c76c3a9cfa66d4001493bbd3e6a413b2705c27bf3635b65154a5f9bd5d7b&o=&hp=1",
+          "photoId": "0",
+          "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1791372144850&force_referer="
+        },
+        {
+          "slot": 57,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/253783124.jpg?k=b26fc18f5bca769ad1d88f610a6ae34d082188a4523c536987b2f67356b9e3df&o=&hp=1",
+          "photoId": "4",
+          "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1791372144850&force_referer="
+        },
+        {
+          "slot": 58,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/175768481.jpg?k=1011fc60aaea41f0fe65cda9ee713ae2259b51c2670b36bf580d221bf3ae8fb3&o=&hp=1",
+          "photoId": "1",
+          "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1791372144850&force_referer="
+        },
+        {
+          "slot": 59,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/245901893.jpg?k=13a1f040d47581b45f6c1a1ee20ea33102032e3e555d431849132bbd4d10a418&o=&hp=1",
+          "photoId": "3",
+          "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1791372144850&force_referer="
+        },
+        {
+          "slot": 60,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/235939176.jpg?k=576564dc02b7dc01df477ef13d857cc6787a8d1cf03e7e1e881cb77e6eee5397&o=&hp=1",
+          "photoId": "6",
+          "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1791372144850&force_referer="
+        },
+        {
+          "slot": 61,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/232878275.jpg?k=19ff6952907923c34d584017557d5c0b45f3625bfc727e9c3f5bba4a23853dff&o=&hp=1",
+          "photoId": "5",
+          "sourceUrl": "https://www.booking.com/hotel/us/the-plymouth-miami-beach.html?lang=en-us&chal_t=1791372144850&force_referer="
+        }
+      ],
+      "photos_status": "RESOLVED"
+    },
+    "audit_timestamp": "2026-10-07T11:22:30.078Z"
+  }
+}
