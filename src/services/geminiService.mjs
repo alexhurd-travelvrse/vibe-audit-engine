@@ -82,7 +82,8 @@ export async function runMultimodalImageClassification(candidatePhotos, hotelNam
         },
         required: ['classifications']
       },
-      temperature: 0.1
+      temperature: 0.1,
+      thinkingConfig: { thinkingBudget: 0 }
     }
   });
 
@@ -166,6 +167,7 @@ export async function runStructuredVibeAudit(hotelName, city, venueCorpus, liveP
       responseMimeType: 'application/json',
       responseSchema: masterVibeSchema,
       temperature: 0.2,
+      thinkingConfig: { thinkingBudget: 0 }
     }
   });
 
@@ -370,6 +372,7 @@ Synthesize this live data and return the complete Master Vibe Audit JSON payload
       responseMimeType: 'application/json',
       responseSchema: masterVibeSchema,
       temperature: 0.2,
+      thinkingConfig: { thinkingBudget: 0 }
     }
   });
 

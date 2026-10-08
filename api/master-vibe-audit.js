@@ -3614,9 +3614,51 @@ export default async function handler(req, res) {
 
     // 3. Initiate Process:
     const manifestPromise = (async () => {
-      // Step 1: Manifest First (Hotel DNA, sensory profile, local neighborhood search demand)
-      console.log(`[Master Vibe API] 1) Manifest first: Gathering venue intelligence & hotel DNA for "${hotelName}"...`);
-      const corpusData = await fetchVenueCorpus(hotelName, city, neighborhood);
+      if (isManifestOnly) {
+        // Fast-path Stage 1: Manifest First (Hotel DNA, sensory profile, local neighborhood search demand)
+        console.log(`[Master Vibe API] 1) Manifest first: Gathering venue intelligence & hotel DNA for "${hotelName}"...`);
+        const corpusData = await fetchVenueCorpus(hotelName, city, neighborhood);
+        const rawCorpus = corpusData.rawCorpus;
+
+        if (corpusData.verifiedCity) {
+          const verifiedLower = corpusData.verifiedCity.toLowerCase();
+          const currentLower = (city || '').toLowerCase().trim();
+          if (!city || (currentLower === 'london' && verifiedLower !== 'london') || (currentLower === 'miami' && !verifiedLower.includes('miami'))) {
+            console.log(`[Master Vibe API] Auto-calibrating city from Google Places: "${city}" -> "${corpusData.verifiedCity}"`);
+            city = corpusData.verifiedCity;
+            manifestKey = getResolutionKey(hotelName, city, neighborhood, bookingUrl || bookingId) + ':::manifest_only';
+            if (!isFresh) {
+              const calibratedDisk = readDailyDiskCache(manifestKey);
+              if (calibratedDisk) {
+                console.log(`[Master Vibe API] Serving calibrated daily disk cache for "${manifestKey}"`);
+                manifestCache.set(manifestKey, { timestamp: Date.now(), data: calibratedDisk });
+                return calibratedDisk;
+              }
+            }
+          }
+        }
+
+        console.log(`[Master Vibe API] Fast-path Manifest-Only requested for "${hotelName}". Generating Vibe Manifest via Gemini 2.5 Flash...`);
+        const manifestResult = await runStructuredVibeAudit(hotelName, city, rawCorpus, [], [], neighborhood);
+        if (manifestResult && manifestResult.ota_conversion_audit) {
+          manifestResult.ota_conversion_audit.photos_status = 'PENDING';
+          manifestResult.ota_conversion_audit.optimal_5_photo_sequence = (manifestResult.ota_conversion_audit.optimal_5_photo_sequence || []).map(p => ({
+            ...p,
+            photo_url: null,
+            image_url: null
+          }));
+        }
+        manifestCache.set(manifestKey, { timestamp: Date.now(), data: manifestResult });
+        writeDailyDiskCache(manifestKey, manifestResult);
+        return manifestResult;
+      }
+
+      // Full Audit Pipeline: Parallel Ingestion of Venue Corpus and Booking.com Gallery
+      console.log(`[Master Vibe API] 1 & 2) Parallel Ingestion: Harvesting venue intelligence & live Booking.com gallery concurrently for "${hotelName}"...`);
+      const [corpusData, liveBookingPhotos] = await Promise.all([
+        fetchVenueCorpus(hotelName, city, neighborhood),
+        fetchBookingPhotosForHotel(hotelName, city, neighborhood, bookingUrl, bookingId)
+      ]);
       const rawCorpus = corpusData.rawCorpus;
 
       if (corpusData.verifiedCity) {
@@ -3625,29 +3667,9 @@ export default async function handler(req, res) {
         if (!city || (currentLower === 'london' && verifiedLower !== 'london') || (currentLower === 'miami' && !verifiedLower.includes('miami'))) {
           console.log(`[Master Vibe API] Auto-calibrating city from Google Places: "${city}" -> "${corpusData.verifiedCity}"`);
           city = corpusData.verifiedCity;
-          manifestKey = getResolutionKey(hotelName, city, neighborhood, bookingUrl || bookingId) + (isManifestOnly ? ':::manifest_only' : '');
-          if (!isFresh) {
-            const calibratedDisk = readDailyDiskCache(manifestKey);
-            if (calibratedDisk) {
-              console.log(`[Master Vibe API] Serving calibrated daily disk cache for "${manifestKey}"`);
-              manifestCache.set(manifestKey, { timestamp: Date.now(), data: calibratedDisk });
-              return calibratedDisk;
-            }
-          }
+          manifestKey = getResolutionKey(hotelName, city, neighborhood, bookingUrl || bookingId);
         }
       }
-
-      if (isManifestOnly) {
-        console.log(`[Master Vibe API] Fast-path Manifest-Only requested for "${hotelName}". Generating Vibe Manifest via Gemini 2.5 Flash...`);
-        const manifestResult = await runStructuredVibeAudit(hotelName, city, rawCorpus, [], [], neighborhood);
-        manifestCache.set(manifestKey, { timestamp: Date.now(), data: manifestResult });
-        writeDailyDiskCache(manifestKey, manifestResult);
-        return manifestResult;
-      }
-
-      // Step 2: Fast-Path: Extract authentic live Booking.com gallery directly
-      console.log(`[Master Vibe API] 2) Fast-Path: Extracting authentic live Booking.com gallery for "${hotelName}"...`);
-      const liveBookingPhotos = await fetchBookingPhotosForHotel(hotelName, city, neighborhood, bookingUrl, bookingId);
       
       let amenityPhotos = [];
       if (!liveBookingPhotos || liveBookingPhotos.length === 0) {
