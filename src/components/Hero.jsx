@@ -74,7 +74,7 @@ const Hero = () => {
 
             <div className="hero-bg-container">
                 <video 
-                    src="/models/atmosvibe2.mp4" 
+                    src="/models/camera_moving.mp4" 
                     className="hero-video"
                     autoPlay 
                     muted 
