@@ -8,16 +8,11 @@ const Footer = () => {
             <div className="container">
                 {/* Bottom Bar: Copyright and Hidden Link */}
                 <div className="footer-bottom">
-                    <p className="copyright">&copy; {new Date().getFullYear()} Travelvrse. All rights reserved.</p>
+                    <p className="copyright">&copy; {new Date().getFullYear()} AtmosVibe. All rights reserved</p>
                     <div className="footer-links">
                         <Link to="/privacy" className="footer-link">Privacy Policy</Link>
                         <span className="footer-divider">|</span>
                         <Link to="/terms" className="footer-link">Terms &amp; Conditions</Link>
-                        <span className="footer-divider">|</span>
-                        {/* The Hidden Creator Link */}
-                        <Link to="/creator-portal" className="stealth-link" title="Creator Portal">
-                            Creators
-                        </Link>
                     </div>
                 </div>
             </div>

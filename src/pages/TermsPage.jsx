@@ -1,12 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, FileText, CheckCircle2 } from 'lucide-react';
+import { ArrowLeft, FileText, ShieldAlert, Award, Scale, HelpCircle } from 'lucide-react';
 import Layout from '../components/Layout';
+import { Helmet } from 'react-helmet-async';
 
 export default function TermsPage() {
   return (
     <Layout>
-      <div style={{ maxWidth: '900px', margin: '0 auto', padding: '6rem 1.5rem 8rem' }}>
+      <div style={{ maxWidth: '920px', margin: '0 auto', padding: '6rem 1.5rem 8rem' }}>
+        <Helmet>
+          <title>Terms &amp; Conditions | AtmosVibe</title>
+          <meta name="description" content="Terms of Service and End User Agreement for AtmosVibe B2B hospitality market intelligence and vibe diagnostic engine" />
+        </Helmet>
         
         {/* Back Link */}
         <Link 
@@ -25,56 +30,84 @@ export default function TermsPage() {
           <ArrowLeft size={16} /> Back to Home
         </Link>
 
-        <div className="glass-card" style={{ padding: '3rem 2.5rem', borderRadius: '1.75rem', background: 'rgba(18, 18, 18, 0.85)', border: '1px solid rgba(0, 229, 255, 0.2)' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '1.5rem' }}>
-            <div style={{ background: 'rgba(0, 229, 255, 0.1)', padding: '10px', borderRadius: '12px', border: '1px solid rgba(0, 229, 255, 0.3)' }}>
-              <FileText size={24} color="#00e5ff" />
+        <div className="glass-card" style={{ padding: '3.5rem 2.5rem', borderRadius: '1.75rem', background: 'rgba(10, 22, 40, 0.9)', border: '1px solid rgba(0, 229, 255, 0.25)', boxShadow: '0 25px 60px rgba(0, 0, 0, 0.7)' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '2rem' }}>
+            <div style={{ background: 'rgba(0, 229, 255, 0.12)', padding: '12px', borderRadius: '14px', border: '1px solid rgba(0, 229, 255, 0.35)' }}>
+              <FileText size={26} color="#00e5ff" />
             </div>
             <div>
-              <h1 style={{ fontSize: '2rem', fontWeight: 900, color: '#ffffff', margin: 0 }}>Terms & Conditions</h1>
-              <span style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)' }}>The TravelVerse Ltd • Last updated: July 2024</span>
+              <h1 style={{ fontSize: '2.2rem', fontWeight: 900, color: '#ffffff', margin: 0, letterSpacing: '-0.5px' }}>Terms &amp; Conditions</h1>
+              <span style={{ fontSize: '13px', color: 'rgba(255,255,255,0.6)' }}>
+                The TravelVerse Ltd trading as AtmosVibe / Travelvrse • Last updated: October 2026
+              </span>
             </div>
           </div>
 
-          <div style={{ color: 'rgba(255, 255, 255, 0.82)', lineHeight: 1.7, fontSize: '15px' }}>
-            <h3 style={{ color: '#00e5ff', fontSize: '1.2rem', marginTop: '2rem', marginBottom: '0.75rem' }}>1. Agreement to Terms</h3>
+          <div style={{ color: 'rgba(255, 255, 255, 0.82)', lineHeight: 1.75, fontSize: '15px' }}>
+            <h3 style={{ color: '#00e5ff', fontSize: '1.25rem', marginTop: '2rem', marginBottom: '0.75rem', fontWeight: 800 }}>1. Agreement to Terms</h3>
             <p>
-              The TravelVerse Ltd (the “Company”, “Us”, or “We”) provides web-based and interactive applications, including the <strong>Travelvrse</strong> and <strong>AtmosVibe</strong> conversion & diagnostic platforms (collectively, the “Services”). As a user (“You” or “Your”) of our website and services, this Terms of Service and End User Agreement (“Agreement”) governs your access to and use of our platform.
+              The TravelVerse Ltd, trading as <strong>AtmosVibe</strong> and <strong>Travelvrse</strong> (the “Company”, “Us”, or “We”), provides B2B hospitality market intelligence, algorithmic photo resequencing, acoustic DNA profiling, and visual diagnostic tools (collectively, the “Services”). As a user or commercial client (“You” or “Your”) accessing our website and audit engines, this Terms of Service and End User Agreement (“Agreement”) governs your access to and use of our platform.
             </p>
             <p>
-              By accessing or using our services, website, or Vibe Audit engine, you agree to be legally bound by this Agreement. If you do not agree, please discontinue use of the platform immediately.
-            </p>
-
-            <h3 style={{ color: '#00e5ff', fontSize: '1.2rem', marginTop: '2rem', marginBottom: '0.75rem' }}>2. Eligibility & Acceptable Use</h3>
-            <p>
-              You represent and warrant that you have full legal capacity to enter into this Agreement. You agree to use the platform solely for legitimate hospitality discovery, visual merchandising intelligence, and experiential gaming purposes in compliance with all applicable laws.
+              By accessing our website, initiating a Vibe Signature audit, applying for our partner program, or using our services, you confirm that you have read, understood, and agree to be legally bound by this Agreement. If you do not agree, please discontinue use immediately.
             </p>
 
-            <h3 style={{ color: '#00e5ff', fontSize: '1.2rem', marginTop: '2rem', marginBottom: '0.75rem' }}>3. Proprietary Rights & Intellectual Property</h3>
+            <h3 style={{ color: '#00e5ff', fontSize: '1.25rem', marginTop: '2.5rem', marginBottom: '0.75rem', fontWeight: 800 }}>2. No Guarantee of Financial or Conversion Performance</h3>
+            <div style={{ background: 'rgba(245, 158, 11, 0.08)', borderLeft: '4px solid #f59e0b', padding: '1.25rem 1.5rem', borderRadius: '0 12px 12px 0', margin: '1rem 0 1.5rem' }}>
+              <p style={{ margin: 0, color: '#ffffff', fontSize: '14.5px', lineHeight: 1.6 }}>
+                <strong>Important Advisory Notice:</strong> All diagnostic audit reports, visual merchandising scores, projected conversion uplift percentages (including references such as +28.5%), ADR impact forecasts, and revenue estimates generated by AtmosVibe are automated algorithmic benchmarks for informational, strategic, and advisory purposes only.
+              </p>
+            </div>
             <p>
-              All proprietary algorithms, 3D interactive environments, acoustic DNA scoring frameworks, visual merchandising sequences, and software powering Travelvrse and AtmosVibe are the exclusive intellectual property of The TravelVerse Ltd. You may not reverse-engineer, decompile, scrape, or redistribute any portion of our platform without prior written authorization.
+              The Company makes no representations, warranties, or guarantees regarding actual booking volumes, net revenue lift, average daily rates (ADR), occupancy percentages, or conversion metrics. Actual commercial performance depends on multiple external market factors, seasonal demand, room pricing, guest satisfaction, and third-party platform algorithms beyond our control.
             </p>
 
-            <h3 style={{ color: '#00e5ff', fontSize: '1.2rem', marginTop: '2rem', marginBottom: '0.75rem' }}>4. Partner Offers & Third-Party Content</h3>
+            <h3 style={{ color: '#00e5ff', fontSize: '1.25rem', marginTop: '2.5rem', marginBottom: '0.75rem', fontWeight: 800 }}>3. Third-Party Brand &amp; OTA Non-Affiliation Disclaimer</h3>
             <p>
-              Certain features may connect you with third-party hotel partners, booking engines, or reward sponsors. Third-party terms and redemption policies are set directly by the respective property or provider. The TravelVerse Ltd does not warrant or guarantee third-party fulfillment beyond platform delivery.
+              AtmosVibe and The TravelVerse Ltd are independent B2B market intelligence providers. We are not affiliated, associated, authorized, endorsed by, or in any formal way connected with Booking.com, Booking Holdings Inc., Expedia Group, TripAdvisor, Airbnb, or any other Online Travel Agency (OTA) or platform.
+            </p>
+            <p>
+              All product and company names, trademarks, service marks, logos, and brand assets referenced across our diagnostics are the property of their respective holders. Their inclusion does not imply any affiliation with or endorsement by them.
             </p>
 
-            <h3 style={{ color: '#00e5ff', fontSize: '1.2rem', marginTop: '2rem', marginBottom: '0.75rem' }}>5. Limitation of Liability</h3>
+            <h3 style={{ color: '#00e5ff', fontSize: '1.25rem', marginTop: '2.5rem', marginBottom: '0.75rem', fontWeight: 800 }}>4. Authority to Request Audits &amp; Data Input</h3>
             <p>
-              To the maximum extent permitted by law, The TravelVerse Ltd shall not be liable for any indirect, incidental, punitive, or consequential damages arising out of your access to or inability to access the services.
+              By submitting a hotel name, website domain, Booking.com listing URL, or corporate email address through our intake engine, you represent and warrant that you are an authorized employee, owner, marketing agency, or bona fide commercial representative with authority to evaluate that property’s digital assets. You agree not to submit fraudulent, malicious, or unauthorized requests.
             </p>
 
-            <h3 style={{ color: '#00e5ff', fontSize: '1.2rem', marginTop: '2rem', marginBottom: '0.75rem' }}>6. Contact Information</h3>
+            <h3 style={{ color: '#00e5ff', fontSize: '1.25rem', marginTop: '2.5rem', marginBottom: '0.75rem', fontWeight: 800 }}>5. Intellectual Property Rights &amp; Deliverables License</h3>
             <p>
-              For legal inquiries or notices regarding these terms, please contact:
+              <strong>AtmosVibe Core Technology:</strong> All proprietary scoring algorithms, 3D interactive discovery engines, acoustic DNA taxonomies, visual resequencing logic, codebases, and aggregated hospitality benchmarks remain the exclusive intellectual property of The TravelVerse Ltd.
             </p>
             <p>
-              <strong>The TravelVerse Ltd</strong><br />
+              <strong>Client Deliverables:</strong> Upon receiving a synthesized audit report or participating in our partner cohort, you receive a perpetual, worldwide, non-exclusive, royalty-free license to utilize the recommended photo resequencing order, framing specifications, and bespoke descriptive copy across your direct property websites, social media channels, and OTA extranet channels.
+            </p>
+
+            <h3 style={{ color: '#00e5ff', fontSize: '1.25rem', marginTop: '2.5rem', marginBottom: '0.75rem', fontWeight: 800 }}>6. Beta Partner Program</h3>
+            <p>
+              Properties participating in the AtmosVibe Beta Cohort (at no software cost for 3 months) agree to collaborate in good faith by implementing recommendations on at least one digital channel and participating in brief bi-weekly feedback sessions to aid product refinement. Beta services are provided on an “as is” basis during the trial period.
+            </p>
+
+            <h3 style={{ color: '#00e5ff', fontSize: '1.25rem', marginTop: '2.5rem', marginBottom: '0.75rem', fontWeight: 800 }}>7. Limitation of Liability</h3>
+            <p>
+              To the fullest extent permitted by applicable law, The TravelVerse Ltd and its directors, employees, or agents shall not be liable for any indirect, incidental, punitive, special, or consequential damages, including loss of profits, booking revenue, reputation, or business interruption, arising out of your access to, use of, or inability to use our services.
+            </p>
+
+            <h3 style={{ color: '#00e5ff', fontSize: '1.25rem', marginTop: '2.5rem', marginBottom: '0.75rem', fontWeight: 800 }}>8. Governing Law &amp; Jurisdiction</h3>
+            <p>
+              This Agreement and any dispute or claim arising out of or in connection with it or its subject matter shall be governed by and construed in accordance with the <strong>laws of England and Wales</strong>. You irrevocably agree that the courts of <strong>London, England</strong> shall have exclusive jurisdiction to settle any dispute or claim arising out of or in connection with this Agreement.
+            </p>
+
+            <h3 style={{ color: '#00e5ff', fontSize: '1.25rem', marginTop: '2.5rem', marginBottom: '0.75rem', fontWeight: 800 }}>9. Corporate Contact Information</h3>
+            <p>
+              For legal notices, partnership enquiries, or questions regarding these terms, please contact:
+            </p>
+            <div style={{ background: 'rgba(255,255,255,0.04)', padding: '1.25rem 1.5rem', borderRadius: '14px', border: '1px solid rgba(255,255,255,0.08)', marginTop: '1rem' }}>
+              <strong>The TravelVerse Ltd</strong> (trading as AtmosVibe / Travelvrse)<br />
               WeWork C/O Travel Curious Ltd, 3 Waterhouse Square<br />
               138 - 142 Holborn, London, United Kingdom, EC1N 2SW<br />
-              Email: <strong>alex@travelvrse.com</strong>
-            </p>
+              Company Email: <strong>alex@travelvrse.com</strong>
+            </div>
           </div>
         </div>
 

@@ -58,41 +58,6 @@ const Layout = ({ children }) => {
                             <span className="nav-link-text">VIBE INSIGHTS</span>
                             <span className="nav-coming-soon">Coming Soon</span>
                         </a>
-
-                        {!isUnlocked ? (
-                            <button
-                                onClick={() => {
-                                    setIsMenuOpen(false);
-                                    window.dispatchEvent(new CustomEvent('atmosvibe-open-login'));
-                                }}
-                                className="nav-highlight-btn"
-                                style={{ cursor: 'pointer', background: 'none', border: '1px solid rgba(0, 229, 255, 0.4)' }}
-                            >
-                                LOG IN
-                            </button>
-                        ) : (
-                            <button
-                                onClick={() => {
-                                    setIsMenuOpen(false);
-                                    lock();
-                                }}
-                                className="nav-highlight-btn"
-                                title="Click to log out / relock"
-                                style={{ 
-                                    cursor: 'pointer', 
-                                    background: 'rgba(16, 185, 129, 0.12)', 
-                                    border: '1px solid rgba(16, 185, 129, 0.35)',
-                                    color: '#10b981',
-                                    display: 'inline-flex',
-                                    alignItems: 'center',
-                                    gap: '6px',
-                                    fontSize: '11.5px'
-                                }}
-                            >
-                                <Sparkles size={13} color="#10b981" />
-                                <span>UNLOCKED (LOG OUT)</span>
-                            </button>
-                        )}
                     </nav>
                 </div>
             </header>

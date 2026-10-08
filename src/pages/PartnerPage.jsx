@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Layout from '../components/Layout';
 import Footer from '../components/Footer';
 import { Helmet } from 'react-helmet-async';
-import { ShieldCheck, TrendingUp, Users, ArrowRight, Sparkles, CheckCircle2, Zap } from 'lucide-react';
+import { ShieldCheck, TrendingUp, Users, ArrowRight, Sparkles, CheckCircle2, Camera, Music, Compass, Send, Hotel, Award } from 'lucide-react';
 
 const PartnerPage = () => {
     const [submitted, setSubmitted] = useState(false);
@@ -37,171 +37,225 @@ const PartnerPage = () => {
 
     return (
         <Layout>
-            <section className="section-padding" style={{ background: 'linear-gradient(to bottom, #050b14, #0a1628)', minHeight: '80vh', display: 'flex', alignItems: 'center' }}>
-                <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' }}>
+            <section className="section-padding" style={{ background: 'radial-gradient(ellipse at top, #0a1b33 0%, #050b14 70%)', minHeight: '85vh', padding: '6rem 0 5rem' }}>
+                <div className="container" style={{ maxWidth: '1240px', margin: '0 auto', padding: '0 1.5rem' }}>
                     <Helmet>
-                        <title>Hotel Partnership Program | Travelvrse &amp; AtmosVibe VIBE API</title>
-                        <meta name="description" content="Join Travelvrse as a hotel or travel partner. Increase direct revenue, capture qualified guest data, and market your iconic experiences in 3D spatial metaverse." />
+                        <title>Beta Hotel Partner Program | AtmosVibe</title>
+                        <meta name="description" content="AtmosVibe is in beta and looking for 5 partner hotels to help co-develop our experience marketing platform at no cost for 3 months" />
                     </Helmet>
 
-                    {/* Case Study Context Banner */}
+                    {/* Top Beta Status Ribbon */}
                     <div style={{
-                        background: 'linear-gradient(135deg, rgba(0, 229, 255, 0.08) 0%, rgba(245, 158, 11, 0.05) 100%)',
-                        border: '1px solid rgba(0, 229, 255, 0.25)',
-                        borderRadius: '20px',
-                        padding: '1.25rem 1.75rem',
-                        marginBottom: '3rem',
-                        display: 'flex',
+                        display: 'inline-flex',
                         alignItems: 'center',
-                        justifyContent: 'space-between',
-                        gap: '1.5rem',
-                        flexWrap: 'wrap'
+                        gap: '10px',
+                        background: 'linear-gradient(135deg, rgba(0, 229, 255, 0.12) 0%, rgba(255, 215, 0, 0.12) 100%)',
+                        border: '1px solid rgba(0, 229, 255, 0.35)',
+                        borderRadius: '50px',
+                        padding: '6px 20px',
+                        marginBottom: '2rem'
                     }}>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
-                            <img src="/models/travelvrse_logo_main.svg" alt="Travelvrse" style={{ height: '24px', width: 'auto' }} />
-                            <div>
-                                <span style={{ fontSize: '11px', fontWeight: 900, color: '#00e5ff', textTransform: 'uppercase', letterSpacing: '0.1em', display: 'block' }}>
-                                    OFFICIAL PARTNER CASE STUDY
-                                </span>
-                                <span style={{ fontSize: '14px', color: '#ffffff', fontWeight: 700 }}>
-                                    How Travelvrse Powers 3D Spatial Travel Discovery with the AtmosVibe VIBE API
-                                </span>
-                            </div>
-                        </div>
-
-                        <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
-                            <div style={{ textAlign: 'center' }}>
-                                <div style={{ fontSize: '1.4rem', fontWeight: 900, color: '#00e5ff' }}>+34%</div>
-                                <div style={{ fontSize: '10.5px', color: 'rgba(255,255,255,0.7)', textTransform: 'uppercase', fontWeight: 700 }}>Direct Intent</div>
-                            </div>
-                            <div style={{ textAlign: 'center' }}>
-                                <div style={{ fontSize: '1.4rem', fontWeight: 900, color: '#ffd700' }}>2.8x</div>
-                                <div style={{ fontSize: '10.5px', color: 'rgba(255,255,255,0.7)', textTransform: 'uppercase', fontWeight: 700 }}>Session Time</div>
-                            </div>
-                            <div style={{ textAlign: 'center' }}>
-                                <div style={{ fontSize: '1.4rem', fontWeight: 900, color: '#10b981' }}>&lt;120ms</div>
-                                <div style={{ fontSize: '10.5px', color: 'rgba(255,255,255,0.7)', textTransform: 'uppercase', fontWeight: 700 }}>Data Sync</div>
-                            </div>
-                        </div>
+                        <Sparkles size={14} color="#00e5ff" />
+                        <span style={{ fontSize: '11.5px', fontWeight: 900, color: '#00e5ff', textTransform: 'uppercase', letterSpacing: '1.5px' }}>
+                            EXCLUSIVE BETA COHORT • 5 HOTEL PARTNER SLOTS
+                        </span>
                     </div>
 
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', alignItems: 'flex-start' }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: '1.15fr 0.85fr', gap: '50px', alignItems: 'flex-start' }}>
+                        {/* Left Column: Context, Value Proposition & Beta Offering */}
                         <div className="animate-fade-up">
-                            <h1 style={{ fontSize: '3.2rem', fontWeight: '800', marginBottom: '1.5rem', lineHeight: '1.1' }}>
-                                Put Vibe at the Front of Your Business with <span className="text-gold">Experience Marketing</span>
+                            <h1 style={{ fontSize: '3rem', fontWeight: 900, marginBottom: '1.25rem', lineHeight: '1.15', color: '#ffffff', letterSpacing: '-0.5px' }}>
+                                Co-Develop the Future of Hotel Experience Marketing with <span className="text-gold-gradient">AtmosVibe</span>
                             </h1>
-                            <p style={{ fontSize: '1.15rem', color: 'rgba(255,255,255,0.75)', marginBottom: '2.5rem', maxWidth: '600px', lineHeight: '1.6' }}>
-                                Travelvrse partners with hotels, hostels, resorts, cruise operators, and landmark properties to promote their authentic atmospheric experiences in interactive 3D spatial cities and capture qualified direct guest profiles
+
+                            <div style={{
+                                background: 'rgba(255, 215, 0, 0.08)',
+                                borderLeft: '4px solid #ffd700',
+                                padding: '1.25rem 1.5rem',
+                                borderRadius: '0 16px 16px 0',
+                                marginBottom: '2.5rem'
+                            }}>
+                                <p style={{ fontSize: '1.2rem', color: '#ffffff', fontWeight: 700, margin: 0, lineHeight: 1.5 }}>
+                                    AtmosVibe is currently in beta and we are looking for 5 hotels to help develop the service at no cost for 3 months
+                                </p>
+                            </div>
+
+                            <p style={{ fontSize: '1.05rem', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.7, marginBottom: '2.5rem' }}>
+                                Next-Gen travelers book local experiences before a hotel room. We use your Vibe Signature to position your property as the natural gateway to your neighbourhood, turning overlooked atmospheric spaces into high-converting visual assets across direct and OTA channels.
                             </p>
-                            
-                            <div style={{ display: 'flex', flexDirection: 'column', gap: '25px', marginBottom: '2.5rem' }}>
-                                <div style={{ display: 'flex', gap: '15px', alignItems: 'flex-start' }}>
-                                    <ShieldCheck className="text-gold" size={24} style={{ flexShrink: 0, marginTop: '3px' }} />
+
+                            {/* What You Receive At Zero Cost */}
+                            <h3 style={{ fontSize: '1.25rem', fontWeight: 900, textTransform: 'uppercase', color: '#00e5ff', letterSpacing: '1px', marginBottom: '1.25rem' }}>
+                                What Selected Beta Partners Receive (100% Free for 3 Months)
+                            </h3>
+
+                            <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '1rem', marginBottom: '3rem' }}>
+                                <div style={{ background: 'rgba(255, 255, 255, 0.03)', border: '1px solid rgba(255, 255, 255, 0.08)', borderRadius: '16px', padding: '1.25rem 1.5rem', display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
+                                    <div style={{ width: '40px', height: '40px', borderRadius: '10px', background: 'rgba(0, 229, 255, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                                        <Camera size={20} color="#00e5ff" />
+                                    </div>
                                     <div>
-                                        <h4 style={{ color: 'white', marginBottom: '5px', fontSize: '1.1rem' }}>Target Next-Gen On Mobile</h4>
-                                        <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.95rem' }}>Millennials and GenZ will account for 70% of luxury hotel sales by 2029</p>
+                                        <h4 style={{ color: '#ffffff', fontSize: '1.05rem', fontWeight: 800, margin: '0 0 4px 0' }}>
+                                            Full 5-Photo Visual Resequencing &amp; Gap Scope
+                                        </h4>
+                                        <p style={{ color: 'rgba(255, 255, 255, 0.65)', fontSize: '0.92rem', margin: 0, lineHeight: 1.5 }}>
+                                            Complete photo audit for Booking.com and direct channels, plus full architectural framing and photometric specs for high-impact missing assets
+                                        </p>
                                     </div>
                                 </div>
-                                <div style={{ display: 'flex', gap: '15px', alignItems: 'flex-start' }}>
-                                    <TrendingUp className="text-cyan" size={24} style={{ flexShrink: 0, marginTop: '3px' }} />
+
+                                <div style={{ background: 'rgba(255, 255, 255, 0.03)', border: '1px solid rgba(255, 255, 255, 0.08)', borderRadius: '16px', padding: '1.25rem 1.5rem', display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
+                                    <div style={{ width: '40px', height: '40px', borderRadius: '10px', background: 'rgba(255, 215, 0, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                                        <Music size={20} color="#ffd700" />
+                                    </div>
                                     <div>
-                                        <h4 style={{ color: 'white', marginBottom: '5px', fontSize: '1.1rem' }}>Increase Direct Revenue</h4>
-                                        <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.95rem' }}>Capture high-intent guests before they bounce to commoditized OTAs</p>
+                                        <h4 style={{ color: '#ffffff', fontSize: '1.05rem', fontWeight: 800, margin: '0 0 4px 0' }}>
+                                            Bespoke Vibe Signature &amp; Acoustic DNA Synthesis
+                                        </h4>
+                                        <p style={{ color: 'rgba(255, 255, 255, 0.65)', fontSize: '0.92rem', margin: 0, lineHeight: 1.5 }}>
+                                            Proprietary atmospheric profiling mapped to local search demand and integrated with curated acoustic soundscapes
+                                        </p>
                                     </div>
                                 </div>
-                                <div style={{ display: 'flex', gap: '15px', alignItems: 'flex-start' }}>
-                                    <Users className="text-gold" size={24} style={{ flexShrink: 0, marginTop: '3px' }} />
+
+                                <div style={{ background: 'rgba(255, 255, 255, 0.03)', border: '1px solid rgba(255, 255, 255, 0.08)', borderRadius: '16px', padding: '1.25rem 1.5rem', display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
+                                    <div style={{ width: '40px', height: '40px', borderRadius: '10px', background: 'rgba(16, 185, 129, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                                        <Compass size={20} color="#10b981" />
+                                    </div>
                                     <div>
-                                        <h4 style={{ color: 'white', marginBottom: '5px', fontSize: '1.1rem' }}>Acoustic DNA &amp; Vibe Radar</h4>
-                                        <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.95rem' }}>Broadcast verified soundscapes and 5-photo visual magnet order directly to 3D travelers</p>
+                                        <h4 style={{ color: '#ffffff', fontSize: '1.05rem', fontWeight: 800, margin: '0 0 4px 0' }}>
+                                            Local Gateway Storytelling &amp; Copy Blueprint
+                                        </h4>
+                                        <p style={{ color: 'rgba(255, 255, 255, 0.65)', fontSize: '0.92rem', margin: 0, lineHeight: 1.5 }}>
+                                            High-converting copy rewrites and neighbourhood venue alignment to capture authentic lifestyle traveler demand
+                                        </p>
                                     </div>
                                 </div>
                             </div>
 
-                            {/* 3D Spatial Preview Thumbnail */}
-                            <div style={{
-                                borderRadius: '16px',
-                                overflow: 'hidden',
-                                border: '1px solid rgba(0, 229, 255, 0.3)',
-                                boxShadow: '0 15px 35px rgba(0,0,0,0.6)'
-                            }}>
-                                <img 
-                                    src="/models/Screenshothomepage.png" 
-                                    alt="Travelvrse 3D Spatial Platform" 
-                                    style={{ width: '100%', height: 'auto', display: 'block' }}
-                                />
+                            {/* What We Ask */}
+                            <div style={{ padding: '1.5rem', background: 'rgba(0, 0, 0, 0.4)', borderRadius: '16px', border: '1px solid rgba(255, 255, 255, 0.08)' }}>
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#ffd700', fontWeight: 800, fontSize: '0.9rem', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '1px' }}>
+                                    <Award size={16} /> Beta Partner Commitment
+                                </div>
+                                <p style={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '0.92rem', margin: 0, lineHeight: 1.6 }}>
+                                    In exchange for 3 months of complimentary access and custom creative direction, we ask for a brief 20-minute bi-weekly feedback session to test recommendations and help us refine the AtmosVibe platform.
+                                </p>
                             </div>
                         </div>
 
-                        <div className="glass-card animate-fade-up delay-1" style={{ padding: '3rem', borderRadius: '24px', background: 'rgba(10, 22, 40, 0.85)', border: '1px solid rgba(0, 229, 255, 0.25)' }}>
+                        {/* Right Column: Formspree Partner Form */}
+                        <div className="glass-card animate-fade-up delay-1" style={{ padding: '2.5rem', borderRadius: '24px', background: 'rgba(10, 22, 40, 0.9)', border: '1px solid rgba(0, 229, 255, 0.3)', boxShadow: '0 25px 60px rgba(0, 0, 0, 0.7), 0 0 40px rgba(0, 229, 255, 0.1)' }}>
                             {!submitted ? (
                                 <>
-                                    <div style={{ marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                    <div style={{ marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
                                         <span style={{ 
-                                            fontSize: '0.85rem', 
-                                            background: '#ffffff', 
+                                            fontSize: '0.75rem', 
+                                            background: '#ffd700', 
                                             color: '#050b14', 
-                                            padding: '4px 14px', 
-                                            borderRadius: '4px', 
+                                            padding: '4px 12px', 
+                                            borderRadius: '50px', 
                                             fontWeight: '900',
                                             textTransform: 'uppercase',
-                                            letterSpacing: '2px',
-                                            boxShadow: '0 0 15px rgba(255, 255, 255, 0.4)',
-                                            border: '2px solid var(--color-gold)',
-                                            display: 'inline-block'
-                                        }}>PARTNERSHIP PROGRAM</span>
-                                    </div>
-                                    <h3 style={{ fontSize: '2rem', marginBottom: '0.5rem', color: '#ffffff', fontWeight: 900 }}>Become a partner</h3>
-                                    <p style={{ color: 'rgba(255,255,255,0.65)', marginBottom: '2rem', fontSize: '0.95rem' }}>
-                                        Register your interest below and our partner onboarding team will be in touch within 24 hours
-                                    </p>
-                                    <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
-                                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
-                                            <input type="text" name="firstName" placeholder="First Name" required className="form-input-premium" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.15)', padding: '12px 16px', borderRadius: '8px', color: 'white' }} />
-                                            <input type="text" name="lastName" placeholder="Last Name" required className="form-input-premium" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.15)', padding: '12px 16px', borderRadius: '8px', color: 'white' }} />
-                                        </div>
-                                        <input type="email" name="email" placeholder="Work Email" required style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.15)', padding: '12px 16px', borderRadius: '8px', color: 'white' }} />
-                                        <input type="text" name="company" placeholder="Property / Company Name" required style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.15)', padding: '12px 16px', borderRadius: '8px', color: 'white' }} />
-                                        <select name="propertyType" required style={{ background: '#0a1628', border: '1px solid rgba(255,255,255,0.15)', padding: '12px 16px', borderRadius: '8px', color: 'white' }}>
-                                            <option value="">Property / Partner Type</option>
-                                            <option value="hotels">Boutique &amp; Luxury Hotels</option>
-                                            <option value="hostels">Design Hostels</option>
-                                            <option value="resorts">Resorts &amp; Retreats</option>
-                                            <option value="ota">OTA / Booking Platform</option>
-                                            <option value="concierge">Travel Concierge / Agency</option>
-                                            <option value="cruise">Cruise Operator</option>
-                                            <option value="landmark">Cultural Landmark</option>
-                                        </select>
-                                        <button className="btn btn-primary" type="submit" disabled={loading} style={{ 
-                                            marginTop: '10px', 
-                                            width: '100%', 
-                                            padding: '16px',
-                                            background: 'linear-gradient(135deg, #ffd700 0%, #ffb300 100%)',
-                                            color: '#050b14',
-                                            fontWeight: 900,
-                                            fontSize: '1rem',
-                                            border: 'none',
-                                            borderRadius: '10px',
-                                            cursor: 'pointer',
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            justifyContent: 'center',
-                                            gap: '10px'
+                                            letterSpacing: '1px'
                                         }}>
+                                            FREE 3-MONTH BETA
+                                        </span>
+                                    </div>
+
+                                    <h3 style={{ fontSize: '1.9rem', marginBottom: '0.4rem', color: '#ffffff', fontWeight: 900, letterSpacing: '-0.3px' }}>
+                                        Apply for Beta Partnership
+                                    </h3>
+                                    <p style={{ color: 'rgba(255,255,255,0.65)', marginBottom: '1.75rem', fontSize: '0.92rem', lineHeight: 1.5 }}>
+                                        Tell us about your property. We are selecting 5 boutique and lifestyle hotels for the initial cohort
+                                    </p>
+
+                                    <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+                                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+                                            <div>
+                                                <label style={{ display: 'block', fontSize: '11px', fontWeight: 800, color: 'rgba(255,255,255,0.7)', textTransform: 'uppercase', marginBottom: '6px', letterSpacing: '0.5px' }}>First Name</label>
+                                                <input type="text" name="firstName" placeholder="First Name" required style={{ width: '100%', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.15)', padding: '11px 14px', borderRadius: '10px', color: 'white', fontSize: '14px' }} />
+                                            </div>
+                                            <div>
+                                                <label style={{ display: 'block', fontSize: '11px', fontWeight: 800, color: 'rgba(255,255,255,0.7)', textTransform: 'uppercase', marginBottom: '6px', letterSpacing: '0.5px' }}>Last Name</label>
+                                                <input type="text" name="lastName" placeholder="Last Name" required style={{ width: '100%', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.15)', padding: '11px 14px', borderRadius: '10px', color: 'white', fontSize: '14px' }} />
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <label style={{ display: 'block', fontSize: '11px', fontWeight: 800, color: 'rgba(255,255,255,0.7)', textTransform: 'uppercase', marginBottom: '6px', letterSpacing: '0.5px' }}>Work Email</label>
+                                            <input type="email" name="email" placeholder="name@hotel.com" required style={{ width: '100%', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.15)', padding: '11px 14px', borderRadius: '10px', color: 'white', fontSize: '14px' }} />
+                                        </div>
+
+                                        <div>
+                                            <label style={{ display: 'block', fontSize: '11px', fontWeight: 800, color: 'rgba(255,255,255,0.7)', textTransform: 'uppercase', marginBottom: '6px', letterSpacing: '0.5px' }}>Hotel / Property Name</label>
+                                            <input type="text" name="propertyName" placeholder="e.g. Sea Containers London" required style={{ width: '100%', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.15)', padding: '11px 14px', borderRadius: '10px', color: 'white', fontSize: '14px' }} />
+                                        </div>
+
+                                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+                                            <div>
+                                                <label style={{ display: 'block', fontSize: '11px', fontWeight: 800, color: 'rgba(255,255,255,0.7)', textTransform: 'uppercase', marginBottom: '6px', letterSpacing: '0.5px' }}>City &amp; Neighbourhood</label>
+                                                <input type="text" name="location" placeholder="e.g. Southwark, London" required style={{ width: '100%', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.15)', padding: '11px 14px', borderRadius: '10px', color: 'white', fontSize: '14px' }} />
+                                            </div>
+                                            <div>
+                                                <label style={{ display: 'block', fontSize: '11px', fontWeight: 800, color: 'rgba(255,255,255,0.7)', textTransform: 'uppercase', marginBottom: '6px', letterSpacing: '0.5px' }}>Property Type</label>
+                                                <select name="propertyType" required style={{ width: '100%', background: '#0a1628', border: '1px solid rgba(255,255,255,0.15)', padding: '11px 14px', borderRadius: '10px', color: 'white', fontSize: '14px' }}>
+                                                    <option value="Boutique Hotel">Boutique Hotel</option>
+                                                    <option value="Luxury Hotel">Luxury Hotel</option>
+                                                    <option value="Design Hostel">Design Hostel</option>
+                                                    <option value="Resort / Retreat">Resort / Retreat</option>
+                                                    <option value="Independent Property">Independent Property</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <label style={{ display: 'block', fontSize: '11px', fontWeight: 800, color: 'rgba(255,255,255,0.7)', textTransform: 'uppercase', marginBottom: '6px', letterSpacing: '0.5px' }}>Website or Booking.com URL</label>
+                                            <input type="text" name="websiteUrl" placeholder="https://..." style={{ width: '100%', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.15)', padding: '11px 14px', borderRadius: '10px', color: 'white', fontSize: '14px' }} />
+                                        </div>
+
+                                        <div>
+                                            <label style={{ display: 'block', fontSize: '11px', fontWeight: 800, color: 'rgba(255,255,255,0.7)', textTransform: 'uppercase', marginBottom: '6px', letterSpacing: '0.5px' }}>Note / Why Your Property is a Good Fit</label>
+                                            <textarea name="message" rows="3" placeholder="Tell us about your property's character and target guests" style={{ width: '100%', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.15)', padding: '11px 14px', borderRadius: '10px', color: 'white', fontSize: '14px', resize: 'vertical' }}></textarea>
+                                        </div>
+
+                                        <button 
+                                            type="submit" 
+                                            disabled={loading} 
+                                            style={{ 
+                                                marginTop: '6px', 
+                                                width: '100%', 
+                                                padding: '14px',
+                                                background: 'linear-gradient(135deg, #00e5ff 0%, #0284c7 100%)',
+                                                color: '#050b14',
+                                                fontWeight: 900,
+                                                fontSize: '1rem',
+                                                border: 'none',
+                                                borderRadius: '12px',
+                                                cursor: 'pointer',
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                justifyContent: 'center',
+                                                gap: '10px',
+                                                boxShadow: '0 8px 25px rgba(0, 229, 255, 0.3)'
+                                            }}
+                                        >
                                             <Sparkles size={18} />
-                                            {loading ? 'Submitting Application...' : 'Register Interest & Become a Partner'}
+                                            {loading ? 'Submitting Application...' : 'Apply for Free 3-Month Beta Cohort'}
                                             <ArrowRight size={18} />
                                         </button>
                                     </form>
                                 </>
                             ) : (
-                                <div style={{ textAlign: 'center', padding: '3rem 1rem' }}>
-                                    <div style={{ width: '64px', height: '64px', borderRadius: '50%', background: 'rgba(16, 185, 129, 0.15)', border: '2px solid #10b981', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.5rem auto' }}>
-                                        <CheckCircle2 size={36} color="#10b981" />
+                                <div style={{ textAlign: 'center', padding: '3.5rem 1rem' }}>
+                                    <div style={{ width: '68px', height: '68px', borderRadius: '50%', background: 'rgba(16, 185, 129, 0.15)', border: '2px solid #10b981', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.5rem auto' }}>
+                                        <CheckCircle2 size={38} color="#10b981" />
                                     </div>
-                                    <h3 style={{ fontSize: '2rem', marginBottom: '1rem', color: '#ffffff', fontWeight: 900 }}>Application Received</h3>
-                                    <p style={{ color: 'rgba(255,255,255,0.7)', lineHeight: 1.6, maxWidth: '420px', margin: '0 auto' }}>
-                                        Thank you for registering your interest. Our partnership team will review your property profile and reach out within 24 hours
+                                    <h3 style={{ fontSize: '2rem', marginBottom: '1rem', color: '#ffffff', fontWeight: 900 }}>
+                                        Beta Application Received
+                                    </h3>
+                                    <p style={{ color: 'rgba(255,255,255,0.75)', lineHeight: 1.6, maxWidth: '420px', margin: '0 auto' }}>
+                                        Thank you for applying. We are reviewing properties for our 5-hotel beta cohort and will reach out directly within 24 hours
                                     </p>
                                 </div>
                             )}

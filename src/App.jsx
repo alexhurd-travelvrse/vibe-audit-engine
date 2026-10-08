@@ -7,7 +7,6 @@ import VibeDimensionsSection from './components/VibeDimensionsSection';
 import HookTeaserSection from './components/HookTeaserSection';
 import DataApiSection from './components/DataApiSection';
 import MarketsSection from './components/MarketsSection';
-import TeamSection from './components/TeamSection';
 import Footer from './components/Footer';
 import MarketplacePage from './pages/MarketplacePage';
 import BarcelonaPage from './pages/BarcelonaPage';
@@ -65,10 +64,7 @@ const B2BHome = () => {
         </>
       )}
       
-      {/* 4. Team */}
-      <TeamSection />
-      
-      {/* 5. Footer */}
+      {/* 4. Footer */}
       <Footer />
 
       <AuthModals
