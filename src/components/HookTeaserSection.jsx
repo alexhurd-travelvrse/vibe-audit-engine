@@ -1,11 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Sparkles, ArrowRight, Compass, Zap, TrendingUp } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import './HookTeaserSection.css';
 
 export default function HookTeaserSection() {
-  const [photoView, setPhotoView] = useState('compare');
-
   return (
     <section className="hook-teaser-section" id="how-we-use-it">
       <div className="container">
@@ -17,7 +15,7 @@ export default function HookTeaserSection() {
             <span>HOW WE USE VIBE SIGNATURES</span>
           </div>
           <h2 className="teaser-title">
-            <span className="text-gold-gradient">Stop Being Commoditised</span>
+            <span className="text-gold-gradient">Become the Gateway to Your Neighbourhood</span>
           </h2>
           <p className="teaser-description">
             74% of Next-Gen travelers book local experiences before a hotel. AtmosVibe uses your Vibe Signature to ensure you are showcasing what makes you unique based on local demand. Across all channels
@@ -36,7 +34,6 @@ export default function HookTeaserSection() {
 
             <div className="tier-content">
               <h3 className="tier-heading">Optimise Your OTA Photos</h3>
-              <p className="tier-subtext">Maps neighbourhood search demand to your unique features</p>
 
               {/* Visual Interactive Showcase: 5-Photo Strip + Headline Vibe Signature */}
               <div className="visual-photo-reorder">
@@ -53,213 +50,82 @@ export default function HookTeaserSection() {
                   <span className="pulse-text">Trending in your area: <strong>Riverside terrace &amp; artisan social spots</strong></span>
                 </div>
 
-                {/* Before & After Collage Mode Switcher */}
-                <div className="photo-mode-switcher">
-                  <button 
-                    type="button" 
-                    className={`mode-btn ${photoView === 'compare' ? 'active' : ''}`}
-                    onClick={() => setPhotoView('compare')}
-                  >
-                    Compare Both
-                  </button>
-                  <button 
-                    type="button" 
-                    className={`mode-btn ${photoView === 'after' ? 'active' : ''}`}
-                    onClick={() => setPhotoView('after')}
-                  >
-                    After: Local Gateway Hook
-                  </button>
-                  <button 
-                    type="button" 
-                    className={`mode-btn ${photoView === 'before' ? 'active' : ''}`}
-                    onClick={() => setPhotoView('before')}
-                  >
-                    Before: Generic Rooms
-                  </button>
-                </div>
-
-                {/* 1. SIDE-BY-SIDE BEFORE & AFTER COLLAGE (DEFAULT) */}
-                {photoView === 'compare' && (
-                  <div className="before-after-collage-row">
+                {/* Side-by-Side Before & After Comparison Containers */}
+                <div className="before-after-collage-row">
+                  
+                  {/* Before Card: Standard Rooms & Features */}
+                  <div className="collage-card before-card">
+                    <div className="collage-card-header before-header">
+                      <span className="collage-badge before-badge">BEFORE: ROOMS &amp; FEATURES</span>
+                    </div>
                     
-                    {/* Before Card: Commoditised Rooms & Features */}
-                    <div className="collage-card before-card">
-                      <div className="collage-card-header before-header">
-                        <span className="collage-badge before-badge">BEFORE: ROOMS &amp; FEATURES</span>
-                      </div>
-                      
-                      <div className="collage-hero-wrap">
-                        <img 
-                          src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=600&q=80" 
-                          alt="Before: Generic Standard Bed" 
-                          className="collage-hero-img desaturated"
-                        />
-                        <div className="collage-slot-tag before-slot-tag">Slot #1: Standard Bed</div>
-                        <div className="collage-status-tag before-status-tag">Commoditised</div>
-                      </div>
+                    <div className="collage-hero-wrap">
+                      <img 
+                        src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=600&q=80" 
+                        alt="Before: Generic Standard Bed" 
+                        className="collage-hero-img desaturated"
+                      />
+                      <div className="collage-slot-tag before-slot-tag">Slot #1: Standard Bed</div>
+                      <div className="collage-status-tag before-status-tag">Standard Listing</div>
+                    </div>
 
-                      <div className="collage-thumbs-strip">
-                        <div className="collage-thumb-item">
-                          <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=300&q=80" alt="Slot 2 Bathroom" />
-                          <span className="thumb-cap">#2 En-Suite</span>
-                        </div>
-                        <div className="collage-thumb-item">
-                          <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=300&q=80" alt="Slot 3 Desk" />
-                          <span className="thumb-cap">#3 Desk</span>
-                        </div>
-                        <div className="collage-thumb-item">
-                          <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=300&q=80" alt="Slot 4 Corridor" />
-                          <span className="thumb-cap">#4 Corridor</span>
-                        </div>
+                    <div className="collage-thumbs-strip">
+                      <div className="collage-thumb-item">
+                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=300&q=80" alt="Slot 2 Bathroom" />
+                        <span className="thumb-cap">#2 En-Suite</span>
                       </div>
-
-                      <div className="collage-verdict before-verdict">
-                        <span>Majors on interior utility · Ignores local search demand</span>
+                      <div className="collage-thumb-item">
+                        <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=300&q=80" alt="Slot 3 Desk" />
+                        <span className="thumb-cap">#3 Desk</span>
+                      </div>
+                      <div className="collage-thumb-item">
+                        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=300&q=80" alt="Slot 4 Corridor" />
+                        <span className="thumb-cap">#4 Corridor</span>
                       </div>
                     </div>
 
-                    {/* After Card: Local Gateway Hook */}
-                    <div className="collage-card after-card">
-                      <div className="collage-card-header after-header">
-                        <span className="collage-badge after-badge">AFTER: LOCAL GATEWAY HOOK</span>
-                      </div>
-
-                      <div className="collage-hero-wrap">
-                        <img 
-                          src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=600&q=80" 
-                          alt="After: Riverside Gateway Terrace" 
-                          className="collage-hero-img vibrant"
-                        />
-                        <div className="collage-slot-tag after-slot-tag">Slot #1: Riverside Terrace</div>
-                        <div className="collage-status-tag after-status-tag">+4.2s Dwell</div>
-                      </div>
-
-                      <div className="collage-thumbs-strip">
-                        <div className="collage-thumb-item">
-                          <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=300&q=80" alt="Slot 2 Artisan Social Bar" />
-                          <span className="thumb-cap">#2 Social Bar</span>
-                        </div>
-                        <div className="collage-thumb-item">
-                          <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=300&q=80" alt="Slot 3 Maritime Glamour" />
-                          <span className="thumb-cap">#3 Maritime</span>
-                        </div>
-                        <div className="collage-thumb-item">
-                          <img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=300&q=80" alt="Slot 4 Sunset River" />
-                          <span className="thumb-cap">#4 Sunset</span>
-                        </div>
-                      </div>
-
-                      <div className="collage-verdict after-verdict">
-                        <span>Directly matches Maritime Buzz &amp; Riverside terrace demand</span>
-                      </div>
-                    </div>
-
-                  </div>
-                )}
-
-                {/* 2. FULL AFTER VIEW (DETAILED 5-SLOT GATEWAY GALLERY) */}
-                {photoView === 'after' && (
-                  <div className="full-view-container animate-fade-in">
-                    <div className="reorder-hero-slot after-hero-glow">
-                      <div className="hero-img-wrap">
-                        <img 
-                          src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=800&q=80" 
-                          alt="Slot 1 Riverside Terrace" 
-                          className="hero-img"
-                        />
-                        <div className="hero-slot-badge-left">
-                          <Zap size={11} />
-                          <span>SLOT #1: RIVERSIDE TERRACE (GATEWAY HOOK)</span>
-                        </div>
-                        <div className="hero-slot-badge-right">
-                          <TrendingUp size={11} />
-                          <span>+4.2s Dwell Time</span>
-                        </div>
-                        <div className="hero-slot-caption">
-                          <span>Stops the scroll by matching local demand: "Riverside terrace &amp; artisan social spots"</span>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="reorder-thumbnails-row">
-                      <div className="reorder-thumb-item">
-                        <div className="thumb-img-wrap">
-                          <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=300&q=80" alt="Slot 2 Artisan Social Bar" />
-                          <span className="thumb-badge">#2 Artisan Social Bar</span>
-                        </div>
-                      </div>
-                      <div className="reorder-thumb-item">
-                        <div className="thumb-img-wrap">
-                          <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=300&q=80" alt="Slot 3 Maritime Glamour" />
-                          <span className="thumb-badge">#3 Maritime Glamour</span>
-                        </div>
-                      </div>
-                      <div className="reorder-thumb-item">
-                        <div className="thumb-img-wrap">
-                          <img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=300&q=80" alt="Slot 4 Sunset River" />
-                          <span className="thumb-badge">#4 Thameside Sunset</span>
-                        </div>
-                      </div>
-                      <div className="reorder-thumb-item">
-                        <div className="thumb-img-wrap">
-                          <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=300&q=80" alt="Slot 5 River-View Suite" />
-                          <span className="thumb-badge">#5 River-View Suite</span>
-                        </div>
-                      </div>
+                    <div className="collage-verdict before-verdict">
+                      <span>Majors on interior utility · Ignores local search demand</span>
                     </div>
                   </div>
-                )}
 
-                {/* 3. FULL BEFORE VIEW (COMMODITISED ROOMS & FEATURES) */}
-                {photoView === 'before' && (
-                  <div className="full-view-container animate-fade-in">
-                    <div className="reorder-hero-slot before-hero-muted">
-                      <div className="hero-img-wrap">
-                        <img 
-                          src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=800&q=80" 
-                          alt="Slot 1 Standard Bed" 
-                          className="hero-img desaturated"
-                        />
-                        <div className="hero-slot-badge-left before-badge-left">
-                          <span>SLOT #1: STANDARD BED</span>
-                        </div>
-                        <div className="hero-slot-badge-right before-badge-right">
-                          <span>0 Local Hook</span>
-                        </div>
-                        <div className="hero-slot-caption">
-                          <span>Commoditised bedroom shot that blends into every chain hotel gallery</span>
-                        </div>
+                  {/* After Card: Local Gateway Hook */}
+                  <div className="collage-card after-card">
+                    <div className="collage-card-header after-header">
+                      <span className="collage-badge after-badge">AFTER: LOCAL GATEWAY HOOK</span>
+                    </div>
+
+                    <div className="collage-hero-wrap">
+                      <img 
+                        src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=600&q=80" 
+                        alt="After: Riverside Gateway Terrace" 
+                        className="collage-hero-img vibrant"
+                      />
+                      <div className="collage-slot-tag after-slot-tag">Slot #1: Riverside Terrace</div>
+                      <div className="collage-status-tag after-status-tag">+4.2s Dwell</div>
+                    </div>
+
+                    <div className="collage-thumbs-strip">
+                      <div className="collage-thumb-item">
+                        <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=300&q=80" alt="Slot 2 Artisan Social Bar" />
+                        <span className="thumb-cap">#2 Social Bar</span>
+                      </div>
+                      <div className="collage-thumb-item">
+                        <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=300&q=80" alt="Slot 3 Maritime Glamour" />
+                        <span className="thumb-cap">#3 Maritime</span>
+                      </div>
+                      <div className="collage-thumb-item">
+                        <img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=300&q=80" alt="Slot 4 Sunset River" />
+                        <span className="thumb-cap">#4 Sunset</span>
                       </div>
                     </div>
 
-                    <div className="reorder-thumbnails-row">
-                      <div className="reorder-thumb-item">
-                        <div className="thumb-img-wrap">
-                          <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=300&q=80" alt="Slot 2 Bathroom" className="desaturated" />
-                          <span className="thumb-badge">#2 En-Suite Bathroom</span>
-                        </div>
-                      </div>
-                      <div className="reorder-thumb-item">
-                        <div className="thumb-img-wrap">
-                          <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=300&q=80" alt="Slot 3 Desk" className="desaturated" />
-                          <span className="thumb-badge">#3 Work Desk &amp; Chair</span>
-                        </div>
-                      </div>
-                      <div className="reorder-thumb-item">
-                        <div className="thumb-img-wrap">
-                          <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=300&q=80" alt="Slot 4 Corridor" className="desaturated" />
-                          <span className="thumb-badge">#4 Hotel Corridor</span>
-                        </div>
-                      </div>
-                      <div className="reorder-thumb-item">
-                        <div className="thumb-img-wrap">
-                          <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=300&q=80" alt="Slot 5 Generic Room" className="desaturated" />
-                          <span className="thumb-badge">#5 Generic Room</span>
-                        </div>
-                      </div>
+                    <div className="collage-verdict after-verdict">
+                      <span>Directly matches Maritime Buzz &amp; Riverside terrace demand</span>
                     </div>
                   </div>
-                )}
+
+                </div>
 
               </div>
             </div>
@@ -281,7 +147,6 @@ export default function HookTeaserSection() {
 
             <div className="tier-content">
               <h3 className="tier-heading">Stand Out Across All Channels</h3>
-              <p className="tier-subtext">Scale your local gateway positioning to maximise bookings across OTAs, your website, social media, and AI search</p>
 
               {/* Distribution Channel Pill Strip */}
               <div className="channel-distribution-strip">
