@@ -11,6 +11,23 @@
   margin: 0 auto 2.75rem auto;
 }
 
+.vibe-dimensions-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 16px;
+  background: rgba(0, 229, 255, 0.08);
+  border: 1px solid rgba(0, 229, 255, 0.22);
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  color: var(--color-cyan-neon, #00e5ff);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
 .vibe-dimensions-title {
   font-size: clamp(2rem, 4vw, 2.85rem);
   font-weight: 800;
@@ -26,24 +43,38 @@
   margin: 0 auto;
 }
 
-/* 5 Dimensions Grid */
+/* 7 Dimensions Grid */
 .dimensions-grid {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   gap: 1.1rem;
-  max-width: 1140px;
-  margin: 0 auto 2rem auto;
+  max-width: 1180px;
+  margin: 0 auto 2.25rem auto;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 540px) {
   .dimensions-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 820px) {
   .dimensions-grid {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1080px) {
+  .dimensions-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.1rem;
+  }
+
+  .dimensions-grid .dimension-card {
+    width: calc(25% - 0.85rem);
+    flex: 0 0 calc(25% - 0.85rem);
   }
 }
 
@@ -91,85 +122,194 @@
 }
 
 .dim-title {
-  font-size: 1.05rem;
+  font-size: 0.98rem;
   font-weight: 700;
   color: #ffffff;
-  margin: 0 0 0.45rem 0;
+  margin: 0 0 0.75rem 0;
 }
 
-.dim-desc {
-  font-size: 0.84rem;
-  color: rgba(230, 241, 255, 0.68);
-  line-height: 1.45;
-  margin: 0;
+/* Micro-Visual Widget Container */
+.dim-visual-container {
+  margin-top: auto;
 }
 
-/* Synthesis Anchor Bar */
-.vibe-synthesis-bar {
-  max-width: 1140px;
-  margin: 0 auto;
-  background: rgba(8, 14, 24, 0.85);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(218, 165, 32, 0.32);
-  border-radius: 14px;
-  padding: 1rem 1.4rem;
+.vibe-visual-widget {
+  background: rgba(5, 10, 18, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 0.65rem 0.75rem;
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
-  align-items: flex-start;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 215, 0, 0.05);
+  gap: 0.45rem;
 }
 
-@media (min-width: 768px) {
-  .vibe-synthesis-bar {
-    flex-direction: row;
-    align-items: center;
-    gap: 1.25rem;
-  }
+.widget-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 4px;
 }
 
-.synthesis-badge {
+.widget-metric {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.widget-caption {
+  font-size: 0.68rem;
+  color: rgba(230, 241, 255, 0.6);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 1. Sound Widget: Equalizer Bars */
+.audio-spectrum-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  height: 20px;
+  padding: 2px 0;
+}
+
+.audio-spectrum-bars .bar {
+  flex: 1;
+  background: linear-gradient(180deg, #00e5ff 0%, #0284c7 100%);
+  border-radius: 3px;
+  animation: audio-bounce 1.6s ease-in-out infinite alternate;
+}
+
+.bar-1 { height: 40%; animation-delay: 0.1s; }
+.bar-2 { height: 75%; animation-delay: 0.3s; }
+.bar-3 { height: 95%; animation-delay: 0.5s; }
+.bar-4 { height: 60%; animation-delay: 0.2s; }
+.bar-5 { height: 85%; animation-delay: 0.4s; }
+.bar-6 { height: 50%; animation-delay: 0.6s; }
+
+@keyframes audio-bounce {
+  0% { transform: scaleY(0.5); }
+  100% { transform: scaleY(1); }
+}
+
+/* 2. People Dial Widget: Locals / Traveler Split */
+.split-dial-bar {
+  display: flex;
+  height: 20px;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  font-size: 0.62rem;
+  font-weight: 800;
+  line-height: 20px;
+  text-align: center;
+}
+
+.locals-seg {
+  background: linear-gradient(90deg, #0284c7 0%, #38bdf8 100%);
+  color: #050b14;
+}
+
+.travelers-seg {
+  background: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* 3. Colours Swatches */
+.swatch-strip {
+  display: flex;
+  gap: 6px;
+  height: 20px;
+  align-items: center;
+}
+
+.swatch {
+  flex: 1;
+  height: 18px;
+  border-radius: 4px;
+  border: 1px solid;
+  transition: transform 0.2s ease;
+}
+
+.swatch:hover {
+  transform: scale(1.1);
+}
+
+.swatch-amber { background: #26170d; border-color: #ffb300; box-shadow: 0 0 8px rgba(255, 179, 0, 0.3); }
+.swatch-navy  { background: #0b192e; border-color: #38bdf8; }
+.swatch-brass { background: #b8924b; border-color: #ffd700; box-shadow: 0 0 8px rgba(255, 215, 0, 0.25); }
+.swatch-stone { background: #e0d8cc; border-color: #ffffff; }
+
+/* 4. Energy Sparkline */
+.pulse-sparkline {
+  height: 22px;
+  display: flex;
+  align-items: center;
+}
+
+.sparkline-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+/* 5. Insider Tips Widget */
+.secret-pill {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 4px 10px;
+  gap: 5px;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  color: #34d399;
+  padding: 2px 8px;
   border-radius: 6px;
-  background: rgba(255, 215, 0, 0.12);
-  border: 1px solid rgba(255, 215, 0, 0.35);
-  font-size: 0.7rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  color: var(--color-gold, #ffd700);
+  font-size: 0.65rem;
+  font-weight: 700;
+  width: fit-content;
+}
+
+.pin-icon {
   flex-shrink: 0;
 }
 
-.synthesis-sparkle {
-  color: var(--color-gold, #ffd700);
-}
-
-.synthesis-content {
+/* 6. Authenticity Widget */
+.auth-score-bar {
   display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
+  align-items: center;
+  gap: 8px;
+  height: 20px;
 }
 
-@media (min-width: 768px) {
-  .synthesis-content {
-    flex-direction: row;
-    align-items: baseline;
-    gap: 0.85rem;
-  }
+.auth-score-bar .auth-fill {
+  height: 8px;
+  background: linear-gradient(90deg, #9333ea 0%, #a855f7 100%);
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(168, 85, 247, 0.4);
 }
 
-.synthesis-quote {
-  font-size: 1rem;
+.auth-num {
+  font-size: 0.72rem;
   font-weight: 800;
-  color: #ffffff;
-  font-style: italic;
-  letter-spacing: 0.01em;
+  color: #c084fc;
 }
 
-.synthesis-note {
-  font-size: 0.84rem;
-  color: rgba(230, 241, 255, 0.7);
+/* 7. Proximity Widget */
+.proximity-pills {
+  display: flex;
+  gap: 5px;
+  height: 20px;
+  align-items: center;
 }
+
+.prox-pill {
+  font-size: 0.62rem;
+  font-weight: 700;
+  background: rgba(236, 72, 153, 0.12);
+  border: 1px solid rgba(236, 72, 153, 0.32);
+  color: #f472b6;
+  padding: 2px 6px;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+
+
