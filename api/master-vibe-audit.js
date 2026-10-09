@@ -728,7 +728,7 @@ export async function lookupHotelCandidates(hotelName, city = '', neighborhood =
 }
 
 // Live Booking.com direct scraper via Playwright (with Serper fallback & strict disambiguation)
-export async function fetchBookingPhotosForHotel(hotelName, city, neighborhood = '', directBookingUrl = null, bookingId = null) {
+export async function fetchBookingPhotosForHotel(hotelName, city, neighborhood = '', directBookingUrl = null, bookingId = null, depth = 0) {
   try {
     const locationContext = neighborhood && neighborhood.trim() ? `${neighborhood.trim()} ${city}` : city;
     let cleanUrl = null;
@@ -775,11 +775,21 @@ export async function fetchBookingPhotosForHotel(hotelName, city, neighborhood =
         ]).catch(() => {});
 
         const page = await context.newPage();
-        await page.goto(cleanUrl, { waitUntil: 'domcontentloaded', timeout: 15000 }).catch(err => {
+        await page.goto(cleanUrl, { waitUntil: 'domcontentloaded', timeout: 20000 }).catch(err => {
           console.warn('[Master Vibe] Playwright navigation warning:', err.message);
         });
-        await page.waitForLoadState('networkidle', { timeout: 4000 }).catch(() => {});
-        await page.waitForTimeout(1000);
+
+        // Handle AWS WAF / Bot challenge if encountered
+        const initialHtml = await page.content().catch(() => '');
+        if (initialHtml.includes('challenge.js') || initialHtml.includes('awsWaf')) {
+          console.log('[Master Vibe] AWS WAF challenge detected. Waiting for challenge redirect...');
+          await page.waitForURL(url => url.toString().includes('chal_t='), { timeout: 15000 }).catch(() => {});
+          await page.waitForLoadState('domcontentloaded', { timeout: 10000 }).catch(() => {});
+          await page.waitForTimeout(2000);
+        } else {
+          await page.waitForLoadState('networkidle', { timeout: 4000 }).catch(() => {});
+          await page.waitForTimeout(1000);
+        }
 
         const extractPhotos = () => {
           const list = [];
@@ -858,6 +868,40 @@ export async function fetchBookingPhotosForHotel(hotelName, city, neighborhood =
           photos = await page.evaluate(extractPhotos).catch(() => []);
         }
 
+        // Resilient HTML regex fallback if DOM images were lazy-loaded or virtualized
+        if (!photos || photos.length < 5) {
+          try {
+            const finalHtml = await page.content().catch(() => '');
+            if (finalHtml && finalHtml.includes('bstatic.com')) {
+              const bstaticRegex = /https?:\/\/[a-z0-9.]*bstatic\.com\/xdata\/images\/hotel\/[^\s"'>\\]+/g;
+              const bstaticMatches = finalHtml.match(bstaticRegex) || [];
+              const regexList = [];
+              const seen = new Set((photos || []).map(p => p.photoId));
+              for (const m of bstaticMatches) {
+                const clean = m.replace(/\\u002F/g, '/').split('?')[0];
+                const photoIdMatch = clean.match(/\/(\d+)\.jpg/);
+                const photoId = photoIdMatch ? photoIdMatch[1] : clean;
+                if (!seen.has(photoId) && clean.endsWith('.jpg')) {
+                  seen.add(photoId);
+                  const highRes = clean.replace(/\/max\d+x\d+\//, '/max1024x768/').replace(/\/max\d+\//, '/max1024x768/');
+                  regexList.push({
+                    title: 'Booking.com Gallery Photo',
+                    imageUrl: highRes,
+                    photoId: photoId,
+                    sourceUrl: cleanUrl
+                  });
+                }
+              }
+              if (regexList.length > 0) {
+                photos = (photos || []).concat(regexList);
+                console.log(`[Master Vibe] Resilient HTML parser hydrated ${regexList.length} authentic Booking.com photos.`);
+              }
+            }
+          } catch (regexErr) {
+            console.warn('[Master Vibe] HTML regex fallback notice:', regexErr.message);
+          }
+        }
+
         await browser.close();
         browser = null;
 
@@ -872,15 +916,19 @@ export async function fetchBookingPhotosForHotel(hotelName, city, neighborhood =
           }));
         } else {
           console.log(`[Master Vibe] URL "${cleanUrl}" returned 0 or insufficient photos (${photos.length}).`);
-          // If cleanUrl was an ID redirect or direct attempt that failed, fall back to searching candidates by name & city!
-          if (cleanUrl.includes('hotel_id=') || cleanUrl.includes('.html')) {
+          // If cleanUrl was an ID redirect or direct attempt that failed, fall back to searching candidates by name & city (max 1 retry)!
+          if (depth === 0 && (cleanUrl.includes('hotel_id=') || cleanUrl.includes('.html'))) {
             console.log(`[Master Vibe] Attempting candidate discovery fallback for "${hotelName}" in "${city}"...`);
             const fallbackLookup = await lookupHotelCandidates(hotelName, city, neighborhood, null, null);
-            if (fallbackLookup?.selected?.url && fallbackLookup.selected.url !== cleanUrl && !fallbackLookup.selected.url.includes('hotel.html?hotel_id=')) {
+            const cleanUrlBase = cleanUrl.split('?')[0].replace(/\/+$/, '').toLowerCase();
+            const fallbackBase = (fallbackLookup?.selected?.url || '').split('?')[0].replace(/\/+$/, '').toLowerCase();
+            if (fallbackLookup?.selected?.url && fallbackBase && fallbackBase !== cleanUrlBase && !fallbackLookup.selected.url.includes('hotel.html?hotel_id=')) {
               console.log(`[Master Vibe] Retrying photo scrape with fallback URL: ${fallbackLookup.selected.url}`);
-              return await fetchBookingPhotosForHotel(hotelName, city, neighborhood, fallbackLookup.selected.url, null);
+              return await fetchBookingPhotosForHotel(hotelName, city, neighborhood, fallbackLookup.selected.url, null, depth + 1);
             }
           }
+          console.log(`[Master Vibe] Live Booking.com direct scrape yielded 0 photos. Gracefully proceeding to verified amenity & official media pool.`);
+          return [];
         }
       } catch (browserErr) {
         console.warn('[Master Vibe] Headless browser scrape warning:', browserErr.message);
@@ -2063,7 +2111,7 @@ export async function resolveAuditPhotos(hotelName, city, neighborhood = '', str
   console.log(`[Photo Gatekeeper] Starting visual asset resolution for "${hotelName}" in "${city}"${bookingUrl ? ` (Direct URL: ${bookingUrl})` : ''}...`);
   
   // 1. Fetch live Booking.com photos (Playwright) if not already prefetched
-  const liveBookingPhotos = (Array.isArray(prefetchedLivePhotos) && prefetchedLivePhotos.length > 0)
+  const liveBookingPhotos = Array.isArray(prefetchedLivePhotos)
     ? prefetchedLivePhotos
     : await fetchBookingPhotosForHotel(hotelName, city, neighborhood, bookingUrl);
 
@@ -2100,7 +2148,7 @@ export async function resolveAuditPhotos(hotelName, city, neighborhood = '', str
     }
   }
 
-  const isListedOnBooking = poolLive.length >= 3;
+  const isListedOnBooking = (poolLive.length >= 3) || Boolean(bookingUrl && (bookingUrl.includes('booking.com') || bookingUrl.includes('hotel/')));
   // Strict OTA Reorder Guard: If property has >= 5 live photos on Booking.com, recommendations MUST be 100% executable within Booking.com Extranet
   const useStrictBookingReorder = poolLive.length >= 5;
   const effectiveAmenityPool = useStrictBookingReorder ? [] : poolAmenity;
@@ -3653,12 +3701,10 @@ export default async function handler(req, res) {
         return manifestResult;
       }
 
-      // Full Audit Pipeline: Parallel Ingestion of Venue Corpus and Booking.com Gallery
-      console.log(`[Master Vibe API] 1 & 2) Parallel Ingestion: Harvesting venue intelligence & live Booking.com gallery concurrently for "${hotelName}"...`);
-      const [corpusData, liveBookingPhotos] = await Promise.all([
-        fetchVenueCorpus(hotelName, city, neighborhood),
-        fetchBookingPhotosForHotel(hotelName, city, neighborhood, bookingUrl, bookingId)
-      ]);
+      // Step 1: Harvest venue intelligence & calibrate city
+      const locationContext = neighborhood && neighborhood.trim() ? `${neighborhood.trim()} ${city}` : city;
+      console.log(`[Master Vibe API] 1) Harvest: Fetching rich venue corpus & amenities for "${hotelName}" in "${locationContext}"...`);
+      const corpusData = await fetchVenueCorpus(hotelName, city, neighborhood);
       const rawCorpus = corpusData.rawCorpus;
 
       if (corpusData.verifiedCity) {
@@ -3670,6 +3716,10 @@ export default async function handler(req, res) {
           manifestKey = getResolutionKey(hotelName, city, neighborhood, bookingUrl || bookingId);
         }
       }
+
+      // Step 2: Discover verified live Booking.com photos sequentially
+      console.log(`[Master Vibe API] 2) Discover: Fetching verified Booking.com room photos for "${hotelName}" in "${city}"...`);
+      const liveBookingPhotos = await fetchBookingPhotosForHotel(hotelName, city, neighborhood, bookingUrl, bookingId);
       
       let amenityPhotos = [];
       if (!liveBookingPhotos || liveBookingPhotos.length === 0) {

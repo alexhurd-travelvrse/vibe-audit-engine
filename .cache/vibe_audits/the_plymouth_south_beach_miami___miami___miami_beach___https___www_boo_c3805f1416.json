@@ -1,0 +1,272 @@
+{
+  "key": "the plymouth south beach miami:::miami:::miami beach:::https://www.booking.com/hotel/us/the-plymouth-miami-beach.html:::manifest_only",
+  "timestamp": 1791555038209,
+  "data": {
+    "venue_id": "the_plymouth_south_beach_miami",
+    "venue_name": "The Plymouth South Beach Miami",
+    "location": "Miami Beach, Miami",
+    "vibe_signature": {
+      "energy_score": 78,
+      "social_pacing": "Vibrant yet Relaxed",
+      "headline": "Art Deco Charm Meets Modern Miami Vibe with a Culinary Edge",
+      "acoustic_dna": {
+        "soundscape_genre": "Loungey Indie Pop & Chillwave",
+        "anchor_artists": [
+          "Khruangbin",
+          "Bon Iver",
+          "Glass Animals"
+        ],
+        "spotify_query": "spotify:playlist:37i9dQZF1DXcBWIGoYBM5M",
+        "sound_texture": "Smooth, atmospheric, with a subtle rhythmic pulse",
+        "conversation_clarity_score": 85,
+        "conversation_verdict": "Effortless Chat & Lively Banter",
+        "decibel_level": "68 dB (Lively Social Hum)"
+      },
+      "crowd_archetype": {
+        "primary": "Cosmopolitan Creatives & Savvy Travelers",
+        "social_density": "Comfortably Buzzing",
+        "dress_code": "Smart Casual to Chic Evening Wear",
+        "energy_verdict": "High Banter & Neighborhood Sanctuary",
+        "local_ratio": 65,
+        "tourist_ratio": 35,
+        "tourist_trap_verdict": "Curated Neighborhood Haven"
+      },
+      "lighting_and_sensory": {
+        "atmosphere": "Sophisticated Art Deco Glamour with Tropical Touches",
+        "sensory_intensity": "Medium-High (Visually Rich, Pleasantly Aromatic)",
+        "lighting_temperature": "2700K Warm Golden Glow & Soft Ambient Uplighting"
+      },
+      "hyper_local_proximity": {
+        "key_anchors": [
+          "Blue Ribbon Sushi Bar & Grill",
+          "The Bass Museum of Art",
+          "Miami Beach"
+        ],
+        "insider_lore": "Nestled in a quieter part of South Beach, The Plymouth offers a sophisticated escape while being steps away from cultural gems like The Bass Museum and the vibrant beach scene. Its on-site Blue Ribbon Sushi is a local favorite."
+      },
+      "qualification_test": {
+        "you_will_love_if": "You appreciate boutique hotels with a distinct design aesthetic, a lively yet relaxed pool scene, and a high-quality culinary offering like Blue Ribbon Sushi. You seek a sophisticated South Beach experience away from the main party strip.",
+        "skip_if": "You prefer large, bustling resorts with extensive amenities, or are looking for a budget-friendly option. If you dislike a vibrant poolside atmosphere or Japanese cuisine, this might not be your ideal fit."
+      },
+      "authenticity_and_materials": {
+        "authenticity_score": 92,
+        "material_palette": "Polished Terrazzo, White Lacquer, Natural Wood Accents, Lush Tropical Greenery, Gold Finishes",
+        "material_verdict": "Art Deco Inspired — Authentic & Refined"
+      },
+      "insider_secrets": {
+        "insider_badge": "Concierge & Local Regular Lore",
+        "off_menu_perk": "Ask the Lobby Bar bartender for their 'Miami Vice' twist, an off-menu cocktail that blends local flavors with a classic.",
+        "secret_lore": "The hotel's oval-shaped lobby is a nod to classic Art Deco design, and if you look closely, you'll find subtle nautical motifs hidden in the decor, a tribute to Miami Beach's maritime history. The best time for a quiet moment in the lobby is late morning.",
+        "secret_title": "The Miami Vice Twist & Hidden Nautical Nods"
+      },
+      "temporal_dynamics": {
+        "best_time_to_visit": "3:00 PM for a relaxed poolside happy hour; 8:00 PM for a vibrant dinner at Blue Ribbon Sushi and a lively lobby bar scene.",
+        "content_readiness": {
+          "aesthetic_subculture": "Art Deco Chic, Tropical Modernism, Culinary Lifestyle",
+          "flattery_note": "The Plymouth's blend of classic Art Deco and modern tropical aesthetics provides a stunning backdrop for sophisticated content creators.",
+          "score": 8.9,
+          "top_creator_spot": "The poolside cabanas and the Blue Ribbon Sushi dining area.",
+          "verdict": "Highly Instagrammable & Creator-Friendly"
+        },
+        "diurnal_rhythm": {
+          "chilling": {
+            "focus": "Poolside relaxation, quiet lobby moments",
+            "score": 8,
+            "window": "10:00 AM - 4:00 PM"
+          },
+          "playing": {
+            "focus": "Lively happy hour, dinner, and evening cocktails",
+            "score": 8.5,
+            "window": "4:00 PM - 11:00 PM"
+          },
+          "working": {
+            "focus": "Casual meetings in the lobby lounge",
+            "score": 6.5,
+            "window": "9:00 AM - 12:00 PM"
+          }
+        },
+        "peak_atmospheric_window": "Late Afternoon Golden Hour & Evening Culinary Buzz"
+      }
+    },
+    "interactive_quiz_challenge": {
+      "target_scene_id": 101,
+      "scene_name": "The Plymouth Poolside",
+      "mission_title": "South Beach Vibe Check",
+      "question": "The Plymouth South Beach is renowned for its unique blend of design and culinary offerings. Which of these is a key highlight that draws both locals and travelers?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A sprawling golf course and country club"
+        },
+        {
+          "id": "B",
+          "text": "An on-site Michelin-starred French bistro"
+        },
+        {
+          "id": "C",
+          "text": "The Miami Beach outpost of Blue Ribbon Sushi Bar and Grill"
+        },
+        {
+          "id": "D",
+          "text": "A rooftop observatory for stargazing"
+        }
+      ],
+      "correct_option_id": "C",
+      "success_lore_reveal": "Correct! The Blue Ribbon Sushi Bar and Grill is a major draw, offering an exceptional culinary experience that complements the hotel's sophisticated vibe and attracts a discerning crowd.",
+      "reward_badge": "Culinary Connoisseur of South Beach"
+    },
+    "ota_conversion_audit": {
+      "channel": "Booking.com",
+      "before_merchandising_score": 48,
+      "after_merchandising_score": 95,
+      "projected_conversion_uplift": "+21.0%",
+      "current_drop_off_flaw": "Lack of a clear hero image that immediately communicates the hotel's unique culinary and social magnet, leading to generic perception and location anxiety.",
+      "key_strategic_shifts": [
+        "Elevate the iconic Art Deco Courtyard Swimming Pool & Cabanas to Slot #1 to immediately capture Miami Beach's #1 search demand for vibrant yet relaxed poolside experiences.",
+        "Re-sequence the authentic Art Deco exterior facade to Slot #2 to quickly ground location and eliminate booking hesitation after the initial visual hook.",
+        "Showcase the sophisticated Blue Ribbon Sushi Bar & Grill in Slot #4 to highlight the hotel's acclaimed culinary offering, a key differentiator for discerning travelers.",
+        "Introduce a high-quality guest bathroom photo in Slot #5 to confirm luxury finish quality and hygiene, addressing a common conversion drop-off point."
+      ],
+      "optimal_5_photo_sequence": [
+        {
+          "slot": 1,
+          "category": "HERO_CULTURAL_MAGNET",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 1,
+          "photo_subject": "Art Deco Courtyard Swimming Pool & Cabanas",
+          "bullet_points": [
+            "Visual Upgrade: This vibrant, sunlit shot captures the essence of Miami Beach's desired poolside lifestyle with inviting cabanas and lush greenery.",
+            "Local Synergy: Directly aligns with Miami Beach's top search demand for stylish and relaxing pool experiences, a core part of the local subculture.",
+            "Conversion Trigger: Immediately conveys a sense of aspirational leisure and sophisticated relaxation, drawing travelers seeking a quintessential South Beach escape."
+          ],
+          "psychological_conversion_trigger": "Triggers immediate desire for a stylish Miami Beach getaway by showcasing the hotel's vibrant and relaxing pool as a central experience.",
+          "action": "HERO_CULTURAL_MAGNET",
+          "action_label": "⚡ HERO CULTURAL MAGNET: ART DECO COURTYARD SWIMMING POOL & CABANAS (SLOT #1)",
+          "current_slot": 1,
+          "local_vibe_connection": "Directly connects to Miami Beach's core identity as a destination for chic poolside leisure and vibrant social scenes.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #1): This photo, already the hero, is perfectly suited to remain in Slot #1 as it embodies the hotel's primary cultural magnet for Miami Beach travelers.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 2,
+          "category": "EXTERIOR_LANDMARK",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 2,
+          "photo_subject": "Art Deco Exterior Facade & Entrance",
+          "bullet_points": [
+            "Strategic Placement: Immediately follows the hero magnet, grounding the property geographically and showcasing its iconic Art Deco architecture.",
+            "Local Synergy: Highlights the hotel's authentic Art Deco heritage, a key architectural subculture of Miami Beach.",
+            "Conversion Trigger: Resolves location anxiety and reinforces the hotel's unique sense of place within the historic district."
+          ],
+          "psychological_conversion_trigger": "Provides essential geographic context and architectural appeal, confirming the hotel's prime location and aesthetic.",
+          "action": "RE_SEQUENCE",
+          "action_label": "EXTERIOR LANDMARK (SLOT #2 - MANDATORY GROUNDING)",
+          "current_slot": 2,
+          "local_vibe_connection": "Connects to Miami Beach's renowned Art Deco architectural style, appealing to travelers interested in the area's unique design heritage.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #2): This photo is ideal for Slot #2, providing immediate geographic grounding and showcasing the hotel's iconic Art Deco facade right after the primary cultural magnet.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 3,
+          "category": "SIGNATURE_SUITE_BEDROOM",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 3,
+          "photo_subject": "Signature King Bedroom with Modern Art Deco Touches",
+          "bullet_points": [
+            "Strategic Placement: Showcases the primary accommodation type, emphasizing comfort and the hotel's design aesthetic.",
+            "Local Synergy: Reflects the sophisticated and stylish interior design sought by travelers visiting Miami Beach's boutique hotels.",
+            "Conversion Trigger: Allows potential guests to visualize their stay, highlighting the room's comfort and aesthetic appeal."
+          ],
+          "psychological_conversion_trigger": "Creates a sense of comfort and aspirational living, allowing guests to envision themselves relaxing in a stylish room.",
+          "action": "KEEP",
+          "action_label": "SIGNATURE KING BEDROOM (SLOT #3)",
+          "current_slot": 3,
+          "local_vibe_connection": "Aligns with the desire for chic, well-appointed accommodations that reflect Miami Beach's modern luxury aesthetic.",
+          "upgrade_rationale": "Retaining this photo in Slot #3 effectively presents the hotel's signature accommodation, emphasizing its stylish design and comfort, which is crucial for guest decision-making.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 4,
+          "category": "SOCIAL_FB_ROOFTOP",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 4,
+          "photo_subject": "Blue Ribbon Sushi Bar & Grill Dining Area",
+          "bullet_points": [
+            "Strategic Placement: Highlights a key, acclaimed culinary amenity that is a significant draw for the hotel.",
+            "Local Synergy: Directly addresses Miami's strong culinary scene, particularly the demand for high-quality Japanese cuisine and unique dining experiences.",
+            "Conversion Trigger: Appeals to food-centric travelers and those seeking a complete luxury experience with on-site dining excellence."
+          ],
+          "psychological_conversion_trigger": "Activates culinary desire and reinforces the hotel as a destination for exceptional dining, enhancing the overall value proposition.",
+          "action": "PROMOTE",
+          "action_label": "BLUE RIBBON SUSHI BAR & GRILL (SLOT #4)",
+          "current_slot": 4,
+          "local_vibe_connection": "Connects to Miami Beach's vibrant culinary landscape, specifically its appreciation for high-end Japanese dining and social experiences.",
+          "upgrade_rationale": "This photo effectively showcases the hotel's acclaimed Blue Ribbon Sushi Bar & Grill, a significant amenity that attracts both hotel guests and locals, enhancing the hotel's appeal as a culinary destination.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 5,
+          "category": "SECONDARY_ROOM_BATHROOM",
+          "source_type": "AMENITY_ASSET",
+          "source_index": 1,
+          "photo_subject": "Modern Guest Bathroom with Walk-in Shower & Designer Fixtures",
+          "bullet_points": [
+            "Visual Upgrade: Provides a clear, well-lit view of a luxurious and clean guest bathroom, a critical element for high-ADR travelers.",
+            "Local Synergy: Meets the expectation of modern, high-quality amenities in a sophisticated Miami Beach boutique hotel.",
+            "Conversion Trigger: Addresses hygiene and luxury concerns, assuring guests of the quality and comfort of private facilities."
+          ],
+          "psychological_conversion_trigger": "Reassures guests about the quality, cleanliness, and modern design of the private facilities, a key factor in booking decisions.",
+          "action": "SWAP_IN",
+          "action_label": "SWAP IN MODERN GUEST BATHROOM (SLOT #5)",
+          "current_slot": 15,
+          "local_vibe_connection": "Aligns with the discerning traveler's expectation for pristine and stylish private spaces in a luxury Miami Beach hotel.",
+          "upgrade_rationale": "This amenity asset provides a much-needed visual of a high-quality guest bathroom, which is currently missing from the top live photos. It directly addresses a critical conversion point by showcasing modern fixtures and cleanliness, which is superior to the absence of such imagery.",
+          "photo_url": null,
+          "image_url": null
+        }
+      ],
+      "anti_commodity_copy_rewrite": {
+        "ota_headline": "The Plymouth South Beach: Art Deco Icon with Blue Ribbon Sushi & Vibrant Poolside Charm",
+        "property_overview_150_words": "Experience the quintessential Miami Beach lifestyle at The Plymouth, where historic Art Deco elegance meets modern sophistication. Nestled in a prime location, our boutique hotel offers a vibrant yet relaxed atmosphere centered around a stunning courtyard pool and cabanas. Indulge in world-class Japanese cuisine at the acclaimed Blue Ribbon Sushi Bar & Grill, or unwind with expertly crafted cocktails at our lively lobby bar. With stylish rooms, exceptional service, and easy access to the beach and cultural attractions like The Bass Museum, The Plymouth is your sophisticated sanctuary in South Beach."
+      },
+      "photographic_gap_analysis": [
+        {
+          "missing_shot_title": "Twilight Golden Hour Aperitivo at Poolside Bar",
+          "category": "ATMOSPHERIC_TWILIGHT",
+          "why_needed": "This shot would capture the magical transition from day to evening at the pool, showcasing the vibrant happy hour atmosphere and expertly crafted cocktails, appealing to travelers seeking social and atmospheric experiences.",
+          "recommended_framing_and_lighting": "Wide-angle shot from a slightly elevated position, capturing the warm glow of twilight, illuminated pool, and guests enjoying cocktails. Focus on ambient lighting, reflections on water, and inviting social energy.",
+          "projected_adr_impact": "+10% higher F&B spend and increased evening social bookings."
+        },
+        {
+          "missing_shot_title": "Blue Ribbon Sushi Chef Crafting Signature Rolls",
+          "category": "CULINARY_SOCIAL",
+          "why_needed": "A dynamic shot of the sushi chef in action would emphasize the authenticity and craftsmanship of Blue Ribbon Sushi, appealing to culinary enthusiasts and enhancing the hotel's reputation as a dining destination.",
+          "recommended_framing_and_lighting": "Close-up, eye-level shot of the chef's hands meticulously preparing sushi, with soft, focused lighting on the ingredients and a blurred background of the restaurant's ambiance. Emphasize precision and artistry.",
+          "projected_adr_impact": "+8% direct restaurant bookings and enhanced culinary brand perception."
+        },
+        {
+          "missing_shot_title": "Lobby Bar with Evening Social Buzz & Signature Cocktails",
+          "category": "CULINARY_SOCIAL",
+          "why_needed": "While the lobby bar is mentioned, a dedicated, high-quality photo showcasing its evening ambiance and signature cocktails would attract guests looking for a sophisticated pre-dinner or late-night social spot.",
+          "recommended_framing_and_lighting": "Medium shot capturing the bar area with warm, inviting lighting, showcasing a few guests enjoying drinks, and a clear focus on artfully presented cocktails. Emphasize the intimate yet lively atmosphere.",
+          "projected_adr_impact": "+5% increased evening bar revenue and enhanced guest satisfaction."
+        }
+      ],
+      "conversion_diagnosis": "The Plymouth South Beach has strong inherent appeal with its Art Deco design, acclaimed sushi restaurant, and vibrant pool. However, the current visual merchandising on Booking.com does not fully leverage these unique selling points, leading to a commoditized perception. By strategically re-sequencing and introducing key amenity assets, we can significantly uplift conversion by aligning the visual narrative with top traveler search demands for Miami Beach's unique subcultures.",
+      "local_vibe_synergy_context": "Miami Beach travelers are actively seeking experiences that blend iconic Art Deco aesthetics, sophisticated culinary offerings (especially Japanese cuisine), and vibrant yet chic poolside leisure. The recommended photo sequence directly addresses these desires by leading with the hotel's stunning pool, grounding with its Art Deco exterior, and prominently featuring its acclaimed Blue Ribbon Sushi, thereby creating a compelling narrative that resonates with the local vibe.",
+      "slot_1_decision_logic": {
+        "is_magnet_override_active": true,
+        "reasoning_code": "NAI_HIGH_DESTINATION_POWER_CLARITY_RESEQUENCE",
+        "strategy_explanation": "The Art Deco Courtyard Swimming Pool & Cabanas (Live Photo #1) serves as a powerful Hero Cultural Magnet for Miami Beach. It perfectly aligns with the neighborhood's top search demand for stylish poolside experiences, functions as a standalone destination, and offers split-second visual clarity with warm human energy. Activating the Magnet Override allows us to immediately hook travelers with the hotel's most compelling and locally resonant feature, followed by the mandatory exterior landmark in Slot #2 to resolve location anxiety.",
+        "neighborhood_affinity_index": 0.92,
+        "override_asset_name": "Art Deco Courtyard Swimming Pool & Cabanas"
+      },
+      "photos_status": "PENDING"
+    },
+    "audit_timestamp": "2026-10-09T14:10:13.800Z"
+  }
+}

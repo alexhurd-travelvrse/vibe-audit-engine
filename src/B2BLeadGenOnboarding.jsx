@@ -386,53 +386,17 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
     setPhaseIndex(0);
 
     try {
-      // STAGE 1: Rapid Vibe Manifest (Vibe Signature in ~5-7 seconds)
-      console.log('[Audit Engine] Launching Stage 1: Fast-Path Vibe Manifest...');
-      const manifestPromise = fetchMasterVibeAuditManifest(
-        targetHotel,
-        targetCity,
-        targetNeighborhood,
-        directBookingUrl,
-        bookingId
-      );
-
-      // STAGE 2: Full Audit Pipeline with verified Booking.com inventory & photo strategy
-      console.log('[Audit Engine] Launching Stage 2: Verified Photo & Strategy Pipeline...');
-      const fullAuditPromise = fetchMasterVibeAudit(
+      console.log('[Audit Engine] Launching Master Vibe Audit Pipeline...');
+      const masterAudit = await fetchMasterVibeAudit(
         targetHotel, 
         targetCity, 
         targetNeighborhood,
         bookingId,
         directBookingUrl
       );
-
-      // Hydrate Stage 1 immediately once Vibe Signature is ready
-      manifestPromise.then(manifestData => {
-        if (abortController.signal.aborted) return;
-        console.log('[Audit Engine] Stage 1 Manifest ready. Transitioning to results immediately.');
-        setAnalysis(prev => {
-          if (prev && prev.masterAudit && prev.masterAudit.ota_conversion_audit?.photos_status === 'RESOLVED') {
-            return prev;
-          }
-          return {
-            signals: prev?.signals || { categories: {} },
-            masterAudit: manifestData,
-            auditResults: null,
-            challenge: null,
-            isOtaHydrating: true
-          };
-        });
-        setStep('results');
-        setCurrentPhase(1);
-      }).catch(err => {
-        console.warn('[Audit Engine] Fast manifest notice:', err.message);
-      });
-
-      // Hydrate Stage 2 (Photos + Strategy) once full pipeline completes
-      const masterAudit = await fullAuditPromise;
       if (abortController.signal.aborted) return;
 
-      console.log('[Audit Engine] Stage 2 Complete. Hydrating full visual audit & photo sequence.');
+      console.log('[Audit Engine] Master Vibe Audit complete. Hydrating results.');
       setAnalysis(prev => ({
         signals: prev?.signals || { categories: {} },
         masterAudit,

@@ -1,0 +1,267 @@
+{
+  "key": "25hours hotel indre by copenhagen:::copenhagen:::indre by:::https://www.booking.com/hotel/dk/25hours-indre-by.html:::manifest_only",
+  "timestamp": 1791554930955,
+  "data": {
+    "venue_id": "25hours_Hotel_Indre_By_Copenhagen",
+    "venue_name": "25hours Hotel Indre By Copenhagen",
+    "location": "Indre By, Copenhagen",
+    "vibe_signature": {
+      "energy_score": 88,
+      "social_pacing": "Vibrant & Dynamic",
+      "headline": "Copenhagen's Creative Hub: A Playful Design Hotel with a Lively Social Scene and Authentic Local Spirit",
+      "acoustic_dna": {
+        "soundscape_genre": "Eclectic Indie & Global Grooves",
+        "anchor_artists": [
+          "Khruangbin",
+          "Bon Iver",
+          "Little Dragon"
+        ],
+        "spotify_query": "spotify:playlist:37i9dQZF1DXcBWIGoYBM5M",
+        "sound_texture": "Warm, inviting, with a playful edge and occasional vinyl crackle from the music room",
+        "conversation_clarity_score": 78,
+        "conversation_verdict": "Vibrant Social Banter & Engaging Dialogue",
+        "decibel_level": "72 dB (Vibrant Social Hub)"
+      },
+      "crowd_archetype": {
+        "primary": "Creative Explorers & Digital Nomads",
+        "social_density": "Lively & Connected",
+        "dress_code": "Smart Casual & Effortlessly Chic",
+        "energy_verdict": "Cosmopolitan Creative Haven & High Banter",
+        "local_ratio": 70,
+        "tourist_ratio": 30,
+        "tourist_trap_verdict": "Curated Neighborhood Haven — Authentic Local Magnet"
+      },
+      "lighting_and_sensory": {
+        "atmosphere": "Playful, Eclectic & Energetic",
+        "sensory_intensity": "Stimulating & Engaging",
+        "lighting_temperature": "2700K Warm Ambient Glow with Playful Neon Accents"
+      },
+      "hyper_local_proximity": {
+        "key_anchors": [
+          "Strøget shopping street",
+          "Round Tower",
+          "King's Garden"
+        ],
+        "insider_lore": "Nestled in the heart of Indre By, the hotel is a stone's throw from historic landmarks and vibrant shopping, yet feels like a secret local discovery."
+      },
+      "qualification_test": {
+        "you_will_love_if": "You appreciate playful design, a lively social atmosphere, and a hotel that feels like a local's secret club with great music and food.",
+        "skip_if": "You prefer minimalist, quiet luxury or a strictly business-oriented hotel experience without a strong social pulse."
+      },
+      "authenticity_and_materials": {
+        "authenticity_score": 92,
+        "material_palette": "Reclaimed wood, exposed brick, vibrant textiles, polished concrete, playful art installations",
+        "material_verdict": "Authentic & Playful Design — Zero Faux Decor"
+      },
+      "insider_secrets": {
+        "insider_badge": "Local Regular & Music Lover Lore",
+        "off_menu_perk": "Ask the bartender at rendezvous for their 'Copenhagen Creative' bespoke cocktail, tailored to your mood.",
+        "secret_lore": "Head to the 'music room' with its extensive vinyl collection. It's a hidden gem perfect for a relaxed evening, often overlooked by first-time visitors.",
+        "secret_title": "The Secret Vinyl Listening Room"
+      },
+      "temporal_dynamics": {
+        "best_time_to_visit": "4:00 PM for a relaxed coffee or co-working session; 8:00 PM for peak bar buzz and social energy.",
+        "content_readiness": {
+          "aesthetic_subculture": "Playful Design & Urban Explorer",
+          "flattery_note": "Your content will thrive in the hotel's vibrant, eclectic spaces, capturing its unique blend of Danish hygge and global design.",
+          "score": 0.9,
+          "top_creator_spot": "The lobby bar with its astronaut art, the vinyl music room, and the outdoor sauna area.",
+          "verdict": "Highly Instagrammable & Creator-Ready"
+        },
+        "diurnal_rhythm": {
+          "chilling": {
+            "focus": "Relaxed co-working, quiet reading in communal areas",
+            "score": 0.7,
+            "window": "10:00 AM - 4:00 PM"
+          },
+          "playing": {
+            "focus": "Vibrant cocktail hour, social dining, evening events",
+            "score": 0.9,
+            "window": "6:00 PM - 1:00 AM"
+          },
+          "working": {
+            "focus": "Digital nomad hub, casual meetings",
+            "score": 0.8,
+            "window": "9:00 AM - 5:00 PM"
+          }
+        },
+        "peak_atmospheric_window": "Evening Cocktail Hour & Dinner"
+      }
+    },
+    "interactive_quiz_challenge": {
+      "target_scene_id": 1,
+      "scene_name": "25hours Hotel Indre By Lobby",
+      "mission_title": "Discover Copenhagen's Creative Pulse",
+      "question": "The 25hours Hotel Indre By is known for its unique 'music room'. What special feature can guests enjoy there?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A live DJ set every evening"
+        },
+        {
+          "id": "B",
+          "text": "An extensive vinyl collection for guests to play"
+        },
+        {
+          "id": "C",
+          "text": "Karaoke nights with local artists"
+        },
+        {
+          "id": "D",
+          "text": "Soundproofed recording studios"
+        }
+      ],
+      "correct_option_id": "B",
+      "success_lore_reveal": "Correct! The music room at 25hours Hotel Indre By is a true hidden gem, offering guests a chance to unwind and explore a curated vinyl collection, perfectly embodying Copenhagen's creative spirit.",
+      "reward_badge": "Copenhagen Vibe Curator",
+      "challenge_prompt": "Unlock the hotel's most unique social space!",
+      "reward_spotify_uri": "spotify:track:3qN5qMTxGZ0QJ1z1Xg32A6"
+    },
+    "ota_conversion_audit": {
+      "channel": "Booking.com",
+      "before_merchandising_score": 48,
+      "after_merchandising_score": 94,
+      "projected_conversion_uplift": "+21.0%",
+      "current_drop_off_flaw": "Lack of immediate visual connection to Copenhagen's vibrant social and creative subcultures, leading to commodity perception.",
+      "key_strategic_shifts": [
+        "Elevate the dynamic Lobby Bar & Social Hub to Slot #1 to immediately capture Copenhagen's #1 social and creative traveler search demand.",
+        "Re-sequence the authentic exterior facade to Slot #2 to quickly resolve location anxiety and ground the property within Indre By's historic context.",
+        "Showcase the signature NENI restaurant and the unique outdoor sauna to highlight diverse amenity offerings and cater to culinary and wellness-focused travelers.",
+        "Introduce a high-quality guest bathroom photo to assure luxury finish quality and hygiene, addressing a common high-ADR traveler concern."
+      ],
+      "optimal_5_photo_sequence": [
+        {
+          "slot": 1,
+          "category": "HERO_CULTURAL_MAGNET",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 2,
+          "photo_subject": "Vibrant Lobby Bar with Astronaut Art & Social Seating",
+          "bullet_points": [
+            "Visual Upgrade: This photo immediately conveys the hotel's playful, energetic, and social atmosphere, a stark contrast to generic hotel lobbies.",
+            "Local Synergy: Directly aligns with Indre By's reputation as a hub for creative social experiences and unique design, attracting travelers seeking authentic local interaction.",
+            "Conversion Trigger: Instantly hooks travelers looking for a vibrant, design-led social hub, differentiating the hotel from traditional accommodations."
+          ],
+          "psychological_conversion_trigger": "Triggers immediate desire for a unique, social, and design-forward stay, aligning with Copenhagen's creative pulse.",
+          "action": "HERO_CULTURAL_MAGNET",
+          "action_label": "⚡ HERO CULTURAL MAGNET: VIBRANT LOBBY BAR (SLOT #1)",
+          "current_slot": 2,
+          "local_vibe_connection": "This image perfectly captures the hotel's role as a social magnet, resonating with travelers searching for 'Copenhagen design hotels with lively bars' or 'creative social hubs in Indre By'.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #2): By elevating the hotel's most dynamic and social space to Slot #1, it immediately communicates the unique '25hours' brand ethos and its strong connection to Copenhagen's creative and social scene, setting an engaging tone from the first impression.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 2,
+          "category": "EXTERIOR_LANDMARK",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 1,
+          "photo_subject": "Historic Building Facade & Street Entrance",
+          "bullet_points": [
+            "Strategic Placement: Immediately grounds the hotel's location within the historic Indre By neighborhood, eliminating geographic uncertainty after the initial 'wow' factor.",
+            "Local Synergy: Showcases the hotel's integration into Copenhagen's classic architecture, appealing to travelers who value historical context and authentic urban experiences.",
+            "Conversion Trigger: Provides essential orientation and reassurance, confirming the hotel's prime, walkable location."
+          ],
+          "psychological_conversion_trigger": "Resolves location anxiety and confirms the hotel's authentic integration into the historic city center.",
+          "action": "RE_SEQUENCE",
+          "action_label": "EXTERIOR LANDMARK (SLOT #2 - MANDATORY GROUNDING)",
+          "current_slot": 1,
+          "local_vibe_connection": "This photo directly addresses traveler searches for 'hotels in historic Copenhagen city center' or 'Indre By hotels with character', showcasing its authentic architectural presence.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #1): By elevating the signature cultural magnet to Slot #1, moving the hotel's authentic exterior facade to Slot #2 immediately grounds location and eliminates booking hesitation while preserving architectural prestige.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 3,
+          "category": "SIGNATURE_SUITE_BEDROOM",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 3,
+          "photo_subject": "Signature King Bedroom with Curated Textural Finishes & Ambient Lighting",
+          "bullet_points": [
+            "Strategic Placement: Highlights the comfort and unique design of the guest rooms, assuring quality and aesthetic appeal.",
+            "Local Synergy: Reflects Copenhagen's design sensibilities with thoughtful details and a cozy, yet modern, ambiance.",
+            "Conversion Trigger: Appeals to travelers seeking stylish and comfortable accommodations, showcasing the private sanctuary aspect of their stay."
+          ],
+          "psychological_conversion_trigger": "Reinforces the promise of a comfortable, stylish, and uniquely designed private space.",
+          "action": "KEEP",
+          "action_label": "SIGNATURE SUITE BEDROOM (SLOT #3)",
+          "current_slot": 3,
+          "local_vibe_connection": "This bedroom aligns with searches for 'boutique hotel rooms Copenhagen' or 'design-led accommodations Indre By', emphasizing comfort and aesthetic.",
+          "upgrade_rationale": "Retained for its strong visual appeal and clear representation of the hotel's signature room design, providing a consistent brand experience.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 4,
+          "category": "WELLNESS_SPA_LOBBY",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 12,
+          "photo_subject": "Outdoor Sauna & Relaxation Area",
+          "bullet_points": [
+            "Strategic Placement: Showcases a unique wellness amenity, catering to the growing demand for relaxation and self-care during travel.",
+            "Local Synergy: Connects to Copenhagen's emphasis on well-being and outdoor living, offering a distinct experience not found in many urban hotels.",
+            "Conversion Trigger: Attracts travelers seeking unique amenities and a holistic travel experience, adding significant value beyond just a room."
+          ],
+          "psychological_conversion_trigger": "Highlights a unique wellness offering, appealing to guests seeking relaxation and a distinctive amenity.",
+          "action": "PROMOTE",
+          "action_label": "OUTDOOR SAUNA & RELAXATION (SLOT #4)",
+          "current_slot": 12,
+          "local_vibe_connection": "This amenity resonates with searches for 'Copenhagen hotels with sauna' or 'wellness experiences Indre By', tapping into a niche but growing demand.",
+          "upgrade_rationale": "Promotes a highly distinctive and appealing wellness amenity that is currently buried deep in the photo gallery. This photo clearly communicates a unique offering that enhances the guest experience and aligns with modern wellness trends, visually superior to generic public spaces.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 5,
+          "category": "SECONDARY_ROOM_BATHROOM",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 10,
+          "photo_subject": "Modern Guest Bathroom with Walk-in Shower & Stylish Fixtures",
+          "bullet_points": [
+            "Strategic Placement: Addresses a key concern for high-ADR travelers regarding hygiene and luxury finish quality in private spaces.",
+            "Local Synergy: Reflects the clean, functional, and design-conscious aesthetic prevalent in Danish interiors.",
+            "Conversion Trigger: Provides reassurance and confirms the attention to detail extends to all aspects of the guest experience, preventing last-minute drop-offs."
+          ],
+          "psychological_conversion_trigger": "Assures high standards of cleanliness, design, and comfort in private guest facilities, crucial for discerning travelers.",
+          "action": "PROMOTE",
+          "action_label": "MODERN GUEST BATHROOM (SLOT #5)",
+          "current_slot": 10,
+          "local_vibe_connection": "This image caters to travelers who prioritize 'modern hotel bathrooms Copenhagen' or 'clean design hotel Indre By', confirming the property's commitment to quality.",
+          "upgrade_rationale": "Promotes a clear, well-lit image of a guest bathroom that is currently underutilized in the photo sequence. This photo directly addresses a critical visual gap, assuring potential guests of the quality and design consistency within the private spaces, which is a significant conversion factor.",
+          "photo_url": null,
+          "image_url": null
+        }
+      ],
+      "anti_commodity_copy_rewrite": {
+        "ota_headline": "25hours Hotel Indre By: Copenhagen's Creative Heartbeat – Design, Culture & Social Energy in Historic Indre By",
+        "property_overview_150_words": "Immerse yourself in Copenhagen's vibrant creative spirit at 25hours Hotel Indre By, a playful design hotel nestled in the historic heart of Indre By. Our hotel is a dynamic social hub, featuring a lively lobby bar, the acclaimed NENI restaurant, and unique communal spaces like our vinyl-filled music room. Experience a blend of Danish hygge and global design, with stylish rooms and an inviting outdoor sauna. Perfect for creative explorers and digital nomads, we offer an authentic local experience, connecting you to Copenhagen's rich culture, culinary scene, and bustling city life, all within walking distance of major attractions."
+      },
+      "photographic_gap_analysis": [
+        {
+          "missing_shot_title": "Twilight Golden Hour at NENI København Terrace",
+          "category": "CULINARY_SOCIAL",
+          "why_needed": "Currently, there isn't a single photo that captures the vibrant evening ambiance of the NENI restaurant, especially its terrace. This misses a huge opportunity to showcase the culinary experience and social energy, which is a key draw for travelers searching for 'best restaurants Indre By' or 'Copenhagen dining experiences'.",
+          "recommended_framing_and_lighting": "Wide-angle shot of the NENI terrace during golden hour (approx. 7 PM), with warm, inviting lighting, blurred background of happy diners, and crisp focus on artfully presented dishes and cocktails. Emphasize natural light and warm filament bulbs.",
+          "projected_adr_impact": "+10% F&B revenue uplift and +5% direct booking conversion for culinary-focused travelers."
+        },
+        {
+          "missing_shot_title": "Late-Night Rendezvous Bar Mixology & Social Scene",
+          "category": "ATMOSPHERIC_TWILIGHT",
+          "why_needed": "While the lobby bar is shown, the distinct 'rendezvous' speakeasy-style bar is mentioned but not visually represented. A dedicated shot would capture its unique, intimate atmosphere and craft cocktail offerings, appealing to travelers seeking 'Copenhagen speakeasy' or 'craft cocktail bars Indre By'.",
+          "recommended_framing_and_lighting": "Low-light, intimate shot of the bar with a mixologist crafting a cocktail, soft focus on glassware, and subtle background blur of engaged patrons. Use warm, moody lighting (2200K) to convey exclusivity and sophistication.",
+          "projected_adr_impact": "+8% bar revenue and +3% direct booking conversion for nightlife enthusiasts."
+        }
+      ],
+      "conversion_diagnosis": "The hotel possesses strong brand DNA and unique amenities, but its current visual merchandising on OTAs fails to immediately communicate its vibrant social energy and deep connection to Copenhagen's creative subcultures, leading to a perception of commodity rather than a destination in itself.",
+      "local_vibe_synergy_context": "Copenhagen's Indre By neighborhood is a magnet for travelers seeking design, culinary innovation, and a vibrant social scene. The strategic photo reordering prioritizes visuals that immediately resonate with these local subcultures: the lively lobby bar (creative social hub), the historic exterior (authentic urban exploration), the unique outdoor sauna (wellness trend), and the NENI restaurant (culinary destination). This ensures the hotel's visual narrative directly aligns with and captures the highest-value traveler search intent for the area.",
+      "slot_1_decision_logic": {
+        "is_magnet_override_active": true,
+        "reasoning_code": "NAI_HIGH_DESTINATION_POWER_CLARITY",
+        "strategy_explanation": "The vibrant Lobby Bar with its unique astronaut art and social seating (Live Photo #2) perfectly embodies Copenhagen's creative and social subculture, scoring high on Neighborhood Affinity Index (NAI). It is a destination in its own right, drawing locals and guests alike, and the photo offers split-second clarity with warm human energy. Therefore, a HERO_CULTURAL_MAGNET override is activated, making it Slot #1 to immediately capture traveler attention and differentiate the property.",
+        "neighborhood_affinity_index": 0.92,
+        "override_asset_name": "Vibrant Lobby Bar with Astronaut Art"
+      },
+      "photos_status": "PENDING"
+    },
+    "audit_timestamp": "2026-10-09T14:08:26.789Z"
+  }
+}
