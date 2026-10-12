@@ -120,6 +120,8 @@
   background: var(--color-gold-hover, #FFF176);
   transform: translateY(-2px);
   box-shadow: 0 0 35px rgba(255, 215, 0, 0.65), 0 12px 30px rgba(0, 0, 0, 0.6);
+}
+
 .b2b-cta-button:active {
   transform: scale(0.98);
 }
