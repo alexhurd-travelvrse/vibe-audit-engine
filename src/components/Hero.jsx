@@ -1,24 +1,10 @@
-import React, { useState } from 'react';
-import { ArrowRight, Sparkles, Building2, AlertCircle } from 'lucide-react';
-import { useNavigate, Link } from 'react-router-dom';
+import React from 'react';
+import { ArrowRight, Sparkles } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import './Hero.css';
 
 const Hero = () => {
-    const [otaUrl, setOtaUrl] = useState('');
-    const [inputError, setInputError] = useState('');
-    const navigate = useNavigate();
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        const trimmedUrl = otaUrl.trim();
-        if (trimmedUrl) {
-            navigate(`/audit?bookingUrl=${encodeURIComponent(trimmedUrl)}`);
-        } else {
-            navigate('/audit');
-        }
-    };
-
     return (
         <section className="hero-section">
             <Helmet>
@@ -46,7 +32,7 @@ const Hero = () => {
 
                     <div className="hero-eyebrow-badge">
                         <Sparkles size={14} className="text-cyan" />
-                        <span>ATMOSVIBE - AI READY VIBE SIGNATURES FOR HOTELS &amp; TRAVEL BRANDS</span>
+                        <span>AI READY VIBE SIGNATURES FOR HOTELS AND TRAVEL BRANDS</span>
                     </div>
 
                     <h1 className="hero-headline">
@@ -54,38 +40,16 @@ const Hero = () => {
                     </h1>
 
                     <p className="hero-subheadline">
-                        Next-Gen travelers book local vibe. AtmosVibe matches what makes you unique with local demand. Showcasing you as the gateway to your neighbourhood
+                        AtmosVibe matches what makes you unique with local demand
                     </p>
                 </div>
 
-                {/* Phased Entry Search Box: Reveals smoothly a couple of seconds after initial load */}
+                {/* Phased Entry Call to Action: Reveals smoothly a couple of seconds after initial load */}
                 <div className="hero-action-container hero-phased-entry">
-                    <form onSubmit={handleSubmit} className="hero-search-box">
-                        <div className="hero-search-input-wrap">
-                            <Building2 className="hero-search-icon" size={20} />
-                            <input 
-                                type="text"
-                                className="hero-search-input"
-                                placeholder="Enter Hotel Name or Booking.com URL"
-                                value={otaUrl}
-                                onChange={(e) => {
-                                    setOtaUrl(e.target.value);
-                                    if (inputError) setInputError('');
-                                }}
-                            />
-                        </div>
-                        <button type="submit" className="hero-search-btn" title="Start by Optimising Your OTA Photos">
-                            <span>Start by Optimising Your OTA Photos</span>
-                            <ArrowRight size={17} />
-                        </button>
-                    </form>
-
-                    {inputError && (
-                        <div className="hero-search-error animate-fade-in">
-                            <AlertCircle size={15} />
-                            <span>{inputError}</span>
-                        </div>
-                    )}
+                    <Link to="/audit" className="hero-search-btn" title="Start by Optimising Your OTA Photos">
+                        <span>Start by Optimising Your OTA Photos</span>
+                        <ArrowRight size={18} />
+                    </Link>
                 </div>
             </div>
 

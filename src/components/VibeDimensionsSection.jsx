@@ -159,7 +159,7 @@ export default function VibeDimensionsSection() {
             <span className="text-gold-gradient">Mapping Your Atmosphere</span>
           </h2>
           <p className="vibe-dimensions-subtitle">
-            AtmosVibe maps the 7 key dimensions that make your property unique
+            74% of travelers book the neighbourhood. AtmosVibe maps the 7 dimensions that make your property the heartbeat of it
           </p>
         </div>
 

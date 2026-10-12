@@ -154,30 +154,33 @@
     color: rgba(230, 241, 255, 0.55);
 }
 
-/* TravelVRse-inspired CTA button */
+/* TravelVRse-inspired Call to Action button */
 .hero-search-btn {
     background: var(--color-gold-champagne, #FFD700);
     color: var(--color-navy-deep, #050B14);
     font-weight: 800;
-    font-size: 0.92rem;
+    font-size: 1.02rem;
     letter-spacing: 0.02em;
-    padding: 0.85rem 1.6rem;
+    padding: 0.95rem 2.25rem;
     border-radius: 999px;
     border: none;
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     cursor: pointer;
     white-space: nowrap;
-    box-shadow: 0 0 20px rgba(255, 215, 0, 0.35);
+    text-decoration: none;
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.5);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     flex-shrink: 0;
 }
 
 .hero-search-btn:hover {
     background: var(--color-gold-hover, #FFF176);
-    box-shadow: 0 0 30px rgba(255, 215, 0, 0.65);
+    color: var(--color-navy-deep, #050B14);
+    box-shadow: 0 0 35px rgba(255, 215, 0, 0.7), 0 10px 30px rgba(0, 0, 0, 0.6);
     transform: translateY(-2px);
+    text-decoration: none;
 }
 
 .hero-search-btn:active {

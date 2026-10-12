@@ -15,10 +15,10 @@ export default function HookTeaserSection() {
             <span>HOW WE USE VIBE SIGNATURES</span>
           </div>
           <h2 className="teaser-title">
-            <span className="text-gold-gradient">Become the Gateway to Your Neighbourhood</span>
+            <span className="text-gold-gradient">Gateway to Your Neighbourhood</span>
           </h2>
           <p className="teaser-description">
-            74% of Next-Gen travelers book local experiences before a hotel. AtmosVibe uses your Vibe Signature to ensure you are showcasing what makes you unique based on local demand. Across all channels
+            AtmosVibe uses your Vibe Signature to ensure you are showcasing what makes you unique based on local demand. Across all channels
           </p>
         </div>
 
