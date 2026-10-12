@@ -53,20 +53,74 @@
     margin-bottom: 1.75rem;
 }
 
-.hero-eyebrow-badge {
+/* Executive Frosted Glass Eyebrow Badge (Quiet Luxury) */
+.hero-executive-badge {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    padding: 5px 14px;
-    background: rgba(0, 229, 255, 0.08);
-    border: 1px solid rgba(0, 229, 255, 0.35);
+    gap: 10px;
+    padding: 6px 16px 6px 12px;
+    background: rgba(10, 18, 30, 0.72);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.14);
     border-radius: 999px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    margin-bottom: 0.25rem;
+}
+
+.hero-executive-badge:hover {
+    background: rgba(14, 25, 42, 0.9);
+    border-color: rgba(255, 215, 0, 0.4);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.6), 0 0 22px rgba(255, 215, 0, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    transform: translateY(-1px);
+}
+
+.badge-status-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #10b981;
+    box-shadow: 0 0 8px rgba(16, 185, 129, 0.85);
+    flex-shrink: 0;
+}
+
+.badge-tag {
     font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    color: var(--color-cyan-neon, #00e5ff);
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    color: var(--color-gold-champagne, #FFD700);
     text-transform: uppercase;
-    box-shadow: 0 0 16px rgba(0, 229, 255, 0.18);
+}
+
+.badge-divider {
+    width: 1px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.18);
+    flex-shrink: 0;
+}
+
+.badge-text {
+    font-size: 0.74rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    color: rgba(240, 246, 255, 0.92);
+    text-transform: uppercase;
+}
+
+.badge-beta-pill {
+    font-size: 0.62rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    color: #ffd700;
+    background: rgba(255, 215, 0, 0.12);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    border-radius: 999px;
+    padding: 1px 7px;
+    text-transform: uppercase;
+    margin-left: 2px;
 }
 
 .hero-headline {
@@ -232,6 +286,15 @@
 }
 
 @media (max-width: 768px) {
+    .hero-executive-badge {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 6px;
+        padding: 5px 12px;
+    }
+    .badge-text {
+        font-size: 0.67rem;
+    }
     .hero-search-box {
         flex-direction: column;
         border-radius: 20px;

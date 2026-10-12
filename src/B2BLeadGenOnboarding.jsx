@@ -528,11 +528,11 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
           {step === 'welcome' && (
             <motion.div key="welcome" initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="b2b-welcome-section" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
               <h1 className="b2b-hero-title">VIBE AUDIT</h1>
-              <p className="b2b-hero-subtitle">The High-Fidelity Propulsion Scale Diagnostic</p>
+              <p className="b2b-hero-subtitle">Visual Merchandising &amp; Local Demand Audit for Modern Hotels</p>
               <div style={{ display: 'flex', justifyContent: 'center' }}>
                 <button className="b2b-cta-button" onClick={() => setStep('input')}>
                   Launch Vibe Audit
-                  <ChevronRight size={24} />
+                  <ChevronRight size={22} />
                 </button>
               </div>
             </motion.div>
@@ -545,16 +545,19 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: '8px',
-                  padding: '4px 14px',
-                  background: 'rgba(0, 229, 255, 0.08)',
-                  border: '1px solid rgba(0, 229, 255, 0.25)',
+                  padding: '5px 16px',
+                  background: 'rgba(10, 18, 30, 0.72)',
+                  backdropFilter: 'blur(16px)',
+                  WebkitBackdropFilter: 'blur(16px)',
+                  border: '1px solid rgba(255, 255, 255, 0.14)',
                   borderRadius: '999px',
-                  fontSize: '0.75rem',
+                  fontSize: '0.72rem',
                   fontWeight: 800,
                   letterSpacing: '0.12em',
-                  color: '#00e5ff',
+                  color: '#FFD700',
                   textTransform: 'uppercase',
-                  marginBottom: '0.85rem'
+                  marginBottom: '1rem',
+                  boxShadow: '0 4px 18px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.15)'
                 }}>
                   <Sparkles size={13} />
                   <span>THE WORKFLOW</span>

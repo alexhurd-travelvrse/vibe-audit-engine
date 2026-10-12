@@ -26,14 +26,13 @@ const Hero = () => {
 
             <div className="container hero-content">
                 <div className="hero-header-group animate-fade-up">
-                    <Link to="/partner" className="beta-badge-premium" style={{ textDecoration: 'none', cursor: 'pointer' }} title="Join the AtmosVibe 3-Month Free Beta Cohort">
-                        BETA
+                    <Link to="/partner" className="hero-executive-badge" title="Explore the AtmosVibe Beta Partner Cohort">
+                        <span className="badge-status-dot"></span>
+                        <span className="badge-tag">AI READY</span>
+                        <span className="badge-divider"></span>
+                        <span className="badge-text">VIBE SIGNATURES FOR HOTELS AND TRAVEL BRANDS</span>
+                        <span className="badge-beta-pill">BETA</span>
                     </Link>
-
-                    <div className="hero-eyebrow-badge">
-                        <Sparkles size={14} className="text-cyan" />
-                        <span>AI READY VIBE SIGNATURES FOR HOTELS AND TRAVEL BRANDS</span>
-                    </div>
 
                     <h1 className="hero-headline">
                         Turn Atmosphere into Bookings

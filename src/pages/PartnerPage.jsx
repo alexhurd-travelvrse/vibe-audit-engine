@@ -49,15 +49,22 @@ const PartnerPage = () => {
                         display: 'inline-flex',
                         alignItems: 'center',
                         gap: '10px',
-                        background: 'linear-gradient(135deg, rgba(0, 229, 255, 0.12) 0%, rgba(255, 215, 0, 0.12) 100%)',
-                        border: '1px solid rgba(0, 229, 255, 0.35)',
-                        borderRadius: '50px',
-                        padding: '6px 20px',
+                        background: 'rgba(10, 18, 30, 0.72)',
+                        backdropFilter: 'blur(16px)',
+                        WebkitBackdropFilter: 'blur(16px)',
+                        border: '1px solid rgba(255, 255, 255, 0.14)',
+                        borderRadius: '999px',
+                        padding: '6px 18px 6px 12px',
+                        boxShadow: '0 4px 20px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.15)',
                         marginBottom: '2rem'
                     }}>
-                        <Sparkles size={14} color="#00e5ff" />
-                        <span style={{ fontSize: '11.5px', fontWeight: 900, color: '#00e5ff', textTransform: 'uppercase', letterSpacing: '1.5px' }}>
-                            EXCLUSIVE BETA COHORT • 5 HOTEL PARTNER SLOTS
+                        <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#10b981', boxShadow: '0 0 8px rgba(16, 185, 129, 0.85)', flexShrink: 0 }} />
+                        <span style={{ fontSize: '0.72rem', fontWeight: 800, color: '#FFD700', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+                            EXCLUSIVE BETA COHORT
+                        </span>
+                        <span style={{ width: '1px', height: '12px', background: 'rgba(255, 255, 255, 0.18)', flexShrink: 0 }} />
+                        <span style={{ fontSize: '0.74rem', fontWeight: 600, color: 'rgba(240, 246, 255, 0.92)', letterSpacing: '0.06em', textTransform: 'uppercase' }}>
+                            5 HOTEL PARTNER SLOTS
                         </span>
                     </div>
 

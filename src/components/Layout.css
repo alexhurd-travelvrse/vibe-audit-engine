@@ -62,12 +62,10 @@
     color: var(--color-cyan-neon);
 }
 
-.nav-link-badge-col {
-    position: relative;
+.nav-link-with-badge {
     display: inline-flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    gap: 8px;
 }
 
 .nav-link-text {
@@ -76,46 +74,23 @@
 }
 
 .nav-coming-soon {
-    font-size: 7px;
+    font-size: 0.65rem;
     font-weight: 700;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
     color: #ffd700;
     background: rgba(255, 215, 0, 0.08);
-    border: 1px solid rgba(255, 215, 0, 0.25);
-    padding: 0px 5px;
+    border: 1px solid rgba(255, 215, 0, 0.28);
+    padding: 2px 7px;
     border-radius: 999px;
     line-height: 1.2;
-    pointer-events: none;
-    box-shadow: none;
+    white-space: nowrap;
+    transition: all 0.2s ease;
 }
 
-@media (max-width: 992px) {
-    .nav-link-badge-col {
-        gap: 4px;
-    }
-
-    .nav-coming-soon {
-        font-size: 7.5px;
-        padding: 1px 6px;
-        margin-top: 1px;
-    }
-}
-
-@media (min-width: 993px) {
-    .nav-link-badge-col {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .nav-link-badge-col .nav-coming-soon {
-        position: absolute;
-        top: calc(100% + 3px);
-        left: 50%;
-        transform: translateX(-50%);
-        white-space: nowrap;
-    }
+.nav-link:hover .nav-coming-soon {
+    background: rgba(255, 215, 0, 0.16);
+    border-color: rgba(255, 215, 0, 0.5);
 }
 
 .mobile-menu-btn {

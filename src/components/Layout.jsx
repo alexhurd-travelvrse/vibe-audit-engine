@@ -44,7 +44,7 @@ const Layout = ({ children }) => {
                         <a href="/#vibe-signatures" className="nav-link" onClick={() => setIsMenuOpen(false)}>VIBE SIGNATURES</a>
                         <a 
                             href={isUnlocked ? "/#vibe-api" : "#"} 
-                            className="nav-link nav-link-badge-col" 
+                            className="nav-link nav-link-with-badge" 
                             onClick={(e) => handleGatedNavClick(e, '#vibe-api')}
                         >
                             <span className="nav-link-text">VIBE API</span>
@@ -52,7 +52,7 @@ const Layout = ({ children }) => {
                         </a>
                         <a 
                             href={isUnlocked ? "/#markets" : "#"} 
-                            className="nav-link nav-link-badge-col" 
+                            className="nav-link nav-link-with-badge" 
                             onClick={(e) => handleGatedNavClick(e, '#markets')}
                         >
                             <span className="nav-link-text">VIBE INSIGHTS</span>
