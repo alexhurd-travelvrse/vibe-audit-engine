@@ -74,16 +74,16 @@
 }
 
 .nav-coming-soon {
-    font-size: 0.65rem;
+    font-size: 0.56rem;
     font-weight: 700;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.05em;
     text-transform: uppercase;
     color: #ffd700;
     background: rgba(255, 215, 0, 0.08);
-    border: 1px solid rgba(255, 215, 0, 0.28);
-    padding: 2px 7px;
+    border: 1px solid rgba(255, 215, 0, 0.25);
+    padding: 1.5px 6px;
     border-radius: 999px;
-    line-height: 1.2;
+    line-height: 1.15;
     white-space: nowrap;
     transition: all 0.2s ease;
 }

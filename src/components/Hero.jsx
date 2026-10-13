@@ -9,7 +9,7 @@ const Hero = () => {
         <section className="hero-section">
             <Helmet>
                 <title>Turn Atmosphere into Bookings | Optimise Your Hotel OTA Photos | AtmosVibe</title>
-                <meta name="description" content="Turn Atmosphere into Bookings. Start by Optimising Your OTA Photos. Next-Gen travelers book local vibe. AtmosVibe matches what makes you unique with local demand. Showcasing you as the gateway to your neighbourhood" />
+                <meta name="description" content="Turn Atmosphere into Bookings. Start by Optimising Your OTA Photos. AtmosVibe connects what makes you unique with local search demand—positioning your property as the ultimate neighbourhood launchpad" />
             </Helmet>
 
             <div className="hero-bg-container">
@@ -30,7 +30,7 @@ const Hero = () => {
                         <span className="badge-status-dot"></span>
                         <span className="badge-tag">AI READY</span>
                         <span className="badge-divider"></span>
-                        <span className="badge-text">VIBE SIGNATURES FOR HOTELS AND TRAVEL BRANDS</span>
+                        <span className="badge-text">VIBE SIGNATURES FOR HOTELS &amp; TRAVEL BRANDS</span>
                         <span className="badge-beta-pill">BETA</span>
                     </Link>
 
@@ -39,7 +39,7 @@ const Hero = () => {
                     </h1>
 
                     <p className="hero-subheadline">
-                        AtmosVibe matches what makes you unique with local demand
+                        AtmosVibe connects what makes you unique with local search demand—positioning your property as the ultimate neighbourhood launchpad
                     </p>
                 </div>
 

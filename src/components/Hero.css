@@ -267,7 +267,7 @@
 }
 
 .hero-action-container.hero-phased-entry {
-    animation: heroPhasedFadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 2.2s both;
+    animation: heroPhasedFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 5.5s both;
 }
 
 .scroll-indicator {

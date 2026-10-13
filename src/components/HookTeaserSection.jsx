@@ -18,7 +18,7 @@ export default function HookTeaserSection() {
             <span className="text-gold-gradient">Gateway to Your Neighbourhood</span>
           </h2>
           <p className="teaser-description">
-            AtmosVibe uses your Vibe Signature to ensure you are showcasing what makes you unique based on local demand. Across all channels
+            AtmosVibe ensures your property stands out as the ultimate local launchpad across all channels
           </p>
         </div>
 
