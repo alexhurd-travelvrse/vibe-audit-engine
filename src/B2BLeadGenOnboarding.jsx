@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, ChevronRight, Send, Star, MapPin, TrendingUp, Search, Globe, Zap, CheckCircle2, BarChart3, ExternalLink, Gift, RefreshCw, Activity, Info, Compass, Radio, Layers, Cpu, Sparkles, Lock, Unlock, Key, ShieldCheck, X, Mail, Phone, Building, Link2 } from 'lucide-react';
+import { ArrowLeft, ChevronRight, Send, Star, MapPin, TrendingUp, Search, Globe, Zap, CheckCircle2, BarChart3, ExternalLink, RefreshCw, Activity, Info, Compass, Radio, Layers, Cpu, Sparkles, Lock, Unlock, Key, ShieldCheck, X, Mail, Phone, Building, Link2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   scrapeLocalSignals, 
@@ -562,12 +562,9 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                   <Sparkles size={13} />
                   <span>THE WORKFLOW</span>
                 </div>
-                <h2 style={{ fontSize: 'clamp(2rem, 4vw, 2.75rem)', fontWeight: 900, color: '#ffffff', letterSpacing: '-0.02em', margin: '0 0 0.65rem 0', textTransform: 'uppercase' }}>
+                <h2 style={{ fontSize: 'clamp(2rem, 4vw, 2.75rem)', fontWeight: 900, color: '#ffffff', letterSpacing: '-0.02em', margin: '0 0 1.75rem 0', textTransform: 'uppercase' }}>
                   HOW IT <span style={{ color: '#00e5ff', background: 'linear-gradient(90deg, #00e5ff, #ffd700)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>WORKS</span>
                 </h2>
-                <p style={{ color: 'rgba(230, 241, 255, 0.85)', fontSize: '15px', lineHeight: 1.6, maxWidth: '720px', margin: '0 auto 1.75rem auto' }}>
-                  From commodity listing to a standout, multi-channel Vibe Signature in three simple steps
-                </p>
 
                 {/* 3-Step Workflow Pipeline Grid */}
                 <div className="audit-workflow-grid">
@@ -1015,16 +1012,7 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                 />
               )}
 
-              {/* ACTION FOOTER */}
-              <div style={{ marginTop: '5rem', display: 'flex', justifyContent: 'center', gap: '2rem' }}>
-                <button onClick={() => setStep('onboarding')} className="back-link">
-                  <div className="back-icon-wrapper"><ArrowLeft size={16} /></div>
-                  NEW AUDIT
-                </button>
-                <button className="cta-button" style={{ margin: 0 }}>
-                  DOWNLOAD FULL REPORT <Gift size={20} />
-                </button>
-              </div>
+
 
             </motion.div>
           )}
