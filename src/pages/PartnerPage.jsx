@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Layout from '../components/Layout';
 import Footer from '../components/Footer';
 import { Helmet } from 'react-helmet-async';
-import { ShieldCheck, TrendingUp, Users, ArrowRight, Sparkles, CheckCircle2, Camera, Music, Compass, Send, Hotel, Award } from 'lucide-react';
+import { ShieldCheck, TrendingUp, Users, ArrowRight, Sparkles, CheckCircle2, Camera, Compass, Send, Hotel, Award, Search, MapPin } from 'lucide-react';
 
 const PartnerPage = () => {
     const [submitted, setSubmitted] = useState(false);
@@ -41,7 +41,7 @@ const PartnerPage = () => {
                 <div className="container" style={{ maxWidth: '1240px', margin: '0 auto', padding: '0 1.5rem' }}>
                     <Helmet>
                         <title>Beta Hotel Partner Program | AtmosVibe</title>
-                        <meta name="description" content="AtmosVibe is in beta and looking for 5 partner hotels to help co-develop our experience marketing platform at no cost for 3 months" />
+                        <meta name="description" content="AtmosVibe is in beta and looking for innovative hospitality groups" />
                     </Helmet>
 
                     {/* Top Beta Status Ribbon */}
@@ -72,7 +72,7 @@ const PartnerPage = () => {
                         {/* Left Column: Context, Value Proposition & Beta Offering */}
                         <div className="animate-fade-up">
                             <h1 style={{ fontSize: '3rem', fontWeight: 900, marginBottom: '1.25rem', lineHeight: '1.15', color: '#ffffff', letterSpacing: '-0.5px' }}>
-                                Co-Develop the Future of Hotel Experience Marketing with <span className="text-gold-gradient">AtmosVibe</span>
+                                Co-Develop the Future of Hotel <span className="text-gold-gradient">Experience Marketing</span>
                             </h1>
 
                             <div style={{
@@ -83,44 +83,43 @@ const PartnerPage = () => {
                                 marginBottom: '2.5rem'
                             }}>
                                 <p style={{ fontSize: '1.2rem', color: '#ffffff', fontWeight: 700, margin: 0, lineHeight: 1.5 }}>
-                                    AtmosVibe is currently in beta and we are looking for 5 hotels to help develop the service at no cost for 3 months
+                                    AtmosVibe is in beta and looking for innovative hospitality groups.
                                 </p>
                             </div>
 
                             <p style={{ fontSize: '1.05rem', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.7, marginBottom: '2.5rem' }}>
-                                Next-Gen travelers book local experiences before a hotel room. We use your Vibe Signature to position your property as the natural gateway to your neighbourhood, turning overlooked atmospheric spaces into high-converting visual assets across direct and OTA channels.
+                                Next-Gen travelers research local atmosphere and experiences before a hotel room. We use your Vibe Signature to position your property as the natural gateway to your neighbourhood, turning overlooked atmospheric spaces into high-converting visual assets across direct and OTA channels.
                             </p>
 
-                            {/* What You Receive At Zero Cost */}
                             <h3 style={{ fontSize: '1.25rem', fontWeight: 900, textTransform: 'uppercase', color: '#00e5ff', letterSpacing: '1px', marginBottom: '1.25rem' }}>
-                                What Selected Beta Partners Receive (100% Free for 3 Months)
+                                What Beta Partners Receive
                             </h3>
 
                             <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '1rem', marginBottom: '3rem' }}>
+                                <div style={{ background: 'rgba(255, 255, 255, 0.03)', border: '1px solid rgba(255, 255, 255, 0.08)', borderRadius: '16px', padding: '1.25rem 1.5rem', display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
+                                    <div style={{ width: '40px', height: '40px', borderRadius: '10px', background: 'rgba(255, 215, 0, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                                        <Sparkles size={20} color="#ffd700" />
+                                    </div>
+                                    <div>
+                                        <h4 style={{ color: '#ffffff', fontSize: '1.05rem', fontWeight: 800, margin: '0 0 4px 0' }}>
+                                            Bespoke Vibe Signature
+                                        </h4>
+                                        <p style={{ color: 'rgba(255, 255, 255, 0.65)', fontSize: '0.92rem', margin: 0, lineHeight: 1.5 }}>
+                                            Proprietary atmospheric profiling mapped to local search demand and integrated with curated acoustic soundscapes
+                                        </p>
+                                    </div>
+                                </div>
+
                                 <div style={{ background: 'rgba(255, 255, 255, 0.03)', border: '1px solid rgba(255, 255, 255, 0.08)', borderRadius: '16px', padding: '1.25rem 1.5rem', display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
                                     <div style={{ width: '40px', height: '40px', borderRadius: '10px', background: 'rgba(0, 229, 255, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                                         <Camera size={20} color="#00e5ff" />
                                     </div>
                                     <div>
                                         <h4 style={{ color: '#ffffff', fontSize: '1.05rem', fontWeight: 800, margin: '0 0 4px 0' }}>
-                                            Full 5-Photo Visual Resequencing &amp; Gap Scope
+                                            Full Photo Re-ordering
                                         </h4>
                                         <p style={{ color: 'rgba(255, 255, 255, 0.65)', fontSize: '0.92rem', margin: 0, lineHeight: 1.5 }}>
-                                            Complete photo audit for Booking.com and direct channels, plus full architectural framing and photometric specs for high-impact missing assets
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <div style={{ background: 'rgba(255, 255, 255, 0.03)', border: '1px solid rgba(255, 255, 255, 0.08)', borderRadius: '16px', padding: '1.25rem 1.5rem', display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
-                                    <div style={{ width: '40px', height: '40px', borderRadius: '10px', background: 'rgba(255, 215, 0, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                                        <Music size={20} color="#ffd700" />
-                                    </div>
-                                    <div>
-                                        <h4 style={{ color: '#ffffff', fontSize: '1.05rem', fontWeight: 800, margin: '0 0 4px 0' }}>
-                                            Bespoke Vibe Signature &amp; Acoustic DNA Synthesis
-                                        </h4>
-                                        <p style={{ color: 'rgba(255, 255, 255, 0.65)', fontSize: '0.92rem', margin: 0, lineHeight: 1.5 }}>
-                                            Proprietary atmospheric profiling mapped to local search demand and integrated with curated acoustic soundscapes
+                                            Complete photo audit for Booking.com and direct channels, plus specs for high-impact missing assets
                                         </p>
                                     </div>
                                 </div>
@@ -131,10 +130,38 @@ const PartnerPage = () => {
                                     </div>
                                     <div>
                                         <h4 style={{ color: '#ffffff', fontSize: '1.05rem', fontWeight: 800, margin: '0 0 4px 0' }}>
-                                            Local Gateway Storytelling &amp; Copy Blueprint
+                                            Local Gateway Copy Guidelines
                                         </h4>
                                         <p style={{ color: 'rgba(255, 255, 255, 0.65)', fontSize: '0.92rem', margin: 0, lineHeight: 1.5 }}>
-                                            High-converting copy rewrites and neighbourhood venue alignment to capture authentic lifestyle traveler demand
+                                            High-converting copy guidelines and neighbourhood venue alignment to capture authentic lifestyle traveler demand
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div style={{ background: 'rgba(255, 255, 255, 0.03)', border: '1px solid rgba(255, 255, 255, 0.08)', borderRadius: '16px', padding: '1.25rem 1.5rem', display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
+                                    <div style={{ width: '40px', height: '40px', borderRadius: '10px', background: 'rgba(168, 85, 247, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                                        <Search size={20} color="#a855f7" />
+                                    </div>
+                                    <div>
+                                        <h4 style={{ color: '#ffffff', fontSize: '1.05rem', fontWeight: 800, margin: '0 0 4px 0' }}>
+                                            AI Search Copy
+                                        </h4>
+                                        <p style={{ color: 'rgba(255, 255, 255, 0.65)', fontSize: '0.92rem', margin: 0, lineHeight: 1.5 }}>
+                                            Semantic entity tags and structured copy engineered to win high-intent recommendations across AI travel search engines
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div style={{ background: 'rgba(255, 255, 255, 0.03)', border: '1px solid rgba(255, 255, 255, 0.08)', borderRadius: '16px', padding: '1.25rem 1.5rem', display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
+                                    <div style={{ width: '40px', height: '40px', borderRadius: '10px', background: 'rgba(244, 63, 94, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                                        <MapPin size={20} color="#f43f5e" />
+                                    </div>
+                                    <div>
+                                        <h4 style={{ color: '#ffffff', fontSize: '1.05rem', fontWeight: 800, margin: '0 0 4px 0' }}>
+                                            Local Vibe Intelligence
+                                        </h4>
+                                        <p style={{ color: 'rgba(255, 255, 255, 0.65)', fontSize: '0.92rem', margin: 0, lineHeight: 1.5 }}>
+                                            Hyperlocal cultural trends, micro-venue dynamics, and atmospheric data to position your property as the local authority
                                         </p>
                                     </div>
                                 </div>
@@ -146,7 +173,7 @@ const PartnerPage = () => {
                                     <Award size={16} /> Beta Partner Commitment
                                 </div>
                                 <p style={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '0.92rem', margin: 0, lineHeight: 1.6 }}>
-                                    In exchange for 3 months of complimentary access and custom creative direction, we ask for a brief 20-minute bi-weekly feedback session to test recommendations and help us refine the AtmosVibe platform.
+                                    In exchange for 3 months of access and custom creative direction, we ask for a brief 20-minute bi-weekly feedback session to test recommendations and help us refine the AtmosVibe platform.
                                 </p>
                             </div>
                         </div>
@@ -166,7 +193,7 @@ const PartnerPage = () => {
                                             textTransform: 'uppercase',
                                             letterSpacing: '1px'
                                         }}>
-                                            FREE 3-MONTH BETA
+                                            3-MONTH BETA COHORT
                                         </span>
                                     </div>
 
@@ -248,7 +275,7 @@ const PartnerPage = () => {
                                             }}
                                         >
                                             <Sparkles size={18} />
-                                            {loading ? 'Submitting Application...' : 'Apply for Free 3-Month Beta Cohort'}
+                                            {loading ? 'Submitting Application...' : 'Apply for 3-Month Beta Cohort'}
                                             <ArrowRight size={18} />
                                         </button>
                                     </form>
