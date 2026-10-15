@@ -71,108 +71,127 @@ const PartnerPage = () => {
                     <div style={{ display: 'grid', gridTemplateColumns: '1.15fr 0.85fr', gap: '50px', alignItems: 'flex-start' }}>
                         {/* Left Column: Context, Value Proposition & Beta Offering */}
                         <div className="animate-fade-up">
-                            <h1 style={{ fontSize: '3rem', fontWeight: 900, marginBottom: '1.25rem', lineHeight: '1.15', color: '#ffffff', letterSpacing: '-0.5px' }}>
-                                Co-Develop the Future of Hotel <span className="text-gold-gradient">Experience Marketing</span>
+                            <h1 style={{ fontSize: 'clamp(2.4rem, 4.2vw, 3.1rem)', fontWeight: 900, marginBottom: '1.25rem', lineHeight: '1.15', color: '#ffffff', letterSpacing: '-0.02em' }}>
+                                Co-Develop the Future of Hotel <span style={{ color: '#00e5ff', background: 'linear-gradient(135deg, #e6f9ff 10%, #00e5ff 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', display: 'inline-block' }}>Experience Marketing</span>
                             </h1>
 
                             <div style={{
-                                background: 'rgba(255, 215, 0, 0.08)',
-                                borderLeft: '4px solid #ffd700',
+                                background: 'linear-gradient(135deg, rgba(14, 25, 45, 0.7) 0%, rgba(8, 14, 26, 0.85) 100%)',
+                                backdropFilter: 'blur(16px)',
+                                WebkitBackdropFilter: 'blur(16px)',
+                                border: '1px solid rgba(0, 229, 255, 0.25)',
+                                borderLeft: '4px solid #00e5ff',
                                 padding: '1.25rem 1.5rem',
-                                borderRadius: '0 16px 16px 0',
-                                marginBottom: '2.5rem'
+                                borderRadius: '0 14px 14px 0',
+                                marginBottom: '2rem',
+                                boxShadow: '0 10px 30px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.08)'
                             }}>
-                                <p style={{ fontSize: '1.2rem', color: '#ffffff', fontWeight: 700, margin: 0, lineHeight: 1.5 }}>
-                                    AtmosVibe is in beta and looking for innovative hospitality groups.
+                                <p style={{ fontSize: '1.15rem', color: '#ffffff', fontWeight: 700, margin: 0, lineHeight: 1.5 }}>
+                                    AtmosVibe is in beta and looking for innovative hospitality groups
                                 </p>
                             </div>
 
-                            <p style={{ fontSize: '1.05rem', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.7, marginBottom: '2.5rem' }}>
+                            <p style={{ fontSize: '1.02rem', color: 'rgba(230, 241, 255, 0.78)', lineHeight: 1.65, marginBottom: '2.25rem' }}>
                                 Next-Gen travelers research local atmosphere and experiences before a hotel room. We use your Vibe Signature to position your property as the natural gateway to your neighbourhood, turning overlooked atmospheric spaces into high-converting visual assets across direct and OTA channels.
                             </p>
 
-                            <h3 style={{ fontSize: '1.25rem', fontWeight: 900, textTransform: 'uppercase', color: '#00e5ff', letterSpacing: '1px', marginBottom: '1.25rem' }}>
-                                What Beta Partners Receive
-                            </h3>
+                            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1rem' }}>
+                                <h3 style={{ fontSize: '1rem', fontWeight: 800, textTransform: 'uppercase', color: '#00e5ff', letterSpacing: '0.1em', margin: 0 }}>
+                                    What Beta Partners Receive
+                                </h3>
+                                <span style={{ fontSize: '0.72rem', fontWeight: 700, color: 'rgba(230, 241, 255, 0.5)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+                                    5-Part Deliverables Suite
+                                </span>
+                            </div>
 
-                            <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '1rem', marginBottom: '3rem' }}>
-                                <div style={{ background: 'rgba(255, 255, 255, 0.03)', border: '1px solid rgba(255, 255, 255, 0.08)', borderRadius: '16px', padding: '1.25rem 1.5rem', display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
-                                    <div style={{ width: '40px', height: '40px', borderRadius: '10px', background: 'rgba(255, 215, 0, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                                        <Sparkles size={20} color="#ffd700" />
+                            {/* 5 Deliverables Architectural Grid */}
+                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '0.85rem', marginBottom: '2rem' }}>
+                                {/* 01 Bespoke Vibe Signature */}
+                                <div style={{ background: 'rgba(14, 22, 38, 0.75)', backdropFilter: 'blur(12px)', border: '1px solid rgba(255, 255, 255, 0.08)', borderRadius: '12px', padding: '1rem 1.15rem', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                                        <span style={{ fontSize: '0.72rem', fontWeight: 800, color: '#ffd700', fontFamily: 'monospace', letterSpacing: '0.06em' }}>01 // SIGNATURE</span>
+                                        <Sparkles size={16} color="#ffd700" />
                                     </div>
-                                    <div>
-                                        <h4 style={{ color: '#ffffff', fontSize: '1.05rem', fontWeight: 800, margin: '0 0 4px 0' }}>
-                                            Bespoke Vibe Signature
-                                        </h4>
-                                        <p style={{ color: 'rgba(255, 255, 255, 0.65)', fontSize: '0.92rem', margin: 0, lineHeight: 1.5 }}>
-                                            Proprietary atmospheric profiling mapped to local search demand and integrated with curated acoustic soundscapes
-                                        </p>
-                                    </div>
+                                    <h4 style={{ color: '#ffffff', fontSize: '0.96rem', fontWeight: 800, margin: 0, lineHeight: 1.3 }}>
+                                        Bespoke Vibe Signature
+                                    </h4>
+                                    <p style={{ color: 'rgba(230, 241, 255, 0.65)', fontSize: '0.82rem', margin: 0, lineHeight: 1.45 }}>
+                                        Proprietary atmospheric profiling mapped to local search demand and integrated with curated acoustic soundscapes
+                                    </p>
                                 </div>
 
-                                <div style={{ background: 'rgba(255, 255, 255, 0.03)', border: '1px solid rgba(255, 255, 255, 0.08)', borderRadius: '16px', padding: '1.25rem 1.5rem', display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
-                                    <div style={{ width: '40px', height: '40px', borderRadius: '10px', background: 'rgba(0, 229, 255, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                                        <Camera size={20} color="#00e5ff" />
+                                {/* 02 Full Photo Re-ordering */}
+                                <div style={{ background: 'rgba(14, 22, 38, 0.75)', backdropFilter: 'blur(12px)', border: '1px solid rgba(255, 255, 255, 0.08)', borderRadius: '12px', padding: '1rem 1.15rem', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                                        <span style={{ fontSize: '0.72rem', fontWeight: 800, color: '#00e5ff', fontFamily: 'monospace', letterSpacing: '0.06em' }}>02 // VISUALS</span>
+                                        <Camera size={16} color="#00e5ff" />
                                     </div>
-                                    <div>
-                                        <h4 style={{ color: '#ffffff', fontSize: '1.05rem', fontWeight: 800, margin: '0 0 4px 0' }}>
-                                            Full Photo Re-ordering
-                                        </h4>
-                                        <p style={{ color: 'rgba(255, 255, 255, 0.65)', fontSize: '0.92rem', margin: 0, lineHeight: 1.5 }}>
-                                            Complete photo audit for Booking.com and direct channels, plus specs for high-impact missing assets
-                                        </p>
-                                    </div>
+                                    <h4 style={{ color: '#ffffff', fontSize: '0.96rem', fontWeight: 800, margin: 0, lineHeight: 1.3 }}>
+                                        Full Photo Re-ordering
+                                    </h4>
+                                    <p style={{ color: 'rgba(230, 241, 255, 0.65)', fontSize: '0.82rem', margin: 0, lineHeight: 1.45 }}>
+                                        Complete photo audit for Booking.com and direct channels, plus specs for high-impact missing assets
+                                    </p>
                                 </div>
 
-                                <div style={{ background: 'rgba(255, 255, 255, 0.03)', border: '1px solid rgba(255, 255, 255, 0.08)', borderRadius: '16px', padding: '1.25rem 1.5rem', display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
-                                    <div style={{ width: '40px', height: '40px', borderRadius: '10px', background: 'rgba(16, 185, 129, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                                        <Compass size={20} color="#10b981" />
+                                {/* 03 Local Gateway Copy Guidelines */}
+                                <div style={{ background: 'rgba(14, 22, 38, 0.75)', backdropFilter: 'blur(12px)', border: '1px solid rgba(255, 255, 255, 0.08)', borderRadius: '12px', padding: '1rem 1.15rem', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                                        <span style={{ fontSize: '0.72rem', fontWeight: 800, color: '#10b981', fontFamily: 'monospace', letterSpacing: '0.06em' }}>03 // COPY</span>
+                                        <Compass size={16} color="#10b981" />
                                     </div>
-                                    <div>
-                                        <h4 style={{ color: '#ffffff', fontSize: '1.05rem', fontWeight: 800, margin: '0 0 4px 0' }}>
-                                            Local Gateway Copy Guidelines
-                                        </h4>
-                                        <p style={{ color: 'rgba(255, 255, 255, 0.65)', fontSize: '0.92rem', margin: 0, lineHeight: 1.5 }}>
-                                            High-converting copy guidelines and neighbourhood venue alignment to capture authentic lifestyle traveler demand
-                                        </p>
-                                    </div>
+                                    <h4 style={{ color: '#ffffff', fontSize: '0.96rem', fontWeight: 800, margin: 0, lineHeight: 1.3 }}>
+                                        Local Gateway Copy Guidelines
+                                    </h4>
+                                    <p style={{ color: 'rgba(230, 241, 255, 0.65)', fontSize: '0.82rem', margin: 0, lineHeight: 1.45 }}>
+                                        High-converting copy guidelines and neighbourhood venue alignment to capture authentic lifestyle traveler demand
+                                    </p>
                                 </div>
 
-                                <div style={{ background: 'rgba(255, 255, 255, 0.03)', border: '1px solid rgba(255, 255, 255, 0.08)', borderRadius: '16px', padding: '1.25rem 1.5rem', display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
-                                    <div style={{ width: '40px', height: '40px', borderRadius: '10px', background: 'rgba(168, 85, 247, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                                        <Search size={20} color="#a855f7" />
+                                {/* 04 AI Search Copy */}
+                                <div style={{ background: 'rgba(14, 22, 38, 0.75)', backdropFilter: 'blur(12px)', border: '1px solid rgba(255, 255, 255, 0.08)', borderRadius: '12px', padding: '1rem 1.15rem', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                                        <span style={{ fontSize: '0.72rem', fontWeight: 800, color: '#00e5ff', fontFamily: 'monospace', letterSpacing: '0.06em' }}>04 // AI GEO</span>
+                                        <Search size={16} color="#00e5ff" />
                                     </div>
-                                    <div>
-                                        <h4 style={{ color: '#ffffff', fontSize: '1.05rem', fontWeight: 800, margin: '0 0 4px 0' }}>
-                                            AI Search Copy
-                                        </h4>
-                                        <p style={{ color: 'rgba(255, 255, 255, 0.65)', fontSize: '0.92rem', margin: 0, lineHeight: 1.5 }}>
-                                            Semantic entity tags and structured copy engineered to win high-intent recommendations across AI travel search engines
-                                        </p>
-                                    </div>
+                                    <h4 style={{ color: '#ffffff', fontSize: '0.96rem', fontWeight: 800, margin: 0, lineHeight: 1.3 }}>
+                                        AI Search Copy
+                                    </h4>
+                                    <p style={{ color: 'rgba(230, 241, 255, 0.65)', fontSize: '0.82rem', margin: 0, lineHeight: 1.45 }}>
+                                        Semantic entity tags and structured copy engineered to win high-intent recommendations across AI travel search engines
+                                    </p>
                                 </div>
 
-                                <div style={{ background: 'rgba(255, 255, 255, 0.03)', border: '1px solid rgba(255, 255, 255, 0.08)', borderRadius: '16px', padding: '1.25rem 1.5rem', display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
-                                    <div style={{ width: '40px', height: '40px', borderRadius: '10px', background: 'rgba(244, 63, 94, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                                        <MapPin size={20} color="#f43f5e" />
+                                {/* 05 Local Vibe Intelligence */}
+                                <div style={{ gridColumn: 'span 2', background: 'rgba(14, 22, 38, 0.75)', backdropFilter: 'blur(12px)', border: '1px solid rgba(255, 255, 255, 0.08)', borderRadius: '12px', padding: '1rem 1.15rem', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                                        <span style={{ fontSize: '0.72rem', fontWeight: 800, color: '#38bdf8', fontFamily: 'monospace', letterSpacing: '0.06em' }}>05 // INTELLIGENCE</span>
+                                        <MapPin size={16} color="#38bdf8" />
                                     </div>
-                                    <div>
-                                        <h4 style={{ color: '#ffffff', fontSize: '1.05rem', fontWeight: 800, margin: '0 0 4px 0' }}>
-                                            Local Vibe Intelligence
-                                        </h4>
-                                        <p style={{ color: 'rgba(255, 255, 255, 0.65)', fontSize: '0.92rem', margin: 0, lineHeight: 1.5 }}>
-                                            Hyperlocal cultural trends, micro-venue dynamics, and atmospheric data to position your property as the local authority
-                                        </p>
-                                    </div>
+                                    <h4 style={{ color: '#ffffff', fontSize: '0.96rem', fontWeight: 800, margin: 0, lineHeight: 1.3 }}>
+                                        Local Vibe Intelligence
+                                    </h4>
+                                    <p style={{ color: 'rgba(230, 241, 255, 0.65)', fontSize: '0.82rem', margin: 0, lineHeight: 1.45 }}>
+                                        Hyperlocal cultural trends, micro-venue dynamics, and atmospheric data to position your property as the local authority
+                                    </p>
                                 </div>
                             </div>
 
-                            {/* What We Ask */}
-                            <div style={{ padding: '1.5rem', background: 'rgba(0, 0, 0, 0.4)', borderRadius: '16px', border: '1px solid rgba(255, 255, 255, 0.08)' }}>
-                                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#ffd700', fontWeight: 800, fontSize: '0.9rem', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '1px' }}>
-                                    <Award size={16} /> Beta Partner Commitment
+                            {/* Beta Partner Commitment */}
+                            <div style={{
+                                padding: '1.25rem 1.5rem',
+                                background: 'rgba(10, 18, 32, 0.75)',
+                                backdropFilter: 'blur(16px)',
+                                WebkitBackdropFilter: 'blur(16px)',
+                                borderRadius: '14px',
+                                border: '1px solid rgba(255, 255, 255, 0.08)',
+                                boxShadow: '0 8px 24px rgba(0, 0, 0, 0.35)',
+                                marginBottom: '1rem'
+                            }}>
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#ffd700', fontWeight: 800, fontSize: '0.82rem', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+                                    <Award size={15} /> Beta Partner Commitment
                                 </div>
-                                <p style={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '0.92rem', margin: 0, lineHeight: 1.6 }}>
+                                <p style={{ color: 'rgba(230, 241, 255, 0.75)', fontSize: '0.88rem', margin: 0, lineHeight: 1.55 }}>
                                     In exchange for 3 months of access and custom creative direction, we ask for a brief 20-minute bi-weekly feedback session to test recommendations and help us refine the AtmosVibe platform.
                                 </p>
                             </div>

@@ -540,30 +540,9 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
 
           {step === 'input' && (
             <motion.div key="input" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="form-section">
-              <div style={{ textAlign: 'center', marginBottom: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                <div style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  padding: '5px 16px',
-                  background: 'rgba(10, 18, 30, 0.72)',
-                  backdropFilter: 'blur(16px)',
-                  WebkitBackdropFilter: 'blur(16px)',
-                  border: '1px solid rgba(255, 255, 255, 0.14)',
-                  borderRadius: '999px',
-                  fontSize: '0.72rem',
-                  fontWeight: 800,
-                  letterSpacing: '0.12em',
-                  color: '#FFD700',
-                  textTransform: 'uppercase',
-                  marginBottom: '1rem',
-                  boxShadow: '0 4px 18px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.15)'
-                }}>
-                  <Sparkles size={13} />
-                  <span>THE WORKFLOW</span>
-                </div>
-                <h2 style={{ fontSize: 'clamp(2rem, 4vw, 2.75rem)', fontWeight: 900, color: '#ffffff', letterSpacing: '-0.02em', margin: '0 0 1.75rem 0', textTransform: 'uppercase' }}>
-                  HOW IT <span style={{ color: '#00e5ff', background: 'linear-gradient(90deg, #00e5ff, #ffd700)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>WORKS</span>
+              <div style={{ textAlign: 'center', marginBottom: '1.25rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                <h2 style={{ fontSize: 'clamp(1.6rem, 2.8vw, 2.1rem)', fontWeight: 900, color: '#ffffff', letterSpacing: '-0.02em', margin: '0 0 2.35rem 0', textTransform: 'uppercase' }}>
+                  HOW IT <span style={{ color: '#00e5ff', background: 'linear-gradient(90deg, #ffffff 10%, #00e5ff 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>WORKS</span>
                 </h2>
 
                 {/* 3-Step Workflow Pipeline Grid */}
@@ -573,11 +552,12 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                       <span className="audit-step-num">01</span>
                       <span className="audit-step-badge">INSTANT INPUT</span>
                     </div>
-                    <div className="audit-step-icon-wrap">
-                      <Link2 size={20} style={{ color: '#00e5ff' }} />
+                    <div className="audit-step-content-row">
+                      <div className="audit-step-icon-wrap">
+                        <Link2 size={16} style={{ color: '#00e5ff' }} />
+                      </div>
+                      <h3 className="audit-step-title">Paste Your Listing</h3>
                     </div>
-                    <h3 className="audit-step-title">Paste Your Listing</h3>
-                    <p className="audit-step-desc">Drop in your hotel details or Booking.com URL in the form below</p>
                   </div>
 
                   <div className="audit-workflow-card">
@@ -585,11 +565,12 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                       <span className="audit-step-num">02</span>
                       <span className="audit-step-badge">LOCAL DYNAMICS</span>
                     </div>
-                    <div className="audit-step-icon-wrap">
-                      <Cpu size={20} style={{ color: '#ffd700' }} />
+                    <div className="audit-step-content-row">
+                      <div className="audit-step-icon-wrap">
+                        <Cpu size={16} style={{ color: 'rgba(0, 229, 255, 0.65)' }} />
+                      </div>
+                      <h3 className="audit-step-title">Map to Local Dynamics</h3>
                     </div>
-                    <h3 className="audit-step-title">Map to Local Dynamics</h3>
-                    <p className="audit-step-desc">Machine vision re-sequences your gallery to lead with high-vibe sensory anchors</p>
                   </div>
 
                   <div className="audit-workflow-card">
@@ -597,36 +578,37 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                       <span className="audit-step-num">03</span>
                       <span className="audit-step-badge">MULTI-CHANNEL PACK</span>
                     </div>
-                    <div className="audit-step-icon-wrap">
-                      <Sparkles size={20} style={{ color: '#00e5ff' }} />
+                    <div className="audit-step-content-row">
+                      <div className="audit-step-icon-wrap">
+                        <Sparkles size={16} style={{ color: 'rgba(0, 229, 255, 0.65)' }} />
+                      </div>
+                      <h3 className="audit-step-title">Unlock Vibe Signature</h3>
                     </div>
-                    <h3 className="audit-step-title">Unlock Vibe Signature</h3>
-                    <p className="audit-step-desc">Preview your 5-slot reorder instantly, then claim turn-key copy and AI search tags</p>
                   </div>
                 </div>
               </div>
 
-              <div className="glass-card" style={{ padding: '2.5rem', borderRadius: '2rem' }}>
-                <div style={{ marginBottom: '1.75rem', paddingBottom: '1rem', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
-                  <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '11px', fontWeight: 800, color: '#00e5ff', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '0.35rem' }}>
-                    <Link2 size={13} />
+              <div className="glass-card" style={{ padding: '1.5rem 1.75rem', borderRadius: '1.25rem' }}>
+                <div style={{ marginBottom: '1rem', paddingBottom: '0.65rem', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
+                  <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '10px', fontWeight: 800, color: '#00e5ff', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '0.25rem' }}>
+                    <Link2 size={12} />
                     <span>STEP 1 // PROPERTY INPUT</span>
                   </div>
-                  <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#ffffff', margin: 0 }}>
+                  <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: '#ffffff', margin: 0 }}>
                     Enter Your Hotel Details to Launch Audit
                   </h3>
                 </div>
 
-                <div className="input-group" style={{ marginBottom: '1.5rem' }}>
-                  <label className="input-label" style={{ marginBottom: '0.75rem' }}>
+                <div className="input-group" style={{ marginBottom: '0.85rem' }}>
+                  <label className="input-label" style={{ marginBottom: '0.35rem', fontSize: '0.85rem' }}>
                     Hotel Name <span style={{ color: '#ef4444', fontWeight: 900 }}>*</span>
                   </label>
                   <input 
                     type="text" 
                     className="form-input" 
                     style={{ 
-                      fontSize: '1.1rem', 
-                      padding: '1rem 1.5rem',
+                      fontSize: '1rem', 
+                      padding: '0.75rem 1.25rem',
                       border: fieldErrors.propertyName ? '1px solid #ef4444' : undefined 
                     }} 
                     value={formData.propertyName} 
@@ -637,23 +619,23 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                     }} 
                   />
                   {fieldErrors.propertyName && (
-                    <div style={{ color: '#ef4444', fontSize: '12px', fontWeight: 700, marginTop: '6px' }}>
+                    <div style={{ color: '#ef4444', fontSize: '12px', fontWeight: 700, marginTop: '4px' }}>
                       ⚠️ {fieldErrors.propertyName}
                     </div>
                   )}
                 </div>
                 
-                <div className="grid-2" style={{ gap: '1.5rem' }}>
-                    <div className="input-group" style={{ marginBottom: '1.5rem' }}>
-                        <label className="input-label" style={{ marginBottom: '0.75rem' }}>
+                <div className="grid-2" style={{ gap: '1rem', marginBottom: '0.85rem' }}>
+                    <div className="input-group" style={{ marginBottom: 0 }}>
+                        <label className="input-label" style={{ marginBottom: '0.35rem', fontSize: '0.85rem' }}>
                           Primary Market / City <span style={{ color: '#ef4444', fontWeight: 900 }}>*</span>
                         </label>
                         <input 
                           type="text" 
                           className="form-input" 
                           style={{ 
-                            fontSize: '1.1rem', 
-                            padding: '1rem 1.5rem',
+                            fontSize: '1rem', 
+                            padding: '0.75rem 1.25rem',
                             border: fieldErrors.city ? '1px solid #ef4444' : undefined 
                           }} 
                           value={formData.city} 
@@ -664,27 +646,27 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                           }} 
                         />
                         {fieldErrors.city && (
-                          <div style={{ color: '#ef4444', fontSize: '12px', fontWeight: 700, marginTop: '6px' }}>
+                          <div style={{ color: '#ef4444', fontSize: '12px', fontWeight: 700, marginTop: '4px' }}>
                             ⚠️ {fieldErrors.city}
                           </div>
                         )}
                     </div>
-                    <div className="input-group" style={{ marginBottom: '1.5rem' }}>
-                        <label className="input-label" style={{ marginBottom: '0.75rem' }}>Neighborhood (Optional)</label>
-                        <input type="text" className="form-input" style={{ fontSize: '1.1rem', padding: '1rem 1.5rem' }} value={formData.neighborhood} placeholder="e.g. South Bank" onChange={e => setFormData({...formData, neighborhood: e.target.value})} />
+                    <div className="input-group" style={{ marginBottom: 0 }}>
+                        <label className="input-label" style={{ marginBottom: '0.35rem', fontSize: '0.85rem' }}>Neighborhood (Optional)</label>
+                        <input type="text" className="form-input" style={{ fontSize: '1rem', padding: '0.75rem 1.25rem' }} value={formData.neighborhood} placeholder="e.g. South Bank" onChange={e => setFormData({...formData, neighborhood: e.target.value})} />
                     </div>
                 </div>
 
-                <div className="input-group" style={{ marginBottom: '1.5rem' }}>
-                  <label className="input-label" style={{ marginBottom: '0.75rem' }}>
+                <div className="input-group" style={{ marginBottom: '0.85rem' }}>
+                  <label className="input-label" style={{ marginBottom: '0.35rem', fontSize: '0.85rem' }}>
                     Booking.com ID or URL <span style={{ color: '#ef4444', fontWeight: 900 }}>*</span>
                   </label>
                   <input 
                     type="text" 
                     className="form-input" 
                     style={{ 
-                      fontSize: '1.05rem', 
-                      padding: '1rem 1.5rem',
+                      fontSize: '1rem', 
+                      padding: '0.75rem 1.25rem',
                       border: fieldErrors.bookingId ? '1px solid #ef4444' : undefined,
                       letterSpacing: '0.02em'
                     }} 
@@ -696,14 +678,14 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                     }} 
                   />
                   {fieldErrors.bookingId && (
-                    <div style={{ color: '#ef4444', fontSize: '12px', fontWeight: 700, marginTop: '6px' }}>
+                    <div style={{ color: '#ef4444', fontSize: '12px', fontWeight: 700, marginTop: '4px' }}>
                       ⚠️ {fieldErrors.bookingId}
                     </div>
                   )}
                 </div>
 
-                <div className="input-group" style={{ marginBottom: '1.5rem' }}>
-                  <label className="input-label" style={{ marginBottom: '0.75rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <div className="input-group" style={{ marginBottom: '0.85rem' }}>
+                  <label className="input-label" style={{ marginBottom: '0.35rem', fontSize: '0.85rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                     <span>
                       Work Email {isLiveProduction ? <span style={{ color: '#ef4444', fontWeight: 900 }}>*</span> : <span style={{ color: 'rgba(255,255,255,0.4)', fontSize: '12px' }}>(Optional in Dev)</span>}
                     </span>
@@ -712,8 +694,8 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                     type="email" 
                     className="form-input" 
                     style={{ 
-                      fontSize: '1.1rem', 
-                      padding: '1rem 1.5rem',
+                      fontSize: '1rem', 
+                      padding: '0.75rem 1.25rem',
                       border: emailError ? '1px solid #ef4444' : undefined 
                     }} 
                     value={formData.email} 
@@ -724,7 +706,7 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                     }} 
                   />
                   {emailError && (
-                    <div style={{ color: '#ef4444', fontSize: '13px', fontWeight: 700, marginTop: '8px', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                    <div style={{ color: '#ef4444', fontSize: '12px', fontWeight: 700, marginTop: '4px', display: 'flex', alignItems: 'center', gap: '6px' }}>
                       ⚠️ {emailError}
                     </div>
                   )}
@@ -733,9 +715,9 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                 <button 
                   className="launch-button" 
                   style={{ 
-                    padding: '1.25rem', 
-                    fontSize: '1.2rem', 
-                    marginTop: '1.5rem',
+                    padding: '0.95rem 1.5rem', 
+                    fontSize: '1.1rem', 
+                    marginTop: '0.85rem',
                     opacity: isVerifyingProperty ? 0.7 : 1,
                     cursor: isVerifyingProperty ? 'wait' : 'pointer'
                   }} 
@@ -746,8 +728,8 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                 </button>
 
                 {/* Micro-Consent Disclaimer */}
-                <div style={{ marginTop: '1.25rem', textAlign: 'center' }}>
-                  <p style={{ fontSize: '11px', color: 'rgba(255, 255, 255, 0.45)', lineHeight: 1.5, margin: 0 }}>
+                <div style={{ marginTop: '0.75rem', textAlign: 'center' }}>
+                  <p style={{ fontSize: '11px', color: 'rgba(255, 255, 255, 0.45)', lineHeight: 1.45, margin: 0 }}>
                     🔒 By clicking <strong>Launch Vibe Audit</strong>, you agree to our{' '}
                     <Link to="/terms" style={{ color: '#00e5ff', textDecoration: 'underline' }}>Terms & Conditions</Link>{' '}
                     and acknowledge our{' '}
