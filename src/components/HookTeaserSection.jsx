@@ -97,26 +97,26 @@ export default function HookTeaserSection() {
 
                     <div className="collage-hero-wrap">
                       <img 
-                        src="https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=600&q=80" 
-                        alt="After: Riverside Social Hub" 
+                        src="/assets/hook_riverside_bar.jpg" 
+                        alt="After: Riverside Restaurant & Bar" 
                         className="collage-hero-img vibrant"
                       />
-                      <div className="collage-slot-tag after-slot-tag">Slot #1: Riverside Social Hub</div>
+                      <div className="collage-slot-tag after-slot-tag">Slot #1: Riverside Bar &amp; Dining</div>
                       <div className="collage-status-tag after-status-tag">+4.2s Dwell</div>
                     </div>
 
                     <div className="collage-thumbs-strip">
                       <div className="collage-thumb-item">
-                        <img src="/models/seacontainers.png" alt="Slot 2 Riverside Facade" />
+                        <img src="/assets/hook_riverside_facade.jpg" alt="Slot 2 Riverside Facade" />
                         <span className="thumb-cap">#2 Facade</span>
                       </div>
                       <div className="collage-thumb-item">
-                        <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=300&q=80" alt="Slot 3 Maritime Glamour" />
-                        <span className="thumb-cap">#3 Maritime</span>
+                        <img src="/assets/hook_riverside_suite.jpg" alt="Slot 3 Riverview Suite" />
+                        <span className="thumb-cap">#3 Suite</span>
                       </div>
                       <div className="collage-thumb-item">
-                        <img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=300&q=80" alt="Slot 4 Sunset Terrace" />
-                        <span className="thumb-cap">#4 Sunset</span>
+                        <img src="/assets/hook_riverside_terrace.jpg" alt="Slot 4 Social Sunset Terrace" />
+                        <span className="thumb-cap">#4 Social</span>
                       </div>
                     </div>
 
