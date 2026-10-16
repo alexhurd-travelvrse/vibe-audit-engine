@@ -11,7 +11,7 @@ const Footer = () => {
                     <p className="copyright">&copy; {new Date().getFullYear()} AtmosVibe. All rights reserved</p>
                     <div className="footer-links">
                         <Link to="/privacy" className="footer-link">Privacy Policy</Link>
-                        <span className="footer-divider">|</span>
+                        <span className="footer-divider" aria-hidden="true">|</span>
                         <Link to="/terms" className="footer-link">Terms &amp; Conditions</Link>
                     </div>
                 </div>

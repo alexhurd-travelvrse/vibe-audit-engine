@@ -18,7 +18,7 @@ export default function HookTeaserSection() {
             Gateway to Your <span className="teaser-title-accent">Neighbourhood</span>
           </h2>
           <p className="teaser-description">
-            AtmosVibe ensures your property stands out as the ultimate local launchpad across all channels
+            AtmosVibe ensures your property stands out as the defining gateway to your neighbourhood across all channels
           </p>
         </div>
 
