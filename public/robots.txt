@@ -6,6 +6,9 @@ Allow: /
 User-agent: GPTBot
 Allow: /
 
+User-agent: OAI-SearchBot
+Allow: /
+
 User-agent: ChatGPT-User
 Allow: /
 
@@ -18,11 +21,18 @@ Allow: /
 User-agent: ClaudeBot
 Allow: /
 
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
 User-agent: CCBot
 Allow: /
 
-# Disallow authenticated/internal app panels
+# Disallow private/internal pages
 Disallow: /creator-portal
+Disallow: /barcelona
 
 # Sitemap location
-Sitemap: https://atmosvibe.io/sitemap.xml
+Sitemap: https://www.atmosvibe.io/sitemap.xml

@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
+import { Analytics } from '@vercel/analytics/react';
 import Layout from './components/Layout';
 import Hero from './components/Hero';
 import VibeDimensionsSection from './components/VibeDimensionsSection';
@@ -101,6 +102,22 @@ const App = () => {
           <Route path="/creator-portal" element={<CreatorPortal />} />
         </Routes>
       </Router>
+      <Analytics
+        beforeSend={(event) => {
+          if (typeof window !== 'undefined') {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('ignore_analytics') === 'true') {
+              localStorage.setItem('ignore_analytics', 'true');
+            } else if (urlParams.get('ignore_analytics') === 'false') {
+              localStorage.removeItem('ignore_analytics');
+            }
+            if (localStorage.getItem('ignore_analytics') === 'true') {
+              return null; // Exclude event from tracking
+            }
+          }
+          return event;
+        }}
+      />
     </HelmetProvider>
   );
 };

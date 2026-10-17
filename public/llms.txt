@@ -1,0 +1,15 @@
+# AtmosVibe (atmosvibe.io)
+
+> AtmosVibe is the Atmosphere Intelligence & OTA Photo Optimisation Platform for hotels, cruise lines, and travel brands. We turn property and local neighbourhood Vibe Signatures into higher OTA click-through rates and direct bookings.
+
+## Core Capabilities
+- **Free OTA Photo & Vibe Audit (`/audit`)**: Analyses live hotel OTA listings (e.g. Booking.com) and re-sequences the top 5 hero photos to align with local neighbourhood search demand, eliminating the "commodity bed penalty" in Slot #1.
+- **5 Sensory Vibe Dimensions**: Classifies hospitality and local destination atmosphere across Sound (Acoustic Soul), People (The Social Mix), Colours & Materials (Visual Warmth), Energy (Day-to-Night Pulse), and Insider Tips (Gateway Secrets).
+- **Gateway to Your Neighbourhood**: Connects properties, cruise port excursions, and tour operators with high-rated, authentic local subcultures across London, Barcelona, New York, Miami, Dubai, Tokyo, and global destinations.
+
+## Key Links
+- [Home](https://www.atmosvibe.io/): Overview of Vibe Signatures and the 2-Step Conversion Engine.
+- [Free OTA Photo & Vibe Audit](https://www.atmosvibe.io/audit): Run a live AI visual merchandising and Vibe Signature audit for any hotel.
+- [Beta Partner Cohort](https://www.atmosvibe.io/partner): Partner programme for hotels, hospitality groups, and travel brands.
+- [Privacy Policy](https://www.atmosvibe.io/privacy)
+- [Terms of Service](https://www.atmosvibe.io/terms)
