@@ -137,17 +137,40 @@ const VibeAuditSearchSection = () => {
     setEmailError('');
     const errors = {};
 
-    if (!formData.propertyName || !formData.propertyName.trim()) {
+    const hotelNameInput = (formData.propertyName || '').trim();
+    if (!hotelNameInput) {
       errors.propertyName = 'Hotel Name is required';
     }
+
     const rawBooking = String(formData.bookingId || '').trim();
-    if (!formData.city || !formData.city.trim()) {
-      if (!rawBooking.includes('booking.com')) {
+    let targetHotel = hotelNameInput;
+    let targetCity = (formData.city || '').trim();
+    let targetNeighborhood = formData.neighborhood ? formData.neighborhood.trim() : '';
+    let directBookingUrl = null;
+    let cleanId = null;
+
+    // Check if property matches known benchmark properties (e.g. Sea Containers London)
+    const benchmarkList = [
+      { aliases: ['sea containers', 'sea containers london', 'seacontainers', 'sea conainers'], title: 'Sea Containers London', city: 'London', neighborhood: 'South Bank', url: 'https://www.booking.com/hotel/gb/sea-containers-london.html' },
+      { aliases: ['plymouth', 'the plymouth', 'the plymouth hotel', 'the plymouth miami beach', 'plymouth south beach'], title: 'The Plymouth South Beach Miami', city: 'Miami', neighborhood: 'Miami Beach', url: 'https://www.booking.com/hotel/us/the-plymouth-miami-beach.html' },
+      { aliases: ['25hours', '25 hours', '25hours copenhagen', '25hours indre by'], title: '25hours Hotel Indre By Copenhagen', city: 'Copenhagen', neighborhood: 'Indre By', url: 'https://www.booking.com/hotel/dk/25hours-indre-by.html' },
+      { aliases: ['dukes the palm', 'dukes dubai', 'dukes palm'], title: 'Dukes The Palm, a Royal Hideaway Hotel Dubai', city: 'Dubai', neighborhood: 'Palm Jumeirah', url: 'https://www.booking.com/hotel/ae/dukes.html' },
+      { aliases: ['sls south beach', 'sls miami'], title: 'SLS South Beach Miami', city: 'Miami', neighborhood: 'Miami Beach', url: 'https://www.booking.com/hotel/us/sls-south-beach.html' }
+    ];
+
+    const lowerInput = hotelNameInput.toLowerCase();
+    const matchedBenchmark = benchmarkList.find(b => b.aliases.some(a => lowerInput === a || lowerInput.includes(a) || a.includes(lowerInput)));
+    if (matchedBenchmark) {
+      targetHotel = matchedBenchmark.title;
+      if (!targetCity) targetCity = matchedBenchmark.city;
+      if (!targetNeighborhood) targetNeighborhood = matchedBenchmark.neighborhood;
+      if (!rawBooking) directBookingUrl = matchedBenchmark.url;
+    }
+
+    if (!targetCity) {
+      if (!rawBooking.includes('booking.com') && !directBookingUrl) {
         errors.city = 'City / Primary Market is required (or provide a Booking.com URL to auto-detect)';
       }
-    }
-    if (!rawBooking) {
-      errors.bookingId = 'Booking.com ID or URL is required';
     }
 
     // Require valid work email on live production environments
@@ -165,16 +188,9 @@ const VibeAuditSearchSection = () => {
     }
     setFieldErrors({});
 
-    let targetHotel = formData.propertyName.trim();
-    let targetCity = formData.city.trim();
-    let targetNeighborhood = formData.neighborhood ? formData.neighborhood.trim() : '';
-
-    let directBookingUrl = null;
-    let cleanId = null;
-
     if (rawBooking.includes('booking.com')) {
       directBookingUrl = rawBooking;
-    } else {
+    } else if (rawBooking) {
       cleanId = rawBooking.replace(/[^\d]/g, '');
       if (cleanId && cleanId !== '357028') {
         directBookingUrl = `https://www.booking.com/hotel.html?hotel_id=${cleanId}`;
@@ -266,7 +282,7 @@ const VibeAuditSearchSection = () => {
                 {/* Booking.com Property ID or URL */}
                 <div className="vibe-input-field">
                   <label className="vibe-label">
-                    Booking.com ID or URL <span style={{ color: '#ef4444', fontWeight: 900 }}>*</span>
+                    Booking.com ID or URL <span className="optional-tag" style={{ fontSize: '11px', color: 'rgba(255, 255, 255, 0.45)', fontWeight: 400 }}>(Optional — auto-detected)</span>
                   </label>
                   <div className="vibe-input-wrapper">
                     <Hash size={18} className="vibe-input-icon text-cyan" />

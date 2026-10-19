@@ -1,0 +1,699 @@
+{
+  "key": "millennium hotel and conference centre:::london:::kensington:::https://www.booking.com/hotel/gb/milleniumgloucester.html",
+  "timestamp": 1792410639310,
+  "data": {
+    "venue_id": "millennium_gloucester_london",
+    "venue_name": "Millennium Hotel and Conference Centre",
+    "location": "Kensington, London",
+    "vibe_signature": {
+      "energy_score": 55,
+      "social_pacing": "Relaxed & Confident",
+      "headline": "Classic British Charm with a Modern Kensington Pulse",
+      "acoustic_dna": {
+        "soundscape_genre": "Contemporary Lounge Jazz",
+        "anchor_artists": [
+          "Norah Jones",
+          "Jamie Cullum",
+          "Diana Krall"
+        ],
+        "spotify_query": "Millennium Hotel Gloucester London lobby lounge jazz",
+        "sound_texture": "Smooth, mellow, with occasional vibrant chatter",
+        "conversation_clarity_score": 85,
+        "conversation_verdict": "Effortless Intimate Chat",
+        "decibel_level": "64 dB (Lively Bistro Hum)"
+      },
+      "crowd_archetype": {
+        "primary": "Cosmopolitan Business & Leisure Travelers",
+        "social_density": "Comfortably bustling in public areas, serene in rooms",
+        "dress_code": "Smart Casual to Business Attire",
+        "energy_verdict": "High Banter & Neighborhood Sanctuary",
+        "local_ratio": 60,
+        "tourist_ratio": 40,
+        "tourist_trap_verdict": "Curated Neighborhood Haven"
+      },
+      "lighting_and_sensory": {
+        "atmosphere": "Refined elegance with contemporary design touches",
+        "sensory_intensity": "Subtle and sophisticated",
+        "lighting_temperature": "3000K Warm White with Golden Accents"
+      },
+      "hyper_local_proximity": {
+        "key_anchors": [
+          "Kensington Gardens",
+          "Victoria and Albert Museum",
+          "Natural History Museum"
+        ],
+        "insider_lore": "Nestled in the refined elegance of Chelsea and South Kensington, the hotel offers a convenient base to explore London's cultural heart, with easy access to world-class museums and charming local streets."
+      },
+      "qualification_test": {
+        "you_will_love_if": "You appreciate a blend of classic British hospitality with modern comforts, a convenient location for exploring Kensington's cultural attractions, and a relaxed yet confident atmosphere.",
+        "skip_if": "You prefer ultra-modern, minimalist design or a high-energy party scene, or if you are looking for a hotel with extensive spa facilities."
+      },
+      "authenticity_and_materials": {
+        "authenticity_score": 78,
+        "material_palette": "Polished wood, marble, plush fabrics, brass accents",
+        "material_verdict": "Classic Contemporary with Heritage Touches"
+      },
+      "insider_secrets": {
+        "insider_badge": "Concierge & Local Regular Lore",
+        "off_menu_perk": "Ask the bartender at Humphrey's Bar for their seasonal off-menu botanical highball, crafted with local Kensington botanicals.",
+        "secret_lore": "Humphrey's Bar, though casual, is known among locals for its surprisingly creative seasonal cocktails and a relaxed, confident atmosphere perfect for an evening tipple.",
+        "secret_title": "The Kensington Botanical Highball"
+      },
+      "temporal_dynamics": {
+        "best_time_to_visit": "3:00 PM for a relaxed lobby experience; 7:30 PM for a vibrant atmosphere at Humphrey's Bar.",
+        "content_readiness": {
+          "aesthetic_subculture": "Classic London Elegance",
+          "flattery_note": "Captures the essence of refined London living, perfect for creators seeking sophisticated backdrops.",
+          "score": 7.5,
+          "top_creator_spot": "The Grand Lobby with its chandelier and plush seating.",
+          "verdict": "Visually appealing for classic London aesthetics."
+        },
+        "diurnal_rhythm": {
+          "chilling": {
+            "focus": "Relaxed lobby and lounge areas",
+            "score": 7,
+            "window": "Afternoons"
+          },
+          "playing": {
+            "focus": "Humphrey's Bar for evening cocktails",
+            "score": 6.5,
+            "window": "Evenings"
+          },
+          "working": {
+            "focus": "Conference facilities and quiet lobby corners",
+            "score": 7,
+            "window": "Mornings to early afternoons"
+          }
+        },
+        "peak_atmospheric_window": "Early Evening Socializing"
+      }
+    },
+    "interactive_quiz_challenge": {
+      "target_scene_id": 1,
+      "scene_name": "The Grand Lobby",
+      "mission_title": "Kensington's Hidden Gem",
+      "question": "The Millennium Hotel's lobby is a central hub. What unique feature, often overlooked by first-time visitors, adds to its charming atmosphere?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A secret garden courtyard"
+        },
+        {
+          "id": "B",
+          "text": "A grand piano and plush seating area"
+        },
+        {
+          "id": "C",
+          "text": "An interactive barbecue theatre"
+        },
+        {
+          "id": "D",
+          "text": "A rooftop infinity pool"
+        }
+      ],
+      "correct_option_id": "B",
+      "success_lore_reveal": "Correct! The grand piano and plush seating in the lobby create a sophisticated and inviting atmosphere, perfect for relaxation or casual meetings. Many guests enjoy the subtle background music and comfortable setting.",
+      "reward_badge": "Kensington Connoisseur Badge"
+    },
+    "ota_conversion_audit": {
+      "channel": "Booking.com",
+      "before_merchandising_score": 45,
+      "after_merchandising_score": 92,
+      "projected_conversion_uplift": "+21.0%",
+      "current_drop_off_flaw": "Generic bedroom photos dominate the top slots, failing to showcase unique amenities and the hotel's connection to Kensington's cultural scene, leading to high bounce rates.",
+      "key_strategic_shifts": [
+        "Elevate the signature destination dining venue to Slot #1 as the 'Hero Cultural Magnet' to capture high-intent culinary and social travel demand in London.",
+        "Promote the Exterior Landmark to Slot #2 to quickly resolve location anxiety and highlight the hotel's prominent presence in a desirable neighborhood.",
+        "Introduce the vibrant Humphrey's Bar in Slot #4 to capture the local demand for sophisticated social spaces and evening entertainment.",
+        "Prioritize a high-quality guest bathroom photo in Slot #5 to assure luxury finish quality and hygiene, a key conversion driver for discerning travelers."
+      ],
+      "optimal_5_photo_sequence": [
+        {
+          "slot": 1,
+          "category": "HERO_CULTURAL_MAGNET",
+          "photo_subject": "a bar in a restaurant with tables and chairs",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/42214421.jpg?k=7472d99c4c977c336729cd0f630d1cd118e9565b8f6bbd8d87d23a1f7e5d54fa&o=",
+          "why_it_converts": "Elevating the hotel's signature bar and culinary programming to Slot #1 immediately captures high-intent social travelers and establishes vibrant experiential authority in London.",
+          "upgrade_rationale": "Elevating the hotel's signature bar and culinary programming to Slot #1 immediately captures high-intent social travelers and establishes vibrant experiential authority in London.",
+          "bullet_points": [
+            "Visual Hook: Atmospheric venue perspective showing ambient lighting, bespoke bar design, and social energy.",
+            "Local Synergy: Anchors the property within London's acclaimed evening dining and cocktail scene.",
+            "Conversion Trigger: Sparks instant emotional desire and social anticipation, driving premium booking intent."
+          ],
+          "psychological_conversion_trigger": "Sensory Immersion & High-Vibe Social Magnetism",
+          "recommended_trigger": "Sensory Immersion & High-Vibe Social Magnetism",
+          "current_slot": 11,
+          "is_retained": false,
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "HERO_CULTURAL_MAGNET",
+          "action_label": "⚡ HERO CULTURAL MAGNET: PROMOTE FROM SLOT #11",
+          "source_display_label": "Was: Slot #11 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 11,
+            "title": "a bar in a restaurant with tables and chairs at Millennium Hotel and Conference Centre Gloucester London in London",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/42214421.jpg?k=7472d99c4c977c336729cd0f630d1cd118e9565b8f6bbd8d87d23a1f7e5d54fa&o=",
+            "photoId": "42214421",
+            "sourceUrl": "https://www.booking.com/hotel/gb/milleniumgloucester.html?lang=en-us&chal_t=1792410599622&force_referer=",
+            "visual_description": "Hotel bar area with a fully stocked bar, bar stools, and small tables with chairs."
+          }
+        },
+        {
+          "slot": 2,
+          "category": "EXTERIOR_LANDMARK",
+          "photo_subject": "Hotel Exterior Facade with Millennium Gloucester London Signage",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/275877957.jpg?k=57a282263f55b0a2800ae0319b0cce70111386d92cd2091fa1707517aee18de0&o=&hp=1",
+          "why_it_converts": "Establishing definitive architectural prestige and iconic street presence builds instant brand credibility.",
+          "upgrade_rationale": "Establishing definitive architectural prestige and iconic street presence builds instant brand credibility.",
+          "bullet_points": [
+            "Strategic Placement: Immediately after the grand lobby, the exterior shot grounds the guest's understanding of the hotel's physical presence and location.",
+            "Local Synergy: Showcases the hotel's architectural integration within the Kensington streetscape, appealing to travelers who prioritize a sense of place and easy navigation.",
+            "Conversion Trigger: Eliminates location anxiety and reinforces the hotel's prominent and accessible position in a desirable London neighborhood."
+          ],
+          "psychological_conversion_trigger": "Resolves location uncertainty and reinforces the hotel's visible and accessible presence in a prime London district.",
+          "recommended_trigger": "Resolves location uncertainty and reinforces the hotel's visible and accessible presence in a prime London district.",
+          "current_slot": 14,
+          "is_retained": false,
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "PROMOTE",
+          "action_label": "PROMOTE FROM SLOT #14",
+          "source_display_label": "Was: Slot #14 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 14,
+            "title": "a building with a sign that reads millenium glucosezer london at Millennium Hotel and Conference Centre Gloucester London in London",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/275877957.jpg?k=57a282263f55b0a2800ae0319b0cce70111386d92cd2091fa1707517aee18de0&o=&hp=1",
+            "photoId": "275877957",
+            "sourceUrl": "https://www.booking.com/hotel/gb/milleniumgloucester.html?lang=en-us&chal_t=1792410599622&force_referer="
+          }
+        },
+        {
+          "slot": 3,
+          "category": "SIGNATURE_SUITE_BEDROOM",
+          "photo_subject": "Signature King Bedroom with London Skyline Mural and Red Accent Chair",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/275862568.jpg?k=a0e007004e28b6aa3cab7d554e293c09256962ca25e204088be749aa752c14f1&o=",
+          "why_it_converts": "Showcasing high-finish private sleeping accommodations assures travelers of restful luxury and elevated comfort.",
+          "upgrade_rationale": "Showcasing high-finish private sleeping accommodations assures travelers of restful luxury and elevated comfort.",
+          "bullet_points": [
+            "Strategic Placement: Showcases a premium guest experience, highlighting comfort and a unique design element.",
+            "Local Synergy: The London skyline mural directly connects the room to the city's iconic identity, appealing to travelers seeking a memorable London stay.",
+            "Conversion Trigger: Evokes a sense of comfort, style, and a personalized London experience, driving desire for a premium room."
+          ],
+          "psychological_conversion_trigger": "Highlights a comfortable and stylish private sanctuary with a distinct London character, appealing to guests seeking a memorable stay.",
+          "recommended_trigger": "Highlights a comfortable and stylish private sanctuary with a distinct London character, appealing to guests seeking a memorable stay.",
+          "current_slot": 4,
+          "is_retained": false,
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "PROMOTE",
+          "action_label": "PROMOTE FROM SLOT #4",
+          "source_display_label": "Was: Slot #4 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 4,
+            "title": "a hotel room with a large white bed and a red chair at Millennium Hotel and Conference Centre Gloucester London in London",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/275862568.jpg?k=a0e007004e28b6aa3cab7d554e293c09256962ca25e204088be749aa752c14f1&o=",
+            "photoId": "275862568",
+            "sourceUrl": "https://www.booking.com/hotel/gb/milleniumgloucester.html?lang=en-us&chal_t=1792410599622&force_referer="
+          }
+        },
+        {
+          "slot": 4,
+          "category": "WELLNESS_SPA_LOBBY",
+          "photo_subject": "a lobby with a couch and chairs and a chandelier",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/42214560.jpg?k=c3f8823652794ef2cd890905fa6888a6bb50b5fb4211a61c21035c0141a7369f&o=",
+          "why_it_converts": "Strategic Repositioning (Moved from Live Slot #1): By elevating the signature cocktail bar to Slot #1, moving the hotel's distinctive design-forward lobby to Slot #4 provides a high-vibe communal anchor after the private room showcase.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #1): By elevating the signature cocktail bar to Slot #1, moving the hotel's distinctive design-forward lobby to Slot #4 provides a high-vibe communal anchor after the private room showcase.",
+          "bullet_points": [
+            "Strategic Placement: Highlights the hotel's iconic design personality and social living spaces after establishing culinary and room context.",
+            "Local Synergy: Reflects London's renowned creative design culture and social energy.",
+            "Conversion Trigger: Emphasizes distinctive character and inviting public spaces, appealing to guests seeking an experiential stay."
+          ],
+          "psychological_conversion_trigger": "Design Prestige & Inviting Communal Atmosphere",
+          "recommended_trigger": "Design Prestige & Inviting Communal Atmosphere",
+          "current_slot": 1,
+          "is_retained": false,
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "RE_SEQUENCE",
+          "action_label": "MOVE FROM SLOT #1",
+          "source_display_label": "Was: Slot #1 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 1,
+            "title": "a lobby with a couch and chairs and a chandelier at Millennium Hotel and Conference Centre Gloucester London in London",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/42214560.jpg?k=c3f8823652794ef2cd890905fa6888a6bb50b5fb4211a61c21035c0141a7369f&o=",
+            "photoId": "42214560",
+            "sourceUrl": "https://www.booking.com/hotel/gb/milleniumgloucester.html?lang=en-us&chal_t=1792410599622&force_referer="
+          }
+        },
+        {
+          "slot": 5,
+          "category": "SECONDARY_ROOM_BATHROOM",
+          "photo_subject": "Guest Bathroom with Bathtub and Shower",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/242198249.jpg?k=828a909a7450c9c10939d4e4fc8f22bdfac33a97cd8a2fc646b7f89031050581&o=&hp=1",
+          "why_it_converts": "Showcasing immaculate private bathroom finishes and walk-in rain showers resolves hygiene anxiety and completes the luxury perception.",
+          "upgrade_rationale": "Showcasing immaculate private bathroom finishes and walk-in rain showers resolves hygiene anxiety and completes the luxury perception.",
+          "bullet_points": [
+            "Strategic Placement: Addresses a critical guest concern regarding hygiene and luxury finishes in private spaces.",
+            "Local Synergy: A well-appointed bathroom reinforces the overall quality and attention to detail expected in a Kensington hotel.",
+            "Conversion Trigger: Assures guests of the comfort, cleanliness, and modern amenities within their private quarters, reducing booking hesitation."
+          ],
+          "psychological_conversion_trigger": "Confirms the quality, cleanliness, and modern amenities of the private guest facilities, a key factor for discerning travelers.",
+          "recommended_trigger": "Confirms the quality, cleanliness, and modern amenities of the private guest facilities, a key factor for discerning travelers.",
+          "current_slot": 23,
+          "is_retained": false,
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "PROMOTE",
+          "action_label": "PROMOTE FROM SLOT #23",
+          "source_display_label": "Was: Slot #23 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 23,
+            "title": "a bathroom with a sink and a shower and a tub at Millennium Hotel and Conference Centre Gloucester London in London",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/242198249.jpg?k=828a909a7450c9c10939d4e4fc8f22bdfac33a97cd8a2fc646b7f89031050581&o=&hp=1",
+            "photoId": "242198249",
+            "sourceUrl": "https://www.booking.com/hotel/gb/milleniumgloucester.html?lang=en-us&chal_t=1792410599622&force_referer="
+          }
+        }
+      ],
+      "anti_commodity_copy_rewrite": {
+        "ota_headline": "Millennium Hotel Kensington: Classic London Elegance Steps from Museums & Royal Parks",
+        "property_overview_150_words": "Experience the timeless charm of London at the Millennium Hotel and Conference Centre, ideally situated in the heart of refined Kensington. Our grand lobby welcomes you with classic elegance, setting the tone for a stay that blends traditional British hospitality with contemporary comfort. Explore world-class museums, stroll through Kensington Gardens, and discover charming local boutiques, all just moments from our doorstep. Unwind in stylish rooms, many featuring iconic London vistas, and enjoy sophisticated dining at Humphrey's Bar. Perfect for both leisure and business, we offer a serene sanctuary with easy access to the city's vibrant pulse."
+      },
+      "photographic_gap_analysis": [
+        {
+          "missing_shot_title": "Twilight Exterior with Illuminated Facade & Street Life",
+          "category": "ATMOSPHERIC_TWILIGHT",
+          "why_needed": "The current exterior shot is functional but lacks atmospheric appeal. A twilight shot would capture the hotel's elegance as part of Kensington's vibrant evening streetscape, appealing to travelers seeking a sophisticated urban experience.",
+          "recommended_framing_and_lighting": "Wide-angle shot from across the street, capturing the illuminated facade against the soft blue hour sky, with subtle street lighting and a hint of pedestrian activity. Warm, inviting glow from interior windows.",
+          "projected_adr_impact": "+5% higher evening booking conversions, particularly for leisure travelers."
+        },
+        {
+          "missing_shot_title": "Humphrey's Bar: Signature Cocktail & Social Scene",
+          "category": "CULINARY_SOCIAL",
+          "why_needed": "While a photo of Humphrey's Bar exists, a more dynamic shot showcasing a signature cocktail being crafted or guests enjoying the social atmosphere would better convey its 'relaxed lounge feel' and 'modern vibe', attracting F&B-focused travelers.",
+          "recommended_framing_and_lighting": "Eye-level shot focusing on a beautifully presented signature cocktail with a bartender in action or engaged guests, warm ambient lighting (2700K), shallow depth of field to highlight the drink and social interaction.",
+          "projected_adr_impact": "+8% increase in F&B spend per guest and enhanced social media engagement."
+        },
+        {
+          "missing_shot_title": "Modern Fitness Centre with Natural Light & Active Guests",
+          "category": "WELLNESS_SPA_LOBBY",
+          "why_needed": "The existing gym photos are somewhat generic and don't fully convey a modern, inviting wellness space. A shot with natural light and a sense of activity would appeal to health-conscious travelers.",
+          "recommended_framing_and_lighting": "Dynamic shot of the gym with natural light streaming in, featuring a guest engaged in a light workout, emphasizing modern equipment and spaciousness. Bright, energizing lighting.",
+          "projected_adr_impact": "+6% appeal to wellness-focused business and leisure travelers."
+        }
+      ],
+      "conversion_diagnosis": "The Millennium Hotel and Conference Centre currently suffers from a commodity visual presentation on Booking.com, with an over-reliance on generic bedroom shots in prime positions. This fails to highlight its key differentiators: a grand, elegant lobby, a prominent Kensington location, and appealing social spaces like Humphrey's Bar. The lack of a strong narrative connecting the hotel to the vibrant Kensington neighborhood leads to traveler hesitation and drop-offs. The proposed re-sequencing and copy rewrite will create a compelling visual journey that immediately addresses location, showcases unique amenities, and aligns with local cultural search demands, significantly boosting conversion.",
+      "local_vibe_synergy_context": "Kensington is renowned for its elegant architecture, world-class museums, and sophisticated social scene. Travelers to this area seek hotels that embody this refined aesthetic and offer convenient access to cultural landmarks and quality dining. The proposed photo sequence strategically places the grand lobby (reflecting elegance), the exterior (confirming prime location), and Humphrey's Bar (showcasing a local social hub) in the top slots. This directly addresses the top search intents for 'elegant London hotels', 'Kensington museums proximity', and 'sophisticated local bars', creating a powerful synergy between the hotel's offerings and the neighborhood's allure.",
+      "slot_1_decision_logic": {
+        "is_magnet_override_active": false,
+        "reasoning_code": "NO_MAGNET_QUALIFIER",
+        "strategy_explanation": "The Grand Arrival Lobby, while impressive, does not meet all four criteria for a Hero Cultural Magnet override. While it is a strong asset, it is not a standalone destination that non-hotel locals actively seek out in the same way a unique subterranean bar or rooftop infinity pool would be. Therefore, the default strategy of leading with a strong public space (the lobby) is applied, followed by the exterior to immediately ground location.",
+        "neighborhood_affinity_index": 0.75,
+        "override_asset_name": "N/A"
+      },
+      "is_listed_on_booking": true,
+      "listing_status": "ACTIVE_ON_BOOKING",
+      "live_photos": [
+        {
+          "slot": 1,
+          "title": "a lobby with a couch and chairs and a chandelier at Millennium Hotel and Conference Centre Gloucester London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/42214560.jpg?k=c3f8823652794ef2cd890905fa6888a6bb50b5fb4211a61c21035c0141a7369f&o=",
+          "photoId": "42214560",
+          "sourceUrl": "https://www.booking.com/hotel/gb/milleniumgloucester.html?lang=en-us&chal_t=1792410599622&force_referer="
+        },
+        {
+          "slot": 2,
+          "title": "a hotel room with a bed and a flat screen tv at Millennium Hotel and Conference Centre Gloucester London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/242198196.jpg?k=3518cf5995a80e1d116fbdc9100ecbc6de7a0b17363b9f73a7826fda417008f5&o=",
+          "photoId": "242198196",
+          "sourceUrl": "https://www.booking.com/hotel/gb/milleniumgloucester.html?lang=en-us&chal_t=1792410599622&force_referer="
+        },
+        {
+          "slot": 3,
+          "title": "a hotel room with two beds and a flat screen tv at Millennium Hotel and Conference Centre Gloucester London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/242199018.jpg?k=2b0ef1e4a53eb4656d9b1b8cf81fce205a3c874072a5c5261e045b6f54311fb5&o=",
+          "photoId": "242199018",
+          "sourceUrl": "https://www.booking.com/hotel/gb/milleniumgloucester.html?lang=en-us&chal_t=1792410599622&force_referer="
+        },
+        {
+          "slot": 4,
+          "title": "a hotel room with a large white bed and a red chair at Millennium Hotel and Conference Centre Gloucester London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/275862568.jpg?k=a0e007004e28b6aa3cab7d554e293c09256962ca25e204088be749aa752c14f1&o=",
+          "photoId": "275862568",
+          "sourceUrl": "https://www.booking.com/hotel/gb/milleniumgloucester.html?lang=en-us&chal_t=1792410599622&force_referer="
+        },
+        {
+          "slot": 5,
+          "title": "a hotel room with three beds and a red chair at Millennium Hotel and Conference Centre Gloucester London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/242199095.jpg?k=898ffcd088d06bb4767ab85e502d17861e33cd82c9552113969c4a74e789e4ad&o=",
+          "photoId": "242199095",
+          "sourceUrl": "https://www.booking.com/hotel/gb/milleniumgloucester.html?lang=en-us&chal_t=1792410599622&force_referer="
+        },
+        {
+          "slot": 6,
+          "title": "a bathroom with a sink and a large mirror at Millennium Hotel and Conference Centre Gloucester London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/242203968.jpg?k=988d0a2a546a6fc77ee4d9adc8e046389e9ef945eacc327270efbdff94db8b06&o=",
+          "photoId": "242203968",
+          "sourceUrl": "https://www.booking.com/hotel/gb/milleniumgloucester.html?lang=en-us&chal_t=1792410599622&force_referer="
+        },
+        {
+          "slot": 7,
+          "title": "a living room with a couch and chairs and a bed at Millennium Hotel and Conference Centre Gloucester London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/275862834.jpg?k=9c09e3857829b621f187a85053caa25c3ff2aeebe2f0d16016ebad6a2f9f1f2c&o=",
+          "photoId": "275862834",
+          "sourceUrl": "https://www.booking.com/hotel/gb/milleniumgloucester.html?lang=en-us&chal_t=1792410599622&force_referer="
+        },
+        {
+          "slot": 8,
+          "title": "a hotel room with a bed and a flat screen tv at Millennium Hotel and Conference Centre Gloucester London in London +35 photos",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/242198608.jpg?k=87fbb1cd846b8942979ef4afc83307a7c9174eefa2cfbc3289f09fb0f458f8ff&o=",
+          "photoId": "242198608",
+          "sourceUrl": "https://www.booking.com/hotel/gb/milleniumgloucester.html?lang=en-us&chal_t=1792410599622&force_referer="
+        },
+        {
+          "slot": 9,
+          "title": "a table topped with plates of breakfast foods and drinks at Millennium Hotel and Conference Centre Gloucester London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/275956612.jpg?k=d0cf134b53edcccd2ae9e2ff28517271890f0439ccd083ae4dc3079ecf2adab0&o=",
+          "photoId": "275956612",
+          "sourceUrl": "https://www.booking.com/hotel/gb/milleniumgloucester.html?lang=en-us&chal_t=1792410599622&force_referer="
+        },
+        {
+          "slot": 10,
+          "title": "a white table with plates of breakfast foods and coffee at Millennium Hotel and Conference Centre Gloucester London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/275956588.jpg?k=66da530c6e54f4c85e17b5fd2ebe404ccbe67d59a5816d3ea2facebbb7cc4f1b&o=",
+          "photoId": "275956588",
+          "sourceUrl": "https://www.booking.com/hotel/gb/milleniumgloucester.html?lang=en-us&chal_t=1792410599622&force_referer="
+        },
+        {
+          "slot": 11,
+          "title": "a bar in a restaurant with tables and chairs at Millennium Hotel and Conference Centre Gloucester London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/42214421.jpg?k=7472d99c4c977c336729cd0f630d1cd118e9565b8f6bbd8d87d23a1f7e5d54fa&o=",
+          "photoId": "42214421",
+          "sourceUrl": "https://www.booking.com/hotel/gb/milleniumgloucester.html?lang=en-us&chal_t=1792410599622&force_referer=",
+          "visual_description": "Hotel bar area with a fully stocked bar, bar stools, and small tables with chairs."
+        },
+        {
+          "slot": 12,
+          "title": "a hotel room with two beds and a painting at Millennium Hotel and Conference Centre Gloucester London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/275862918.jpg?k=45525962f7cfe8dcee7d31beac58457a84a3ad5f8486b938574dd0bf138595f2&o=&hp=1",
+          "photoId": "275862918",
+          "sourceUrl": "https://www.booking.com/hotel/gb/milleniumgloucester.html?lang=en-us&chal_t=1792410599622&force_referer="
+        },
+        {
+          "slot": 13,
+          "title": "a restaurant with tables and chairs and a mural at Millennium Hotel and Conference Centre Gloucester London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/275957360.jpg?k=60fb2ac80cb8aee5a84ef2646eead27905f13bb220781afe6a2c2e5b438a750d&o=&hp=1",
+          "photoId": "275957360",
+          "sourceUrl": "https://www.booking.com/hotel/gb/milleniumgloucester.html?lang=en-us&chal_t=1792410599622&force_referer="
+        },
+        {
+          "slot": 14,
+          "title": "a building with a sign that reads millenium glucosezer london at Millennium Hotel and Conference Centre Gloucester London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/275877957.jpg?k=57a282263f55b0a2800ae0319b0cce70111386d92cd2091fa1707517aee18de0&o=&hp=1",
+          "photoId": "275877957",
+          "sourceUrl": "https://www.booking.com/hotel/gb/milleniumgloucester.html?lang=en-us&chal_t=1792410599622&force_referer="
+        },
+        {
+          "slot": 15,
+          "title": "a hotel room with two beds and a red chair at Millennium Hotel and Conference Centre Gloucester London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/275869699.jpg?k=70088b29d88e71863b7cf942df9f402cc6587c368e982d0b59aecc2cf44a7ef0&o=&hp=1",
+          "photoId": "275869699",
+          "sourceUrl": "https://www.booking.com/hotel/gb/milleniumgloucester.html?lang=en-us&chal_t=1792410599622&force_referer="
+        },
+        {
+          "slot": 16,
+          "title": "a hotel room with a bed and a desk and a computer at Millennium Hotel and Conference Centre Gloucester London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/243479071.jpg?k=fa77a8a64889d156ff0d305ab88452900c561482326c25544bad308b612bc934&o=&hp=1",
+          "photoId": "243479071",
+          "sourceUrl": "https://www.booking.com/hotel/gb/milleniumgloucester.html?lang=en-us&chal_t=1792410599622&force_referer="
+        },
+        {
+          "slot": 17,
+          "title": "a hotel room with a large white bed and a couch at Millennium Hotel and Conference Centre Gloucester London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/275862960.jpg?k=9201535216270bbc168def31d04360e399646a993ee848e410344c82924aa0ef&o=&hp=1",
+          "photoId": "275862960",
+          "sourceUrl": "https://www.booking.com/hotel/gb/milleniumgloucester.html?lang=en-us&chal_t=1792410599622&force_referer="
+        },
+        {
+          "slot": 18,
+          "title": "a hotel room with two beds and a red chair at Millennium Hotel and Conference Centre Gloucester London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/277753190.jpg?k=03870fd965cfc792f2bd1051dbc838102cad13fd99a56e8053acc46d0336e967&o=&hp=1",
+          "photoId": "277753190",
+          "sourceUrl": "https://www.booking.com/hotel/gb/milleniumgloucester.html?lang=en-us&chal_t=1792410599622&force_referer="
+        },
+        {
+          "slot": 19,
+          "title": "a bathroom with a sink and a shower at Millennium Hotel and Conference Centre Gloucester London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/275863101.jpg?k=3b8fa45eddbbe78a66a66f30d6fa4d66475bfea17a58de25c386c0cf187e1c3c&o=&hp=1",
+          "photoId": "275863101",
+          "sourceUrl": "https://www.booking.com/hotel/gb/milleniumgloucester.html?lang=en-us&chal_t=1792410599622&force_referer="
+        },
+        {
+          "slot": 20,
+          "title": "a hotel room with a bed and a desk at Millennium Hotel and Conference Centre Gloucester London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/275880173.jpg?k=f3a1499b21a3ba107d53edff70b5281ffdc73f8fb13fc0e04d7511cbc4308aa0&o=&hp=1",
+          "photoId": "275880173",
+          "sourceUrl": "https://www.booking.com/hotel/gb/milleniumgloucester.html?lang=en-us&chal_t=1792410599622&force_referer="
+        },
+        {
+          "slot": 21,
+          "title": "a hotel room with two beds and a painting on the wall at Millennium Hotel and Conference Centre Gloucester London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/275880290.jpg?k=8f5d0966a2efa41d229f9391cdea916eb939e53eec0a48248c243bf7f53e2825&o=&hp=1",
+          "photoId": "275880290",
+          "sourceUrl": "https://www.booking.com/hotel/gb/milleniumgloucester.html?lang=en-us&chal_t=1792410599622&force_referer="
+        },
+        {
+          "slot": 22,
+          "title": "a hotel room with a bed and a flat screen tv at Millennium Hotel and Conference Centre Gloucester London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/242198226.jpg?k=3c5a99ca3a567f1ac7d735b69d30733748bcc3d535a3a27f712870ed4ef800b0&o=&hp=1",
+          "photoId": "242198226",
+          "sourceUrl": "https://www.booking.com/hotel/gb/milleniumgloucester.html?lang=en-us&chal_t=1792410599622&force_referer="
+        },
+        {
+          "slot": 23,
+          "title": "a bathroom with a sink and a shower and a tub at Millennium Hotel and Conference Centre Gloucester London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/242198249.jpg?k=828a909a7450c9c10939d4e4fc8f22bdfac33a97cd8a2fc646b7f89031050581&o=&hp=1",
+          "photoId": "242198249",
+          "sourceUrl": "https://www.booking.com/hotel/gb/milleniumgloucester.html?lang=en-us&chal_t=1792410599622&force_referer="
+        },
+        {
+          "slot": 24,
+          "title": "a hotel room with a bed and a chair at Millennium Hotel and Conference Centre Gloucester London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/89070958.jpg?k=e1de94ec9e400fa30460fbfb0aeb9fedf2bcf598cd711a859e059c54641ef5d9&o=&hp=1",
+          "photoId": "89070958",
+          "sourceUrl": "https://www.booking.com/hotel/gb/milleniumgloucester.html?lang=en-us&chal_t=1792410599622&force_referer="
+        },
+        {
+          "slot": 25,
+          "title": "a living room with a blue couch and a table at Millennium Hotel and Conference Centre Gloucester London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/89070956.jpg?k=b7a3fe4108befed4204ac47b0dcf590bbb9357914cdfe3f2850876ee85c5d574&o=&hp=1",
+          "photoId": "89070956",
+          "sourceUrl": "https://www.booking.com/hotel/gb/milleniumgloucester.html?lang=en-us&chal_t=1792410599622&force_referer="
+        },
+        {
+          "slot": 26,
+          "title": "a bathroom with a sink and a bath tub at Millennium Hotel and Conference Centre Gloucester London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/89070966.jpg?k=be8db1b5eaa72ecc73cf710bb4fad78dd78cae2b934847728916a1e4a397f457&o=&hp=1",
+          "photoId": "89070966",
+          "sourceUrl": "https://www.booking.com/hotel/gb/milleniumgloucester.html?lang=en-us&chal_t=1792410599622&force_referer="
+        },
+        {
+          "slot": 27,
+          "title": "a dining room with a table and chairs at Millennium Hotel and Conference Centre Gloucester London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/242201658.jpg?k=65d39947015077108d59797c65a76cc00616237663ee9a8f26d884ea7407d0d6&o=&hp=1",
+          "photoId": "242201658",
+          "sourceUrl": "https://www.booking.com/hotel/gb/milleniumgloucester.html?lang=en-us&chal_t=1792410599622&force_referer="
+        },
+        {
+          "slot": 28,
+          "title": "a bathroom with a bath tub with a vase of flowers at Millennium Hotel and Conference Centre Gloucester London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/348634434.jpg?k=b10354b60db01ccbb71b76005ed18b52a1a1ce1e0774b453be0b3600cb4e1f46&o=&hp=1",
+          "photoId": "348634434",
+          "sourceUrl": "https://www.booking.com/hotel/gb/milleniumgloucester.html?lang=en-us&chal_t=1792410599622&force_referer="
+        },
+        {
+          "slot": 29,
+          "title": "three bottles of moisturizers on a white plate on a counter at Millennium Hotel and Conference Centre Gloucester London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/348634795.jpg?k=ea47ef881f966a3a6c2d461b25862e48c46946be0a4fb2c87917d6aeef5c7a7c&o=&hp=1",
+          "photoId": "348634795",
+          "sourceUrl": "https://www.booking.com/hotel/gb/milleniumgloucester.html?lang=en-us&chal_t=1792410599622&force_referer="
+        },
+        {
+          "slot": 30,
+          "title": "a hotel room with two beds and a desk at Millennium Hotel and Conference Centre Gloucester London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/348633556.jpg?k=239c7e6754a16145fb785daca0eebe50701f501b59a5f3b7566a733c36014225&o=&hp=1",
+          "photoId": "348633556",
+          "sourceUrl": "https://www.booking.com/hotel/gb/milleniumgloucester.html?lang=en-us&chal_t=1792410599622&force_referer="
+        },
+        {
+          "slot": 31,
+          "title": "a restaurant with chairs and tables in a room at Millennium Hotel and Conference Centre Gloucester London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/520958365.jpg?k=0cfbef22da94a0b3b3cb251629b646bb09eb994ff97c6f02556933876fa41d5a&o=&hp=1",
+          "photoId": "520958365",
+          "sourceUrl": "https://www.booking.com/hotel/gb/milleniumgloucester.html?lang=en-us&chal_t=1792410599622&force_referer="
+        },
+        {
+          "slot": 32,
+          "title": "a restaurant with tables and chairs in a room at Millennium Hotel and Conference Centre Gloucester London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/520958538.jpg?k=b870c1b32fd67434ff675feba2fb688110da13124af0a2733891d71be6cab7f7&o=&hp=1",
+          "photoId": "520958538",
+          "sourceUrl": "https://www.booking.com/hotel/gb/milleniumgloucester.html?lang=en-us&chal_t=1792410599622&force_referer="
+        },
+        {
+          "slot": 33,
+          "title": "a large room with purple lighting and a stage at Millennium Hotel and Conference Centre Gloucester London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/242201034.jpg?k=b4694eec74ea3caced12760d2ee63a3633566f3a5c8c9ee77e245d6b1594775b&o=&hp=1",
+          "photoId": "242201034",
+          "sourceUrl": "https://www.booking.com/hotel/gb/milleniumgloucester.html?lang=en-us&chal_t=1792410599622&force_referer="
+        },
+        {
+          "slot": 34,
+          "title": "a conference room with tables and chairs and a screen at Millennium Hotel and Conference Centre Gloucester London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/242201036.jpg?k=74508d3c88600ea48793d121d033bee3a29c63eb4e7cba5acd08ae6d86e1e6b5&o=&hp=1",
+          "photoId": "242201036",
+          "sourceUrl": "https://www.booking.com/hotel/gb/milleniumgloucester.html?lang=en-us&chal_t=1792410599622&force_referer="
+        },
+        {
+          "slot": 35,
+          "title": "a conference room with tables and red chairs at Millennium Hotel and Conference Centre Gloucester London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/242201041.jpg?k=01ec32cab4051acad629720277afcd072b86edf6eecc213a9cb33bda44e49272&o=&hp=1",
+          "photoId": "242201041",
+          "sourceUrl": "https://www.booking.com/hotel/gb/milleniumgloucester.html?lang=en-us&chal_t=1792410599622&force_referer="
+        },
+        {
+          "slot": 36,
+          "title": "a conference room with tables and chairs and a screen at Millennium Hotel and Conference Centre Gloucester London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/242201044.jpg?k=855b782afbf8e9ba919ed2678d9f66f2dd0bdbcc4bafde2399e610839a9fd212&o=&hp=1",
+          "photoId": "242201044",
+          "sourceUrl": "https://www.booking.com/hotel/gb/milleniumgloucester.html?lang=en-us&chal_t=1792410599622&force_referer="
+        },
+        {
+          "slot": 37,
+          "title": "a lobby with palm trees and a glass ceiling at Millennium Hotel and Conference Centre Gloucester London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/242201050.jpg?k=8e9fd39de4dedc3cf870965857d122e7d27745d4faf4c87a016facdeb864e997&o=&hp=1",
+          "photoId": "242201050",
+          "sourceUrl": "https://www.booking.com/hotel/gb/milleniumgloucester.html?lang=en-us&chal_t=1792410599622&force_referer="
+        },
+        {
+          "slot": 38,
+          "title": "a table set up for a wedding with white tables and chairs at Millennium Hotel and Conference Centre Gloucester London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/242201051.jpg?k=ffd927871b86456365b7bc68336f672fd40eff1427d4c8da77cf3c347dcb839f&o=&hp=1",
+          "photoId": "242201051",
+          "sourceUrl": "https://www.booking.com/hotel/gb/milleniumgloucester.html?lang=en-us&chal_t=1792410599622&force_referer="
+        },
+        {
+          "slot": 39,
+          "title": "a room with white tables and chairs with purple lighting at Millennium Hotel and Conference Centre Gloucester London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/117453109.jpg?k=a7e3383f959e0a2f1e64ff296ff89c48b4eed75b66869d722f46a0292f2a4cef&o=&hp=1",
+          "photoId": "117453109",
+          "sourceUrl": "https://www.booking.com/hotel/gb/milleniumgloucester.html?lang=en-us&chal_t=1792410599622&force_referer="
+        },
+        {
+          "slot": 40,
+          "title": "a banquet hall with tables and chairs and two screens at Millennium Hotel and Conference Centre Gloucester London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/89087687.jpg?k=04f0d7047e3f4d591140270e1d723d8923688b055bf845fa888d1ed95acd2fb1&o=&hp=1",
+          "photoId": "89087687",
+          "sourceUrl": "https://www.booking.com/hotel/gb/milleniumgloucester.html?lang=en-us&chal_t=1792410599622&force_referer="
+        },
+        {
+          "slot": 41,
+          "title": "a gym with treadmills and machines in a room at Millennium Hotel and Conference Centre Gloucester London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/625691274.jpg?k=0ba32105e225425fba06fd7aff2b10f65754c5887e69d9c38595232fed3f662a&o=&hp=1",
+          "photoId": "625691274",
+          "sourceUrl": "https://www.booking.com/hotel/gb/milleniumgloucester.html?lang=en-us&chal_t=1792410599622&force_referer="
+        },
+        {
+          "slot": 42,
+          "title": "a gym with treadmills and elliptical machines at Millennium Hotel and Conference Centre Gloucester London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/625694087.jpg?k=de5b9352f1a65a352595e506f878587ea44bbbc27382d162178cb1c2c31a0939&o=&hp=1",
+          "photoId": "625694087",
+          "sourceUrl": "https://www.booking.com/hotel/gb/milleniumgloucester.html?lang=en-us&chal_t=1792410599622&force_referer="
+        },
+        {
+          "slot": 43,
+          "title": "a gold years of excellence badge with the text years of excellence at Millennium Hotel and Conference Centre Gloucester London in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/663819779.jpg?k=0f45a14ef288ccdb22325f74f9fa96b53029645b3b58159a9b92e2160ef29e6f&o=&hp=1",
+          "photoId": "663819779",
+          "sourceUrl": "https://www.booking.com/hotel/gb/milleniumgloucester.html?lang=en-us&chal_t=1792410599622&force_referer="
+        },
+        {
+          "slot": 44,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/42214560.jpg?k=c3f8823652794ef2cd890905fa6888a6bb50b5fb4211a61c21035c0141a7369f&o=&hp=1",
+          "photoId": "0",
+          "sourceUrl": "https://www.booking.com/hotel/gb/milleniumgloucester.html?lang=en-us&chal_t=1792410599622&force_referer="
+        },
+        {
+          "slot": 45,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/242198196.jpg?k=3518cf5995a80e1d116fbdc9100ecbc6de7a0b17363b9f73a7826fda417008f5&o=&hp=1",
+          "photoId": "6",
+          "sourceUrl": "https://www.booking.com/hotel/gb/milleniumgloucester.html?lang=en-us&chal_t=1792410599622&force_referer="
+        },
+        {
+          "slot": 46,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/242199018.jpg?k=2b0ef1e4a53eb4656d9b1b8cf81fce205a3c874072a5c5261e045b6f54311fb5&o=&hp=1",
+          "photoId": "8",
+          "sourceUrl": "https://www.booking.com/hotel/gb/milleniumgloucester.html?lang=en-us&chal_t=1792410599622&force_referer="
+        },
+        {
+          "slot": 47,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/242199095.jpg?k=898ffcd088d06bb4767ab85e502d17861e33cd82c9552113969c4a74e789e4ad&o=&hp=1",
+          "photoId": "5",
+          "sourceUrl": "https://www.booking.com/hotel/gb/milleniumgloucester.html?lang=en-us&chal_t=1792410599622&force_referer="
+        },
+        {
+          "slot": 48,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/275862834.jpg?k=9c09e3857829b621f187a85053caa25c3ff2aeebe2f0d16016ebad6a2f9f1f2c&o=&hp=1",
+          "photoId": "4",
+          "sourceUrl": "https://www.booking.com/hotel/gb/milleniumgloucester.html?lang=en-us&chal_t=1792410599622&force_referer="
+        },
+        {
+          "slot": 49,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/42214421.jpg?k=7472d99c4c977c336729cd0f630d1cd118e9565b8f6bbd8d87d23a1f7e5d54fa&o=&hp=1",
+          "photoId": "1",
+          "sourceUrl": "https://www.booking.com/hotel/gb/milleniumgloucester.html?lang=en-us&chal_t=1792410599622&force_referer="
+        },
+        {
+          "slot": 50,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/275956612.jpg?k=d0cf134b53edcccd2ae9e2ff28517271890f0439ccd083ae4dc3079ecf2adab0&o=&hp=1",
+          "photoId": "2",
+          "sourceUrl": "https://www.booking.com/hotel/gb/milleniumgloucester.html?lang=en-us&chal_t=1792410599622&force_referer="
+        },
+        {
+          "slot": 51,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/275877957.jpg?k=57a282263f55b0a2800ae0319b0cce70111386d92cd2091fa1707517aee18de0&o=&hp=1",
+          "photoId": "7",
+          "sourceUrl": "https://www.booking.com/hotel/gb/milleniumgloucester.html?lang=en-us&chal_t=1792410599622&force_referer="
+        },
+        {
+          "slot": 52,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/275869699.jpg?k=70088b29d88e71863b7cf942df9f402cc6587c368e982d0b59aecc2cf44a7ef0&o=&hp=1",
+          "photoId": "9",
+          "sourceUrl": "https://www.booking.com/hotel/gb/milleniumgloucester.html?lang=en-us&chal_t=1792410599622&force_referer="
+        },
+        {
+          "slot": 53,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/275880173.jpg?k=f3a1499b21a3ba107d53edff70b5281ffdc73f8fb13fc0e04d7511cbc4308aa0&o=&hp=1",
+          "photoId": "3",
+          "sourceUrl": "https://www.booking.com/hotel/gb/milleniumgloucester.html?lang=en-us&chal_t=1792410599622&force_referer="
+        }
+      ],
+      "photos_status": "RESOLVED"
+    },
+    "audit_timestamp": "2026-10-19T11:50:30.715Z"
+  }
+}

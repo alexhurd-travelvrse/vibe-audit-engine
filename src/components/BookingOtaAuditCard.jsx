@@ -17,7 +17,7 @@ export default function BookingOtaAuditCard({ otaData, hotelName, isUnlocked, on
     ? isUnlocked 
     : (typeof window !== 'undefined' && sessionStorage.getItem('atmosvibe_pro_unlocked') === 'true');
 
-  const isListedOnBooking = (otaData.is_listed_on_booking !== false) && (livePhotos && livePhotos.length >= 3);
+  const isListedOnBooking = (otaData.is_listed_on_booking !== false) && (otaData.listing_status !== 'NOT_LISTED_ON_BOOKING');
   const beforeScore = isListedOnBooking ? (otaData.before_merchandising_score || 44) : 'N/A';
   const afterScore = otaData.after_merchandising_score || 94;
   const uplift = otaData.projected_conversion_uplift || '+28.5%';
