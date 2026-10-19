@@ -1,6 +1,7 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { Zap, Music, Users, Sparkles, CheckCircle2, AlertTriangle, Disc, MapPin, Compass, Volume2, ShieldCheck, Sun, Clock, Eye, ChevronLeft, ChevronRight, Key, Flame, Briefcase, Coffee, Camera, Laptop, Moon } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { resolveVibeSignatureSpotify, fetchLiveSpotifyPlaylistForVibe } from '../services/spotifyVibeResolver';
 
 export default function HotelVibeManifestCard({ manifest, hotelName, location }) {
   const scrollContainerRef = useRef(null);
@@ -29,6 +30,25 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
   const secrets = v.insider_secrets || {};
 
   const [activeDiurnalTab, setActiveDiurnalTab] = useState('chilling');
+
+  // Resolve multi-dimensional Spotify playlist (Brand + Anchor Artists + Genre + Diurnal Energy Arc)
+  const resolvedSpotifyPreset = resolveVibeSignatureSpotify(manifest, activeDiurnalTab, hotelName);
+  const [liveSpotifyOverride, setLiveSpotifyOverride] = useState(null);
+
+  useEffect(() => {
+    let isMounted = true;
+    setLiveSpotifyOverride(null);
+    if (dna.spotify_query && !String(dna.spotify_query).startsWith('spotify:playlist:')) {
+      fetchLiveSpotifyPlaylistForVibe(dna.spotify_query, resolvedSpotifyPreset).then(res => {
+        if (isMounted && res && res.id && res.id !== resolvedSpotifyPreset.id) {
+          setLiveSpotifyOverride(res);
+        }
+      });
+    }
+    return () => { isMounted = false; };
+  }, [manifest?.venue_name, dna.spotify_query]);
+
+  const activeSpotify = (activeDiurnalTab === 'chilling' && liveSpotifyOverride) ? liveSpotifyOverride : resolvedSpotifyPreset;
 
   const diurnal = temporal.diurnal_rhythm || {
     working: {
@@ -302,27 +322,53 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
               </p>
             </div>
 
-            {/* Embedded Spotify Mini Player */}
-            <div style={{ marginTop: '0.5rem', borderRadius: '10px', overflow: 'hidden', background: '#121212', border: '1px solid rgba(29, 185, 84, 0.25)', minHeight: '80px' }}>
-              <iframe
-                style={{ borderRadius: '10px', border: 'none', display: 'block' }}
-                src={`https://open.spotify.com/embed/playlist/${(() => {
-                  const g = (dna.soundscape_genre || '').toLowerCase();
-                  if (g.includes('jazz') || g.includes('bossa') || g.includes('soul')) return '37i9dQZF1DXbITWG1ZJKYt';
-                  if (g.includes('house') || g.includes('club') || g.includes('rooftop') || g.includes('sunset') || g.includes('electronic')) return '37i9dQZF1DX8tZsk68tuDw';
-                  if (g.includes('indie') || g.includes('folk') || g.includes('acoustic')) return '37i9dQZF1DX2Nc3B70tvx0';
-                  if (g.includes('piano') || g.includes('classical') || g.includes('heritage')) return '37i9dQZF1DWWEcRhUVtL8n';
-                  if (g.includes('ambient') || g.includes('spa') || g.includes('zen') || g.includes('wellness') || g.includes('sanctuary')) return '37i9dQZF1DX3Ogo9pFvBkY';
-                  if (g.includes('latin') || g.includes('tropic') || g.includes('mediterranean') || g.includes('coastal')) return '37i9dQZF1DX10zKzsJ2jva';
-                  return '37i9dQZF1DX4WYpdgoIcn6';
-                })()}?utm_source=generator&theme=0`}
-                width="100%"
-                height="80"
-                frameBorder="0"
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                loading="lazy"
-                title="Acoustic DNA Spotify Player"
-              />
+            {/* Embedded Spotify Mini Player (Synced with Travelvrse 4-Tier Resolver & Diurnal Rhythm) */}
+            <div style={{ marginTop: '0.5rem' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '6px', gap: '6px' }}>
+                <span style={{ fontSize: '10px', fontWeight: 800, color: '#1DB954', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }} title={`${activeSpotify.title} (${activeSpotify.matchReason})`}>
+                  ♫ {activeSpotify.title}
+                </span>
+                <div style={{ display: 'flex', gap: '3px', flexShrink: 0 }}>
+                  {[
+                    { id: 'working', label: 'Work' },
+                    { id: 'chilling', label: 'Chill' },
+                    { id: 'playing', label: 'Play' }
+                  ].map(mode => (
+                    <button
+                      key={mode.id}
+                      type="button"
+                      onClick={() => setActiveDiurnalTab(mode.id)}
+                      style={{
+                        fontSize: '9px',
+                        fontWeight: 800,
+                        padding: '2px 6px',
+                        borderRadius: '6px',
+                        cursor: 'pointer',
+                        border: activeDiurnalTab === mode.id ? '1px solid #1DB954' : '1px solid rgba(255,255,255,0.12)',
+                        background: activeDiurnalTab === mode.id ? 'rgba(29, 185, 84, 0.22)' : 'rgba(0,0,0,0.4)',
+                        color: activeDiurnalTab === mode.id ? '#1DB954' : 'rgba(255,255,255,0.55)',
+                        textTransform: 'uppercase'
+                      }}
+                      title={`Switch Acoustic DNA to ${mode.label} Diurnal Mode`}
+                    >
+                      {mode.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+              <div style={{ borderRadius: '10px', overflow: 'hidden', background: '#121212', border: '1px solid rgba(29, 185, 84, 0.25)', minHeight: '80px' }}>
+                <iframe
+                  key={activeSpotify.id}
+                  style={{ borderRadius: '10px', border: 'none', display: 'block' }}
+                  src={`https://open.spotify.com/embed/playlist/${activeSpotify.id}?utm_source=generator&theme=0`}
+                  width="100%"
+                  height="80"
+                  frameBorder="0"
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                  loading="lazy"
+                  title={`Acoustic DNA Spotify Player — ${activeSpotify.title}`}
+                />
+              </div>
             </div>
           </div>
 
