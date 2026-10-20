@@ -45,13 +45,13 @@ export async function fetchVenueCorpus(hotelName, city, neighborhood = '') {
     return {};
   });
 
-  // 3. Atmosphere & Guest Experience Search
+  // 3. Atmosphere, Host Vibe & Guest Experience Search
   const atmospherePromise = fetch('https://google.serper.dev/search', {
     method: 'POST',
     headers,
     body: JSON.stringify({
-      q: `"${hotelName}" ${locationContext} ("bar" OR "music" OR "interior design" OR "cocktail" OR "lobby" OR "crowd")`,
-      num: 8
+      q: `"${hotelName}" ${locationContext} ("bar" OR "music" OR "interior design" OR "cocktail" OR "lobby" OR "crowd" OR "bartender" OR "staff" OR "concierge" OR "host")`,
+      num: 10
     }),
     signal: AbortSignal.timeout(6000)
   }).then(r => r.json()).catch(err => {

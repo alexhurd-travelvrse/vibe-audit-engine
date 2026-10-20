@@ -2247,7 +2247,7 @@ export async function resolveAuditPhotos(hotelName, city, neighborhood = '', str
   const liveDining = poolLive.filter(p => /restaurant|dining|bar\b|cocktail|bistro|sushi|grill|boilerman|neni|cafe|tea/i.test(`${p.title || ''} ${p.imageUrl || ''}`)).slice(0, 4);
   const liveExt = poolLive.filter(p => /exterior|facade|façade|building|street|store front|entrance|courtyard|tower|dome|palace|landmark/i.test(`${p.title || ''} ${p.imageUrl || ''}`)).slice(0, 4);
   const liveSpa = poolLive.filter(p => /spa|wellness|sauna|treatment|massage|steam|hydrotherapy|agua|bathhouse|vase|sculpture|tear/i.test(`${p.title || ''} ${p.imageUrl || ''}`)).slice(0, 3);
-  const liveLobby = poolLive.filter(p => /lobby|reception|sculpture|salon|lounge|hall|atrium|foyer|living/i.test(`${p.title || ''} ${p.imageUrl || ''}`)).slice(0, 3);
+  const liveLobby = poolLive.filter(p => /lobby|reception|sculpture|salon|lounge|\bhall\b|atrium|foyer|living/i.test(`${p.title || ''} ${p.imageUrl || ''}`) && !/hallway|corridor|passageway|stairwell|elevator/i.test(`${p.title || ''} ${p.imageUrl || ''}`)).slice(0, 3);
   const liveBed = poolLive.filter(p => /bedroom|bed|suite/i.test(`${p.title || ''} ${p.imageUrl || ''}`)).slice(0, 3);
   const liveBath = poolLive.filter(p => /bath|tub|shower/i.test(`${p.title || ''} ${p.imageUrl || ''}`)).slice(0, 2);
   const livePool = poolLive.filter(p => /pool|swim/i.test(`${p.title || ''} ${p.imageUrl || ''}`)).slice(0, 2);
@@ -2296,13 +2296,21 @@ export async function resolveAuditPhotos(hotelName, city, neighborhood = '', str
     return s.includes('food_') || s.includes('_food') || s.includes('fruits_de_mer') || s.includes('boeuf') || s.includes('steak') || s.includes('dessert') || s.includes('burger') || s.includes('oyster') || s.includes('dish') || s.includes('plate') || s.includes('tartare') || s.includes('pasta');
   };
 
+  const isCorridorOrTransition = (p) => {
+    if (!p) return false;
+    const v = getVisual(p);
+    const s = `${p.title || ''} ${p.imageUrl || ''} ${v?.brief_visual_description || ''}`.toLowerCase();
+    return /hallway|corridor|passageway|stairwell|elevator|lift lobby/i.test(s);
+  };
+
   const isApplianceOrObject = (p) => {
     if (!p) return false;
+    if (isCorridorOrTransition(p)) return true;
     const v = getVisual(p);
     if (v && v.primary_category === 'GENERIC_OTHER' && !v.is_dining_or_bar) return true;
     const s = `${p.title || ''} ${p.imageUrl || ''}`.toLowerCase();
     if (/sculpture|art piece|basin|water|bench/i.test(s)) return false;
-    return /coffee|kettle|machine|appliance|teapot|cup|countertop|detail|mug|espresso|toiletries|amenity kit/i.test(s);
+    return /coffee|kettle|machine|appliance|teapot|cup|countertop|detail|mug|espresso|toiletries|amenity kit|bottles of soap/i.test(s);
   };
 
   const isVerifiedDiningOrBar = (p) => {
@@ -2811,7 +2819,7 @@ export async function resolveAuditPhotos(hotelName, city, neighborhood = '', str
 
   if (slot4ExplicitIdx && poolLive[slot4ExplicitIdx - 1]) {
     const explicitAsset = poolLive[slot4ExplicitIdx - 1];
-    if (!isBedroomLike(explicitAsset) && !isBath(explicitAsset) && !isExterior(explicitAsset)) {
+    if (!isBedroomLike(explicitAsset) && !isBath(explicitAsset) && !isExterior(explicitAsset) && !isApplianceOrObject(explicitAsset) && !isCorridorOrTransition(explicitAsset)) {
       slot4Asset = explicitAsset;
       usedUrls.add(explicitAsset.imageUrl);
       const key = getPhotoUniqueKey(explicitAsset.imageUrl);
@@ -2842,7 +2850,7 @@ export async function resolveAuditPhotos(hotelName, city, neighborhood = '', str
       slot4Asset = findFirst(effectiveAmenityPool, p => (isPoolLike(p) || isSpaOrWellness(p)) && !isBedroomLike(p) && !isBath(p) && !isExterior(p));
     }
     if (!slot4Asset) {
-      slot4Asset = findFirst(poolLive, p => (p.detectedCategory === 'LOBBY' || /lobby|salon|lounge|library|reception|courtyard/i.test(`${p.title || ''} ${p.imageUrl || ''}`)) && !isBedroomLike(p) && !isBath(p) && !isExterior(p) && !isApplianceOrObject(p));
+      slot4Asset = findFirst(poolLive, p => (p.detectedCategory === 'LOBBY' || /lobby|salon|lounge|library|reception|courtyard|living room|couch/i.test(`${p.title || ''} ${p.imageUrl || ''}`)) && !isBedroomLike(p) && !isBath(p) && !isExterior(p) && !isApplianceOrObject(p));
     }
   } else if (!slot4Asset) {
     // Check if Slot 1 is already featuring dining/bar:
@@ -2854,10 +2862,10 @@ export async function resolveAuditPhotos(hotelName, city, neighborhood = '', str
         slot4Asset = findFirst(effectiveAmenityPool, p => (isPoolLike(p) || isSpaOrWellness(p)) && !isBedroomLike(p) && !isBath(p) && !isExterior(p));
       }
       if (!slot4Asset) {
-        slot4Asset = findFirst(poolLive, p => (p.detectedCategory === 'LOBBY' || /lobby|couch|sculpture|salon|library|reception|courtyard/i.test(`${p.title || ''} ${p.imageUrl || ''}`)) && !isBedroomLike(p) && !isBath(p) && !isExterior(p) && !isApplianceOrObject(p));
+        slot4Asset = findFirst(poolLive, p => (p.detectedCategory === 'LOBBY' || /lobby|couch|sculpture|salon|library|reception|courtyard|living room/i.test(`${p.title || ''} ${p.imageUrl || ''}`)) && !isBedroomLike(p) && !isBath(p) && !isExterior(p) && !isApplianceOrObject(p));
       }
       if (!slot4Asset) {
-        slot4Asset = findFirst(effectiveAmenityPool, p => (p.detectedCategory === 'LOBBY' || /lobby|couch|sculpture|salon|library|reception|courtyard/i.test(`${p.title || ''} ${p.imageUrl || ''}`)) && !isBedroomLike(p) && !isBath(p) && !isExterior(p) && !isApplianceOrObject(p));
+        slot4Asset = findFirst(effectiveAmenityPool, p => (p.detectedCategory === 'LOBBY' || /lobby|couch|sculpture|salon|library|reception|courtyard|living room/i.test(`${p.title || ''} ${p.imageUrl || ''}`)) && !isBedroomLike(p) && !isBath(p) && !isExterior(p) && !isApplianceOrObject(p));
       }
     } else if (isSlot4DiningOrBar) {
       slot4Asset = findFirst(poolLive, p => isVerifiedDiningOrBar(p) && !isBedroomLike(p) && !isBath(p) && !isExterior(p) && (!isSlot1Pool || !isPoolLike(p)));
@@ -2867,12 +2875,12 @@ export async function resolveAuditPhotos(hotelName, city, neighborhood = '', str
     }
   }
 
-  // Graceful Fallbacks for Slot 4
+  // Graceful Fallbacks for Slot 4 (Prioritize Spa/Pool -> Lounge/Living Area -> Dining -> Scenic River/Terrace View)
   if (!slot4Asset) {
     slot4Asset = findFirst(poolLive, p => (isPoolLike(p) || isSpaOrWellness(p)) && !isBedroomLike(p) && !isBath(p) && !isExterior(p));
   }
   if (!slot4Asset) {
-    slot4Asset = findFirst(poolLive, p => (p.detectedCategory === 'LOBBY' || /lobby|salon|lounge|library/i.test(`${p.title || ''} ${p.imageUrl || ''}`)) && !isBedroomLike(p) && !isBath(p) && !isExterior(p));
+    slot4Asset = findFirst(poolLive, p => (p.detectedCategory === 'LOBBY' || /lobby|salon|lounge|library|living room|couch/i.test(`${p.title || ''} ${p.imageUrl || ''}`)) && !isBedroomLike(p) && !isBath(p) && !isExterior(p));
   }
   if (!slot4Asset) {
     slot4Asset = findFirst(poolLive, p => isVerifiedDiningOrBar(p) && !isBedroomLike(p) && !isBath(p) && !isExterior(p));
@@ -2884,7 +2892,7 @@ export async function resolveAuditPhotos(hotelName, city, neighborhood = '', str
     slot4Asset = findFirst(effectiveAmenityPool, p => (p.detectedCategory === 'SPA' || p.detectedCategory === 'LOBBY') && !isBedroomLike(p) && !isBath(p) && !isExterior(p) && (!isSlot1Pool || !isPoolLike(p)));
   }
   if (!slot4Asset) {
-    slot4Asset = findFirst(poolLive, p => (p.detectedCategory === 'SPA' || p.detectedCategory === 'LOBBY' || (p.title && (p.title.toLowerCase().includes('lobby') || p.title.toLowerCase().includes('lounge') || p.title.toLowerCase().includes('library')))) && !isBedroomLike(p) && !isBath(p) && !isExterior(p) && (!isSlot1Pool || !isPoolLike(p)));
+    slot4Asset = findFirst(poolLive, p => (p.detectedCategory === 'SPA' || p.detectedCategory === 'LOBBY' || (p.title && /lobby|lounge|library|living room|couch/i.test(p.title))) && !isBedroomLike(p) && !isBath(p) && !isExterior(p) && (!isSlot1Pool || !isPoolLike(p)));
   }
   if (!slot4Asset) {
     slot4Asset = findFirst(poolLive, p => !isBedroomLike(p) && !isBath(p) && !isExterior(p) && (!isSlot1Pool || !isPoolLike(p)));

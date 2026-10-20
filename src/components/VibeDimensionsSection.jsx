@@ -48,6 +48,24 @@ const DIMENSIONS = [
     )
   },
   {
+    icon: Sparkles,
+    tag: 'HOST VIBE',
+    title: 'Human Alchemy',
+    accentColor: '#34d399',
+    renderVisual: () => (
+      <div className="vibe-visual-widget host-widget">
+        <div className="host-alchemy-pills">
+          <span className="host-pill">✦ Mixologist Lore</span>
+          <span className="host-pill">✦ Zero Snobbery</span>
+        </div>
+        <div className="widget-label-row">
+          <span className="widget-metric">Cultural Hosts</span>
+          <span className="widget-caption">Unscripted Warmth</span>
+        </div>
+      </div>
+    )
+  },
+  {
     icon: Palette,
     tag: 'COLOURS',
     title: 'Visual Warmth',
@@ -159,11 +177,11 @@ export default function VibeDimensionsSection() {
             Mapping Your <span className="vibe-title-accent">Atmosphere</span>
           </h2>
           <p className="vibe-dimensions-subtitle">
-            74% of travelers book the neighbourhood. AtmosVibe maps the 7 dimensions that make your property the heartbeat of it
+            74% of Next-Gen travelers book the neighbourhood and the people who bring it to life — AtmosVibe maps the 8 dimensions that make your property the heartbeat of it
           </p>
         </div>
 
-        {/* 7 Sensory Dimensions Grid with Micro-Visuals */}
+        {/* 8 Sensory Dimensions Grid with Micro-Visuals */}
         <div className="dimensions-grid animate-fade-up">
           {DIMENSIONS.map((dim, index) => {
             const IconComponent = dim.icon;

@@ -2,17 +2,51 @@
 > vibe-audit-engine@0.0.0 dev
 > concurrently "vite" "node server.js"
 
-[1] ◇ injected env (3) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }
-[1] ◇ injected env (0) from .env // tip: ⌁ auth for agents [www.vestauth.com]
-[1] ◇ injected env (0) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }
+[1] ◇ injected env (3) from .env // tip: ⌘ override existing { override: true }
 [1] ◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }
-[1] ◇ injected env (0) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }
+[1] ◇ injected env (0) from .env // tip: ⌘ override existing { override: true }
+[1] ◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }
+[1] ◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }
 [1] [Benchmark Vault] Successfully loaded 4 golden benchmark properties.
 [1] ◇ injected env (0) from .env // tip: ⌘ override existing { override: true }
 [1] Local Vercel API Emulator running on http://localhost:3002
 [0] 
-[0]   [32m[1mVITE[22m v8.0.10[39m  [2mready in [0m[1m315[22m[2m[0m ms[22m
+[0]   [32m[1mVITE[22m v8.0.10[39m  [2mready in [0m[1m580[22m[2m[0m ms[22m
 [0] 
 [0]   [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m5173[22m/[39m
 [0]   [32m➜[39m  [1mNetwork[22m: [36mhttp://192.168.68.125:[1m5173[22m/[39m
-[1] [Photo Gatekeeper API] Serving golden benchmark photos for "Sea Containers London"
+[0] [2m16:05:12[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/VibeDimensionsSection.jsx[22m
+[0] [2m16:05:14[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/VibeDimensionsSection.jsx[22m
+[0] [2m16:05:17[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/VibeDimensionsSection.css[22m
+[1] [Master Vibe Audit API] Running 4-Step Pipeline for: "Malmaison Newcastle" in "NEWCASTLE" (Quayside)  (URL: https://www.booking.com/hotel/gb/malmaison-newcastle.html)
+[1] [Master Vibe API] 1) Harvest: Fetching rich venue corpus & amenities for "Malmaison Newcastle" in "Quayside NEWCASTLE"...
+[1] [Serper] Gathering live intelligence for "Malmaison Newcastle" in "Quayside NEWCASTLE"...
+[1] [Serper] Successfully compiled 0 characters of live venue data.
+[1] [Master Vibe API] 2) Discover: Fetching verified Booking.com room photos for "Malmaison Newcastle" in "NEWCASTLE"...
+[1] [Master Vibe] Scraping live Booking.com gallery from resolved URL: https://www.booking.com/hotel/gb/malmaison-newcastle.html?lang=en-us
+[1] [Master Vibe] AWS WAF challenge detected. Waiting for challenge redirect...
+[1] [Master Vibe] Successfully extracted 55 exact live Booking.com photos!
+[1] [Master Vibe API] Successfully captured 55 verified live Booking.com photos. Skipping external TripAdvisor/Official scrapers.
+[1] [Master Vibe API] Inventory ready: 55 live OTA photos, 0 fallback assets.
+[1] [Master Vibe API] 3) Set strategy: Synthesizing Key Strategic Shifts & 5-slot blueprint bridging Hotel DNA ⟷ Neighborhood Demand with discovered inventory...
+[1] [Gemini] Preparing multimodal extraction request for Malmaison Newcastle...
+[1] [Gemini] Successfully received and validated structured JSON with visual photo analysis.
+[1] [Master Vibe API] 4) Re-order: Binding and sequencing authentic photos to match strategic shifts 100% into Slots 1-5...
+[1] [Photo Gatekeeper] Starting visual asset resolution for "Malmaison Newcastle" in "NEWCASTLE" (Direct URL: https://www.booking.com/hotel/gb/malmaison-newcastle.html)...
+[1] [Master Vibe] Running Pass 2: Batched Gemini Multimodal Gatekeeper on 16 candidate images...
+[1] [Master Vibe] Visual Gatekeeper classified 32 candidates via raw pixels.
+[1] [Disk Cache] Saved daily cache to malmaison_newcastle___newcastle___quayside___https___www_booking_com_h_125ffe3830.json
+[1] [API] Cache expired or missing. Running pipeline for NEWCASTLE / Quayside ...
+[1] [Step 1] Querying Gemini AI Mega-Prompt for Quayside, NEWCASTLE...
+[1] Gemini Failed, falling back to mock telemetry data: Gemini API Error: Gemini timeout or unavailable
+[1]    -> Searching Serper Places: Boutique Hotel Riverside Quayside NEWCASTLE
+[1]    -> Searching Serper Places: Rooftop Bar Cocktails Quayside NEWCASTLE
+[1]    -> Searching Serper Places: Modern Art Gallery Museum Quayside NEWCASTLE
+[1]    -> Searching Serper Places: Spa Wellness Thermal Quayside NEWCASTLE
+[1]    -> Searching Serper Places: Market Food Artisan Quayside NEWCASTLE
+[1]    -> Searching Serper Places: Market Food Artisan NEWCASTLE NEWCASTLE
+[1]    -> Searching Serper Places: Rooftop Bar Cocktails NEWCASTLE NEWCASTLE
+[1]    -> Searching Serper Places: Boutique Hotel Riverside NEWCASTLE NEWCASTLE
+[1]    -> Searching Serper Places: Spa Wellness Thermal NEWCASTLE NEWCASTLE
+[1]    -> Searching Serper Places: Modern Art Gallery Museum NEWCASTLE NEWCASTLE
+[1] [API] Engine returned mock data fallback. Bypassing all caches.

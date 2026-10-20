@@ -122,6 +122,22 @@ export const masterVibeSchema = {
             insider_badge: { type: "string", description: "e.g. Concierge & Local Regular Lore" }
           }
         },
+        host_vibe: {
+          type: "object",
+          properties: {
+            host_style_score: { type: "integer", description: "0-100 scale: 0 = Formal/Scripted, 50 = Warm & Attentive, 100 = Charismatic Cultural Hosts" },
+            host_archetype: { type: "string", description: "e.g. Storytelling Mixologists & Scene Insiders" },
+            warmth_verdict: { type: "string", description: "e.g. Zero Snobbery — Instant Regulars Treatment" },
+            service_pacing: { type: "string", description: "e.g. Unhurried Banter & Intuitive Craft" },
+            team_aesthetic: { type: "string", description: "e.g. Bespoke Workwear Aprons & Relaxed Street Tailoring" },
+            signature_team_roles: {
+              type: "array",
+              items: { type: "string" },
+              description: "2-3 standout human roles e.g. ['Master Botanical Bartender', 'Vinyl Archivist', 'Neighborhood Concierge']"
+            },
+            staff_icebreaker_prompt: { type: "string", description: "Actionable conversation starter guests can use with the team on arrival" }
+          }
+        },
         qualification_test: {
           type: "object",
           properties: {

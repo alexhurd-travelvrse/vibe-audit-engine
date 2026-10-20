@@ -450,31 +450,51 @@ export function resolveVibeSignatureSpotify(manifest, activeDiurnalTab = null, h
     return { ...PLAYLIST_PRESETS.universal_downtempo_lounge, matchReason: 'Anchor Artist Downtempo & Balearic DNA' };
   }
 
-  // 4. Jazz / Soul / Speakeasy / Crooner (Miles Davis, Chet Baker, Sade, Leon Bridges, Ezra Collective, Tom Misch)
+  // 4. Contemporary Eclectic Lounge / Modern UK Neo-Soul / Riverside Social (Jorja Smith, Tom Misch, Sade, Leon Bridges, Cleo Sol)
   if (
-    combinedCorpus.includes('jazz') ||
-    combinedCorpus.includes('bossa') ||
-    combinedCorpus.includes('soul') ||
-    combinedCorpus.includes('speakeasy') ||
+    combinedCorpus.includes('eclectic lounge') ||
+    combinedCorpus.includes('live performance') ||
+    combinedCorpus.includes('jorja smith') ||
+    combinedCorpus.includes('tom misch') ||
+    combinedCorpus.includes('cleo sol') ||
+    combinedCorpus.includes('sault') ||
+    combinedCorpus.includes('leon bridges') ||
     combinedCorpus.includes('sade') ||
+    combinedCorpus.includes('lianne la havas') ||
+    combinedCorpus.includes('botanical')
+  ) {
+    if (effectiveMode === 'working') {
+      return { ...PLAYLIST_PRESETS.universal_acoustic_morning, matchReason: 'Daytime Riverside Acoustic & Coffee Lounge DNA' };
+    }
+    if (effectiveMode === 'playing') {
+      return { ...PLAYLIST_PRESETS.universal_soul_booster, matchReason: 'Evening Social Hub Soul, Groove & Live Performance DNA' };
+    }
+    return { ...PLAYLIST_PRESETS.universal_downtempo_lounge, matchReason: 'Golden Hour Eclectic Lounge & Modern Soul DNA' };
+  }
+
+  // 5. Authentic Jazz / Bossa Nova / Speakeasy / Crooner (Only when explicitly Jazz, Bossa, Speakeasy, or Jazz Masters)
+  if (
+    /\bjazz\b/i.test(combinedCorpus) ||
+    /\bbossa\b/i.test(combinedCorpus) ||
+    combinedCorpus.includes('speakeasy') ||
     combinedCorpus.includes('chet baker') ||
     combinedCorpus.includes('miles davis') ||
-    combinedCorpus.includes('leon bridges') ||
     combinedCorpus.includes('ezra collective') ||
-    combinedCorpus.includes('tom misch') ||
     combinedCorpus.includes('kamasi') ||
-    combinedCorpus.includes('gregory porter')
+    combinedCorpus.includes('gregory porter') ||
+    combinedCorpus.includes('bill evans') ||
+    combinedCorpus.includes('coltrane')
   ) {
     if (effectiveMode === 'working') {
       return { ...PLAYLIST_PRESETS.universal_jazz_vibes, matchReason: 'Daytime Nu-Jazz & Coffeehouse Lounge DNA' };
     }
     if (effectiveMode === 'playing') {
-      return { ...PLAYLIST_PRESETS.universal_jazz_classics, matchReason: 'Late-Night Speakeasy Jazz & Soul DNA' };
+      return { ...PLAYLIST_PRESETS.universal_jazz_classics, matchReason: 'Late-Night Speakeasy Jazz & Brass DNA' };
     }
     return { ...PLAYLIST_PRESETS.universal_jazz_vibes, matchReason: 'Twilight Jazz & Cocktail Banter DNA' };
   }
 
-  // 5. Deep House / Rooftop / Beach Club / Electronic (Kaytranada, Rüfüs Du Sol, Black Coffee, Peggy Gou, Poolside)
+  // 6. Deep House / Rooftop / Beach Club / Electronic (Kaytranada, Rüfüs Du Sol, Black Coffee, Peggy Gou, Poolside)
   if (
     combinedCorpus.includes('house') ||
     combinedCorpus.includes('club') ||
@@ -498,7 +518,7 @@ export function resolveVibeSignatureSpotify(manifest, activeDiurnalTab = null, h
     return { ...PLAYLIST_PRESETS.universal_deep_house_sunset, matchReason: 'Sunset Deep House & Rooftop DNA' };
   }
 
-  // 6. Indie / Nordic Folk / Vinyl / Acoustic (Agnes Obel, Jose Gonzalez, Kings of Convenience, Fleet Foxes)
+  // 7. Indie / Nordic Folk / Vinyl / Acoustic (Agnes Obel, Jose Gonzalez, Kings of Convenience, Bon Iver)
   if (
     combinedCorpus.includes('indie') ||
     combinedCorpus.includes('folk') ||

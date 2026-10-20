@@ -118,8 +118,9 @@ CRITICAL RULES:
 - An indoor dining room or restaurant with tables and chairs is NEVER an exterior, even if inside a historic building.
 - A street facade, courtyard, or outdoor building elevation IS an exterior.
 - A meeting room with a long boardroom table is MEETING_CONFERENCE, NOT a restaurant.
-- A close-up of a coffee machine, espresso maker, kettle, appliance, counter, or object is GENERIC_OTHER and MUST have is_dining_or_bar: false and best_fit_slot: "DISQUALIFIED". It is NOT a bar or lounge.
-- Disqualify meeting/conference rooms, coffee machines/appliances, and tight food macro close-ups.`
+- A close-up of a coffee machine, espresso maker, kettle, appliance, counter, soap bottles, or object is GENERIC_OTHER and MUST have is_dining_or_bar: false and best_fit_slot: "DISQUALIFIED". It is NOT a bar or lounge.
+- A room corridor, hallway, narrow passageway, closed room door, stairwell, or elevator is GENERIC_OTHER and MUST have best_fit_slot: "DISQUALIFIED". NEVER classify a hallway or corridor as LOBBY_SOCIAL or recommend it for any slot.
+- Disqualify meeting/conference rooms, room corridors/hallways, coffee machines/appliances, and tight food macro close-ups.`
     }
   ];
 
@@ -232,9 +233,10 @@ STRICT SLOT INTEGRITY & DEDUPLICATION RULES:
 - REAL AMENITY FIDELITY & ZERO VISUAL-DEFICIT HALLUCINATION: Inspect the live photos and amenity assets list carefully. If a hotel does not have an authentic photo of a restaurant, bar, spa, pool, or sauna in the discovered inventory, NEVER recommend that amenity for any slot. Base all 5 slots and all strategic shifts strictly on available imagery, and add any missing signature amenities to 'photographic_gap_analysis'.
 - LIVE PHOTO SELECTION PRIORITY: Always inspect "CURRENT LIVE BOOKING.COM PHOTOS" first! If an asset of the required category (e.g. Grand Lobby, Spa Pool, Signature Bedroom, Exterior, Restaurant, Bathroom) is ALREADY present in the live gallery (e.g. Live Photo #4 is the Grand Lobby or Spa), you MUST select source_type: "LIVE_PHOTO", source_index: [1-indexed slot], and action: "PROMOTE" / "RE_SEQUENCE" / "KEEP". ONLY select "AMENITY_ASSET" if the live gallery completely lacks a photo of that amenity.
 - RESTAURANT / CULINARY FIDELITY: When recommending Slot 4 (or Slot 2) for Social F&B / Restaurant (Category: "SOCIAL_FB_ROOFTOP"), the photo subject MUST depict an authentic indoor dining room, table setting, gastronomy dishes, cocktail bar, or lounge interior. It must NEVER be an exterior building, marina, facade, or street view.
+- NEVER SELECT CORRIDORS OR HALLWAYS: Never select a room corridor, hallway, narrow passageway, closed door, stairwell, or soap bottle close-up for Slot 4 or any other slot! If a hotel has no spa or restaurant photo for Slot 4, select an inviting Lounge, Suite Living Room with Couch & Table, or Panoramic River/Terrace View.
 - NEVER repeat the same theme across slots (e.g., NEVER put Pool/Exterior in Slot 1 AND Slot 2; NEVER put Bedroom in Slot 3 AND Bedroom in Slot 5).
 - Slot 5 ADAPTIVE FIDELITY: Features a luxury guest bathroom IF an authentic bathroom photo exists. If NO guest bathroom photo exists in the gallery, Slot 5 features a distinct Secondary Lifestyle Sanctuary / Estate Grounds / Library, and the missing bathroom is delegated to 'photographic_gap_analysis' as a priority commission recommendation. NEVER classify a public spa shower or pool as a guest bathroom.
-- Strict 5 distinct thematic slots at all times (Magnet ➔ Exterior ➔ Suite ➔ Complementary Public Space/Spa/Dining ➔ Luxury Bathroom OR Secondary Lifestyle Sanctuary).
+- Strict 5 distinct thematic slots at all times (Magnet ➔ Exterior ➔ Suite ➔ Complementary Public Space/Lounge/Spa/Dining ➔ Luxury Bathroom OR Secondary Lifestyle Sanctuary).
 - Populate "slot_1_decision_logic" explaining whether Magnet Override was triggered or why default was retained.
 
 MERCHANDISING SCORES & READABILITY BULLETS:
@@ -291,7 +293,15 @@ Synthesize realistic sensory attributes derived from the real venue and neighbor
    - secret_title: Catchy title (e.g. "The Off-Menu Boiler Highball", "The Secret Courtyard Arch").
    - secret_lore: A real, actionable local insider secret, off-menu perk, or hidden architectural shortcut known only to regulars.
    - off_menu_perk: Specific actionable recommendation.
-   - insider_badge: e.g. "Head Bartender & Local Regular Lore".`;
+   - insider_badge: e.g. "Head Bartender & Local Regular Lore".
+7. Host Vibe (Customer Team & Human Energy):
+   - host_style_score: 0-100 scale (0-35 = Formal & Scripted, 36-70 = Warm & Attentive, 71-100 = Charismatic Cultural Hosts).
+   - host_archetype: 3-5 word persona of the staff/hosts (e.g. "Storytelling Mixologists & Scene Insiders", "Warm Neighborhood Cultural Hosts").
+   - warmth_verdict: e.g. "Zero Snobbery — Instant Regulars Treatment", "Discreet Mayfair White-Glove Warmth".
+   - service_pacing: e.g. "Unhurried Banter & Intuitive Craft".
+   - team_aesthetic: Describe what the staff wear / how they present (e.g. "Bespoke Denim Aprons & Relaxed Street Tailoring", "Tailored Nautical Uniforms & Sneaker Culture").
+   - signature_team_roles: 2-3 standout human roles (e.g. ["Master Botanical Mixologist", "Neighborhood Culture Concierge", "Vinyl Archivist"]).
+   - staff_icebreaker_prompt: An actionable conversation starter guests can ask the team on arrival (e.g. "Ask the Lyaness bartender which botanical they fermented in-house this week").`;
 
   const userPrompt = `VENUE: ${hotelName} (${city})
 TIMESTAMP: ${new Date().toISOString()}
@@ -1104,6 +1114,33 @@ function synthesizeVibeAuditFromCorpus(hotelName, city, neighborhood, venueCorpu
                   : "Ask the lead mixologist for the off-menu seasonal botanical infusion, available exclusively upon request.")),
         off_menu_perk: isLondon ? "Access to off-menu single-batch botanical infusion & 12th Knot riverfront banquette" : "Access to off-menu signature cocktail infusion & private garden nook",
         insider_badge: "Head Bartender & Local Regular Lore"
+      },
+      host_vibe: {
+        host_style_score: isLondon && nameLower.includes('sea containers') ? 94 : (isMiami ? 92 : (isDubai ? 88 : 90)),
+        host_archetype: isLondon && nameLower.includes('sea containers')
+          ? "Storytelling Mixologists & South Bank Scene Insiders"
+          : (isDubai && nameLower.includes('dukes')
+              ? "Mayfair Martini Masters & Warm Heritage Hosts"
+              : (isMiami
+                  ? "Sunlit Poolside Curators & Effortless Local Insiders"
+                  : "Charismatic Cultural Hosts & Neighborhood Insiders")),
+        warmth_verdict: isDubai ? "Refined Heritage Warmth — Effortless Recognition" : "Zero Snobbery — Instant Regulars Treatment",
+        service_pacing: "Unhurried Banter & Intuitive Craft",
+        team_aesthetic: isLondon && nameLower.includes('sea containers')
+          ? "Bespoke Maritime Tailoring, Lab-Craft Aprons & Contemporary Street Polish"
+          : (isDubai
+              ? "Crisp White-Jacket Martini Tailoring & Resort Linen Elegance"
+              : "Relaxed Resort Tailoring, Artisanal Aprons & Creative Street Style"),
+        signature_team_roles: isLondon && nameLower.includes('sea containers')
+          ? ["Lyaness Fermenter & Mixologist", "12th Knot Sound Curator", "South Bank Insider Concierge"]
+          : (isDubai
+              ? ["Dukes Bar Martini Trolley Master", "Private Beach Butler", "Drawing Room Tea Sommelier"]
+              : ["Head Botanical Mixologist", "Neighborhood Culture Concierge", "Resident Vinyl & Vibe Curator"]),
+        staff_icebreaker_prompt: isLondon && nameLower.includes('sea containers')
+          ? "Ask the Lyaness bar team which off-menu botanical ingredient they distilled in-house this week."
+          : (isDubai
+              ? "Ask the Dukes Bar head bartender to wheel over the copper trolley for a tableside Vesper Martini story."
+              : "Ask the bartender for their off-menu neighborhood nightcap and favorite late-night local spot.")
       },
       qualification_test: {
         you_will_love_if: isLondon 

@@ -28,6 +28,44 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
   const auth = v.authenticity_and_materials || {};
   const temporal = v.temporal_dynamics || {};
   const secrets = v.insider_secrets || {};
+  const rawHostVibe = v.host_vibe || {};
+
+  const venueNameLower = (manifest.venue_name || hotelName || '').toLowerCase();
+  const hostVibe = {
+    host_style_score: rawHostVibe.host_style_score || (venueNameLower.includes('sea containers') ? 94 : (venueNameLower.includes('25hours') ? 96 : (venueNameLower.includes('dukes') ? 88 : 91))),
+    host_archetype: rawHostVibe.host_archetype || (
+      venueNameLower.includes('sea containers')
+        ? 'Storytelling Mixologists & South Bank Scene Insiders'
+        : (venueNameLower.includes('25hours')
+            ? 'Unscripted Vinyl Curators & Highball Storytellers'
+            : (venueNameLower.includes('dukes')
+                ? 'Mayfair Martini Masters & Warm Heritage Hosts'
+                : 'Charismatic Cultural Hosts & Neighborhood Insiders'))
+    ),
+    warmth_verdict: rawHostVibe.warmth_verdict || (venueNameLower.includes('dukes') ? 'Refined Heritage Warmth' : 'Zero Snobbery — Instant Regulars'),
+    service_pacing: rawHostVibe.service_pacing || 'Unhurried Banter & Intuitive Craft',
+    team_aesthetic: rawHostVibe.team_aesthetic || (
+      venueNameLower.includes('sea containers')
+        ? 'Bespoke Maritime Tailoring & Lab-Craft Mixology Aprons'
+        : (venueNameLower.includes('25hours')
+            ? 'Relaxed Scandi Streetwear, Denim Aprons & Sneakers'
+            : 'Relaxed Contemporary Tailoring & Artisanal Aprons')
+    ),
+    signature_team_roles: (rawHostVibe.signature_team_roles && rawHostVibe.signature_team_roles.length > 0)
+      ? rawHostVibe.signature_team_roles
+      : (venueNameLower.includes('sea containers')
+          ? ['Lyaness Mixologist', '12th Knot Selector', 'Culture Concierge']
+          : (venueNameLower.includes('25hours')
+              ? ['Boilerman Highball Host', 'Vinyl Room Curator', 'Bike Concierge']
+              : ['Head Mixologist', 'Neighborhood Concierge', 'Vibe Host'])),
+    staff_icebreaker_prompt: rawHostVibe.staff_icebreaker_prompt || (
+      venueNameLower.includes('sea containers')
+        ? 'Ask the Lyaness bar team which off-menu botanical ingredient they fermented in-house this week.'
+        : (venueNameLower.includes('25hours')
+            ? 'Ask the Boilerman bartender for their favorite Copenhagen vinyl record and highball pairing.'
+            : 'Ask the bartender for their off-menu neighborhood nightcap and favorite late-night local spot.')
+    )
+  };
 
   const [activeDiurnalTab, setActiveDiurnalTab] = useState('chilling');
 
@@ -492,6 +530,72 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
 
             <div style={{ marginTop: '1.25rem', background: 'rgba(192, 132, 252, 0.08)', padding: '10px 12px', borderRadius: '10px', border: '1px solid rgba(192, 132, 252, 0.2)', fontSize: '11px', color: 'rgba(255,255,255,0.85)' }}>
               ⚡ <strong>Social Velocity:</strong> {crowd.energy_verdict || 'High Banter & Neighborhood Sanctuary'}
+            </div>
+          </div>
+
+          {/* ========================================================================= */}
+          {/* CONTAINER 4: Host Vibe (Customer Team & Human Alchemy)                    */}
+          {/* ========================================================================= */}
+          <div style={{ flex: '0 0 380px', minWidth: '380px', maxWidth: '400px', scrollSnapAlign: 'start', background: 'rgba(0,0,0,0.55)', padding: '1.5rem', borderRadius: '1.25rem', border: '1px solid rgba(52, 211, 153, 0.4)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxSizing: 'border-box' }}>
+            <div>
+              {/* Category Badge */}
+              <div style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center' }}>
+                <span style={{ fontSize: '11px', fontWeight: 900, color: '#34d399', letterSpacing: '0.08em', textTransform: 'uppercase', display: 'flex', alignItems: 'center', gap: '5px' }}>
+                  <Sparkles size={13} /> Host Vibe
+                </span>
+              </div>
+
+              <h3 style={{ fontSize: '16px', fontWeight: 900, color: '#ffffff', minHeight: '44px', lineHeight: 1.3, margin: '0 0 0.85rem 0' }}>
+                Scripted Protocol or Cultural Hosts?
+              </h3>
+
+              {/* Standardized Scale Bar Container */}
+              <div style={{ background: 'rgba(0,0,0,0.45)', padding: '10px 12px', borderRadius: '10px', border: '1px solid rgba(255,255,255,0.08)', marginBottom: '1rem', minHeight: '82px', boxSizing: 'border-box', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', gap: '6px' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', fontSize: '9.5px', fontWeight: 800, textTransform: 'uppercase', color: 'rgba(255,255,255,0.6)' }}>
+                  <span style={{ color: '#94a3b8', textAlign: 'left' }}>Scripted</span>
+                  <span style={{ color: '#38bdf8', textAlign: 'center' }}>Attentive</span>
+                  <span style={{ color: '#34d399', textAlign: 'right' }}>Cultural Hosts</span>
+                </div>
+                {/* Scale Track with Pin */}
+                <div style={{ position: 'relative', width: '100%', height: '8px', background: 'linear-gradient(90deg, #64748b 0%, #38bdf8 50%, #34d399 100%)', borderRadius: '4px' }}>
+                  <div style={{ 
+                    position: 'absolute', 
+                    top: '50%', 
+                    left: `${Math.min(95, Math.max(5, hostVibe.host_style_score))}%`, 
+                    transform: 'translate(-50%, -50%)', 
+                    width: '14px', 
+                    height: '14px', 
+                    borderRadius: '50%', 
+                    background: '#ffffff', 
+                    boxShadow: '0 0 8px rgba(0,0,0,0.8), 0 0 10px #34d399',
+                    border: '2px solid #050b14' 
+                  }} />
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '11px', fontWeight: 700, gap: '8px' }}>
+                  <span style={{ color: '#34d399', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', flex: 1 }}>{hostVibe.warmth_verdict}</span>
+                  <span style={{ color: '#ffffff', fontFamily: 'monospace', flexShrink: 0, fontSize: '10px', background: 'rgba(52, 211, 153, 0.18)', padding: '2px 7px', borderRadius: '4px', border: '1px solid rgba(52, 211, 153, 0.35)' }}>{hostVibe.host_style_score}/100 Alchemy</span>
+                </div>
+              </div>
+
+              <div style={{ fontSize: '13px', fontWeight: 800, color: '#ffffff', minHeight: '34px', lineHeight: 1.35, marginBottom: '0.4rem', display: 'flex', alignItems: 'flex-start' }}>
+                <span>{hostVibe.host_archetype}</span>
+              </div>
+
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '5px', marginBottom: '0.6rem', minHeight: '24px', alignItems: 'center' }}>
+                {(hostVibe.signature_team_roles || []).slice(0, 3).map((role, idx) => (
+                  <span key={idx} style={{ background: 'rgba(52, 211, 153, 0.12)', color: '#34d399', fontSize: '10px', fontWeight: 700, padding: '2px 8px', borderRadius: '10px', border: '1px solid rgba(52, 211, 153, 0.25)', whiteSpace: 'nowrap' }}>
+                    ✦ {role}
+                  </span>
+                ))}
+              </div>
+
+              <p style={{ fontSize: '11.5px', color: 'rgba(255,255,255,0.7)', lineHeight: 1.4, margin: '0 0 0.5rem 0' }}>
+                <strong style={{ color: '#34d399' }}>Team Look:</strong> {hostVibe.team_aesthetic}
+              </p>
+            </div>
+
+            <div style={{ marginTop: '0.75rem', background: 'rgba(52, 211, 153, 0.08)', padding: '10px 12px', borderRadius: '10px', border: '1px solid rgba(52, 211, 153, 0.25)', fontSize: '11px', color: 'rgba(255,255,255,0.9)', lineHeight: 1.35 }}>
+              💬 <strong style={{ color: '#34d399' }}>Host Icebreaker:</strong> {hostVibe.staff_icebreaker_prompt}
             </div>
           </div>
 

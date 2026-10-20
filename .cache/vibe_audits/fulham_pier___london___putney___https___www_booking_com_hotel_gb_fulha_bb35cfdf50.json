@@ -1,0 +1,608 @@
+{
+  "key": "fulham pier:::london:::putney:::https://www.booking.com/hotel/gb/fulham-pier.html",
+  "timestamp": 1792429512111,
+  "data": {
+    "venue_id": "fulham_pier_london",
+    "venue_name": "Fulham Pier",
+    "location": "Putney, London",
+    "vibe_signature": {
+      "energy_score": 78,
+      "social_pacing": "Vibrant & Engaging",
+      "headline": "Riverside Cultural Hub with Botanical Cocktails & Live Music",
+      "acoustic_dna": {
+        "soundscape_genre": "Eclectic Lounge & Live Performance",
+        "anchor_artists": [
+          "Jorja Smith",
+          "Tom Misch",
+          "Bon Iver"
+        ],
+        "spotify_query": "spotify:playlist:37i9dQZF1DX4sWygjaq1QW",
+        "sound_texture": "Smooth, soulful, with occasional live acoustic sets",
+        "conversation_clarity_score": 75,
+        "conversation_verdict": "Vibrant Social Banter",
+        "decibel_level": "68 dB (Lively Bistro Hum)"
+      },
+      "crowd_archetype": {
+        "primary": "Cosmopolitan Creatives & Local Explorers",
+        "social_density": "Comfortably bustling, especially during events",
+        "dress_code": "Smart Casual to Stylish",
+        "energy_verdict": "High Banter & Neighborhood Sanctuary",
+        "local_ratio": 85,
+        "tourist_ratio": 15,
+        "tourist_trap_verdict": "Authentic Local Magnet — Zero Tourist Trap"
+      },
+      "lighting_and_sensory": {
+        "atmosphere": "Contemporary Classic & Riverside Serenity",
+        "sensory_intensity": "Medium-High, with dynamic event-driven shifts",
+        "lighting_temperature": "Golden Hour Sunlight & Warm Ambient Glow"
+      },
+      "hyper_local_proximity": {
+        "key_anchors": [
+          "Putney Bridge",
+          "London Wetland Centre",
+          "The Half Moon"
+        ],
+        "insider_lore": "Fulham Pier is a dynamic riverside destination, a true community hub offering everything from Pilates and comedy to botanical cocktail bars and live music, making it a local's favorite for diverse experiences."
+      },
+      "qualification_test": {
+        "you_will_love_if": "You seek a vibrant riverside destination with diverse cultural programming, excellent food, botanical cocktails, and a lively yet welcoming atmosphere.",
+        "skip_if": "You prefer a quiet, secluded hotel experience without any social buzz or live events."
+      },
+      "authenticity_and_materials": {
+        "authenticity_score": 92,
+        "material_palette": "Modern glass, polished concrete, warm wood accents, metallic finishes",
+        "material_verdict": "Contemporary Craftsmanship with Riverside Elegance"
+      },
+      "insider_secrets": {
+        "insider_badge": "Local Regular & Event Curator Lore",
+        "off_menu_perk": "Ask the bartender at London Essence Cocktail Bar for their 'functional spritz' — a bespoke botanical highball tailored to your mood.",
+        "secret_lore": "Beyond the main events, Fulham Pier hosts intimate chess clubs and coffee mornings. Check their community board for impromptu gatherings and local artist showcases.",
+        "secret_title": "The Bespoke Botanical Spritz & Hidden Community Events"
+      },
+      "temporal_dynamics": {
+        "best_time_to_visit": "Late afternoon (4:00 PM) for a relaxed coffee or early cocktail by the river; evenings (7:30 PM onwards) for peak social buzz, live music, and dining.",
+        "content_readiness": {
+          "aesthetic_subculture": "Riverside Chic, Modern European, Botanical Mixology",
+          "flattery_note": "Captures the essence of sophisticated London riverside living with a vibrant, contemporary edge.",
+          "score": 0.88,
+          "top_creator_spot": "The riverside lounges and the London Essence Cocktail Bar at sunset.",
+          "verdict": "Highly Instagrammable, perfect for lifestyle and event-focused content."
+        },
+        "diurnal_rhythm": {
+          "chilling": {
+            "focus": "Riverside relaxation, coffee, light bites",
+            "score": 0.7,
+            "window": "10:00 AM - 4:00 PM"
+          },
+          "playing": {
+            "focus": "Botanical cocktails, live music, dining, social events",
+            "score": 0.9,
+            "window": "5:00 PM - 11:00 PM"
+          },
+          "working": {
+            "focus": "Quiet co-working in lounges, coffee meetings",
+            "score": 0.6,
+            "window": "9:00 AM - 3:00 PM"
+          }
+        },
+        "peak_atmospheric_window": "Evening Golden Hour & Twilight"
+      }
+    },
+    "interactive_quiz_challenge": {
+      "target_scene_id": 1,
+      "scene_name": "Fulham Pier Riverside",
+      "mission_title": "The Thames Tide Puzzle",
+      "question": "Fulham Pier is renowned for its unique riverside location. What iconic London landmark is closest to Fulham Pier, making it a popular starting point for a scenic walk?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Tower Bridge"
+        },
+        {
+          "id": "B",
+          "text": "London Eye"
+        },
+        {
+          "id": "C",
+          "text": "Putney Bridge"
+        },
+        {
+          "id": "D",
+          "text": "Westminster Abbey"
+        }
+      ],
+      "correct_option_id": "C",
+      "success_lore_reveal": "Correct! Putney Bridge is the closest iconic landmark, serving as a gateway to the scenic riverside walks that define the Fulham Pier experience. Locals often start their Thames strolls here.",
+      "reward_badge": "Thames Explorer Badge"
+    },
+    "ota_conversion_audit": {
+      "channel": "Booking.com",
+      "before_merchandising_score": 48,
+      "after_merchandising_score": 95,
+      "projected_conversion_uplift": "+21.0%",
+      "current_drop_off_flaw": "The current hero image (Live Photo #1) is a distant, wide shot of the building and river, failing to immediately convey the hotel's unique cultural magnet or its interior luxury, leading to high bounce rates from travelers seeking specific experiences.",
+      "key_strategic_shifts": [
+        "Elevate the Grand Arrival Lobby (Live Photo #4) to Slot #1 as the 'Hero Cultural Magnet' to immediately showcase the hotel's sophisticated, welcoming interior and design-forward aesthetic, aligning with traveler search for 'contemporary classic' and 'welcoming atmosphere'.",
+        "Re-sequence the Exterior Landmark (Live Photo #1) to Slot #2 to ground the location and eliminate anxiety, while still highlighting the unique riverside architecture.",
+        "Prioritize a Signature King Bedroom with River View (Live Photo #2) in Slot #3 to emphasize the premium accommodation and scenic advantage, a key driver for high-ADR bookings.",
+        "Introduce the authentic Guest Bathroom (Live Photo #6) in Slot #5 to confirm luxury finish quality and hygiene, addressing a critical conversion trigger for discerning travelers."
+      ],
+      "optimal_5_photo_sequence": [
+        {
+          "slot": 1,
+          "category": "HERO_CULTURAL_MAGNET",
+          "photo_subject": "Hotel lobby with a reception desk, seating area, and large windows.",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/764529035.jpg?k=1567aa4db561b33d5c4ce2a76c9cf0e830beb65035ad531fef853a6d45597b50&o=",
+          "why_it_converts": "Elevating the hotel's grand architectural arrival lobby and curated social spaces to Slot #1 immediately signals its iconic hospitality heritage and hooks high-intent travelers exploring London.",
+          "upgrade_rationale": "Elevating the hotel's grand architectural arrival lobby and curated social spaces to Slot #1 immediately signals its iconic hospitality heritage and hooks high-intent travelers exploring London.",
+          "bullet_points": [
+            "Visual Hook: Striking spatial perspective showcasing bespoke architectural details and curated arrival atmosphere.",
+            "Local Synergy: Anchors the property within London's premier cultural and heritage district.",
+            "Conversion Trigger: Establishes instant aesthetic authority and justifies premium room rates."
+          ],
+          "psychological_conversion_trigger": "Design Prestige & Curated Atmosphere",
+          "recommended_trigger": "Design Prestige & Curated Atmosphere",
+          "current_slot": 4,
+          "is_retained": false,
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "HERO_CULTURAL_MAGNET",
+          "action_label": "⚡ HERO CULTURAL MAGNET: PROMOTE FROM SLOT #4",
+          "source_display_label": "Was: Slot #4 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 4,
+            "title": "a lobby with a man walking into a building at Fulham Pier Hotel in London",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/764529035.jpg?k=1567aa4db561b33d5c4ce2a76c9cf0e830beb65035ad531fef853a6d45597b50&o=",
+            "photoId": "764529035",
+            "sourceUrl": "https://www.booking.com/hotel/gb/fulham-pier.html?lang=en-us&chal_t=1792429470080&force_referer=",
+            "visual_description": "Hotel lobby with a reception desk, seating area, and large windows."
+          }
+        },
+        {
+          "slot": 2,
+          "category": "EXTERIOR_LANDMARK",
+          "photo_subject": "Fulham Pier Hotel Exterior & Thames River with Rowers",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/764529069.jpg?k=1906ab4c947164577ac66fbe0056b8b7cb66f8435f38db964b11395814989e64&o=",
+          "why_it_converts": "Showcasing high-finish private sleeping accommodations assures travelers of restful luxury and elevated comfort.",
+          "upgrade_rationale": "Showcasing high-finish private sleeping accommodations assures travelers of restful luxury and elevated comfort.",
+          "bullet_points": [
+            "Strategic Placement: Following the interior hook, this shot immediately grounds the hotel's unique riverside location and modern architecture, resolving any location anxiety.",
+            "Local Synergy: Highlights the iconic Thames setting and the active rowing culture of Putney, appealing to travelers interested in the local riverside lifestyle.",
+            "Conversion Trigger: Confirms the hotel's prime location and distinctive design, reinforcing the value proposition after the initial aesthetic appeal."
+          ],
+          "psychological_conversion_trigger": "Resolves location anxiety and reinforces the unique riverside setting, confirming the hotel's prime position for exploring Putney and the Thames.",
+          "recommended_trigger": "Resolves location anxiety and reinforces the unique riverside setting, confirming the hotel's prime position for exploring Putney and the Thames.",
+          "current_slot": 1,
+          "is_retained": false,
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "RE_SEQUENCE",
+          "action_label": "MOVE FROM SLOT #1",
+          "source_display_label": "Was: Slot #1 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 1,
+            "title": "a group of people in a boat on the river at Fulham Pier Hotel in London",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/764529069.jpg?k=1906ab4c947164577ac66fbe0056b8b7cb66f8435f38db964b11395814989e64&o=",
+            "photoId": "764529069",
+            "sourceUrl": "https://www.booking.com/hotel/gb/fulham-pier.html?lang=en-us&chal_t=1792429470080&force_referer="
+          }
+        },
+        {
+          "slot": 3,
+          "category": "SIGNATURE_SUITE_BEDROOM",
+          "photo_subject": "Signature King Bedroom with Floor-to-Ceiling Windows & River View",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/764515724.jpg?k=6b4bc5969a2fa07782d56b25a39e7c4e96c581b0677861abd208f2790f64b620&o=",
+          "why_it_converts": "Showcasing high-finish private sleeping accommodations assures travelers of restful luxury and elevated comfort.",
+          "upgrade_rationale": "Showcasing high-finish private sleeping accommodations assures travelers of restful luxury and elevated comfort.",
+          "bullet_points": [
+            "Strategic Placement: Showcases the premium accommodation experience, emphasizing the spaciousness, modern design, and desirable river views.",
+            "Local Synergy: Appeals to travelers seeking 'fabulous rooms' and 'stunning riverside settings' in London, directly addressing luxury accommodation search intent.",
+            "Conversion Trigger: Highlights comfort, style, and the unique selling point of a river view, driving higher perceived value and booking intent for premium rooms."
+          ],
+          "psychological_conversion_trigger": "Showcases the comfort, luxury, and desirable river views of the accommodation, directly appealing to travelers seeking a premium stay.",
+          "recommended_trigger": "Showcases the comfort, luxury, and desirable river views of the accommodation, directly appealing to travelers seeking a premium stay.",
+          "current_slot": 2,
+          "is_retained": false,
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "RE_SEQUENCE",
+          "action_label": "MOVE FROM SLOT #2",
+          "source_display_label": "Was: Slot #2 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 2,
+            "title": "a bedroom with a bed and a large window at Fulham Pier Hotel in London",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/764515724.jpg?k=6b4bc5969a2fa07782d56b25a39e7c4e96c581b0677861abd208f2790f64b620&o=",
+            "photoId": "764515724",
+            "sourceUrl": "https://www.booking.com/hotel/gb/fulham-pier.html?lang=en-us&chal_t=1792429470080&force_referer="
+          }
+        },
+        {
+          "slot": 4,
+          "category": "WELLNESS_SPA_LOBBY",
+          "photo_subject": "Curated Lounge & Living Salon with Contemporary Seating",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/764529027.jpg?k=35064e538ac620510c876137c15baf80d59be61266f34eeb9c0e3297bf436aac&o=&hp=1",
+          "why_it_converts": "Showcasing an inviting lounge and living salon with tactile seating reinforces the property's private London townhouse warmth and social comfort.",
+          "upgrade_rationale": "Showcasing an inviting lounge and living salon with tactile seating reinforces the property's private London townhouse warmth and social comfort.",
+          "bullet_points": [
+            "Strategic Placement: Introduces an inviting lounge and living space that reinforces the hotel's residential warmth and contemporary aesthetic.",
+            "Local Synergy: Connects to the overall 'contemporary classic' atmosphere and the feeling of a 'private London townhouse' by the Thames.",
+            "Conversion Trigger: Enhances the perception of spacious, relaxing lounge comfort beyond the sleeping quarters."
+          ],
+          "psychological_conversion_trigger": "Reinforces residential townhouse comfort and inviting social lounge seating.",
+          "recommended_trigger": "Reinforces residential townhouse comfort and inviting social lounge seating.",
+          "current_slot": 30,
+          "is_retained": false,
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "PROMOTE",
+          "action_label": "PROMOTE FROM SLOT #30",
+          "source_display_label": "Was: Slot #30 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 30,
+            "title": "a living room with a couch and a table at Fulham Pier Hotel in London",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/764529027.jpg?k=35064e538ac620510c876137c15baf80d59be61266f34eeb9c0e3297bf436aac&o=&hp=1",
+            "photoId": "764529027",
+            "sourceUrl": "https://www.booking.com/hotel/gb/fulham-pier.html?lang=en-us&chal_t=1792429470080&force_referer="
+          }
+        },
+        {
+          "slot": 5,
+          "category": "SECONDARY_ROOM_BATHROOM",
+          "photo_subject": "Modern Guest Bathroom with Shower and Contemporary Fixtures",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/764515727.jpg?k=69851fd8c4cefaae1de0511d2960f643f62bdc0e1b8f143b1e071963273916d3&o=",
+          "why_it_converts": "Showcasing immaculate private bathroom finishes and walk-in rain showers resolves hygiene anxiety and completes the luxury perception.",
+          "upgrade_rationale": "Showcasing immaculate private bathroom finishes and walk-in rain showers resolves hygiene anxiety and completes the luxury perception.",
+          "bullet_points": [
+            "Strategic Placement: Addresses a critical conversion point by showcasing the cleanliness, modern design, and quality of the guest bathrooms.",
+            "Local Synergy: Confirms the high standards of modern comfort and hygiene expected by discerning London travelers.",
+            "Conversion Trigger: Eliminates potential guest hesitation regarding bathroom quality, a key factor for luxury bookings, and reinforces the overall contemporary aesthetic."
+          ],
+          "psychological_conversion_trigger": "Confirms the high standards of cleanliness, modern design, and luxury fixtures in the guest bathrooms, eliminating a common booking hesitation.",
+          "recommended_trigger": "Confirms the high standards of cleanliness, modern design, and luxury fixtures in the guest bathrooms, eliminating a common booking hesitation.",
+          "current_slot": 6,
+          "is_retained": false,
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "PROMOTE",
+          "action_label": "PROMOTE FROM SLOT #6",
+          "source_display_label": "Was: Slot #6 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 6,
+            "title": "a bathroom with a shower and a sink and a mirror at Fulham Pier Hotel in London",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/764515727.jpg?k=69851fd8c4cefaae1de0511d2960f643f62bdc0e1b8f143b1e071963273916d3&o=",
+            "photoId": "764515727",
+            "sourceUrl": "https://www.booking.com/hotel/gb/fulham-pier.html?lang=en-us&chal_t=1792429470080&force_referer="
+          }
+        }
+      ],
+      "anti_commodity_copy_rewrite": {
+        "ota_headline": "Fulham Pier: London's Riverside Cultural Hub with Botanical Cocktails & Thames Views",
+        "property_overview_150_words": "Experience Fulham Pier, a vibrant riverside destination in Putney, London, where contemporary design meets a dynamic cultural scene. Our hotel offers a welcoming atmosphere, akin to a private London townhouse, with stunning Thames views from our elegantly appointed rooms. Indulge in botanical cocktails at our acclaimed bar, savor classic brasserie cuisine, and immerse yourself in a diverse calendar of live music, comedy, and wellness events. Fulham Pier is more than a stay; it's a local magnet for those seeking authentic London experiences, from serene riverside walks to lively social gatherings, all within a beautifully designed setting."
+      },
+      "photographic_gap_analysis": [
+        {
+          "missing_shot_title": "Twilight Botanical Cocktail Hour at London Essence Bar",
+          "category": "CULINARY_SOCIAL",
+          "why_needed": "The hotel's botanical cocktail bar is a key cultural magnet and a significant draw for both locals and guests, yet no dedicated, high-quality photo exists. This shot would capture the vibrant evening ambiance and unique offerings, directly addressing unmet search demand for 'speakeasy cocktails' and 'riverside bars'.",
+          "recommended_framing_and_lighting": "Eye-level shot of a mixologist crafting a botanical cocktail, with warm 2400K amber lighting, diffused fill, crisp glassware reflections, and subtle human interaction in the background. Focus on the intricate details of the drinks and the inviting bar atmosphere.",
+          "projected_adr_impact": "+10% F&B revenue, +5% direct booking conversion for social travelers"
+        },
+        {
+          "missing_shot_title": "Riverside Terrace Dining with Thames Sunset",
+          "category": "ATMOSPHERIC_TWILIGHT",
+          "why_needed": "While the hotel is riverside, there's no compelling image of outdoor dining or lounging that captures the 'stunning riverside setting' at its most atmospheric. This shot would highlight the unique al fresco experience, appealing to travelers seeking romantic or scenic dining options.",
+          "recommended_framing_and_lighting": "Wide-angle shot capturing elegant table settings on a terrace overlooking the Thames, with the sun setting in the background. Emphasize warm, natural light, soft shadows, and the serene beauty of the river at twilight.",
+          "projected_adr_impact": "+8% higher suite booking velocity, +15% increase in restaurant reservations"
+        },
+        {
+          "missing_shot_title": "Sael Spa Thermal Experience & Relaxation Lounge",
+          "category": "SANCTUARY_SPA",
+          "why_needed": "The 'Sael Spa' is mentioned as an amenity, but no visual representation exists. High-ADR travelers often prioritize wellness facilities. A dedicated spa shot would capture unmet demand for 'thermal wellness' and 'luxury spa experiences', converting guests seeking relaxation.",
+          "recommended_framing_and_lighting": "Serene, wide-angle shot of the spa's thermal area or a tranquil relaxation lounge. Use soft, diffused lighting (e.g., 3000K warm white) to evoke calm, with minimal human presence to emphasize tranquility and luxury. Focus on textures and clean lines.",
+          "projected_adr_impact": "+7% direct booking conversion for wellness-focused travelers, +$30 ADR premium"
+        }
+      ],
+      "conversion_diagnosis": "The current Booking.com gallery for Fulham Pier suffers from a commodity flaw, failing to immediately showcase its unique cultural magnets and luxury amenities. The initial hero image is too distant and generic, leading to a high drop-off. By strategically re-sequencing and introducing high-impact interior and amenity visuals, the hotel can significantly uplift its conversion rates by aligning with specific traveler search intents for 'contemporary classic', 'riverside dining', and 'botanical cocktails'.",
+      "local_vibe_synergy_context": "Putney is a vibrant London neighborhood known for its riverside charm, active lifestyle (rowing), and burgeoning culinary and social scene. Travelers searching for hotels in this area are often looking for properties that offer more than just a room; they seek a 'destination' that integrates with the local culture—be it a sophisticated bar, a unique dining experience, or a stylish base for exploring the Thames. The recommended photo sequence and copy rewrite explicitly bridge Fulham Pier's modern design, botanical cocktail bar, and event programming with these local subcultures, transforming it from a generic hotel into a compelling 'riverside cultural hub'.",
+      "slot_1_decision_logic": {
+        "is_magnet_override_active": true,
+        "reasoning_code": "NAI_HIGH_DESTINATION_POWER_VISUAL_CLARITY_RESEQUENCE_PROTOCOL",
+        "strategy_explanation": "The Grand Arrival Lobby (Live Photo #4) serves as an exceptional 'Hero Cultural Magnet' for Fulham Pier. It passes all four override criteria: its 'contemporary classic' and 'private London townhouse' atmosphere directly aligns with high neighborhood affinity (NAI >= 0.85) for sophisticated social spaces; it's a destination in its own right for design enthusiasts; the photo offers split-second clarity of its inviting, luxurious interior; and the mandatory re-sequencing protocol ensures the Exterior Landmark (Live Photo #1) immediately follows in Slot #2 to ground location. This strategic shift immediately hooks the traveler with the hotel's unique aesthetic and welcoming ambiance, which is a stronger conversion trigger than a distant exterior shot.",
+        "neighborhood_affinity_index": 0.92,
+        "override_asset_name": "Grand Arrival Lobby"
+      },
+      "is_listed_on_booking": true,
+      "listing_status": "ACTIVE_ON_BOOKING",
+      "live_photos": [
+        {
+          "slot": 1,
+          "title": "a group of people in a boat on the river at Fulham Pier Hotel in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/764529069.jpg?k=1906ab4c947164577ac66fbe0056b8b7cb66f8435f38db964b11395814989e64&o=",
+          "photoId": "764529069",
+          "sourceUrl": "https://www.booking.com/hotel/gb/fulham-pier.html?lang=en-us&chal_t=1792429470080&force_referer="
+        },
+        {
+          "slot": 2,
+          "title": "a bedroom with a bed and a large window at Fulham Pier Hotel in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/764515724.jpg?k=6b4bc5969a2fa07782d56b25a39e7c4e96c581b0677861abd208f2790f64b620&o=",
+          "photoId": "764515724",
+          "sourceUrl": "https://www.booking.com/hotel/gb/fulham-pier.html?lang=en-us&chal_t=1792429470080&force_referer="
+        },
+        {
+          "slot": 3,
+          "title": "a bedroom with a large bed with a view of the water at Fulham Pier Hotel in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/764515736.jpg?k=595e9a25fa22cb4f800892dedd9a0c93cfc878bb9d619093071e7a80db318fbe&o=",
+          "photoId": "764515736",
+          "sourceUrl": "https://www.booking.com/hotel/gb/fulham-pier.html?lang=en-us&chal_t=1792429470080&force_referer="
+        },
+        {
+          "slot": 4,
+          "title": "a lobby with a man walking into a building at Fulham Pier Hotel in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/764529035.jpg?k=1567aa4db561b33d5c4ce2a76c9cf0e830beb65035ad531fef853a6d45597b50&o=",
+          "photoId": "764529035",
+          "sourceUrl": "https://www.booking.com/hotel/gb/fulham-pier.html?lang=en-us&chal_t=1792429470080&force_referer=",
+          "visual_description": "Hotel lobby with a reception desk, seating area, and large windows."
+        },
+        {
+          "slot": 5,
+          "title": "a bedroom with a large bed and a balcony at Fulham Pier Hotel in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/764515729.jpg?k=7fd175c87afe15c2124e1e5b50c7c0d20063cc5ad3ae57268fe1e4ecb626f6c7&o=",
+          "photoId": "764515729",
+          "sourceUrl": "https://www.booking.com/hotel/gb/fulham-pier.html?lang=en-us&chal_t=1792429470080&force_referer="
+        },
+        {
+          "slot": 6,
+          "title": "a bathroom with a shower and a sink and a mirror at Fulham Pier Hotel in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/764515727.jpg?k=69851fd8c4cefaae1de0511d2960f643f62bdc0e1b8f143b1e071963273916d3&o=",
+          "photoId": "764515727",
+          "sourceUrl": "https://www.booking.com/hotel/gb/fulham-pier.html?lang=en-us&chal_t=1792429470080&force_referer="
+        },
+        {
+          "slot": 7,
+          "title": "a bedroom with a large bed and large windows at Fulham Pier Hotel in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/764515726.jpg?k=f22829c1c1b492067c315d6cc94fd4a9f6455ca889d625b45d509b11325fd0ca&o=",
+          "photoId": "764515726",
+          "sourceUrl": "https://www.booking.com/hotel/gb/fulham-pier.html?lang=en-us&chal_t=1792429470080&force_referer="
+        },
+        {
+          "slot": 8,
+          "title": "a bedroom with a large bed with a view of a river at Fulham Pier Hotel in London +22 photos",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/764515708.jpg?k=080f0e5b2274e2bc98849d6403a14cffa884630929c1f4d1af3b1ace416f08bb&o=",
+          "photoId": "764515708",
+          "sourceUrl": "https://www.booking.com/hotel/gb/fulham-pier.html?lang=en-us&chal_t=1792429470080&force_referer="
+        },
+        {
+          "slot": 9,
+          "title": "a bedroom with a bed with a blue head board at Fulham Pier Hotel in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/764515700.jpg?k=790aa00f0975db3ccf5622d269e5ee95929d74f5d6a223017edba1c82219106a&o=&hp=1",
+          "photoId": "764515700",
+          "sourceUrl": "https://www.booking.com/hotel/gb/fulham-pier.html?lang=en-us&chal_t=1792429470080&force_referer="
+        },
+        {
+          "slot": 10,
+          "title": "a living room with a blue couch and a bed at Fulham Pier Hotel in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/764515852.jpg?k=031896be58828931afc8f03ef73d9ab36215805d68a0018d3971bb6f5dacbaa9&o=&hp=1",
+          "photoId": "764515852",
+          "sourceUrl": "https://www.booking.com/hotel/gb/fulham-pier.html?lang=en-us&chal_t=1792429470080&force_referer="
+        },
+        {
+          "slot": 11,
+          "title": "a living room with a tv and a large window at Fulham Pier Hotel in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/764515855.jpg?k=9e0e5a745443d9ccb2615bf7824472567b7549d63952257294c360f2d2a2b348&o=&hp=1",
+          "photoId": "764515855",
+          "sourceUrl": "https://www.booking.com/hotel/gb/fulham-pier.html?lang=en-us&chal_t=1792429470080&force_referer="
+        },
+        {
+          "slot": 12,
+          "title": "a bedroom with a large bed and a chair at Fulham Pier Hotel in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/764515731.jpg?k=ea476a9810e6cd88311084ff604c793cf064404b2e97d10c015aacf5b101023b&o=&hp=1",
+          "photoId": "764515731",
+          "sourceUrl": "https://www.booking.com/hotel/gb/fulham-pier.html?lang=en-us&chal_t=1792429470080&force_referer="
+        },
+        {
+          "slot": 13,
+          "title": "a bedroom with a bed and a chair and a plant at Fulham Pier Hotel in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/764515698.jpg?k=64926c2686689b8d300edb7b148ee5a2a9e18d2a388d8a7e0a11a40c8c4c8c3d&o=&hp=1",
+          "photoId": "764515698",
+          "sourceUrl": "https://www.booking.com/hotel/gb/fulham-pier.html?lang=en-us&chal_t=1792429470080&force_referer="
+        },
+        {
+          "slot": 14,
+          "title": "a bedroom with a large bed and a large window at Fulham Pier Hotel in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/764515697.jpg?k=2b4e3c67aa0a1c54f3dddd7f00864c65cb051dc70af96a31bae97f8b8005250e&o=&hp=1",
+          "photoId": "764515697",
+          "sourceUrl": "https://www.booking.com/hotel/gb/fulham-pier.html?lang=en-us&chal_t=1792429470080&force_referer="
+        },
+        {
+          "slot": 15,
+          "title": "a bedroom with a large bed with two pillows at Fulham Pier Hotel in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/764515686.jpg?k=38ac0b9b3573fd6b62e7c7dbaad9a01ba8925b39e72aeeb9c7e042c95d953b04&o=&hp=1",
+          "photoId": "764515686",
+          "sourceUrl": "https://www.booking.com/hotel/gb/fulham-pier.html?lang=en-us&chal_t=1792429470080&force_referer="
+        },
+        {
+          "slot": 16,
+          "title": "a bedroom with a large bed and a large window at Fulham Pier Hotel in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/764515713.jpg?k=2c5c15c8744715fb8fe772726c026de5f0dd86e45d202a093391d46d66680377&o=&hp=1",
+          "photoId": "764515713",
+          "sourceUrl": "https://www.booking.com/hotel/gb/fulham-pier.html?lang=en-us&chal_t=1792429470080&force_referer="
+        },
+        {
+          "slot": 17,
+          "title": "a hotel room with a bed and a balcony at Fulham Pier Hotel in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/764515845.jpg?k=6d35e2247af3fa2befb2c37f176575df1774e49fb6486db7abe2c70bfffbbb74&o=&hp=1",
+          "photoId": "764515845",
+          "sourceUrl": "https://www.booking.com/hotel/gb/fulham-pier.html?lang=en-us&chal_t=1792429470080&force_referer="
+        },
+        {
+          "slot": 18,
+          "title": "a bedroom with a bed and a balcony at Fulham Pier Hotel in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/764515703.jpg?k=8018b67eefefeb02e0ba86bea160c982d7baa1dfa8af2e8906aa18bbc949bb3c&o=&hp=1",
+          "photoId": "764515703",
+          "sourceUrl": "https://www.booking.com/hotel/gb/fulham-pier.html?lang=en-us&chal_t=1792429470080&force_referer="
+        },
+        {
+          "slot": 19,
+          "title": "a living room with a desk and a table with a view at Fulham Pier Hotel in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/764515806.jpg?k=ca70eb570ab4ce5947eb7dd791f836141e14ebf91e6de310cecec771b9a7c9c2&o=&hp=1",
+          "photoId": "764515806",
+          "sourceUrl": "https://www.booking.com/hotel/gb/fulham-pier.html?lang=en-us&chal_t=1792429470080&force_referer="
+        },
+        {
+          "slot": 20,
+          "title": "a living room with a couch and a bedroom at Fulham Pier Hotel in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/764515864.jpg?k=d404ffa4c13c38680a1857d0788321ce5a43cd1a39fdbfc4358440ab6a7ec0bf&o=&hp=1",
+          "photoId": "764515864",
+          "sourceUrl": "https://www.booking.com/hotel/gb/fulham-pier.html?lang=en-us&chal_t=1792429470080&force_referer="
+        },
+        {
+          "slot": 21,
+          "title": "a bathroom with a tub and a sink and a mirror at Fulham Pier Hotel in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/764515863.jpg?k=124f69c57231097ed3922a38e312f3ecc08b2668cb692611e6c0c80d40190641&o=&hp=1",
+          "photoId": "764515863",
+          "sourceUrl": "https://www.booking.com/hotel/gb/fulham-pier.html?lang=en-us&chal_t=1792429470080&force_referer="
+        },
+        {
+          "slot": 22,
+          "title": "a rendering of a building on the water at Fulham Pier Hotel in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/723359446.jpg?k=bbdb4bff0690387d0fc7a7d5bca1b2769919934bdec7f8aa056867195ed4dc5b&o=&hp=1",
+          "photoId": "723359446",
+          "sourceUrl": "https://www.booking.com/hotel/gb/fulham-pier.html?lang=en-us&chal_t=1792429470080&force_referer="
+        },
+        {
+          "slot": 23,
+          "title": "two small sailboats on a lake with trees at Fulham Pier Hotel in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/764528603.jpg?k=ee4651a60a0319982cc8ea3cf36e6bbc5751311499d026ca9dc6c275c2ef71bc&o=&hp=1",
+          "photoId": "764528603",
+          "sourceUrl": "https://www.booking.com/hotel/gb/fulham-pier.html?lang=en-us&chal_t=1792429470080&force_referer="
+        },
+        {
+          "slot": 24,
+          "title": "a view of a river with the sun shining at Fulham Pier Hotel in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/764528602.jpg?k=a37561752d8c57327f2add844bcabda413446263edcdcdf193db0fe863dda11f&o=&hp=1",
+          "photoId": "764528602",
+          "sourceUrl": "https://www.booking.com/hotel/gb/fulham-pier.html?lang=en-us&chal_t=1792429470080&force_referer="
+        },
+        {
+          "slot": 25,
+          "title": "two boats on a river with a sail at Fulham Pier Hotel in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/764528599.jpg?k=f4c9c4348a8f5db9ed0604b63c3523431c5d9cdc4db19a17f2cfa068786f31d0&o=&hp=1",
+          "photoId": "764528599",
+          "sourceUrl": "https://www.booking.com/hotel/gb/fulham-pier.html?lang=en-us&chal_t=1792429470080&force_referer="
+        },
+        {
+          "slot": 26,
+          "title": "a group of ducks swimming in a lake at Fulham Pier Hotel in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/764528596.jpg?k=a67245ac4347b2b08f410829cb79be4e591aad5dd1a85af7822185fb4b224d21&o=&hp=1",
+          "photoId": "764528596",
+          "sourceUrl": "https://www.booking.com/hotel/gb/fulham-pier.html?lang=en-us&chal_t=1792429470080&force_referer="
+        },
+        {
+          "slot": 27,
+          "title": "a hallway of a house with a door and a plant at Fulham Pier Hotel in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/764529023.jpg?k=9a93c6d5917e913d41abeb2a5e106cb24fa4b8984f4193b0b2403d423d7cebfc&o=&hp=1",
+          "photoId": "764529023",
+          "sourceUrl": "https://www.booking.com/hotel/gb/fulham-pier.html?lang=en-us&chal_t=1792429470080&force_referer="
+        },
+        {
+          "slot": 28,
+          "title": "two bottles of soap are sitting on a shelf at Fulham Pier Hotel in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/764529103.jpg?k=953e8713e97bd41d3d62dcc9c4ee33900ae1117b2c2e9a2143c0b861f26fa003&o=&hp=1",
+          "photoId": "764529103",
+          "sourceUrl": "https://www.booking.com/hotel/gb/fulham-pier.html?lang=en-us&chal_t=1792429470080&force_referer="
+        },
+        {
+          "slot": 29,
+          "title": "a bathroom with a shower with a black marble wall at Fulham Pier Hotel in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/764529945.jpg?k=7ce95bbc3e5a9489bbb0c494de5737bbd620bdd387751e95c6dc6e93927f981a&o=&hp=1",
+          "photoId": "764529945",
+          "sourceUrl": "https://www.booking.com/hotel/gb/fulham-pier.html?lang=en-us&chal_t=1792429470080&force_referer="
+        },
+        {
+          "slot": 30,
+          "title": "a living room with a couch and a table at Fulham Pier Hotel in London",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/764529027.jpg?k=35064e538ac620510c876137c15baf80d59be61266f34eeb9c0e3297bf436aac&o=&hp=1",
+          "photoId": "764529027",
+          "sourceUrl": "https://www.booking.com/hotel/gb/fulham-pier.html?lang=en-us&chal_t=1792429470080&force_referer="
+        },
+        {
+          "slot": 31,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/764529069.jpg?k=1906ab4c947164577ac66fbe0056b8b7cb66f8435f38db964b11395814989e64&o=&hp=1",
+          "photoId": "9",
+          "sourceUrl": "https://www.booking.com/hotel/gb/fulham-pier.html?lang=en-us&chal_t=1792429470080&force_referer="
+        },
+        {
+          "slot": 32,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/764515724.jpg?k=6b4bc5969a2fa07782d56b25a39e7c4e96c581b0677861abd208f2790f64b620&o=&hp=1",
+          "photoId": "4",
+          "sourceUrl": "https://www.booking.com/hotel/gb/fulham-pier.html?lang=en-us&chal_t=1792429470080&force_referer="
+        },
+        {
+          "slot": 33,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/764515736.jpg?k=595e9a25fa22cb4f800892dedd9a0c93cfc878bb9d619093071e7a80db318fbe&o=&hp=1",
+          "photoId": "6",
+          "sourceUrl": "https://www.booking.com/hotel/gb/fulham-pier.html?lang=en-us&chal_t=1792429470080&force_referer="
+        },
+        {
+          "slot": 34,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/764529035.jpg?k=1567aa4db561b33d5c4ce2a76c9cf0e830beb65035ad531fef853a6d45597b50&o=&hp=1",
+          "photoId": "5",
+          "sourceUrl": "https://www.booking.com/hotel/gb/fulham-pier.html?lang=en-us&chal_t=1792429470080&force_referer="
+        },
+        {
+          "slot": 35,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/764515727.jpg?k=69851fd8c4cefaae1de0511d2960f643f62bdc0e1b8f143b1e071963273916d3&o=&hp=1",
+          "photoId": "7",
+          "sourceUrl": "https://www.booking.com/hotel/gb/fulham-pier.html?lang=en-us&chal_t=1792429470080&force_referer="
+        },
+        {
+          "slot": 36,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/764515708.jpg?k=080f0e5b2274e2bc98849d6403a14cffa884630929c1f4d1af3b1ace416f08bb&o=&hp=1",
+          "photoId": "8",
+          "sourceUrl": "https://www.booking.com/hotel/gb/fulham-pier.html?lang=en-us&chal_t=1792429470080&force_referer="
+        },
+        {
+          "slot": 37,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/764515700.jpg?k=790aa00f0975db3ccf5622d269e5ee95929d74f5d6a223017edba1c82219106a&o=&hp=1",
+          "photoId": "0",
+          "sourceUrl": "https://www.booking.com/hotel/gb/fulham-pier.html?lang=en-us&chal_t=1792429470080&force_referer="
+        },
+        {
+          "slot": 38,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/764515852.jpg?k=031896be58828931afc8f03ef73d9ab36215805d68a0018d3971bb6f5dacbaa9&o=&hp=1",
+          "photoId": "2",
+          "sourceUrl": "https://www.booking.com/hotel/gb/fulham-pier.html?lang=en-us&chal_t=1792429470080&force_referer="
+        },
+        {
+          "slot": 39,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/764515731.jpg?k=ea476a9810e6cd88311084ff604c793cf064404b2e97d10c015aacf5b101023b&o=&hp=1",
+          "photoId": "1",
+          "sourceUrl": "https://www.booking.com/hotel/gb/fulham-pier.html?lang=en-us&chal_t=1792429470080&force_referer="
+        },
+        {
+          "slot": 40,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/764515713.jpg?k=2c5c15c8744715fb8fe772726c026de5f0dd86e45d202a093391d46d66680377&o=&hp=1",
+          "photoId": "3",
+          "sourceUrl": "https://www.booking.com/hotel/gb/fulham-pier.html?lang=en-us&chal_t=1792429470080&force_referer="
+        }
+      ],
+      "photos_status": "RESOLVED"
+    },
+    "audit_timestamp": "2026-10-19T17:04:37.385Z"
+  }
+}

@@ -1,0 +1,713 @@
+{
+  "key": "malmaison newcastle:::newcastle:::quayside:::https://www.booking.com/hotel/gb/malmaison-newcastle.html",
+  "timestamp": 1792508863217,
+  "data": {
+    "venue_id": "malmaison_newcastle",
+    "venue_name": "Malmaison Newcastle",
+    "location": "Quayside, NEWCASTLE",
+    "vibe_signature": {
+      "energy_score": 78,
+      "social_pacing": "Vibrant and engaging, with pockets for intimate conversation",
+      "headline": "Riverside Chic with a Bold, Boutique Edge – Your Quayside Social Hub",
+      "acoustic_dna": {
+        "soundscape_genre": "Eclectic Lounge & Contemporary Soul",
+        "anchor_artists": [
+          "Massive Attack",
+          "Zero 7",
+          "Bonobo"
+        ],
+        "spotify_query": "spotify:playlist:37i9dQZF1DX4WYpdgoEREB",
+        "sound_texture": "Smooth, layered, with a subtle bassline",
+        "conversation_clarity_score": 75,
+        "conversation_verdict": "Vibrant Social Banter",
+        "decibel_level": "68 dB (Lively Bistro Hum)"
+      },
+      "crowd_archetype": {
+        "primary": "Cosmopolitan Creatives & Local Connoisseurs",
+        "social_density": "Comfortably bustling, especially in the evenings",
+        "dress_code": "Smart Casual to Stylish",
+        "energy_verdict": "High Banter & Neighborhood Sanctuary",
+        "local_ratio": 70,
+        "tourist_ratio": 30,
+        "tourist_trap_verdict": "Curated Neighborhood Haven"
+      },
+      "lighting_and_sensory": {
+        "atmosphere": "Moody, sophisticated, with dramatic accents",
+        "sensory_intensity": "Medium-High, engaging but not overwhelming",
+        "lighting_temperature": "2700K Warm Amber & Dramatic Spotlighting"
+      },
+      "hyper_local_proximity": {
+        "key_anchors": [
+          "Millennium Bridge",
+          "BALTIC Centre for Contemporary Art",
+          "Tyne Bridge"
+        ],
+        "insider_lore": "Nestled on the vibrant Quayside, Malmaison Newcastle offers direct access to the city's cultural pulse, from art galleries to bustling markets. It's a prime spot for experiencing Newcastle's dynamic riverside life."
+      },
+      "qualification_test": {
+        "you_will_love_if": "You appreciate bold design, a lively social scene, and being steps away from Newcastle's iconic Quayside attractions and nightlife.",
+        "skip_if": "You prefer minimalist aesthetics, absolute silence, or a secluded, off-the-beaten-path location."
+      },
+      "authenticity_and_materials": {
+        "authenticity_score": 88,
+        "material_palette": "Rich velvets, dark wood, polished brass, exposed brick, lush greenery",
+        "material_verdict": "Bold Contemporary Design with Industrial Chic Accents"
+      },
+      "insider_secrets": {
+        "insider_badge": "Concierge & Local Regular Lore",
+        "off_menu_perk": "Ask the bar staff for their 'Quayside Sunset Spritz' – a seasonal, off-menu cocktail inspired by the river views.",
+        "secret_lore": "The best spot for people-watching and catching the Millennium Bridge's tilt is from the window seats in the main lounge area, especially during the golden hour.",
+        "secret_title": "The Quayside Sunset Spritz & Millennium Bridge View"
+      },
+      "temporal_dynamics": {
+        "best_time_to_visit": "5:00 PM for pre-dinner cocktails and riverside ambiance; 9:00 PM for peak social buzz in the lounge and bar.",
+        "content_readiness": {
+          "aesthetic_subculture": "Urban Chic, Industrial Glam, Boutique Lifestyle",
+          "flattery_note": "Perfect for capturing sophisticated urban lifestyle content with a dramatic backdrop.",
+          "score": 8.5,
+          "top_creator_spot": "The main lounge with its lush greenery and bold lighting.",
+          "verdict": "Highly Instagrammable & Creator-Ready"
+        },
+        "diurnal_rhythm": {
+          "chilling": {
+            "focus": "Relaxed coffee and reading in the lounge",
+            "score": 7,
+            "window": "10:00 AM - 3:00 PM"
+          },
+          "playing": {
+            "focus": "Vibrant cocktails and socialising",
+            "score": 9,
+            "window": "6:00 PM - 11:00 PM"
+          },
+          "working": {
+            "focus": "Casual meetings and laptop work",
+            "score": 6.5,
+            "window": "9:00 AM - 5:00 PM"
+          }
+        },
+        "peak_atmospheric_window": "Evening Cocktail Hour"
+      }
+    },
+    "interactive_quiz_challenge": {
+      "target_scene_id": 101,
+      "scene_name": "Quayside Explorer",
+      "mission_title": "Uncover Newcastle's Hidden Gems",
+      "question": "Malmaison Newcastle is perfectly situated on the Quayside. Which iconic bridge, famous for its 'blinking eye' tilt, is just steps away?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Tyne Bridge"
+        },
+        {
+          "id": "B",
+          "text": "Millennium Bridge"
+        },
+        {
+          "id": "C",
+          "text": "High Level Bridge"
+        },
+        {
+          "id": "D",
+          "text": "Swing Bridge"
+        }
+      ],
+      "correct_option_id": "B",
+      "success_lore_reveal": "Correct! The Gateshead Millennium Bridge, affectionately known as the 'blinking eye', is a stunning pedestrian and cycle bridge that tilts to allow ships to pass. It's a true symbol of modern Newcastle and offers fantastic views, especially at sunset.",
+      "reward_badge": "Quayside Navigator Badge",
+      "challenge_prompt": "Test your local knowledge and discover more about Malmaison Newcastle's vibrant surroundings!",
+      "reward_spotify_uri": "spotify:track:37i9dQZF1DX4WYpdgoEREB"
+    },
+    "ota_conversion_audit": {
+      "channel": "Booking.com",
+      "before_merchandising_score": 48,
+      "after_merchandising_score": 92,
+      "projected_conversion_uplift": "+21.0%",
+      "current_drop_off_flaw": "Generic exterior shot fails to convey vibrant Quayside location and the hotel's unique social spaces. Repetitive bedroom imagery dilutes luxury perception.",
+      "key_strategic_shifts": [
+        "Elevate the hotel's vibrant, design-led lounge (Chez Mal Bar) to Slot #1 to immediately capture Newcastle's #1 social and nightlife search demand on the Quayside.",
+        "Re-sequence the iconic exterior view to Slot #2 to ground location and eliminate anxiety, showcasing the hotel's prime riverside position.",
+        "Prioritize a signature suite bedroom (Live Photo #3) in Slot #3 to highlight the hotel's bold design and comfort, avoiding generic room shots.",
+        "Introduce the stylish dining room (Live Photo #6) in Slot #4 to showcase the culinary offering, appealing to the Quayside's strong gastronomic interest."
+      ],
+      "optimal_5_photo_sequence": [
+        {
+          "slot": 1,
+          "category": "HERO_CULTURAL_MAGNET",
+          "photo_subject": "Vibrant and stylish lounge with lush greenery and bold seating (Chez Mal Bar)",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/100398853.jpg?k=c775782232578b74a22813981d4d83a61f600d5d3b6744a1d8dffb7f069dc665&o=",
+          "why_it_converts": "Highlighting the hotel's striking architecture, bespoke design, and vibrant public spaces establishes distinct brand prestige.",
+          "upgrade_rationale": "Highlighting the hotel's striking architecture, bespoke design, and vibrant public spaces establishes distinct brand prestige.",
+          "bullet_points": [
+            "Visual Upgrade: This dynamic shot captures the essence of the hotel's social hub, with inviting seating, dramatic lighting, and unique design elements.",
+            "Local Synergy: Directly appeals to Newcastle's vibrant Quayside social scene and the strong demand for stylish bars and lounges.",
+            "Conversion Trigger: Immediately hooks travelers seeking a lively, design-forward experience and a central social base."
+          ],
+          "psychological_conversion_trigger": "This image instantly communicates a desirable, energetic social experience, aligning with the Quayside's reputation as a nightlife and dining destination.",
+          "recommended_trigger": "This image instantly communicates a desirable, energetic social experience, aligning with the Quayside's reputation as a nightlife and dining destination.",
+          "current_slot": 2,
+          "is_retained": false,
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "HERO_CULTURAL_MAGNET",
+          "action_label": "⚡ HERO CULTURAL MAGNET: PROMOTE FROM SLOT #2",
+          "source_display_label": "Was: Slot #2 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 2,
+            "title": "a living room with couches and a table at Malmaison Newcastle in Newcastle upon Tyne",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/100398853.jpg?k=c775782232578b74a22813981d4d83a61f600d5d3b6744a1d8dffb7f069dc665&o=",
+            "photoId": "100398853",
+            "sourceUrl": "https://www.booking.com/hotel/gb/malmaison-newcastle.html?lang=en-us&chal_t=1792508823758&force_referer="
+          }
+        },
+        {
+          "slot": 2,
+          "category": "EXTERIOR_LANDMARK",
+          "photo_subject": "Malmaison Newcastle exterior at twilight with Millennium Bridge",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/524778045.jpg?k=70d6ed6e6072124bdb714af0e47636d9ac6d9184e8a30e3e107bf0941e70ed91&o=",
+          "why_it_converts": "Establishing definitive architectural prestige and iconic street presence builds instant brand credibility.",
+          "upgrade_rationale": "Establishing definitive architectural prestige and iconic street presence builds instant brand credibility.",
+          "bullet_points": [
+            "Strategic Placement: Immediately grounds the hotel's prime Quayside location, resolving any potential location anxiety for travelers.",
+            "Local Synergy: Highlights the hotel's iconic setting next to the Millennium Bridge, a major Newcastle landmark and search term.",
+            "Conversion Trigger: Provides clear geographic context and reinforces the hotel's desirability as a riverside destination."
+          ],
+          "psychological_conversion_trigger": "Confirms the hotel's desirable and easily recognizable location, a crucial factor for travelers exploring a new city.",
+          "recommended_trigger": "Confirms the hotel's desirable and easily recognizable location, a crucial factor for travelers exploring a new city.",
+          "current_slot": 1,
+          "is_retained": false,
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "RE_SEQUENCE",
+          "action_label": "MOVE FROM SLOT #1",
+          "source_display_label": "Was: Slot #1 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 1,
+            "title": "a bridge in a city with a building at Malmaison Newcastle in Newcastle upon Tyne",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/524778045.jpg?k=70d6ed6e6072124bdb714af0e47636d9ac6d9184e8a30e3e107bf0941e70ed91&o=",
+            "photoId": "524778045",
+            "sourceUrl": "https://www.booking.com/hotel/gb/malmaison-newcastle.html?lang=en-us&chal_t=1792508823758&force_referer="
+          }
+        },
+        {
+          "slot": 3,
+          "category": "SIGNATURE_SUITE_BEDROOM",
+          "photo_subject": "Signature King Bedroom with bold red headboard and ambient lighting",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/740723556.jpg?k=7bd428fb740f9efcd73a27ae2ee930c6c1419cea3ed75400e3bb9ee24defd3a5&o=",
+          "why_it_converts": "Showcasing high-finish private sleeping accommodations assures travelers of restful luxury and elevated comfort.",
+          "upgrade_rationale": "Showcasing high-finish private sleeping accommodations assures travelers of restful luxury and elevated comfort.",
+          "bullet_points": [
+            "Strategic Placement: Showcases the hotel's distinctive and luxurious accommodation style, appealing to guests seeking unique design.",
+            "Local Synergy: Reflects the boutique and stylish aesthetic often sought by travelers visiting the vibrant Quayside.",
+            "Conversion Trigger: Visually communicates comfort, quality, and a memorable stay experience, driving higher room category bookings."
+          ],
+          "psychological_conversion_trigger": "Highlights the unique and comfortable private sanctuary, assuring guests of a premium and stylish stay.",
+          "recommended_trigger": "Highlights the unique and comfortable private sanctuary, assuring guests of a premium and stylish stay.",
+          "current_slot": 3,
+          "is_retained": true,
+          "is_moved": false,
+          "is_swapped_in": false,
+          "action": "RETAIN",
+          "action_label": "RETAIN IN SLOT #3",
+          "source_display_label": "Was: Slot #3 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 3,
+            "title": "a bedroom with a bed with red walls and lights at Malmaison Newcastle in Newcastle upon Tyne",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/740723556.jpg?k=7bd428fb740f9efcd73a27ae2ee930c6c1419cea3ed75400e3bb9ee24defd3a5&o=",
+            "photoId": "740723556",
+            "sourceUrl": "https://www.booking.com/hotel/gb/malmaison-newcastle.html?lang=en-us&chal_t=1792508823758&force_referer="
+          }
+        },
+        {
+          "slot": 4,
+          "category": "SOCIAL_FB_ROOFTOP",
+          "photo_subject": "a dining room with tables and chairs and a large window",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/92618360.jpg?k=74cb494c117d327e055ab5945c9c2c252f9caf40167be8b97477b7525abe5554&o=",
+          "why_it_converts": "Showcasing destination culinary programming elevates property perception and captures high-spend leisure travelers visiting NEWCASTLE.",
+          "upgrade_rationale": "Showcasing destination culinary programming elevates property perception and captures high-spend leisure travelers visiting NEWCASTLE.",
+          "bullet_points": [
+            "Visual Upgrade: Atmospheric culinary perspective showing ambient lighting and curated seating.",
+            "Local Synergy: Anchors the property within the destination's acclaimed dining circuit.",
+            "Conversion Trigger: Stimulates social anticipation and validates on-property lifestyle experiences."
+          ],
+          "psychological_conversion_trigger": "Destination Gastronomy & Evening Social Gravitas",
+          "recommended_trigger": "Destination Gastronomy & Evening Social Gravitas",
+          "current_slot": 6,
+          "is_retained": false,
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "PROMOTE",
+          "action_label": "PROMOTE FROM SLOT #6",
+          "source_display_label": "Was: Slot #6 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 6,
+            "title": "a dining room with tables and chairs and a large window at Malmaison Newcastle in Newcastle upon Tyne",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/92618360.jpg?k=74cb494c117d327e055ab5945c9c2c252f9caf40167be8b97477b7525abe5554&o=",
+            "photoId": "92618360",
+            "sourceUrl": "https://www.booking.com/hotel/gb/malmaison-newcastle.html?lang=en-us&chal_t=1792508823758&force_referer="
+          }
+        },
+        {
+          "slot": 5,
+          "category": "SECONDARY_ROOM_BATHROOM",
+          "photo_subject": "Modern guest bathroom with sink, mirror, and contemporary fixtures",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/747812451.jpg?k=7ad3f99676cd11bb0bbafa0204de122bf2d9adedb46a67f6016fb0c7be9f3b51&o=&hp=1",
+          "why_it_converts": "Showcasing immaculate private bathroom finishes and walk-in rain showers resolves hygiene anxiety and completes the luxury perception.",
+          "upgrade_rationale": "Showcasing immaculate private bathroom finishes and walk-in rain showers resolves hygiene anxiety and completes the luxury perception.",
+          "bullet_points": [
+            "Strategic Placement: Addresses traveler concerns regarding bathroom quality, hygiene, and modern amenities.",
+            "Local Synergy: Reinforces the overall contemporary and well-maintained standard expected by discerning travelers in urban boutique hotels.",
+            "Conversion Trigger: Provides reassurance of luxury finishes and attention to detail in private spaces, crucial for high-ADR bookings."
+          ],
+          "psychological_conversion_trigger": "Confirms the quality and cleanliness of private facilities, a critical factor for guest satisfaction and booking confidence.",
+          "recommended_trigger": "Confirms the quality and cleanliness of private facilities, a critical factor for guest satisfaction and booking confidence.",
+          "current_slot": 9,
+          "is_retained": false,
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "PROMOTE",
+          "action_label": "PROMOTE FROM SLOT #9",
+          "source_display_label": "Was: Slot #9 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 9,
+            "title": "a bathroom with a sink and a toilet and a mirror at Malmaison Newcastle in Newcastle upon Tyne",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/747812451.jpg?k=7ad3f99676cd11bb0bbafa0204de122bf2d9adedb46a67f6016fb0c7be9f3b51&o=&hp=1",
+            "photoId": "747812451",
+            "sourceUrl": "https://www.booking.com/hotel/gb/malmaison-newcastle.html?lang=en-us&chal_t=1792508823758&force_referer="
+          }
+        }
+      ],
+      "anti_commodity_copy_rewrite": {
+        "ota_headline": "Malmaison Newcastle: Quayside's Bold Boutique Haven with Iconic River Views",
+        "property_overview_150_words": "Experience Malmaison Newcastle, a stylish boutique hotel nestled on the vibrant Quayside, offering unparalleled views of the iconic Millennium Bridge. Our design-led rooms and suites provide a luxurious retreat, while the energetic Chez Mal Bar and Brasserie serve as a social hub for locals and travelers alike. Immerse yourself in Newcastle's dynamic cultural scene, with art galleries, bustling markets, and lively nightlife just steps away. Malmaison Newcastle is your perfect base for exploring the city's unique charm, blending sophisticated comfort with an authentic local experience."
+      },
+      "photographic_gap_analysis": [
+        {
+          "missing_shot_title": "Twilight River View from Signature Suite Window",
+          "category": "ATMOSPHERIC_TWILIGHT",
+          "why_needed": "Currently, there are no photos showcasing the stunning river views from within a guest room, which is a major selling point for a Quayside hotel. This shot would capture the romantic and iconic aspect of the location, appealing to couples and those seeking a memorable view.",
+          "recommended_framing_and_lighting": "Wide-angle shot from a signature suite window, capturing the Millennium Bridge and Tyne Bridge at twilight with warm interior lighting and a subtle human element (e.g., a hand holding a cocktail).",
+          "projected_adr_impact": "+10% higher suite booking velocity and +$30 ADR premium for river-view rooms."
+        },
+        {
+          "missing_shot_title": "Chef's Signature Dish & Cocktail Pairing at Chez Mal Brasserie",
+          "category": "CULINARY_SOCIAL",
+          "why_needed": "While the dining room is shown, there's no close-up, high-quality imagery of the actual food and beverage offerings. This gap creates a missed opportunity to entice food-focused travelers and highlight the culinary excellence of Chez Mal Brasserie, a key amenity.",
+          "recommended_framing_and_lighting": "Close-up, artfully composed shot of a beautifully plated signature dish paired with a bespoke cocktail, using natural light or soft, warm artificial lighting to emphasize texture and color.",
+          "projected_adr_impact": "+8% increase in F&B spend per guest and improved restaurant reservations."
+        },
+        {
+          "missing_shot_title": "Morning Coffee & Pastries in the Lounge with Quayside Light",
+          "category": "LIFESTYLE_SANCTUARY",
+          "why_needed": "The current lounge photos are primarily evening shots. A morning shot would showcase the versatility of the space, appealing to guests seeking a relaxed start to their day and highlighting the natural light and comfort for a different temporal experience.",
+          "recommended_framing_and_lighting": "Soft, natural morning light illuminating a cozy corner of the lounge with a beautifully presented coffee and pastry, conveying tranquility and comfort.",
+          "projected_adr_impact": "+5% increase in breakfast package bookings and enhanced perception of comfort."
+        }
+      ],
+      "conversion_diagnosis": "Malmaison Newcastle suffers from a common commodity flaw where its unique, vibrant social spaces and prime Quayside location are not immediately evident in its top Booking.com photos. The current sequence fails to leverage the hotel's strong local affinity and design-led DNA, leading to missed conversion opportunities. By strategically re-sequencing and highlighting key cultural magnets, we can significantly uplift booking intent.",
+      "local_vibe_synergy_context": "The Quayside neighborhood in Newcastle is renowned for its vibrant social scene, iconic architecture, and burgeoning culinary landscape. Travelers actively search for stylish bars, unique dining experiences, and hotels that offer direct access to cultural landmarks like the Millennium Bridge. Our photo recommendations prioritize showcasing Malmaison's energetic Chez Mal Bar and its prime riverside location, directly aligning with these top local subcultural search themes to capture high-value traveler intent.",
+      "slot_1_decision_logic": {
+        "is_magnet_override_active": true,
+        "reasoning_code": "NAI_HIGH_DESTINATION_POWER_CLARITY_RESEQUENCE",
+        "strategy_explanation": "The Chez Mal Bar lounge (Live Photo #2) is a high-impact cultural magnet with a Neighborhood Affinity Index (NAI) above 0.85. It directly mirrors the #1 trending subcultural search theme in Quayside (vibrant social and nightlife). It is a destination in its own right, visually clear, and allows for immediate re-sequencing of the exterior to Slot #2 for grounding.",
+        "neighborhood_affinity_index": 0.9,
+        "override_asset_name": "Chez Mal Bar Lounge"
+      },
+      "is_listed_on_booking": true,
+      "listing_status": "ACTIVE_ON_BOOKING",
+      "live_photos": [
+        {
+          "slot": 1,
+          "title": "a bridge in a city with a building at Malmaison Newcastle in Newcastle upon Tyne",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/524778045.jpg?k=70d6ed6e6072124bdb714af0e47636d9ac6d9184e8a30e3e107bf0941e70ed91&o=",
+          "photoId": "524778045",
+          "sourceUrl": "https://www.booking.com/hotel/gb/malmaison-newcastle.html?lang=en-us&chal_t=1792508823758&force_referer="
+        },
+        {
+          "slot": 2,
+          "title": "a living room with couches and a table at Malmaison Newcastle in Newcastle upon Tyne",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/100398853.jpg?k=c775782232578b74a22813981d4d83a61f600d5d3b6744a1d8dffb7f069dc665&o=",
+          "photoId": "100398853",
+          "sourceUrl": "https://www.booking.com/hotel/gb/malmaison-newcastle.html?lang=en-us&chal_t=1792508823758&force_referer="
+        },
+        {
+          "slot": 3,
+          "title": "a bedroom with a bed with red walls and lights at Malmaison Newcastle in Newcastle upon Tyne",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/740723556.jpg?k=7bd428fb740f9efcd73a27ae2ee930c6c1419cea3ed75400e3bb9ee24defd3a5&o=",
+          "photoId": "740723556",
+          "sourceUrl": "https://www.booking.com/hotel/gb/malmaison-newcastle.html?lang=en-us&chal_t=1792508823758&force_referer="
+        },
+        {
+          "slot": 4,
+          "title": "a living room with a couch and tables and windows at Malmaison Newcastle in Newcastle upon Tyne",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/100397707.jpg?k=83789a9edfa745f94807dea43b4d135afa9b9ade12ab30c3304ec43e943ffb94&o=",
+          "photoId": "100397707",
+          "sourceUrl": "https://www.booking.com/hotel/gb/malmaison-newcastle.html?lang=en-us&chal_t=1792508823758&force_referer="
+        },
+        {
+          "slot": 5,
+          "title": "a hotel room with a large bed and purple walls at Malmaison Newcastle in Newcastle upon Tyne",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/747811868.jpg?k=c802c8391cf977f8ca895d564f64d4dbbe5dbf785ee8c6c752558c4237a7cdcf&o=",
+          "photoId": "747811868",
+          "sourceUrl": "https://www.booking.com/hotel/gb/malmaison-newcastle.html?lang=en-us&chal_t=1792508823758&force_referer="
+        },
+        {
+          "slot": 6,
+          "title": "a dining room with tables and chairs and a large window at Malmaison Newcastle in Newcastle upon Tyne",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/92618360.jpg?k=74cb494c117d327e055ab5945c9c2c252f9caf40167be8b97477b7525abe5554&o=",
+          "photoId": "92618360",
+          "sourceUrl": "https://www.booking.com/hotel/gb/malmaison-newcastle.html?lang=en-us&chal_t=1792508823758&force_referer="
+        },
+        {
+          "slot": 7,
+          "title": "a bedroom with a bed in a round mirror at Malmaison Newcastle in Newcastle upon Tyne",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/747815219.jpg?k=d04a7f8b7788cfe0f85635f773d6634f2cc6ad336be8ec233bbb3061dfe82dfb&o=",
+          "photoId": "747815219",
+          "sourceUrl": "https://www.booking.com/hotel/gb/malmaison-newcastle.html?lang=en-us&chal_t=1792508823758&force_referer="
+        },
+        {
+          "slot": 8,
+          "title": "a bedroom with a desk and a chair at Malmaison Newcastle in Newcastle upon Tyne +81 photos",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/747811861.jpg?k=ee1dade340b7022a0705c22307bf943480e19847b30a6784f821f9e816c689cc&o=",
+          "photoId": "747811861",
+          "sourceUrl": "https://www.booking.com/hotel/gb/malmaison-newcastle.html?lang=en-us&chal_t=1792508823758&force_referer="
+        },
+        {
+          "slot": 9,
+          "title": "a bathroom with a sink and a toilet and a mirror at Malmaison Newcastle in Newcastle upon Tyne",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/747812451.jpg?k=7ad3f99676cd11bb0bbafa0204de122bf2d9adedb46a67f6016fb0c7be9f3b51&o=&hp=1",
+          "photoId": "747812451",
+          "sourceUrl": "https://www.booking.com/hotel/gb/malmaison-newcastle.html?lang=en-us&chal_t=1792508823758&force_referer="
+        },
+        {
+          "slot": 10,
+          "title": "a living room with a couch and a colorful wall at Malmaison Newcastle in Newcastle upon Tyne",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/740734024.jpg?k=a0cab5ab3a5d13fa97607c9fcfd8fb4c1cc8dbc34af1d64d3aff61fea1ec7b18&o=&hp=1",
+          "photoId": "740734024",
+          "sourceUrl": "https://www.booking.com/hotel/gb/malmaison-newcastle.html?lang=en-us&chal_t=1792508823758&force_referer="
+        },
+        {
+          "slot": 11,
+          "title": "a table with chairs in front of a window at Malmaison Newcastle in Newcastle upon Tyne",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/92620190.jpg?k=b7519d3b80cfc2551d6bd8bdd25f6cd1fb0e93f19df1f023888098512ef98db5&o=&hp=1",
+          "photoId": "92620190",
+          "sourceUrl": "https://www.booking.com/hotel/gb/malmaison-newcastle.html?lang=en-us&chal_t=1792508823758&force_referer="
+        },
+        {
+          "slot": 12,
+          "title": "a lobby with couches and a bar in the background at Malmaison Newcastle in Newcastle upon Tyne",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/100397720.jpg?k=7d14710d981e929af855a69b60a4d88635ae0f21f983d7e2afa814b13aea9854&o=&hp=1",
+          "photoId": "100397720",
+          "sourceUrl": "https://www.booking.com/hotel/gb/malmaison-newcastle.html?lang=en-us&chal_t=1792508823758&force_referer="
+        },
+        {
+          "slot": 13,
+          "title": "a restaurant with couches and a bar at night at Malmaison Newcastle in Newcastle upon Tyne",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/100397690.jpg?k=a4b6f1883e9a223ab6bd91c7e3c22e2fb2ee325690515b5d6691d40aede03923&o=&hp=1",
+          "photoId": "100397690",
+          "sourceUrl": "https://www.booking.com/hotel/gb/malmaison-newcastle.html?lang=en-us&chal_t=1792508823758&force_referer="
+        },
+        {
+          "slot": 14,
+          "title": "a woman with pink nail polish holding a bottle of nail polish at Malmaison Newcastle in Newcastle upon Tyne",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/112659976.jpg?k=78bee722abac16091925e8fe21b1c7b8490703c5d4181d9c53798cd06b1404a3&o=&hp=1",
+          "photoId": "112659976",
+          "sourceUrl": "https://www.booking.com/hotel/gb/malmaison-newcastle.html?lang=en-us&chal_t=1792508823758&force_referer="
+        },
+        {
+          "slot": 15,
+          "title": "a hotel room with a bed and a tv at Malmaison Newcastle in Newcastle upon Tyne",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/740733995.jpg?k=4a7c4e8cc1b43606f66e09ead26d12226394e00149886fb4f4093432cfbb7885&o=&hp=1",
+          "photoId": "740733995",
+          "sourceUrl": "https://www.booking.com/hotel/gb/malmaison-newcastle.html?lang=en-us&chal_t=1792508823758&force_referer="
+        },
+        {
+          "slot": 16,
+          "title": "a restaurant with tables and chairs and a large window at Malmaison Newcastle in Newcastle upon Tyne",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/92619684.jpg?k=819b9ffbfbfa6370ab0eaf13b9e2d3a14354e9ecd257ce2d7b2165bd88524db3&o=&hp=1",
+          "photoId": "92619684",
+          "sourceUrl": "https://www.booking.com/hotel/gb/malmaison-newcastle.html?lang=en-us&chal_t=1792508823758&force_referer="
+        },
+        {
+          "slot": 17,
+          "title": "a plate with two breakfast sandwiches and a cup of coffee at Malmaison Newcastle in Newcastle upon Tyne",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/112655973.jpg?k=173467358b81efaf1128f262ed99fafca4e039acf8514337328038bbd7516d4d&o=&hp=1",
+          "photoId": "112655973",
+          "sourceUrl": "https://www.booking.com/hotel/gb/malmaison-newcastle.html?lang=en-us&chal_t=1792508823758&force_referer="
+        },
+        {
+          "slot": 18,
+          "title": "a table with glasses of beer and a bowl of food at Malmaison Newcastle in Newcastle upon Tyne",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/28978195.jpg?k=55d59cbd413ad9f02a877d7d64ba4262e24858071f6cbfc2fdddcea91be4a25e&o=&hp=1",
+          "photoId": "28978195",
+          "sourceUrl": "https://www.booking.com/hotel/gb/malmaison-newcastle.html?lang=en-us&chal_t=1792508823758&force_referer="
+        },
+        {
+          "slot": 19,
+          "title": "two beds in a hotel room with purple walls at Malmaison Newcastle in Newcastle upon Tyne",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/747812448.jpg?k=ea6d3eec17c7aa521e5157a0a477ed8b63dd38052bc4ef8183df0ffc29c80a9b&o=&hp=1",
+          "photoId": "747812448",
+          "sourceUrl": "https://www.booking.com/hotel/gb/malmaison-newcastle.html?lang=en-us&chal_t=1792508823758&force_referer="
+        },
+        {
+          "slot": 20,
+          "title": "a bathroom with a sink and a mirror and a tub at Malmaison Newcastle in Newcastle upon Tyne",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/747815243.jpg?k=de1e2e16f8c2bf7720cf2e830a2475f850c51b426367c0d548d629d520fc4061&o=&hp=1",
+          "photoId": "747815243",
+          "sourceUrl": "https://www.booking.com/hotel/gb/malmaison-newcastle.html?lang=en-us&chal_t=1792508823758&force_referer="
+        },
+        {
+          "slot": 21,
+          "title": "a bedroom with a bed with blue and white pillows at Malmaison Newcastle in Newcastle upon Tyne",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/747820102.jpg?k=f4c862dcbc24720832c30edc575135af141a67f944250c42a301b961e0dff2ed&o=&hp=1",
+          "photoId": "747820102",
+          "sourceUrl": "https://www.booking.com/hotel/gb/malmaison-newcastle.html?lang=en-us&chal_t=1792508823758&force_referer="
+        },
+        {
+          "slot": 22,
+          "title": "a candle in the dark next to some books at Malmaison Newcastle in Newcastle upon Tyne",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/112659989.jpg?k=49c8c36ca3257b0359ac2429a6d42cb1e9a0edeb136415e7b572bca4706776db&o=&hp=1",
+          "photoId": "112659989",
+          "sourceUrl": "https://www.booking.com/hotel/gb/malmaison-newcastle.html?lang=en-us&chal_t=1792508823758&force_referer="
+        },
+        {
+          "slot": 23,
+          "title": "a flyer for a massage clinic with a woman at Malmaison Newcastle in Newcastle upon Tyne",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/449282653.jpg?k=cbd25c1013da713403930952c86aa6633ad6f93c6665fcac9308b223f92a6870&o=&hp=1",
+          "photoId": "449282653",
+          "sourceUrl": "https://www.booking.com/hotel/gb/malmaison-newcastle.html?lang=en-us&chal_t=1792508823758&force_referer="
+        },
+        {
+          "slot": 24,
+          "title": "a menu for a restaurant with a blue chair at Malmaison Newcastle in Newcastle upon Tyne",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/449282849.jpg?k=5b8c0ab6d05577f8e52c9229a9622bde32e56645f66b9f16767b30547d057529&o=&hp=1",
+          "photoId": "449282849",
+          "sourceUrl": "https://www.booking.com/hotel/gb/malmaison-newcastle.html?lang=en-us&chal_t=1792508823758&force_referer="
+        },
+        {
+          "slot": 25,
+          "title": "a living room with a tv and a blue couch at Malmaison Newcastle in Newcastle upon Tyne",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/740722248.jpg?k=4eaffe4f2a137dcefec59c87669cd952c0f4ece02c685f4bf2d8d6bceb9d5f0d&o=&hp=1",
+          "photoId": "740722248",
+          "sourceUrl": "https://www.booking.com/hotel/gb/malmaison-newcastle.html?lang=en-us&chal_t=1792508823758&force_referer="
+        },
+        {
+          "slot": 26,
+          "title": "a view of the gateway arch at night at Malmaison Newcastle in Newcastle upon Tyne",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/28976729.jpg?k=3ba1a9eded449e08b67bceb138aa4115af42174d52f2007324556420f48e60b5&o=&hp=1",
+          "photoId": "28976729",
+          "sourceUrl": "https://www.booking.com/hotel/gb/malmaison-newcastle.html?lang=en-us&chal_t=1792508823758&force_referer="
+        },
+        {
+          "slot": 27,
+          "title": "a hotel room with a bed and red walls at Malmaison Newcastle in Newcastle upon Tyne",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/740734002.jpg?k=9b5816d1a4d7cf7f3f0f879220e059fb946b02e62a4ab1a0c2ed65bf256d5274&o=&hp=1",
+          "photoId": "740734002",
+          "sourceUrl": "https://www.booking.com/hotel/gb/malmaison-newcastle.html?lang=en-us&chal_t=1792508823758&force_referer="
+        },
+        {
+          "slot": 28,
+          "title": "a hotel room with a bed and a table and chairs at Malmaison Newcastle in Newcastle upon Tyne",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/740723542.jpg?k=5f5dea73de671b68056e26d408b78657e0607a77ed0a15290d27d33c3021d9d1&o=&hp=1",
+          "photoId": "740723542",
+          "sourceUrl": "https://www.booking.com/hotel/gb/malmaison-newcastle.html?lang=en-us&chal_t=1792508823758&force_referer="
+        },
+        {
+          "slot": 29,
+          "title": "a conference room with chairs and a projection screen at Malmaison Newcastle in Newcastle upon Tyne",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/28976876.jpg?k=c3cc9be92de6cbfee7e99fba4ed159284e952ea4dbc08d6f8c268c3caf9a4d9d&o=&hp=1",
+          "photoId": "28976876",
+          "sourceUrl": "https://www.booking.com/hotel/gb/malmaison-newcastle.html?lang=en-us&chal_t=1792508823758&force_referer="
+        },
+        {
+          "slot": 30,
+          "title": "a sign that says chibellezsteensteensteensteensteensteensteensteensteen at Malmaison Newcastle in Newcastle upon Tyne",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/92620183.jpg?k=3b6bf1b1dc11b424fe1eb448971828893d09ef1e667d5a5dcaf201340e9d5006&o=&hp=1",
+          "photoId": "92620183",
+          "sourceUrl": "https://www.booking.com/hotel/gb/malmaison-newcastle.html?lang=en-us&chal_t=1792508823758&force_referer="
+        },
+        {
+          "slot": 31,
+          "title": "a row of black and white tires on a shelf at Malmaison Newcastle in Newcastle upon Tyne",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/714602202.jpg?k=cb2e0de1aa9fe60bf53fd7b9284d17daff891a835ed04de25d17fb9ef2190ce5&o=&hp=1",
+          "photoId": "714602202",
+          "sourceUrl": "https://www.booking.com/hotel/gb/malmaison-newcastle.html?lang=en-us&chal_t=1792508823758&force_referer="
+        },
+        {
+          "slot": 32,
+          "title": "a room with two vases with pink flowers in it at Malmaison Newcastle in Newcastle upon Tyne",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/112660093.jpg?k=1f483b572279ab88709bc320c19e2c591f0f7285b47979e848c24be524d9d94a&o=&hp=1",
+          "photoId": "112660093",
+          "sourceUrl": "https://www.booking.com/hotel/gb/malmaison-newcastle.html?lang=en-us&chal_t=1792508823758&force_referer="
+        },
+        {
+          "slot": 33,
+          "title": "a living room with a green wall and a table at Malmaison Newcastle in Newcastle upon Tyne",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/740733973.jpg?k=bf9627f050d6e1037aa9841cd4b01746e6f409ed7850519d36a52ff3af19ce58&o=&hp=1",
+          "photoId": "740733973",
+          "sourceUrl": "https://www.booking.com/hotel/gb/malmaison-newcastle.html?lang=en-us&chal_t=1792508823758&force_referer="
+        },
+        {
+          "slot": 34,
+          "title": "a bedroom with a large bed with two blue pillows at Malmaison Newcastle in Newcastle upon Tyne",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/747820082.jpg?k=0193c2a5893b9efe02edf71d6ed002976454a1e50473f3f20a2bf21cfbf32c4c&o=&hp=1",
+          "photoId": "747820082",
+          "sourceUrl": "https://www.booking.com/hotel/gb/malmaison-newcastle.html?lang=en-us&chal_t=1792508823758&force_referer="
+        },
+        {
+          "slot": 35,
+          "title": "a bedroom with red walls with a bed and a desk at Malmaison Newcastle in Newcastle upon Tyne",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/740733998.jpg?k=582e56fe4e26846dcbc9caf3e8cbd816946b69b5663cf82e4dfc2f1229a798ec&o=&hp=1",
+          "photoId": "740733998",
+          "sourceUrl": "https://www.booking.com/hotel/gb/malmaison-newcastle.html?lang=en-us&chal_t=1792508823758&force_referer="
+        },
+        {
+          "slot": 36,
+          "title": "a conference room with tables and chairs and a screen at Malmaison Newcastle in Newcastle upon Tyne",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/28976887.jpg?k=f5424e5ccd4dc8822d520f94b2a5007d5d1908183ce9a33f3f3a3a1e25e1abd3&o=&hp=1",
+          "photoId": "28976887",
+          "sourceUrl": "https://www.booking.com/hotel/gb/malmaison-newcastle.html?lang=en-us&chal_t=1792508823758&force_referer="
+        },
+        {
+          "slot": 37,
+          "title": "a white plate with a piece of cake and a fork at Malmaison Newcastle in Newcastle upon Tyne",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/28978173.jpg?k=52176d80a88782ca7a2e7fc61e2ff84e5f941e229aed2536409c8e8f3dfce50b&o=&hp=1",
+          "photoId": "28978173",
+          "sourceUrl": "https://www.booking.com/hotel/gb/malmaison-newcastle.html?lang=en-us&chal_t=1792508823758&force_referer="
+        },
+        {
+          "slot": 38,
+          "title": "a bedroom with a bed with a yellow headboard at Malmaison Newcastle in Newcastle upon Tyne",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/747811870.jpg?k=18874a6e21b12f0cea50990e511a9e572a25fd37ceb77b60417a59f3fb3f6b73&o=&hp=1",
+          "photoId": "747811870",
+          "sourceUrl": "https://www.booking.com/hotel/gb/malmaison-newcastle.html?lang=en-us&chal_t=1792508823758&force_referer="
+        },
+        {
+          "slot": 39,
+          "title": "a blue bathroom with a tub and a sink at Malmaison Newcastle in Newcastle upon Tyne",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/740722286.jpg?k=131f52b0f0d1006820532a8bd2e9a3ec77094a5eceafd8d37c599bbc09640673&o=&hp=1",
+          "photoId": "740722286",
+          "sourceUrl": "https://www.booking.com/hotel/gb/malmaison-newcastle.html?lang=en-us&chal_t=1792508823758&force_referer="
+        },
+        {
+          "slot": 40,
+          "title": "a bathroom with a white sink and a blue wall at Malmaison Newcastle in Newcastle upon Tyne",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/740722277.jpg?k=83252f3b6a104d6342a09403537a387932aa191520354a9c88cf5b8d3aec93aa&o=&hp=1",
+          "photoId": "740722277",
+          "sourceUrl": "https://www.booking.com/hotel/gb/malmaison-newcastle.html?lang=en-us&chal_t=1792508823758&force_referer="
+        },
+        {
+          "slot": 41,
+          "title": "a bedroom with a large bed with a red headboard at Malmaison Newcastle in Newcastle upon Tyne",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/747814328.jpg?k=af2f48f65f207665bcd3c71f379118a978d59941dd28de10f8e80444a05d3a68&o=&hp=1",
+          "photoId": "747814328",
+          "sourceUrl": "https://www.booking.com/hotel/gb/malmaison-newcastle.html?lang=en-us&chal_t=1792508823758&force_referer="
+        },
+        {
+          "slot": 42,
+          "title": "a living room with a tv and a mural at Malmaison Newcastle in Newcastle upon Tyne",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/747814334.jpg?k=8a75aaec86eb996056e74a0fb32d6bbde7bbcd23694b6b5e3e96d278c1302ca1&o=&hp=1",
+          "photoId": "747814334",
+          "sourceUrl": "https://www.booking.com/hotel/gb/malmaison-newcastle.html?lang=en-us&chal_t=1792508823758&force_referer="
+        },
+        {
+          "slot": 43,
+          "title": "a large white building with a dome on top at Malmaison Newcastle in Newcastle upon Tyne",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/28976752.jpg?k=c220359ed0eba569b6a3277ab2b47a84d94709631d376eadba981b959c8848ac&o=&hp=1",
+          "photoId": "28976752",
+          "sourceUrl": "https://www.booking.com/hotel/gb/malmaison-newcastle.html?lang=en-us&chal_t=1792508823758&force_referer="
+        },
+        {
+          "slot": 44,
+          "title": "a restaurant with tables and chairs and a person in the background at Malmaison Newcastle in Newcastle upon Tyne",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/92619673.jpg?k=b3ad7e948de61a3fafe0cc692f917759631d9156dd9e23b307e29039f54e9108&o=&hp=1",
+          "photoId": "92619673",
+          "sourceUrl": "https://www.booking.com/hotel/gb/malmaison-newcastle.html?lang=en-us&chal_t=1792508823758&force_referer="
+        },
+        {
+          "slot": 45,
+          "title": "a red bed with red pillows in a green bedroom at Malmaison Newcastle in Newcastle upon Tyne",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/747820076.jpg?k=312d07c0021045e2bf3dcd20444044425f70f599ccd27d8a9fce911ff86cef62&o=&hp=1",
+          "photoId": "747820076",
+          "sourceUrl": "https://www.booking.com/hotel/gb/malmaison-newcastle.html?lang=en-us&chal_t=1792508823758&force_referer="
+        },
+        {
+          "slot": 46,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/524778045.jpg?k=70d6ed6e6072124bdb714af0e47636d9ac6d9184e8a30e3e107bf0941e70ed91&o=&hp=1",
+          "photoId": "5",
+          "sourceUrl": "https://www.booking.com/hotel/gb/malmaison-newcastle.html?lang=en-us&chal_t=1792508823758&force_referer="
+        },
+        {
+          "slot": 47,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/100398853.jpg?k=c775782232578b74a22813981d4d83a61f600d5d3b6744a1d8dffb7f069dc665&o=&hp=1",
+          "photoId": "3",
+          "sourceUrl": "https://www.booking.com/hotel/gb/malmaison-newcastle.html?lang=en-us&chal_t=1792508823758&force_referer="
+        },
+        {
+          "slot": 48,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/740723556.jpg?k=7bd428fb740f9efcd73a27ae2ee930c6c1419cea3ed75400e3bb9ee24defd3a5&o=&hp=1",
+          "photoId": "6",
+          "sourceUrl": "https://www.booking.com/hotel/gb/malmaison-newcastle.html?lang=en-us&chal_t=1792508823758&force_referer="
+        },
+        {
+          "slot": 49,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/100397707.jpg?k=83789a9edfa745f94807dea43b4d135afa9b9ade12ab30c3304ec43e943ffb94&o=&hp=1",
+          "photoId": "7",
+          "sourceUrl": "https://www.booking.com/hotel/gb/malmaison-newcastle.html?lang=en-us&chal_t=1792508823758&force_referer="
+        },
+        {
+          "slot": 50,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/747811868.jpg?k=c802c8391cf977f8ca895d564f64d4dbbe5dbf785ee8c6c752558c4237a7cdcf&o=&hp=1",
+          "photoId": "8",
+          "sourceUrl": "https://www.booking.com/hotel/gb/malmaison-newcastle.html?lang=en-us&chal_t=1792508823758&force_referer="
+        },
+        {
+          "slot": 51,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/92618360.jpg?k=74cb494c117d327e055ab5945c9c2c252f9caf40167be8b97477b7525abe5554&o=&hp=1",
+          "photoId": "0",
+          "sourceUrl": "https://www.booking.com/hotel/gb/malmaison-newcastle.html?lang=en-us&chal_t=1792508823758&force_referer="
+        },
+        {
+          "slot": 52,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/747815219.jpg?k=d04a7f8b7788cfe0f85635f773d6634f2cc6ad336be8ec233bbb3061dfe82dfb&o=&hp=1",
+          "photoId": "9",
+          "sourceUrl": "https://www.booking.com/hotel/gb/malmaison-newcastle.html?lang=en-us&chal_t=1792508823758&force_referer="
+        },
+        {
+          "slot": 53,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/747811861.jpg?k=ee1dade340b7022a0705c22307bf943480e19847b30a6784f821f9e816c689cc&o=&hp=1",
+          "photoId": "1",
+          "sourceUrl": "https://www.booking.com/hotel/gb/malmaison-newcastle.html?lang=en-us&chal_t=1792508823758&force_referer="
+        },
+        {
+          "slot": 54,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/740734024.jpg?k=a0cab5ab3a5d13fa97607c9fcfd8fb4c1cc8dbc34af1d64d3aff61fea1ec7b18&o=&hp=1",
+          "photoId": "4",
+          "sourceUrl": "https://www.booking.com/hotel/gb/malmaison-newcastle.html?lang=en-us&chal_t=1792508823758&force_referer="
+        },
+        {
+          "slot": 55,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/747820102.jpg?k=f4c862dcbc24720832c30edc575135af141a67f944250c42a301b961e0dff2ed&o=&hp=1",
+          "photoId": "2",
+          "sourceUrl": "https://www.booking.com/hotel/gb/malmaison-newcastle.html?lang=en-us&chal_t=1792508823758&force_referer="
+        }
+      ],
+      "photos_status": "RESOLVED"
+    },
+    "audit_timestamp": "2026-10-20T15:07:09.442Z"
+  }
+}
