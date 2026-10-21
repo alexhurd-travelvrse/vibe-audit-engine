@@ -25,7 +25,8 @@ export const masterVibeSchema = {
             sound_texture: { type: "string" },
             decibel_level: { type: "string", description: "e.g. 52 dB (Snug/Intimate) or 74 dB (Vibrant)" },
             conversation_clarity_score: { type: "integer", description: "0-100 percentage e.g. 96" },
-            conversation_verdict: { type: "string", description: "e.g. Effortless Chat, Lean-in Required" }
+            conversation_verdict: { type: "string", description: "Plain-English human verdict e.g. Easy Date-Night Chat, Lively Bar Banter" },
+            sleep_sanctuary_verdict: { type: "string", description: "Plain-English sleep & acoustic isolation verdict for guest rooms e.g. Quiet Soundproofed Rooms & Blackout Rest" }
           },
           required: ["soundscape_genre", "anchor_artists", "spotify_query", "sound_texture"]
         },
@@ -46,7 +47,12 @@ export const masterVibeSchema = {
             local_ratio: { type: "integer", description: "Percentage of locals (0-100), e.g. 82" },
             tourist_ratio: { type: "integer", description: "Percentage of travelers/tourists (0-100), e.g. 18" },
             energy_verdict: { type: "string", description: "e.g. High Banter & Neighborhood Sanctuary" },
-            tourist_trap_verdict: { type: "string", description: "e.g. Authentic Local Magnet — Zero Tourist Trap" }
+            tourist_trap_verdict: { type: "string", description: "e.g. Loved by Locals — Not a Tourist Trap" },
+            trip_occasions: {
+              type: "array",
+              items: { type: "string" },
+              description: "3 human trip occasions this property is best for e.g. ['Couples Escape', 'Local Foodies', 'Remote Working']"
+            }
           },
           required: ["primary", "social_density", "dress_code"]
         },
@@ -108,10 +114,28 @@ export const masterVibeSchema = {
         hyper_local_proximity: {
           type: "object",
           properties: {
-            key_anchors: { type: "array", items: { type: "string" } },
+            key_anchors: {
+              type: "array",
+              items: { type: "string" },
+              description: "Top 3 verified authentic local spots within a 2-8 min walk, strictly >=4.4★ rated on Google Maps (NEVER tourist traps), formatted with star rating and walk time e.g. 'Bodega Sepúlveda (4.4★ · 2 min walk)'"
+            },
             insider_lore: { type: "string" }
           },
           required: ["key_anchors", "insider_lore"]
+        },
+        ai_search_geo: {
+          type: "object",
+          properties: {
+            traveler_prompts: {
+              type: "array",
+              items: { type: "string" },
+              description: "3 real natural-language prompts travelers type into ChatGPT, Perplexity, or Gemini where this hotel should be recommended"
+            },
+            verified_entity_summary: {
+              type: "string",
+              description: "Plain-English verified Vibe Signature summary linking the hotel, its sleep & social vibe, and its verified walkable local anchors for AI search and agency reference"
+            }
+          }
         },
         insider_secrets: {
           type: "object",

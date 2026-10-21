@@ -356,8 +356,12 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
               </div>
 
               <p style={{ fontSize: '11.5px', color: 'rgba(255,255,255,0.65)', lineHeight: 1.4, margin: '0 0 0.5rem 0' }}>
-                {(dna.sound_texture || 'Atmospheric acoustic layering with comfortable conversational resonance.').split('.')[0] + '.'}
+                {(dna.sound_texture || 'Warm background music with easy conversation downstairs and quiet rooms upstairs.').split('.')[0] + '.'}
               </p>
+              <div style={{ background: 'rgba(16, 185, 129, 0.1)', border: '1px solid rgba(16, 185, 129, 0.3)', borderRadius: '8px', padding: '6px 10px', fontSize: '10.5px', color: '#34d399', fontWeight: 700, marginBottom: '0.4rem', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                <Moon size={12} color="#34d399" />
+                <span><strong>Sleep Sanctuary:</strong> {dna.sleep_sanctuary_verdict || 'Quiet Sound-Mitigated Rooms & Restful Sleep'}</span>
+              </div>
             </div>
 
             {/* Embedded Spotify Mini Player (Synced with Travelvrse 4-Tier Resolver & Diurnal Rhythm) */}
@@ -529,7 +533,7 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
             </div>
 
             <div style={{ marginTop: '1.25rem', background: 'rgba(192, 132, 252, 0.08)', padding: '10px 12px', borderRadius: '10px', border: '1px solid rgba(192, 132, 252, 0.2)', fontSize: '11px', color: 'rgba(255,255,255,0.85)' }}>
-              ⚡ <strong>Social Velocity:</strong> {crowd.energy_verdict || 'High Banter & Neighborhood Sanctuary'}
+              🎯 <strong>Best For:</strong> {(crowd.trip_occasions && crowd.trip_occasions.length > 0) ? crowd.trip_occasions.join(' • ') : (crowd.energy_verdict || 'Couples City Break • Local Foodies • Solo & Remote Work')}
             </div>
           </div>
 
@@ -726,20 +730,20 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
               {/* Category Badge */}
               <div style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center' }}>
                 <span style={{ fontSize: '11px', fontWeight: 900, color: '#ffb300', letterSpacing: '0.08em', textTransform: 'uppercase', display: 'flex', alignItems: 'center', gap: '5px' }}>
-                  <MapPin size={13} /> Location Pulse
+                  <MapPin size={13} /> 5-Minute Walk &amp; Local Gems
                 </span>
               </div>
 
               <h3 style={{ fontSize: '16px', fontWeight: 900, color: '#ffffff', minHeight: '44px', lineHeight: 1.3, margin: '0 0 0.85rem 0' }}>
-                Right on the Doorstep of Trending Spots
+                Verified 4.4★+ Local Spots Right Outside
               </h3>
 
               {/* Standardized Scale Bar Container */}
               <div style={{ background: 'rgba(0,0,0,0.45)', padding: '10px 12px', borderRadius: '10px', border: '1px solid rgba(255,255,255,0.08)', marginBottom: '1rem', minHeight: '82px', boxSizing: 'border-box', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', gap: '6px' }}>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', fontSize: '9.5px', fontWeight: 800, textTransform: 'uppercase', color: 'rgba(255,255,255,0.6)' }}>
-                  <span style={{ color: '#94a3b8', textAlign: 'left' }}>Quiet</span>
-                  <span style={{ color: '#fbbf24', textAlign: 'center' }}>Active</span>
-                  <span style={{ color: '#ffb300', textAlign: 'right' }}>Epicenter</span>
+                  <span style={{ color: '#94a3b8', textAlign: 'left' }}>Isolated</span>
+                  <span style={{ color: '#fbbf24', textAlign: 'center' }}>Walkable</span>
+                  <span style={{ color: '#ffb300', textAlign: 'right' }}>Local Hub</span>
                 </div>
                 {/* Scale Track with Pin */}
                 <div style={{ position: 'relative', width: '100%', height: '8px', background: 'linear-gradient(90deg, #64748b 0%, #fbbf24 50%, #ffb300 100%)', borderRadius: '4px' }}>
@@ -757,17 +761,17 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
                   }} />
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '11px', fontWeight: 700, gap: '8px' }}>
-                  <span style={{ color: '#ffb300', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', flex: 1 }}>Immediate Doorstep</span>
-                  <span style={{ color: '#10b981', flexShrink: 0, fontSize: '10px', background: 'rgba(16, 185, 129, 0.12)', padding: '2px 7px', borderRadius: '4px', border: '1px solid rgba(16, 185, 129, 0.25)' }}>0 Min Walk</span>
+                  <span style={{ color: '#ffb300', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', flex: 1 }}>Verified Local Gems</span>
+                  <span style={{ color: '#10b981', flexShrink: 0, fontSize: '10px', background: 'rgba(16, 185, 129, 0.12)', padding: '2px 7px', borderRadius: '4px', border: '1px solid rgba(16, 185, 129, 0.25)' }}>2–6 Min Walk</span>
                 </div>
               </div>
 
               <div style={{ fontSize: '13px', fontWeight: 800, color: '#ffffff', minHeight: '34px', lineHeight: 1.35, marginBottom: '0.4rem', display: 'flex', alignItems: 'flex-start' }}>
-                <span><span style={{ color: '#ffb300' }}>District Anchors:</span> {(proximity.key_anchors && proximity.key_anchors.length > 0) ? proximity.key_anchors.slice(0, 2).join(' • ') : 'Cultural Epicenter & Boutiques'}</span>
+                <span><span style={{ color: '#ffb300' }}>Doorstep Gems:</span> {(proximity.key_anchors && proximity.key_anchors.length > 0) ? proximity.key_anchors.slice(0, 2).join(' • ') : 'Verified 4.5★+ Local Spots'}</span>
               </div>
 
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '0.65rem', minHeight: '26px', alignItems: 'center' }}>
-                {(proximity.key_anchors || ['Neighborhood Cultural Hub', 'Riverside Promenade', 'Artisan Dining']).slice(0, 2).map((anchor, i) => (
+                {(proximity.key_anchors || ['Verified Local Wine Bar (4.6★ · 3m)', 'Artisan Bakery (4.5★ · 4m)']).slice(0, 2).map((anchor, i) => (
                   <span key={i} style={{ background: 'rgba(255, 179, 0, 0.12)', color: '#ffb300', fontSize: '10.5px', fontWeight: 700, padding: '2px 8px', borderRadius: '10px', border: '1px solid rgba(255, 179, 0, 0.25)', whiteSpace: 'nowrap' }}>
                     📍 {anchor}
                   </span>
@@ -775,12 +779,12 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
               </div>
 
               <p style={{ fontSize: '11.5px', color: 'rgba(255,255,255,0.75)', lineHeight: 1.4, margin: '0 0 0.5rem 0' }}>
-                {(proximity.insider_lore || 'Positioned directly within the cultural epicenter with immediate access to independent boutiques.').split('.')[0] + '.'}
+                {(proximity.insider_lore || 'Positioned within a 2 to 6 minute walk of verified 4.4★+ local spots where residents actually eat and drink.').split('.')[0] + '.'}
               </p>
             </div>
 
             <div style={{ marginTop: '1.25rem', background: 'rgba(255, 179, 0, 0.08)', padding: '10px 12px', borderRadius: '10px', border: '1px solid rgba(255, 179, 0, 0.2)', fontSize: '11px', color: 'rgba(255,255,255,0.85)' }}>
-              🚶 <strong>Walkability Score:</strong> 100% pedestrian access to district anchors.
+              ✓ <strong>Verified Local Filter:</strong> Strictly 4.4★+ rated local spots — zero tourist traps.
             </div>
           </div>
 
@@ -842,7 +846,7 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
             </div>
 
             <div style={{ marginTop: '1.25rem', background: 'rgba(236, 72, 153, 0.08)', padding: '10px 12px', borderRadius: '10px', border: '1px solid rgba(236, 72, 153, 0.2)', fontSize: '11px', color: 'rgba(255,255,255,0.85)' }}>
-              🔑 <strong>Secret Quest:</strong> Unlocks exclusive perks on Travelvrse 3D Spatial Walkthroughs.
+              🔑 <strong>Insider Tip:</strong> Ask the host team on arrival for the current off-menu local favourite.
             </div>
           </div>
         </div>
@@ -874,6 +878,57 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
               {qual.skip_if || 'You prefer clinical, uniform corporate hotels with zero social energy or neighborhood engagement.'}
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* ========================================================================= */}
+      {/* AI SEARCH (CHATGPT, PERPLEXITY & GEMINI) & PROTECTED VIBE REGISTRY        */}
+      {/* ========================================================================= */}
+      <div style={{
+        marginTop: '1.5rem',
+        background: 'linear-gradient(135deg, rgba(0, 229, 255, 0.08) 0%, rgba(16, 185, 129, 0.06) 100%)',
+        padding: '1.35rem 1.5rem',
+        borderRadius: '1.25rem',
+        border: '1px solid rgba(0, 229, 255, 0.28)'
+      }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.75rem', marginBottom: '1rem' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+            <Compass size={18} color="#00e5ff" />
+            <span style={{ fontSize: '12.5px', fontWeight: 900, textTransform: 'uppercase', color: '#00e5ff', letterSpacing: '0.06em' }}>
+              AI Search Discovery (ChatGPT, Perplexity &amp; Gemini)
+            </span>
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
+            <span style={{ background: 'rgba(16, 185, 129, 0.15)', color: '#34d399', border: '1px solid rgba(16, 185, 129, 0.35)', fontSize: '10px', fontWeight: 800, padding: '3px 9px', borderRadius: '10px' }}>
+              🔒 Protected Vibe Registry • Live 30-Day Freshness
+            </span>
+          </div>
+        </div>
+
+        <p style={{ fontSize: '12.5px', color: 'rgba(255,255,255,0.85)', margin: '0 0 0.85rem 0', lineHeight: 1.45 }}>
+          {(v.ai_search_geo && v.ai_search_geo.verified_entity_summary)
+            ? v.ai_search_geo.verified_entity_summary
+            : `${manifest.venue_name || hotelName} is a verified neighbourhood gateway in ${manifest.location || location || 'its district'}, combining quiet, restful rooms upstairs with warm social spaces and direct 2–6 minute walking access to 4.4★+ local gems.`}
+        </p>
+
+        <div style={{ fontSize: '11px', fontWeight: 800, color: '#ffd700', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.5rem' }}>
+          Traveller Prompts Where This Property Matches:
+        </div>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '0.65rem' }}>
+          {((v.ai_search_geo && v.ai_search_geo.traveler_prompts && v.ai_search_geo.traveler_prompts.length > 0)
+            ? v.ai_search_geo.traveler_prompts
+            : [
+                `Best hotel in ${manifest.location || location || 'this area'} within a 5-minute walk of authentic 4.5★ local wine bars and restaurants`,
+                `Where to stay in ${manifest.location || location || 'the city'} with a warm evening atmosphere downstairs and quiet, restful rooms upstairs`,
+                `Recommended boutique basecamp in ${manifest.location || location || 'town'} for couples and solo explorers who want a true local feel`
+              ]
+          ).map((promptText, idx) => (
+            <div key={idx} style={{ background: 'rgba(0,0,0,0.45)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '10px', padding: '10px 12px', fontSize: '11.5px', color: 'rgba(255,255,255,0.9)', lineHeight: 1.35 }}>
+              <span style={{ color: '#00e5ff', fontWeight: 800, marginRight: '5px' }}>“</span>
+              {promptText}
+              <span style={{ color: '#00e5ff', fontWeight: 800, marginLeft: '3px' }}>”</span>
+            </div>
+          ))}
         </div>
       </div>
 

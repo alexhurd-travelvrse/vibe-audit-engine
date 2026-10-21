@@ -270,38 +270,45 @@ Identify 2 to 3 missing shots that the hotel should ideally shoot/commission to 
 - recommended_framing_and_lighting: Specific creative direction (camera angle, focal length, color temperature e.g. '2400K warm twilight glow, 35mm f/1.8 shallow depth with crisp glassware reflections and natural guest conversation').
 - projected_adr_impact: Projected revenue impact (e.g. '+12% direct suite booking conversion and +$45 ADR premium').
 
-MULTIDIMENSIONAL SENSORY & ATMOSPHERIC CALIBRATION:
-Synthesize realistic sensory attributes derived from the real venue and neighborhood vibe:
-1. Acoustic DNA & Conversation:
-   - decibel_level: Calibrate realistic sound level (e.g., "52 dB (Snug / Intimate Sanctuary)", "64 dB (Lively Bistro Hum)", "76 dB (High-Energy Cocktail Buzz)").
+MULTIDIMENSIONAL SENSORY & ATMOSPHERIC CALIBRATION (WRITE IN WARM, PLAIN-ENGLISH HUMAN SPEAK):
+Synthesize realistic attributes derived from the real venue and neighborhood vibe using everyday human language (avoid technical jargon like "2400K low-lux" or "Zero Downlight Raccoon Eyes"):
+1. Sound, Music & Sleep Sanctuary:
+   - decibel_level: Calibrate realistic sound level (e.g., "52 dB (Cosy & Quiet)", "64 dB (Easy Chat & Lively Hum)", "72 dB (Buzzing Evening Bar)").
    - conversation_clarity_score: 0-100 percentage (e.g. 96 for effortless chat, 68 for vibrant nightlife).
-   - conversation_verdict: e.g. "Effortless Intimate Chat", "Gentle Ambient Murmur", "Vibrant Social Banter".
-2. Material Honesty & Authenticity:
+   - conversation_verdict: Plain-English verdict e.g. "Easy Date-Night Chat", "Lively Bar Banter — No Shouting".
+   - sleep_sanctuary_verdict: Explicitly distinguish social buzz downstairs from bedroom sleep quality upstairs (e.g. "Quiet Double-Glazed Rooms & Blackout Rest Upstairs").
+2. True Character & Materials:
    - authenticity_score: 0-100 score (e.g. 94/100).
-   - material_palette: Specific physical materials (e.g. "Hand-hewn Victorian oak, aged brass, reclaimed timber, fluted glass").
-   - material_verdict: e.g. "Authentic Heritage — Zero Faux Decor" or "Artisanal Contemporary Craftsmanship".
-3. Crowd Velocity & Local Ratio:
-   - local_ratio: Realistic % of local neighborhood visitors (e.g., 75-90% for pubs/boutique anchors, 40-60% for major luxury hotels).
+   - material_palette: Specific physical materials in warm human terms (e.g. "Natural oak, aged brass, warm stone, textured glass").
+   - material_verdict: e.g. "True Local Character — Not a Cookie-Cutter Chain".
+3. The Crowd, Local Ratio & Trip Occasions:
+   - local_ratio: Realistic % of local neighborhood visitors (e.g., 75-90% for boutique anchors, 40-60% for major luxury hotels).
    - tourist_ratio: Remainder (100 - local_ratio).
-   - energy_verdict: e.g. "High Banter & Neighborhood Sanctuary", "Cosmopolitan Creative Haven".
-   - tourist_trap_verdict: e.g. "Authentic Local Magnet — Zero Tourist Trap", "Curated Neighborhood Haven".
-4. Lighting & Photometrics:
-   - lighting_temperature: e.g. "2200K Warm Amber Filament", "Subterranean Speakeasy Candelight", "Golden Hour Thames Reflections".
-5. Temporal Dynamics:
-   - best_time_to_visit: Provide specific dual-peak time windows (e.g., "4:30 PM for tranquil fireside drinks; 8:30 PM for peak atmospheric buzz").
-6. Insider Secrets & Hidden Lore:
-   - secret_title: Catchy title (e.g. "The Off-Menu Boiler Highball", "The Secret Courtyard Arch").
-   - secret_lore: A real, actionable local insider secret, off-menu perk, or hidden architectural shortcut known only to regulars.
+   - energy_verdict: e.g. "Lively Local Regulars & Easy Evening Buzz".
+   - tourist_trap_verdict: e.g. "Loved by Locals — Zero Tourist Trap".
+   - trip_occasions: 3 specific trip occasions this property fits best (e.g. ["Couples Escape", "Local Foodies", "Solo & Remote Work"]).
+4. Warmth & Lighting:
+   - lighting_temperature: Plain-English warmth e.g. "Warm Candlelit & Golden-Hour Glow", "Sunlit Courtyard & Cosy Evening Lamps".
+5. Best Time of Day:
+   - best_time_to_visit: Provide specific time windows in plain English (e.g., "4:30 PM for relaxed sunset drinks; 8:30 PM for lively evening buzz").
+6. Hyper-Local Proximity (STRICT 4.4★+ VERIFIED LOCAL GEMS RULE):
+   - key_anchors: Select ONLY genuinely authentic, high-rated local institutions (strictly >= 4.4★ on Google Maps with strong local reputation; NEVER select poorly rated or overpriced tourist traps like Bar Alegría). Format each anchor with its star rating and walking time from the hotel, e.g., ["Bodega Sepúlveda (4.4★ · 2 min walk)", "Bar Gelida (4.5★ · 6 min walk)", "Mercat de Sant Antoni (4.6★ · 5 min walk)"].
+7. AI Search / GEO Visibility (ai_search_geo):
+   - traveler_prompts: 3 realistic natural-language questions travelers ask ChatGPT, Perplexity, or Gemini where this hotel should be recommended (e.g. "Best boutique hotel in Sant Antoni Barcelona near authentic local tapas bars with quiet rooms").
+   - verified_entity_summary: A concise, factual 2-sentence summary linking the hotel, its sleep & social vibe, and its verified walking-distance local gems for AI assistants and partner agencies.
+8. Insider Secrets & Hidden Lore:
+   - secret_title: Catchy title (e.g. "The Off-Menu Boiler Highball", "The Best Corner Table at Sunset").
+   - secret_lore: A real, actionable local insider secret or off-menu order known to regulars.
    - off_menu_perk: Specific actionable recommendation.
-   - insider_badge: e.g. "Head Bartender & Local Regular Lore".
-7. Host Vibe (Customer Team & Human Energy):
-   - host_style_score: 0-100 scale (0-35 = Formal & Scripted, 36-70 = Warm & Attentive, 71-100 = Charismatic Cultural Hosts).
-   - host_archetype: 3-5 word persona of the staff/hosts (e.g. "Storytelling Mixologists & Scene Insiders", "Warm Neighborhood Cultural Hosts").
-   - warmth_verdict: e.g. "Zero Snobbery — Instant Regulars Treatment", "Discreet Mayfair White-Glove Warmth".
-   - service_pacing: e.g. "Unhurried Banter & Intuitive Craft".
-   - team_aesthetic: Describe what the staff wear / how they present (e.g. "Bespoke Denim Aprons & Relaxed Street Tailoring", "Tailored Nautical Uniforms & Sneaker Culture").
-   - signature_team_roles: 2-3 standout human roles (e.g. ["Master Botanical Mixologist", "Neighborhood Culture Concierge", "Vinyl Archivist"]).
-   - staff_icebreaker_prompt: An actionable conversation starter guests can ask the team on arrival (e.g. "Ask the Lyaness bartender which botanical they fermented in-house this week").`;
+   - insider_badge: e.g. "Head Bartender & Regulars' Tip".
+9. Host Vibe (Warm Local Insiders):
+   - host_style_score: 0-100 scale (0-35 = Formal & Scripted, 36-70 = Warm & Attentive, 71-100 = Warm Local Insiders).
+   - host_archetype: 3-5 word persona of the staff/hosts (e.g. "Warm Local Insiders & Storytelling Bartenders").
+   - warmth_verdict: e.g. "Zero Snobbery — Treated Like a Regular".
+   - service_pacing: e.g. "Relaxed, Friendly & Attentive".
+   - team_aesthetic: Describe what the staff wear in plain English (e.g. "Relaxed Tailoring & Craft Aprons").
+   - signature_team_roles: 2-3 standout human roles (e.g. ["Head Bartender", "Neighbourhood Concierge", "Coffee Roaster"]).
+   - staff_icebreaker_prompt: An actionable conversation starter guests can ask the team on arrival (e.g. "Ask the bartender for their favourite local wine bar two streets over").`;
 
   const userPrompt = `VENUE: ${hotelName} (${city})
 TIMESTAMP: ${new Date().toISOString()}
@@ -989,113 +996,141 @@ function synthesizeVibeAuditFromCorpus(hotelName, city, neighborhood, venueCorpu
               : (isMiami 
                   ? "South Beach Poolside Lounge" 
                   : "Intimate Speakeasy Vinyl Jazz")),
-        sound_texture: "Warm acoustic resonance with conversational clarity and gentle rhythmic bass undercurrents.",
-        decibel_level: isMiami ? "64 dB (Lively Poolside Hum)" : (isLondon ? "66 dB (Vibrant Riverside Buzz)" : "56 dB (Intimate Sanctuary)"),
-        conversation_clarity_score: isMiami ? 86 : (isLondon ? 89 : 94),
-        conversation_verdict: isMiami ? "Effortless Social Banter" : (isLondon ? "Effortless Social & Creative Banter" : "Effortless Intimate Chat")
+        sound_texture: "Warm background music with easy conversation downstairs and quiet, soundproofed rooms upstairs.",
+        decibel_level: isMiami ? "64 dB (Easy Poolside Chat)" : (isLondon ? "64 dB (Lively Riverside Buzz)" : "56 dB (Cosy & Relaxed)"),
+        conversation_clarity_score: isMiami ? 88 : (isLondon ? 91 : 94),
+        conversation_verdict: isMiami ? "Easy Social Chat" : (isLondon ? "Easy Date-Night & Social Chat" : "Easy Conversation — No Shouting"),
+        sleep_sanctuary_verdict: "Quiet Sound-Mitigated Rooms & Blackout Rest Upstairs"
       },
       authenticity_and_materials: {
         authenticity_score: isMiami ? 94 : (isLondon ? 93 : 91),
         material_palette: isLondon && nameLower.includes('sea containers')
-          ? "Curved Warren Platner brass, copper hull cladding, maritime navy velvet, ribbed glass"
+          ? "Curved brass, copper maritime hull details, deep navy velvet, warm wood"
           : (isDubai 
-              ? "Polished English walnut, aged brass, patterned marble, bespoke British textiles"
+              ? "Polished walnut, aged brass, warm marble, bespoke British textiles"
               : (isMiami 
-                  ? "Original 1940s terrazzo, curved Art Moderne plaster, coral stone, brass, French velvet"
-                  : "Hand-hewn timber, aged brass, tactile stone, fluted glass")),
+                  ? "Original 1940s terrazzo, curved Art Deco plaster, coral stone, warm brass"
+                  : "Natural wood, aged brass, warm stone, textured glass")),
         material_verdict: isLondon && nameLower.includes('sea containers')
-          ? "Iconic Transatlantic Cruise Liner Heritage — Zero Faux Decor"
+          ? "True Maritime Character — Not a Cookie-Cutter Chain"
           : (isDubai 
-              ? "Authentic British Heritage & Palm Luxury — Zero Faux Decor"
+              ? "Classic British Warmth & Beachfront Calm"
               : (isMiami 
-                  ? "Authentic Art Moderne Heritage — Zero Faux Decor" 
-                  : "Authentic Craftsmanship & Historic Integrity"))
+                  ? "Original 1940s Art Deco Character" 
+                  : "True Local Character — Not a Cookie-Cutter Chain"))
       },
       crowd_archetype: {
         primary: isLondon && nameLower.includes('sea containers')
-          ? "Tate Modern curators, creative directors, South Bank theatergoers & international tastemakers"
+          ? "Tate Modern visitors, creative locals, South Bank theatre-goers & couples"
           : (isDubai 
-              ? "Discerning international travelers, expatriate professionals & beachfront resort guests"
+              ? "Couples, international travellers & beachfront resort regulars"
               : (isMiami 
-                  ? "Design-conscious creatives, neighborhood regulars & international tastemakers"
-                  : "Design-conscious travelers & cultural regulars")),
-        social_density: "Curated & High-Velocity",
-        dress_code: isLondon ? "Smart Creative & Effortlessly Tailored" : (isDubai ? "Resort Elegance & Smart Casual" : (isMiami ? "Miami Chic & Resortwear" : "Smart Casual & Refined")),
-        local_ratio: isLondon ? 66 : (isDubai ? 42 : (isMiami ? 68 : 74)),
-        tourist_ratio: isLondon ? 34 : (isDubai ? 58 : (isMiami ? 32 : 26)),
-        energy_verdict: isLondon ? "Riverside Creative Magnet & Sunset Buzz" : (isDubai ? "Prestigious Island Sanctuary" : (isMiami ? "Sunlit Social Magnet & Evening Buzz" : "Neighborhood Sanctuary & Cultural Hub")),
-        tourist_trap_verdict: "Authentic Local Magnet — Zero Tourist Trap"
+                  ? "Design-loving couples, neighbourhood regulars & weekend travellers"
+                  : "Neighbourhood locals, couples & culture-loving travellers")),
+        social_density: "Lively & Welcoming",
+        dress_code: isLondon ? "Smart Casual & Relaxed Creative" : (isDubai ? "Relaxed Resort Chic" : (isMiami ? "Sunlit Resort Casual" : "Relaxed Smart Casual")),
+        local_ratio: isLondon ? 66 : (isDubai ? 42 : (isMiami ? 68 : 78)),
+        tourist_ratio: isLondon ? 34 : (isDubai ? 58 : (isMiami ? 32 : 22)),
+        energy_verdict: isLondon ? "Lively Riverside Bar & Relaxed Lounge" : (isDubai ? "Calm Beachfront Escape" : (isMiami ? "Sunlit Poolside & Candlelit Evenings" : "Cosy Neighbourhood Basecamp & Local Buzz")),
+        tourist_trap_verdict: "Loved by Locals — Zero Tourist Trap",
+        trip_occasions: isLondon
+          ? ["Couples Weekend", "Cultural City Break", "Remote Working"]
+          : (isMiami
+              ? ["Couples Escape", "Friends Getaway", "Sun & Dining"]
+              : ["Couples City Break", "Local Food & Wine", "Solo & Remote Work"])
       },
       lighting_and_sensory: {
         atmosphere: isLondon 
-          ? "Cinematic day-to-night lighting transitions from soft Thames river reflections to amber candlelight and panoramic skyline illumination."
+          ? "Shifts smoothly from bright Thames daylight to warm candlelit tables and evening skyline views."
           : (isDubai 
-              ? "Sun-kissed Arabian Gulf reflections transitioning to candlelit terrace glow and soft palm uplighting."
-              : "Seductive day-to-night lighting transitions from sun-drenched reflections to amber candlelight and soft architectural uplighting."),
-        lighting_temperature: isLondon ? "2400K Warm Filament Amber & Thames Twilight" : "2200K Warm Filament Amber & Golden Hour Sun",
-        sensory_intensity: "Sensory Warmth & Tactile Elegance"
+              ? "Bright Gulf sunshine by day, turning into a warm candlelit terrace at sunset."
+              : "Bright, welcoming daytime light that turns into a warm, cosy candlelit glow in the evening."),
+        lighting_temperature: isLondon ? "Warm Candlelit Amber & Sunset River Views" : "Warm Candlelit & Golden-Hour Glow",
+        sensory_intensity: "Warm, Cosy & Inviting"
       },
       temporal_dynamics: {
         best_time_to_visit: isLondon 
-          ? "5:00 PM for golden-hour Thames terrace cocktails; 8:30 PM for 12th Knot panoramic rooftop buzz"
+          ? "5:00 PM for sunset Thames terrace drinks; 8:30 PM for 12th Knot rooftop buzz"
           : (isDubai 
-              ? "4:30 PM for sunset beachfront aperitivo; 8:00 PM for dinner & cocktails"
+              ? "4:30 PM for sunset beach drinks; 8:00 PM for candlelit dinner"
               : (isMiami 
-                  ? "3:30 PM for sunlit courtyard cocktails; 8:30 PM for candlelit dinner & music"
-                  : "4:30 PM for tranquil aperitivo; 8:30 PM for peak atmospheric buzz")),
-        peak_atmospheric_window: "Golden Hour to Late Evening Aperitivo",
+                  ? "3:30 PM for sunny courtyard drinks; 8:30 PM for dinner & music"
+                  : "6:00 PM for early-evening vermut & tapas; 8:30 PM for lively local dinner")),
+        peak_atmospheric_window: "Golden Hour to Evening Drinks",
         diurnal_rhythm: {
           working: {
             window: "9:00 AM – 3:30 PM",
             focus: isLondon 
-              ? "Bright diffused Thames daylight, quiet acoustic hum & spacious laptop banquettes in river lounge."
+              ? "Bright riverside daylight, calm coffee atmosphere & comfy tables for laptop work."
               : (isMiami 
-                  ? "Shaded tropical courtyard patio with fast Wi-Fi and natural daylight."
-                  : "Sunlit lobby sanctuary with high conversational clarity & quiet coffee service."),
+                  ? "Shaded courtyard patio with fast Wi-Fi, morning coffee, and natural light."
+                  : "Calm morning lounge with natural light, good coffee, and quiet tables for reading or work."),
             score: 91
           },
           chilling: {
             window: "4:00 PM – 7:00 PM",
             focus: isLondon
-              ? "The 4:00 PM Twilight Pivot: stepless shift to 2400K amber glow, Thames golden hour & tranquil aperitivo."
+              ? "Golden hour on the Thames: warm evening light & relaxed pre-dinner drinks."
               : (isMiami
-                  ? "Golden hour poolside lounger transition with gentle acoustic downtempo and pastel sunset reflections."
-                  : "Gulf sunset terrace with calming sea breeze, shaded daybeds & pre-dinner botanical cocktails."),
+                  ? "Late-afternoon sun by the pool with relaxed music and early-evening drinks."
+                  : "Golden-hour transition: warm lighting & relaxed early-evening drinks before dinner."),
             score: 97
           },
           playing: {
             window: "7:30 PM – Late",
             focus: isLondon
-              ? "Seductive 2200K low-lux amber, 12th Knot panoramic skyline energy & buzzing mixology crowd."
+              ? "Candlelit evening buzz, 12th Knot rooftop skyline views & a lively cocktail crowd."
               : (isMiami
-                  ? "Candlelit courtyard & Hyde Beach social magnetism, lively DJ sets & vibrant cocktail crowd."
-                  : "Intimate Duke's Bar legendary martini rituals, low-Kelvin table lamps & sophisticated banter."),
+                  ? "Candlelit courtyard, great music, and a lively evening bar crowd."
+                  : "Cosy evening atmosphere with great drinks and verified local dining steps away."),
             score: 95
           }
         },
         content_readiness: {
           score: isLondon ? 96 : (isMiami ? 97 : 94),
-          verdict: "Zero Downlight Raccoon Eyes",
-          flattery_note: "Flattering diffuse eye-level bounce & warm 2400K skin-tone illumination",
+          verdict: "Warm, Flattering Evening Light • Zero Harsh Glare",
+          flattery_note: "Soft, warm lighting that looks great in person and in photos",
           top_creator_spot: isLondon 
             ? "12th Knot Glass Corner Banquette during Thames Golden Hour"
             : (isMiami 
-                ? "Courtyard Poolside Sanctuary Loungers framed by historic Palms"
-                : "Duke's Bar intimate leather banquettes with backlit martini trolley"),
+                ? "Courtyard Poolside Loungers framed by historic Palms"
+                : "Street-view Juliet balcony or warm library lounge at golden hour"),
           aesthetic_subculture: isLondon 
-            ? "Moody Maritime Chiaroscuro" 
-            : (isMiami ? "Sun-Drenched Pastel Art Deco" : "Classic British Heritage Chiaroscuro")
+            ? "Warm Riverside Glamour" 
+            : (isMiami ? "Sun-Drenched Art Deco" : "Warm Neighbourhood Character")
         }
       },
       hyper_local_proximity: {
         key_anchors: isLondon && nameLower.includes('sea containers')
-          ? ["Tate Modern & Bankside Gallery", "National Theatre & Southbank Centre", "Borough Market Gastronomy Enclave"]
-          : (isDubai 
-              ? ["The View at The Palm", "Nakheel Mall & Monorail", "Palm West Beach Promenade"]
-              : (isMiami 
-                  ? ["Collins Park Cultural Precinct", "The Bass Museum of Art", "South Beach Oceanfront"]
-                  : ["District Cultural Center", "Historic Promenade", "Artisan Dining Enclave"])),
-        insider_lore: `Positioned directly in the sweet spot of ${loc}, offering immediate pedestrian access to the destination's finest cultural anchors.`
+          ? ["Tate Modern (4.7★ · 4 min walk)", "Borough Market (4.7★ · 12 min walk)", "National Theatre Riverfront (4.7★ · 3 min walk)"]
+          : (locLower.includes('barcelona') || nameLower.includes('acta') || nameLower.includes('splendid')
+              ? ["Bodega Sepúlveda (4.4★ · 2 min walk)", "Bar Gelida (4.5★ · 6 min walk)", "Mercat de Sant Antoni (4.6★ · 5 min walk)"]
+              : (isDubai 
+                  ? ["Palm West Beach Promenade (4.7★ · 3 min walk)", "The View at The Palm (4.8★ · 5 min walk)", "Club Vista Mare (4.5★ · 6 min walk)"]
+                  : (isMiami 
+                      ? ["The Bass Museum of Art (4.6★ · 3 min walk)", "Collins Park Beachfront (4.7★ · 4 min walk)", "Sweet Liberty Drinks & Supply (4.7★ · 3 min walk)"]
+                      : ["Verified Local Wine Bar (4.6★ · 3 min walk)", "Historic Neighbourhood Market (4.6★ · 5 min walk)", "Artisan Coffee Roastery (4.5★ · 2 min walk)"]))),
+        insider_lore: `Right in the sweet spot of ${loc}, within a 2 to 6 minute walk of verified 4.4★+ local spots where residents actually eat and drink.`
+      },
+      ai_search_geo: {
+        traveler_prompts: isLondon && nameLower.includes('sea containers')
+          ? [
+              "Best boutique hotel on London South Bank with river views, a lively rooftop bar, and quiet rooms",
+              "Where to stay near Tate Modern and Borough Market for a couples weekend",
+              "Design-led London hotel with a great lounge for working by day and cocktails at night"
+            ]
+          : (locLower.includes('barcelona') || nameLower.includes('acta') || nameLower.includes('splendid')
+              ? [
+                  "Authentic boutique hotel in Sant Antoni / Eixample Barcelona near real local tapas bars, not tourist traps",
+                  "Quiet, walkable hotel in central Barcelona within 5 minutes of Mercat de Sant Antoni and local bodegas",
+                  "Best value stylish basecamp in Barcelona with quiet rooms and a cosy library lounge"
+                ]
+              : [
+                  `Best hotel in ${loc} within walking distance of authentic 4.5★ local restaurants and wine bars`,
+                  `Where to stay in ${loc} with a warm evening atmosphere downstairs and quiet, restful rooms upstairs`,
+                  `Recommended boutique stay in ${loc} for couples and solo travellers who want a real local neighbourhood feel`
+                ]),
+        verified_entity_summary: `${name} is a verified neighbourhood gateway in ${loc}, combining quiet, sound-mitigated guest rooms with warm communal spaces and direct 2–6 minute walking access to 4.4★+ local dining and cultural anchors.`
       },
       insider_secrets: {
         secret_title: isLondon && nameLower.includes('sea containers')

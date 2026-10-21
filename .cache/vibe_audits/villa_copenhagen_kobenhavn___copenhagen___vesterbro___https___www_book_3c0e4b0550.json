@@ -1,0 +1,726 @@
+{
+  "key": "villa copenhagen kobenhavn:::copenhagen:::vesterbro:::https://www.booking.com/hotel/dk/villa-copenhagen-kobenhavn.html",
+  "timestamp": 1792580238607,
+  "data": {
+    "venue_id": "villa_copenhagen_kobenhavn",
+    "venue_name": "Villa Copenhagen Kobenhavn",
+    "location": "Vesterbro, Copenhagen",
+    "vibe_signature": {
+      "energy_score": 78,
+      "social_pacing": "Vibrant & Culturally Engaged",
+      "headline": "Historic Grandeur Meets Nordic Modernism: A Social Hub in Vesterbro",
+      "acoustic_dna": {
+        "soundscape_genre": "Eclectic Nordic Jazz & Ambient Electronic",
+        "anchor_artists": [
+          "Bon Iver",
+          "Trentemøller",
+          "Efterklang"
+        ],
+        "spotify_query": "Villa Copenhagen Vibe Playlist",
+        "sound_texture": "Warm, layered, with occasional vibrant social hum",
+        "conversation_clarity_score": 85,
+        "conversation_verdict": "Effortless Chat & Engaging Dialogue",
+        "decibel_level": "68 dB (Lively Social Hub)"
+      },
+      "crowd_archetype": {
+        "primary": "Creative Professionals & Design Enthusiasts",
+        "social_density": "Comfortably Buzzing",
+        "dress_code": "Smart Casual & Effortlessly Chic",
+        "energy_verdict": "Cosmopolitan Creative Haven & Dynamic Social Scene",
+        "local_ratio": 70,
+        "tourist_ratio": 30,
+        "tourist_trap_verdict": "Curated Neighborhood Haven"
+      },
+      "lighting_and_sensory": {
+        "atmosphere": "Sophisticated & Inviting",
+        "sensory_intensity": "Balanced & Stimulating",
+        "lighting_temperature": "3000K Warm White & Natural Daylight Infusion"
+      },
+      "hyper_local_proximity": {
+        "key_anchors": [
+          "Tivoli Gardens",
+          "Central Station",
+          "Meatpacking District (Kødbyen)"
+        ],
+        "insider_lore": "Nestled in the heart of Vesterbro, Villa Copenhagen is a stone's throw from the vibrant Meatpacking District, a hub for culinary experiences and nightlife. Its unique architecture, a former post office, blends seamlessly with the area's industrial-chic aesthetic."
+      },
+      "qualification_test": {
+        "you_will_love_if": "You appreciate a blend of historic architecture and contemporary Nordic design, enjoy vibrant social spaces, and seek a hotel that acts as a cultural gateway to Copenhagen's creative scene.",
+        "skip_if": "You prefer ultra-minimalist, silent retreats or seek a hotel completely isolated from urban energy."
+      },
+      "authenticity_and_materials": {
+        "authenticity_score": 92,
+        "material_palette": "Reclaimed wood, polished concrete, natural stone, exposed brick, brass accents",
+        "material_verdict": "Authentic Heritage & Contemporary Nordic Craftsmanship"
+      },
+      "host_vibe": {
+        "host_archetype": "Engaging Cultural Curators & Attentive Hosts",
+        "host_style_score": 88,
+        "service_pacing": "Seamless & Thoughtful Engagement",
+        "signature_team_roles": [
+          "Cultural Concierge",
+          "Nordic Mixologist",
+          "Sustainability Ambassador"
+        ],
+        "staff_icebreaker_prompt": "Ask the front desk about their favorite hidden gem in the Meatpacking District.",
+        "team_aesthetic": "Contemporary Uniforms with Sustainable Accents & Approachable Elegance",
+        "warmth_verdict": "Genuine Hospitality — Personalized & Welcoming"
+      },
+      "insider_secrets": {
+        "insider_badge": "Local Regular Lore & Architectural Explorer",
+        "off_menu_perk": "Inquire about the 'Post Office Punch' at the bar, a nod to the building's history.",
+        "secret_lore": "The hotel's stunning courtyard pool is heated using excess energy from the building, a testament to its commitment to sustainability. It's a true urban oasis, especially during the colder months.",
+        "secret_title": "The Sustainable Rooftop Pool Oasis"
+      },
+      "temporal_dynamics": {
+        "best_time_to_visit": "3:00 PM for a relaxed dip in the rooftop pool; 7:00 PM for a lively dinner at the restaurant and social buzz in the lobby.",
+        "content_readiness": {
+          "aesthetic_subculture": "Nordic Chic & Sustainable Luxury",
+          "flattery_note": "Your content will effortlessly capture the blend of historic grandeur and modern, conscious living.",
+          "score": 0.9,
+          "top_creator_spot": "The glass-roofed lobby atrium and the heated rooftop pool.",
+          "verdict": "Highly Instagrammable & Story-Rich"
+        },
+        "diurnal_rhythm": {
+          "chilling": {
+            "focus": "Rooftop pool relaxation & lobby lounge tranquility",
+            "score": 0.8,
+            "window": "10:00 AM - 4:00 PM"
+          },
+          "playing": {
+            "focus": "Social dining, cocktail hour, and cultural events",
+            "score": 0.9,
+            "window": "6:00 PM - 11:00 PM"
+          },
+          "working": {
+            "focus": "Co-working in the lobby, quiet corners for focus",
+            "score": 0.6,
+            "window": "9:00 AM - 5:00 PM"
+          }
+        },
+        "peak_atmospheric_window": "Late Afternoon Golden Hour & Evening Social Buzz"
+      }
+    },
+    "interactive_quiz_challenge": {
+      "target_scene_id": 1,
+      "scene_name": "Villa Copenhagen Rooftop Pool",
+      "mission_title": "The Sustainable Splash",
+      "question": "Villa Copenhagen's rooftop pool is a unique urban oasis. What makes it particularly special and aligned with Copenhagen's values?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It's the only rooftop pool in Copenhagen."
+        },
+        {
+          "id": "B",
+          "text": "It's heated using excess energy from the building."
+        },
+        {
+          "id": "C",
+          "text": "It's filled with seawater directly from the harbor."
+        },
+        {
+          "id": "D",
+          "text": "It features a swim-up bar with local craft beers."
+        }
+      ],
+      "correct_option_id": "B",
+      "success_lore_reveal": "Correct! The rooftop pool at Villa Copenhagen is a testament to sustainable luxury, heated by the building's excess energy, offering a warm dip even on cooler days while minimizing environmental impact. It's a true urban sanctuary with a conscience.",
+      "reward_badge": "Eco-Conscious Explorer",
+      "challenge_prompt": "Discover the hidden sustainable gem of Villa Copenhagen!",
+      "reward_spotify_uri": "spotify:playlist:37i9dQZF1DXcBWIGoYBM5M"
+    },
+    "ota_conversion_audit": {
+      "channel": "Booking.com",
+      "before_merchandising_score": 45,
+      "after_merchandising_score": 95,
+      "projected_conversion_uplift": "+22.0%",
+      "current_drop_off_flaw": "Lack of immediate visual impact for key cultural magnets and poor sequencing that buries unique selling points.",
+      "key_strategic_shifts": [
+        "Showcase the a bar in Slot #4 to highlight the hotel's distinctive atmosphere and social appeal.",
+        "Re-sequence the grand exterior facade to Slot #2 to quickly ground location and showcase the hotel's historic architectural prestige.",
+        "Prioritize showcasing the vibrant social dining and bar scenes (Kontrast, Public) in Slot #4 to align with Vesterbro's strong culinary and nightlife subcultures.",
+        "Introduce a high-quality guest bathroom photo in Slot #5 to address luxury traveler expectations for hygiene and design consistency."
+      ],
+      "optimal_5_photo_sequence": [
+        {
+          "slot": 1,
+          "category": "OUTDOOR_SOCIAL_POOL",
+          "photo_subject": "Resort Swimming Pool & Lifestyle Cabana Deck",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/262226850.jpg?k=781d48e03bb93653c2003a28f987c0d0ee0d7f30a4114f7fc3a446b688b4d479&o=",
+          "why_it_converts": "Showcasing the hotel's signature outdoor pool and day club atmosphere captures high-intent social travel demand and accelerates premium weekend leisure conversions.",
+          "upgrade_rationale": "Showcasing the hotel's signature outdoor pool and day club atmosphere captures high-intent social travel demand and accelerates premium weekend leisure conversions.",
+          "bullet_points": [
+            "Visual Upgrade: This photo captures the unique, heated rooftop pool with clear blue skies and the city skyline, immediately conveying a luxurious and sustainable urban oasis.",
+            "Local Synergy: Directly aligns with Copenhagen's strong focus on wellness, unique experiences, and sustainable living, a top search driver for Vesterbro travelers.",
+            "Conversion Trigger: Instantly communicates a distinctive, high-value amenity that differentiates the property from competitors and offers a year-round escape."
+          ],
+          "psychological_conversion_trigger": "This image immediately hooks travelers seeking unique, design-forward wellness experiences and sustainable luxury, a prime motivator for booking in Copenhagen.",
+          "recommended_trigger": "This image immediately hooks travelers seeking unique, design-forward wellness experiences and sustainable luxury, a prime motivator for booking in Copenhagen.",
+          "current_slot": 2,
+          "is_retained": false,
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "ELEVATE_POOL",
+          "action_label": "⚡ HERO LIFESTYLE SANCTUARY: PROMOTE POOL FROM SLOT #2",
+          "source_display_label": "Was: Slot #2 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 2,
+            "title": "a swimming pool in front of a brick building at Villa Copenhagen in Copenhagen",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/262226850.jpg?k=781d48e03bb93653c2003a28f987c0d0ee0d7f30a4114f7fc3a446b688b4d479&o=",
+            "photoId": "262226850",
+            "sourceUrl": "https://www.booking.com/hotel/dk/villa-copenhagen-kobenhavn.html?lang=en-us&chal_t=1792580197798&force_referer="
+          }
+        },
+        {
+          "slot": 2,
+          "category": "EXTERIOR_LANDMARK",
+          "photo_subject": "Grand Historic Facade of Villa Copenhagen",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/374445283.jpg?k=dd1c5643f60978c092795c67b73d6dc27c9c200e5081a23cce543c0f74ccbc19&o=",
+          "why_it_converts": "Establishing definitive architectural prestige and iconic street presence builds instant brand credibility.",
+          "upgrade_rationale": "Establishing definitive architectural prestige and iconic street presence builds instant brand credibility.",
+          "bullet_points": [
+            "Strategic Placement: Moving the grand exterior to Slot #2 immediately grounds the guest's location, showcasing the hotel's impressive architecture and historical significance right after the initial hook.",
+            "Local Synergy: Highlights the hotel's integration into Copenhagen's urban fabric, appealing to travelers who value historic charm and architectural beauty in their accommodation.",
+            "Conversion Trigger: Resolves location anxiety and reinforces the property's prestige and sense of place, building trust and desire."
+          ],
+          "psychological_conversion_trigger": "By presenting the impressive exterior facade in Slot 2, the hotel immediately establishes its landmark status and prime location, satisfying the traveler's need for orientation and prestige.",
+          "recommended_trigger": "By presenting the impressive exterior facade in Slot 2, the hotel immediately establishes its landmark status and prime location, satisfying the traveler's need for orientation and prestige.",
+          "current_slot": 4,
+          "is_retained": false,
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "PROMOTE",
+          "action_label": "PROMOTE FROM SLOT #4",
+          "source_display_label": "Was: Slot #4 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 4,
+            "title": "a large brick building with a cross on top of it at Villa Copenhagen in Copenhagen",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/374445283.jpg?k=dd1c5643f60978c092795c67b73d6dc27c9c200e5081a23cce543c0f74ccbc19&o=",
+            "photoId": "374445283",
+            "sourceUrl": "https://www.booking.com/hotel/dk/villa-copenhagen-kobenhavn.html?lang=en-us&chal_t=1792580197798&force_referer="
+          }
+        },
+        {
+          "slot": 3,
+          "category": "SIGNATURE_SUITE_BEDROOM",
+          "photo_subject": "Signature King Bedroom with Curated Textural Finishes & Ambient Lighting",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/276085364.jpg?k=43ea73caea81659d9f9f09503d0a4647f0f212fcb83d7f0aeee33a50076eb188&o=&hp=1",
+          "why_it_converts": "Showcasing high-finish private sleeping accommodations assures travelers of restful luxury and elevated comfort.",
+          "upgrade_rationale": "Showcasing high-finish private sleeping accommodations assures travelers of restful luxury and elevated comfort.",
+          "bullet_points": [
+            "Strategic Placement: Showcases the comfort and design aesthetic of a typical guest room, setting expectations for interior quality.",
+            "Local Synergy: Reflects the Nordic design principles of comfort and functionality, resonating with travelers seeking authentic Scandinavian experiences.",
+            "Conversion Trigger: Allows potential guests to visualize themselves in the space, confirming the quality and style of their private sanctuary."
+          ],
+          "psychological_conversion_trigger": "This image allows travelers to envision their personal space, confirming the hotel's commitment to comfort, design, and a restful stay, crucial for high-ADR bookings.",
+          "recommended_trigger": "This image allows travelers to envision their personal space, confirming the hotel's commitment to comfort, design, and a restful stay, crucial for high-ADR bookings.",
+          "current_slot": 15,
+          "is_retained": false,
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "PROMOTE",
+          "action_label": "PROMOTE FROM SLOT #15",
+          "source_display_label": "Was: Slot #15 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 15,
+            "title": "a bedroom with a bed and a mirror at Villa Copenhagen in Copenhagen",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/276085364.jpg?k=43ea73caea81659d9f9f09503d0a4647f0f212fcb83d7f0aeee33a50076eb188&o=&hp=1",
+            "photoId": "276085364",
+            "sourceUrl": "https://www.booking.com/hotel/dk/villa-copenhagen-kobenhavn.html?lang=en-us&chal_t=1792580197798&force_referer="
+          }
+        },
+        {
+          "slot": 4,
+          "category": "SOCIAL_FB_ROOFTOP",
+          "photo_subject": "a bar",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/374445455.jpg?k=8728ddd207836ef406223f844cbc48861aa3819540beae15a8b92ee0f964cf6b&o=&hp=1",
+          "why_it_converts": "Showcasing destination culinary programming elevates property perception and captures high-spend leisure travelers visiting Copenhagen.",
+          "upgrade_rationale": "Showcasing destination culinary programming elevates property perception and captures high-spend leisure travelers visiting Copenhagen.",
+          "bullet_points": [
+            "Visual Upgrade: Atmospheric culinary perspective showing ambient lighting and curated seating.",
+            "Local Synergy: Anchors the property within the destination's acclaimed dining circuit.",
+            "Conversion Trigger: Stimulates social anticipation and validates on-property lifestyle experiences."
+          ],
+          "psychological_conversion_trigger": "Destination Gastronomy & Evening Social Gravitas",
+          "recommended_trigger": "Destination Gastronomy & Evening Social Gravitas",
+          "current_slot": 10,
+          "is_retained": false,
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "PROMOTE",
+          "action_label": "PROMOTE FROM SLOT #10",
+          "source_display_label": "Was: Slot #10 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 10,
+            "title": "a bar at a restaurant with stools at Villa Copenhagen in Copenhagen",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/374445455.jpg?k=8728ddd207836ef406223f844cbc48861aa3819540beae15a8b92ee0f964cf6b&o=&hp=1",
+            "photoId": "374445455",
+            "sourceUrl": "https://www.booking.com/hotel/dk/villa-copenhagen-kobenhavn.html?lang=en-us&chal_t=1792580197798&force_referer="
+          }
+        },
+        {
+          "slot": 5,
+          "category": "SECONDARY_ROOM_BATHROOM",
+          "photo_subject": "Modern Guest Bathroom with Tub and Sink",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/267758327.jpg?k=bc4b106fab3587d472441d6295f4e6e52ecfb54ffe8b684dbe1535638e21a7cc&o=&hp=1",
+          "why_it_converts": "Showcasing immaculate private bathroom finishes and walk-in rain showers resolves hygiene anxiety and completes the luxury perception.",
+          "upgrade_rationale": "Showcasing immaculate private bathroom finishes and walk-in rain showers resolves hygiene anxiety and completes the luxury perception.",
+          "bullet_points": [
+            "Strategic Placement: Addresses a critical conversion point for luxury travelers by showcasing the cleanliness, design, and amenities of the private bathroom.",
+            "Local Synergy: Aligns with Copenhagen's reputation for functional and aesthetically pleasing design, even in private spaces.",
+            "Conversion Trigger: Reassures guests about hygiene standards and the quality of private facilities, a common concern that can impact booking decisions."
+          ],
+          "psychological_conversion_trigger": "A high-quality bathroom image is crucial for luxury travelers, signaling attention to detail, hygiene, and comfort, which directly impacts booking confidence.",
+          "recommended_trigger": "A high-quality bathroom image is crucial for luxury travelers, signaling attention to detail, hygiene, and comfort, which directly impacts booking confidence.",
+          "current_slot": 25,
+          "is_retained": false,
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "PROMOTE",
+          "action_label": "PROMOTE FROM SLOT #25",
+          "source_display_label": "Was: Slot #25 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 25,
+            "title": "a bathroom with a tub and a sink and a mirror at Villa Copenhagen in Copenhagen",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/267758327.jpg?k=bc4b106fab3587d472441d6295f4e6e52ecfb54ffe8b684dbe1535638e21a7cc&o=&hp=1",
+            "photoId": "267758327",
+            "sourceUrl": "https://www.booking.com/hotel/dk/villa-copenhagen-kobenhavn.html?lang=en-us&chal_t=1792580197798&force_referer="
+          }
+        }
+      ],
+      "anti_commodity_copy_rewrite": {
+        "ota_headline": "Villa Copenhagen: Historic Grandeur & Sustainable Nordic Luxury in Vesterbro",
+        "property_overview_150_words": "Experience Villa Copenhagen, a magnificent architectural landmark transformed from a historic post office into a vibrant, sustainable hotel in the heart of Vesterbro. Discover a unique blend of classic elegance and contemporary Nordic design, from our iconic heated rooftop pool to our dynamic social spaces. Immerse yourself in Copenhagen's creative pulse, with easy access to Tivoli Gardens and the Meatpacking District's culinary delights. Villa Copenhagen offers a conscious luxury experience, where heritage meets innovation, inviting you to connect with the city's authentic spirit."
+      },
+      "photographic_gap_analysis": [
+        {
+          "missing_shot_title": "Twilight Rooftop Pool & Cityscape",
+          "category": "ATMOSPHERIC_TWILIGHT",
+          "why_needed": "Currently, the rooftop pool photos are only in daylight. A twilight shot would capture the romantic and sophisticated evening ambiance, appealing to couples and those seeking unique evening experiences, which is a significant unmet search demand.",
+          "recommended_framing_and_lighting": "Wide-angle shot capturing the illuminated pool with the city lights in the background, warm ambient lighting (2700K) on the pool deck, with subtle steam rising from the heated water.",
+          "projected_adr_impact": "+10% higher booking conversion for romantic getaways and evening experience seekers."
+        },
+        {
+          "missing_shot_title": "Dynamic Culinary Scene at Kontrast Restaurant",
+          "category": "CULINARY_SOCIAL",
+          "why_needed": "While there are bar photos, a dedicated shot of the main restaurant, Kontrast, showcasing its vibrant dining atmosphere, plated dishes, and guest interaction is missing. This would capture the strong culinary search demand in Vesterbro.",
+          "recommended_framing_and_lighting": "Eye-level shot of a beautifully set table with artfully plated dishes, soft, warm overhead lighting (2400K), with blurred background of other diners to convey a lively yet intimate atmosphere.",
+          "projected_adr_impact": "+8% increase in F&B revenue and enhanced direct booking appeal for foodies."
+        },
+        {
+          "missing_shot_title": "Cozy Lobby Nooks & Co-working Spaces",
+          "category": "SECONDARY_LIFESTYLE_SANCTUARY",
+          "why_needed": "The current lobby photos are grand but don't highlight the inviting, smaller nooks or co-working areas. Many travelers seek comfortable, inspiring spaces for remote work or relaxed socializing beyond their rooms.",
+          "recommended_framing_and_lighting": "Medium shot focusing on a comfortable seating area with a laptop or book, natural light from the glass ceiling, and warm task lighting, conveying productivity and relaxation.",
+          "projected_adr_impact": "+5% increase in bookings from business travelers and digital nomads seeking versatile spaces."
+        }
+      ],
+      "conversion_diagnosis": "Villa Copenhagen suffers from a commodity visual sequence that fails to highlight its unique cultural magnets and sustainable luxury. The current photo order does not effectively tell the story of its historic grandeur, vibrant social scene, or its standout rooftop pool, leading to missed conversion opportunities, especially for travelers seeking authentic local experiences and wellness.",
+      "local_vibe_synergy_context": "Vesterbro is a dynamic district known for its creative energy, culinary innovation, and a strong emphasis on sustainable living and design. The recommended photo sequence strategically leverages the hotel's heated rooftop pool (wellness/sustainability), its historic facade (architectural heritage), and its vibrant bar/dining scenes (culinary/social hub) to directly align with these top traveler search intents. By showcasing these elements prominently, Villa Copenhagen is positioned as an authentic and desirable destination within Copenhagen's most sought-after neighborhood subcultures.",
+      "slot_1_decision_logic": {
+        "is_magnet_override_active": true,
+        "reasoning_code": "NAI_HIGH_DESTINATION_POWER_CLARITY",
+        "strategy_explanation": "The heated rooftop pool at Villa Copenhagen is a truly unique and high-impact cultural magnet. It scores high on Neighborhood Affinity (NAI >= 0.85) as Copenhagen and Vesterbro travelers actively seek unique wellness and sustainable experiences. It is a destination in its own right, visually clear, and immediately differentiates the property. Therefore, a MAGNET OVERRIDE is activated to place this asset in Slot #1, followed by the exterior landmark in Slot #2 for grounding.",
+        "neighborhood_affinity_index": 0.92,
+        "override_asset_name": "Heated Rooftop Pool with City Views"
+      },
+      "is_listed_on_booking": true,
+      "listing_status": "ACTIVE_ON_BOOKING",
+      "live_photos": [
+        {
+          "slot": 1,
+          "title": "a lobby with two chairs and a table and plants at Villa Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/374445278.jpg?k=02414bf83d752026e1ca4789373fb3a8261a4a9f78573885b1dc57f9c3305293&o=",
+          "photoId": "374445278",
+          "sourceUrl": "https://www.booking.com/hotel/dk/villa-copenhagen-kobenhavn.html?lang=en-us&chal_t=1792580197798&force_referer="
+        },
+        {
+          "slot": 2,
+          "title": "a swimming pool in front of a brick building at Villa Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/262226850.jpg?k=781d48e03bb93653c2003a28f987c0d0ee0d7f30a4114f7fc3a446b688b4d479&o=",
+          "photoId": "262226850",
+          "sourceUrl": "https://www.booking.com/hotel/dk/villa-copenhagen-kobenhavn.html?lang=en-us&chal_t=1792580197798&force_referer="
+        },
+        {
+          "slot": 3,
+          "title": "an empty swimming pool with a building in the background at Villa Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/417697917.jpg?k=1e286ff9de291dbb3cad0df4ce0702b300d000479209b7dec6fe45a4900bec5f&o=",
+          "photoId": "417697917",
+          "sourceUrl": "https://www.booking.com/hotel/dk/villa-copenhagen-kobenhavn.html?lang=en-us&chal_t=1792580197798&force_referer="
+        },
+        {
+          "slot": 4,
+          "title": "a large brick building with a cross on top of it at Villa Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/374445283.jpg?k=dd1c5643f60978c092795c67b73d6dc27c9c200e5081a23cce543c0f74ccbc19&o=",
+          "photoId": "374445283",
+          "sourceUrl": "https://www.booking.com/hotel/dk/villa-copenhagen-kobenhavn.html?lang=en-us&chal_t=1792580197798&force_referer="
+        },
+        {
+          "slot": 5,
+          "title": "a large building with a tower on top of it at Villa Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/221867022.jpg?k=c29200b7b42c78a8293e2c17f4ad6f9c3d8edc67c3a03a6a814ac2e3188d234a&o=",
+          "photoId": "221867022",
+          "sourceUrl": "https://www.booking.com/hotel/dk/villa-copenhagen-kobenhavn.html?lang=en-us&chal_t=1792580197798&force_referer="
+        },
+        {
+          "slot": 6,
+          "title": "a lobby with a glass ceiling and tables and chairs at Villa Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/262226920.jpg?k=a9b1997de0f5138d5c64b8bb694dbb7f0401d3e7c7be598abc4f60072bc2d332&o=",
+          "photoId": "262226920",
+          "sourceUrl": "https://www.booking.com/hotel/dk/villa-copenhagen-kobenhavn.html?lang=en-us&chal_t=1792580197798&force_referer="
+        },
+        {
+          "slot": 7,
+          "title": "a statue of a woman with her finger in her mouth at Villa Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/262226924.jpg?k=c23cd4d66e5761ade449e28277ef82f57870820feacbe8e5474598762e02e353&o=",
+          "photoId": "262226924",
+          "sourceUrl": "https://www.booking.com/hotel/dk/villa-copenhagen-kobenhavn.html?lang=en-us&chal_t=1792580197798&force_referer="
+        },
+        {
+          "slot": 8,
+          "title": "a man sitting at a desk with a laptop at Villa Copenhagen in Copenhagen +69 photos",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/374445303.jpg?k=f66eb12de945a3a3c90b3cac29dc8d3d1f1985419d09c06fc45adf7078ef9f29&o=",
+          "photoId": "374445303",
+          "sourceUrl": "https://www.booking.com/hotel/dk/villa-copenhagen-kobenhavn.html?lang=en-us&chal_t=1792580197798&force_referer="
+        },
+        {
+          "slot": 9,
+          "title": "a large swimming pool in a city with buildings at Villa Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/277346700.jpg?k=df8e4ec28f50ee1efaaae53e78d24b2934e588f4cc66cad19a615dbe08781b79&o=&hp=1",
+          "photoId": "277346700",
+          "sourceUrl": "https://www.booking.com/hotel/dk/villa-copenhagen-kobenhavn.html?lang=en-us&chal_t=1792580197798&force_referer="
+        },
+        {
+          "slot": 10,
+          "title": "a bar at a restaurant with stools at Villa Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/374445455.jpg?k=8728ddd207836ef406223f844cbc48861aa3819540beae15a8b92ee0f964cf6b&o=&hp=1",
+          "photoId": "374445455",
+          "sourceUrl": "https://www.booking.com/hotel/dk/villa-copenhagen-kobenhavn.html?lang=en-us&chal_t=1792580197798&force_referer="
+        },
+        {
+          "slot": 11,
+          "title": "a restaurant with red chairs and a bar at Villa Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/262226867.jpg?k=38a108294ed6a0ffa6dc6e8c6fbf34d8529dcffa85f76f67d2858d5cbfbfdbfb&o=&hp=1",
+          "photoId": "262226867",
+          "sourceUrl": "https://www.booking.com/hotel/dk/villa-copenhagen-kobenhavn.html?lang=en-us&chal_t=1792580197798&force_referer="
+        },
+        {
+          "slot": 12,
+          "title": "a restaurant with red chairs and tables and glasses at Villa Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/374445357.jpg?k=b1c06cf15521cda879a36c290c60061dad9b2b4094bc39fc3287e8593ac4fe6d&o=&hp=1",
+          "photoId": "374445357",
+          "sourceUrl": "https://www.booking.com/hotel/dk/villa-copenhagen-kobenhavn.html?lang=en-us&chal_t=1792580197798&force_referer="
+        },
+        {
+          "slot": 13,
+          "title": "a hallway in a building with a ceiling at Villa Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/267758295.jpg?k=cbbd0a845989eb01515097e796b2980d54a70af18d3b3f759593770b3c2ebe2a&o=&hp=1",
+          "photoId": "267758295",
+          "sourceUrl": "https://www.booking.com/hotel/dk/villa-copenhagen-kobenhavn.html?lang=en-us&chal_t=1792580197798&force_referer="
+        },
+        {
+          "slot": 14,
+          "title": "a hallway in a building with lights on the walls at Villa Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/267758221.jpg?k=a8ad60afb561df4d318c886f04b05609cdfca7216aa4208dd995fb70c115b918&o=&hp=1",
+          "photoId": "267758221",
+          "sourceUrl": "https://www.booking.com/hotel/dk/villa-copenhagen-kobenhavn.html?lang=en-us&chal_t=1792580197798&force_referer="
+        },
+        {
+          "slot": 15,
+          "title": "a bedroom with a bed and a mirror at Villa Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/276085364.jpg?k=43ea73caea81659d9f9f09503d0a4647f0f212fcb83d7f0aeee33a50076eb188&o=&hp=1",
+          "photoId": "276085364",
+          "sourceUrl": "https://www.booking.com/hotel/dk/villa-copenhagen-kobenhavn.html?lang=en-us&chal_t=1792580197798&force_referer="
+        },
+        {
+          "slot": 16,
+          "title": "a living room with a couch and a table at Villa Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/267758251.jpg?k=3b05b305373a9f4f85407a84492fcbc530b4eb8f483a268f956d4462a3ab982b&o=&hp=1",
+          "photoId": "267758251",
+          "sourceUrl": "https://www.booking.com/hotel/dk/villa-copenhagen-kobenhavn.html?lang=en-us&chal_t=1792580197798&force_referer="
+        },
+        {
+          "slot": 17,
+          "title": "a bedroom with a bed and a chair and a window at Villa Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/267758261.jpg?k=cf6bae7227cac87ac8af6984a3d8873f94b95760e5e38e4ce9339b39c6c13a3d&o=&hp=1",
+          "photoId": "267758261",
+          "sourceUrl": "https://www.booking.com/hotel/dk/villa-copenhagen-kobenhavn.html?lang=en-us&chal_t=1792580197798&force_referer="
+        },
+        {
+          "slot": 18,
+          "title": "a bedroom with a bed and a desk with a mirror at Villa Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/267758267.jpg?k=aaab4e4c92aa5c6a6c4f417cd0577394a0ab278e4c2880c2fd8ffbeebea05e41&o=&hp=1",
+          "photoId": "267758267",
+          "sourceUrl": "https://www.booking.com/hotel/dk/villa-copenhagen-kobenhavn.html?lang=en-us&chal_t=1792580197798&force_referer="
+        },
+        {
+          "slot": 19,
+          "title": "a bedroom with a white bed and a window at Villa Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/267758279.jpg?k=53bc504e861551d45d89614139a1afeb90f52dc65684fbbf5e98c2ad2a68f6b4&o=&hp=1",
+          "photoId": "267758279",
+          "sourceUrl": "https://www.booking.com/hotel/dk/villa-copenhagen-kobenhavn.html?lang=en-us&chal_t=1792580197798&force_referer="
+        },
+        {
+          "slot": 20,
+          "title": "a living room with a couch and a table at Villa Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/267758282.jpg?k=c9f724cf3eba7c2d09a5241043220bfd597ddaaf336f1253140f2c2dd0242876&o=&hp=1",
+          "photoId": "267758282",
+          "sourceUrl": "https://www.booking.com/hotel/dk/villa-copenhagen-kobenhavn.html?lang=en-us&chal_t=1792580197798&force_referer="
+        },
+        {
+          "slot": 21,
+          "title": "a sauna with two windows and a bench in a room at Villa Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/267758203.jpg?k=95cb29950c94a0ce70299812c3da9c543e1b547ed1e5eca5d9df627371701818&o=&hp=1",
+          "photoId": "267758203",
+          "sourceUrl": "https://www.booking.com/hotel/dk/villa-copenhagen-kobenhavn.html?lang=en-us&chal_t=1792580197798&force_referer="
+        },
+        {
+          "slot": 22,
+          "title": "a gym with a row of treadms and machines at Villa Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/267758305.jpg?k=2ac9f60dba801efdcf87fff019ddb88cd8d1a89192134ee44956183c23ade3b6&o=&hp=1",
+          "photoId": "267758305",
+          "sourceUrl": "https://www.booking.com/hotel/dk/villa-copenhagen-kobenhavn.html?lang=en-us&chal_t=1792580197798&force_referer="
+        },
+        {
+          "slot": 23,
+          "title": "a gym with several treadmills and a row of exercise bikes at Villa Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/267758314.jpg?k=382940d0b03f1535069a800eb640593daacb18818bcf49515591c89f70b63854&o=&hp=1",
+          "photoId": "267758314",
+          "sourceUrl": "https://www.booking.com/hotel/dk/villa-copenhagen-kobenhavn.html?lang=en-us&chal_t=1792580197798&force_referer="
+        },
+        {
+          "slot": 24,
+          "title": "a white bed in a bedroom with a window at Villa Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/267758288.jpg?k=e47f95ff17eb73df8c0040522527bffade402fa9c30f8356a77ee9ade4d9d6b5&o=&hp=1",
+          "photoId": "267758288",
+          "sourceUrl": "https://www.booking.com/hotel/dk/villa-copenhagen-kobenhavn.html?lang=en-us&chal_t=1792580197798&force_referer="
+        },
+        {
+          "slot": 25,
+          "title": "a bathroom with a tub and a sink and a mirror at Villa Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/267758327.jpg?k=bc4b106fab3587d472441d6295f4e6e52ecfb54ffe8b684dbe1535638e21a7cc&o=&hp=1",
+          "photoId": "267758327",
+          "sourceUrl": "https://www.booking.com/hotel/dk/villa-copenhagen-kobenhavn.html?lang=en-us&chal_t=1792580197798&force_referer="
+        },
+        {
+          "slot": 26,
+          "title": "a hotel room with a bed and a window at Villa Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/267758338.jpg?k=f2d2a19ec34b4b2c8eb8565214af43108b6e5769e822d6695403a769075cf81d&o=&hp=1",
+          "photoId": "267758338",
+          "sourceUrl": "https://www.booking.com/hotel/dk/villa-copenhagen-kobenhavn.html?lang=en-us&chal_t=1792580197798&force_referer="
+        },
+        {
+          "slot": 27,
+          "title": "a chair with a lamp on a table next to a window at Villa Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/267758346.jpg?k=5b4515fe6bf6266972c9f99ecc5af20d1ab56434ab8e15aad9db879a93a3c251&o=&hp=1",
+          "photoId": "267758346",
+          "sourceUrl": "https://www.booking.com/hotel/dk/villa-copenhagen-kobenhavn.html?lang=en-us&chal_t=1792580197798&force_referer="
+        },
+        {
+          "slot": 28,
+          "title": "a table with a book and a glass on it at Villa Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/276086758.jpg?k=7278db8a32f57333cf0a97654730486d763e69e53c4aa432c5b352edfd077f1c&o=&hp=1",
+          "photoId": "276086758",
+          "sourceUrl": "https://www.booking.com/hotel/dk/villa-copenhagen-kobenhavn.html?lang=en-us&chal_t=1792580197798&force_referer="
+        },
+        {
+          "slot": 29,
+          "title": "a bedroom with a white bed with a black headboard at Villa Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/289601082.jpg?k=df81e6f1e74d7443482b01e01a8af45c71c85d37ef8b4e2ea4f9a10bf3d4d63a&o=&hp=1",
+          "photoId": "289601082",
+          "sourceUrl": "https://www.booking.com/hotel/dk/villa-copenhagen-kobenhavn.html?lang=en-us&chal_t=1792580197798&force_referer="
+        },
+        {
+          "slot": 30,
+          "title": "a counter with a toothbrush in a pot on a table at Villa Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/262229608.jpg?k=ec4ddea806d9baf010bdc37ff2cd9ea6e232805dce7d48f9da6c9db1e5c5acc5&o=&hp=1",
+          "photoId": "262229608",
+          "sourceUrl": "https://www.booking.com/hotel/dk/villa-copenhagen-kobenhavn.html?lang=en-us&chal_t=1792580197798&force_referer="
+        },
+        {
+          "slot": 31,
+          "title": "a living room with a couch and a table at Villa Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/252840001.jpg?k=074d008839f08d012c45fc63c39e9519f81ba67477d294e812865d95f30bf1d4&o=&hp=1",
+          "photoId": "252840001",
+          "sourceUrl": "https://www.booking.com/hotel/dk/villa-copenhagen-kobenhavn.html?lang=en-us&chal_t=1792580197798&force_referer="
+        },
+        {
+          "slot": 32,
+          "title": "a large swimming pool in front of a building at Villa Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/374445012.jpg?k=8bb9396862317c0a5e913171534e4caf7fa42e2f34c0f114091ff2d4738c0131&o=&hp=1",
+          "photoId": "374445012",
+          "sourceUrl": "https://www.booking.com/hotel/dk/villa-copenhagen-kobenhavn.html?lang=en-us&chal_t=1792580197798&force_referer="
+        },
+        {
+          "slot": 33,
+          "title": "a building with a flag on top of it at Villa Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/267758322.jpg?k=4928c733612f64fdd381076af8ef9092a9d3e40ed6dde7c15c53788fe354acbb&o=&hp=1",
+          "photoId": "267758322",
+          "sourceUrl": "https://www.booking.com/hotel/dk/villa-copenhagen-kobenhavn.html?lang=en-us&chal_t=1792580197798&force_referer="
+        },
+        {
+          "slot": 34,
+          "title": "a building with a clock tower on top of it at Villa Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/267758171.jpg?k=0703d3dddc0e4c46f61cac6c9b2b0e2bd9f3645b85f1147dfa84fec4318071cf&o=&hp=1",
+          "photoId": "267758171",
+          "sourceUrl": "https://www.booking.com/hotel/dk/villa-copenhagen-kobenhavn.html?lang=en-us&chal_t=1792580197798&force_referer="
+        },
+        {
+          "slot": 35,
+          "title": "an aerial view of a building with a roof at Villa Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/374447208.jpg?k=bd1f146ba73d1016f218c940fe604fdfb8ab904762e0f7b4ac994456a082cbfc&o=&hp=1",
+          "photoId": "374447208",
+          "sourceUrl": "https://www.booking.com/hotel/dk/villa-copenhagen-kobenhavn.html?lang=en-us&chal_t=1792580197798&force_referer="
+        },
+        {
+          "slot": 36,
+          "title": "a large red brick building with a lot of windows at Villa Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/262226915.jpg?k=0c396e7ca602abde4ad97a3477faa31771d3e8e79a846f613780763cac6e186f&o=&hp=1",
+          "photoId": "262226915",
+          "sourceUrl": "https://www.booking.com/hotel/dk/villa-copenhagen-kobenhavn.html?lang=en-us&chal_t=1792580197798&force_referer="
+        },
+        {
+          "slot": 37,
+          "title": "a row of tables and umbrellas next to a swimming pool at Villa Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/262226860.jpg?k=a76f67a38b001eb27c4fc6b83939b2b982244480e194ed744f66cfe4aa252a5d&o=&hp=1",
+          "photoId": "262226860",
+          "sourceUrl": "https://www.booking.com/hotel/dk/villa-copenhagen-kobenhavn.html?lang=en-us&chal_t=1792580197798&force_referer="
+        },
+        {
+          "slot": 38,
+          "title": "a store hallway with a large window and plants at Villa Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/267758226.jpg?k=2c011b8d2f73b46671d34ecc1c2c1661d4d6dec6f6c4204f12d1cb24a936a553&o=&hp=1",
+          "photoId": "267758226",
+          "sourceUrl": "https://www.booking.com/hotel/dk/villa-copenhagen-kobenhavn.html?lang=en-us&chal_t=1792580197798&force_referer="
+        },
+        {
+          "slot": 39,
+          "title": "a room with stairs and a large window at Villa Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/267758189.jpg?k=a00030830d95929e89ed06e684ea4415e650adda47a276a3e7201ae2c29943fd&o=&hp=1",
+          "photoId": "267758189",
+          "sourceUrl": "https://www.booking.com/hotel/dk/villa-copenhagen-kobenhavn.html?lang=en-us&chal_t=1792580197798&force_referer="
+        },
+        {
+          "slot": 40,
+          "title": "a hallway with wooden doors in a building at Villa Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/267758234.jpg?k=e31f079ec7a289dd8097d2ab211b9585190e5c276bb802739d9d63905b6139f0&o=&hp=1",
+          "photoId": "267758234",
+          "sourceUrl": "https://www.booking.com/hotel/dk/villa-copenhagen-kobenhavn.html?lang=en-us&chal_t=1792580197798&force_referer="
+        },
+        {
+          "slot": 41,
+          "title": "a staircase in a building with windows and a stair case at Villa Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/267758242.jpg?k=dedbf8c4bceaa43f28edac9dbb2556d222e667af0ddac9d8eca76c31e46fe676&o=&hp=1",
+          "photoId": "267758242",
+          "sourceUrl": "https://www.booking.com/hotel/dk/villa-copenhagen-kobenhavn.html?lang=en-us&chal_t=1792580197798&force_referer="
+        },
+        {
+          "slot": 42,
+          "title": "a wooden table topped with plates of food and coffee at Villa Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/262226844.jpg?k=a7a8f49364ffb07907bb3adc5d410d954ba6918b5ab35d4325fa8ee4d58159f2&o=&hp=1",
+          "photoId": "262226844",
+          "sourceUrl": "https://www.booking.com/hotel/dk/villa-copenhagen-kobenhavn.html?lang=en-us&chal_t=1792580197798&force_referer="
+        },
+        {
+          "slot": 43,
+          "title": "a restaurant with a bar with blue stools at Villa Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/262226905.jpg?k=f58bbd84e86ada11289848dee372a05cde2a8ade38abb6c091db06eaddb5d5e6&o=&hp=1",
+          "photoId": "262226905",
+          "sourceUrl": "https://www.booking.com/hotel/dk/villa-copenhagen-kobenhavn.html?lang=en-us&chal_t=1792580197798&force_referer="
+        },
+        {
+          "slot": 44,
+          "title": "a dining room with a long table with chairs and lights at Villa Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/262226896.jpg?k=0abab44db05786b2d49cb32a87bb139d0ca28195dd48c3524ea928a89063d7d1&o=&hp=1",
+          "photoId": "262226896",
+          "sourceUrl": "https://www.booking.com/hotel/dk/villa-copenhagen-kobenhavn.html?lang=en-us&chal_t=1792580197798&force_referer="
+        },
+        {
+          "slot": 45,
+          "title": "a restaurant with wooden tables and chairs and a kitchen at Villa Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/262226884.jpg?k=c28a35d6f33009b4b8cc84fdb3762e6a3f2844f1f7baf52805c4521a709438c7&o=&hp=1",
+          "photoId": "262226884",
+          "sourceUrl": "https://www.booking.com/hotel/dk/villa-copenhagen-kobenhavn.html?lang=en-us&chal_t=1792580197798&force_referer="
+        },
+        {
+          "slot": 46,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/374445278.jpg?k=02414bf83d752026e1ca4789373fb3a8261a4a9f78573885b1dc57f9c3305293&o=&hp=1",
+          "photoId": "8",
+          "sourceUrl": "https://www.booking.com/hotel/dk/villa-copenhagen-kobenhavn.html?lang=en-us&chal_t=1792580197798&force_referer="
+        },
+        {
+          "slot": 47,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/262226850.jpg?k=781d48e03bb93653c2003a28f987c0d0ee0d7f30a4114f7fc3a446b688b4d479&o=&hp=1",
+          "photoId": "0",
+          "sourceUrl": "https://www.booking.com/hotel/dk/villa-copenhagen-kobenhavn.html?lang=en-us&chal_t=1792580197798&force_referer="
+        },
+        {
+          "slot": 48,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/417697917.jpg?k=1e286ff9de291dbb3cad0df4ce0702b300d000479209b7dec6fe45a4900bec5f&o=&hp=1",
+          "photoId": "7",
+          "sourceUrl": "https://www.booking.com/hotel/dk/villa-copenhagen-kobenhavn.html?lang=en-us&chal_t=1792580197798&force_referer="
+        },
+        {
+          "slot": 49,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/374445283.jpg?k=dd1c5643f60978c092795c67b73d6dc27c9c200e5081a23cce543c0f74ccbc19&o=&hp=1",
+          "photoId": "3",
+          "sourceUrl": "https://www.booking.com/hotel/dk/villa-copenhagen-kobenhavn.html?lang=en-us&chal_t=1792580197798&force_referer="
+        },
+        {
+          "slot": 50,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/221867022.jpg?k=c29200b7b42c78a8293e2c17f4ad6f9c3d8edc67c3a03a6a814ac2e3188d234a&o=&hp=1",
+          "photoId": "2",
+          "sourceUrl": "https://www.booking.com/hotel/dk/villa-copenhagen-kobenhavn.html?lang=en-us&chal_t=1792580197798&force_referer="
+        },
+        {
+          "slot": 51,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/262226924.jpg?k=c23cd4d66e5761ade449e28277ef82f57870820feacbe8e5474598762e02e353&o=&hp=1",
+          "photoId": "4",
+          "sourceUrl": "https://www.booking.com/hotel/dk/villa-copenhagen-kobenhavn.html?lang=en-us&chal_t=1792580197798&force_referer="
+        },
+        {
+          "slot": 52,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/374445455.jpg?k=8728ddd207836ef406223f844cbc48861aa3819540beae15a8b92ee0f964cf6b&o=&hp=1",
+          "photoId": "5",
+          "sourceUrl": "https://www.booking.com/hotel/dk/villa-copenhagen-kobenhavn.html?lang=en-us&chal_t=1792580197798&force_referer="
+        },
+        {
+          "slot": 53,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/267758221.jpg?k=a8ad60afb561df4d318c886f04b05609cdfca7216aa4208dd995fb70c115b918&o=&hp=1",
+          "photoId": "1",
+          "sourceUrl": "https://www.booking.com/hotel/dk/villa-copenhagen-kobenhavn.html?lang=en-us&chal_t=1792580197798&force_referer="
+        },
+        {
+          "slot": 54,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/267758279.jpg?k=53bc504e861551d45d89614139a1afeb90f52dc65684fbbf5e98c2ad2a68f6b4&o=&hp=1",
+          "photoId": "9",
+          "sourceUrl": "https://www.booking.com/hotel/dk/villa-copenhagen-kobenhavn.html?lang=en-us&chal_t=1792580197798&force_referer="
+        },
+        {
+          "slot": 55,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/267758346.jpg?k=5b4515fe6bf6266972c9f99ecc5af20d1ab56434ab8e15aad9db879a93a3c251&o=&hp=1",
+          "photoId": "6",
+          "sourceUrl": "https://www.booking.com/hotel/dk/villa-copenhagen-kobenhavn.html?lang=en-us&chal_t=1792580197798&force_referer="
+        }
+      ],
+      "photos_status": "RESOLVED"
+    },
+    "audit_timestamp": "2026-10-21T10:56:44.075Z"
+  }
+}

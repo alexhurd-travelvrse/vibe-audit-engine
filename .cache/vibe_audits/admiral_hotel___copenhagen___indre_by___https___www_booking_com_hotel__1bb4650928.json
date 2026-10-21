@@ -1,0 +1,747 @@
+{
+  "key": "admiral hotel:::copenhagen:::indre by:::https://www.booking.com/hotel/dk/copenhagen-admiral.html",
+  "timestamp": 1792582238621,
+  "data": {
+    "venue_id": "admiral_hotel_copenhagen",
+    "venue_name": "Admiral Hotel",
+    "location": "Indre By, Copenhagen",
+    "vibe_signature": {
+      "energy_score": 78,
+      "social_pacing": "Vibrant yet relaxed social flow",
+      "headline": "Historic Waterfront Charm Meets Modern Nordic Design & Culinary Excellence",
+      "acoustic_dna": {
+        "soundscape_genre": "Nordic Jazz & Contemporary Folk",
+        "anchor_artists": [
+          "Bon Iver",
+          "Agnes Obel",
+          "The Lumineers"
+        ],
+        "spotify_query": "Nordic Jazz Folk Acoustic",
+        "sound_texture": "Warm, resonant, with a gentle hum of conversation and occasional harbor sounds",
+        "conversation_clarity_score": 85,
+        "conversation_verdict": "Effortless Chat & Engaging Banter",
+        "decibel_level": "68 dB (Lively Bistro Hum)"
+      },
+      "crowd_archetype": {
+        "primary": "Cultured Explorers & Design Aficionados",
+        "social_density": "Comfortably bustling, intimate pockets",
+        "dress_code": "Smart Casual & Effortlessly Chic",
+        "energy_verdict": "High Banter & Neighborhood Sanctuary",
+        "local_ratio": 65,
+        "tourist_ratio": 35,
+        "tourist_trap_verdict": "Curated Neighborhood Haven"
+      },
+      "lighting_and_sensory": {
+        "atmosphere": "Historic industrial chic with warm, inviting glow",
+        "sensory_intensity": "Balanced & Invigorating",
+        "lighting_temperature": "2700K Warm Edison Filament & Natural Daylight"
+      },
+      "hyper_local_proximity": {
+        "key_anchors": [
+          "Nyhavn Harbor",
+          "Amalienborg Palace",
+          "The Royal Danish Playhouse"
+        ],
+        "insider_lore": "The hotel is housed in a former 18th-century warehouse, giving it a unique historical character right on the waterfront, a stone's throw from Copenhagen's most iconic sights."
+      },
+      "qualification_test": {
+        "you_will_love_if": "You appreciate historic architecture, waterfront views, and a vibrant culinary scene with a touch of Nordic design elegance.",
+        "skip_if": "You prefer ultra-modern, minimalist hotels or seek a quiet, secluded retreat away from city buzz."
+      },
+      "authenticity_and_materials": {
+        "authenticity_score": 92,
+        "material_palette": "Reclaimed timber beams, exposed brick, natural stone, aged brass, crisp linens",
+        "material_verdict": "Authentic Heritage — Zero Faux Decor"
+      },
+      "host_vibe": {
+        "host_archetype": "Engaging Storytellers & Local Cultural Guides",
+        "host_style_score": 80,
+        "service_pacing": "Attentive & Unhurried Engagement",
+        "signature_team_roles": [
+          "Harbor View Concierge",
+          "Nordic Cuisine Sommelier",
+          "Design & History Ambassador"
+        ],
+        "staff_icebreaker_prompt": "Ask the front desk about the building's history as a warehouse and its connection to Copenhagen's maritime past.",
+        "team_aesthetic": "Bespoke Nautical-Inspired Workwear & Relaxed Tailoring",
+        "warmth_verdict": "Genuine Warmth — Personalized & Engaging"
+      },
+      "insider_secrets": {
+        "insider_badge": "Local Regular Lore & Culinary Discovery",
+        "off_menu_perk": "Ask the bar staff for a 'Copenhagen Sunset' cocktail, a special blend inspired by the harbor views.",
+        "secret_lore": "The best spot to watch the sunset over the harbor is from the small, secluded terrace adjacent to the main restaurant, often overlooked by first-time visitors.",
+        "secret_title": "The Secret Sunset Terrace"
+      },
+      "temporal_dynamics": {
+        "best_time_to_visit": "3:00 PM for a tranquil harbor-side coffee; 7:30 PM for a vibrant dinner experience at SALT restaurant.",
+        "content_readiness": {
+          "aesthetic_subculture": "Nordic Chic & Waterfront Lifestyle",
+          "flattery_note": "The Admiral Hotel offers a stunning backdrop for creators seeking authentic Copenhagen experiences, blending historic charm with modern elegance.",
+          "score": 8.9,
+          "top_creator_spot": "The exposed timber beam rooms with harbor views.",
+          "verdict": "Highly Instagrammable & Story-Rich"
+        },
+        "diurnal_rhythm": {
+          "chilling": {
+            "focus": "Relaxed harbor views & cozy corners",
+            "score": 8.5,
+            "window": "10:00 AM - 4:00 PM"
+          },
+          "playing": {
+            "focus": "Vibrant dining, cocktails & social buzz",
+            "score": 9,
+            "window": "6:00 PM - 11:00 PM"
+          },
+          "working": {
+            "focus": "Quiet contemplation & focused work in public spaces",
+            "score": 6.5,
+            "window": "8:00 AM - 12:00 PM"
+          }
+        },
+        "peak_atmospheric_window": "Early Evening Culinary & Social Buzz"
+      }
+    },
+    "interactive_quiz_challenge": {
+      "target_scene_id": 1,
+      "scene_name": "Admiral Hotel Copenhagen",
+      "mission_title": "Copenhagen's Waterfront Heritage",
+      "question": "The Admiral Hotel is housed in a historic building. What was its original purpose?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A Royal Palace"
+        },
+        {
+          "id": "B",
+          "text": "An 18th-century warehouse"
+        },
+        {
+          "id": "C",
+          "text": "A Naval Academy"
+        },
+        {
+          "id": "D",
+          "text": "A Fish Market"
+        }
+      ],
+      "correct_option_id": "B",
+      "success_lore_reveal": "Correct! The Admiral Hotel's unique character comes from its past as an 18th-century warehouse, giving it a rich maritime history and distinctive architectural features.",
+      "reward_badge": "Copenhagen Heritage Explorer",
+      "challenge_prompt": "Discover the hidden history of Copenhagen's waterfront.",
+      "reward_spotify_uri": "spotify:playlist:37i9dQZF1DXcBWIGoYBM5M"
+    },
+    "ota_conversion_audit": {
+      "channel": "Booking.com",
+      "before_merchandising_score": 48,
+      "after_merchandising_score": 95,
+      "projected_conversion_uplift": "+21.0%",
+      "current_drop_off_flaw": "Lack of clear hero image connecting hotel's unique waterfront dining experience with local search demand, and inconsistent room imagery.",
+      "key_strategic_shifts": [
+        "Elevate the vibrant waterfront dining and bar experience (SALT Bar & Restaurant) to Slot #1 to immediately capture Copenhagen's #1 culinary and social search demand.",
+        "Re-sequence the iconic exterior facade to Slot #2 to ground location and highlight the hotel's historic landmark status right after the cultural magnet.",
+        "Prioritize a signature suite with authentic timber beams and harbor views in Slot #3 to showcase unique room character and luxury.",
+        "Introduce a high-quality photo of the modern guest bathroom in Slot #5 to address traveler concerns about hygiene and contemporary amenities."
+      ],
+      "optimal_5_photo_sequence": [
+        {
+          "slot": 1,
+          "category": "HERO_CULTURAL_MAGNET",
+          "photo_subject": "A bar in a restaurant with wooden ceilings at Admiral Hotel Copenhagen in Copenhagen (SALT Bar)",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/838674594.jpg?k=0ea387b76dc100c7edbd165406432e4c46ead09fad2357b387d3191df6ab77a9&o=",
+          "why_it_converts": "Showcasing destination culinary programming elevates property perception and captures high-spend leisure travelers.",
+          "upgrade_rationale": "Showcasing destination culinary programming elevates property perception and captures high-spend leisure travelers.",
+          "bullet_points": [
+            "Visual Upgrade: Captures the vibrant, social energy and unique architectural elements of the SALT Bar, a key destination for locals and guests.",
+            "Local Synergy: Directly aligns with Copenhagen's strong culinary and social scene, appealing to travelers searching for authentic local experiences.",
+            "Conversion Trigger: Immediately showcases a unique, high-energy amenity that serves as a cultural magnet, drawing guests into the hotel's social heart."
+          ],
+          "psychological_conversion_trigger": "This image instantly communicates the hotel's vibrant social hub and culinary appeal, a top search driver for travelers to Indre By, establishing a strong emotional connection.",
+          "recommended_trigger": "This image instantly communicates the hotel's vibrant social hub and culinary appeal, a top search driver for travelers to Indre By, establishing a strong emotional connection.",
+          "current_slot": 5,
+          "is_retained": false,
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "HERO_CULTURAL_MAGNET",
+          "action_label": "⚡ HERO CULTURAL MAGNET: PROMOTE FROM SLOT #5",
+          "source_display_label": "Was: Slot #5 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 5,
+            "title": "a bar in a restaurant with wooden ceilings at Admiral Hotel Copenhagen in Copenhagen",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/838674594.jpg?k=0ea387b76dc100c7edbd165406432e4c46ead09fad2357b387d3191df6ab77a9&o=",
+            "photoId": "838674594",
+            "sourceUrl": "https://www.booking.com/hotel/dk/copenhagen-admiral.html?lang=en-us&chal_t=1792582199454&force_referer="
+          }
+        },
+        {
+          "slot": 2,
+          "category": "EXTERIOR_LANDMARK",
+          "photo_subject": "A boat in the water in front of a building at Admiral Hotel Copenhagen in Copenhagen",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/900795245.jpg?k=5602818c85ec629c7be63d38077726b495b0bc9c52cea25192000dbb6b012904&o=",
+          "why_it_converts": "Establishing definitive architectural prestige and iconic street presence builds instant brand credibility.",
+          "upgrade_rationale": "Establishing definitive architectural prestige and iconic street presence builds instant brand credibility.",
+          "bullet_points": [
+            "Strategic Placement: Immediately grounds the hotel's iconic waterfront location and historic facade, resolving location anxiety after the initial cultural hook.",
+            "Local Synergy: Highlights the hotel's unique position on the harbor, a defining characteristic of Copenhagen's Indre By, and its integration into the maritime landscape.",
+            "Conversion Trigger: Provides essential geographic context and reinforces the hotel's distinctive architectural presence, appealing to travelers seeking authentic local landmarks."
+          ],
+          "psychological_conversion_trigger": "Following the social magnet, this shot provides crucial locational context and reinforces the hotel's unique, historic waterfront identity, building trust and desire.",
+          "recommended_trigger": "Following the social magnet, this shot provides crucial locational context and reinforces the hotel's unique, historic waterfront identity, building trust and desire.",
+          "current_slot": 1,
+          "is_retained": false,
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "RE_SEQUENCE",
+          "action_label": "MOVE FROM SLOT #1",
+          "source_display_label": "Was: Slot #1 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 1,
+            "title": "a boat in the water in front of a building at Admiral Hotel Copenhagen in Copenhagen",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/900795245.jpg?k=5602818c85ec629c7be63d38077726b495b0bc9c52cea25192000dbb6b012904&o=",
+            "photoId": "900795245",
+            "sourceUrl": "https://www.booking.com/hotel/dk/copenhagen-admiral.html?lang=en-us&chal_t=1792582199454&force_referer="
+          }
+        },
+        {
+          "slot": 3,
+          "category": "SIGNATURE_SUITE_BEDROOM",
+          "photo_subject": "A hotel room with a bed and a desk at Admiral Hotel Copenhagen in Copenhagen",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/913807685.jpg?k=b667399b7b27fdbf40efeff9998d7e90d798f83a4196a46663d6dbbd00449c1b&o=",
+          "why_it_converts": "Showcasing high-finish private sleeping accommodations assures travelers of restful luxury and elevated comfort.",
+          "upgrade_rationale": "Showcasing high-finish private sleeping accommodations assures travelers of restful luxury and elevated comfort.",
+          "bullet_points": [
+            "Visual Upgrade: Showcases the unique architectural character of the rooms with exposed timber beams and a comfortable, modern design.",
+            "Local Synergy: Reflects the blend of historic charm and contemporary Nordic design that travelers seek in Copenhagen accommodations.",
+            "Conversion Trigger: Highlights the comfort, style, and unique features of the guest rooms, directly influencing booking decisions for discerning travelers."
+          ],
+          "psychological_conversion_trigger": "This image provides a clear, appealing view of the unique room design, reassuring guests of comfort and style, and showcasing the hotel's distinctive character.",
+          "recommended_trigger": "This image provides a clear, appealing view of the unique room design, reassuring guests of comfort and style, and showcasing the hotel's distinctive character.",
+          "current_slot": 2,
+          "is_retained": false,
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "RE_SEQUENCE",
+          "action_label": "MOVE FROM SLOT #2",
+          "source_display_label": "Was: Slot #2 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 2,
+            "title": "a hotel room with a bed and a desk at Admiral Hotel Copenhagen in Copenhagen",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/913807685.jpg?k=b667399b7b27fdbf40efeff9998d7e90d798f83a4196a46663d6dbbd00449c1b&o=",
+            "photoId": "913807685",
+            "sourceUrl": "https://www.booking.com/hotel/dk/copenhagen-admiral.html?lang=en-us&chal_t=1792582199454&force_referer="
+          }
+        },
+        {
+          "slot": 4,
+          "category": "WELLNESS_SPA_LOBBY",
+          "photo_subject": "a person walking through a lobby with a reception desk",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/841560835.jpg?k=e329492a68c36acfd14a3bd4354d49aca264652ffa3d1c552a381b23d3429a5a&o=&hp=1",
+          "why_it_converts": "Showcases the hotel's distinctive design-forward lobby and social spaces, confirming a vibrant boutique atmosphere and communal warmth after the private room showcase.",
+          "upgrade_rationale": "Showcases the hotel's distinctive design-forward lobby and social spaces, confirming a vibrant boutique atmosphere and communal warmth after the private room showcase.",
+          "bullet_points": [
+            "Strategic Placement: Highlights the hotel's iconic design personality and social living spaces after establishing culinary and room context.",
+            "Local Synergy: Reflects Copenhagen's renowned creative design culture and social energy.",
+            "Conversion Trigger: Emphasizes distinctive character and inviting public spaces, appealing to guests seeking an experiential stay."
+          ],
+          "psychological_conversion_trigger": "Design Prestige & Inviting Communal Atmosphere",
+          "recommended_trigger": "Design Prestige & Inviting Communal Atmosphere",
+          "current_slot": 12,
+          "is_retained": false,
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "PROMOTE",
+          "action_label": "PROMOTE FROM SLOT #12",
+          "source_display_label": "Was: Slot #12 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 12,
+            "title": "a person walking through a lobby with a reception desk at Admiral Hotel Copenhagen in Copenhagen",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/841560835.jpg?k=e329492a68c36acfd14a3bd4354d49aca264652ffa3d1c552a381b23d3429a5a&o=&hp=1",
+            "photoId": "841560835",
+            "sourceUrl": "https://www.booking.com/hotel/dk/copenhagen-admiral.html?lang=en-us&chal_t=1792582199454&force_referer="
+          }
+        },
+        {
+          "slot": 5,
+          "category": "SECONDARY_ROOM_BATHROOM",
+          "photo_subject": "A bathroom with a sink and a toilet and a mirror at Admiral Hotel Copenhagen in Copenhagen",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/913807780.jpg?k=d51fa1f9a4fb1ff9d03721433c4de8ddbd11790416704d2d6df5879794057d35&o=",
+          "why_it_converts": "Showcasing immaculate private bathroom finishes and walk-in rain showers resolves hygiene anxiety and completes the luxury perception.",
+          "upgrade_rationale": "Showcasing immaculate private bathroom finishes and walk-in rain showers resolves hygiene anxiety and completes the luxury perception.",
+          "bullet_points": [
+            "Visual Upgrade: Presents a clean, modern, and well-appointed guest bathroom, addressing a critical aspect of guest comfort and hygiene.",
+            "Local Synergy: Demonstrates the hotel's attention to detail and contemporary amenities, aligning with the high standards expected in Copenhagen.",
+            "Conversion Trigger: Reassures guests about the quality and cleanliness of private facilities, a significant factor in booking decisions."
+          ],
+          "psychological_conversion_trigger": "This image directly addresses guest concerns about bathroom quality and cleanliness, providing reassurance and completing the picture of a comfortable stay.",
+          "recommended_trigger": "This image directly addresses guest concerns about bathroom quality and cleanliness, providing reassurance and completing the picture of a comfortable stay.",
+          "current_slot": 3,
+          "is_retained": false,
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "RE_SEQUENCE",
+          "action_label": "MOVE FROM SLOT #3",
+          "source_display_label": "Was: Slot #3 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 3,
+            "title": "a bathroom with a sink and a toilet and a mirror at Admiral Hotel Copenhagen in Copenhagen",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/913807780.jpg?k=d51fa1f9a4fb1ff9d03721433c4de8ddbd11790416704d2d6df5879794057d35&o=",
+            "photoId": "913807780",
+            "sourceUrl": "https://www.booking.com/hotel/dk/copenhagen-admiral.html?lang=en-us&chal_t=1792582199454&force_referer="
+          }
+        }
+      ],
+      "anti_commodity_copy_rewrite": {
+        "ota_headline": "Admiral Hotel: Historic Copenhagen Waterfront Gem with Nordic Culinary Soul",
+        "property_overview_150_words": "Experience the Admiral Hotel, a captivating 18th-century warehouse transformed into a vibrant waterfront sanctuary in Copenhagen's historic Indre By. Overlooking Nyhavn Harbor, our hotel blends authentic timber beams and exposed brick with contemporary Nordic design. Indulge in exceptional dining at SALT Bar & Restaurant, a local favorite, or unwind in our stylish rooms with picturesque views. Perfectly positioned to explore Amalienborg Palace and The Royal Danish Playhouse, we offer a unique blend of cultural heritage and modern comfort, making every stay an immersive Copenhagen experience."
+      },
+      "photographic_gap_analysis": [
+        {
+          "missing_shot_title": "Twilight Golden Hour at SALT Restaurant with Harbor Views",
+          "category": "ATMOSPHERIC_TWILIGHT",
+          "why_needed": "Currently, photos of SALT Restaurant are well-lit but lack the atmospheric magic of twilight. A shot capturing the golden hour glow over the harbor from the restaurant would evoke romance and a premium dining experience, appealing to travelers seeking memorable evening experiences.",
+          "recommended_framing_and_lighting": "Wide-angle shot from inside SALT Restaurant looking out towards the harbor during golden hour, with warm interior lighting (2700K) and soft natural light illuminating the dining area and harbor beyond. Focus on elegant table settings and a subtle human presence.",
+          "projected_adr_impact": "+10% higher F&B spend and +$30 ADR premium for romantic getaways."
+        },
+        {
+          "missing_shot_title": "Cozy Fireside Lounge Nook with Local Guests",
+          "category": "SECONDARY_LIFESTYLE_SANCTUARY",
+          "why_needed": "The hotel has inviting public spaces, but a dedicated shot of a cozy lounge area, perhaps with a fireplace or intimate seating, would highlight 'hygge' and appeal to guests seeking relaxation and a sense of belonging. This is a key aspect of Danish culture that is currently underrepresented visually.",
+          "recommended_framing_and_lighting": "Medium shot of a comfortable seating arrangement (e.g., armchairs, low tables) with warm, ambient lighting (2200K) and soft focus on textures. Include subtle human interaction (e.g., two people quietly conversing or reading).",
+          "projected_adr_impact": "+8% direct booking conversion for leisure travelers seeking comfort and local immersion."
+        }
+      ],
+      "conversion_diagnosis": "The Admiral Hotel possesses strong architectural character and a vibrant F&B offering, but its current Booking.com photo sequence fails to prioritize these unique selling points. The initial impression is generic, leading to high drop-off. By re-sequencing to highlight the cultural magnet (SALT Bar) and reinforcing location and unique room features, conversion will significantly increase.",
+      "local_vibe_synergy_context": "Indre By, Copenhagen, is a hub for culinary exploration, historic architecture, and a vibrant social scene. Travelers actively search for hotels that are integrated into this local fabric, offering authentic experiences. Our strategy elevates the hotel's unique waterfront dining and historic facade, directly aligning with these top local search demands. The focus on Nordic design in rooms and inviting public spaces further resonates with Copenhagen's design-conscious visitors.",
+      "slot_1_decision_logic": {
+        "is_magnet_override_active": true,
+        "reasoning_code": "NAI_HIGH_DESTINATION_POWER_CLARITY",
+        "strategy_explanation": "The SALT Bar & Restaurant (Live Photo #5) is a standalone destination that perfectly embodies Copenhagen's vibrant culinary and social subculture, with a Neighborhood Affinity Index (NAI) well above 0.85. Its visual clarity and human energy make it an ideal Hero Cultural Magnet, immediately capturing traveler intent for authentic local experiences. The mandatory re-sequencing protocol places the Exterior Landmark in Slot #2 to quickly resolve location anxiety.",
+        "neighborhood_affinity_index": 0.92,
+        "override_asset_name": "SALT Bar & Restaurant"
+      },
+      "is_listed_on_booking": true,
+      "listing_status": "ACTIVE_ON_BOOKING",
+      "live_photos": [
+        {
+          "slot": 1,
+          "title": "a boat in the water in front of a building at Admiral Hotel Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/900795245.jpg?k=5602818c85ec629c7be63d38077726b495b0bc9c52cea25192000dbb6b012904&o=",
+          "photoId": "900795245",
+          "sourceUrl": "https://www.booking.com/hotel/dk/copenhagen-admiral.html?lang=en-us&chal_t=1792582199454&force_referer="
+        },
+        {
+          "slot": 2,
+          "title": "a hotel room with a bed and a desk at Admiral Hotel Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/913807685.jpg?k=b667399b7b27fdbf40efeff9998d7e90d798f83a4196a46663d6dbbd00449c1b&o=",
+          "photoId": "913807685",
+          "sourceUrl": "https://www.booking.com/hotel/dk/copenhagen-admiral.html?lang=en-us&chal_t=1792582199454&force_referer="
+        },
+        {
+          "slot": 3,
+          "title": "a bathroom with a sink and a toilet and a mirror at Admiral Hotel Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/913807780.jpg?k=d51fa1f9a4fb1ff9d03721433c4de8ddbd11790416704d2d6df5879794057d35&o=",
+          "photoId": "913807780",
+          "sourceUrl": "https://www.booking.com/hotel/dk/copenhagen-admiral.html?lang=en-us&chal_t=1792582199454&force_referer="
+        },
+        {
+          "slot": 4,
+          "title": "a row of lounge chairs with umbrellas next to a swimming pool at Admiral Hotel Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/900795639.jpg?k=0424531231a1132fc3aaf58b61731b132b9b11dba93213db948e557747f68b6a&o=",
+          "photoId": "900795639",
+          "sourceUrl": "https://www.booking.com/hotel/dk/copenhagen-admiral.html?lang=en-us&chal_t=1792582199454&force_referer="
+        },
+        {
+          "slot": 5,
+          "title": "a bar in a restaurant with wooden ceilings at Admiral Hotel Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/838674594.jpg?k=0ea387b76dc100c7edbd165406432e4c46ead09fad2357b387d3191df6ab77a9&o=",
+          "photoId": "838674594",
+          "sourceUrl": "https://www.booking.com/hotel/dk/copenhagen-admiral.html?lang=en-us&chal_t=1792582199454&force_referer="
+        },
+        {
+          "slot": 6,
+          "title": "a bedroom with a bed and a living room at Admiral Hotel Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/913808023.jpg?k=cb8e59a5c0323e913e7494b54336a2cb4b93a392dc4e7b1d7c2623d988e04dac&o=",
+          "photoId": "913808023",
+          "sourceUrl": "https://www.booking.com/hotel/dk/copenhagen-admiral.html?lang=en-us&chal_t=1792582199454&force_referer="
+        },
+        {
+          "slot": 7,
+          "title": "a large building sitting next to a body of water at Admiral Hotel Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/14841863.jpg?k=75c4e4e2a71c0b0f8e3b5181c421d308b7fbf2bb4797f1ed1587ae5810242642&o=",
+          "photoId": "14841863",
+          "sourceUrl": "https://www.booking.com/hotel/dk/copenhagen-admiral.html?lang=en-us&chal_t=1792582199454&force_referer="
+        },
+        {
+          "slot": 8,
+          "title": "a dining room with tables and chairs and wooden beams at Admiral Hotel Copenhagen in Copenhagen +88 photos",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/838674878.jpg?k=09c103f9c76f85739f764e9d18b92535a6d8dc9adbfc547a4e2317a06c63922a&o=",
+          "photoId": "838674878",
+          "sourceUrl": "https://www.booking.com/hotel/dk/copenhagen-admiral.html?lang=en-us&chal_t=1792582199454&force_referer="
+        },
+        {
+          "slot": 9,
+          "title": "a swimming pool with chairs and umbrellas next to a pirate ship at Admiral Hotel Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/900795683.jpg?k=2d3b7ad1904701c40737236c3cdb784ff7487d46d3ebef8b894d1b28d8300a88&o=&hp=1",
+          "photoId": "900795683",
+          "sourceUrl": "https://www.booking.com/hotel/dk/copenhagen-admiral.html?lang=en-us&chal_t=1792582199454&force_referer="
+        },
+        {
+          "slot": 10,
+          "title": "a kitchen with a wooden table in a room at Admiral Hotel Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/900795476.jpg?k=330b85c01f5063bbb03cc9e63dc6cf3162234c33711274ce5b0db6daa8005f26&o=&hp=1",
+          "photoId": "900795476",
+          "sourceUrl": "https://www.booking.com/hotel/dk/copenhagen-admiral.html?lang=en-us&chal_t=1792582199454&force_referer="
+        },
+        {
+          "slot": 11,
+          "title": "a dining room with tables and chairs and windows at Admiral Hotel Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/650097315.jpg?k=b03c8d23162dc76c68bb916b2f3a54ba772857a14252e030a4323fe97bd3bad0&o=&hp=1",
+          "photoId": "650097315",
+          "sourceUrl": "https://www.booking.com/hotel/dk/copenhagen-admiral.html?lang=en-us&chal_t=1792582199454&force_referer="
+        },
+        {
+          "slot": 12,
+          "title": "a person walking through a lobby with a reception desk at Admiral Hotel Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/841560835.jpg?k=e329492a68c36acfd14a3bd4354d49aca264652ffa3d1c552a381b23d3429a5a&o=&hp=1",
+          "photoId": "841560835",
+          "sourceUrl": "https://www.booking.com/hotel/dk/copenhagen-admiral.html?lang=en-us&chal_t=1792582199454&force_referer="
+        },
+        {
+          "slot": 13,
+          "title": "an empty gym with rows of exercise equipment at Admiral Hotel Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/838676313.jpg?k=932dffe0bb18153e909203b606528453a39f39f1b66ede773404babe3af76549&o=&hp=1",
+          "photoId": "838676313",
+          "sourceUrl": "https://www.booking.com/hotel/dk/copenhagen-admiral.html?lang=en-us&chal_t=1792582199454&force_referer="
+        },
+        {
+          "slot": 14,
+          "title": "a dining room with tables and chairs and windows at Admiral Hotel Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/650097302.jpg?k=7594a9e6098d1b793080eab4f5892d97f19f20cddb502a5e2a421e82dcbf1ccd&o=&hp=1",
+          "photoId": "650097302",
+          "sourceUrl": "https://www.booking.com/hotel/dk/copenhagen-admiral.html?lang=en-us&chal_t=1792582199454&force_referer="
+        },
+        {
+          "slot": 15,
+          "title": "a bike parked next to a park with cherry trees at Admiral Hotel Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/462460954.jpg?k=98de1f4f38088c68a09ae29d3272f623bbaac4174a09ba282e3153155ad176a3&o=&hp=1",
+          "photoId": "462460954",
+          "sourceUrl": "https://www.booking.com/hotel/dk/copenhagen-admiral.html?lang=en-us&chal_t=1792582199454&force_referer="
+        },
+        {
+          "slot": 16,
+          "title": "a long dining room with a long table and chairs at Admiral Hotel Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/650097311.jpg?k=55da8928328e08b7e54bf734f232c69cfbc9fa4e5ae1c033a3f625740dc8907c&o=&hp=1",
+          "photoId": "650097311",
+          "sourceUrl": "https://www.booking.com/hotel/dk/copenhagen-admiral.html?lang=en-us&chal_t=1792582199454&force_referer="
+        },
+        {
+          "slot": 17,
+          "title": "a person is holding a piece of bread with wine glasses at Admiral Hotel Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/650097310.jpg?k=839d8266f4098bd1e13750045bab5f3765230b5bb16faa04be5f7a31891d4907&o=&hp=1",
+          "photoId": "650097310",
+          "sourceUrl": "https://www.booking.com/hotel/dk/copenhagen-admiral.html?lang=en-us&chal_t=1792582199454&force_referer="
+        },
+        {
+          "slot": 18,
+          "title": "a table with wine glasses and a lamp on it at Admiral Hotel Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/650097309.jpg?k=ad203d8fef0544b8bf71264c68a228f4678cefd3cf10b6192e4d711eaa783e8b&o=&hp=1",
+          "photoId": "650097309",
+          "sourceUrl": "https://www.booking.com/hotel/dk/copenhagen-admiral.html?lang=en-us&chal_t=1792582199454&force_referer="
+        },
+        {
+          "slot": 19,
+          "title": "a man in a suit holding a bottle of wine at Admiral Hotel Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/650097304.jpg?k=abfe54c3bfbc2cde050529f3b241ad2681dc22932ced0bde33340d0ea44a65c1&o=&hp=1",
+          "photoId": "650097304",
+          "sourceUrl": "https://www.booking.com/hotel/dk/copenhagen-admiral.html?lang=en-us&chal_t=1792582199454&force_referer="
+        },
+        {
+          "slot": 20,
+          "title": "a kitchen with a counter with fruits and vegetables at Admiral Hotel Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/650097408.jpg?k=6d4ca33103120387bb089166d092f47de348caa23fdfa44f0172730be09c9508&o=&hp=1",
+          "photoId": "650097408",
+          "sourceUrl": "https://www.booking.com/hotel/dk/copenhagen-admiral.html?lang=en-us&chal_t=1792582199454&force_referer="
+        },
+        {
+          "slot": 21,
+          "title": "a plate of food with oysters on a table at Admiral Hotel Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/650097301.jpg?k=bddbdbc00d4aa4be451630e210224f5b87a54f177552663473d11642f49a27d4&o=&hp=1",
+          "photoId": "650097301",
+          "sourceUrl": "https://www.booking.com/hotel/dk/copenhagen-admiral.html?lang=en-us&chal_t=1792582199454&force_referer="
+        },
+        {
+          "slot": 22,
+          "title": "a table with two chairs and a table with cups and plates at Admiral Hotel Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/650097454.jpg?k=4b99d1e89100771e97edefa56c398a8ac3069d86be44fe5bf6a113660fadde2a&o=&hp=1",
+          "photoId": "650097454",
+          "sourceUrl": "https://www.booking.com/hotel/dk/copenhagen-admiral.html?lang=en-us&chal_t=1792582199454&force_referer="
+        },
+        {
+          "slot": 23,
+          "title": "a table with cups and saucers on top at Admiral Hotel Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/650097455.jpg?k=bde6f8a3de9ec7b8d7b82472982cb2061acad38c311588aab0302f769d96c894&o=&hp=1",
+          "photoId": "650097455",
+          "sourceUrl": "https://www.booking.com/hotel/dk/copenhagen-admiral.html?lang=en-us&chal_t=1792582199454&force_referer="
+        },
+        {
+          "slot": 24,
+          "title": "a table with three cups and saucers on it at Admiral Hotel Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/650097473.jpg?k=392234778c5135c61c53f9214bc368d88cb633395f55e0e9b0aa474c1422c575&o=&hp=1",
+          "photoId": "650097473",
+          "sourceUrl": "https://www.booking.com/hotel/dk/copenhagen-admiral.html?lang=en-us&chal_t=1792582199454&force_referer="
+        },
+        {
+          "slot": 25,
+          "title": "a dining room with a table and chairs at Admiral Hotel Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/650097488.jpg?k=62a563ac2e7da4189a92b6d8f472eb6bb8cfc467ec9af428c3b20e596de27e26&o=&hp=1",
+          "photoId": "650097488",
+          "sourceUrl": "https://www.booking.com/hotel/dk/copenhagen-admiral.html?lang=en-us&chal_t=1792582199454&force_referer="
+        },
+        {
+          "slot": 26,
+          "title": "a conference room with a large table and chairs at Admiral Hotel Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/658591461.jpg?k=e8ce3201271e0ce3bf2d842333b198e3cc317628e061282dc7f1a2164c3ecf57&o=&hp=1",
+          "photoId": "658591461",
+          "sourceUrl": "https://www.booking.com/hotel/dk/copenhagen-admiral.html?lang=en-us&chal_t=1792582199454&force_referer="
+        },
+        {
+          "slot": 27,
+          "title": "a conference room with tables and chairs and a tv at Admiral Hotel Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/658591452.jpg?k=737491f7386bb887a9a5112376c92111212d3da09dfff0ef31bdc25cecc2ef22&o=&hp=1",
+          "photoId": "658591452",
+          "sourceUrl": "https://www.booking.com/hotel/dk/copenhagen-admiral.html?lang=en-us&chal_t=1792582199454&force_referer="
+        },
+        {
+          "slot": 28,
+          "title": "a group of people sitting around a table eating food at Admiral Hotel Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/900797188.jpg?k=8aae0bc295c09f99ac3ee229d806e2bd4d1bfb42895b9a98a73ae572c4c60fd0&o=&hp=1",
+          "photoId": "900797188",
+          "sourceUrl": "https://www.booking.com/hotel/dk/copenhagen-admiral.html?lang=en-us&chal_t=1792582199454&force_referer="
+        },
+        {
+          "slot": 29,
+          "title": "a row of tables and chairs in a restaurant at Admiral Hotel Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/686516694.jpg?k=199af80754285e99d61ab607d170c8b0e9c4c4642ed398a47697ca7884c018fc&o=&hp=1",
+          "photoId": "686516694",
+          "sourceUrl": "https://www.booking.com/hotel/dk/copenhagen-admiral.html?lang=en-us&chal_t=1792582199454&force_referer="
+        },
+        {
+          "slot": 30,
+          "title": "a large conference room with a long table and chairs at Admiral Hotel Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/900797506.jpg?k=1f19e26efef501cb90a1e1d8a71b5f67895194fff3bfbb752bd0bcb903176188&o=&hp=1",
+          "photoId": "900797506",
+          "sourceUrl": "https://www.booking.com/hotel/dk/copenhagen-admiral.html?lang=en-us&chal_t=1792582199454&force_referer="
+        },
+        {
+          "slot": 31,
+          "title": "a table with two glasses of orange juice on it at Admiral Hotel Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/686516678.jpg?k=f44cd61bbb1740234bc774916a04e93df893739bc7ad158d1f2418145d07833d&o=&hp=1",
+          "photoId": "686516678",
+          "sourceUrl": "https://www.booking.com/hotel/dk/copenhagen-admiral.html?lang=en-us&chal_t=1792582199454&force_referer="
+        },
+        {
+          "slot": 32,
+          "title": "a person pouring a bottle of wine on a table at Admiral Hotel Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/900797951.jpg?k=8a6c3489411186fc585a3e7b0b5f6d11a059189697f1c1f84596ef950047de74&o=&hp=1",
+          "photoId": "900797951",
+          "sourceUrl": "https://www.booking.com/hotel/dk/copenhagen-admiral.html?lang=en-us&chal_t=1792582199454&force_referer="
+        },
+        {
+          "slot": 33,
+          "title": "a restaurant with tables and chairs and a kitchen at Admiral Hotel Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/900797842.jpg?k=80a995b39b4500113d735058755e34955a90e1aca8c571ab49020270a5eaed9f&o=&hp=1",
+          "photoId": "900797842",
+          "sourceUrl": "https://www.booking.com/hotel/dk/copenhagen-admiral.html?lang=en-us&chal_t=1792582199454&force_referer="
+        },
+        {
+          "slot": 34,
+          "title": "a conference room with a long table and chairs at Admiral Hotel Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/900797638.jpg?k=bccad980e3acb7e8bf3abf14868a2cb014a085890a78aa06791d20ec249c6746&o=&hp=1",
+          "photoId": "900797638",
+          "sourceUrl": "https://www.booking.com/hotel/dk/copenhagen-admiral.html?lang=en-us&chal_t=1792582199454&force_referer="
+        },
+        {
+          "slot": 35,
+          "title": "a bike parked on a street with the sun behind it at Admiral Hotel Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/686516877.jpg?k=f3a391b56eaff65b7b0688e08330581dd74d30ffe63159671f175ddf398b07b9&o=&hp=1",
+          "photoId": "686516877",
+          "sourceUrl": "https://www.booking.com/hotel/dk/copenhagen-admiral.html?lang=en-us&chal_t=1792582199454&force_referer="
+        },
+        {
+          "slot": 36,
+          "title": "a group of people on a boat in the water at Admiral Hotel Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/686516821.jpg?k=34c6ddcb70456797ff15f04d88cb5f4932d27f494c0cfe9e0b0cb0ca58122feb&o=&hp=1",
+          "photoId": "686516821",
+          "sourceUrl": "https://www.booking.com/hotel/dk/copenhagen-admiral.html?lang=en-us&chal_t=1792582199454&force_referer="
+        },
+        {
+          "slot": 37,
+          "title": "a boat is docked in the water in a harbor at Admiral Hotel Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/686516990.jpg?k=6628334431a903f2aef274158aaaed0536b87c0339b1d988481f9f0847de1734&o=&hp=1",
+          "photoId": "686516990",
+          "sourceUrl": "https://www.booking.com/hotel/dk/copenhagen-admiral.html?lang=en-us&chal_t=1792582199454&force_referer="
+        },
+        {
+          "slot": 38,
+          "title": "a restaurant with wooden tables and chairs with wine glasses at Admiral Hotel Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/686516958.jpg?k=be2e220a511ee86005bf64979917364deb48000629b938acb3268997dc4080cd&o=&hp=1",
+          "photoId": "686516958",
+          "sourceUrl": "https://www.booking.com/hotel/dk/copenhagen-admiral.html?lang=en-us&chal_t=1792582199454&force_referer="
+        },
+        {
+          "slot": 39,
+          "title": "a large chandelier hanging over a table with chairs at Admiral Hotel Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/686516941.jpg?k=a2ee22bea549137e5f1a67ccd2cbfd42889319bc31d2719c5566d93552774857&o=&hp=1",
+          "photoId": "686516941",
+          "sourceUrl": "https://www.booking.com/hotel/dk/copenhagen-admiral.html?lang=en-us&chal_t=1792582199454&force_referer="
+        },
+        {
+          "slot": 40,
+          "title": "a dining room with tables and chairs and windows at Admiral Hotel Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/686517018.jpg?k=379791367077c53f353fc4ab3ec2bf80f82879b88dd4366cad483c89e932844f&o=&hp=1",
+          "photoId": "686517018",
+          "sourceUrl": "https://www.booking.com/hotel/dk/copenhagen-admiral.html?lang=en-us&chal_t=1792582199454&force_referer="
+        },
+        {
+          "slot": 41,
+          "title": "a group of people sitting at a table with wine glasses at Admiral Hotel Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/686516994.jpg?k=89ee5793a13e829cdcf0bd916b080b2d3d7afb322498887d39399c55668a077b&o=&hp=1",
+          "photoId": "686516994",
+          "sourceUrl": "https://www.booking.com/hotel/dk/copenhagen-admiral.html?lang=en-us&chal_t=1792582199454&force_referer="
+        },
+        {
+          "slot": 42,
+          "title": "a woman sitting on a ledge looking out a window at Admiral Hotel Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/686516841.jpg?k=c9b089e149b7cd541685ad3e07f2b2a8cc1059ff0ad24cff1b37b77c9cd529c0&o=&hp=1",
+          "photoId": "686516841",
+          "sourceUrl": "https://www.booking.com/hotel/dk/copenhagen-admiral.html?lang=en-us&chal_t=1792582199454&force_referer="
+        },
+        {
+          "slot": 43,
+          "title": "a person sitting at a table with a plate of food at Admiral Hotel Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/686517041.jpg?k=49ff11ffd33c861ffee9dc083d88dbade7334cedfbc7d5f625bbcd142fac1ed7&o=&hp=1",
+          "photoId": "686517041",
+          "sourceUrl": "https://www.booking.com/hotel/dk/copenhagen-admiral.html?lang=en-us&chal_t=1792582199454&force_referer="
+        },
+        {
+          "slot": 44,
+          "title": "a lobby with couches and tables and a bar at Admiral Hotel Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/838674598.jpg?k=f6154789dc12e7f00a09b98523b5c8b9619ed3974a3c167ad62f13cbf36413da&o=&hp=1",
+          "photoId": "838674598",
+          "sourceUrl": "https://www.booking.com/hotel/dk/copenhagen-admiral.html?lang=en-us&chal_t=1792582199454&force_referer="
+        },
+        {
+          "slot": 45,
+          "title": "a restaurant with tables and chairs in a room at Admiral Hotel Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/838674592.jpg?k=a43c4822dab83936c90b69e66bd68f094a9571021c9c98d770b933327bef9013&o=&hp=1",
+          "photoId": "838674592",
+          "sourceUrl": "https://www.booking.com/hotel/dk/copenhagen-admiral.html?lang=en-us&chal_t=1792582199454&force_referer="
+        },
+        {
+          "slot": 46,
+          "title": "a living room with a couch and two tables and chairs at Admiral Hotel Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/838674579.jpg?k=c75d37e3d32eed701feaac7a08738b7fff1971a342e442cc087fe602ce8a4343&o=&hp=1",
+          "photoId": "838674579",
+          "sourceUrl": "https://www.booking.com/hotel/dk/copenhagen-admiral.html?lang=en-us&chal_t=1792582199454&force_referer="
+        },
+        {
+          "slot": 47,
+          "title": "a bar with two chairs and a counter with spices at Admiral Hotel Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/838674577.jpg?k=15fd9711a03cf5fa0ed715dfceb07a925d92a352e63e0c750b86f33ca0aff85f&o=&hp=1",
+          "photoId": "838674577",
+          "sourceUrl": "https://www.booking.com/hotel/dk/copenhagen-admiral.html?lang=en-us&chal_t=1792582199454&force_referer="
+        },
+        {
+          "slot": 48,
+          "title": "a row of tables and chairs in a restaurant at Admiral Hotel Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/838674575.jpg?k=2141da661a08ef9ce64a790153cb6d6e7cf5311890724dcf11732ec7d66014de&o=&hp=1",
+          "photoId": "838674575",
+          "sourceUrl": "https://www.booking.com/hotel/dk/copenhagen-admiral.html?lang=en-us&chal_t=1792582199454&force_referer="
+        },
+        {
+          "slot": 49,
+          "title": "a table with a book and a candle on it at Admiral Hotel Copenhagen in Copenhagen",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/838674566.jpg?k=760b554863555512a91ab9ff84366da0f213fc61318ba888a807258861b50f44&o=&hp=1",
+          "photoId": "838674566",
+          "sourceUrl": "https://www.booking.com/hotel/dk/copenhagen-admiral.html?lang=en-us&chal_t=1792582199454&force_referer="
+        },
+        {
+          "slot": 50,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/900795245.jpg?k=5602818c85ec629c7be63d38077726b495b0bc9c52cea25192000dbb6b012904&o=&hp=1",
+          "photoId": "5",
+          "sourceUrl": "https://www.booking.com/hotel/dk/copenhagen-admiral.html?lang=en-us&chal_t=1792582199454&force_referer="
+        },
+        {
+          "slot": 51,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/913807780.jpg?k=d51fa1f9a4fb1ff9d03721433c4de8ddbd11790416704d2d6df5879794057d35&o=&hp=1",
+          "photoId": "0",
+          "sourceUrl": "https://www.booking.com/hotel/dk/copenhagen-admiral.html?lang=en-us&chal_t=1792582199454&force_referer="
+        },
+        {
+          "slot": 52,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/838674594.jpg?k=0ea387b76dc100c7edbd165406432e4c46ead09fad2357b387d3191df6ab77a9&o=&hp=1",
+          "photoId": "4",
+          "sourceUrl": "https://www.booking.com/hotel/dk/copenhagen-admiral.html?lang=en-us&chal_t=1792582199454&force_referer="
+        },
+        {
+          "slot": 53,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/14841863.jpg?k=75c4e4e2a71c0b0f8e3b5181c421d308b7fbf2bb4797f1ed1587ae5810242642&o=&hp=1",
+          "photoId": "3",
+          "sourceUrl": "https://www.booking.com/hotel/dk/copenhagen-admiral.html?lang=en-us&chal_t=1792582199454&force_referer="
+        },
+        {
+          "slot": 54,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/900795476.jpg?k=330b85c01f5063bbb03cc9e63dc6cf3162234c33711274ce5b0db6daa8005f26&o=&hp=1",
+          "photoId": "6",
+          "sourceUrl": "https://www.booking.com/hotel/dk/copenhagen-admiral.html?lang=en-us&chal_t=1792582199454&force_referer="
+        },
+        {
+          "slot": 55,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/650097302.jpg?k=7594a9e6098d1b793080eab4f5892d97f19f20cddb502a5e2a421e82dcbf1ccd&o=&hp=1",
+          "photoId": "2",
+          "sourceUrl": "https://www.booking.com/hotel/dk/copenhagen-admiral.html?lang=en-us&chal_t=1792582199454&force_referer="
+        },
+        {
+          "slot": 56,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/650097311.jpg?k=55da8928328e08b7e54bf734f232c69cfbc9fa4e5ae1c033a3f625740dc8907c&o=&hp=1",
+          "photoId": "1",
+          "sourceUrl": "https://www.booking.com/hotel/dk/copenhagen-admiral.html?lang=en-us&chal_t=1792582199454&force_referer="
+        },
+        {
+          "slot": 57,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/650097309.jpg?k=ad203d8fef0544b8bf71264c68a228f4678cefd3cf10b6192e4d711eaa783e8b&o=&hp=1",
+          "photoId": "9",
+          "sourceUrl": "https://www.booking.com/hotel/dk/copenhagen-admiral.html?lang=en-us&chal_t=1792582199454&force_referer="
+        },
+        {
+          "slot": 58,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/650097408.jpg?k=6d4ca33103120387bb089166d092f47de348caa23fdfa44f0172730be09c9508&o=&hp=1",
+          "photoId": "8",
+          "sourceUrl": "https://www.booking.com/hotel/dk/copenhagen-admiral.html?lang=en-us&chal_t=1792582199454&force_referer="
+        },
+        {
+          "slot": 59,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/686516877.jpg?k=f3a391b56eaff65b7b0688e08330581dd74d30ffe63159671f175ddf398b07b9&o=&hp=1",
+          "photoId": "7",
+          "sourceUrl": "https://www.booking.com/hotel/dk/copenhagen-admiral.html?lang=en-us&chal_t=1792582199454&force_referer="
+        }
+      ],
+      "photos_status": "RESOLVED"
+    },
+    "audit_timestamp": "2026-10-21T11:30:04.071Z"
+  }
+}
