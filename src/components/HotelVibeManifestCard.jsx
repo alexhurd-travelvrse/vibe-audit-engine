@@ -92,57 +92,57 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
     working: {
       window: '9:00 AM – 3:30 PM',
       focus: (manifest.venue_name || '').toLowerCase().includes('sea containers')
-        ? 'Bright diffused Thames daylight, quiet acoustic hum & spacious laptop banquettes.'
-        : 'Natural diffused daylight, low acoustic distractions, and spacious laptop banquettes.',
+        ? 'Bright riverside daylight, calm coffee atmosphere & comfy tables for getting work done.'
+        : 'Bright natural daylight, calm atmosphere, and comfortable seating for morning coffee or laptop work.',
       score: 91
     },
     chilling: {
       window: '4:00 PM – 7:00 PM',
       focus: (manifest.venue_name || '').toLowerCase().includes('sea containers')
-        ? 'The 4:00 PM Twilight Pivot: stepless shift to 2400K amber glow, Thames golden hour & tranquil aperitivo.'
-        : 'The 4:00 PM Twilight Pivot: stepless transition to warm 2400K amber glow & tranquil aperitivo.',
+        ? 'Golden-hour sunset over the Thames: warm evening light & relaxed pre-dinner drinks.'
+        : 'Golden-hour transition: warm candlelit glow & relaxed early-evening drinks.',
       score: 97
     },
     playing: {
       window: '7:30 PM – Late',
       focus: (manifest.venue_name || '').toLowerCase().includes('sea containers')
-        ? 'Seductive 2200K low-lux amber, 12th Knot panoramic skyline energy & buzzing mixology crowd.'
-        : 'Seductive 2200K low-lux candlelight, buzzing craft mixology & high-energy magnetic crowd.',
+        ? 'Candlelit evening buzz, 12th Knot rooftop views & a lively cocktail crowd.'
+        : 'Cosy candlelit tables, great music, and a lively evening bar crowd.',
       score: 95
     }
   };
 
   const contentReady = temporal.content_readiness || {
     score: 96,
-    verdict: 'Zero Downlight Raccoon Eyes',
-    flattery_note: 'Flattering diffuse eye-level bounce & warm 2400K skin-tone illumination',
+    verdict: 'Warm, Flattering Evening Light • Zero Harsh Glare',
+    flattery_note: 'Soft, warm lighting that looks great in person and in photos',
     top_creator_spot: (manifest.venue_name || '').toLowerCase().includes('sea containers')
       ? '12th Knot Glass Corner Banquette during Thames Golden Hour'
       : ((manifest.venue_name || '').toLowerCase().includes('sls')
         ? 'Courtyard Poolside Sanctuary Loungers framed by historic Palms'
         : 'Signature terrace lounge banquette during golden hour'),
     aesthetic_subculture: (manifest.venue_name || '').toLowerCase().includes('sea containers')
-      ? 'Moody Maritime Chiaroscuro'
-      : ((manifest.venue_name || '').toLowerCase().includes('sls') ? 'Sun-Drenched Pastel Art Deco' : 'Curated Architectural Warmth')
+      ? 'Warm Riverside Glamour'
+      : ((manifest.venue_name || '').toLowerCase().includes('sls') ? 'Sun-Drenched Pastel Art Deco' : 'Warm Character & Natural Light')
   };
   
   // Calibrated Metrics with intelligent fallbacks
   const energy = v.energy_score || 85;
-  const rawDb = dna.decibel_level || '54 dB';
+  const rawDb = dna.decibel_level || 'Easy Chat';
   const dbMatch = String(rawDb).match(/^(\d+\s*dB)/i);
   const dbNumber = dbMatch ? dbMatch[1] : (parseInt(rawDb) ? `${parseInt(rawDb)} dB` : String(rawDb).split('(')[0].trim());
   const dbDetail = String(rawDb).replace(/^(\d+\s*dB)\s*\(?/i, '').replace(/\)$/, '').trim();
   const decibels = rawDb;
   const clarityScore = dna.conversation_clarity_score || 94;
-  const clarityVerdict = dna.conversation_verdict || 'Effortless Chat';
+  const clarityVerdict = dna.conversation_verdict || 'Easy Conversation';
   const authenticityScore = auth.authenticity_score || 92;
-  const materialPalette = auth.material_palette || 'Hand-hewn timber, aged brass, tactile stone, fluted glass';
-  const materialVerdict = auth.material_verdict || 'Authentic Heritage — Zero Faux Decor';
+  const materialPalette = auth.material_palette || 'Natural wood, aged brass, warm stone, textured glass';
+  const materialVerdict = auth.material_verdict || 'True Local Character — Not a Cookie-Cutter Chain';
   const localRatio = crowd.local_ratio || 80;
   const touristRatio = crowd.tourist_ratio || (100 - localRatio);
-  const lightingTemp = lighting.lighting_temperature || '2200K Warm Filament Amber';
-  const bestTimeToVisit = temporal.best_time_to_visit || '4:30 PM for fireside aperitivo; 8:30 PM for peak atmospheric buzz';
-  const touristTrapVerdict = crowd.tourist_trap_verdict || (localRatio >= 60 ? 'Authentic Local Magnet — Zero Tourist Trap' : 'Curated International Lifestyle Destination');
+  const lightingTemp = lighting.lighting_temperature || 'Warm Candlelit & Golden-Hour Glow';
+  const bestTimeToVisit = temporal.best_time_to_visit || '4:30 PM for relaxed sunset drinks; 8:30 PM for lively evening buzz';
+  const touristTrapVerdict = crowd.tourist_trap_verdict || (localRatio >= 60 ? 'Loved by Locals — Zero Tourist Trap' : 'Welcoming Mix of Locals & Travellers');
 
   // Calculate Spectrum Position for Sanctuary (0%) vs Social Hub (100%)
   const numericDb = parseInt(dbNumber) || (energy > 70 ? 72 : 54);
@@ -285,12 +285,12 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
               {/* Category Badge */}
               <div style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center' }}>
                 <span style={{ fontSize: '11px', fontWeight: 900, color: '#1DB954', letterSpacing: '0.08em', textTransform: 'uppercase', display: 'flex', alignItems: 'center', gap: '5px' }}>
-                  <Volume2 size={13} /> Acoustic DNA
+                  <Volume2 size={13} /> Sound, Music &amp; Sleep
                 </span>
               </div>
 
               <h3 style={{ fontSize: '16px', fontWeight: 900, color: '#ffffff', minHeight: '44px', lineHeight: 1.3, margin: '0 0 0.85rem 0' }}>
-                Social Hub or Quiet Sanctuary?
+                Easy Chat Downstairs, Quiet Sleep Upstairs?
               </h3>
 
               {/* Standardized Scale Bar Container */}
@@ -418,12 +418,12 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
               {/* Category Badge */}
               <div style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center' }}>
                 <span style={{ fontSize: '11px', fontWeight: 900, color: '#ffd700', letterSpacing: '0.08em', textTransform: 'uppercase', display: 'flex', alignItems: 'center', gap: '5px' }}>
-                  <ShieldCheck size={13} /> Authenticity
+                  <ShieldCheck size={13} /> True Character
                 </span>
               </div>
 
               <h3 style={{ fontSize: '16px', fontWeight: 900, color: '#ffffff', minHeight: '44px', lineHeight: 1.3, margin: '0 0 0.85rem 0' }}>
-                Real Soul or Corporate Generic?
+                Real Character or Cookie-Cutter Chain?
               </h3>
 
               {/* Standardized Scale Bar Container */}
@@ -480,12 +480,12 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
               {/* Category Badge */}
               <div style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center' }}>
                 <span style={{ fontSize: '11px', fontWeight: 900, color: '#c084fc', letterSpacing: '0.08em', textTransform: 'uppercase', display: 'flex', alignItems: 'center', gap: '5px' }}>
-                  <Users size={13} /> Crowd Gravity
+                  <Users size={13} /> The Crowd &amp; Mood
                 </span>
               </div>
 
               <h3 style={{ fontSize: '16px', fontWeight: 900, color: '#ffffff', minHeight: '44px', lineHeight: 1.3, margin: '0 0 0.85rem 0' }}>
-                Local Magnet or Tourist Trap?
+                Loved by Locals or Tourist Trap?
               </h3>
 
               {/* Standardized Scale Bar Container */}
@@ -607,12 +607,12 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
               {/* Category Badge */}
               <div style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center' }}>
                 <span style={{ fontSize: '11px', fontWeight: 900, color: '#00e5ff', letterSpacing: '0.08em', textTransform: 'uppercase', display: 'flex', alignItems: 'center', gap: '5px' }}>
-                  <Sun size={13} /> Time of Day & Lighting Arc
+                  <Sun size={13} /> Best Time of Day
                 </span>
               </div>
 
               <h3 style={{ fontSize: '16px', fontWeight: 900, color: '#ffffff', minHeight: '44px', lineHeight: 1.3, margin: '0 0 0.85rem 0' }}>
-                Working, Chilling & Playing Rhythm
+                Morning Coffee, Sunset Drinks &amp; Evening Buzz
               </h3>
 
               {/* 3 User Benefit Mode Tabs: Working | Chilling | Playing */}

@@ -46,12 +46,12 @@ export default function HookTeaserSection() {
                   <div className="pulse-bar-row">
                     <div className="vibe-signature-pulse">
                       <span className="vibe-pulse-dot"></span>
-                      <span className="pulse-text">Your Vibe Signature: <strong>Maritime Glamour &amp; Thameside Buzz</strong></span>
+                      <span className="pulse-text">Your Vibe: <strong>Golden-Hour Riverside Drinks &amp; Easy Social Buzz</strong></span>
                     </div>
 
                     <div className="area-demand-pulse">
                       <span className="pulse-dot"></span>
-                      <span className="pulse-text">Trending in your area: <strong>Riverside terrace &amp; artisan social spots</strong></span>
+                      <span className="pulse-text">What guests search for nearby: <strong>Sunset river terraces &amp; walkable local wine bars</strong></span>
                     </div>
                   </div>
 
@@ -61,7 +61,7 @@ export default function HookTeaserSection() {
                     {/* Before Card: Standard Rooms & Features */}
                     <div className="collage-card before-card">
                       <div className="collage-card-header before-header">
-                        <span className="collage-badge before-badge">BEFORE: ROOMS &amp; FEATURES</span>
+                        <span className="collage-badge before-badge">BEFORE: GENERIC ROOM FIRST</span>
                       </div>
                       
                       <div className="collage-hero-wrap">
@@ -71,7 +71,7 @@ export default function HookTeaserSection() {
                           className="collage-hero-img desaturated"
                         />
                         <div className="collage-slot-tag before-slot-tag">Slot #1: Standard Bed</div>
-                        <div className="collage-status-tag before-status-tag">Standard Listing</div>
+                        <div className="collage-status-tag before-status-tag">Easy to Scroll Past</div>
                       </div>
 
                       <div className="collage-thumbs-strip">
@@ -90,14 +90,14 @@ export default function HookTeaserSection() {
                       </div>
 
                       <div className="collage-verdict before-verdict">
-                        <span>Majors on interior utility · Ignores local search demand</span>
+                        <span>Looks like every other hotel · Hides what makes staying here special</span>
                       </div>
                     </div>
 
                     {/* After Card: Local Gateway Hook */}
                     <div className="collage-card after-card">
                       <div className="collage-card-header after-header">
-                        <span className="collage-badge after-badge">AFTER: LOCAL GATEWAY HOOK</span>
+                        <span className="collage-badge after-badge">AFTER: VIBE &amp; NEIGHBOURHOOD FIRST</span>
                       </div>
 
                       <div className="collage-hero-wrap">
@@ -106,27 +106,27 @@ export default function HookTeaserSection() {
                           alt="After: Riverside Restaurant & Bar" 
                           className="collage-hero-img vibrant"
                         />
-                        <div className="collage-slot-tag after-slot-tag">Slot #1: Riverside Bar &amp; Dining</div>
-                        <div className="collage-status-tag after-status-tag">+4.2s Dwell</div>
+                        <div className="collage-slot-tag after-slot-tag">Slot #1: Golden-Hour Riverside Bar</div>
+                        <div className="collage-status-tag after-status-tag">+4.2s Longer Look</div>
                       </div>
 
                       <div className="collage-thumbs-strip">
                         <div className="collage-thumb-item">
                           <img src="/assets/hook_riverside_facade.jpg" alt="Slot 2 Riverside Facade" />
-                          <span className="thumb-cap">#2 Facade</span>
+                          <span className="thumb-cap">#2 Street Presence</span>
                         </div>
                         <div className="collage-thumb-item">
                           <img src="/assets/hook_riverside_suite.jpg" alt="Slot 3 Riverview Suite" />
-                          <span className="thumb-cap">#3 Suite</span>
+                          <span className="thumb-cap">#3 Quiet Room</span>
                         </div>
                         <div className="collage-thumb-item">
                           <img src="/assets/hook_riverside_terrace.jpg" alt="Slot 4 Social Sunset Terrace" />
-                          <span className="thumb-cap">#4 Social</span>
+                          <span className="thumb-cap">#4 Sunset Terrace</span>
                         </div>
                       </div>
 
                       <div className="collage-verdict after-verdict">
-                        <span>Directly matches Maritime Glamour &amp; Riverside terrace demand</span>
+                        <span>Stops the scroll with evening warmth, real room comfort &amp; local buzz</span>
                       </div>
                     </div>
 
@@ -153,17 +153,17 @@ export default function HookTeaserSection() {
             <div className="tier-content">
               <div className="tier-content-header-row">
                 <div>
-                  <h3 className="tier-heading">Stand Out Across All Channels</h3>
-                  <p className="tier-micro-desc">Deploy your hotel's distinct cultural gravity across every touchpoint travellers use to choose a destination</p>
+                  <h3 className="tier-heading">Stand Out Everywhere Guests Search</h3>
+                  <p className="tier-micro-desc">Turn your hotel's atmosphere and walkable neighbourhood gems into clear, trustworthy proof across every booking channel</p>
                 </div>
               </div>
 
                 {/* Distribution Channel Pill Strip */}
                 <div className="channel-distribution-strip">
-                  <span className="channel-tag">OTAs</span>
-                  <span className="channel-tag">Hotel Website</span>
-                  <span className="channel-tag">Social Media</span>
-                  <span className="channel-tag">AI Search (GEO)</span>
+                  <span className="channel-tag">Booking.com &amp; OTAs</span>
+                  <span className="channel-tag">Direct Website</span>
+                  <span className="channel-tag">Instagram &amp; Reels</span>
+                  <span className="channel-tag">AI Search (ChatGPT &amp; Perplexity)</span>
                 </div>
 
                 {/* Streamlined High-Impact Deliverables Grid */}
@@ -173,8 +173,8 @@ export default function HookTeaserSection() {
                       <Sparkles size={16} className="text-gold" />
                     </div>
                     <div className="pro-deliv-body">
-                      <h4 className="pro-deliv-title">High-Converting Photo Re-Ordering</h4>
-                      <p className="pro-deliv-desc">5-slot sequencing scientifically optimized to match active micro-district search queries</p>
+                      <h4 className="pro-deliv-title">First-Impression Photo Order</h4>
+                      <p className="pro-deliv-desc">Put your most inviting photo in Slot #1—backed by a bright, honest room and your neighbourhood view</p>
                     </div>
                   </div>
 
@@ -183,8 +183,8 @@ export default function HookTeaserSection() {
                       <Compass size={16} className="text-gold" />
                     </div>
                     <div className="pro-deliv-body">
-                      <h4 className="pro-deliv-title">Local Gateway Narrative</h4>
-                      <p className="pro-deliv-desc">Compelling storytelling positioning your lobby as the direct portal to neighbourhood culture</p>
+                      <h4 className="pro-deliv-title">Verified 5-Minute Walk Guide</h4>
+                      <p className="pro-deliv-desc">Connect your front door to verified 4.5★+ local wine bars, cafés, and markets travellers love</p>
                     </div>
                   </div>
 
@@ -193,8 +193,8 @@ export default function HookTeaserSection() {
                       <Zap size={16} className="text-gold" />
                     </div>
                     <div className="pro-deliv-body">
-                      <h4 className="pro-deliv-title">AI Search (GEO) Semantic Tags</h4>
-                      <p className="pro-deliv-desc">Structured entities ensuring ChatGPT, Gemini &amp; Perplexity recommend your property</p>
+                      <h4 className="pro-deliv-title">Get Recommended by AI Assistants</h4>
+                      <p className="pro-deliv-desc">Give ChatGPT, Gemini &amp; Perplexity the plain-English facts and local links they need to recommend you</p>
                     </div>
                   </div>
 
@@ -203,8 +203,8 @@ export default function HookTeaserSection() {
                       <CheckCircle2 size={16} className="text-gold" />
                     </div>
                     <div className="pro-deliv-body">
-                      <h4 className="pro-deliv-title">Neighbourhood Vibe Radar &amp; Benchmarks</h4>
-                      <p className="pro-deliv-desc">Subcultural market intelligence monitoring shifting guest demand in real time</p>
+                      <h4 className="pro-deliv-title">Social Buzz + Quiet Sleep Proof</h4>
+                      <p className="pro-deliv-desc">Show guests where the evening atmosphere comes alive and reassure them they'll sleep soundly upstairs</p>
                     </div>
                   </div>
                 </div>

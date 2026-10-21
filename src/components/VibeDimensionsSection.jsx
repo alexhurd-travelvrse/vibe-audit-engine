@@ -4,9 +4,27 @@ import './VibeDimensionsSection.css';
 
 const DIMENSIONS = [
   {
+    icon: Compass,
+    tag: '5-MIN WALK',
+    title: 'Walkable Local Gems',
+    accentColor: '#ec4899',
+    renderVisual: () => (
+      <div className="vibe-visual-widget proximity-widget">
+        <div className="proximity-pills">
+          <span className="prox-pill">★ 4.6 Local Wine Bar (2m)</span>
+          <span className="prox-pill">★ 4.5 Artisan Bakery (4m)</span>
+        </div>
+        <div className="widget-label-row">
+          <span className="widget-metric">Verified Spots</span>
+          <span className="widget-caption">Steps From Your Door</span>
+        </div>
+      </div>
+    )
+  },
+  {
     icon: Volume2,
-    tag: 'SOUND',
-    title: 'Acoustic Soul',
+    tag: 'SOUND & SLEEP',
+    title: 'Easy Chat & Quiet Sleep',
     accentColor: '#00e5ff',
     renderVisual: () => (
       <div className="vibe-visual-widget sound-widget">
@@ -19,16 +37,54 @@ const DIMENSIONS = [
           <span className="bar bar-6"></span>
         </div>
         <div className="widget-label-row">
-          <span className="widget-metric">58 dB</span>
-          <span className="widget-caption">Intimate Lounge Hum</span>
+          <span className="widget-metric">No Shouting</span>
+          <span className="widget-caption">Buzz Downstairs · Quiet Rooms</span>
+        </div>
+      </div>
+    )
+  },
+  {
+    icon: Palette,
+    tag: 'WARMTH & LIGHT',
+    title: 'Candlelit & Golden Glow',
+    accentColor: '#fbbf24',
+    renderVisual: () => (
+      <div className="vibe-visual-widget palette-widget">
+        <div className="swatch-strip">
+          <span className="swatch swatch-amber" title="Candlelit Amber"></span>
+          <span className="swatch swatch-navy" title="Velvet Navy"></span>
+          <span className="swatch swatch-brass" title="Aged Brass"></span>
+          <span className="swatch swatch-stone" title="Warm Stone"></span>
+        </div>
+        <div className="widget-label-row">
+          <span className="widget-metric">Cosy & Flattering</span>
+          <span className="widget-caption">Zero Harsh Glare</span>
+        </div>
+      </div>
+    )
+  },
+  {
+    icon: Sparkles,
+    tag: 'THE HOSTS',
+    title: 'Warm Local Insiders',
+    accentColor: '#34d399',
+    renderVisual: () => (
+      <div className="vibe-visual-widget host-widget">
+        <div className="host-alchemy-pills">
+          <span className="host-pill">✦ Like a Local Friend</span>
+          <span className="host-pill">✦ Zero Snobbery</span>
+        </div>
+        <div className="widget-label-row">
+          <span className="widget-metric">Genuine Welcome</span>
+          <span className="widget-caption">Unscripted Hospitality</span>
         </div>
       </div>
     )
   },
   {
     icon: Users,
-    tag: 'PEOPLE',
-    title: 'The Social Mix',
+    tag: 'THE CROWD',
+    title: 'Where Locals Hang Out',
     accentColor: '#38bdf8',
     renderVisual: () => (
       <div className="vibe-visual-widget dial-widget">
@@ -41,54 +97,16 @@ const DIMENSIONS = [
           </div>
         </div>
         <div className="widget-label-row">
-          <span className="widget-metric">Local Magnet</span>
-          <span className="widget-caption">Zero Tourist Trap</span>
-        </div>
-      </div>
-    )
-  },
-  {
-    icon: Sparkles,
-    tag: 'HOST VIBE',
-    title: 'Human Alchemy',
-    accentColor: '#34d399',
-    renderVisual: () => (
-      <div className="vibe-visual-widget host-widget">
-        <div className="host-alchemy-pills">
-          <span className="host-pill">✦ Mixologist Lore</span>
-          <span className="host-pill">✦ Zero Snobbery</span>
-        </div>
-        <div className="widget-label-row">
-          <span className="widget-metric">Cultural Hosts</span>
-          <span className="widget-caption">Unscripted Warmth</span>
-        </div>
-      </div>
-    )
-  },
-  {
-    icon: Palette,
-    tag: 'COLOURS',
-    title: 'Visual Warmth',
-    accentColor: '#fbbf24',
-    renderVisual: () => (
-      <div className="vibe-visual-widget palette-widget">
-        <div className="swatch-strip">
-          <span className="swatch swatch-amber" title="2200K Amber"></span>
-          <span className="swatch swatch-navy" title="Velvet Navy"></span>
-          <span className="swatch swatch-brass" title="Aged Brass"></span>
-          <span className="swatch swatch-stone" title="Raw Limestone"></span>
-        </div>
-        <div className="widget-label-row">
-          <span className="widget-metric">2200K Ambient</span>
-          <span className="widget-caption">Warm Twilight Glow</span>
+          <span className="widget-metric">Neighbourhood Favourite</span>
+          <span className="widget-caption">Not a Tourist Trap</span>
         </div>
       </div>
     )
   },
   {
     icon: Zap,
-    tag: 'ENERGY',
-    title: 'Day-to-Night Pulse',
+    tag: 'BEST TIME OF DAY',
+    title: 'Calm Days, Lively Nights',
     accentColor: '#f59e0b',
     renderVisual: () => (
       <div className="vibe-visual-widget energy-widget">
@@ -100,34 +118,16 @@ const DIMENSIONS = [
           </svg>
         </div>
         <div className="widget-label-row">
-          <span className="widget-metric">Sunset Peak</span>
-          <span className="widget-caption">4 PM Calm ➔ 9 PM Buzz</span>
-        </div>
-      </div>
-    )
-  },
-  {
-    icon: MapPin,
-    tag: 'INSIDER TIPS',
-    title: 'Gateway Secrets',
-    accentColor: '#10b981',
-    renderVisual: () => (
-      <div className="vibe-visual-widget tips-widget">
-        <div className="secret-pill">
-          <MapPin size={11} className="pin-icon" />
-          <span>Speakeasy 3 doors down</span>
-        </div>
-        <div className="widget-label-row">
-          <span className="widget-metric">2 min walk</span>
-          <span className="widget-caption">Artisan Flat White</span>
+          <span className="widget-metric">Best at 6:30 PM</span>
+          <span className="widget-caption">Morning Coffee ➔ Sunset Drinks</span>
         </div>
       </div>
     )
   },
   {
     icon: ShieldCheck,
-    tag: 'AUTHENTICITY',
-    title: 'Material Honesty',
+    tag: 'TRUE CHARACTER',
+    title: 'Real Craft, Not Chain',
     accentColor: '#a855f7',
     renderVisual: () => (
       <div className="vibe-visual-widget auth-widget">
@@ -136,26 +136,26 @@ const DIMENSIONS = [
           <span className="auth-num">94%</span>
         </div>
         <div className="widget-label-row">
-          <span className="widget-metric">Honest Materials</span>
-          <span className="widget-caption">Zero Faux Decor</span>
+          <span className="widget-metric">Real Wood & Stone</span>
+          <span className="widget-caption">True Local Architecture</span>
         </div>
       </div>
     )
   },
   {
-    icon: Compass,
-    tag: 'PROXIMITY',
-    title: 'Proximity to Hotspots',
-    accentColor: '#ec4899',
+    icon: MapPin,
+    tag: 'INSIDER TIPS',
+    title: 'The Secret Local Order',
+    accentColor: '#10b981',
     renderVisual: () => (
-      <div className="vibe-visual-widget proximity-widget">
-        <div className="proximity-pills">
-          <span className="prox-pill">3m South Bank</span>
-          <span className="prox-pill">5m Tate Modern</span>
+      <div className="vibe-visual-widget tips-widget">
+        <div className="secret-pill">
+          <MapPin size={11} className="pin-icon" />
+          <span>Hidden Wine Bar 2 Doors Down</span>
         </div>
         <div className="widget-label-row">
-          <span className="widget-metric">98 WalkScore</span>
-          <span className="widget-caption">Local Epicentre</span>
+          <span className="widget-metric">Regulars' Tip</span>
+          <span className="widget-caption">What Locals Ask For</span>
         </div>
       </div>
     )
@@ -171,13 +171,13 @@ export default function VibeDimensionsSection() {
         <div className="vibe-dimensions-header animate-fade-up">
           <div className="vibe-dimensions-eyebrow">
             <Sparkles size={14} />
-            <span>VIBE SIGNATURES</span>
+            <span>WHAT TRAVELLERS ACTUALLY BOOK</span>
           </div>
           <h2 className="vibe-dimensions-title">
-            Mapping Your <span className="vibe-title-accent">Atmosphere</span>
+            Your Vibe Creates <span className="vibe-title-accent">Desire.</span> Your Neighbourhood Closes the <span className="vibe-title-accent">Booking.</span>
           </h2>
           <p className="vibe-dimensions-subtitle">
-            74% of Next-Gen travelers book the neighbourhood and the people who bring it to life — AtmosVibe maps the 8 dimensions that make your property the heartbeat of it
+            Over 70% of travellers choose how they want to feel and which neighbourhood they want to explore before picking a room. AtmosVibe translates your atmosphere and doorstep gems into plain-English proof that wins the booking.
           </p>
         </div>
 

@@ -50,3 +50,143 @@
 [1]    -> Searching Serper Places: Spa Wellness Thermal NEWCASTLE NEWCASTLE
 [1]    -> Searching Serper Places: Modern Art Gallery Museum NEWCASTLE NEWCASTLE
 [1] [API] Engine returned mock data fallback. Bypassing all caches.
+[1] [Master Vibe Audit API] Running 4-Step Pipeline for: "Malmaison leeds" in "leeds" (quayside)  (URL: https://www.booking.com/hotel/gb/malmaisonhotelleeds.html)
+[1] [Master Vibe API] 1) Harvest: Fetching rich venue corpus & amenities for "Malmaison leeds" in "quayside leeds"...
+[1] [Serper] Gathering live intelligence for "Malmaison leeds" in "quayside leeds"...
+[1] [Serper] Successfully compiled 0 characters of live venue data.
+[1] [Master Vibe API] 2) Discover: Fetching verified Booking.com room photos for "Malmaison leeds" in "leeds"...
+[1] [Master Vibe] Scraping live Booking.com gallery from resolved URL: https://www.booking.com/hotel/gb/malmaisonhotelleeds.html?lang=en-us
+[1] [Master Vibe] AWS WAF challenge detected. Waiting for challenge redirect...
+[1] [Master Vibe] Successfully extracted 55 exact live Booking.com photos!
+[1] [Master Vibe API] Successfully captured 55 verified live Booking.com photos. Skipping external TripAdvisor/Official scrapers.
+[1] [Master Vibe API] Inventory ready: 55 live OTA photos, 0 fallback assets.
+[1] [Master Vibe API] 3) Set strategy: Synthesizing Key Strategic Shifts & 5-slot blueprint bridging Hotel DNA ⟷ Neighborhood Demand with discovered inventory...
+[1] [Gemini] Preparing multimodal extraction request for Malmaison leeds...
+[1] [Gemini] Successfully received and validated structured JSON with visual photo analysis.
+[1] [Master Vibe API] 4) Re-order: Binding and sequencing authentic photos to match strategic shifts 100% into Slots 1-5...
+[1] [Photo Gatekeeper] Starting visual asset resolution for "Malmaison leeds" in "leeds" (Direct URL: https://www.booking.com/hotel/gb/malmaisonhotelleeds.html)...
+[1] [Master Vibe] Running Pass 2: Batched Gemini Multimodal Gatekeeper on 16 candidate images...
+[1] [Master Vibe] Visual Gatekeeper classified 32 candidates via raw pixels.
+[1] [Disk Cache] Saved daily cache to malmaison_leeds___leeds___quayside___https___www_booking_com_hotel_gb__7c651bf6b1.json
+[1] [API] Cache expired or missing. Running pipeline for leeds / quayside ...
+[1] [Step 1] Querying Gemini AI Mega-Prompt for quayside, leeds...
+[1] Gemini Failed, falling back to mock telemetry data: Gemini API Error: Gemini timeout or unavailable
+[1]    -> Searching Serper Places: Boutique Hotel Riverside quayside leeds
+[1]    -> Searching Serper Places: Rooftop Bar Cocktails quayside leeds
+[1]    -> Searching Serper Places: Modern Art Gallery Museum quayside leeds
+[1]    -> Searching Serper Places: Spa Wellness Thermal quayside leeds
+[1]    -> Searching Serper Places: Market Food Artisan quayside leeds
+[1]    -> Searching Serper Places: Rooftop Bar Cocktails leeds leeds
+[1]    -> Searching Serper Places: Spa Wellness Thermal leeds leeds
+[1]    -> Searching Serper Places: Boutique Hotel Riverside leeds leeds
+[1]    -> Searching Serper Places: Modern Art Gallery Museum leeds leeds
+[1]    -> Searching Serper Places: Market Food Artisan leeds leeds
+[1] [API] Engine returned mock data fallback. Bypassing all caches.
+[0] [2m22:55:41[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/experience/1" 
+[0] [2m22:55:41[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/experience/1" 
+[0] [2m22:55:44[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/experience/2" 
+[0] [2m22:55:44[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/experience/2" 
+[0] [2m22:55:46[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/experience/3" 
+[0] [2m22:55:46[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/experience/3" 
+[0] [2m22:55:48[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/experience/4" 
+[0] [2m22:55:48[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/experience/4" 
+[0] [2m22:55:50[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/experience/5" 
+[0] [2m22:55:50[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/experience/5" 
+[0] [2m22:55:53[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/ted-lasso/1" 
+[0] [2m22:55:53[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/ted-lasso/1" 
+[0] [2m22:55:55[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/ted-lasso/2" 
+[0] [2m22:55:55[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/ted-lasso/2" 
+[0] [2m22:55:57[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/msc-europa/1" 
+[0] [2m22:55:57[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/msc-europa/1" 
+[0] [2m22:55:59[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/msc-europa/2" 
+[0] [2m22:55:59[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/msc-europa/2" 
+[0] [2m22:56:01[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/virgin-hotel-las-vegas/1" 
+[0] [2m22:56:01[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/virgin-hotel-las-vegas/1" 
+[0] [2m22:56:03[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/virgin-hotel-las-vegas/2" 
+[0] [2m22:56:03[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/virgin-hotel-las-vegas/2" 
+[0] [2m22:56:06[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/25-hours-copenhagen/1" 
+[0] [2m22:56:06[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/25-hours-copenhagen/1" 
+[0] [2m22:56:08[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/25-hours-copenhagen/2" 
+[0] [2m22:56:08[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/25-hours-copenhagen/2" 
+[0] [2m22:56:10[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/sea-containers/1" 
+[0] [2m22:56:10[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/sea-containers/1" 
+[0] [2m22:56:12[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/sea-containers/2" 
+[0] [2m22:56:12[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/sea-containers/2" 
+[0] [2m22:56:14[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/ena-suite-seoul/1" 
+[0] [2m22:56:14[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/ena-suite-seoul/1" 
+[0] [2m22:56:17[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/ena-suite-seoul/2" 
+[0] [2m22:56:17[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/ena-suite-seoul/2" 
+[0] [2m22:59:14[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/experience/1" 
+[0] [2m22:59:14[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/experience/1" 
+[0] [2m22:59:17[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/experience/2" 
+[0] [2m22:59:17[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/experience/2" 
+[0] [2m22:59:20[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/ted-lasso/2" 
+[0] [2m22:59:20[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/ted-lasso/2" 
+[0] [2m22:59:23[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/msc-europa/1" 
+[0] [2m22:59:23[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/msc-europa/1" 
+[0] [2m22:59:26[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/msc-europa/2" 
+[0] [2m22:59:26[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/msc-europa/2" 
+[0] [2m22:59:29[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/virgin-hotel-las-vegas/1" 
+[0] [2m22:59:29[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/virgin-hotel-las-vegas/1" 
+[0] [2m22:59:32[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/virgin-hotel-las-vegas/2" 
+[0] [2m22:59:32[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/virgin-hotel-las-vegas/2" 
+[0] [2m22:59:35[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/25-hours-copenhagen/1" 
+[0] [2m22:59:35[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/25-hours-copenhagen/1" 
+[0] [2m22:59:38[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/25-hours-copenhagen/2" 
+[0] [2m22:59:38[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/25-hours-copenhagen/2" 
+[0] [2m22:59:41[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/sea-containers/1" 
+[0] [2m22:59:41[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/sea-containers/1" 
+[0] [2m22:59:44[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/sea-containers/2" 
+[0] [2m22:59:44[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/sea-containers/2" 
+[0] [2m22:59:47[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/ena-suite-seoul/1" 
+[0] [2m22:59:47[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/ena-suite-seoul/1" 
+[0] [2m22:59:50[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/ena-suite-seoul/2" 
+[0] [2m22:59:50[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/ena-suite-seoul/2" 
+[0] [2m23:00:49[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/experience/1" 
+[0] [2m23:00:49[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/experience/1" 
+[0] [2m23:00:51[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/experience/2" 
+[0] [2m23:00:51[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/experience/2" 
+[0] [2m23:00:52[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/experience/3" 
+[0] [2m23:00:52[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/experience/3" 
+[0] [2m23:00:54[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/ted-lasso/2" 
+[0] [2m23:00:54[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/ted-lasso/2" 
+[0] [2m23:00:55[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/msc-europa/2" 
+[0] [2m23:00:55[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/msc-europa/2" 
+[0] [2m23:00:57[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/virgin-hotel-las-vegas/2" 
+[0] [2m23:00:57[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/virgin-hotel-las-vegas/2" 
+[0] [2m23:00:59[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/25-hours-copenhagen/2" 
+[0] [2m23:00:59[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/25-hours-copenhagen/2" 
+[0] [2m23:01:00[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/sea-containers/2" 
+[0] [2m23:01:00[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/sea-containers/2" 
+[0] [2m23:01:02[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/ena-suite-seoul/2" 
+[0] [2m23:01:02[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/ena-suite-seoul/2" 
+[0] [2m23:04:47[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/experience/1" 
+[0] [2m23:04:47[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/experience/1" 
+[0] [2m23:04:50[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/experience/2" 
+[0] [2m23:04:50[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/experience/2" 
+[0] [2m23:04:53[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/ted-lasso/2" 
+[0] [2m23:04:53[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/ted-lasso/2" 
+[0] [2m23:04:56[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/msc-europa/1" 
+[0] [2m23:04:56[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/msc-europa/1" 
+[0] [2m23:04:59[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/msc-europa/2" 
+[0] [2m23:04:59[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/msc-europa/2" 
+[0] [2m23:05:02[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/virgin-hotel-las-vegas/1" 
+[0] [2m23:05:02[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/virgin-hotel-las-vegas/1" 
+[0] [2m23:05:05[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/virgin-hotel-las-vegas/2" 
+[0] [2m23:05:05[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/virgin-hotel-las-vegas/2" 
+[0] [2m23:05:08[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/25-hours-copenhagen/1" 
+[0] [2m23:05:08[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/25-hours-copenhagen/1" 
+[0] [2m23:05:11[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/25-hours-copenhagen/2" 
+[0] [2m23:05:11[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/25-hours-copenhagen/2" 
+[0] [2m23:05:14[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/sea-containers/1" 
+[0] [2m23:05:14[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/sea-containers/1" 
+[0] [2m23:05:17[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/sea-containers/2" 
+[0] [2m23:05:17[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/sea-containers/2" 
+[0] [2m23:05:20[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/ena-suite-seoul/1" 
+[0] [2m23:05:20[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/ena-suite-seoul/1" 
+[0] [2m23:05:23[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/ena-suite-seoul/2" 
+[0] [2m23:05:23[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/play/ena-suite-seoul/2" 
+[0] [2m23:11:58[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/vibe/seoul/namdaemun/ena-suite-seoul" 
+[0] [2m23:11:58[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/vibe/seoul/namdaemun/ena-suite-seoul" 
+[0] [2m23:12:04[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/vibe/seoul/namdaemun/ena-suite-seoul" 
+[0] [2m23:12:04[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mNo routes matched location "/vibe/seoul/namdaemun/ena-suite-seoul" 
