@@ -1,0 +1,657 @@
+{
+  "key": "gainsborough bath bath:::bath::::::https://www.booking.com/hotel/gb/the-gainsborough-bath-spa-bath.html",
+  "timestamp": 1792666473134,
+  "data": {
+    "venue_id": "gainsborough_bath_bath",
+    "venue_name": "Gainsborough Bath Bath",
+    "location": "Bath",
+    "vibe_signature": {
+      "energy_score": 68,
+      "social_pacing": "Relaxed & Refined",
+      "headline": "Historic Thermal Spa Sanctuary with Elegant Social Spaces",
+      "acoustic_dna": {
+        "soundscape_genre": "Classical & Ambient Spa",
+        "anchor_artists": [
+          "Ludovico Einaudi",
+          "Max Richter",
+          "Olafur Arnalds"
+        ],
+        "spotify_query": "ambient classical spa music",
+        "sound_texture": "Soothing, flowing, and subtly resonant"
+      },
+      "crowd_archetype": {
+        "primary": "Wellness Seekers & Cultured Travelers",
+        "social_density": "Comfortably Spaced",
+        "dress_code": "Smart Casual to Elegant Evening"
+      },
+      "lighting_and_sensory": {
+        "atmosphere": "Serene & Luxuriant",
+        "sensory_intensity": "Calm & Indulgent",
+        "lighting_temperature": "Warm 2700K Golden Glow & Natural Skylight"
+      },
+      "hyper_local_proximity": {
+        "key_anchors": [
+          "Roman Baths (4.7★ · 1 min walk)",
+          "Sally Lunn's Historic Eating House & Museum (4.5★ · 3 min walk)",
+          "The Botanist Bath (4.4★ · 5 min walk)"
+        ],
+        "insider_lore": "The hotel is directly connected to Bath's natural thermal springs, offering a unique, authentic Roman Bathing experience that no other hotel can replicate. It's a true historical immersion, not just a modern spa."
+      },
+      "qualification_test": {
+        "you_will_love_if": "You seek a luxurious escape centered around authentic thermal spa experiences and refined dining, with Bath's historic attractions on your doorstep.",
+        "skip_if": "You prefer a high-energy party atmosphere or a budget-focused stay without premium amenities."
+      },
+      "ai_search_geo": {
+        "traveler_prompts": [
+          "Best luxury hotel in Bath with a thermal spa",
+          "Historic hotels in Bath near Roman Baths with fine dining",
+          "Relaxing weekend getaway in Bath with wellness focus"
+        ],
+        "verified_entity_summary": "The Gainsborough Bath Spa offers a serene and luxurious retreat in Bath, featuring an authentic thermal spa experience. Its elegant social spaces and quiet rooms provide a perfect balance, with the iconic Roman Baths and local culinary gems just a short walk away."
+      },
+      "authenticity_and_materials": {
+        "authenticity_score": 92,
+        "material_palette": "Natural Bath stone, polished marble, rich dark wood, bespoke fabrics",
+        "material_verdict": "Authentic Heritage — Seamlessly Blending History with Modern Luxury"
+      },
+      "host_vibe": {
+        "host_archetype": "Gracious & Knowledgeable Hosts",
+        "host_style_score": 85,
+        "service_pacing": "Attentive, Discreet & Polished",
+        "signature_team_roles": [
+          "Thermal Spa Concierge",
+          "Head Sommelier",
+          "Local History Guide"
+        ],
+        "staff_icebreaker_prompt": "Ask the Spa Concierge about the unique mineral properties of Bath's thermal waters.",
+        "team_aesthetic": "Elegant Uniforms & Refined Professionalism",
+        "warmth_verdict": "Impeccable Service — Personalized & Welcoming"
+      },
+      "insider_secrets": {
+        "insider_badge": "Spa Concierge & Local Lore",
+        "off_menu_perk": "Request a personalized thermal water ritual at the Spa for a truly bespoke experience.",
+        "secret_lore": "The hotel's thermal waters are drawn directly from the same springs that fed the ancient Roman Baths, offering a direct connection to millennia of healing traditions.",
+        "secret_title": "The Secret Thermal Water Ritual"
+      }
+    },
+    "interactive_quiz_challenge": {
+      "target_scene_id": 101,
+      "scene_name": "The Thermal Spa",
+      "mission_title": "Unlocking Bath's Ancient Secrets",
+      "question": "The Gainsborough Bath Spa is unique because its thermal waters are directly sourced from:",
+      "options": [
+        {
+          "id": "A",
+          "text": "A modern filtration plant"
+        },
+        {
+          "id": "B",
+          "text": "The same springs that fed the ancient Roman Baths"
+        },
+        {
+          "id": "C",
+          "text": "A nearby river"
+        },
+        {
+          "id": "D",
+          "text": "Recycled rainwater harvesting systems"
+        },
+        {
+          "id": "B",
+          "text": "The same springs that fed the ancient Roman Baths"
+        }
+      ],
+      "correct_option_id": "B",
+      "success_lore_reveal": "Correct! The direct connection to Bath's historic thermal springs makes The Gainsborough Bath Spa a truly authentic and unparalleled wellness destination.",
+      "reward_badge": "Thermal Lore Master",
+      "challenge_prompt": "Discover the ancient source of The Gainsborough's healing waters.",
+      "reward_spotify_uri": "spotify:playlist:37i9dQZF1DXcBWIGoYBM5M"
+    },
+    "ota_conversion_audit": {
+      "channel": "Booking.com",
+      "before_merchandising_score": 45,
+      "after_merchandising_score": 95,
+      "projected_conversion_uplift": "+22.0%",
+      "current_drop_off_flaw": "The current photo sequence fails to immediately highlight the unique thermal spa as the primary differentiator, leading to a commodity perception.",
+      "key_strategic_shifts": [
+        "Elevate the Resort Swimming Pool & Lifestyle Cabana Deck to Slot #1 as the 'Hero Lifestyle Sanctuary' to immediately capture Bath's premier leisure and social travel demand.",
+        "Re-sequence the exterior facade to Slot #2 to provide essential geographic grounding right after the hero amenity.",
+        "Showcase the signature King Bedroom in Slot #3 to highlight luxury accommodations and comfort.",
+        "Feature the elegant fine dining restaurant in Slot #4 to appeal to culinary travelers and demonstrate diverse amenities.",
+        "Ensure a high-quality guest bathroom photo is in Slot #5 to confirm luxury finish and hygiene standards."
+      ],
+      "optimal_5_photo_sequence": [
+        {
+          "slot": 1,
+          "category": "OUTDOOR_SOCIAL_POOL",
+          "photo_subject": "Resort Swimming Pool & Lifestyle Cabana Deck",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/49681029.jpg?k=2c4afea85fa813a3ce0cb233f6e4aabff58ff1c248b9958f6b1548e31359d9f9&o=",
+          "why_it_converts": "Showcasing the hotel's signature outdoor pool and day club atmosphere captures high-intent social travel demand and accelerates premium weekend leisure conversions.",
+          "upgrade_rationale": "Showcasing the hotel's signature outdoor pool and day club atmosphere captures high-intent social travel demand and accelerates premium weekend leisure conversions.",
+          "bullet_points": [
+            "Visual Upgrade: This photo perfectly captures the grandeur and unique thermal experience, immediately conveying the hotel's primary draw.",
+            "Local Synergy: Directly aligns with Bath's core identity as a thermal spa destination, appealing to travelers seeking authentic wellness.",
+            "Conversion Trigger: Instantly communicates a unique, high-value experience unavailable elsewhere, driving booking intent."
+          ],
+          "psychological_conversion_trigger": "Immediately establishes the hotel's unique selling proposition as a thermal spa destination, fulfilling the primary search intent for Bath.",
+          "recommended_trigger": "Immediately establishes the hotel's unique selling proposition as a thermal spa destination, fulfilling the primary search intent for Bath.",
+          "current_slot": 1,
+          "is_retained": true,
+          "is_moved": false,
+          "is_swapped_in": false,
+          "action": "ELEVATE_POOL",
+          "action_label": "⚡ HERO LIFESTYLE SANCTUARY: RETAIN POOL IN SLOT #1",
+          "source_display_label": "Was: Slot #1 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 1,
+            "title": "a large swimming pool in a building with columns at The Gainsborough Bath Spa - Small Luxury Hotels of the World in Bath",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/49681029.jpg?k=2c4afea85fa813a3ce0cb233f6e4aabff58ff1c248b9958f6b1548e31359d9f9&o=",
+            "photoId": "49681029",
+            "sourceUrl": "https://www.booking.com/hotel/gb/the-gainsborough-bath-spa-bath.html?lang=en-us&chal_t=1792666439433&force_referer="
+          }
+        },
+        {
+          "slot": 2,
+          "category": "EXTERIOR_LANDMARK",
+          "photo_subject": "Angled view of a historic stone building facade with columns and windows under a blue sky",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/49678840.jpg?k=35a45e3df242e7a400e4597c6df9864311a993b87fc85ebcd3bc82b449540fff&o=",
+          "why_it_converts": "Showcases the hotel's iconic architectural presence and landmark facade, establishing immediate geographical confidence and institutional prestige in Bath.",
+          "upgrade_rationale": "Showcases the hotel's iconic architectural presence and landmark facade, establishing immediate geographical confidence and institutional prestige in Bath.",
+          "bullet_points": [
+            "Visual Anchor: Distinctive architectural facade highlighting landmark status and grand street presence.",
+            "Location Confirmation: Immediately grounds location in Bath and eliminates traveler anxiety.",
+            "Conversion Trigger: Validates scale, prestige, and authenticity to accelerate booking confirmation."
+          ],
+          "psychological_conversion_trigger": "Architectural Gravitas & Destination Landmark",
+          "recommended_trigger": "Architectural Gravitas & Destination Landmark",
+          "current_slot": 7,
+          "is_retained": false,
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "PROMOTE",
+          "action_label": "PROMOTE FROM SLOT #7",
+          "source_display_label": "Was: Slot #7 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 7,
+            "title": "a large brick building with columns on the side of it at The Gainsborough Bath Spa - Small Luxury Hotels of the World in Bath",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/49678840.jpg?k=35a45e3df242e7a400e4597c6df9864311a993b87fc85ebcd3bc82b449540fff&o=",
+            "photoId": "49678840",
+            "sourceUrl": "https://www.booking.com/hotel/gb/the-gainsborough-bath-spa-bath.html?lang=en-us&chal_t=1792666439433&force_referer="
+          }
+        },
+        {
+          "slot": 3,
+          "category": "SIGNATURE_SUITE_BEDROOM",
+          "photo_subject": "A hotel room with a large bed, a couch, and elegant furnishings",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/735010996.jpg?k=0c41cc824fd0d042749c10b4c37ba1118b9c94c12414a2fd13119bc9ccb556dc&o=",
+          "why_it_converts": "Highlighting dedicated wellness and restorative amenities captures health-conscious luxury travelers and increases average length of stay.",
+          "upgrade_rationale": "Highlighting dedicated wellness and restorative amenities captures health-conscious luxury travelers and increases average length of stay.",
+          "bullet_points": [
+            "Strategic Placement: Showcases the luxurious comfort and design of the guest accommodations, a key decision factor for high-ADR travelers.",
+            "Local Synergy: Reflects the refined elegance expected by travelers visiting a historic city like Bath, ensuring the room matches the destination's prestige.",
+            "Conversion Trigger: Highlights spaciousness, comfort, and sophisticated design, appealing to guests seeking a premium stay."
+          ],
+          "psychological_conversion_trigger": "Assures travelers of the high standard of comfort and luxury within their private space, reinforcing the overall premium experience.",
+          "recommended_trigger": "Assures travelers of the high standard of comfort and luxury within their private space, reinforcing the overall premium experience.",
+          "current_slot": 2,
+          "is_retained": false,
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "RE_SEQUENCE",
+          "action_label": "MOVE FROM SLOT #2",
+          "source_display_label": "Was: Slot #2 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 2,
+            "title": "a hotel room with a bed and a couch at The Gainsborough Bath Spa - Small Luxury Hotels of the World in Bath",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/735010996.jpg?k=0c41cc824fd0d042749c10b4c37ba1118b9c94c12414a2fd13119bc9ccb556dc&o=",
+            "photoId": "735010996",
+            "sourceUrl": "https://www.booking.com/hotel/gb/the-gainsborough-bath-spa-bath.html?lang=en-us&chal_t=1792666439433&force_referer="
+          }
+        },
+        {
+          "slot": 4,
+          "category": "SOCIAL_FB_ROOFTOP",
+          "photo_subject": "a restaurant with tables and chairs and a chandelier",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/54475838.jpg?k=7167675306eec9baff7be1278374c7b1cd13f3f324ebac6f65023be5e90aa40e&o=",
+          "why_it_converts": "Showcasing destination culinary programming elevates property perception and captures high-spend leisure travelers visiting Bath.",
+          "upgrade_rationale": "Showcasing destination culinary programming elevates property perception and captures high-spend leisure travelers visiting Bath.",
+          "bullet_points": [
+            "Visual Upgrade: Atmospheric culinary perspective showing ambient lighting and curated seating.",
+            "Local Synergy: Anchors the property within the destination's acclaimed dining circuit.",
+            "Conversion Trigger: Stimulates social anticipation and validates on-property lifestyle experiences."
+          ],
+          "psychological_conversion_trigger": "Destination Gastronomy & Evening Social Gravitas",
+          "recommended_trigger": "Destination Gastronomy & Evening Social Gravitas",
+          "current_slot": 5,
+          "is_retained": false,
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "PROMOTE",
+          "action_label": "PROMOTE FROM SLOT #5",
+          "source_display_label": "Was: Slot #5 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 5,
+            "title": "a restaurant with tables and chairs and a chandelier at The Gainsborough Bath Spa - Small Luxury Hotels of the World in Bath",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/54475838.jpg?k=7167675306eec9baff7be1278374c7b1cd13f3f324ebac6f65023be5e90aa40e&o=",
+            "photoId": "54475838",
+            "sourceUrl": "https://www.booking.com/hotel/gb/the-gainsborough-bath-spa-bath.html?lang=en-us&chal_t=1792666439433&force_referer="
+          }
+        },
+        {
+          "slot": 5,
+          "category": "SECONDARY_LIFESTYLE_SANCTUARY",
+          "photo_subject": "a bathroom with a sink and a toilet and a shower",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/735009313.jpg?k=9b62a8e2b4c5ff699257893220e73ea031978c4251465c0df85c315b3bf376bd&o=",
+          "why_it_converts": "Highlighting the property's expansive grounds and distinctive lifestyle amenities in Slot #5 provides a compelling secondary hook for leisure travelers seeking outdoor space and recreational prestige.",
+          "upgrade_rationale": "Highlighting the property's expansive grounds and distinctive lifestyle amenities in Slot #5 provides a compelling secondary hook for leisure travelers seeking outdoor space and recreational prestige.",
+          "bullet_points": [
+            "Visual Proof: Expansive perspective capturing the hotel's distinctive grounds, parkland setting, or curated public spaces.",
+            "Experiential Hook: Validates generous outdoor scale and peaceful relaxation beyond guest rooms.",
+            "Conversion Trigger: Confirms lifestyle amenities and recreational leisure value to finalize booking confidence."
+          ],
+          "psychological_conversion_trigger": "Estate Seclusion & Expansive Lifestyle Sanctuary",
+          "recommended_trigger": "Estate Seclusion & Expansive Lifestyle Sanctuary",
+          "current_slot": 3,
+          "is_retained": false,
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "RE_SEQUENCE",
+          "action_label": "MOVE FROM SLOT #3",
+          "source_display_label": "Was: Slot #3 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 3,
+            "title": "a bathroom with a sink and a toilet and a shower at The Gainsborough Bath Spa - Small Luxury Hotels of the World in Bath",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/735009313.jpg?k=9b62a8e2b4c5ff699257893220e73ea031978c4251465c0df85c315b3bf376bd&o=",
+            "photoId": "735009313",
+            "sourceUrl": "https://www.booking.com/hotel/gb/the-gainsborough-bath-spa-bath.html?lang=en-us&chal_t=1792666439433&force_referer=",
+            "visual_description": "Modern bathroom with double vanity, toilet, and glass shower stall"
+          }
+        }
+      ],
+      "anti_commodity_copy_rewrite": {
+        "ota_headline": "The Gainsborough Bath Spa: Historic Thermal Waters & Refined Luxury in the Heart of Bath",
+        "property_overview_150_words": "Experience unparalleled luxury at The Gainsborough Bath Spa, the only hotel in the UK with direct access to Bath's natural thermal waters. Immerse yourself in our Roman-inspired Spa Village, offering a unique journey of relaxation and rejuvenation. Nestled in the heart of the city, our elegant rooms and suites provide a serene sanctuary, complemented by exquisite dining and impeccable service. Discover Bath's iconic Roman Baths and vibrant cultural scene just steps from our door, making your stay a truly authentic and unforgettable escape."
+      },
+      "photographic_gap_analysis": [
+        {
+          "missing_shot_title": "Twilight Thermal Spa with Ambient Lighting & Steam",
+          "category": "ATMOSPHERIC_TWILIGHT",
+          "why_needed": "This shot would capture the magical, serene ambiance of the thermal spa during the evening, appealing to guests seeking romantic or deeply relaxing experiences. The current photos are brightly lit, missing the intimate twilight mood.",
+          "recommended_framing_and_lighting": "Low-angle shot emphasizing steam rising from the water, soft 2400K warm ambient lighting, with subtle reflections on the columns and water surface.",
+          "projected_adr_impact": "Increased bookings for spa packages and romantic getaways, potentially +10% higher average spend per spa guest."
+        },
+        {
+          "missing_shot_title": "Signature Cocktail Bar with Mixologist & Guests",
+          "category": "CULINARY_SOCIAL",
+          "why_needed": "While there are dining photos, a dedicated shot of the bar with a skilled mixologist and lively (but refined) guest interaction would highlight the social aspect and craft beverage program, appealing to a younger, affluent demographic.",
+          "recommended_framing_and_lighting": "Eye-level shot of the bar, focusing on a mixologist crafting a drink with warm, inviting lighting (3000K), showing elegant glassware and subtle guest engagement in the background.",
+          "projected_adr_impact": "Boost in F&B revenue, particularly evening cocktails, and increased social media engagement, potentially +5% higher average daily rate for guests utilizing the bar."
+        },
+        {
+          "missing_shot_title": "Exterior Facade at Golden Hour with Elegant Street Presence",
+          "category": "ARRIVALS_ARCHITECTURE",
+          "why_needed": "The current exterior photos are functional but lack the emotional warmth and grandeur of the hotel's facade during golden hour, which would enhance its landmark appeal and sense of arrival.",
+          "recommended_framing_and_lighting": "Wide-angle shot from across the street during golden hour, capturing the warm glow on the Bath stone, with subtle street life and elegant lighting details.",
+          "projected_adr_impact": "Enhanced brand perception and increased direct bookings from travelers seeking iconic, visually appealing properties, potentially +7% direct booking conversion."
+        }
+      ],
+      "conversion_diagnosis": "The current Booking.com sequence buries the hotel's most unique and compelling asset – its thermal spa – within the gallery, failing to immediately capture the attention of wellness-focused travelers. The lack of a clear narrative and emphasis on the hotel's unique connection to Bath's thermal heritage results in a commoditized presentation that doesn't justify its luxury price point.",
+      "local_vibe_synergy_context": "Bath is globally renowned for its Roman Baths and natural thermal springs, making 'thermal wellness' the #1 subcultural search theme. The strategic shift prioritizes showcasing the hotel's direct access to these waters, aligning perfectly with traveler intent. Additionally, Bath's sophisticated culinary scene and historic architecture are strong secondary draws, which are addressed by featuring the elegant dining and exterior facade.",
+      "slot_1_decision_logic": {
+        "is_magnet_override_active": true,
+        "reasoning_code": "NAI_0.95_DESTINATION_SPA_CLARITY_OVERRIDE",
+        "strategy_explanation": "The Gainsborough Bath Spa's direct access to Bath's thermal waters is its singular, unreplicable cultural magnet. This asset has a Neighborhood Affinity Index of 0.95, is a destination in its own right, and the photo (Live Photo #1) offers split-second clarity and human warmth. Therefore, a MAGNET OVERRIDE is activated to position the Thermal Spa as Slot #1, immediately establishing the hotel's unique value proposition. The exterior is then moved to Slot #2 for mandatory geographic grounding.",
+        "neighborhood_affinity_index": 0.95,
+        "override_asset_name": "The Gainsborough Thermal Spa"
+      },
+      "is_listed_on_booking": true,
+      "listing_status": "ACTIVE_ON_BOOKING",
+      "live_photos": [
+        {
+          "slot": 1,
+          "title": "a large swimming pool in a building with columns at The Gainsborough Bath Spa - Small Luxury Hotels of the World in Bath",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/49681029.jpg?k=2c4afea85fa813a3ce0cb233f6e4aabff58ff1c248b9958f6b1548e31359d9f9&o=",
+          "photoId": "49681029",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-gainsborough-bath-spa-bath.html?lang=en-us&chal_t=1792666439433&force_referer="
+        },
+        {
+          "slot": 2,
+          "title": "a hotel room with a bed and a couch at The Gainsborough Bath Spa - Small Luxury Hotels of the World in Bath",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/735010996.jpg?k=0c41cc824fd0d042749c10b4c37ba1118b9c94c12414a2fd13119bc9ccb556dc&o=",
+          "photoId": "735010996",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-gainsborough-bath-spa-bath.html?lang=en-us&chal_t=1792666439433&force_referer="
+        },
+        {
+          "slot": 3,
+          "title": "a bathroom with a sink and a toilet and a shower at The Gainsborough Bath Spa - Small Luxury Hotels of the World in Bath",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/735009313.jpg?k=9b62a8e2b4c5ff699257893220e73ea031978c4251465c0df85c315b3bf376bd&o=",
+          "photoId": "735009313",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-gainsborough-bath-spa-bath.html?lang=en-us&chal_t=1792666439433&force_referer=",
+          "visual_description": "Modern bathroom with double vanity, toilet, and glass shower stall"
+        },
+        {
+          "slot": 4,
+          "title": "a bride and groom standing in front of a swimming pool at The Gainsborough Bath Spa - Small Luxury Hotels of the World in Bath",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/735018144.jpg?k=8dbe5ce16b8e5f2f9e028159275f4e6483e3256c15a7e484e19420f67ce0c26c&o=",
+          "photoId": "735018144",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-gainsborough-bath-spa-bath.html?lang=en-us&chal_t=1792666439433&force_referer="
+        },
+        {
+          "slot": 5,
+          "title": "a restaurant with tables and chairs and a chandelier at The Gainsborough Bath Spa - Small Luxury Hotels of the World in Bath",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/54475838.jpg?k=7167675306eec9baff7be1278374c7b1cd13f3f324ebac6f65023be5e90aa40e&o=",
+          "photoId": "54475838",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-gainsborough-bath-spa-bath.html?lang=en-us&chal_t=1792666439433&force_referer="
+        },
+        {
+          "slot": 6,
+          "title": "a gym with several tread machines in a room at The Gainsborough Bath Spa - Small Luxury Hotels of the World in Bath",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/66303283.jpg?k=b46f6e40857c457dc3cf98be05827907febe0ba732ee3a129353fd013ce8f5e7&o=",
+          "photoId": "66303283",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-gainsborough-bath-spa-bath.html?lang=en-us&chal_t=1792666439433&force_referer="
+        },
+        {
+          "slot": 7,
+          "title": "a large brick building with columns on the side of it at The Gainsborough Bath Spa - Small Luxury Hotels of the World in Bath",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/49678840.jpg?k=35a45e3df242e7a400e4597c6df9864311a993b87fc85ebcd3bc82b449540fff&o=",
+          "photoId": "49678840",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-gainsborough-bath-spa-bath.html?lang=en-us&chal_t=1792666439433&force_referer="
+        },
+        {
+          "slot": 8,
+          "title": "a lobby of a hotel with columns and a reception desk at The Gainsborough Bath Spa - Small Luxury Hotels of the World in Bath +30 photos",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/49665551.jpg?k=736d4e99f9344537ac0d7734277e76296c564043c56f52a699bd3680563213de&o=",
+          "photoId": "49665551",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-gainsborough-bath-spa-bath.html?lang=en-us&chal_t=1792666439433&force_referer="
+        },
+        {
+          "slot": 9,
+          "title": "a tray of different types of food on a table at The Gainsborough Bath Spa - Small Luxury Hotels of the World in Bath",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/594825568.jpg?k=798f6a3d56cc307fce8285c295688d638cba49d72319090e1944a2ff87454a6d&o=",
+          "photoId": "594825568",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-gainsborough-bath-spa-bath.html?lang=en-us&chal_t=1792666439433&force_referer="
+        },
+        {
+          "slot": 10,
+          "title": "a plate of food and a cup of coffee on a table at The Gainsborough Bath Spa - Small Luxury Hotels of the World in Bath",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/594826440.jpg?k=317a6461391a45edf91aefac1d43402f7281fca10775e3d4da1a15213f30f7b3&o=",
+          "photoId": "594826440",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-gainsborough-bath-spa-bath.html?lang=en-us&chal_t=1792666439433&force_referer="
+        },
+        {
+          "slot": 11,
+          "title": "a man holding a bottle of wine in a restaurant at The Gainsborough Bath Spa - Small Luxury Hotels of the World in Bath",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/562435716.jpg?k=b1d5e4efbd866ed2c49c01e51d732f02d467dc8a9511f2e3f87ed7d1b686d84c&o=",
+          "photoId": "562435716",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-gainsborough-bath-spa-bath.html?lang=en-us&chal_t=1792666439433&force_referer="
+        },
+        {
+          "slot": 12,
+          "title": "a tall building with columns on top of it at The Gainsborough Bath Spa - Small Luxury Hotels of the World in Bath",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/49665082.jpg?k=93ca47191d5566ee6bc4f662a4dae3cec675979f6b589047afd91ab6ffa33b0d&o=&hp=1",
+          "photoId": "49665082",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-gainsborough-bath-spa-bath.html?lang=en-us&chal_t=1792666439433&force_referer="
+        },
+        {
+          "slot": 13,
+          "title": "a tall building with the sky in the background at The Gainsborough Bath Spa - Small Luxury Hotels of the World in Bath",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/49665308.jpg?k=5fc249e0502bff239da0b5cd006a498d77895799731cfae3392db542f2f41222&o=&hp=1",
+          "photoId": "49665308",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-gainsborough-bath-spa-bath.html?lang=en-us&chal_t=1792666439433&force_referer="
+        },
+        {
+          "slot": 14,
+          "title": "a building with purple lights on the front of it at The Gainsborough Bath Spa - Small Luxury Hotels of the World in Bath",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/56380744.jpg?k=f1346a90326ea553e9907a347f5ff3fcc57721381bc03e2ece2415ab6dae4659&o=&hp=1",
+          "photoId": "56380744",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-gainsborough-bath-spa-bath.html?lang=en-us&chal_t=1792666439433&force_referer="
+        },
+        {
+          "slot": 15,
+          "title": "a book about the cambridge borough bath spa at The Gainsborough Bath Spa - Small Luxury Hotels of the World in Bath",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/258024324.jpg?k=49ff43e387acf9080e80edfba464ef02de9ad87a9447e6367d8063ee6f554c88&o=&hp=1",
+          "photoId": "258024324",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-gainsborough-bath-spa-bath.html?lang=en-us&chal_t=1792666439433&force_referer="
+        },
+        {
+          "slot": 16,
+          "title": "a bedroom with a large bed and a couch at The Gainsborough Bath Spa - Small Luxury Hotels of the World in Bath",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/517914063.jpg?k=580c00d5ab712f9755cb742e5893ffe92eb96f96ed8dcdb93c0e26ddb37dcbf6&o=&hp=1",
+          "photoId": "517914063",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-gainsborough-bath-spa-bath.html?lang=en-us&chal_t=1792666439433&force_referer="
+        },
+        {
+          "slot": 17,
+          "title": "a pool in a hotel lobby with blue water at The Gainsborough Bath Spa - Small Luxury Hotels of the World in Bath",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/113868469.jpg?k=05b392dfa8354448d1758f347f1029e78f5dc2f61fbcfe15997906e5683aeaed&o=&hp=1",
+          "photoId": "113868469",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-gainsborough-bath-spa-bath.html?lang=en-us&chal_t=1792666439433&force_referer="
+        },
+        {
+          "slot": 18,
+          "title": "a swimming pool in a building with a lobby at The Gainsborough Bath Spa - Small Luxury Hotels of the World in Bath",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/49681212.jpg?k=2f0c3c76787852035efbfaf51e171d20f30cc25e7597c2386539cfd2ccbe1f8b&o=&hp=1",
+          "photoId": "49681212",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-gainsborough-bath-spa-bath.html?lang=en-us&chal_t=1792666439433&force_referer="
+        },
+        {
+          "slot": 19,
+          "title": "a swimming pool in a room with a house at The Gainsborough Bath Spa - Small Luxury Hotels of the World in Bath",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/48883585.jpg?k=4e062981f0f067f19eebd1c98fc3c390731d35838a29e449447e26031cd19506&o=&hp=1",
+          "photoId": "48883585",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-gainsborough-bath-spa-bath.html?lang=en-us&chal_t=1792666439433&force_referer="
+        },
+        {
+          "slot": 20,
+          "title": "a statue of a lion head in a shower at The Gainsborough Bath Spa - Small Luxury Hotels of the World in Bath",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/120704454.jpg?k=a54349323bde4a3ed621f59207038a32580324d89e48ba53aa5ae07f6b98e43e&o=&hp=1",
+          "photoId": "120704454",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-gainsborough-bath-spa-bath.html?lang=en-us&chal_t=1792666439433&force_referer="
+        },
+        {
+          "slot": 21,
+          "title": "a living room with a couch and a rug at The Gainsborough Bath Spa - Small Luxury Hotels of the World in Bath",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/735018147.jpg?k=c86b2562636711d2c6554bd7e2f6495e22c367bf5e78eccac7a73899d6b69e0f&o=&hp=1",
+          "photoId": "735018147",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-gainsborough-bath-spa-bath.html?lang=en-us&chal_t=1792666439433&force_referer="
+        },
+        {
+          "slot": 22,
+          "title": "a kitchen with a black island in a room at The Gainsborough Bath Spa - Small Luxury Hotels of the World in Bath",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/49681030.jpg?k=4f9b05ebd2b5d9245cb1dd2488cf8fe6cef83f9e89ccbfe9536189786ab8f4f3&o=&hp=1",
+          "photoId": "49681030",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-gainsborough-bath-spa-bath.html?lang=en-us&chal_t=1792666439433&force_referer="
+        },
+        {
+          "slot": 23,
+          "title": "a woman sitting at a bar talking to a customer at The Gainsborough Bath Spa - Small Luxury Hotels of the World in Bath",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/735018145.jpg?k=c782fe593d29c844861f9436f4e6efe60d14c25833202d74cb584e0d2e8cfeb0&o=&hp=1",
+          "photoId": "735018145",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-gainsborough-bath-spa-bath.html?lang=en-us&chal_t=1792666439433&force_referer="
+        },
+        {
+          "slot": 24,
+          "title": "a bedroom with a large bed with blue walls at The Gainsborough Bath Spa - Small Luxury Hotels of the World in Bath",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/60729180.jpg?k=a6be82402c247fdef210c5482e1c3ad557b003b98dd16b128d9339cbfedf7545&o=&hp=1",
+          "photoId": "60729180",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-gainsborough-bath-spa-bath.html?lang=en-us&chal_t=1792666439433&force_referer="
+        },
+        {
+          "slot": 25,
+          "title": "a dining room with a table with a vase of flowers at The Gainsborough Bath Spa - Small Luxury Hotels of the World in Bath",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/49665860.jpg?k=3df57b5936734bc3755ba7e4337e4757fdb92fe27ae9a3637e1d385b50a7f3c7&o=&hp=1",
+          "photoId": "49665860",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-gainsborough-bath-spa-bath.html?lang=en-us&chal_t=1792666439433&force_referer="
+        },
+        {
+          "slot": 26,
+          "title": "a dining room with a table with food on it at The Gainsborough Bath Spa - Small Luxury Hotels of the World in Bath",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/49665858.jpg?k=00b72adde6ff341da498f614954c4994f0cd7397fb523fd6151013668ed20bdb&o=&hp=1",
+          "photoId": "49665858",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-gainsborough-bath-spa-bath.html?lang=en-us&chal_t=1792666439433&force_referer="
+        },
+        {
+          "slot": 27,
+          "title": "a restaurant with tables and chairs and a chandelier at The Gainsborough Bath Spa - Small Luxury Hotels of the World in Bath",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/43639847.jpg?k=25d9995bc53c968bcd642f8ed256254fb9f9a207780575d98d9b862ccba44cf3&o=&hp=1",
+          "photoId": "43639847",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-gainsborough-bath-spa-bath.html?lang=en-us&chal_t=1792666439433&force_referer="
+        },
+        {
+          "slot": 28,
+          "title": "a bar in a restaurant with a window at The Gainsborough Bath Spa - Small Luxury Hotels of the World in Bath",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/49665845.jpg?k=5b9f389d92f93c7d6109b66ce4a8779ab32291130e26e0d6574316589f65cbb2&o=&hp=1",
+          "photoId": "49665845",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-gainsborough-bath-spa-bath.html?lang=en-us&chal_t=1792666439433&force_referer="
+        },
+        {
+          "slot": 29,
+          "title": "a bunch of different types of donuts and pastries on display at The Gainsborough Bath Spa - Small Luxury Hotels of the World in Bath",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/594826339.jpg?k=64628d1cc80a99b108e02629b2b70b12aa7458d0b3cfc2bedd92724bf30acee5&o=&hp=1",
+          "photoId": "594826339",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-gainsborough-bath-spa-bath.html?lang=en-us&chal_t=1792666439433&force_referer="
+        },
+        {
+          "slot": 30,
+          "title": "a counter with jars of nuts on a table at The Gainsborough Bath Spa - Small Luxury Hotels of the World in Bath",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/594826402.jpg?k=22b266be62d9acd1081264e1b7e129e6c11547a0c84803add6d2e114f2032232&o=&hp=1",
+          "photoId": "594826402",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-gainsborough-bath-spa-bath.html?lang=en-us&chal_t=1792666439433&force_referer="
+        },
+        {
+          "slot": 31,
+          "title": "a row of mason jars filled with different colored liquids at The Gainsborough Bath Spa - Small Luxury Hotels of the World in Bath",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/594826314.jpg?k=5a4e108ec9bae49b4c17a092ffbe7961474080478168e348598048f136703a20&o=&hp=1",
+          "photoId": "594826314",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-gainsborough-bath-spa-bath.html?lang=en-us&chal_t=1792666439433&force_referer="
+        },
+        {
+          "slot": 32,
+          "title": "a large room with a long table and chairs at The Gainsborough Bath Spa - Small Luxury Hotels of the World in Bath",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/65436564.jpg?k=de31f7a47ce4a6ac95b047384769a3be433452f66f1360a4187f3dfe12fd14a4&o=&hp=1",
+          "photoId": "65436564",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-gainsborough-bath-spa-bath.html?lang=en-us&chal_t=1792666439433&force_referer="
+        },
+        {
+          "slot": 33,
+          "title": "a bedroom with a large white bed with two lamps at The Gainsborough Bath Spa - Small Luxury Hotels of the World in Bath",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/49679501.jpg?k=a5f3439dfdb6218b119317945ef99046d01c759964d58a3b2d63117f4e55d85d&o=&hp=1",
+          "photoId": "49679501",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-gainsborough-bath-spa-bath.html?lang=en-us&chal_t=1792666439433&force_referer="
+        },
+        {
+          "slot": 34,
+          "title": "a man standing in front of a long table in a room at The Gainsborough Bath Spa - Small Luxury Hotels of the World in Bath",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/65436571.jpg?k=fcf4202f6d14aface9bd3d32ad6c2cc0066417a030e19f280c93558d3b47e580&o=&hp=1",
+          "photoId": "65436571",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-gainsborough-bath-spa-bath.html?lang=en-us&chal_t=1792666439433&force_referer="
+        },
+        {
+          "slot": 35,
+          "title": "an empty room with chairs and a ceiling with chandeliers at The Gainsborough Bath Spa - Small Luxury Hotels of the World in Bath",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/54478949.jpg?k=cca0db58d5ad54da9c0e938d358c7fd040a271022aba8fcfdc8b8fe21adb9eea&o=&hp=1",
+          "photoId": "54478949",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-gainsborough-bath-spa-bath.html?lang=en-us&chal_t=1792666439433&force_referer="
+        },
+        {
+          "slot": 36,
+          "title": "a room filled with tables and chairs with white table cloth at The Gainsborough Bath Spa - Small Luxury Hotels of the World in Bath",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/54479438.jpg?k=0f198fe653f15d4710c4ae39a63a3a4fc0420b24c6ce37e4a3dc750d43f3a80b&o=&hp=1",
+          "photoId": "54479438",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-gainsborough-bath-spa-bath.html?lang=en-us&chal_t=1792666439433&force_referer="
+        },
+        {
+          "slot": 37,
+          "title": "a gym with treadmills and exercise equipment in a room at The Gainsborough Bath Spa - Small Luxury Hotels of the World in Bath",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/66303282.jpg?k=de28d8ebc9d437ce3e1d3f59ff27651163ae0d506be5a11206ea17a1c635af5e&o=&hp=1",
+          "photoId": "66303282",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-gainsborough-bath-spa-bath.html?lang=en-us&chal_t=1792666439433&force_referer="
+        },
+        {
+          "slot": 38,
+          "title": "a bedroom with a bed and a chair and a table at The Gainsborough Bath Spa - Small Luxury Hotels of the World in Bath",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/78777274.jpg?k=133580c9005079113a3b33a1eff5384df2b27a96e197ac19c42d396c99a7b94f&o=&hp=1",
+          "photoId": "78777274",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-gainsborough-bath-spa-bath.html?lang=en-us&chal_t=1792666439433&force_referer="
+        },
+        {
+          "slot": 39,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/49681029.jpg?k=2c4afea85fa813a3ce0cb233f6e4aabff58ff1c248b9958f6b1548e31359d9f9&o=&hp=1",
+          "photoId": "9",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-gainsborough-bath-spa-bath.html?lang=en-us&chal_t=1792666439433&force_referer="
+        },
+        {
+          "slot": 40,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/735010996.jpg?k=0c41cc824fd0d042749c10b4c37ba1118b9c94c12414a2fd13119bc9ccb556dc&o=&hp=1",
+          "photoId": "6",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-gainsborough-bath-spa-bath.html?lang=en-us&chal_t=1792666439433&force_referer="
+        },
+        {
+          "slot": 41,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/735009313.jpg?k=9b62a8e2b4c5ff699257893220e73ea031978c4251465c0df85c315b3bf376bd&o=&hp=1",
+          "photoId": "3",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-gainsborough-bath-spa-bath.html?lang=en-us&chal_t=1792666439433&force_referer="
+        },
+        {
+          "slot": 42,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/735018144.jpg?k=8dbe5ce16b8e5f2f9e028159275f4e6483e3256c15a7e484e19420f67ce0c26c&o=&hp=1",
+          "photoId": "4",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-gainsborough-bath-spa-bath.html?lang=en-us&chal_t=1792666439433&force_referer="
+        },
+        {
+          "slot": 43,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/54475838.jpg?k=7167675306eec9baff7be1278374c7b1cd13f3f324ebac6f65023be5e90aa40e&o=&hp=1",
+          "photoId": "8",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-gainsborough-bath-spa-bath.html?lang=en-us&chal_t=1792666439433&force_referer="
+        },
+        {
+          "slot": 44,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/49678840.jpg?k=35a45e3df242e7a400e4597c6df9864311a993b87fc85ebcd3bc82b449540fff&o=&hp=1",
+          "photoId": "0",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-gainsborough-bath-spa-bath.html?lang=en-us&chal_t=1792666439433&force_referer="
+        },
+        {
+          "slot": 45,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/49665551.jpg?k=736d4e99f9344537ac0d7734277e76296c564043c56f52a699bd3680563213de&o=&hp=1",
+          "photoId": "1",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-gainsborough-bath-spa-bath.html?lang=en-us&chal_t=1792666439433&force_referer="
+        },
+        {
+          "slot": 46,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/49665082.jpg?k=93ca47191d5566ee6bc4f662a4dae3cec675979f6b589047afd91ab6ffa33b0d&o=&hp=1",
+          "photoId": "2",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-gainsborough-bath-spa-bath.html?lang=en-us&chal_t=1792666439433&force_referer="
+        },
+        {
+          "slot": 47,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/48883585.jpg?k=4e062981f0f067f19eebd1c98fc3c390731d35838a29e449447e26031cd19506&o=&hp=1",
+          "photoId": "5",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-gainsborough-bath-spa-bath.html?lang=en-us&chal_t=1792666439433&force_referer="
+        },
+        {
+          "slot": 48,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/735018147.jpg?k=c86b2562636711d2c6554bd7e2f6495e22c367bf5e78eccac7a73899d6b69e0f&o=&hp=1",
+          "photoId": "7",
+          "sourceUrl": "https://www.booking.com/hotel/gb/the-gainsborough-bath-spa-bath.html?lang=en-us&chal_t=1792666439433&force_referer="
+        }
+      ],
+      "photos_status": "RESOLVED"
+    },
+    "audit_timestamp": "2026-10-22T10:54:04.946Z"
+  }
+}
