@@ -9,7 +9,7 @@ const Hero = () => {
         <section className="hero-section">
             <Helmet>
                 <title>Turn Atmosphere into Bookings | Optimise Your Hotel OTA Photos | AtmosVibe</title>
-                <meta name="description" content="Turn Atmosphere into Bookings. Start by Optimising Your OTA Photos. Align your unique atmosphere with local search demand. Position your property as the gateway to your neighbourhood" />
+                <meta name="description" content="Turn Atmosphere into Bookings. Start by Optimising Your OTA Photos. Position your brand as the authentic gateway to your destination" />
             </Helmet>
 
             <div className="hero-bg-container">
@@ -39,7 +39,7 @@ const Hero = () => {
                     </h1>
 
                     <p className="hero-subheadline">
-                        Align your unique atmosphere with local search demand. Position your property as the gateway to your neighbourhood
+                        Position your brand as the authentic gateway to your destination
                     </p>
                 </div>
 

@@ -15,10 +15,10 @@ export default function HookTeaserSection() {
             <span>HOW WE USE VIBE SIGNATURES</span>
           </div>
           <h2 className="teaser-title">
-            Gateway to Your <span className="teaser-title-accent">Neighbourhood</span>
+            Gateway to Your <span className="teaser-title-accent">Destination</span>
           </h2>
           <p className="teaser-description">
-            AtmosVibe ensures your property stands out as the defining gateway to your neighbourhood across all channels
+            AtmosVibe ensures your brand stands out as the defining gateway to your destination across all channels
           </p>
         </div>
 
@@ -154,7 +154,7 @@ export default function HookTeaserSection() {
               <div className="tier-content-header-row">
                 <div>
                   <h3 className="tier-heading">Stand Out Everywhere Guests Search</h3>
-                  <p className="tier-micro-desc">Turn your hotel's atmosphere and walkable neighbourhood gems into clear, trustworthy proof across every booking channel</p>
+                  <p className="tier-micro-desc">Turn your atmosphere and local destination gems into clear, trustworthy proof across every booking channel</p>
                 </div>
               </div>
 
@@ -174,7 +174,7 @@ export default function HookTeaserSection() {
                     </div>
                     <div className="pro-deliv-body">
                       <h4 className="pro-deliv-title">First-Impression Photo Order</h4>
-                      <p className="pro-deliv-desc">Put your most inviting photo in Slot #1—backed by a bright, honest room and your neighbourhood view</p>
+                      <p className="pro-deliv-desc">Put your most inviting photo in Slot #1—backed by a bright, honest room and your destination view</p>
                     </div>
                   </div>
 

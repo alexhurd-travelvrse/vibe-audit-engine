@@ -171,13 +171,13 @@ export default function VibeDimensionsSection() {
         <div className="vibe-dimensions-header animate-fade-up">
           <div className="vibe-dimensions-eyebrow">
             <Sparkles size={14} />
-            <span>WHAT TRAVELLERS ACTUALLY BOOK</span>
+            <span>THE VIBE SIGNATURE™</span>
           </div>
           <h2 className="vibe-dimensions-title">
-            Your Vibe Creates <span className="vibe-title-accent">Desire.</span> Your Neighbourhood Closes the <span className="vibe-title-accent">Booking.</span>
+            Your Destination Creates <span className="vibe-title-accent">Desire.</span> Your Vibe Closes the <span className="vibe-title-accent">Booking</span>
           </h2>
           <p className="vibe-dimensions-subtitle">
-            Over 70% of travellers choose how they want to feel and which neighbourhood they want to explore before picking a room. AtmosVibe translates your atmosphere and doorstep gems into plain-English proof that wins the booking.
+            We capture the 8 real-world signals that make people choose you—and match them to what guests are searching for locally
           </p>
         </div>
 

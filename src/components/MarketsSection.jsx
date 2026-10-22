@@ -142,7 +142,7 @@ export default function MarketsSection() {
             <span className="pulse-dot gold-dot" /> COMING SOON
           </div>
           <p className="markets-narrative">
-            Explore our proprietary acoustic and subcultural research across key international hospitality hubs. See how traveler search demand, neighborhood gravity, and visual merchandising conversion vary across global cities.
+            Explore our proprietary acoustic and subcultural research across key international hospitality hubs. See how traveler search demand, destination gravity, and visual merchandising conversion vary across global cities
           </p>
         </div>
 
