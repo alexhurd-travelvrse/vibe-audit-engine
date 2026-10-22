@@ -3,7 +3,21 @@ dotenv.config();
 
 const getApiKey = () => process.env.SERPER_API_KEY || process.env.VITE_SERPER_API_KEY;
 
+const corpusCache = new Map();
+const inFlightCorpus = new Map();
+const CORPUS_TTL_MS = 24 * 60 * 60 * 1000;
+
 export async function fetchVenueCorpus(hotelName, city, neighborhood = '') {
+  const cacheKey = `${String(hotelName || '').toLowerCase().trim()}:::${String(city || '').toLowerCase().trim()}:::${String(neighborhood || '').toLowerCase().trim()}`;
+  const cached = corpusCache.get(cacheKey);
+  if (cached && (Date.now() - cached.timestamp < CORPUS_TTL_MS)) {
+    return cached.data;
+  }
+  if (inFlightCorpus.has(cacheKey)) {
+    return await inFlightCorpus.get(cacheKey);
+  }
+
+  const promise = (async () => {
   const apiKey = getApiKey();
   if (!apiKey) {
     throw new Error('SERPER_API_KEY or VITE_SERPER_API_KEY is not defined in environment variables');
@@ -151,11 +165,21 @@ export async function fetchVenueCorpus(hotelName, city, neighborhood = '') {
     }
   }
 
-  return {
+  const result = {
     rawCorpus,
     places: placesData.places || [],
     editorial: editorialData.organic || [],
     verifiedAddress,
     verifiedCity
   };
+  corpusCache.set(cacheKey, { timestamp: Date.now(), data: result });
+  return result;
+  })();
+
+  inFlightCorpus.set(cacheKey, promise);
+  try {
+    return await promise;
+  } finally {
+    inFlightCorpus.delete(cacheKey);
+  }
 }

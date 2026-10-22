@@ -17,7 +17,7 @@ const SERPER_API_KEY = process.env.VITE_SERPER_API_KEY || process.env.SERPER_API
 async function fetchGeminiWithRetry(url, options, retries = 2, delay = 1000) {
     for (let i = 0; i < retries; i++) {
         try {
-            const res = await fetch(url, { ...options, signal: AbortSignal.timeout(4000) });
+            const res = await fetch(url, { ...options, signal: AbortSignal.timeout(10000) });
             if (res.status === 503) {
                 console.log(`[Gemini] 503 High Demand. Retrying in ${delay}ms... (Attempt ${i+1}/${retries})`);
                 await new Promise(r => setTimeout(r, delay));
@@ -77,7 +77,7 @@ Do not include markdown codeblocks (\`\`\`json) or any other text outside the JS
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
                 contents: [{ parts: [{ text: prompt }] }],
-                generationConfig: { temperature: 0.2 }
+                generationConfig: { temperature: 0.2, thinkingConfig: { thinkingBudget: 0 } }
             })
         });
     

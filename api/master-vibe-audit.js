@@ -3867,9 +3867,39 @@ export default async function handler(req, res) {
       }
       console.log(`[Master Vibe API] Inventory ready: ${liveBookingPhotos?.length || 0} live OTA photos, ${amenityPhotos?.length || 0} fallback assets.`);
 
-      // Step 3: Set strategy
-      console.log(`[Master Vibe API] 3) Set strategy: Synthesizing Key Strategic Shifts & 5-slot blueprint bridging Hotel DNA ⟷ Neighborhood Demand with discovered inventory...`);
-      const auditResult = await runStructuredVibeAudit(hotelName, city, rawCorpus, liveBookingPhotos || [], amenityPhotos || [], neighborhood);
+      // Step 3: Set strategy (reuse Stage 1 manifest if already generated/in-flight to avoid duplicate Gemini call)
+      const stage1Key = `${manifestKey}:::manifest_only`;
+      let baseManifest = null;
+      if (!isFresh) {
+        if (activeManifests.has(stage1Key)) {
+          console.log(`[Master Vibe API] 3) Reusing in-flight Stage 1 Vibe Manifest for "${hotelName}" (saving duplicate Gemini call)...`);
+          try {
+            baseManifest = await activeManifests.get(stage1Key);
+          } catch (e) {}
+        }
+        if (!baseManifest && manifestCache.has(stage1Key)) {
+          const cachedStage1 = manifestCache.get(stage1Key);
+          if (cachedStage1 && (Date.now() - cachedStage1.timestamp < MANIFEST_CACHE_TTL_MS)) {
+            console.log(`[Master Vibe API] 3) Reusing RAM cached Stage 1 Vibe Manifest for "${hotelName}" (saving duplicate Gemini call)...`);
+            baseManifest = cachedStage1.data;
+          }
+        }
+        if (!baseManifest) {
+          const diskStage1 = readDailyDiskCache(stage1Key);
+          if (diskStage1) {
+            console.log(`[Master Vibe API] 3) Reusing disk cached Stage 1 Vibe Manifest for "${hotelName}" (saving duplicate Gemini call)...`);
+            baseManifest = diskStage1;
+          }
+        }
+      }
+
+      let auditResult;
+      if (baseManifest) {
+        auditResult = JSON.parse(JSON.stringify(baseManifest));
+      } else {
+        console.log(`[Master Vibe API] 3) Set strategy: Synthesizing Key Strategic Shifts & 5-slot blueprint bridging Hotel DNA ⟷ Neighborhood Demand with discovered inventory...`);
+        auditResult = await runStructuredVibeAudit(hotelName, city, rawCorpus, liveBookingPhotos || [], amenityPhotos || [], neighborhood);
+      }
 
       // Step 4: Re-order
       console.log(`[Master Vibe API] 4) Re-order: Binding and sequencing authentic photos to match strategic shifts 100% into Slots 1-5...`);

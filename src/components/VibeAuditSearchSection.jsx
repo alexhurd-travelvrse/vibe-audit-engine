@@ -117,13 +117,6 @@ const VibeAuditSearchSection = () => {
         isOtaHydrating: false
       }));
       setLoading(false);
-
-      // Background supplemental signals fetch
-      scrapeLocalSignals(targetCity, targetNeighborhood).then(sig => {
-        if (sig && sig.categories) {
-          setAnalysis(prev => prev ? { ...prev, signals: sig } : prev);
-        }
-      }).catch(err => console.warn('Supplemental signals error:', err));
     } catch (err) {
       if (abortController.signal.aborted) return;
       console.error('Audit engine failure:', err);
