@@ -280,6 +280,255 @@
   color: #00e5ff;
 }
 
+/* Interactive Layout Option Switcher Bar */
+.layout-preview-switcher {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.45rem;
+  margin-top: 1.35rem;
+  padding: 0.45rem 0.65rem;
+  background: rgba(5, 11, 20, 0.85);
+  border: 1px solid rgba(0, 229, 255, 0.25);
+  border-radius: 999px;
+}
+
+.layout-switcher-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #00e5ff;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0 0.4rem;
+}
+
+.layout-switch-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.layout-switch-btn:hover {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.layout-switch-btn.active {
+  background: linear-gradient(90deg, #00e5ff, #10b981);
+  color: #050b14;
+  border-color: transparent;
+  font-weight: 800;
+}
+
+/* Shared Card Base for Options 2, 3, and 4 */
+.dimension-card {
+  background: rgba(10, 16, 26, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  padding: 1.35rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.dim-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 0.75rem;
+}
+
+.card-mini-certainty {
+  font-size: 0.62rem;
+  font-weight: 800;
+  padding: 2px 7px;
+  border-radius: 999px;
+  border: 1px solid;
+  white-space: nowrap;
+}
+
+.card-mini-desc {
+  font-size: 0.8rem;
+  color: rgba(230, 241, 255, 0.72);
+  line-height: 1.45;
+  margin: 0 0 0.85rem 0;
+}
+
+/* OPTION 2: Horizontal Swipe Rail / Carousel */
+.dimensions-carousel-wrapper {
+  max-width: 1180px;
+  margin: 0 auto 2.25rem auto;
+}
+
+.carousel-top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.85rem;
+  padding: 0 0.25rem;
+}
+
+.carousel-hint {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #ffd700;
+}
+
+.dimensions-carousel-track {
+  display: flex;
+  gap: 1.15rem;
+  overflow-x: auto;
+  padding: 0.35rem 0.25rem 1.1rem 0.25rem;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 229, 255, 0.4) rgba(0, 0, 0, 0.3);
+}
+
+.carousel-card {
+  flex: 0 0 320px;
+  min-width: 320px;
+  max-width: 340px;
+  scroll-snap-align: start;
+}
+
+/* OPTION 3: 2-Tab Journey Split */
+.dimensions-journey-wrapper {
+  max-width: 1140px;
+  margin: 0 auto 2.25rem auto;
+}
+
+.journey-tabs-bar {
+  display: flex;
+  justify-content: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.journey-tab-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.7rem 1.35rem;
+  border-radius: 14px;
+  background: rgba(10, 16, 26, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.72);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.journey-tab-btn.active {
+  background: rgba(0, 229, 255, 0.12);
+  border-color: #00e5ff;
+  color: #ffffff;
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.18);
+}
+
+.journey-step-num {
+  font-size: 0.65rem;
+  font-weight: 900;
+  background: rgba(255, 215, 0, 0.15);
+  color: #ffd700;
+  padding: 2px 7px;
+  border-radius: 6px;
+  letter-spacing: 0.08em;
+}
+
+.journey-step-title {
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+
+.dimensions-four-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.15rem;
+  animation: spotlight-fade-in 0.35s ease;
+}
+
+/* OPTION 4: Staggered Cascade + Active Pulse Grid */
+.dimensions-cascade-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.15rem;
+  max-width: 1180px;
+  margin: 0 auto 2.25rem auto;
+}
+
+@media (min-width: 560px) {
+  .dimensions-cascade-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1060px) {
+  .dimensions-cascade-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.cascade-card {
+  cursor: pointer;
+  opacity: 0;
+  overflow: hidden;
+  animation: cascade-in 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes cascade-in {
+  0% { opacity: 0; transform: translateY(14px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.cascade-card.cascade-active {
+  background: rgba(14, 24, 38, 0.95);
+  border-color: var(--card-accent, #00e5ff);
+  transform: translateY(-5px);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.6), 0 0 24px rgba(0, 229, 255, 0.18);
+}
+
+.cascade-card-desc {
+  font-size: 0.76rem;
+  color: rgba(230, 241, 255, 0.52);
+  line-height: 1.4;
+  margin: 0 0 0.85rem 0;
+  transition: color 0.25s ease;
+}
+
+.cascade-card-desc.desc-highlighted {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.cascade-progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  transform-origin: left center;
+  animation: cascade-timer-fill 2.6s linear forwards;
+}
+
+@keyframes cascade-timer-fill {
+  0% { transform: scaleX(0); }
+  100% { transform: scaleX(1); }
+}
+
 
 .dim-icon-wrap {
   width: 34px;

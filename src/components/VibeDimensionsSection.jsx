@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Volume2, Users, Palette, Zap, MapPin, ShieldCheck, Compass, Sparkles, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Volume2, Users, Palette, Zap, MapPin, ShieldCheck, Compass, Sparkles } from 'lucide-react';
 import './VibeDimensionsSection.css';
 
 const DIMENSIONS = [
@@ -8,10 +8,9 @@ const DIMENSIONS = [
     tag: '5-MIN WALK',
     title: 'Walkable Local Gems',
     accentColor: '#ec4899',
-    certaintyBadge: '✓ 96% Verified Fact',
+    certaintyBadge: '✓ 96% Fact',
     certaintyColor: '#34d399',
-    description: 'Connects your front door to verified 4.4★+ local wine bars, bakeries, and markets within a 2 to 6 minute walk—zero tourist traps',
-    proofBasis: 'Google Places walk-time radius (≤500m) × ≥4.4★ rating filter',
+    description: 'Verified 4.4★+ local wine bars, bakeries & markets within a 2–6 min walk',
     renderVisual: () => (
       <div className="vibe-visual-widget proximity-widget">
         <div className="proximity-pills">
@@ -30,10 +29,9 @@ const DIMENSIONS = [
     tag: 'SOUND & SLEEP',
     title: 'Easy Chat & Quiet Sleep',
     accentColor: '#00e5ff',
-    certaintyBadge: '◎ 90% Corroborated',
+    certaintyBadge: '◎ 90% Proven',
     certaintyColor: '#00e5ff',
-    description: 'Reassures guests they can enjoy warm music and easy conversation downstairs while sleeping soundly in quiet rooms upstairs',
-    proofBasis: 'Guest sleep-quality review consensus + bar operating hours',
+    description: 'Warm music & easy chat downstairs, sound-mitigated quiet sleep upstairs',
     renderVisual: () => (
       <div className="vibe-visual-widget sound-widget">
         <div className="audio-spectrum-bars">
@@ -56,10 +54,9 @@ const DIMENSIONS = [
     tag: 'WARMTH & LIGHT',
     title: 'Candlelit & Golden Glow',
     accentColor: '#fbbf24',
-    certaintyBadge: '✓ 94% Verified Fact',
+    certaintyBadge: '✓ 94% Fact',
     certaintyColor: '#34d399',
-    description: 'Showcases flattering evening table lamps, natural daylight, and warm textures instead of harsh overhead lighting',
-    proofBasis: 'Computer-vision pixel scan of 16 live gallery photos',
+    description: 'Flattering table lamps, natural daylight & warm textures—zero harsh glare',
     renderVisual: () => (
       <div className="vibe-visual-widget palette-widget">
         <div className="swatch-strip">
@@ -80,10 +77,9 @@ const DIMENSIONS = [
     tag: 'THE HOSTS',
     title: 'Warm Local Insiders',
     accentColor: '#34d399',
-    certaintyBadge: '◎ 89% Corroborated',
+    certaintyBadge: '◎ 89% Proven',
     certaintyColor: '#00e5ff',
-    description: 'Highlights unscripted, welcoming hosts who know the destination inside out and make guests feel like instant regulars',
-    proofBasis: 'Cross-referenced staff & service mentions across guest reviews',
+    description: 'Unscripted hosts who know the destination inside out & make you feel at home',
     renderVisual: () => (
       <div className="vibe-visual-widget host-widget">
         <div className="host-alchemy-pills">
@@ -102,10 +98,9 @@ const DIMENSIONS = [
     tag: 'THE CROWD',
     title: 'Where Locals Hang Out',
     accentColor: '#38bdf8',
-    certaintyBadge: '◈ 78% Observed Estimate',
+    certaintyBadge: '◈ 78% Estimate',
     certaintyColor: '#fbbf24',
-    description: 'Shows whether the social spaces attract genuine local regulars, couples, or solo explorers—so guests know they will fit right in',
-    proofBasis: 'Behavioural estimate from dining mix & guest review profiles',
+    description: 'Shows whether spaces attract genuine local regulars, couples or solo explorers',
     renderVisual: () => (
       <div className="vibe-visual-widget dial-widget">
         <div className="split-dial-bar">
@@ -128,10 +123,9 @@ const DIMENSIONS = [
     tag: 'BEST TIME OF DAY',
     title: 'Calm Days, Lively Nights',
     accentColor: '#f59e0b',
-    certaintyBadge: '◎ 88% Corroborated',
+    certaintyBadge: '◎ 88% Proven',
     certaintyColor: '#00e5ff',
-    description: 'Maps how the mood shifts from bright morning coffee and remote work to golden-hour sunset drinks and evening buzz',
-    proofBasis: 'Venue operating windows + golden-hour review consensus',
+    description: 'Maps how the mood shifts from bright morning coffee to sunset drinks',
     renderVisual: () => (
       <div className="vibe-visual-widget energy-widget">
         <div className="pulse-sparkline">
@@ -153,10 +147,9 @@ const DIMENSIONS = [
     tag: 'TRUE CHARACTER',
     title: 'Real Craft, Not Chain',
     accentColor: '#a855f7',
-    certaintyBadge: '✓ 94% Verified Fact',
+    certaintyBadge: '✓ 94% Fact',
     certaintyColor: '#34d399',
-    description: 'Proves authentic architecture, natural stone, aged timber, and handcrafted details that set you apart from cookie-cutter chains',
-    proofBasis: 'Computer-vision material scan + architectural press features',
+    description: 'Authentic architecture, natural stone & handcrafted finishes—not chain decor',
     renderVisual: () => (
       <div className="vibe-visual-widget auth-widget">
         <div className="auth-score-bar">
@@ -175,10 +168,9 @@ const DIMENSIONS = [
     tag: 'INSIDER TIPS',
     title: 'The Secret Local Order',
     accentColor: '#10b981',
-    certaintyBadge: '◎ 86% Corroborated',
+    certaintyBadge: '◎ 86% Proven',
     certaintyColor: '#00e5ff',
-    description: 'Captures the off-menu orders, best sunset table, and hidden local favourites that turn first-time guests into regulars',
-    proofBasis: 'Curated from repeat-guest tips, menu archives & press',
+    description: 'Off-menu orders, best sunset tables & hidden spots regulars ask for',
     renderVisual: () => (
       <div className="vibe-visual-widget tips-widget">
         <div className="secret-pill">
@@ -202,12 +194,9 @@ export default function VibeDimensionsSection() {
     if (isPaused) return;
     const timer = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % DIMENSIONS.length);
-    }, 3500);
+    }, 2600);
     return () => clearInterval(timer);
   }, [isPaused]);
-
-  const activeDim = DIMENSIONS[activeIndex];
-  const ActiveIcon = activeDim.icon;
 
   return (
     <section className="vibe-dimensions-section" id="vibe-signatures">
@@ -227,119 +216,57 @@ export default function VibeDimensionsSection() {
           </p>
         </div>
 
-        {/* Interactive 8-Signal Pill Selector + Single Spotlight Showcase */}
+        {/* Staggered Cascade Grid with Cycling Active Pulse Highlight */}
         <div
-          className="dimensions-spotlight-wrapper animate-fade-up"
+          className="dimensions-cascade-grid"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
-          {/* 8 Signal Selector Pills */}
-          <div className="dimensions-pill-nav" role="tablist" aria-label="8 Vibe Signature Signals">
-            {DIMENSIONS.map((dim, idx) => {
-              const PillIcon = dim.icon;
-              const isActive = idx === activeIndex;
-              return (
-                <button
-                  key={idx}
-                  type="button"
-                  role="tab"
-                  aria-selected={isActive}
-                  className={`dim-selector-pill ${isActive ? 'active' : ''}`}
-                  onClick={() => setActiveIndex(idx)}
-                  style={{
-                    '--pill-accent': dim.accentColor
-                  }}
-                >
-                  <PillIcon size={14} style={{ color: isActive ? dim.accentColor : 'rgba(255,255,255,0.55)' }} />
-                  <span className="dim-pill-label">{dim.tag}</span>
-                  {isActive && !isPaused && <span className="dim-pill-progress" style={{ background: dim.accentColor }} />}
-                </button>
-              );
-            })}
-          </div>
-
-          {/* Active Signal Spotlight Card */}
-          <div
-            key={activeIndex}
-            className="dimension-spotlight-card"
-            style={{ borderColor: `${activeDim.accentColor}44` }}
-          >
-            {/* Left Side: Narrative + Verification Proof */}
-            <div className="spotlight-info-col">
-              <div className="spotlight-top-meta">
-                <span className="spotlight-index-badge">
-                  SIGNAL 0{activeIndex + 1} / 0{DIMENSIONS.length}
-                </span>
-                <span
-                  className="spotlight-certainty-pill"
-                  style={{
-                    color: activeDim.certaintyColor,
-                    borderColor: `${activeDim.certaintyColor}44`,
-                    background: `${activeDim.certaintyColor}14`
-                  }}
-                >
-                  {activeDim.certaintyBadge}
-                </span>
-              </div>
-
-              <div className="spotlight-title-row">
-                <div
-                  className="dim-icon-wrap spotlight-icon-lg"
-                  style={{
-                    color: activeDim.accentColor,
-                    borderColor: `${activeDim.accentColor}44`,
-                    backgroundColor: `${activeDim.accentColor}15`
-                  }}
-                >
-                  <ActiveIcon size={22} />
-                </div>
-                <div>
-                  <div className="dim-tag" style={{ color: activeDim.accentColor }}>{activeDim.tag}</div>
-                  <h3 className="spotlight-main-title">{activeDim.title}</h3>
-                </div>
-              </div>
-
-              <p className="spotlight-description">
-                {activeDim.description}
-              </p>
-
-              <div className="spotlight-proof-bar">
-                <span className="proof-label">📊 Proof Basis:</span>
-                <span className="proof-text">{activeDim.proofBasis}</span>
-              </div>
-            </div>
-
-            {/* Right Side: Live Interactive Signal Widget + Controls */}
-            <div className="spotlight-visual-col">
-              <div className="spotlight-widget-stage">
-                {activeDim.renderVisual()}
-              </div>
-
-              <div className="spotlight-controls-row">
-                <span className="spotlight-status-hint">
-                  {isPaused ? '⏸ Paused — click any signal above' : '▶ Auto-cycling signals (hover to pause)'}
-                </span>
-                <div className="spotlight-arrow-group">
-                  <button
-                    type="button"
-                    className="spotlight-nav-btn"
-                    onClick={() => setActiveIndex((prev) => (prev - 1 + DIMENSIONS.length) % DIMENSIONS.length)}
-                    aria-label="Previous Signal"
+          {DIMENSIONS.map((dim, idx) => {
+            const IconComponent = dim.icon;
+            const isHighlighted = idx === activeIndex;
+            return (
+              <div
+                key={idx}
+                onClick={() => setActiveIndex(idx)}
+                onMouseEnter={() => setActiveIndex(idx)}
+                className={`dimension-card cascade-card ${isHighlighted ? 'cascade-active' : ''}`}
+                style={{
+                  animationDelay: `${idx * 120}ms`,
+                  '--card-accent': dim.accentColor
+                }}
+              >
+                <div className="dim-card-header" style={{ justifyContent: 'space-between' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <div className="dim-icon-wrap" style={{ color: dim.accentColor, borderColor: `${dim.accentColor}33`, backgroundColor: `${dim.accentColor}12` }}>
+                      <IconComponent size={18} />
+                    </div>
+                    <span className="dim-tag" style={{ color: dim.accentColor }}>{dim.tag}</span>
+                  </div>
+                  <span
+                    className="card-mini-certainty"
+                    style={{
+                      color: dim.certaintyColor,
+                      borderColor: `${dim.certaintyColor}40`,
+                      background: `${dim.certaintyColor}12`
+                    }}
                   >
-                    <ChevronLeft size={16} />
-                  </button>
-                  <button
-                    type="button"
-                    className="spotlight-nav-btn"
-                    onClick={() => setActiveIndex((prev) => (prev + 1) % DIMENSIONS.length)}
-                    aria-label="Next Signal"
-                  >
-                    <ChevronRight size={16} />
-                  </button>
+                    {dim.certaintyBadge}
+                  </span>
                 </div>
+                <h4 className="dim-title">{dim.title}</h4>
+                <p className={`cascade-card-desc ${isHighlighted ? 'desc-highlighted' : ''}`}>
+                  {dim.description}
+                </p>
+                <div className="dim-visual-container">
+                  {dim.renderVisual()}
+                </div>
+                {isHighlighted && !isPaused && (
+                  <span className="cascade-progress-bar" style={{ background: dim.accentColor }} />
+                )}
               </div>
-            </div>
-          </div>
+            );
+          })}
         </div>
 
       </div>
