@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Volume2, Users, Palette, Zap, MapPin, ShieldCheck, Compass, Sparkles } from 'lucide-react';
+import { Volume2, Users, Palette, Zap, MapPin, ShieldCheck, Compass, Sparkles, ChevronLeft, ChevronRight } from 'lucide-react';
 import './VibeDimensionsSection.css';
 
 const DIMENSIONS = [
@@ -189,14 +189,27 @@ const DIMENSIONS = [
 export default function VibeDimensionsSection() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [motionStyle, setMotionStyle] = useState('step'); // 'step' (slides 1 card at a time) | 'continuous' (smooth marquee left-to-right)
 
   useEffect(() => {
-    if (isPaused) return;
+    if (isPaused || motionStyle !== 'step') return;
     const timer = setInterval(() => {
+      // Move 1 card at a time (wrapping around 0..7)
       setActiveIndex((prev) => (prev + 1) % DIMENSIONS.length);
-    }, 2600);
+    }, 2800);
     return () => clearInterval(timer);
-  }, [isPaused]);
+  }, [isPaused, motionStyle]);
+
+  const handlePrev = () => {
+    setActiveIndex((prev) => (prev - 1 + DIMENSIONS.length) % DIMENSIONS.length);
+  };
+
+  const handleNext = () => {
+    setActiveIndex((prev) => (prev + 1) % DIMENSIONS.length);
+  };
+
+  // Duplicate array so a 4-card window never shows empty space at the end of the 8 signals
+  const TRACK_ITEMS = [...DIMENSIONS, ...DIMENSIONS];
 
   return (
     <section className="vibe-dimensions-section" id="vibe-signatures">
@@ -216,57 +229,120 @@ export default function VibeDimensionsSection() {
           </p>
         </div>
 
-        {/* Staggered Cascade Grid with Cycling Active Pulse Highlight */}
+        {/* 4-Card-At-A-Time Moving Carousel */}
         <div
-          className="dimensions-cascade-grid"
+          className="four-up-carousel-shell animate-fade-up"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
-          {DIMENSIONS.map((dim, idx) => {
-            const IconComponent = dim.icon;
-            const isHighlighted = idx === activeIndex;
-            return (
-              <div
-                key={idx}
-                onClick={() => setActiveIndex(idx)}
-                onMouseEnter={() => setActiveIndex(idx)}
-                className={`dimension-card cascade-card ${isHighlighted ? 'cascade-active' : ''}`}
-                style={{
-                  animationDelay: `${idx * 120}ms`,
-                  '--card-accent': dim.accentColor
-                }}
-              >
-                <div className="dim-card-header" style={{ justifyContent: 'space-between' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <div className="dim-icon-wrap" style={{ color: dim.accentColor, borderColor: `${dim.accentColor}33`, backgroundColor: `${dim.accentColor}12` }}>
-                      <IconComponent size={18} />
-                    </div>
-                    <span className="dim-tag" style={{ color: dim.accentColor }}>{dim.tag}</span>
-                  </div>
-                  <span
-                    className="card-mini-certainty"
+          {/* Carousel Controls Bar */}
+          <div className="four-up-controls-bar">
+            <div className="four-up-dots">
+              {DIMENSIONS.map((dim, idx) => (
+                <button
+                  key={idx}
+                  type="button"
+                  onClick={() => {
+                    setMotionStyle('step');
+                    setActiveIndex(idx);
+                  }}
+                  className={`four-up-dot ${idx === activeIndex && motionStyle === 'step' ? 'active' : ''}`}
+                  style={{ '--dot-color': dim.accentColor }}
+                  title={dim.title}
+                  aria-label={`Show ${dim.title}`}
+                />
+              ))}
+            </div>
+
+            <div className="four-up-right-controls">
+              <div className="motion-mode-toggle">
+                <button
+                  type="button"
+                  className={`motion-mode-btn ${motionStyle === 'step' ? 'active' : ''}`}
+                  onClick={() => setMotionStyle('step')}
+                >
+                  Step 1-by-1
+                </button>
+                <button
+                  type="button"
+                  className={`motion-mode-btn ${motionStyle === 'continuous' ? 'active' : ''}`}
+                  onClick={() => setMotionStyle('continuous')}
+                >
+                  Continuous Glide (L ➔ R)
+                </button>
+              </div>
+
+              {motionStyle === 'step' && (
+                <div className="spotlight-arrow-group">
+                  <button type="button" className="spotlight-nav-btn" onClick={handlePrev} aria-label="Previous Signal">
+                    <ChevronLeft size={16} />
+                  </button>
+                  <button type="button" className="spotlight-nav-btn" onClick={handleNext} aria-label="Next Signal">
+                    <ChevronRight size={16} />
+                  </button>
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* 4-Card Viewport */}
+          <div className="four-up-viewport">
+            <div
+              className={`four-up-track ${motionStyle === 'continuous' ? 'continuous-ltr' : 'stepped-track'} ${isPaused ? 'track-paused' : ''}`}
+              style={
+                motionStyle === 'step'
+                  ? { '--step-index': activeIndex }
+                  : undefined
+              }
+            >
+              {TRACK_ITEMS.map((dim, idx) => {
+                const realIdx = idx % DIMENSIONS.length;
+                const IconComponent = dim.icon;
+                const isLeadActive = motionStyle === 'step' && idx === activeIndex;
+                return (
+                  <div
+                    key={idx}
+                    onClick={() => {
+                      if (motionStyle === 'step') setActiveIndex(realIdx);
+                    }}
+                    className={`dimension-card four-up-card ${isLeadActive ? 'cascade-active' : ''}`}
                     style={{
-                      color: dim.certaintyColor,
-                      borderColor: `${dim.certaintyColor}40`,
-                      background: `${dim.certaintyColor}12`
+                      '--card-accent': dim.accentColor
                     }}
                   >
-                    {dim.certaintyBadge}
-                  </span>
-                </div>
-                <h4 className="dim-title">{dim.title}</h4>
-                <p className={`cascade-card-desc ${isHighlighted ? 'desc-highlighted' : ''}`}>
-                  {dim.description}
-                </p>
-                <div className="dim-visual-container">
-                  {dim.renderVisual()}
-                </div>
-                {isHighlighted && !isPaused && (
-                  <span className="cascade-progress-bar" style={{ background: dim.accentColor }} />
-                )}
-              </div>
-            );
-          })}
+                    <div className="dim-card-header" style={{ justifyContent: 'space-between' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <div className="dim-icon-wrap" style={{ color: dim.accentColor, borderColor: `${dim.accentColor}33`, backgroundColor: `${dim.accentColor}12` }}>
+                          <IconComponent size={18} />
+                        </div>
+                        <span className="dim-tag" style={{ color: dim.accentColor }}>{dim.tag}</span>
+                      </div>
+                      <span
+                        className="card-mini-certainty"
+                        style={{
+                          color: dim.certaintyColor,
+                          borderColor: `${dim.certaintyColor}40`,
+                          background: `${dim.certaintyColor}12`
+                        }}
+                      >
+                        {dim.certaintyBadge}
+                      </span>
+                    </div>
+                    <h4 className="dim-title">{dim.title}</h4>
+                    <p className={`cascade-card-desc ${isLeadActive || motionStyle === 'continuous' ? 'desc-highlighted' : ''}`}>
+                      {dim.description}
+                    </p>
+                    <div className="dim-visual-container">
+                      {dim.renderVisual()}
+                    </div>
+                    {isLeadActive && !isPaused && (
+                      <span className="cascade-progress-bar" style={{ background: dim.accentColor }} />
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
         </div>
 
       </div>

@@ -521,12 +521,149 @@
   height: 3px;
   width: 100%;
   transform-origin: left center;
-  animation: cascade-timer-fill 2.6s linear forwards;
+  animation: cascade-timer-fill 2.8s linear forwards;
 }
 
 @keyframes cascade-timer-fill {
   0% { transform: scaleX(0); }
   100% { transform: scaleX(1); }
+}
+
+/* 4-Card-At-A-Time Moving Carousel */
+.four-up-carousel-shell {
+  max-width: 1180px;
+  margin: 0 auto 2.25rem auto;
+  --visible-cards: 1;
+  --card-gap: 1.15rem;
+}
+
+@media (min-width: 580px) {
+  .four-up-carousel-shell {
+    --visible-cards: 2;
+  }
+}
+
+@media (min-width: 1024px) {
+  .four-up-carousel-shell {
+    --visible-cards: 4;
+  }
+}
+
+.four-up-controls-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 0.9rem;
+  padding: 0 0.25rem;
+}
+
+.four-up-dots {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.four-up-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  border: none;
+  background: rgba(255, 255, 255, 0.22);
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.four-up-dot.active {
+  width: 24px;
+  background: var(--dot-color, #00e5ff);
+  box-shadow: 0 0 10px var(--dot-color, #00e5ff);
+}
+
+.four-up-right-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.motion-mode-toggle {
+  display: inline-flex;
+  background: rgba(5, 11, 20, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  padding: 3px;
+  gap: 3px;
+}
+
+.motion-mode-btn {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.motion-mode-btn.active {
+  background: rgba(0, 229, 255, 0.18);
+  color: #00e5ff;
+}
+
+.four-up-viewport {
+  overflow: hidden;
+  padding: 10px 2px 18px 2px;
+}
+
+.four-up-track {
+  display: flex;
+  gap: var(--card-gap);
+  will-change: transform;
+}
+
+.four-up-track.stepped-track {
+  transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+  transform: translateX(
+    calc(-1 * var(--step-index, 0) * (100% + var(--card-gap)) / var(--visible-cards))
+  );
+}
+
+/* Continuous Left-to-Right Marquee Glide across the 8 cards (showing 4 at a time) */
+.four-up-track.continuous-ltr {
+  animation: marquee-left-to-right 26s linear infinite;
+}
+
+.four-up-track.continuous-ltr.track-paused {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-left-to-right {
+  0% {
+    transform: translateX(calc(-8 * (100% + var(--card-gap)) / var(--visible-cards)));
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.four-up-card {
+  flex: 0 0 calc((100% - (var(--visible-cards) - 1) * var(--card-gap)) / var(--visible-cards));
+  min-width: calc((100% - (var(--visible-cards) - 1) * var(--card-gap)) / var(--visible-cards));
+  max-width: calc((100% - (var(--visible-cards) - 1) * var(--card-gap)) / var(--visible-cards));
+  box-sizing: border-box;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.four-up-card.cascade-active {
+  background: rgba(14, 24, 38, 0.95);
+  border-color: var(--card-accent, #00e5ff);
+  transform: translateY(-5px);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.6), 0 0 24px rgba(0, 229, 255, 0.18);
 }
 
 
