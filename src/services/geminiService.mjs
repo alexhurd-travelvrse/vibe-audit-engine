@@ -195,48 +195,14 @@ Trigger a MAGNET OVERRIDE (making the unique asset Slot 1) ONLY IF the property 
 1. Neighborhood Affinity Threshold (NAI >= 0.85): The asset directly mirrors the #1 or #2 trending subcultural search theme in this specific neighborhood (e.g., Subterranean Vinyl Hi-Fi Lounge in a nightlife district, Rooftop Infinity Pool in an iconic skyline area, Destination Culinary Bistro).
 2. Destination Power Check (Standalone Viability): The feature is a destination in its own right that non-hotel locals actively seek out.
 3. Split-Second Clarity Visual Standard: The photo must have zero ambiguity (<0.5s recognition), rich spatial context (skyline, architectural arches), and warm human energy.
-4. Mandatory Re-Sequencing Protocol: When Magnet Override is executed, you MUST immediately lock EXTERIOR_LANDMARK into Slot #2 to resolve location anxiety right after the hook.
+4. Mandatory 5-Slot Consensus Formula:
+   - Slot #1 (HERO_CULTURAL_MAGNET or OUTDOOR_SOCIAL_POOL): The Signature Vibe Shot — stops the scroll and communicates the emotional promise (e.g., golden-hour rooftop bar, sculptural design lobby, courtyard pool).
+   - Slot #2 (SIGNATURE_SUITE_BEDROOM): The Honest, Bookable Room — immediately proves the sleeping space matches the emotional promise of Slot #1 (not buried in Slot #3/#4).
+   - Slot #3 (SECONDARY_ROOM_BATHROOM or SECONDARY_LIFESTYLE_SANCTUARY): Bathroom & Comfort Proof — pairs the guest bathroom right beside the bedroom in Slot #2 to complete the private comfort & hygiene check that Booking.com guests expect. If 0 guest bathroom photos exist in the gallery, place a restorative comfort/terrace/spa sanctuary in Slot #3 and flag "Master Bathroom Soaking Tub & Walk-in Shower" as Priority #1 in 'photographic_gap_analysis'.
+   - Slot #4 (SOCIAL_FB_ROOFTOP or WELLNESS_SPA_LOBBY): Day-to-Night Social, Dining & Evening Energy — shows how the atmosphere feels in the evening or in communal spaces (restaurant, cocktail bar, spa, or salon).
+   - Slot #5 (EXTERIOR_LANDMARK): The Neighbourhood & Architectural Gateway — street presence, waterfront, or historic facade that connects the stay to its walkable local setting.
 
-THE TWO VALID 5-SLOT SEQUENCES:
-
-A) STANDARD BASELINE SEQUENCE (Default when no asset qualifies for override):
-- Slot 1 (EXTERIOR_LANDMARK): Authentic facade/entrance. (Action: "PROMOTE" or "KEEP_HERO")
-- Slot 2 (SOCIAL_FB_ROOFTOP): Signature cocktail bar, rooftop lounge, or restaurant. (Action: "SWAP_IN" or "PROMOTE")
-- Slot 3 (SIGNATURE_SUITE_BEDROOM): Most stylish signature king suite/room with local texture. (Action: "KEEP" or "RETAIN")
-- Slot 4 (WELLNESS_SPA_LOBBY): SIGNATURE DESTINATION AMENITY / HISTORIC GRAND PUBLIC SPACE / WELLNESS. If property has a Spa or Pool, feature it. If property has NO spa or pool (e.g. historic landmarks like The US Grant, boutique urban heritage hotels), Slot 4 MUST feature the Historic Grand Arrival Lobby, Crystal Ballroom, Heritage Drawing Room, or Iconic Lounge. Category: "WELLNESS_SPA_LOBBY".
-- Slot 5 (SECONDARY_ROOM_BATHROOM or SECONDARY_LIFESTYLE_SANCTUARY):
-  * IF an authentic guest bedroom bathroom, soaking tub, or walk-in shower photo EXISTS: Slot 5 MUST feature it (Category: "SECONDARY_ROOM_BATHROOM", confirming luxury finish quality and hygiene).
-  * IF NO authentic guest room bathroom photo exists in the inventory (NEVER substitute a public spa shower, locker room shower, or pool): Slot 5 gracefully adapts to showcase an authentic SECONDARY LIFESTYLE SANCTUARY / ESTATE ASSET (e.g. Estate Grounds, Parkland, Championship Golf Terrace, Historic Library, or Courtyard Lounge; Category: "SECONDARY_LIFESTYLE_SANCTUARY").
-  * CRITICAL: If no guest bathroom exists, you MUST explicitly add "Curated Master Bathroom Soaking Tub & Walk-in Shower" as the #1 priority missing shot in 'photographic_gap_analysis', warning that the absence of bathroom imagery creates a conversion drop for high-ADR travelers.
-
-B) MAGNET OVERRIDE SEQUENCE (When NAI >= 0.85 and Asset passes all 4 rules):
-- Slot 1 (HERO_CULTURAL_MAGNET): The unique asset (e.g., Hartwell Spa Indoor Pool, The Grant Grill, 12th Knot Rooftop Bar, Subterranean Hi-Fi Bar). Category: "HERO_CULTURAL_MAGNET", Action: "HERO_CULTURAL_MAGNET", Action Label: "⚡ HERO CULTURAL MAGNET: [ASSET NAME] (SLOT #1)".
-- Slot 2 (EXTERIOR_LANDMARK): Mandatory exterior facade. Category: "EXTERIOR_LANDMARK", Action: "PROMOTE" or "RE_SEQUENCE", Action Label: "EXTERIOR LANDMARK (SLOT #2 - MANDATORY GROUNDING)".
-- Slot 3 (SIGNATURE_SUITE_BEDROOM): Most stylish signature king suite/room. Category: "SIGNATURE_SUITE_BEDROOM".
-- Slot 4 (COMPLEMENTARY AMENITY - NO THEMATIC DUPLICATION & ZERO HALLUCINATION):
-  * VISUAL FEASIBILITY MANDATE (UNIVERSAL ACROSS ALL CATEGORIES):
-  * Only recommend a venue, restaurant, dining room, cocktail bar, spa, pool, sauna, or amenity in 'key_strategic_shifts' or 'optimal_5_photo_sequence' IF an authentic photo of that venue/amenity exists in CURRENT LIVE BOOKING.COM PHOTOS or SIGNATURE AMENITY ASSETS!
-  * IF hotel text mentions an acclaimed restaurant, chef, or spa (e.g. Blue Ribbon Sushi, NENI, Matador Room, 12th Knot, Ciel Spa), but ZERO photos of that venue exist in the provided photos list:
-    - DO NOT recommend or assign that restaurant/venue to Slot 1, Slot 2, or Slot 4!
-    - DO NOT promise or mention showcasing that venue in 'key_strategic_shifts'!
-    - INSTEAD: Recommend an authentic public space, courtyard pool, or lounge that DOES have a photo (e.g. Courtyard Pool, Arrival Lobby, Lounge), and relegate the photo-less venue STRICTLY to 'photographic_gap_analysis' as a missing asset to commission.
-  * IF Slot 1 was a Social/Bar/Dining asset AND hotel HAS a verified spa/pool photo -> Slot 4 features the Spa/Wellness facility (Category: "WELLNESS_SPA_LOBBY").
-  * IF Slot 1 was a Social/Bar/Dining asset AND hotel lacks a spa/pool photo -> Slot 4 MUST feature the Grand Arrival Lobby, Art Lounge, Library, Courtyard, or Heritage Drawing Room (Category: "WELLNESS_SPA_LOBBY"). NEVER invent or assign a photo-less spa or restaurant.
-  * IF Slot 1 was a Spa/Pool or Lobby asset -> Slot 4 features the Destination Restaurant / Culinary Dining / Cocktail Lounge (Category: "SOCIAL_FB_ROOFTOP") ONLY IF a verified dining/bar photo exists. If no dining photo exists, Slot 4 features the Grand Arrival Lobby, Art Lounge, or Courtyard.
-- Slot 5 (SECONDARY_ROOM_BATHROOM or SECONDARY_LIFESTYLE_SANCTUARY):
-  * IF an authentic guest bathroom photo exists: feature it in Slot 5 (Category: "SECONDARY_ROOM_BATHROOM").
-  * IF NO authentic guest room bathroom exists: Slot 5 adapts to showcase an authentic SECONDARY LIFESTYLE SANCTUARY / ESTATE ASSET (Category: "SECONDARY_LIFESTYLE_SANCTUARY"), and delegate the missing bathroom to 'photographic_gap_analysis'.
-
-STRICT SLOT INTEGRITY & DEDUPLICATION RULES:
-- POOL VS BAR/DINING DISAMBIGUATION: If an image depicts a swimming pool (even if named 'Poolside Bar', 'Tiki Bar', or 'pool next to a bar'), its primary visual subject is POOL. DO NOT classify it as a dining/culinary restaurant asset! If selected for Slot 1, it must be labeled and treated as a pool/lifestyle sanctuary (e.g. 'Art Deco Courtyard Swimming Pool & Cabanas'), NEVER claiming it is a dining or culinary room.
-- EXTERIOR LANDMARK VS COURTYARD POOL DISAMBIGUATION: An exterior landmark (Slot 2 or Slot 1) MUST depict the true street-level facade, Art Deco architectural entrance, or front landmark elevation. NEVER classify a courtyard swimming pool (even if the building is visible in the background) as an EXTERIOR_LANDMARK. If the live photo #1 is a courtyard pool, and Slot 1 elevates the Pool as HERO_CULTURAL_MAGNET, Slot 2 (EXTERIOR_LANDMARK) MUST select a real street facade asset (from AMENITY_ASSET or an actual exterior live photo), NEVER re-using or moving the pool photo into Slot 2.
-- REAL AMENITY FIDELITY & ZERO VISUAL-DEFICIT HALLUCINATION: Inspect the live photos and amenity assets list carefully. If a hotel does not have an authentic photo of a restaurant, bar, spa, pool, or sauna in the discovered inventory, NEVER recommend that amenity for any slot. Base all 5 slots and all strategic shifts strictly on available imagery, and add any missing signature amenities to 'photographic_gap_analysis'.
-- LIVE PHOTO SELECTION PRIORITY: Always inspect "CURRENT LIVE BOOKING.COM PHOTOS" first! If an asset of the required category (e.g. Grand Lobby, Spa Pool, Signature Bedroom, Exterior, Restaurant, Bathroom) is ALREADY present in the live gallery (e.g. Live Photo #4 is the Grand Lobby or Spa), you MUST select source_type: "LIVE_PHOTO", source_index: [1-indexed slot], and action: "PROMOTE" / "RE_SEQUENCE" / "KEEP". ONLY select "AMENITY_ASSET" if the live gallery completely lacks a photo of that amenity.
-- RESTAURANT / CULINARY FIDELITY: When recommending Slot 4 (or Slot 2) for Social F&B / Restaurant (Category: "SOCIAL_FB_ROOFTOP"), the photo subject MUST depict an authentic indoor dining room, table setting, gastronomy dishes, cocktail bar, or lounge interior. It must NEVER be an exterior building, marina, facade, or street view.
-- NEVER SELECT CORRIDORS OR HALLWAYS: Never select a room corridor, hallway, narrow passageway, closed door, stairwell, or soap bottle close-up for Slot 4 or any other slot! If a hotel has no spa or restaurant photo for Slot 4, select an inviting Lounge, Suite Living Room with Couch & Table, or Panoramic River/Terrace View.
-- NEVER repeat the same theme across slots (e.g., NEVER put Pool/Exterior in Slot 1 AND Slot 2; NEVER put Bedroom in Slot 3 AND Bedroom in Slot 5).
-- Slot 5 ADAPTIVE FIDELITY: Features a luxury guest bathroom IF an authentic bathroom photo exists. If NO guest bathroom photo exists in the gallery, Slot 5 features a distinct Secondary Lifestyle Sanctuary / Estate Grounds / Library, and the missing bathroom is delegated to 'photographic_gap_analysis' as a priority commission recommendation. NEVER classify a public spa shower or pool as a guest bathroom.
-- Strict 5 distinct thematic slots at all times (Magnet ➔ Exterior ➔ Suite ➔ Complementary Public Space/Lounge/Spa/Dining ➔ Luxury Bathroom OR Secondary Lifestyle Sanctuary).
+Strict 5 distinct thematic slots at all times (Slot #1 Signature Vibe Hero ➔ Slot #2 Bookable Bedroom ➔ Slot #3 Bathroom / Comfort Sanctuary ➔ Slot #4 Day-to-Night Social/Dining/Wellness ➔ Slot #5 Neighbourhood & Exterior Gateway).
 - Populate "slot_1_decision_logic" explaining whether Magnet Override was triggered or why default was retained.
 
 MERCHANDISING SCORES & READABILITY BULLETS:

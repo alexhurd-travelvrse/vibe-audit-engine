@@ -112,16 +112,16 @@ export default function HookTeaserSection() {
 
                       <div className="collage-thumbs-strip">
                         <div className="collage-thumb-item">
-                          <img src="/assets/hook_riverside_facade.jpg" alt="Slot 2 Riverside Facade" />
-                          <span className="thumb-cap">#2 Street Presence</span>
+                          <img src="/assets/hook_riverside_suite.jpg" alt="Slot 2 Quiet Room" />
+                          <span className="thumb-cap">#2 Quiet Room</span>
                         </div>
                         <div className="collage-thumb-item">
-                          <img src="/assets/hook_riverside_suite.jpg" alt="Slot 3 Riverview Suite" />
-                          <span className="thumb-cap">#3 Quiet Room</span>
+                          <img src="/assets/hook_riverside_terrace.jpg" alt="Slot 3 Social Sunset Terrace" />
+                          <span className="thumb-cap">#3 Sunset Terrace</span>
                         </div>
                         <div className="collage-thumb-item">
-                          <img src="/assets/hook_riverside_terrace.jpg" alt="Slot 4 Social Sunset Terrace" />
-                          <span className="thumb-cap">#4 Sunset Terrace</span>
+                          <img src="/assets/hook_riverside_facade.jpg" alt="Slot 4 Riverside Street Presence" />
+                          <span className="thumb-cap">#4 Street Presence</span>
                         </div>
                       </div>
 

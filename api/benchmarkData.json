@@ -123,26 +123,27 @@
       "projected_conversion_uplift": "+21.0%",
       "current_drop_off_flaw": "Generic exterior shot as hero, followed by repetitive bedroom/living room photos, failing to highlight unique social amenities and local cultural connection.",
       "key_strategic_shifts": [
-        "Elevate the iconic 12th Knot Rooftop Bar to Slot #1 to immediately capture South Bank's #1 'rooftop bar with a view' search demand, showcasing the hotel as a vibrant social destination.",
-        "Re-sequence the authentic river-facing exterior to Slot #2 to ground location and eliminate anxiety right after the initial cultural hook, reinforcing its prime riverside position.",
-        "Prioritize a signature suite with a clear river view in Slot #3 to convey luxury and the unique selling proposition of the location.",
-        "Introduce the sophisticated Lyaness Bar in Slot #4 to highlight the hotel's acclaimed mixology scene, appealing to the 'craft cocktail' subculture of London."
+        "Slot #1 — Signature Vibe Hero: Promote the iconic 12th Knot Rooftop Bar (Live Slot #24) to Slot #1 to stop the scroll and match South Bank's #1 'rooftop bar with a Thames view' desire.",
+        "Slot #2 — The Bookable Room: Promote the bright King Bedroom with floor-to-ceiling window (Live Slot #6) directly into Slot #2 (replacing 3 repetitive blue-couch living room shots in Live Slots #2, #3, and #5) to prove the room matches the promise.",
+        "Slot #3 — Comfort & Balcony Sanctuary (Adaptive Bathroom Fallback): Because 0 guest bathroom photos exist in the 55-photo Booking.com gallery, promote the Private River-View Balcony & Terrace (Live Slot #22) into Slot #3 and flag a Master Bathroom Rain-Shower & Tub shot as Priority #1 in Gap Analysis.",
+        "Slot #4 — Day-to-Night Social & Mixology: Promote Lyaness Craft Cocktail Bar (Live Slot #26) into Slot #4 to showcase evening sensory energy.",
+        "Slot #5 — Neighbourhood & Riverbank Gateway: Move the South Bank Thames Riverfront & Building Exterior (Live Slot #1) to Slot #5 to ground walkable riverside context."
       ],
       "optimal_5_photo_sequence": [
         {
           "slot": 1,
           "category": "HERO_CULTURAL_MAGNET",
-          "photo_subject": "A restaurant with a view of the city at night at Sea Containers London in London (12th Knot Rooftop Bar)",
+          "photo_subject": "12th Knot Rooftop Bar & Illuminated London Skyline at Night",
           "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/851801494.jpg?k=c89556f58e3108941b31cc6bff1b8b9020c7021aee0ef3af086b85fa0a8124b4&o=&hp=1",
-          "why_it_converts": "Showcasing destination culinary programming elevates property perception and captures high-spend leisure travelers.",
-          "upgrade_rationale": "Showcasing destination culinary programming elevates property perception and captures high-spend leisure travelers.",
+          "why_it_converts": "Stops the scroll in Slot #1 by leading with the property's most iconic emotional magnet—12th Knot Rooftop Lounge overlooking the Thames at night—rather than a distant daytime office-block exterior.",
+          "upgrade_rationale": "Stops the scroll in Slot #1 by leading with the property's most iconic emotional magnet—12th Knot Rooftop Lounge overlooking the Thames at night—rather than a distant daytime office-block exterior.",
           "bullet_points": [
-            "Visual Upgrade: This photo captures the vibrant energy and iconic views of the 12th Knot Rooftop Bar at night, showcasing its status as a premier social destination with a dramatic city backdrop.",
-            "Local Synergy: Directly aligns with South Bank's strong demand for 'rooftop bars with views' and 'chic nightlife', positioning the hotel as a central hub for local social experiences.",
-            "Conversion Trigger: Instantly communicates a desirable, high-energy social experience and aspirational lifestyle, drawing in travelers seeking vibrant urban stays."
+            "Visual Hook (Slot #1): Captures the warm glow and panoramic Thames skyline of 12th Knot Rooftop Bar at night.",
+            "Local Synergy: Directly matches South Bank's #1 traveller desire for riverside rooftop bars and vibrant evening energy.",
+            "Conversion Trigger: Stops the scroll in under 1 second and wins the initial shortlist click."
           ],
-          "psychological_conversion_trigger": "Triggers immediate desire for a vibrant, social London experience with iconic views, establishing the hotel as a destination in itself.",
-          "recommended_trigger": "Triggers immediate desire for a vibrant, social London experience with iconic views, establishing the hotel as a destination in itself.",
+          "psychological_conversion_trigger": "Sensory Immersion & High-Vibe Social Magnetism",
+          "recommended_trigger": "Sensory Immersion & High-Vibe Social Magnetism",
           "current_slot": 24,
           "is_retained": false,
           "is_moved": true,
@@ -161,48 +162,18 @@
         },
         {
           "slot": 2,
-          "category": "EXTERIOR_LANDMARK",
-          "photo_subject": "a view of a river with buildings and a city at Sea Containers London in London",
-          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/37817004.jpg?k=238a7f412de6dc18a068ba35b5c38e699d43d03ec9d4de2c54f8e3029103341f&o=",
-          "why_it_converts": "Establishing definitive architectural prestige and iconic street presence builds instant brand credibility.",
-          "upgrade_rationale": "Establishing definitive architectural prestige and iconic street presence builds instant brand credibility.",
-          "bullet_points": [
-            "Strategic Placement: Re-sequencing the iconic riverside exterior to Slot #2 immediately grounds the hotel's location, resolving geographic anxiety after the initial cultural magnet.",
-            "Local Synergy: Highlights the hotel's unique position on the Thames, a key identifier for travelers seeking a quintessential London experience in the South Bank area.",
-            "Conversion Trigger: Provides essential locational context and reinforces the hotel's architectural presence, building trust and confidence."
-          ],
-          "psychological_conversion_trigger": "Eliminates location uncertainty and reinforces the hotel's prestigious riverside address, a strong booking motivator.",
-          "recommended_trigger": "Eliminates location uncertainty and reinforces the hotel's prestigious riverside address, a strong booking motivator.",
-          "current_slot": 1,
-          "is_retained": false,
-          "is_moved": true,
-          "is_swapped_in": false,
-          "action": "RE_SEQUENCE",
-          "action_label": "MOVE FROM SLOT #1",
-          "source_display_label": "Was: Slot #1 (Booking.com)",
-          "source_domain": "booking.com",
-          "current_photo": {
-            "slot": 1,
-            "title": "a view of a river with buildings and a city at Sea Containers London in London",
-            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/37817004.jpg?k=238a7f412de6dc18a068ba35b5c38e699d43d03ec9d4de2c54f8e3029103341f&o=",
-            "photoId": "37817004",
-            "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1792405577687&force_referer="
-          }
-        },
-        {
-          "slot": 3,
           "category": "SIGNATURE_SUITE_BEDROOM",
-          "photo_subject": "a living room with a blue couch and a large window at Sea Containers London in London",
+          "photo_subject": "Signature King Bedroom with Bespoke Headboard & Floor-to-Ceiling Window",
           "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/818802965.jpg?k=e7c4d1f49ef8a639d70fc663479efcabca9546767f520353dfa51f8ed49efbb6&o=",
-          "why_it_converts": "Showcasing high-finish private sleeping accommodations assures travelers of restful luxury and elevated comfort.",
-          "upgrade_rationale": "Showcasing high-finish private sleeping accommodations assures travelers of restful luxury and elevated comfort.",
+          "why_it_converts": "Placing the honest, bookable King Bedroom directly in Slot #2 immediately proves that private sleeping quarters match the emotional promise of Slot #1—replacing the 3 repetitive blue-couch living room photos currently clogging Live Slots #2, #3, and #5.",
+          "upgrade_rationale": "Placing the honest, bookable King Bedroom directly in Slot #2 immediately proves that private sleeping quarters match the emotional promise of Slot #1—replacing the 3 repetitive blue-couch living room photos currently clogging Live Slots #2, #3, and #5.",
           "bullet_points": [
-            "Strategic Placement: Showcases a spacious, well-appointed living area of a suite with a panoramic city view, appealing to guests seeking comfort and luxury.",
-            "Local Synergy: The expansive window view connects the interior luxury with the vibrant South Bank cityscape, a key draw for travelers.",
-            "Conversion Trigger: Highlights the premium accommodation experience and the value of a room with a view, driving higher ADR bookings."
+            "Immediate Room Proof (Slot #2): Replaces 3 nearly identical suite sofa shots with a bright, bookable King Bedroom with natural window light.",
+            "Local Synergy: Floor-to-ceiling glazing connects private rest with the South Bank skyline.",
+            "Conversion Trigger: Resolves 'where will I actually sleep?' in the second click, preventing early gallery drop-off."
           ],
-          "psychological_conversion_trigger": "Evokes a sense of spacious luxury and a desirable 'room with a view' experience, encouraging longer stays and higher category bookings.",
-          "recommended_trigger": "Evokes a sense of spacious luxury and a desirable 'room with a view' experience, encouraging longer stays and higher category bookings.",
+          "psychological_conversion_trigger": "Restorative Sleep & Tactile Room Proof",
+          "recommended_trigger": "Restorative Sleep & Tactile Room Proof",
           "current_slot": 6,
           "is_retained": false,
           "is_moved": true,
@@ -221,16 +192,46 @@
           }
         },
         {
+          "slot": 3,
+          "category": "SECONDARY_LIFESTYLE_SANCTUARY",
+          "photo_subject": "Private River-View Balcony & Outdoor Terrace Sanctuary (Adaptive Comfort Slot)",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/851801396.jpg?k=10352fab3075fe13b9ea3c07a10286ceda2edbf94cc13eecf2d32a62a3e7544e&o=&hp=1",
+          "why_it_converts": "Booking.com travellers expect a Bathroom / Comfort check in Slot #3 right beside the bedroom. Because Sea Containers has 0 guest bathroom photos in its 55-photo live gallery, AtmosVibe places the Private River-View Balcony Terrace here as an adaptive comfort bridge—and flags a Master Bathroom Soaking Tub & Rain-Shower shot as Priority #1 in Gap Analysis.",
+          "upgrade_rationale": "Booking.com travellers expect a Bathroom / Comfort check in Slot #3 right beside the bedroom. Because Sea Containers has 0 guest bathroom photos in its 55-photo live gallery, AtmosVibe places the Private River-View Balcony Terrace here as an adaptive comfort bridge—and flags a Master Bathroom Soaking Tub & Rain-Shower shot as Priority #1 in Gap Analysis.",
+          "bullet_points": [
+            "Adaptive Comfort Slot #3: Bridges private sanctuary comfort right after the bedroom while flagging the missing bathroom photo as Gap #1.",
+            "Experiential Hook: Showcases private outdoor terrace seating overlooking the London skyline.",
+            "Conversion Trigger: Justifies premium room/balcony upgrades and sustains shortlist confidence."
+          ],
+          "psychological_conversion_trigger": "Private Outdoor Sanctuary & Comfort Proof",
+          "recommended_trigger": "Private Outdoor Sanctuary & Comfort Proof",
+          "current_slot": 22,
+          "is_retained": false,
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "PROMOTE",
+          "action_label": "PROMOTE FROM SLOT #22",
+          "source_display_label": "Was: Slot #22 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 22,
+            "title": "a balcony with tables and chairs and a view of the city at Sea Containers London in London",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/851801396.jpg?k=10352fab3075fe13b9ea3c07a10286ceda2edbf94cc13eecf2d32a62a3e7544e&o=&hp=1",
+            "photoId": "851801396",
+            "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1792405577687&force_referer="
+          }
+        },
+        {
           "slot": 4,
           "category": "SOCIAL_FB_ROOFTOP",
-          "photo_subject": "a man sitting",
+          "photo_subject": "Lyaness Award-Winning Cocktail Bar & Evening Mixology Craft",
           "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/851801638.jpg?k=82611973e2bfdf3d777046fd5159d389a579cdb7b5a93b880f2fa0322f4225a2&o=&hp=1",
-          "why_it_converts": "Showcasing destination culinary programming elevates property perception and captures high-spend leisure travelers visiting London.",
-          "upgrade_rationale": "Showcasing destination culinary programming elevates property perception and captures high-spend leisure travelers visiting London.",
+          "why_it_converts": "Showcasing human sensory warmth and craft mixology in Slot #4 illustrates how the hotel's atmosphere feels in the evening, capturing high-spend leisure travellers.",
+          "upgrade_rationale": "Showcasing human sensory warmth and craft mixology in Slot #4 illustrates how the hotel's atmosphere feels in the evening, capturing high-spend leisure travellers.",
           "bullet_points": [
-            "Visual Upgrade: Atmospheric culinary perspective showing ambient lighting and curated seating.",
-            "Local Synergy: Anchors the property within the destination's acclaimed dining circuit.",
-            "Conversion Trigger: Stimulates social anticipation and validates on-property lifestyle experiences."
+            "Day-to-Night Sensory Moment (Slot #4): Highlights human craft and evening atmosphere at the award-winning Lyaness bar.",
+            "Local Synergy: Connects the hotel to London's world-renowned cocktail and riverfront dining scene.",
+            "Conversion Trigger: Sparks social anticipation after the private room and comfort checks are complete."
           ],
           "psychological_conversion_trigger": "Destination Gastronomy & Evening Social Gravitas",
           "recommended_trigger": "Destination Gastronomy & Evening Social Gravitas",
@@ -252,33 +253,32 @@
         },
         {
           "slot": 5,
-          "category": "SECONDARY_LIFESTYLE_SANCTUARY",
-          "photo_subject": "a living room with a blue couch and a large window",
-          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/818798316.jpg?k=56e03a102e49b280711b7371553921cce2f6c7eb0b113e95a3fcac8b0b993008&o=",
-          "why_it_converts": "Highlighting the property's expansive grounds and distinctive lifestyle amenities in Slot #5 provides a compelling secondary hook for leisure travelers seeking outdoor space and recreational prestige.",
-          "upgrade_rationale": "Highlighting the property's expansive grounds and distinctive lifestyle amenities in Slot #5 provides a compelling secondary hook for leisure travelers seeking outdoor space and recreational prestige.",
+          "category": "EXTERIOR_LANDMARK",
+          "photo_subject": "South Bank Thames Riverwalk & Iconic Riverside Building Presence",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/37817004.jpg?k=238a7f412de6dc18a068ba35b5c38e699d43d03ec9d4de2c54f8e3029103341f&o=",
+          "why_it_converts": "Strategic Repositioning (Moved from Live Slot #1 to Slot #5): Rather than wasting the #1 scroll-stopping thumbnail on a wide river exterior, placing the Thames waterfront facade in Slot #5 anchors walkable South Bank neighbourhood context right after proving the vibe, bedroom, comfort sanctuary, and evening bar.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #1 to Slot #5): Rather than wasting the #1 scroll-stopping thumbnail on a wide river exterior, placing the Thames waterfront facade in Slot #5 anchors walkable South Bank neighbourhood context right after proving the vibe, bedroom, comfort sanctuary, and evening bar.",
           "bullet_points": [
-            "Visual Proof: Expansive perspective capturing the hotel's distinctive grounds, parkland setting, or curated public spaces.",
-            "Experiential Hook: Validates generous outdoor scale and peaceful relaxation beyond guest rooms.",
-            "Conversion Trigger: Confirms lifestyle amenities and recreational leisure value to finalize booking confidence."
+            "Neighbourhood Gateway (Slot #5): Grounds the hotel directly on the walkable South Bank riverfront between Tate Modern and Oxo Tower.",
+            "Location Confirmation: Resolves geographic context at the exact moment the traveller is ready to check map proximity.",
+            "Conversion Trigger: Closes the 5-slot sequence with unmistakable Thames waterfront prestige."
           ],
-          "psychological_conversion_trigger": "Estate Seclusion & Expansive Lifestyle Sanctuary",
-          "recommended_trigger": "Estate Seclusion & Expansive Lifestyle Sanctuary",
-          "current_slot": 2,
+          "psychological_conversion_trigger": "Walkable Neighbourhood Gateway & Waterfront Grounding",
+          "recommended_trigger": "Walkable Neighbourhood Gateway & Waterfront Grounding",
+          "current_slot": 1,
           "is_retained": false,
           "is_moved": true,
           "is_swapped_in": false,
           "action": "RE_SEQUENCE",
-          "action_label": "MOVE FROM SLOT #2",
-          "source_display_label": "Was: Slot #2 (Booking.com)",
+          "action_label": "MOVE FROM SLOT #1",
+          "source_display_label": "Was: Slot #1 (Booking.com)",
           "source_domain": "booking.com",
           "current_photo": {
-            "slot": 2,
-            "title": "a living room with a blue couch and a large window at Sea Containers London in London",
-            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/818798316.jpg?k=56e03a102e49b280711b7371553921cce2f6c7eb0b113e95a3fcac8b0b993008&o=",
-            "photoId": "818798316",
-            "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1792405577687&force_referer=",
-            "visual_description": "Hotel suite living area with a large blue sofa and floor-to-ceiling windows overlooking the city"
+            "slot": 1,
+            "title": "a view of a river with buildings and a city at Sea Containers London in London",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/37817004.jpg?k=238a7f412de6dc18a068ba35b5c38e699d43d03ec9d4de2c54f8e3029103341f&o=",
+            "photoId": "37817004",
+            "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1792405577687&force_referer="
           }
         }
       ],
@@ -1533,15 +1533,16 @@
     },
     "ota_conversion_audit": {
       "channel": "Booking.com",
-      "before_merchandising_score": 48,
-      "after_merchandising_score": 94,
-      "projected_conversion_uplift": "+21.0%",
-      "current_drop_off_flaw": "Commoditized visual sequence failing to highlight unique cultural magnets and neighborhood synergy, leading to traveler hesitation.",
+      "before_merchandising_score": 76,
+      "after_merchandising_score": 96,
+      "projected_conversion_uplift": "+14.5%",
+      "current_drop_off_flaw": "Strong opening sequence across Slots #1–#4 (Sculptural Lobby -> King Bedroom -> Daylit Bathroom -> NENI Restaurant), but Slot #5 wastes the final gateway slot on a repetitive second bedroom with a TV instead of grounding the historic Indre By street facade.",
       "key_strategic_shifts": [
-        "Elevate the unique, art-infused lobby as the Hero Cultural Magnet to immediately convey the hotel's playful and design-forward DNA, aligning with Indre By's creative subculture.",
-        "Strategically reposition the exterior facade to Slot #2 to ground location and eliminate anxiety, while showcasing the hotel's architectural presence.",
-        "Prioritize the vibrant NENI restaurant with its distinctive greenhouse roof to capture Copenhagen's strong culinary and social dining search demand.",
-        "Integrate the stylish guest bathroom to confirm luxury finish quality and hygiene, a key conversion trigger for high-ADR travelers."
+        "Slot #1 — Signature Vibe Hero (RETAIN): Keep the iconic Art-Infused Lobby & Book Sculpture in Slot #1—it immediately communicates 25hours' creative DNA and matches Indre By's design subculture.",
+        "Slot #2 — The Bookable Room (RETAIN): Keep the bright King Bedroom with heritage window in Slot #2—it immediately proves the sleeping space matches the creative promise.",
+        "Slot #3 — Bathroom & Comfort Proof (RETAIN): Keep the daylit Freestanding Tub & Window Bathroom in Slot #3 right beside the bedroom to complete the private comfort check.",
+        "Slot #4 — Social & Culinary Energy (RETAIN): Keep NENI's glass-atrium restaurant in Slot #4 to showcase vibrant communal dining.",
+        "Slot #5 — Neighbourhood & Street Gateway (UPGRADE): Promote the Historic Indre By Facade & Street Presence from Live Slot #9 into Slot #5, replacing the redundant second bedroom in Live Slot #5."
       ],
       "optimal_5_photo_sequence": [
         {
@@ -1549,12 +1550,12 @@
           "category": "HERO_CULTURAL_MAGNET",
           "photo_subject": "Hotel lobby with a green velvet sofa, small tables, and a large sculptural book installation.",
           "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/914625284.jpg?k=c4595822e088e04a3cebd0924ae887b82212e0cdd77e7573b08a067770892d36&o=",
-          "why_it_converts": "Elevating the hotel's grand architectural arrival lobby and curated social spaces to Slot #1 immediately signals its iconic hospitality heritage and hooks high-intent travelers exploring Copenhagen.",
-          "upgrade_rationale": "Elevating the hotel's grand architectural arrival lobby and curated social spaces to Slot #1 immediately signals its iconic hospitality heritage and hooks high-intent travelers exploring Copenhagen.",
+          "why_it_converts": "Retaining the hotel's iconic book-sculpture salon in Slot #1 immediately signals its playful 19th-century university-meets-design heritage and hooks creative travellers exploring Copenhagen.",
+          "upgrade_rationale": "Retaining the hotel's iconic book-sculpture salon in Slot #1 immediately signals its playful 19th-century university-meets-design heritage and hooks creative travellers exploring Copenhagen.",
           "bullet_points": [
-            "Visual Hook: Striking spatial perspective showcasing bespoke architectural details and curated arrival atmosphere.",
-            "Local Synergy: Anchors the property within Copenhagen's premier cultural and heritage district.",
-            "Conversion Trigger: Establishes instant aesthetic authority and justifies premium room rates."
+            "Visual Hook (Slot #1 - Retained): Striking spatial perspective showcasing the sculptural book tower and green velvet lounge.",
+            "Local Synergy: Anchors the property within Copenhagen's historic Indre By creative and literary quarter.",
+            "Conversion Trigger: Establishes instant aesthetic authority and differentiates the property from standard Nordic chain hotels."
           ],
           "psychological_conversion_trigger": "Design Prestige & Curated Atmosphere",
           "recommended_trigger": "Design Prestige & Curated Atmosphere",
@@ -1577,54 +1578,24 @@
         },
         {
           "slot": 2,
-          "category": "EXTERIOR_LANDMARK",
-          "photo_subject": "Store front of a building with windows",
-          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/914625292.jpg?k=3f8ce495cce3d5432c0b7c6f28240ffe63da67e077d1a7174668e5c5783852dc&o=&hp=1",
-          "why_it_converts": "Establishing definitive architectural prestige and iconic street presence builds instant brand credibility.",
-          "upgrade_rationale": "Establishing definitive architectural prestige and iconic street presence builds instant brand credibility.",
-          "bullet_points": [
-            "Strategic Placement: Immediately grounds the hotel's location within the charming Indre By neighborhood, resolving location anxiety for travelers.",
-            "Local Synergy: Showcases the hotel's integration into the historic urban fabric of Copenhagen, appealing to those seeking an authentic city experience.",
-            "Conversion Trigger: Provides essential geographic context and architectural appeal, reinforcing the hotel's presence in a desirable area."
-          ],
-          "psychological_conversion_trigger": "Eliminates location uncertainty and visually confirms the hotel's prime position, a critical factor for urban travelers.",
-          "recommended_trigger": "Eliminates location uncertainty and visually confirms the hotel's prime position, a critical factor for urban travelers.",
-          "current_slot": 9,
-          "is_retained": false,
-          "is_moved": true,
-          "is_swapped_in": false,
-          "action": "PROMOTE",
-          "action_label": "PROMOTE FROM SLOT #9",
-          "source_display_label": "Was: Slot #9 (Booking.com)",
-          "source_domain": "booking.com",
-          "current_photo": {
-            "slot": 9,
-            "title": "a store front of a building with windows at 25hours Hotel Indre By in Copenhagen",
-            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/914625292.jpg?k=3f8ce495cce3d5432c0b7c6f28240ffe63da67e077d1a7174668e5c5783852dc&o=&hp=1",
-            "photoId": "914625292",
-            "sourceUrl": "https://www.booking.com/hotel/dk/25hours-indre-by.html?lang=en-us&chal_t=1791892114159&force_referer="
-          }
-        },
-        {
-          "slot": 3,
           "category": "SIGNATURE_SUITE_BEDROOM",
-          "photo_subject": "A bedroom with a large bed and a large window",
+          "photo_subject": "Signature King Bedroom with Heritage Window & Warm Natural Light",
           "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/914625330.jpg?k=d06043d9cae69a872ea42f4336b3b9736c4fb09180fac047609052dc20269592&o=",
-          "why_it_converts": "Showcasing high-finish private sleeping accommodations assures travelers of restful luxury and elevated comfort.",
-          "upgrade_rationale": "Showcasing high-finish private sleeping accommodations assures travelers of restful luxury and elevated comfort.",
+          "why_it_converts": "Retaining the bright King Bedroom in Slot #2 immediately proves that the guest rooms deliver on the creative promise of Slot #1 with warm textures, high ceilings, and natural daylight.",
+          "upgrade_rationale": "Retaining the bright King Bedroom in Slot #2 immediately proves that the guest rooms deliver on the creative promise of Slot #1 with warm textures, high ceilings, and natural daylight.",
           "bullet_points": [
-            "Strategic Placement: Showcases the hotel's unique and stylish guest room design, emphasizing comfort and aesthetic appeal.",
-            "Local Synergy: Reflects Copenhagen's contemporary design ethos, appealing to travelers who value modern, well-appointed accommodations.",
-            "Conversion Trigger: Highlights the quality of the private space, assuring comfort and a pleasant stay."
+            "Immediate Room Proof (Slot #2 - Retained): Confirms a restful, characterful bedroom right after the lobby hook.",
+            "Local Synergy: Warm Danish tactile finishes and tall heritage windows reflect authentic Copenhagen living.",
+            "Conversion Trigger: Eliminates room-quality hesitation in the second thumbnail."
           ],
-          "psychological_conversion_trigger": "Reassures guests about the quality and design of their private accommodation, a primary concern for booking.",
-          "recommended_trigger": "Reassures guests about the quality and design of their private accommodation, a primary concern for booking.",
+          "psychological_conversion_trigger": "Restorative Sleep & Tactile Room Proof",
+          "recommended_trigger": "Restorative Sleep & Tactile Room Proof",
           "current_slot": 2,
-          "is_retained": false,
-          "is_moved": true,
+          "is_retained": true,
+          "is_moved": false,
           "is_swapped_in": false,
-          "action": "RE_SEQUENCE",
-          "action_label": "MOVE FROM SLOT #2",
+          "action": "RETAIN",
+          "action_label": "RETAIN IN SLOT #2",
           "source_display_label": "Was: Slot #2 (Booking.com)",
           "source_domain": "booking.com",
           "current_photo": {
@@ -1636,16 +1607,46 @@
           }
         },
         {
+          "slot": 3,
+          "category": "SECONDARY_ROOM_BATHROOM",
+          "photo_subject": "Daylit Design Bathroom with Freestanding Soaking Tub & Window",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/914625350.jpg?k=df467ed12d38824ac8d9a32974fa1cf290e8a6355470b3f03e535a7215d43d42&o=",
+          "why_it_converts": "Retaining the daylit freestanding-tub bathroom in Slot #3 right beside the bedroom in Slot #2 completes the private room-and-bathroom comfort check that Booking.com guests expect before exploring public amenities.",
+          "upgrade_rationale": "Retaining the daylit freestanding-tub bathroom in Slot #3 right beside the bedroom in Slot #2 completes the private room-and-bathroom comfort check that Booking.com guests expect before exploring public amenities.",
+          "bullet_points": [
+            "Comfort & Hygiene Proof (Slot #3 - Retained): Pairs the bathroom directly beside the bedroom for a seamless private-space inspection.",
+            "Local Synergy: Natural window light and bespoke retro fixtures elevate the bathroom beyond standard hotel utility.",
+            "Conversion Trigger: Removes hygiene and comfort doubts early in the gallery sequence."
+          ],
+          "psychological_conversion_trigger": "Hygiene Assurance & Private Luxury Finishes",
+          "recommended_trigger": "Hygiene Assurance & Private Luxury Finishes",
+          "current_slot": 3,
+          "is_retained": true,
+          "is_moved": false,
+          "is_swapped_in": false,
+          "action": "RETAIN",
+          "action_label": "RETAIN IN SLOT #3",
+          "source_display_label": "Was: Slot #3 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 3,
+            "title": "a bath tub in a bathroom with a window at 25hours Hotel Indre By in Copenhagen",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/914625350.jpg?k=df467ed12d38824ac8d9a32974fa1cf290e8a6355470b3f03e535a7215d43d42&o=",
+            "photoId": "914625350",
+            "sourceUrl": "https://www.booking.com/hotel/dk/25hours-indre-by.html?lang=en-us&chal_t=1791892114159&force_referer="
+          }
+        },
+        {
           "slot": 4,
           "category": "SOCIAL_FB_ROOFTOP",
-          "photo_subject": "a restaurant with tables and chairs in a building",
+          "photo_subject": "NENI Glass-Atrium Restaurant & Communal Dining Space",
           "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/914625368.jpg?k=a995e8455cb14f8386b10c9e4ba0e30f6be5f4b48a0168f05beab1b80737195d&o=",
-          "why_it_converts": "Showcasing destination culinary programming elevates property perception and captures high-spend leisure travelers visiting Copenhagen.",
-          "upgrade_rationale": "Showcasing destination culinary programming elevates property perception and captures high-spend leisure travelers visiting Copenhagen.",
+          "why_it_converts": "Retaining NENI Restaurant in Slot #4 showcases the property's vibrant communal dining atmosphere under the glass atrium roof, capturing Copenhagen's strong culinary demand.",
+          "upgrade_rationale": "Retaining NENI Restaurant in Slot #4 showcases the property's vibrant communal dining atmosphere under the glass atrium roof, capturing Copenhagen's strong culinary demand.",
           "bullet_points": [
-            "Visual Upgrade: Atmospheric culinary perspective showing ambient lighting and curated seating.",
-            "Local Synergy: Anchors the property within the destination's acclaimed dining circuit.",
-            "Conversion Trigger: Stimulates social anticipation and validates on-property lifestyle experiences."
+            "Day-to-Night Social Energy (Slot #4 - Retained): Atmospheric culinary perspective showing warm lighting and greenhouse architecture.",
+            "Local Synergy: Anchors the hotel as a lively dining magnet for both locals and guests in Indre By.",
+            "Conversion Trigger: Stimulates social anticipation after private room and bathroom comfort are verified."
           ],
           "psychological_conversion_trigger": "Destination Gastronomy & Evening Social Gravitas",
           "recommended_trigger": "Destination Gastronomy & Evening Social Gravitas",
@@ -1667,31 +1668,31 @@
         },
         {
           "slot": 5,
-          "category": "SECONDARY_ROOM_BATHROOM",
-          "photo_subject": "A bath tub in a bathroom with a window",
-          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/914625350.jpg?k=df467ed12d38824ac8d9a32974fa1cf290e8a6355470b3f03e535a7215d43d42&o=",
-          "why_it_converts": "Showcasing immaculate private bathroom finishes and walk-in rain showers resolves hygiene anxiety and completes the luxury perception.",
-          "upgrade_rationale": "Showcasing immaculate private bathroom finishes and walk-in rain showers resolves hygiene anxiety and completes the luxury perception.",
+          "category": "EXTERIOR_LANDMARK",
+          "photo_subject": "Historic Indre By Facade & Walkable Street Presence",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/914625292.jpg?k=3f8ce495cce3d5432c0b7c6f28240ffe63da67e077d1a7174668e5c5783852dc&o=&hp=1",
+          "why_it_converts": "Surgical Slot #5 Upgrade (Promoted from Live Slot #9): Replaces the redundant second bedroom in Live Slot #5 with the hotel's historic Indre By street facade—completing the 5-slot story by grounding walkable neighbourhood context beside Rundetårn and Købmagergade.",
+          "upgrade_rationale": "Surgical Slot #5 Upgrade (Promoted from Live Slot #9): Replaces the redundant second bedroom in Live Slot #5 with the hotel's historic Indre By street facade—completing the 5-slot story by grounding walkable neighbourhood context beside Rundetårn and Købmagergade.",
           "bullet_points": [
-            "Strategic Placement: Confirms the luxury finish and hygiene standards of the private bathroom, a critical detail for discerning travelers.",
-            "Local Synergy: The stylish design and natural light in the bathroom reflect Copenhagen's emphasis on clean, functional, and aesthetically pleasing interiors.",
-            "Conversion Trigger: Addresses a key psychological need for cleanliness, comfort, and modern amenities in private spaces, reducing booking friction."
+            "Neighbourhood Gateway (Slot #5 - Promoted from #9): Eliminates the duplicate bedroom in Live Slot #5 in favour of historic street-level presence.",
+            "Local Synergy: Shows how the heritage building sits directly within Copenhagen's walkable Indre By quarter.",
+            "Conversion Trigger: Closes the 5-slot sequence with authentic architectural scale and location confidence."
           ],
-          "psychological_conversion_trigger": "Provides reassurance regarding the quality and cleanliness of essential private facilities, a significant factor in booking decisions.",
-          "recommended_trigger": "Provides reassurance regarding the quality and cleanliness of essential private facilities, a significant factor in booking decisions.",
-          "current_slot": 3,
+          "psychological_conversion_trigger": "Walkable Neighbourhood Gateway & Architectural Grounding",
+          "recommended_trigger": "Walkable Neighbourhood Gateway & Architectural Grounding",
+          "current_slot": 9,
           "is_retained": false,
           "is_moved": true,
           "is_swapped_in": false,
-          "action": "RE_SEQUENCE",
-          "action_label": "MOVE FROM SLOT #3",
-          "source_display_label": "Was: Slot #3 (Booking.com)",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE FROM SLOT #9",
+          "source_display_label": "Was: Slot #9 (Booking.com)",
           "source_domain": "booking.com",
           "current_photo": {
-            "slot": 3,
-            "title": "a bath tub in a bathroom with a window at 25hours Hotel Indre By in Copenhagen",
-            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/914625350.jpg?k=df467ed12d38824ac8d9a32974fa1cf290e8a6355470b3f03e535a7215d43d42&o=",
-            "photoId": "914625350",
+            "slot": 9,
+            "title": "a store front of a building with windows at 25hours Hotel Indre By in Copenhagen",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/914625292.jpg?k=3f8ce495cce3d5432c0b7c6f28240ffe63da67e077d1a7174668e5c5783852dc&o=&hp=1",
+            "photoId": "914625292",
             "sourceUrl": "https://www.booking.com/hotel/dk/25hours-indre-by.html?lang=en-us&chal_t=1791892114159&force_referer="
           }
         }
