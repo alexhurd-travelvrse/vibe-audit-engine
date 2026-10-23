@@ -18,7 +18,7 @@ export default function HookTeaserSection() {
             Gateway to Your <span className="teaser-title-accent">Destination</span>
           </h2>
           <p className="teaser-description">
-            AtmosVibe ensures your brand stands out as the defining gateway to your destination across all channels
+            AtmosVibe ensures your brand stands out as the defining gateway to your destination across all channels. We also create a Vibe Signature for your destination, compare and verify it against yours, and give you a clear action plan where there are gaps
           </p>
         </div>
 
