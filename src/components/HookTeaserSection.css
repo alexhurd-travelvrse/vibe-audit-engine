@@ -31,12 +31,12 @@
 }
 
 .teaser-title {
-  font-size: clamp(1.85rem, 3.8vw, 2.75rem);
+  font-size: clamp(1.75rem, 2.8vw, 2.25rem);
   font-weight: 800;
   line-height: 1.2;
   letter-spacing: -0.02em;
   color: #ffffff;
-  margin-bottom: 0.85rem;
+  margin-bottom: 0.75rem;
 }
 
 .teaser-title-accent {
@@ -55,8 +55,8 @@
 }
 
 .teaser-description {
-  font-size: 1.02rem;
-  color: rgba(230, 241, 255, 0.75);
+  font-size: 1rem;
+  color: rgba(230, 241, 255, 0.78);
   line-height: 1.55;
   max-width: 680px;
   margin: 0 auto 1.75rem auto;
@@ -368,7 +368,7 @@
 }
 
 .tier-heading {
-  font-size: 1.45rem;
+  font-size: 1.3rem;
   font-weight: 800;
   color: #ffffff;
   margin: 0 0 0.35rem 0;
