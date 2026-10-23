@@ -8,8 +8,8 @@ const Hero = () => {
     return (
         <section className="hero-section">
             <Helmet>
-                <title>Turn Atmosphere into Bookings | Optimise Your Hotel OTA Photos | AtmosVibe</title>
-                <meta name="description" content="Turn Atmosphere into Bookings. Start by Optimising Your OTA Photos. Position your brand as the authentic gateway to your destination" />
+                <title>Turn Your Unique Experiences into Bookings | AtmosVibe</title>
+                <meta name="description" content="Turn Your Unique Experiences into Bookings. Match travellers' dreams about your destination with your verified reality" />
             </Helmet>
 
             <div className="hero-bg-container">
@@ -30,23 +30,23 @@ const Hero = () => {
                         <span className="badge-status-dot"></span>
                         <span className="badge-tag">AI READY</span>
                         <span className="badge-divider"></span>
-                        <span className="badge-text">VIBE SIGNATURES FOR HOTELS &amp; TRAVEL BRANDS</span>
+                        <span className="badge-text">VIBE SIGNATURES FOR HOTELS, CRUISES &amp; TOURS</span>
                         <span className="badge-beta-pill">BETA</span>
                     </Link>
 
                     <h1 className="hero-headline">
-                        Turn Atmosphere into Bookings
+                        Turn Your Unique Experiences into Bookings
                     </h1>
 
                     <p className="hero-subheadline">
-                        Position your brand as the authentic gateway to your destination
+                        Match travellers' dreams about your destination with your verified reality
                     </p>
                 </div>
 
                 {/* Phased Entry Call to Action: Reveals smoothly a couple of seconds after initial load */}
                 <div className="hero-action-container hero-phased-entry">
-                    <Link to="/audit" className="hero-search-btn" title="Start by Optimising Your OTA Photos">
-                        <span>Start by Optimising Your OTA Photos</span>
+                    <Link to="/audit" className="hero-search-btn" title="Run My Free Vibe Snapshot">
+                        <span>Run My Free Vibe Snapshot</span>
                         <ArrowRight size={18} />
                     </Link>
                 </div>

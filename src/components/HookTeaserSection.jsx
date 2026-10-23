@@ -25,10 +25,10 @@ export default function HookTeaserSection() {
         {/* Linear Stack */}
         <div className="linear-teaser-stack">
           
-          {/* TIER 1: Instant Output (Free) */}
+          {/* TIER 1: Free Vibe Snapshot */}
           <div className="unlock-card free-tier-card animate-fade-up">
             <div className="card-top-bar">
-              <div className="step-tag free-tag">STEP 1: INSTANT OUTPUT</div>
+              <div className="step-tag free-tag">STEP 1: FREE VIBE SNAPSHOT</div>
               <span className="price-tag free-price">100% FREE</span>
             </div>
 
@@ -213,7 +213,7 @@ export default function HookTeaserSection() {
 
               <div className="card-footer">
                 <Link to="/partner" className="tier-cta-btn pro-btn">
-                  <span>Unlock Complete Vibe Signature™</span>
+                  <span>Unlock Your Complete Vibe Signature™</span>
                   <ArrowRight size={16} />
                 </Link>
               </div>
