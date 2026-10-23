@@ -25,26 +25,22 @@ const DIMENSIONS = [
     )
   },
   {
-    icon: Volume2,
-    tag: 'SOUND & SLEEP',
-    title: 'Easy Chat & Quiet Sleep',
-    accentColor: '#00e5ff',
-    certaintyBadge: '◎ 90% Proven',
-    certaintyColor: '#00e5ff',
-    description: 'Warm music & easy chat downstairs, sound-mitigated quiet sleep upstairs',
+    icon: ShieldCheck,
+    tag: 'TRUE CHARACTER',
+    title: 'Real Craft, Not Chain',
+    accentColor: '#a855f7',
+    certaintyBadge: '✓ 94% Fact',
+    certaintyColor: '#34d399',
+    description: 'Authentic architecture, natural stone & handcrafted finishes—not chain decor',
     renderVisual: () => (
-      <div className="vibe-visual-widget sound-widget">
-        <div className="audio-spectrum-bars">
-          <span className="bar bar-1"></span>
-          <span className="bar bar-2"></span>
-          <span className="bar bar-3"></span>
-          <span className="bar bar-4"></span>
-          <span className="bar bar-5"></span>
-          <span className="bar bar-6"></span>
+      <div className="vibe-visual-widget auth-widget">
+        <div className="auth-score-bar">
+          <div className="auth-fill" style={{ width: '94%' }}></div>
+          <span className="auth-num">94%</span>
         </div>
         <div className="widget-label-row">
-          <span className="widget-metric">No Shouting</span>
-          <span className="widget-caption">Buzz Downstairs · Quiet Rooms</span>
+          <span className="widget-metric">Real Wood & Stone</span>
+          <span className="widget-caption">True Local Architecture</span>
         </div>
       </div>
     )
@@ -143,22 +139,26 @@ const DIMENSIONS = [
     )
   },
   {
-    icon: ShieldCheck,
-    tag: 'TRUE CHARACTER',
-    title: 'Real Craft, Not Chain',
-    accentColor: '#a855f7',
-    certaintyBadge: '✓ 94% Fact',
-    certaintyColor: '#34d399',
-    description: 'Authentic architecture, natural stone & handcrafted finishes—not chain decor',
+    icon: Volume2,
+    tag: 'SOUND & SLEEP',
+    title: 'Easy Chat & Quiet Sleep',
+    accentColor: '#00e5ff',
+    certaintyBadge: '◎ 90% Proven',
+    certaintyColor: '#00e5ff',
+    description: 'Warm music & easy chat downstairs, sound-mitigated quiet sleep upstairs',
     renderVisual: () => (
-      <div className="vibe-visual-widget auth-widget">
-        <div className="auth-score-bar">
-          <div className="auth-fill" style={{ width: '94%' }}></div>
-          <span className="auth-num">94%</span>
+      <div className="vibe-visual-widget sound-widget">
+        <div className="audio-spectrum-bars">
+          <span className="bar bar-1"></span>
+          <span className="bar bar-2"></span>
+          <span className="bar bar-3"></span>
+          <span className="bar bar-4"></span>
+          <span className="bar bar-5"></span>
+          <span className="bar bar-6"></span>
         </div>
         <div className="widget-label-row">
-          <span className="widget-metric">Real Wood & Stone</span>
-          <span className="widget-caption">True Local Architecture</span>
+          <span className="widget-metric">No Shouting</span>
+          <span className="widget-caption">Buzz Downstairs · Quiet Rooms</span>
         </div>
       </div>
     )
@@ -222,10 +222,10 @@ export default function VibeDimensionsSection() {
             <span>THE VIBE SIGNATURE™</span>
           </div>
           <h2 className="vibe-dimensions-title">
-            Your Destination Creates <span className="vibe-title-accent">Desire.</span> Your Vibe Closes the <span className="vibe-title-accent">Booking</span>
+            Your Destination Creates <span className="vibe-title-accent">Desire.</span> Your Vibe Wins the <span className="vibe-title-accent">Shortlist</span>
           </h2>
           <p className="vibe-dimensions-subtitle">
-            74% of travellers choose a destination and vibe first. Vibe Signatures verify the 8 real-world signals that match your unique experiences to demand
+            81% of travellers choose a destination based on how they want to feel. Vibe Signatures verify the 8 real-world signals that get your brand noticed early and onto the shortlist
           </p>
         </div>
 

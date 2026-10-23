@@ -8,8 +8,8 @@ const Hero = () => {
     return (
         <section className="hero-section">
             <Helmet>
-                <title>Turn Your Unique Experiences into Bookings | AtmosVibe</title>
-                <meta name="description" content="Turn Your Unique Experiences into Bookings. Match travellers' dreams about your destination with your verified reality" />
+                <title>Turn Your Unique Experience into Bookings | AtmosVibe</title>
+                <meta name="description" content="Turn Your Unique Experience into Bookings. Match travellers' dreams about your destination with your verified reality" />
             </Helmet>
 
             <div className="hero-bg-container">
@@ -35,7 +35,7 @@ const Hero = () => {
                     </Link>
 
                     <h1 className="hero-headline">
-                        Turn Your Unique Experiences into Bookings
+                        Turn Your Unique Experience into Bookings
                     </h1>
 
                     <p className="hero-subheadline">
