@@ -626,7 +626,6 @@ export default function BookingOtaAuditCard({ otaData, hotelName, isUnlocked, on
                         src={photoImg} 
                         alt={item.photo_subject}
                         referrerPolicy="no-referrer"
-                        crossOrigin="anonymous"
                         onError={(e) => {
                           const originalSrc = e.currentTarget.getAttribute('data-original-src') || photoImg;
                           if (!e.currentTarget.getAttribute('data-proxied') && originalSrc && originalSrc.startsWith('http')) {
@@ -991,7 +990,6 @@ export default function BookingOtaAuditCard({ otaData, hotelName, isUnlocked, on
                     src={img.imageUrl} 
                     alt={img.title} 
                     referrerPolicy="no-referrer"
-                    crossOrigin="anonymous"
                     onError={(e) => {
                       const originalSrc = e.currentTarget.getAttribute('data-original-src') || img.imageUrl;
                       if (!e.currentTarget.getAttribute('data-proxied') && originalSrc && originalSrc.startsWith('http')) {

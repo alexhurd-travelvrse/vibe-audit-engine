@@ -1,4 +1,4 @@
-import benchmarkVault from '../../api/benchmarkData.json';
+import benchmarkVault from './benchmarkData.json';
 
 const rawSeaContainers = benchmarkVault['sea-containers-london'] || {};
 
