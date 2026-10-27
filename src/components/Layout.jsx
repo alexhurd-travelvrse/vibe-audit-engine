@@ -31,8 +31,6 @@ const Layout = ({ children }) => {
 
                     <nav className={`header-nav ${isMenuOpen ? 'open' : ''}`}>
                         <a href="/#vibe-signatures" className="nav-link" onClick={() => setIsMenuOpen(false)}>VIBE SIGNATURES</a>
-                        <Link to="/audit" className="nav-link" onClick={() => setIsMenuOpen(false)}>FREE VIBE SNAPSHOT</Link>
-                        <Link to="/partner" className="nav-link" onClick={() => setIsMenuOpen(false)}>BETA COHORT</Link>
                         <span className="nav-link nav-link-with-badge" style={{ cursor: 'default' }}>
                             <span className="nav-link-text">VIBE API</span>
                             <span className="nav-coming-soon">Coming Soon</span>
