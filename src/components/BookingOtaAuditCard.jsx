@@ -310,6 +310,7 @@ export default function BookingOtaAuditCard({ otaData, hotelName, isUnlocked, on
                     return (
                       <div
                         key={s.slot}
+                        className="rubric-slot-row"
                         style={{
                           display: 'grid',
                           gridTemplateColumns: 'minmax(185px, 1.1fr) 78px minmax(200px, 1.5fr) minmax(200px, 1.5fr)',
@@ -335,10 +336,10 @@ export default function BookingOtaAuditCard({ otaData, hotelName, isUnlocked, on
                         }}>
                           {s.live_score}/{s.max_score}
                         </div>
-                        <div style={{ color: 'rgba(255,255,255,0.72)', fontSize: '11.5px' }}>
+                        <div className="rubric-col-wide" style={{ color: 'rgba(255,255,255,0.72)', fontSize: '11.5px' }}>
                           <strong style={{ color: 'rgba(255,255,255,0.9)' }}>Live:</strong> {s.live_what_is_there}
                         </div>
-                        <div style={{ color: '#00e5ff', fontSize: '11.5px', fontWeight: 600 }}>
+                        <div className="rubric-col-wide" style={{ color: '#00e5ff', fontSize: '11.5px', fontWeight: 600 }}>
                           <strong style={{ color: '#10b981' }}>Action:</strong> {s.optimal_fix}
                         </div>
                       </div>

@@ -43,12 +43,26 @@ const Hero = () => {
                     </p>
                 </div>
 
-                {/* Phased Entry Call to Action: Reveals smoothly a couple of seconds after initial load */}
+                {/* Phased Entry Call to Action: Reveals smoothly after initial load */}
                 <div className="hero-action-container hero-phased-entry">
                     <Link to="/audit" className="hero-search-btn" title="Run My Free Vibe Snapshot">
                         <span>Run My Free Vibe Snapshot</span>
                         <ArrowRight size={18} />
                     </Link>
+
+                    {/* 1-Tap Canned Conference Demo: Sea Containers London (Zero Latency, No Email Gate) */}
+                    <div className="hero-instant-demo-bar">
+                        <span className="hero-demo-label">
+                            <Sparkles size={12} style={{ color: '#ffd700', flexShrink: 0 }} />
+                            <span>Instant Live Demo:</span>
+                        </span>
+                        <div className="hero-demo-pills">
+                            <Link to="/audit?demo=sea-containers-london" className="hero-demo-pill hero-demo-pill-bcn" title="Open Instant Pre-Audited Demo: Sea Containers London">
+                                <span>⚡ Sea Containers London (South Bank)</span>
+                                <ArrowRight size={13} />
+                            </Link>
+                        </div>
+                    </div>
                 </div>
             </div>
 

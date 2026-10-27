@@ -190,6 +190,7 @@ export default function VibeDimensionsSection() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [motionStyle, setMotionStyle] = useState('step'); // 'step' (slides 1 card at a time) | 'continuous' (smooth marquee left-to-right)
+  const touchStartXRef = React.useRef(null);
 
   useEffect(() => {
     if (isPaused || motionStyle !== 'step') return;
@@ -201,11 +202,35 @@ export default function VibeDimensionsSection() {
   }, [isPaused, motionStyle]);
 
   const handlePrev = () => {
+    setMotionStyle('step');
     setActiveIndex((prev) => (prev - 1 + DIMENSIONS.length) % DIMENSIONS.length);
   };
 
   const handleNext = () => {
+    setMotionStyle('step');
     setActiveIndex((prev) => (prev + 1) % DIMENSIONS.length);
+  };
+
+  const handleTouchStart = (e) => {
+    setIsPaused(true);
+    if (e.touches && e.touches.length > 0) {
+      touchStartXRef.current = e.touches[0].clientX;
+    }
+  };
+
+  const handleTouchEnd = (e) => {
+    if (touchStartXRef.current !== null && e.changedTouches && e.changedTouches.length > 0) {
+      const deltaX = e.changedTouches[0].clientX - touchStartXRef.current;
+      if (Math.abs(deltaX) > 36) {
+        if (deltaX < 0) {
+          handleNext();
+        } else {
+          handlePrev();
+        }
+      }
+    }
+    touchStartXRef.current = null;
+    setTimeout(() => setIsPaused(false), 2500);
   };
 
   // Duplicate array so a 4-card window never shows empty space at the end of the 8 signals
@@ -286,7 +311,11 @@ export default function VibeDimensionsSection() {
           </div>
 
           {/* 4-Card Viewport */}
-          <div className="four-up-viewport">
+          <div
+            className="four-up-viewport"
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+          >
             <div
               className={`four-up-track ${motionStyle === 'continuous' ? 'continuous-ltr' : 'stepped-track'} ${isPaused ? 'track-paused' : ''}`}
               style={

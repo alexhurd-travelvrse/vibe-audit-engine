@@ -514,9 +514,15 @@
   gap: 0.65rem;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 640px) {
   .before-after-collage-row {
     grid-template-columns: 1fr;
+  }
+  .tier-content {
+    padding: 1.25rem 1.1rem 1.25rem;
+  }
+  .card-top-bar {
+    padding: 0.85rem 1.1rem;
   }
 }
 

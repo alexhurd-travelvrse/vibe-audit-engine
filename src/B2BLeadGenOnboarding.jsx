@@ -15,6 +15,7 @@ import HotelVibeManifestCard from './components/HotelVibeManifestCard';
 import InteractiveQuizCard from './components/InteractiveQuizCard';
 import BookingOtaAuditCard from './components/BookingOtaAuditCard';
 import { validateWorkEmail, isLocalhostEnvironment } from './utils/workEmailValidator';
+import { CANNED_CONFERENCE_DEMOS } from './data/cannedConferenceDemos';
 import './B2BLeadGenOnboarding.css';
 
 // Environment detector: Enforce email on live Vercel/Production, bypass on localhost
@@ -235,10 +236,47 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
     setStep(initialStep);
   }, [initialStep]);
 
-  // Handle URL query parameter auto-execution (e.g. from Hero Action Box)
+  const launchCannedDemo = (demoSlug = 'sea-containers-london') => {
+    const demo = CANNED_CONFERENCE_DEMOS[demoSlug] || CANNED_CONFERENCE_DEMOS['sea-containers-london'];
+    if (!demo) return;
+    if (activePhase2AbortRef.current) {
+      activePhase2AbortRef.current.abort();
+    }
+    setEmailError('');
+    setFieldErrors({});
+    setAmbiguousCandidates(null);
+    setFormData(prev => ({
+      ...prev,
+      propertyName: demo.propertyName,
+      city: demo.city,
+      neighborhood: demo.neighborhood,
+      bookingId: demo.bookingUrl
+    }));
+    setIsProUnlocked(true);
+    if (typeof window !== 'undefined') {
+      sessionStorage.setItem('atmosvibe_pro_unlocked', 'true');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    setAnalysis({
+      signals: { categories: {} },
+      masterAudit: demo.masterAudit,
+      auditResults: null,
+      challenge: null,
+      isOtaHydrating: false
+    });
+    setStep('results');
+    setCurrentPhase(1);
+  };
+
+  // Handle URL query parameter auto-execution (e.g. from Hero Action Box or Instant Conference Demo)
   useEffect(() => {
     if (typeof window === 'undefined') return;
     const params = new URLSearchParams(window.location.search);
+    const demoParam = params.get('demo');
+    if (demoParam) {
+      launchCannedDemo(demoParam.toLowerCase().trim());
+      return;
+    }
     const urlParam = params.get('bookingUrl') || params.get('url') || params.get('q');
     const emailParam = params.get('email') || '';
     if (!urlParam) return;
@@ -352,6 +390,13 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
       if (!targetCity) targetCity = matchedBenchmark.city;
       if (!targetNeighborhood) targetNeighborhood = matchedBenchmark.neighborhood;
       if (!rawBooking) directBookingUrl = matchedBenchmark.url;
+      if (matchedBenchmark.title === 'Sea Containers London') {
+        if (formData.email && formData.email.trim()) {
+          submitLeadToFormspree({ ...formData, propertyName: targetHotel, city: targetCity, neighborhood: targetNeighborhood, bookingId: directBookingUrl });
+        }
+        launchCannedDemo('sea-containers-london');
+        return;
+      }
     }
 
     if (!targetCity) {
@@ -607,13 +652,37 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
               </div>
 
               <div className="glass-card" style={{ padding: '1.5rem 1.75rem', borderRadius: '1.25rem' }}>
+                {/* 1-Tap Canned Conference Demo Banner: Sea Containers London */}
+                <div className="canned-demo-banner">
+                  <div className="canned-demo-info">
+                    <div className="canned-demo-eyebrow">
+                      <Zap size={12} color="#ffd700" />
+                      <span>INSTANT LIVE BENCHMARK • NO EMAIL REQUIRED</span>
+                    </div>
+                    <div className="canned-demo-title">
+                      Sea Containers London <span style={{ color: 'rgba(255,255,255,0.55)', fontWeight: 600, fontSize: '0.82rem' }}>(South Bank, London)</span>
+                    </div>
+                    <div className="canned-demo-sub">
+                      See a full 8-Signal Vibe Signature + 5-Slot Booking.com Photo Re-Order (92/100 Reality vs. 48/100 Live OTA)
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => launchCannedDemo('sea-containers-london')}
+                    className="canned-demo-btn"
+                  >
+                    <span>⚡ Open Sea Containers Demo</span>
+                    <ChevronRight size={16} />
+                  </button>
+                </div>
+
                 <div style={{ marginBottom: '1rem', paddingBottom: '0.65rem', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
                   <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '10px', fontWeight: 800, color: '#00e5ff', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '0.25rem' }}>
                     <Link2 size={12} />
                     <span>STEP 1 // PROPERTY INPUT</span>
                   </div>
                   <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: '#ffffff', margin: 0 }}>
-                    Enter Your Hotel Details to Launch Audit
+                    Or Enter Any Hotel Details to Launch a Custom Audit
                   </h3>
                 </div>
 
@@ -969,13 +1038,27 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
             <motion.div key="results" initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="results-section">
               
               {/* PROPERTY HEADER */}
-              <div className="property-info" style={{ borderBottom: '1px solid rgba(255,255,255,0.05)', paddingBottom: '3rem', marginBottom: '3rem' }}>
-                <div style={{ textAlign: 'left' }}>
-                  <h1 style={{ fontSize: '4rem', fontWeight: 900, textTransform: 'uppercase', lineHeight: 1 }}>{formData.propertyName || "Vibe Audit"}</h1>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', color: 'rgba(255,255,255,0.4)', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.3em', fontSize: '20px', marginTop: '1.5rem' }}>
-                    <MapPin size={22} color="#00e5ff" /> {formData.neighborhood}, {formData.city}
+              <div className="property-info results-property-header" style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: '2rem', marginBottom: '2.25rem' }}>
+                <div style={{ textAlign: 'left', flex: 1, minWidth: 0 }}>
+                  <h1 className="results-property-title">{formData.propertyName || "Vibe Audit"}</h1>
+                  <div className="results-property-subtitle">
+                    <MapPin size={20} color="#00e5ff" style={{ flexShrink: 0 }} />
+                    <span>{[formData.neighborhood, formData.city].filter(Boolean).join(', ')}</span>
                   </div>
                 </div>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setStep('input');
+                    if (typeof window !== 'undefined' && window.location.search) {
+                      window.history.replaceState({}, '', '/audit');
+                    }
+                  }}
+                  className="results-new-audit-btn"
+                >
+                  <Search size={14} />
+                  <span>Audit Another Hotel</span>
+                </button>
               </div>
 
               {/* 1. HOTEL VIBE MANIFEST & ACOUSTIC DNA (PRIMARY SCORECARD) */}

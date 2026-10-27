@@ -37,8 +37,55 @@ const PartnerPage = () => {
 
     return (
         <Layout>
-            <section className="section-padding" style={{ background: 'radial-gradient(ellipse at top, #0a1b33 0%, #050b14 70%)', minHeight: '85vh', padding: '6rem 0 5rem' }}>
-                <div className="container" style={{ maxWidth: '1240px', margin: '0 auto', padding: '0 1.5rem' }}>
+            <style>{`
+                .partner-main-grid {
+                    display: grid;
+                    grid-template-columns: 1.15fr 0.85fr;
+                    gap: 50px;
+                    align-items: flex-start;
+                }
+                .partner-deliverables-grid {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 0.85rem;
+                    margin-bottom: 2rem;
+                }
+                .partner-deliverable-span-2 {
+                    grid-column: span 2;
+                }
+                .partner-form-row-2 {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 12px;
+                }
+                .partner-form-card {
+                    padding: 2.5rem;
+                    border-radius: 24px;
+                }
+                @media (max-width: 960px) {
+                    .partner-main-grid {
+                        grid-template-columns: 1fr;
+                        gap: 2.25rem;
+                    }
+                }
+                @media (max-width: 640px) {
+                    .partner-deliverables-grid {
+                        grid-template-columns: 1fr;
+                    }
+                    .partner-deliverable-span-2 {
+                        grid-column: span 1;
+                    }
+                    .partner-form-row-2 {
+                        grid-template-columns: 1fr;
+                    }
+                    .partner-form-card {
+                        padding: 1.5rem 1.25rem !important;
+                        border-radius: 18px !important;
+                    }
+                }
+            `}</style>
+            <section className="section-padding" style={{ background: 'radial-gradient(ellipse at top, #0a1b33 0%, #050b14 70%)', minHeight: '85vh', padding: '5rem 0 4.5rem' }}>
+                <div className="container" style={{ maxWidth: '1240px', margin: '0 auto', padding: '0 1.25rem' }}>
                     <Helmet>
                         <title>Beta Hotel Partner Program | AtmosVibe</title>
                         <meta name="description" content="AtmosVibe is in beta and looking for innovative hospitality groups" />
@@ -48,13 +95,14 @@ const PartnerPage = () => {
                     <div style={{
                         display: 'inline-flex',
                         alignItems: 'center',
-                        gap: '10px',
+                        flexWrap: 'wrap',
+                        gap: '8px',
                         background: 'rgba(10, 18, 30, 0.72)',
                         backdropFilter: 'blur(16px)',
                         WebkitBackdropFilter: 'blur(16px)',
                         border: '1px solid rgba(255, 255, 255, 0.14)',
                         borderRadius: '999px',
-                        padding: '6px 18px 6px 12px',
+                        padding: '6px 16px 6px 12px',
                         boxShadow: '0 4px 20px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.15)',
                         marginBottom: '2rem'
                     }}>
@@ -68,7 +116,7 @@ const PartnerPage = () => {
                         </span>
                     </div>
 
-                    <div style={{ display: 'grid', gridTemplateColumns: '1.15fr 0.85fr', gap: '50px', alignItems: 'flex-start' }}>
+                    <div className="partner-main-grid">
                         {/* Left Column: Context, Value Proposition & Beta Offering */}
                         <div className="animate-fade-up">
                             <h1 style={{ fontSize: 'clamp(2.4rem, 4.2vw, 3.1rem)', fontWeight: 900, marginBottom: '1.25rem', lineHeight: '1.15', color: '#ffffff', letterSpacing: '-0.02em' }}>
@@ -105,7 +153,7 @@ const PartnerPage = () => {
                             </div>
 
                             {/* 5 Deliverables Architectural Grid */}
-                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '0.85rem', marginBottom: '2rem' }}>
+                            <div className="partner-deliverables-grid">
                                 {/* 01 Bespoke Vibe Signature */}
                                 <div style={{ background: 'rgba(14, 22, 38, 0.75)', backdropFilter: 'blur(12px)', border: '1px solid rgba(255, 255, 255, 0.08)', borderRadius: '12px', padding: '1rem 1.15rem', display: 'flex', flexDirection: 'column', gap: '8px' }}>
                                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
@@ -163,7 +211,7 @@ const PartnerPage = () => {
                                 </div>
 
                                 {/* 05 Local Vibe Intelligence */}
-                                <div style={{ gridColumn: 'span 2', background: 'rgba(14, 22, 38, 0.75)', backdropFilter: 'blur(12px)', border: '1px solid rgba(255, 255, 255, 0.08)', borderRadius: '12px', padding: '1rem 1.15rem', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                                <div className="partner-deliverable-span-2" style={{ background: 'rgba(14, 22, 38, 0.75)', backdropFilter: 'blur(12px)', border: '1px solid rgba(255, 255, 255, 0.08)', borderRadius: '12px', padding: '1rem 1.15rem', display: 'flex', flexDirection: 'column', gap: '8px' }}>
                                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                                         <span style={{ fontSize: '0.72rem', fontWeight: 800, color: '#38bdf8', fontFamily: 'monospace', letterSpacing: '0.06em' }}>05 // INTELLIGENCE</span>
                                         <MapPin size={16} color="#38bdf8" />
@@ -198,7 +246,7 @@ const PartnerPage = () => {
                         </div>
 
                         {/* Right Column: Formspree Partner Form */}
-                        <div className="glass-card animate-fade-up delay-1" style={{ padding: '2.5rem', borderRadius: '24px', background: 'rgba(10, 22, 40, 0.9)', border: '1px solid rgba(0, 229, 255, 0.3)', boxShadow: '0 25px 60px rgba(0, 0, 0, 0.7), 0 0 40px rgba(0, 229, 255, 0.1)' }}>
+                        <div className="glass-card partner-form-card animate-fade-up delay-1" style={{ background: 'rgba(10, 22, 40, 0.9)', border: '1px solid rgba(0, 229, 255, 0.3)', boxShadow: '0 25px 60px rgba(0, 0, 0, 0.7), 0 0 40px rgba(0, 229, 255, 0.1)' }}>
                             {!submitted ? (
                                 <>
                                     <div style={{ marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -224,7 +272,7 @@ const PartnerPage = () => {
                                     </p>
 
                                     <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
-                                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+                                        <div className="partner-form-row-2">
                                             <div>
                                                 <label style={{ display: 'block', fontSize: '11px', fontWeight: 800, color: 'rgba(255,255,255,0.7)', textTransform: 'uppercase', marginBottom: '6px', letterSpacing: '0.5px' }}>First Name</label>
                                                 <input type="text" name="firstName" placeholder="First Name" required style={{ width: '100%', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.15)', padding: '11px 14px', borderRadius: '10px', color: 'white', fontSize: '14px' }} />
@@ -245,7 +293,7 @@ const PartnerPage = () => {
                                             <input type="text" name="propertyName" placeholder="e.g. Sea Containers London" required style={{ width: '100%', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.15)', padding: '11px 14px', borderRadius: '10px', color: 'white', fontSize: '14px' }} />
                                         </div>
 
-                                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+                                        <div className="partner-form-row-2">
                                             <div>
                                                 <label style={{ display: 'block', fontSize: '11px', fontWeight: 800, color: 'rgba(255,255,255,0.7)', textTransform: 'uppercase', marginBottom: '6px', letterSpacing: '0.5px' }}>City &amp; Neighbourhood</label>
                                                 <input type="text" name="location" placeholder="e.g. Southwark, London" required style={{ width: '100%', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.15)', padding: '11px 14px', borderRadius: '10px', color: 'white', fontSize: '14px' }} />

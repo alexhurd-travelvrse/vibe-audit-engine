@@ -88,42 +88,52 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
 
   const activeSpotify = (activeDiurnalTab === 'chilling' && liveSpotifyOverride) ? liveSpotifyOverride : resolvedSpotifyPreset;
 
-  const diurnal = temporal.diurnal_rhythm || {
+  const normalizePct = (val, fallback) => {
+    const n = Number(val);
+    if (!Number.isFinite(n) || n <= 0) return fallback;
+    if (n <= 1) return Math.round(n * 100);
+    if (n <= 10) return Math.round(n * 10);
+    return Math.round(n);
+  };
+
+  const rawDiurnal = temporal.diurnal_rhythm || {};
+  const diurnal = {
     working: {
-      window: '9:00 AM – 3:30 PM',
+      window: rawDiurnal.working?.window || '9:00 AM – 3:30 PM',
       focus: (manifest.venue_name || '').toLowerCase().includes('sea containers')
         ? 'Bright riverside daylight, calm coffee atmosphere & comfy tables for getting work done.'
-        : 'Bright natural daylight, calm atmosphere, and comfortable seating for morning coffee or laptop work.',
-      score: 91
+        : (rawDiurnal.working?.focus || 'Bright natural daylight, calm atmosphere, and comfortable seating for morning coffee or laptop work.'),
+      score: (manifest.venue_name || '').toLowerCase().includes('sea containers') ? 89 : normalizePct(rawDiurnal.working?.score, 91)
     },
     chilling: {
-      window: '4:00 PM – 7:00 PM',
+      window: rawDiurnal.chilling?.window || '4:00 PM – 7:00 PM',
       focus: (manifest.venue_name || '').toLowerCase().includes('sea containers')
         ? 'Golden-hour sunset over the Thames: warm evening light & relaxed pre-dinner drinks.'
-        : 'Golden-hour transition: warm candlelit glow & relaxed early-evening drinks.',
-      score: 97
+        : (rawDiurnal.chilling?.focus || 'Golden-hour transition: warm candlelit glow & relaxed early-evening drinks.'),
+      score: (manifest.venue_name || '').toLowerCase().includes('sea containers') ? 96 : normalizePct(rawDiurnal.chilling?.score, 97)
     },
     playing: {
-      window: '7:30 PM – Late',
+      window: rawDiurnal.playing?.window || '7:30 PM – Late',
       focus: (manifest.venue_name || '').toLowerCase().includes('sea containers')
         ? 'Candlelit evening buzz, 12th Knot rooftop views & a lively cocktail crowd.'
-        : 'Cosy candlelit tables, great music, and a lively evening bar crowd.',
-      score: 95
+        : (rawDiurnal.playing?.focus || 'Cosy candlelit tables, great music, and a lively evening bar crowd.'),
+      score: (manifest.venue_name || '').toLowerCase().includes('sea containers') ? 98 : normalizePct(rawDiurnal.playing?.score, 95)
     }
   };
 
-  const contentReady = temporal.content_readiness || {
-    score: 96,
-    verdict: 'Warm, Flattering Evening Light • Zero Harsh Glare',
-    flattery_note: 'Soft, warm lighting that looks great in person and in photos',
-    top_creator_spot: (manifest.venue_name || '').toLowerCase().includes('sea containers')
+  const rawContentReady = temporal.content_readiness || {};
+  const contentReady = {
+    score: normalizePct(rawContentReady.score, 96),
+    verdict: rawContentReady.verdict || 'Warm, Flattering Evening Light • Zero Harsh Glare',
+    flattery_note: rawContentReady.flattery_note || 'Soft, warm lighting that looks great in person and in photos',
+    top_creator_spot: rawContentReady.top_creator_spot || ((manifest.venue_name || '').toLowerCase().includes('sea containers')
       ? '12th Knot Glass Corner Banquette during Thames Golden Hour'
       : ((manifest.venue_name || '').toLowerCase().includes('sls')
         ? 'Courtyard Poolside Sanctuary Loungers framed by historic Palms'
-        : 'Signature terrace lounge banquette during golden hour'),
-    aesthetic_subculture: (manifest.venue_name || '').toLowerCase().includes('sea containers')
+        : 'Signature terrace lounge banquette during golden hour')),
+    aesthetic_subculture: rawContentReady.aesthetic_subculture || ((manifest.venue_name || '').toLowerCase().includes('sea containers')
       ? 'Warm Riverside Glamour'
-      : ((manifest.venue_name || '').toLowerCase().includes('sls') ? 'Sun-Drenched Pastel Art Deco' : 'Warm Character & Natural Light')
+      : ((manifest.venue_name || '').toLowerCase().includes('sls') ? 'Sun-Drenched Pastel Art Deco' : 'Warm Character & Natural Light'))
   };
   
   // Calibrated Metrics with intelligent fallbacks
@@ -370,7 +380,7 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
           {/* ========================================================================= */}
           {/* CONTAINER 1: Sound & Conversation                                         */}
           {/* ========================================================================= */}
-          <div style={{ flex: '0 0 380px', minWidth: '380px', maxWidth: '400px', scrollSnapAlign: 'start', background: 'rgba(0,0,0,0.55)', padding: '1.5rem', borderRadius: '1.25rem', border: '1px solid rgba(29, 185, 84, 0.35)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxSizing: 'border-box' }}>
+          <div style={{ flex: '0 0 min(380px, 84vw)', minWidth: 'min(380px, 84vw)', maxWidth: '400px', scrollSnapAlign: 'start', background: 'rgba(0,0,0,0.55)', padding: '1.5rem', borderRadius: '1.25rem', border: '1px solid rgba(29, 185, 84, 0.35)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxSizing: 'border-box' }}>
             <div>
               {/* Category Badge + Degree of Certainty */}
               <div style={{ marginBottom: '0.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '6px' }}>
@@ -513,7 +523,7 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
           {/* ========================================================================= */}
           {/* CONTAINER 2: Authenticity & Craft                                         */}
           {/* ========================================================================= */}
-          <div style={{ flex: '0 0 380px', minWidth: '380px', maxWidth: '400px', scrollSnapAlign: 'start', background: 'rgba(0,0,0,0.55)', padding: '1.5rem', borderRadius: '1.25rem', border: '1px solid rgba(255, 215, 0, 0.35)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxSizing: 'border-box' }}>
+          <div style={{ flex: '0 0 min(380px, 84vw)', minWidth: 'min(380px, 84vw)', maxWidth: '400px', scrollSnapAlign: 'start', background: 'rgba(0,0,0,0.55)', padding: '1.5rem', borderRadius: '1.25rem', border: '1px solid rgba(255, 215, 0, 0.35)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxSizing: 'border-box' }}>
             <div>
               {/* Category Badge + Degree of Certainty */}
               <div style={{ marginBottom: '0.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '6px' }}>
@@ -581,7 +591,7 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
           {/* ========================================================================= */}
           {/* CONTAINER 3: Crowd & Subculture                                           */}
           {/* ========================================================================= */}
-          <div style={{ flex: '0 0 380px', minWidth: '380px', maxWidth: '400px', scrollSnapAlign: 'start', background: 'rgba(0,0,0,0.55)', padding: '1.5rem', borderRadius: '1.25rem', border: '1px solid rgba(192, 132, 252, 0.35)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxSizing: 'border-box' }}>
+          <div style={{ flex: '0 0 min(380px, 84vw)', minWidth: 'min(380px, 84vw)', maxWidth: '400px', scrollSnapAlign: 'start', background: 'rgba(0,0,0,0.55)', padding: '1.5rem', borderRadius: '1.25rem', border: '1px solid rgba(192, 132, 252, 0.35)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxSizing: 'border-box' }}>
             <div>
               {/* Category Badge + Degree of Certainty */}
               <div style={{ marginBottom: '0.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '6px' }}>
@@ -648,7 +658,7 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
           {/* ========================================================================= */}
           {/* CONTAINER 4: Host Vibe (Customer Team & Human Alchemy)                    */}
           {/* ========================================================================= */}
-          <div style={{ flex: '0 0 380px', minWidth: '380px', maxWidth: '400px', scrollSnapAlign: 'start', background: 'rgba(0,0,0,0.55)', padding: '1.5rem', borderRadius: '1.25rem', border: '1px solid rgba(52, 211, 153, 0.4)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxSizing: 'border-box' }}>
+          <div style={{ flex: '0 0 min(380px, 84vw)', minWidth: 'min(380px, 84vw)', maxWidth: '400px', scrollSnapAlign: 'start', background: 'rgba(0,0,0,0.55)', padding: '1.5rem', borderRadius: '1.25rem', border: '1px solid rgba(52, 211, 153, 0.4)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxSizing: 'border-box' }}>
             <div>
               {/* Category Badge + Degree of Certainty */}
               <div style={{ marginBottom: '0.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '6px' }}>
@@ -720,7 +730,7 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
           {/* ========================================================================= */}
           {/* CONTAINER 4: Time of Day & Content Ready Analysis                         */}
           {/* ========================================================================= */}
-          <div style={{ flex: '0 0 380px', minWidth: '380px', maxWidth: '400px', scrollSnapAlign: 'start', background: 'rgba(0,0,0,0.55)', padding: '1.5rem', borderRadius: '1.25rem', border: '1px solid rgba(0, 229, 255, 0.35)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxSizing: 'border-box' }}>
+          <div style={{ flex: '0 0 min(380px, 84vw)', minWidth: 'min(380px, 84vw)', maxWidth: '400px', scrollSnapAlign: 'start', background: 'rgba(0,0,0,0.55)', padding: '1.5rem', borderRadius: '1.25rem', border: '1px solid rgba(0, 229, 255, 0.35)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxSizing: 'border-box' }}>
             <div>
               {/* Category Badge + Degree of Certainty */}
               <div style={{ marginBottom: '0.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '6px' }}>
@@ -845,7 +855,7 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
           {/* ========================================================================= */}
           {/* CONTAINER 5: Location & Neighborhood Pulse                                */}
           {/* ========================================================================= */}
-          <div style={{ flex: '0 0 380px', minWidth: '380px', maxWidth: '400px', scrollSnapAlign: 'start', background: 'rgba(0,0,0,0.55)', padding: '1.5rem', borderRadius: '1.25rem', border: '1px solid rgba(255, 179, 0, 0.35)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxSizing: 'border-box' }}>
+          <div style={{ flex: '0 0 min(380px, 84vw)', minWidth: 'min(380px, 84vw)', maxWidth: '400px', scrollSnapAlign: 'start', background: 'rgba(0,0,0,0.55)', padding: '1.5rem', borderRadius: '1.25rem', border: '1px solid rgba(255, 179, 0, 0.35)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxSizing: 'border-box' }}>
             <div>
               {/* Category Badge + Degree of Certainty */}
               <div style={{ marginBottom: '0.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '6px' }}>
@@ -917,7 +927,7 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
           {/* ========================================================================= */}
           {/* CONTAINER 6: Insider Secrets & Hidden Lore                                */}
           {/* ========================================================================= */}
-          <div style={{ flex: '0 0 380px', minWidth: '380px', maxWidth: '400px', scrollSnapAlign: 'start', background: 'rgba(0,0,0,0.55)', padding: '1.5rem', borderRadius: '1.25rem', border: '1px solid rgba(236, 72, 153, 0.4)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxSizing: 'border-box' }}>
+          <div style={{ flex: '0 0 min(380px, 84vw)', minWidth: 'min(380px, 84vw)', maxWidth: '400px', scrollSnapAlign: 'start', background: 'rgba(0,0,0,0.55)', padding: '1.5rem', borderRadius: '1.25rem', border: '1px solid rgba(236, 72, 153, 0.4)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxSizing: 'border-box' }}>
             <div>
               {/* Category Badge + Degree of Certainty */}
               <div style={{ marginBottom: '0.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '6px' }}>
