@@ -1,22 +1,11 @@
 import React, { useState } from 'react';
-import { useLocation, Link } from 'react-router-dom';
-import { Menu, X, Sparkles, Key, Lock } from 'lucide-react';
-import { useAuthGate } from './GatedSectionAuth';
+import { Link } from 'react-router-dom';
+import { Menu, X } from 'lucide-react';
 import './Layout.css';
 
 
 const Layout = ({ children }) => {
-    const location = useLocation();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const { isUnlocked, lock } = useAuthGate();
-
-    const handleGatedNavClick = (e, targetHash) => {
-        setIsMenuOpen(false);
-        if (!isUnlocked) {
-            e.preventDefault();
-            window.dispatchEvent(new CustomEvent('atmosvibe-open-login'));
-        }
-    };
 
     return (
         <>
@@ -44,22 +33,14 @@ const Layout = ({ children }) => {
                         <a href="/#vibe-signatures" className="nav-link" onClick={() => setIsMenuOpen(false)}>VIBE SIGNATURES</a>
                         <Link to="/audit" className="nav-link" onClick={() => setIsMenuOpen(false)}>FREE VIBE SNAPSHOT</Link>
                         <Link to="/partner" className="nav-link" onClick={() => setIsMenuOpen(false)}>BETA COHORT</Link>
-                        <a 
-                            href={isUnlocked ? "/#vibe-api" : "#"} 
-                            className="nav-link nav-link-with-badge" 
-                            onClick={(e) => handleGatedNavClick(e, '#vibe-api')}
-                        >
+                        <span className="nav-link nav-link-with-badge" style={{ cursor: 'default' }}>
                             <span className="nav-link-text">VIBE API</span>
                             <span className="nav-coming-soon">Coming Soon</span>
-                        </a>
-                        <a 
-                            href={isUnlocked ? "/#markets" : "#"} 
-                            className="nav-link nav-link-with-badge" 
-                            onClick={(e) => handleGatedNavClick(e, '#markets')}
-                        >
+                        </span>
+                        <span className="nav-link nav-link-with-badge" style={{ cursor: 'default' }}>
                             <span className="nav-link-text">VIBE INSIGHTS</span>
                             <span className="nav-coming-soon">Coming Soon</span>
-                        </a>
+                        </span>
                     </nav>
                 </div>
             </header>
