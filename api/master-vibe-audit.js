@@ -2932,7 +2932,17 @@ export async function resolveAuditPhotos(hotelName, city, neighborhood = '', str
   if (!slot5Asset) {
     slot5Asset = findFirst(effectiveAmenityPool, p => isBath(p) && !isExterior(p));
   }
-  // Adaptive Bathroom Fallback: If no authentic bathroom exists, prioritize Spa / Wellness Sanctuary / Balcony / Terrace / Estate Grounds / Courtyard (excluding repetitive suite living-room couch shots)
+  // Adaptive Bathroom Fallback (Booking.com Top 5 Rule: Minimum 2 Room/Suite/Bathroom shots in Slots #2 & #3):
+  // If no authentic bathroom exists in the gallery, prioritize a 2nd distinct Bedroom / Suite with window & seating (excluding duplicate sofa-only living room shots) before falling back to sanctuary spaces.
+  if (!slot5Asset) {
+    const isSuiteLivingCouchOnly = (p) => {
+      const s = `${p?.title || ''} ${p?.visual_description || ''}`.toLowerCase();
+      return (s.includes('living room') || s.includes('suite living')) && !s.includes('bedroom') && !s.includes('bed');
+    };
+    slot5Asset = findFirst(poolLive, p => isBedroomLike(p) && !isSuiteLivingCouchOnly(p) && !isExterior(p) && /window|view|couch|seating|suite|deluxe|river|balcony/i.test(`${p?.title || ''} ${p?.visual_description || ''}`)) ||
+                 findFirst(poolLive, p => isBedroomLike(p) && !isSuiteLivingCouchOnly(p) && !isExterior(p)) ||
+                 findFirst(effectiveAmenityPool, p => isBedroomLike(p) && !isSuiteLivingCouchOnly(p) && !isExterior(p));
+  }
   if (!slot5Asset) {
     const isSuiteLivingCouch = (p) => {
       const s = `${p?.title || ''} ${p?.visual_description || ''}`.toLowerCase();
@@ -3278,8 +3288,21 @@ export async function resolveAuditPhotos(hotelName, city, neighborhood = '', str
             `Conversion Trigger: Removes private room-and-bathroom doubt before showcasing social and neighbourhood spaces.`
           ];
         }
+      } else if (isBedroomLike(asset)) {
+        // Adaptive Slot 3 (Booking.com Top 5 Rule): When 0 bathroom photos exist in the gallery, pair a 2nd distinct Bedroom / Suite shot in Slot #3
+        category = 'SECONDARY_ROOM_BATHROOM';
+        photoSubject = (asset?.title && !asset.title.includes('Booking.com') && !asset.title.includes('Tripadvisor')) 
+          ? asset.title.replace(/\s*at\s+.*$/i, '').trim() 
+          : (v?.brief_visual_description || 'Deluxe Suite Bedroom & In-Room Lounge (2nd Room / Bath Compliance Slot)');
+        why = `Booking.com Top 5 rules require at least 2 guestroom/bathroom photos in the first 5 slots. Because 0 guest bathroom photos exist in the live gallery, Slot #3 pairs a second distinct bookable bedroom/suite layout beside Slot #2 while flagging a Master Bathroom photo as Priority #1 in Gap Analysis.`;
+        trigger = 'Booking.com 2-Room Rule & Suite Upgrade Proof';
+        bullets = [
+          `Booking.com Top 5 Rule (Slot #3): Ensures 2 of the first 5 photos showcase bookable guestroom/suite sleeping quarters while 0 bathroom photos exist in the gallery.`,
+          `Room Category Variety: Highlights a second distinct bedroom and in-room lounge angle with natural window light.`,
+          `Conversion Trigger: Satisfies OTA accommodation depth requirements and flags the missing bathroom shot in the Visual Opportunity card.`
+        ];
       } else {
-        // Adaptive Slot 3: When no guest bathroom exists in the live gallery, adapt to Comfort Sanctuary / Terrace / Spa
+        // Adaptive Slot 3 fallback if only 1 bedroom and 0 bathrooms exist in the entire gallery
         category = 'SECONDARY_LIFESTYLE_SANCTUARY';
         photoSubject = (asset?.title && !asset.title.includes('Booking.com') && !asset.title.includes('Tripadvisor')) 
           ? asset.title.replace(/\s*at\s+.*$/i, '').trim() 

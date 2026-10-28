@@ -125,7 +125,7 @@
       "key_strategic_shifts": [
         "Slot #1 — Signature Vibe Hero: Promote the iconic 12th Knot Rooftop Bar (Live Slot #24) to Slot #1 to stop the scroll and match South Bank's #1 'rooftop bar with a Thames view' desire.",
         "Slot #2 — The Bookable Room: Promote the bright King Bedroom with floor-to-ceiling window (Live Slot #6) directly into Slot #2 (replacing 3 repetitive blue-couch living room shots in Live Slots #2, #3, and #5) to prove the room matches the promise.",
-        "Slot #3 — Comfort & Balcony Sanctuary (Adaptive Bathroom Fallback): Because 0 guest bathroom photos exist in the 55-photo Booking.com gallery, promote the Private River-View Balcony & Terrace (Live Slot #22) into Slot #3 and flag a Master Bathroom Rain-Shower & Tub shot as Priority #1 in Gap Analysis.",
+        "Slot #3 — 2nd Room / Bath Compliance Slot: Booking.com Top 5 rules require at least 2 guestroom/bathroom shots in the first 5 slots. Because 0 guest bathroom photos exist in the 55-photo gallery, promote the River-View Deluxe Suite Bedroom & Lounge (Live Slot #14) into Slot #3 and flag a Master Bathroom Rain-Shower & Tub shot as Priority #1 in the Visual Opportunity card.",
         "Slot #4 — Day-to-Night Social & Mixology: Promote Lyaness Craft Cocktail Bar (Live Slot #26) into Slot #4 to showcase evening sensory energy.",
         "Slot #5 — Neighbourhood & Riverbank Gateway: Move the South Bank Thames Riverfront & Building Exterior (Live Slot #1) to Slot #5 to ground walkable riverside context."
       ],
@@ -193,31 +193,31 @@
         },
         {
           "slot": 3,
-          "category": "SECONDARY_LIFESTYLE_SANCTUARY",
-          "photo_subject": "Private River-View Balcony & Outdoor Terrace Sanctuary (Adaptive Comfort Slot)",
-          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/851801396.jpg?k=10352fab3075fe13b9ea3c07a10286ceda2edbf94cc13eecf2d32a62a3e7544e&o=&hp=1",
-          "why_it_converts": "Booking.com travellers expect a Bathroom / Comfort check in Slot #3 right beside the bedroom. Because Sea Containers has 0 guest bathroom photos in its 55-photo live gallery, AtmosVibe places the Private River-View Balcony Terrace here as an adaptive comfort bridge—and flags a Master Bathroom Soaking Tub & Rain-Shower shot as Priority #1 in Gap Analysis.",
-          "upgrade_rationale": "Booking.com travellers expect a Bathroom / Comfort check in Slot #3 right beside the bedroom. Because Sea Containers has 0 guest bathroom photos in its 55-photo live gallery, AtmosVibe places the Private River-View Balcony Terrace here as an adaptive comfort bridge—and flags a Master Bathroom Soaking Tub & Rain-Shower shot as Priority #1 in Gap Analysis.",
+          "category": "SECONDARY_ROOM_BATHROOM",
+          "photo_subject": "River-View Deluxe Suite Bedroom & In-Room Lounge (2nd Room / Bath Compliance Slot)",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/820352424.jpg?k=eb26f5cc4e055518bb9924cc199a5265d5911e9ff5276941c61d70591d228136&o=&hp=1",
+          "why_it_converts": "Booking.com Top 5 rules require at least 2 guestroom/bathroom photos in the first 5 slots. Because Sea Containers has 0 guest bathroom photos in its 55-photo live gallery, AtmosVibe pairs a second distinct bookable bedroom & suite lounge layout (Live #14) in Slot #3—and flags a Master Bathroom Soaking Tub & Rain-Shower shot as Priority #1 in the Visual Opportunity card.",
+          "upgrade_rationale": "Booking.com Top 5 rules require at least 2 guestroom/bathroom photos in the first 5 slots. Because Sea Containers has 0 guest bathroom photos in its 55-photo live gallery, AtmosVibe pairs a second distinct bookable bedroom & suite lounge layout (Live #14) in Slot #3—and flags a Master Bathroom Soaking Tub & Rain-Shower shot as Priority #1 in the Visual Opportunity card.",
           "bullet_points": [
-            "Adaptive Comfort Slot #3: Bridges private sanctuary comfort right after the bedroom while flagging the missing bathroom photo as Gap #1.",
-            "Experiential Hook: Showcases private outdoor terrace seating overlooking the London skyline.",
-            "Conversion Trigger: Justifies premium room/balcony upgrades and sustains shortlist confidence."
+            "Booking.com 2-Room/Bath Rule (Slot #3): Ensures 2 of the Top 5 photos show bookable sleeping/suite quarters while 0 bathroom photos exist in the gallery.",
+            "Suite & Layout Variety: Showcases a second distinct bedroom with in-room lounge seating and floor-to-ceiling window light.",
+            "Conversion Trigger: Satisfies OTA room-depth compliance and flags the missing bathroom shot in the Visual Opportunity card."
           ],
-          "psychological_conversion_trigger": "Private Outdoor Sanctuary & Comfort Proof",
-          "recommended_trigger": "Private Outdoor Sanctuary & Comfort Proof",
-          "current_slot": 22,
+          "psychological_conversion_trigger": "Booking.com 2-Room Rule & Suite Upgrade Proof",
+          "recommended_trigger": "Booking.com 2-Room Rule & Suite Upgrade Proof",
+          "current_slot": 14,
           "is_retained": false,
           "is_moved": true,
           "is_swapped_in": false,
           "action": "PROMOTE",
-          "action_label": "PROMOTE FROM SLOT #22",
-          "source_display_label": "Was: Slot #22 (Booking.com)",
+          "action_label": "PROMOTE FROM SLOT #14",
+          "source_display_label": "Was: Slot #14 (Booking.com)",
           "source_domain": "booking.com",
           "current_photo": {
-            "slot": 22,
-            "title": "a balcony with tables and chairs and a view of the city at Sea Containers London in London",
-            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/851801396.jpg?k=10352fab3075fe13b9ea3c07a10286ceda2edbf94cc13eecf2d32a62a3e7544e&o=&hp=1",
-            "photoId": "851801396",
+            "slot": 14,
+            "title": "a bedroom with a bed and a couch and a window at Sea Containers London in London",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/820352424.jpg?k=eb26f5cc4e055518bb9924cc199a5265d5911e9ff5276941c61d70591d228136&o=&hp=1",
+            "photoId": "820352424",
             "sourceUrl": "https://www.booking.com/hotel/gb/sea-containers-london.html?lang=en-us&chal_t=1792405577687&force_referer="
           }
         },

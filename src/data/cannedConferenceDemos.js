@@ -102,12 +102,12 @@ export const SEA_CONTAINERS_CANNED_DEMO = {
         },
         {
           slot: 3,
-          formula_name: 'Slot #3 — Bathroom & Comfort Proof',
+          formula_name: 'Slot #3 — 2nd Room / Bath Compliance Slot',
           live_score: 4,
           max_score: 20,
           status: '0/55 BATHROOM GAP',
           live_what_is_there: 'Duplicate angle of the same blue-couch living room (Live #3); 0 guest bathrooms in all 55 photos',
-          optimal_fix: 'Bridge with Private River-View Balcony (Live #22) + Upload Master Bathroom Shot'
+          optimal_fix: 'Pair 2nd Distinct Deluxe Suite Bedroom & Lounge (Live #14) + Upload Master Bathroom Shot'
         },
         {
           slot: 4,
