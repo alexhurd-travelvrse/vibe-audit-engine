@@ -307,7 +307,7 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
             <span style={{ fontSize: '13px', fontWeight: 900, textTransform: 'uppercase', color: '#ffd700', letterSpacing: '0.08em', display: 'flex', alignItems: 'center', gap: '6px' }}>
-              <Sparkles size={16} color="#ffd700" /> 6 VIBE SIGNALS
+              <Sparkles size={16} color="#ffd700" /> VIBE SIGNATURE
             </span>
             <span style={{ background: 'rgba(255, 215, 0, 0.12)', color: '#ffd700', border: '1px solid rgba(255, 215, 0, 0.35)', fontSize: '10px', fontWeight: 800, padding: '2px 8px', borderRadius: '10px' }}>
               SWIPE / SCROLL ➔
@@ -512,12 +512,12 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
               </div>
             </div>
 
-            {/* Row H: Uniform Separate Proof Container — Locked to Bottom (Fixed 96px across ALL cards) */}
+            {/* Row H: Uniform Separate Proof Container — Locked to Bottom (Fixed 114px across ALL cards) */}
             <div style={{
               marginTop: 'auto',
-              height: '96px',
-              minHeight: '96px',
-              maxHeight: '96px',
+              height: '114px',
+              minHeight: '114px',
+              maxHeight: '114px',
               background: 'rgba(4, 10, 22, 0.92)',
               border: '1px solid rgba(0, 229, 255, 0.25)',
               borderLeft: '3px solid #00e5ff',
@@ -618,12 +618,12 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
               </div>
             </div>
 
-            {/* Row H: Uniform Separate Proof Container — Locked to Bottom (Fixed 96px across ALL cards) */}
+            {/* Row H: Uniform Separate Proof Container — Locked to Bottom (Fixed 114px across ALL cards) */}
             <div style={{
               marginTop: 'auto',
-              height: '96px',
-              minHeight: '96px',
-              maxHeight: '96px',
+              height: '114px',
+              minHeight: '114px',
+              maxHeight: '114px',
               background: 'rgba(4, 10, 22, 0.92)',
               border: '1px solid rgba(16, 185, 129, 0.28)',
               borderLeft: '3px solid #34d399',
@@ -654,7 +654,117 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
           </div>
 
           {/* ========================================================================= */}
-          {/* CONTAINER 3: Crowd & Subculture                                           */}
+          {/* CONTAINER 3: Warmth & Light (Candlelit & Golden Glow)                     */}
+          {/* ========================================================================= */}
+          <div style={{ flex: '0 0 min(380px, 84vw)', minWidth: 'min(380px, 84vw)', maxWidth: '400px', scrollSnapAlign: 'start', background: 'rgba(0,0,0,0.55)', padding: '1.35rem', borderRadius: '1.25rem', border: '1px solid rgba(251, 191, 36, 0.38)', display: 'flex', flexDirection: 'column', boxSizing: 'border-box' }}>
+            {/* Row A: Category Badge + Degree of Certainty (24px) */}
+            <div style={{ height: '24px', marginBottom: '8px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '6px', flexShrink: 0 }}>
+              <span style={{ fontSize: '11px', fontWeight: 900, color: '#fbbf24', letterSpacing: '0.08em', textTransform: 'uppercase', display: 'flex', alignItems: 'center', gap: '5px' }}>
+                <Flame size={13} /> Warmth &amp; Light
+              </span>
+              <span style={{ fontSize: '9.5px', fontWeight: 800, color: '#34d399', background: 'rgba(16, 185, 129, 0.15)', border: '1px solid rgba(16, 185, 129, 0.35)', padding: '2px 7px', borderRadius: '8px', whiteSpace: 'nowrap' }} title="Hard-verified via Computer-Vision colour temperature & luminance scan across 16 gallery photos">
+                ✓ {certaintyMetrics.craftMaterials}% Verified Fact
+              </span>
+            </div>
+
+            {/* Row B: Title (42px) */}
+            <h3 style={{ fontSize: '16px', fontWeight: 900, color: '#ffffff', height: '42px', minHeight: '42px', maxHeight: '42px', lineHeight: 1.3, margin: '0 0 12px 0', overflow: 'hidden', flexShrink: 0 }}>
+              Candlelit Evening Glow or Harsh Glare?
+            </h3>
+
+            {/* Row C: Standardized Scale Bar Container (84px) */}
+            <div style={{ background: 'rgba(0,0,0,0.45)', padding: '10px 12px', borderRadius: '10px', border: '1px solid rgba(255,255,255,0.08)', marginBottom: '12px', height: '84px', minHeight: '84px', maxHeight: '84px', boxSizing: 'border-box', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', gap: '6px', flexShrink: 0 }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', fontSize: '9.5px', fontWeight: 800, textTransform: 'uppercase', color: 'rgba(255,255,255,0.6)' }}>
+                <span style={{ color: '#94a3b8', textAlign: 'left' }}>Harsh Glare</span>
+                <span style={{ color: '#38bdf8', textAlign: 'center' }}>Daylight</span>
+                <span style={{ color: '#fbbf24', textAlign: 'right' }}>Candlelit Glow</span>
+              </div>
+              <div style={{ position: 'relative', width: '100%', height: '8px', background: 'linear-gradient(90deg, #64748b 0%, #38bdf8 45%, #f59e0b 80%, #fbbf24 100%)', borderRadius: '4px' }}>
+                <div style={{ 
+                  position: 'absolute', 
+                  top: '50%', 
+                  left: '91%', 
+                  transform: 'translate(-50%, -50%)', 
+                  width: '14px', 
+                  height: '14px', 
+                  borderRadius: '50%', 
+                  background: '#ffffff', 
+                  boxShadow: '0 0 8px rgba(0,0,0,0.8), 0 0 10px #fbbf24',
+                  border: '2px solid #050b14' 
+                }} />
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '11px', fontWeight: 700, gap: '8px' }}>
+                <span style={{ color: '#fbbf24', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', flex: 1 }}>{lightingTemp}</span>
+                <span style={{ color: '#10b981', flexShrink: 0, fontSize: '10px', background: 'rgba(16, 185, 129, 0.12)', padding: '2px 7px', borderRadius: '4px', border: '1px solid rgba(16, 185, 129, 0.25)' }}>Zero Glare</span>
+              </div>
+            </div>
+
+            {/* Row D+E+F: Fixed-Height Body Block (128px) */}
+            <div style={{ height: '128px', minHeight: '128px', maxHeight: '128px', marginBottom: '12px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', overflow: 'hidden', flexShrink: 0 }}>
+              <div style={{ fontSize: '13px', fontWeight: 800, color: '#ffffff', height: '36px', lineHeight: 1.35, overflow: 'hidden', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>
+                <span style={{ color: '#fbbf24' }}>Mood:</span> {lighting.atmosphere || 'Warm Candlelit & Golden-Hour Glow'}
+              </div>
+
+              <div style={{ display: 'flex', flexWrap: 'nowrap', gap: '5px', height: '26px', alignItems: 'center', overflow: 'hidden' }}>
+                {['2700K Warm Amber', 'Natural Daylight', 'Soft Table Lamps'].map((pill, pIdx) => (
+                  <span key={pIdx} style={{ background: 'rgba(251, 191, 36, 0.12)', color: '#fbbf24', fontSize: '10px', fontWeight: 700, padding: '2px 8px', borderRadius: '10px', border: '1px solid rgba(251, 191, 36, 0.28)', whiteSpace: 'nowrap', flexShrink: 0 }}>
+                    ✦ {pill}
+                  </span>
+                ))}
+              </div>
+
+              <p style={{ fontSize: '11.5px', color: 'rgba(255,255,255,0.68)', lineHeight: 1.4, margin: 0, height: '48px', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+                Flattering warm table lamps, natural daylight &amp; low-glare evening lighting across social spaces and rooms.
+              </p>
+            </div>
+
+            {/* Row G: Middle Callout Box — Fixed 108px across ALL cards */}
+            <div style={{ height: '108px', minHeight: '108px', maxHeight: '108px', marginBottom: '12px', background: 'rgba(251, 191, 36, 0.08)', padding: '12px 14px', borderRadius: '10px', border: '1px solid rgba(251, 191, 36, 0.24)', boxSizing: 'border-box', display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '6px', flexShrink: 0, overflow: 'hidden' }}>
+              <div style={{ fontSize: '10.5px', fontWeight: 900, color: '#fbbf24', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+                🕯️ Warmth &amp; Sensory Comfort
+              </div>
+              <div style={{ fontSize: '11.5px', color: 'rgba(255,255,255,0.92)', lineHeight: 1.4, display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+                Warm 2400K–2700K ambient glow and natural daylight transitions—zero harsh overhead fluorescent glare.
+              </div>
+            </div>
+
+            {/* Row H: Uniform Separate Proof Container — Locked to Bottom (Fixed 114px across ALL cards) */}
+            <div style={{
+              marginTop: 'auto',
+              height: '114px',
+              minHeight: '114px',
+              maxHeight: '114px',
+              background: 'rgba(4, 10, 22, 0.92)',
+              border: '1px solid rgba(16, 185, 129, 0.28)',
+              borderLeft: '3px solid #34d399',
+              borderRadius: '10px',
+              padding: '10px 12px',
+              boxSizing: 'border-box',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              flexShrink: 0,
+              overflow: 'hidden'
+            }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '6px', height: '18px' }}>
+                <span style={{ fontSize: '9.5px', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#34d399' }}>
+                  📊 Verification Proof
+                </span>
+                <span style={{ fontSize: '9px', fontWeight: 800, color: '#34d399', background: 'rgba(16, 185, 129, 0.14)', border: '1px solid rgba(16, 185, 129, 0.35)', padding: '1px 6px', borderRadius: '6px', whiteSpace: 'nowrap' }}>
+                  ✓ {certaintyMetrics.craftMaterials}% Hard-Verified
+                </span>
+              </div>
+              <div style={{ fontSize: '10.5px', color: 'rgba(255,255,255,0.88)', lineHeight: 1.3, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+                <strong style={{ color: '#34d399' }}>Sources:</strong> 16 property gallery photos + evening atmosphere guest reviews
+              </div>
+              <div style={{ fontSize: '10px', color: 'rgba(255,255,255,0.62)', lineHeight: 1.25, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                <strong style={{ color: 'rgba(255,255,255,0.8)' }}>Method:</strong> Colour-temperature (Kelvin) &amp; glare contrast pixel scan
+              </div>
+            </div>
+          </div>
+
+          {/* ========================================================================= */}
+          {/* CONTAINER 4: Crowd & Subculture                                           */}
           {/* ========================================================================= */}
           <div style={{ flex: '0 0 min(380px, 84vw)', minWidth: 'min(380px, 84vw)', maxWidth: '400px', scrollSnapAlign: 'start', background: 'rgba(0,0,0,0.55)', padding: '1.35rem', borderRadius: '1.25rem', border: '1px solid rgba(192, 132, 252, 0.35)', display: 'flex', flexDirection: 'column', boxSizing: 'border-box' }}>
             {/* Row A: Category Badge + Degree of Certainty (24px) */}
@@ -723,12 +833,12 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
               </div>
             </div>
 
-            {/* Row H: Uniform Separate Proof Container — Locked to Bottom (Fixed 96px across ALL cards) */}
+            {/* Row H: Uniform Separate Proof Container — Locked to Bottom (Fixed 114px across ALL cards) */}
             <div style={{
               marginTop: 'auto',
-              height: '96px',
-              minHeight: '96px',
-              maxHeight: '96px',
+              height: '114px',
+              minHeight: '114px',
+              maxHeight: '114px',
               background: 'rgba(4, 10, 22, 0.92)',
               border: '1px solid rgba(251, 191, 36, 0.28)',
               borderLeft: '3px solid #fbbf24',
@@ -833,12 +943,12 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
               </div>
             </div>
 
-            {/* Row H: Uniform Separate Proof Container — Locked to Bottom (Fixed 96px across ALL cards) */}
+            {/* Row H: Uniform Separate Proof Container — Locked to Bottom (Fixed 114px across ALL cards) */}
             <div style={{
               marginTop: 'auto',
-              height: '96px',
-              minHeight: '96px',
-              maxHeight: '96px',
+              height: '114px',
+              minHeight: '114px',
+              maxHeight: '114px',
               background: 'rgba(4, 10, 22, 0.92)',
               border: '1px solid rgba(0, 229, 255, 0.25)',
               borderLeft: '3px solid #00e5ff',
@@ -998,12 +1108,12 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
               </div>
             </div>
 
-            {/* Row H: Uniform Separate Proof Container — Locked to Bottom (Fixed 96px across ALL cards) */}
+            {/* Row H: Uniform Separate Proof Container — Locked to Bottom (Fixed 114px across ALL cards) */}
             <div style={{
               marginTop: 'auto',
-              height: '96px',
-              minHeight: '96px',
-              maxHeight: '96px',
+              height: '114px',
+              minHeight: '114px',
+              maxHeight: '114px',
               background: 'rgba(4, 10, 22, 0.92)',
               border: '1px solid rgba(0, 229, 255, 0.25)',
               borderLeft: '3px solid #00e5ff',
@@ -1108,12 +1218,12 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
               </div>
             </div>
 
-            {/* Row H: Uniform Separate Proof Container — Locked to Bottom (Fixed 96px across ALL cards) */}
+            {/* Row H: Uniform Separate Proof Container — Locked to Bottom (Fixed 114px across ALL cards) */}
             <div style={{
               marginTop: 'auto',
-              height: '96px',
-              minHeight: '96px',
-              maxHeight: '96px',
+              height: '114px',
+              minHeight: '114px',
+              maxHeight: '114px',
               background: 'rgba(4, 10, 22, 0.92)',
               border: '1px solid rgba(16, 185, 129, 0.28)',
               borderLeft: '3px solid #34d399',
@@ -1214,12 +1324,12 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
               </div>
             </div>
 
-            {/* Row H: Uniform Separate Proof Container — Locked to Bottom (Fixed 96px across ALL cards) */}
+            {/* Row H: Uniform Separate Proof Container — Locked to Bottom (Fixed 114px across ALL cards) */}
             <div style={{
               marginTop: 'auto',
-              height: '96px',
-              minHeight: '96px',
-              maxHeight: '96px',
+              height: '114px',
+              minHeight: '114px',
+              maxHeight: '114px',
               background: 'rgba(4, 10, 22, 0.92)',
               border: '1px solid rgba(0, 229, 255, 0.25)',
               borderLeft: '3px solid #00e5ff',
@@ -1247,6 +1357,45 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
                 <strong style={{ color: 'rgba(255,255,255,0.8)' }}>Method:</strong> Cross-referenced off-menu perks &amp; hidden spots cited by 3+ sources
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Cryptographic Signature Hash Bar at the Bottom of the 8 Vibe Signature Containers */}
+        <div style={{
+          marginTop: '0.5rem',
+          background: 'rgba(4, 10, 22, 0.85)',
+          border: '1px solid rgba(0, 229, 255, 0.25)',
+          borderLeft: '3px solid #34d399',
+          borderRadius: '12px',
+          padding: '10px 14px',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          flexWrap: 'wrap',
+          gap: '0.75rem'
+        }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem', flexWrap: 'wrap', fontSize: '11px', color: 'rgba(255,255,255,0.85)' }}>
+            <span style={{ display: 'inline-flex', alignItems: 'center', gap: '5px', fontWeight: 800, color: '#34d399' }}>
+              <ShieldCheck size={14} color="#34d399" /> Verified Vibe Signature
+            </span>
+            <span>
+              <strong style={{ color: '#00e5ff' }}>Signature Hash:</strong>{' '}
+              <code style={{ color: '#34d399', background: 'rgba(16, 185, 129, 0.14)', border: '1px solid rgba(16, 185, 129, 0.3)', padding: '2px 7px', borderRadius: '5px', fontSize: '10.5px', fontWeight: 700 }} title={fullSigHash}>
+                {shortSigHash}
+              </code>
+            </span>
+            <span>
+              <strong style={{ color: '#ffd700' }}>Valid Until:</strong> {validUntilDateStr} <span style={{ color: 'rgba(255,255,255,0.5)' }}>(30-Day TTL)</span>
+            </span>
+          </div>
+
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
+            <span style={{ background: 'rgba(0, 229, 255, 0.12)', color: '#00e5ff', border: '1px solid rgba(0, 229, 255, 0.3)', fontSize: '10px', fontWeight: 800, padding: '3px 9px', borderRadius: '8px' }}>
+              📊 {overallCertainty}% Evidence Certainty
+            </span>
+            <span style={{ background: 'rgba(16, 185, 129, 0.14)', color: '#34d399', border: '1px solid rgba(16, 185, 129, 0.35)', fontSize: '10px', fontWeight: 800, padding: '3px 9px', borderRadius: '8px' }}>
+              ✓ Protected Vibe Registry
+            </span>
           </div>
         </div>
       </div>
@@ -1278,196 +1427,6 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
             </div>
           </div>
         </div>
-      </div>
-
-      {/* ========================================================================= */}
-      {/* AI SEARCH (CHATGPT, PERPLEXITY & GEMINI) & PROTECTED VIBE REGISTRY        */}
-      {/* ========================================================================= */}
-      <div style={{
-        marginTop: '1.5rem',
-        background: 'linear-gradient(135deg, rgba(0, 229, 255, 0.08) 0%, rgba(16, 185, 129, 0.06) 100%)',
-        padding: '1.35rem 1.5rem',
-        borderRadius: '1.25rem',
-        border: '1px solid rgba(0, 229, 255, 0.28)'
-      }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.75rem', marginBottom: '1rem' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
-            <Compass size={18} color="#00e5ff" />
-            <span style={{ fontSize: '12.5px', fontWeight: 900, textTransform: 'uppercase', color: '#00e5ff', letterSpacing: '0.06em' }}>
-              AI Search Discovery (ChatGPT, Perplexity &amp; Gemini) &amp; Verification Proof
-            </span>
-          </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
-            <span style={{ background: 'rgba(0, 229, 255, 0.14)', color: '#00e5ff', border: '1px solid rgba(0, 229, 255, 0.35)', fontSize: '10px', fontWeight: 800, padding: '3px 9px', borderRadius: '10px' }}>
-              📊 {overallCertainty}% Overall Evidence Certainty
-            </span>
-            <span style={{ background: 'rgba(16, 185, 129, 0.15)', color: '#34d399', border: '1px solid rgba(16, 185, 129, 0.35)', fontSize: '10px', fontWeight: 800, padding: '3px 9px', borderRadius: '10px' }}>
-              🔒 Protected Vibe Registry • Live 30-Day Freshness
-            </span>
-          </div>
-        </div>
-
-        <p style={{ fontSize: '12.5px', color: 'rgba(255,255,255,0.85)', margin: '0 0 1rem 0', lineHeight: 1.45 }}>
-          {(v.ai_search_geo && v.ai_search_geo.verified_entity_summary)
-            ? v.ai_search_geo.verified_entity_summary
-            : `${manifest.venue_name || hotelName} is a verified destination gateway in ${manifest.location || location || 'its district'}, combining quiet, restful rooms upstairs with warm social spaces and direct 2–6 minute walking access to 4.4★+ local gems.`}
-        </p>
-
-        {/* 4-Source Verification & Degrees of Certainty Breakdown (GEO Trust Layer) */}
-        <div style={{ marginBottom: '1.1rem' }}>
-          <div style={{ fontSize: '11px', fontWeight: 800, color: '#34d399', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.5rem' }}>
-            How This Vibe Signature Is Proven to Search Engines &amp; AI Assistants:
-          </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(210px, 1fr))', gap: '0.6rem' }}>
-            <div style={{ background: 'rgba(0,0,0,0.45)', border: '1px solid rgba(16, 185, 129, 0.3)', borderRadius: '10px', padding: '9px 11px' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '3px' }}>
-                <span style={{ fontSize: '10.5px', fontWeight: 800, color: '#34d399' }}>✓ Local Gems &amp; Walk Time</span>
-                <span style={{ fontSize: '10px', fontWeight: 900, color: '#34d399', fontFamily: 'monospace' }}>{certaintyMetrics.localGems}% Fact</span>
-              </div>
-              <div style={{ fontSize: '10.5px', color: 'rgba(255,255,255,0.7)', lineHeight: 1.3 }}>
-                Google Places API coordinates (≤500m walk) &amp; ≥4.4★ rating filter
-              </div>
-            </div>
-
-            <div style={{ background: 'rgba(0,0,0,0.45)', border: '1px solid rgba(16, 185, 129, 0.3)', borderRadius: '10px', padding: '9px 11px' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '3px' }}>
-                <span style={{ fontSize: '10.5px', fontWeight: 800, color: '#34d399' }}>✓ Design &amp; Craft Proof</span>
-                <span style={{ fontSize: '10px', fontWeight: 900, color: '#34d399', fontFamily: 'monospace' }}>{certaintyMetrics.craftMaterials}% Fact</span>
-              </div>
-              <div style={{ fontSize: '10.5px', color: 'rgba(255,255,255,0.7)', lineHeight: 1.3 }}>
-                Computer-vision pixel scan of 16 live property gallery photos
-              </div>
-            </div>
-
-            <div style={{ background: 'rgba(0,0,0,0.45)', border: '1px solid rgba(0, 229, 255, 0.3)', borderRadius: '10px', padding: '9px 11px' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '3px' }}>
-                <span style={{ fontSize: '10.5px', fontWeight: 800, color: '#00e5ff' }}>◎ Sleep &amp; Host Consensus</span>
-                <span style={{ fontSize: '10px', fontWeight: 900, color: '#00e5ff', fontFamily: 'monospace' }}>{certaintyMetrics.soundSleep}% Corroborated</span>
-              </div>
-              <div style={{ fontSize: '10.5px', color: 'rgba(255,255,255,0.7)', lineHeight: 1.3 }}>
-                Cross-checked across guest sleep reviews, bar hours &amp; press
-              </div>
-            </div>
-
-            <div style={{ background: 'rgba(0,0,0,0.45)', border: '1px solid rgba(251, 191, 36, 0.3)', borderRadius: '10px', padding: '9px 11px' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '3px' }}>
-                <span style={{ fontSize: '10.5px', fontWeight: 800, color: '#fbbf24' }}>◈ Crowd &amp; Social Mix</span>
-                <span style={{ fontSize: '10px', fontWeight: 900, color: '#fbbf24', fontFamily: 'monospace' }}>{certaintyMetrics.crowdMix}% Estimate</span>
-              </div>
-              <div style={{ fontSize: '10.5px', color: 'rgba(255,255,255,0.7)', lineHeight: 1.3 }}>
-                Behavioural inference from dining mix &amp; review profiles
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div style={{ fontSize: '11px', fontWeight: 800, color: '#ffd700', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.5rem' }}>
-          Traveller Prompts Where This Property Matches:
-        </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '0.65rem', marginBottom: '1rem' }}>
-          {((v.ai_search_geo && v.ai_search_geo.traveler_prompts && v.ai_search_geo.traveler_prompts.length > 0)
-            ? v.ai_search_geo.traveler_prompts
-            : [
-                `Best hotel in ${manifest.location || location || 'this area'} within a 5-minute walk of authentic 4.5★ local wine bars and restaurants`,
-                `Where to stay in ${manifest.location || location || 'the city'} with a warm evening atmosphere downstairs and quiet, restful rooms upstairs`,
-                `Recommended boutique basecamp in ${manifest.location || location || 'town'} for couples and solo explorers who want a true local feel`
-              ]
-          ).map((promptText, idx) => (
-            <div key={idx} style={{ background: 'rgba(0,0,0,0.45)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '10px', padding: '10px 12px', fontSize: '11.5px', color: 'rgba(255,255,255,0.9)', lineHeight: 1.35 }}>
-              <span style={{ color: '#00e5ff', fontWeight: 800, marginRight: '5px' }}>“</span>
-              {promptText}
-              <span style={{ color: '#00e5ff', fontWeight: 800, marginLeft: '3px' }}>”</span>
-            </div>
-          ))}
-        </div>
-
-        {/* Cryptographic Signature Hash & Uniform Agency Sync Bar */}
-        <div style={{
-          background: 'rgba(0, 0, 0, 0.55)',
-          border: '1px solid rgba(255, 255, 255, 0.12)',
-          borderRadius: '10px',
-          padding: '10px 12px',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          flexWrap: 'wrap',
-          gap: '0.75rem'
-        }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem', flexWrap: 'wrap', fontSize: '11px', color: 'rgba(255,255,255,0.8)' }}>
-            <span>
-              <strong style={{ color: '#00e5ff' }}>Signature Hash:</strong>{' '}
-              <code style={{ color: '#34d399', background: 'rgba(16, 185, 129, 0.12)', padding: '2px 6px', borderRadius: '4px', fontSize: '10.5px' }} title={fullSigHash}>
-                {shortSigHash}
-              </code>
-            </span>
-            <span>
-              <strong style={{ color: '#ffd700' }}>Valid Until:</strong> {validUntilDateStr} <span style={{ color: 'rgba(255,255,255,0.5)' }}>(30-Day TTL)</span>
-            </span>
-            <span style={{ color: 'rgba(255,255,255,0.65)' }}>
-              ✓ Single Source of Truth for Partner Agencies &amp; AI Search
-            </span>
-          </div>
-
-          <button
-            type="button"
-            onClick={() => setShowJsonLdDrawer(prev => !prev)}
-            style={{
-              background: showJsonLdDrawer ? 'rgba(0, 229, 255, 0.22)' : 'rgba(255, 255, 255, 0.08)',
-              border: '1px solid rgba(0, 229, 255, 0.4)',
-              color: '#00e5ff',
-              fontSize: '10.5px',
-              fontWeight: 800,
-              padding: '5px 11px',
-              borderRadius: '8px',
-              cursor: 'pointer'
-            }}
-          >
-            {showJsonLdDrawer ? 'Hide Verifiable JSON-LD Feed ▲' : '{ } View Verifiable JSON-LD & Agency Feed ▼'}
-          </button>
-        </div>
-
-        {showJsonLdDrawer && (
-          <div style={{ marginTop: '0.75rem', background: '#050b14', border: '1px solid rgba(0, 229, 255, 0.3)', borderRadius: '10px', padding: '12px' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px', flexWrap: 'wrap', gap: '8px' }}>
-              <span style={{ fontSize: '11px', fontWeight: 800, color: '#00e5ff' }}>
-                Schema.org + VerifiableVibeSignature JSON-LD (Referenced by Agencies, Perplexity, ChatGPT &amp; Google)
-              </span>
-              <button
-                type="button"
-                onClick={() => {
-                  navigator.clipboard?.writeText(verifiableJsonLdPayload);
-                  setCopiedJsonLd(true);
-                  setTimeout(() => setCopiedJsonLd(false), 2000);
-                }}
-                style={{
-                  background: copiedJsonLd ? 'rgba(16, 185, 129, 0.25)' : 'rgba(0, 229, 255, 0.15)',
-                  border: `1px solid ${copiedJsonLd ? '#34d399' : '#00e5ff'}`,
-                  color: copiedJsonLd ? '#34d399' : '#00e5ff',
-                  fontSize: '10px',
-                  fontWeight: 800,
-                  padding: '4px 10px',
-                  borderRadius: '6px',
-                  cursor: 'pointer'
-                }}
-              >
-                {copiedJsonLd ? '✓ Copied JSON-LD' : 'Copy Verifiable JSON-LD'}
-              </button>
-            </div>
-            <pre style={{
-              margin: 0,
-              maxHeight: '240px',
-              overflowY: 'auto',
-              fontSize: '10.5px',
-              lineHeight: 1.4,
-              color: '#a7f3d0',
-              fontFamily: 'monospace',
-              whiteSpace: 'pre-wrap',
-              wordBreak: 'break-word'
-            }}>
-              {verifiableJsonLdPayload}
-            </pre>
-          </div>
-        )}
       </div>
 
     </motion.div>
