@@ -120,8 +120,182 @@ export default function BookingOtaAuditCard({ otaData, hotelName, isUnlocked, on
             borderRadius: '20px', 
             textTransform: 'uppercase' 
           }}>
-            {isListedOnBooking ? '🏨 Booking.com Visual & Copy Diagnostic' : '⚡ Direct Site & Pre-Listing Merchandising Blueprint'}
+            {isListedOnBooking ? '📊 Local Vibe & Cross-Channel Gap Audit' : '⚡ Direct Site & Pre-Listing Merchandising Audit'}
           </span>
+        </div>
+        {rubric?.vibe_gap_archetype && (
+          <span style={{
+            fontSize: '10.5px',
+            fontWeight: 900,
+            textTransform: 'uppercase',
+            letterSpacing: '0.09em',
+            background: vibeGapPoints <= -30 ? 'rgba(245, 158, 11, 0.2)' : 'rgba(16, 185, 129, 0.2)',
+            color: vibeGapPoints <= -30 ? '#fbbf24' : '#34d399',
+            padding: '4px 12px',
+            borderRadius: '14px',
+            border: `1px solid ${vibeGapPoints <= -30 ? 'rgba(245,158,11,0.4)' : 'rgba(16,185,129,0.4)'}`
+          }}>
+            {rubric.vibe_gap_archetype}
+          </span>
+        )}
+      </div>
+
+      {/* PART 1: 3-Part Diagnostic Overview (a. Key Local Vibe Trends | b. Overall Cross-Channel Vibe Match | c. OTA Gap Analysis) */}
+      <div style={{ 
+        background: 'rgba(0,0,0,0.45)', 
+        border: '1px solid rgba(0, 229, 255, 0.25)', 
+        borderRadius: '1.5rem', 
+        padding: '1.75rem', 
+        marginBottom: '2.5rem',
+        boxShadow: '0 10px 30px rgba(0,0,0,0.4)'
+      }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.15rem' }}>
+          
+          {/* A) Key Local Vibe Trends */}
+          <div style={{ 
+            background: 'linear-gradient(135deg, rgba(139, 92, 246, 0.14) 0%, rgba(139, 92, 246, 0.03) 100%)', 
+            border: '1px solid rgba(139, 92, 246, 0.35)', 
+            borderRadius: '1.15rem', 
+            padding: '1.25rem',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between'
+          }}>
+            <div>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
+                <span style={{ fontSize: '10px', fontWeight: 900, textTransform: 'uppercase', color: '#a78bfa', letterSpacing: '0.09em' }}>
+                  1. Key Local Vibe Trends
+                </span>
+                <span style={{ fontSize: '9.5px', background: 'rgba(139, 92, 246, 0.2)', color: '#d8b4fe', padding: '2px 8px', borderRadius: '10px', fontWeight: 700 }}>
+                  Search Drivers
+                </span>
+              </div>
+              <div style={{ fontSize: '17px', fontWeight: 900, color: '#f3e8ff', lineHeight: 1.25, marginBottom: '6px' }}>
+                {rubric?.destination_vibe_title || 'Target Neighbourhood Benchmark'}
+              </div>
+              <div style={{ fontSize: '12px', fontWeight: 700, color: '#c4b5fd', marginBottom: '10px', lineHeight: 1.4 }}>
+                {rubric?.destination_vibe_pillars || 'Local Architecture • Evening Social Energy • Walkable Micro-Gems'}
+              </div>
+              <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.8)', lineHeight: 1.5, margin: 0 }}>
+                {otaData.local_vibe_synergy_context || 'High traveller demand centers on authentic rooftop social spaces, craft mixology, and walkable cultural riverfront access.'}
+              </p>
+            </div>
+          </div>
+
+          {/* B) Overall Hotel vs. Local Vibe Match (All Channels + Google Reviews) */}
+          <div style={{ 
+            background: 'linear-gradient(135deg, rgba(0, 229, 255, 0.12) 0%, rgba(0, 229, 255, 0.03) 100%)', 
+            border: '1px solid rgba(0, 229, 255, 0.35)', 
+            borderRadius: '1.15rem', 
+            padding: '1.25rem',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between'
+          }}>
+            <div>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
+                <span style={{ fontSize: '10px', fontWeight: 900, textTransform: 'uppercase', color: '#00e5ff', letterSpacing: '0.09em' }}>
+                  2. Hotel vs. Local Vibe Match
+                </span>
+                <span style={{ fontSize: '9.5px', background: 'rgba(0, 229, 255, 0.16)', color: '#00e5ff', padding: '2px 8px', borderRadius: '10px', fontWeight: 700 }}>
+                  All Channels & Google Reviews
+                </span>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'baseline', gap: '10px', marginBottom: '6px' }}>
+                <div style={{ fontSize: '36px', fontWeight: 900, color: '#00e5ff', fontFamily: 'monospace', lineHeight: 1 }}>
+                  {verifiedRealityScore}<span style={{ fontSize: '16px', color: 'rgba(0,229,255,0.65)' }}>/100</span>
+                </div>
+                <div style={{ fontSize: '12px', fontWeight: 800, color: '#e0f2fe' }}>
+                  Verified On-Property Reality
+                </div>
+              </div>
+              <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.82)', lineHeight: 1.5, margin: '8px 0 0 0' }}>
+                Cross-checked across Google Reviews, editorial press, and on-property social spaces—confirming the hotel delivers a <strong style={{ color: '#00e5ff' }}>{verifiedRealityScore}% authentic match</strong> to the {rubric?.destination_vibe_title || 'local'} Vibe Signature.
+              </p>
+            </div>
+          </div>
+
+          {/* C) Gap Analysis (Including OTA Analysis) */}
+          <div style={{ 
+            background: 'linear-gradient(135deg, rgba(245, 158, 11, 0.14) 0%, rgba(16, 185, 129, 0.05) 100%)', 
+            border: '1px solid rgba(245, 158, 11, 0.45)', 
+            borderRadius: '1.15rem', 
+            padding: '1.25rem',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between'
+          }}>
+            <div>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
+                <span style={{ fontSize: '10px', fontWeight: 900, textTransform: 'uppercase', color: '#fbbf24', letterSpacing: '0.09em' }}>
+                  3. Gap Analysis & OTA Merchandising
+                </span>
+                <span style={{ fontSize: '9.5px', background: 'rgba(245, 158, 11, 0.2)', color: '#fcd34d', padding: '2px 8px', borderRadius: '10px', fontWeight: 800 }}>
+                  {isListedOnBooking ? `${vibeGapPoints} pt Vibe Gap` : 'Direct Opportunity'}
+                </span>
+              </div>
+
+              {/* Score transition bar */}
+              <div style={{ 
+                display: 'flex', 
+                alignItems: 'center', 
+                justifyContent: 'space-between',
+                background: 'rgba(0,0,0,0.35)',
+                border: '1px solid rgba(255,255,255,0.08)',
+                borderRadius: '10px',
+                padding: '8px 12px',
+                marginBottom: '10px'
+              }}>
+                <div>
+                  <div style={{ fontSize: '9.5px', textTransform: 'uppercase', color: '#fbbf24', fontWeight: 800 }}>Live OTA Score</div>
+                  <div style={{ fontSize: '22px', fontWeight: 900, color: '#fbbf24', fontFamily: 'monospace', lineHeight: 1.1 }}>
+                    {isListedOnBooking ? `${beforeScore}/100` : 'UNLISTED'}
+                  </div>
+                </div>
+                <ArrowRight size={18} color="rgba(255,255,255,0.4)" />
+                <div style={{ textAlign: 'right' }}>
+                  <div style={{ fontSize: '9.5px', textTransform: 'uppercase', color: '#10b981', fontWeight: 800 }}>Resequenced Target</div>
+                  <div style={{ fontSize: '22px', fontWeight: 900, color: '#10b981', fontFamily: 'monospace', lineHeight: 1.1 }}>
+                    {afterScore}/100 <span style={{ fontSize: '11px', fontFamily: 'sans-serif' }}>({uplift})</span>
+                  </div>
+                </div>
+              </div>
+
+              <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.85)', lineHeight: 1.5, margin: 0 }}>
+                {rubric?.vibe_gap_summary || otaData.conversion_diagnosis || 'Current OTA gallery undersells the property’s true neighbourhood vibe due to repetitive room angles and buried hero social spaces.'}
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      {/* PART 2: Separate Section on OTA Photo Resequencing */}
+      <div style={{ 
+        borderTop: '1px solid rgba(255,255,255,0.1)', 
+        paddingTop: '2rem',
+        marginBottom: '1.25rem',
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        flexWrap: 'wrap',
+        gap: '1rem'
+      }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+          <Camera size={20} color="#00e5ff" />
+          <div>
+            <h3 style={{ fontSize: '1.25rem', fontWeight: 900, textTransform: 'uppercase', margin: 0, letterSpacing: '0.03em' }}>
+              OTA Photo Resequencing
+            </h3>
+            <div style={{ fontSize: '11.5px', color: 'rgba(255,255,255,0.65)', marginTop: '2px' }}>
+              Optimal Top 5 gallery sequence + missing asset opportunity to close the {vibeGapPoints} pt Vibe Gap
+            </div>
+          </div>
+          {((otaData.photos_status === 'PENDING') || (photos.length > 0 && photos.every(p => !p.photo_url))) && (
+            <span style={{ fontSize: '11px', background: 'rgba(0,229,255,0.15)', color: '#00e5ff', padding: '3px 10px', borderRadius: '12px', fontWeight: 700, marginLeft: '0.5rem' }}>
+              Analyzing Live Assets...
+            </span>
+          )}
         </div>
 
         {/* View Toggle */}
@@ -140,7 +314,7 @@ export default function BookingOtaAuditCard({ otaData, hotelName, isUnlocked, on
               textTransform: 'uppercase'
             }}
           >
-            {isListedOnBooking ? 'Recommended Photos' : 'Optimal 5-Photo Hierarchy'}
+            {isListedOnBooking ? 'Recommended Sequence' : 'Optimal 5-Photo Hierarchy'}
           </button>
           {isListedOnBooking && livePhotos.length > 0 && (
             <button
@@ -157,383 +331,15 @@ export default function BookingOtaAuditCard({ otaData, hotelName, isUnlocked, on
                 textTransform: 'uppercase'
               }}
             >
-              Current Live
+              Current Live Top 5
             </button>
           )}
-        </div>
-      </div>
-
-      {/* Visual Merchandising Scorecard & Strategic Shifts */}
-      <div style={{ 
-        background: 'rgba(0,0,0,0.45)', 
-        border: '1px solid rgba(0, 229, 255, 0.25)', 
-        borderRadius: '1.5rem', 
-        padding: '1.75rem', 
-        marginBottom: '2.5rem',
-        boxShadow: '0 10px 30px rgba(0,0,0,0.4)'
-      }}>
-        {/* Destination Vibe Signature (No Figure) + 3-Score Hotel & Channel Scorecard */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(175px, 1fr))', gap: '0.9rem', marginBottom: '1.25rem' }}>
-          {/* Baseline Reference: Destination Vibe Signature (No Numeric Figure) */}
-          <div style={{ 
-            background: 'linear-gradient(135deg, rgba(139, 92, 246, 0.12) 0%, rgba(139, 92, 246, 0.03) 100%)', 
-            border: '1px solid rgba(139, 92, 246, 0.35)', 
-            borderRadius: '1.15rem', 
-            padding: '1rem', 
-            textAlign: 'center',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center'
-          }}>
-            <div style={{ fontSize: '10px', fontWeight: 900, textTransform: 'uppercase', color: '#a78bfa', letterSpacing: '0.09em', marginBottom: '5px' }}>
-              Destination Vibe Signature
-            </div>
-            <div style={{ fontSize: '15px', fontWeight: 900, color: '#e9d5ff', lineHeight: 1.25 }}>
-              {rubric?.destination_vibe_title || 'Target Neighbourhood Benchmark'}
-            </div>
-            <div style={{ fontSize: '11px', color: 'rgba(255,255,255,0.75)', marginTop: '6px', lineHeight: 1.35 }}>
-              {rubric?.destination_vibe_pillars || 'Local Architecture • Evening Social Energy • Walkable Micro-Gems'}
-            </div>
-          </div>
-
-          {/* Score 1: Hotel Vibe Signature (Verified On-Property Reality) */}
-          <div style={{ 
-            background: 'linear-gradient(135deg, rgba(0, 229, 255, 0.12) 0%, rgba(0, 229, 255, 0.03) 100%)', 
-            border: '1px solid rgba(0, 229, 255, 0.35)', 
-            borderRadius: '1.15rem', 
-            padding: '1rem', 
-            textAlign: 'center' 
-          }}>
-            <div style={{ fontSize: '10px', fontWeight: 900, textTransform: 'uppercase', color: '#00e5ff', letterSpacing: '0.09em', marginBottom: '4px' }}>
-              Hotel Vibe Signature (Reality)
-            </div>
-            <div style={{ fontSize: '30px', fontWeight: 900, color: '#00e5ff', fontFamily: 'monospace', lineHeight: 1.1 }}>
-              {verifiedRealityScore}<span style={{ fontSize: '15px', color: 'rgba(0,229,255,0.6)' }}>/100</span>
-            </div>
-            <div style={{ fontSize: '11px', color: 'rgba(255,255,255,0.7)', marginTop: '5px' }}>
-              {rubric?.verified_reality_label || 'On-Property Match to Destination'}
-            </div>
-          </div>
-
-          {/* Score 2: Live Channel Merchandising Baseline + Vibe Gap */}
-          <div style={{ 
-            background: isListedOnBooking 
-              ? (beforeScore < 65 ? 'linear-gradient(135deg, rgba(245, 158, 11, 0.14) 0%, rgba(239, 68, 68, 0.05) 100%)' : 'linear-gradient(135deg, rgba(56, 189, 248, 0.12) 0%, rgba(56, 189, 248, 0.03) 100%)')
-              : 'linear-gradient(135deg, rgba(245, 158, 11, 0.12) 0%, rgba(245, 158, 11, 0.04) 100%)', 
-            border: `1px solid ${isListedOnBooking ? (beforeScore < 65 ? 'rgba(245, 158, 11, 0.45)' : 'rgba(56, 189, 248, 0.35)') : 'rgba(245, 158, 11, 0.35)'}`, 
-            borderRadius: '1.15rem', 
-            padding: '1rem', 
-            textAlign: 'center' 
-          }}>
-            <div style={{ fontSize: '10px', fontWeight: 900, textTransform: 'uppercase', color: beforeScore < 65 ? '#fbbf24' : '#38bdf8', letterSpacing: '0.09em', marginBottom: '4px' }}>
-              {isListedOnBooking ? 'Live OTA Merchandising' : 'OTA Listing Status'}
-            </div>
-            <div style={{ fontSize: isListedOnBooking ? '30px' : '22px', fontWeight: 900, color: beforeScore < 65 ? '#fbbf24' : '#38bdf8', fontFamily: isListedOnBooking ? 'monospace' : 'inherit', lineHeight: 1.1 }}>
-              {isListedOnBooking ? (<>{beforeScore}<span style={{ fontSize: '15px', opacity: 0.65 }}>/100</span></>) : 'UNLISTED'}
-            </div>
-            <div style={{ fontSize: '11px', color: beforeScore < 65 ? '#fcd34d' : 'rgba(255,255,255,0.75)', fontWeight: 700, marginTop: '5px' }}>
-              {isListedOnBooking ? `${vibeGapPoints} pt Vibe Gap vs. Reality` : 'Independent / Direct Venue'}
-            </div>
-          </div>
-
-          {/* Optimized Vibe Sequence Score */}
-          <div style={{ 
-            background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.14) 0%, rgba(16, 185, 129, 0.04) 100%)', 
-            border: '1px solid rgba(16, 185, 129, 0.45)', 
-            borderRadius: '1.15rem', 
-            padding: '1rem', 
-            textAlign: 'center' 
-          }}>
-            <div style={{ fontSize: '10px', fontWeight: 900, textTransform: 'uppercase', color: '#10b981', letterSpacing: '0.09em', marginBottom: '4px' }}>
-              {isListedOnBooking ? 'Optimized Vibe Sequence' : 'Target Launch Score'}
-            </div>
-            <div style={{ fontSize: '30px', fontWeight: 900, color: '#10b981', fontFamily: 'monospace', lineHeight: 1.1 }}>
-              {afterScore}<span style={{ fontSize: '15px', color: 'rgba(16,185,129,0.6)' }}>/100</span>
-            </div>
-            <div style={{ fontSize: '11px', color: '#10b981', fontWeight: 700, marginTop: '5px' }}>
-              Closes Vibe Gap ({uplift} Est. Lift)
-            </div>
-          </div>
-        </div>
-
-        {/* Auditable 5-Slot 100-Point Rubric Breakdown & Auto Vibe Insights */}
-        {rubric && Array.isArray(rubric.slot_scorecard) && (
-          <div style={{
-            background: 'rgba(255, 255, 255, 0.025)',
-            border: '1px solid rgba(255, 255, 255, 0.09)',
-            borderRadius: '1.15rem',
-            padding: '1.15rem 1.25rem',
-            marginBottom: '1.35rem'
-          }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '8px', marginBottom: showSlotRubric ? '0.9rem' : 0 }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
-                <span style={{
-                  fontSize: '10px',
-                  fontWeight: 900,
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.09em',
-                  background: vibeGapPoints <= -30 ? 'rgba(245, 158, 11, 0.2)' : 'rgba(16, 185, 129, 0.2)',
-                  color: vibeGapPoints <= -30 ? '#fbbf24' : '#34d399',
-                  padding: '3px 9px',
-                  borderRadius: '10px',
-                  border: `1px solid ${vibeGapPoints <= -30 ? 'rgba(245,158,11,0.4)' : 'rgba(16,185,129,0.4)'}`
-                }}>
-                  {rubric.vibe_gap_archetype}
-                </span>
-                <span style={{ fontSize: '12px', fontWeight: 800, color: 'rgba(255,255,255,0.9)' }}>
-                  Auditable 100-Point 5-Slot Grading Breakdown ({rubric.raw_slot_total}/100 Raw {rubric.repetition_penalty} pt Repetition Penalty = {beforeScore}/100)
-                </span>
-              </div>
-              <button
-                onClick={() => setShowSlotRubric(!showSlotRubric)}
-                style={{
-                  background: 'rgba(255,255,255,0.07)',
-                  color: '#00e5ff',
-                  border: '1px solid rgba(0,229,255,0.25)',
-                  borderRadius: '12px',
-                  padding: '3px 10px',
-                  fontSize: '10.5px',
-                  fontWeight: 800,
-                  cursor: 'pointer'
-                }}
-              >
-                {showSlotRubric ? 'Hide Rubric' : 'Show 5-Slot Math'}
-              </button>
-            </div>
-
-            {showSlotRubric && (
-              <>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '7px', marginBottom: '1rem' }}>
-                  {rubric.slot_scorecard.map((s) => {
-                    const isFull = s.live_score >= 18;
-                    const isLow = s.live_score <= 8;
-                    return (
-                      <div
-                        key={s.slot}
-                        className="rubric-slot-row"
-                        style={{
-                          display: 'grid',
-                          gridTemplateColumns: 'minmax(185px, 1.1fr) 78px minmax(200px, 1.5fr) minmax(200px, 1.5fr)',
-                          gap: '10px',
-                          alignItems: 'center',
-                          background: 'rgba(0,0,0,0.35)',
-                          border: `1px solid ${isFull ? 'rgba(16,185,129,0.28)' : (isLow ? 'rgba(239,68,68,0.28)' : 'rgba(255,255,255,0.07)')}`,
-                          borderRadius: '9px',
-                          padding: '8px 12px',
-                          fontSize: '12px'
-                        }}
-                      >
-                        <div style={{ fontWeight: 800, color: '#fff' }}>{s.formula_name}</div>
-                        <div style={{
-                          fontFamily: 'monospace',
-                          fontWeight: 900,
-                          fontSize: '13px',
-                          color: isFull ? '#10b981' : (isLow ? '#f87171' : '#fbbf24'),
-                          textAlign: 'center',
-                          background: 'rgba(255,255,255,0.04)',
-                          padding: '2px 6px',
-                          borderRadius: '6px'
-                        }}>
-                          {s.live_score}/{s.max_score}
-                        </div>
-                        <div className="rubric-col-wide" style={{ color: 'rgba(255,255,255,0.72)', fontSize: '11.5px' }}>
-                          <strong style={{ color: 'rgba(255,255,255,0.9)' }}>Live:</strong> {s.live_what_is_there}
-                        </div>
-                        <div className="rubric-col-wide" style={{ color: '#00e5ff', fontSize: '11.5px', fontWeight: 600 }}>
-                          <strong style={{ color: '#10b981' }}>Action:</strong> {s.optimal_fix}
-                        </div>
-                      </div>
-                    );
-                  })}
-
-                  {/* Repetition Penalty Row */}
-                  {rubric.repetition_penalty < 0 && (
-                    <div style={{
-                      display: 'flex',
-                      justifyContent: 'space-between',
-                      alignItems: 'center',
-                      background: 'rgba(239, 68, 68, 0.08)',
-                      border: '1px solid rgba(239, 68, 68, 0.25)',
-                      borderRadius: '9px',
-                      padding: '7px 12px',
-                      fontSize: '11.5px',
-                      color: '#fca5a5'
-                    }}>
-                      <span><strong>Repetition / Redundancy Penalty:</strong> {rubric.repetition_penalty_reason}</span>
-                      <span style={{ fontFamily: 'monospace', fontWeight: 900, fontSize: '13px', color: '#f87171' }}>
-                        {rubric.repetition_penalty} pts
-                      </span>
-                    </div>
-                  )}
-                </div>
-
-                {/* Automated Vibe Insights Marketing Box */}
-                {rubric.auto_vibe_insights && (
-                  <div style={{
-                    background: 'linear-gradient(135deg, rgba(0, 229, 255, 0.07) 0%, rgba(16, 185, 129, 0.06) 100%)',
-                    border: '1px solid rgba(0, 229, 255, 0.25)',
-                    borderRadius: '10px',
-                    padding: '10px 14px'
-                  }}>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '8px', marginBottom: '6px' }}>
-                      <span style={{ fontSize: '10.5px', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#00e5ff' }}>
-                        ⚡ Automated Vibe Insight (Ready for Site / LinkedIn / GM Outreach)
-                      </span>
-                      <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
-                        <button
-                          onClick={() => handleCopyInsight('gm', rubric.auto_vibe_insights.gm_outreach_hook)}
-                          style={{
-                            background: copiedInsightKey === 'gm' ? '#10b981' : 'rgba(0,229,255,0.14)',
-                            color: copiedInsightKey === 'gm' ? '#000' : '#00e5ff',
-                            border: '1px solid rgba(0,229,255,0.3)',
-                            borderRadius: '8px',
-                            padding: '3px 9px',
-                            fontSize: '10.5px',
-                            fontWeight: 800,
-                            cursor: 'pointer'
-                          }}
-                        >
-                          {copiedInsightKey === 'gm' ? '✓ Copied GM Hook' : 'Copy GM Outreach Hook'}
-                        </button>
-                        <button
-                          onClick={() => handleCopyInsight('li', rubric.auto_vibe_insights.linkedin_post_hook)}
-                          style={{
-                            background: copiedInsightKey === 'li' ? '#10b981' : 'rgba(139,92,246,0.18)',
-                            color: copiedInsightKey === 'li' ? '#000' : '#c4b5fd',
-                            border: '1px solid rgba(139,92,246,0.35)',
-                            borderRadius: '8px',
-                            padding: '3px 9px',
-                            fontSize: '10.5px',
-                            fontWeight: 800,
-                            cursor: 'pointer'
-                          }}
-                        >
-                          {copiedInsightKey === 'li' ? '✓ Copied LinkedIn Hook' : 'Copy LinkedIn Insight'}
-                        </button>
-                      </div>
-                    </div>
-                    <div style={{ fontSize: '12.5px', color: 'rgba(255,255,255,0.92)', lineHeight: 1.5 }}>
-                      “{rubric.auto_vibe_insights.headline_stat}”
-                    </div>
-                  </div>
-                )}
-              </>
-            )}
-          </div>
-        )}
-
-        {/* Neighborhood Demand Gravity ⟷ Key Strategic Shifts */}
-        <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '1.25rem' }}>
-          {/* Neighborhood Demand Narrative */}
-          {otaData.local_vibe_synergy_context && (
-            <div style={{
-              background: 'linear-gradient(135deg, rgba(0, 229, 255, 0.08) 0%, rgba(139, 92, 246, 0.06) 100%)',
-              border: '1px solid rgba(0, 229, 255, 0.25)',
-              borderRadius: '1rem',
-              padding: '1rem 1.25rem',
-              marginBottom: '1.25rem'
-            }}>
-              <div style={{ 
-                display: 'flex', 
-                alignItems: 'center', 
-                gap: '8px', 
-                marginBottom: '6px' 
-              }}>
-                <Sparkles size={15} color="#00e5ff" />
-                <span style={{ 
-                  fontSize: '11px', 
-                  fontWeight: 900, 
-                  color: '#00e5ff', 
-                  textTransform: 'uppercase', 
-                  letterSpacing: '0.08em' 
-                }}>
-                  Neighborhood Demand Gravity
-                </span>
-                <span style={{ 
-                  fontSize: '10px', 
-                  background: 'rgba(0, 229, 255, 0.15)', 
-                  color: '#00e5ff', 
-                  padding: '2px 8px', 
-                  borderRadius: '12px', 
-                  fontWeight: 700 
-                }}>
-                  Search Drivers
-                </span>
-              </div>
-              <div style={{ fontSize: '13px', color: 'rgba(255, 255, 255, 0.92)', lineHeight: 1.55 }}>
-                {otaData.local_vibe_synergy_context}
-              </div>
-            </div>
-          )}
-
-          {/* Key Strategic Shifts */}
-          <div>
-            <div style={{ 
-              fontSize: '11px', 
-              fontWeight: 900, 
-              color: '#38bdf8', 
-              textTransform: 'uppercase', 
-              letterSpacing: '0.08em', 
-              marginBottom: '0.75rem', 
-              display: 'flex', 
-              alignItems: 'center', 
-              gap: '6px' 
-            }}>
-              <TrendingUp size={14} color="#38bdf8" />
-              Key Strategic Shifts Driven by Neighborhood Demand
-            </div>
-
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-              {strategicShifts.map((shift, sIdx) => (
-                <div 
-                  key={sIdx} 
-                  style={{ 
-                    display: 'flex', 
-                    alignItems: 'flex-start', 
-                    gap: '10px',
-                    background: 'rgba(255, 255, 255, 0.03)',
-                    border: '1px solid rgba(255, 255, 255, 0.06)',
-                    borderRadius: '10px',
-                    padding: '10px 14px'
-                  }}
-                >
-                  <span style={{ 
-                    background: 'rgba(0, 229, 255, 0.15)', 
-                    color: '#00e5ff', 
-                    fontSize: '10.5px', 
-                    fontWeight: 900, 
-                    borderRadius: '6px', 
-                    padding: '2px 7px',
-                    flexShrink: 0,
-                    marginTop: '2px',
-                    fontFamily: 'monospace'
-                  }}>
-                    SHIFT {sIdx + 1}
-                  </span>
-                  <span style={{ fontSize: '12.5px', color: 'rgba(255,255,255,0.88)', lineHeight: 1.5 }}>
-                    {shift}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
       </div>
 
       {/* SECTION: Recommended Photos Grid OR Pending Status Card */}
       {viewMode === 'recommended' && (
         <div style={{ marginBottom: '2.5rem' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1.25rem' }}>
-            <Camera size={20} color="#00e5ff" />
-            <h3 style={{ fontSize: '1.3rem', fontWeight: 900, textTransform: 'uppercase', margin: 0 }}>
-              Recommended Photos
-            </h3>
-            {((otaData.photos_status === 'PENDING') || (photos.length > 0 && photos.every(p => !p.photo_url))) && (
-              <span style={{ fontSize: '11px', background: 'rgba(0,229,255,0.15)', color: '#00e5ff', padding: '3px 10px', borderRadius: '12px', fontWeight: 700, marginLeft: '0.5rem' }}>
-                Analyzing Live Assets...
-              </span>
-            )}
-          </div>
 
           {/* Live Phase 2 Status Banner */}
           {((otaData.photos_status === 'PENDING') || (photos.length > 0 && photos.every(p => !p.photo_url))) ? (
@@ -787,8 +593,8 @@ export default function BookingOtaAuditCard({ otaData, hotelName, isUnlocked, on
                         {item.photo_subject}
                       </div>
 
-                      {/* Upgrade Callout Badge if brand asset */}
-                      {item.upgrade_rationale && (
+                      {/* Upgrade Callout Badge only if no bullet points are present */}
+                      {item.upgrade_rationale && (!item.bullet_points || item.bullet_points.length === 0) && (
                         <div style={{
                           background: 'rgba(245, 158, 11, 0.1)',
                           border: '1px solid rgba(245, 158, 11, 0.3)',

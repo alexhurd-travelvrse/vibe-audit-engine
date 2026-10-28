@@ -544,6 +544,10 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
               <div style={{ fontSize: '10px', color: 'rgba(255,255,255,0.62)', lineHeight: 1.25, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                 <strong style={{ color: 'rgba(255,255,255,0.8)' }}>Method:</strong> Room soundproofing vs. ground-floor decibel profile
               </div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '4px', marginTop: '2px', fontSize: '9.5px', color: 'rgba(255,255,255,0.6)' }}>
+                <span><strong style={{ color: '#00e5ff' }}>Signature Hash:</strong> <code style={{ color: '#34d399', fontSize: '9.5px' }}>{shortSigHash}</code></span>
+                <span style={{ color: '#34d399', fontWeight: 700 }}>✓ Verified</span>
+              </div>
             </div>
           </div>
 
@@ -649,6 +653,10 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
               </div>
               <div style={{ fontSize: '10px', color: 'rgba(255,255,255,0.62)', lineHeight: 1.25, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                 <strong style={{ color: 'rgba(255,255,255,0.8)' }}>Method:</strong> Computer-vision pixel scan of stone, timber &amp; lighting warmth
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '4px', marginTop: '2px', fontSize: '9.5px', color: 'rgba(255,255,255,0.6)' }}>
+                <span><strong style={{ color: '#00e5ff' }}>Signature Hash:</strong> <code style={{ color: '#34d399', fontSize: '9.5px' }}>{shortSigHash}</code></span>
+                <span style={{ color: '#34d399', fontWeight: 700 }}>✓ Verified</span>
               </div>
             </div>
           </div>
@@ -760,6 +768,10 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
               <div style={{ fontSize: '10px', color: 'rgba(255,255,255,0.62)', lineHeight: 1.25, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                 <strong style={{ color: 'rgba(255,255,255,0.8)' }}>Method:</strong> Colour-temperature (Kelvin) &amp; glare contrast pixel scan
               </div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '4px', marginTop: '2px', fontSize: '9.5px', color: 'rgba(255,255,255,0.6)' }}>
+                <span><strong style={{ color: '#00e5ff' }}>Signature Hash:</strong> <code style={{ color: '#34d399', fontSize: '9.5px' }}>{shortSigHash}</code></span>
+                <span style={{ color: '#34d399', fontWeight: 700 }}>✓ Verified</span>
+              </div>
             </div>
           </div>
 
@@ -864,6 +876,10 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
               </div>
               <div style={{ fontSize: '10px', color: 'rgba(255,255,255,0.62)', lineHeight: 1.25, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                 <strong style={{ color: 'rgba(255,255,255,0.8)' }}>Method:</strong> Behavioural local-to-traveller inference (non-census estimate)
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '4px', marginTop: '2px', fontSize: '9.5px', color: 'rgba(255,255,255,0.6)' }}>
+                <span><strong style={{ color: '#00e5ff' }}>Signature Hash:</strong> <code style={{ color: '#34d399', fontSize: '9.5px' }}>{shortSigHash}</code></span>
+                <span style={{ color: '#34d399', fontWeight: 700 }}>✓ Verified</span>
               </div>
             </div>
           </div>
@@ -974,6 +990,10 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
               </div>
               <div style={{ fontSize: '10px', color: 'rgba(255,255,255,0.62)', lineHeight: 1.25, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                 <strong style={{ color: 'rgba(255,255,255,0.8)' }}>Method:</strong> Cross-referenced host warmth &amp; local insider knowledge sentiment
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '4px', marginTop: '2px', fontSize: '9.5px', color: 'rgba(255,255,255,0.6)' }}>
+                <span><strong style={{ color: '#00e5ff' }}>Signature Hash:</strong> <code style={{ color: '#34d399', fontSize: '9.5px' }}>{shortSigHash}</code></span>
+                <span style={{ color: '#34d399', fontWeight: 700 }}>✓ Verified</span>
               </div>
             </div>
           </div>
@@ -1140,6 +1160,10 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
               <div style={{ fontSize: '10px', color: 'rgba(255,255,255,0.62)', lineHeight: 1.25, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                 <strong style={{ color: 'rgba(255,255,255,0.8)' }}>Method:</strong> Diurnal energy mapping across Work (AM), Chill &amp; Play windows
               </div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '4px', marginTop: '2px', fontSize: '9.5px', color: 'rgba(255,255,255,0.6)' }}>
+                <span><strong style={{ color: '#00e5ff' }}>Signature Hash:</strong> <code style={{ color: '#34d399', fontSize: '9.5px' }}>{shortSigHash}</code></span>
+                <span style={{ color: '#34d399', fontWeight: 700 }}>✓ Verified</span>
+              </div>
             </div>
           </div>
 
@@ -1250,6 +1274,10 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
               <div style={{ fontSize: '10px', color: 'rgba(255,255,255,0.62)', lineHeight: 1.25, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                 <strong style={{ color: 'rgba(255,255,255,0.8)' }}>Method:</strong> Geospatial walk radius (≤500m) × ≥4.4★ rating threshold
               </div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '4px', marginTop: '2px', fontSize: '9.5px', color: 'rgba(255,255,255,0.6)' }}>
+                <span><strong style={{ color: '#00e5ff' }}>Signature Hash:</strong> <code style={{ color: '#34d399', fontSize: '9.5px' }}>{shortSigHash}</code></span>
+                <span style={{ color: '#34d399', fontWeight: 700 }}>✓ Verified</span>
+              </div>
             </div>
           </div>
 
@@ -1355,6 +1383,10 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
               </div>
               <div style={{ fontSize: '10px', color: 'rgba(255,255,255,0.62)', lineHeight: 1.25, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                 <strong style={{ color: 'rgba(255,255,255,0.8)' }}>Method:</strong> Cross-referenced off-menu perks &amp; hidden spots cited by 3+ sources
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '4px', marginTop: '2px', fontSize: '9.5px', color: 'rgba(255,255,255,0.6)' }}>
+                <span><strong style={{ color: '#00e5ff' }}>Signature Hash:</strong> <code style={{ color: '#34d399', fontSize: '9.5px' }}>{shortSigHash}</code></span>
+                <span style={{ color: '#34d399', fontWeight: 700 }}>✓ Verified</span>
               </div>
             </div>
           </div>

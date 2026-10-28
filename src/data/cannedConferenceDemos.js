@@ -63,6 +63,7 @@ export const SEA_CONTAINERS_CANNED_DEMO = {
   },
   ota_conversion_audit: {
     ...(rawSeaContainers.ota_conversion_audit || {}),
+    local_vibe_synergy_context: 'South Bank is London’s riverfront cultural hub, where high-intent traveller searches center on Thames-view rooftop bars, world-class craft cocktail bars, and walkable access to Tate Modern and Borough Market.',
     before_merchandising_score: 48,
     after_merchandising_score: 94,
     projected_conversion_uplift: '+21.0%',
@@ -76,7 +77,7 @@ export const SEA_CONTAINERS_CANNED_DEMO = {
       optimized_merchandising_score: 94,
       vibe_gap_points: -44,
       vibe_gap_archetype: 'HIGH VIBE GAP — UNDERSOLD ICON',
-      vibe_gap_summary: 'Sea Containers delivers a 92/100 on-property match to the South Bank Vibe Signature (12th Knot rooftop, award-winning Lyaness bar, Thames views), but its live Booking.com Top 5 scores just 48/100 due to 3 repetitive blue-couch living room shots and 0 guest bathroom photos across all 55 images.',
+      vibe_gap_summary: 'Booking.com Top 5 scores just 48/100 (-44 pt gap vs. reality): 3 repetitive blue-couch living room photos occupy Slots #2, #3 & #5 (-10 pt penalty), 0 guest bathrooms appear in all 55 photos, and 12th Knot & Lyaness are buried at #24–#26.',
       raw_slot_total: 58,
       repetition_penalty: -10,
       repetition_penalty_reason: '3 nearly identical blue-couch suite living room shots occupy Live Slots #2, #3, and #5',
