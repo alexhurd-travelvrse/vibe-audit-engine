@@ -1,0 +1,762 @@
+{
+  "key": "skol apartments marbella:::marbella:::marbella beachfront:::",
+  "timestamp": 1793198986593,
+  "data": {
+    "venue_id": "skol_apartments_marbella",
+    "venue_name": "Skol Apartments Marbella",
+    "location": "Marbella Beachfront, Marbella",
+    "vibe_signature": {
+      "energy_score": 70,
+      "social_pacing": "Relaxed Beachfront Buzz",
+      "headline": "Vibrant Beachfront Apartments with Lively Pools & Easy Access to Marbella's Coastal Charm",
+      "acoustic_dna": {
+        "soundscape_genre": "Mediterranean Chill & Lively Poolside Pop",
+        "anchor_artists": [
+          "Gipsy Kings",
+          "Chico & The Gypsies",
+          "Julio Iglesias"
+        ],
+        "spotify_query": "Mediterranean Chillout Marbella Poolside",
+        "sound_texture": "Gentle waves, distant chatter, and upbeat lounge music",
+        "conversation_clarity_score": 75,
+        "conversation_verdict": "Lively Holiday Banter",
+        "decibel_level": "68 dB (Vibrant & Social)",
+        "sleep_sanctuary_verdict": "Quiet Rooms with Ocean Breezes & Soundproofed for Rest"
+      },
+      "crowd_archetype": {
+        "primary": "Families & Couples Seeking Sun & Sea",
+        "social_density": "Medium-High, especially around pools",
+        "dress_code": "Casual Beach Chic",
+        "energy_verdict": "Sunny Holiday Energy & Relaxed Evening Strolls",
+        "local_ratio": 30,
+        "tourist_ratio": 70,
+        "tourist_trap_verdict": "Popular with Tourists — Authentic Local Gems Nearby",
+        "trip_occasions": [
+          "Family Beach Holiday",
+          "Couples Getaway",
+          "Sun & Relaxation"
+        ]
+      },
+      "lighting_and_sensory": {
+        "atmosphere": "Bright & Airy with Coastal Views",
+        "sensory_intensity": "Moderate",
+        "lighting_temperature": "Golden Hour Sunlight & Warm Evening Glow"
+      },
+      "hyper_local_proximity": {
+        "key_anchors": [
+          "Chiringuito La Milla (4.5★ · 7 min walk)",
+          "Marbella Old Town (4.6★ · 15 min walk)",
+          "Mercado Municipal de Marbella (4.4★ · 12 min walk)"
+        ],
+        "insider_lore": "Discover the best local seafood at Chiringuito La Milla, a favorite among Marbella residents for its fresh catches and relaxed beachfront ambiance."
+      },
+      "qualification_test": {
+        "you_will_love_if": "You seek a vibrant beachfront apartment experience with excellent pool facilities and easy access to Marbella's lively promenade and charming Old Town.",
+        "skip_if": "You prefer a secluded, ultra-quiet retreat far from tourist activity or a highly curated, minimalist design hotel."
+      },
+      "ai_search_geo": {
+        "traveler_prompts": [
+          "Best family-friendly apartments in Marbella with a pool near the beach",
+          "Where to stay in Marbella for couples seeking sun, sea, and local dining",
+          "Marbella beachfront accommodation with good access to Old Town and authentic restaurants"
+        ],
+        "verified_entity_summary": "Skol Apartments Marbella offers vibrant beachfront apartments with lively pool areas, perfect for families and couples. Guests enjoy comfortable, quiet rooms and easy walking access to Marbella's authentic local chiringuitos and the historic Old Town."
+      },
+      "authenticity_and_materials": {
+        "authenticity_score": 65,
+        "material_palette": "Light woods, cool tiles, white linens, and vibrant blue accents",
+        "material_verdict": "Functional & Bright — Classic Mediterranean Holiday Style"
+      },
+      "host_vibe": {
+        "host_archetype": "Friendly & Efficient Holiday Hosts",
+        "host_style_score": 60,
+        "service_pacing": "Attentive & Responsive",
+        "signature_team_roles": [
+          "Guest Relations Manager",
+          "Poolside Attendant"
+        ],
+        "staff_icebreaker_prompt": "Ask the reception team for their favorite hidden beach cove along the coast.",
+        "team_aesthetic": "Smart Casual Uniforms & Welcoming Smiles",
+        "warmth_verdict": "Helpful & Approachable — Ready to Assist"
+      },
+      "insider_secrets": {
+        "insider_badge": "Local Beach Expert",
+        "off_menu_perk": "Ask the pool bar for a 'Marbella Sunset' cocktail, a local favorite not on the main menu.",
+        "secret_lore": "The best time to visit the main pool for a quieter swim is early morning before 10 AM, or late afternoon after 5 PM when the main crowds disperse.",
+        "secret_title": "The Quiet Pool Hour"
+      },
+      "temporal_dynamics": {
+        "best_time_to_visit": "10:00 AM for a refreshing morning swim; 6:00 PM for relaxed sunset drinks by the beach.",
+        "content_readiness": {
+          "aesthetic_subculture": "Mediterranean Holiday Lifestyle",
+          "flattery_note": "Captures the essence of a classic Marbella beach holiday.",
+          "score": 7.5,
+          "top_creator_spot": "Poolside loungers with ocean backdrop",
+          "verdict": "Highly Instagrammable for holiday content"
+        },
+        "diurnal_rhythm": {
+          "chilling": {
+            "focus": "Sunbathing & Relaxation",
+            "score": 8,
+            "window": "11:00 AM - 4:00 PM"
+          },
+          "playing": {
+            "focus": "Swimming & Beach Activities",
+            "score": 8.5,
+            "window": "10:00 AM - 6:00 PM"
+          },
+          "working": {
+            "focus": "Light Remote Work from Balcony",
+            "score": 6,
+            "window": "9:00 AM - 11:00 AM"
+          }
+        },
+        "peak_atmospheric_window": "Mid-day Poolside & Sunset Beachfront"
+      }
+    },
+    "interactive_quiz_challenge": {
+      "target_scene_id": 1,
+      "scene_name": "Marbella Beachfront",
+      "mission_title": "Coastal Charm Explorer",
+      "question": "Which local spot, known for its fresh seafood and relaxed ambiance, is a favorite among Marbella residents and within a short walk from Skol Apartments?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Chiringuito La Milla"
+        },
+        {
+          "id": "B",
+          "text": "Puerto Banús Marina"
+        },
+        {
+          "id": "C",
+          "text": "Plaza de los Naranjos"
+        },
+        {
+          "id": "D",
+          "text": "Nikki Beach Marbella"
+        }
+      ],
+      "correct_option_id": "A",
+      "success_lore_reveal": "Correct! Chiringuito La Milla is a true local gem, offering an authentic taste of Marbella's culinary scene right on the beachfront. Enjoy fresh seafood with your toes in the sand!",
+      "reward_badge": "Marbella Local Foodie",
+      "challenge_prompt": "Discover the authentic flavors of Marbella!"
+    },
+    "ota_conversion_audit": {
+      "channel": "Booking.com",
+      "before_merchandising_score": 66,
+      "after_merchandising_score": 95,
+      "projected_conversion_uplift": "+21.0%",
+      "current_drop_off_flaw": "Lack of clear beachfront identity and inconsistent room presentation, leading to commodity perception.",
+      "key_strategic_shifts": [
+        "Elevate the vibrant main pool and beachfront access to Slot #1 to immediately capture Marbella's #1 'beach holiday' search demand.",
+        "Prioritize a bright, bookable bedroom with a clear view in Slot #2 to reassure guests of the quality of private spaces.",
+        "Feature the A large white building in front of a mountain at NH Collection Marbella in Marbella in Slot #5 to showcase the property's distinctive estate grounds and lifestyle amenities.",
+        "Re-sequence social and dining areas to highlight the relaxed, family-friendly atmosphere and diverse offerings."
+      ],
+      "optimal_5_photo_sequence": [
+        {
+          "slot": 1,
+          "category": "OUTDOOR_SOCIAL_POOL",
+          "photo_subject": "Resort Swimming Pool & Lifestyle Cabana Deck",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/669538335.jpg?k=75e68e1bc22dba865549ce83f26c50e353e4e38b2d2dbc432761c43779ebde24&o=",
+          "why_it_converts": "Showcasing the hotel's signature outdoor pool and day club atmosphere captures high-intent social travel demand and accelerates premium weekend leisure conversions.",
+          "upgrade_rationale": "Showcasing the hotel's signature outdoor pool and day club atmosphere captures high-intent social travel demand and accelerates premium weekend leisure conversions.",
+          "bullet_points": [
+            "Visual Upgrade: This photo immediately showcases the property's prime beachfront location and vibrant pool area, aligning with Marbella's core appeal.",
+            "Local Synergy: Directly addresses traveler search intent for 'Marbella beach hotels with pools' and 'family-friendly beachfront stays'.",
+            "Conversion Trigger: Instantly communicates a desirable holiday experience, reducing location anxiety and highlighting key amenities."
+          ],
+          "psychological_conversion_trigger": "This image immediately fulfills the desire for a sunny, beachfront holiday with excellent pool facilities, a primary driver for Marbella bookings.",
+          "recommended_trigger": "This image immediately fulfills the desire for a sunny, beachfront holiday with excellent pool facilities, a primary driver for Marbella bookings.",
+          "current_slot": 1,
+          "is_retained": true,
+          "is_moved": false,
+          "is_swapped_in": false,
+          "action": "ELEVATE_POOL",
+          "action_label": "⚡ HERO LIFESTYLE SANCTUARY: RETAIN POOL IN SLOT #1",
+          "source_display_label": "Was: Slot #1 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 1,
+            "title": "a hotel with a swimming pool in front of a building at NH Collection Marbella in Marbella",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/669538335.jpg?k=75e68e1bc22dba865549ce83f26c50e353e4e38b2d2dbc432761c43779ebde24&o=",
+            "photoId": "669538335",
+            "sourceUrl": "https://www.booking.com/hotel/es/nhmarbella.html?lang=en-us&chal_t=1793198943240&force_referer="
+          }
+        },
+        {
+          "slot": 2,
+          "category": "SIGNATURE_SUITE_BEDROOM",
+          "photo_subject": "Hotel room with a bed and a view of the beach",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/669484963.jpg?k=147cb8fd8c11fa86b99eddf82f7526e782343bc3df0c6e4862918a6dd7e29577&o=",
+          "why_it_converts": "Showcasing high-finish private sleeping accommodations assures travelers of restful luxury and elevated comfort.",
+          "upgrade_rationale": "Showcasing high-finish private sleeping accommodations assures travelers of restful luxury and elevated comfort.",
+          "bullet_points": [
+            "Strategic Placement: Immediately follows the hero shot, showcasing a comfortable, bright bedroom with a desirable view, validating the quality of private spaces.",
+            "Local Synergy: Highlights the 'beach view' aspect, a highly sought-after feature for Marbella travelers, enhancing the overall holiday appeal.",
+            "Conversion Trigger: Reassures guests about the quality and comfort of their private accommodation, directly linking to the beachfront experience."
+          ],
+          "psychological_conversion_trigger": "Provides immediate visual proof that the private rooms match the aspirational beachfront lifestyle, addressing comfort and view expectations.",
+          "recommended_trigger": "Provides immediate visual proof that the private rooms match the aspirational beachfront lifestyle, addressing comfort and view expectations.",
+          "current_slot": 2,
+          "is_retained": true,
+          "is_moved": false,
+          "is_swapped_in": false,
+          "action": "RETAIN",
+          "action_label": "RETAIN IN SLOT #2",
+          "source_display_label": "Was: Slot #2 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 2,
+            "title": "a hotel room with a bed and a view of the beach at NH Collection Marbella in Marbella",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/669484963.jpg?k=147cb8fd8c11fa86b99eddf82f7526e782343bc3df0c6e4862918a6dd7e29577&o=",
+            "photoId": "669484963",
+            "sourceUrl": "https://www.booking.com/hotel/es/nhmarbella.html?lang=en-us&chal_t=1793198943240&force_referer=",
+            "visual_description": "Hotel bedroom with a bed, small table, and a balcony view."
+          }
+        },
+        {
+          "slot": 3,
+          "category": "SECONDARY_ROOM_BATHROOM",
+          "photo_subject": "Bathroom with a sink and a shower",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/669484968.jpg?k=a20fccec088b86f65822397b332c2f01d35482ddfdd5987ac90f0f8333f22f3b&o=",
+          "why_it_converts": "Showcasing immaculate private bathroom finishes and walk-in rain showers resolves hygiene anxiety and completes the luxury perception.",
+          "upgrade_rationale": "Showcasing immaculate private bathroom finishes and walk-in rain showers resolves hygiene anxiety and completes the luxury perception.",
+          "bullet_points": [
+            "Strategic Placement: Addresses essential guest concerns about hygiene and modern facilities by placing a clear bathroom shot directly after the bedroom.",
+            "Local Synergy: While not directly 'local', a clean, functional bathroom is a universal expectation that supports a comfortable holiday experience in any destination.",
+            "Conversion Trigger: Eliminates potential booking hesitation related to bathroom quality, a common pain point for travelers."
+          ],
+          "psychological_conversion_trigger": "Satisfies the fundamental need for a clean, well-maintained private bathroom, a critical factor for booking confidence.",
+          "recommended_trigger": "Satisfies the fundamental need for a clean, well-maintained private bathroom, a critical factor for booking confidence.",
+          "current_slot": 5,
+          "is_retained": false,
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "PROMOTE",
+          "action_label": "PROMOTE FROM SLOT #5",
+          "source_display_label": "Was: Slot #5 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 5,
+            "title": "a bathroom with a sink and a shower at NH Collection Marbella in Marbella",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/669484968.jpg?k=a20fccec088b86f65822397b332c2f01d35482ddfdd5987ac90f0f8333f22f3b&o=",
+            "photoId": "669484968",
+            "sourceUrl": "https://www.booking.com/hotel/es/nhmarbella.html?lang=en-us&chal_t=1793198943240&force_referer=",
+            "visual_description": "Bathroom with a sink, mirror, and a walk-in shower with tiled walls."
+          }
+        },
+        {
+          "slot": 4,
+          "category": "SOCIAL_FB_ROOFTOP",
+          "photo_subject": "a restaurant with tables and chairs and potted plants",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/841381699.jpg?k=37b1613556f8fe77fed93f57e14b72e89fd478ac425d6f6f24d1215e621360ae&o=",
+          "why_it_converts": "Showcasing destination culinary and evening social programming in Slot #4 captures day-to-night sensory energy and high-spend leisure travelers visiting Marbella.",
+          "upgrade_rationale": "Showcasing destination culinary and evening social programming in Slot #4 captures day-to-night sensory energy and high-spend leisure travelers visiting Marbella.",
+          "bullet_points": [
+            "Visual Upgrade: Atmospheric culinary perspective showing ambient lighting and curated seating.",
+            "Local Synergy: Anchors the property within the destination's acclaimed dining circuit.",
+            "Conversion Trigger: Stimulates social anticipation and validates on-property lifestyle experiences."
+          ],
+          "psychological_conversion_trigger": "Destination Gastronomy & Evening Social Gravitas",
+          "recommended_trigger": "Destination Gastronomy & Evening Social Gravitas",
+          "current_slot": 6,
+          "is_retained": false,
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "PROMOTE",
+          "action_label": "PROMOTE FROM SLOT #6",
+          "source_display_label": "Was: Slot #6 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 6,
+            "title": "a restaurant with tables and chairs and potted plants at NH Collection Marbella in Marbella",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/841381699.jpg?k=37b1613556f8fe77fed93f57e14b72e89fd478ac425d6f6f24d1215e621360ae&o=",
+            "photoId": "841381699",
+            "sourceUrl": "https://www.booking.com/hotel/es/nhmarbella.html?lang=en-us&chal_t=1793198943240&force_referer="
+          }
+        },
+        {
+          "slot": 5,
+          "category": "EXTERIOR_LANDMARK",
+          "photo_subject": "A large white building in front of a mountain at NH Collection Marbella in Marbella",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/671238500.jpg?k=18fdc02327eb87e6bc04bf5655ebf1490f4e536fe4ced48bb879f5db397c624e&o=&hp=1",
+          "why_it_converts": "Establishing definitive architectural prestige and iconic street presence builds instant brand credibility.",
+          "upgrade_rationale": "Establishing definitive architectural prestige and iconic street presence builds instant brand credibility.",
+          "bullet_points": [
+            "Strategic Placement: Provides a clear exterior view, grounding the property within its Marbella setting and offering a sense of arrival.",
+            "Local Synergy: Shows the hotel's architectural style and its relationship to the natural landscape (mountains), connecting it to the broader Marbella environment.",
+            "Conversion Trigger: Eliminates any lingering doubts about the property's physical appearance and location, completing the visual journey."
+          ],
+          "psychological_conversion_trigger": "Offers a final, reassuring visual of the property's exterior and its integration into the Marbella landscape, confirming its physical presence.",
+          "recommended_trigger": "Offers a final, reassuring visual of the property's exterior and its integration into the Marbella landscape, confirming its physical presence.",
+          "current_slot": 15,
+          "is_retained": false,
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "PROMOTE",
+          "action_label": "PROMOTE FROM SLOT #15",
+          "source_display_label": "Was: Slot #15 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 15,
+            "title": "a large white building in front of a mountain at NH Collection Marbella in Marbella",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/671238500.jpg?k=18fdc02327eb87e6bc04bf5655ebf1490f4e536fe4ced48bb879f5db397c624e&o=&hp=1",
+            "photoId": "671238500",
+            "sourceUrl": "https://www.booking.com/hotel/es/nhmarbella.html?lang=en-us&chal_t=1793198943240&force_referer=",
+            "visual_description": "Exterior view of a large white hotel building with palm trees and a mountain in the background."
+          }
+        }
+      ],
+      "anti_commodity_copy_rewrite": {
+        "ota_headline": "Skol Apartments Marbella: Vibrant Beachfront Stays with Lively Pools & Authentic Coastal Access",
+        "property_overview_150_words": "Experience the best of Marbella at Skol Apartments, offering bright, comfortable apartments directly on the beachfront. Dive into our lively outdoor pools, soak up the Mediterranean sun, and enjoy direct access to the vibrant promenade. Each apartment provides a welcoming retreat, many with stunning sea views, ensuring a relaxing stay. Perfectly positioned for exploring, we’re just a short stroll from authentic local chiringuitos and the charming historic Old Town, allowing you to immerse yourself in Marbella's unique coastal culture. Ideal for families and couples seeking a dynamic holiday with both relaxation and local discovery."
+      },
+      "photographic_gap_analysis": [
+        {
+          "missing_shot_title": "Golden Hour Poolside & Beachfront Terrace",
+          "category": "ATMOSPHERIC_TWILIGHT",
+          "why_needed": "Currently, there are no photos capturing the magical golden hour or early evening ambiance of the pool and beachfront areas. This misses a crucial opportunity to showcase the property's romantic and relaxed evening vibe, which is highly sought after by couples and those looking for atmospheric social moments.",
+          "recommended_framing_and_lighting": "Wide-angle shot from the pool deck looking towards the beach, capturing the warm, soft light of sunset. Include subtle lighting on the palm trees and loungers, with a few guests enjoying drinks or a quiet conversation. Focus on warm tones and inviting shadows.",
+          "projected_adr_impact": "+10% higher booking conversion for couples and longer stays, +$30 ADR premium."
+        },
+        {
+          "missing_shot_title": "Spacious Apartment Living Area with Balcony & Sea View",
+          "category": "SIGNATURE_SUITE_BEDROOM",
+          "why_needed": "While there are bedroom shots, a comprehensive photo of a spacious apartment living area, clearly showing a balcony with a sea view, is missing. This would highlight the 'apartment' aspect and the value of private outdoor space, which is a key differentiator for longer stays and families.",
+          "recommended_framing_and_lighting": "Interior shot from the living area, looking out through open balcony doors to a clear sea view. Emphasize natural light, comfortable seating, and the seamless indoor-outdoor flow. Show a table and chairs on the balcony.",
+          "projected_adr_impact": "+15% increase in apartment bookings, +$50 ADR for premium units."
+        },
+        {
+          "missing_shot_title": "Kids' Pool Area & Family Activities",
+          "category": "SOCIAL_FB_ROOFTOP",
+          "why_needed": "The property is family-friendly, but there's no dedicated photo showcasing the kids' pool or any specific family-oriented amenities. This gap prevents families from visualizing their children enjoying the facilities, a critical factor for this demographic.",
+          "recommended_framing_and_lighting": "Bright, cheerful shot of the kids' pool area, possibly with colorful floats or a small slide, and children (with parental consent) happily playing. Capture the vibrant, safe environment.",
+          "projected_adr_impact": "+8% increase in family bookings, improved guest satisfaction scores."
+        }
+      ],
+      "conversion_diagnosis": "The current Booking.com gallery suffers from a commodity presentation, failing to highlight the property's prime beachfront location, vibrant social areas, and the comfort of its apartments in a compelling sequence. The lack of atmospheric shots and clear differentiation from generic hotels leads to high drop-off rates.",
+      "local_vibe_synergy_context": "Marbella is synonymous with luxurious beachfront holidays, vibrant social scenes, and access to charming local culture. The photo recommendations strategically align with these top traveler search intents: prioritizing the beachfront pool (Slot 1) captures the 'sun and sea' desire; showcasing a beach-view room (Slot 2) reinforces the premium coastal experience; and featuring dining areas (Slot 4) speaks to the social and culinary aspects of a Marbella getaway. The exterior shot (Slot 5) grounds the property within the iconic Marbella landscape, connecting it to both the coast and the mountains, appealing to a broad range of travelers seeking a quintessential Mediterranean experience.",
+      "slot_1_decision_logic": {
+        "is_magnet_override_active": true,
+        "reasoning_code": "NAI_HIGH_DESTINATION_POWER_CLARITY",
+        "strategy_explanation": "The main outdoor swimming pool with direct beachfront access is the property's strongest cultural magnet, perfectly aligning with Marbella's core identity as a premier beach holiday destination. This asset possesses high destination power, is visually clear, and immediately communicates the aspirational holiday experience, making it the ideal hero shot to stop the scroll and capture traveler intent.",
+        "neighborhood_affinity_index": 0.9,
+        "override_asset_name": "Main Outdoor Swimming Pool with Beachfront Access"
+      },
+      "is_listed_on_booking": true,
+      "listing_status": "ACTIVE_ON_BOOKING",
+      "live_photos": [
+        {
+          "slot": 1,
+          "title": "a hotel with a swimming pool in front of a building at NH Collection Marbella in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/669538335.jpg?k=75e68e1bc22dba865549ce83f26c50e353e4e38b2d2dbc432761c43779ebde24&o=",
+          "photoId": "669538335",
+          "sourceUrl": "https://www.booking.com/hotel/es/nhmarbella.html?lang=en-us&chal_t=1793198943240&force_referer="
+        },
+        {
+          "slot": 2,
+          "title": "a hotel room with a bed and a view of the beach at NH Collection Marbella in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/669484963.jpg?k=147cb8fd8c11fa86b99eddf82f7526e782343bc3df0c6e4862918a6dd7e29577&o=",
+          "photoId": "669484963",
+          "sourceUrl": "https://www.booking.com/hotel/es/nhmarbella.html?lang=en-us&chal_t=1793198943240&force_referer=",
+          "visual_description": "Hotel bedroom with a bed, small table, and a balcony view."
+        },
+        {
+          "slot": 3,
+          "title": "a living room with a couch and a table at NH Collection Marbella in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/669484993.jpg?k=45aafb6aa95d47736f380673c8f6ca186192b2d877a4acb3b4aa7575c3e1a736&o=",
+          "photoId": "669484993",
+          "sourceUrl": "https://www.booking.com/hotel/es/nhmarbella.html?lang=en-us&chal_t=1793198943240&force_referer="
+        },
+        {
+          "slot": 4,
+          "title": "a hotel room with a large bed and a table at NH Collection Marbella in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/669484967.jpg?k=ebcbd7871ee7eb47cf14f027ea2475b926739d89f73abc91e797dc8d65120c9f&o=",
+          "photoId": "669484967",
+          "sourceUrl": "https://www.booking.com/hotel/es/nhmarbella.html?lang=en-us&chal_t=1793198943240&force_referer="
+        },
+        {
+          "slot": 5,
+          "title": "a bathroom with a sink and a shower at NH Collection Marbella in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/669484968.jpg?k=a20fccec088b86f65822397b332c2f01d35482ddfdd5987ac90f0f8333f22f3b&o=",
+          "photoId": "669484968",
+          "sourceUrl": "https://www.booking.com/hotel/es/nhmarbella.html?lang=en-us&chal_t=1793198943240&force_referer=",
+          "visual_description": "Bathroom with a sink, mirror, and a walk-in shower with tiled walls."
+        },
+        {
+          "slot": 6,
+          "title": "a restaurant with tables and chairs and potted plants at NH Collection Marbella in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/841381699.jpg?k=37b1613556f8fe77fed93f57e14b72e89fd478ac425d6f6f24d1215e621360ae&o=",
+          "photoId": "841381699",
+          "sourceUrl": "https://www.booking.com/hotel/es/nhmarbella.html?lang=en-us&chal_t=1793198943240&force_referer="
+        },
+        {
+          "slot": 7,
+          "title": "a restaurant with a buffet line with food at NH Collection Marbella in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/841381690.jpg?k=ca55d513c5d60f71cb594fa234de75ea7db0a14ecfae2a86aa2f26317add3442&o=",
+          "photoId": "841381690",
+          "sourceUrl": "https://www.booking.com/hotel/es/nhmarbella.html?lang=en-us&chal_t=1793198943240&force_referer="
+        },
+        {
+          "slot": 8,
+          "title": "a lobby with a table with flowers on it at NH Collection Marbella in Marbella +31 photos",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/841381692.jpg?k=18d380857f2586aa321370503b07d5a60b28afa9c058c640c921011eb08d8e01&o=",
+          "photoId": "841381692",
+          "sourceUrl": "https://www.booking.com/hotel/es/nhmarbella.html?lang=en-us&chal_t=1793198943240&force_referer="
+        },
+        {
+          "slot": 9,
+          "title": "a living room with a fireplace and a couch at NH Collection Marbella in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/669484991.jpg?k=2301093f2a4b0e2896b52fa23f14faf899465ab57c466f237304275428d0efb6&o=&hp=1",
+          "photoId": "669484991",
+          "sourceUrl": "https://www.booking.com/hotel/es/nhmarbella.html?lang=en-us&chal_t=1793198943240&force_referer="
+        },
+        {
+          "slot": 10,
+          "title": "a swimming pool in a building with a resort at NH Collection Marbella in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/647192965.jpg?k=1fd86aa98235eff22d8e103a39c4efb1093be5b3934bd40b132efee87a4052f6&o=&hp=1",
+          "photoId": "647192965",
+          "sourceUrl": "https://www.booking.com/hotel/es/nhmarbella.html?lang=en-us&chal_t=1793198943240&force_referer="
+        },
+        {
+          "slot": 11,
+          "title": "a row of chairs and straw umbrellas on a lawn at NH Collection Marbella in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/647192968.jpg?k=6cf744e712b4879a109c633baf716b72ac20f21ad0fe2d4cc8dbbcb5a5a9ee85&o=&hp=1",
+          "photoId": "647192968",
+          "sourceUrl": "https://www.booking.com/hotel/es/nhmarbella.html?lang=en-us&chal_t=1793198943240&force_referer="
+        },
+        {
+          "slot": 12,
+          "title": "a room with rows of chairs and a projection screen at NH Collection Marbella in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/669485002.jpg?k=479719e0f694fea837a7471c3c4ebab59e397881f7737e6ed95398ca782a8c56&o=&hp=1",
+          "photoId": "669485002",
+          "sourceUrl": "https://www.booking.com/hotel/es/nhmarbella.html?lang=en-us&chal_t=1793198943240&force_referer="
+        },
+        {
+          "slot": 13,
+          "title": "a conference room with a table and chairs and a screen at NH Collection Marbella in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/669485005.jpg?k=830e92e9dc5ac01b13cb3e5b0cdafdc45569c6aeea3ca59d0bded963f28540cc&o=&hp=1",
+          "photoId": "669485005",
+          "sourceUrl": "https://www.booking.com/hotel/es/nhmarbella.html?lang=en-us&chal_t=1793198943240&force_referer="
+        },
+        {
+          "slot": 14,
+          "title": "a gym with exercise equipment in a room at NH Collection Marbella in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/647192959.jpg?k=29744ffc3ee413cdebbe86b20bf2f8b72f634a6ace41f2ce9609f93cb6d37efb&o=&hp=1",
+          "photoId": "647192959",
+          "sourceUrl": "https://www.booking.com/hotel/es/nhmarbella.html?lang=en-us&chal_t=1793198943240&force_referer="
+        },
+        {
+          "slot": 15,
+          "title": "a large white building in front of a mountain at NH Collection Marbella in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/671238500.jpg?k=18fdc02327eb87e6bc04bf5655ebf1490f4e536fe4ced48bb879f5db397c624e&o=&hp=1",
+          "photoId": "671238500",
+          "sourceUrl": "https://www.booking.com/hotel/es/nhmarbella.html?lang=en-us&chal_t=1793198943240&force_referer=",
+          "visual_description": "Exterior view of a large white hotel building with palm trees and a mountain in the background."
+        },
+        {
+          "slot": 16,
+          "title": "a view of a city with the ocean in the background at NH Collection Marbella in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/669485003.jpg?k=534a3da170cb38b0dcb0bf6c23a7d374fb35bb2cb1819e82eacbe66d1a3b55e3&o=&hp=1",
+          "photoId": "669485003",
+          "sourceUrl": "https://www.booking.com/hotel/es/nhmarbella.html?lang=en-us&chal_t=1793198943240&force_referer="
+        },
+        {
+          "slot": 17,
+          "title": "a living room with a couch and a ceiling fan at NH Collection Marbella in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/669485020.jpg?k=2556898cd5a0284f5c394e916e5530a0c4171c9633ac958cb6bdf3a56010bb85&o=&hp=1",
+          "photoId": "669485020",
+          "sourceUrl": "https://www.booking.com/hotel/es/nhmarbella.html?lang=en-us&chal_t=1793198943240&force_referer="
+        },
+        {
+          "slot": 18,
+          "title": "a bedroom with a large bed with white pillows at NH Collection Marbella in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/669485014.jpg?k=c03b135a995b9458c1c509afa9091f44d100db922926603185e789a2ea2343dc&o=&hp=1",
+          "photoId": "669485014",
+          "sourceUrl": "https://www.booking.com/hotel/es/nhmarbella.html?lang=en-us&chal_t=1793198943240&force_referer="
+        },
+        {
+          "slot": 19,
+          "title": "a hotel room with a bed and a table and a window at NH Collection Marbella in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/669485034.jpg?k=d334bc64c75757204e92f14a17226435ce973f11da4472aa4b3fa431490c47fe&o=&hp=1",
+          "photoId": "669485034",
+          "sourceUrl": "https://www.booking.com/hotel/es/nhmarbella.html?lang=en-us&chal_t=1793198943240&force_referer="
+        },
+        {
+          "slot": 20,
+          "title": "a bedroom with a bed and a picture on the wall at NH Collection Marbella in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/669485038.jpg?k=12210bd0bd718ece45bf39dfa86f3109c8c3b8e815b20bdd3bbee0fbb3140a88&o=&hp=1",
+          "photoId": "669485038",
+          "sourceUrl": "https://www.booking.com/hotel/es/nhmarbella.html?lang=en-us&chal_t=1793198943240&force_referer="
+        },
+        {
+          "slot": 21,
+          "title": "a hotel room with a large bed and a table at NH Collection Marbella in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/669485040.jpg?k=3cbf5ff57abe57154875707d4d571d9e49370f92e9d2c8ead9f47a32b2681906&o=&hp=1",
+          "photoId": "669485040",
+          "sourceUrl": "https://www.booking.com/hotel/es/nhmarbella.html?lang=en-us&chal_t=1793198943240&force_referer="
+        },
+        {
+          "slot": 22,
+          "title": "a hotel room with a bed and a side table at NH Collection Marbella in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/669485044.jpg?k=2c2d15a25cdde0d0ff7409d9d5b4eedb02d69b5cea5df010cbf9f71683f58318&o=&hp=1",
+          "photoId": "669485044",
+          "sourceUrl": "https://www.booking.com/hotel/es/nhmarbella.html?lang=en-us&chal_t=1793198943240&force_referer="
+        },
+        {
+          "slot": 23,
+          "title": "a hotel room with a large bed and a table at NH Collection Marbella in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/647192989.jpg?k=945d2470d4fc30f761ea3e9619f486ee687dbcc09177d41f640e275d7c5d28bc&o=&hp=1",
+          "photoId": "647192989",
+          "sourceUrl": "https://www.booking.com/hotel/es/nhmarbella.html?lang=en-us&chal_t=1793198943240&force_referer="
+        },
+        {
+          "slot": 24,
+          "title": "a bathroom with a sink and a shower at NH Collection Marbella in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/669485045.jpg?k=f7ae8b65d3adb28a413517549345dc17ee8d57e2ed3c9f00ed8ebd37cfc7d43f&o=&hp=1",
+          "photoId": "669485045",
+          "sourceUrl": "https://www.booking.com/hotel/es/nhmarbella.html?lang=en-us&chal_t=1793198943240&force_referer="
+        },
+        {
+          "slot": 25,
+          "title": "an aerial view of a building with a swimming pool at NH Collection Marbella in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/671238505.jpg?k=5a20791abd357cfa26a68b72d8b492c7a9933622851da96649a5f90ca555de7b&o=&hp=1",
+          "photoId": "671238505",
+          "sourceUrl": "https://www.booking.com/hotel/es/nhmarbella.html?lang=en-us&chal_t=1793198943240&force_referer="
+        },
+        {
+          "slot": 26,
+          "title": "a resort with a swimming pool and a building at NH Collection Marbella in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/671238502.jpg?k=e0e3dc66a0e71d416fb556be91c72acde9b98f8956d342a6c76178efd721c003&o=&hp=1",
+          "photoId": "671238502",
+          "sourceUrl": "https://www.booking.com/hotel/es/nhmarbella.html?lang=en-us&chal_t=1793198943240&force_referer="
+        },
+        {
+          "slot": 27,
+          "title": "a dining room with a table and chairs and a book shelf at NH Collection Marbella in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/841381694.jpg?k=0f3e431b8f75ff8cf648a3e8409daa9b068b95e038e68934f339404c2ee366e8&o=&hp=1",
+          "photoId": "841381694",
+          "sourceUrl": "https://www.booking.com/hotel/es/nhmarbella.html?lang=en-us&chal_t=1793198943240&force_referer="
+        },
+        {
+          "slot": 28,
+          "title": "a restaurant with tables and chairs and plants at NH Collection Marbella in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/841381713.jpg?k=bad1fb322f7aec900fad5c7b825e8394e81fef7461e87e4551d5b8afc5bc1285&o=&hp=1",
+          "photoId": "841381713",
+          "sourceUrl": "https://www.booking.com/hotel/es/nhmarbella.html?lang=en-us&chal_t=1793198943240&force_referer="
+        },
+        {
+          "slot": 29,
+          "title": "a restaurant with a bar and tables and chairs at NH Collection Marbella in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/841381715.jpg?k=845acacdc56deb65b121417ebe2b2f9b58326860edccedac2ec7bdeb1e104afb&o=&hp=1",
+          "photoId": "841381715",
+          "sourceUrl": "https://www.booking.com/hotel/es/nhmarbella.html?lang=en-us&chal_t=1793198943240&force_referer="
+        },
+        {
+          "slot": 30,
+          "title": "a dining room with a table and chairs at NH Collection Marbella in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/841381718.jpg?k=e8c3f0590ab1a7ece1e5656a9bc3402f1d1749dbf9e3dbd959e3460f01270afb&o=&hp=1",
+          "photoId": "841381718",
+          "sourceUrl": "https://www.booking.com/hotel/es/nhmarbella.html?lang=en-us&chal_t=1793198943240&force_referer="
+        },
+        {
+          "slot": 31,
+          "title": "a restaurant with tables and chairs in a room at NH Collection Marbella in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/841381723.jpg?k=dfb0d16c2f4fcabd1522accc8f98f054d943202aa88a5edbb637e9261ac309f9&o=&hp=1",
+          "photoId": "841381723",
+          "sourceUrl": "https://www.booking.com/hotel/es/nhmarbella.html?lang=en-us&chal_t=1793198943240&force_referer="
+        },
+        {
+          "slot": 32,
+          "title": "a table with plates of food and glasses of wine at NH Collection Marbella in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/841381742.jpg?k=66b26746e1293777b312bb480843fd41f9a23983b549dfb7daf72081dde80b5f&o=&hp=1",
+          "photoId": "841381742",
+          "sourceUrl": "https://www.booking.com/hotel/es/nhmarbella.html?lang=en-us&chal_t=1793198943240&force_referer="
+        },
+        {
+          "slot": 33,
+          "title": "a drink and a plate of fruit next to a pool at NH Collection Marbella in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/672098379.jpg?k=694c398907b84892934f6cca57632034aa2c89868f2d76f99370ae03b881caef&o=&hp=1",
+          "photoId": "672098379",
+          "sourceUrl": "https://www.booking.com/hotel/es/nhmarbella.html?lang=en-us&chal_t=1793198943240&force_referer="
+        },
+        {
+          "slot": 34,
+          "title": "a rendering of the exterior of a marriott hotel at NH Collection Marbella in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/671238501.jpg?k=d8498100f13f7f04f55283acedc75b4c899cec980873c08b0cec3e83d5b08d8a&o=&hp=1",
+          "photoId": "671238501",
+          "sourceUrl": "https://www.booking.com/hotel/es/nhmarbella.html?lang=en-us&chal_t=1793198943240&force_referer="
+        },
+        {
+          "slot": 35,
+          "title": "a view of a mountain range with houses and trees at NH Collection Marbella in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/669485059.jpg?k=be741c2cba7974019873112e2afda069941c5f90e85a70f71a0bece70a15d760&o=&hp=1",
+          "photoId": "669485059",
+          "sourceUrl": "https://www.booking.com/hotel/es/nhmarbella.html?lang=en-us&chal_t=1793198943240&force_referer="
+        },
+        {
+          "slot": 36,
+          "title": "a drink in a glass sitting on a table at NH Collection Marbella in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/841381739.jpg?k=5cec6d7992ca212fa035de81d12bce9c29574d2ca2b7278153df0ce4aea3f53e&o=&hp=1",
+          "photoId": "841381739",
+          "sourceUrl": "https://www.booking.com/hotel/es/nhmarbella.html?lang=en-us&chal_t=1793198943240&force_referer="
+        },
+        {
+          "slot": 37,
+          "title": "a table with two plates of food and two glasses of wine at NH Collection Marbella in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/841381745.jpg?k=2b24df03b121a23840efc75f5650db11264a05a7bfc079af43a19d1520701541&o=&hp=1",
+          "photoId": "841381745",
+          "sourceUrl": "https://www.booking.com/hotel/es/nhmarbella.html?lang=en-us&chal_t=1793198943240&force_referer="
+        },
+        {
+          "slot": 38,
+          "title": "a shower head with water coming out of it at NH Collection Marbella in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/757623299.jpg?k=4b7b98b978bfa7bb70c42779d976ae8231f98c208fbd846de53ab95a005873d6&o=&hp=1",
+          "photoId": "757623299",
+          "sourceUrl": "https://www.booking.com/hotel/es/nhmarbella.html?lang=en-us&chal_t=1793198943240&force_referer="
+        },
+        {
+          "slot": 39,
+          "title": "three bottles of wine sitting on a shelf at NH Collection Marbella in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/787385193.jpg?k=33e83bedc8752f326cf1151f45a4e661a8126b0e9c078d2e6295e8364e150690&o=&hp=1",
+          "photoId": "787385193",
+          "sourceUrl": "https://www.booking.com/hotel/es/nhmarbella.html?lang=en-us&chal_t=1793198943240&force_referer="
+        },
+        {
+          "slot": 40,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/669538335.jpg?k=75e68e1bc22dba865549ce83f26c50e353e4e38b2d2dbc432761c43779ebde24&o=&hp=1",
+          "photoId": "5",
+          "sourceUrl": "https://www.booking.com/hotel/es/nhmarbella.html?lang=en-us&chal_t=1793198943240&force_referer="
+        },
+        {
+          "slot": 41,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/669484963.jpg?k=147cb8fd8c11fa86b99eddf82f7526e782343bc3df0c6e4862918a6dd7e29577&o=&hp=1",
+          "photoId": "3",
+          "sourceUrl": "https://www.booking.com/hotel/es/nhmarbella.html?lang=en-us&chal_t=1793198943240&force_referer="
+        },
+        {
+          "slot": 42,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/669484967.jpg?k=ebcbd7871ee7eb47cf14f027ea2475b926739d89f73abc91e797dc8d65120c9f&o=&hp=1",
+          "photoId": "7",
+          "sourceUrl": "https://www.booking.com/hotel/es/nhmarbella.html?lang=en-us&chal_t=1793198943240&force_referer="
+        },
+        {
+          "slot": 43,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/669484968.jpg?k=a20fccec088b86f65822397b332c2f01d35482ddfdd5987ac90f0f8333f22f3b&o=&hp=1",
+          "photoId": "8",
+          "sourceUrl": "https://www.booking.com/hotel/es/nhmarbella.html?lang=en-us&chal_t=1793198943240&force_referer="
+        },
+        {
+          "slot": 44,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/841381699.jpg?k=37b1613556f8fe77fed93f57e14b72e89fd478ac425d6f6f24d1215e621360ae&o=&hp=1",
+          "photoId": "9",
+          "sourceUrl": "https://www.booking.com/hotel/es/nhmarbella.html?lang=en-us&chal_t=1793198943240&force_referer="
+        },
+        {
+          "slot": 45,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/841381690.jpg?k=ca55d513c5d60f71cb594fa234de75ea7db0a14ecfae2a86aa2f26317add3442&o=&hp=1",
+          "photoId": "0",
+          "sourceUrl": "https://www.booking.com/hotel/es/nhmarbella.html?lang=en-us&chal_t=1793198943240&force_referer="
+        },
+        {
+          "slot": 46,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/841381692.jpg?k=18d380857f2586aa321370503b07d5a60b28afa9c058c640c921011eb08d8e01&o=&hp=1",
+          "photoId": "2",
+          "sourceUrl": "https://www.booking.com/hotel/es/nhmarbella.html?lang=en-us&chal_t=1793198943240&force_referer="
+        },
+        {
+          "slot": 47,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/669484991.jpg?k=2301093f2a4b0e2896b52fa23f14faf899465ab57c466f237304275428d0efb6&o=&hp=1",
+          "photoId": "1",
+          "sourceUrl": "https://www.booking.com/hotel/es/nhmarbella.html?lang=en-us&chal_t=1793198943240&force_referer="
+        },
+        {
+          "slot": 48,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/669485014.jpg?k=c03b135a995b9458c1c509afa9091f44d100db922926603185e789a2ea2343dc&o=&hp=1",
+          "photoId": "4",
+          "sourceUrl": "https://www.booking.com/hotel/es/nhmarbella.html?lang=en-us&chal_t=1793198943240&force_referer="
+        }
+      ],
+      "vibe_grading_rubric": {
+        "destination_vibe_title": "Marbella Beachfront, Marbella",
+        "destination_vibe_pillars": "Local Architecture • Evening Social Energy • Walkable Micro-Gems",
+        "verified_reality_score": 91,
+        "verified_reality_label": "On-Property Match to Destination Vibe",
+        "current_merchandising_score": 66,
+        "optimized_merchandising_score": 95,
+        "vibe_gap_points": -25,
+        "vibe_gap_archetype": "SURGICAL MERCHANDISING OPPORTUNITY",
+        "vibe_gap_summary": "Skol Apartments Marbella delivers a 91/100 on-property match to the Marbella Beachfront Vibe Signature, compared to a 66/100 live OTA Top 5 merchandising score (-25 pt Vibe Gap).",
+        "raw_slot_total": 72,
+        "repetition_penalty": -6,
+        "repetition_penalty_reason": "Sub-optimal sequencing or category repetition in Live Slots #1–#5",
+        "slot_scorecard": [
+          {
+            "slot": 1,
+            "formula_name": "Slot #1 — Signature Vibe Hero",
+            "live_score": 20,
+            "max_score": 20,
+            "status": "RETAINED (20/20)",
+            "live_what_is_there": "a hotel with a swimming pool in front of a building at NH Collection Marbella in Marbella",
+            "optimal_fix": "Retain Resort Swimming Pool & Lifestyle Cabana Deck in Slot #1"
+          },
+          {
+            "slot": 2,
+            "formula_name": "Slot #2 — The Bookable Room",
+            "live_score": 20,
+            "max_score": 20,
+            "status": "RETAINED (20/20)",
+            "live_what_is_there": "a hotel room with a bed and a view of the beach at NH Collection Marbella in Marbella",
+            "optimal_fix": "Retain Hotel room with a bed and a view of the beach in Slot #2"
+          },
+          {
+            "slot": 3,
+            "formula_name": "Slot #3 — Bathroom & Comfort Proof",
+            "live_score": 12,
+            "max_score": 20,
+            "status": "PROMOTED FROM #5",
+            "live_what_is_there": "a living room with a couch and a table at NH Collection Marbella in Marbella",
+            "optimal_fix": "Promote Bathroom with a sink and a shower into Slot #3"
+          },
+          {
+            "slot": 4,
+            "formula_name": "Slot #4 — Day-to-Night Social & Dining",
+            "live_score": 12,
+            "max_score": 20,
+            "status": "PROMOTED FROM #6",
+            "live_what_is_there": "a hotel room with a large bed and a table at NH Collection Marbella in Marbella",
+            "optimal_fix": "Promote a restaurant with tables and chairs and potted plants into Slot #4"
+          },
+          {
+            "slot": 5,
+            "formula_name": "Slot #5 — Neighbourhood & Architectural Gateway",
+            "live_score": 8,
+            "max_score": 20,
+            "status": "PROMOTED FROM #15",
+            "live_what_is_there": "a bathroom with a sink and a shower at NH Collection Marbella in Marbella",
+            "optimal_fix": "Promote A large white building in front of a mountain at NH Collection Marbella in Marbella into Slot #5"
+          }
+        ],
+        "auto_vibe_insights": {
+          "badge": "Vibe Gap Analysis (-25 pts)",
+          "headline_stat": "Skol Apartments Marbella delivers a 91/100 verified match to the Marbella Beachfront Vibe Signature, vs. 66/100 on its live Booking.com Top 5 sequence.",
+          "gm_outreach_hook": "Your on-property guest experience scores 91/100 against the Marbella Beachfront Vibe Signature, but your live Booking.com Top 5 gallery currently converts at 66/100—resequencing your existing photos unlocks 95/100.",
+          "linkedin_post_hook": "Vibe Gap Audit for Skol Apartments Marbella (Marbella): On-Property Reality 91/100 | Current OTA Gallery 66/100 -> Optimized 95/100."
+        }
+      },
+      "photos_status": "RESOLVED"
+    },
+    "audit_timestamp": "2026-10-28T14:49:11.409Z"
+  }
+}

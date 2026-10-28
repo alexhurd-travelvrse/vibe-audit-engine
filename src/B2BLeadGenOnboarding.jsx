@@ -15,7 +15,7 @@ import HotelVibeManifestCard from './components/HotelVibeManifestCard';
 import InteractiveQuizCard from './components/InteractiveQuizCard';
 import BookingOtaAuditCard from './components/BookingOtaAuditCard';
 import { validateWorkEmail, isLocalhostEnvironment } from './utils/workEmailValidator';
-import { CANNED_CONFERENCE_DEMOS } from './data/cannedConferenceDemos';
+import { CANNED_CONFERENCE_DEMOS, MEETING_LIVE_LINKS } from './data/cannedConferenceDemos';
 import './B2BLeadGenOnboarding.css';
 
 // Environment detector: Enforce email on live Vercel/Production, bypass on localhost
@@ -1416,6 +1416,50 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Temporary Live Meeting Links Bar at Bottom of Audit Page */}
+      {MEETING_LIVE_LINKS.length > 0 && (
+        <div style={{
+          maxWidth: '1240px',
+          margin: '2.5rem auto 0',
+          padding: '1rem 1.5rem 2rem',
+          borderTop: '1px solid rgba(255, 255, 255, 0.08)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          flexWrap: 'wrap',
+          gap: '0.75rem'
+        }}>
+          <span style={{ fontSize: '11px', fontWeight: 800, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.45)' }}>
+            ⚡ Live Meeting Audits:
+          </span>
+          <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem' }}>
+            {MEETING_LIVE_LINKS.map((item) => (
+              <button
+                key={item.slug}
+                type="button"
+                onClick={() => launchCannedDemo(item.slug)}
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  padding: '5px 12px',
+                  borderRadius: '999px',
+                  background: 'rgba(0, 229, 255, 0.08)',
+                  border: '1px solid rgba(0, 229, 255, 0.25)',
+                  color: '#00e5ff',
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  cursor: 'pointer'
+                }}
+              >
+                <span>{item.label}</span>
+                <span style={{ color: 'rgba(255,255,255,0.45)', fontSize: '11px', fontWeight: 500 }}>({item.location})</span>
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 };

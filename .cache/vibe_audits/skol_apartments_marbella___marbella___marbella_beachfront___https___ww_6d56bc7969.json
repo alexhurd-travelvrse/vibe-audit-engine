@@ -1,0 +1,761 @@
+{
+  "key": "skol apartments marbella:::marbella:::marbella beachfront:::https://www.booking.com/hotel/es/skol-apartments-marbella.html",
+  "timestamp": 1793199056786,
+  "data": {
+    "venue_id": "skol_marbella_apartments",
+    "venue_name": "Skol Apartments Marbella",
+    "location": "Marbella Beachfront, Marbella",
+    "vibe_signature": {
+      "energy_score": 75,
+      "social_pacing": "Lively & Relaxed Beachfront",
+      "headline": "Vibrant Beachfront Apartments with Ocean Views & Family-Friendly Pools",
+      "acoustic_dna": {
+        "soundscape_genre": "Mediterranean Pop & Chill-Out",
+        "anchor_artists": [
+          "Gipsy Kings",
+          "Chambao",
+          "Buena Vista Social Club"
+        ],
+        "spotify_query": "Marbella beach chillout summer vibes",
+        "sound_texture": "Gentle waves, distant chatter, poolside laughter",
+        "conversation_clarity_score": 78,
+        "conversation_verdict": "Lively Holiday Banter",
+        "decibel_level": "68 dB (Vibrant & Social)",
+        "sleep_sanctuary_verdict": "Comfortable Apartments with Ocean Sounds & Good Night's Rest"
+      },
+      "crowd_archetype": {
+        "primary": "Families & Couples",
+        "social_density": "Medium-High",
+        "dress_code": "Casual Beach Chic",
+        "energy_verdict": "Sunny & Relaxed Holiday Buzz",
+        "local_ratio": 30,
+        "tourist_ratio": 70,
+        "tourist_trap_verdict": "Popular with Tourists — Authentic Local Gems Nearby",
+        "trip_occasions": [
+          "Family Beach Holiday",
+          "Couples Getaway",
+          "Relaxing Sun Escape"
+        ]
+      },
+      "lighting_and_sensory": {
+        "atmosphere": "Bright & Airy Mediterranean",
+        "sensory_intensity": "Moderate",
+        "lighting_temperature": "Golden Hour Sunlight & Warm Evening Glow"
+      },
+      "hyper_local_proximity": {
+        "key_anchors": [
+          "Chiringuito La Milla (4.5★ · 10 min walk)",
+          "Marbella Old Town (4.6★ · 15 min walk)",
+          "Mercado Municipal de Marbella (4.4★ · 12 min walk)"
+        ],
+        "insider_lore": "Discover hidden tapas bars in Marbella Old Town, just a short stroll away, or enjoy fresh seafood at the beachfront chiringuitos."
+      },
+      "qualification_test": {
+        "you_will_love_if": "You seek a vibrant beachfront apartment experience with direct access to pools and the sea, ideal for families and couples looking for a lively holiday.",
+        "skip_if": "You prefer a quiet, secluded retreat away from the main tourist areas or a highly curated, adults-only boutique experience."
+      },
+      "ai_search_geo": {
+        "traveler_prompts": [
+          "Family-friendly apartments Marbella beachfront with pools",
+          "Best self-catering accommodation in Marbella with ocean views",
+          "Holiday rentals in Marbella near Old Town and beach"
+        ],
+        "verified_entity_summary": "Skol Apartments Marbella offers vibrant beachfront apartments with multiple pools and direct ocean access, providing a lively social atmosphere. Guests can enjoy comfortable stays and easy walks to Marbella Old Town and highly-rated local eateries."
+      },
+      "authenticity_and_materials": {
+        "authenticity_score": 65,
+        "material_palette": "White stucco, blue tiles, palm trees, simple modern furnishings",
+        "material_verdict": "Functional & Bright — Classic Holiday Apartment Style"
+      },
+      "host_vibe": {
+        "host_archetype": "Friendly & Efficient Holiday Hosts",
+        "host_style_score": 60,
+        "service_pacing": "Attentive & Responsive",
+        "signature_team_roles": [
+          "Guest Relations Manager",
+          "Poolside Attendant"
+        ],
+        "staff_icebreaker_prompt": "Ask the reception staff for their favorite local beach for a quiet afternoon.",
+        "team_aesthetic": "Smart Casual Uniforms & Approachable Demeanor",
+        "warmth_verdict": "Welcoming & Helpful — Smooth Holiday Experience"
+      },
+      "insider_secrets": {
+        "insider_badge": "Local Beach Expert",
+        "off_menu_perk": "Ask at reception for the best time to visit the nearby 'secret' cove for a quieter swim.",
+        "secret_lore": "The best time to enjoy the main pool without crowds is early morning or late afternoon, just before sunset.",
+        "secret_title": "The Quieter Cove"
+      },
+      "temporal_dynamics": {
+        "best_time_to_visit": "10:00 AM for a relaxed poolside start; 7:00 PM for a vibrant beachfront dinner.",
+        "content_readiness": {
+          "aesthetic_subculture": "Mediterranean Holiday Lifestyle",
+          "flattery_note": "Captures the essence of a sunny, active beach vacation.",
+          "score": 7.5,
+          "top_creator_spot": "Balcony with ocean and pool view",
+          "verdict": "Highly Instagrammable for holiday content."
+        },
+        "diurnal_rhythm": {
+          "chilling": {
+            "focus": "Poolside relaxation & sunbathing",
+            "score": 8,
+            "window": "11:00 AM - 4:00 PM"
+          },
+          "playing": {
+            "focus": "Beach activities & evening strolls",
+            "score": 7.5,
+            "window": "4:00 PM - 9:00 PM"
+          },
+          "working": {
+            "focus": "Remote work from apartment balcony",
+            "score": 5,
+            "window": "9:00 AM - 12:00 PM"
+          }
+        },
+        "peak_atmospheric_window": "Late Afternoon Golden Hour by the Pools"
+      }
+    },
+    "interactive_quiz_challenge": {
+      "target_scene_id": 1,
+      "scene_name": "Beachfront Bliss",
+      "mission_title": "Marbella's Coastal Charm",
+      "question": "You've just arrived at Skol Apartments. What's the first thing you do to soak in the Marbella vibe?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Head straight to the Old Town for tapas."
+        },
+        {
+          "id": "B",
+          "text": "Unpack, then grab a sun lounger by the pool overlooking the sea."
+        },
+        {
+          "id": "C",
+          "text": "Find the nearest high-end boutique for some shopping."
+        },
+        {
+          "id": "D",
+          "text": "Book a day trip to Gibraltar."
+        }
+      ],
+      "correct_option_id": "B",
+      "success_lore_reveal": "Correct! The immediate draw of Skol Apartments is its direct beachfront access and inviting pools, perfect for instantly unwinding and embracing the coastal lifestyle.",
+      "reward_badge": "Marbella Beachfront Explorer",
+      "challenge_prompt": "Discover the best way to enjoy the sun and sea at Skol Apartments.",
+      "reward_spotify_uri": "spotify:playlist:37i9dQZF1DXcBWIGoYBM5M"
+    },
+    "ota_conversion_audit": {
+      "channel": "Booking.com",
+      "before_merchandising_score": 66,
+      "after_merchandising_score": 95,
+      "projected_conversion_uplift": "+21.0%",
+      "current_drop_off_flaw": "Lack of immediate visual impact for beachfront appeal and inconsistent room quality representation.",
+      "key_strategic_shifts": [
+        "Elevate the panoramic pool and ocean view to Slot #1 to immediately convey the prime beachfront location and holiday atmosphere.",
+        "Prioritize a clear, inviting apartment interior in Slot #2 to address accommodation quality and comfort early in the booking journey.",
+        "Feature the a balcony with tables and umbrellas on the grass in Slot #5 to showcase the property's distinctive estate grounds and lifestyle amenities.",
+        "Re-sequence to showcase the vibrant social areas and exterior presence, reinforcing the lively holiday experience and local connection."
+      ],
+      "optimal_5_photo_sequence": [
+        {
+          "slot": 1,
+          "category": "OUTDOOR_SOCIAL_POOL",
+          "photo_subject": "Resort Swimming Pool & Lifestyle Cabana Deck",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/836283464.jpg?k=f6a5f76ed4f670acff6e2fbcff004ef4392f8f3f7902ed6fec14e6641bc20d0e&o=",
+          "why_it_converts": "Showcasing the hotel's signature outdoor pool and day club atmosphere captures high-intent social travel demand and accelerates premium weekend leisure conversions.",
+          "upgrade_rationale": "Showcasing the hotel's signature outdoor pool and day club atmosphere captures high-intent social travel demand and accelerates premium weekend leisure conversions.",
+          "bullet_points": [
+            "Visual Upgrade: This panoramic aerial shot immediately captures the essence of a vibrant beachfront holiday, showcasing multiple pools and direct ocean access.",
+            "Local Synergy: Directly aligns with top traveler searches for 'Marbella beachfront apartments with pools' and 'ocean view holidays'.",
+            "Conversion Trigger: Instantly communicates the prime location and aspirational holiday experience, eliminating location anxiety."
+          ],
+          "psychological_conversion_trigger": "This photo immediately establishes the property's prime beachfront location and vibrant holiday atmosphere, fulfilling the desire for sun, sea, and relaxation.",
+          "recommended_trigger": "This photo immediately establishes the property's prime beachfront location and vibrant holiday atmosphere, fulfilling the desire for sun, sea, and relaxation.",
+          "current_slot": 1,
+          "is_retained": true,
+          "is_moved": false,
+          "is_swapped_in": false,
+          "action": "ELEVATE_POOL",
+          "action_label": "⚡ HERO LIFESTYLE SANCTUARY: RETAIN POOL IN SLOT #1",
+          "source_display_label": "Was: Slot #1 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 1,
+            "title": "an aerial view of a resort with a pool and the ocean at Marbella Skol in Marbella",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/836283464.jpg?k=f6a5f76ed4f670acff6e2fbcff004ef4392f8f3f7902ed6fec14e6641bc20d0e&o=",
+            "photoId": "836283464",
+            "sourceUrl": "https://www.booking.com/hotel/es/skol-apartments-marbella.html?lang=en-us&chal_t=1793199017433&force_referer="
+          }
+        },
+        {
+          "slot": 2,
+          "category": "SIGNATURE_SUITE_BEDROOM",
+          "photo_subject": "A bedroom with a bed and a window at Marbella Skol in Marbella",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/836262074.jpg?k=37f9b277aba7763db7fbbd5ed6f94acd09905edf11a685d30173ef0724cc55cc&o=",
+          "why_it_converts": "Showcasing high-finish private sleeping accommodations assures travelers of restful luxury and elevated comfort.",
+          "upgrade_rationale": "Showcasing high-finish private sleeping accommodations assures travelers of restful luxury and elevated comfort.",
+          "bullet_points": [
+            "Strategic Placement: Immediately follows the hero shot, proving the interior comfort and quality match the exterior promise.",
+            "Local Synergy: Appeals to travelers seeking comfortable, well-appointed apartments for their Marbella stay.",
+            "Conversion Trigger: Addresses the critical need for clear, inviting accommodation visuals early in the decision-making process."
+          ],
+          "psychological_conversion_trigger": "By showing a clean, comfortable bedroom right after the hero shot, it reassures guests about the quality of their private space, bridging the gap between aspirational exterior and practical interior.",
+          "recommended_trigger": "By showing a clean, comfortable bedroom right after the hero shot, it reassures guests about the quality of their private space, bridging the gap between aspirational exterior and practical interior.",
+          "current_slot": 8,
+          "is_retained": false,
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "PROMOTE",
+          "action_label": "PROMOTE FROM SLOT #8",
+          "source_display_label": "Was: Slot #8 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 8,
+            "title": "a bedroom with a bed and a window at Marbella Skol in Marbella +30 photos",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/836262074.jpg?k=37f9b277aba7763db7fbbd5ed6f94acd09905edf11a685d30173ef0724cc55cc&o=",
+            "photoId": "836262074",
+            "sourceUrl": "https://www.booking.com/hotel/es/skol-apartments-marbella.html?lang=en-us&chal_t=1793199017433&force_referer=",
+            "visual_description": "Bedroom with a black metal frame bed, white bedding, and dark curtains covering a window."
+          }
+        },
+        {
+          "slot": 3,
+          "category": "SECONDARY_ROOM_BATHROOM",
+          "photo_subject": "A bathroom with a sink and a shower at Marbella Skol in Marbella",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/836262141.jpg?k=99fb462452c0819af678c3bf6e4db393eacb74385f7de0ddc3e5db081f9107f2&o=&hp=1",
+          "why_it_converts": "Pairing the guest bathroom in Slot #3 directly beside the bedroom in Slot #2 completes the private room-and-bath inspection, resolving hygiene and comfort expectations early.",
+          "upgrade_rationale": "Pairing the guest bathroom in Slot #3 directly beside the bedroom in Slot #2 completes the private room-and-bath inspection, resolving hygiene and comfort expectations early.",
+          "bullet_points": [
+            "Visual Proof (Slot #3): Pristine bathroom perspective paired directly after the bedroom to complete the private comfort check.",
+            "Quality Indicator: Confirms rigorous hygiene standards, natural light, and elevated residential fixtures.",
+            "Conversion Trigger: Removes private room-and-bathroom doubt before showcasing social and neighbourhood spaces."
+          ],
+          "psychological_conversion_trigger": "Hygiene Assurance & Private Luxury Finishes",
+          "recommended_trigger": "Hygiene Assurance & Private Luxury Finishes",
+          "current_slot": 30,
+          "is_retained": false,
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "PROMOTE",
+          "action_label": "PROMOTE FROM SLOT #30",
+          "source_display_label": "Was: Slot #30 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 30,
+            "title": "a bathroom with a bed and a toilet in a room at Marbella Skol in Marbella",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/836262141.jpg?k=99fb462452c0819af678c3bf6e4db393eacb74385f7de0ddc3e5db081f9107f2&o=&hp=1",
+            "photoId": "836262141",
+            "sourceUrl": "https://www.booking.com/hotel/es/skol-apartments-marbella.html?lang=en-us&chal_t=1793199017433&force_referer="
+          }
+        },
+        {
+          "slot": 4,
+          "category": "WELLNESS_SPA_LOBBY",
+          "photo_subject": "a view of the pool and the ocean from the balcony of a resort",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/349898846.jpg?k=f2c53e3bcd1fc9b184b4803665a8fb0551f470c6fb3425035975478f67cfcd22&o=",
+          "why_it_converts": "Showcasing the serene indoor swimming pool in Slot #4 highlights a key wellness amenity that appeals to travelers seeking relaxation and rejuvenation amidst urban exploration in Marbella.",
+          "upgrade_rationale": "Showcasing the serene indoor swimming pool in Slot #4 highlights a key wellness amenity that appeals to travelers seeking relaxation and rejuvenation amidst urban exploration in Marbella.",
+          "bullet_points": [
+            "Visual Upgrade: Serene aquatic perspective showcasing tranquil water reflections and sanctuary ambient lighting.",
+            "Experiential Hook: Confirms an exceptional indoor wellness retreat protected from the urban bustle of Marbella.",
+            "Conversion Trigger: Fulfills a top leisure amenity filter, providing the decisive conversion trigger for luxury wellness seekers."
+          ],
+          "psychological_conversion_trigger": "Restorative Wellness & Urban Sanctuary",
+          "recommended_trigger": "Restorative Wellness & Urban Sanctuary",
+          "current_slot": 4,
+          "is_retained": true,
+          "is_moved": false,
+          "is_swapped_in": false,
+          "action": "RETAIN",
+          "action_label": "RETAIN IN SLOT #4",
+          "source_display_label": "Was: Slot #4 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 4,
+            "title": "a view of the pool and the ocean from the balcony of a resort at Marbella Skol in Marbella",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/349898846.jpg?k=f2c53e3bcd1fc9b184b4803665a8fb0551f470c6fb3425035975478f67cfcd22&o=",
+            "photoId": "349898846",
+            "sourceUrl": "https://www.booking.com/hotel/es/skol-apartments-marbella.html?lang=en-us&chal_t=1793199017433&force_referer="
+          }
+        },
+        {
+          "slot": 5,
+          "category": "EXTERIOR_LANDMARK",
+          "photo_subject": "a balcony with tables and umbrellas on the grass",
+          "photo_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/836261445.jpg?k=59421a2741034509242172407071306c2f3682ec43303ede36473eeb517f5ffa&o=",
+          "why_it_converts": "Showcasing high-finish private sleeping accommodations assures travelers of restful luxury and elevated comfort.",
+          "upgrade_rationale": "Showcasing high-finish private sleeping accommodations assures travelers of restful luxury and elevated comfort.",
+          "bullet_points": [
+            "Strategic Placement: Grounds the property within its stunning natural surroundings, providing a clear sense of place.",
+            "Local Synergy: Directly addresses searches for 'Marbella beach hotels' and 'coastal views', reinforcing the prime location.",
+            "Conversion Trigger: Eliminates any lingering location anxiety and visually connects the property to the broader Marbella beachfront destination."
+          ],
+          "psychological_conversion_trigger": "This shot firmly anchors the property within the beautiful Marbella beachfront landscape, providing a sense of arrival and confirming the desirable coastal setting.",
+          "recommended_trigger": "This shot firmly anchors the property within the beautiful Marbella beachfront landscape, providing a sense of arrival and confirming the desirable coastal setting.",
+          "current_slot": 7,
+          "is_retained": false,
+          "is_moved": true,
+          "is_swapped_in": false,
+          "action": "PROMOTE",
+          "action_label": "PROMOTE FROM SLOT #7",
+          "source_display_label": "Was: Slot #7 (Booking.com)",
+          "source_domain": "booking.com",
+          "current_photo": {
+            "slot": 7,
+            "title": "a balcony with tables and umbrellas on the grass at Marbella Skol in Marbella",
+            "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/836261445.jpg?k=59421a2741034509242172407071306c2f3682ec43303ede36473eeb517f5ffa&o=",
+            "photoId": "836261445",
+            "sourceUrl": "https://www.booking.com/hotel/es/skol-apartments-marbella.html?lang=en-us&chal_t=1793199017433&force_referer=",
+            "visual_description": "Outdoor balcony overlooking a grassy area with straw umbrellas, palm trees, and the ocean in the distance."
+          }
+        }
+      ],
+      "anti_commodity_copy_rewrite": {
+        "ota_headline": "Skol Apartments Marbella: Beachfront Oasis with Panoramic Ocean Views & Multiple Pools",
+        "property_overview_150_words": "Experience the vibrant heart of Marbella at Skol Apartments, perfectly situated on the beachfront with direct access to golden sands and the sparkling Mediterranean. Our spacious apartments offer stunning ocean and pool views, providing a comfortable and lively base for your holiday. Enjoy three inviting outdoor pools, lush gardens, and a prime location within walking distance of Marbella Old Town's charming streets and authentic local eateries. Ideal for families and couples, Skol Apartments blends relaxation with easy access to Marbella's best, ensuring a memorable and sun-drenched escape."
+      },
+      "photographic_gap_analysis": [
+        {
+          "missing_shot_title": "Golden Hour Poolside Social Scene",
+          "category": "ATMOSPHERIC_TWILIGHT",
+          "why_needed": "Currently, there are no photos capturing the vibrant, social atmosphere of the pools and surrounding areas during the magical golden hour or early evening. This misses a key emotional trigger for travelers seeking lively holiday experiences.",
+          "recommended_framing_and_lighting": "Wide-angle shot of the main pool area during golden hour, with warm, diffused natural light, showing guests enjoying drinks or conversation, with the ocean in the background. Focus on ambient glow and relaxed social energy.",
+          "projected_adr_impact": "+10% direct booking conversion for social travelers"
+        },
+        {
+          "missing_shot_title": "Modern Apartment Kitchen & Dining Area",
+          "category": "SECONDARY_LIFESTYLE_SANCTUARY",
+          "why_needed": "While there are kitchen shots, none truly highlight a modern, inviting kitchen and dining area that conveys the convenience and comfort of self-catering. This is crucial for apartment bookings, especially for families.",
+          "recommended_framing_and_lighting": "Eye-level shot of a well-appointed kitchen and dining table, showcasing modern appliances, natural light, and perhaps a subtle styling with fresh local produce. Emphasize functionality and aesthetic appeal.",
+          "projected_adr_impact": "+8% higher family apartment bookings"
+        },
+        {
+          "missing_shot_title": "Beach Access & Promenade Connection",
+          "category": "EXTERIOR_LANDMARK",
+          "why_needed": "The direct connection from the property to the beach and the famous Marbella promenade is a huge selling point that is not clearly captured. Travelers want to visualize this seamless access.",
+          "recommended_framing_and_lighting": "Shot from the property's edge, looking towards the beach and promenade, showing guests easily transitioning from the resort grounds to the sand. Capture the vibrant energy of the promenade and the inviting beach.",
+          "projected_adr_impact": "+7% overall booking conversion by reinforcing prime location"
+        }
+      ],
+      "conversion_diagnosis": "The current Booking.com sequence fails to immediately convey the property's prime beachfront location and vibrant holiday atmosphere, burying key amenities and presenting inconsistent room visuals. This leads to high drop-off rates from travelers seeking clear, aspirational holiday experiences.",
+      "local_vibe_synergy_context": "Marbella is renowned for its stunning beaches, vibrant promenade, and a blend of lively social scenes with accessible local charm. The photo recommendations strategically highlight Skol Apartments' direct connection to these core Marbella subcultures – the 'Beach Life & Promenade Strolls' and 'Family-Friendly Coastal Escapes' – ensuring the visuals resonate with what travelers actively seek in this destination.",
+      "slot_1_decision_logic": {
+        "is_magnet_override_active": false,
+        "reasoning_code": "DEFAULT_HERO_RETAINED",
+        "strategy_explanation": "The existing aerial view (Live Photo #1) perfectly serves as the default hero, immediately showcasing the property's most compelling assets: multiple pools, direct beachfront access, and panoramic ocean views. It effectively eliminates location anxiety and sets the aspirational tone for a vibrant beach holiday, aligning with the primary traveler intent for Marbella. No single internal amenity possesses the standalone destination power or neighborhood affinity to override this powerful exterior hero.",
+        "neighborhood_affinity_index": 0.88,
+        "override_asset_name": "N/A"
+      },
+      "is_listed_on_booking": true,
+      "listing_status": "ACTIVE_ON_BOOKING",
+      "live_photos": [
+        {
+          "slot": 1,
+          "title": "an aerial view of a resort with a pool and the ocean at Marbella Skol in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/836283464.jpg?k=f6a5f76ed4f670acff6e2fbcff004ef4392f8f3f7902ed6fec14e6641bc20d0e&o=",
+          "photoId": "836283464",
+          "sourceUrl": "https://www.booking.com/hotel/es/skol-apartments-marbella.html?lang=en-us&chal_t=1793199017433&force_referer="
+        },
+        {
+          "slot": 2,
+          "title": "a living room with a couch and a desk at Marbella Skol in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/836261848.jpg?k=3e9af529ea60adde3798550375b61c511890b874c6b1fc5e3b08bdfb66d6d6dd&o=",
+          "photoId": "836261848",
+          "sourceUrl": "https://www.booking.com/hotel/es/skol-apartments-marbella.html?lang=en-us&chal_t=1793199017433&force_referer="
+        },
+        {
+          "slot": 3,
+          "title": "a mirror in a room with a green wall at Marbella Skol in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/836262037.jpg?k=5bb8144a94c3589592d604a1f97350ecc074352bcb5bc13e3dc9c9bcd5d4a724&o=",
+          "photoId": "836262037",
+          "sourceUrl": "https://www.booking.com/hotel/es/skol-apartments-marbella.html?lang=en-us&chal_t=1793199017433&force_referer="
+        },
+        {
+          "slot": 4,
+          "title": "a view of the pool and the ocean from the balcony of a resort at Marbella Skol in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/349898846.jpg?k=f2c53e3bcd1fc9b184b4803665a8fb0551f470c6fb3425035975478f67cfcd22&o=",
+          "photoId": "349898846",
+          "sourceUrl": "https://www.booking.com/hotel/es/skol-apartments-marbella.html?lang=en-us&chal_t=1793199017433&force_referer="
+        },
+        {
+          "slot": 5,
+          "title": "a living room with a couch and a table at Marbella Skol in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/836261894.jpg?k=dc884c3178294a59e7ac1d6972e316259cff2c02446406a48632a269bdc9f061&o=",
+          "photoId": "836261894",
+          "sourceUrl": "https://www.booking.com/hotel/es/skol-apartments-marbella.html?lang=en-us&chal_t=1793199017433&force_referer="
+        },
+        {
+          "slot": 6,
+          "title": "a living room with a couch and a tv at Marbella Skol in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/836261716.jpg?k=2f43b39f8140fdf8014b7c7189a22b1ec0f9a41772861482250748ccc9fc7d75&o=",
+          "photoId": "836261716",
+          "sourceUrl": "https://www.booking.com/hotel/es/skol-apartments-marbella.html?lang=en-us&chal_t=1793199017433&force_referer="
+        },
+        {
+          "slot": 7,
+          "title": "a balcony with tables and umbrellas on the grass at Marbella Skol in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/836261445.jpg?k=59421a2741034509242172407071306c2f3682ec43303ede36473eeb517f5ffa&o=",
+          "photoId": "836261445",
+          "sourceUrl": "https://www.booking.com/hotel/es/skol-apartments-marbella.html?lang=en-us&chal_t=1793199017433&force_referer=",
+          "visual_description": "Outdoor balcony overlooking a grassy area with straw umbrellas, palm trees, and the ocean in the distance."
+        },
+        {
+          "slot": 8,
+          "title": "a bedroom with a bed and a window at Marbella Skol in Marbella +30 photos",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max300/836262074.jpg?k=37f9b277aba7763db7fbbd5ed6f94acd09905edf11a685d30173ef0724cc55cc&o=",
+          "photoId": "836262074",
+          "sourceUrl": "https://www.booking.com/hotel/es/skol-apartments-marbella.html?lang=en-us&chal_t=1793199017433&force_referer=",
+          "visual_description": "Bedroom with a black metal frame bed, white bedding, and dark curtains covering a window."
+        },
+        {
+          "slot": 9,
+          "title": "a balcony with a table and chairs and a view of the ocean at Marbella Skol in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/836261561.jpg?k=e74f390383dfed65c0f4e1f40e5f83a9cbe2deaf336f6253d19c1ff3ce758f0a&o=&hp=1",
+          "photoId": "836261561",
+          "sourceUrl": "https://www.booking.com/hotel/es/skol-apartments-marbella.html?lang=en-us&chal_t=1793199017433&force_referer="
+        },
+        {
+          "slot": 10,
+          "title": "a view of a beach with palm trees and the ocean at Marbella Skol in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/836261521.jpg?k=ed941aaaac9b140acf68a7fd821f69868ab4195403e8f23569b3ff2aaf861602&o=&hp=1",
+          "photoId": "836261521",
+          "sourceUrl": "https://www.booking.com/hotel/es/skol-apartments-marbella.html?lang=en-us&chal_t=1793199017433&force_referer="
+        },
+        {
+          "slot": 11,
+          "title": "a table and chairs on a balcony with a view of the ocean at Marbella Skol in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/836261343.jpg?k=ab0ec496ae50fa89918ecc2a4b95ed1551e0535412d4ed1929464dbdbc9e7dbe&o=&hp=1",
+          "photoId": "836261343",
+          "sourceUrl": "https://www.booking.com/hotel/es/skol-apartments-marbella.html?lang=en-us&chal_t=1793199017433&force_referer="
+        },
+        {
+          "slot": 12,
+          "title": "a room with a window with a view of the ocean at Marbella Skol in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/836261580.jpg?k=48f3065e011d0dae40cff89b3dccea6b926a03b5124979cd9186eeb8b054e5b1&o=&hp=1",
+          "photoId": "836261580",
+          "sourceUrl": "https://www.booking.com/hotel/es/skol-apartments-marbella.html?lang=en-us&chal_t=1793199017433&force_referer="
+        },
+        {
+          "slot": 13,
+          "title": "a living room with a view of the ocean at Marbella Skol in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/836261792.jpg?k=ccb2731bcb64f9d5ca0ecf4333665831cb5dc6908e3b14dfdbe41c7847bc03da&o=&hp=1",
+          "photoId": "836261792",
+          "sourceUrl": "https://www.booking.com/hotel/es/skol-apartments-marbella.html?lang=en-us&chal_t=1793199017433&force_referer="
+        },
+        {
+          "slot": 14,
+          "title": "a living room with a couch and a tv at Marbella Skol in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/836261604.jpg?k=2ecde43f40ffc2c354a348adb4b94d9a1905e61c701531e29f8d030e96c94ff7&o=&hp=1",
+          "photoId": "836261604",
+          "sourceUrl": "https://www.booking.com/hotel/es/skol-apartments-marbella.html?lang=en-us&chal_t=1793199017433&force_referer="
+        },
+        {
+          "slot": 15,
+          "title": "a living room with a couch and a table at Marbella Skol in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/836261677.jpg?k=578688254019c39035a2a5cbbd819fab9fafea1d9d3eb92d3ef35c13e2319a23&o=&hp=1",
+          "photoId": "836261677",
+          "sourceUrl": "https://www.booking.com/hotel/es/skol-apartments-marbella.html?lang=en-us&chal_t=1793199017433&force_referer="
+        },
+        {
+          "slot": 16,
+          "title": "a living room with a table and a couch at Marbella Skol in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/836261997.jpg?k=ec79e0821273df8e7949ecc86848a23cf2a53f3a6cd8ad3f776f42946fe9a278&o=&hp=1",
+          "photoId": "836261997",
+          "sourceUrl": "https://www.booking.com/hotel/es/skol-apartments-marbella.html?lang=en-us&chal_t=1793199017433&force_referer="
+        },
+        {
+          "slot": 17,
+          "title": "a living room with a couch and a table at Marbella Skol in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/836261915.jpg?k=98e1310d8b7ef7c3cd3dfa4a4dece7e39236609972b558d4ecf94627c10b30af&o=&hp=1",
+          "photoId": "836261915",
+          "sourceUrl": "https://www.booking.com/hotel/es/skol-apartments-marbella.html?lang=en-us&chal_t=1793199017433&force_referer="
+        },
+        {
+          "slot": 18,
+          "title": "a living room with a gray couch and a flat screen tv at Marbella Skol in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/836261825.jpg?k=ba85c173dff83b0a8edee8b2af3a575c19c9d9bea61e8ecadd3e89c91e0c654a&o=&hp=1",
+          "photoId": "836261825",
+          "sourceUrl": "https://www.booking.com/hotel/es/skol-apartments-marbella.html?lang=en-us&chal_t=1793199017433&force_referer="
+        },
+        {
+          "slot": 19,
+          "title": "a living room with a couch and a tv at Marbella Skol in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/836261755.jpg?k=a77913019cc4a6e9e32e764ddd0f0d4c711c42d22fb23630deca36edea10df51&o=&hp=1",
+          "photoId": "836261755",
+          "sourceUrl": "https://www.booking.com/hotel/es/skol-apartments-marbella.html?lang=en-us&chal_t=1793199017433&force_referer="
+        },
+        {
+          "slot": 20,
+          "title": "a bedroom with a window with a view of a balcony at Marbella Skol in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/836262055.jpg?k=492dc82b2a7304142492a60276f65361bbd91e3e841ea8b55483578191462378&o=&hp=1",
+          "photoId": "836262055",
+          "sourceUrl": "https://www.booking.com/hotel/es/skol-apartments-marbella.html?lang=en-us&chal_t=1793199017433&force_referer="
+        },
+        {
+          "slot": 21,
+          "title": "a bedroom with a bed with a tv on the wall at Marbella Skol in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/836262103.jpg?k=7a06f7b71c3c75217df4ea7c1c94d5c2830a3a78a86d73b628ed7f080992c664&o=&hp=1",
+          "photoId": "836262103",
+          "sourceUrl": "https://www.booking.com/hotel/es/skol-apartments-marbella.html?lang=en-us&chal_t=1793199017433&force_referer="
+        },
+        {
+          "slot": 22,
+          "title": "a bed with a metal frame in a bedroom at Marbella Skol in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/836262049.jpg?k=ce7fd7a2ad295ac84557acfbeace93eba2bb963da6c72bb3c41e5c9f8c0face4&o=&hp=1",
+          "photoId": "836262049",
+          "sourceUrl": "https://www.booking.com/hotel/es/skol-apartments-marbella.html?lang=en-us&chal_t=1793199017433&force_referer="
+        },
+        {
+          "slot": 23,
+          "title": "a kitchen with white cabinets and a washing machine at Marbella Skol in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/836262404.jpg?k=5505b4bcf352e081416379dabbd0e34a102aaaadc000d5df546a847b4dc76371&o=&hp=1",
+          "photoId": "836262404",
+          "sourceUrl": "https://www.booking.com/hotel/es/skol-apartments-marbella.html?lang=en-us&chal_t=1793199017433&force_referer="
+        },
+        {
+          "slot": 24,
+          "title": "a kitchen with white cabinets and a washer and dryer at Marbella Skol in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/836262342.jpg?k=526c98a1399131ca9c9bf6bf964ca785f8b57c6daebac194137731d07ffb75c0&o=&hp=1",
+          "photoId": "836262342",
+          "sourceUrl": "https://www.booking.com/hotel/es/skol-apartments-marbella.html?lang=en-us&chal_t=1793199017433&force_referer="
+        },
+        {
+          "slot": 25,
+          "title": "a kitchen with white cabinets and a sink at Marbella Skol in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/836262317.jpg?k=e59295f36ad3e5d67d41d67e579a4f769550683a2519c07c29a5220a1a9aa435&o=&hp=1",
+          "photoId": "836262317",
+          "sourceUrl": "https://www.booking.com/hotel/es/skol-apartments-marbella.html?lang=en-us&chal_t=1793199017433&force_referer="
+        },
+        {
+          "slot": 26,
+          "title": "a kitchen with an archway in the middle of it at Marbella Skol in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/836262299.jpg?k=64fc367964b426e4c20a021dcadf747db16ad6a239ebc8e50727fad0a6d9f1ee&o=&hp=1",
+          "photoId": "836262299",
+          "sourceUrl": "https://www.booking.com/hotel/es/skol-apartments-marbella.html?lang=en-us&chal_t=1793199017433&force_referer="
+        },
+        {
+          "slot": 27,
+          "title": "a kitchen with white cabinets and a washer and dryer at Marbella Skol in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/836262469.jpg?k=eb958551061d5d822a2dfe02feb65ce3a53315488de8569ff17034ba29425f41&o=&hp=1",
+          "photoId": "836262469",
+          "sourceUrl": "https://www.booking.com/hotel/es/skol-apartments-marbella.html?lang=en-us&chal_t=1793199017433&force_referer="
+        },
+        {
+          "slot": 28,
+          "title": "a bathroom with a sink and a washing machine at Marbella Skol in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/836262237.jpg?k=1be631b35e144009c43a4be4781cc96fd07d93d75a9b8a3e27eb4908e87404ac&o=&hp=1",
+          "photoId": "836262237",
+          "sourceUrl": "https://www.booking.com/hotel/es/skol-apartments-marbella.html?lang=en-us&chal_t=1793199017433&force_referer="
+        },
+        {
+          "slot": 29,
+          "title": "a bathroom with a green leafy wall at Marbella Skol in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/836261944.jpg?k=0a7f15fde95b24fd0a7edba66b57b6ffac8e608b6889cd49e66252d5bf670e3a&o=&hp=1",
+          "photoId": "836261944",
+          "sourceUrl": "https://www.booking.com/hotel/es/skol-apartments-marbella.html?lang=en-us&chal_t=1793199017433&force_referer="
+        },
+        {
+          "slot": 30,
+          "title": "a bathroom with a bed and a toilet in a room at Marbella Skol in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/836262141.jpg?k=99fb462452c0819af678c3bf6e4db393eacb74385f7de0ddc3e5db081f9107f2&o=&hp=1",
+          "photoId": "836262141",
+          "sourceUrl": "https://www.booking.com/hotel/es/skol-apartments-marbella.html?lang=en-us&chal_t=1793199017433&force_referer="
+        },
+        {
+          "slot": 31,
+          "title": "a white bathroom with a toilet and a sink at Marbella Skol in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/836262802.jpg?k=2c718bb5f10a2de7a206e6db0b5e62298925f5e26c39178a1c6ce76f627fe38f&o=&hp=1",
+          "photoId": "836262802",
+          "sourceUrl": "https://www.booking.com/hotel/es/skol-apartments-marbella.html?lang=en-us&chal_t=1793199017433&force_referer="
+        },
+        {
+          "slot": 32,
+          "title": "a bathroom with a sink and a shower at Marbella Skol in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/836262759.jpg?k=a09d19cc92435cb8f547bc42e5b52d847c2f8460427c022ebe218a0271c04198&o=&hp=1",
+          "photoId": "836262759",
+          "sourceUrl": "https://www.booking.com/hotel/es/skol-apartments-marbella.html?lang=en-us&chal_t=1793199017433&force_referer="
+        },
+        {
+          "slot": 33,
+          "title": "a white bathroom with a sink and a shower at Marbella Skol in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/836262708.jpg?k=b9f00713e47ad032701ecfa7627b9b961e92efc62b37c01c1f214da899467797&o=&hp=1",
+          "photoId": "836262708",
+          "sourceUrl": "https://www.booking.com/hotel/es/skol-apartments-marbella.html?lang=en-us&chal_t=1793199017433&force_referer="
+        },
+        {
+          "slot": 34,
+          "title": "a bathroom with a sink and a mirror at Marbella Skol in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/836262669.jpg?k=36425d28070ed97b2f73e578e9b9ebe16c8cf383bb07f2cde3c5f05d05b54677&o=&hp=1",
+          "photoId": "836262669",
+          "sourceUrl": "https://www.booking.com/hotel/es/skol-apartments-marbella.html?lang=en-us&chal_t=1793199017433&force_referer="
+        },
+        {
+          "slot": 35,
+          "title": "a bathroom with a shower and a toilet and a sink at Marbella Skol in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/836262591.jpg?k=1a6d7dcae6b6136af4ac342490857ebe2349068192f11a9f01bb48da0f3f05eb&o=&hp=1",
+          "photoId": "836262591",
+          "sourceUrl": "https://www.booking.com/hotel/es/skol-apartments-marbella.html?lang=en-us&chal_t=1793199017433&force_referer="
+        },
+        {
+          "slot": 36,
+          "title": "a bathroom with a sink and a mirror at Marbella Skol in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/836262868.jpg?k=9dcd85185dd1594c854b48c08ca0dcf09abfb822105504bd3b5389625dc47952&o=&hp=1",
+          "photoId": "836262868",
+          "sourceUrl": "https://www.booking.com/hotel/es/skol-apartments-marbella.html?lang=en-us&chal_t=1793199017433&force_referer="
+        },
+        {
+          "slot": 37,
+          "title": "a group of couches and chairs and an umbrella and the ocean at Marbella Skol in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/836283744.jpg?k=2522a2ffba6f4cc2f27a7ecb1327178c0f48cae789a27e50874ed55b0ee3e38f&o=&hp=1",
+          "photoId": "836283744",
+          "sourceUrl": "https://www.booking.com/hotel/es/skol-apartments-marbella.html?lang=en-us&chal_t=1793199017433&force_referer="
+        },
+        {
+          "slot": 38,
+          "title": "a group of people playing soccer on the beach at Marbella Skol in Marbella",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/836283944.jpg?k=30a4403566420b1c364a924362b7bce58421f1762f6eff5fb68fc2d85a186eb2&o=&hp=1",
+          "photoId": "836283944",
+          "sourceUrl": "https://www.booking.com/hotel/es/skol-apartments-marbella.html?lang=en-us&chal_t=1793199017433&force_referer="
+        },
+        {
+          "slot": 39,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max500/836283464.jpg?k=f6a5f76ed4f670acff6e2fbcff004ef4392f8f3f7902ed6fec14e6641bc20d0e&o=&hp=1",
+          "photoId": "4",
+          "sourceUrl": "https://www.booking.com/hotel/es/skol-apartments-marbella.html?lang=en-us&chal_t=1793199017433&force_referer="
+        },
+        {
+          "slot": 40,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/836261848.jpg?k=3e9af529ea60adde3798550375b61c511890b874c6b1fc5e3b08bdfb66d6d6dd&o=&hp=1",
+          "photoId": "8",
+          "sourceUrl": "https://www.booking.com/hotel/es/skol-apartments-marbella.html?lang=en-us&chal_t=1793199017433&force_referer="
+        },
+        {
+          "slot": 41,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/836262037.jpg?k=5bb8144a94c3589592d604a1f97350ecc074352bcb5bc13e3dc9c9bcd5d4a724&o=&hp=1",
+          "photoId": "7",
+          "sourceUrl": "https://www.booking.com/hotel/es/skol-apartments-marbella.html?lang=en-us&chal_t=1793199017433&force_referer="
+        },
+        {
+          "slot": 42,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/349898846.jpg?k=f2c53e3bcd1fc9b184b4803665a8fb0551f470c6fb3425035975478f67cfcd22&o=&hp=1",
+          "photoId": "6",
+          "sourceUrl": "https://www.booking.com/hotel/es/skol-apartments-marbella.html?lang=en-us&chal_t=1793199017433&force_referer="
+        },
+        {
+          "slot": 43,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/836261445.jpg?k=59421a2741034509242172407071306c2f3682ec43303ede36473eeb517f5ffa&o=&hp=1",
+          "photoId": "5",
+          "sourceUrl": "https://www.booking.com/hotel/es/skol-apartments-marbella.html?lang=en-us&chal_t=1793199017433&force_referer="
+        },
+        {
+          "slot": 44,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/836261561.jpg?k=e74f390383dfed65c0f4e1f40e5f83a9cbe2deaf336f6253d19c1ff3ce758f0a&o=&hp=1",
+          "photoId": "1",
+          "sourceUrl": "https://www.booking.com/hotel/es/skol-apartments-marbella.html?lang=en-us&chal_t=1793199017433&force_referer="
+        },
+        {
+          "slot": 45,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/836261343.jpg?k=ab0ec496ae50fa89918ecc2a4b95ed1551e0535412d4ed1929464dbdbc9e7dbe&o=&hp=1",
+          "photoId": "3",
+          "sourceUrl": "https://www.booking.com/hotel/es/skol-apartments-marbella.html?lang=en-us&chal_t=1793199017433&force_referer="
+        },
+        {
+          "slot": 46,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/836261580.jpg?k=48f3065e011d0dae40cff89b3dccea6b926a03b5124979cd9186eeb8b054e5b1&o=&hp=1",
+          "photoId": "0",
+          "sourceUrl": "https://www.booking.com/hotel/es/skol-apartments-marbella.html?lang=en-us&chal_t=1793199017433&force_referer="
+        },
+        {
+          "slot": 47,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/836261792.jpg?k=ccb2731bcb64f9d5ca0ecf4333665831cb5dc6908e3b14dfdbe41c7847bc03da&o=&hp=1",
+          "photoId": "2",
+          "sourceUrl": "https://www.booking.com/hotel/es/skol-apartments-marbella.html?lang=en-us&chal_t=1793199017433&force_referer="
+        },
+        {
+          "slot": 48,
+          "title": "Booking.com Deep Gallery Photo",
+          "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max200/836262049.jpg?k=ce7fd7a2ad295ac84557acfbeace93eba2bb963da6c72bb3c41e5c9f8c0face4&o=&hp=1",
+          "photoId": "9",
+          "sourceUrl": "https://www.booking.com/hotel/es/skol-apartments-marbella.html?lang=en-us&chal_t=1793199017433&force_referer="
+        }
+      ],
+      "vibe_grading_rubric": {
+        "destination_vibe_title": "Marbella Beachfront, Marbella",
+        "destination_vibe_pillars": "Local Architecture • Evening Social Energy • Walkable Micro-Gems",
+        "verified_reality_score": 91,
+        "verified_reality_label": "On-Property Match to Destination Vibe",
+        "current_merchandising_score": 66,
+        "optimized_merchandising_score": 95,
+        "vibe_gap_points": -25,
+        "vibe_gap_archetype": "SURGICAL MERCHANDISING OPPORTUNITY",
+        "vibe_gap_summary": "Skol Apartments Marbella delivers a 91/100 on-property match to the Marbella Beachfront Vibe Signature, compared to a 66/100 live OTA Top 5 merchandising score (-25 pt Vibe Gap).",
+        "raw_slot_total": 72,
+        "repetition_penalty": -6,
+        "repetition_penalty_reason": "Sub-optimal sequencing or category repetition in Live Slots #1–#5",
+        "slot_scorecard": [
+          {
+            "slot": 1,
+            "formula_name": "Slot #1 — Signature Vibe Hero",
+            "live_score": 20,
+            "max_score": 20,
+            "status": "RETAINED (20/20)",
+            "live_what_is_there": "an aerial view of a resort with a pool and the ocean at Marbella Skol in Marbella",
+            "optimal_fix": "Retain Resort Swimming Pool & Lifestyle Cabana Deck in Slot #1"
+          },
+          {
+            "slot": 2,
+            "formula_name": "Slot #2 — The Bookable Room",
+            "live_score": 12,
+            "max_score": 20,
+            "status": "PROMOTED FROM #8",
+            "live_what_is_there": "a living room with a couch and a desk at Marbella Skol in Marbella",
+            "optimal_fix": "Promote A bedroom with a bed and a window at Marbella Skol in Marbella into Slot #2"
+          },
+          {
+            "slot": 3,
+            "formula_name": "Slot #3 — Bathroom & Comfort Proof",
+            "live_score": 8,
+            "max_score": 20,
+            "status": "PROMOTED FROM #30",
+            "live_what_is_there": "a mirror in a room with a green wall at Marbella Skol in Marbella",
+            "optimal_fix": "Promote A bathroom with a sink and a shower at Marbella Skol in Marbella into Slot #3"
+          },
+          {
+            "slot": 4,
+            "formula_name": "Slot #4 — Day-to-Night Social & Dining",
+            "live_score": 20,
+            "max_score": 20,
+            "status": "RETAINED (20/20)",
+            "live_what_is_there": "a view of the pool and the ocean from the balcony of a resort at Marbella Skol in Marbella",
+            "optimal_fix": "Retain a view of the pool and the ocean from the balcony of a resort in Slot #4"
+          },
+          {
+            "slot": 5,
+            "formula_name": "Slot #5 — Neighbourhood & Architectural Gateway",
+            "live_score": 12,
+            "max_score": 20,
+            "status": "PROMOTED FROM #7",
+            "live_what_is_there": "a living room with a couch and a table at Marbella Skol in Marbella",
+            "optimal_fix": "Promote a balcony with tables and umbrellas on the grass into Slot #5"
+          }
+        ],
+        "auto_vibe_insights": {
+          "badge": "Vibe Gap Analysis (-25 pts)",
+          "headline_stat": "Skol Apartments Marbella delivers a 91/100 verified match to the Marbella Beachfront Vibe Signature, vs. 66/100 on its live Booking.com Top 5 sequence.",
+          "gm_outreach_hook": "Your on-property guest experience scores 91/100 against the Marbella Beachfront Vibe Signature, but your live Booking.com Top 5 gallery currently converts at 66/100—resequencing your existing photos unlocks 95/100.",
+          "linkedin_post_hook": "Vibe Gap Audit for Skol Apartments Marbella (Marbella): On-Property Reality 91/100 | Current OTA Gallery 66/100 -> Optimized 95/100."
+        }
+      },
+      "photos_status": "RESOLVED"
+    },
+    "audit_timestamp": "2026-10-28T14:50:24.195Z"
+  }
+}
