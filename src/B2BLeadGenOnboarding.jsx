@@ -652,7 +652,7 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
               </div>
 
               <div className="glass-card" style={{ padding: '1.5rem 1.75rem', borderRadius: '1.25rem' }}>
-                {/* 1-Tap Canned Conference Demo Banner: Sea Containers London */}
+                {/* 1-Tap Instant Live Demo Banner */}
                 <div className="canned-demo-banner">
                   <div className="canned-demo-info">
                     <div className="canned-demo-eyebrow">
@@ -660,7 +660,7 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                       <span>INSTANT LIVE BENCHMARK • NO EMAIL REQUIRED</span>
                     </div>
                     <div className="canned-demo-title">
-                      Sea Containers London <span style={{ color: 'rgba(255,255,255,0.55)', fontWeight: 600, fontSize: '0.82rem' }}>(South Bank, London)</span>
+                      Instant Live Demo
                     </div>
                     <div className="canned-demo-sub">
                       See a full 8-Signal Vibe Signature + 5-Slot Booking.com Photo Re-Order (92/100 Reality vs. 48/100 Live OTA)
@@ -671,7 +671,7 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                     onClick={() => launchCannedDemo('sea-containers-london')}
                     className="canned-demo-btn"
                   >
-                    <span>⚡ Open Sea Containers Demo</span>
+                    <span>⚡ Instant Live Demo</span>
                     <ChevronRight size={16} />
                   </button>
                 </div>
@@ -699,7 +699,7 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                       border: fieldErrors.propertyName ? '1px solid #ef4444' : undefined 
                     }} 
                     value={formData.propertyName} 
-                    placeholder="e.g. Sea Containers London" 
+                    placeholder="Enter hotel name" 
                     onChange={e => {
                       setFieldErrors(prev => ({ ...prev, propertyName: '' }));
                       setFormData({...formData, propertyName: e.target.value});

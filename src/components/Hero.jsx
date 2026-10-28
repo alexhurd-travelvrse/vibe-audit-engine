@@ -50,15 +50,12 @@ const Hero = () => {
                         <ArrowRight size={18} />
                     </Link>
 
-                    {/* 1-Tap Canned Conference Demo: Sea Containers London (Zero Latency, No Email Gate) */}
+                    {/* 1-Tap Instant Live Demo (Zero Latency, No Email Gate) */}
                     <div className="hero-instant-demo-bar">
-                        <span className="hero-demo-label">
-                            <Sparkles size={12} style={{ color: '#ffd700', flexShrink: 0 }} />
-                            <span>Instant Live Demo:</span>
-                        </span>
                         <div className="hero-demo-pills">
-                            <Link to="/audit?demo=sea-containers-london" className="hero-demo-pill hero-demo-pill-bcn" title="Open Instant Pre-Audited Demo: Sea Containers London">
-                                <span>⚡ Sea Containers London (South Bank)</span>
+                            <Link to="/audit?demo=sea-containers-london" className="hero-demo-pill hero-demo-pill-bcn" title="Open Instant Live Demo">
+                                <Sparkles size={13} style={{ color: '#ffd700', flexShrink: 0 }} />
+                                <span>Instant Live Demo</span>
                                 <ArrowRight size={13} />
                             </Link>
                         </div>
