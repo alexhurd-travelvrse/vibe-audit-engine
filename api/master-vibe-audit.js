@@ -433,6 +433,14 @@ export const KNOWN_BENCHMARK_PROPERTIES = [
     title: 'Raffles London at The OWO'
   },
   {
+    aliases: ['nobu', 'nobu hotel', 'nobu barcelona', 'nobu hotel barcelona'],
+    city: 'barcelona',
+    neighborhood: 'Sants-Montjuïc',
+    slug: 'nobu-barcelona',
+    url: 'https://www.booking.com/hotel/es/nobu-barcelona.html',
+    title: 'Nobu Hotel Barcelona'
+  },
+  {
     aliases: ['1 hotel south beach', 'one hotel south beach', '1 hotel miami'],
     city: 'miami',
     slug: '1-hotel-south-beach',
@@ -1355,7 +1363,8 @@ export async function fetchAmenityPhotosForHotel(hotelName, city, neighborhood =
     if (signatureMagnetName) {
       const magnetLower = signatureMagnetName.toLowerCase();
       for (const p of [...officialWebsitePhotos, ...taPhotos]) {
-        const txt = `${p.title || ''} ${p.imageUrl || ''}`.toLowerCase();
+        if (!p) continue;
+        const txt = `${p?.title || ''} ${p?.imageUrl || ''}`.toLowerCase();
         if (txt.includes(magnetLower)) {
           p.isSignatureMagnet = true;
           p.detectedCategory = 'MAGNET';
@@ -1794,28 +1803,32 @@ export function matchBestImageForSubject(subjectText, category, liveBookingPhoto
   const setUsed = (usedUrls instanceof Set) ? usedUrls : new Set();
 
   const isExterior = (p) => {
-    const s = `${p.title || ''} ${p.imageUrl || ''}`.toLowerCase();
+    if (!p) return false;
+    const s = `${p?.title || ''} ${p?.imageUrl || ''}`.toLowerCase();
     return s.includes('exterior') || s.includes('facade') || s.includes('façade') || s.includes('building') || s.includes('outside') || s.includes('aerial') || s.includes('marina') || s.includes('entrance');
   };
 
   const isBedroomLike = (p) => {
-    const s = `${p.title || ''} ${p.imageUrl || ''}`.toLowerCase();
+    if (!p) return false;
+    const s = `${p?.title || ''} ${p?.imageUrl || ''}`.toLowerCase();
     return s.includes('bedroom') || s.includes('suite') || (s.includes('bed') && !s.includes('sunbed') && !s.includes('daybed'));
   };
 
   const isSpaOrPoolLike = (p) => {
+    if (!p) return false;
     const s = `${p?.title || ''} ${p?.imageUrl || ''}`.toLowerCase();
     return s.includes('spa') || s.includes('wellness') || s.includes('pool') || s.includes('swim') || s.includes('sauna') || s.includes('jacuzzi') || s.includes('hot tub') || s.includes('fitness') || s.includes('gym') || s.includes('locker') || s.includes('changing room');
   };
 
   const isBath = (p) => {
-    if (isSpaOrPoolLike(p)) return false;
+    if (!p || isSpaOrPoolLike(p)) return false;
     const s = `${p?.title || ''} ${p?.imageUrl || ''}`.toLowerCase();
     return s.includes('bathroom') || s.includes('washroom') || s.includes('ensuite') || s.includes('en-suite') || (s.includes('soaking tub') && !s.includes('hot tub')) || s.includes('freestanding tub') || (s.includes('walk-in shower') && !s.includes('pool'));
   };
 
   const isMeetingOrConference = (p) => {
-    const s = `${p.title || ''} ${p.imageUrl || ''}`.toLowerCase();
+    if (!p) return false;
+    const s = `${p?.title || ''} ${p?.imageUrl || ''}`.toLowerCase();
     return s.includes('meeting') || s.includes('conference') || s.includes('boardroom') || s.includes('event space') || s.includes('banquet') || s.includes('seminar');
   };
 
@@ -2244,13 +2257,13 @@ export async function resolveAuditPhotos(hotelName, city, neighborhood = '', str
   // Classify top candidate images directly via raw pixels to eliminate text heuristics
   // -------------------------------------------------------------
   // Select candidates: if useStrictBookingReorder is true, poolLive provides 100% of candidates
-  const liveDining = poolLive.filter(p => /restaurant|dining|bar\b|cocktail|bistro|sushi|grill|boilerman|neni|cafe|tea/i.test(`${p.title || ''} ${p.imageUrl || ''}`)).slice(0, 4);
-  const liveExt = poolLive.filter(p => /exterior|facade|façade|building|street|store front|entrance|courtyard|tower|dome|palace|landmark/i.test(`${p.title || ''} ${p.imageUrl || ''}`)).slice(0, 4);
-  const liveSpa = poolLive.filter(p => /spa|wellness|sauna|treatment|massage|steam|hydrotherapy|agua|bathhouse|vase|sculpture|tear/i.test(`${p.title || ''} ${p.imageUrl || ''}`)).slice(0, 3);
-  const liveLobby = poolLive.filter(p => /lobby|reception|sculpture|salon|lounge|\bhall\b|atrium|foyer|living/i.test(`${p.title || ''} ${p.imageUrl || ''}`) && !/hallway|corridor|passageway|stairwell|elevator/i.test(`${p.title || ''} ${p.imageUrl || ''}`)).slice(0, 3);
-  const liveBed = poolLive.filter(p => /bedroom|bed|suite/i.test(`${p.title || ''} ${p.imageUrl || ''}`)).slice(0, 3);
-  const liveBath = poolLive.filter(p => /bath|tub|shower/i.test(`${p.title || ''} ${p.imageUrl || ''}`)).slice(0, 2);
-  const livePool = poolLive.filter(p => /pool|swim/i.test(`${p.title || ''} ${p.imageUrl || ''}`)).slice(0, 2);
+  const liveDining = poolLive.filter(p => /restaurant|dining|bar\b|cocktail|bistro|sushi|grill|boilerman|neni|cafe|tea/i.test(`${p?.title || ''} ${p?.imageUrl || ''}`)).slice(0, 4);
+  const liveExt = poolLive.filter(p => /exterior|facade|façade|building|street|store front|entrance|courtyard|tower|dome|palace|landmark/i.test(`${p?.title || ''} ${p?.imageUrl || ''}`)).slice(0, 4);
+  const liveSpa = poolLive.filter(p => /spa|wellness|sauna|treatment|massage|steam|hydrotherapy|agua|bathhouse|vase|sculpture|tear/i.test(`${p?.title || ''} ${p?.imageUrl || ''}`)).slice(0, 3);
+  const liveLobby = poolLive.filter(p => /lobby|reception|sculpture|salon|lounge|\bhall\b|atrium|foyer|living/i.test(`${p?.title || ''} ${p?.imageUrl || ''}`) && !/hallway|corridor|passageway|stairwell|elevator/i.test(`${p?.title || ''} ${p?.imageUrl || ''}`)).slice(0, 3);
+  const liveBed = poolLive.filter(p => /bedroom|bed|suite/i.test(`${p?.title || ''} ${p?.imageUrl || ''}`)).slice(0, 3);
+  const liveBath = poolLive.filter(p => /bath|tub|shower/i.test(`${p?.title || ''} ${p?.imageUrl || ''}`)).slice(0, 2);
+  const livePool = poolLive.filter(p => /pool|swim/i.test(`${p?.title || ''} ${p?.imageUrl || ''}`)).slice(0, 2);
   const liveHeroes = poolLive.slice(0, 4);
   
   const selectedLiveCandidates = Array.from(new Set([...liveHeroes, ...liveDining, ...liveExt, ...liveSpa, ...liveLobby, ...liveBed, ...liveBath, ...livePool, ...poolLive.slice(0, 16)])).slice(0, 18);
@@ -2331,6 +2344,7 @@ export async function resolveAuditPhotos(hotelName, city, neighborhood = '', str
   };
 
   const isExterior = (p) => {
+    if (!p) return false;
     const v = getVisual(p);
     if (v) {
       if (v.is_dining_or_bar === true || v.primary_category === 'RESTAURANT_DINING' || v.primary_category === 'BAR_LOUNGE' || v.primary_category === 'POOL_DECK') {
@@ -2338,7 +2352,7 @@ export async function resolveAuditPhotos(hotelName, city, neighborhood = '', str
       }
       return v.primary_category === 'EXTERIOR_FACADE' || v.primary_category === 'COURTYARD_OUTDOOR' || v.is_exterior === true;
     }
-    const s = `${p.title || ''} ${p.imageUrl || ''}`.toLowerCase();
+    const s = `${p?.title || ''} ${p?.imageUrl || ''}`.toLowerCase();
     if (s.includes('balcony-suite') || s.includes('suite-') || s.includes('room-') || s.includes('bedroom')) return false;
     if (s.includes('big ben') || s.includes('clock tower') || s.includes('young child') || s.includes('london sign') || s.includes('capitol building')) return false;
     if (
@@ -2348,26 +2362,27 @@ export async function resolveAuditPhotos(hotelName, city, neighborhood = '', str
       s.includes('meeting') || s.includes('kitchen') || s.includes('buffet') || s.includes('breakfast') ||
       s.includes('lobby')
     ) return false;
-    return p.detectedCategory === 'EXTERIOR' || s.includes('exterior') || s.includes('facade') || s.includes('façade') || s.includes('store front') || s.includes('storefront') || s.includes('view of a river with buildings') || s.includes('courtyard') || s.includes('grounds') || (s.includes('building') && !s.includes('in a building') && !s.includes('inside a building')) || (s.includes('outside') && !s.includes('balcony')) || s.includes('aerial') || s.includes('marina') || s.includes('entrance') || s.includes('street view');
+    return p?.detectedCategory === 'EXTERIOR' || s.includes('exterior') || s.includes('facade') || s.includes('façade') || s.includes('store front') || s.includes('storefront') || s.includes('view of a river with buildings') || s.includes('courtyard') || s.includes('grounds') || (s.includes('building') && !s.includes('in a building') && !s.includes('inside a building')) || (s.includes('outside') && !s.includes('balcony')) || s.includes('aerial') || s.includes('marina') || s.includes('entrance') || s.includes('street view');
   };
 
   const isBedroomLike = (p) => {
+    if (!p) return false;
     const v = getVisual(p);
     if (v) return v.has_bed === true && !v.is_exterior;
-    if (p.detectedCategory === 'EXTERIOR' || p.detectedCategory === 'POOL' || p.detectedCategory === 'SPA') return false;
-    const s = `${p.title || ''} ${p.imageUrl || ''}`.toLowerCase();
+    if (p?.detectedCategory === 'EXTERIOR' || p?.detectedCategory === 'POOL' || p?.detectedCategory === 'SPA') return false;
+    const s = `${p?.title || ''} ${p?.imageUrl || ''}`.toLowerCase();
     if (s.includes('exterior') || s.includes('facade') || s.includes('façade') || s.includes('rumpus') || s.includes('lyaness') || s.includes('12th knot')) return false;
-    if (p.detectedCategory === 'BEDROOM') return true;
+    if (p?.detectedCategory === 'BEDROOM') return true;
     return s.includes('bedroom') || s.includes('suite') || (s.includes('bed') && !s.includes('sunbed') && !s.includes('daybed'));
   };
 
   const isBath = (p) => {
     if (!p) return false;
-    const s = `${p.title || ''} ${p.imageUrl || ''}`.toLowerCase();
+    const s = `${p?.title || ''} ${p?.imageUrl || ''}`.toLowerCase();
     if (s.includes('spa') || s.includes('sauna') || s.includes('wellness') || s.includes('pool') || s.includes('swim') || s.includes('gym') || s.includes('fitness') || s.includes('locker') || s.includes('changing room') || s.includes('hot tub') || s.includes('jacuzzi')) return false;
     const v = getVisual(p);
     if (v) return v.has_bath === true && !v.is_exterior;
-    if (p.detectedCategory === 'BATHROOM') return true;
+    if (p?.detectedCategory === 'BATHROOM') return true;
     return s.includes('bathroom') || s.includes('washroom') || s.includes('ensuite') || s.includes('en-suite') || (s.includes('soaking tub') && !s.includes('hot tub')) || s.includes('freestanding tub') || (s.includes('walk-in shower') && !s.includes('pool'));
   };
 

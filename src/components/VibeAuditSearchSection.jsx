@@ -148,7 +148,8 @@ const VibeAuditSearchSection = () => {
       { aliases: ['plymouth', 'the plymouth', 'the plymouth hotel', 'the plymouth miami beach', 'plymouth south beach'], title: 'The Plymouth South Beach Miami', city: 'Miami', neighborhood: 'Miami Beach', url: 'https://www.booking.com/hotel/us/the-plymouth-miami-beach.html' },
       { aliases: ['25hours', '25 hours', '25hours copenhagen', '25hours indre by'], title: '25hours Hotel Indre By Copenhagen', city: 'Copenhagen', neighborhood: 'Indre By', url: 'https://www.booking.com/hotel/dk/25hours-indre-by.html' },
       { aliases: ['dukes the palm', 'dukes dubai', 'dukes palm'], title: 'Dukes The Palm, a Royal Hideaway Hotel Dubai', city: 'Dubai', neighborhood: 'Palm Jumeirah', url: 'https://www.booking.com/hotel/ae/dukes.html' },
-      { aliases: ['sls south beach', 'sls miami'], title: 'SLS South Beach Miami', city: 'Miami', neighborhood: 'Miami Beach', url: 'https://www.booking.com/hotel/us/sls-south-beach.html' }
+      { aliases: ['sls south beach', 'sls miami'], title: 'SLS South Beach Miami', city: 'Miami', neighborhood: 'Miami Beach', url: 'https://www.booking.com/hotel/us/sls-south-beach.html' },
+      { aliases: ['nobu', 'nobu hotel', 'nobu barcelona', 'nobu hotel barcelona'], title: 'Nobu Hotel Barcelona', city: 'Barcelona', neighborhood: 'Sants-Montjuïc', url: 'https://www.booking.com/hotel/es/nobu-barcelona.html' }
     ];
 
     const lowerInput = hotelNameInput.toLowerCase();

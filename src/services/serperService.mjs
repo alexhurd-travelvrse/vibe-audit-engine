@@ -82,51 +82,56 @@ export async function fetchVenueCorpus(hotelName, city, neighborhood = '') {
   const corpusSections = [];
 
   // Parse Places Data with strict venue matching
-  if (placesData.places && placesData.places.length > 0) {
+  if (Array.isArray(placesData?.places) && placesData.places.length > 0) {
     const normHotel = hotelName.toLowerCase().replace(/^(the|a|an)\s+/i, '').trim();
     const hotelTokens = normHotel.split(/\s+/).filter(t => t.length > 2);
     
     // Find place that best matches hotel name tokens
     const matchedPlace = placesData.places.find(p => {
-      const pTitle = (p.title || '').toLowerCase();
+      if (!p) return false;
+      const pTitle = (p?.title || '').toLowerCase();
       return hotelTokens.some(t => pTitle.includes(t));
     }) || placesData.places[0];
 
     const topPlace = matchedPlace;
-    corpusSections.push(`=== GOOGLE PLACES METADATA & REVIEWS ===`);
-    corpusSections.push(`Title: ${topPlace.title || hotelName}`);
-    corpusSections.push(`Address: ${topPlace.address || ''}`);
-    corpusSections.push(`Rating: ${topPlace.rating || 'N/A'} (${topPlace.ratingCount || 0} reviews)`);
-    corpusSections.push(`Category: ${topPlace.category || ''}`);
-    
-    if (topPlace.description) {
-      corpusSections.push(`Description: ${topPlace.description}`);
-    }
+    if (topPlace) {
+      corpusSections.push(`=== GOOGLE PLACES METADATA & REVIEWS ===`);
+      corpusSections.push(`Title: ${topPlace.title || hotelName}`);
+      corpusSections.push(`Address: ${topPlace.address || ''}`);
+      corpusSections.push(`Rating: ${topPlace.rating || 'N/A'} (${topPlace.ratingCount || 0} reviews)`);
+      corpusSections.push(`Category: ${topPlace.category || ''}`);
+      
+      if (topPlace.description) {
+        corpusSections.push(`Description: ${topPlace.description}`);
+      }
 
-    // Top places attributes if present
-    if (topPlace.attributes) {
-      corpusSections.push(`Attributes: ${JSON.stringify(topPlace.attributes)}`);
+      // Top places attributes if present
+      if (topPlace.attributes) {
+        corpusSections.push(`Attributes: ${JSON.stringify(topPlace.attributes)}`);
+      }
     }
   }
 
   // Parse Editorial Articles
-  if (editorialData.organic && editorialData.organic.length > 0) {
+  if (Array.isArray(editorialData?.organic) && editorialData.organic.length > 0) {
     corpusSections.push(`\n=== EDITORIAL CRITIQUE & PRESS SNIPPETS ===`);
     editorialData.organic.forEach((item, idx) => {
-      corpusSections.push(`[Source ${idx + 1}: ${item.title}]`);
-      corpusSections.push(`Link: ${item.link}`);
+      if (!item) return;
+      corpusSections.push(`[Source ${idx + 1}: ${item.title || 'Press Critique'}]`);
+      corpusSections.push(`Link: ${item.link || ''}`);
       corpusSections.push(`Snippet: ${item.snippet || ''}`);
-      if (item.sitelinks && item.sitelinks.length > 0) {
-        corpusSections.push(`Highlights: ${item.sitelinks.map(s => s.title).join(', ')}`);
+      if (Array.isArray(item.sitelinks) && item.sitelinks.length > 0) {
+        corpusSections.push(`Highlights: ${item.sitelinks.map(s => s?.title).filter(Boolean).join(', ')}`);
       }
     });
   }
 
   // Parse Atmosphere & Guest Vibe Mentions
-  if (atmosphereData.organic && atmosphereData.organic.length > 0) {
+  if (Array.isArray(atmosphereData?.organic) && atmosphereData.organic.length > 0) {
     corpusSections.push(`\n=== ATMOSPHERE, INTERIOR & GUEST OBSERVATIONS ===`);
     atmosphereData.organic.forEach((item, idx) => {
-      corpusSections.push(`- ${item.title}: ${item.snippet || ''}`);
+      if (!item) return;
+      corpusSections.push(`- ${item.title || 'Observation'}: ${item.snippet || ''}`);
     });
   }
 
