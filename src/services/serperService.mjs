@@ -178,6 +178,10 @@ export async function fetchVenueCorpus(hotelName, city, neighborhood = '') {
     verifiedCity
   };
   corpusCache.set(cacheKey, { timestamp: Date.now(), data: result });
+  if (verifiedCity) {
+    const calibratedKey = `${String(hotelName || '').toLowerCase().trim()}:::${String(verifiedCity || '').toLowerCase().trim()}:::${String(neighborhood || '').toLowerCase().trim()}`;
+    corpusCache.set(calibratedKey, { timestamp: Date.now(), data: result });
+  }
   return result;
   })();
 

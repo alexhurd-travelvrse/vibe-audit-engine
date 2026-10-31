@@ -469,15 +469,6 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
       }));
       setStep('results');
       setCurrentPhase(1);
-
-      // Background non-blocking load of supplemental category signals
-      scrapeLocalSignals(targetCity, targetNeighborhood).then(sig => {
-        if (abortController.signal.aborted) return;
-        if (sig && sig.categories) {
-          setAnalysis(prev => (prev && prev.masterAudit?.venue_id === masterAudit?.venue_id) ? { ...prev, signals: sig } : prev);
-        }
-      }).catch(err => console.warn("Supplemental signals error:", err));
-
     } catch (err) {
       if (!abortController.signal.aborted) {
         console.error("Analysis launch failed", err);
@@ -490,7 +481,15 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
   const runPhase2 = async () => {
     setCurrentPhase(2);
     try {
-      const auditResults = await auditDiscoverability(formData.propertyName, formData.city, analysis.signals.categories, formData.propertyUrl, formData.instagramUrl, formData.neighborhood);
+      let categories = analysis?.signals?.categories;
+      if (!categories || Object.keys(categories).length === 0) {
+        const sig = await scrapeLocalSignals(formData.city, formData.neighborhood);
+        if (sig && sig.categories) {
+          categories = sig.categories;
+          setAnalysis(prev => ({ ...prev, signals: sig }));
+        }
+      }
+      const auditResults = await auditDiscoverability(formData.propertyName, formData.city, categories || {}, formData.propertyUrl, formData.instagramUrl, formData.neighborhood);
       setAnalysis(prev => ({ ...prev, auditResults }));
       const challenge = generatePropulsionQuest(auditResults, formData.propertyName, formData.reward);
       setAnalysis(prev => ({ ...prev, challenge }));

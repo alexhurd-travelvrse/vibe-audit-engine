@@ -507,6 +507,10 @@ export function extractCleanBookingTarget(input) {
   return { url: null, id: null };
 }
 
+// In-memory 24h cache for Booking.com candidate lookups to eliminate duplicate Serper calls
+const candidateLookupCache = new Map();
+const CANDIDATE_CACHE_TTL_MS = 24 * 60 * 60 * 1000;
+
 // Universal Candidate Lookup Engine (Booking.com ID + Direct URL + Benchmark Dictionary + Serper + Playwright Fallback)
 export async function lookupHotelCandidates(hotelName, city = '', neighborhood = '', directBookingUrl = null, bookingId = null) {
   // 0. Direct Booking URL detection across all input strings (HIGHEST PRIORITY - preserves full slug and prevents URL truncation)
@@ -596,49 +600,32 @@ export async function lookupHotelCandidates(hotelName, city = '', neighborhood =
     }
   }
 
+  const lookupCacheKey = `${nameLower}:::${cityLower}:::${(neighborhood || '').toLowerCase().trim()}`;
+  const cachedLookup = candidateLookupCache.get(lookupCacheKey);
+  if (cachedLookup && (Date.now() - cachedLookup.timestamp < CANDIDATE_CACHE_TTL_MS)) {
+    console.log(`[Master Vibe] Serving cached Booking.com candidate lookup for "${lookupCacheKey}" (0 Serper credits)`);
+    return cachedLookup.data;
+  }
+
   const brandTokens = getDistinctiveTokens(hotelName);
   const cleanHotel = hotelName.replace(/\b(the|hotel|spa|resort|suites|inn|lodge|and|&)\b/gi, '').trim();
   
+  // Rationalised to max 3 high-signal queries with early exit on first decisive match (1 credit typical vs 6 credits)
   const queries = [
-    neighborhood ? `site:booking.com/hotel/ "${cleanHotel || hotelName}" "${neighborhood}" -residence -apartment -hostel` : null,
-    neighborhood ? `site:booking.com/hotel/ ${cleanHotel || hotelName} ${neighborhood} ${city} -residence -apartment -hostel` : null,
-    `site:booking.com/hotel/ "${cleanHotel || hotelName}" ${city} -residence -apartment -hostel`,
-    `site:booking.com/hotel/ ${cleanHotel || hotelName} ${city} -residence -apartment -hostel`,
-    `site:booking.com/hotel/ "${cleanHotel || hotelName}" hotel ${city}`,
-    brandTokens.length > 0 ? `site:booking.com/hotel/ ${brandTokens.join(' ')} ${city} hotel -residence -apartment -hostel` : null
-  ].filter(Boolean);
-
-  let rawCandidates = [];
-  if (SERPER_API_KEY) {
-    for (const q of queries) {
-      try {
-        const res = await fetch('https://google.serper.dev/search', {
-          method: 'POST',
-          headers: { 'X-API-KEY': SERPER_API_KEY, 'Content-Type': 'application/json' },
-          body: JSON.stringify({ q, num: 8 })
-        });
-        if (res.ok) {
-          const d = await res.json();
-          for (const item of (d.organic || [])) {
-            if (item.link && item.link.includes('booking.com/hotel/')) {
-              rawCandidates.push(item);
-            }
-          }
-        }
-      } catch (e) {
-        console.warn('[Master Vibe] Serper candidate query error:', e.message);
-      }
-    }
-  }
+    `site:booking.com/hotel/ "${cleanHotel || hotelName}" ${neighborhood ? `${neighborhood} ` : ''}${city} -residence -apartment -hostel`.trim(),
+    `site:booking.com/hotel/ ${cleanHotel || hotelName} ${city} -residence -apartment -hostel`.trim(),
+    brandTokens.length > 0 ? `site:booking.com/hotel/ ${brandTokens.join(' ')} ${city} hotel -residence -apartment -hostel`.trim() : null
+  ].filter((q, idx, arr) => Boolean(q) && arr.indexOf(q) === idx);
 
   const candidateMap = new Map();
-  for (const item of rawCandidates) {
-    let cleanUrl = item.link.replace(/\.[a-z]{2,3}(-[a-z]{2,4})?\.html/i, '.html');
+  const ingestCandidateItem = (item) => {
+    if (!item?.link || !item.link.includes('booking.com/hotel/')) return;
+    const cleanUrl = item.link.replace(/\.[a-z]{2,3}(-[a-z]{2,4})?\.html/i, '.html').split('?')[0];
     const slug = cleanUrl.split('booking.com/hotel/')[1]?.split('?')[0];
-    if (!slug) continue;
+    if (!slug) return;
 
     const score = scoreBookingCandidate(item, hotelName, city, neighborhood, brandTokens);
-    if (score < 25) continue;
+    if (score < 25) return;
 
     if (!candidateMap.has(slug) || candidateMap.get(slug).score < score) {
       const cleanTitle = (item.title || '')
@@ -656,6 +643,34 @@ export async function lookupHotelCandidates(hotelName, city = '', neighborhood =
         snippet: item.snippet || '',
         score
       });
+    }
+  };
+
+  if (SERPER_API_KEY && !process.env.DISABLE_SERPER) {
+    for (const q of queries) {
+      try {
+        const res = await fetch('https://google.serper.dev/search', {
+          method: 'POST',
+          headers: { 'X-API-KEY': SERPER_API_KEY, 'Content-Type': 'application/json' },
+          body: JSON.stringify({ q, num: 8 })
+        });
+        if (res.ok) {
+          const d = await res.json();
+          for (const item of (d.organic || [])) {
+            ingestCandidateItem(item);
+          }
+          // Early exit as soon as Query #1 (or current query) yields a decisive match
+          const currentSorted = Array.from(candidateMap.values()).sort((a, b) => b.score - a.score);
+          if (currentSorted.length === 1 && currentSorted[0].score >= 150) {
+            break;
+          }
+          if (currentSorted.length >= 2 && currentSorted[0].score >= 170 && (currentSorted[0].score - currentSorted[1].score >= 70)) {
+            break;
+          }
+        }
+      } catch (e) {
+        console.warn('[Master Vibe] Serper candidate query error:', e.message);
+      }
     }
   }
 
@@ -721,36 +736,41 @@ export async function lookupHotelCandidates(hotelName, city = '', neighborhood =
     .filter(c => c.score >= 25)
     .sort((a, b) => b.score - a.score);
 
+  let finalLookupResult;
   if (sortedCandidates.length === 0) {
-    return { status: 'none', requiresClarification: false, candidates: [] };
-  }
-  if (sortedCandidates.length === 1) {
-    return { status: 'decisive', requiresClarification: false, selected: sortedCandidates[0], candidates: sortedCandidates };
+    finalLookupResult = { status: 'none', requiresClarification: false, candidates: [] };
+  } else if (sortedCandidates.length === 1) {
+    finalLookupResult = { status: 'decisive', requiresClarification: false, selected: sortedCandidates[0], candidates: sortedCandidates };
+  } else {
+    const top1 = sortedCandidates[0];
+    const top2 = sortedCandidates[1];
+    const scoreDiff = top1.score - top2.score;
+
+    // DECISIVE ONLY IF TOP 1 IS OVERWHELMINGLY DOMINANT:
+    // e.g., top score is high (>= 170) AND at least 70 points ahead of candidate #2
+    if (top1.score >= 170 && scoreDiff >= 70) {
+      finalLookupResult = { status: 'decisive', requiresClarification: false, selected: top1, candidates: sortedCandidates };
+    } else {
+      // OTHERWISE: Trigger Clarification Page!
+      finalLookupResult = {
+        status: 'ambiguous',
+        requiresClarification: true,
+        selected: top1,
+        candidates: sortedCandidates.slice(0, 4)
+      };
+    }
   }
 
-  const top1 = sortedCandidates[0];
-  const top2 = sortedCandidates[1];
-  const scoreDiff = top1.score - top2.score;
-
-  // DECISIVE ONLY IF TOP 1 IS OVERWHELMINGLY DOMINANT:
-  // e.g., top score is high (>= 170) AND at least 70 points ahead of candidate #2
-  if (top1.score >= 170 && scoreDiff >= 70) {
-    return { status: 'decisive', requiresClarification: false, selected: top1, candidates: sortedCandidates };
+  if (finalLookupResult.status !== 'none') {
+    candidateLookupCache.set(lookupCacheKey, { timestamp: Date.now(), data: finalLookupResult });
   }
-
-  // OTHERWISE: Trigger Clarification Page!
-  return {
-    status: 'ambiguous',
-    requiresClarification: true,
-    selected: top1,
-    candidates: sortedCandidates.slice(0, 4)
-  };
+  return finalLookupResult;
 }
 
 // Resilient Serper Booking.com Live Photos Harvest (Zero-Playwright, Serverless/WAF Resilient)
 export async function fetchBookingPhotosViaSerper(hotelName, city = '', cleanUrl = null) {
   const apiKey = process.env.VITE_SERPER_API_KEY || process.env.SERPER_API_KEY;
-  if (!apiKey) return [];
+  if (!apiKey || process.env.DISABLE_SERPER) return [];
   try {
     const queries = [];
     if (cleanUrl) {
@@ -763,14 +783,14 @@ export async function fetchBookingPhotosViaSerper(hotelName, city = '', cleanUrl
     const seen = new Set();
 
     for (const q of queries) {
-      if (photos.length >= 25) break;
+      if (photos.length >= 8) break;
       const res = await fetch('https://google.serper.dev/images', {
         method: 'POST',
         headers: {
           'X-API-KEY': apiKey,
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ q, num: 30 })
+        body: JSON.stringify({ q, num: 10 })
       });
       if (!res.ok) continue;
       const data = await res.json();
@@ -1374,84 +1394,50 @@ export async function fetchAmenityPhotosForHotel(hotelName, city, neighborhood =
       }
     }
     
-    // Optional Serper search (only attempted if SERPER_API_KEY is present and not disabled; gracefully ignored on 403 / 0 credits)
+    // Rationalised Serper image search:
+    // - Capped strictly at num: 10 (1 credit per query instead of 2 credits for num > 10)
+    // - Consolidated from 12 queries (24 credits) to max 4 multi-category queries (max 4 credits, or 0-1 credit if >=12 direct Official/TA photos already harvested)
     let resSocial = {}, resSpa = {}, resLobby = {}, resExterior = {}, resBedroom = {}, resBath = {}, resTripAdvisorReview = {}, resMagnet = {}, resPool = {}, resTripAdvisorFeature = {}, resOfficial = {}, resParent = {};
     if (SERPER_API_KEY && !process.env.DISABLE_SERPER) {
       try {
-        [resSocial, resSpa, resLobby, resExterior, resBedroom, resBath, resTripAdvisorReview, resMagnet, resPool, resTripAdvisorFeature, resOfficial, resParent] = await Promise.all([
-          fetch('https://google.serper.dev/images', {
-            method: 'POST',
-            headers: { 'X-API-KEY': SERPER_API_KEY, 'Content-Type': 'application/json' },
-            body: JSON.stringify({ q: `${specificHotelQuery} (restaurant OR bar OR dining OR cocktails OR lounge OR food) -wedding`, num: 12 }),
-            signal: AbortSignal.timeout(4000)
-          }).then(r => r.ok ? r.json() : {}).catch(() => ({})),
-          fetch('https://google.serper.dev/images', {
-            method: 'POST',
-            headers: { 'X-API-KEY': SERPER_API_KEY, 'Content-Type': 'application/json' },
-            body: JSON.stringify({ q: `${specificHotelQuery} (spa OR wellness OR "vitality pool" OR sauna OR massage) -wedding`, num: 12 }),
-            signal: AbortSignal.timeout(4000)
-          }).then(r => r.ok ? r.json() : {}).catch(() => ({})),
-          fetch('https://google.serper.dev/images', {
-            method: 'POST',
-            headers: { 'X-API-KEY': SERPER_API_KEY, 'Content-Type': 'application/json' },
-            body: JSON.stringify({ q: `${specificHotelQuery} (lobby OR reception OR ballroom OR "drawing room" OR interior OR salon) -wedding`, num: 12 }),
-            signal: AbortSignal.timeout(4000)
-          }).then(r => r.ok ? r.json() : {}).catch(() => ({})),
-          fetch('https://google.serper.dev/images', {
-            method: 'POST',
-            headers: { 'X-API-KEY': SERPER_API_KEY, 'Content-Type': 'application/json' },
-            body: JSON.stringify({ q: `${specificHotelQuery} (facade OR exterior OR entrance OR building OR architecture) -wedding`, num: 12 }),
-            signal: AbortSignal.timeout(4000)
-          }).then(r => r.ok ? r.json() : {}).catch(() => ({})),
-          fetch('https://google.serper.dev/images', {
-            method: 'POST',
-            headers: { 'X-API-KEY': SERPER_API_KEY, 'Content-Type': 'application/json' },
-            body: JSON.stringify({ q: `${specificHotelQuery} ("signature suite" OR "hotel suite" OR "king room" OR bedroom) -wedding`, num: 12 }),
-            signal: AbortSignal.timeout(4000)
-          }).then(r => r.ok ? r.json() : {}).catch(() => ({})),
-          fetch('https://google.serper.dev/images', {
-            method: 'POST',
-            headers: { 'X-API-KEY': SERPER_API_KEY, 'Content-Type': 'application/json' },
-            body: JSON.stringify({ q: `${specificHotelQuery} (bathroom OR "marble bathroom" OR shower OR "soaking tub" OR "clawfoot tub" OR "freestanding tub" OR "master bath") -wedding`, num: 20 }),
-            signal: AbortSignal.timeout(4000)
-          }).then(r => r.ok ? r.json() : {}).catch(() => ({})),
-          fetch('https://google.serper.dev/images', {
-            method: 'POST',
-            headers: { 'X-API-KEY': SERPER_API_KEY, 'Content-Type': 'application/json' },
-            body: JSON.stringify({ q: `site:tripadvisor.com/Hotel_Review "${cleanHotelName}" -intitle:"Picture of" -intitle:"Photo of"`, num: 15 }),
-            signal: AbortSignal.timeout(4000)
-          }).then(r => r.ok ? r.json() : {}).catch(() => ({})),
-          signatureMagnetName ? fetch('https://google.serper.dev/images', {
-            method: 'POST',
-            headers: { 'X-API-KEY': SERPER_API_KEY, 'Content-Type': 'application/json' },
-            body: JSON.stringify({ q: `"${cleanHotelName}" "${signatureMagnetName}" (club OR lounge OR bar OR venue OR nightlife OR bowling) -wedding`, num: 12 }),
-            signal: AbortSignal.timeout(4000)
-          }).then(r => r.ok ? r.json() : {}).catch(() => ({})) : Promise.resolve({}),
-          fetch('https://google.serper.dev/images', {
-            method: 'POST',
-            headers: { 'X-API-KEY': SERPER_API_KEY, 'Content-Type': 'application/json' },
-            body: JSON.stringify({ q: `${specificHotelQuery} (pool OR "resort pool" OR cabana OR "pool deck" OR "swimming pool") -wedding`, num: 12 }),
-            signal: AbortSignal.timeout(4000)
-          }).then(r => r.ok ? r.json() : {}).catch(() => ({})),
-          fetch('https://google.serper.dev/images', {
-            method: 'POST',
-            headers: { 'X-API-KEY': SERPER_API_KEY, 'Content-Type': 'application/json' },
-            body: JSON.stringify({ q: `site:tripadvisor.com/Hotel_Feature "${cleanHotelName}" -intitle:"Picture of" -intitle:"Photo of"`, num: 15 }),
-            signal: AbortSignal.timeout(4000)
-          }).then(r => r.ok ? r.json() : {}).catch(() => ({})),
-          officialDomain ? fetch('https://google.serper.dev/images', {
-            method: 'POST',
-            headers: { 'X-API-KEY': SERPER_API_KEY, 'Content-Type': 'application/json' },
-            body: JSON.stringify({ q: `site:${officialDomain} "${cleanHotelName}" (pool OR spa OR dining OR bar OR suite OR room OR bath OR exterior)`, num: 15 }),
-            signal: AbortSignal.timeout(4000)
-          }).then(r => r.ok ? r.json() : {}).catch(() => ({})) : Promise.resolve({}),
-          parentBrand && parentBrand !== officialDomain ? fetch('https://google.serper.dev/images', {
-            method: 'POST',
-            headers: { 'X-API-KEY': SERPER_API_KEY, 'Content-Type': 'application/json' },
-            body: JSON.stringify({ q: `site:${parentBrand} "${cleanHotelName}" (pool OR spa OR dining OR room OR bath OR suite OR exterior)`, num: 15 }),
-            signal: AbortSignal.timeout(4000)
-          }).then(r => r.ok ? r.json() : {}).catch(() => ({})) : Promise.resolve({})
-        ]);
+        const directHarvestCount = officialWebsitePhotos.length + taPhotos.length;
+        const fetchSerperImages = (q) => fetch('https://google.serper.dev/images', {
+          method: 'POST',
+          headers: { 'X-API-KEY': SERPER_API_KEY, 'Content-Type': 'application/json' },
+          body: JSON.stringify({ q, num: 10 }),
+          signal: AbortSignal.timeout(4000)
+        }).then(r => r.ok ? r.json() : {}).catch(() => ({}));
+
+        if (directHarvestCount >= 12) {
+          console.log(`[Master Vibe] Already harvested ${directHarvestCount} direct Official/TA Management photos; skipping bulk Serper image queries.`);
+          if (signatureMagnetName) {
+            resMagnet = await fetchSerperImages(`"${cleanHotelName}" "${signatureMagnetName}" (club OR lounge OR bar OR venue OR restaurant OR pool) -wedding`);
+          }
+        } else {
+          const officialOrTaQuery = officialDomain
+            ? `site:${officialDomain} "${cleanHotelName}" (pool OR spa OR dining OR bar OR suite OR room OR bath OR exterior)`
+            : `site:tripadvisor.com/Hotel_Review "${cleanHotelName}" -intitle:"Picture of" -intitle:"Photo of"`;
+
+          const [resSocialSpaPool, resRoomsBathLobbyExt, resOfficialOrTA, resMagnetResult] = await Promise.all([
+            fetchSerperImages(`${specificHotelQuery} (restaurant OR bar OR cocktails OR lounge OR pool OR spa OR wellness) -wedding`),
+            fetchSerperImages(`${specificHotelQuery} ("suite" OR bedroom OR bathroom OR "soaking tub" OR lobby OR facade OR exterior) -wedding`),
+            fetchSerperImages(officialOrTaQuery),
+            signatureMagnetName
+              ? fetchSerperImages(`"${cleanHotelName}" "${signatureMagnetName}" (club OR lounge OR bar OR venue OR nightlife OR bowling) -wedding`)
+              : Promise.resolve({})
+          ]);
+
+          resSocial = resSocialSpaPool;
+          resSpa = resSocialSpaPool;
+          resPool = resSocialSpaPool;
+          resLobby = resRoomsBathLobbyExt;
+          resExterior = resRoomsBathLobbyExt;
+          resBedroom = resRoomsBathLobbyExt;
+          resBath = resRoomsBathLobbyExt;
+          resOfficial = officialDomain ? resOfficialOrTA : {};
+          resTripAdvisorReview = officialDomain ? {} : resOfficialOrTA;
+          resMagnet = resMagnetResult;
+        }
       } catch (serperErr) {
         console.log('[Master Vibe] Serper image search skipped (zero credits or network issue):', serperErr.message);
       }

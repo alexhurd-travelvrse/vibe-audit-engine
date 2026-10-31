@@ -31,10 +31,10 @@ const Layout = ({ children }) => {
 
                     <nav className={`header-nav ${isMenuOpen ? 'open' : ''}`}>
                         <a href="/#vibe-signatures" className="nav-link" onClick={() => setIsMenuOpen(false)}>VIBE SIGNATURES</a>
-                        <span className="nav-link nav-link-with-badge" style={{ cursor: 'default' }}>
+                        <Link to="/vibe-api" className="nav-link nav-link-with-badge" onClick={() => setIsMenuOpen(false)} style={{ textDecoration: 'none' }}>
                             <span className="nav-link-text">VIBE API</span>
-                            <span className="nav-coming-soon">Coming Soon</span>
-                        </span>
+                            <span className="nav-coming-soon" style={{ background: 'rgba(0, 229, 255, 0.14)', borderColor: 'rgba(0, 229, 255, 0.45)', color: '#00e5ff' }}>Live Demo</span>
+                        </Link>
                         <span className="nav-link nav-link-with-badge" style={{ cursor: 'default' }}>
                             <span className="nav-link-text">VIBE INSIGHTS</span>
                             <span className="nav-coming-soon">Coming Soon</span>
