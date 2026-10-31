@@ -1,7 +1,7 @@
 .tc-vibe-page {
   min-height: 100vh;
-  background: radial-gradient(circle at 15% 10%, rgba(0, 229, 255, 0.08), transparent 40%),
-              radial-gradient(circle at 85% 20%, rgba(245, 158, 11, 0.08), transparent 40%),
+  background: radial-gradient(circle at 15% 10%, rgba(0, 229, 255, 0.09), transparent 42%),
+              radial-gradient(circle at 85% 18%, rgba(245, 158, 11, 0.08), transparent 42%),
               #050811;
   color: #f8fafc;
   padding-bottom: 5rem;
@@ -20,7 +20,7 @@
 
 .tc-gate-card {
   width: 100%;
-  max-width: 480px;
+  max-width: 440px;
   background: rgba(13, 19, 34, 0.92);
   border: 1px solid rgba(0, 229, 255, 0.28);
   border-radius: 20px;
@@ -56,22 +56,7 @@
   font-weight: 800;
   letter-spacing: 1.2px;
   text-transform: uppercase;
-  margin-bottom: 1rem;
-}
-
-.tc-gate-title {
-  font-size: 1.65rem;
-  font-weight: 800;
-  color: #ffffff;
-  margin: 0 0 0.6rem;
-  line-height: 1.25;
-}
-
-.tc-gate-subtitle {
-  font-size: 0.93rem;
-  color: rgba(226, 232, 240, 0.72);
-  line-height: 1.55;
-  margin-bottom: 1.6rem;
+  margin-bottom: 1.35rem;
 }
 
 .tc-gate-form {
@@ -131,7 +116,7 @@
 
 /* Unlocked Top Status Bar */
 .tc-top-bar {
-  background: rgba(10, 16, 30, 0.85);
+  background: rgba(10, 16, 30, 0.88);
   border-bottom: 1px solid rgba(0, 229, 255, 0.18);
   padding: 0.7rem 0;
   backdrop-filter: blur(12px);
@@ -191,6 +176,7 @@
   display: flex;
   align-items: center;
   gap: 0.65rem;
+  flex-wrap: wrap;
 }
 
 .tc-mode-toggle {
@@ -250,7 +236,7 @@
 .tc-hero {
   text-align: center;
   max-width: 920px;
-  margin: 0 auto 2.25rem;
+  margin: 0 auto 2rem;
 }
 
 .tc-hero-eyebrow {
@@ -262,33 +248,33 @@
   background: rgba(245, 158, 11, 0.12);
   border: 1px solid rgba(245, 158, 11, 0.35);
   color: #fbbf24;
-  font-size: 0.76rem;
+  font-size: 0.75rem;
   font-weight: 800;
   letter-spacing: 1.1px;
   text-transform: uppercase;
-  margin-bottom: 1rem;
+  margin-bottom: 0.9rem;
 }
 
 .tc-hero-title {
-  font-size: clamp(1.9rem, 3.6vw, 2.85rem);
+  font-size: clamp(1.9rem, 3.6vw, 2.8rem);
   font-weight: 900;
   line-height: 1.15;
-  margin: 0 0 0.85rem;
+  margin: 0 0 0.8rem;
   letter-spacing: -0.5px;
 }
 
 .tc-hero-subtitle {
-  font-size: 1.02rem;
+  font-size: 1rem;
   color: rgba(226, 232, 240, 0.78);
   line-height: 1.6;
   margin: 0 auto;
-  max-width: 760px;
+  max-width: 780px;
 }
 
 /* Search & Vibe Controls Panel */
 .tc-controls-panel {
-  background: rgba(13, 20, 36, 0.85);
-  border: 1px solid rgba(0, 229, 255, 0.22);
+  background: rgba(13, 20, 36, 0.88);
+  border: 1px solid rgba(0, 229, 255, 0.24);
   border-radius: 20px;
   padding: 1.5rem 1.6rem;
   margin-bottom: 2rem;
@@ -320,10 +306,10 @@
   width: 100%;
   padding: 0.95rem 2.6rem 0.95rem 2.85rem;
   border-radius: 14px;
-  background: rgba(5, 8, 17, 0.9);
-  border: 1px solid rgba(0, 229, 255, 0.3);
+  background: rgba(5, 8, 17, 0.92);
+  border: 1px solid rgba(0, 229, 255, 0.32);
   color: #ffffff;
-  font-size: 0.96rem;
+  font-size: 0.95rem;
   transition: all 0.2s;
 }
 
@@ -356,17 +342,17 @@
   align-items: center;
   gap: 0.5rem;
   flex-wrap: wrap;
-  margin-bottom: 1.35rem;
-  padding-bottom: 1.2rem;
+  margin-bottom: 1.3rem;
+  padding-bottom: 1.15rem;
   border-bottom: 1px solid rgba(148, 163, 184, 0.14);
 }
 
 .tc-prompts-label {
-  font-size: 0.75rem;
-  font-weight: 700;
+  font-size: 0.74rem;
+  font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.8px;
-  color: rgba(148, 163, 184, 0.85);
+  color: #fbbf24;
   margin-right: 0.25rem;
 }
 
@@ -375,7 +361,7 @@
   border: 1px solid rgba(148, 163, 184, 0.24);
   color: #e2e8f0;
   font-size: 0.78rem;
-  padding: 5px 11px;
+  padding: 5px 12px;
   border-radius: 999px;
   cursor: pointer;
   transition: all 0.15s ease;
@@ -387,7 +373,7 @@
   background: rgba(0, 229, 255, 0.08);
 }
 
-/* 8 Vibe Filter Grid */
+/* 8 Pure Mood / Atmosphere Filter Grid */
 .tc-vibe-filters-header {
   display: flex;
   align-items: center;
@@ -409,8 +395,8 @@
 }
 
 .tc-reset-btn {
-  background: rgba(0, 229, 255, 0.1);
-  border: 1px solid rgba(0, 229, 255, 0.3);
+  background: rgba(0, 229, 255, 0.12);
+  border: 1px solid rgba(0, 229, 255, 0.35);
   color: #00e5ff;
   font-size: 0.76rem;
   font-weight: 700;
@@ -421,23 +407,21 @@
 
 .tc-vibe-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
-  gap: 0.7rem;
-  margin-bottom: 1.25rem;
+  grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+  gap: 0.75rem;
 }
 
 .tc-vibe-filter-card {
   text-align: left;
-  background: rgba(7, 11, 22, 0.85);
+  background: rgba(7, 11, 22, 0.88);
   border: 1px solid rgba(148, 163, 184, 0.2);
-  border-radius: 13px;
-  padding: 0.75rem 0.9rem;
+  border-radius: 14px;
+  padding: 0.85rem 1rem;
   cursor: pointer;
   transition: all 0.18s ease;
   display: flex;
   flex-direction: column;
-  gap: 0.3rem;
-  position: relative;
+  gap: 0.28rem;
 }
 
 .tc-vibe-filter-card:hover {
@@ -446,9 +430,9 @@
 }
 
 .tc-vibe-filter-card.selected {
-  background: linear-gradient(135deg, rgba(0, 229, 255, 0.16), rgba(15, 23, 42, 0.95));
+  background: linear-gradient(135deg, rgba(0, 229, 255, 0.16), rgba(15, 23, 42, 0.96));
   border-color: #00e5ff;
-  box-shadow: 0 0 20px rgba(0, 229, 255, 0.16);
+  box-shadow: 0 0 22px rgba(0, 229, 255, 0.18);
 }
 
 .tc-vibe-filter-top {
@@ -459,12 +443,20 @@
 }
 
 .tc-vibe-filter-name {
-  font-size: 0.86rem;
+  font-size: 0.88rem;
   font-weight: 800;
   color: #ffffff;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 7px;
+}
+
+.tc-vibe-mood-words {
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: #fbbf24;
 }
 
 .tc-vibe-count-badge {
@@ -482,61 +474,78 @@
 }
 
 .tc-vibe-filter-desc {
-  font-size: 0.74rem;
-  color: rgba(203, 213, 225, 0.68);
-  line-height: 1.35;
+  font-size: 0.75rem;
+  color: rgba(203, 213, 225, 0.72);
+  line-height: 1.38;
 }
 
-/* Duration & Results Summary Row */
-.tc-subcontrols-row {
+/* Top 3 Shortlist Spotlight Banner */
+.tc-shortlist-spotlight {
+  background: linear-gradient(135deg, rgba(0, 229, 255, 0.09), rgba(245, 158, 11, 0.07));
+  border: 1px solid rgba(251, 191, 36, 0.4);
+  border-radius: 20px;
+  padding: 1.35rem 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.tc-shortlist-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 0.75rem;
-  padding-top: 1rem;
-  border-top: 1px solid rgba(148, 163, 184, 0.14);
+  gap: 0.5rem;
+  margin-bottom: 1rem;
 }
 
-.tc-duration-tabs {
-  display: flex;
+.tc-shortlist-badge {
+  display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
-  flex-wrap: wrap;
-}
-
-.tc-duration-tab {
-  background: rgba(7, 11, 22, 0.8);
-  border: 1px solid rgba(148, 163, 184, 0.22);
-  color: rgba(226, 232, 240, 0.78);
-  font-size: 0.78rem;
-  font-weight: 700;
-  padding: 6px 12px;
-  border-radius: 999px;
-  cursor: pointer;
-  transition: all 0.15s;
-}
-
-.tc-duration-tab.active {
-  background: rgba(245, 158, 11, 0.16);
-  border-color: #fbbf24;
+  gap: 7px;
+  font-size: 0.8rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   color: #fbbf24;
 }
 
-.tc-results-counter {
-  font-size: 0.85rem;
-  color: #cbd5e1;
-  font-weight: 600;
+.tc-shortlist-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 1rem;
 }
 
-.tc-results-counter strong {
-  color: #00e5ff;
+.tc-shortlist-mini-card {
+  background: rgba(8, 13, 25, 0.92);
+  border: 1px solid rgba(0, 229, 255, 0.3);
+  border-radius: 14px;
+  padding: 1rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.tc-shortlist-rank-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.tc-shortlist-rank-pill {
+  font-size: 0.7rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #fbbf24, #f59e0b);
+  color: #050811;
 }
 
 /* Tours Grid */
 .tc-tours-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(390px, 1fr));
   gap: 1.5rem;
 }
 
@@ -547,7 +556,7 @@
 }
 
 .tc-tour-card {
-  background: rgba(13, 20, 36, 0.9);
+  background: rgba(13, 20, 36, 0.92);
   border: 1px solid rgba(148, 163, 184, 0.2);
   border-radius: 18px;
   overflow: hidden;
@@ -556,10 +565,15 @@
   transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
+.tc-tour-card.shortlist-winner {
+  border-color: rgba(251, 191, 36, 0.55);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5), 0 0 24px rgba(251, 191, 36, 0.12);
+}
+
 .tc-tour-card:hover {
   transform: translateY(-4px);
-  border-color: rgba(0, 229, 255, 0.45);
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.55), 0 0 25px rgba(0, 229, 255, 0.1);
+  border-color: rgba(0, 229, 255, 0.5);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.55), 0 0 25px rgba(0, 229, 255, 0.12);
 }
 
 .tc-tour-media {
@@ -583,7 +597,7 @@
 .tc-tour-media-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(5, 8, 17, 0.35) 0%, transparent 40%, rgba(5, 8, 17, 0.92) 100%);
+  background: linear-gradient(180deg, rgba(5, 8, 17, 0.4) 0%, transparent 40%, rgba(5, 8, 17, 0.94) 100%);
 }
 
 .tc-tour-top-badges {
@@ -597,11 +611,22 @@
   gap: 8px;
 }
 
+.tc-rank-ribbon {
+  background: linear-gradient(90deg, #fbbf24, #f59e0b);
+  color: #050811;
+  font-size: 0.72rem;
+  font-weight: 900;
+  padding: 4px 10px;
+  border-radius: 999px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
 .tc-duration-badge {
   background: rgba(5, 8, 17, 0.85);
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: #f8fafc;
-  font-size: 0.74rem;
+  font-size: 0.73rem;
   font-weight: 700;
   padding: 4px 10px;
   border-radius: 999px;
@@ -611,7 +636,7 @@
 .tc-match-badge {
   background: linear-gradient(90deg, rgba(0, 229, 255, 0.95), rgba(56, 189, 248, 0.95));
   color: #040914;
-  font-size: 0.76rem;
+  font-size: 0.75rem;
   font-weight: 900;
   padding: 4px 11px;
   border-radius: 999px;
@@ -634,23 +659,12 @@
   font-size: 0.72rem;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.7px;
+  letter-spacing: 0.6px;
   color: #fbbf24;
-  background: rgba(5, 8, 17, 0.82);
-  border: 1px solid rgba(251, 191, 36, 0.35);
+  background: rgba(5, 8, 17, 0.86);
+  border: 1px solid rgba(251, 191, 36, 0.38);
   padding: 3px 9px;
   border-radius: 6px;
-}
-
-.tc-price-tag {
-  font-size: 0.82rem;
-  font-weight: 800;
-  color: #ffffff;
-  background: rgba(5, 8, 17, 0.85);
-  border: 1px solid rgba(0, 229, 255, 0.3);
-  padding: 3px 9px;
-  border-radius: 6px;
-  white-space: nowrap;
 }
 
 /* Card Body */
@@ -669,11 +683,15 @@
   margin: 0 0 0.55rem;
 }
 
-.tc-tour-summary {
-  font-size: 0.84rem;
-  color: rgba(203, 213, 225, 0.78);
-  line-height: 1.5;
-  margin: 0 0 0.9rem;
+.tc-shortlist-hook-box {
+  background: rgba(0, 229, 255, 0.07);
+  border-left: 3px solid #00e5ff;
+  border-radius: 0 10px 10px 0;
+  padding: 0.6rem 0.8rem;
+  margin-bottom: 0.9rem;
+  font-size: 0.82rem;
+  color: #e2e8f0;
+  line-height: 1.45;
 }
 
 .tc-vibe-pills-row {
@@ -684,7 +702,7 @@
 }
 
 .tc-vibe-pill {
-  font-size: 0.72rem;
+  font-size: 0.71rem;
   font-weight: 700;
   padding: 3px 9px;
   border-radius: 999px;
@@ -693,22 +711,23 @@
   color: #67e8f9;
 }
 
-/* Sensory Box */
+/* 5-Signal Pure Atmospheric Signature Box */
 .tc-sensory-box {
-  background: rgba(5, 8, 17, 0.65);
-  border: 1px solid rgba(148, 163, 184, 0.14);
+  background: rgba(5, 8, 17, 0.72);
+  border: 1px solid rgba(148, 163, 184, 0.16);
   border-radius: 12px;
-  padding: 0.75rem 0.85rem;
-  margin-bottom: 0.95rem;
+  padding: 0.8rem 0.9rem;
+  margin-bottom: 1.1rem;
   font-size: 0.77rem;
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  gap: 0.45rem;
 }
 
 .tc-sensory-row {
-  display: flex;
-  gap: 6px;
+  display: grid;
+  grid-template-columns: 128px 1fr;
+  gap: 8px;
   line-height: 1.4;
   color: #cbd5e1;
 }
@@ -716,46 +735,6 @@
 .tc-sensory-label {
   color: #00e5ff;
   font-weight: 800;
-  white-space: nowrap;
-}
-
-/* Mini DNA Telemetry Bars */
-.tc-dna-mini-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.45rem 0.85rem;
-  margin-bottom: 1.15rem;
-  padding: 0.7rem 0.85rem;
-  background: rgba(5, 8, 17, 0.45);
-  border-radius: 10px;
-  border: 1px solid rgba(148, 163, 184, 0.1);
-}
-
-.tc-dna-bar-item {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-}
-
-.tc-dna-bar-top {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.69rem;
-  font-weight: 700;
-  color: rgba(203, 213, 225, 0.82);
-}
-
-.tc-dna-track {
-  height: 5px;
-  border-radius: 999px;
-  background: rgba(148, 163, 184, 0.16);
-  overflow: hidden;
-}
-
-.tc-dna-fill {
-  height: 100%;
-  border-radius: 999px;
-  background: linear-gradient(90deg, #00e5ff, #fbbf24);
 }
 
 /* Card Actions */
@@ -804,6 +783,43 @@
 
 .tc-btn-book:hover {
   transform: translateY(-1px);
+}
+
+/* Before vs After Comparison Grid */
+.tc-compare-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.tc-compare-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  background: rgba(13, 20, 36, 0.85);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 18px;
+  padding: 1.35rem;
+}
+
+@media (max-width: 860px) {
+  .tc-compare-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.tc-compare-before {
+  background: rgba(5, 8, 17, 0.75);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 14px;
+  padding: 1.15rem;
+}
+
+.tc-compare-after {
+  background: rgba(0, 229, 255, 0.06);
+  border: 1px solid rgba(0, 229, 255, 0.4);
+  border-radius: 14px;
+  padding: 1.15rem;
 }
 
 /* Modal / Full Vibe Signature Drawer */
