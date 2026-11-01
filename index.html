@@ -94,6 +94,116 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Vercel Analytics Self-Traffic & Headless Linux Bot Blocker (Runs before any bundle or auto-injected script) -->
+    <script>
+      (function () {
+        try {
+          var COOKIE_NAME = 'ignore_analytics';
+          var MAX_AGE = 315360000; // 10 years
+          var rootDomain = window.location.hostname.replace(/^www\./, '');
+
+          function setIgnoreFlag(enabled) {
+            try {
+              if (enabled) {
+                localStorage.setItem(COOKIE_NAME, 'true');
+                document.cookie = COOKIE_NAME + '=true; path=/; max-age=' + MAX_AGE + '; SameSite=Lax';
+                if (rootDomain.indexOf('.') !== -1) {
+                  document.cookie = COOKIE_NAME + '=true; domain=.' + rootDomain + '; path=/; max-age=' + MAX_AGE + '; SameSite=Lax';
+                }
+              } else {
+                localStorage.removeItem(COOKIE_NAME);
+                document.cookie = COOKIE_NAME + '=; path=/; max-age=0; SameSite=Lax';
+                if (rootDomain.indexOf('.') !== -1) {
+                  document.cookie = COOKIE_NAME + '=; domain=.' + rootDomain + '; path=/; max-age=0; SameSite=Lax';
+                }
+              }
+            } catch (e) {}
+          }
+
+          function isOwnerIgnored() {
+            try {
+              var params = new URLSearchParams(window.location.search);
+              var path = window.location.pathname;
+              if (
+                params.get('ignore_analytics') === 'true' ||
+                params.get('me') === 'true' ||
+                params.get('notrack') === 'true' ||
+                path === '/ignore-me' ||
+                path === '/notrack'
+              ) {
+                setIgnoreFlag(true);
+                return true;
+              }
+              if (params.get('ignore_analytics') === 'false') {
+                setIgnoreFlag(false);
+                return false;
+              }
+              var hasLocal = localStorage.getItem(COOKIE_NAME) === 'true';
+              var hasCookie = document.cookie.split(';').some(function (c) {
+                return c.trim().indexOf(COOKIE_NAME + '=true') === 0;
+              });
+              if (hasLocal || hasCookie) {
+                // Keep both storage and root-domain cookie in sync across www and non-www
+                setIgnoreFlag(true);
+                return true;
+              }
+            } catch (e) {}
+            return false;
+          }
+
+          function isAutomatedBot() {
+            try {
+              var ua = navigator.userAgent || '';
+              if (navigator.webdriver === true) return true;
+              if (/HeadlessChrome|PhantomJS|Playwright|Puppeteer|Slurp|bingbot|AhrefsBot|SemrushBot|Bytespider|GPTBot|ClaudeBot|PerplexityBot|OAI-SearchBot|YandexBot|Baiduspider|DotBot|MJ12bot|Prerender|vercel-screenshot|Lighthouse|PageSpeed/i.test(ua)) {
+                return true;
+              }
+              // Catch stealth headless GNU/Linux cloud containers
+              if (ua.indexOf('Linux x86_64') !== -1) {
+                var noWindowSize = window.outerWidth === 0 && window.outerHeight === 0;
+                var noLanguages = !navigator.languages || navigator.languages.length === 0;
+                if (noWindowSize || noLanguages) return true;
+              }
+            } catch (e) {}
+            return false;
+          }
+
+          window.__shouldBlockVercelAnalytics = function () {
+            return isOwnerIgnored() || isAutomatedBot();
+          };
+          window.__setVercelAnalyticsIgnore = setIgnoreFlag;
+
+          // Run immediately to sync URL flags / cookies
+          window.__shouldBlockVercelAnalytics();
+
+          // Hard network guard: block any fetch or sendBeacon to /_vercel/insights if ignored or bot
+          if (typeof window.fetch === 'function') {
+            var origFetch = window.fetch;
+            window.fetch = function (input, init) {
+              try {
+                var url = typeof input === 'string' ? input : (input && input.url) || '';
+                if (url.indexOf('/_vercel/insights') !== -1 && window.__shouldBlockVercelAnalytics()) {
+                  return Promise.resolve(new Response(null, { status: 204 }));
+                }
+              } catch (e) {}
+              return origFetch.apply(this, arguments);
+            };
+          }
+          if (navigator && typeof navigator.sendBeacon === 'function') {
+            var origBeacon = navigator.sendBeacon.bind(navigator);
+            navigator.sendBeacon = function (url, data) {
+              try {
+                if (typeof url === 'string' && url.indexOf('/_vercel/insights') !== -1 && window.__shouldBlockVercelAnalytics()) {
+                  return true;
+                }
+              } catch (e) {}
+              return origBeacon(url, data);
+            };
+          }
+        } catch (err) {}
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
