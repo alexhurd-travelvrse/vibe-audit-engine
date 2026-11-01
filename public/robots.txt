@@ -1,38 +1,56 @@
-# Allow major web and AI search crawlers
+# Allow major web and AI search crawlers on canonical domain (www.atmosvibe.io)
 User-agent: *
 Allow: /
+Disallow: /barcelona
+Disallow: /vibe-api
+Disallow: /ignore-me
+Disallow: /notrack
 
 # Explicit AI Crawlers (Search & Model Retrieval)
 User-agent: GPTBot
 Allow: /
+Disallow: /barcelona
+Disallow: /vibe-api
 
 User-agent: OAI-SearchBot
 Allow: /
+Disallow: /barcelona
+Disallow: /vibe-api
 
 User-agent: ChatGPT-User
 Allow: /
+Disallow: /barcelona
+Disallow: /vibe-api
 
 User-agent: Google-Extended
 Allow: /
+Disallow: /barcelona
+Disallow: /vibe-api
 
 User-agent: PerplexityBot
 Allow: /
+Disallow: /barcelona
+Disallow: /vibe-api
 
 User-agent: ClaudeBot
 Allow: /
+Disallow: /barcelona
+Disallow: /vibe-api
 
 User-agent: anthropic-ai
 Allow: /
+Disallow: /barcelona
+Disallow: /vibe-api
 
 User-agent: Applebot-Extended
 Allow: /
+Disallow: /barcelona
+Disallow: /vibe-api
 
 User-agent: CCBot
 Allow: /
-
-# Disallow private/internal pages
-Disallow: /creator-portal
 Disallow: /barcelona
+Disallow: /vibe-api
 
 # Sitemap location
 Sitemap: https://www.atmosvibe.io/sitemap.xml

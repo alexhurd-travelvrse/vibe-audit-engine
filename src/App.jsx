@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { Analytics } from '@vercel/analytics/react';
 import Layout from './components/Layout';
@@ -208,6 +208,7 @@ const App = () => {
           <Route path="/barcelona" element={<BarcelonaPage />} />
           <Route path="/partner" element={<PartnerPage />} />
           <Route path="/creator" element={<CreatorPage />} />
+          <Route path="/creator-portal" element={<Navigate to="/" replace />} />
         </Routes>
       </Router>
       <Analytics

@@ -1,9 +1,51 @@
 {
+  "redirects": [
+    {
+      "source": "/creator-portal",
+      "destination": "https://www.atmosvibe.io/",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "vibe-audit-engine.vercel.app"
+        }
+      ],
+      "destination": "https://www.atmosvibe.io/:path*",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     { "source": "/api/(.*)", "destination": "/api/$1" },
     { "source": "/(.*)", "destination": "/index.html" }
   ],
   "headers": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "(.*)\\.vercel\\.app"
+        }
+      ],
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow, noarchive, nosnippet"
+        }
+      ]
+    },
+    {
+      "source": "/(creator-portal|barcelona|vibe-api|vibe-api/.*|ignore-me|notrack)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
     {
       "source": "/api/(.*)",
       "headers": [
