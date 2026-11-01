@@ -940,24 +940,8 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                 </div>
               </div>
 
-              {/* Phase Badge */}
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 18px', background: 'rgba(0, 229, 255, 0.08)', border: '1px solid rgba(0, 229, 255, 0.3)', borderRadius: '100px', color: '#00E5FF', fontSize: '11px', fontWeight: 800, letterSpacing: '0.15em', marginBottom: '1.25rem' }}>
-                <Sparkles size={13} color="#00E5FF" />
-                <span>{PROCESSING_PHASES[phaseIndex].badge}</span>
-              </div>
-
-              {/* Dynamic Phase Title */}
-              <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', fontWeight: 900, textTransform: 'uppercase', color: '#FFFFFF', marginBottom: '0.75rem', letterSpacing: '-0.02em', minHeight: '3rem' }}>
-                {PROCESSING_PHASES[phaseIndex].title}
-              </h2>
-
-              {/* Dynamic Detail Text */}
-              <p style={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '15px', maxWidth: '620px', margin: '0 auto 2.5rem', lineHeight: 1.6, minHeight: '2.5rem' }}>
-                {PROCESSING_PHASES[phaseIndex].detail}
-              </p>
-
               {/* Progress Bar */}
-              <div style={{ maxWidth: '480px', margin: '0 auto 3rem', background: 'rgba(255, 255, 255, 0.06)', borderRadius: '100px', padding: '4px', border: '1px solid rgba(255, 255, 255, 0.1)' }}>
+              <div style={{ maxWidth: '480px', margin: '0 auto 2rem', background: 'rgba(255, 255, 255, 0.06)', borderRadius: '100px', padding: '4px', border: '1px solid rgba(255, 255, 255, 0.1)' }}>
                 <div style={{
                   height: '8px',
                   borderRadius: '100px',
