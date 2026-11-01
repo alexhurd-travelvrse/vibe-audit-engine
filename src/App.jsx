@@ -11,7 +11,6 @@ import MarketplacePage from './pages/MarketplacePage';
 import BarcelonaPage from './pages/BarcelonaPage';
 import PartnerPage from './pages/PartnerPage';
 import CreatorPage from './pages/CreatorPage';
-import CreatorPortal from './pages/CreatorPortal';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import TermsPage from './pages/TermsPage';
 import VibeApiDemoPage from './pages/VibeApiDemoPage';
@@ -209,7 +208,6 @@ const App = () => {
           <Route path="/barcelona" element={<BarcelonaPage />} />
           <Route path="/partner" element={<PartnerPage />} />
           <Route path="/creator" element={<CreatorPage />} />
-          <Route path="/creator-portal" element={<CreatorPortal />} />
         </Routes>
       </Router>
       <Analytics
