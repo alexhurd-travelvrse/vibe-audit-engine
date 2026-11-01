@@ -6,7 +6,18 @@
       "permanent": true
     },
     {
-      "source": "/:path*",
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "vibe-audit-engine.vercel.app"
+        }
+      ],
+      "destination": "https://www.atmosvibe.io/",
+      "permanent": true
+    },
+    {
+      "source": "/:path+",
       "has": [
         {
           "type": "host",
@@ -23,11 +34,11 @@
   ],
   "headers": [
     {
-      "source": "/:path*",
+      "source": "/(.*)",
       "has": [
         {
           "type": "host",
-          "value": "(.*)\\.vercel\\.app"
+          "value": "vibe-audit-engine.vercel.app"
         }
       ],
       "headers": [
@@ -38,7 +49,7 @@
       ]
     },
     {
-      "source": "/(creator-portal|barcelona|vibe-api|vibe-api/.*|ignore-me|notrack)",
+      "source": "/(creator-portal|barcelona|vibe-api|ignore-me|notrack)",
       "headers": [
         {
           "key": "X-Robots-Tag",
