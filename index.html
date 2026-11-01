@@ -99,6 +99,15 @@
     <script>
       (function () {
         try {
+          // If accessed via *.vercel.app preview/staging domain, inject noindex and redirect to canonical www.atmosvibe.io
+          if (window.location.hostname.indexOf('.vercel.app') !== -1) {
+            var meta = document.createElement('meta');
+            meta.name = 'robots';
+            meta.content = 'noindex, nofollow, noarchive';
+            document.head.appendChild(meta);
+            window.location.replace('https://www.atmosvibe.io' + window.location.pathname + window.location.search + window.location.hash);
+            return;
+          }
           var COOKIE_NAME = 'ignore_analytics';
           var MAX_AGE = 315360000; // 10 years
           var rootDomain = window.location.hostname.replace(/^www\./, '');

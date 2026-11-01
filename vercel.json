@@ -6,18 +6,7 @@
       "permanent": true
     },
     {
-      "source": "/",
-      "has": [
-        {
-          "type": "host",
-          "value": "vibe-audit-engine.vercel.app"
-        }
-      ],
-      "destination": "https://www.atmosvibe.io/",
-      "permanent": true
-    },
-    {
-      "source": "/:path+",
+      "source": "/:path*",
       "has": [
         {
           "type": "host",
@@ -34,7 +23,7 @@
   ],
   "headers": [
     {
-      "source": "/(.*)",
+      "source": "/:path*",
       "has": [
         {
           "type": "host",
