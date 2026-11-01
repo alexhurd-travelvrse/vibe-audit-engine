@@ -1,7 +1,7 @@
 {
   "redirects": [
     {
-      "source": "/creator-portal",
+      "source": "/(creator-portal|creator|marketplace)",
       "destination": "https://www.atmosvibe.io/",
       "permanent": true
     },
@@ -38,7 +38,7 @@
       ]
     },
     {
-      "source": "/(creator-portal|barcelona|vibe-api|ignore-me|notrack)",
+      "source": "/(creator-portal|creator|marketplace|barcelona|vibe-api|ignore-me|notrack)",
       "headers": [
         {
           "key": "X-Robots-Tag",

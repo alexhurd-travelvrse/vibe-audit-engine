@@ -7,10 +7,8 @@ import Hero from './components/Hero';
 import VibeDimensionsSection from './components/VibeDimensionsSection';
 import HookTeaserSection from './components/HookTeaserSection';
 import Footer from './components/Footer';
-import MarketplacePage from './pages/MarketplacePage';
 import BarcelonaPage from './pages/BarcelonaPage';
 import PartnerPage from './pages/PartnerPage';
-import CreatorPage from './pages/CreatorPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import TermsPage from './pages/TermsPage';
 import VibeApiDemoPage from './pages/VibeApiDemoPage';
@@ -204,10 +202,10 @@ const App = () => {
           <Route path="/vibe-api/travel-curious" element={<VibeApiDemoPage />} />
           <Route path="/privacy" element={<PrivacyPolicyPage />} />
           <Route path="/terms" element={<TermsPage />} />
-          <Route path="/marketplace" element={<MarketplacePage />} />
           <Route path="/barcelona" element={<BarcelonaPage />} />
           <Route path="/partner" element={<PartnerPage />} />
-          <Route path="/creator" element={<CreatorPage />} />
+          <Route path="/marketplace" element={<Navigate to="/" replace />} />
+          <Route path="/creator" element={<Navigate to="/" replace />} />
           <Route path="/creator-portal" element={<Navigate to="/" replace />} />
         </Routes>
       </Router>
