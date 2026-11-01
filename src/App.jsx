@@ -12,6 +12,7 @@ import PartnerPage from './pages/PartnerPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import TermsPage from './pages/TermsPage';
 import VibeApiDemoPage from './pages/VibeApiDemoPage';
+import WtmMobileDeckPage from './pages/WtmMobileDeckPage';
 import B2BLeadGenOnboarding from './B2BLeadGenOnboarding';
 import './B2BLeadGenOnboarding.css';
 
@@ -200,6 +201,8 @@ const App = () => {
           <Route path="/vibe-audit" element={<B2BLeadGenOnboarding initialStep="input" />} />
           <Route path="/vibe-api" element={<VibeApiDemoPage />} />
           <Route path="/vibe-api/travel-curious" element={<VibeApiDemoPage />} />
+          <Route path="/wtm" element={<WtmMobileDeckPage />} />
+          <Route path="/pocket" element={<WtmMobileDeckPage />} />
           <Route path="/privacy" element={<PrivacyPolicyPage />} />
           <Route path="/terms" element={<TermsPage />} />
           <Route path="/barcelona" element={<BarcelonaPage />} />

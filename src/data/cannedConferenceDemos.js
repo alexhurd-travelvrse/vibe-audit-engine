@@ -508,6 +508,12 @@ export const CANNED_CONFERENCE_DEMOS = {
 
 export const MEETING_LIVE_LINKS = [
   {
+    slug: 'sea-containers-wtm-deck',
+    label: '📱 Sea Containers (Mobile Deck)',
+    location: 'WTM 4-Slide Story',
+    href: '/wtm'
+  },
+  {
     slug: 'skol-apartments-marbella',
     label: 'Skol Apartments Marbella',
     location: 'Marbella Beachfront',

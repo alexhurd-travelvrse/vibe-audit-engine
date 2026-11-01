@@ -1005,19 +1005,42 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                     <span>{[formData.neighborhood, formData.city].filter(Boolean).join(', ')}</span>
                   </div>
                 </div>
-                <button
-                  type="button"
-                  onClick={() => {
-                    setStep('input');
-                    if (typeof window !== 'undefined' && window.location.search) {
-                      window.history.replaceState({}, '', '/audit');
-                    }
-                  }}
-                  className="results-new-audit-btn"
-                >
-                  <Search size={14} />
-                  <span>Audit Another Hotel</span>
-                </button>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', flexWrap: 'wrap' }}>
+                  {(formData.propertyName || '').toLowerCase().includes('sea containers') && (
+                    <Link
+                      to="/wtm"
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '6px',
+                        padding: '0.6rem 1rem',
+                        borderRadius: '999px',
+                        background: 'linear-gradient(90deg, rgba(0, 229, 255, 0.16), rgba(16, 185, 129, 0.16))',
+                        border: '1px solid rgba(0, 229, 255, 0.45)',
+                        color: '#00e5ff',
+                        fontSize: '12px',
+                        fontWeight: 800,
+                        textDecoration: 'none'
+                      }}
+                    >
+                      <Zap size={14} />
+                      <span>📱 4-Slide Mobile Deck</span>
+                    </Link>
+                  )}
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setStep('input');
+                      if (typeof window !== 'undefined' && window.location.search) {
+                        window.history.replaceState({}, '', '/audit');
+                      }
+                    }}
+                    className="results-new-audit-btn"
+                  >
+                    <Search size={14} />
+                    <span>Audit Another Hotel</span>
+                  </button>
+                </div>
               </div>
 
               {/* 1. HOTEL VIBE MANIFEST & ACOUSTIC DNA (PRIMARY SCORECARD) */}
