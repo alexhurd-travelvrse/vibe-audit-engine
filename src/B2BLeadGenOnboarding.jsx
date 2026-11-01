@@ -651,37 +651,13 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
               </div>
 
               <div className="glass-card" style={{ padding: '1.5rem 1.75rem', borderRadius: '1.25rem' }}>
-                {/* 1-Tap Instant Live Demo Banner */}
-                <div className="canned-demo-banner">
-                  <div className="canned-demo-info">
-                    <div className="canned-demo-eyebrow">
-                      <Zap size={12} color="#ffd700" />
-                      <span>INSTANT LIVE BENCHMARK • NO EMAIL REQUIRED</span>
-                    </div>
-                    <div className="canned-demo-title">
-                      Instant Live Demo
-                    </div>
-                    <div className="canned-demo-sub">
-                      See a full 8-Signal Vibe Signature + 5-Slot Booking.com Photo Re-Order (92/100 Reality vs. 48/100 Live OTA)
-                    </div>
-                  </div>
-                  <button
-                    type="button"
-                    onClick={() => launchCannedDemo('sea-containers-london')}
-                    className="canned-demo-btn"
-                  >
-                    <span>⚡ Instant Live Demo</span>
-                    <ChevronRight size={16} />
-                  </button>
-                </div>
-
                 <div style={{ marginBottom: '1rem', paddingBottom: '0.65rem', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
                   <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '10px', fontWeight: 800, color: '#00e5ff', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '0.25rem' }}>
                     <Link2 size={12} />
                     <span>STEP 1 // PROPERTY INPUT</span>
                   </div>
                   <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: '#ffffff', margin: 0 }}>
-                    Or Enter Any Hotel Details to Launch a Custom Audit
+                    Enter Hotel Details to Launch Your Custom Audit
                   </h3>
                 </div>
 
