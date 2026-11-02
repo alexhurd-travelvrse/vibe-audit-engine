@@ -17,7 +17,9 @@ import {
   Layers,
   ShieldCheck,
   ChevronDown,
-  ChevronUp
+  ChevronUp,
+  ChevronLeft,
+  ChevronRight
 } from 'lucide-react';
 
 // ============================================================================
@@ -32,13 +34,14 @@ const SIGNALS = [
   {
     id: 'walk',
     num: '01',
+    shortPill: '01 Walk',
     label: '5-MIN WALK',
     headline: 'Tate Modern (4m) & Oxo Tower (2m)',
     certaintyBadge: '✓ 96% Fact',
     certaintyTier: '✓ 96% Hard-Verified',
     icon: MapPin,
     color: '#00e5ff',
-    bgGlow: 'rgba(0, 229, 255, 0.16)',
+    bgGlow: 'rgba(0, 229, 255, 0.18)',
     hashtags: ['#OxoTower2m', '#TateModern4m', '#BoroughMkt6m'],
     proof: 'Directly on the pedestrian South Bank riverwalk — verified 4.6★+ cultural & foodie spots within 2 to 6 minutes on foot.',
     sources: 'Google Places API GPS coordinates + live ≥4.4★ rating ledger',
@@ -48,13 +51,14 @@ const SIGNALS = [
   {
     id: 'character',
     num: '02',
+    shortPill: '02 Design',
     label: 'TRUE CHARACTER',
     headline: '1920s Transatlantic Liner Glamour',
     certaintyBadge: '✓ 94% Fact',
     certaintyTier: '✓ 94% Hard-Verified',
     icon: Compass,
     color: '#f59e0b',
-    bgGlow: 'rgba(245, 158, 11, 0.16)',
+    bgGlow: 'rgba(245, 158, 11, 0.18)',
     hashtags: ['#TomDixonDesign', '#CopperHullLobby', '#ZeroChainDecor'],
     proof: 'Bespoke Tom Dixon maritime architecture with hand-beaten copper, polished concrete, and mid-century ocean-liner furniture.',
     sources: '16-photo Computer Vision material scan + architectural press',
@@ -64,13 +68,14 @@ const SIGNALS = [
   {
     id: 'light',
     num: '03',
+    shortPill: '03 Light',
     label: 'WARMTH & LIGHT',
     headline: '2700K Golden-Hour Thames Glow',
     certaintyBadge: '✓ 94% Fact',
     certaintyTier: '✓ 94% Hard-Verified',
     icon: Sun,
     color: '#fbbf24',
-    bgGlow: 'rgba(251, 191, 36, 0.16)',
+    bgGlow: 'rgba(251, 191, 36, 0.18)',
     hashtags: ['#RiverDaylight', '#2700KAmberGlow', '#ZeroHarshGlare'],
     proof: 'Floor-to-ceiling Thames glass floods rooms with river light by day and transitions to flattering 2700K amber glow at night.',
     sources: 'Computer Vision kelvin/luminance scan across 16 gallery assets',
@@ -80,13 +85,14 @@ const SIGNALS = [
   {
     id: 'hosts',
     num: '04',
+    shortPill: '04 Hosts',
     label: 'THE HOSTS',
     headline: 'Zero Snobbery — Instant Regulars',
     certaintyBadge: '◎ 92% Proven',
     certaintyTier: '◎ 92% Corroborated',
     icon: Award,
     color: '#10b981',
-    bgGlow: 'rgba(16, 185, 129, 0.16)',
+    bgGlow: 'rgba(16, 185, 129, 0.18)',
     hashtags: ['#LyanessMixologists', '#12thKnotHosts', '#UnscriptedWarmth'],
     proof: 'Led by Lyaness award-winning mixologists and South Bank insiders — unhurried banter and genuine warmth with zero stiffness.',
     sources: 'Verified guest review sentiment + Condé Nast & Time Out critiques',
@@ -96,13 +102,14 @@ const SIGNALS = [
   {
     id: 'crowd',
     num: '05',
+    shortPill: '05 Crowd',
     label: 'THE CROWD',
     headline: '65% London Locals · 35% Guests',
     certaintyBadge: '◈ 82% Observed',
     certaintyTier: '◈ 82% Behavioural',
     icon: Users,
     color: '#a855f7',
-    bgGlow: 'rgba(168, 85, 247, 0.16)',
+    bgGlow: 'rgba(168, 85, 247, 0.18)',
     hashtags: ['#65PercentLondonLocals', '#SouthBankCreatives', '#NotATouristTrap'],
     proof: 'A genuine London destination — South Bank creatives and locals pack Lyaness and 12th Knot nightly alongside hotel guests.',
     sources: 'Bar reservation demand, Time Out London & local review mix',
@@ -112,13 +119,14 @@ const SIGNALS = [
   {
     id: 'time',
     num: '06',
+    shortPill: '06 Peak Time',
     label: 'BEST TIME OF DAY',
     headline: '17:00 Sunset · 20:30 Rooftop Buzz',
     certaintyBadge: '◎ 90% Proven',
     certaintyTier: '◎ 90% Corroborated',
     icon: Clock,
     color: '#ec4899',
-    bgGlow: 'rgba(236, 72, 153, 0.16)',
+    bgGlow: 'rgba(236, 72, 153, 0.18)',
     hashtags: ['#0900RiverCoffee', '#1700LyanessSunset', '#2030RooftopPeak'],
     proof: 'Calm riverside coffee & laptop work by morning, golden-hour Thames aperitifs at 5 PM, and St Paul’s skyline energy after 8:30 PM.',
     sources: 'Google Popular Times telemetry + F&B venue operating hours',
@@ -128,13 +136,14 @@ const SIGNALS = [
   {
     id: 'sound',
     num: '07',
+    shortPill: '07 Sound',
     label: 'SOUND & SLEEP',
     headline: '74 dB Bar Buzz · Quiet River Sleep',
     certaintyBadge: '◎ 91% Proven',
     certaintyTier: '◎ 91% Corroborated',
     icon: Volume2,
     color: '#38bdf8',
-    bgGlow: 'rgba(56, 189, 248, 0.16)',
+    bgGlow: 'rgba(56, 189, 248, 0.18)',
     hashtags: ['#74dBSocialBuzz', '#EclecticDeepHouse', '#SoundproofBedrooms'],
     proof: 'Vibrant lounge & deep house downstairs/rooftop (74 dB), isolated from quiet, triple-glazed river-view bedrooms.',
     sources: 'Guest sleep-quality review consensus + architectural glazing specs',
@@ -144,36 +153,19 @@ const SIGNALS = [
   {
     id: 'insider',
     num: '08',
+    shortPill: '08 Insider',
     label: 'INSIDER TIPS',
     headline: '12th Knot Secret St Paul’s Corner',
     certaintyBadge: '◎ 89% Proven',
     certaintyTier: '◎ 89% Corroborated',
     icon: Sparkles,
     color: '#ffd700',
-    bgGlow: 'rgba(255, 215, 0, 0.16)',
+    bgGlow: 'rgba(255, 215, 0, 0.18)',
     hashtags: ['#WestCornerBanquette', '#OffMenuBotanicals', '#Arrive20mPreSunset'],
     proof: 'Ask Lyaness bartenders for the off-menu "Forgotten Classics" botanicals, and claim the west corner banquette at 12th Knot before sunset.',
     sources: 'Repeat-guest review tips, bartender interviews & press archives',
     method: 'Corroborated insider tips cited across 3+ independent sources',
     hash: '0x8f4a29c1...b0d53e'
-  }
-];
-
-const CHAPTER_GROUPS = [
-  {
-    title: 'Chapter 1 · Place, Design & Light',
-    accent: '#00e5ff',
-    signalIds: ['walk', 'character', 'light']
-  },
-  {
-    title: 'Chapter 2 · Human & Social Energy',
-    accent: '#10b981',
-    signalIds: ['hosts', 'crowd', 'time']
-  },
-  {
-    title: 'Chapter 3 · Sleep & Insider Secrets',
-    accent: '#ffd700',
-    signalIds: ['sound', 'insider']
   }
 ];
 
@@ -260,29 +252,43 @@ const SLIDE_META = [
 export default function WtmMobileDeckPage() {
   const navigate = useNavigate();
   const [slide, setSlide] = useState(0);
-  // Layer 2 accordion state: which signal's verification drawer is open (null = all collapsed)
-  const [expandedSignalId, setExpandedSignalId] = useState('walk');
+  // Active signal index (0..7) in the horizontal carousel
+  const [activeSignalIdx, setActiveSignalIdx] = useState(0);
+  // Layer 2 proof toggle: collapsed by default on load so the card is super clean!
+  const [showProofDrawer, setShowProofDrawer] = useState(false);
+
   const [photoMode, setPhotoMode] = useState('after'); // 'before' | 'after'
   const [selectedSlotIdx, setSelectedSlotIdx] = useState(0);
-  const touchStartX = useRef(null);
+  const carouselRef = useRef(null);
 
   const livePhotos = HARDCODED_LIVE_PHOTOS;
   const optimalPhotos = HARDCODED_OPTIMAL_PHOTOS;
 
-  const handleTouchStart = (e) => {
-    if (e.touches && e.touches.length === 1) {
-      touchStartX.current = e.touches[0].clientX;
+  // Scroll horizontal signal carousel to a specific index (0..7)
+  const scrollToSignal = (idx) => {
+    const clamped = Math.max(0, Math.min(SIGNALS.length - 1, idx));
+    setActiveSignalIdx(clamped);
+    const container = carouselRef.current;
+    if (container && container.children[clamped]) {
+      container.children[clamped].scrollIntoView({
+        behavior: 'smooth',
+        inline: 'center',
+        block: 'nearest'
+      });
     }
   };
 
-  const handleTouchEnd = (e) => {
-    if (touchStartX.current === null || !e.changedTouches || e.changedTouches.length === 0) return;
-    const deltaX = e.changedTouches[0].clientX - touchStartX.current;
-    if (Math.abs(deltaX) > 55) {
-      if (deltaX < 0 && slide < 3) setSlide(slide + 1);
-      if (deltaX > 0 && slide > 0) setSlide(slide - 1);
+  // Update activeSignalIdx as the user horizontally swipes the carousel
+  const handleCarouselScroll = () => {
+    const container = carouselRef.current;
+    if (!container) return;
+    const cardWidth = container.clientWidth * 0.86;
+    if (cardWidth <= 0) return;
+    const approxIdx = Math.round(container.scrollLeft / cardWidth);
+    const clamped = Math.max(0, Math.min(SIGNALS.length - 1, approxIdx));
+    if (clamped !== activeSignalIdx) {
+      setActiveSignalIdx(clamped);
     }
-    touchStartX.current = null;
   };
 
   const activePhotoList = photoMode === 'after' ? optimalPhotos : livePhotos;
@@ -290,8 +296,6 @@ export default function WtmMobileDeckPage() {
 
   return (
     <div
-      onTouchStart={handleTouchStart}
-      onTouchEnd={handleTouchEnd}
       style={{
         minHeight: '100dvh',
         background: 'radial-gradient(circle at 50% 0%, #0f2542 0%, #050a14 60%, #02050a 100%)',
@@ -363,13 +367,13 @@ export default function WtmMobileDeckPage() {
       </div>
 
       {/* MAIN SLIDE VIEWPORT */}
-      <div style={{ flex: 1, maxWidth: '480px', width: '100%', margin: '0 auto', padding: '12px 14px 36px', display: 'flex', flexDirection: 'column' }}>
-        {/* ==================== SLIDE 1: FULL-WIDTH LAYERED ACCORDION STACK ==================== */}
+      <div style={{ flex: 1, maxWidth: '480px', width: '100%', margin: '0 auto', padding: '14px 14px 32px', display: 'flex', flexDirection: 'column' }}>
+        {/* ==================== SLIDE 1: HORIZONTAL SNAP-SCROLL 8-SIGNAL DECK ==================== */}
         {slide === 0 && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', flex: 1 }}>
             {/* Title + Global Cryptographic Signature Pill */}
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px' }}>
-              <h1 style={{ fontSize: '1.28rem', fontWeight: 900, lineHeight: 1.1, margin: 0, letterSpacing: '-0.02em', textTransform: 'uppercase' }}>
+              <h1 style={{ fontSize: '1.25rem', fontWeight: 900, lineHeight: 1.1, margin: 0, letterSpacing: '-0.02em', textTransform: 'uppercase' }}>
                 8-Signal <span style={{ color: '#00e5ff' }}>Vibe Signature</span>
               </h1>
               <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', background: 'rgba(16, 185, 129, 0.16)', border: '1px solid rgba(52, 211, 153, 0.5)', color: '#34d399', fontSize: '10px', fontWeight: 900, padding: '4px 8px', borderRadius: '8px', fontFamily: 'monospace' }}>
@@ -378,219 +382,283 @@ export default function WtmMobileDeckPage() {
               </span>
             </div>
 
-            {/* 3-Chapter Full-Width Accordion Stack */}
-            {CHAPTER_GROUPS.map((chapter) => {
-              const chapterSignals = SIGNALS.filter((s) => chapter.signalIds.includes(s.id));
-              return (
-                <div key={chapter.title} style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                  {/* Chapter Divider Header */}
-                  <div
+            {/* Compact 01–08 Horizontal Pill Strip (Tap or Swipe to Jump) */}
+            <div
+              style={{
+                display: 'flex',
+                gap: '6px',
+                overflowX: 'auto',
+                paddingBottom: '4px',
+                scrollbarWidth: 'none',
+                msOverflowStyle: 'none'
+              }}
+            >
+              {SIGNALS.map((sig, idx) => {
+                const isActive = idx === activeSignalIdx;
+                return (
+                  <button
+                    key={sig.id}
+                    type="button"
+                    onClick={() => scrollToSignal(idx)}
                     style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'space-between',
-                      padding: '4px 2px 0',
-                      borderBottom: `1px solid ${chapter.accent}44`
+                      flexShrink: 0,
+                      padding: '6px 11px',
+                      borderRadius: '999px',
+                      border: isActive ? `2px solid ${sig.color}` : '1px solid rgba(255,255,255,0.16)',
+                      background: isActive ? sig.bgGlow : 'rgba(15, 23, 42, 0.85)',
+                      color: isActive ? '#ffffff' : '#94a3b8',
+                      fontSize: '11px',
+                      fontWeight: 900,
+                      cursor: 'pointer',
+                      boxShadow: isActive ? `0 0 12px ${sig.bgGlow}` : 'none',
+                      transition: 'all 0.15s ease'
                     }}
                   >
-                    <span
-                      style={{
-                        fontSize: '10.5px',
-                        fontWeight: 900,
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.09em',
-                        color: chapter.accent
-                      }}
-                    >
-                      {chapter.title}
-                    </span>
-                    <span style={{ fontSize: '9.5px', fontWeight: 700, color: '#94a3b8' }}>
-                      Tap any signal for proof
-                    </span>
-                  </div>
+                    <span style={{ color: sig.color, marginRight: '4px' }}>#{sig.num}</span>
+                    <span>{sig.shortPill.slice(3)}</span>
+                  </button>
+                );
+              })}
+            </div>
 
-                  {/* Full-Width Signal Cards */}
-                  {chapterSignals.map((sig) => {
-                    const Icon = sig.icon;
-                    const isExpanded = expandedSignalId === sig.id;
-                    return (
-                      <div
-                        key={sig.id}
-                        style={{
-                          borderRadius: '14px',
-                          background: isExpanded
-                            ? `linear-gradient(135deg, ${sig.bgGlow} 0%, rgba(10, 18, 34, 0.98) 100%)`
-                            : 'rgba(12, 20, 36, 0.94)',
-                          border: isExpanded ? `2px solid ${sig.color}` : '1px solid rgba(255,255,255,0.16)',
-                          borderLeft: `5px solid ${sig.color}`,
-                          boxShadow: isExpanded ? `0 10px 26px ${sig.bgGlow}` : '0 4px 12px rgba(0,0,0,0.45)',
-                          overflow: 'hidden',
-                          transition: 'all 0.18s ease'
-                        }}
-                      >
-                        {/* LAYER 1: ALWAYS VISIBLE FULL-WIDTH HEADER + HEADLINE + #HASHTAGS */}
-                        <button
-                          type="button"
-                          onClick={() => setExpandedSignalId(isExpanded ? null : sig.id)}
+            {/* HORIZONTAL SNAP-SCROLL CAROUSEL — 1 HERO CARD ON SCREEN AT A TIME */}
+            <div
+              ref={carouselRef}
+              onScroll={handleCarouselScroll}
+              style={{
+                display: 'flex',
+                gap: '12px',
+                overflowX: 'auto',
+                scrollSnapType: 'x mandatory',
+                WebkitOverflowScrolling: 'touch',
+                paddingBottom: '6px',
+                scrollbarWidth: 'none',
+                msOverflowStyle: 'none'
+              }}
+            >
+              {SIGNALS.map((sig, idx) => {
+                const Icon = sig.icon;
+                const isActive = idx === activeSignalIdx;
+                return (
+                  <div
+                    key={sig.id}
+                    style={{
+                      flex: '0 0 88%',
+                      scrollSnapAlign: 'center',
+                      borderRadius: '20px',
+                      background: `linear-gradient(155deg, ${sig.bgGlow} 0%, rgba(10, 18, 34, 0.98) 55%, rgba(6, 11, 22, 0.99) 100%)`,
+                      border: `2px solid ${isActive ? sig.color : 'rgba(255,255,255,0.18)'}`,
+                      borderTop: `6px solid ${sig.color}`,
+                      padding: '18px 16px',
+                      boxShadow: isActive ? `0 16px 36px rgba(0,0,0,0.65), 0 0 24px ${sig.bgGlow}` : '0 8px 20px rgba(0,0,0,0.45)',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      justifyContent: 'space-between',
+                      gap: '14px',
+                      boxSizing: 'border-box',
+                      transition: 'all 0.2s ease'
+                    }}
+                  >
+                    {/* LAYER 1: ULTRA-CLEAN HERO SIGNAL CONTENT */}
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                      {/* Top Badge Row: #01 / 08 + Signal Label | Verified Certainty Pill */}
+                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px' }}>
+                        <div style={{ display: 'inline-flex', alignItems: 'center', gap: '7px' }}>
+                          <span
+                            style={{
+                              fontSize: '12px',
+                              fontFamily: 'monospace',
+                              fontWeight: 900,
+                              color: '#04101c',
+                              background: sig.color,
+                              padding: '3px 8px',
+                              borderRadius: '8px'
+                            }}
+                          >
+                            #{sig.num} / 08
+                          </span>
+                          <span
+                            style={{
+                              display: 'inline-flex',
+                              alignItems: 'center',
+                              gap: '5px',
+                              fontSize: '12.5px',
+                              fontWeight: 900,
+                              color: sig.color,
+                              letterSpacing: '0.06em'
+                            }}
+                          >
+                            <Icon size={16} color={sig.color} />
+                            <span>{sig.label}</span>
+                          </span>
+                        </div>
+
+                        <span
                           style={{
-                            width: '100%',
-                            textAlign: 'left',
-                            padding: '12px 13px',
-                            background: 'transparent',
-                            border: 'none',
-                            color: '#ffffff',
-                            cursor: 'pointer',
-                            display: 'flex',
-                            flexDirection: 'column',
-                            gap: '6px'
+                            fontSize: '11px',
+                            fontWeight: 900,
+                            color: '#34d399',
+                            background: 'rgba(16, 185, 129, 0.18)',
+                            border: '1px solid rgba(52, 211, 153, 0.5)',
+                            padding: '3px 9px',
+                            borderRadius: '999px'
                           }}
                         >
-                          {/* Top Row: #01 + Icon + Signal Label on Left | Verified Fact Pill + Chevron on Right */}
-                          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px', width: '100%' }}>
-                            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '7px' }}>
-                              <span
-                                style={{
-                                  fontSize: '11px',
-                                  fontFamily: 'monospace',
-                                  fontWeight: 900,
-                                  color: '#04101c',
-                                  background: sig.color,
-                                  padding: '2px 6px',
-                                  borderRadius: '6px'
-                                }}
-                              >
-                                #{sig.num}
-                              </span>
-                              <Icon size={15} color={sig.color} style={{ flexShrink: 0 }} />
-                              <span
-                                style={{
-                                  fontSize: '12px',
-                                  fontWeight: 900,
-                                  color: sig.color,
-                                  letterSpacing: '0.06em'
-                                }}
-                              >
-                                {sig.label}
-                              </span>
-                            </div>
-
-                            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
-                              <span
-                                style={{
-                                  fontSize: '10px',
-                                  fontWeight: 900,
-                                  color: '#34d399',
-                                  background: 'rgba(16, 185, 129, 0.16)',
-                                  border: '1px solid rgba(52, 211, 153, 0.45)',
-                                  padding: '2px 8px',
-                                  borderRadius: '999px'
-                                }}
-                              >
-                                {sig.certaintyBadge}
-                              </span>
-                              {isExpanded ? (
-                                <ChevronUp size={16} color={sig.color} />
-                              ) : (
-                                <ChevronDown size={16} color="#94a3b8" />
-                              )}
-                            </div>
-                          </div>
-
-                          {/* Oversized Primary Signal Headline */}
-                          <div
-                            style={{
-                              fontSize: '15px',
-                              fontWeight: 900,
-                              color: '#ffffff',
-                              lineHeight: 1.25,
-                              letterSpacing: '-0.01em'
-                            }}
-                          >
-                            {sig.headline}
-                          </div>
-
-                          {/* Layer 1 #Hashtags Row */}
-                          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '5px', marginTop: '1px' }}>
-                            {sig.hashtags.map((tag, idx) => (
-                              <span
-                                key={idx}
-                                style={{
-                                  fontSize: '10.5px',
-                                  fontWeight: 800,
-                                  color: sig.color,
-                                  background: 'rgba(255, 255, 255, 0.06)',
-                                  border: `1px solid ${sig.color}55`,
-                                  padding: '2px 8px',
-                                  borderRadius: '999px'
-                                }}
-                              >
-                                {tag}
-                              </span>
-                            ))}
-                          </div>
-                        </button>
-
-                        {/* LAYER 2: EXPANDED IN-PLACE VERIFICATION PROOF & CRYPTOGRAPHIC SIGNATURE HASH */}
-                        {isExpanded && (
-                          <div
-                            style={{
-                              padding: '0 13px 13px',
-                              display: 'flex',
-                              flexDirection: 'column',
-                              gap: '8px',
-                              borderTop: '1px solid rgba(255,255,255,0.08)'
-                            }}
-                          >
-                            {/* Verified Reality Statement */}
-                            <div style={{ fontSize: '12.5px', fontWeight: 600, color: '#f8fafc', lineHeight: 1.42, paddingTop: '9px' }}>
-                              {sig.proof}
-                            </div>
-
-                            {/* Verification Proof & Signature Hash Box (Exact Desktop Pattern) */}
-                            <div
-                              style={{
-                                background: 'rgba(2, 6, 14, 0.92)',
-                                border: '1px solid rgba(52, 211, 153, 0.4)',
-                                borderLeft: '3px solid #34d399',
-                                borderRadius: '9px',
-                                padding: '8px 10px',
-                                display: 'flex',
-                                flexDirection: 'column',
-                                gap: '3px'
-                              }}
-                            >
-                              <div style={{ fontSize: '10.5px', color: '#e2e8f0', lineHeight: 1.3 }}>
-                                <strong style={{ color: '#34d399' }}>Sources:</strong> {sig.sources}
-                              </div>
-                              <div style={{ fontSize: '10px', color: '#94a3b8', lineHeight: 1.25 }}>
-                                <strong style={{ color: '#cbd5e1' }}>Method:</strong> {sig.method}
-                              </div>
-                              <div
-                                style={{
-                                  display: 'flex',
-                                  justifyContent: 'space-between',
-                                  alignItems: 'center',
-                                  borderTop: '1px solid rgba(255,255,255,0.1)',
-                                  paddingTop: '5px',
-                                  marginTop: '3px',
-                                  fontSize: '10px'
-                                }}
-                              >
-                                <span>
-                                  <strong style={{ color: '#00e5ff' }}>Signature Hash:</strong>{' '}
-                                  <code style={{ color: '#34d399', fontWeight: 800, fontSize: '10px' }}>{sig.hash}</code>
-                                </span>
-                                <span style={{ color: '#34d399', fontWeight: 900 }}>✓ Verified</span>
-                              </div>
-                            </div>
-                          </div>
-                        )}
+                          {sig.certaintyBadge}
+                        </span>
                       </div>
-                    );
-                  })}
-                </div>
-              );
-            })}
+
+                      {/* Giant Signal Headline */}
+                      <div
+                        style={{
+                          fontSize: '1.35rem',
+                          fontWeight: 900,
+                          color: '#ffffff',
+                          lineHeight: 1.2,
+                          letterSpacing: '-0.02em'
+                        }}
+                      >
+                        {sig.headline}
+                      </div>
+
+                      {/* Bold #Hashtag Pills */}
+                      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+                        {sig.hashtags.map((tag, tIdx) => (
+                          <span
+                            key={tIdx}
+                            style={{
+                              fontSize: '11.5px',
+                              fontWeight: 800,
+                              color: '#ffffff',
+                              background: 'rgba(255, 255, 255, 0.08)',
+                              border: `1.5px solid ${sig.color}`,
+                              padding: '4px 10px',
+                              borderRadius: '999px'
+                            }}
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+
+                      {/* Concise 1-Sentence Reality Summary */}
+                      <div
+                        style={{
+                          fontSize: '13px',
+                          fontWeight: 600,
+                          color: '#e2e8f0',
+                          lineHeight: 1.45
+                        }}
+                      >
+                        {sig.proof}
+                      </div>
+                    </div>
+
+                    {/* LAYER 2: COLLAPSED BY DEFAULT — TAP TO EXPAND VERIFICATION PROOF & HASH */}
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                      <button
+                        type="button"
+                        onClick={() => setShowProofDrawer(!showProofDrawer)}
+                        style={{
+                          width: '100%',
+                          padding: '9px 12px',
+                          borderRadius: '10px',
+                          background: 'rgba(16, 185, 129, 0.14)',
+                          border: '1px solid rgba(52, 211, 153, 0.45)',
+                          color: '#34d399',
+                          fontSize: '11px',
+                          fontWeight: 900,
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'space-between',
+                          cursor: 'pointer',
+                          fontFamily: 'monospace'
+                        }}
+                      >
+                        <span>✓ Verified • {sig.hash}</span>
+                        <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', fontFamily: 'Inter, sans-serif', fontSize: '10.5px', color: '#a7f3d0' }}>
+                          <span>{showProofDrawer ? 'Hide Proof' : 'Tap for Proof'}</span>
+                          {showProofDrawer ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
+                        </span>
+                      </button>
+
+                      {showProofDrawer && (
+                        <div
+                          style={{
+                            background: 'rgba(2, 6, 14, 0.94)',
+                            border: '1px solid rgba(52, 211, 153, 0.4)',
+                            borderLeft: '3px solid #34d399',
+                            borderRadius: '10px',
+                            padding: '9px 11px',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            gap: '4px'
+                          }}
+                        >
+                          <div style={{ fontSize: '11px', color: '#e2e8f0', lineHeight: 1.35 }}>
+                            <strong style={{ color: '#34d399' }}>Sources:</strong> {sig.sources}
+                          </div>
+                          <div style={{ fontSize: '10.5px', color: '#94a3b8', lineHeight: 1.3 }}>
+                            <strong style={{ color: '#cbd5e1' }}>Method:</strong> {sig.method}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Bottom Prev / Next Signal Controls + Swipe Hint */}
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '2px 4px' }}>
+              <button
+                type="button"
+                onClick={() => scrollToSignal(activeSignalIdx - 1)}
+                disabled={activeSignalIdx === 0}
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '4px',
+                  padding: '7px 12px',
+                  borderRadius: '10px',
+                  border: '1px solid rgba(255,255,255,0.16)',
+                  background: activeSignalIdx === 0 ? 'rgba(255,255,255,0.03)' : 'rgba(15, 23, 42, 0.9)',
+                  color: activeSignalIdx === 0 ? 'rgba(255,255,255,0.25)' : '#ffffff',
+                  fontSize: '11.5px',
+                  fontWeight: 800,
+                  cursor: activeSignalIdx === 0 ? 'default' : 'pointer'
+                }}
+              >
+                <ChevronLeft size={15} />
+                <span>Prev Signal</span>
+              </button>
+
+              <span style={{ fontSize: '11px', fontWeight: 800, color: '#94a3b8' }}>
+                Swipe ➔ ({activeSignalIdx + 1} of 8)
+              </span>
+
+              <button
+                type="button"
+                onClick={() => scrollToSignal(activeSignalIdx + 1)}
+                disabled={activeSignalIdx === SIGNALS.length - 1}
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '4px',
+                  padding: '7px 12px',
+                  borderRadius: '10px',
+                  border: '1px solid rgba(0, 229, 255, 0.35)',
+                  background: activeSignalIdx === SIGNALS.length - 1 ? 'rgba(255,255,255,0.03)' : 'rgba(0, 229, 255, 0.14)',
+                  color: activeSignalIdx === SIGNALS.length - 1 ? 'rgba(255,255,255,0.25)' : '#00e5ff',
+                  fontSize: '11.5px',
+                  fontWeight: 800,
+                  cursor: activeSignalIdx === SIGNALS.length - 1 ? 'default' : 'pointer'
+                }}
+              >
+                <span>Next Signal</span>
+                <ChevronRight size={15} />
+              </button>
+            </div>
           </div>
         )}
 
