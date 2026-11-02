@@ -319,23 +319,28 @@ export default function WtmMobileDeckPage() {
           background: 'rgba(4, 9, 18, 0.96)',
           backdropFilter: 'blur(14px)',
           borderBottom: '1px solid rgba(0, 229, 255, 0.2)',
-          padding: '12px 14px 14px'
+          padding: '20px 16px 22px'
         }}
       >
         <div style={{ maxWidth: '480px', width: '100%', margin: '0 auto' }}>
           {/* Brand + Property Pill Bar */}
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px', marginBottom: '12px' }}>
-            <Link to="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', textDecoration: 'none' }}>
-              <img src="/models/Atmosvibe6.svg" alt="AtmosVibe" style={{ height: '28px', width: 'auto' }} />
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '10px', marginBottom: '26px' }}>
+            <Link to="/" className="logo" style={{ display: 'inline-flex', alignItems: 'center', textDecoration: 'none' }}>
+              <img
+                src="/models/Atmosvibe6.svg"
+                alt="AtmosVibe"
+                className="nav-logo"
+                style={{ height: '56px', width: 'auto', display: 'block' }}
+              />
             </Link>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '5px', padding: '5px 11px', borderRadius: '999px', background: 'rgba(0, 229, 255, 0.12)', border: '1px solid rgba(0, 229, 255, 0.35)', fontSize: '11.5px', fontWeight: 800, color: '#ffffff' }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', padding: '6px 12px', borderRadius: '999px', background: 'rgba(0, 229, 255, 0.12)', border: '1px solid rgba(0, 229, 255, 0.35)', fontSize: '12px', fontWeight: 800, color: '#ffffff' }}>
               <MapPin size={13} color="#00e5ff" />
               <span>Sea Containers London</span>
             </div>
           </div>
 
           {/* 4 Bold Top Tab Containers */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '7px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '8px' }}>
             {SLIDE_META.map((s) => {
               const isActive = s.index === slide;
               return (
@@ -344,8 +349,8 @@ export default function WtmMobileDeckPage() {
                   type="button"
                   onClick={() => setSlide(s.index)}
                   style={{
-                    padding: '10px 4px',
-                    borderRadius: '10px',
+                    padding: '12px 4px',
+                    borderRadius: '11px',
                     border: isActive ? '2px solid #00e5ff' : '1px solid rgba(255,255,255,0.16)',
                     background: isActive ? 'linear-gradient(180deg, rgba(0, 229, 255, 0.26), rgba(0, 229, 255, 0.1))' : 'rgba(15, 23, 42, 0.85)',
                     color: isActive ? '#ffffff' : '#cbd5e1',
@@ -365,53 +370,15 @@ export default function WtmMobileDeckPage() {
       </div>
 
       {/* MAIN SLIDE VIEWPORT */}
-      <div style={{ flex: 1, maxWidth: '480px', width: '100%', margin: '0 auto', padding: '24px 16px 40px', display: 'flex', flexDirection: 'column' }}>
+      <div style={{ flex: 1, maxWidth: '480px', width: '100%', margin: '0 auto', padding: '36px 18px 52px', display: 'flex', flexDirection: 'column' }}>
         {/* ==================== SLIDE 1: HORIZONTAL SNAP-SCROLL 8-SIGNAL DECK ==================== */}
         {slide === 0 && (
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '22px', flex: 1 }}>
-            {/* Clean Title Only (Hash badge removed from header) */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '28px', flex: 1 }}>
+            {/* Clean Title Only */}
             <div>
-              <h1 style={{ fontSize: '1.45rem', fontWeight: 900, lineHeight: 1.15, margin: 0, letterSpacing: '-0.02em', textTransform: 'uppercase' }}>
+              <h1 style={{ fontSize: '1.55rem', fontWeight: 900, lineHeight: 1.15, margin: 0, letterSpacing: '-0.02em', textTransform: 'uppercase' }}>
                 8-Signal <span style={{ color: '#00e5ff' }}>Vibe Signature</span>
               </h1>
-            </div>
-
-            {/* Horizontal Signal Selector Containers (Main Titles Only) */}
-            <div
-              style={{
-                display: 'flex',
-                gap: '8px',
-                overflowX: 'auto',
-                paddingBottom: '4px',
-                scrollbarWidth: 'none',
-                msOverflowStyle: 'none'
-              }}
-            >
-              {SIGNALS.map((sig, idx) => {
-                const isActive = idx === activeSignalIdx;
-                return (
-                  <button
-                    key={sig.id}
-                    type="button"
-                    onClick={() => scrollToSignal(idx)}
-                    style={{
-                      flexShrink: 0,
-                      padding: '10px 15px',
-                      borderRadius: '12px',
-                      border: isActive ? `2px solid ${sig.color}` : '1px solid rgba(255,255,255,0.16)',
-                      background: isActive ? sig.bgGlow : 'rgba(15, 23, 42, 0.85)',
-                      color: isActive ? '#ffffff' : '#cbd5e1',
-                      fontSize: '12.5px',
-                      fontWeight: 900,
-                      cursor: 'pointer',
-                      boxShadow: isActive ? `0 0 14px ${sig.bgGlow}` : 'none',
-                      transition: 'all 0.15s ease'
-                    }}
-                  >
-                    {sig.title}
-                  </button>
-                );
-              })}
             </div>
 
             {/* HORIZONTAL SNAP-SCROLL CAROUSEL — 1 HERO CARD ON SCREEN AT A TIME */}
@@ -420,12 +387,12 @@ export default function WtmMobileDeckPage() {
               onScroll={handleCarouselScroll}
               style={{
                 display: 'flex',
-                gap: '14px',
+                gap: '16px',
                 overflowX: 'auto',
                 scrollSnapType: 'x mandatory',
                 WebkitOverflowScrolling: 'touch',
-                paddingTop: '2px',
-                paddingBottom: '10px',
+                paddingTop: '4px',
+                paddingBottom: '16px',
                 scrollbarWidth: 'none',
                 msOverflowStyle: 'none'
               }}
@@ -439,46 +406,46 @@ export default function WtmMobileDeckPage() {
                     style={{
                       flex: '0 0 88%',
                       scrollSnapAlign: 'center',
-                      borderRadius: '22px',
+                      borderRadius: '24px',
                       background: `linear-gradient(155deg, ${sig.bgGlow} 0%, rgba(10, 18, 34, 0.98) 55%, rgba(6, 11, 22, 0.99) 100%)`,
                       border: `2px solid ${isActive ? sig.color : 'rgba(255,255,255,0.18)'}`,
                       borderTop: `6px solid ${sig.color}`,
-                      padding: '24px 20px',
+                      padding: '32px 24px',
                       boxShadow: isActive ? `0 18px 40px rgba(0,0,0,0.65), 0 0 26px ${sig.bgGlow}` : '0 8px 20px rgba(0,0,0,0.45)',
                       display: 'flex',
                       flexDirection: 'column',
                       justifyContent: 'space-between',
-                      gap: '20px',
+                      gap: '32px',
                       boxSizing: 'border-box',
                       transition: 'all 0.2s ease'
                     }}
                   >
                     {/* LAYER 1: ULTRA-CLEAN HERO SIGNAL CONTENT */}
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
                       {/* Top Badge Row: Main Title Only | Verified Certainty Pill */}
                       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px' }}>
                         <span
                           style={{
                             display: 'inline-flex',
                             alignItems: 'center',
-                            gap: '6px',
-                            fontSize: '14px',
+                            gap: '7px',
+                            fontSize: '15px',
                             fontWeight: 900,
                             color: sig.color
                           }}
                         >
-                          <Icon size={17} color={sig.color} />
+                          <Icon size={18} color={sig.color} />
                           <span>{sig.title}</span>
                         </span>
 
                         <span
                           style={{
-                            fontSize: '11px',
+                            fontSize: '11.5px',
                             fontWeight: 900,
                             color: '#34d399',
                             background: 'rgba(16, 185, 129, 0.18)',
                             border: '1px solid rgba(52, 211, 153, 0.5)',
-                            padding: '3px 9px',
+                            padding: '4px 10px',
                             borderRadius: '999px'
                           }}
                         >
@@ -489,10 +456,10 @@ export default function WtmMobileDeckPage() {
                       {/* Giant Signal Headline */}
                       <div
                         style={{
-                          fontSize: '1.35rem',
+                          fontSize: '1.45rem',
                           fontWeight: 900,
                           color: '#ffffff',
-                          lineHeight: 1.2,
+                          lineHeight: 1.24,
                           letterSpacing: '-0.02em'
                         }}
                       >
@@ -500,17 +467,17 @@ export default function WtmMobileDeckPage() {
                       </div>
 
                       {/* Bold #Hashtag Pills */}
-                      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+                      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
                         {sig.hashtags.map((tag, tIdx) => (
                           <span
                             key={tIdx}
                             style={{
-                              fontSize: '11.5px',
+                              fontSize: '12px',
                               fontWeight: 800,
                               color: '#ffffff',
                               background: 'rgba(255, 255, 255, 0.08)',
                               border: `1.5px solid ${sig.color}`,
-                              padding: '4px 10px',
+                              padding: '5px 12px',
                               borderRadius: '999px'
                             }}
                           >
@@ -522,10 +489,10 @@ export default function WtmMobileDeckPage() {
                       {/* Concise 1-Sentence Reality Summary */}
                       <div
                         style={{
-                          fontSize: '13px',
+                          fontSize: '13.5px',
                           fontWeight: 600,
                           color: '#e2e8f0',
-                          lineHeight: 1.45
+                          lineHeight: 1.5
                         }}
                       >
                         {sig.proof}
@@ -533,18 +500,18 @@ export default function WtmMobileDeckPage() {
                     </div>
 
                     {/* LAYER 2: COLLAPSED BY DEFAULT — TAP TO EXPAND VERIFICATION PROOF & HASH */}
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                       <button
                         type="button"
                         onClick={() => setShowProofDrawer(!showProofDrawer)}
                         style={{
                           width: '100%',
-                          padding: '9px 12px',
-                          borderRadius: '10px',
+                          padding: '11px 14px',
+                          borderRadius: '12px',
                           background: 'rgba(16, 185, 129, 0.14)',
                           border: '1px solid rgba(52, 211, 153, 0.45)',
                           color: '#34d399',
-                          fontSize: '11px',
+                          fontSize: '11.5px',
                           fontWeight: 900,
                           display: 'flex',
                           alignItems: 'center',
@@ -554,7 +521,7 @@ export default function WtmMobileDeckPage() {
                         }}
                       >
                         <span>✓ Verified • {sig.hash}</span>
-                        <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', fontFamily: 'Inter, sans-serif', fontSize: '10.5px', color: '#a7f3d0' }}>
+                        <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', fontFamily: 'Inter, sans-serif', fontSize: '11px', color: '#a7f3d0' }}>
                           <span>{showProofDrawer ? 'Hide Proof' : 'Tap for Proof'}</span>
                           {showProofDrawer ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
                         </span>
@@ -567,16 +534,16 @@ export default function WtmMobileDeckPage() {
                             border: '1px solid rgba(52, 211, 153, 0.4)',
                             borderLeft: '3px solid #34d399',
                             borderRadius: '10px',
-                            padding: '9px 11px',
+                            padding: '11px 13px',
                             display: 'flex',
                             flexDirection: 'column',
-                            gap: '4px'
+                            gap: '5px'
                           }}
                         >
-                          <div style={{ fontSize: '11px', color: '#e2e8f0', lineHeight: 1.35 }}>
+                          <div style={{ fontSize: '11.5px', color: '#e2e8f0', lineHeight: 1.4 }}>
                             <strong style={{ color: '#34d399' }}>Sources:</strong> {sig.sources}
                           </div>
-                          <div style={{ fontSize: '10.5px', color: '#94a3b8', lineHeight: 1.3 }}>
+                          <div style={{ fontSize: '11px', color: '#94a3b8', lineHeight: 1.35 }}>
                             <strong style={{ color: '#cbd5e1' }}>Method:</strong> {sig.method}
                           </div>
                         </div>
