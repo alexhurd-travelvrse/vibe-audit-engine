@@ -17,9 +17,7 @@ import {
   Layers,
   ShieldCheck,
   ChevronDown,
-  ChevronUp,
-  ChevronLeft,
-  ChevronRight
+  ChevronUp
 } from 'lucide-react';
 
 // ============================================================================
@@ -34,7 +32,7 @@ const SIGNALS = [
   {
     id: 'walk',
     num: '01',
-    shortPill: '01 Walk',
+    title: '5-Min Walk',
     label: '5-MIN WALK',
     headline: 'Tate Modern (4m) & Oxo Tower (2m)',
     certaintyBadge: '✓ 96% Fact',
@@ -51,7 +49,7 @@ const SIGNALS = [
   {
     id: 'character',
     num: '02',
-    shortPill: '02 Design',
+    title: 'True Character',
     label: 'TRUE CHARACTER',
     headline: '1920s Transatlantic Liner Glamour',
     certaintyBadge: '✓ 94% Fact',
@@ -68,7 +66,7 @@ const SIGNALS = [
   {
     id: 'light',
     num: '03',
-    shortPill: '03 Light',
+    title: 'Warmth & Light',
     label: 'WARMTH & LIGHT',
     headline: '2700K Golden-Hour Thames Glow',
     certaintyBadge: '✓ 94% Fact',
@@ -85,7 +83,7 @@ const SIGNALS = [
   {
     id: 'hosts',
     num: '04',
-    shortPill: '04 Hosts',
+    title: 'The Hosts',
     label: 'THE HOSTS',
     headline: 'Zero Snobbery — Instant Regulars',
     certaintyBadge: '◎ 92% Proven',
@@ -102,7 +100,7 @@ const SIGNALS = [
   {
     id: 'crowd',
     num: '05',
-    shortPill: '05 Crowd',
+    title: 'The Crowd',
     label: 'THE CROWD',
     headline: '65% London Locals · 35% Guests',
     certaintyBadge: '◈ 82% Observed',
@@ -119,7 +117,7 @@ const SIGNALS = [
   {
     id: 'time',
     num: '06',
-    shortPill: '06 Peak Time',
+    title: 'Best Time of Day',
     label: 'BEST TIME OF DAY',
     headline: '17:00 Sunset · 20:30 Rooftop Buzz',
     certaintyBadge: '◎ 90% Proven',
@@ -136,7 +134,7 @@ const SIGNALS = [
   {
     id: 'sound',
     num: '07',
-    shortPill: '07 Sound',
+    title: 'Sound & Sleep',
     label: 'SOUND & SLEEP',
     headline: '74 dB Bar Buzz · Quiet River Sleep',
     certaintyBadge: '◎ 91% Proven',
@@ -153,7 +151,7 @@ const SIGNALS = [
   {
     id: 'insider',
     num: '08',
-    shortPill: '08 Insider',
+    title: 'Insider Tips',
     label: 'INSIDER TIPS',
     headline: '12th Knot Secret St Paul’s Corner',
     certaintyBadge: '◎ 89% Proven',
@@ -321,12 +319,12 @@ export default function WtmMobileDeckPage() {
           background: 'rgba(4, 9, 18, 0.96)',
           backdropFilter: 'blur(14px)',
           borderBottom: '1px solid rgba(0, 229, 255, 0.2)',
-          padding: '10px 14px 10px'
+          padding: '12px 14px 14px'
         }}
       >
         <div style={{ maxWidth: '480px', width: '100%', margin: '0 auto' }}>
           {/* Brand + Property Pill Bar */}
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px', marginBottom: '10px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px', marginBottom: '12px' }}>
             <Link to="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', textDecoration: 'none' }}>
               <img src="/models/Atmosvibe6.svg" alt="AtmosVibe" style={{ height: '28px', width: 'auto' }} />
             </Link>
@@ -337,7 +335,7 @@ export default function WtmMobileDeckPage() {
           </div>
 
           {/* 4 Bold Top Tab Containers */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '6px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '7px' }}>
             {SLIDE_META.map((s) => {
               const isActive = s.index === slide;
               return (
@@ -346,7 +344,7 @@ export default function WtmMobileDeckPage() {
                   type="button"
                   onClick={() => setSlide(s.index)}
                   style={{
-                    padding: '9px 4px',
+                    padding: '10px 4px',
                     borderRadius: '10px',
                     border: isActive ? '2px solid #00e5ff' : '1px solid rgba(255,255,255,0.16)',
                     background: isActive ? 'linear-gradient(180deg, rgba(0, 229, 255, 0.26), rgba(0, 229, 255, 0.1))' : 'rgba(15, 23, 42, 0.85)',
@@ -367,26 +365,22 @@ export default function WtmMobileDeckPage() {
       </div>
 
       {/* MAIN SLIDE VIEWPORT */}
-      <div style={{ flex: 1, maxWidth: '480px', width: '100%', margin: '0 auto', padding: '14px 14px 32px', display: 'flex', flexDirection: 'column' }}>
+      <div style={{ flex: 1, maxWidth: '480px', width: '100%', margin: '0 auto', padding: '24px 16px 40px', display: 'flex', flexDirection: 'column' }}>
         {/* ==================== SLIDE 1: HORIZONTAL SNAP-SCROLL 8-SIGNAL DECK ==================== */}
         {slide === 0 && (
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', flex: 1 }}>
-            {/* Title + Global Cryptographic Signature Pill */}
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px' }}>
-              <h1 style={{ fontSize: '1.25rem', fontWeight: 900, lineHeight: 1.1, margin: 0, letterSpacing: '-0.02em', textTransform: 'uppercase' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '22px', flex: 1 }}>
+            {/* Clean Title Only (Hash badge removed from header) */}
+            <div>
+              <h1 style={{ fontSize: '1.45rem', fontWeight: 900, lineHeight: 1.15, margin: 0, letterSpacing: '-0.02em', textTransform: 'uppercase' }}>
                 8-Signal <span style={{ color: '#00e5ff' }}>Vibe Signature</span>
               </h1>
-              <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', background: 'rgba(16, 185, 129, 0.16)', border: '1px solid rgba(52, 211, 153, 0.5)', color: '#34d399', fontSize: '10px', fontWeight: 900, padding: '4px 8px', borderRadius: '8px', fontFamily: 'monospace' }}>
-                <ShieldCheck size={12} color="#34d399" />
-                {SIGNATURE_HASH}
-              </span>
             </div>
 
-            {/* Compact 01–08 Horizontal Pill Strip (Tap or Swipe to Jump) */}
+            {/* Horizontal Signal Selector Containers (Main Titles Only) */}
             <div
               style={{
                 display: 'flex',
-                gap: '6px',
+                gap: '8px',
                 overflowX: 'auto',
                 paddingBottom: '4px',
                 scrollbarWidth: 'none',
@@ -402,20 +396,19 @@ export default function WtmMobileDeckPage() {
                     onClick={() => scrollToSignal(idx)}
                     style={{
                       flexShrink: 0,
-                      padding: '6px 11px',
-                      borderRadius: '999px',
+                      padding: '10px 15px',
+                      borderRadius: '12px',
                       border: isActive ? `2px solid ${sig.color}` : '1px solid rgba(255,255,255,0.16)',
                       background: isActive ? sig.bgGlow : 'rgba(15, 23, 42, 0.85)',
-                      color: isActive ? '#ffffff' : '#94a3b8',
-                      fontSize: '11px',
+                      color: isActive ? '#ffffff' : '#cbd5e1',
+                      fontSize: '12.5px',
                       fontWeight: 900,
                       cursor: 'pointer',
-                      boxShadow: isActive ? `0 0 12px ${sig.bgGlow}` : 'none',
+                      boxShadow: isActive ? `0 0 14px ${sig.bgGlow}` : 'none',
                       transition: 'all 0.15s ease'
                     }}
                   >
-                    <span style={{ color: sig.color, marginRight: '4px' }}>#{sig.num}</span>
-                    <span>{sig.shortPill.slice(3)}</span>
+                    {sig.title}
                   </button>
                 );
               })}
@@ -427,11 +420,12 @@ export default function WtmMobileDeckPage() {
               onScroll={handleCarouselScroll}
               style={{
                 display: 'flex',
-                gap: '12px',
+                gap: '14px',
                 overflowX: 'auto',
                 scrollSnapType: 'x mandatory',
                 WebkitOverflowScrolling: 'touch',
-                paddingBottom: '6px',
+                paddingTop: '2px',
+                paddingBottom: '10px',
                 scrollbarWidth: 'none',
                 msOverflowStyle: 'none'
               }}
@@ -445,53 +439,37 @@ export default function WtmMobileDeckPage() {
                     style={{
                       flex: '0 0 88%',
                       scrollSnapAlign: 'center',
-                      borderRadius: '20px',
+                      borderRadius: '22px',
                       background: `linear-gradient(155deg, ${sig.bgGlow} 0%, rgba(10, 18, 34, 0.98) 55%, rgba(6, 11, 22, 0.99) 100%)`,
                       border: `2px solid ${isActive ? sig.color : 'rgba(255,255,255,0.18)'}`,
                       borderTop: `6px solid ${sig.color}`,
-                      padding: '18px 16px',
-                      boxShadow: isActive ? `0 16px 36px rgba(0,0,0,0.65), 0 0 24px ${sig.bgGlow}` : '0 8px 20px rgba(0,0,0,0.45)',
+                      padding: '24px 20px',
+                      boxShadow: isActive ? `0 18px 40px rgba(0,0,0,0.65), 0 0 26px ${sig.bgGlow}` : '0 8px 20px rgba(0,0,0,0.45)',
                       display: 'flex',
                       flexDirection: 'column',
                       justifyContent: 'space-between',
-                      gap: '14px',
+                      gap: '20px',
                       boxSizing: 'border-box',
                       transition: 'all 0.2s ease'
                     }}
                   >
                     {/* LAYER 1: ULTRA-CLEAN HERO SIGNAL CONTENT */}
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                      {/* Top Badge Row: #01 / 08 + Signal Label | Verified Certainty Pill */}
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                      {/* Top Badge Row: Main Title Only | Verified Certainty Pill */}
                       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px' }}>
-                        <div style={{ display: 'inline-flex', alignItems: 'center', gap: '7px' }}>
-                          <span
-                            style={{
-                              fontSize: '12px',
-                              fontFamily: 'monospace',
-                              fontWeight: 900,
-                              color: '#04101c',
-                              background: sig.color,
-                              padding: '3px 8px',
-                              borderRadius: '8px'
-                            }}
-                          >
-                            #{sig.num} / 08
-                          </span>
-                          <span
-                            style={{
-                              display: 'inline-flex',
-                              alignItems: 'center',
-                              gap: '5px',
-                              fontSize: '12.5px',
-                              fontWeight: 900,
-                              color: sig.color,
-                              letterSpacing: '0.06em'
-                            }}
-                          >
-                            <Icon size={16} color={sig.color} />
-                            <span>{sig.label}</span>
-                          </span>
-                        </div>
+                        <span
+                          style={{
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: '6px',
+                            fontSize: '14px',
+                            fontWeight: 900,
+                            color: sig.color
+                          }}
+                        >
+                          <Icon size={17} color={sig.color} />
+                          <span>{sig.title}</span>
+                        </span>
 
                         <span
                           style={{
@@ -607,57 +585,6 @@ export default function WtmMobileDeckPage() {
                   </div>
                 );
               })}
-            </div>
-
-            {/* Bottom Prev / Next Signal Controls + Swipe Hint */}
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '2px 4px' }}>
-              <button
-                type="button"
-                onClick={() => scrollToSignal(activeSignalIdx - 1)}
-                disabled={activeSignalIdx === 0}
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '4px',
-                  padding: '7px 12px',
-                  borderRadius: '10px',
-                  border: '1px solid rgba(255,255,255,0.16)',
-                  background: activeSignalIdx === 0 ? 'rgba(255,255,255,0.03)' : 'rgba(15, 23, 42, 0.9)',
-                  color: activeSignalIdx === 0 ? 'rgba(255,255,255,0.25)' : '#ffffff',
-                  fontSize: '11.5px',
-                  fontWeight: 800,
-                  cursor: activeSignalIdx === 0 ? 'default' : 'pointer'
-                }}
-              >
-                <ChevronLeft size={15} />
-                <span>Prev Signal</span>
-              </button>
-
-              <span style={{ fontSize: '11px', fontWeight: 800, color: '#94a3b8' }}>
-                Swipe ➔ ({activeSignalIdx + 1} of 8)
-              </span>
-
-              <button
-                type="button"
-                onClick={() => scrollToSignal(activeSignalIdx + 1)}
-                disabled={activeSignalIdx === SIGNALS.length - 1}
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '4px',
-                  padding: '7px 12px',
-                  borderRadius: '10px',
-                  border: '1px solid rgba(0, 229, 255, 0.35)',
-                  background: activeSignalIdx === SIGNALS.length - 1 ? 'rgba(255,255,255,0.03)' : 'rgba(0, 229, 255, 0.14)',
-                  color: activeSignalIdx === SIGNALS.length - 1 ? 'rgba(255,255,255,0.25)' : '#00e5ff',
-                  fontSize: '11.5px',
-                  fontWeight: 800,
-                  cursor: activeSignalIdx === SIGNALS.length - 1 ? 'default' : 'pointer'
-                }}
-              >
-                <span>Next Signal</span>
-                <ChevronRight size={15} />
-              </button>
             </div>
           </div>
         )}
