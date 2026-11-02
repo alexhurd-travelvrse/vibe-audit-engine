@@ -1,32 +1,286 @@
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo } from 'react';
 import {
   Lock,
   Sparkles,
-  Search,
-  X,
   ExternalLink,
-  Code2,
-  Compass,
-  SlidersHorizontal,
-  CheckCircle2,
   Clock,
   ShieldCheck,
-  Copy,
-  Check,
-  Trophy,
-  Zap
+  CheckCircle2,
+  X,
+  Footprints,
+  Mic,
+  SunMedium
 } from 'lucide-react';
 import Layout from '../components/Layout';
 import Footer from '../components/Footer';
 import {
-  VIBE_FILTER_CATEGORIES,
-  SAMPLE_VIBE_PROMPTS,
-  TRAVEL_CURIOUS_BLACK_CAB_TOURS,
-  scoreTourByVibes
+  TRAVEL_CURIOUS_BLACK_CAB_TOURS
 } from '../data/travelCuriousBlackCabVibes';
 import './VibeApiDemoPage.css';
 
 const STORAGE_KEY = 'atmosvibe_tc_vibe_api_unlocked';
+
+// LAYER 1: Pure Emotional Atmosphere & Vibe Filters (How you want it to FEEL, not just descriptive topics)
+const ATMOSPHERE_CHIPS = [
+  {
+    id: 'rock-beatles',
+    icon: '⚡',
+    vibeTitle: 'Rebellious & Electric',
+    subLabel: '60s counterculture & vinyl nostalgia',
+    color: '#f43f5e'
+  },
+  {
+    id: 'gothic-noir',
+    icon: '🕯️',
+    vibeTitle: 'Moody & Spine-Tingling',
+    subLabel: 'Gaslit shadows & dark Victorian noir',
+    color: '#10b981'
+  },
+  {
+    id: 'cinematic-magic',
+    icon: '✨',
+    vibeTitle: 'Spellbinding & Playful',
+    subLabel: 'Enchanted story-worlds & film wonder',
+    color: '#a855f7'
+  },
+  {
+    id: 'royal-power',
+    icon: '👑',
+    vibeTitle: 'Majestic & Ceremonial',
+    subLabel: 'Regal pageantry & grand power corridors',
+    color: '#ffd700'
+  },
+  {
+    id: 'wartime-grit',
+    icon: '🔥',
+    vibeTitle: 'Gripping & High-Drama',
+    subLabel: 'High-stakes intrigue & 1940s Blitz grit',
+    color: '#f59e0b'
+  },
+  {
+    id: 'nocturnal-lights',
+    icon: '🌃',
+    vibeTitle: 'Romantic & Nocturnal',
+    subLabel: 'Blue-hour river glow & neon reflections',
+    color: '#00e5ff'
+  },
+  {
+    id: 'bespoke-knowledge',
+    icon: '🧭',
+    vibeTitle: 'Off-Radar & Unscripted',
+    subLabel: 'Hushed secret courts & cabbie lore',
+    color: '#38bdf8'
+  },
+  {
+    id: 'countryside-regency',
+    icon: '🌿',
+    vibeTitle: 'Serene & Slow-Luxury',
+    subLabel: 'Pastoral honey-stone & Regency calm',
+    color: '#34d399'
+  }
+];
+
+// LAYER 2: Tour Pacing & Rhythm Filters (Solving the #1 Tour Drop-Off Trigger: "Windscreen Trap vs. Hop-Out Cadence")
+const PACING_FILTERS = [
+  {
+    id: 'hop-out-alleys',
+    icon: '🚶',
+    label: 'Hop-In / Hop-Out Alley Walks',
+    shortDesc: '60% cab leaps + 40% secret cobbled courts & foot exploration',
+    color: '#00e5ff'
+  },
+  {
+    id: 'panoramic-glide',
+    icon: '🚖',
+    label: 'Effortless Cab Glide',
+    shortDesc: 'High-impact panoramic sweep · Kerbside photo stops · Zero walking fatigue',
+    color: '#ffd700'
+  },
+  {
+    id: 'unhurried-graze',
+    icon: '🍷',
+    label: 'Unhurried & Tavern Pause',
+    shortDesc: 'Lingering multi-neighbourhood flow · Historic pub or market stop',
+    color: '#f59e0b'
+  },
+  {
+    id: 'sanctuary-escape',
+    icon: '🌄',
+    label: 'Day-Long Sanctuary Escape',
+    shortDesc: 'Door-to-door out-of-town cocoon + unhurried heritage strolls',
+    color: '#34d399'
+  }
+];
+
+// Per-tour Anti-Drop-Off Pacing, Guide Vibe, and Pure Atmospheric Hashtags
+const TOUR_DROP_OFF_PROFILES = {
+  TR04SC: {
+    pacingIds: ['hop-out-alleys'],
+    pacingBadge: 'Hop-In / Hop-Out · 8+ Studio & Alley Walks',
+    guideVibeBadge: 'Passionate 60s Music Raconteur',
+    peakVibeBadge: 'Late Morning / Golden Afternoon',
+    vibeHashtags: ['#Electric60sNostalgia', '#RebelliousSohoVibe', '#HopOutStudioWalks']
+  },
+  TR2VLZ: {
+    pacingIds: ['hop-out-alleys'],
+    pacingBadge: 'Hop-In / Hop-Out · Soho Vinyl & Mews Stops',
+    guideVibeBadge: 'Witty Backstage Rock Insider',
+    peakVibeBadge: 'Afternoon into Early Evening Buzz',
+    vibeHashtags: ['#EdgyBohemianGrit', '#HighVoltageRockLore', '#SecretSohoCobbles']
+  },
+  TVX23G: {
+    pacingIds: ['hop-out-alleys'],
+    pacingBadge: 'Warm Cab Cocoon + Gaslit Alley Footsteps',
+    guideVibeBadge: 'Suspenseful Noir Storyteller',
+    peakVibeBadge: 'Dusk & Long Shadows',
+    vibeHashtags: ['#Moody1888Noir', '#SpineTinglingSuspense', '#ShadowyCobbleWalks']
+  },
+  T77QC0: {
+    pacingIds: ['hop-out-alleys', 'panoramic-glide'],
+    pacingBadge: 'After-Dark Cab Glide + Cloister Hop-Outs',
+    guideVibeBadge: 'Theatrical Folklore & Dark Wit',
+    peakVibeBadge: 'Twilight & After-Dark',
+    vibeHashtags: ['#EerieSpectralMood', '#HushedMedievalSquares', '#TheatricalChills']
+  },
+  T1AKAJ: {
+    pacingIds: ['hop-out-alleys'],
+    pacingBadge: 'Interactive Hop-Out · Wand-Ready Arcade Walks',
+    guideVibeBadge: 'Playful & Spellbinding Film Insider',
+    peakVibeBadge: 'Mid-Morning Arcade Light',
+    vibeHashtags: ['#SpellbindingWonder', '#PlayfulFamilyMagic', '#HiddenArcadeHopOuts']
+  },
+  TSNPZ3: {
+    pacingIds: ['sanctuary-escape', 'unhurried-graze'],
+    pacingBadge: 'Countryside Cab Cocoon + Cloister Strolls',
+    guideVibeBadge: 'Cultured Oxford & Fantasy Storyteller',
+    peakVibeBadge: 'Full-Day Golden Stone Arc',
+    vibeHashtags: ['#TimelessScholarlyAwe', '#StorybookCloisters', '#UnhurriedDaySanctuary']
+  },
+  T26KP8: {
+    pacingIds: ['sanctuary-escape', 'unhurried-graze'],
+    pacingBadge: 'Door-to-Door Sanctuary + Regency Promenades',
+    guideVibeBadge: 'Charming Society & Period-Drama Host',
+    peakVibeBadge: 'Sunlit Countryside & Afternoon Crescents',
+    vibeHashtags: ['#OpulentRegencyRomance', '#SlowLuxuryPromenade', '#SunlitGeorgianGlamour']
+  },
+  TOIN97: {
+    pacingIds: ['sanctuary-escape', 'unhurried-graze'],
+    pacingBadge: 'Slow-Luxury Escape + Village & Inn Pause',
+    guideVibeBadge: 'Unhurried Country-Heritage Raconteur',
+    peakVibeBadge: 'Full-Day Pastoral Calm',
+    vibeHashtags: ['#TimeFrozenSerenity', '#RestorativeCountryPace', '#FiresideTavernPause']
+  },
+  TGTYRO: {
+    pacingIds: ['panoramic-glide'],
+    pacingBadge: 'Effortless Panoramic Glide · Kerbside Reflections',
+    guideVibeBadge: 'Smooth, Intimate Evening Chauffeur-Host',
+    peakVibeBadge: 'Blue Hour & After-Dark (19:30+)',
+    vibeHashtags: ['#NocturnalRiverGlamour', '#EffortlessNightGlide', '#RomanticBlueHourGlow']
+  },
+  T5C76S: {
+    pacingIds: ['hop-out-alleys'],
+    pacingBadge: 'Rhythmic Whitehall Glide + Mayfair Walk Stops',
+    guideVibeBadge: 'Gripping Wartime & Political Historian',
+    peakVibeBadge: 'Crisp Morning or Late Afternoon Shadows',
+    vibeHashtags: ['#HighStakes1940Tension', '#StoicWartimeDrama', '#InsiderWhitehallAccess']
+  },
+  TPHRI8: {
+    pacingIds: ['panoramic-glide'],
+    pacingBadge: 'High-Impact 2h Sweep · Zero Walking Fatigue',
+    guideVibeBadge: 'Polished Royal & Westminster Insider',
+    peakVibeBadge: 'Crisp Morning Pageantry or Golden Hour',
+    vibeHashtags: ['#EffortlessVIPMajesty', '#WhistleStopGrandeur', '#ZeroCrowdVantagePoints']
+  },
+  TJI8RE: {
+    pacingIds: ['hop-out-alleys', 'panoramic-glide'],
+    pacingBadge: 'Balanced 60% Cab Sweep / 40% Hidden Court Walks',
+    guideVibeBadge: 'Charismatic Master of "The Knowledge"',
+    peakVibeBadge: 'Morning or Afternoon Half-Day Arc',
+    vibeHashtags: ['#GrandToGrittyContrast', '#BusProhibitedBackstreets', '#EffortlessHalfDayFlow']
+  },
+  TNA63G: {
+    pacingIds: ['unhurried-graze', 'hop-out-alleys'],
+    pacingBadge: 'Unhurried 6h Immersion + Historic Tavern Pause',
+    guideVibeBadge: 'Convivial, Encyclopedic London Host',
+    peakVibeBadge: 'Full Day with Riverside Pub / Market Stop',
+    vibeHashtags: ['#UnhurriedTavernRhythm', '#ConvivialStorytelling', '#GrandToSecretWharves']
+  },
+  TTBDTB: {
+    pacingIds: ['hop-out-alleys'],
+    pacingBadge: 'Nimble Backstreet Pivots + Secret Mews Walks',
+    guideVibeBadge: 'Unscripted "Knowledge" Secret-Hunter',
+    peakVibeBadge: 'Quiet Morning or Afternoon Backstreets',
+    vibeHashtags: ['#100PercentOffRadar', '#SerendipitousDiscovery', '#HushedMewsAndRuins']
+  },
+  TYE4O3: {
+    pacingIds: ['unhurried-graze', 'hop-out-alleys'],
+    pacingBadge: '5-Village Flow + Spontaneous Coffee / Pub Stops',
+    guideVibeBadge: 'Culturally Plugged-In Local Aesthetic Host',
+    peakVibeBadge: 'Full-Day Neighbourhood Hopping',
+    vibeHashtags: ['#EclecticVillageRhythm', '#UnscriptedLocalFlow', '#StylishSlowDiscovery']
+  },
+  T0IE5Y: {
+    pacingIds: ['unhurried-graze', 'sanctuary-escape'],
+    pacingBadge: 'Carte Blanche All-Day Standby · Your Own Pace',
+    guideVibeBadge: 'Dedicated Private Historian & Chauffeur',
+    peakVibeBadge: 'Full Morning-to-Night Circadian Arc',
+    vibeHashtags: ['#TotalCarteBlancheFreedom', '#DaylightToNeonShift', '#ZeroRushVIPSanctuary']
+  },
+  TGH0DN: {
+    pacingIds: ['sanctuary-escape', 'panoramic-glide'],
+    pacingBadge: 'Door-to-Door Cab Sanctuary + Monolith Walk',
+    guideVibeBadge: 'Engaging Ancient-Wessex Storyteller',
+    peakVibeBadge: 'Open Morning Countryside Skies',
+    vibeHashtags: ['#ElementalAncientAwe', '#EffortlessCoastalGlide', '#WindsweptSolsticeMood']
+  },
+  TO3TAR: {
+    pacingIds: ['sanctuary-escape', 'panoramic-glide'],
+    pacingBadge: 'Door-to-Door Royal Glide + Castle Stroll',
+    guideVibeBadge: 'Regal Chivalry & Heritage Raconteur',
+    peakVibeBadge: 'Morning Royal Battlement Arrival',
+    vibeHashtags: ['#ChivalricFortressMajesty', '#UnhurriedRoyalJourney', '#AristocraticCalm']
+  }
+};
+
+function getTourProfile(tour) {
+  return (
+    TOUR_DROP_OFF_PROFILES[tour.id] || {
+      pacingIds: ['hop-out-alleys'],
+      pacingBadge: 'Balanced Cab Glide + Curated Hop-Out Walks',
+      guideVibeBadge: 'Charismatic "Knowledge" Raconteur',
+      peakVibeBadge: tour.fiveSignalSignature?.peakWindow || 'Golden Afternoon',
+      vibeHashtags: ['#AuthenticCabbieVibe', '#HopOutDiscovery', '#ZeroCrowdAccess']
+    }
+  );
+}
+
+// Format "You'll love this tour if..." sentence cleanly from each tour's shortlistHook
+function formatYouWillLoveIf(tour) {
+  const raw = (tour.shortlistHook || '').trim();
+  if (!raw) {
+    return `You want ${tour.vibeArchetype?.toLowerCase() || 'an authentic private London Black Cab experience'}.`;
+  }
+  const lowerFirst = raw.charAt(0).toLowerCase() + raw.slice(1);
+  if (/^(puts you|takes you|immerses you)/i.test(raw)) {
+    return raw.replace(/^(Puts|Takes|Immerses) you/i, 'You want to be');
+  }
+  if (/^(trades|swaps)/i.test(raw)) {
+    return raw.replace(/^(Trades|Swaps)/i, 'You want to trade');
+  }
+  if (/^(turns|transforms|uses|delivers|bridges|weaves|solves|connects|recreates|unlocks|pairs|lets)/i.test(raw)) {
+    return `You want a tour that ${lowerFirst}`;
+  }
+  return raw;
+}
+
+function getTourHash(tourId) {
+  let acc = 0x811c9dc5;
+  const str = String(tourId || 'TC');
+  for (let i = 0; i < str.length; i++) {
+    acc = Math.imul(acc ^ str.charCodeAt(i), 0x01000193) >>> 0;
+  }
+  return `0x${acc.toString(16).padStart(8, '0').slice(0, 6)}...${str.toLowerCase()}`;
+}
 
 export default function VibeApiDemoPage() {
   const [isUnlocked, setIsUnlocked] = useState(() => {
@@ -38,15 +292,12 @@ export default function VibeApiDemoPage() {
   const [passwordInput, setPasswordInput] = useState('');
   const [passwordError, setPasswordError] = useState('');
 
-  // Pure Atmospheric Filters & Mood Search state
-  const [selectedVibes, setSelectedVibes] = useState([]);
-  const [searchQuery, setSearchQuery] = useState('');
-  const [viewMode, setViewMode] = useState('discovery'); // 'discovery' | 'before-after' | 'api-json'
-
-  // Modal state for inspecting a single tour's full Vibe Signature + JSON payload
-  const [activeTourModal, setActiveTourModal] = useState(null);
-  const [modalTab, setModalTab] = useState('signature'); // 'signature' | 'json'
-  const [copiedJson, setCopiedJson] = useState(false);
+  // Layer 1: Atmosphere / Emotional Mood filter
+  const [selectedMood, setSelectedMood] = useState(null);
+  // Layer 2: Tour Pacing & Rhythm filter (works alone OR in conjunction with selectedMood)
+  const [selectedPacing, setSelectedPacing] = useState(null);
+  // Optional 1-tap proof toggle per tour card
+  const [openProofId, setOpenProofId] = useState(null);
 
   const handlePasswordSubmit = (e) => {
     e.preventDefault();
@@ -68,98 +319,30 @@ export default function VibeApiDemoPage() {
     setPasswordError('');
   };
 
-  const toggleVibeFilter = (vibeId) => {
-    setSelectedVibes((prev) =>
-      prev.includes(vibeId) ? prev.filter((id) => id !== vibeId) : [...prev, vibeId]
+  const matchesTour = (tour, moodId, pacingId) => {
+    const moodMatch = !moodId || (tour.vibeTags || []).includes(moodId);
+    const profile = getTourProfile(tour);
+    const pacingMatch = !pacingId || (profile.pacingIds || []).includes(pacingId);
+    return moodMatch && pacingMatch;
+  };
+
+  const filteredTours = useMemo(() => {
+    return TRAVEL_CURIOUS_BLACK_CAB_TOURS.filter((tour) =>
+      matchesTour(tour, selectedMood, selectedPacing)
     );
-  };
+  }, [selectedMood, selectedPacing]);
 
-  const applySamplePrompt = (promptObj) => {
-    setSearchQuery(promptObj.query);
-    setSelectedVibes(promptObj.vibes || []);
-  };
+  const activeMoodChip = useMemo(
+    () => ATMOSPHERE_CHIPS.find((c) => c.id === selectedMood) || null,
+    [selectedMood]
+  );
 
-  const clearAllFilters = () => {
-    setSelectedVibes([]);
-    setSearchQuery('');
-  };
+  const activePacingChip = useMemo(
+    () => PACING_FILTERS.find((p) => p.id === selectedPacing) || null,
+    [selectedPacing]
+  );
 
-  // Count how many tours belong to each vibe category
-  const vibeCategoryCounts = useMemo(() => {
-    const counts = {};
-    for (const cat of VIBE_FILTER_CATEGORIES) {
-      counts[cat.id] = TRAVEL_CURIOUS_BLACK_CAB_TOURS.filter((t) =>
-        t.vibeTags.includes(cat.id)
-      ).length;
-    }
-    return counts;
-  }, []);
-
-  // Dynamically score, filter, and rank tours purely by Atmospheric Vibe Match
-  const rankedTours = useMemo(() => {
-    const scored = TRAVEL_CURIOUS_BLACK_CAB_TOURS.map((tour) => {
-      const evaluation = scoreTourByVibes(tour, selectedVibes, searchQuery);
-      return {
-        ...tour,
-        _visible: evaluation.visible,
-        _matchScore: evaluation.matchScore,
-        _matchedVibes: evaluation.matchedVibes
-      };
-    }).filter((t) => t._visible);
-
-    return scored.sort((a, b) => b._matchScore - a._matchScore);
-  }, [selectedVibes, searchQuery]);
-
-  const isFilteringActive = selectedVibes.length > 0 || searchQuery.trim().length > 0;
-  const top3Shortlist = useMemo(() => rankedTours.slice(0, 3), [rankedTours]);
-
-  // Construct live API response preview
-  const liveApiPayload = useMemo(() => {
-    return {
-      api_version: '2026.10.v2-pure-vibe',
-      partner_id: 'travel-curious',
-      collection_slug: 'black-cab-heritage-tours',
-      source_url: 'https://travelcurious.com/collections/black-cab-heritage-tours',
-      query_context: {
-        active_mood_filters: selectedVibes.length > 0 ? selectedVibes : 'ALL_MOODS',
-        vibe_prompt: searchQuery || null,
-        shortlist_winners: top3Shortlist.map((t, i) => ({
-          shortlist_rank: i + 1,
-          tour_id: t.id,
-          title: t.title,
-          vibe_archetype: t.vibeArchetype,
-          why_it_wins_shortlist: t.shortlistHook
-        }))
-      },
-      results: rankedTours.map((t, index) => ({
-        rank: index + 1,
-        tour_id: t.id,
-        title: t.title,
-        vibe_match_score: t._matchScore,
-        vibe_archetype: t.vibeArchetype,
-        shortlist_hook: t.shortlistHook,
-        matched_vibe_tags: t._matchedVibes,
-        five_signal_vibe_signature: t.fiveSignalSignature,
-        signature_on_route_moments: t.signatureMoments,
-        booking_url: t.url
-      }))
-    };
-  }, [rankedTours, top3Shortlist, selectedVibes, searchQuery]);
-
-  const copyPayloadToClipboard = (obj) => {
-    navigator.clipboard.writeText(JSON.stringify(obj, null, 2));
-    setCopiedJson(true);
-    setTimeout(() => setCopiedJson(false), 2000);
-  };
-
-  useEffect(() => {
-    const onKeyDown = (e) => {
-      if (e.key === 'Escape') setActiveTourModal(null);
-    };
-    window.addEventListener('keydown', onKeyDown);
-    return () => window.removeEventListener('keydown', onKeyDown);
-  }, []);
-
+  // ---------------- PASSWORD GATE ----------------
   if (!isUnlocked) {
     return (
       <Layout>
@@ -196,621 +379,565 @@ export default function VibeApiDemoPage() {
     );
   }
 
+  // ---------------- UNLOCKED MOBILE-FIRST VIBE + PACING DEMO ----------------
   return (
     <Layout>
-      <div className="tc-vibe-page">
-        {/* Sticky Partner Top Bar */}
-        <div className="tc-top-bar">
-          <div className="tc-top-bar-inner">
-            <div className="tc-top-bar-left">
-              <span className="tc-partner-pill">
-                <Sparkles size={12} /> ATMOSVIBE API × TRAVEL CURIOUS
-              </span>
-              <a
-                href="https://travelcurious.com/collections/black-cab-heritage-tours"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="tc-source-link"
-              >
-                <span>London Black Cab Heritage Collection</span>
-                <ExternalLink size={13} />
-              </a>
+      <div
+        style={{
+          minHeight: '100vh',
+          background: 'radial-gradient(circle at 50% 0%, #0f2542 0%, #050a14 60%, #02050a 100%)',
+          color: '#ffffff',
+          padding: '14px 12px 64px',
+          fontFamily: 'Inter, system-ui, -apple-system, sans-serif'
+        }}
+      >
+        <div style={{ maxWidth: '540px', margin: '0 auto' }}>
+          {/* Compact Top Header */}
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px', marginBottom: '10px' }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', padding: '4px 10px', borderRadius: '999px', background: 'rgba(0, 229, 255, 0.12)', border: '1px solid rgba(0, 229, 255, 0.35)', fontSize: '11px', fontWeight: 800, color: '#00e5ff' }}>
+              <Sparkles size={12} />
+              <span>London Black Cab Heritage Tours</span>
             </div>
-
-            <div className="tc-top-bar-right">
-              <div className="tc-mode-toggle">
-                <button
-                  type="button"
-                  className={`tc-mode-btn ${viewMode === 'discovery' ? 'active' : ''}`}
-                  onClick={() => setViewMode('discovery')}
-                >
-                  <Compass size={14} />
-                  <span>Vibe Shortlist &amp; Discovery</span>
-                </button>
-                <button
-                  type="button"
-                  className={`tc-mode-btn ${viewMode === 'before-after' ? 'active' : ''}`}
-                  onClick={() => setViewMode('before-after')}
-                >
-                  <Zap size={14} />
-                  <span>Before vs. After Catalogue</span>
-                </button>
-                <button
-                  type="button"
-                  className={`tc-mode-btn ${viewMode === 'api-json' ? 'active' : ''}`}
-                  onClick={() => setViewMode('api-json')}
-                >
-                  <Code2 size={14} />
-                  <span>Live Vibe API JSON</span>
-                </button>
-              </div>
-
-              <button type="button" onClick={handleLock} className="tc-lock-btn" title="Lock Demo">
-                <Lock size={13} />
-                <span>Lock</span>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div className="tc-container">
-          {/* Hero Section */}
-          <div className="tc-hero">
-            <div className="tc-hero-eyebrow">
-              <span>🚖 WINNING THE SHORTLIST THROUGH PURE ATMOSPHERE</span>
-            </div>
-            <h1 className="tc-hero-title">
-              Match the London Mood You Want to{' '}
-              <span
-                style={{
-                  background: 'linear-gradient(90deg, #00e5ff, #fbbf24)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent'
-                }}
-              >
-                Step Inside
-              </span>
-            </h1>
-            <p className="tc-hero-subtitle">
-              Travellers don’t shortlist a tour because of a dry route list—they shortlist an{' '}
-              <strong>atmosphere, an era, and a feeling</strong>. Select a London mood below to elevate the top
-              Black Cab experiences to the <strong>#1 spot on the shortlist</strong>.
-            </p>
+            <button
+              type="button"
+              onClick={handleLock}
+              style={{
+                background: 'rgba(255,255,255,0.05)',
+                border: '1px solid rgba(255,255,255,0.12)',
+                color: '#94a3b8',
+                borderRadius: '8px',
+                padding: '4px 9px',
+                fontSize: '11px',
+                fontWeight: 700,
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '4px',
+                cursor: 'pointer'
+              }}
+            >
+              <Lock size={11} />
+              <span>Lock</span>
+            </button>
           </div>
 
-          {/* Interactive Mood Filter & Vibe Prompt Panel */}
-          <div className="tc-controls-panel">
-            {/* Natural Language Vibe Search Input */}
-            <div className="tc-search-row">
-              <div className="tc-search-input-wrap">
-                <Search size={18} className="tc-search-icon" />
-                <input
-                  type="text"
-                  className="tc-search-input"
-                  placeholder="Describe the London atmosphere you want to feel (e.g. 'Swinging 60s Soho vinyl', 'Gaslit Victorian Noir at dusk', 'Blue-hour Thames lights')..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                />
-                {searchQuery && (
-                  <button
-                    type="button"
-                    className="tc-clear-input-btn"
-                    onClick={() => setSearchQuery('')}
-                    aria-label="Clear search"
-                  >
-                    <X size={14} />
-                  </button>
-                )}
-              </div>
-            </div>
-
-            {/* One-Click Mood Prompts */}
-            <div className="tc-prompts-row">
-              <span className="tc-prompts-label">Instant Mood Prompts:</span>
-              {SAMPLE_VIBE_PROMPTS.map((p, idx) => (
+          {/* ==================== TWO-LAYER ATMOSPHERE + PACING FILTER BOX ==================== */}
+          <div
+            style={{
+              background: 'rgba(10, 18, 34, 0.95)',
+              border: '1.5px solid rgba(0, 229, 255, 0.32)',
+              borderRadius: '16px',
+              padding: '13px',
+              marginBottom: '16px',
+              boxShadow: '0 10px 30px rgba(0,0,0,0.55)'
+            }}
+          >
+            {/* Filter Header */}
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
+              <h1 style={{ fontSize: '1.08rem', fontWeight: 900, margin: 0, letterSpacing: '-0.01em' }}>
+                Search by <span style={{ color: '#00e5ff' }}>Atmosphere</span> &amp; <span style={{ color: '#ffd700' }}>Pacing</span>
+              </h1>
+              {(selectedMood || selectedPacing) && (
                 <button
-                  key={idx}
                   type="button"
-                  className="tc-prompt-chip"
-                  onClick={() => applySamplePrompt(p)}
+                  onClick={() => {
+                    setSelectedMood(null);
+                    setSelectedPacing(null);
+                  }}
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '4px',
+                    background: 'rgba(255,255,255,0.1)',
+                    border: '1px solid rgba(255,255,255,0.25)',
+                    color: '#ffffff',
+                    fontSize: '10.5px',
+                    fontWeight: 800,
+                    padding: '4px 8px',
+                    borderRadius: '999px',
+                    cursor: 'pointer'
+                  }}
                 >
-                  {p.label}
-                </button>
-              ))}
-            </div>
-
-            {/* 8 Pure Atmospheric Mood Filters */}
-            <div className="tc-vibe-filters-header">
-              <div className="tc-vibe-filters-title">
-                <SlidersHorizontal size={15} />
-                <span>How Do You Want London to Feel? (Select one or blend multiple atmospheres)</span>
-              </div>
-              {isFilteringActive && (
-                <button type="button" className="tc-reset-btn" onClick={clearAllFilters}>
-                  Clear Mood Filters ({selectedVibes.length + (searchQuery ? 1 : 0)})
+                  <X size={11} />
+                  <span>Reset All</span>
                 </button>
               )}
             </div>
 
-            <div className="tc-vibe-grid">
-              {VIBE_FILTER_CATEGORIES.map((cat) => {
-                const isSelected = selectedVibes.includes(cat.id);
+            {/* STEP 1: EMOTIONAL ATMOSPHERE & MOOD */}
+            <div style={{ fontSize: '10px', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#00e5ff', marginBottom: '6px' }}>
+              1. How do you want it to feel? (Emotional Atmosphere)
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6px', marginBottom: '12px' }}>
+              {ATMOSPHERE_CHIPS.map((chip) => {
+                const isSelected = selectedMood === chip.id;
+                const count = TRAVEL_CURIOUS_BLACK_CAB_TOURS.filter((t) =>
+                  matchesTour(t, chip.id, selectedPacing)
+                ).length;
+                const isDimmed = count === 0 && !isSelected;
+
                 return (
                   <button
-                    key={cat.id}
+                    key={chip.id}
                     type="button"
-                    className={`tc-vibe-filter-card ${isSelected ? 'selected' : ''}`}
-                    onClick={() => toggleVibeFilter(cat.id)}
+                    onClick={() => setSelectedMood(isSelected ? null : chip.id)}
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                      gap: '6px',
+                      padding: '8px 9px',
+                      borderRadius: '10px',
+                      border: isSelected ? `2px solid ${chip.color}` : '1px solid rgba(255,255,255,0.13)',
+                      background: isSelected
+                        ? 'rgba(0, 229, 255, 0.16)'
+                        : 'rgba(15, 23, 42, 0.88)',
+                      color: '#ffffff',
+                      cursor: 'pointer',
+                      textAlign: 'left',
+                      opacity: isDimmed ? 0.42 : 1,
+                      boxShadow: isSelected ? `0 0 14px ${chip.color}44` : 'none',
+                      transition: 'all 0.15s ease'
+                    }}
                   >
-                    <div className="tc-vibe-filter-top">
-                      <span className="tc-vibe-filter-name">
-                        <span>{cat.icon}</span>
-                        <span>{cat.label}</span>
-                      </span>
-                      <span className="tc-vibe-count-badge">{vibeCategoryCounts[cat.id]}</span>
+                    <div style={{ minWidth: 0, flex: 1 }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '11.5px', fontWeight: 900, color: isSelected ? chip.color : '#ffffff', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                        <span style={{ fontSize: '13px' }}>{chip.icon}</span>
+                        <span>{chip.vibeTitle}</span>
+                      </div>
+                      <div style={{ fontSize: '9.5px', color: '#94a3b8', fontWeight: 600, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', marginTop: '1px' }}>
+                        {chip.subLabel}
+                      </div>
                     </div>
-                    <span className="tc-vibe-mood-words">{cat.moodWord}</span>
-                    <span className="tc-vibe-filter-desc">{cat.shortDesc}</span>
+                    <span
+                      style={{
+                        fontSize: '10px',
+                        fontWeight: 900,
+                        color: isSelected ? '#04101c' : '#94a3b8',
+                        background: isSelected ? chip.color : 'rgba(255,255,255,0.07)',
+                        padding: '1px 6px',
+                        borderRadius: '999px',
+                        flexShrink: 0
+                      }}
+                    >
+                      {count}
+                    </span>
                   </button>
                 );
               })}
             </div>
-          </div>
 
-          {/* VIEW MODE 1: VIBE SHORTLIST & DISCOVERY */}
-          {viewMode === 'discovery' && (
-            <>
-              {/* TOP 3 SHORTLIST WINNERS BANNER */}
-              {rankedTours.length > 0 && (
-                <div className="tc-shortlist-spotlight">
-                  <div className="tc-shortlist-header">
-                    <div className="tc-shortlist-badge">
-                      <Trophy size={16} />
-                      <span>
-                        {isFilteringActive
-                          ? `Top ${Math.min(3, rankedTours.length)} Vibe Shortlist Winners for Your Selected Mood`
-                          : 'Top 3 Flagship Vibe Shortlist Winners'}
-                      </span>
-                    </div>
-                    <span style={{ fontSize: '0.8rem', color: '#cbd5e1' }}>
-                      Showing <strong>{rankedTours.length}</strong> atmospheric matches
-                    </span>
-                  </div>
-
-                  <div className="tc-shortlist-grid">
-                    {top3Shortlist.map((tour, idx) => (
-                      <div key={tour.id} className="tc-shortlist-mini-card">
-                        <div className="tc-shortlist-rank-row">
-                          <span className="tc-shortlist-rank-pill">
-                            #{idx + 1} SHORTLIST MATCH · {tour._matchScore}% VIBE
-                          </span>
-                          <span style={{ fontSize: '0.74rem', color: '#94a3b8', fontWeight: 700 }}>
-                            {tour.durationLabel}
-                          </span>
-                        </div>
-                        <div style={{ fontSize: '0.96rem', fontWeight: 800, color: '#ffffff' }}>
-                          {tour.title}
-                        </div>
-                        <div style={{ fontSize: '0.75rem', fontWeight: 800, color: '#00e5ff' }}>
-                          ✦ {tour.vibeArchetype}
-                        </div>
-                        <p style={{ margin: 0, fontSize: '0.79rem', color: '#cbd5e1', lineHeight: 1.45 }}>
-                          {tour.shortlistHook}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {/* FULL CARDS GRID */}
-              {rankedTours.length === 0 ? (
-                <div
-                  style={{
-                    textAlign: 'center',
-                    padding: '4rem 1.5rem',
-                    background: 'rgba(13, 20, 36, 0.7)',
-                    borderRadius: '18px',
-                    border: '1px solid rgba(148, 163, 184, 0.2)'
-                  }}
-                >
-                  <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem' }}>
-                    No single preset tour matched that exact mood blend
-                  </h3>
-                  <p style={{ color: 'rgba(203, 213, 225, 0.75)', marginBottom: '1.25rem' }}>
-                    Clear one mood filter or select <strong>Secret Alleyways &amp; Insider "Knowledge"</strong> to see our bespoke Black Cab editions that blend multiple London moods.
-                  </p>
-                  <button type="button" className="tc-gate-btn" style={{ maxWidth: '240px' }} onClick={clearAllFilters}>
-                    Reset Mood Filters
-                  </button>
-                </div>
-              ) : (
-                <div className="tc-tours-grid">
-                  {rankedTours.map((tour, index) => {
-                    const isTop3 = index < 3;
-                    return (
-                      <article
-                        key={tour.id}
-                        className={`tc-tour-card ${isTop3 ? 'shortlist-winner' : ''}`}
-                      >
-                        {/* Tour Image & Overlay Badges */}
-                        <div className="tc-tour-media">
-                          <img src={tour.imageUrl} alt={tour.title} className="tc-tour-img" loading="lazy" />
-                          <div className="tc-tour-media-overlay" />
-                          <div className="tc-tour-top-badges">
-                            {isTop3 ? (
-                              <span className="tc-rank-ribbon">🏆 #{index + 1} Shortlist Winner</span>
-                            ) : (
-                              <span className="tc-duration-badge">
-                                <Clock size={11} style={{ display: 'inline', marginRight: '4px', verticalAlign: '-1px' }} />
-                                {tour.durationLabel}
-                              </span>
-                            )}
-                            <span className="tc-match-badge">{tour._matchScore}% VIBE MATCH</span>
-                          </div>
-                          <div className="tc-tour-bottom-meta">
-                            <span className="tc-archetype-tag">{tour.vibeArchetype}</span>
-                          </div>
-                        </div>
-
-                        {/* Card Content */}
-                        <div className="tc-tour-body">
-                          <h2 className="tc-tour-title">{tour.title}</h2>
-
-                          {/* Why This Wins the Shortlist Hook */}
-                          <div className="tc-shortlist-hook-box">
-                            <strong style={{ color: '#00e5ff' }}>Why it wins the shortlist: </strong>
-                            {tour.shortlistHook}
-                          </div>
-
-                          {/* Vibe Pills */}
-                          <div className="tc-vibe-pills-row">
-                            {tour.vibePills.map((pill, idx) => (
-                              <span key={idx} className="tc-vibe-pill">
-                                ✦ {pill}
-                              </span>
-                            ))}
-                            {tour.vibeTags.map((tagId) => {
-                              const cat = VIBE_FILTER_CATEGORIES.find((c) => c.id === tagId);
-                              if (!cat) return null;
-                              const isHighlighted = selectedVibes.includes(tagId);
-                              return (
-                                <span
-                                  key={tagId}
-                                  className="tc-vibe-pill"
-                                  style={
-                                    isHighlighted
-                                      ? {
-                                          background: 'rgba(251, 191, 36, 0.2)',
-                                          borderColor: '#fbbf24',
-                                          color: '#fbbf24'
-                                        }
-                                      : {
-                                          background: 'rgba(148, 163, 184, 0.12)',
-                                          borderColor: 'rgba(148, 163, 184, 0.28)',
-                                          color: '#cbd5e1'
-                                        }
-                                  }
-                                >
-                                  {cat.icon} {cat.label}
-                                </span>
-                              );
-                            })}
-                          </div>
-
-                          {/* The 5-Signal Tour Vibe Signature */}
-                          <div className="tc-sensory-box">
-                            <div className="tc-sensory-row">
-                              <span className="tc-sensory-label">🎭 Era &amp; World:</span>
-                              <span>{tour.fiveSignalSignature.eraWorld}</span>
-                            </div>
-                            <div className="tc-sensory-row">
-                              <span className="tc-sensory-label">🌆 Visual Aura:</span>
-                              <span>{tour.fiveSignalSignature.visualAura}</span>
-                            </div>
-                            <div className="tc-sensory-row">
-                              <span className="tc-sensory-label">🎙️ Host Energy:</span>
-                              <span>{tour.fiveSignalSignature.raconteurEnergy}</span>
-                            </div>
-                            <div className="tc-sensory-row">
-                              <span className="tc-sensory-label">🎵 Emotional Mood:</span>
-                              <span>{tour.fiveSignalSignature.emotionalMood}</span>
-                            </div>
-                            <div className="tc-sensory-row">
-                              <span className="tc-sensory-label">🕰️ Peak Window:</span>
-                              <span>{tour.fiveSignalSignature.peakWindow}</span>
-                            </div>
-                          </div>
-
-                          {/* Actions */}
-                          <div className="tc-tour-actions">
-                            <button
-                              type="button"
-                              className="tc-btn-signature"
-                              onClick={() => {
-                                setActiveTourModal(tour);
-                                setModalTab('signature');
-                              }}
-                            >
-                              <Sparkles size={14} />
-                              <span>Inspect Vibe Signature</span>
-                            </button>
-                            <a
-                              href={tour.url}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="tc-btn-book"
-                            >
-                              <span>Explore Tour</span>
-                              <ExternalLink size={13} />
-                            </a>
-                          </div>
-                        </div>
-                      </article>
-                    );
-                  })}
-                </div>
-              )}
-            </>
-          )}
-
-          {/* VIEW MODE 2: BEFORE VS AFTER (FIXING CATALOGUE BLUR) */}
-          {viewMode === 'before-after' && (
-            <div className="tc-controls-panel">
-              <div style={{ marginBottom: '1.35rem' }}>
-                <div style={{ fontSize: '0.76rem', fontWeight: 800, color: '#fbbf24', letterSpacing: '1px', textTransform: 'uppercase' }}>
-                  WHY TOURS LOSE THE SHORTLIST · BEFORE VS. AFTER ATMOSVIBE
-                </div>
-                <h2 style={{ margin: '0.25rem 0 0.4rem', fontSize: '1.4rem' }}>
-                  Eliminating "Catalogue Commodity Blur" Through Atmospheric Signatures
-                </h2>
-                <p style={{ margin: 0, color: 'rgba(203, 213, 225, 0.8)', fontSize: '0.9rem', lineHeight: 1.55 }}>
-                  On Travel Curious’s current collection page, tours are described as flat landmark lists—and their bespoke Black Cab listings repeat the exact same sentence (<em>"Discover iconic London attractions and hidden gems, all from the back seat of a London taxi"</em>). See how AtmosVibe transforms flat copy into magnetic, shortlist-winning atmosphere:
-                </p>
-              </div>
-
-              <div className="tc-compare-list">
-                {rankedTours.map((tour) => (
-                  <div key={tour.id} className="tc-compare-row">
-                    {/* BEFORE: Current Live Travel Curious Card */}
-                    <div className="tc-compare-before">
-                      <div style={{ fontSize: '0.72rem', fontWeight: 800, color: '#f87171', textTransform: 'uppercase', letterSpacing: '0.8px', marginBottom: '0.4rem' }}>
-                        ❌ Current Travel Curious Listing (Logistics / Route Copy)
-                      </div>
-                      <h3 style={{ margin: '0 0 0.5rem', fontSize: '1.02rem', color: '#f8fafc' }}>{tour.title}</h3>
-                      <p style={{ margin: '0 0 0.75rem', fontSize: '0.84rem', color: '#94a3b8', fontStyle: 'italic', lineHeight: 1.5 }}>
-                        "{tour.originalCatalogueCopy}"
-                      </p>
-                      <div style={{ fontSize: '0.76rem', color: '#fca5a5' }}>
-                        <strong>Why it risks drop-off:</strong> Zero sensory mood, zero host energy, and no atmospheric hook to stand out on a traveller’s shortlist.
-                      </div>
-                    </div>
-
-                    {/* AFTER: AtmosVibe Enriched Tour Signature */}
-                    <div className="tc-compare-after">
-                      <div style={{ fontSize: '0.72rem', fontWeight: 800, color: '#00e5ff', textTransform: 'uppercase', letterSpacing: '0.8px', marginBottom: '0.4rem' }}>
-                        ✦ AtmosVibe 5-Signal Signature ({tour.vibeArchetype})
-                      </div>
-                      <h3 style={{ margin: '0 0 0.45rem', fontSize: '1.02rem', color: '#ffffff' }}>{tour.title}</h3>
-                      <p style={{ margin: '0 0 0.65rem', fontSize: '0.84rem', color: '#e2e8f0', lineHeight: 1.45 }}>
-                        <strong style={{ color: '#fbbf24' }}>Shortlist Hook: </strong>
-                        {tour.shortlistHook}
-                      </p>
-                      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', fontSize: '0.74rem' }}>
-                        <span className="tc-vibe-pill">🎭 {tour.fiveSignalSignature.eraWorld}</span>
-                        <span className="tc-vibe-pill">🎵 {tour.fiveSignalSignature.emotionalMood}</span>
-                        <span className="tc-vibe-pill">🕰️ {tour.fiveSignalSignature.peakWindow}</span>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
+            {/* STEP 2: TOUR PACING & RHYTHM (Anti-Drop-Off Layer) */}
+            <div style={{ fontSize: '10px', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#ffd700', marginBottom: '6px' }}>
+              2. How do you want it paced? (De-Risking Drop-Off)
             </div>
-          )}
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6px' }}>
+              {PACING_FILTERS.map((pace) => {
+                const isSelected = selectedPacing === pace.id;
+                const count = TRAVEL_CURIOUS_BLACK_CAB_TOURS.filter((t) =>
+                  matchesTour(t, selectedMood, pace.id)
+                ).length;
+                const isDimmed = count === 0 && !isSelected;
 
-          {/* VIEW MODE 3: LIVE VIBE API JSON */}
-          {viewMode === 'api-json' && (
-            <div className="tc-controls-panel">
-              <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  alignItems: 'center',
-                  marginBottom: '1rem',
-                  flexWrap: 'wrap',
-                  gap: '0.75rem'
-                }}
-              >
-                <div>
-                  <div style={{ fontSize: '0.76rem', fontWeight: 800, color: '#00e5ff', letterSpacing: '1px' }}>
-                    LIVE ATMOSVIBE SHORTLIST &amp; SIGNATURE PAYLOAD
-                  </div>
-                  <h3 style={{ margin: '0.2rem 0 0', fontSize: '1.15rem' }}>
-                    GET /api/v1/vibe-shortlist?partner=travel-curious&amp;collection=black-cab-heritage-tours
-                  </h3>
-                </div>
-                <button
-                  type="button"
-                  className="tc-btn-signature"
-                  style={{ flex: '0 0 auto', padding: '0.55rem 1rem' }}
-                  onClick={() => copyPayloadToClipboard(liveApiPayload)}
-                >
-                  {copiedJson ? <Check size={14} /> : <Copy size={14} />}
-                  <span>{copiedJson ? 'Copied JSON!' : 'Copy Full JSON Payload'}</span>
-                </button>
-              </div>
-              <pre className="tc-code-block">{JSON.stringify(liveApiPayload, null, 2)}</pre>
-            </div>
-          )}
-        </div>
-
-        {/* FULL VIBE SIGNATURE & API JSON MODAL */}
-        {activeTourModal && (
-          <div className="tc-modal-backdrop" onClick={() => setActiveTourModal(null)}>
-            <div className="tc-modal-card" onClick={(e) => e.stopPropagation()}>
-              <div className="tc-modal-header">
-                <div>
-                  <div
+                return (
+                  <button
+                    key={pace.id}
+                    type="button"
+                    onClick={() => setSelectedPacing(isSelected ? null : pace.id)}
                     style={{
-                      display: 'inline-flex',
+                      display: 'flex',
                       alignItems: 'center',
+                      justifyContent: 'space-between',
                       gap: '6px',
-                      fontSize: '0.74rem',
-                      fontWeight: 800,
-                      color: '#fbbf24',
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.8px',
-                      marginBottom: '0.35rem'
+                      padding: '8px 9px',
+                      borderRadius: '10px',
+                      border: isSelected ? `2px solid ${pace.color}` : '1px solid rgba(255, 215, 0, 0.22)',
+                      background: isSelected
+                        ? 'rgba(255, 215, 0, 0.14)'
+                        : 'rgba(20, 27, 45, 0.85)',
+                      color: '#ffffff',
+                      cursor: 'pointer',
+                      textAlign: 'left',
+                      opacity: isDimmed ? 0.42 : 1,
+                      boxShadow: isSelected ? `0 0 14px ${pace.color}44` : 'none',
+                      transition: 'all 0.15s ease'
                     }}
                   >
-                    <Sparkles size={13} /> {activeTourModal.vibeArchetype} · {activeTourModal._matchScore}% Vibe Match
-                  </div>
-                  <h2 style={{ margin: 0, fontSize: '1.35rem', color: '#ffffff' }}>{activeTourModal.title}</h2>
-                </div>
-                <button
-                  type="button"
-                  className="tc-modal-close"
-                  onClick={() => setActiveTourModal(null)}
-                  aria-label="Close modal"
-                >
-                  <X size={18} />
-                </button>
-              </div>
-
-              {/* Modal Tabs */}
-              <div style={{ display: 'flex', gap: '0.6rem', marginBottom: '1.25rem' }}>
-                <button
-                  type="button"
-                  className={`tc-mode-btn ${modalTab === 'signature' ? 'active' : ''}`}
-                  style={{ border: '1px solid rgba(0, 229, 255, 0.3)', padding: '8px 14px' }}
-                  onClick={() => setModalTab('signature')}
-                >
-                  <Sparkles size={14} />
-                  <span>5-Signal Atmospheric Signature</span>
-                </button>
-                <button
-                  type="button"
-                  className={`tc-mode-btn ${modalTab === 'json' ? 'active' : ''}`}
-                  style={{ border: '1px solid rgba(0, 229, 255, 0.3)', padding: '8px 14px' }}
-                  onClick={() => setModalTab('json')}
-                >
-                  <Code2 size={14} />
-                  <span>Tour Vibe API JSON</span>
-                </button>
-              </div>
-
-              {modalTab === 'signature' ? (
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.15rem' }}>
-                  {/* Why it wins the shortlist */}
-                  <div className="tc-shortlist-hook-box" style={{ marginBottom: 0, fontSize: '0.9rem' }}>
-                    <strong style={{ color: '#00e5ff' }}>Why It Wins the Shortlist: </strong>
-                    {activeTourModal.shortlistHook}
-                  </div>
-
-                  {/* 5-Signal Sensory Breakdown */}
-                  <div className="tc-sensory-box" style={{ marginBottom: 0, fontSize: '0.84rem', padding: '1rem 1.15rem' }}>
-                    <div className="tc-sensory-row">
-                      <span className="tc-sensory-label">🎭 Era &amp; World:</span>
-                      <span>{activeTourModal.fiveSignalSignature.eraWorld}</span>
+                    <div style={{ minWidth: 0, flex: 1 }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '11px', fontWeight: 900, color: isSelected ? pace.color : '#f8fafc', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                        <span style={{ fontSize: '13px' }}>{pace.icon}</span>
+                        <span>{pace.label}</span>
+                      </div>
+                      <div style={{ fontSize: '9.5px', color: '#94a3b8', fontWeight: 600, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', marginTop: '1px' }}>
+                        {pace.shortDesc}
+                      </div>
                     </div>
-                    <div className="tc-sensory-row">
-                      <span className="tc-sensory-label">🌆 Visual Aura:</span>
-                      <span>{activeTourModal.fiveSignalSignature.visualAura}</span>
-                    </div>
-                    <div className="tc-sensory-row">
-                      <span className="tc-sensory-label">🎙️ Host Energy:</span>
-                      <span>{activeTourModal.fiveSignalSignature.raconteurEnergy}</span>
-                    </div>
-                    <div className="tc-sensory-row">
-                      <span className="tc-sensory-label">🎵 Emotional Mood:</span>
-                      <span>{activeTourModal.fiveSignalSignature.emotionalMood}</span>
-                    </div>
-                    <div className="tc-sensory-row">
-                      <span className="tc-sensory-label">🕰️ Peak Window:</span>
-                      <span>{activeTourModal.fiveSignalSignature.peakWindow}</span>
-                    </div>
-                  </div>
-
-                  {/* 3 Cinematic On-Route Vibe Moments */}
-                  <div
-                    style={{
-                      background: 'rgba(5, 8, 17, 0.7)',
-                      border: '1px solid rgba(0, 229, 255, 0.22)',
-                      borderRadius: '14px',
-                      padding: '1rem 1.15rem'
-                    }}
-                  >
-                    <div
+                    <span
                       style={{
-                        fontSize: '0.76rem',
-                        fontWeight: 800,
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.9px',
-                        color: '#00e5ff',
-                        marginBottom: '0.65rem'
+                        fontSize: '10px',
+                        fontWeight: 900,
+                        color: isSelected ? '#04101c' : '#cbd5e1',
+                        background: isSelected ? pace.color : 'rgba(255,255,255,0.08)',
+                        padding: '1px 6px',
+                        borderRadius: '999px',
+                        flexShrink: 0
                       }}
                     >
-                      3 Signature On-Route Atmospheric Moments
-                    </div>
-                    <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.55rem' }}>
-                      {(activeTourModal.signatureMoments || []).map((m, i) => (
-                        <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: '0.88rem', color: '#e2e8f0' }}>
-                          <CheckCircle2 size={16} color="#00e5ff" style={{ flexShrink: 0, marginTop: '2px' }} />
-                          <span>{m}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                      {count}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
 
-                  {/* Before vs After Copy Comparison inside Modal */}
+            {/* Active Combined Filter Summary Banner */}
+            {(activeMoodChip || activePacingChip) && (
+              <div
+                style={{
+                  marginTop: '10px',
+                  padding: '8px 10px',
+                  borderRadius: '10px',
+                  background: 'rgba(0, 229, 255, 0.08)',
+                  border: '1px solid rgba(0, 229, 255, 0.35)',
+                  fontSize: '11px',
+                  color: '#f8fafc',
+                  lineHeight: 1.35
+                }}
+              >
+                {activeMoodChip && (
+                  <div>
+                    <strong style={{ color: activeMoodChip.color }}>
+                      {activeMoodChip.icon} {activeMoodChip.vibeTitle}:
+                    </strong>{' '}
+                    {activeMoodChip.subLabel}
+                  </div>
+                )}
+                {activePacingChip && (
+                  <div style={{ marginTop: activeMoodChip ? '3px' : 0 }}>
+                    <strong style={{ color: activePacingChip.color }}>
+                      {activePacingChip.icon} {activePacingChip.label}:
+                    </strong>{' '}
+                    {activePacingChip.shortDesc}
+                  </div>
+                )}
+              </div>
+            )}
+          </div>
+
+          {/* RESULTS COUNT STRIP */}
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '12px', padding: '0 2px' }}>
+            <span style={{ fontSize: '12px', fontWeight: 800, color: '#cbd5e1', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+              {selectedMood || selectedPacing
+                ? `${filteredTours.length} Matching ${filteredTours.length === 1 ? 'Tour' : 'Tours'}`
+                : `All ${filteredTours.length} Black Cab Tours`}
+            </span>
+            <span style={{ fontSize: '11px', fontWeight: 700, color: '#34d399', display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+              <ShieldCheck size={13} color="#34d399" />
+              <span>Anti-Drop-Off Vibe Layer Active</span>
+            </span>
+          </div>
+
+          {/* EMPTY STATE IF COMBINATION HAS 0 TOURS */}
+          {filteredTours.length === 0 && (
+            <div
+              style={{
+                padding: '24px 16px',
+                borderRadius: '16px',
+                background: 'rgba(15, 23, 42, 0.9)',
+                border: '1px solid rgba(255,255,255,0.14)',
+                textAlign: 'center',
+                marginBottom: '18px'
+              }}
+            >
+              <div style={{ fontSize: '14px', fontWeight: 800, color: '#ffffff', marginBottom: '6px' }}>
+                No single tour matches both of those exact filters.
+              </div>
+              <div style={{ fontSize: '12px', color: '#94a3b8', marginBottom: '12px' }}>
+                Try clearing the pacing filter or selecting another emotional atmosphere.
+              </div>
+              <button
+                type="button"
+                onClick={() => setSelectedPacing(null)}
+                style={{
+                  padding: '8px 14px',
+                  borderRadius: '999px',
+                  background: '#00e5ff',
+                  color: '#04101c',
+                  border: 'none',
+                  fontSize: '12px',
+                  fontWeight: 900,
+                  cursor: 'pointer'
+                }}
+              >
+                Show All Pacing Styles for This Vibe
+              </button>
+            </div>
+          )}
+
+          {/* TOUR CARDS LIST (Normal Tour Card + "You'll love this tour if..." Top Badge with Pacing & Guide Vibe) */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
+            {filteredTours.map((tour) => {
+              const primaryMood =
+                ATMOSPHERE_CHIPS.find((m) => (tour.vibeTags || []).includes(m.id)) || ATMOSPHERE_CHIPS[0];
+              const accentColor = primaryMood.color;
+              const sigHash = getTourHash(tour.id);
+              const isProofOpen = openProofId === tour.id;
+              const profile = getTourProfile(tour);
+
+              return (
+                <article
+                  key={tour.id}
+                  style={{
+                    borderRadius: '18px',
+                    overflow: 'hidden',
+                    background: 'rgba(12, 20, 36, 0.95)',
+                    border: '1.5px solid rgba(255, 255, 255, 0.14)',
+                    boxShadow: '0 14px 34px rgba(0, 0, 0, 0.55)',
+                    display: 'flex',
+                    flexDirection: 'column'
+                  }}
+                >
+                  {/* ==================== 1. ATMOSVIBE TOP BADGE ("YOU'LL LOVE THIS TOUR IF..." + PACING & GUIDE VIBE) ==================== */}
                   <div
                     style={{
-                      background: 'rgba(239, 68, 68, 0.06)',
-                      border: '1px solid rgba(239, 68, 68, 0.25)',
-                      borderRadius: '12px',
-                      padding: '0.85rem 1.05rem',
-                      fontSize: '0.8rem',
-                      color: '#cbd5e1'
+                      background: 'linear-gradient(135deg, rgba(0, 229, 255, 0.14) 0%, rgba(6, 13, 26, 0.98) 100%)',
+                      borderBottom: `1.5px solid ${accentColor}`,
+                      borderLeft: `5px solid ${accentColor}`,
+                      padding: '13px 14px'
                     }}
                   >
-                    <div style={{ fontWeight: 800, color: '#fca5a5', marginBottom: '0.25rem', fontSize: '0.73rem', textTransform: 'uppercase' }}>
-                      Original Travel Curious Catalogue Description (Before AtmosVibe):
+                    {/* Eyebrow + Verified Vibe Hash Pill */}
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '6px', marginBottom: '6px' }}>
+                      <span
+                        style={{
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '5px',
+                          fontSize: '10.5px',
+                          fontWeight: 900,
+                          letterSpacing: '0.08em',
+                          textTransform: 'uppercase',
+                          color: accentColor
+                        }}
+                      >
+                        <CheckCircle2 size={13} color={accentColor} />
+                        <span>You’ll Love This Tour If:</span>
+                      </span>
+
+                      <button
+                        type="button"
+                        onClick={() => setOpenProofId(isProofOpen ? null : tour.id)}
+                        title="Tap to view verification proof & signature hash"
+                        style={{
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '4px',
+                          background: 'rgba(16, 185, 129, 0.16)',
+                          border: '1px solid rgba(52, 211, 153, 0.45)',
+                          color: '#34d399',
+                          fontSize: '9.5px',
+                          fontWeight: 900,
+                          padding: '2px 7px',
+                          borderRadius: '6px',
+                          cursor: 'pointer',
+                          fontFamily: 'monospace'
+                        }}
+                      >
+                        <span>✓ Verified • {sigHash}</span>
+                      </button>
                     </div>
-                    <em>"{activeTourModal.originalCatalogueCopy}"</em>
+
+                    {/* The "You'll love this tour if..." Hook */}
+                    <div
+                      style={{
+                        fontSize: '13.5px',
+                        fontWeight: 800,
+                        color: '#ffffff',
+                        lineHeight: 1.38,
+                        marginBottom: '9px'
+                      }}
+                    >
+                      “{formatYouWillLoveIf(tour)}”
+                    </div>
+
+                    {/* ANTI-DROP-OFF PACING & GUIDE VIBE STRIP (De-risking the Windscreen Trap & Guide Roulette) */}
+                    <div
+                      style={{
+                        display: 'grid',
+                        gridTemplateColumns: '1fr',
+                        gap: '5px',
+                        padding: '8px 10px',
+                        borderRadius: '10px',
+                        background: 'rgba(4, 10, 22, 0.78)',
+                        border: '1px solid rgba(255, 255, 255, 0.12)',
+                        marginBottom: '9px',
+                        fontSize: '11px'
+                      }}
+                    >
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#f8fafc' }}>
+                        <Footprints size={12} color="#00e5ff" style={{ flexShrink: 0 }} />
+                        <span>
+                          <strong style={{ color: '#00e5ff' }}>Pacing:</strong> {profile.pacingBadge}
+                        </span>
+                      </div>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#f8fafc' }}>
+                        <Mic size={12} color="#ffd700" style={{ flexShrink: 0 }} />
+                        <span>
+                          <strong style={{ color: '#ffd700' }}>Guide Vibe:</strong> {profile.guideVibeBadge}
+                        </span>
+                      </div>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#f8fafc' }}>
+                        <SunMedium size={12} color="#34d399" style={{ flexShrink: 0 }} />
+                        <span>
+                          <strong style={{ color: '#34d399' }}>Best Mood Window:</strong> {profile.peakVibeBadge}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Pure Atmospheric Hashtags Row */}
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+                      {(profile.vibeHashtags || []).map((tag, idx) => (
+                        <span
+                          key={idx}
+                          style={{
+                            fontSize: '11px',
+                            fontWeight: 800,
+                            color: '#00e5ff',
+                            background: 'rgba(0, 229, 255, 0.1)',
+                            border: '1px solid rgba(0, 229, 255, 0.3)',
+                            padding: '2px 8px',
+                            borderRadius: '999px'
+                          }}
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+
+                    {/* Optional 1-Tap Verification Proof Box */}
+                    {isProofOpen && (
+                      <div
+                        style={{
+                          marginTop: '10px',
+                          padding: '8px 10px',
+                          borderRadius: '8px',
+                          background: 'rgba(2, 6, 14, 0.92)',
+                          border: '1px solid rgba(52, 211, 153, 0.35)',
+                          borderLeft: '3px solid #34d399',
+                          fontSize: '10.5px',
+                          color: '#cbd5e1',
+                          lineHeight: 1.35
+                        }}
+                      >
+                        <div>
+                          <strong style={{ color: '#34d399' }}>Emotional Mood:</strong> {tour.fiveSignalSignature?.emotionalMood}
+                        </div>
+                        <div style={{ marginTop: '3px' }}>
+                          <strong style={{ color: '#00e5ff' }}>Visual Aura:</strong> {tour.fiveSignalSignature?.visualAura}
+                        </div>
+                        <div style={{ marginTop: '4px', paddingTop: '4px', borderTop: '1px solid rgba(255,255,255,0.08)', display: 'flex', justifyContent: 'space-between', fontSize: '9.5px' }}>
+                          <span><strong>Sources:</strong> Verified guest reviews &amp; Knowledge route ledger</span>
+                          <span style={{ color: '#34d399', fontWeight: 800 }}>Hash: {sigHash}</span>
+                        </div>
+                      </div>
+                    )}
                   </div>
 
-                  <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '0.75rem', marginTop: '0.25rem' }}>
+                  {/* ==================== 2. STANDARD TOUR CARD DATA ==================== */}
+                  {/* Hero Image with Standard Duration & Price Badges */}
+                  <div style={{ position: 'relative', height: '185px', overflow: 'hidden' }}>
+                    <img
+                      src={tour.imageUrl}
+                      alt={tour.title}
+                      style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                      loading="lazy"
+                    />
+                    <div
+                      style={{
+                        position: 'absolute',
+                        bottom: '10px',
+                        left: '10px',
+                        right: '10px',
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                        gap: '8px'
+                      }}
+                    >
+                      <span
+                        style={{
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '5px',
+                          background: 'rgba(4, 9, 18, 0.88)',
+                          backdropFilter: 'blur(6px)',
+                          color: '#f8fafc',
+                          fontSize: '11px',
+                          fontWeight: 800,
+                          padding: '4px 10px',
+                          borderRadius: '8px',
+                          border: '1px solid rgba(255,255,255,0.15)'
+                        }}
+                      >
+                        <Clock size={12} color="#00e5ff" />
+                        <span>{tour.durationLabel}</span>
+                      </span>
+
+                      <span
+                        style={{
+                          background: 'rgba(4, 9, 18, 0.9)',
+                          backdropFilter: 'blur(6px)',
+                          color: '#ffd700',
+                          fontSize: '11.5px',
+                          fontWeight: 900,
+                          padding: '4px 10px',
+                          borderRadius: '8px',
+                          border: '1px solid rgba(255, 215, 0, 0.35)'
+                        }}
+                      >
+                        {tour.priceLabel}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Standard Title, Original Description & CTA */}
+                  <div style={{ padding: '14px' }}>
+                    <h2 style={{ fontSize: '1.1rem', fontWeight: 900, color: '#ffffff', margin: '0 0 6px', lineHeight: 1.25 }}>
+                      {tour.title}
+                    </h2>
+                    <p style={{ fontSize: '12.5px', color: '#cbd5e1', lineHeight: 1.5, margin: '0 0 12px' }}>
+                      {tour.originalCatalogueCopy}
+                    </p>
+
                     <a
-                      href={activeTourModal.url}
+                      href={tour.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="tc-btn-book"
-                      style={{ padding: '0.75rem 1.35rem', fontSize: '0.88rem' }}
+                      style={{
+                        width: '100%',
+                        padding: '10px 14px',
+                        borderRadius: '10px',
+                        background: 'rgba(255, 255, 255, 0.06)',
+                        border: '1px solid rgba(255, 255, 255, 0.16)',
+                        color: '#ffffff',
+                        fontSize: '12px',
+                        fontWeight: 800,
+                        textDecoration: 'none',
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        gap: '6px',
+                        boxSizing: 'border-box'
+                      }}
                     >
-                      <span>View on Travel Curious</span>
-                      <ExternalLink size={15} />
+                      <span>View Standard Listing on Travel Curious</span>
+                      <ExternalLink size={13} color="#00e5ff" />
                     </a>
                   </div>
-                </div>
-              ) : (
-                <div>
-                  <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '0.6rem' }}>
-                    <button
-                      type="button"
-                      className="tc-btn-signature"
-                      style={{ flex: '0 0 auto', padding: '0.45rem 0.9rem' }}
-                      onClick={() => copyPayloadToClipboard(activeTourModal)}
-                    >
-                      {copiedJson ? <Check size={14} /> : <Copy size={14} />}
-                      <span>{copiedJson ? 'Copied!' : 'Copy Tour JSON'}</span>
-                    </button>
-                  </div>
-                  <pre className="tc-code-block">{JSON.stringify(activeTourModal, null, 2)}</pre>
-                </div>
-              )}
-            </div>
+                </article>
+              );
+            })}
           </div>
-        )}
+        </div>
       </div>
       <Footer />
     </Layout>
