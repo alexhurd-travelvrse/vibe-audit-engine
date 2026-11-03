@@ -21,66 +21,58 @@ import './VibeApiDemoPage.css';
 
 const STORAGE_KEY = 'atmosvibe_tc_vibe_api_unlocked';
 
-// 1. TOUR PACE & RHYTHM (Literal, zero generic marketing words)
+// 1. TOUR PACE & RHYTHM (Single-line literal filters)
 const TOUR_PACE_FILTERS = [
   {
     id: 'fast-paced',
     icon: '⚡',
     title: 'Fast-Paced',
-    sub: 'Quick stops · Cover lots of ground',
     color: '#f43f5e'
   },
   {
     id: 'hop-out-walks',
     icon: '🚶',
-    title: 'Lots of Hop-Out Walks',
-    sub: 'Step out into alleys & courtyards',
+    title: 'Hop-Out Walks',
     color: '#a855f7'
   },
   {
     id: 'slow-unhurried',
     icon: '☕',
     title: 'Slow & Unhurried',
-    sub: 'Relaxed pace · Time for a pub or cafe',
     color: '#34d399'
   },
   {
     id: 'easy-ride',
     icon: '🚖',
-    title: 'Easy Ride · Minimal Walking',
-    sub: 'Stay in the cab · Kerbside stops',
+    title: 'Minimal Walking',
     color: '#00e5ff'
   }
 ];
 
-// 2. DESTINATION VIBE SIGNATURES (Matches AtmosVibe 8-Signal Signatures: Crowd, Tourist Trap vs Local, Character)
+// 2. DESTINATION VIBE SIGNATURES (Single-line Vibe Signature filters)
 const DESTINATION_VIBE_FILTERS = [
   {
     id: 'where-locals-hang-out',
     icon: '🍻',
     title: 'Where Locals Hang Out',
-    sub: 'Not a tourist trap · Real pubs & markets',
     color: '#f59e0b'
   },
   {
     id: 'zero-tour-buses',
     icon: '🤫',
-    title: 'Quiet · Zero Tour Buses',
-    sub: 'Hidden backstreets & silent courts',
+    title: 'Not a Tourist Trap',
     color: '#38bdf8'
   },
   {
     id: 'major-hotspots',
     icon: '📸',
-    title: 'Famous Sightseeing Hotspots',
-    sub: 'Big landmarks (skip crowds by cab)',
+    title: 'Famous Hotspots',
     color: '#ec4899'
   },
   {
     id: 'country-towns',
     icon: '🌿',
-    title: 'Quiet Country & Old Towns',
-    sub: 'Out of London · Zero city traffic',
+    title: 'Quiet Country Towns',
     color: '#ffd700'
   }
 ];
@@ -452,8 +444,8 @@ export default function VibeApiDemoPage() {
             }}
           >
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '10px' }}>
-              <h1 style={{ fontSize: '1.05rem', fontWeight: 900, margin: 0, letterSpacing: '-0.01em' }}>
-                Filter by <span style={{ color: '#00e5ff' }}>Tour Pace</span> &amp; <span style={{ color: '#ffd700' }}>Destination Crowd</span>
+              <h1 style={{ fontSize: '1.05rem', fontWeight: 900, margin: 0, letterSpacing: '-0.01em', color: '#ffffff' }}>
+                Filter
               </h1>
               {(selectedPace || selectedDest) && (
                 <button
@@ -482,9 +474,9 @@ export default function VibeApiDemoPage() {
               )}
             </div>
 
-            {/* 1. TOUR PACE & RHYTHM */}
+            {/* 1. TOUR PACE */}
             <div style={{ fontSize: '10px', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.07em', color: '#00e5ff', marginBottom: '6px' }}>
-              1. Tour Pace (How It Runs)
+              1. Tour Pace
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '7px', marginBottom: '12px' }}>
               {TOUR_PACE_FILTERS.map((item) => {
@@ -504,7 +496,7 @@ export default function VibeApiDemoPage() {
                       alignItems: 'center',
                       justifyContent: 'space-between',
                       gap: '6px',
-                      padding: '8px 10px',
+                      padding: '9px 10px',
                       borderRadius: '10px',
                       border: isSelected ? `2px solid ${item.color}` : '1px solid rgba(255,255,255,0.13)',
                       background: isSelected ? 'rgba(0, 229, 255, 0.14)' : 'rgba(15, 23, 42, 0.9)',
@@ -516,14 +508,9 @@ export default function VibeApiDemoPage() {
                       transition: 'all 0.15s ease'
                     }}
                   >
-                    <div style={{ minWidth: 0, flex: 1 }}>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '11.5px', fontWeight: 900, color: isSelected ? item.color : '#ffffff', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                        <span>{item.icon}</span>
-                        <span>{item.title}</span>
-                      </div>
-                      <div style={{ fontSize: '9.5px', color: '#94a3b8', fontWeight: 600, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', marginTop: '1px' }}>
-                        {item.sub}
-                      </div>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '12px', fontWeight: 800, color: isSelected ? item.color : '#ffffff', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', minWidth: 0, flex: 1 }}>
+                      <span>{item.icon}</span>
+                      <span>{item.title}</span>
                     </div>
                     <span
                       style={{
@@ -543,9 +530,9 @@ export default function VibeApiDemoPage() {
               })}
             </div>
 
-            {/* 2. DESTINATION VIBE SIGNATURE (THE CROWD / TOURIST TRAP VS LOCAL) */}
+            {/* 2. DESTINATION VIBE */}
             <div style={{ fontSize: '10px', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.07em', color: '#ffd700', marginBottom: '6px' }}>
-              2. Destination Vibe (The Crowd &amp; Streets)
+              2. Destination Vibe
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '7px' }}>
               {DESTINATION_VIBE_FILTERS.map((dest) => {
@@ -565,7 +552,7 @@ export default function VibeApiDemoPage() {
                       alignItems: 'center',
                       justifyContent: 'space-between',
                       gap: '6px',
-                      padding: '8px 10px',
+                      padding: '9px 10px',
                       borderRadius: '10px',
                       border: isSelected ? `2px solid ${dest.color}` : '1px solid rgba(255, 215, 0, 0.22)',
                       background: isSelected ? 'rgba(255, 215, 0, 0.14)' : 'rgba(20, 27, 45, 0.88)',
@@ -577,14 +564,9 @@ export default function VibeApiDemoPage() {
                       transition: 'all 0.15s ease'
                     }}
                   >
-                    <div style={{ minWidth: 0, flex: 1 }}>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '11.5px', fontWeight: 900, color: isSelected ? dest.color : '#f8fafc', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                        <span>{dest.icon}</span>
-                        <span>{dest.title}</span>
-                      </div>
-                      <div style={{ fontSize: '9.5px', color: '#94a3b8', fontWeight: 600, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', marginTop: '1px' }}>
-                        {dest.sub}
-                      </div>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '12px', fontWeight: 800, color: isSelected ? dest.color : '#f8fafc', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', minWidth: 0, flex: 1 }}>
+                      <span>{dest.icon}</span>
+                      <span>{dest.title}</span>
                     </div>
                     <span
                       style={{
