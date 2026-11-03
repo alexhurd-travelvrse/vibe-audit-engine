@@ -7,9 +7,10 @@ import {
   ShieldCheck,
   CheckCircle2,
   X,
-  Footprints,
-  Mic,
-  SunMedium
+  Users,
+  Compass,
+  Zap,
+  MapPin
 } from 'lucide-react';
 import Layout from '../components/Layout';
 import Footer from '../components/Footer';
@@ -20,257 +21,286 @@ import './VibeApiDemoPage.css';
 
 const STORAGE_KEY = 'atmosvibe_tc_vibe_api_unlocked';
 
-// LAYER 1: Pure Emotional Atmosphere & Vibe Filters (How you want it to FEEL, not just descriptive topics)
-const ATMOSPHERE_CHIPS = [
+// 1. TOUR PACE & RHYTHM (Literal, zero generic marketing words)
+const TOUR_PACE_FILTERS = [
   {
-    id: 'rock-beatles',
+    id: 'fast-paced',
     icon: '⚡',
-    vibeTitle: 'Rebellious & Electric',
-    subLabel: '60s counterculture & vinyl nostalgia',
+    title: 'Fast-Paced',
+    sub: 'Quick stops · Cover lots of ground',
     color: '#f43f5e'
   },
   {
-    id: 'gothic-noir',
-    icon: '🕯️',
-    vibeTitle: 'Moody & Spine-Tingling',
-    subLabel: 'Gaslit shadows & dark Victorian noir',
-    color: '#10b981'
-  },
-  {
-    id: 'cinematic-magic',
-    icon: '✨',
-    vibeTitle: 'Spellbinding & Playful',
-    subLabel: 'Enchanted story-worlds & film wonder',
+    id: 'hop-out-walks',
+    icon: '🚶',
+    title: 'Lots of Hop-Out Walks',
+    sub: 'Step out into alleys & courtyards',
     color: '#a855f7'
   },
   {
-    id: 'royal-power',
-    icon: '👑',
-    vibeTitle: 'Majestic & Ceremonial',
-    subLabel: 'Regal pageantry & grand power corridors',
-    color: '#ffd700'
+    id: 'slow-unhurried',
+    icon: '☕',
+    title: 'Slow & Unhurried',
+    sub: 'Relaxed pace · Time for a pub or cafe',
+    color: '#34d399'
   },
   {
-    id: 'wartime-grit',
-    icon: '🔥',
-    vibeTitle: 'Gripping & High-Drama',
-    subLabel: 'High-stakes intrigue & 1940s Blitz grit',
+    id: 'easy-ride',
+    icon: '🚖',
+    title: 'Easy Ride · Minimal Walking',
+    sub: 'Stay in the cab · Kerbside stops',
+    color: '#00e5ff'
+  }
+];
+
+// 2. DESTINATION VIBE SIGNATURES (Matches AtmosVibe 8-Signal Signatures: Crowd, Tourist Trap vs Local, Character)
+const DESTINATION_VIBE_FILTERS = [
+  {
+    id: 'where-locals-hang-out',
+    icon: '🍻',
+    title: 'Where Locals Hang Out',
+    sub: 'Not a tourist trap · Real pubs & markets',
     color: '#f59e0b'
   },
   {
-    id: 'nocturnal-lights',
-    icon: '🌃',
-    vibeTitle: 'Romantic & Nocturnal',
-    subLabel: 'Blue-hour river glow & neon reflections',
-    color: '#00e5ff'
-  },
-  {
-    id: 'bespoke-knowledge',
-    icon: '🧭',
-    vibeTitle: 'Off-Radar & Unscripted',
-    subLabel: 'Hushed secret courts & cabbie lore',
+    id: 'zero-tour-buses',
+    icon: '🤫',
+    title: 'Quiet · Zero Tour Buses',
+    sub: 'Hidden backstreets & silent courts',
     color: '#38bdf8'
   },
   {
-    id: 'countryside-regency',
+    id: 'major-hotspots',
+    icon: '📸',
+    title: 'Famous Sightseeing Hotspots',
+    sub: 'Big landmarks (skip crowds by cab)',
+    color: '#ec4899'
+  },
+  {
+    id: 'country-towns',
     icon: '🌿',
-    vibeTitle: 'Serene & Slow-Luxury',
-    subLabel: 'Pastoral honey-stone & Regency calm',
-    color: '#34d399'
-  }
-];
-
-// LAYER 2: Tour Pacing & Rhythm Filters (Solving the #1 Tour Drop-Off Trigger: "Windscreen Trap vs. Hop-Out Cadence")
-const PACING_FILTERS = [
-  {
-    id: 'hop-out-alleys',
-    icon: '🚶',
-    label: 'Hop-In / Hop-Out Alley Walks',
-    shortDesc: '60% cab leaps + 40% secret cobbled courts & foot exploration',
-    color: '#00e5ff'
-  },
-  {
-    id: 'panoramic-glide',
-    icon: '🚖',
-    label: 'Effortless Cab Glide',
-    shortDesc: 'High-impact panoramic sweep · Kerbside photo stops · Zero walking fatigue',
+    title: 'Quiet Country & Old Towns',
+    sub: 'Out of London · Zero city traffic',
     color: '#ffd700'
-  },
-  {
-    id: 'unhurried-graze',
-    icon: '🍷',
-    label: 'Unhurried & Tavern Pause',
-    shortDesc: 'Lingering multi-neighbourhood flow · Historic pub or market stop',
-    color: '#f59e0b'
-  },
-  {
-    id: 'sanctuary-escape',
-    icon: '🌄',
-    label: 'Day-Long Sanctuary Escape',
-    shortDesc: 'Door-to-door out-of-town cocoon + unhurried heritage strolls',
-    color: '#34d399'
   }
 ];
 
-// Per-tour Anti-Drop-Off Pacing, Guide Vibe, and Pure Atmospheric Hashtags
-const TOUR_DROP_OFF_PROFILES = {
+// AtmosVibe Tour + Destination Signatures using the exact Vibe Category Signature language
+const TOUR_VIBE_SIGNATURES = {
   TR04SC: {
-    pacingIds: ['hop-out-alleys'],
-    pacingBadge: 'Hop-In / Hop-Out · 8+ Studio & Alley Walks',
-    guideVibeBadge: 'Passionate 60s Music Raconteur',
-    peakVibeBadge: 'Late Morning / Golden Afternoon',
-    vibeHashtags: ['#Electric60sNostalgia', '#RebelliousSohoVibe', '#HopOutStudioWalks']
+    paceIds: ['fast-paced', 'hop-out-walks'],
+    destIds: ['where-locals-hang-out', 'zero-tour-buses'],
+    youLoveIf: 'You want a fast-paced 60s music tour hitting Abbey Road, Savile Row, and Soho with a Beatles obsessive.',
+    tourPace: 'Fast-Paced · 8 hop-out stops (short 5–10 min walks)',
+    theCrowd: 'Not a Tourist Trap (75% Local) — Quiet Marylebone mews & local Soho lanes; only Abbey Road crossing is busy',
+    trueCharacter: 'Real 1960s recording studios, brick Soho music alleys & Georgian townhouses (zero chain venues)',
+    theHost: 'Like a Local Friend — Unscripted 60s music obsessive, studio stories instead of dry dates',
+    bestTime: '10:00 AM or 3:00 PM (Best street light at Abbey Road)',
+    hashtags: ['#FastPaced', '#NotATouristTrap', '#8HopOutWalks']
   },
   TR2VLZ: {
-    pacingIds: ['hop-out-alleys'],
-    pacingBadge: 'Hop-In / Hop-Out · Soho Vinyl & Mews Stops',
-    guideVibeBadge: 'Witty Backstage Rock Insider',
-    peakVibeBadge: 'Afternoon into Early Evening Buzz',
-    vibeHashtags: ['#EdgyBohemianGrit', '#HighVoltageRockLore', '#SecretSohoCobbles']
+    paceIds: ['fast-paced', 'hop-out-walks'],
+    destIds: ['where-locals-hang-out'],
+    youLoveIf: 'You want to explore Soho’s real vinyl shops, old music pubs, and basement club streets.',
+    tourPace: 'Fast-Paced · Frequent hop-out walks in Soho & Camden',
+    theCrowd: 'Where Locals Hang Out (80% Local) — Buzzing Soho & Camden music streets, not tourist coach stops',
+    trueCharacter: 'Gritty Soho alleyways, independent record shops & historic rock pubs',
+    theHost: 'Warm Local Insider — Witty rock-history cabbie with backstage stories',
+    bestTime: '2:00 PM – 6:00 PM (When Soho & Camden streets come alive)',
+    hashtags: ['#FastPaced', '#WhereLocalsHangOut', '#RealSohoPubs']
   },
   TVX23G: {
-    pacingIds: ['hop-out-alleys'],
-    pacingBadge: 'Warm Cab Cocoon + Gaslit Alley Footsteps',
-    guideVibeBadge: 'Suspenseful Noir Storyteller',
-    peakVibeBadge: 'Dusk & Long Shadows',
-    vibeHashtags: ['#Moody1888Noir', '#SpineTinglingSuspense', '#ShadowyCobbleWalks']
+    paceIds: ['hop-out-walks'],
+    destIds: ['zero-tour-buses', 'where-locals-hang-out'],
+    youLoveIf: 'You want a dark, true-crime tour walking through quiet 1888 East End alleys and old Victorian pubs.',
+    tourPace: 'Steady Pace · Warm cab ride between 6 short alley walks',
+    theCrowd: 'Quiet · Zero Tour Buses — Deserted Spitalfields brick lanes after dusk + traditional local East End pubs',
+    trueCharacter: 'Original 1888 cobbled courts, Victorian pub tilework & Hawksmoor church spires',
+    theHost: 'Unscripted Storyteller — Serious crime-history insider, zero cheesy gimmicks',
+    bestTime: 'After 5:30 PM (Dusk & streetlamp shadows)',
+    hashtags: ['#QuietBackstreets', '#ZeroTourBuses', '#DarkCrimeHistory']
   },
   T77QC0: {
-    pacingIds: ['hop-out-alleys', 'panoramic-glide'],
-    pacingBadge: 'After-Dark Cab Glide + Cloister Hop-Outs',
-    guideVibeBadge: 'Theatrical Folklore & Dark Wit',
-    peakVibeBadge: 'Twilight & After-Dark',
-    vibeHashtags: ['#EerieSpectralMood', '#HushedMedievalSquares', '#TheatricalChills']
+    paceIds: ['easy-ride', 'hop-out-walks'],
+    destIds: ['zero-tour-buses'],
+    youLoveIf: 'You want spooky ghost stories in silent, crowd-free medieval squares after dark.',
+    tourPace: 'Easy Pace · Mostly cab ride + short 5-min courtyard stops',
+    theCrowd: '100% Crowd-Free at Night — Financial District & Smithfield squares are completely empty after 7:00 PM',
+    trueCharacter: 'Medieval stone cloisters, gaslit alleys & 500-year-old timber pubs',
+    theHost: 'Entertaining Local Host — Dark London humour & ghost lore',
+    bestTime: '7:00 PM onwards (After dark)',
+    hashtags: ['#100PercentCrowdFree', '#QuietAtNight', '#EasyCabRide']
   },
   T1AKAJ: {
-    pacingIds: ['hop-out-alleys'],
-    pacingBadge: 'Interactive Hop-Out · Wand-Ready Arcade Walks',
-    guideVibeBadge: 'Playful & Spellbinding Film Insider',
-    peakVibeBadge: 'Mid-Morning Arcade Light',
-    vibeHashtags: ['#SpellbindingWonder', '#PlayfulFamilyMagic', '#HiddenArcadeHopOuts']
+    paceIds: ['hop-out-walks', 'fast-paced'],
+    destIds: ['zero-tour-buses', 'major-hotspots'],
+    youLoveIf: 'You want an active family tour stepping into real Harry Potter filming alleys without walking for miles.',
+    tourPace: 'Active · 7 hop-out walks into narrow arcades & bridges',
+    theCrowd: 'Mix of Hidden & Busy — Tiny gaslit alleys with zero tour buses, plus busy King’s Cross for Platform 9¾',
+    trueCharacter: 'Ornate Victorian wrought-iron markets & crooked 17th-century lanes',
+    theHost: 'Great with Kids & Teens — Playful film-trivia insider, zero boredom',
+    bestTime: '9:30 AM (Beats the midday queue at Platform 9¾)',
+    hashtags: ['#ActiveHopOutWalks', '#HiddenAlleys', '#GreatForKids']
   },
   TSNPZ3: {
-    pacingIds: ['sanctuary-escape', 'unhurried-graze'],
-    pacingBadge: 'Countryside Cab Cocoon + Cloister Strolls',
-    guideVibeBadge: 'Cultured Oxford & Fantasy Storyteller',
-    peakVibeBadge: 'Full-Day Golden Stone Arc',
-    vibeHashtags: ['#TimelessScholarlyAwe', '#StorybookCloisters', '#UnhurriedDaySanctuary']
+    paceIds: ['slow-unhurried', 'hop-out-walks'],
+    destIds: ['country-towns'],
+    youLoveIf: 'You want a relaxed door-to-door day trip to Oxford’s medieval colleges and libraries.',
+    tourPace: 'Slow & Unhurried · Comfortable 90-min drive + flat college strolls',
+    theCrowd: 'Calm University Town — Quiet college quads & cobbled lanes away from London traffic',
+    trueCharacter: 'Real 13th-century honey-stone quadrangles, timber halls & old bookshops',
+    theHost: 'Knowledgeable Local Host — Relaxed storyteller covering both Oxford history & film locations',
+    bestTime: '9:00 AM departure (Arrives in Oxford before afternoon tour groups)',
+    hashtags: ['#SlowAndUnhurried', '#QuietCollegeQuads', '#DoorToDoorDrive']
   },
   T26KP8: {
-    pacingIds: ['sanctuary-escape', 'unhurried-graze'],
-    pacingBadge: 'Door-to-Door Sanctuary + Regency Promenades',
-    guideVibeBadge: 'Charming Society & Period-Drama Host',
-    peakVibeBadge: 'Sunlit Countryside & Afternoon Crescents',
-    vibeHashtags: ['#OpulentRegencyRomance', '#SlowLuxuryPromenade', '#SunlitGeorgianGlamour']
+    paceIds: ['slow-unhurried'],
+    destIds: ['country-towns'],
+    youLoveIf: 'You want a slow, easygoing day in Georgian Bath seeing real Bridgerton filming streets and tearooms.',
+    tourPace: 'Slow & Unhurried · Easy flat walks + time for lunch or tea',
+    theCrowd: 'Relaxed Local Spa Town — Sophisticated, unhurried streets with independent cafes & boutiques',
+    trueCharacter: '100% Authentic Georgian honey-stone crescents, colonnades & Roman baths',
+    theHost: 'Warm Unscripted Host — Period-drama & architecture insider',
+    bestTime: 'Full Day (Best light on the Royal Crescent between 11:00 AM – 3:00 PM)',
+    hashtags: ['#SlowAndUnhurried', '#NotATouristTrap', '#GeorgianBath']
   },
   TOIN97: {
-    pacingIds: ['sanctuary-escape', 'unhurried-graze'],
-    pacingBadge: 'Slow-Luxury Escape + Village & Inn Pause',
-    guideVibeBadge: 'Unhurried Country-Heritage Raconteur',
-    peakVibeBadge: 'Full-Day Pastoral Calm',
-    vibeHashtags: ['#TimeFrozenSerenity', '#RestorativeCountryPace', '#FiresideTavernPause']
+    paceIds: ['slow-unhurried'],
+    destIds: ['country-towns', 'zero-tour-buses'],
+    youLoveIf: 'You want to escape London traffic for a quiet 13th-century country village, Bath, and a country pub lunch.',
+    tourPace: 'Slow & Unhurried · Includes time for a historic country pub lunch',
+    theCrowd: 'Zero Tour Crowds in Lacock — Quiet, car-free medieval village lanes & country air',
+    trueCharacter: 'Untouched 13th-century stone cottages, medieval abbey & real fireside country inns',
+    theHost: 'Like a Local Friend — Easygoing countryside & heritage driver-guide',
+    bestTime: 'Full Day (Lunch stop at 1:00 PM in a village inn)',
+    hashtags: ['#SlowAndUnhurried', '#CountryPubLunch', '#ZeroCityTraffic']
   },
   TGTYRO: {
-    pacingIds: ['panoramic-glide'],
-    pacingBadge: 'Effortless Panoramic Glide · Kerbside Reflections',
-    guideVibeBadge: 'Smooth, Intimate Evening Chauffeur-Host',
-    peakVibeBadge: 'Blue Hour & After-Dark (19:30+)',
-    vibeHashtags: ['#NocturnalRiverGlamour', '#EffortlessNightGlide', '#RomanticBlueHourGlow']
+    paceIds: ['easy-ride', 'fast-paced'],
+    destIds: ['major-hotspots'],
+    youLoveIf: 'You want to see London’s big landmarks lit up at night from a warm cab with zero walking.',
+    tourPace: 'Easy Ride · 2-hour sweep with quick kerbside photo stops (Zero walking)',
+    theCrowd: 'Beat the Crowds — Stay in your private glass-roof cab while viewing busy Soho & Thames hotspots',
+    trueCharacter: 'Floodlit Tower Bridge, Big Ben river reflections & Piccadilly neon',
+    theHost: 'Smooth Evening Chauffeur — Relaxed commentary, great photo-stop timing',
+    bestTime: '7:30 PM – 9:30 PM (Blue hour into full night lights)',
+    hashtags: ['#EasyRideZeroWalking', '#NightLights', '#PrivateCabComfort']
   },
   T5C76S: {
-    pacingIds: ['hop-out-alleys'],
-    pacingBadge: 'Rhythmic Whitehall Glide + Mayfair Walk Stops',
-    guideVibeBadge: 'Gripping Wartime & Political Historian',
-    peakVibeBadge: 'Crisp Morning or Late Afternoon Shadows',
-    vibeHashtags: ['#HighStakes1940Tension', '#StoicWartimeDrama', '#InsiderWhitehallAccess']
+    paceIds: ['hop-out-walks'],
+    destIds: ['major-hotspots', 'zero-tour-buses'],
+    youLoveIf: 'You want a serious WWII & Churchill history tour through Whitehall and quiet St James’s backstreets.',
+    tourPace: 'Steady Pace · Cab ride along Whitehall + short walks in St James’s & Mayfair',
+    theCrowd: '50% Busy Whitehall / 50% Quiet Backstreets — Ducks out of Westminster crowds into silent St James’s courts',
+    trueCharacter: '1940s government buildings, historic cigar shops & traditional gentlemen’s club streets',
+    theHost: 'Deep History Insider — Gripping WWII & political storyteller',
+    bestTime: '10:00 AM or 3:00 PM',
+    hashtags: ['#SteadyPace', '#WWIIHistory', '#QuietStJamesCourts']
   },
   TPHRI8: {
-    pacingIds: ['panoramic-glide'],
-    pacingBadge: 'High-Impact 2h Sweep · Zero Walking Fatigue',
-    guideVibeBadge: 'Polished Royal & Westminster Insider',
-    peakVibeBadge: 'Crisp Morning Pageantry or Golden Hour',
-    vibeHashtags: ['#EffortlessVIPMajesty', '#WhistleStopGrandeur', '#ZeroCrowdVantagePoints']
+    paceIds: ['fast-paced', 'easy-ride'],
+    destIds: ['major-hotspots'],
+    youLoveIf: 'You’re short on time and want to hit every major royal landmark in 2 hours without walking.',
+    tourPace: 'Fast-Paced 2-Hr Sweep · Kerbside photo stops, minimal walking',
+    theCrowd: 'Famous Sightseeing Hotspot — High-crowd royal zone, but your cab uses taxi-only lanes to skip the queues',
+    trueCharacter: 'Buckingham Palace, Westminster Abbey, Big Ben & Trafalgar Square',
+    theHost: 'Sharp London Insider — Fast, punchy royal & Westminster stories',
+    bestTime: '9:30 AM or 4:00 PM',
+    hashtags: ['#FastPaced2Hrs', '#MinimalWalking', '#SkipCrowdsByCab']
   },
   TJI8RE: {
-    pacingIds: ['hop-out-alleys', 'panoramic-glide'],
-    pacingBadge: 'Balanced 60% Cab Sweep / 40% Hidden Court Walks',
-    guideVibeBadge: 'Charismatic Master of "The Knowledge"',
-    peakVibeBadge: 'Morning or Afternoon Half-Day Arc',
-    vibeHashtags: ['#GrandToGrittyContrast', '#BusProhibitedBackstreets', '#EffortlessHalfDayFlow']
+    paceIds: ['fast-paced', 'hop-out-walks'],
+    destIds: ['major-hotspots', 'zero-tour-buses'],
+    youLoveIf: 'You want half a day that combines the big famous sights with hidden Roman ruins and secret alleys.',
+    tourPace: 'Fast-Paced · 60% cab ride / 40% short walks into hidden courts',
+    theCrowd: 'Best of Both — Hits the big Westminster hotspots, then escapes into bus-free City alleys',
+    trueCharacter: 'Royal palaces contrasted with 2,000-year-old Roman walls & medieval guildhalls',
+    theHost: 'Master of "The Knowledge" — Shows you the secret corners right behind the tourist traps',
+    bestTime: 'Morning (9:30 AM) or Afternoon (2:00 PM)',
+    hashtags: ['#FastPaced', '#BigSightsPlusSecrets', '#ZeroTourBusAlleys']
   },
   TNA63G: {
-    pacingIds: ['unhurried-graze', 'hop-out-alleys'],
-    pacingBadge: 'Unhurried 6h Immersion + Historic Tavern Pause',
-    guideVibeBadge: 'Convivial, Encyclopedic London Host',
-    peakVibeBadge: 'Full Day with Riverside Pub / Market Stop',
-    vibeHashtags: ['#UnhurriedTavernRhythm', '#ConvivialStorytelling', '#GrandToSecretWharves']
+    paceIds: ['slow-unhurried', 'hop-out-walks'],
+    destIds: ['where-locals-hang-out', 'major-hotspots', 'zero-tour-buses'],
+    youLoveIf: 'You want a full 6-hour day mixing big sights with Borough Market food and an old riverside pub.',
+    tourPace: 'Slow & Unhurried · 6 hours with a proper pub lunch or food-market stop',
+    theCrowd: 'Tourist Sights + Local Hangouts — Pairs major landmarks with local Wapping river pubs & artisan food stalls',
+    trueCharacter: 'UNESCO palaces, cobbled Southwark wharves & 17th-century timbered taverns',
+    theHost: 'Sociable All-Day Host — Unhurried storyteller who knows the best pub tables',
+    bestTime: '10:00 AM – 4:00 PM (Includes lunch stop)',
+    hashtags: ['#SlowAndUnhurried', '#WhereLocalsHangOut', '#RiversidePubStop']
   },
   TTBDTB: {
-    pacingIds: ['hop-out-alleys'],
-    pacingBadge: 'Nimble Backstreet Pivots + Secret Mews Walks',
-    guideVibeBadge: 'Unscripted "Knowledge" Secret-Hunter',
-    peakVibeBadge: 'Quiet Morning or Afternoon Backstreets',
-    vibeHashtags: ['#100PercentOffRadar', '#SerendipitousDiscovery', '#HushedMewsAndRuins']
+    paceIds: ['hop-out-walks', 'slow-unhurried'],
+    destIds: ['zero-tour-buses', 'where-locals-hang-out'],
+    youLoveIf: 'You want to avoid tourist traps completely and spend 4 hours in secret alleys, ruins, and quiet mews.',
+    tourPace: 'Flexible · Frequent hop-out walks in traffic-free courts & gardens',
+    theCrowd: '100% Not a Tourist Trap — Pin-drop quiet mews, bombed church gardens & gaslit legal inns',
+    trueCharacter: 'Real hidden London: wisteria mews, Roman fragments & 17th-century taverns',
+    theHost: 'Unscripted "Hidden London" Cabbie — Tailors the route live to what you like',
+    bestTime: '10:00 AM or 2:00 PM',
+    hashtags: ['#NotATouristTrap', '#ZeroTourBuses', '#100PercentHidden']
   },
   TYE4O3: {
-    pacingIds: ['unhurried-graze', 'hop-out-alleys'],
-    pacingBadge: '5-Village Flow + Spontaneous Coffee / Pub Stops',
-    guideVibeBadge: 'Culturally Plugged-In Local Aesthetic Host',
-    peakVibeBadge: 'Full-Day Neighbourhood Hopping',
-    vibeHashtags: ['#EclecticVillageRhythm', '#UnscriptedLocalFlow', '#StylishSlowDiscovery']
+    paceIds: ['slow-unhurried', 'hop-out-walks'],
+    destIds: ['where-locals-hang-out'],
+    youLoveIf: 'You want to hang out in London’s coolest local neighbourhoods—Notting Hill, Soho, and Shoreditch.',
+    tourPace: 'Slow & Flexible 6-Hr Flow · Time for coffee, indie shops & pub stops',
+    theCrowd: 'Where Locals Hang Out (85% Local) — Real neighbourhood high streets, street-art lanes & local cafes',
+    trueCharacter: 'Pastel townhouses, Savile Row tailors, Soho record shops & East End warehouse murals',
+    theHost: 'Plugged-In Local Insider — Knows the best independent coffee, food & design spots',
+    bestTime: '10:30 AM – 4:30 PM',
+    hashtags: ['#WhereLocalsHangOut', '#NotATouristTrap', '#CoolNeighbourhoods']
   },
   T0IE5Y: {
-    pacingIds: ['unhurried-graze', 'sanctuary-escape'],
-    pacingBadge: 'Carte Blanche All-Day Standby · Your Own Pace',
-    guideVibeBadge: 'Dedicated Private Historian & Chauffeur',
-    peakVibeBadge: 'Full Morning-to-Night Circadian Arc',
-    vibeHashtags: ['#TotalCarteBlancheFreedom', '#DaylightToNeonShift', '#ZeroRushVIPSanctuary']
+    paceIds: ['slow-unhurried', 'easy-ride'],
+    destIds: ['where-locals-hang-out', 'zero-tour-buses', 'major-hotspots'],
+    youLoveIf: 'You want a private cab on standby all day to go wherever you want at your own pace.',
+    tourPace: '100% Your Own Pace · All-day private cab (8–10 hrs)',
+    theCrowd: 'Avoids Tourist Traps Live — Your driver pivots around busy crowds in real time',
+    trueCharacter: 'Custom mix of royal parks, hidden backstreets, local markets & floodlit night views',
+    theHost: 'Dedicated Private Chauffeur-Host — Completely unscripted around your day',
+    bestTime: 'Morning through Evening',
+    hashtags: ['#YourOwnPace', '#SkipTouristTraps', '#AllDayPrivateCab']
   },
   TGH0DN: {
-    pacingIds: ['sanctuary-escape', 'panoramic-glide'],
-    pacingBadge: 'Door-to-Door Cab Sanctuary + Monolith Walk',
-    guideVibeBadge: 'Engaging Ancient-Wessex Storyteller',
-    peakVibeBadge: 'Open Morning Countryside Skies',
-    vibeHashtags: ['#ElementalAncientAwe', '#EffortlessCoastalGlide', '#WindsweptSolsticeMood']
+    paceIds: ['slow-unhurried', 'easy-ride'],
+    destIds: ['country-towns'],
+    youLoveIf: 'You want a comfortable door-to-door drive to Stonehenge without being herded onto a 50-seat tour bus.',
+    tourPace: 'Slow & Easy · Private countryside drive + walk around the stone circle',
+    theCrowd: 'Beats the Coach Crowds — Private cab timing lets you arrive outside peak tour-bus waves',
+    trueCharacter: 'Open Salisbury Plain grassland & 4,500-year-old prehistoric stone circle',
+    theHost: 'Relaxed Countryside & History Host — Makes the drive out as interesting as the stones',
+    bestTime: '8:30 AM departure',
+    hashtags: ['#EasyCountryDrive', '#NoTourBuses', '#Stonehenge']
   },
   TO3TAR: {
-    pacingIds: ['sanctuary-escape', 'panoramic-glide'],
-    pacingBadge: 'Door-to-Door Royal Glide + Castle Stroll',
-    guideVibeBadge: 'Regal Chivalry & Heritage Raconteur',
-    peakVibeBadge: 'Morning Royal Battlement Arrival',
-    vibeHashtags: ['#ChivalricFortressMajesty', '#UnhurriedRoyalJourney', '#AristocraticCalm']
+    paceIds: ['slow-unhurried', 'easy-ride'],
+    destIds: ['country-towns', 'major-hotspots'],
+    youLoveIf: 'You want an easy door-to-door trip to Windsor Castle and the quiet river town of Eton.',
+    tourPace: 'Slow & Unhurried · Easy 1-hr drive from London + castle & river stroll',
+    theCrowd: 'Busy at Castle Gates / Quiet in Eton — Cross the bridge into Eton for local high-street pubs & zero crowds',
+    trueCharacter: '900-year-old royal fortress paired with traditional Eton riverside streets',
+    theHost: 'Warm Royal & Local Insider — Drops you right at the castle entrance',
+    bestTime: '9:30 AM departure',
+    hashtags: ['#SlowAndUnhurried', '#EasyDoorToDoor', '#WindsorAndEton']
   }
 };
 
-function getTourProfile(tour) {
+function getTourSig(tour) {
   return (
-    TOUR_DROP_OFF_PROFILES[tour.id] || {
-      pacingIds: ['hop-out-alleys'],
-      pacingBadge: 'Balanced Cab Glide + Curated Hop-Out Walks',
-      guideVibeBadge: 'Charismatic "Knowledge" Raconteur',
-      peakVibeBadge: tour.fiveSignalSignature?.peakWindow || 'Golden Afternoon',
-      vibeHashtags: ['#AuthenticCabbieVibe', '#HopOutDiscovery', '#ZeroCrowdAccess']
+    TOUR_VIBE_SIGNATURES[tour.id] || {
+      paceIds: ['hop-out-walks'],
+      destIds: ['zero-tour-buses'],
+      youLoveIf: 'You want a private London Black Cab tour tailored around your pace.',
+      tourPace: 'Balanced Pace · Cab ride + short walks',
+      theCrowd: 'Not a Tourist Trap — Uses quiet cab-only backstreets',
+      trueCharacter: 'Authentic London streets & historic architecture',
+      theHost: 'Warm Local Insider — Accredited Knowledge cabbie',
+      bestTime: 'Morning or Afternoon',
+      hashtags: ['#BalancedPace', '#NotATouristTrap', '#QuietBackstreets']
     }
   );
-}
-
-// Format "You'll love this tour if..." sentence cleanly from each tour's shortlistHook
-function formatYouWillLoveIf(tour) {
-  const raw = (tour.shortlistHook || '').trim();
-  if (!raw) {
-    return `You want ${tour.vibeArchetype?.toLowerCase() || 'an authentic private London Black Cab experience'}.`;
-  }
-  const lowerFirst = raw.charAt(0).toLowerCase() + raw.slice(1);
-  if (/^(puts you|takes you|immerses you)/i.test(raw)) {
-    return raw.replace(/^(Puts|Takes|Immerses) you/i, 'You want to be');
-  }
-  if (/^(trades|swaps)/i.test(raw)) {
-    return raw.replace(/^(Trades|Swaps)/i, 'You want to trade');
-  }
-  if (/^(turns|transforms|uses|delivers|bridges|weaves|solves|connects|recreates|unlocks|pairs|lets)/i.test(raw)) {
-    return `You want a tour that ${lowerFirst}`;
-  }
-  return raw;
 }
 
 function getTourHash(tourId) {
@@ -292,11 +322,11 @@ export default function VibeApiDemoPage() {
   const [passwordInput, setPasswordInput] = useState('');
   const [passwordError, setPasswordError] = useState('');
 
-  // Layer 1: Atmosphere / Emotional Mood filter
-  const [selectedMood, setSelectedMood] = useState(null);
-  // Layer 2: Tour Pacing & Rhythm filter (works alone OR in conjunction with selectedMood)
-  const [selectedPacing, setSelectedPacing] = useState(null);
-  // Optional 1-tap proof toggle per tour card
+  // Row 1: Tour Pace filter
+  const [selectedPace, setSelectedPace] = useState(null);
+  // Row 2: Destination Vibe Signature filter (Tourist trap vs Where locals hang out, etc.)
+  const [selectedDest, setSelectedDest] = useState(null);
+  // Optional 1-tap proof drawer per tour card
   const [openProofId, setOpenProofId] = useState(null);
 
   const handlePasswordSubmit = (e) => {
@@ -319,28 +349,18 @@ export default function VibeApiDemoPage() {
     setPasswordError('');
   };
 
-  const matchesTour = (tour, moodId, pacingId) => {
-    const moodMatch = !moodId || (tour.vibeTags || []).includes(moodId);
-    const profile = getTourProfile(tour);
-    const pacingMatch = !pacingId || (profile.pacingIds || []).includes(pacingId);
-    return moodMatch && pacingMatch;
+  const matchesTour = (tour, paceId, destId) => {
+    const sig = getTourSig(tour);
+    const paceMatch = !paceId || (sig.paceIds || []).includes(paceId);
+    const destMatch = !destId || (sig.destIds || []).includes(destId);
+    return paceMatch && destMatch;
   };
 
   const filteredTours = useMemo(() => {
     return TRAVEL_CURIOUS_BLACK_CAB_TOURS.filter((tour) =>
-      matchesTour(tour, selectedMood, selectedPacing)
+      matchesTour(tour, selectedPace, selectedDest)
     );
-  }, [selectedMood, selectedPacing]);
-
-  const activeMoodChip = useMemo(
-    () => ATMOSPHERE_CHIPS.find((c) => c.id === selectedMood) || null,
-    [selectedMood]
-  );
-
-  const activePacingChip = useMemo(
-    () => PACING_FILTERS.find((p) => p.id === selectedPacing) || null,
-    [selectedPacing]
-  );
+  }, [selectedPace, selectedDest]);
 
   // ---------------- PASSWORD GATE ----------------
   if (!isUnlocked) {
@@ -379,7 +399,7 @@ export default function VibeApiDemoPage() {
     );
   }
 
-  // ---------------- UNLOCKED MOBILE-FIRST VIBE + PACING DEMO ----------------
+  // ---------------- UNLOCKED DIRECT VIBE SIGNATURE DEMO ----------------
   return (
     <Layout>
       <div
@@ -396,7 +416,7 @@ export default function VibeApiDemoPage() {
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px', marginBottom: '10px' }}>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', padding: '4px 10px', borderRadius: '999px', background: 'rgba(0, 229, 255, 0.12)', border: '1px solid rgba(0, 229, 255, 0.35)', fontSize: '11px', fontWeight: 800, color: '#00e5ff' }}>
               <Sparkles size={12} />
-              <span>London Black Cab Heritage Tours</span>
+              <span>London Black Cab Tours · Vibe Signatures</span>
             </div>
             <button
               type="button"
@@ -420,28 +440,27 @@ export default function VibeApiDemoPage() {
             </button>
           </div>
 
-          {/* ==================== TWO-LAYER ATMOSPHERE + PACING FILTER BOX ==================== */}
+          {/* ==================== DIRECT 2-ROW FILTER BOX ==================== */}
           <div
             style={{
               background: 'rgba(10, 18, 34, 0.95)',
               border: '1.5px solid rgba(0, 229, 255, 0.32)',
               borderRadius: '16px',
-              padding: '13px',
+              padding: '14px',
               marginBottom: '16px',
               boxShadow: '0 10px 30px rgba(0,0,0,0.55)'
             }}
           >
-            {/* Filter Header */}
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
-              <h1 style={{ fontSize: '1.08rem', fontWeight: 900, margin: 0, letterSpacing: '-0.01em' }}>
-                Search by <span style={{ color: '#00e5ff' }}>Atmosphere</span> &amp; <span style={{ color: '#ffd700' }}>Pacing</span>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '10px' }}>
+              <h1 style={{ fontSize: '1.05rem', fontWeight: 900, margin: 0, letterSpacing: '-0.01em' }}>
+                Filter by <span style={{ color: '#00e5ff' }}>Tour Pace</span> &amp; <span style={{ color: '#ffd700' }}>Destination Crowd</span>
               </h1>
-              {(selectedMood || selectedPacing) && (
+              {(selectedPace || selectedDest) && (
                 <button
                   type="button"
                   onClick={() => {
-                    setSelectedMood(null);
-                    setSelectedPacing(null);
+                    setSelectedPace(null);
+                    setSelectedDest(null);
                   }}
                   style={{
                     display: 'inline-flex',
@@ -458,54 +477,52 @@ export default function VibeApiDemoPage() {
                   }}
                 >
                   <X size={11} />
-                  <span>Reset All</span>
+                  <span>Reset</span>
                 </button>
               )}
             </div>
 
-            {/* STEP 1: EMOTIONAL ATMOSPHERE & MOOD */}
-            <div style={{ fontSize: '10px', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#00e5ff', marginBottom: '6px' }}>
-              1. How do you want it to feel? (Emotional Atmosphere)
+            {/* 1. TOUR PACE & RHYTHM */}
+            <div style={{ fontSize: '10px', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.07em', color: '#00e5ff', marginBottom: '6px' }}>
+              1. Tour Pace (How It Runs)
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6px', marginBottom: '12px' }}>
-              {ATMOSPHERE_CHIPS.map((chip) => {
-                const isSelected = selectedMood === chip.id;
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '7px', marginBottom: '12px' }}>
+              {TOUR_PACE_FILTERS.map((item) => {
+                const isSelected = selectedPace === item.id;
                 const count = TRAVEL_CURIOUS_BLACK_CAB_TOURS.filter((t) =>
-                  matchesTour(t, chip.id, selectedPacing)
+                  matchesTour(t, item.id, selectedDest)
                 ).length;
                 const isDimmed = count === 0 && !isSelected;
 
                 return (
                   <button
-                    key={chip.id}
+                    key={item.id}
                     type="button"
-                    onClick={() => setSelectedMood(isSelected ? null : chip.id)}
+                    onClick={() => setSelectedPace(isSelected ? null : item.id)}
                     style={{
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'space-between',
                       gap: '6px',
-                      padding: '8px 9px',
+                      padding: '8px 10px',
                       borderRadius: '10px',
-                      border: isSelected ? `2px solid ${chip.color}` : '1px solid rgba(255,255,255,0.13)',
-                      background: isSelected
-                        ? 'rgba(0, 229, 255, 0.16)'
-                        : 'rgba(15, 23, 42, 0.88)',
+                      border: isSelected ? `2px solid ${item.color}` : '1px solid rgba(255,255,255,0.13)',
+                      background: isSelected ? 'rgba(0, 229, 255, 0.14)' : 'rgba(15, 23, 42, 0.9)',
                       color: '#ffffff',
                       cursor: 'pointer',
                       textAlign: 'left',
-                      opacity: isDimmed ? 0.42 : 1,
-                      boxShadow: isSelected ? `0 0 14px ${chip.color}44` : 'none',
+                      opacity: isDimmed ? 0.4 : 1,
+                      boxShadow: isSelected ? `0 0 14px ${item.color}44` : 'none',
                       transition: 'all 0.15s ease'
                     }}
                   >
                     <div style={{ minWidth: 0, flex: 1 }}>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '11.5px', fontWeight: 900, color: isSelected ? chip.color : '#ffffff', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                        <span style={{ fontSize: '13px' }}>{chip.icon}</span>
-                        <span>{chip.vibeTitle}</span>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '11.5px', fontWeight: 900, color: isSelected ? item.color : '#ffffff', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                        <span>{item.icon}</span>
+                        <span>{item.title}</span>
                       </div>
                       <div style={{ fontSize: '9.5px', color: '#94a3b8', fontWeight: 600, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', marginTop: '1px' }}>
-                        {chip.subLabel}
+                        {item.sub}
                       </div>
                     </div>
                     <span
@@ -513,7 +530,7 @@ export default function VibeApiDemoPage() {
                         fontSize: '10px',
                         fontWeight: 900,
                         color: isSelected ? '#04101c' : '#94a3b8',
-                        background: isSelected ? chip.color : 'rgba(255,255,255,0.07)',
+                        background: isSelected ? item.color : 'rgba(255,255,255,0.08)',
                         padding: '1px 6px',
                         borderRadius: '999px',
                         flexShrink: 0
@@ -526,49 +543,47 @@ export default function VibeApiDemoPage() {
               })}
             </div>
 
-            {/* STEP 2: TOUR PACING & RHYTHM (Anti-Drop-Off Layer) */}
-            <div style={{ fontSize: '10px', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#ffd700', marginBottom: '6px' }}>
-              2. How do you want it paced? (De-Risking Drop-Off)
+            {/* 2. DESTINATION VIBE SIGNATURE (THE CROWD / TOURIST TRAP VS LOCAL) */}
+            <div style={{ fontSize: '10px', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.07em', color: '#ffd700', marginBottom: '6px' }}>
+              2. Destination Vibe (The Crowd &amp; Streets)
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6px' }}>
-              {PACING_FILTERS.map((pace) => {
-                const isSelected = selectedPacing === pace.id;
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '7px' }}>
+              {DESTINATION_VIBE_FILTERS.map((dest) => {
+                const isSelected = selectedDest === dest.id;
                 const count = TRAVEL_CURIOUS_BLACK_CAB_TOURS.filter((t) =>
-                  matchesTour(t, selectedMood, pace.id)
+                  matchesTour(t, selectedPace, dest.id)
                 ).length;
                 const isDimmed = count === 0 && !isSelected;
 
                 return (
                   <button
-                    key={pace.id}
+                    key={dest.id}
                     type="button"
-                    onClick={() => setSelectedPacing(isSelected ? null : pace.id)}
+                    onClick={() => setSelectedDest(isSelected ? null : dest.id)}
                     style={{
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'space-between',
                       gap: '6px',
-                      padding: '8px 9px',
+                      padding: '8px 10px',
                       borderRadius: '10px',
-                      border: isSelected ? `2px solid ${pace.color}` : '1px solid rgba(255, 215, 0, 0.22)',
-                      background: isSelected
-                        ? 'rgba(255, 215, 0, 0.14)'
-                        : 'rgba(20, 27, 45, 0.85)',
+                      border: isSelected ? `2px solid ${dest.color}` : '1px solid rgba(255, 215, 0, 0.22)',
+                      background: isSelected ? 'rgba(255, 215, 0, 0.14)' : 'rgba(20, 27, 45, 0.88)',
                       color: '#ffffff',
                       cursor: 'pointer',
                       textAlign: 'left',
-                      opacity: isDimmed ? 0.42 : 1,
-                      boxShadow: isSelected ? `0 0 14px ${pace.color}44` : 'none',
+                      opacity: isDimmed ? 0.4 : 1,
+                      boxShadow: isSelected ? `0 0 14px ${dest.color}44` : 'none',
                       transition: 'all 0.15s ease'
                     }}
                   >
                     <div style={{ minWidth: 0, flex: 1 }}>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '11px', fontWeight: 900, color: isSelected ? pace.color : '#f8fafc', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                        <span style={{ fontSize: '13px' }}>{pace.icon}</span>
-                        <span>{pace.label}</span>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '11.5px', fontWeight: 900, color: isSelected ? dest.color : '#f8fafc', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                        <span>{dest.icon}</span>
+                        <span>{dest.title}</span>
                       </div>
                       <div style={{ fontSize: '9.5px', color: '#94a3b8', fontWeight: 600, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', marginTop: '1px' }}>
-                        {pace.shortDesc}
+                        {dest.sub}
                       </div>
                     </div>
                     <span
@@ -576,7 +591,7 @@ export default function VibeApiDemoPage() {
                         fontSize: '10px',
                         fontWeight: 900,
                         color: isSelected ? '#04101c' : '#cbd5e1',
-                        background: isSelected ? pace.color : 'rgba(255,255,255,0.08)',
+                        background: isSelected ? dest.color : 'rgba(255,255,255,0.08)',
                         padding: '1px 6px',
                         borderRadius: '999px',
                         flexShrink: 0
@@ -588,51 +603,18 @@ export default function VibeApiDemoPage() {
                 );
               })}
             </div>
-
-            {/* Active Combined Filter Summary Banner */}
-            {(activeMoodChip || activePacingChip) && (
-              <div
-                style={{
-                  marginTop: '10px',
-                  padding: '8px 10px',
-                  borderRadius: '10px',
-                  background: 'rgba(0, 229, 255, 0.08)',
-                  border: '1px solid rgba(0, 229, 255, 0.35)',
-                  fontSize: '11px',
-                  color: '#f8fafc',
-                  lineHeight: 1.35
-                }}
-              >
-                {activeMoodChip && (
-                  <div>
-                    <strong style={{ color: activeMoodChip.color }}>
-                      {activeMoodChip.icon} {activeMoodChip.vibeTitle}:
-                    </strong>{' '}
-                    {activeMoodChip.subLabel}
-                  </div>
-                )}
-                {activePacingChip && (
-                  <div style={{ marginTop: activeMoodChip ? '3px' : 0 }}>
-                    <strong style={{ color: activePacingChip.color }}>
-                      {activePacingChip.icon} {activePacingChip.label}:
-                    </strong>{' '}
-                    {activePacingChip.shortDesc}
-                  </div>
-                )}
-              </div>
-            )}
           </div>
 
           {/* RESULTS COUNT STRIP */}
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '12px', padding: '0 2px' }}>
             <span style={{ fontSize: '12px', fontWeight: 800, color: '#cbd5e1', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
-              {selectedMood || selectedPacing
+              {selectedPace || selectedDest
                 ? `${filteredTours.length} Matching ${filteredTours.length === 1 ? 'Tour' : 'Tours'}`
                 : `All ${filteredTours.length} Black Cab Tours`}
             </span>
             <span style={{ fontSize: '11px', fontWeight: 700, color: '#34d399', display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
               <ShieldCheck size={13} color="#34d399" />
-              <span>Anti-Drop-Off Vibe Layer Active</span>
+              <span>Verified Vibe Signatures</span>
             </span>
           </div>
 
@@ -649,15 +631,13 @@ export default function VibeApiDemoPage() {
               }}
             >
               <div style={{ fontSize: '14px', fontWeight: 800, color: '#ffffff', marginBottom: '6px' }}>
-                No single tour matches both of those exact filters.
-              </div>
-              <div style={{ fontSize: '12px', color: '#94a3b8', marginBottom: '12px' }}>
-                Try clearing the pacing filter or selecting another emotional atmosphere.
+                No tour matches both of those exact filters.
               </div>
               <button
                 type="button"
-                onClick={() => setSelectedPacing(null)}
+                onClick={() => setSelectedDest(null)}
                 style={{
+                  marginTop: '8px',
                   padding: '8px 14px',
                   borderRadius: '999px',
                   background: '#00e5ff',
@@ -668,20 +648,20 @@ export default function VibeApiDemoPage() {
                   cursor: 'pointer'
                 }}
               >
-                Show All Pacing Styles for This Vibe
+                Show All Destination Vibes for This Pace
               </button>
             </div>
           )}
 
-          {/* TOUR CARDS LIST (Normal Tour Card + "You'll love this tour if..." Top Badge with Pacing & Guide Vibe) */}
+          {/* TOUR CARDS LIST */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
             {filteredTours.map((tour) => {
-              const primaryMood =
-                ATMOSPHERE_CHIPS.find((m) => (tour.vibeTags || []).includes(m.id)) || ATMOSPHERE_CHIPS[0];
-              const accentColor = primaryMood.color;
+              const sig = getTourSig(tour);
+              const primaryPace =
+                TOUR_PACE_FILTERS.find((p) => sig.paceIds.includes(p.id)) || TOUR_PACE_FILTERS[0];
+              const accentColor = primaryPace.color;
               const sigHash = getTourHash(tour.id);
               const isProofOpen = openProofId === tour.id;
-              const profile = getTourProfile(tour);
 
               return (
                 <article
@@ -696,7 +676,7 @@ export default function VibeApiDemoPage() {
                     flexDirection: 'column'
                   }}
                 >
-                  {/* ==================== 1. ATMOSVIBE TOP BADGE ("YOU'LL LOVE THIS TOUR IF..." + PACING & GUIDE VIBE) ==================== */}
+                  {/* ==================== 1. ATMOSVIBE TOP BADGE (STANDARD VIBE SIGNATURE CATEGORIES) ==================== */}
                   <div
                     style={{
                       background: 'linear-gradient(135deg, rgba(0, 229, 255, 0.14) 0%, rgba(6, 13, 26, 0.98) 100%)',
@@ -726,7 +706,7 @@ export default function VibeApiDemoPage() {
                       <button
                         type="button"
                         onClick={() => setOpenProofId(isProofOpen ? null : tour.id)}
-                        title="Tap to view verification proof & signature hash"
+                        title="Tap to see True Character, The Host & Best Time"
                         style={{
                           display: 'inline-flex',
                           alignItems: 'center',
@@ -746,56 +726,54 @@ export default function VibeApiDemoPage() {
                       </button>
                     </div>
 
-                    {/* The "You'll love this tour if..." Hook */}
+                    {/* Plain-English "You'll love this tour if..." */}
                     <div
                       style={{
                         fontSize: '13.5px',
                         fontWeight: 800,
                         color: '#ffffff',
-                        lineHeight: 1.38,
+                        lineHeight: 1.35,
                         marginBottom: '9px'
                       }}
                     >
-                      “{formatYouWillLoveIf(tour)}”
+                      “{sig.youLoveIf}”
                     </div>
 
-                    {/* ANTI-DROP-OFF PACING & GUIDE VIBE STRIP (De-risking the Windscreen Trap & Guide Roulette) */}
+                    {/* VIBE SIGNATURE SIGNALS: TOUR PACE + THE CROWD (TOURIST TRAP VS LOCAL) */}
                     <div
                       style={{
                         display: 'grid',
                         gridTemplateColumns: '1fr',
-                        gap: '5px',
+                        gap: '6px',
                         padding: '8px 10px',
                         borderRadius: '10px',
-                        background: 'rgba(4, 10, 22, 0.78)',
+                        background: 'rgba(4, 10, 22, 0.82)',
                         border: '1px solid rgba(255, 255, 255, 0.12)',
                         marginBottom: '9px',
-                        fontSize: '11px'
+                        fontSize: '11.5px',
+                        lineHeight: 1.35
                       }}
                     >
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#f8fafc' }}>
-                        <Footprints size={12} color="#00e5ff" style={{ flexShrink: 0 }} />
-                        <span>
-                          <strong style={{ color: '#00e5ff' }}>Pacing:</strong> {profile.pacingBadge}
-                        </span>
+                      <div style={{ display: 'flex', alignItems: 'flex-start', gap: '6px', color: '#f8fafc' }}>
+                        <Zap size={13} color="#00e5ff" style={{ flexShrink: 0, marginTop: '2px' }} />
+                        <div>
+                          <strong style={{ color: '#00e5ff', textTransform: 'uppercase', fontSize: '10.5px', letterSpacing: '0.04em' }}>Tour Pace:</strong>{' '}
+                          <span style={{ fontWeight: 700, color: '#ffffff' }}>{sig.tourPace}</span>
+                        </div>
                       </div>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#f8fafc' }}>
-                        <Mic size={12} color="#ffd700" style={{ flexShrink: 0 }} />
-                        <span>
-                          <strong style={{ color: '#ffd700' }}>Guide Vibe:</strong> {profile.guideVibeBadge}
-                        </span>
-                      </div>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#f8fafc' }}>
-                        <SunMedium size={12} color="#34d399" style={{ flexShrink: 0 }} />
-                        <span>
-                          <strong style={{ color: '#34d399' }}>Best Mood Window:</strong> {profile.peakVibeBadge}
-                        </span>
+
+                      <div style={{ display: 'flex', alignItems: 'flex-start', gap: '6px', color: '#f8fafc' }}>
+                        <Users size={13} color="#ffd700" style={{ flexShrink: 0, marginTop: '2px' }} />
+                        <div>
+                          <strong style={{ color: '#ffd700', textTransform: 'uppercase', fontSize: '10.5px', letterSpacing: '0.04em' }}>The Crowd:</strong>{' '}
+                          <span style={{ color: '#e2e8f0' }}>{sig.theCrowd}</span>
+                        </div>
                       </div>
                     </div>
 
-                    {/* Pure Atmospheric Hashtags Row */}
+                    {/* Direct Hashtags */}
                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
-                      {(profile.vibeHashtags || []).map((tag, idx) => (
+                      {(sig.hashtags || []).map((tag, idx) => (
                         <span
                           key={idx}
                           style={{
@@ -813,37 +791,35 @@ export default function VibeApiDemoPage() {
                       ))}
                     </div>
 
-                    {/* Optional 1-Tap Verification Proof Box */}
+                    {/* 1-Tap Expandable Vibe Signature Signals: TRUE CHARACTER, THE HOST, BEST TIME */}
                     {isProofOpen && (
                       <div
                         style={{
                           marginTop: '10px',
-                          padding: '8px 10px',
+                          padding: '9px 10px',
                           borderRadius: '8px',
-                          background: 'rgba(2, 6, 14, 0.92)',
+                          background: 'rgba(2, 6, 14, 0.94)',
                           border: '1px solid rgba(52, 211, 153, 0.35)',
                           borderLeft: '3px solid #34d399',
-                          fontSize: '10.5px',
+                          fontSize: '11px',
                           color: '#cbd5e1',
-                          lineHeight: 1.35
+                          lineHeight: 1.4
                         }}
                       >
                         <div>
-                          <strong style={{ color: '#34d399' }}>Emotional Mood:</strong> {tour.fiveSignalSignature?.emotionalMood}
+                          <strong style={{ color: '#a855f7' }}>True Character:</strong> {sig.trueCharacter}
                         </div>
-                        <div style={{ marginTop: '3px' }}>
-                          <strong style={{ color: '#00e5ff' }}>Visual Aura:</strong> {tour.fiveSignalSignature?.visualAura}
+                        <div style={{ marginTop: '4px' }}>
+                          <strong style={{ color: '#34d399' }}>The Host:</strong> {sig.theHost}
                         </div>
-                        <div style={{ marginTop: '4px', paddingTop: '4px', borderTop: '1px solid rgba(255,255,255,0.08)', display: 'flex', justifyContent: 'space-between', fontSize: '9.5px' }}>
-                          <span><strong>Sources:</strong> Verified guest reviews &amp; Knowledge route ledger</span>
-                          <span style={{ color: '#34d399', fontWeight: 800 }}>Hash: {sigHash}</span>
+                        <div style={{ marginTop: '4px' }}>
+                          <strong style={{ color: '#00e5ff' }}>Best Time of Day:</strong> {sig.bestTime}
                         </div>
                       </div>
                     )}
                   </div>
 
                   {/* ==================== 2. STANDARD TOUR CARD DATA ==================== */}
-                  {/* Hero Image with Standard Duration & Price Badges */}
                   <div style={{ position: 'relative', height: '185px', overflow: 'hidden' }}>
                     <img
                       src={tour.imageUrl}
