@@ -203,6 +203,8 @@ const App = () => {
           <Route path="/vibe-api/travel-curious" element={<VibeApiDemoPage />} />
           <Route path="/wtm" element={<WtmMobileDeckPage />} />
           <Route path="/pocket" element={<WtmMobileDeckPage />} />
+          <Route path="/tui-zora" element={<WtmMobileDeckPage defaultDemo="tui-zora" />} />
+          <Route path="/tui" element={<WtmMobileDeckPage defaultDemo="tui-zora" />} />
           <Route path="/privacy" element={<PrivacyPolicyPage />} />
           <Route path="/terms" element={<TermsPage />} />
           <Route path="/barcelona" element={<BarcelonaPage />} />

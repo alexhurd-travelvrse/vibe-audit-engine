@@ -281,6 +281,11 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
     const emailParam = params.get('email') || '';
     if (!urlParam) return;
 
+    if (/tui-zora|tui\.co\.uk\/river-cruises\/ships\/tui-zora/i.test(urlParam)) {
+      launchCannedDemo('tui-zora');
+      return;
+    }
+
     const parsed = parseBookingUrl(urlParam);
     let targetHotel = '';
     let targetCity = 'London';
@@ -363,11 +368,32 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
     const errors = {};
 
     const hotelNameInput = (formData.propertyName || '').trim();
+    const rawBooking = String(formData.bookingId || '').trim();
+
+    // Instant check for TUI Zora (by name or URL in either input box)
+    const combinedTuiCheck = `${hotelNameInput} ${rawBooking}`.toLowerCase();
+    if (
+      combinedTuiCheck.includes('tui zora') ||
+      combinedTuiCheck.includes('tui-zora') ||
+      combinedTuiCheck.includes('tui.co.uk/river-cruises/ships/tui-zora')
+    ) {
+      if (formData.email && formData.email.trim()) {
+        submitLeadToFormspree({
+          ...formData,
+          propertyName: 'TUI Zora (TUI River Cruises)',
+          city: 'Cologne, Cochem & Koblenz',
+          neighborhood: 'Rhine & Moselle River Valleys',
+          bookingId: 'https://www.tui.co.uk/river-cruises/ships/tui-zora/'
+        });
+      }
+      launchCannedDemo('tui-zora');
+      return;
+    }
+
     if (!hotelNameInput) {
       errors.propertyName = 'Hotel Name is required';
     }
 
-    const rawBooking = String(formData.bookingId || '').trim();
     let targetHotel = hotelNameInput;
     let targetCity = (formData.city || '').trim();
     let targetNeighborhood = formData.neighborhood ? formData.neighborhood.trim() : '';
@@ -651,14 +677,58 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
               </div>
 
               <div className="glass-card" style={{ padding: '1.5rem 1.75rem', borderRadius: '1.25rem' }}>
-                <div style={{ marginBottom: '1rem', paddingBottom: '0.65rem', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
-                  <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '10px', fontWeight: 800, color: '#00e5ff', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '0.25rem' }}>
-                    <Link2 size={12} />
-                    <span>STEP 1 // PROPERTY INPUT</span>
+                <div style={{ marginBottom: '1rem', paddingBottom: '0.65rem', borderBottom: '1px solid rgba(255,255,255,0.08)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.75rem' }}>
+                  <div>
+                    <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '10px', fontWeight: 800, color: '#00e5ff', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '0.25rem' }}>
+                      <Link2 size={12} />
+                      <span>STEP 1 // PROPERTY INPUT</span>
+                    </div>
+                    <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: '#ffffff', margin: 0 }}>
+                      Enter Hotel or Cruise Ship Details to Launch Audit
+                    </h3>
                   </div>
-                  <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: '#ffffff', margin: 0 }}>
-                    Enter Hotel Details to Launch Your Custom Audit
-                  </h3>
+
+                  {/* 1-Tap Instant Meeting Demos */}
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap' }}>
+                    <button
+                      type="button"
+                      onClick={() => launchCannedDemo('tui-zora')}
+                      style={{
+                        padding: '6px 11px',
+                        borderRadius: '999px',
+                        border: '1px solid rgba(0, 229, 255, 0.45)',
+                        background: 'rgba(0, 229, 255, 0.14)',
+                        color: '#ffffff',
+                        fontSize: '11.5px',
+                        fontWeight: 800,
+                        cursor: 'pointer',
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '5px'
+                      }}
+                    >
+                      <span>🚢 TUI Zora Demo</span>
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => launchCannedDemo('sea-containers-london')}
+                      style={{
+                        padding: '6px 11px',
+                        borderRadius: '999px',
+                        border: '1px solid rgba(255, 255, 255, 0.2)',
+                        background: 'rgba(255, 255, 255, 0.06)',
+                        color: '#cbd5e1',
+                        fontSize: '11.5px',
+                        fontWeight: 700,
+                        cursor: 'pointer',
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '5px'
+                      }}
+                    >
+                      <span>🏨 Sea Containers</span>
+                    </button>
+                  </div>
                 </div>
 
                 <div className="input-group" style={{ marginBottom: '0.85rem' }}>

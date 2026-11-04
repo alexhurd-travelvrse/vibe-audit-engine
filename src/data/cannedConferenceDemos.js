@@ -487,6 +487,346 @@ export const SKOL_APARTMENTS_MARBELLA_DEMO = {
   }
 };
 
+export const TUI_ZORA_CANNED_DEMO = {
+  venue_id: 'tui_zora_river_cruise_uk',
+  venue_name: 'TUI Zora (TUI River Cruises)',
+  location: 'Rhine & Moselle Rivers (Cologne · Cochem · Koblenz · Rüdesheim)',
+  vibe_signature: {
+    energy_score: 82,
+    social_pacing: 'Boutique Floating Hotel & Walkable River Cities (18+ Adults Only)',
+    headline: 'Next-Gen "Cultural Mosaic" River Ship: 25m² French Balcony Suites & Central Rhine/Moselle City Docks',
+    acoustic_dna: {
+      soundscape_genre: 'Acoustic Lounge, Contemporary Soul & Regional Wine-Bar Sets',
+      anchor_artists: ['Tom Misch', 'Norah Jones', 'Leon Bridges'],
+      spotify_query: 'Boutique Hotel Evening Lounge Acoustic Soul',
+      sound_texture: 'Whisper-quiet flat-water river glide by day; sociable 72 dB cocktail & live acoustic music in The Observatory by night',
+      conversation_clarity_score: 91,
+      conversation_verdict: 'Easy Cocktail Chat in The Observatory & Zero-Swell 36 dB Cabin Sleep',
+      decibel_level: '72 dB Lounge / 36 dB Suite',
+      sleep_sanctuary_verdict: 'Sleep Sanctuary: Flat-Water River Navigation (Zero Ocean Swells) & Sound-Insulated Deck 2/3 Staterooms'
+    },
+    crowd_archetype: {
+      primary: 'Sociable 38–55 Couples, Food & Wine Explorers, and Multi-City Break Travellers (18+ Adults Only)',
+      social_density: 'Intimate 188-Guest Boutique Scale Across 4 Decks (Never Crowded)',
+      dress_code: 'Smart-Casual Boutique Hotel Style (Zero Black-Tie Formality)',
+      energy_verdict: 'Daytime Vineyard & City Walks Into Sociable Evening Cocktails at The Observatory',
+      local_ratio: 68,
+      tourist_ratio: 32,
+      tourist_trap_verdict: 'Docks in Real Local Wine Towns & City Centres (Not Isolated Mega-Ship Ports)',
+      trip_occasions: ['Couples Wine & Culture Cruise', 'Multi-City Rhine/Moselle Escape', 'Boutique River Break']
+    },
+    lighting_and_sensory: {
+      atmosphere: 'Panoramic Drop-Down French Balcony Daylight & Warm 2700K Observatory Cocktail Glow',
+      sensory_intensity: 'Warm, Contemporary & Scenic',
+      lighting_temperature: 'Natural Rhine Valley Daylight & 2700K Candlelit Evening Lounge'
+    },
+    hyper_local_proximity: {
+      key_anchors: [
+        'Cologne Altstadt & Peters Brauhaus (4.6★ · 4m walk from berth)',
+        'Cochem Old Town & Weingut Hieronimi (4.7★ · 2m walk from berth)',
+        'Koblenz Deutsches Eck & Ehrenbreitstein Cable Car (4.7★ · 3m walk)',
+        'Rüdesheim Drosselgasse Wine Lane (4.6★ · 4m walk from berth)'
+      ],
+      insider_lore: 'Unlike ocean ships that dock in industrial ports 45 minutes from town, TUI Zora berths directly on central river promenades in Cologne, Cochem, Koblenz, and Boppard—putting verified 4.6★+ local wine taverns, Kölsch beer halls, and TUI Musement e-bike/vineyard trails within a 2 to 5 minute walk of the gangway.'
+    },
+    qualification_test: {
+      you_will_love_if: 'You want a modern, adults-only (18+) floating boutique hotel (188 guests) with 25m² drop-down French Balcony suites that docks right in the middle of walkable Rhine & Moselle wine towns.',
+      skip_if: 'You are looking for a 5,000-passenger mega-ship with waterslides, casinos, and kids’ clubs, or a formal black-tie traditional cruise.'
+    },
+    ai_search_geo: {
+      traveler_prompts: [
+        'Modern river cruise on the Rhine and Moselle for couples in their 40s and 50s that feels like a boutique hotel',
+        'Adults-only European river cruise with French balcony suites, relaxed dining, and walkable city-centre ports',
+        'Best Rhine and Moselle river cruise ship for local wine tasting, Cologne Old Town, and Cochem castle views'
+      ],
+      verified_entity_summary: 'TUI Zora is a next-generation, adults-only (18+) boutique river cruise ship for TUI River Cruises (188 guests, 94 cabins up to 25m² French Balcony Suites, methanol-ready hull) sailing the Rhine and Moselle with Verdastro restaurant, The Observatory lounge, and central city berths.'
+    },
+    authenticity_and_materials: {
+      authenticity_score: 93,
+      material_palette: '"Cultural Mosaic" Interior Architecture: Warm European Oak, Brushed Brass, Terracotta & Regional Rhine/Moselle Textiles',
+      material_verdict: 'Contemporary Boutique Hotel Design — Zero Traditional Cruise-Ship Clutter'
+    },
+    host_vibe: {
+      host_style_score: 94,
+      host_archetype: '52-Person English-Speaking Crew (1:3 Ratio), Atrium Shore Concierge & Regional Guest Musicians',
+      warmth_verdict: 'Zero Stiffness — Warm UK Hospitality & Local Port Insiders',
+      service_pacing: 'Open-Seating Flexible Dining & Unhurried Lounge Service',
+      team_aesthetic: 'Contemporary Boutique Hospitality Tailoring',
+      signature_team_roles: ['Cruise Director (Atrium Desk)', 'Verdastro Sommelier', 'Observatory Mixologist'],
+      staff_icebreaker_prompt: 'Ask the Cruise Director at the Atrium desk which family-run Riesling cellar in Cochem or Boppard is pouring late-harvest tastings within a 4-minute walk of today’s berth.'
+    },
+    insider_secrets: {
+      insider_badge: 'Rhine & Moselle Insider Playbook',
+      off_menu_perk: 'Book a Deck 3 French Balcony Suite (25m²—largest in TUI’s fleet) and drop the panoramic window at 4:00 PM during the UNESCO Middle Rhine Gorge passage past the Lorelei Rock.',
+      secret_lore: 'When TUI Zora docks overnight in Cologne or Koblenz, you can walk straight off the gangway after dinner at Verdastro into local Altstadt beer halls and wine bars without worrying about tender boats.',
+      secret_title: 'Deck 3 French Balcony Gorge Glide & Overnight Port Tavern Walk'
+    },
+    temporal_dynamics: {
+      best_time_to_visit: '10:00 AM on the Top Deck gliding past 40 Rhine Gorge castles; 4:00 PM stepping ashore into Cochem wine alleys; 8:30 PM for cocktails & live acoustic music in The Observatory.',
+      content_readiness: {
+        aesthetic_subculture: 'Contemporary River Boutique & Vineyard Slow-Luxury',
+        flattery_note: 'Floor-to-ceiling drop-down French balcony daylight & warm 2700K Observatory lounge lamps—zero harsh fluorescent glare',
+        score: 94,
+        top_creator_spot: 'Deck 3 French Balcony Suite with Drop-Down Glass Open to Cochem Castle & Moselle Vineyards',
+        verdict: 'Panoramic River Light & Warm 2700K Lounge Glow'
+      },
+      diurnal_rhythm: {
+        working: {
+          window: '8:30 AM – 12:30 PM',
+          focus: 'Included ship-wide Wi-Fi, morning coffee in The Observatory, top-deck yoga & scenic castle gliding.',
+          score: 91
+        },
+        chilling: {
+          window: '1:00 PM – 6:30 PM',
+          focus: 'Walk straight off the gangway into Cochem, Boppard or Cologne—or open your 25m² suite’s French balcony to the river breeze.',
+          score: 96
+        },
+        playing: {
+          window: '7:00 PM – Late',
+          focus: 'Open-seating regional dinner at Verdastro (Full Board Plus drinks included) into live acoustic sets & local entertainers in The Observatory.',
+          score: 95
+        }
+      },
+      peak_atmospheric_window: 'Golden-Hour Gorge Sail & Evening Observatory Lounge'
+    }
+  },
+  ota_conversion_audit: {
+    channel: 'TUI Direct & AI Search (ChatGPT / Mindtrip)',
+    before_merchandising_score: 52,
+    after_merchandising_score: 95,
+    projected_conversion_uplift: '+24.0%',
+    photos_status: 'RESOLVED',
+    current_drop_off_flaw: 'Traditional river cruise listings score 52/100 with younger 38–55 adults because Slots #1 and #2 lead with a distant flat-water hull render and a technical deck plan, while Slot #3 shows an empty daytime dining room—hiding the 25m² drop-down French Balcony lifestyle, The Observatory evening cocktail vibe, and walkable city-centre ports.',
+    local_vibe_synergy_context: 'TUI River Cruises attracts some of the youngest adult profiles in river cruising (38–55), who book when they see a floating boutique hotel + walkable European wine & city break rather than a traditional retirement riverboat.',
+    key_strategic_shifts: [
+      'Slot #1 — Boutique Suite Hero: Lead with the 25m² Deck 3 Suite with Drop-Down French Balcony open to Rhine/Moselle vineyards (replaces the distant exterior riverboat hull in Slot #1).',
+      'Slot #2 — Evening Social Vibe: Promote The Observatory Lounge & Cocktail Bar at Twilight into Slot #2 (replaces the technical deck plan diagram to prove a sociable 18+ boutique atmosphere).',
+      'Slot #3 — Walkable Port Reality (TUI Musement Hook): Show guests stepping directly from the gangway into Cochem & Cologne Old Town wine lanes (3-min walk) in Slot #3.',
+      'Slot #4 — Daytime Top-Deck Sanctuary: Feature Top-Deck Sun Loungers & Wellness gliding past UNESCO Rhine Gorge castles in Slot #4.',
+      'Slot #5 — Contemporary Culinary Proof: Showcase evening regional dining & wine pour at Verdastro in Slot #5 (replaces empty daytime table shots).'
+    ],
+    vibe_grading_rubric: {
+      destination_vibe_title: 'Rhine & Moselle Boutique River Cruise (TUI Zora)',
+      destination_vibe_pillars: '25m² French Balcony Suites • Walkable Wine & City Ports • 18+ Boutique Lounge Vibe',
+      verified_reality_score: 93,
+      verified_reality_label: 'On-Ship & Port Match to Younger Adult (38–55) Vibe',
+      current_merchandising_score: 52,
+      optimized_merchandising_score: 95,
+      vibe_gap_points: -41,
+      vibe_gap_archetype: 'PERCEPTION GAP — BOUTIQUE SHIP SOLD LIKE TRADITIONAL RIVERBOAT',
+      vibe_gap_summary: 'Current river cruise merchandising scores 52/100 (-41 pt gap vs. reality): leading with exterior hull renders, deck schematics, and empty dining tables triggers the "traditional retirement cruise" stereotype—hiding TUI Zora’s 25m² French Balcony Suites, The Observatory evening lounge, and city-centre berths.',
+      raw_slot_total: 60,
+      repetition_penalty: -8,
+      repetition_penalty_reason: 'Empty venue renders & static cabin shots without river/port context in the first 5 visual slots',
+      slot_scorecard: [
+        {
+          slot: 1,
+          formula_name: 'Slot #1 — Signature Vibe Hero',
+          live_score: 10,
+          max_score: 20,
+          status: 'STEREOTYPE RISK',
+          live_what_is_there: 'Wide exterior render of the riverboat hull on water (Live #1)',
+          optimal_fix: 'Lead with 25m² Suite + Drop-Down French Balcony Open to Rhine Vineyards'
+        },
+        {
+          slot: 2,
+          formula_name: 'Slot #2 — Social & Evening Vibe',
+          live_score: 8,
+          max_score: 20,
+          status: 'DECK PLAN IN #2',
+          live_what_is_there: 'Technical deck/cabin layout graphic in the hero sequence (Live #2)',
+          optimal_fix: 'Promote The Observatory Cocktail Lounge & Live Evening Vibe to Slot #2'
+        },
+        {
+          slot: 3,
+          formula_name: 'Slot #3 — Port Walkability & Shore Hook',
+          live_score: 10,
+          max_score: 20,
+          status: 'ZERO PORT CONTEXT',
+          live_what_is_there: 'Empty daytime restaurant tables with no people or river view (Live #3)',
+          optimal_fix: 'Show Central City Berth Steps from Cochem Vineyards & Cologne Old Town'
+        },
+        {
+          slot: 4,
+          formula_name: 'Slot #4 — Daytime Deck & Scenic Glide',
+          live_score: 12,
+          max_score: 20,
+          status: 'CLOSED CURTAINS',
+          live_what_is_there: 'Standard cabin bed angle with curtains partially drawn (Live #4)',
+          optimal_fix: 'Promote Top-Deck Sun Loungers & UNESCO Rhine Castle Glide into Slot #4'
+        },
+        {
+          slot: 5,
+          formula_name: 'Slot #5 — Culinary & Full Board Plus Proof',
+          live_score: 12,
+          max_score: 20,
+          status: 'REPETITIVE EXTERIOR',
+          live_what_is_there: 'Second bow/waterline exterior shot (Live #5)',
+          optimal_fix: 'Show Verdastro Evening À-La-Carte Dining & Regional Wine Pour in Slot #5'
+        }
+      ],
+      auto_vibe_insights: {
+        badge: 'High Vibe Gap Opportunity (-41 pts)',
+        headline_stat: 'TUI Zora delivers a 93/100 reality match for 38–55 boutique travellers (25m² French Balcony Suites + city-centre Rhine/Moselle berths), but standard river cruise merchandising scores 52/100 by leading with hull renders and deck plans.',
+        gm_outreach_hook: 'TUI River Cruises already attracts some of the youngest profiles in river cruising—pairing TUI Zora’s "Cultural Mosaic" ship Vibe Signature with AtmosVibe Port Signatures for Cologne, Cochem, and Koblenz turns static ship pages into a high-converting GEO & TUI Musement discovery engine.',
+        linkedin_post_hook: 'River cruises are half boutique floating hotel, half walkable city break. Here is how AtmosVibe bridges the 41-point perception gap on TUI’s new TUI Zora by connecting onboard Vibe Signatures with port-side neighbourhood DNA.'
+      }
+    },
+    optimal_5_photo_sequence: [
+      {
+        slot: 1,
+        category: 'SIGNATURE_SUITE_BEDROOM',
+        photo_subject: '25m² Suite with Drop-Down French Balcony Open to the River',
+        photo_url: '/wtm-assets/tui-opt-1-frenchbalcony.jpg',
+        why_it_converts: 'Immediately reframes TUI Zora from a "riverboat" into a floating boutique hotel with the largest suites (25m²) in TUI’s European fleet.',
+        upgrade_rationale: 'Younger 38–55 couples convert when they see indoor-outdoor French balcony living overlooking the Rhine.',
+        bullet_points: [
+          'Visual Hook: Drop-down panoramic glass turns the suite into an open-air river lounge.',
+          'De-Risks Cabin Size: Highlights TUI Zora’s new 25m² Deck 3 suite footprint.',
+          'Conversion Trigger: Breaks the traditional river-cruise stereotype in under 1 second.'
+        ],
+        psychological_conversion_trigger: 'Boutique Hotel Suite & Panoramic River View',
+        recommended_trigger: 'Boutique Hotel Suite & Panoramic River View',
+        current_slot: 12,
+        is_retained: false,
+        is_moved: true,
+        is_swapped_in: false,
+        action: 'PROMOTE',
+        action_label: 'PROMOTE FROM SLOT #12',
+        source_display_label: 'Was: Slot #12 (Ship Gallery)',
+        source_domain: 'tui.co.uk',
+        current_photo: {
+          slot: 1,
+          title: 'Wide Exterior Hull Render on Water (Live #1)',
+          imageUrl: '/wtm-assets/tui-live-1-exterior.jpg',
+          photoId: 'tui-1',
+          sourceUrl: 'https://www.tui.co.uk/river-cruises/ships/tui-zora/'
+        }
+      },
+      {
+        slot: 2,
+        category: 'SOCIAL_FB_ROOFTOP',
+        photo_subject: 'The Observatory Lounge & Cocktail Bar at Twilight (18+ Social Vibe)',
+        photo_url: '/wtm-assets/tui-opt-2-observatory.jpg',
+        why_it_converts: 'Replaces the technical deck schematic in Slot #2 with warm 2700K cocktail lighting and sociable evening energy.',
+        upgrade_rationale: 'Directly answers the #1 objection of younger river cruisers: "What is the vibe like after dark?"',
+        bullet_points: [
+          'Social Proof: Shows a contemporary 18+ cocktail lounge, not a bingo hall.',
+          'Cultural Mosaic Design: Highlights regional textures and warm lighting.',
+          'Conversion Trigger: Drives All-Inclusive drinks upgrades and evening confidence.'
+        ],
+        psychological_conversion_trigger: 'Sociable 18+ Boutique Lounge Atmosphere',
+        recommended_trigger: 'Sociable 18+ Boutique Lounge Atmosphere',
+        current_slot: 18,
+        is_retained: false,
+        is_moved: true,
+        is_swapped_in: false,
+        action: 'PROMOTE',
+        action_label: 'PROMOTE FROM SLOT #18',
+        source_display_label: 'Was: Slot #18 (Ship Gallery)',
+        source_domain: 'tui.co.uk',
+        current_photo: {
+          slot: 2,
+          title: 'Technical Deck & Cabin Schematic (Live #2)',
+          imageUrl: '/wtm-assets/tui-live-2-deckplan.jpg',
+          photoId: 'tui-2',
+          sourceUrl: 'https://www.tui.co.uk/river-cruises/ships/tui-zora/'
+        }
+      },
+      {
+        slot: 3,
+        category: 'SECONDARY_ROOM_BATHROOM',
+        photo_subject: 'Superior French Balcony King Bedroom with Floor-to-Ceiling Castle View',
+        photo_url: '/wtm-assets/tui-opt-3-cochem-port.jpg',
+        why_it_converts: 'Satisfies the 2-cabin visual rule by pairing the UK King Bed with floor-to-ceiling river & castle views (promoted from Cabins tab #11).',
+        upgrade_rationale: 'Replacing a close-up dessert plate shot with the bookable French Balcony King Bedroom drives immediate cabin selection confidence.',
+        bullet_points: [
+          '2-Cabin Rule: Shows both the 24.2m² Balcony Suite (Slot #1) and 14.4m² French Balcony King (Slot #3).',
+          'Castle Sightline: Proves front-row river views from the bed.',
+          'Conversion Trigger: Eliminates fear of dark, cramped lower-deck cabins.'
+        ],
+        psychological_conversion_trigger: 'King Bed with Front-Row River & Castle Views',
+        recommended_trigger: 'King Bed with Front-Row River & Castle Views',
+        current_slot: 11,
+        is_retained: false,
+        is_moved: true,
+        is_swapped_in: false,
+        action: 'PROMOTE',
+        action_label: 'PROMOTE FROM SLOT #11',
+        source_display_label: 'Was: Slot #11 (Cabins Tab)',
+        source_domain: 'tui.co.uk',
+        current_photo: {
+          slot: 3,
+          title: 'Close-Up Plated Dessert Shot (Live #3)',
+          imageUrl: '/wtm-assets/tui-live-3-dining.jpg',
+          photoId: 'tui-3',
+          sourceUrl: 'https://www.tui.co.uk/river-cruises/ships/tui-zora/'
+        }
+      },
+      {
+        slot: 4,
+        category: 'SECONDARY_ROOM_BATHROOM',
+        photo_subject: 'Boutique Gold-Brass Walk-In Rainshower & Backlit Marble Vanity',
+        photo_url: '/wtm-assets/tui-opt-4-topdeck.jpg',
+        why_it_converts: 'Eliminates the #1 cruise objection ("tiny plastic wet-room bathrooms") with a luxury boutique-hotel rainshower bathroom (promoted from Cabins tab #12).',
+        upgrade_rationale: 'Replaces the Deck 1 small high-window cabin shot with TUI Zora’s warm brushed-brass bathroom finish.',
+        bullet_points: [
+          'Bathroom Proof: Brushed brass fixtures, backlit oval mirror, and walk-in glass rainshower.',
+          'Boutique Hotel Standard: Looks like a 5-star city hotel bathroom, not a ship.',
+          'Conversion Trigger: Removes bathroom anxiety for first-time river cruisers.'
+        ],
+        psychological_conversion_trigger: 'Boutique Hotel Walk-In Rainshower Bathroom',
+        recommended_trigger: 'Boutique Hotel Walk-In Rainshower Bathroom',
+        current_slot: 12,
+        is_retained: false,
+        is_moved: true,
+        is_swapped_in: false,
+        action: 'PROMOTE',
+        action_label: 'PROMOTE FROM SLOT #12',
+        source_display_label: 'Was: Slot #12 (Cabins Tab)',
+        source_domain: 'tui.co.uk',
+        current_photo: {
+          slot: 4,
+          title: 'Deck 1 Standard Cabin with Small High Window (Live #4)',
+          imageUrl: '/wtm-assets/tui-live-4-corridor.jpg',
+          photoId: 'tui-4',
+          sourceUrl: 'https://www.tui.co.uk/river-cruises/ships/tui-zora/'
+        }
+      },
+      {
+        slot: 5,
+        category: 'EXTERIOR_LANDMARK',
+        photo_subject: 'Walkable Medieval River Quay — Step Off Straight Into Historic Towns',
+        photo_url: '/wtm-assets/tui-opt-5-port.jpg',
+        why_it_converts: 'Closes the Top 5 by proving that TUI Zora docks directly in the heart of walkable European river towns—connecting the ship directly to TUI Musement shore experiences.',
+        upgrade_rationale: 'Replaces an overexposed white-sky deck rail shot with vibrant riverside town architecture.',
+        bullet_points: [
+          '5-Min Walk Proof: Gangway steps straight onto historic riverfront quays.',
+          'Ancillary Bridge: Sets up TUI Musement shore excursions and independent port walks.',
+          'Conversion Trigger: Seals the destination + boutique ship value proposition.'
+        ],
+        psychological_conversion_trigger: 'Walkable City-Centre River Quays',
+        recommended_trigger: 'Walkable City-Centre River Quays',
+        current_slot: 18,
+        is_retained: false,
+        is_moved: true,
+        is_swapped_in: false,
+        action: 'PROMOTE',
+        action_label: 'PROMOTE FROM SLOT #18',
+        source_display_label: 'Was: Slot #18 (Top Ports Tab)',
+        source_domain: 'tui.co.uk',
+        current_photo: {
+          slot: 5,
+          title: 'Overexposed White-Sky Deck Rail Shot (Live #5)',
+          imageUrl: '/wtm-assets/tui-live-5-bow.jpg',
+          photoId: 'tui-5',
+          sourceUrl: 'https://www.tui.co.uk/river-cruises/ships/tui-zora/'
+        }
+      }
+    ]
+  }
+};
+
 export const CANNED_CONFERENCE_DEMOS = {
   'sea-containers-london': {
     slug: 'sea-containers-london',
@@ -495,6 +835,14 @@ export const CANNED_CONFERENCE_DEMOS = {
     neighborhood: 'South Bank',
     bookingUrl: 'https://www.booking.com/hotel/gb/sea-containers-london.html',
     masterAudit: SEA_CONTAINERS_CANNED_DEMO
+  },
+  'tui-zora': {
+    slug: 'tui-zora',
+    propertyName: 'TUI Zora (TUI River Cruises)',
+    city: 'Rhine & Moselle',
+    neighborhood: 'Cologne · Cochem · Koblenz · Rüdesheim',
+    bookingUrl: 'https://www.tui.co.uk/river-cruises/ships/tui-zora/',
+    masterAudit: TUI_ZORA_CANNED_DEMO
   },
   'skol-apartments-marbella': {
     slug: 'skol-apartments-marbella',
@@ -507,6 +855,18 @@ export const CANNED_CONFERENCE_DEMOS = {
 };
 
 export const MEETING_LIVE_LINKS = [
+  {
+    slug: 'tui-zora-deck',
+    label: '🚢 TUI Zora (River Cruise Deck)',
+    location: 'TUI Meeting Demo',
+    href: '/tui-zora'
+  },
+  {
+    slug: 'tui-zora-dossier',
+    label: '🚢 TUI Zora (Full Dossier)',
+    location: 'Rhine & Moselle',
+    href: '/audit?demo=tui-zora'
+  },
   {
     slug: 'sea-containers-wtm-deck',
     label: '📱 Sea Containers (Mobile Deck)',
