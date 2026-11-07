@@ -589,6 +589,8 @@ export default function WtmMobileDeckPage({ defaultDemo }) {
   const [selectedSlotIdx, setSelectedSlotIdx] = useState(0);
   const [gapSlotIdx, setGapSlotIdx] = useState(0);
   const [lightboxItem, setLightboxItem] = useState(null);
+  const [copiedLicenseEmbed, setCopiedLicenseEmbed] = useState(false);
+  const [showLicensePreview, setShowLicensePreview] = useState(false);
   const carouselRef = useRef(null);
   const gapCarouselRef = useRef(null);
   const fixCarouselRef = useRef(null);
@@ -605,6 +607,40 @@ export default function WtmMobileDeckPage({ defaultDemo }) {
   const SIGNALS = deck.SIGNALS;
   const livePhotos = deck.LIVE_PHOTOS;
   const optimalPhotos = deck.OPTIMAL_PHOTOS;
+
+  const canonicalDeckUrl = `https://atmosvibe.io/signature/${activeDeckKey === 'tui-zora' ? 'rhine-moselle/tui-zora' : 'london/sea-containers-london'}`;
+  const primarySigHash = SIGNALS[0]?.hash || '0x8f4e29a1...e871b0';
+
+  const deckJsonLdPayload = JSON.stringify({
+    "@context": ["https://schema.org", "https://www.atmosvibe.io/schema/vibe-signature/v1"],
+    "@type": [activeDeckKey === 'tui-zora' ? "Product" : "LodgingBusiness", "VerifiableVibeSignature"],
+    "name": deck.propertyTitle,
+    "description": deck.vibeSubhead,
+    "identifier": primarySigHash,
+    "isBasedOn": canonicalDeckUrl,
+    "sdLicense": "https://atmosvibe.io/license/vibe-signature-syndication-v1",
+    "creditText": `Verified by AtmosVibe • Signature ${primarySigHash}`,
+    "sdPublisher": {
+      "@type": "Organization",
+      "name": "AtmosVibe",
+      "url": "https://atmosvibe.io",
+      "identifier": "atmosvibe-protected-vibe-registry"
+    },
+    "additionalProperty": SIGNALS.map((s) => ({
+      "@type": "PropertyValue",
+      "propertyID": `atmosvibe:${s.id}`,
+      "name": s.title,
+      "value": `${s.headline} (${s.certaintyBadge}) — ${s.proof}`
+    }))
+  }, null, 2);
+
+  const deckPartnerEmbed = `<!-- AtmosVibe Licensed Vibe Signature (Travelvrse / Partner Syndication) -->
+<div class="atmosvibe-licensed-signature" data-venue="${deck.slug}" data-hash="${primarySigHash}">
+  <a href="${canonicalDeckUrl}" rel="external" data-attribution="sdPublisher">✓ Verified by AtmosVibe • ${deck.propertyTitle} (${primarySigHash})</a>
+</div>
+<script type="application/ld+json">
+${deckJsonLdPayload}
+</script>`;
 
   const handleSwitchDeck = (key) => {
     setActiveDeckKey(key);
@@ -987,6 +1023,9 @@ export default function WtmMobileDeckPage({ defaultDemo }) {
                           </div>
                           <div style={{ fontSize: '11px', color: '#94a3b8', lineHeight: 1.35 }}>
                             <strong style={{ color: '#cbd5e1' }}>Method:</strong> {sig.method}
+                          </div>
+                          <div style={{ fontSize: '10.5px', color: '#00e5ff', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '5px', marginTop: '2px' }}>
+                            <strong>SEO/GEO License:</strong> <code>sdPublisher: AtmosVibe</code> • <code>isBasedOn: atmosvibe.io</code>
                           </div>
                         </div>
                       )}
@@ -1574,9 +1613,91 @@ export default function WtmMobileDeckPage({ defaultDemo }) {
                 <ExternalLink size={13} />
               </button>
             </div>
+
+            {/* Partner Licensing & SEO / GEO Schema (sdPublisher + isBasedOn) */}
+            <div style={{
+              background: 'rgba(6, 14, 28, 0.94)',
+              border: '1px solid rgba(16, 185, 129, 0.4)',
+              borderRadius: '14px',
+              padding: '12px 14px'
+            }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
+                <div>
+                  <div style={{ fontSize: '10.5px', fontWeight: 900, color: '#34d399', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+                    ✓ Partner Licensing Ready (Travelvrse • OTAs • Direct)
+                  </div>
+                  <div style={{ fontSize: '11.5px', color: '#cbd5e1', marginTop: '2px' }}>
+                    Uses <code style={{ color: '#00e5ff' }}>sdPublisher</code> + <code style={{ color: '#34d399' }}>isBasedOn</code> so every partner embed boosts <strong>atmosvibe.io</strong> SEO &amp; AI citations.
+                  </div>
+                </div>
+                <div style={{ display: 'flex', gap: '6px' }}>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      navigator.clipboard.writeText(deckPartnerEmbed);
+                      setCopiedLicenseEmbed(true);
+                      setTimeout(() => setCopiedLicenseEmbed(false), 2500);
+                    }}
+                    style={{
+                      background: copiedLicenseEmbed ? '#10b981' : 'rgba(0, 229, 255, 0.16)',
+                      border: '1px solid rgba(0, 229, 255, 0.45)',
+                      color: copiedLicenseEmbed ? '#031c11' : '#00e5ff',
+                      borderRadius: '8px',
+                      padding: '6px 10px',
+                      fontSize: '11px',
+                      fontWeight: 900,
+                      cursor: 'pointer'
+                    }}
+                  >
+                    {copiedLicenseEmbed ? '✓ Copied Embed!' : 'Copy Partner Embed'}
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setShowLicensePreview(prev => !prev)}
+                    style={{
+                      background: 'rgba(255,255,255,0.06)',
+                      border: '1px solid rgba(255,255,255,0.2)',
+                      color: '#e2e8f0',
+                      borderRadius: '8px',
+                      padding: '6px 9px',
+                      fontSize: '11px',
+                      fontWeight: 700,
+                      cursor: 'pointer'
+                    }}
+                  >
+                    {showLicensePreview ? 'Hide JSON-LD' : 'JSON-LD'}
+                  </button>
+                </div>
+              </div>
+
+              {showLicensePreview && (
+                <pre style={{
+                  marginTop: '10px',
+                  marginBottom: 0,
+                  maxHeight: '150px',
+                  overflowY: 'auto',
+                  background: 'rgba(2, 6, 14, 0.95)',
+                  border: '1px solid rgba(255,255,255,0.12)',
+                  borderRadius: '8px',
+                  padding: '10px',
+                  fontSize: '10px',
+                  color: '#a7f3d0',
+                  fontFamily: 'monospace',
+                  lineHeight: 1.4
+                }}>
+                  {deckJsonLdPayload}
+                </pre>
+              )}
+            </div>
           </div>
         )}
       </div>
+
+      {/* Live Schema.org JSON-LD (sdPublisher + isBasedOn) */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: deckJsonLdPayload }}
+      />
 
       {/* FULL-SCREEN PHOTO ZOOM LIGHTBOX MODAL */}
       {lightboxItem && (

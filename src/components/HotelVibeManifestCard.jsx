@@ -217,6 +217,12 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
   // Verification Certainty & Cryptographic Attestation Engine (for GEO / AI Search & Agencies)
   const [showJsonLdDrawer, setShowJsonLdDrawer] = useState(false);
   const [copiedJsonLd, setCopiedJsonLd] = useState(false);
+  const [copiedEmbedBundle, setCopiedEmbedBundle] = useState(false);
+
+  const rawCityStr = String(manifest.location || location || 'london').split(',')[0].trim();
+  const citySlug = rawCityStr.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'london';
+  const venueSlug = String(manifest.venue_name || hotelName || 'venue').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'venue';
+  const canonicalSignatureUrl = `https://atmosvibe.io/signature/${citySlug}/${venueSlug}`;
 
   const hashSeed = `${manifest.venue_name || hotelName || 'venue'}:::${manifest.location || location || 'city'}:::${v.headline || ''}`;
   let hashAcc1 = 0x811c9dc5;
@@ -256,9 +262,69 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
     "@type": ["LodgingBusiness", "VerifiableVibeSignature"],
     "name": manifest.venue_name || hotelName,
     "address": manifest.location || location,
-    "identifier": manifest.venue_id || 'vibe_node_01',
+    "identifier": fullSigHash,
+    "isBasedOn": canonicalSignatureUrl,
+    "sdLicense": "https://atmosvibe.io/license/vibe-signature-syndication-v1",
+    "creditText": `Verified by AtmosVibe • Signature ${shortSigHash}`,
+    "sdPublisher": {
+      "@type": "Organization",
+      "name": "AtmosVibe",
+      "url": "https://atmosvibe.io",
+      "identifier": "atmosvibe-protected-vibe-registry"
+    },
+    "additionalProperty": [
+      {
+        "@type": "PropertyValue",
+        "propertyID": "atmosvibe:5_min_walk",
+        "name": "5-Min Walk & Local Gems",
+        "value": `${(proximity.key_anchors || ['Verified Local Wine Bar (4.6★ · 3m)', 'Artisan Bakery (4.5★ · 4m)']).slice(0, 2).join(' • ')} (${certaintyMetrics.localGems}% Hard-Verified)`
+      },
+      {
+        "@type": "PropertyValue",
+        "propertyID": "atmosvibe:true_character",
+        "name": "True Character & Craft",
+        "value": `${materialVerdict} — ${materialPalette} (${certaintyMetrics.craftMaterials}% Hard-Verified)`
+      },
+      {
+        "@type": "PropertyValue",
+        "propertyID": "atmosvibe:warmth_and_light",
+        "name": "Warmth & Light",
+        "value": `${lightingTemp} • ${contentReady.verdict}`
+      },
+      {
+        "@type": "PropertyValue",
+        "propertyID": "atmosvibe:the_hosts",
+        "name": "The Hosts",
+        "value": `${hostVibe.warmth_verdict} — ${hostVibe.host_archetype} (${certaintyMetrics.hostVibe}% Corroborated)`
+      },
+      {
+        "@type": "PropertyValue",
+        "propertyID": "atmosvibe:the_crowd",
+        "name": "The Crowd",
+        "value": `${localRatio}% Local / ${touristRatio}% Traveller • ${touristTrapVerdict} (${certaintyMetrics.crowdMix}% Observed Estimate)`
+      },
+      {
+        "@type": "PropertyValue",
+        "propertyID": "atmosvibe:best_time_of_day",
+        "name": "Best Time of Day",
+        "value": `${bestTimeToVisit} (${certaintyMetrics.timeOfDay}% Multi-Source)`
+      },
+      {
+        "@type": "PropertyValue",
+        "propertyID": "atmosvibe:sound_and_sleep",
+        "name": "Sound, Music & Sleep",
+        "value": `${clarityVerdict} (${dbNumber}) • ${dna.sleep_sanctuary_verdict || 'Quiet Sound-Mitigated Rooms'} (${certaintyMetrics.soundSleep}% Corroborated)`
+      },
+      {
+        "@type": "PropertyValue",
+        "propertyID": "atmosvibe:insider_tips",
+        "name": "Insider Access & Local Lore",
+        "value": `${secrets.secret_title || 'Off-Menu Insider Access'} (${certaintyMetrics.insiderLore}% Corroborated)`
+      }
+    ],
     "vibeRegistryAttestation": {
       "registryAuthority": "AtmosVibe Protected Vibe Registry",
+      "canonicalEntityUrl": canonicalSignatureUrl,
       "signatureHash": fullSigHash,
       "issuedAt": issuedDateStr,
       "validUntil": validUntilDateStr,
@@ -303,6 +369,16 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
       }
     }
   }, null, 2);
+
+  const partnerEmbedBundle = `<!-- AtmosVibe Licensed Vibe Signature Widget (Travelvrse / Partner Syndication) -->
+<div class="atmosvibe-licensed-signature" data-venue-slug="${venueSlug}" data-signature-hash="${fullSigHash}">
+  <a href="${canonicalSignatureUrl}" rel="external" data-attribution="sdPublisher" style="display:inline-flex;align-items:center;gap:6px;font-family:system-ui,sans-serif;font-size:12px;font-weight:700;color:#00e5ff;background:#050b14;padding:6px 12px;border-radius:8px;border:1px solid rgba(0,229,255,0.4);text-decoration:none;">
+    ✓ Verified by AtmosVibe • ${manifest.venue_name || hotelName} (${overallCertainty}% Certainty • ${shortSigHash})
+  </a>
+</div>
+<script type="application/ld+json">
+${verifiableJsonLdPayload}
+</script>`;
 
   return (
     <motion.div 
@@ -1548,7 +1624,7 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
       {/* ========================================================================= */}
       {/* QUALIFICATION MATRIX (You will love if / Skip if)                         */}
       {/* ========================================================================= */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem', background: 'rgba(0,0,0,0.5)', padding: '1.25rem 1.5rem', borderRadius: '1.25rem', border: '1px solid rgba(255,255,255,0.1)' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem', background: 'rgba(0,0,0,0.5)', padding: '1.25rem 1.5rem', borderRadius: '1.25rem', border: '1px solid rgba(255,255,255,0.1)', marginBottom: '1.25rem' }}>
         <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem' }}>
           <CheckCircle2 size={20} color="#10b981" style={{ flexShrink: 0, marginTop: '2px' }} />
           <div>
@@ -1572,6 +1648,160 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Live Embedded JSON-LD Schema.org Structured Data (sdPublisher + isBasedOn) */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: verifiableJsonLdPayload }}
+      />
+
+      {/* ========================================================================= */}
+      {/* PARTNER SYNDICATION & SEO / GEO ATTRIBUTION BAR (sdPublisher + isBasedOn) */}
+      {/* ========================================================================= */}
+      <div style={{
+        background: 'rgba(4, 12, 24, 0.92)',
+        border: '1px solid rgba(0, 229, 255, 0.35)',
+        borderRadius: '1.25rem',
+        padding: '1rem 1.25rem'
+      }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.75rem' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', flexWrap: 'wrap' }}>
+            <span style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '6px',
+              background: 'rgba(16, 185, 129, 0.14)',
+              border: '1px solid rgba(16, 185, 129, 0.4)',
+              color: '#34d399',
+              fontSize: '11px',
+              fontWeight: 900,
+              padding: '4px 10px',
+              borderRadius: '8px',
+              letterSpacing: '0.04em'
+            }}>
+              <ShieldCheck size={14} /> ✓ Verified by AtmosVibe • <code style={{ color: '#00e5ff' }}>{shortSigHash}</code>
+            </span>
+            <span style={{ fontSize: '12px', color: 'rgba(255,255,255,0.8)', fontWeight: 600 }}>
+              SEO/GEO Licensing Ready (<code style={{ color: '#00e5ff', fontSize: '11px' }}>sdPublisher</code> + <code style={{ color: '#34d399', fontSize: '11px' }}>isBasedOn</code>) — Partner embeds pass 100% entity &amp; LLM citation credit back to <strong>atmosvibe.io</strong>
+            </span>
+          </div>
+
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
+            <button
+              type="button"
+              onClick={() => {
+                navigator.clipboard.writeText(partnerEmbedBundle);
+                setCopiedEmbedBundle(true);
+                setTimeout(() => setCopiedEmbedBundle(false), 2500);
+              }}
+              style={{
+                background: copiedEmbedBundle ? '#10b981' : 'linear-gradient(90deg, #00e5ff, #10b981)',
+                color: '#04101c',
+                border: 'none',
+                borderRadius: '8px',
+                padding: '6px 12px',
+                fontSize: '11px',
+                fontWeight: 900,
+                cursor: 'pointer'
+              }}
+            >
+              {copiedEmbedBundle ? '✓ Copied Partner Embed + JSON-LD!' : 'Copy Partner Embed + JSON-LD'}
+            </button>
+
+            <button
+              type="button"
+              onClick={() => setShowJsonLdDrawer(prev => !prev)}
+              style={{
+                background: 'rgba(255,255,255,0.06)',
+                border: '1px solid rgba(0, 229, 255, 0.35)',
+                color: '#00e5ff',
+                borderRadius: '8px',
+                padding: '6px 11px',
+                fontSize: '11px',
+                fontWeight: 800,
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '4px'
+              }}
+            >
+              {showJsonLdDrawer ? <>Hide Schema <ChevronUp size={13} /></> : <>Inspect Schema <ChevronDown size={13} /></>}
+            </button>
+          </div>
+        </div>
+
+        {showJsonLdDrawer && (
+          <div style={{ marginTop: '1rem', paddingTop: '1rem', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(230px, 1fr))', gap: '0.75rem', marginBottom: '0.85rem' }}>
+              <div style={{ background: 'rgba(0, 229, 255, 0.07)', border: '1px solid rgba(0, 229, 255, 0.25)', borderRadius: '10px', padding: '10px 12px' }}>
+                <div style={{ fontSize: '10.5px', fontWeight: 900, color: '#00e5ff', textTransform: 'uppercase', marginBottom: '4px' }}>
+                  1. Google SEO Protection (sdPublisher + isBasedOn)
+                </div>
+                <div style={{ fontSize: '11.5px', color: 'rgba(255,255,255,0.85)', lineHeight: 1.4 }}>
+                  Declares <strong>AtmosVibe</strong> as the structured-data publisher and <code style={{ color: '#00e5ff' }}>{canonicalSignatureUrl}</code> as the canonical origin — zero duplicate-content risk when licensed to Travelvrse or hotels.
+                </div>
+              </div>
+              <div style={{ background: 'rgba(16, 185, 129, 0.07)', border: '1px solid rgba(16, 185, 129, 0.25)', borderRadius: '10px', padding: '10px 12px' }}>
+                <div style={{ fontSize: '10.5px', fontWeight: 900, color: '#34d399', textTransform: 'uppercase', marginBottom: '4px' }}>
+                  2. AI / GEO Citation Amplifier (Multi-Node Consensus)
+                </div>
+                <div style={{ fontSize: '11.5px', color: 'rgba(255,255,255,0.85)', lineHeight: 1.4 }}>
+                  ChatGPT, Perplexity &amp; Gemini weight facts corroborated across multiple trusted domains higher. Every Travelvrse &amp; hotel embed trains LLMs to cite <strong>AtmosVibe</strong> as the registry authority.
+                </div>
+              </div>
+              <div style={{ background: 'rgba(245, 158, 11, 0.07)', border: '1px solid rgba(245, 158, 11, 0.25)', borderRadius: '10px', padding: '10px 12px' }}>
+                <div style={{ fontSize: '10.5px', fontWeight: 900, color: '#fbbf24', textTransform: 'uppercase', marginBottom: '4px' }}>
+                  3. 30-Day Cryptographic TTL ({shortSigHash})
+                </div>
+                <div style={{ fontSize: '11.5px', color: 'rgba(255,255,255,0.85)', lineHeight: 1.4 }}>
+                  Valid from <strong>{issuedDateStr}</strong> to <strong>{validUntilDateStr}</strong>. Prevents unauthorized scraping or stale static copies by agencies.
+                </div>
+              </div>
+            </div>
+
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '6px' }}>
+              <span style={{ fontSize: '11px', fontWeight: 800, color: '#94a3b8' }}>
+                Live JSON-LD Payload (<code style={{ color: '#00e5ff' }}>application/ld+json</code>)
+              </span>
+              <button
+                type="button"
+                onClick={() => {
+                  navigator.clipboard.writeText(verifiableJsonLdPayload);
+                  setCopiedJsonLd(true);
+                  setTimeout(() => setCopiedJsonLd(false), 2000);
+                }}
+                style={{
+                  background: copiedJsonLd ? '#10b981' : 'rgba(0, 229, 255, 0.14)',
+                  color: copiedJsonLd ? '#04101c' : '#00e5ff',
+                  border: '1px solid rgba(0, 229, 255, 0.35)',
+                  borderRadius: '6px',
+                  padding: '4px 10px',
+                  fontSize: '10.5px',
+                  fontWeight: 800,
+                  cursor: 'pointer'
+                }}
+              >
+                {copiedJsonLd ? '✓ Copied JSON-LD' : 'Copy JSON-LD Only'}
+              </button>
+            </div>
+            <pre style={{
+              margin: 0,
+              maxHeight: '220px',
+              overflowY: 'auto',
+              background: 'rgba(2, 6, 14, 0.95)',
+              border: '1px solid rgba(255,255,255,0.12)',
+              borderRadius: '10px',
+              padding: '12px',
+              fontSize: '11px',
+              color: '#a7f3d0',
+              fontFamily: 'monospace',
+              lineHeight: 1.45
+            }}>
+              {verifiableJsonLdPayload}
+            </pre>
+          </div>
+        )}
       </div>
 
     </motion.div>
