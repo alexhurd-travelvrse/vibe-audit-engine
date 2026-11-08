@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import { Zap, Music, Users, Sparkles, CheckCircle2, AlertTriangle, Disc, MapPin, Compass, Volume2, ShieldCheck, Sun, Clock, Eye, ChevronLeft, ChevronRight, ChevronDown, ChevronUp, Key, Flame, Briefcase, Coffee, Camera, Laptop, Moon } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { resolveVibeSignatureSpotify, fetchLiveSpotifyPlaylistForVibe } from '../services/spotifyVibeResolver';
+import { computeAtmosVibeMathProfile } from '../services/vibeMathEngine';
 
 export default function HotelVibeManifestCard({ manifest, hotelName, location }) {
   const scrollContainerRef = useRef(null);
@@ -216,8 +217,14 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
 
   // Verification Certainty & Cryptographic Attestation Engine (for GEO / AI Search & Agencies)
   const [showJsonLdDrawer, setShowJsonLdDrawer] = useState(false);
+  const [showMathDrawer, setShowMathDrawer] = useState(false);
   const [copiedJsonLd, setCopiedJsonLd] = useState(false);
   const [copiedEmbedBundle, setCopiedEmbedBundle] = useState(false);
+
+  const mathProfile = computeAtmosVibeMathProfile({
+    venueName: manifest.venue_name || hotelName,
+    manifest
+  });
 
   const rawCityStr = String(manifest.location || location || 'london').split(',')[0].trim();
   const citySlug = rawCityStr.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'london';
@@ -263,14 +270,33 @@ export default function HotelVibeManifestCard({ manifest, hotelName, location })
     "name": manifest.venue_name || hotelName,
     "address": manifest.location || location,
     "identifier": fullSigHash,
-    "isBasedOn": canonicalSignatureUrl,
+    "isBasedOn": [
+      canonicalSignatureUrl,
+      "https://atmosvibe.io/#dataset"
+    ],
+    "sameAs": [
+      canonicalSignatureUrl,
+      mathProfile.travelvrseTrojanHorse.canonicalUrl,
+      mathProfile.travelvrseTrojanHorse.shortUrl
+    ],
     "sdLicense": "https://atmosvibe.io/license/vibe-signature-syndication-v1",
     "creditText": `Verified by AtmosVibe • Signature ${shortSigHash}`,
     "sdPublisher": {
       "@type": "Organization",
+      "@id": "https://atmosvibe.io/#organization",
       "name": "AtmosVibe",
       "url": "https://atmosvibe.io",
       "identifier": "atmosvibe-protected-vibe-registry"
+    },
+    "measurementTechnique": mathProfile.formulaPlain,
+    "mathematicalVerification": {
+      "compositeGeoScore": mathProfile.compositeGeoScore,
+      "formula": mathProfile.formulaPlain,
+      "atmosphericResonanceIndex_A_dna": mathProfile.atmosphericResonanceScore,
+      "localGemProximityGravity_G_prox": mathProfile.localGemProximityScore,
+      "proximityDecayFormula": mathProfile.proximityFormulaPlain,
+      "vibeTriangulation_V_tri": `${mathProfile.triangulation.rawTriangulation120}/120 (${mathProfile.triangulation.normalizedTriangulation100}/100)`,
+      "travelvrseSpatialTelemetryBoost": `+${mathProfile.travelvrseTrojanHorse.telemetryBoost} pts (${mathProfile.travelvrseTrojanHorse.telemetrySessions} 3D sessions at ${mathProfile.travelvrseTrojanHorse.shortUrl})`
     },
     "additionalProperty": [
       {
@@ -1690,6 +1716,26 @@ ${verifiableJsonLdPayload}
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
             <button
               type="button"
+              onClick={() => setShowMathDrawer(prev => !prev)}
+              style={{
+                background: showMathDrawer ? 'rgba(255, 215, 0, 0.2)' : 'rgba(255, 215, 0, 0.1)',
+                border: '1px solid rgba(255, 215, 0, 0.45)',
+                color: '#ffd700',
+                borderRadius: '8px',
+                padding: '6px 11px',
+                fontSize: '11px',
+                fontWeight: 900,
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '4px'
+              }}
+            >
+              📐 Math &amp; Travelvrse Proof ({mathProfile.compositeGeoScore}/100) {showMathDrawer ? <ChevronUp size={13} /> : <ChevronDown size={13} />}
+            </button>
+
+            <button
+              type="button"
               onClick={() => {
                 navigator.clipboard.writeText(partnerEmbedBundle);
                 setCopiedEmbedBundle(true);
@@ -1730,6 +1776,88 @@ ${verifiableJsonLdPayload}
             </button>
           </div>
         </div>
+
+        {showMathDrawer && (
+          <div style={{ marginTop: '1rem', paddingTop: '1rem', borderTop: '1px solid rgba(255, 215, 0, 0.25)' }}>
+            {/* Top Formula Banner */}
+            <div style={{
+              background: 'rgba(2, 8, 18, 0.95)',
+              border: '1px solid rgba(255, 215, 0, 0.35)',
+              borderRadius: '10px',
+              padding: '10px 14px',
+              marginBottom: '0.85rem',
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              flexWrap: 'wrap',
+              gap: '8px'
+            }}>
+              <div>
+                <div style={{ fontSize: '10px', fontWeight: 900, color: '#ffd700', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+                  4-Part Mathematical Verification Equation (AtmosVibe × TravelVRSE)
+                </div>
+                <code style={{ fontSize: '11.5px', color: '#00e5ff', fontWeight: 700 }}>
+                  GEO_score ({mathProfile.compositeGeoScore}) = 0.40·A_dna ({mathProfile.atmosphericResonanceScore}) + 0.35·G_prox ({mathProfile.localGemProximityScore}) + 0.25·V_tri ({mathProfile.triangulation.normalizedTriangulation100}) + Δ_telemetry (+{mathProfile.travelvrseTrojanHorse.telemetryBoost})
+                </code>
+              </div>
+              <a
+                href={mathProfile.travelvrseTrojanHorse.shortUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  background: 'linear-gradient(90deg, #ffd700, #f59e0b)',
+                  color: '#050b14',
+                  fontSize: '11px',
+                  fontWeight: 900,
+                  padding: '6px 12px',
+                  borderRadius: '8px',
+                  textDecoration: 'none'
+                }}
+              >
+                Open Live 3D Challenge on TravelVRSE ↗
+              </a>
+            </div>
+
+            {/* 4 Pillars Grid */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '0.75rem' }}>
+              <div style={{ background: 'rgba(0, 229, 255, 0.06)', border: '1px solid rgba(0, 229, 255, 0.25)', borderRadius: '10px', padding: '10px 12px' }}>
+                <div style={{ fontSize: '10.5px', fontWeight: 900, color: '#00e5ff', marginBottom: '4px' }}>
+                  1. Atmospheric Resonance (A_dna = {mathProfile.atmosphericResonanceScore}/100)
+                </div>
+                <div style={{ fontSize: '11px', color: 'rgba(255,255,255,0.82)', lineHeight: 1.4 }}>
+                  <code>0.25·Clarity({mathProfile.dnaBreakdown.cClarity}) + 0.20·Sleep({mathProfile.dnaBreakdown.sSanctuary}) + 0.25·Craft({mathProfile.dnaBreakdown.mAuth}) + 0.15·Local({mathProfile.dnaBreakdown.lRatio}) + 0.15·Diurnal({mathProfile.dnaBreakdown.dPeak})</code>
+                </div>
+              </div>
+
+              <div style={{ background: 'rgba(16, 185, 129, 0.06)', border: '1px solid rgba(16, 185, 129, 0.25)', borderRadius: '10px', padding: '10px 12px' }}>
+                <div style={{ fontSize: '10.5px', fontWeight: 900, color: '#34d399', marginBottom: '4px' }}>
+                  2. Local Gem Gravity (G_prox = {mathProfile.localGemProximityScore}/100)
+                </div>
+                <div style={{ fontSize: '11px', color: 'rgba(255,255,255,0.82)', lineHeight: 1.4 }}>
+                  Distance-decay <code>e^(-0.35·d)</code> to ≥4.4★ spots: {mathProfile.evaluatedGems.slice(0, 2).map(g => `${g.name} (${g.googleRating}★, d=${g.distanceKm}km, decay=${g.decayFactor})`).join(' • ')}
+                </div>
+              </div>
+
+              <div style={{ background: 'rgba(192, 132, 252, 0.06)', border: '1px solid rgba(192, 132, 252, 0.25)', borderRadius: '10px', padding: '10px 12px' }}>
+                <div style={{ fontSize: '10.5px', fontWeight: 900, color: '#c084fc', marginBottom: '4px' }}>
+                  3. 120-Pt Triangulation (V_tri = {mathProfile.triangulation.rawTriangulation120}/120)
+                </div>
+                <div style={{ fontSize: '11px', color: 'rgba(255,255,255,0.82)', lineHeight: 1.4 }}>
+                  Places Signal: <strong>{mathProfile.triangulation.placesSignal}/35</strong> + Creator Velocity: <strong>{mathProfile.triangulation.socialSignal}/65</strong> + Editorial Consensus: <strong>{mathProfile.triangulation.authoritySignal}/20</strong>
+                </div>
+              </div>
+
+              <div style={{ background: 'rgba(255, 215, 0, 0.07)', border: '1px solid rgba(255, 215, 0, 0.3)', borderRadius: '10px', padding: '10px 12px' }}>
+                <div style={{ fontSize: '10.5px', fontWeight: 900, color: '#ffd700', marginBottom: '4px' }}>
+                  4. TravelVRSE 3D Telemetry (Δ = +{mathProfile.travelvrseTrojanHorse.telemetryBoost} pts)
+                </div>
+                <div style={{ fontSize: '11px', color: 'rgba(255,255,255,0.85)', lineHeight: 1.4 }}>
+                  <strong>{mathProfile.travelvrseTrojanHorse.telemetrySessions}</strong> spatial challenge sessions • Top ranked: <em>{mathProfile.travelvrseTrojanHorse.topRanked3dSpace}</em>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
 
         {showJsonLdDrawer && (
           <div style={{ marginTop: '1rem', paddingTop: '1rem', borderTop: '1px solid rgba(255,255,255,0.1)' }}>

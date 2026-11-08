@@ -19,6 +19,7 @@ import {
   ChevronUp,
   Anchor
 } from 'lucide-react';
+import { computeAtmosVibeMathProfile } from '../services/vibeMathEngine';
 
 // ============================================================================
 // 100% HARDCODED MOBILE DECK DATASETS
@@ -607,6 +608,7 @@ export default function WtmMobileDeckPage({ defaultDemo }) {
   const SIGNALS = deck.SIGNALS;
   const livePhotos = deck.LIVE_PHOTOS;
   const optimalPhotos = deck.OPTIMAL_PHOTOS;
+  const deckMath = computeAtmosVibeMathProfile({ venueName: deck.propertyTitle });
 
   const canonicalDeckUrl = `https://atmosvibe.io/signature/${activeDeckKey === 'tui-zora' ? 'rhine-moselle/tui-zora' : 'london/sea-containers-london'}`;
   const primarySigHash = SIGNALS[0]?.hash || '0x8f4e29a1...e871b0';
@@ -617,14 +619,31 @@ export default function WtmMobileDeckPage({ defaultDemo }) {
     "name": deck.propertyTitle,
     "description": deck.vibeSubhead,
     "identifier": primarySigHash,
-    "isBasedOn": canonicalDeckUrl,
+    "isBasedOn": [
+      canonicalDeckUrl,
+      "https://atmosvibe.io/#dataset"
+    ],
+    "sameAs": [
+      canonicalDeckUrl,
+      deckMath.travelvrseTrojanHorse.canonicalUrl,
+      deckMath.travelvrseTrojanHorse.shortUrl
+    ],
     "sdLicense": "https://atmosvibe.io/license/vibe-signature-syndication-v1",
     "creditText": `Verified by AtmosVibe • Signature ${primarySigHash}`,
     "sdPublisher": {
       "@type": "Organization",
+      "@id": "https://atmosvibe.io/#organization",
       "name": "AtmosVibe",
       "url": "https://atmosvibe.io",
       "identifier": "atmosvibe-protected-vibe-registry"
+    },
+    "measurementTechnique": deckMath.formulaPlain,
+    "mathematicalVerification": {
+      "compositeGeoScore": deckMath.compositeGeoScore,
+      "atmosphericResonanceIndex_A_dna": deckMath.atmosphericResonanceScore,
+      "localGemProximityGravity_G_prox": deckMath.localGemProximityScore,
+      "vibeTriangulation_V_tri": `${deckMath.triangulation.rawTriangulation120}/120`,
+      "travelvrseTelemetryBoost": `+${deckMath.travelvrseTrojanHorse.telemetryBoost} pts (${deckMath.travelvrseTrojanHorse.telemetrySessions} 3D sessions)`
     },
     "additionalProperty": SIGNALS.map((s) => ({
       "@type": "PropertyValue",
@@ -1024,7 +1043,10 @@ ${deckJsonLdPayload}
                           <div style={{ fontSize: '11px', color: '#94a3b8', lineHeight: 1.35 }}>
                             <strong style={{ color: '#cbd5e1' }}>Method:</strong> {sig.method}
                           </div>
-                          <div style={{ fontSize: '10.5px', color: '#00e5ff', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '5px', marginTop: '2px' }}>
+                          <div style={{ fontSize: '10.5px', color: '#ffd700', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '5px', marginTop: '2px', lineHeight: 1.4 }}>
+                            <strong>📐 Math Proof:</strong> <code>GEO ({deckMath.compositeGeoScore}) = 0.40·A_dna({deckMath.atmosphericResonanceScore}) + 0.35·G_prox({deckMath.localGemProximityScore}, e^-0.35d) + 0.25·V_tri({deckMath.triangulation.normalizedTriangulation100}) + Δ_3D(+{deckMath.travelvrseTrojanHorse.telemetryBoost})</code>
+                          </div>
+                          <div style={{ fontSize: '10.5px', color: '#00e5ff' }}>
                             <strong>SEO/GEO License:</strong> <code>sdPublisher: AtmosVibe</code> • <code>isBasedOn: atmosvibe.io</code>
                           </div>
                         </div>
@@ -1614,21 +1636,50 @@ ${deckJsonLdPayload}
               </button>
             </div>
 
-            {/* Partner Licensing & SEO / GEO Schema (sdPublisher + isBasedOn) */}
+            {/* Partner Licensing, Mathematical Proof & TravelVRSE 3D Telemetry */}
             <div style={{
               background: 'rgba(6, 14, 28, 0.94)',
-              border: '1px solid rgba(16, 185, 129, 0.4)',
+              border: '1px solid rgba(255, 215, 0, 0.4)',
               borderRadius: '14px',
-              padding: '12px 14px'
+              padding: '12px 14px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '8px'
             }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
-                <div>
-                  <div style={{ fontSize: '10.5px', fontWeight: 900, color: '#34d399', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
-                    ✓ Partner Licensing Ready (Travelvrse • OTAs • Direct)
-                  </div>
-                  <div style={{ fontSize: '11.5px', color: '#cbd5e1', marginTop: '2px' }}>
-                    Uses <code style={{ color: '#00e5ff' }}>sdPublisher</code> + <code style={{ color: '#34d399' }}>isBasedOn</code> so every partner embed boosts <strong>atmosvibe.io</strong> SEO &amp; AI citations.
-                  </div>
+                <div style={{ fontSize: '10.5px', fontWeight: 900, color: '#ffd700', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+                  📐 4-Part Mathematical Proof (GEO = {deckMath.compositeGeoScore}/100)
+                </div>
+                <a
+                  href={deckMath.travelvrseTrojanHorse.shortUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    background: 'rgba(255, 215, 0, 0.16)',
+                    border: '1px solid rgba(255, 215, 0, 0.45)',
+                    color: '#ffd700',
+                    borderRadius: '6px',
+                    padding: '4px 8px',
+                    fontSize: '10.5px',
+                    fontWeight: 900,
+                    textDecoration: 'none'
+                  }}
+                >
+                  Live 3D Lab on TravelVRSE ↗
+                </a>
+              </div>
+
+              <div style={{ fontSize: '11px', color: '#e2e8f0', fontFamily: 'monospace', background: 'rgba(2, 6, 14, 0.85)', padding: '7px 9px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.1)' }}>
+                0.40·A_dna({deckMath.atmosphericResonanceScore}) + 0.35·G_prox({deckMath.localGemProximityScore}, e^-0.35d) + 0.25·V_tri({deckMath.triangulation.normalizedTriangulation100}) + Δ_3D(+{deckMath.travelvrseTrojanHorse.telemetryBoost})
+              </div>
+
+              <div style={{ fontSize: '11px', color: '#a7f3d0', lineHeight: 1.35 }}>
+                <strong>TravelVRSE Telemetry ({deckMath.travelvrseTrojanHorse.telemetrySessions} 3D sessions):</strong> {deckMath.travelvrseTrojanHorse.topRanked3dSpace}
+              </div>
+
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '8px', flexWrap: 'wrap', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '8px' }}>
+                <div style={{ fontSize: '11px', color: '#cbd5e1' }}>
+                  <code style={{ color: '#00e5ff' }}>sdPublisher</code> + <code style={{ color: '#34d399' }}>isBasedOn</code> Licensing Ready
                 </div>
                 <div style={{ display: 'flex', gap: '6px' }}>
                   <button
@@ -1643,13 +1694,13 @@ ${deckJsonLdPayload}
                       border: '1px solid rgba(0, 229, 255, 0.45)',
                       color: copiedLicenseEmbed ? '#031c11' : '#00e5ff',
                       borderRadius: '8px',
-                      padding: '6px 10px',
-                      fontSize: '11px',
+                      padding: '5px 10px',
+                      fontSize: '10.5px',
                       fontWeight: 900,
                       cursor: 'pointer'
                     }}
                   >
-                    {copiedLicenseEmbed ? '✓ Copied Embed!' : 'Copy Partner Embed'}
+                    {copiedLicenseEmbed ? '✓ Copied!' : 'Copy Partner Embed'}
                   </button>
                   <button
                     type="button"
@@ -1659,8 +1710,8 @@ ${deckJsonLdPayload}
                       border: '1px solid rgba(255,255,255,0.2)',
                       color: '#e2e8f0',
                       borderRadius: '8px',
-                      padding: '6px 9px',
-                      fontSize: '11px',
+                      padding: '5px 9px',
+                      fontSize: '10.5px',
                       fontWeight: 700,
                       cursor: 'pointer'
                     }}
@@ -1672,7 +1723,7 @@ ${deckJsonLdPayload}
 
               {showLicensePreview && (
                 <pre style={{
-                  marginTop: '10px',
+                  marginTop: '4px',
                   marginBottom: 0,
                   maxHeight: '150px',
                   overflowY: 'auto',
