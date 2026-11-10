@@ -692,25 +692,6 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                   <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap' }}>
                     <button
                       type="button"
-                      onClick={() => launchCannedDemo('tui-zora')}
-                      style={{
-                        padding: '6px 11px',
-                        borderRadius: '999px',
-                        border: '1px solid rgba(0, 229, 255, 0.45)',
-                        background: 'rgba(0, 229, 255, 0.14)',
-                        color: '#ffffff',
-                        fontSize: '11.5px',
-                        fontWeight: 800,
-                        cursor: 'pointer',
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        gap: '5px'
-                      }}
-                    >
-                      <span>🚢 TUI Zora Demo</span>
-                    </button>
-                    <button
-                      type="button"
                       onClick={() => launchCannedDemo('sea-containers-london')}
                       style={{
                         padding: '6px 11px',
@@ -726,7 +707,7 @@ const B2BLeadGenOnboarding = ({ initialStep = 'input' }) => {
                         gap: '5px'
                       }}
                     >
-                      <span>🏨 Sea Containers</span>
+                      <span>🏨 Sea Containers Demo</span>
                     </button>
                   </div>
                 </div>

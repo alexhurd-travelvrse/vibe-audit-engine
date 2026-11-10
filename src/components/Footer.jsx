@@ -53,6 +53,10 @@ const Footer = () => {
                 <div className="footer-bottom">
                     <p className="copyright">&copy; {new Date().getFullYear()} AtmosVibe. All rights reserved</p>
                     <div className="footer-links">
+                        <a href="https://atmosvibe.substack.com" target="_blank" rel="noopener noreferrer" className="footer-link">Substack</a>
+                        <span className="footer-divider" aria-hidden="true">|</span>
+                        <a href="https://www.linkedin.com/company/atmosvibe" target="_blank" rel="noopener noreferrer" className="footer-link">LinkedIn</a>
+                        <span className="footer-divider" aria-hidden="true">|</span>
                         <Link to="/privacy" className="footer-link">Privacy Policy</Link>
                         <span className="footer-divider" aria-hidden="true">|</span>
                         <Link to="/terms" className="footer-link">Terms &amp; Conditions</Link>

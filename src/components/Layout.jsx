@@ -35,10 +35,11 @@ const Layout = ({ children }) => {
                             <span className="nav-link-text">VIBE API</span>
                             <span className="nav-coming-soon" style={{ background: 'rgba(0, 229, 255, 0.14)', borderColor: 'rgba(0, 229, 255, 0.45)', color: '#00e5ff' }}>Live Demo</span>
                         </Link>
-                        <span className="nav-link nav-link-with-badge" style={{ cursor: 'default' }}>
+                        <Link to="/vibe-insights" className="nav-link nav-link-with-badge" onClick={() => setIsMenuOpen(false)} style={{ textDecoration: 'none' }}>
                             <span className="nav-link-text">VIBE INSIGHTS</span>
-                            <span className="nav-coming-soon">Coming Soon</span>
-                        </span>
+                            <span className="nav-coming-soon" style={{ background: 'rgba(245, 158, 11, 0.16)', borderColor: 'rgba(245, 158, 11, 0.5)', color: '#fbbf24' }}>New Study</span>
+                        </Link>
+                        <a href="/#team" className="nav-link" onClick={() => setIsMenuOpen(false)}>OUR TEAM</a>
                     </nav>
                 </div>
             </header>

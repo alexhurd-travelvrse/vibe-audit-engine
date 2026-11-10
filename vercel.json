@@ -19,6 +19,9 @@
   ],
   "rewrites": [
     { "source": "/api/(.*)", "destination": "/api/$1" },
+    { "source": "/vibe-insights", "destination": "/vibe-insights/index.html" },
+    { "source": "/vibe-insights/london-boutique-ota-gap", "destination": "/vibe-insights/london-boutique-ota-gap/index.html" },
+    { "source": "/research/london-boutique-ota-gap", "destination": "/vibe-insights/london-boutique-ota-gap/index.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ],
   "headers": [

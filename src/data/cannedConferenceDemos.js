@@ -854,29 +854,4 @@ export const CANNED_CONFERENCE_DEMOS = {
   }
 };
 
-export const MEETING_LIVE_LINKS = [
-  {
-    slug: 'tui-zora-deck',
-    label: '🚢 TUI Zora (River Cruise Deck)',
-    location: 'TUI Meeting Demo',
-    href: '/tui-zora'
-  },
-  {
-    slug: 'tui-zora-dossier',
-    label: '🚢 TUI Zora (Full Dossier)',
-    location: 'Rhine & Moselle',
-    href: '/audit?demo=tui-zora'
-  },
-  {
-    slug: 'sea-containers-wtm-deck',
-    label: '📱 Sea Containers (Mobile Deck)',
-    location: 'WTM 4-Slide Story',
-    href: '/wtm'
-  },
-  {
-    slug: 'skol-apartments-marbella',
-    label: 'Skol Apartments Marbella',
-    location: 'Marbella Beachfront',
-    href: '/audit?demo=skol-apartments-marbella'
-  }
-];
+export const MEETING_LIVE_LINKS = [];

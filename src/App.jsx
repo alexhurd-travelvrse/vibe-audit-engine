@@ -6,6 +6,8 @@ import Layout from './components/Layout';
 import Hero from './components/Hero';
 import VibeDimensionsSection from './components/VibeDimensionsSection';
 import HookTeaserSection from './components/HookTeaserSection';
+import BlogJournal from './components/BlogJournal';
+import TeamSection from './components/TeamSection';
 import Footer from './components/Footer';
 import BarcelonaPage from './pages/BarcelonaPage';
 import PartnerPage from './pages/PartnerPage';
@@ -13,6 +15,8 @@ import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import TermsPage from './pages/TermsPage';
 import VibeApiDemoPage from './pages/VibeApiDemoPage';
 import WtmMobileDeckPage from './pages/WtmMobileDeckPage';
+import VibeInsightsPage from './pages/VibeInsightsPage';
+import VibeInsightsDirectoryPage from './pages/VibeInsightsDirectoryPage';
 import B2BLeadGenOnboarding from './B2BLeadGenOnboarding';
 import './B2BLeadGenOnboarding.css';
 
@@ -180,12 +184,32 @@ const B2BHome = () => {
 
       {/* 3. The 2-Step Conversion Engine: OTA Photos + Multi-Channel */}
       <HookTeaserSection />
+
+      {/* 4. Research & Substack Journal */}
+      <BlogJournal />
+
+      {/* 5. Team Section */}
+      <TeamSection />
       
-      {/* 4. Footer */}
+      {/* 6. Footer */}
       <Footer />
     </Layout>
   );
 };
+
+const VibeInsightsDirectoryRoutePage = () => (
+  <Layout>
+    <VibeInsightsDirectoryPage />
+    <Footer />
+  </Layout>
+);
+
+const VibeInsightsRoutePage = () => (
+  <Layout>
+    <VibeInsightsPage />
+    <Footer />
+  </Layout>
+);
 
 const App = () => {
   return (
@@ -195,6 +219,9 @@ const App = () => {
         <OwnerModeBanner />
         <Routes>
           <Route path="/" element={<B2BHome />} />
+          <Route path="/vibe-insights" element={<VibeInsightsDirectoryRoutePage />} />
+          <Route path="/vibe-insights/:slug" element={<VibeInsightsRoutePage />} />
+          <Route path="/research/:slug" element={<VibeInsightsRoutePage />} />
           <Route path="/ignore-me" element={<IgnoreAnalyticsPage />} />
           <Route path="/notrack" element={<IgnoreAnalyticsPage />} />
           <Route path="/audit" element={<B2BLeadGenOnboarding initialStep="input" />} />
