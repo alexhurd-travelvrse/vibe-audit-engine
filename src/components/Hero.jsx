@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import './Hero.css';
@@ -9,7 +9,7 @@ const Hero = () => {
         <section className="hero-section">
             <Helmet>
                 <title>Turn Your Vibe &amp; Experiences into Bookings | AtmosVibe</title>
-                <meta name="description" content="Turn Your Vibe &amp; Experiences into Bookings. Match travellers' dreams about your destination with your verified reality" />
+                <meta name="description" content="Turn Your Vibe &amp; Experiences into Bookings. Audit how you showcase your vibe and act as the gateway to your local destination across OTAs, web, and social—verified for AI search." />
             </Helmet>
 
             <div className="hero-bg-container">
@@ -39,7 +39,7 @@ const Hero = () => {
                     </h1>
 
                     <p className="hero-subheadline">
-                        Match travellers' dreams about your destination with your verified reality
+                        Audit how you showcase your vibe and act as the gateway to your local destination across OTAs, web, and social—verified for AI search
                     </p>
                 </div>
 
@@ -49,17 +49,6 @@ const Hero = () => {
                         <span>Run My Free Vibe Snapshot</span>
                         <ArrowRight size={18} />
                     </Link>
-
-                    {/* 1-Tap Instant Live Demo (Zero Latency, No Email Gate) */}
-                    <div className="hero-instant-demo-bar">
-                        <div className="hero-demo-pills">
-                            <Link to="/audit?demo=sea-containers-london" className="hero-demo-pill hero-demo-pill-bcn" title="Open Instant Live Demo">
-                                <Sparkles size={13} style={{ color: '#ffd700', flexShrink: 0 }} />
-                                <span>Instant Live Demo</span>
-                                <ArrowRight size={13} />
-                            </Link>
-                        </div>
-                    </div>
                 </div>
             </div>
 
