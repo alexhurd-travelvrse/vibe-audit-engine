@@ -430,7 +430,7 @@ const option2Html = `<!DOCTYPE html>
     <div class="content">
       <div class="badge">VIBE SIGNATURES • HOTELS, CRUISES &amp; TOURS</div>
       <h1>TURN YOUR VIBE &amp; EXPERIENCES<br/><span>INTO BOOKINGS</span></h1>
-      <div class="sub" style="margin-bottom: 0;">Audit how you showcase your vibe and act as the gateway to your local destination across OTAs, web, and social—verified for AI search</div>
+      <div class="sub" style="margin-bottom: 0;">Showcase your vibe and connection to your local destination across OTAs, web, and social—verified for AI search</div>
     </div>
     <div class="bottom-bar"></div>
   </div>
