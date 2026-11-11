@@ -1,0 +1,301 @@
+{
+  "key": "kwandwe ecca lodge:::makhanda:::great fish river valley::::::manifest_only",
+  "timestamp": 1794335159952,
+  "data": {
+    "venue_id": "kwandwe_ecca_lodge",
+    "venue_name": "Kwandwe Ecca Lodge",
+    "location": "Great Fish River Valley, Makhanda",
+    "vibe_signature": {
+      "energy_score": 78,
+      "social_pacing": "Relaxed Safari & Family Friendly",
+      "headline": "Playful Safari Design & Warm Family Sanctuary in the Eastern Cape Thicket",
+      "acoustic_dna": {
+        "soundscape_genre": "African Bushveld & Ambient Lodge",
+        "anchor_artists": [
+          "Nature's Own Soundtrack",
+          "Gentle African Rhythms",
+          "Crackling Campfire Melodies"
+        ],
+        "spotify_query": "African safari lodge ambient sounds",
+        "sound_texture": "Natural bush sounds, distant animal calls, gentle human chatter",
+        "conversation_clarity_score": 92,
+        "conversation_verdict": "Easy Safari Banter & Relaxed Family Chats",
+        "decibel_level": "58 dB (Relaxed & Conversational)",
+        "sleep_sanctuary_verdict": "Quiet Soundproofed Suites & Deep Bushveld Rest"
+      },
+      "crowd_archetype": {
+        "primary": "Family Adventurers & Nature Enthusiasts",
+        "social_density": "Intimate & Spacious",
+        "dress_code": "Smart Casual Safari Chic",
+        "energy_verdict": "Warm Family Atmosphere & Peaceful Bush Escape",
+        "local_ratio": 45,
+        "tourist_ratio": 55,
+        "tourist_trap_verdict": "Authentic Safari Experience — Not a Tourist Trap",
+        "trip_occasions": [
+          "Family Safari Adventure",
+          "Nature & Wildlife Escape",
+          "Relaxing Bush Retreat"
+        ]
+      },
+      "lighting_and_sensory": {
+        "atmosphere": "Contemporary Safari & Natural Warmth",
+        "sensory_intensity": "Subtle & Immersive",
+        "lighting_temperature": "Golden Hour Sunlight, Warm Lantern Glow & Fireside Ambiance"
+      },
+      "hyper_local_proximity": {
+        "key_anchors": [
+          "Kwandwe Private Game Reserve (5.0★ · 0 min walk)",
+          "Kwandwe Great Fish River Lodge (5.0★ · 0 min walk)",
+          "Kwandwe Melton Manor (5.0★ · 0 min walk)"
+        ],
+        "insider_lore": "Ecca Lodge is nestled within the Kwandwe Private Game Reserve, offering immediate access to unparalleled wildlife viewing and a true immersion in the Eastern Cape bushveld. The entire reserve acts as your backyard."
+      },
+      "qualification_test": {
+        "you_will_love_if": "You seek a contemporary, family-friendly safari lodge with exceptional game viewing, playful design, and a warm, welcoming atmosphere.",
+        "skip_if": "You prefer a highly formal, adults-only safari experience or are looking for urban nightlife."
+      },
+      "ai_search_geo": {
+        "traveler_prompts": [
+          "Best family safari lodge Eastern Cape South Africa with modern design",
+          "Luxury game reserve accommodation near Makhanda with excellent wildlife",
+          "Safari lodge with kids activities and private game drives in Great Fish River Valley"
+        ],
+        "verified_entity_summary": "Kwandwe Ecca Lodge offers a playful, contemporary safari experience within the Kwandwe Private Game Reserve, providing quiet, soundproofed suites for deep rest and immediate access to exceptional wildlife viewing. It's an ideal choice for families and nature enthusiasts seeking an authentic bushveld escape."
+      },
+      "authenticity_and_materials": {
+        "authenticity_score": 92,
+        "material_palette": "Natural wood, textured fabrics, local stone, contemporary African art",
+        "material_verdict": "Authentic Safari Design — Blending Modernity with Nature"
+      },
+      "host_vibe": {
+        "host_archetype": "Knowledgeable Guides & Warm Safari Hosts",
+        "host_style_score": 88,
+        "service_pacing": "Attentive, Personalized & Unhurried",
+        "signature_team_roles": [
+          "Expert Game Ranger",
+          "Dedicated Tracker",
+          "Lodge Host"
+        ],
+        "staff_icebreaker_prompt": "Ask your game ranger about their most memorable wildlife encounter in Kwandwe.",
+        "team_aesthetic": "Practical Safari Attire & Warm, Welcoming Smiles",
+        "warmth_verdict": "Genuine Hospitality — Like Visiting Family in the Bush"
+      },
+      "insider_secrets": {
+        "insider_badge": "Game Ranger's Favorite Spot",
+        "off_menu_perk": "Ask your ranger for a sundowner stop at a secret viewpoint overlooking the Great Fish River.",
+        "secret_lore": "The best time for spotting elusive nocturnal animals is during the late evening game drive; your ranger has a few secret spots they frequent.",
+        "secret_title": "The Secret Sundowner Viewpoint"
+      },
+      "temporal_dynamics": {
+        "best_time_to_visit": "6:00 AM for exhilarating morning game drives; 5:00 PM for stunning sunset game drives and sundowners.",
+        "content_readiness": {
+          "aesthetic_subculture": "Safari Chic & Nature Immersion",
+          "flattery_note": "Captures the essence of modern safari luxury with a family-friendly twist.",
+          "score": 0.9,
+          "top_creator_spot": "Private plunge pool with bushveld views",
+          "verdict": "Highly Instagrammable Safari Escape"
+        },
+        "diurnal_rhythm": {
+          "chilling": {
+            "focus": "Poolside relaxation & lounge reading",
+            "score": 0.8,
+            "window": "11:00 AM - 3:00 PM"
+          },
+          "playing": {
+            "focus": "Game drives & bush walks",
+            "score": 0.9,
+            "window": "6:00 AM - 9:00 AM & 4:00 PM - 7:00 PM"
+          },
+          "working": {
+            "focus": "Quiet contemplation & wildlife photography",
+            "score": 0.6,
+            "window": "Anytime in private suites"
+          }
+        },
+        "peak_atmospheric_window": "Sunset Game Drive & Fireside Evenings"
+      }
+    },
+    "interactive_quiz_challenge": {
+      "target_scene_id": 101,
+      "scene_name": "Safari Sundowner",
+      "mission_title": "The Perfect Bushveld Moment",
+      "question": "You've just finished an exhilarating game drive at Kwandwe Ecca Lodge. What's the ideal way to cap off your day before dinner?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Head straight to your room to unpack."
+        },
+        {
+          "id": "B",
+          "text": "Join fellow guests for sundowners at a scenic bush location."
+        },
+        {
+          "id": "C",
+          "text": "Immediately check emails and social media."
+        },
+        {
+          "id": "D",
+          "text": "Go for a quick swim in the main lodge pool."
+        }
+      ],
+      "correct_option_id": "B",
+      "success_lore_reveal": "Correct! The Kwandwe Ecca Lodge experience is all about embracing the bushveld. Sundowners are a cherished safari tradition, offering a moment to reflect on the day's sightings amidst breathtaking natural beauty.",
+      "reward_badge": "Bushveld Bliss Master",
+      "challenge_prompt": "Discover the magic of Kwandwe Ecca Lodge's evening rituals.",
+      "reward_spotify_uri": "spotify:playlist:37i9dQZF1DXcBWIGoYBM5M"
+    },
+    "ota_conversion_audit": {
+      "channel": "Booking.com",
+      "before_merchandising_score": 48,
+      "after_merchandising_score": 95,
+      "projected_conversion_uplift": "+21.0%",
+      "current_drop_off_flaw": "Lack of immediate visual connection to unique safari experiences and family-friendly design in initial photos.",
+      "key_strategic_shifts": [
+        "Elevate the unique, playful lodge design and family-friendly atmosphere to Slot #1 to capture 'modern safari' and 'family adventure' search demand.",
+        "Strategically place a signature suite in Slot #2 to immediately showcase the quality of private accommodation.",
+        "Introduce a dedicated photo of the main lodge's social areas to highlight the vibrant, yet relaxed, communal vibe.",
+        "Re-sequence the exterior shot to Slot #5 to ground the property within its stunning natural reserve setting after establishing the internal experience."
+      ],
+      "optimal_5_photo_sequence": [
+        {
+          "slot": 1,
+          "category": "HERO_CULTURAL_MAGNET",
+          "source_type": "AMENITY_ASSET",
+          "source_index": 1,
+          "photo_subject": "Kwandwe Ecca Lodge Main Deck & Plunge Pool with Bushveld Views",
+          "bullet_points": [
+            "Visual Upgrade: This asset immediately conveys the lodge's contemporary design, inviting social spaces, and direct connection to the bushveld, superior to a generic exterior.",
+            "Local Synergy: Directly aligns with 'modern safari lodge' and 'bushveld views' search intent for the Eastern Cape.",
+            "Conversion Trigger: Evokes a sense of aspirational relaxation and immersive nature experience, setting a high expectation for the stay."
+          ],
+          "psychological_conversion_trigger": "This image instantly communicates the lodge's unique blend of playful design and immersive safari experience, drawing in travelers seeking a contemporary bush escape.",
+          "action": "MAGNET_OVERRIDE",
+          "action_label": "HERO CULTURAL MAGNET: MAIN DECK & PLUNGE POOL (SLOT #1)",
+          "current_slot": 1,
+          "local_vibe_connection": "Captures the essence of a modern, comfortable safari experience deeply integrated with the Eastern Cape's natural beauty.",
+          "upgrade_rationale": "This asset replaces a less impactful exterior shot, immediately showcasing the lodge's signature design and prime location, which is crucial for travelers searching for unique safari experiences.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 2,
+          "category": "SIGNATURE_SUITE_BEDROOM",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 3,
+          "photo_subject": "Signature King Suite with Bushveld View & Private Deck",
+          "bullet_points": [
+            "Strategic Placement: Immediately follows the hero shot, proving the private accommodation matches the lodge's high-design and immersive promise.",
+            "Local Synergy: Showcases comfortable, stylish private spaces that are essential for a relaxing safari stay in the Great Fish River Valley.",
+            "Conversion Trigger: Reassures guests about the quality and comfort of their private sanctuary, reinforcing value."
+          ],
+          "psychological_conversion_trigger": "By presenting a high-quality, bookable room early, it validates the luxury and comfort aspect of the safari experience, reducing booking friction.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE SIGNATURE KING SUITE (FROM SLOT #3)",
+          "current_slot": 3,
+          "local_vibe_connection": "Highlights the private, comfortable aspect of a luxury safari, a key search criterion for travelers to this region.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #3): Elevating the signature suite to Slot #2 ensures that the private accommodation's quality and design are immediately apparent, reinforcing the overall lodge appeal after the hero shot.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 3,
+          "category": "SECONDARY_ROOM_BATHROOM",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 4,
+          "photo_subject": "Spacious En-Suite Bathroom with Freestanding Tub & Outdoor Shower",
+          "bullet_points": [
+            "Strategic Placement: Pairs the guest bathroom directly with the bedroom, completing the private comfort and hygiene check for Booking.com guests.",
+            "Local Synergy: Showcases the luxurious and nature-integrated bathroom experience, a desirable feature for safari travelers.",
+            "Conversion Trigger: Addresses a key guest expectation for comfort and privacy, enhancing the perception of a complete luxury offering."
+          ],
+          "psychological_conversion_trigger": "This photo fulfills the essential need for a high-quality, private bathroom, a critical factor for many travelers when evaluating accommodation.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE EN-SUITE BATHROOM (FROM SLOT #4)",
+          "current_slot": 4,
+          "local_vibe_connection": "Emphasizes the blend of luxury and nature, with features like outdoor showers being highly sought after in safari lodges.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #4): Placing the en-suite bathroom immediately after the bedroom completes the visual narrative of the private guest space, addressing a common traveler query early in the booking journey.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 4,
+          "category": "SOCIAL_FB_ROOFTOP",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 2,
+          "photo_subject": "Kwandwe Ecca Lodge Main Lounge & Bar Area",
+          "bullet_points": [
+            "Strategic Placement: Showcases the lodge's vibrant yet relaxed communal social space, highlighting the 'family-friendly atmosphere' mentioned in reviews.",
+            "Local Synergy: Connects to the desire for comfortable social interaction and relaxation after game drives, a core part of the safari experience.",
+            "Conversion Trigger: Illustrates the inviting atmosphere and opportunities for social engagement, appealing to guests seeking a communal yet intimate experience."
+          ],
+          "psychological_conversion_trigger": "This image demonstrates the lodge's social heart, appealing to guests who value a welcoming and engaging communal environment during their stay.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE MAIN LOUNGE & BAR (FROM SLOT #2)",
+          "current_slot": 2,
+          "local_vibe_connection": "Reflects the social aspect of a safari lodge, where guests gather to share experiences and relax in a beautifully designed space.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #2): Repositioning the main lounge to Slot #4 ensures that the lodge's social and communal appeal is highlighted after the private spaces, offering a balanced view of the guest experience.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 5,
+          "category": "EXTERIOR_LANDMARK",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 1,
+          "photo_subject": "Kwandwe Ecca Lodge Exterior with Natural Bushveld Surroundings",
+          "bullet_points": [
+            "Strategic Placement: Grounds the property geographically, confirming its stunning location within the Kwandwe Private Game Reserve.",
+            "Local Synergy: Directly addresses 'safari lodge exterior' and 'bushveld setting' search terms, confirming the immersive nature experience.",
+            "Conversion Trigger: Eliminates location anxiety and reinforces the promise of an authentic safari, completing the visual journey."
+          ],
+          "psychological_conversion_trigger": "This photo provides essential geographical context and reinforces the authentic safari setting, solidifying the decision to book.",
+          "action": "DEMOTE",
+          "action_label": "DEMOTE EXTERIOR LANDMARK (FROM SLOT #1)",
+          "current_slot": 1,
+          "local_vibe_connection": "Clearly positions the lodge within the iconic Eastern Cape bushveld, a primary draw for safari travelers.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #1): While a strong exterior, its demotion to Slot #5 allows the more emotionally resonant cultural magnet to lead, with the exterior serving to anchor the location after the internal experience has been established.",
+          "photo_url": null,
+          "image_url": null
+        }
+      ],
+      "anti_commodity_copy_rewrite": {
+        "ota_headline": "Kwandwe Ecca Lodge: Playful Safari Design & Family Adventures in the Eastern Cape Bushveld",
+        "property_overview_150_words": "Nestled in the heart of the Kwandwe Private Game Reserve, Ecca Lodge offers a vibrant, family-friendly safari experience with a contemporary twist. Its playful design blends seamlessly with the stunning Eastern Cape bushveld, providing spacious suites with private decks and immersive views. Enjoy exhilarating game drives led by expert rangers, unwind by the main lodge's inviting pool, and savor delicious meals in a relaxed atmosphere. Ecca Lodge is a sanctuary for nature lovers and families, promising unforgettable wildlife encounters and genuine South African hospitality, all within a pristine, protected wilderness."
+      },
+      "photographic_gap_analysis": [
+        {
+          "missing_shot_title": "Family-Friendly Activities & Kids' Program",
+          "category": "FAMILY_EXPERIENCE",
+          "why_needed": "Reviews highlight the 'family-friendly atmosphere,' but there are no dedicated visuals showcasing specific activities or spaces for children, which is a key decision-making factor for families. This shot would capture unmet 'safari with kids' search demand.",
+          "recommended_framing_and_lighting": "Dynamic shot of children engaged in a supervised bush activity (e.g., tracking, craft session) with natural, soft daylight and genuine smiles, emphasizing interaction and learning.",
+          "projected_adr_impact": "+10% family package bookings and increased length of stay."
+        },
+        {
+          "missing_shot_title": "Authentic Safari Dining Experience (Boma or Bush Dinner)",
+          "category": "CULINARY_SOCIAL",
+          "why_needed": "While food is mentioned, there's no strong visual of a quintessential safari dining experience like a boma dinner or a bush breakfast. This misses a high-value 'authentic safari dining' search intent.",
+          "recommended_framing_and_lighting": "Wide-angle shot of a beautifully set boma dinner under the stars, with warm firelight, ambient lanterns, and guests enjoying the experience. Alternatively, a bush breakfast setup with stunning natural backdrop.",
+          "projected_adr_impact": "+8% direct booking conversion for culinary-focused travelers."
+        },
+        {
+          "missing_shot_title": "Wildlife Interaction (Ethical Game Drive Moment)",
+          "category": "WILDLIFE_IMMERSION",
+          "why_needed": "The core of a safari is wildlife. While implied, a powerful, ethically captured image of a close-up, respectful wildlife encounter during a game drive is missing. This would directly address 'best wildlife viewing' and 'safari experience' search demand.",
+          "recommended_framing_and_lighting": "Telephoto shot from a game vehicle, capturing a majestic animal (e.g., elephant, rhino) in its natural habitat, with soft morning or late afternoon light, conveying awe and proximity without disturbance.",
+          "projected_adr_impact": "+15% overall booking intent and higher perceived value."
+        }
+      ],
+      "conversion_diagnosis": "Kwandwe Ecca Lodge suffers from a commodity visual sequence that fails to immediately highlight its unique blend of playful contemporary design, family-friendly atmosphere, and immersive safari experience. The current sequence buries key differentiators, leading to traveler drop-off who are searching for specific 'modern safari' and 'family adventure' attributes.",
+      "local_vibe_synergy_context": "The Eastern Cape is renowned for its diverse wildlife and authentic safari experiences. Travelers to Makhanda and the Great Fish River Valley specifically seek lodges that offer both exceptional game viewing and a comfortable, immersive stay. The photo recommendations prioritize showcasing Ecca Lodge's unique contemporary safari design and family-friendly amenities, directly aligning with the top local subcultures of 'wildlife adventure' and 'luxury family retreats' in this region.",
+      "slot_1_decision_logic": {
+        "is_magnet_override_active": true,
+        "reasoning_code": "NAI_HIGH_DESTINATION_POWER_CLARITY",
+        "strategy_explanation": "The Kwandwe Ecca Lodge Main Deck & Plunge Pool with Bushveld Views (Amenity Asset #1) is an exceptional cultural magnet. It perfectly captures the lodge's playful contemporary design, its direct connection to the stunning bushveld, and its inviting social atmosphere. This asset has high neighborhood affinity (NAI 0.92) as it directly addresses the top traveler search for 'modern safari lodge with views' and 'family-friendly safari social spaces' in the Eastern Cape. It is a destination in its own right, offering a unique visual identity that immediately differentiates the lodge. The photo is clear, visually rich, and instantly communicates the emotional promise of a luxurious yet relaxed safari experience, making it ideal for Slot #1.",
+        "neighborhood_affinity_index": 0.92,
+        "override_asset_name": "Kwandwe Ecca Lodge Main Deck & Plunge Pool with Bushveld Views"
+      },
+      "photos_status": "PENDING"
+    },
+    "audit_timestamp": "2026-11-10T18:25:35.287Z"
+  }
+}

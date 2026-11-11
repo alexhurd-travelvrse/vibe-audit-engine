@@ -4,6 +4,27 @@ import './VibeDimensionsSection.css';
 
 const DIMENSIONS = [
   {
+    icon: Sparkles,
+    tag: 'ON-SITE EXPERIENCES',
+    title: 'Rooftops, Dining & Spa',
+    accentColor: '#10b981',
+    certaintyBadge: '✓ 95% Fact',
+    certaintyColor: '#34d399',
+    description: 'Signature rooftop bars, destination dining & wellness spaces guests pay a premium for',
+    renderVisual: () => (
+      <div className="vibe-visual-widget proximity-widget">
+        <div className="proximity-pills">
+          <span className="prox-pill">★ Rooftop Terrace &amp; Bar</span>
+          <span className="prox-pill">★ Destination Dining</span>
+        </div>
+        <div className="widget-label-row">
+          <span className="widget-metric">Signature Spaces</span>
+          <span className="widget-caption">Top Guest Booking Driver</span>
+        </div>
+      </div>
+    )
+  },
+  {
     icon: Compass,
     tag: '5-MIN WALK',
     title: 'Walkable Local Gems',
@@ -162,27 +183,6 @@ const DIMENSIONS = [
         </div>
       </div>
     )
-  },
-  {
-    icon: MapPin,
-    tag: 'INSIDER TIPS',
-    title: 'The Secret Local Order',
-    accentColor: '#10b981',
-    certaintyBadge: '◎ 86% Proven',
-    certaintyColor: '#00e5ff',
-    description: 'Off-menu orders, best sunset tables & hidden spots regulars ask for',
-    renderVisual: () => (
-      <div className="vibe-visual-widget tips-widget">
-        <div className="secret-pill">
-          <MapPin size={11} className="pin-icon" />
-          <span>Hidden Wine Bar 2 Doors Down</span>
-        </div>
-        <div className="widget-label-row">
-          <span className="widget-metric">Regulars' Tip</span>
-          <span className="widget-caption">What Locals Ask For</span>
-        </div>
-      </div>
-    )
   }
 ];
 
@@ -247,10 +247,10 @@ export default function VibeDimensionsSection() {
             <span>THE VIBE SIGNATURE™</span>
           </div>
           <h2 className="vibe-dimensions-title">
-            Your Destination Creates <span className="vibe-title-accent">Desire.</span> Your Vibe Wins the <span className="vibe-title-accent">Shortlist</span>
+            Your Destination Creates <span className="vibe-title-accent">Desire.</span> Your Vibe &amp; Experiences Win the <span className="vibe-title-accent">Shortlist</span>
           </h2>
           <p className="vibe-dimensions-subtitle">
-            81% of travellers choose a destination based on how they want to feel. Vibe Signatures verify the 8 real-world signals that get your brand noticed early and onto the shortlist
+            Travellers choose where to stay based on mood, atmosphere, and signature experiences. Vibe Signatures verify the 8 real-world signals that get your brand noticed early and onto the shortlist
           </p>
         </div>
 

@@ -1,0 +1,300 @@
+{
+  "key": "nima lodge:::wilderness:::hoekwil::::::manifest_only",
+  "timestamp": 1794335157999,
+  "data": {
+    "venue_id": "nima_lodge_wilderness",
+    "venue_name": "Nima Lodge",
+    "location": "Hoekwil, Wilderness",
+    "vibe_signature": {
+      "energy_score": 78,
+      "social_pacing": "Relaxed & Intimate Nature Retreat",
+      "headline": "Design-Led Nature Retreat with Serene Cabins & Warm Hospitality",
+      "acoustic_dna": {
+        "soundscape_genre": "Ambient Nature & Acoustic Folk",
+        "anchor_artists": [
+          "Bon Iver",
+          "The Lumineers",
+          "Fleet Foxes"
+        ],
+        "spotify_query": "acoustic folk nature retreat",
+        "sound_texture": "Gentle rustling leaves, distant bird calls, soft crackling fireplace",
+        "conversation_clarity_score": 92,
+        "conversation_verdict": "Easy Date-Night Chat & Tranquil Reflection",
+        "decibel_level": "58 dB (Snug/Intimate)",
+        "sleep_sanctuary_verdict": "Quiet Soundproofed Cabins & Blackout Rest"
+      },
+      "crowd_archetype": {
+        "primary": "Couples & Nature Seekers",
+        "social_density": "Intimate & Dispersed",
+        "dress_code": "Relaxed Chic & Outdoor Casual",
+        "energy_verdict": "Peaceful Serenity & Thoughtful Connection",
+        "local_ratio": 65,
+        "tourist_ratio": 35,
+        "tourist_trap_verdict": "Loved by Locals — Not a Tourist Trap",
+        "trip_occasions": [
+          "Couples Escape",
+          "Nature Immersion",
+          "Wellness Retreat"
+        ]
+      },
+      "lighting_and_sensory": {
+        "atmosphere": "Warm, Natural & Serene",
+        "sensory_intensity": "Subtle & Restorative",
+        "lighting_temperature": "Golden Hour Sunlight & Warm Filament Glow"
+      },
+      "hyper_local_proximity": {
+        "key_anchors": [
+          "Hoekwil Country Cafe (4.5★ · 10 min drive)",
+          "Wilderness National Park (4.7★ · 5 min walk)",
+          "Dolphin's Point Lookout (4.6★ · 12 min drive)"
+        ],
+        "insider_lore": "Nima Lodge offers direct access to the Wilderness National Park, perfect for morning hikes and birdwatching."
+      },
+      "qualification_test": {
+        "you_will_love_if": "You seek a luxurious, design-led nature retreat with quiet, private cabins and direct access to hiking trails, prioritizing tranquility and warm hospitality.",
+        "skip_if": "You prefer a bustling, high-energy social scene, urban amenities, or a property directly on the beach."
+      },
+      "ai_search_geo": {
+        "traveler_prompts": [
+          "Best luxury nature retreat Garden Route with private cabins",
+          "Quiet romantic getaway Wilderness South Africa with hiking access",
+          "Design hotel Hoekwil with fireplace and local charm"
+        ],
+        "verified_entity_summary": "Nima Lodge is a 4.9-star design-led nature retreat in Hoekwil, Wilderness, offering serene, soundproofed cabins for restorative sleep and a tranquil social vibe. Guests enjoy direct access to Wilderness National Park and are a short drive from the beloved Hoekwil Country Cafe."
+      },
+      "authenticity_and_materials": {
+        "authenticity_score": 94,
+        "material_palette": "Natural wood, warm stone, textured fabrics, handcrafted elements",
+        "material_verdict": "Authentic Craftsmanship — Zero Faux Decor"
+      },
+      "host_vibe": {
+        "host_archetype": "Warm & Attentive Nature Guides",
+        "host_style_score": 88,
+        "service_pacing": "Unhurried & Intuitive Craft",
+        "signature_team_roles": [
+          "Nature Concierge",
+          "Breakfast Basket Curator"
+        ],
+        "staff_icebreaker_prompt": "Ask the staff about their favorite hidden trail in the Wilderness National Park.",
+        "team_aesthetic": "Relaxed Earthy Tones & Thoughtful Comfort",
+        "warmth_verdict": "Zero Snobbery — Instant Regulars Treatment"
+      },
+      "insider_secrets": {
+        "insider_badge": "Host & Local Regular Lore",
+        "off_menu_perk": "Ask staff for a demo of the pellet fireplace in the 'Sun' cabins to avoid any beeping surprises.",
+        "secret_lore": "The honesty bar offers a curated selection of local wines and snacks; it's a perfect spot for a quiet evening drink by the fireplace.",
+        "secret_title": "The Pellet Fireplace Whisperer"
+      },
+      "temporal_dynamics": {
+        "best_time_to_visit": "4:00 PM for golden hour views from your cabin; 7:00 PM for a cozy evening by the fireplace with a drink from the honesty bar.",
+        "content_readiness": {
+          "aesthetic_subculture": "Naturecore & Minimalist Luxury",
+          "flattery_note": "Your aesthetic captures the essence of serene, design-led nature escapes perfectly.",
+          "score": 9.2,
+          "top_creator_spot": "Private cabin deck overlooking the forest at sunrise",
+          "verdict": "Highly Instagrammable & Creator-Ready"
+        },
+        "diurnal_rhythm": {
+          "chilling": {
+            "focus": "Relaxing in private cabins, enjoying nature views",
+            "score": 9.5,
+            "window": "All Day"
+          },
+          "playing": {
+            "focus": "Hiking in Wilderness National Park, exploring local cafes",
+            "score": 7,
+            "window": "Morning & Afternoon"
+          },
+          "working": {
+            "focus": "Quiet remote work from cabin with Wi-Fi",
+            "score": 7.5,
+            "window": "Morning & Early Afternoon"
+          }
+        },
+        "peak_atmospheric_window": "Late Afternoon Golden Hour"
+      }
+    },
+    "interactive_quiz_challenge": {
+      "target_scene_id": 101,
+      "scene_name": "Nima Lodge Cabin Retreat",
+      "mission_title": "The Wilderness Serenity Seeker",
+      "question": "You've just arrived at Nima Lodge, ready to unwind. What's the first thing you do to truly immerse yourself in the tranquil nature vibe?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Head straight to the snack bar for a lively evening."
+        },
+        {
+          "id": "B",
+          "text": "Ask the staff for a demo of your cabin's pellet fireplace and enjoy the quiet."
+        },
+        {
+          "id": "C",
+          "text": "Search for the nearest bustling tourist attraction."
+        },
+        {
+          "id": "D",
+          "text": "Turn on loud music on your cabin's music system."
+        }
+      ],
+      "correct_option_id": "B",
+      "success_lore_reveal": "Correct! Embracing the quiet comfort of your cabin, perhaps with a warm fire, is key to the Nima Lodge experience. The staff are happy to assist with the fireplace, ensuring a seamless, cozy retreat.",
+      "reward_badge": "Wilderness Whisperer Badge",
+      "challenge_prompt": "Discover the hidden comforts of Nima Lodge.",
+      "reward_spotify_uri": "spotify:playlist:37i9dQZF1DXcBWIGoYBM5M"
+    },
+    "ota_conversion_audit": {
+      "channel": "Booking.com",
+      "before_merchandising_score": 48,
+      "after_merchandising_score": 95,
+      "projected_conversion_uplift": "+21.0%",
+      "current_drop_off_flaw": "Lack of immediate visual clarity on the unique nature retreat experience and the quality of private sleeping spaces.",
+      "key_strategic_shifts": [
+        "Elevate the signature private cabin experience to Slot #1 to immediately convey the unique nature retreat DNA.",
+        "Prioritize a clear, bookable bedroom shot in Slot #2 to address core traveler intent for sleeping comfort.",
+        "Introduce a dedicated bathroom shot in Slot #3 to complete the private space comfort and hygiene check.",
+        "Re-sequence the exterior shot to Slot #5 to ground location after establishing the property's unique vibe."
+      ],
+      "optimal_5_photo_sequence": [
+        {
+          "slot": 1,
+          "category": "HERO_CULTURAL_MAGNET",
+          "source_type": "AMENITY_ASSET",
+          "source_index": 1,
+          "photo_subject": "Private Cabin Deck with Forest View & Outdoor Bathtub",
+          "bullet_points": [
+            "Visual Upgrade: This asset captures the quintessential Nima Lodge experience – a private, luxurious nature immersion with a stunning forest backdrop and an inviting outdoor tub, far superior to generic interior shots.",
+            "Local Synergy: Directly aligns with the top traveler search for 'nature retreats Garden Route' and 'luxury cabins Wilderness', showcasing the unique blend of design and natural beauty.",
+            "Conversion Trigger: Evokes immediate desire for a serene, private escape, highlighting the unique selling proposition of the lodge."
+          ],
+          "psychological_conversion_trigger": "Immediately communicates the unique, private, and luxurious nature retreat experience, stopping the scroll and inspiring booking intent for a tranquil escape.",
+          "action": "MAGNET_OVERRIDE",
+          "action_label": "HERO CULTURAL MAGNET: PRIVATE CABIN DECK & OUTDOOR TUB (SLOT #1)",
+          "current_slot": 1,
+          "local_vibe_connection": "This image perfectly encapsulates the 'nature immersion' and 'wellness retreat' subcultures highly sought after in the Wilderness area, connecting Nima Lodge's offering directly to local demand.",
+          "upgrade_rationale": "This new asset transforms the visual narrative from a generic interior to a breathtaking, aspirational outdoor living space, showcasing the property's core value proposition of secluded luxury in nature. It replaces a less impactful interior shot with a visually stunning and emotionally resonant hero image.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 2,
+          "category": "SIGNATURE_SUITE_BEDROOM",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 4,
+          "photo_subject": "Signature King Bedroom with Curated Textural Finishes & Ambient Lighting",
+          "bullet_points": [
+            "Strategic Placement: Immediately follows the hero shot, proving the sleeping space matches the aspirational promise of the nature retreat.",
+            "Local Synergy: Appeals to travelers seeking 'luxury accommodation Wilderness' by showcasing a well-appointed, comfortable private space.",
+            "Conversion Trigger: Reassures guests about the quality and comfort of their private quarters, a critical factor for booking."
+          ],
+          "psychological_conversion_trigger": "Validates the promise of a luxurious and comfortable private space, directly addressing the primary need for a high-quality sleeping environment after the initial emotional hook.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE SIGNATURE KING BEDROOM (FROM SLOT #4)",
+          "current_slot": 4,
+          "local_vibe_connection": "This bedroom shot reinforces the 'design-led' aspect of Nima Lodge, appealing to travelers who value aesthetics and comfort within their nature escape, a key search parameter in the Garden Route.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #4): By promoting this high-quality bedroom shot to Slot #2, we immediately address the guest's core need for a comfortable and aesthetically pleasing sleeping environment, reinforcing the luxury aspect established by the hero image.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 3,
+          "category": "SECONDARY_ROOM_BATHROOM",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 5,
+          "photo_subject": "Modern Guest Bathroom with Walk-in Shower & Natural Light",
+          "bullet_points": [
+            "Strategic Placement: Completes the private comfort check by showcasing the bathroom directly after the bedroom, fulfilling a key guest expectation.",
+            "Local Synergy: Meets the demand for 'clean and modern facilities Wilderness' by presenting a well-maintained and stylish bathroom.",
+            "Conversion Trigger: Eliminates hygiene and comfort anxieties, building trust and confidence in the overall guest experience."
+          ],
+          "psychological_conversion_trigger": "Addresses fundamental guest concerns about cleanliness and modern amenities in private spaces, solidifying the perception of a complete and comfortable stay.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE MODERN GUEST BATHROOM (FROM SLOT #5)",
+          "current_slot": 5,
+          "local_vibe_connection": "This photo supports the 'wellness retreat' and 'luxury stay' search intent by demonstrating high standards of personal care facilities, crucial for discerning travelers in the Garden Route.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #5): Placing the bathroom immediately after the bedroom in Slot #3 ensures a seamless visual flow for guests assessing private amenities, directly addressing a common booking hesitation point regarding hygiene and comfort.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 4,
+          "category": "SOCIAL_FB_ROOFTOP",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 2,
+          "photo_subject": "Communal Lounge with Fireplace & Cozy Seating",
+          "bullet_points": [
+            "Strategic Placement: Showcases the property's social and relaxation spaces, demonstrating the warm atmosphere beyond the private cabins.",
+            "Local Synergy: Appeals to travelers seeking 'cozy atmosphere Wilderness' and 'relaxing common areas', highlighting the lodge's inviting communal vibe.",
+            "Conversion Trigger: Illustrates opportunities for relaxation and connection, enhancing the overall perceived value of the stay."
+          ],
+          "psychological_conversion_trigger": "Highlights the inviting communal spaces, reassuring guests that there are comfortable areas to relax and socialize, even within a nature retreat setting.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE COMMUNAL LOUNGE WITH FIREPLACE (FROM SLOT #2)",
+          "current_slot": 2,
+          "local_vibe_connection": "This image reinforces the 'tranquil atmosphere' and 'warm hospitality' aspects that are highly valued in the Hoekwil/Wilderness area, connecting the lodge's social offering to local preferences.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #2): By placing the communal lounge in Slot #4, we provide a balanced view of both private sanctuary and inviting social spaces, demonstrating the full spectrum of the Nima Lodge experience after the private amenities have been established.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 5,
+          "category": "EXTERIOR_LANDMARK",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 1,
+          "photo_subject": "Nima Lodge Exterior & Lush Natural Surroundings",
+          "bullet_points": [
+            "Strategic Placement: Grounds the property geographically after the interior and social spaces have been showcased, eliminating location anxiety.",
+            "Local Synergy: Connects the lodge to its 'Garden Route' and 'Wilderness' setting, appealing to travelers searching for scenic locations.",
+            "Conversion Trigger: Provides essential context and a sense of arrival, completing the visual journey and reinforcing the nature retreat theme."
+          ],
+          "psychological_conversion_trigger": "Offers a clear sense of place and arrival, confirming the property's integration into its natural surroundings and alleviating any geographical uncertainty.",
+          "action": "DEMOTE",
+          "action_label": "DEMOTE NIMA LODGE EXTERIOR (FROM SLOT #1)",
+          "current_slot": 1,
+          "local_vibe_connection": "This exterior shot clearly positions Nima Lodge within the lush, natural landscape of Hoekwil, directly addressing traveler searches for 'scenic accommodation Garden Route' and 'nature views Wilderness'.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #1): While a strong exterior, moving it to Slot #5 allows the more unique and emotionally resonant private cabin experience to lead the visual narrative, then provides essential geographic context as the final anchor.",
+          "photo_url": null,
+          "image_url": null
+        }
+      ],
+      "anti_commodity_copy_rewrite": {
+        "ota_headline": "Nima Lodge: Design-Led Nature Retreat with Private Cabins & Forest Views in Wilderness",
+        "property_overview_150_words": "Discover Nima Lodge, a 4.9-star luxury nature retreat nestled in Hoekwil, Wilderness, offering an unparalleled escape on South Africa's Garden Route. Our design-led cabins and apartment provide private, handcrafted spaces with breathtaking forest views, perfect for quiet contemplation and romantic getaways. Enjoy direct access to the Wilderness National Park for invigorating hikes, unwind by the fireplace in our cozy communal lounge, or savor a drink from our honesty bar. Experience warm, attentive hospitality and a serene atmosphere, just a short drive from the beloved Hoekwil Country Cafe, making Nima Lodge a true local gem for discerning travelers."
+      },
+      "photographic_gap_analysis": [
+        {
+          "missing_shot_title": "Creator-Friendly Master Bathroom Soaking Tub with Natural Morning Light",
+          "category": "CREATOR_BATHROOM",
+          "why_needed": "Currently, there are no photos showcasing a luxurious, well-lit bathroom with a soaking tub, which is a high-value amenity for wellness-focused travelers and content creators. This gap misses an opportunity to highlight a key comfort and aesthetic feature.",
+          "recommended_framing_and_lighting": "Wide-angle shot from a low perspective, capturing a freestanding soaking tub with soft, diffused morning light streaming through a window, highlighting natural materials and a serene ambiance. Focus on clean lines and inviting textures.",
+          "projected_adr_impact": "+8% higher suite booking velocity and increased social media engagement."
+        },
+        {
+          "missing_shot_title": "Twilight Fireside Relaxation at Communal Lounge with Local Wine",
+          "category": "ATMOSPHERIC_TWILIGHT",
+          "why_needed": "While a communal lounge photo exists, a twilight shot capturing the warm, inviting atmosphere around the fireplace with subtle human interaction (e.g., a couple enjoying local wine) is missing. This would convey the evening social vibe and coziness.",
+          "recommended_framing_and_lighting": "Medium shot with a warm, low-light glow from the fireplace, capturing soft reflections on glassware and relaxed postures. Use a shallow depth of field to emphasize intimacy and warmth (e.g., 50mm f/1.8).",
+          "projected_adr_impact": "+5% increase in F&B spend and enhanced perception of evening ambiance."
+        },
+        {
+          "missing_shot_title": "Breakfast Basket Delivery & Enjoyment on Private Cabin Deck",
+          "category": "CULINARY_SOCIAL",
+          "why_needed": "The optional breakfast basket is a unique and highly appealing service, but there are no visuals of it being enjoyed in the beautiful cabin setting. This misses a chance to showcase a personalized, luxurious start to the day.",
+          "recommended_framing_and_lighting": "Eye-level shot of a beautifully arranged breakfast basket on a small table on a private cabin deck, with a guest (from behind) enjoying coffee and the forest view. Capture the steam from the coffee and the fresh ingredients. Golden hour morning light.",
+          "projected_adr_impact": "+10% uptake in breakfast package add-ons and increased perceived value of the stay."
+        }
+      ],
+      "conversion_diagnosis": "Nima Lodge suffers from a commodity visual sequence that fails to immediately highlight its unique selling propositions: the private, design-led nature cabins and the serene, immersive experience. The current sequence buries key emotional triggers, leading to high drop-off rates from travelers seeking distinctive nature retreats.",
+      "local_vibe_synergy_context": "The Wilderness area, particularly Hoekwil, is renowned for its tranquil nature, outdoor activities, and a desire for authentic, design-led escapes. The photo recommendations prioritize showcasing Nima Lodge's unique private cabins, immersive forest views, and cozy communal spaces. This directly aligns with local search demand for 'luxury nature retreats Garden Route', 'quiet cabins Wilderness', and 'design hotels with forest access', ensuring the visual story resonates deeply with the target traveler's intent.",
+      "slot_1_decision_logic": {
+        "is_magnet_override_active": true,
+        "reasoning_code": "NAI_HIGH_DESTINATION_POWER_CLARITY",
+        "strategy_explanation": "The private cabin deck with an outdoor bathtub and forest view is an extraordinary, high-impact cultural asset that perfectly embodies the #1 trending subcultural search theme in Wilderness: 'luxury nature immersion' and 'private wellness retreats'. This feature is a destination in its own right, offering a unique experience that non-hotel locals would seek out. The photo provides split-second clarity, rich spatial context, and warm human energy, making it an ideal Hero Cultural Magnet.",
+        "neighborhood_affinity_index": 0.92,
+        "override_asset_name": "Private Cabin Deck with Forest View & Outdoor Bathtub"
+      },
+      "photos_status": "PENDING"
+    },
+    "audit_timestamp": "2026-11-10T18:25:33.365Z"
+  }
+}

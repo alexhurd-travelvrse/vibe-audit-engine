@@ -1,0 +1,301 @@
+{
+  "key": "emily moon river lodge:::plettenberg bay:::bitou river::::::manifest_only",
+  "timestamp": 1794335289891,
+  "data": {
+    "venue_id": "emily_moon_river_lodge_plettenberg_bay",
+    "venue_name": "Emily Moon River Lodge",
+    "location": "Bitou River, Plettenberg Bay",
+    "vibe_signature": {
+      "energy_score": 78,
+      "social_pacing": "Lively & Relaxed Riverfront Social",
+      "headline": "Riverfront Sanctuary with Vibrant Dining & Sunset Views",
+      "acoustic_dna": {
+        "soundscape_genre": "Afro-Chill & World Fusion",
+        "anchor_artists": [
+          "Goldfish",
+          "Black Coffee",
+          "Jeremy Loops"
+        ],
+        "spotify_query": "Emily Moon River Lodge Plettenberg Bay chillout",
+        "sound_texture": "Warm, ambient beats with lively conversation hum",
+        "conversation_clarity_score": 75,
+        "conversation_verdict": "Lively Bar Banter & Easy Dinner Chat",
+        "decibel_level": "68 dB (Vibrant Dining & Social)",
+        "sleep_sanctuary_verdict": "Quiet, Secluded Suites with River Views & Natural Sounds"
+      },
+      "crowd_archetype": {
+        "primary": "Discerning Travelers & Local Foodies",
+        "social_density": "Vibrant but comfortable",
+        "dress_code": "Smart Casual & Relaxed Chic",
+        "energy_verdict": "Lively Evening Buzz & Tranquil Daytime Escape",
+        "local_ratio": 65,
+        "tourist_ratio": 35,
+        "tourist_trap_verdict": "Loved by Locals — Not a Tourist Trap",
+        "trip_occasions": [
+          "Couples Escape",
+          "Gourmet Getaway",
+          "Nature & Relaxation"
+        ]
+      },
+      "lighting_and_sensory": {
+        "atmosphere": "Warm, intimate, and naturally lit",
+        "sensory_intensity": "Medium-High (Vibrant evenings, tranquil days)",
+        "lighting_temperature": "Golden Hour Sunlight & Warm Filament Glow"
+      },
+      "hyper_local_proximity": {
+        "key_anchors": [
+          "The Fat Fish (4.5★ · 10 min drive)",
+          "Lookout Beach (4.6★ · 12 min drive)",
+          "Old Nick Village (4.5★ · 8 min drive)"
+        ],
+        "insider_lore": "Nestled on the Bitou River, Emily Moon offers a secluded escape while being a short drive from Plettenberg Bay's vibrant culinary scene and stunning beaches. It's a local favorite for sunset drinks and wood-fired pizzas."
+      },
+      "qualification_test": {
+        "you_will_love_if": "You seek a tranquil riverfront retreat with exceptional dining, a lively bar scene, and stunning natural views, all while being close to Plettenberg Bay's attractions.",
+        "skip_if": "You prefer a bustling city center location or a strictly quiet, isolated experience without any evening social buzz."
+      },
+      "ai_search_geo": {
+        "traveler_prompts": [
+          "Best boutique hotel Plettenberg Bay with river views and great restaurant",
+          "Romantic getaway Garden Route with lively bar and secluded suites",
+          "Where to stay near Bitou River for local dining and nature"
+        ],
+        "verified_entity_summary": "Emily Moon River Lodge offers a vibrant social scene with exceptional dining and a lively bar, balanced by tranquil, secluded suites overlooking the Bitou River. It's a local favorite, providing an authentic Plettenberg Bay experience with easy access to nearby culinary and natural attractions."
+      },
+      "authenticity_and_materials": {
+        "authenticity_score": 92,
+        "material_palette": "Natural wood, stone, thatch, and artisanal African decor",
+        "material_verdict": "Authentic African Charm — Handcrafted & Earthy"
+      },
+      "host_vibe": {
+        "host_archetype": "Warm Local Insiders & Attentive Storytellers",
+        "host_style_score": 85,
+        "service_pacing": "Relaxed, Friendly & Attentive",
+        "signature_team_roles": [
+          "Head Chef",
+          "Mixologist",
+          "River Guide"
+        ],
+        "staff_icebreaker_prompt": "Ask the bartender about their favorite local wine from the region.",
+        "team_aesthetic": "Relaxed Safari Chic & Earthy Tones",
+        "warmth_verdict": "Genuine Hospitality — Instant Regulars Treatment"
+      },
+      "insider_secrets": {
+        "insider_badge": "Local Regular Lore & Bartender's Pick",
+        "off_menu_perk": "Ask for the 'River Sunset' cocktail, a local favorite not always on the menu.",
+        "secret_lore": "Simon's Bar, while known for pizzas, has a hidden selection of craft gins. Ask the bartender for their current favorite local gin pairing.",
+        "secret_title": "The Hidden Craft Gin Selection at Simon's Bar"
+      },
+      "temporal_dynamics": {
+        "best_time_to_visit": "4:00 PM for sunset drinks and river views; 7:30 PM for peak dining atmosphere at the restaurant.",
+        "content_readiness": {
+          "aesthetic_subculture": "Safari Chic & Riverfront Luxury",
+          "flattery_note": "Perfect for capturing golden hour moments and vibrant social scenes.",
+          "score": 0.88,
+          "top_creator_spot": "The main restaurant terrace overlooking the Bitou River at sunset.",
+          "verdict": "Highly Instagrammable for luxury travel and lifestyle creators."
+        },
+        "diurnal_rhythm": {
+          "chilling": {
+            "focus": "Relaxing by the pool or on private suite terraces with river views.",
+            "score": 0.9,
+            "window": "10:00 AM - 4:00 PM"
+          },
+          "playing": {
+            "focus": "Enjoying cocktails and wood-fired pizzas at Simon's Bar, or dining at the main restaurant.",
+            "score": 0.85,
+            "window": "5:00 PM - 10:00 PM"
+          },
+          "working": {
+            "focus": "Quiet corners in suites or lobby for focused work, though not a primary focus.",
+            "score": 0.6,
+            "window": "9:00 AM - 12:00 PM"
+          }
+        },
+        "peak_atmospheric_window": "Late Afternoon Golden Hour & Evening Dining"
+      }
+    },
+    "interactive_quiz_challenge": {
+      "target_scene_id": 101,
+      "scene_name": "Emily Moon River Lodge",
+      "mission_title": "The Riverfront Vibe Quest",
+      "question": "What is the signature social experience at Emily Moon River Lodge, known for its lively atmosphere and river views?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A quiet, secluded library for reading."
+        },
+        {
+          "id": "B",
+          "text": "A bustling market square within the lodge."
+        },
+        {
+          "id": "C",
+          "text": "The main restaurant and Simon's Bar, offering vibrant dining and cocktails with river views."
+        },
+        {
+          "id": "D",
+          "text": "An exclusive, members-only golf course."
+        }
+      ],
+      "correct_option_id": "C",
+      "success_lore_reveal": "Correct! The main restaurant and Simon's Bar are the heart of Emily Moon's social scene, offering delicious food, creative cocktails, and stunning views over the Bitou River, making it a favorite for both guests and locals.",
+      "reward_badge": "Riverfront Socialite",
+      "challenge_prompt": "Discover the vibrant heart of Emily Moon River Lodge!",
+      "reward_spotify_uri": "spotify:playlist:37i9dQZF1DXcBWIGoYBM5M"
+    },
+    "ota_conversion_audit": {
+      "channel": "Booking.com",
+      "before_merchandising_score": 48,
+      "after_merchandising_score": 95,
+      "projected_conversion_uplift": "+21.0%",
+      "current_drop_off_flaw": "Lack of immediate visual connection between the unique social spaces and the tranquil suites, leading to a fragmented guest journey.",
+      "key_strategic_shifts": [
+        "Elevate the vibrant main restaurant/bar with river views to Slot #1 to immediately capture 'Plettenberg Bay dining' and 'river view hotel' search demand.",
+        "Promote a signature suite bedroom to Slot #2 to quickly reassure guests of the quality and comfort of the private accommodations.",
+        "Introduce a dedicated bathroom shot in Slot #3 to address a common traveler concern regarding hygiene and luxury amenities.",
+        "Re-sequence the exterior shot to Slot #5 to ground the property geographically after establishing its unique social and private offerings."
+      ],
+      "optimal_5_photo_sequence": [
+        {
+          "slot": 1,
+          "category": "HERO_CULTURAL_MAGNET",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 2,
+          "photo_subject": "Main Restaurant & Bar Terrace with River Views at Sunset",
+          "bullet_points": [
+            "Visual Upgrade: Captures the vibrant social heart of the lodge with stunning golden-hour river views and inviting atmosphere.",
+            "Local Synergy: Directly addresses 'Plettenberg Bay dining' and 'river view hotel' search intent, showcasing a local favorite.",
+            "Conversion Trigger: Immediately communicates the unique social and scenic appeal, drawing guests into the property's experience."
+          ],
+          "psychological_conversion_trigger": "This photo instantly conveys the unique blend of vibrant social life and breathtaking natural beauty, aligning with traveler desires for both experience and tranquility.",
+          "action": "MAGNET_OVERRIDE",
+          "action_label": "HERO CULTURAL MAGNET: MAIN RESTAURANT & BAR TERRACE (SLOT #1)",
+          "current_slot": 2,
+          "local_vibe_connection": "This image perfectly showcases the lodge's renowned dining and social scene, a key draw for both locals and travelers seeking authentic Plettenberg Bay experiences with stunning natural backdrops.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #2): This photo, already a strong asset, is elevated to Slot #1 to act as the Hero Cultural Magnet. It immediately highlights the property's unique social and scenic appeal, which is a primary driver for Plettenberg Bay travelers, overriding the default exterior shot.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 2,
+          "category": "SIGNATURE_SUITE_BEDROOM",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 5,
+          "photo_subject": "Signature King Bedroom with River View & Private Terrace",
+          "bullet_points": [
+            "Strategic Placement: Immediately reassures guests of the quality and comfort of the private accommodations after the social hero shot.",
+            "Local Synergy: Connects the luxurious private space with the natural beauty of the Bitou River, a key aspect of the Plettenberg Bay experience.",
+            "Conversion Trigger: Addresses the 'sleep sanctuary' need, proving the private spaces match the aspirational social vibe."
+          ],
+          "psychological_conversion_trigger": "By showcasing a luxurious, comfortable bedroom with a view directly after the social magnet, this photo builds trust and confirms the property offers both vibrant experiences and serene rest.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE SIGNATURE KING BEDROOM (FROM SLOT #5)",
+          "current_slot": 5,
+          "local_vibe_connection": "This bedroom, with its natural materials and river view, embodies the tranquil, nature-integrated luxury sought by travelers in the Garden Route region.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #5): This photo is promoted to Slot #2 to immediately follow the cultural magnet. It provides crucial reassurance about the quality and comfort of the private accommodations, a key decision factor for Booking.com users, ensuring the 'sleep sanctuary' promise is delivered early in the visual journey.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 3,
+          "category": "SECONDARY_ROOM_BATHROOM",
+          "source_type": "AMENITY_ASSET",
+          "source_index": 1,
+          "photo_subject": "Spacious Master Bathroom with Soaking Tub & River View",
+          "bullet_points": [
+            "Visual Upgrade: Introduces a high-quality, well-lit image of a luxurious bathroom, a critical amenity often overlooked in current OTA sequences.",
+            "Local Synergy: The natural light and potential for river views from the bathroom enhance the overall 'nature escape' appeal of Plettenberg Bay.",
+            "Conversion Trigger: Directly addresses traveler concerns about bathroom quality and cleanliness, completing the private space narrative."
+          ],
+          "psychological_conversion_trigger": "Placing a high-quality bathroom shot immediately after the bedroom fulfills a fundamental guest expectation for comfort and hygiene, reducing friction in the booking process.",
+          "action": "SWAP_IN",
+          "action_label": "SWAP IN MASTER BATHROOM WITH RIVER VIEW (SLOT #3)",
+          "current_slot": 0,
+          "local_vibe_connection": "A luxurious, well-appointed bathroom with natural light aligns with the premium, comfort-seeking traveler profile in this scenic region.",
+          "upgrade_rationale": "This new amenity asset upgrades from a complete absence of dedicated bathroom photos on Booking.com. It provides a visually superior, well-composed shot of a spacious master bathroom with a soaking tub and natural light, immediately conveying luxury and attention to detail that the current live photos fail to capture.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 4,
+          "category": "SOCIAL_FB_ROOFTOP",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 1,
+          "photo_subject": "Lively Simon's Bar with Wood-Fired Pizza Oven & Guests",
+          "bullet_points": [
+            "Strategic Placement: Showcases the property's secondary social hub, emphasizing its vibrant evening atmosphere and culinary offerings.",
+            "Local Synergy: Highlights Simon's Bar, a locally renowned spot for pizzas and drinks, connecting the hotel to the local social scene.",
+            "Conversion Trigger: Reinforces the 'lively social' aspect, appealing to guests seeking dynamic experiences beyond their room."
+          ],
+          "psychological_conversion_trigger": "This photo reinforces the property's social vibrancy and culinary appeal, demonstrating diverse experiences available on-site and catering to guests looking for engaging evenings.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE LIVELY SIMON'S BAR (FROM SLOT #1)",
+          "current_slot": 1,
+          "local_vibe_connection": "Simon's Bar is a local institution for casual dining and drinks, making this photo a strong connection to Plettenberg Bay's relaxed yet vibrant culinary subculture.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #1): While a strong social asset, this photo is moved to Slot #4 to allow the main restaurant/bar (Live Photo #2) to serve as the primary cultural magnet. It effectively showcases the property's secondary, more casual social offering, ensuring a balanced representation of its social dynamics.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 5,
+          "category": "EXTERIOR_LANDMARK",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 3,
+          "photo_subject": "Exterior View of Lodge Architecture with Lush Surroundings",
+          "bullet_points": [
+            "Strategic Placement: Grounds the property geographically after establishing its key internal experiences, providing a sense of arrival.",
+            "Local Synergy: Showcases the lodge's integration with the natural Plettenberg Bay landscape, appealing to nature-seeking travelers.",
+            "Conversion Trigger: Eliminates location anxiety and provides a clear visual landmark for arrival and orientation."
+          ],
+          "psychological_conversion_trigger": "This photo provides essential geographic context and a sense of place, reassuring travelers about the property's setting within the beautiful Plettenberg Bay landscape.",
+          "action": "RE_SEQUENCE",
+          "action_label": "RE-SEQUENCE EXTERIOR ARCHITECTURE (FROM SLOT #3)",
+          "current_slot": 3,
+          "local_vibe_connection": "The lodge's architecture, blending with the natural environment, reflects the eco-conscious and aesthetically refined preferences of many Garden Route visitors.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #3): This exterior shot is re-sequenced to Slot #5. After establishing the property's unique social and private offerings, placing the exterior here provides a crucial sense of arrival and geographic context, completing the visual journey by anchoring the experience within its stunning natural setting.",
+          "photo_url": null,
+          "image_url": null
+        }
+      ],
+      "anti_commodity_copy_rewrite": {
+        "ota_headline": "Emily Moon River Lodge: Plettenberg Bay's Vibrant Riverfront Escape with Acclaimed Dining & Secluded Suites",
+        "property_overview_150_words": "Nestled on the tranquil Bitou River, Emily Moon River Lodge offers a unique blend of vibrant social energy and serene natural beauty. Guests are captivated by the warm atmosphere, exceptional river-view dining, and lively Simon's Bar, a local favorite for wood-fired pizzas and cocktails. Each secluded suite provides a luxurious sanctuary with stunning vistas, ensuring a peaceful night's rest. Discover an authentic Plettenberg Bay experience, where local charm meets refined comfort, all within easy reach of the region's natural wonders and culinary delights. Perfect for discerning travelers seeking both lively evenings and tranquil escapes."
+      },
+      "photographic_gap_analysis": [
+        {
+          "missing_shot_title": "Twilight Cocktail Hour at Main Restaurant Terrace",
+          "category": "ATMOSPHERIC_TWILIGHT",
+          "why_needed": "Currently, photos capture the restaurant during the day or with general evening lighting. A dedicated twilight shot would capture the magical 'golden hour' atmosphere, showcasing the romantic and sophisticated ambiance that attracts couples and discerning diners, a key unmet search demand.",
+          "recommended_framing_and_lighting": "Wide-angle shot from the terrace, capturing the warm glow of interior lights, subtle candlelit tables, and the fading light over the Bitou River. Focus on human interaction (couples enjoying drinks) with soft, diffused fill light to enhance warmth. 2800K warm lighting.",
+          "projected_adr_impact": "+10% higher F&B spend and +$30 ADR premium for romantic getaways."
+        },
+        {
+          "missing_shot_title": "Creator-Friendly Master Bathroom Soaking Tub with Natural Light",
+          "category": "CREATOR_BATHROOM",
+          "why_needed": "While a bathroom shot is added, a specific 'creator-friendly' shot of the soaking tub, emphasizing natural light and luxurious details, is missing. This would appeal to wellness and luxury travelers who prioritize spa-like bathroom experiences, a growing search trend.",
+          "recommended_framing_and_lighting": "Eye-level shot of a beautifully styled soaking tub, positioned to capture natural morning light streaming through a window, perhaps with a subtle river view. Include luxury bath amenities and a soft, inviting towel. Focus on clean lines and serene ambiance. 3500K natural light.",
+          "projected_adr_impact": "+8% higher suite booking velocity and +$45 ADR premium for wellness-focused guests."
+        },
+        {
+          "missing_shot_title": "Authentic Local Craft & Art Details within Lodge Interiors",
+          "category": "LIFESTYLE_SANCTUARY",
+          "why_needed": "The lodge is known for its authentic African charm and artisanal decor, but no specific photo highlights these unique, handcrafted details. This gap misses an opportunity to appeal to travelers seeking culturally rich and unique design experiences, a strong local subculture.",
+          "recommended_framing_and_lighting": "Close-up to medium shot showcasing a curated collection of local art, sculptures, or handcrafted furniture within a cozy lounge or suite. Emphasize texture, craftsmanship, and warm, inviting lighting. Shallow depth of field to highlight the details. 2700K warm ambient light.",
+          "projected_adr_impact": "+7% increase in direct bookings from design-conscious travelers and enhanced brand perception."
+        }
+      ],
+      "conversion_diagnosis": "The current Booking.com photo sequence suffers from a commodity flaw by not immediately showcasing the property's unique social and dining magnet, burying key differentiators. The lack of a dedicated bathroom shot further contributes to traveler hesitation. The re-sequencing and introduction of new assets will create a compelling visual narrative that aligns with traveler search intent for vibrant social experiences, luxurious comfort, and authentic local charm in Plettenberg Bay.",
+      "local_vibe_synergy_context": "Plettenberg Bay travelers actively seek experiences that blend natural beauty with sophisticated dining and authentic local culture. The optimized photo sequence strategically highlights Emily Moon's acclaimed riverfront restaurant and lively Simon's Bar (Slot #1 & #4) to capture the 'gourmet getaway' and 'social dining' subcultures. The luxurious, nature-integrated suites (Slot #2 & #3) cater to the 'tranquil escape' and 'wellness' demand, while the exterior (Slot #5) grounds the property within the stunning Garden Route landscape, ensuring every visual speaks directly to the region's top traveler motivations.",
+      "slot_1_decision_logic": {
+        "is_magnet_override_active": true,
+        "reasoning_code": "NAI_HIGH_DESTINATION_POWER_CLARITY_CONSENSUS",
+        "strategy_explanation": "The main restaurant and bar terrace at Emily Moon River Lodge, with its stunning river views and vibrant atmosphere, is a destination in its own right, highly sought after by both locals and travelers for its dining and social scene. This asset directly mirrors the #1 trending subcultural search theme in Plettenberg Bay ('riverfront dining' and 'vibrant social scene'). The chosen photo (Live Photo #2) offers split-second clarity, rich spatial context, and warm human energy, making it an ideal Hero Cultural Magnet to stop the scroll and immediately convey the property's unique emotional promise. This aligns perfectly with the 5-Slot Consensus Formula by leading with the signature vibe.",
+        "neighborhood_affinity_index": 0.92,
+        "override_asset_name": "Main Restaurant & Bar Terrace with River Views at Sunset"
+      },
+      "photos_status": "PENDING"
+    },
+    "audit_timestamp": "2026-11-10T18:27:43.495Z"
+  }
+}

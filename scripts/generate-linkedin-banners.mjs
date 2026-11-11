@@ -429,7 +429,7 @@ const option2Html = `<!DOCTYPE html>
     <div class="fade-overlay"></div>
     <div class="content">
       <div class="badge">VIBE SIGNATURES • HOTELS, CRUISES &amp; TOURS</div>
-      <h1>TURN YOUR UNIQUE EXPERIENCE<br/><span>INTO BOOKINGS</span></h1>
+      <h1>TURN YOUR VIBE &amp; EXPERIENCES<br/><span>INTO BOOKINGS</span></h1>
       <div class="sub" style="margin-bottom: 0;">Match travellers' dreams about your destination with your verified reality</div>
     </div>
     <div class="bottom-bar"></div>

@@ -97,7 +97,7 @@ export default function HookTeaserSection() {
                     {/* After Card: Local Gateway Hook */}
                     <div className="collage-card after-card">
                       <div className="collage-card-header after-header">
-                        <span className="collage-badge after-badge">AFTER: VIBE &amp; NEIGHBOURHOOD FIRST</span>
+                        <span className="collage-badge after-badge">AFTER: VIBE &amp; EXPERIENCES FIRST</span>
                       </div>
 
                       <div className="collage-hero-wrap">
@@ -154,7 +154,7 @@ export default function HookTeaserSection() {
               <div className="tier-content-header-row">
                 <div>
                   <h3 className="tier-heading">Stand Out Everywhere Guests Search</h3>
-                  <p className="tier-micro-desc">Turn your atmosphere and local destination gems into clear, trustworthy proof across every booking channel</p>
+                  <p className="tier-micro-desc">Turn your vibe, on-site experiences, and local destination gems into clear, trustworthy proof across every booking channel</p>
                 </div>
               </div>
 

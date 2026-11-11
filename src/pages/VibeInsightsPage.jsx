@@ -313,7 +313,7 @@ export default function VibeInsightsPage() {
             <div className="vi-kpi-grid" style={{ marginTop: '2rem' }}>
               <div className="vi-kpi-card vi-kpi-card--emerald">
                 <div className="vi-kpi-label" style={{ color: '#34d399' }}>
-                  A. Physical Vibe Score
+                  A. Physical Vibe &amp; Experiences
                 </div>
                 <div className="vi-kpi-value" style={{ color: '#34d399' }}>
                   {LONDON_10_STUDY_META.kpis.avgPhysicalVibeScore}
@@ -326,7 +326,7 @@ export default function VibeInsightsPage() {
 
               <div className="vi-kpi-card vi-kpi-card--cyan">
                 <div className="vi-kpi-label" style={{ color: '#00e5ff' }}>
-                  B1. Owned Digital: Own Vibe
+                  B1. Owned Digital: Vibe &amp; Experiences
                 </div>
                 <div className="vi-kpi-value" style={{ color: '#00e5ff' }}>
                   {LONDON_10_STUDY_META.kpis.avgOwnPropertyDigitalScore}

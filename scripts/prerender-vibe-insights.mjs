@@ -121,6 +121,7 @@ function buildLondonStudyJsonLd() {
 }
 
 function buildDirectoryStaticHtml() {
+  const kpis = LONDON_10_STUDY_META.kpis;
   return `
     <div class="vibe-insights-static-prerender">
       <header>
@@ -132,10 +133,10 @@ function buildDirectoryStaticHtml() {
           <h2><a href="/vibe-insights/london-boutique-ota-gap">Study #01: ${escapeHtml(LONDON_10_STUDY_META.title)} — ${escapeHtml(LONDON_10_STUDY_META.subtitle)}</a></h2>
           <p>Why London’s most atmospheric hotels excel at marketing their own internal bars and design online (88.4/100), yet under-sell their walkable local neighbourhood vibe (45.5/100) and surrender 70% of their Booking.com Top-5 Hero slots to repetitive bedrooms, sinks, and utility shots (56.5/100).</p>
           <ul>
-            <li>A. Physical Vibe Average: ${LONDON_10_STUDY_META.avgMathVibeScore} / 100</li>
-            <li>B1. Owned Digital — Own Property Vibe: ${LONDON_10_STUDY_META.avgOwnPropertyDigitalScore} / 100</li>
-            <li>B2. Owned Digital — Local Destination Vibe: ${LONDON_10_STUDY_META.avgLocalDestinationDigitalScore} / 100</li>
-            <li>C. Booking.com Top-5 Hero Score: ${LONDON_10_STUDY_META.avgOtaTop5Score} / 100</li>
+            <li>A. Physical Vibe Average: ${kpis.avgMathVibeScore} / 100</li>
+            <li>B1. Owned Digital — Own Property Vibe: ${kpis.avgOwnPropertyDigitalScore} / 100</li>
+            <li>B2. Owned Digital — Local Destination Vibe: ${kpis.avgLocalDestinationDigitalScore} / 100</li>
+            <li>C. Booking.com Top-5 Hero Score: ${kpis.avgOtaTop5Score} / 100</li>
           </ul>
         </article>
       </main>
@@ -144,6 +145,7 @@ function buildDirectoryStaticHtml() {
 }
 
 function buildLondonStudyStaticHtml() {
+  const kpis = LONDON_10_STUDY_META.kpis;
   const hotelsHtml = LONDON_10_HOTELS.map(
     (h) => `
       <article id="hotel-${escapeHtml(h.id)}">
@@ -179,18 +181,18 @@ function buildLondonStudyStaticHtml() {
     <div class="vibe-insights-static-prerender">
       <article>
         <header>
-          <p>EXECUTIVE SUMMARY • ${escapeHtml(LONDON_10_STUDY_META.studyCode)} • ${escapeHtml(LONDON_10_STUDY_META.sampleSize)}</p>
+          <p>EXECUTIVE SUMMARY • ${escapeHtml(LONDON_10_STUDY_META.studyCode)} • 10 Audited London Lifestyle Hotels</p>
           <h1>${escapeHtml(LONDON_10_STUDY_META.title)}: ${escapeHtml(LONDON_10_STUDY_META.subtitle)}</h1>
-          <p>We audited 10 of London’s most celebrated boutique and lifestyle hotels across three channels: Physical Reality (${LONDON_10_STUDY_META.avgMathVibeScore}/100), Owned Website &amp; Social (${LONDON_10_STUDY_META.avgOwnPropertyDigitalScore}/100 Own Vibe vs. ${LONDON_10_STUDY_META.avgLocalDestinationDigitalScore}/100 Local Destination Vibe), and Booking.com Top-5 Hero Galleries (${LONDON_10_STUDY_META.avgOtaTop5Score}/100). Two structural gaps emerged: first, on their own websites and Instagram feeds, even top lifestyle hotels operate as "Walled Gardens" — brilliantly showcasing their own internal bars and design (${LONDON_10_STUDY_META.avgOwnPropertyDigitalScore}/100), while under-marketing the walkable local neighbourhood vibe outside their doors (${LONDON_10_STUDY_META.avgLocalDestinationDigitalScore}/100). Second, on Booking.com, 70% of all Top-5 Hero slots (35 of 50 photos) default to repetitive bedrooms, bathroom sinks, toiletries, conference tables, and gym treadmills.</p>
+          <p>We audited 10 of London’s most celebrated boutique and lifestyle hotels across three channels: Physical Reality (${kpis.avgMathVibeScore}/100), Owned Website &amp; Social (${kpis.avgOwnPropertyDigitalScore}/100 Own Vibe vs. ${kpis.avgLocalDestinationDigitalScore}/100 Local Destination Vibe), and Booking.com Top-5 Hero Galleries (${kpis.avgOtaTop5Score}/100). Two structural gaps emerged: first, on their own websites and Instagram feeds, even top lifestyle hotels operate as "Walled Gardens" — brilliantly showcasing their own internal bars and design (${kpis.avgOwnPropertyDigitalScore}/100), while under-marketing the walkable local neighbourhood vibe outside their doors (${kpis.avgLocalDestinationDigitalScore}/100). Second, on Booking.com, 70% of all Top-5 Hero slots (35 of 50 photos) default to repetitive bedrooms, bathroom sinks, toiletries, conference tables, and gym treadmills.</p>
         </header>
 
         <section>
           <h2>4-Container Multi-Channel Benchmark Summary</h2>
           <ul>
-            <li><strong>A. Physical Vibe (${LONDON_10_STUDY_META.avgMathVibeScore} / 100):</strong> Real-World Property &amp; District — Iconic architecture, destination rooftops, high-energy dining rooms, and prime walkable London districts.</li>
-            <li><strong>B1. Owned Digital — Own Vibe (${LONDON_10_STUDY_META.avgOwnPropertyDigitalScore} / 100):</strong> Internal Property Merchandising — Official hotel websites and Instagram feeds excel at showcasing their own internal bars, restaurants, and design DNA.</li>
-            <li><strong>B2. Owned Digital — Local Vibe (${LONDON_10_STUDY_META.avgLocalDestinationDigitalScore} / 100):</strong> The "Walled Garden" Blind Spot — Owned digital treats the hotel as a self-contained island, under-marketing step-out neighbourhood culture, street markets, and local walkability.</li>
-            <li><strong>C. OTA Top-5 Hero Score (${LONDON_10_STUDY_META.avgOtaTop5Score} / 100):</strong> 70% Rooms, Bathrooms &amp; Utility — 35 of 50 Booking.com Hero slots show beds, couches, sinks, shower gel, or gym equipment — vs. just 14% social/culinary and 16% destination views.</li>
+            <li><strong>A. Physical Vibe (${kpis.avgMathVibeScore} / 100):</strong> Real-World Property &amp; District — Iconic architecture, destination rooftops, high-energy dining rooms, and prime walkable London districts.</li>
+            <li><strong>B1. Owned Digital — Own Vibe (${kpis.avgOwnPropertyDigitalScore} / 100):</strong> Internal Property Merchandising — Official hotel websites and Instagram feeds excel at showcasing their own internal bars, restaurants, and design DNA.</li>
+            <li><strong>B2. Owned Digital — Local Vibe (${kpis.avgLocalDestinationDigitalScore} / 100):</strong> The "Walled Garden" Blind Spot — Owned digital treats the hotel as a self-contained island, under-marketing step-out neighbourhood culture, street markets, and local walkability.</li>
+            <li><strong>C. OTA Top-5 Hero Score (${kpis.avgOtaTop5Score} / 100):</strong> 70% Rooms, Bathrooms &amp; Utility — 35 of 50 Booking.com Hero slots show beds, couches, sinks, shower gel, or gym equipment — vs. just 14% social/culinary and 16% destination views.</li>
           </ul>
         </section>
 

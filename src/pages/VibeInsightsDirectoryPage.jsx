@@ -31,12 +31,12 @@ const B2B_SECTORS = [
         date: 'Nov 2026',
         title: LONDON_10_STUDY_META.title,
         summary:
-          'AtmosVibe benchmark of 10 flagship London lifestyle hotels across Physical Presence (92.5), Owned Digital — Own Property Vibe (88.4) vs. Local Destination Vibe (45.5), and Live Booking.com Top-5 Hero Images (56.5).',
+          'AtmosVibe benchmark of 10 flagship London lifestyle hotels across Physical Vibe & Experiences (92.5), Owned Digital — Own Vibe & Experiences (88.4) vs. Local Destination Vibe (45.5), and Live Booking.com Top-5 Hero Images (56.5).',
         status: 'Published Report',
         statusType: 'published',
         href: '/vibe-insights/london-boutique-ota-gap',
         metaPills: [
-          '92.5 Physical Vibe',
+          '92.5 Physical Vibe & Experiences',
           '88.4 Own Vibe / 45.5 Local Vibe',
           '56.5 OTA Top-5 Score',
           'n = 10 London Hotels',
