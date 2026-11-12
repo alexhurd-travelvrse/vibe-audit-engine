@@ -244,13 +244,13 @@ export default function VibeDimensionsSection() {
         <div className="vibe-dimensions-header animate-fade-up">
           <div className="vibe-dimensions-eyebrow">
             <Sparkles size={14} />
-            <span>THE VIBE SIGNATURE™</span>
+            <span>THE VERIFIED VIBE SIGNATURE™</span>
           </div>
           <h2 className="vibe-dimensions-title">
-            Your Destination Creates <span className="vibe-title-accent">Desire.</span> Your Vibe &amp; Experiences Win the <span className="vibe-title-accent">Shortlist</span>
+            How We <span className="vibe-title-accent">Verify</span> Your Real-World <span className="vibe-title-accent">Vibe &amp; Experiences</span>
           </h2>
           <p className="vibe-dimensions-subtitle">
-            Travellers choose where to stay based on mood, atmosphere, and signature experiences. Vibe Signatures verify the 8 real-world signals that get your brand noticed early and onto the shortlist
+            Your on-site vibe, experiences and connection to your local destination are increasingly what win the shortlist and drive bookings. Vibe Signatures independently verify the 8 real-world signals that prove what makes your property and local area special
           </p>
         </div>
 

@@ -15,10 +15,10 @@ export default function HookTeaserSection() {
             <span>HOW WE USE VIBE SIGNATURES</span>
           </div>
           <h2 className="teaser-title">
-            Gateway to Your <span className="teaser-title-accent">Destination</span>
+            Showcase Your Verified Vibe <span className="teaser-title-accent">Everywhere Guests Search</span>
           </h2>
           <p className="teaser-description">
-            AtmosVibe ensures your brand stands out as the defining gateway to your destination across all channels. We also create a Vibe Signature for your destination, compare and verify it against yours, and give you a clear action plan where there are gaps
+            Once we verify your property’s real-world vibe, on-site experiences and local destination connection, we audit where your channels fall short—and give you the exact action plan and verified data feeds to stand out across OTAs, your website, social and AI search
           </p>
         </div>
 
@@ -153,8 +153,8 @@ export default function HookTeaserSection() {
             <div className="tier-content">
               <div className="tier-content-header-row">
                 <div>
-                  <h3 className="tier-heading">Stand Out Everywhere Guests Search</h3>
-                  <p className="tier-micro-desc">Turn your vibe, on-site experiences, and local destination gems into clear, trustworthy proof across every booking channel</p>
+                  <h3 className="tier-heading">Get Showcased Across Every Channel &amp; AI Search</h3>
+                  <p className="tier-micro-desc">Use your independent verification to showcase your property vibe, signature experiences and local destination connection everywhere guests book</p>
                 </div>
               </div>
 
@@ -163,7 +163,7 @@ export default function HookTeaserSection() {
                   <span className="channel-tag">Booking.com &amp; OTAs</span>
                   <span className="channel-tag">Direct Website</span>
                   <span className="channel-tag">Instagram &amp; Reels</span>
-                  <span className="channel-tag">AI Search (ChatGPT &amp; Perplexity)</span>
+                  <span className="channel-tag">AI Search (ChatGPT, Gemini &amp; Perplexity)</span>
                 </div>
 
                 {/* Streamlined High-Impact Deliverables Grid */}
@@ -173,18 +173,8 @@ export default function HookTeaserSection() {
                       <Sparkles size={16} className="text-gold" />
                     </div>
                     <div className="pro-deliv-body">
-                      <h4 className="pro-deliv-title">First-Impression Photo Order</h4>
-                      <p className="pro-deliv-desc">Put your most inviting photo in Slot #1—backed by a bright, honest room and your destination view</p>
-                    </div>
-                  </div>
-
-                  <div className="pro-deliverable-card">
-                    <div className="pro-deliv-icon-wrap">
-                      <Compass size={16} className="text-gold" />
-                    </div>
-                    <div className="pro-deliv-body">
-                      <h4 className="pro-deliv-title">Verified 5-Minute Walk Guide</h4>
-                      <p className="pro-deliv-desc">Connect your front door to verified 4.5★+ local wine bars, cafés, and markets travellers love</p>
+                      <h4 className="pro-deliv-title">Cross-Channel Visual Audit</h4>
+                      <p className="pro-deliv-desc">Ensure your Top-5 OTA photos, website, and social lead with your best experiences and room comfort—not utility clutter</p>
                     </div>
                   </div>
 
@@ -193,8 +183,8 @@ export default function HookTeaserSection() {
                       <Zap size={16} className="text-gold" />
                     </div>
                     <div className="pro-deliv-body">
-                      <h4 className="pro-deliv-title">Get Recommended by AI Assistants</h4>
-                      <p className="pro-deliv-desc">Give ChatGPT, Gemini &amp; Perplexity the plain-English facts and local links they need to recommend you</p>
+                      <h4 className="pro-deliv-title">Verified Feed for AI Search</h4>
+                      <p className="pro-deliv-desc">Give ChatGPT, Gemini &amp; Perplexity the independently verified signals they need to trust and recommend you directly</p>
                     </div>
                   </div>
 
@@ -203,8 +193,18 @@ export default function HookTeaserSection() {
                       <CheckCircle2 size={16} className="text-gold" />
                     </div>
                     <div className="pro-deliv-body">
-                      <h4 className="pro-deliv-title">Social Buzz + Quiet Sleep Proof</h4>
-                      <p className="pro-deliv-desc">Show guests where the evening atmosphere comes alive and reassure them they'll sleep soundly upstairs</p>
+                      <h4 className="pro-deliv-title">On-Site Experiences &amp; Sleep Proof</h4>
+                      <p className="pro-deliv-desc">Showcase your rooftop, dining, and evening atmosphere while reassuring guests they’ll sleep soundly upstairs</p>
+                    </div>
+                  </div>
+
+                  <div className="pro-deliverable-card">
+                    <div className="pro-deliv-icon-wrap">
+                      <Compass size={16} className="text-gold" />
+                    </div>
+                    <div className="pro-deliv-body">
+                      <h4 className="pro-deliv-title">Gateway to Your Local Destination</h4>
+                      <p className="pro-deliv-desc">Connect your front door to verified 4.5★+ walkable local wine bars, cafés, and markets travellers love</p>
                     </div>
                   </div>
                 </div>

@@ -1,0 +1,221 @@
+{
+  "key": "raggy charters marine eco-cruises:::gqeberha port elizabeth:::algoa bay harbour::::::manifest_only",
+  "timestamp": 1794435985606,
+  "data": {
+    "venue_id": "raggy_charters_marine_eco_cruises_gqeberha",
+    "venue_name": "Raggy Charters Marine Eco-Cruises",
+    "location": "Algoa Bay Harbour, Gqeberha Port Elizabeth",
+    "vibe_signature": {
+      "energy_score": 92,
+      "social_pacing": "Vibrant & Engaging",
+      "headline": "Thrilling Marine Eco-Adventures & Whale Heritage Exploration",
+      "acoustic_dna": {
+        "soundscape_genre": "Oceanic & Adventurous",
+        "anchor_artists": [
+          "Seaside (Not The King)",
+          "Upbeat Folk",
+          "Nature Sounds"
+        ],
+        "spotify_query": "upbeat folk adventure marine wildlife",
+        "sound_texture": "Open-air ocean breeze, excited chatter, occasional marine animal calls"
+      },
+      "crowd_archetype": {
+        "primary": "Eco-Adventurers & Nature Enthusiasts",
+        "social_density": "Lively & Communal",
+        "dress_code": "Casual & Weather-Appropriate"
+      },
+      "lighting_and_sensory": {
+        "atmosphere": "Exhilarating & Natural",
+        "sensory_intensity": "High - Wind, sun, ocean spray, marine life sightings"
+      },
+      "hyper_local_proximity": {
+        "key_anchors": [
+          "Nelson Mandela Bay Yacht Club Restaurant & Bar (4.5★ · 5 min walk)",
+          "Bayworld (4.4★ · 8 min walk)",
+          "Colchester Beach and Harbour (4.6★ · 10 min drive)"
+        ],
+        "insider_lore": "Algoa Bay is a declared Whale Heritage Site, making every trip a journey through a globally recognized marine sanctuary."
+      },
+      "qualification_test": {
+        "you_will_love_if": "You crave exhilarating encounters with marine wildlife, appreciate conservation efforts, and enjoy a lively, communal atmosphere on the open sea.",
+        "skip_if": "You prefer quiet, solitary experiences, are prone to seasickness, or are looking for a luxury, pampered cruise."
+      }
+    },
+    "interactive_quiz_challenge": {
+      "target_scene_id": 1,
+      "scene_name": "Algoa Bay Marine Safari",
+      "mission_title": "Spot the Gentle Giants",
+      "question": "Which marine mammal is Algoa Bay particularly famous for, often seen in large pods?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Great White Sharks"
+        },
+        {
+          "id": "B",
+          "text": "Common Dolphins"
+        },
+        {
+          "id": "C",
+          "text": "African Penguins"
+        },
+        {
+          "id": "D",
+          "text": "Humpback Whales"
+        }
+      ],
+      "correct_option_id": "B",
+      "success_lore_reveal": "Correct! Algoa Bay is renowned for its massive pods of Common Dolphins, often numbering over a thousand, creating spectacular displays for lucky observers.",
+      "reward_badge": "Marine Explorer Badge"
+    },
+    "ota_conversion_audit": {
+      "channel": "Booking.com",
+      "before_merchandising_score": 48,
+      "after_merchandising_score": 95,
+      "projected_conversion_uplift": "+22.0%",
+      "current_drop_off_flaw": "Lack of immediate visual impact showcasing the core marine wildlife experience and the unique Whale Heritage Site status.",
+      "key_strategic_shifts": [
+        "Elevate the 'Common Dolphin Super-Pod' asset to Slot #1 to immediately convey the thrilling marine wildlife experience, aligning with Algoa Bay's #1 eco-tourism search demand.",
+        "Introduce a 'Whale Heritage Site' context shot in Slot #2 to anchor the unique conservation and educational value, addressing traveler interest in responsible tourism.",
+        "Prioritize a clear 'Boat & Crew' shot in Slot #3 to build trust and showcase the professional, friendly host vibe, crucial for adventure bookings.",
+        "Re-sequence the 'Coastal Landscape' shot to Slot #5 to provide geographic orientation after the core experience has been established."
+      ],
+      "optimal_5_photo_sequence": [
+        {
+          "slot": 1,
+          "category": "HERO_CULTURAL_MAGNET",
+          "source_type": "AMENITY_ASSET",
+          "source_index": 1,
+          "photo_subject": "Massive Pod of Common Dolphins Leaping in Algoa Bay",
+          "bullet_points": [
+            "Visual Upgrade: Captures the exhilarating, once-in-a-lifetime experience of a super-pod of dolphins, far more dynamic than a static boat shot.",
+            "Local Synergy: Directly addresses the top traveler search for 'marine wildlife Algoa Bay' and 'dolphin watching Port Elizabeth'.",
+            "Conversion Trigger: Evokes immediate excitement and the desire for an unforgettable nature encounter."
+          ],
+          "psychological_conversion_trigger": "This image instantly communicates the unparalleled thrill of marine wildlife encounters, a primary driver for booking eco-cruises in Algoa Bay.",
+          "action": "MAGNET_OVERRIDE",
+          "action_label": "HERO CULTURAL MAGNET: COMMON DOLPHIN SUPER-POD (SLOT #1)",
+          "upgrade_rationale": "This new asset dramatically upgrades from a generic boat exterior to a high-impact, emotionally resonant shot of the region's most sought-after marine life, immediately conveying the core experience and unique selling proposition.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 2,
+          "category": "EXTERIOR_LANDMARK",
+          "source_type": "AMENITY_ASSET",
+          "source_index": 2,
+          "photo_subject": "Raggy Charters Boat with Algoa Bay Coastline & Whale Heritage Site Banner",
+          "bullet_points": [
+            "Visual Upgrade: Combines the vessel with the scenic bay and a subtle nod to its Whale Heritage Site status, providing context and unique value.",
+            "Local Synergy: Connects the cruise directly to Algoa Bay's protected status, appealing to eco-conscious travelers searching for 'sustainable marine tours'.",
+            "Conversion Trigger: Establishes credibility and highlights the unique environmental significance of the location."
+          ],
+          "psychological_conversion_trigger": "By showcasing the boat within the context of the Whale Heritage Site, this photo builds trust and highlights the unique, responsible nature of the experience.",
+          "action": "SWAP_IN",
+          "action_label": "SWAP IN WHALE HERITAGE SITE CONTEXT (SLOT #2)",
+          "upgrade_rationale": "This asset provides crucial context that the current live photos lack, explicitly linking the charter to Algoa Bay's protected status and offering a more compelling visual narrative than a generic boat shot.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 3,
+          "category": "SECONDARY_LIFESTYLE_SANCTUARY",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 4,
+          "photo_subject": "Raggy Charters Crew Member Pointing to Marine Life with Guests on Deck",
+          "bullet_points": [
+            "Strategic Placement: Positions the friendly, knowledgeable crew and engaged guests early in the sequence, building confidence in the experience.",
+            "Local Synergy: Highlights the human element of the tour, appealing to travelers seeking 'guided marine tours Port Elizabeth' and 'expert wildlife guides'.",
+            "Conversion Trigger: Conveys a sense of safety, expertise, and shared excitement, reassuring potential bookers about the quality of the tour."
+          ],
+          "psychological_conversion_trigger": "This photo reassures guests about the quality of the guiding and the interactive nature of the experience, fostering trust and anticipation.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE CREW & GUEST INTERACTION (FROM SLOT #4)",
+          "current_slot": 4,
+          "local_vibe_connection": "This image directly addresses the traveler's desire for knowledgeable local guides and an engaging, interactive experience with marine life, a key aspect of Algoa Bay's eco-tourism.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #4): Moving this photo forward emphasizes the professional and engaging host experience, a critical factor for adventure tour bookings, immediately after establishing the destination's unique appeal.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 4,
+          "category": "SOCIAL_FB_ROOFTOP",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 2,
+          "photo_subject": "Guests Enjoying the View from the Deck of Raggy Charters Boat",
+          "bullet_points": [
+            "Strategic Placement: Showcases the social and comfortable aspect of the cruise, demonstrating the onboard experience.",
+            "Local Synergy: Appeals to travelers looking for 'relaxing boat trips Port Elizabeth' and 'scenic cruises Algoa Bay'.",
+            "Conversion Trigger: Illustrates the enjoyable atmosphere and the opportunity to relax while observing the surroundings."
+          ],
+          "psychological_conversion_trigger": "This photo highlights the comfortable and social environment on board, appealing to those seeking both adventure and relaxation.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE ONBOARD SOCIAL EXPERIENCE (FROM SLOT #2)",
+          "current_slot": 2,
+          "local_vibe_connection": "This image connects to the local desire for enjoyable outdoor activities and scenic views within Algoa Bay, showcasing the cruise as a social and relaxing outing.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #2): This photo, while good, is better placed after the core wildlife and crew elements to reinforce the overall positive experience, rather than leading with a less impactful general view.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 5,
+          "category": "EXTERIOR_LANDMARK",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 1,
+          "photo_subject": "Raggy Charters Boat Docked in Algoa Bay Harbour with City in Background",
+          "bullet_points": [
+            "Strategic Placement: Provides essential geographic context and a sense of arrival/departure, grounding the experience.",
+            "Local Synergy: Addresses practical traveler concerns about 'Port Elizabeth harbour tours' and 'Algoa Bay departure points'.",
+            "Conversion Trigger: Confirms the departure location and connects the marine adventure to the urban gateway."
+          ],
+          "psychological_conversion_trigger": "This shot provides crucial logistical clarity and anchors the marine adventure within the familiar context of the Port Elizabeth harbour.",
+          "action": "DEMOTE",
+          "action_label": "DEMOTE HARBOUR & CITY CONTEXT (FROM SLOT #1)",
+          "current_slot": 1,
+          "local_vibe_connection": "This photo directly addresses the need for clear geographical context for travelers searching for 'boat trips from Port Elizabeth harbour' and 'Algoa Bay excursions'.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #1): While important for location, this photo is less impactful as a hero shot than the marine wildlife itself. Placing it last provides necessary orientation after the core experience has been highlighted.",
+          "photo_url": null,
+          "image_url": null
+        }
+      ],
+      "anti_commodity_copy_rewrite": {
+        "ota_headline": "Raggy Charters: Algoa Bay's Premier Whale Heritage Eco-Cruises",
+        "property_overview_150_words": "Embark on an unforgettable marine eco-adventure with Raggy Charters, your gateway to Algoa Bay, a globally recognized Whale Heritage Site. Witness breathtaking super-pods of Common Dolphins, majestic whales, and playful penguins in their natural habitat. Our passionate, expert crew provides an engaging and educational experience, ensuring every moment on the water is filled with wonder. From the vibrant harbour to the open ocean, discover the rich biodiversity of South Africa's coast. Join us for a thrilling, responsible, and truly authentic encounter with the ocean's most magnificent creatures."
+      },
+      "photographic_gap_analysis": [
+        {
+          "missing_shot_title": "Close-up of African Penguins on St Croix Island",
+          "category": "MARINE_WILDLIFE",
+          "why_needed": "Currently, there isn't a strong visual asset showcasing the iconic African Penguins, a key draw for Algoa Bay. This shot would capture the unique biodiversity and appeal to travelers specifically interested in these endangered birds.",
+          "recommended_framing_and_lighting": "Eye-level shot of a group of penguins on the rocky shore of St Croix Island, natural daylight, capturing their distinctive waddle and expressions.",
+          "projected_adr_impact": "+10% booking conversion for eco-tours, attracting niche wildlife enthusiasts."
+        },
+        {
+          "missing_shot_title": "Educational Interaction with Marine Biologist Onboard",
+          "category": "EDUCATIONAL_EXPERIENCE",
+          "why_needed": "The 'eco-cruises' aspect is strong, but a visual demonstrating the educational component (e.g., a marine biologist explaining sightings) is missing. This would appeal to families and those seeking deeper learning.",
+          "recommended_framing_and_lighting": "Mid-shot of a crew member or marine biologist engaging with guests, pointing to marine life or a map, with a backdrop of the ocean. Warm, natural light.",
+          "projected_adr_impact": "+7% family bookings, enhancing perceived value beyond just 'sightseeing'."
+        },
+        {
+          "missing_shot_title": "Sunrise/Sunset Departure from Algoa Bay Harbour",
+          "category": "ATMOSPHERIC_TWILIGHT",
+          "why_needed": "While the daytime experience is well-covered, an atmospheric shot of a sunrise or sunset departure would add a romantic/serene dimension, appealing to couples or those seeking a different mood.",
+          "recommended_framing_and_lighting": "Wide-angle shot of the boat departing the harbour at golden hour, with warm, diffused light reflecting on the water and a silhouetted coastline.",
+          "projected_adr_impact": "+5% premium bookings for special occasion/romantic cruises."
+        }
+      ],
+      "conversion_diagnosis": "The current Booking.com sequence fails to immediately highlight Raggy Charters' unique selling proposition: the thrilling marine wildlife encounters within a Whale Heritage Site. Generic boat shots and a lack of focus on the core experience lead to high drop-off rates. The proposed sequence prioritizes emotional impact and educational value, directly addressing traveler intent for eco-tourism in Algoa Bay.",
+      "local_vibe_synergy_context": "Algoa Bay is globally recognized as a Whale Heritage Site, attracting travelers specifically interested in marine conservation and wildlife. The local subculture revolves around eco-tourism, responsible wildlife viewing, and outdoor adventure. The photo recommendations prioritize showcasing the incredible marine life (dolphins, whales, penguins) and the knowledgeable, friendly crew, directly aligning with these high-demand local search themes. By leading with the 'Common Dolphin Super-Pod' and integrating the 'Whale Heritage Site' context, the visual narrative immediately resonates with the neighborhood's core identity and traveler expectations.",
+      "slot_1_decision_logic": {
+        "is_magnet_override_active": true,
+        "reasoning_code": "NAI_DESTINATION_CLARITY_CONSENSUS",
+        "strategy_explanation": "The 'Common Dolphin Super-Pod' asset perfectly meets all four Magnet Override criteria. Algoa Bay's #1 subcultural search theme is marine wildlife, particularly dolphins and whales. This asset is a destination in its own right, offering a split-second, unambiguous visual of an extraordinary natural event. It also aligns with the 5-Slot Consensus Formula by immediately delivering the emotional promise of the eco-cruise.",
+        "neighborhood_affinity_index": 0.92,
+        "override_asset_name": "Common Dolphin Super-Pod Leaping"
+      },
+      "photos_status": "PENDING"
+    },
+    "audit_timestamp": "2026-11-11T22:26:05.927Z"
+  }
+}

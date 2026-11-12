@@ -248,6 +248,12 @@ const html = `<!DOCTYPE html>
 
         <div class="grid-3">
           <div class="sm-card">
+            <div class="sm-num" style="color:#34d399;">80%+ <span>(4 in 5)</span></div>
+            <div class="sm-title">Pay Extra for Vibe &amp; Experiences</div>
+            <div class="sm-desc">Over 80% of travellers pay extra for atmosphere &amp; on-site experiences (rooftops, dining, spa) over loyalty points.</div>
+          </div>
+
+          <div class="sm-card">
             <div class="sm-num" style="color:#00e5ff;">26% <span>vs 21%</span></div>
             <div class="sm-title">OTAs Overtook Search Engines</div>
             <div class="sm-desc">26% of travellers now start hotel research on an OTA (up from 18%), while search engines fell from 36% to 21%.</div>
@@ -257,12 +263,6 @@ const html = `<!DOCTYPE html>
             <div class="sm-num" style="color:#ffd700;">18% <span>(+3.3pp)</span></div>
             <div class="sm-title">Start on OTA → Book Direct</div>
             <div class="sm-desc">18% of guests who begin their search on an OTA ultimately switch to book directly on the hotel’s own website.</div>
-          </div>
-
-          <div class="sm-card">
-            <div class="sm-num" style="color:#34d399;">58% <span>(+4pp)</span></div>
-            <div class="sm-title">Prioritise Elevated Experiences</div>
-            <div class="sm-desc">58% now choose superior or luxury stays—shifting toward meaningful, elevated on-property experiences &amp; vibe.</div>
           </div>
         </div>
       </div>

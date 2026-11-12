@@ -1,0 +1,302 @@
+{
+  "key": "nyathi rest camp addo:::addo:::addo elephant national park::::::manifest_only",
+  "timestamp": 1794433477122,
+  "data": {
+    "venue_id": "nyathi_rest_camp_addo",
+    "venue_name": "Nyathi Rest Camp Addo",
+    "location": "Addo Elephant National Park, Addo",
+    "vibe_signature": {
+      "energy_score": 78,
+      "social_pacing": "Relaxed Safari Rhythm & Attentive Service",
+      "headline": "Luxury Safari Lodge with Serene Savanna Views & Authentic Wildlife Encounters",
+      "acoustic_dna": {
+        "soundscape_genre": "African Ambient & Nature Sounds",
+        "anchor_artists": [
+          "Miriam Makeba",
+          "Ladysmith Black Mambazo",
+          "Hugh Masekela"
+        ],
+        "spotify_query": "African ambient safari lounge",
+        "sound_texture": "Gentle rustling, distant wildlife calls, soft conversational hum",
+        "conversation_clarity_score": 92,
+        "conversation_verdict": "Easy Safari Chat & Relaxed Banter",
+        "decibel_level": "58 dB (Peaceful & Immersive)",
+        "sleep_sanctuary_verdict": "Quiet Log Cabins & Deep Safari Rest"
+      },
+      "crowd_archetype": {
+        "primary": "Nature Enthusiasts & Luxury Safari Seekers",
+        "social_density": "Intimate & Spacious",
+        "dress_code": "Smart Casual Safari Chic",
+        "energy_verdict": "Peaceful Immersion & Attentive Comfort",
+        "local_ratio": 60,
+        "tourist_ratio": 40,
+        "tourist_trap_verdict": "Authentic Safari Experience — Not a Tourist Trap",
+        "trip_occasions": [
+          "Couples Safari Escape",
+          "Wildlife Photography",
+          "Family Nature Retreat"
+        ]
+      },
+      "lighting_and_sensory": {
+        "atmosphere": "Warm African Sunset Glow & Natural Textures",
+        "sensory_intensity": "Subtle & Immersive",
+        "lighting_temperature": "Golden Hour Sunlight & Warm Lantern Glow"
+      },
+      "hyper_local_proximity": {
+        "key_anchors": [
+          "Addo Elephant National Park Main Gate (4.7★ · 10 min drive)",
+          "Jack's Ridge (4.6★ · 15 min drive)",
+          "Mathyolweni Gate (4.5★ · 20 min drive)"
+        ],
+        "insider_lore": "Nyathi Rest Camp offers exclusive access to game drives within the Addo Elephant National Park, providing unparalleled wildlife viewing opportunities away from the main crowds."
+      },
+      "qualification_test": {
+        "you_will_love_if": "You seek a luxurious, peaceful safari experience with abundant wildlife, attentive service, and a deep connection to nature.",
+        "skip_if": "You prefer a bustling, urban environment or expect a lively nightlife scene within walking distance."
+      },
+      "ai_search_geo": {
+        "traveler_prompts": [
+          "Luxury safari lodge Addo Elephant National Park with private game drives",
+          "Best quiet accommodation in Addo for wildlife viewing",
+          "Family-friendly safari stay in South Africa with excellent service"
+        ],
+        "verified_entity_summary": "Nyathi Rest Camp Addo offers a luxury safari experience within Addo Elephant National Park, providing peaceful, soundproofed log cabins for deep rest, complemented by serene savanna views and attentive service. Guests can enjoy authentic wildlife encounters and easy access to the park's 'Big 7' through verified local game drives."
+      },
+      "authenticity_and_materials": {
+        "authenticity_score": 95,
+        "material_palette": "Natural timber, thatch, local stone, woven textiles",
+        "material_verdict": "Authentic Safari Lodge — Seamlessly Blends with Nature"
+      },
+      "host_vibe": {
+        "host_archetype": "Knowledgeable Safari Guides & Attentive Hosts",
+        "host_style_score": 90,
+        "service_pacing": "Unhurried, Personalized & Intuitive",
+        "signature_team_roles": [
+          "Safari Guide",
+          "Camp Manager",
+          "Wildlife Expert"
+        ],
+        "staff_icebreaker_prompt": "Ask your host about their most memorable wildlife sighting in Addo.",
+        "team_aesthetic": "Practical Safari Attire & Warm, Welcoming Smiles",
+        "warmth_verdict": "Genuine Hospitality — Treated Like Valued Guests"
+      },
+      "insider_secrets": {
+        "insider_badge": "Safari Guide & Local Lore",
+        "off_menu_perk": "Request a private sundowner experience at a secluded viewpoint within the camp's concession.",
+        "secret_lore": "The best time for elephant sightings near the camp is often early morning or late afternoon when they gather at the waterholes. Ask your guide for the prime viewing spots.",
+        "secret_title": "The Secluded Sundowner Spot"
+      },
+      "temporal_dynamics": {
+        "best_time_to_visit": "6:00 AM for morning game drives; 5:00 PM for sunset views from your cabin.",
+        "content_readiness": {
+          "aesthetic_subculture": "Safari Luxury & Wildlife Photography",
+          "flattery_note": "Perfect for capturing stunning wildlife and serene landscapes.",
+          "score": 0.9,
+          "top_creator_spot": "Private deck overlooking the savanna at sunrise",
+          "verdict": "Highly Instagrammable Safari Escape"
+        },
+        "diurnal_rhythm": {
+          "chilling": {
+            "focus": "Relaxing on private deck, enjoying savanna views",
+            "score": 0.9,
+            "window": "Mid-morning to late afternoon"
+          },
+          "playing": {
+            "focus": "Game drives, wildlife spotting, guided walks",
+            "score": 0.95,
+            "window": "Early morning & late afternoon"
+          },
+          "working": {
+            "focus": "Minimal, digital detox encouraged",
+            "score": 0.2,
+            "window": "N/A"
+          }
+        },
+        "peak_atmospheric_window": "Sunrise & Sunset Game Drives"
+      }
+    },
+    "interactive_quiz_challenge": {
+      "target_scene_id": 101,
+      "scene_name": "Safari Sundowner",
+      "mission_title": "Spot the Big 7",
+      "question": "Which of these animals is NOT part of Addo Elephant National Park's 'Big 7'?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Elephant"
+        },
+        {
+          "id": "B",
+          "text": "Lion"
+        },
+        {
+          "id": "C",
+          "text": "Great White Shark"
+        },
+        {
+          "id": "D",
+          "text": "Rhino"
+        }
+      ],
+      "correct_option_id": "B",
+      "success_lore_reveal": "While lions are iconic safari animals, Addo's 'Big 7' uniquely includes marine life like the Great White Shark and Southern Right Whale, alongside the traditional Big 5 (Elephant, Rhino, Buffalo, Leopard, Lion - though lions were reintroduced to Addo in 2003, the 'Big 7' concept specifically highlights the marine aspect).",
+      "reward_badge": "Addo Explorer Badge",
+      "challenge_prompt": "Test your safari knowledge and unlock insider tips for your Addo adventure!",
+      "reward_spotify_uri": "spotify:playlist:37i9dQZF1DX4sWwJ4S91gL"
+    },
+    "ota_conversion_audit": {
+      "channel": "Booking.com",
+      "before_merchandising_score": 48,
+      "after_merchandising_score": 92,
+      "projected_conversion_uplift": "+21.0%",
+      "current_drop_off_flaw": "Lack of immediate visual impact for luxury safari experience and inconsistent room representation.",
+      "key_strategic_shifts": [
+        "Elevate the signature savanna view from a private deck to Slot #1 to immediately convey the luxury safari experience and capture Addo's #1 wildlife viewing demand.",
+        "Prioritize a clear, bookable luxury log cabin interior in Slot #2 to validate the sleeping experience matches the aspirational hero shot.",
+        "Introduce a dedicated bathroom shot in Slot #3 to address guest comfort and hygiene expectations, a common booking friction point.",
+        "Re-sequence the exterior and social areas to reinforce the immersive nature and unique setting of the camp."
+      ],
+      "optimal_5_photo_sequence": [
+        {
+          "slot": 1,
+          "category": "HERO_CULTURAL_MAGNET",
+          "source_type": "AMENITY_ASSET",
+          "source_index": 1,
+          "photo_subject": "Private Deck Overlooking Savanna with Wildlife",
+          "bullet_points": [
+            "Visual Upgrade: Captures the essence of a luxury safari with a clear savanna view and potential wildlife, offering an aspirational and immersive experience.",
+            "Local Synergy: Directly aligns with the top traveler search intent for 'wildlife viewing' and 'luxury safari' in Addo Elephant National Park.",
+            "Conversion Trigger: Evokes a strong emotional response, promising an exclusive and authentic connection to nature."
+          ],
+          "psychological_conversion_trigger": "This image immediately transports the viewer into the desired luxury safari experience, creating a strong desire to book for wildlife immersion.",
+          "action": "MAGNET_OVERRIDE",
+          "action_label": "HERO CULTURAL MAGNET: PRIVATE DECK SAVANNA VIEW (SLOT #1)",
+          "current_slot": 1,
+          "local_vibe_connection": "This shot perfectly encapsulates the primary reason travelers visit Addo: an intimate, luxurious connection with the park's unique wildlife and landscapes.",
+          "upgrade_rationale": "This amenity asset provides a far superior visual narrative to the current Booking.com hero, which is a generic exterior. It immediately conveys the unique selling proposition of Nyathi: luxury, wildlife, and serene views, setting an aspirational tone from the first glance.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 2,
+          "category": "SIGNATURE_SUITE_BEDROOM",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 4,
+          "photo_subject": "Luxury Log Cabin Interior with King Bed & Safari Decor",
+          "bullet_points": [
+            "Strategic Placement: Immediately validates the quality of the sleeping quarters, ensuring consistency with the luxury promise of Slot #1.",
+            "Local Synergy: Showcases the rustic yet refined safari lodge aesthetic that travelers expect when searching for accommodation in Addo.",
+            "Conversion Trigger: Reassures guests about comfort and style, bridging the aspirational hero with a tangible, bookable room."
+          ],
+          "psychological_conversion_trigger": "By presenting a high-quality, authentic room immediately after the hero, guests feel confident that the luxury experience extends to their private space.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE LUXURY LOG CABIN INTERIOR (FROM SLOT #4)",
+          "current_slot": 4,
+          "local_vibe_connection": "This room reflects the authentic, comfortable safari lodge style that is highly sought after by visitors to Addo Elephant National Park.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #4): This photo is promoted to Slot #2 to directly follow the cultural magnet, ensuring that the guest's private sanctuary is immediately showcased, reinforcing the luxury and comfort promised by the hero image.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 3,
+          "category": "SECONDARY_ROOM_BATHROOM",
+          "source_type": "AMENITY_ASSET",
+          "source_index": 2,
+          "photo_subject": "En-suite Bathroom with Walk-in Shower & Natural Light",
+          "bullet_points": [
+            "Visual Upgrade: Provides a clear, well-lit view of a modern, clean bathroom, addressing a key guest concern for hygiene and comfort.",
+            "Local Synergy: Reinforces the high standards of a luxury safari lodge, aligning with expectations for premium amenities in a natural setting.",
+            "Conversion Trigger: Eliminates potential booking hesitation related to bathroom quality and privacy, enhancing the overall perceived value."
+          ],
+          "psychological_conversion_trigger": "A clean, well-appointed bathroom is a fundamental comfort expectation; placing it here builds trust and completes the private space narrative.",
+          "action": "SWAP_IN",
+          "action_label": "SWAP IN EN-SUITE BATHROOM (SLOT #3)",
+          "current_slot": 1,
+          "local_vibe_connection": "A high-quality bathroom is essential for a comfortable safari stay, meeting the practical needs of travelers exploring the Addo region.",
+          "upgrade_rationale": "This amenity asset fills a critical gap by showcasing a clean, modern en-suite bathroom, which is often overlooked but crucial for guest comfort and conversion. It directly addresses a common booking friction point by proving the quality of private facilities.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 4,
+          "category": "SOCIAL_FB_ROOFTOP",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 3,
+          "photo_subject": "Outdoor Dining Area with Savanna Views",
+          "bullet_points": [
+            "Strategic Placement: Highlights the social and dining experience, showing how guests can enjoy meals with a view, extending the immersive safari feel.",
+            "Local Synergy: Connects the dining experience to the natural surroundings, a key draw for visitors to Addo Elephant National Park.",
+            "Conversion Trigger: Showcases opportunities for relaxation and social interaction within the camp, enhancing the overall guest experience.",
+            "Local Vibe Connection: This image emphasizes the unique dining experience offered in a safari setting, appealing to travelers seeking immersive culinary experiences amidst nature."
+          ],
+          "psychological_conversion_trigger": "This photo demonstrates the social and experiential aspects of the camp, allowing guests to envision themselves enjoying meals in a stunning natural environment.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE OUTDOOR DINING AREA (FROM SLOT #3)",
+          "current_slot": 3,
+          "local_vibe_connection": "This image emphasizes the unique dining experience offered in a safari setting, appealing to travelers seeking immersive culinary experiences amidst nature.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #3): This photo is promoted to Slot #4 to highlight the communal dining experience with savanna views, reinforcing the social and experiential aspects of the safari lodge.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 5,
+          "category": "EXTERIOR_LANDMARK",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 1,
+          "photo_subject": "Exterior View of Log Cabins & Natural Surroundings",
+          "bullet_points": [
+            "Strategic Placement: Provides a clear sense of place and the architectural style of the camp, grounding the property within its natural environment.",
+            "Local Synergy: Showcases the authentic safari lodge design that blends seamlessly with the Addo landscape, appealing to guests seeking an integrated nature experience.",
+            "Conversion Trigger: Eliminates location anxiety and reinforces the unique, secluded setting of the rest camp."
+          ],
+          "psychological_conversion_trigger": "This image provides essential geographic context and confirms the property's authentic safari lodge aesthetic, building trust and reducing uncertainty.",
+          "action": "DEMOTE",
+          "action_label": "DEMOTE EXTERIOR VIEW (FROM SLOT #1)",
+          "current_slot": 1,
+          "local_vibe_connection": "This exterior shot confirms the property's integration into the Addo landscape, a key aspect for travelers seeking an authentic safari stay.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #1): While a strong exterior shot, it is demoted to Slot #5 to allow a more emotionally resonant cultural magnet to lead the sequence, serving as a crucial geographical anchor after the aspirational and interior shots.",
+          "photo_url": null,
+          "image_url": null
+        }
+      ],
+      "anti_commodity_copy_rewrite": {
+        "ota_headline": "Nyathi Rest Camp Addo: Luxury Safari Lodge with Private Savanna Views & Big 7 Encounters",
+        "property_overview_150_words": "Nestled within the heart of Addo Elephant National Park, Nyathi Rest Camp offers an exclusive luxury safari experience. Our serene log cabins provide unparalleled savanna views, inviting you to witness the 'Big 7' from your private deck. Enjoy attentive service, gourmet dining, and guided game drives that immerse you in the wild beauty of South Africa. Perfect for nature enthusiasts and those seeking a tranquil escape, Nyathi blends authentic design with upscale amenities, ensuring a memorable and intimate connection with the African wilderness. Discover a true sanctuary where comfort meets adventure."
+      },
+      "photographic_gap_analysis": [
+        {
+          "missing_shot_title": "Twilight Game Drive Vehicle & Guests",
+          "category": "ATMOSPHERIC_TWILIGHT",
+          "why_needed": "Currently, there are no photos showcasing the actual game drive experience, which is a primary reason guests visit. This shot would capture the excitement and adventure of a safari at dusk, a highly sought-after experience.",
+          "recommended_framing_and_lighting": "Wide-angle shot of a safari vehicle with guests, silhouetted against a vibrant sunset sky, with a focus on the expansive landscape and anticipation.",
+          "projected_adr_impact": "+10% direct booking conversion for safari packages"
+        },
+        {
+          "missing_shot_title": "Wildlife at Waterhole from Camp Viewpoint",
+          "category": "WILDLIFE_IMMERSION",
+          "why_needed": "While savanna views are shown, a direct, high-quality shot of wildlife (e.g., elephants) at a waterhole visible from the camp would dramatically enhance the 'wildlife encounter' promise and validate the unique location.",
+          "recommended_framing_and_lighting": "Telephoto lens shot of elephants or other wildlife at a waterhole, framed by the camp's natural surroundings, emphasizing proximity and exclusivity.",
+          "projected_adr_impact": "+8% higher perceived value and booking velocity"
+        },
+        {
+          "missing_shot_title": "Gourmet Safari Dining Experience",
+          "category": "CULINARY_SOCIAL",
+          "why_needed": "The current dining photo is good, but a more curated shot highlighting the gourmet aspect of the safari dining, perhaps with a focus on food presentation and ambient lighting, would elevate the culinary appeal.",
+          "recommended_framing_and_lighting": "Close-up of beautifully plated dishes on an outdoor table, with soft lantern light and a hint of the savanna backdrop, conveying luxury and taste.",
+          "projected_adr_impact": "+5% increase in F&B spend and overall guest satisfaction"
+        }
+      ],
+      "conversion_diagnosis": "The current Booking.com sequence fails to immediately convey the luxury safari experience and unique wildlife immersion that Nyathi Rest Camp offers. Generic exterior shots and inconsistent room representation lead to high drop-off rates. The absence of strong wildlife interaction visuals and a clear bathroom shot further hinders conversion.",
+      "local_vibe_synergy_context": "Addo Elephant National Park is primarily sought after for its unparalleled wildlife viewing, particularly elephants, and the immersive safari experience. The strategic photo reordering and new asset recommendations are designed to directly address this core traveler demand, showcasing the camp's luxury, direct access to wildlife, and authentic safari ambiance. By leading with a savanna view and integrating wildlife elements, the visual narrative aligns perfectly with the 'wildlife enthusiast' and 'luxury safari seeker' subcultures dominant in the Addo region.",
+      "slot_1_decision_logic": {
+        "is_magnet_override_active": true,
+        "reasoning_code": "NAI_HIGH_DESTINATION_POWER_CLARITY_CONSENSUS",
+        "strategy_explanation": "The private deck overlooking the savanna with potential wildlife is an extraordinary cultural asset that perfectly aligns with Addo's #1 search demand for wildlife viewing and luxury safari. It is a destination in its own right, offers split-second clarity, and fits the 5-slot consensus formula by immediately establishing the aspirational safari experience.",
+        "neighborhood_affinity_index": 0.92,
+        "override_asset_name": "Private Deck Overlooking Savanna with Wildlife"
+      },
+      "photos_status": "PENDING"
+    },
+    "audit_timestamp": "2026-11-11T21:44:13.208Z"
+  }
+}

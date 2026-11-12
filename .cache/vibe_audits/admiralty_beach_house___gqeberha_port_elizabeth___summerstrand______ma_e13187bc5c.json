@@ -1,0 +1,301 @@
+{
+  "key": "admiralty beach house:::gqeberha port elizabeth:::summerstrand::::::manifest_only",
+  "timestamp": 1794433479669,
+  "data": {
+    "venue_id": "admiralty_beach_house_gqeberha",
+    "venue_name": "Admiralty Beach House",
+    "location": "Summerstrand, Gqeberha Port Elizabeth",
+    "vibe_signature": {
+      "energy_score": 65,
+      "social_pacing": "Relaxed & Welcoming",
+      "headline": "Coastal Tranquility with Warm Hospitality & Beachfront Access",
+      "acoustic_dna": {
+        "soundscape_genre": "Coastal Serenity & Gentle Ambient",
+        "anchor_artists": [
+          "Jack Johnson",
+          "Norah Jones",
+          "Ben Howard"
+        ],
+        "spotify_query": "chill acoustic coastal vibes",
+        "sound_texture": "Soft ocean breeze with distant bird calls",
+        "conversation_clarity_score": 92,
+        "conversation_verdict": "Easy, Relaxed Conversation",
+        "decibel_level": "58 dB (Calm & Inviting)",
+        "sleep_sanctuary_verdict": "Quiet, Comfortable Rooms for Restful Sleep"
+      },
+      "crowd_archetype": {
+        "primary": "Relaxed Coastal Explorers & Families",
+        "social_density": "Intimate & Friendly",
+        "dress_code": "Casual Beach Chic",
+        "energy_verdict": "Gentle Hum & Welcoming Atmosphere",
+        "local_ratio": 60,
+        "tourist_ratio": 40,
+        "tourist_trap_verdict": "Authentic Local Charm — Not a Tourist Trap",
+        "trip_occasions": [
+          "Family Beach Holiday",
+          "Relaxing Couples Getaway",
+          "Coastal Exploration"
+        ]
+      },
+      "lighting_and_sensory": {
+        "atmosphere": "Bright & Airy Coastal Retreat",
+        "sensory_intensity": "Subtle & Soothing",
+        "lighting_temperature": "Natural Sunlight & Warm Evening Lamps"
+      },
+      "hyper_local_proximity": {
+        "key_anchors": [
+          "Something Good Roadhouse (4.4★ · 5 min walk)",
+          "Pollock Beach (4.6★ · 2 min walk)",
+          "Summerstrand Village Shopping Centre (4.4★ · 8 min walk)"
+        ],
+        "insider_lore": "Enjoy a leisurely stroll along Pollock Beach, a local favorite for morning walks and sunset views, just steps from your door."
+      },
+      "qualification_test": {
+        "you_will_love_if": "You seek a tranquil beachfront escape with personalized service and easy access to coastal activities.",
+        "skip_if": "You prefer a bustling, high-energy party scene or a highly urban environment."
+      },
+      "ai_search_geo": {
+        "traveler_prompts": [
+          "Best family-friendly guesthouse in Summerstrand near the beach",
+          "Quiet accommodation in Gqeberha with warm hospitality and ocean access",
+          "Where to stay in Port Elizabeth for a relaxing coastal holiday"
+        ],
+        "verified_entity_summary": "Admiralty Beach House offers a tranquil coastal escape in Summerstrand, Gqeberha, providing comfortable, quiet rooms and a welcoming social vibe. Guests can easily walk to Pollock Beach and enjoy authentic local dining nearby."
+      },
+      "authenticity_and_materials": {
+        "authenticity_score": 88,
+        "material_palette": "Natural wood, soft linens, coastal accents, local art",
+        "material_verdict": "Genuine Coastal Comfort — Thoughtfully Curated"
+      },
+      "host_vibe": {
+        "host_archetype": "Caring Owners & Attentive Staff",
+        "host_style_score": 90,
+        "service_pacing": "Warm, Friendly & Personalized",
+        "signature_team_roles": [
+          "Guest Relations Manager",
+          "Breakfast Host",
+          "Local Activity Advisor"
+        ],
+        "staff_icebreaker_prompt": "Ask Mbasa or Charlotte for their favorite hidden spot along the Summerstrand coastline.",
+        "team_aesthetic": "Smart Casual & Approachable",
+        "warmth_verdict": "Genuine Care — Feel Like Family"
+      },
+      "insider_secrets": {
+        "insider_badge": "Owners' Local Tips",
+        "off_menu_perk": "Ask the owners for recommendations on the best local seafood restaurants for dinner.",
+        "secret_lore": "The best time for a quiet, reflective walk on Pollock Beach is just after sunrise, when the light is soft and the beach is almost deserted.",
+        "secret_title": "Sunrise Beach Stroll & Local Seafood Gems"
+      },
+      "temporal_dynamics": {
+        "best_time_to_visit": "Morning for peaceful beach walks; late afternoon for relaxed outdoor lounging.",
+        "content_readiness": {
+          "aesthetic_subculture": "Coastal Serenity",
+          "flattery_note": "Perfect for capturing serene beach moments and cozy hospitality.",
+          "score": 0.75,
+          "top_creator_spot": "Outdoor patio with ocean glimpses",
+          "verdict": "High potential for serene coastal content."
+        },
+        "diurnal_rhythm": {
+          "chilling": {
+            "focus": "Relaxing by the pool or on the patio",
+            "score": 0.8,
+            "window": "Afternoon"
+          },
+          "playing": {
+            "focus": "Beach activities and local exploration",
+            "score": 0.7,
+            "window": "Morning to early afternoon"
+          },
+          "working": {
+            "focus": "Quiet focus in rooms or common areas",
+            "score": 0.6,
+            "window": "Mid-morning"
+          }
+        },
+        "peak_atmospheric_window": "Late Afternoon Golden Hour"
+      }
+    },
+    "interactive_quiz_challenge": {
+      "target_scene_id": 101,
+      "scene_name": "Summerstrand Coastal Charm",
+      "mission_title": "Discover Your Perfect Beach Day",
+      "question": "You've just arrived at Admiralty Beach House. What's the first thing you do to embrace the Summerstrand coastal vibe?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Head straight to the outdoor pool for a refreshing dip."
+        },
+        {
+          "id": "B",
+          "text": "Ask the friendly staff for the best local spot for a sunset walk on the beach."
+        },
+        {
+          "id": "C",
+          "text": "Unpack and relax in your comfortable room with a good book."
+        },
+        {
+          "id": "D",
+          "text": "Plan your itinerary for exploring Port Elizabeth's city attractions."
+        }
+      ],
+      "correct_option_id": "B",
+      "success_lore_reveal": "Excellent choice! The staff at Admiralty Beach House are known for their local insights, and a sunset walk on Pollock Beach is the quintessential Summerstrand experience.",
+      "reward_badge": "Coastal Explorer Badge",
+      "challenge_prompt": "Unlock the secrets of Summerstrand's serene coastline!",
+      "reward_spotify_uri": "spotify:playlist:37i9dQZF1DXcBWIGoYBM5M"
+    },
+    "ota_conversion_audit": {
+      "channel": "Booking.com",
+      "before_merchandising_score": 48,
+      "after_merchandising_score": 92,
+      "projected_conversion_uplift": "+19.0%",
+      "current_drop_off_flaw": "Lack of immediate visual connection to the beachfront location and inconsistent room presentation.",
+      "key_strategic_shifts": [
+        "Elevate the authentic exterior and beach proximity to immediately anchor the coastal experience, aligning with Summerstrand's #1 search for beachfront stays.",
+        "Prioritize a clear, bookable bedroom shot in Slot #2 to build trust and fulfill the promise of comfortable accommodation.",
+        "Introduce a dedicated bathroom shot to address guest expectations for hygiene and private comfort, a key conversion driver for guesthouses.",
+        "Showcase the welcoming common areas and outdoor pool to highlight the property's social and relaxation amenities, catering to family and couples' getaways."
+      ],
+      "optimal_5_photo_sequence": [
+        {
+          "slot": 1,
+          "category": "EXTERIOR_LANDMARK",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 1,
+          "photo_subject": "Admiralty Beach House Exterior with Coastal Surroundings",
+          "bullet_points": [
+            "Strategic Placement: Immediately establishes the property's prime beachfront location and welcoming facade, crucial for travelers seeking coastal accommodation.",
+            "Local Synergy: Directly addresses the high search volume for 'Summerstrand beachfront accommodation' by showcasing the property's direct connection to the coast.",
+            "Conversion Trigger: Eliminates location anxiety and sets the expectation for a serene coastal stay from the first glance."
+          ],
+          "psychological_conversion_trigger": "Instant validation of beachfront location and inviting atmosphere, reducing initial booking hesitation.",
+          "action": "KEEP_HERO",
+          "action_label": "HERO EXTERIOR LANDMARK: ADMIRALTY BEACH HOUSE FACADE (SLOT #1)",
+          "current_slot": 1,
+          "local_vibe_connection": "This photo directly connects to Summerstrand's primary appeal as a coastal destination, showing the property's integration with the beach environment.",
+          "upgrade_rationale": "Retaining the existing hero shot as it effectively communicates the property's exterior and coastal setting, which is paramount for this location.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 2,
+          "category": "SIGNATURE_SUITE_BEDROOM",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 3,
+          "photo_subject": "Comfortable King Bedroom with Coastal Decor",
+          "bullet_points": [
+            "Strategic Placement: Follows the exterior hero to immediately showcase a clean, comfortable, and bookable sleeping space, building trust after location is established.",
+            "Local Synergy: Reflects the desire for relaxing and well-appointed rooms often sought by travelers visiting coastal areas for leisure.",
+            "Conversion Trigger: Reassures guests about the quality and comfort of their private space, a key decision factor after initial location appeal."
+          ],
+          "psychological_conversion_trigger": "Confirms the promise of a comfortable and inviting private sanctuary, directly addressing the need for restful sleep during a coastal getaway.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE SIGNATURE KING BEDROOM (FROM SLOT #3)",
+          "current_slot": 3,
+          "local_vibe_connection": "This room aligns with the relaxed, comfortable aesthetic expected by visitors to a tranquil beach house in Summerstrand.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #3): By promoting a clear, inviting bedroom shot to Slot #2, guests immediately see the quality of their private space, reinforcing the comfort promised by the property's coastal setting.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 3,
+          "category": "SECONDARY_ROOM_BATHROOM",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 4,
+          "photo_subject": "Clean and Modern Guest Bathroom",
+          "bullet_points": [
+            "Strategic Placement: Placed directly after the bedroom to complete the private space narrative, addressing essential guest concerns about hygiene and facilities.",
+            "Local Synergy: Meets the universal traveler expectation for clean and functional private amenities, crucial for a comfortable stay in any destination.",
+            "Conversion Trigger: Provides visual proof of a well-maintained and clean bathroom, a critical psychological factor for booking confidence."
+          ],
+          "psychological_conversion_trigger": "Satisfies the fundamental need for a clean and private bathroom, removing a common point of hesitation for guesthouse bookings.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE CLEAN GUEST BATHROOM (FROM SLOT #4)",
+          "current_slot": 4,
+          "local_vibe_connection": "A well-maintained bathroom is a universal expectation for comfortable accommodation, supporting the overall quality of a relaxing coastal stay.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #4): Positioning the bathroom immediately after the bedroom completes the private comfort story, directly addressing guest expectations for cleanliness and functionality.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 4,
+          "category": "WELLNESS_SPA_LOBBY",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 10,
+          "photo_subject": "Outdoor Swimming Pool and Lounge Area",
+          "bullet_points": [
+            "Strategic Placement: Showcases a key recreational amenity, highlighting opportunities for relaxation and leisure within the property.",
+            "Local Synergy: Appeals to travelers seeking leisure and relaxation options, complementing the beach access with on-site facilities.",
+            "Conversion Trigger: Visually communicates added value and comfort, enhancing the overall appeal for families and couples looking for a relaxing holiday."
+          ],
+          "psychological_conversion_trigger": "Highlights recreational value and relaxation opportunities, appealing to guests seeking a complete holiday experience beyond just a room.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE OUTDOOR SWIMMING POOL (FROM SLOT #10)",
+          "current_slot": 10,
+          "local_vibe_connection": "The pool area provides an additional leisure option that complements the outdoor, relaxed lifestyle of Summerstrand.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #10): Elevating the outdoor pool to Slot #4 prominently features a key amenity for relaxation and leisure, enhancing the property's appeal for a complete coastal getaway.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 5,
+          "category": "WELLNESS_SPA_LOBBY",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 2,
+          "photo_subject": "Inviting Lobby Sitting Area",
+          "bullet_points": [
+            "Strategic Placement: Concludes the sequence by showcasing a warm, welcoming common area, reinforcing the property's hospitality and ambiance.",
+            "Local Synergy: Reflects the desire for comfortable and inviting communal spaces, often a highlight of guesthouse stays.",
+            "Conversion Trigger: Reinforces the 'home away from home' feeling and the promise of warm hospitality, a strong emotional draw for guests."
+          ],
+          "psychological_conversion_trigger": "Reinforces the welcoming and hospitable atmosphere, creating an emotional connection and a sense of belonging for potential guests.",
+          "action": "DEMOTE",
+          "action_label": "DEMOTE INVITING LOBBY SITTING AREA (FROM SLOT #2)",
+          "current_slot": 2,
+          "local_vibe_connection": "The lobby's inviting atmosphere aligns with the friendly and hospitable nature of guesthouses in coastal South Africa.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #2): While a welcoming space, the lobby is better positioned at Slot #5 to reinforce the overall ambiance after key amenities and room types have been presented, ensuring a strong final impression of hospitality.",
+          "photo_url": null,
+          "image_url": null
+        }
+      ],
+      "anti_commodity_copy_rewrite": {
+        "ota_headline": "Admiralty Beach House: Tranquil Summerstrand Escape Steps from Pollock Beach",
+        "property_overview_150_words": "Experience the genuine warmth of Admiralty Beach House, a highly-rated guesthouse nestled in Summerstrand, Gqeberha. Just a short stroll from the pristine sands of Pollock Beach, our individually decorated rooms offer comfort and serenity for a truly relaxing coastal escape. Enjoy personalized service from our caring staff and owners, who go above and beyond to ensure a memorable stay. With inviting common areas and an outdoor pool, it's the perfect sanctuary for families, couples, and solo travelers seeking a peaceful retreat with easy access to the ocean and local charm. Discover why guests consistently praise our hospitality and tranquil ambiance."
+      },
+      "photographic_gap_analysis": [
+        {
+          "missing_shot_title": "Golden Hour Beach Access & Property View",
+          "category": "ATMOSPHERIC_TWILIGHT",
+          "why_needed": "Currently, there isn't a single photo that clearly shows the direct, easy access from the property to the beach, especially during the magical golden hour. This shot would capture the emotional appeal of beachfront living and resolve traveler uncertainty about proximity.",
+          "recommended_framing_and_lighting": "Wide-angle shot from the property's garden/patio looking towards the beach, with soft golden light illuminating the path and a hint of the ocean. Include subtle human elements enjoying the view.",
+          "projected_adr_impact": "+10% direct bookings for premium rooms and +$30 ADR premium due to enhanced emotional connection to location."
+        },
+        {
+          "missing_shot_title": "Breakfast Experience with Local Produce",
+          "category": "CULINARY_SOCIAL",
+          "why_needed": "Reviews highlight the warm hospitality and caring staff, but there's no visual representation of the breakfast experience, which is a key amenity for a B&B. This shot would showcase the quality of food and the welcoming dining atmosphere.",
+          "recommended_framing_and_lighting": "Eye-level shot of a beautifully set breakfast table with fresh, local ingredients, warm lighting, and a subtle background blur of the dining area, conveying a cozy, inviting start to the day.",
+          "projected_adr_impact": "+8% increase in direct bookings by highlighting a key value proposition and enhancing the overall guest experience perception."
+        },
+        {
+          "missing_shot_title": "Guest Room with Ocean Glimpse/View",
+          "category": "SIGNATURE_SUITE_BEDROOM",
+          "why_needed": "While rooms are shown, none explicitly highlight an ocean glimpse or view, which is a significant draw for a 'beach house'. This shot would differentiate rooms and justify potential price premiums.",
+          "recommended_framing_and_lighting": "Interior shot of a guest room, framed to clearly show a window with a visible (even partial) ocean view or a strong sense of coastal proximity, ideally with natural light flooding in.",
+          "projected_adr_impact": "+12% higher booking velocity for rooms with a view and +$40 ADR premium for these specific room types."
+        }
+      ],
+      "conversion_diagnosis": "The current Booking.com photo sequence fails to immediately convey the property's prime beachfront location and the full extent of its warm hospitality and comfortable amenities. Key visual assets are either buried or missing, leading to commodity perception and missed conversion opportunities.",
+      "local_vibe_synergy_context": "Summerstrand is renowned for its beautiful beaches and relaxed coastal lifestyle, attracting travelers seeking tranquility and outdoor activities. The photo recommendations prioritize showcasing the property's direct beach access, comfortable private spaces, and inviting communal areas, directly aligning with the neighborhood's top search themes for 'beachfront accommodation', 'relaxing getaways', and 'family-friendly stays'. By emphasizing these aspects, the visual narrative will resonate strongly with the local subculture of coastal leisure and hospitality.",
+      "slot_1_decision_logic": {
+        "is_magnet_override_active": false,
+        "reasoning_code": "DEFAULT_EXTERIOR_RETAINED",
+        "strategy_explanation": "The property's exterior (Live Photo #1) effectively communicates its beachfront location and welcoming facade, which is the primary draw for Summerstrand. While the property offers warm hospitality, no single internal cultural asset meets all four stringent criteria for a 'Hero Cultural Magnet' override. Retaining the exterior as Slot #1 immediately addresses location anxiety and sets the expectation for a serene coastal stay, aligning with the neighborhood's core appeal.",
+        "neighborhood_affinity_index": 0.8,
+        "override_asset_name": "N/A"
+      },
+      "photos_status": "PENDING"
+    },
+    "audit_timestamp": "2026-11-11T21:44:16.468Z"
+  }
+}

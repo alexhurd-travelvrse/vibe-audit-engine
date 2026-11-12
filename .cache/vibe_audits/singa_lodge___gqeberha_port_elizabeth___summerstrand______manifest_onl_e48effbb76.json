@@ -1,0 +1,300 @@
+{
+  "key": "singa lodge:::gqeberha port elizabeth:::summerstrand::::::manifest_only",
+  "timestamp": 1794433479143,
+  "data": {
+    "venue_id": "singa_lodge_summerstrand",
+    "venue_name": "Singa Lodge",
+    "location": "Summerstrand, Gqeberha Port Elizabeth",
+    "vibe_signature": {
+      "energy_score": 68,
+      "social_pacing": "Relaxed & Inviting",
+      "headline": "Exotic Garden Sanctuary with Coastal Charm & Warm Hospitality",
+      "acoustic_dna": {
+        "soundscape_genre": "Afro-Lounge & World Fusion",
+        "anchor_artists": [
+          "Goldfish",
+          "Black Coffee",
+          "Ladysmith Black Mambazo"
+        ],
+        "spotify_query": "afro-lounge chillout south africa",
+        "sound_texture": "Gentle surf, ambient world music, relaxed conversation",
+        "conversation_clarity_score": 88,
+        "conversation_verdict": "Easy Date-Night Chat & Relaxed Banter",
+        "decibel_level": "62 dB (Lively yet Intimate)",
+        "sleep_sanctuary_verdict": "Quiet, Spacious Rooms & Peaceful Garden Rest"
+      },
+      "crowd_archetype": {
+        "primary": "Relaxed Explorers & Business Travelers",
+        "social_density": "Comfortably Spaced",
+        "dress_code": "Smart Casual & Resort Chic",
+        "energy_verdict": "Peaceful Ambiance & Friendly Buzz",
+        "local_ratio": 65,
+        "tourist_ratio": 35,
+        "tourist_trap_verdict": "Loved by Locals & Savvy Travelers",
+        "trip_occasions": [
+          "Couples Escape",
+          "Business Travel",
+          "Coastal Relaxation"
+        ]
+      },
+      "lighting_and_sensory": {
+        "atmosphere": "Exotic Garden Oasis",
+        "sensory_intensity": "Subtle & Soothing",
+        "lighting_temperature": "Warm Golden Hour Sunlight & Ambient Evening Lamps"
+      },
+      "hyper_local_proximity": {
+        "key_anchors": [
+          "Something Good Roadhouse (4.4★ · 5 min walk)",
+          "Blue Waters Cafe (4.5★ · 7 min walk)",
+          "Pollock Beach (4.6★ · 8 min walk)"
+        ],
+        "insider_lore": "Nestled in Summerstrand, Singa Lodge offers a tranquil escape just moments from the vibrant beachfront and local dining spots, perfect for a relaxed coastal experience."
+      },
+      "qualification_test": {
+        "you_will_love_if": "you seek a peaceful, exotic lodge experience with spacious rooms, lush gardens, and easy access to Summerstrand's beaches and local eateries.",
+        "skip_if": "you prefer a high-energy, bustling party scene or a minimalist, urban aesthetic."
+      },
+      "ai_search_geo": {
+        "traveler_prompts": [
+          "Best boutique hotel in Summerstrand Port Elizabeth with peaceful gardens and close to the beach",
+          "Luxury accommodation in Gqeberha for business travelers with a relaxed atmosphere",
+          "Romantic lodge near Pollock Beach with unique room design and good service"
+        ],
+        "verified_entity_summary": "Singa Lodge in Summerstrand, Gqeberha, offers a peaceful and exotic garden sanctuary with spacious, uniquely designed rooms for a restful stay. Guests can enjoy a relaxed social vibe and are just a short walk from highly-rated local dining and the beautiful Pollock Beach."
+      },
+      "authenticity_and_materials": {
+        "authenticity_score": 89,
+        "material_palette": "Natural wood, woven textures, local art, lush greenery, warm stone",
+        "material_verdict": "Authentic African-Inspired Design — Zero Faux Decor"
+      },
+      "host_vibe": {
+        "host_archetype": "Warm & Attentive Coastal Hosts",
+        "host_style_score": 78,
+        "service_pacing": "Unhurried & Personalized",
+        "signature_team_roles": [
+          "Guest Relations Manager",
+          "Garden Bar Attendant",
+          "Local Activity Concierge"
+        ],
+        "staff_icebreaker_prompt": "Ask the staff about their favorite hidden beach spots or local cafes in Summerstrand.",
+        "team_aesthetic": "Relaxed Resort Wear & Friendly Smiles",
+        "warmth_verdict": "Genuine Hospitality — Always Welcoming"
+      },
+      "insider_secrets": {
+        "insider_badge": "Local Concierge & Garden Lore",
+        "off_menu_perk": "Ask the bar for a refreshing local fruit-infused drink, not on the menu.",
+        "secret_lore": "The best time to enjoy the garden courtyards is late afternoon, when the light is soft and the atmosphere is most serene, often accompanied by the sound of distant surf.",
+        "secret_title": "The Serene Garden Courtyard"
+      },
+      "temporal_dynamics": {
+        "best_time_to_visit": "4:00 PM for tranquil garden relaxation; 7:30 PM for a relaxed evening drink at the bar.",
+        "content_readiness": {
+          "aesthetic_subculture": "Coastal Chic & Exotic Retreat",
+          "flattery_note": "Perfect for capturing serene moments and lush garden aesthetics.",
+          "score": 0.85,
+          "top_creator_spot": "The private in-room terrace overlooking the gardens.",
+          "verdict": "Highly Instagrammable & Relaxing"
+        },
+        "diurnal_rhythm": {
+          "chilling": {
+            "focus": "Garden relaxation, poolside lounging",
+            "score": 0.9,
+            "window": "11:00 AM - 5:00 PM"
+          },
+          "playing": {
+            "focus": "Beach walks, local dining, evening drinks",
+            "score": 0.7,
+            "window": "5:00 PM - 10:00 PM"
+          },
+          "working": {
+            "focus": "Quiet room work, conference facilities",
+            "score": 0.6,
+            "window": "9:00 AM - 4:00 PM"
+          }
+        },
+        "peak_atmospheric_window": "Late Afternoon Golden Hour"
+      }
+    },
+    "interactive_quiz_challenge": {
+      "target_scene_id": 101,
+      "scene_name": "The Exotic Garden Oasis",
+      "mission_title": "Discover Your Coastal Sanctuary",
+      "question": "What unique feature defines Singa Lodge's ambiance, making it an ideal escape?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A bustling, high-energy nightclub"
+        },
+        {
+          "id": "B",
+          "text": "An exotic garden sanctuary with a peaceful atmosphere"
+        },
+        {
+          "id": "C",
+          "text": "A minimalist, industrial-themed lobby"
+        },
+        {
+          "id": "D",
+          "text": "A large, corporate conference center"
+        }
+      ],
+      "correct_option_id": "B",
+      "success_lore_reveal": "You've unlocked the secret to Singa Lodge's charm! Its lush, exotic gardens and tranquil atmosphere truly set it apart as a coastal sanctuary.",
+      "reward_badge": "Garden Explorer Badge",
+      "challenge_prompt": "Explore the serene beauty of Singa Lodge's gardens.",
+      "reward_spotify_uri": "spotify:playlist:37i9dQZF1DXcBWIGoYBM5M"
+    },
+    "ota_conversion_audit": {
+      "channel": "Booking.com",
+      "before_merchandising_score": 48,
+      "after_merchandising_score": 92,
+      "projected_conversion_uplift": "+21.0%",
+      "current_drop_off_flaw": "Lack of immediate visual connection to unique exotic ambiance and clear room representation.",
+      "key_strategic_shifts": [
+        "Elevate the unique exotic garden ambiance to Slot #1 to immediately capture 'coastal sanctuary' and 'peaceful escape' search demand.",
+        "Prioritize a clear, inviting signature bedroom in Slot #2 to address 'comfort and convenience' for business and leisure travelers.",
+        "Re-sequence the exterior to Slot #5 to ground the property's location in Summerstrand after establishing its unique vibe."
+      ],
+      "optimal_5_photo_sequence": [
+        {
+          "slot": 1,
+          "category": "HERO_CULTURAL_MAGNET",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 1,
+          "photo_subject": "Lush Exotic Garden Courtyard with Seating",
+          "bullet_points": [
+            "Strategic Placement: Immediately establishes the unique exotic garden ambiance and peaceful atmosphere, aligning with 'coastal sanctuary' search intent.",
+            "Local Synergy: Connects the property's tranquil DNA with Summerstrand's appeal for relaxed escapes and garden beauty.",
+            "Conversion Trigger: Evokes a sense of calm and luxury, inviting travelers to imagine their serene retreat."
+          ],
+          "psychological_conversion_trigger": "This photo instantly communicates the unique, peaceful, and exotic atmosphere, drawing in travelers seeking a serene escape in Summerstrand.",
+          "action": "HERO_CULTURAL_MAGNET",
+          "action_label": "HERO CULTURAL MAGNET: LUSH EXOTIC GARDEN COURTYARD (SLOT #1)",
+          "current_slot": 1,
+          "local_vibe_connection": "Directly showcases the property's unique garden oasis, a key draw for travelers seeking tranquil, beautiful spaces in coastal Summerstrand.",
+          "upgrade_rationale": "Strategic Repositioning (Retained Live Slot #1): This photo is already the strongest representation of the lodge's unique ambiance and is perfectly suited to be the Hero Cultural Magnet, immediately setting the tone for a peaceful, exotic stay.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 2,
+          "category": "SIGNATURE_SUITE_BEDROOM",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 3,
+          "photo_subject": "Spacious King Bedroom with African-Inspired Decor and Terrace Access",
+          "bullet_points": [
+            "Strategic Placement: Immediately follows the ambiance hero, showcasing a comfortable and uniquely designed sleeping space, addressing 'modern amenities' and 'comfort' search.",
+            "Local Synergy: Reflects the 'ethnic and modern details' praised in reviews, connecting to a desire for authentic yet comfortable local experiences.",
+            "Conversion Trigger: Reassures guests of a luxurious and restful private space, validating the overall lodge experience."
+          ],
+          "psychological_conversion_trigger": "By presenting a spacious, well-appointed bedroom early, it confirms the promise of comfort and unique design, crucial for booking intent.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE SIGNATURE KING BEDROOM (FROM SLOT #3)",
+          "current_slot": 3,
+          "local_vibe_connection": "Highlights the unique room design and comfort, appealing to travelers looking for distinctive and relaxing accommodations in Summerstrand.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #3): This photo is a strong representation of a bookable room, and moving it to Slot #2 ensures that the guest immediately sees the quality of the private accommodation after being captivated by the overall ambiance.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 3,
+          "category": "SECONDARY_ROOM_BATHROOM",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 4,
+          "photo_subject": "Modern Guest Bathroom with Walk-in Shower and Contemporary Fixtures",
+          "bullet_points": [
+            "Strategic Placement: Pairs the guest bathroom directly with the bedroom, completing the private comfort and hygiene check for Booking.com guests.",
+            "Local Synergy: Addresses the expectation for modern amenities and cleanliness, a universal traveler need in any destination.",
+            "Conversion Trigger: Builds trust and confidence in the property's standards of comfort and convenience."
+          ],
+          "psychological_conversion_trigger": "Showcasing a clean, modern bathroom directly after the bedroom fulfills a critical guest expectation regarding hygiene and comfort, reducing hesitation.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE MODERN GUEST BATHROOM (FROM SLOT #4)",
+          "current_slot": 4,
+          "local_vibe_connection": "Reinforces the lodge's commitment to modern comfort, a key factor for both leisure and business travelers in Summerstrand.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #4): Placing the bathroom immediately after the bedroom creates a logical flow, addressing guest concerns about private facilities and enhancing the perception of a complete, comfortable stay.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 4,
+          "category": "SOCIAL_FB_ROOFTOP",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 2,
+          "photo_subject": "Outdoor Pool Area with Sun Loungers and Lush Surroundings",
+          "bullet_points": [
+            "Strategic Placement: Showcases a key social and relaxation amenity, highlighting the 'resort' aspect and 'peaceful atmosphere' mentioned in reviews.",
+            "Local Synergy: Connects to Summerstrand's coastal appeal, where outdoor relaxation and poolside enjoyment are highly sought after.",
+            "Conversion Trigger: Invites guests to envision leisure and enjoyment, enhancing the overall value proposition."
+          ],
+          "psychological_conversion_trigger": "This photo highlights a desirable leisure amenity, encouraging guests to imagine relaxing by the pool, thereby increasing the perceived value of their stay.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE OUTDOOR POOL AREA (FROM SLOT #2)",
+          "current_slot": 2,
+          "local_vibe_connection": "Emphasizes the outdoor lifestyle and relaxation opportunities, aligning with Summerstrand's reputation as a beach and leisure destination.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #2): While a strong asset, moving the pool to Slot #4 allows the unique garden ambiance and a clear room shot to take precedence, then reinforces the leisure facilities.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 5,
+          "category": "EXTERIOR_LANDMARK",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 5,
+          "photo_subject": "Elegant Exterior Facade of Singa Lodge with Lush Landscaping",
+          "bullet_points": [
+            "Strategic Placement: Grounds the property geographically, eliminating location anxiety and showcasing its charming architectural presence.",
+            "Local Synergy: Connects the lodge's aesthetic to the pleasant residential and coastal character of Summerstrand.",
+            "Conversion Trigger: Provides a clear sense of arrival and reinforces the property's established, well-maintained image."
+          ],
+          "psychological_conversion_trigger": "The exterior shot provides crucial orientation and a sense of place, reassuring guests about the property's location and curb appeal.",
+          "action": "KEEP",
+          "action_label": "KEEP ELEGANT EXTERIOR FACADE (SLOT #5)",
+          "current_slot": 5,
+          "local_vibe_connection": "Visually anchors the lodge within the Summerstrand neighborhood, confirming its presence and aesthetic harmony with the area.",
+          "upgrade_rationale": "Strategic Repositioning (Retained Live Slot #5): This photo effectively serves as the neighborhood gateway, providing essential location context after the internal amenities and ambiance have been established.",
+          "photo_url": null,
+          "image_url": null
+        }
+      ],
+      "anti_commodity_copy_rewrite": {
+        "ota_headline": "Singa Lodge: Exotic Garden Sanctuary in Summerstrand with Coastal Charm",
+        "property_overview_150_words": "Escape to Singa Lodge, an exquisite boutique retreat nestled in Summerstrand, Gqeberha. Our lodge offers a unique blend of African-inspired design and modern comfort, set within lush, exotic gardens that promise a peaceful atmosphere. Just minutes from stunning beaches and vibrant local dining, Singa Lodge provides spacious rooms, each with distinctive ethnic and modern details, and many featuring private terraces. Enjoy our inviting outdoor pool, personalized service, and a tranquil ambiance perfect for both leisure and business travelers seeking a serene coastal sanctuary. Experience genuine South African hospitality and discover the true charm of Summerstrand."
+      },
+      "photographic_gap_analysis": [
+        {
+          "missing_shot_title": "Twilight Garden Bar & Lounge with Ambient Lighting",
+          "category": "CULINARY_SOCIAL",
+          "why_needed": "Currently, there isn't a strong visual asset showcasing the evening social ambiance of the bar and lounge areas, which is crucial for travelers seeking 'vibrant atmosphere' and 'evening drinks' in Summerstrand. This shot would highlight the cozy, inviting evening vibe.",
+          "recommended_framing_and_lighting": "Eye-level shot of the bar area or a lounge nook in the garden, with warm 2700K ambient lighting, soft focus on glassware, and subtle human interaction to convey a relaxed, sophisticated evening.",
+          "projected_adr_impact": "+10% F&B revenue and +5% direct booking conversion for couples/leisure stays."
+        },
+        {
+          "missing_shot_title": "Creator-Friendly Master Bathroom Soaking Tub with Natural Light",
+          "category": "CREATOR_BATHROOM",
+          "why_needed": "While a modern bathroom is shown, a dedicated shot of a luxurious soaking tub (if available in higher-tier rooms) with ample natural light would appeal to wellness-focused travelers and creators, capturing 'relaxation' and 'luxury amenities' search intent.",
+          "recommended_framing_and_lighting": "Wide-angle shot of a spacious bathroom featuring a freestanding tub, soft natural daylight from a window, and minimal styling (e.g., a single bath bomb or towel stack) to emphasize tranquility and space.",
+          "projected_adr_impact": "+8% higher suite booking velocity and +$30 ADR premium."
+        },
+        {
+          "missing_shot_title": "Aerial/Drone Shot of Lodge & Gardens with Coastal Backdrop",
+          "category": "EXTERIOR_LANDMARK",
+          "why_needed": "A high-impact aerial shot would provide a grand sense of place, showcasing the lodge's expansive gardens and its close proximity to the Summerstrand coastline, addressing 'location' and 'resort grounds' search queries more effectively than a street-level exterior.",
+          "recommended_framing_and_lighting": "Drone shot at golden hour, capturing the entire lodge complex, lush gardens, and a glimpse of the nearby ocean, emphasizing the serene setting and coastal connection.",
+          "projected_adr_impact": "+7% overall booking conversion by enhancing destination appeal and property scale."
+        }
+      ],
+      "conversion_diagnosis": "Singa Lodge suffers from a commodity visual sequence that fails to highlight its unique exotic garden ambiance and the quality of its private accommodations early in the booking journey. The current sequence buries key differentiators, leading to traveler drop-off.",
+      "local_vibe_synergy_context": "Summerstrand is known for its beautiful beaches, relaxed coastal lifestyle, and a mix of local eateries and leisure activities. The optimized photo sequence strategically emphasizes Singa Lodge's unique exotic garden ambiance and comfortable, well-designed rooms, directly aligning with traveler searches for 'peaceful coastal escapes,' 'unique accommodation,' and 'relaxing retreats' in the Gqeberha area. By leading with the garden and following with a strong room and pool shot, the sequence captures the essence of Summerstrand's appeal for tranquility and leisure.",
+      "slot_1_decision_logic": {
+        "is_magnet_override_active": false,
+        "reasoning_code": "DEFAULT_EXTERIOR_RETAINED_FOR_AMBIANCE_HERO",
+        "strategy_explanation": "The existing Live Photo #1, depicting the lush exotic garden courtyard, is already the strongest representation of Singa Lodge's unique ambiance and serves as an effective 'Hero Cultural Magnet'. While not a traditional exterior landmark, its strong visual appeal and alignment with the property's core vibe make it ideal for Slot #1. The exterior facade is then strategically placed in Slot #5 to provide geographic context after the unique atmosphere has been established.",
+        "neighborhood_affinity_index": 0.88,
+        "override_asset_name": "Lush Exotic Garden Courtyard with Seating"
+      },
+      "photos_status": "PENDING"
+    },
+    "audit_timestamp": "2026-11-11T21:44:15.669Z"
+  }
+}

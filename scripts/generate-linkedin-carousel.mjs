@@ -129,14 +129,14 @@ const commonStyles = `
   .stat-stack {
     display: flex;
     flex-direction: column;
-    gap: 22px;
-    margin: 22px 0;
+    gap: 24px;
+    margin: 24px 0;
   }
   .stat-card {
     background: rgba(11, 20, 38, 0.92);
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 22px;
-    padding: 28px 34px;
+    padding: 34px 38px;
     position: relative;
   }
   .stat-card.cyan-border {
@@ -157,11 +157,11 @@ const commonStyles = `
     display: flex;
     align-items: baseline;
     justify-content: space-between;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
   }
   .big-num {
     font-family: 'Outfit', sans-serif;
-    font-size: 64px;
+    font-size: 72px;
     font-weight: 900;
     line-height: 1;
     color: #00e5ff;
@@ -198,15 +198,15 @@ const commonStyles = `
     color: #fda4af;
   }
   .stat-title {
-    font-size: 24px;
+    font-size: 25px;
     font-weight: 800;
     color: #ffffff;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
   }
   .stat-desc {
-    font-size: 19px;
+    font-size: 19.5px;
     color: #cbd5e1;
-    line-height: 1.42;
+    line-height: 1.44;
   }
   .stat-desc strong { color: #ffffff; }
   .footer-bar {
@@ -296,7 +296,7 @@ const commonStyles = `
 `;
 
 const slidesHtml = [
-  // SLIDE 1: 2026 Research on Vibe & Experiences (Accor x Globetrender 2026 + SiteMinder 2026)
+  // SLIDE 1: SiteMinder Changing Traveller Report — Experiences & Vibe Beat Loyalty
   `
   <div class="slide" id="slide-1">
     <div class="top-bar">
@@ -305,48 +305,39 @@ const slidesHtml = [
     </div>
 
     <div>
-      <div class="kicker">2026 Hospitality Research • Accor &amp; SiteMinder</div>
-      <h1>In 2026, <span class="cyan">Vibe &amp; Experiences</span> Drive Hotel Bookings.</h1>
-      <p class="lead">New 2026 consumer research from <strong>ALL Accor × Globetrender</strong> ("When Moods Drive Bookings") and <strong>SiteMinder</strong> shows how guests choose where to stay:</p>
+      <div class="kicker">SiteMinder Changing Traveller Report</div>
+      <h1>Guests Now Pay Extra for <span class="cyan">Vibe &amp; Experiences</span> Over Loyalty Points.</h1>
+      <p class="lead">Across 12,000 travellers in 14 countries, property atmosphere and memorable on-site experiences have overtaken traditional loyalty programs.</p>
     </div>
 
-    <div class="stat-stack" style="gap: 18px;">
+    <div class="stat-stack">
       <div class="stat-card cyan-border">
         <div class="stat-top">
-          <div class="big-num">1 in 4 <span style="font-size:34px;color:#94a3b8;font-weight:700;">(25%)</span></div>
-          <div class="badge cyan">Accor 2026 Report</div>
+          <div class="big-num">80%+</div>
+          <div class="badge cyan">Top 3: Rooftops, Dining &amp; Spa</div>
         </div>
-        <div class="stat-title">Want to Search by "Mood &amp; Vibe" First</div>
-        <div class="stat-desc"><strong>25% of travellers</strong> want their online search to begin with <strong>mood and vibe</strong> rather than geography alone.</div>
+        <div class="stat-title">Pay Extra for Atmosphere &amp; On-Site Experiences</div>
+        <div class="stat-desc">Over <strong>4 in 5 travellers (80.3%)</strong> will pay a premium for on-property experiences—led by <strong>rooftop venues, gourmet dining, and spa</strong>.</div>
       </div>
 
       <div class="stat-card gold-border">
         <div class="stat-top">
-          <div class="big-num gold">85%</div>
-          <div class="badge gold">Accor 2026 Report</div>
+          <div class="big-num gold">39.7% <span style="font-size:36px;color:#94a3b8;font-weight:700;">vs 30.8%</span></div>
+          <div class="badge gold">Jumped +11.2pp</div>
         </div>
-        <div class="stat-title">Seek Shared Social Spaces &amp; Atmosphere</div>
-        <div class="stat-desc"><strong>85% of travellers</strong> prioritize social connection &amp; vibrant communal spaces (rooftops, bars, dining, wellness).</div>
-      </div>
-
-      <div class="stat-card emerald-border">
-        <div class="stat-top">
-          <div class="big-num emerald">58%</div>
-          <div class="badge emerald">SiteMinder 2026 (+4pp)</div>
-        </div>
-        <div class="stat-title">Upgrade Rooms for an Elevated Experience</div>
-        <div class="stat-desc"><strong>58% of guests</strong> now book Superior or Luxury rooms over standard rooms for a more elevated property experience.</div>
+        <div class="stat-title">Memorable Experiences Overtook Loyalty Points</div>
+        <div class="stat-desc">Choosing a hotel for <strong>memorable experiences (39.7%)</strong> surged past traditional <strong>loyalty program benefits (30.8%, down -7.7pp)</strong>.</div>
       </div>
     </div>
 
     <div class="footer-bar">
-      <div class="source-note">Sources: ALL Accor × Globetrender (Jan 2026) &amp; SiteMinder 2026 Report</div>
-      <div class="swipe-cta">Where do guests look first? →</div>
+      <div class="source-note">Source: SiteMinder Changing Traveller Report (12,000 travellers)</div>
+      <div class="swipe-cta">Where do guests start their search? →</div>
     </div>
   </div>
   `,
 
-  // SLIDE 2: Where Guests Discover Vibe & Experiences (SiteMinder 2026)
+  // SLIDE 2: SiteMinder Changing Traveller Report — OTAs #1 + 18% OTA-to-Direct
   `
   <div class="slide" id="slide-2">
     <div class="top-bar">
@@ -355,39 +346,39 @@ const slidesHtml = [
     </div>
 
     <div>
-      <div class="kicker">2026 Discovery Shift • SiteMinder Report</div>
-      <h1>Where Do Guests Look First for <span class="cyan">Vibe &amp; Experiences?</span></h1>
-      <p class="lead">Before a guest ever reaches your website, your <strong>OTA listing</strong> is now their #1 discovery window.</p>
+      <div class="kicker">SiteMinder Changing Traveller Report</div>
+      <h1>Where Do Travellers Start Their Search to <span class="cyan">Build Their Shortlist?</span></h1>
+      <p class="lead">Before a guest ever reaches your website, your <strong>OTA listing</strong> is now their #1 visual discovery window.</p>
     </div>
 
-    <div class="stat-stack" style="gap: 28px;">
-      <div class="stat-card cyan-border" style="padding: 36px 40px;">
+    <div class="stat-stack">
+      <div class="stat-card cyan-border">
         <div class="stat-top">
-          <div class="big-num" style="font-size: 74px;">26% <span style="font-size:36px;color:#94a3b8;font-weight:700;">vs 21%</span></div>
-          <div class="badge cyan">#1 Starting Point in 2026</div>
+          <div class="big-num">26% <span style="font-size:36px;color:#94a3b8;font-weight:700;">vs 21%</span></div>
+          <div class="badge cyan">#1 Starting Point</div>
         </div>
-        <div class="stat-title" style="font-size: 26px;">OTAs Overtook Search Engines for Hotel Discovery</div>
-        <div class="stat-desc" style="font-size: 20px;"><strong>26% of travellers</strong> now start their 2026 hotel search on an OTA (up from 18%), while search engines dropped from <strong>36% down to 21%</strong>.</div>
+        <div class="stat-title">OTAs Overtook Search Engines for Hotel Research</div>
+        <div class="stat-desc"><strong>26% of travellers</strong> now start their hotel research on an OTA (up from 18%), while search engines dropped from <strong>36% down to 21%</strong>.</div>
       </div>
 
-      <div class="stat-card emerald-border" style="padding: 36px 40px;">
+      <div class="stat-card emerald-border">
         <div class="stat-top">
-          <div class="big-num emerald" style="font-size: 74px;">18%</div>
-          <div class="badge emerald">Up +3.3pp for 2026</div>
+          <div class="big-num emerald">18%</div>
+          <div class="badge emerald">Up +3.3pp YoY</div>
         </div>
-        <div class="stat-title" style="font-size: 26px;">Shortlist on the OTA → Switch to Book Direct</div>
-        <div class="stat-desc" style="font-size: 20px;">Nearly <strong>1 in 5 guests</strong> who discover a hotel on an OTA use its gallery to shortlist—then switch to <strong>book direct on the hotel's website</strong>.</div>
+        <div class="stat-title">Shortlist on the OTA → Switch to Book Direct</div>
+        <div class="stat-desc"><strong>18% of travellers</strong> start on an OTA to build their visual shortlist before switching to the <strong>hotel's own website to book direct</strong>.</div>
       </div>
     </div>
 
     <div class="footer-bar">
-      <div class="source-note">Source: SiteMinder Changing Traveller Report 2026 (12,000 travellers)</div>
+      <div class="source-note">Source: SiteMinder Changing Traveller Report</div>
       <div class="swipe-cta">So we audited London's top 10 →</div>
     </div>
   </div>
   `,
 
-  // SLIDE 3: The AtmosVibe London 10 Audit (Own Site vs Booking.com)
+  // SLIDE 3: The AtmosVibe London 10 Audit (92.5 -> 88.4 -> 56.5)
   `
   <div class="slide" id="slide-3">
     <div class="top-bar">
@@ -396,9 +387,9 @@ const slidesHtml = [
     </div>
 
     <div>
-      <div class="kicker rose">AtmosVibe 2026 London 10 Lifestyle Benchmark</div>
-      <h1>Hotels Show Their <span class="cyan">Vibe &amp; Experiences</span> on Their Site—<span class="rose">But Hide Them on OTAs</span></h1>
-      <p class="lead">We audited 135,000+ guest reviews, hotel websites, Instagram, and live Booking.com hero galleries across London's top 10 lifestyle hotels.</p>
+      <div class="kicker rose">AtmosVibe London 10 Lifestyle Benchmark</div>
+      <h1>Hotels Score <span class="cyan">88/100</span> on Their Own Site—Then Drop to <span class="rose">56/100 on Booking.com</span></h1>
+      <p class="lead">We audited 10 of London's most iconic lifestyle hotels across 135,000+ guest reviews, their own websites &amp; Instagram, and Booking.com:</p>
     </div>
 
     <div class="stat-stack" style="gap: 18px;">
@@ -408,7 +399,7 @@ const slidesHtml = [
           <div class="badge emerald">135,000+ Guest Reviews</div>
         </div>
         <div class="stat-title" style="font-size: 23px; margin-bottom: 4px;">Real-World Vibe &amp; Experiences</div>
-        <div class="stat-desc" style="font-size: 18.5px;">Guests overwhelmingly rave about the <strong>rooftop bars, destination dining, and social atmosphere</strong>.</div>
+        <div class="stat-desc" style="font-size: 18.5px;">In real life, guests rave about their <strong>rooftop bars, destination dining, and social energy</strong>.</div>
       </div>
 
       <div class="stat-card cyan-border" style="padding: 26px 34px;">
@@ -416,8 +407,8 @@ const slidesHtml = [
           <div class="big-num" style="font-size: 60px;">88.4 <span style="font-size:30px;color:#94a3b8;">/ 100</span></div>
           <div class="badge cyan">Owned Channels</div>
         </div>
-        <div class="stat-title" style="font-size: 23px; margin-bottom: 4px;">Hotel Website &amp; Instagram</div>
-        <div class="stat-desc" style="font-size: 18.5px;">On their own sites, hotels lead with their <strong>signature experiences, rooftops, and design energy</strong>.</div>
+        <div class="stat-title" style="font-size: 23px; margin-bottom: 4px;">Own Website &amp; Instagram</div>
+        <div class="stat-desc" style="font-size: 18.5px;">On their own channels, hotels showcase those exact <strong>rooftops, restaurants, and lifestyle spaces</strong>.</div>
       </div>
 
       <div class="stat-card rose-border" style="padding: 26px 34px;">
@@ -426,12 +417,12 @@ const slidesHtml = [
           <div class="badge rose">70% Utility Shots (35 of 50)</div>
         </div>
         <div class="stat-title" style="font-size: 23px; margin-bottom: 4px;">Booking.com Top-5 Hero Gallery</div>
-        <div class="stat-desc" style="font-size: 18.5px;">A <strong>-36pt drop</strong>: <strong>70% of Top-5 OTA hero slots</strong> show generic beds, couches, or bathrooms instead of vibe &amp; experiences.</div>
+        <div class="stat-desc" style="font-size: 18.5px;"><strong>70% of their Top-5 Hero photos</strong> default to standard beds, couches, bathroom sinks, and utility rooms—burying the vibe that wins the shortlist.</div>
       </div>
     </div>
 
     <div class="footer-bar">
-      <div class="source-note">Source: AtmosVibe 2026 London 10 Lifestyle Hotel Audit</div>
+      <div class="source-note">Source: AtmosVibe London 10 Lifestyle Hotel Benchmark</div>
       <div class="swipe-cta">See live Booking.com examples →</div>
     </div>
   </div>
@@ -447,7 +438,7 @@ const slidesHtml = [
 
     <div>
       <div class="kicker rose">Live Booking.com Top-5 Hero Gallery Proof</div>
-      <h1>Guests Search for <span class="cyan">Vibe &amp; Experiences.</span> <span class="rose">Here’s What Booking.com Shows:</span></h1>
+      <h1>80%+ Pay Extra for Atmosphere &amp; Experiences. <span class="rose">Here’s What Booking.com Shows:</span></h1>
     </div>
 
     <div class="photo-grid">
@@ -504,7 +495,7 @@ const slidesHtml = [
       <div style="display:flex;align-items:center;justify-content:space-between;">
         <div>
           <div style="font-size:22px;font-weight:800;color:#ffffff;">Turn Your Vibe &amp; Experiences into Bookings</div>
-          <div style="font-size:17px;color:#cbd5e1;margin-top:4px;">Explore the full 10-hotel benchmark at <strong>atmosvibe.io/vibe-insights</strong></div>
+          <div style="font-size:17px;color:#cbd5e1;margin-top:4px;">Full 10-hotel scorecard pinned on <strong>@AtmosVibe</strong> • <strong>atmosvibe.io/vibe-insights</strong></div>
         </div>
         <div style="background:rgba(0,229,255,0.16);border:1px solid rgba(0,229,255,0.5);color:#00e5ff;font-weight:800;font-size:18px;padding:12px 22px;border-radius:12px;">
           atmosvibe.io
