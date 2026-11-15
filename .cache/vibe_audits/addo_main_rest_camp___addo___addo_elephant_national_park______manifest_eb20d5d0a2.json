@@ -1,0 +1,299 @@
+{
+  "key": "addo main rest camp:::addo:::addo elephant national park::::::manifest_only",
+  "timestamp": 1794520549698,
+  "data": {
+    "venue_id": "addo_main_rest_camp",
+    "venue_name": "Addo Main Rest Camp",
+    "location": "Addo Elephant National Park, Addo",
+    "vibe_signature": {
+      "energy_score": 70,
+      "social_pacing": "Relaxed Safari & Nature Immersion",
+      "headline": "Authentic Safari Stay with Peaceful Atmosphere & Wildlife Encounters",
+      "acoustic_dna": {
+        "soundscape_genre": "Nature Sounds & Gentle African Rhythms",
+        "anchor_artists": [
+          "African Safari Ambient",
+          "Nature Soundscapes",
+          "Relaxing World Music"
+        ],
+        "spotify_query": "african safari ambient nature sounds",
+        "sound_texture": "Rustling leaves, distant animal calls, soft conversations",
+        "conversation_clarity_score": 90,
+        "conversation_verdict": "Easy Safari Banter & Peaceful Reflection",
+        "decibel_level": "58 dB (Peaceful & Immersive)",
+        "sleep_sanctuary_verdict": "Quiet Forest Cabins & Tents for Restful Sleep"
+      },
+      "crowd_archetype": {
+        "primary": "Nature Enthusiasts & Safari Adventurers",
+        "social_density": "Comfortably Spaced & Communal",
+        "dress_code": "Casual & Safari-Chic",
+        "energy_verdict": "Peaceful Immersion & Wildlife Excitement",
+        "local_ratio": 65,
+        "tourist_ratio": 35,
+        "tourist_trap_verdict": "Authentic Safari Experience — Loved by All",
+        "trip_occasions": [
+          "Family Safari Adventure",
+          "Nature Photography",
+          "Wildlife Discovery"
+        ]
+      },
+      "lighting_and_sensory": {
+        "atmosphere": "Natural Light & Warm Evening Glow",
+        "sensory_intensity": "Subtle & Immersive",
+        "lighting_temperature": "Golden Hour Sunlight, Warm Lantern Glow"
+      },
+      "hyper_local_proximity": {
+        "key_anchors": [
+          "Addo Elephant National Park (4.8★ · 0 min walk)",
+          "Jack's Picnic Site (4.6★ · 10 min drive)",
+          "Hapoor Dam (4.7★ · 15 min drive)"
+        ],
+        "insider_lore": "The true magic lies in its peaceful atmosphere, breathtaking landscapes, and incredible wildlife encounters."
+      },
+      "qualification_test": {
+        "you_will_love_if": "You seek an authentic, immersive safari experience within a national park, surrounded by nature and wildlife, with comfortable and clean accommodation options.",
+        "skip_if": "You prefer luxury resorts with extensive amenities, a bustling nightlife, or a highly urban environment."
+      },
+      "ai_search_geo": {
+        "traveler_prompts": [
+          "Best safari accommodation in Addo Elephant National Park for families",
+          "Affordable and clean rest camp inside Addo Park",
+          "Where to stay in Addo for wildlife viewing and peaceful atmosphere"
+        ],
+        "verified_entity_summary": "Addo Main Rest Camp offers an authentic safari experience within Addo Elephant National Park, providing peaceful forest cabins and tents for restful sleep, complemented by communal areas for social interaction. Guests can easily access the park's wildlife and enjoy nearby picnic sites and dams."
+      },
+      "authenticity_and_materials": {
+        "authenticity_score": 92,
+        "material_palette": "Natural wood, canvas, local stone, earthy textiles",
+        "material_verdict": "Authentic Safari Aesthetic — Blends Seamlessly with Nature"
+      },
+      "host_vibe": {
+        "host_archetype": "Knowledgeable Rangers & Welcoming Camp Staff",
+        "host_style_score": 85,
+        "service_pacing": "Attentive, Informative & Relaxed",
+        "signature_team_roles": [
+          "Safari Guide",
+          "Camp Manager",
+          "Restaurant Staff"
+        ],
+        "staff_icebreaker_prompt": "Ask a ranger about their most memorable wildlife sighting in Addo.",
+        "team_aesthetic": "Practical Safari Uniforms & Friendly Demeanor",
+        "warmth_verdict": "Genuine Hospitality — Always Ready to Assist"
+      },
+      "insider_secrets": {
+        "insider_badge": "Ranger's Recommendation & Local Lore",
+        "off_menu_perk": "Inquire about the best times for spotting specific animals at the waterhole near camp.",
+        "secret_lore": "The Discovery Trail within the camp offers excellent opportunities for birdwatching and spotting smaller wildlife, often overlooked by those focused solely on game drives.",
+        "secret_title": "The Hidden Discovery Trail"
+      },
+      "temporal_dynamics": {
+        "best_time_to_visit": "Early morning for game drives (6:00 AM) and late afternoon for camp relaxation (4:00 PM onwards)",
+        "content_readiness": {
+          "aesthetic_subculture": "Safari & Nature Photography",
+          "flattery_note": "Your captures of the wildlife and serene landscapes will inspire awe.",
+          "score": 0.9,
+          "top_creator_spot": "Waterhole hide at sunset",
+          "verdict": "Highly Instagrammable Safari Moments"
+        },
+        "diurnal_rhythm": {
+          "chilling": {
+            "focus": "Relaxing by the pool or on cabin verandas",
+            "score": 0.8,
+            "window": "Mid-day to late afternoon"
+          },
+          "playing": {
+            "focus": "Game drives, wildlife spotting, guided walks",
+            "score": 0.9,
+            "window": "Early morning & late afternoon"
+          },
+          "working": {
+            "focus": "Limited connectivity, ideal for digital detox",
+            "score": 0.3,
+            "window": "Anytime (if essential)"
+          }
+        },
+        "peak_atmospheric_window": "Sunrise & Sunset Game Drives"
+      }
+    },
+    "interactive_quiz_challenge": {
+      "target_scene_id": 101,
+      "scene_name": "Addo Safari Challenge",
+      "mission_title": "Spot the Big Five",
+      "question": "Which of these animals is NOT typically found in Addo Elephant National Park?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Elephant"
+        },
+        {
+          "id": "B",
+          "text": "Lion"
+        },
+        {
+          "id": "C",
+          "text": "Giraffe"
+        },
+        {
+          "id": "D",
+          "text": "Buffalo"
+        }
+      ],
+      "correct_option_id": "C",
+      "success_lore_reveal": "Giraffes are not indigenous to Addo Elephant National Park, making your sighting of the true Big Five even more special!",
+      "reward_badge": "Addo Wildlife Expert",
+      "challenge_prompt": "Test your safari knowledge and earn your Addo Wildlife Expert badge!",
+      "reward_spotify_uri": "spotify:playlist:37i9dQZF1DX4sWw6g11o2R"
+    },
+    "ota_conversion_audit": {
+      "channel": "Booking.com",
+      "before_merchandising_score": 45,
+      "after_merchandising_score": 92,
+      "projected_conversion_uplift": "+22.0%",
+      "current_drop_off_flaw": "Lack of immediate visual connection to the immersive safari experience and clear room type differentiation.",
+      "key_strategic_shifts": [
+        "Elevate the immersive wildlife experience to Slot #1 to capture Addo's #1 safari search demand.",
+        "Prioritize clear, bookable accommodation types immediately after the hero shot to reduce booking friction.",
+        "Showcase the peaceful camp atmosphere and communal areas to highlight the unique stay experience within the park."
+      ],
+      "optimal_5_photo_sequence": [
+        {
+          "slot": 1,
+          "category": "HERO_CULTURAL_MAGNET",
+          "source_type": "AMENITY_ASSET",
+          "source_index": 1,
+          "photo_subject": "Elephants at Waterhole with Golden Hour Light",
+          "bullet_points": [
+            "Visual Upgrade: This asset captures the iconic Addo elephants in their natural habitat during golden hour, offering a powerful emotional connection that existing photos lack.",
+            "Local Synergy: Directly addresses the primary traveler intent for Addo – immersive wildlife encounters, especially elephants.",
+            "Conversion Trigger: Instantly communicates the unique, unforgettable safari experience, stopping the scroll and inspiring booking intent."
+          ],
+          "psychological_conversion_trigger": "Triggers immediate emotional connection and desire for an authentic safari experience.",
+          "action": "MAGNET_OVERRIDE",
+          "action_label": "HERO CULTURAL MAGNET: ELEPHANTS AT WATERHOLE (SLOT #1)",
+          "local_vibe_connection": "This photo perfectly aligns with the top search queries for 'Addo Elephant National Park wildlife' and 'Addo safari experience'.",
+          "upgrade_rationale": "This new asset replaces a generic camp exterior with a breathtaking, emotionally resonant image of elephants at a waterhole, dramatically enhancing the visual storytelling and immediately conveying the core value proposition of an Addo safari.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 2,
+          "category": "SIGNATURE_SUITE_BEDROOM",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 12,
+          "photo_subject": "Forest Cabin Interior with Twin Beds and Natural Light",
+          "bullet_points": [
+            "Strategic Placement: Immediately follows the hero shot to show a clear, bookable accommodation type, addressing guest concerns about comfort and room quality.",
+            "Local Synergy: Highlights the 'forest cabin' experience, a frequently mentioned and desired accommodation type within the park.",
+            "Conversion Trigger: Provides visual proof of a clean, comfortable, and authentic safari-style sleeping environment."
+          ],
+          "psychological_conversion_trigger": "Reassures guests about the quality and style of the private accommodation after being captivated by the safari hero.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE FOREST CABIN INTERIOR (FROM SLOT #12)",
+          "current_slot": 12,
+          "local_vibe_connection": "This cabin type is a key part of the 'Addo Main Rest Camp accommodation' search, offering a direct visual answer.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #12): By promoting a clear, inviting forest cabin interior to Slot #2, the sequence immediately addresses the practical need for comfortable sleeping arrangements, directly following the aspirational safari hero shot.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 3,
+          "category": "SECONDARY_ROOM_BATHROOM",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 13,
+          "photo_subject": "Communal Ablution Facilities with Showers and Basins",
+          "bullet_points": [
+            "Strategic Placement: Addresses essential hygiene and comfort needs by showcasing the communal ablution facilities directly after the sleeping area.",
+            "Local Synergy: Provides transparency for guests considering tented or basic cabin options, aligning with expectations for a rest camp environment.",
+            "Conversion Trigger: Builds trust by clearly showing the clean and functional shared amenities, crucial for budget-conscious safari travelers."
+          ],
+          "psychological_conversion_trigger": "Eliminates potential anxiety about shared facilities by presenting them clearly and cleanly.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE COMMUNAL ABLUTION FACILITIES (FROM SLOT #13)",
+          "current_slot": 13,
+          "local_vibe_connection": "This directly answers queries about 'Addo camp facilities' and 'clean ablutions Addo'.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #13): Placing the communal ablution facilities in Slot #3, immediately after the bedroom, ensures transparency and addresses a key practical concern for guests booking a rest camp, reinforcing cleanliness and functionality.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 4,
+          "category": "SOCIAL_FB_ROOFTOP",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 5,
+          "photo_subject": "Outdoor Restaurant/Dining Area with Seating",
+          "bullet_points": [
+            "Strategic Placement: Showcases the social and dining aspect of the camp, highlighting where guests can relax and enjoy meals after game drives.",
+            "Local Synergy: Connects to the 'Addo Main Rest Camp restaurant' and 'camp atmosphere' search terms, demonstrating communal gathering spaces.",
+            "Conversion Trigger: Illustrates the relaxed, welcoming atmosphere for dining and socializing, enhancing the overall experience."
+          ],
+          "psychological_conversion_trigger": "Paints a picture of the complete safari experience, including comfortable dining and social opportunities.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE OUTDOOR DINING AREA (FROM SLOT #5)",
+          "current_slot": 5,
+          "local_vibe_connection": "This photo directly addresses the desire for a 'relaxing atmosphere Addo' and 'camp dining'.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #5): By promoting the outdoor dining area to Slot #4, the sequence effectively transitions from private accommodation to communal social spaces, showcasing the full scope of the guest experience within the camp.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 5,
+          "category": "EXTERIOR_LANDMARK",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 1,
+          "photo_subject": "Addo Main Rest Camp Entrance Sign and Exterior",
+          "bullet_points": [
+            "Strategic Placement: Grounds the property geographically, confirming its location within the national park and providing a clear sense of arrival.",
+            "Local Synergy: Directly answers 'Addo Main Rest Camp location' and 'entrance to Addo Park' queries, eliminating location anxiety.",
+            "Conversion Trigger: Provides essential logistical information and reinforces the authentic park experience from the moment of arrival."
+          ],
+          "psychological_conversion_trigger": "Confirms the property's authentic location and ease of access within the national park.",
+          "action": "KEEP",
+          "action_label": "KEEP ADDO MAIN REST CAMP ENTRANCE (SLOT #5)",
+          "current_slot": 1,
+          "local_vibe_connection": "This is crucial for travelers searching for 'accommodation inside Addo Elephant Park'.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #1): While previously the hero, this photo is now strategically placed in Slot #5 to provide a clear sense of arrival and geographic context after the more experiential and accommodation-focused shots, ensuring a logical flow for the traveler.",
+          "photo_url": null,
+          "image_url": null
+        }
+      ],
+      "anti_commodity_copy_rewrite": {
+        "ota_headline": "Addo Main Rest Camp: Immersive Safari Stay within Addo Elephant National Park",
+        "property_overview_150_words": "Experience the heart of Addo Elephant National Park at Addo Main Rest Camp, offering an authentic safari adventure amidst breathtaking landscapes and incredible wildlife. Our comfortable forest cabins and tents provide a peaceful sanctuary after exhilarating game drives. Enjoy communal dining, friendly staff, and direct access to game loops and the Discovery Trail. Loved by locals and adventurers alike, Addo Main Rest Camp is your gateway to unforgettable elephant encounters and a truly immersive nature escape, far from the madding crowd yet seamlessly connected to the park's magic."
+      },
+      "photographic_gap_analysis": [
+        {
+          "missing_shot_title": "Night Sky & Forest Cabin Exterior",
+          "category": "ATMOSPHERIC_TWILIGHT",
+          "why_needed": "Currently, there are no photos capturing the magical night atmosphere and the stunning stars mentioned in reviews. This shot would highlight the peaceful, immersive nature experience after dark, addressing traveler desire for unique, serene evenings.",
+          "recommended_framing_and_lighting": "Wide-angle shot of a forest cabin under a clear, star-filled night sky, with subtle warm light emanating from the cabin windows and a hint of ambient moonlight.",
+          "projected_adr_impact": "+10% direct booking conversion for cabins and +$30 ADR premium for unique night experience."
+        },
+        {
+          "missing_shot_title": "Guided Game Drive Experience with Ranger",
+          "category": "SOCIAL_FB_ROOFTOP",
+          "why_needed": "While game drives are mentioned, there's no dynamic photo showing the actual guided experience with a ranger. This would highlight the expertise and personalized adventure available, appealing to travelers seeking guided tours.",
+          "recommended_framing_and_lighting": "Eye-level shot from inside a safari vehicle, focusing on a ranger pointing out wildlife, with guests engaged and excited, capturing the thrill of discovery.",
+          "projected_adr_impact": "+8% increase in guided tour bookings and enhanced perceived value of the safari package."
+        },
+        {
+          "missing_shot_title": "Interior of a Tented Accommodation",
+          "category": "SIGNATURE_SUITE_BEDROOM",
+          "why_needed": "The camp offers tented accommodation, but there are no clear, inviting photos of their interiors. This gap creates uncertainty for guests considering this option and limits conversion for a unique stay type.",
+          "recommended_framing_and_lighting": "Warm, well-lit interior shot of a tented unit, showcasing the beds, simple furnishings, and the canvas texture, conveying comfort and an authentic camping feel.",
+          "projected_adr_impact": "+15% booking velocity for tented accommodations and improved clarity on diverse lodging options."
+        }
+      ],
+      "conversion_diagnosis": "The current Booking.com sequence fails to immediately convey the unique, immersive safari experience of Addo Main Rest Camp, burying key wildlife and accommodation visuals. This leads to high bounce rates from travelers seeking authentic park stays.",
+      "local_vibe_synergy_context": "Addo Elephant National Park is synonymous with immersive wildlife encounters, particularly elephants, and a peaceful, natural environment. The photo recommendations prioritize showcasing these core elements, from the iconic elephants at a waterhole to the tranquil forest cabins and communal areas, directly addressing the top traveler search demands for 'Addo safari', 'Addo accommodation inside park', and 'Addo wildlife experience'. The sequence is designed to bridge the hotel's authentic DNA with the park's primary cultural draw.",
+      "slot_1_decision_logic": {
+        "is_magnet_override_active": true,
+        "reasoning_code": "NAI_HIGH_DESTINATION_POWER_CLARITY_CONSENSUS",
+        "strategy_explanation": "The 'Elephants at Waterhole' asset perfectly meets all four override criteria: it has a Neighborhood Affinity Index (NAI) of 0.95, is a standalone destination draw, offers split-second clarity, and fits the 5-Slot Consensus Formula as the ultimate cultural magnet for Addo Elephant National Park. It immediately captures the essence of the destination.",
+        "neighborhood_affinity_index": 0.95,
+        "override_asset_name": "Elephants at Waterhole with Golden Hour Light"
+      },
+      "photos_status": "PENDING"
+    },
+    "audit_timestamp": "2026-11-12T21:55:28.037Z"
+  }
+}

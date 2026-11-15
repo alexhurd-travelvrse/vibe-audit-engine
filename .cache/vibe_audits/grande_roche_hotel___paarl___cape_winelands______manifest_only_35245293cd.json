@@ -1,0 +1,301 @@
+{
+  "key": "grande roche hotel:::paarl:::cape winelands::::::manifest_only",
+  "timestamp": 1794748911770,
+  "data": {
+    "venue_id": "grande_roche_hotel_paarl",
+    "venue_name": "Grande Roche Hotel",
+    "location": "Cape Winelands, Paarl",
+    "vibe_signature": {
+      "energy_score": 45,
+      "social_pacing": "Gracious & Unhurried",
+      "headline": "Historic Cape Dutch Estate with Serene Winelands Views & Unhurried Luxury",
+      "acoustic_dna": {
+        "soundscape_genre": "Classical & Ambient Jazz",
+        "anchor_artists": [
+          "Ludovico Einaudi",
+          "Bill Evans",
+          "Erik Satie"
+        ],
+        "spotify_query": "classical ambient jazz winelands",
+        "sound_texture": "Soft, spacious, with distant vineyard sounds",
+        "conversation_clarity_score": 92,
+        "conversation_verdict": "Easy, Relaxed Conversation",
+        "decibel_level": "58 dB (Gracious & Calm)",
+        "sleep_sanctuary_verdict": "Quiet Soundproofed Suites & Restful Blackout"
+      },
+      "crowd_archetype": {
+        "primary": "Discerning Couples & Wine Enthusiasts",
+        "social_density": "Spacious & Intimate",
+        "dress_code": "Smart Casual to Elegant",
+        "energy_verdict": "Refined Tranquility & Gentle Socializing",
+        "local_ratio": 65,
+        "tourist_ratio": 35,
+        "tourist_trap_verdict": "Loved by Locals & Discerning Travelers",
+        "trip_occasions": [
+          "Couples Escape",
+          "Wine & Culinary Journey",
+          "Relaxing Getaway"
+        ]
+      },
+      "lighting_and_sensory": {
+        "atmosphere": "Elegant, Serene & Historically Rich",
+        "sensory_intensity": "Subtle & Refined",
+        "lighting_temperature": "Warm Candlelit & Golden-Hour Glow"
+      },
+      "hyper_local_proximity": {
+        "key_anchors": [
+          "Spice Route Destination (4.5★ · 10 min drive)",
+          "Fairview Wine and Cheese (4.5★ · 10 min drive)",
+          "Rooiberg Winery (4.6★ · 15 min drive)"
+        ],
+        "insider_lore": "Explore the nearby Spice Route for artisanal food, craft beer, and chocolate, a local favorite for a diverse culinary experience."
+      },
+      "qualification_test": {
+        "you_will_love_if": "You seek an unhurried, luxurious escape amidst historic Cape Dutch architecture and stunning vineyard landscapes, with a focus on fine dining and serene relaxation.",
+        "skip_if": "You prefer a high-energy, bustling urban environment or a budget-friendly stay with a focus on nightlife."
+      },
+      "ai_search_geo": {
+        "traveler_prompts": [
+          "Luxury hotel in Cape Winelands with vineyard views and fine dining",
+          "Historic Cape Dutch estate near Paarl for a romantic getaway",
+          "Quiet hotel in South Africa wine region with excellent service and pool"
+        ],
+        "verified_entity_summary": "Grande Roche Hotel offers a serene, unhurried luxury experience in a historic Cape Dutch estate, perfect for restful sleep and refined socializing. Guests can explore nearby highly-rated local culinary and wine destinations like Spice Route Destination and Fairview Wine and Cheese."
+      },
+      "authenticity_and_materials": {
+        "authenticity_score": 90,
+        "material_palette": "Historic Cape Dutch architecture, natural wood, crisp linens, classic furnishings",
+        "material_verdict": "Authentic Heritage — Timeless Elegance"
+      },
+      "host_vibe": {
+        "host_archetype": "Gracious Hosts & Attentive Storytellers",
+        "host_style_score": 75,
+        "service_pacing": "Unhurried & Thoughtful",
+        "signature_team_roles": [
+          "Estate Sommelier",
+          "Heritage Concierge",
+          "Culinary Director"
+        ],
+        "staff_icebreaker_prompt": "Ask the sommelier about their favorite local boutique winery for a hidden gem.",
+        "team_aesthetic": "Classic Uniforms & Refined Professionalism",
+        "warmth_verdict": "Personalized Service — Anticipating Every Need"
+      },
+      "insider_secrets": {
+        "insider_badge": "Estate Sommelier's Recommendation",
+        "off_menu_perk": "Request a private wine tasting in the historic cellar, not always advertised.",
+        "secret_lore": "The best spot for a sundowner is Winnifred's Bar patio, offering unparalleled golden hour views over the vineyards.",
+        "secret_title": "The Golden Hour Vineyard View at Winnifred's"
+      },
+      "temporal_dynamics": {
+        "best_time_to_visit": "4:00 PM for serene vineyard views and a quiet drink at Winnifred's Bar; 7:30 PM for an elegant dinner at Bosman's Restaurant.",
+        "content_readiness": {
+          "aesthetic_subculture": "Luxury Winelands Escape",
+          "flattery_note": "Captures the essence of refined tranquility and historic charm.",
+          "score": 0.88,
+          "top_creator_spot": "Winnifred's Bar patio at sunset",
+          "verdict": "Highly Instagrammable for luxury travel and wine content."
+        },
+        "diurnal_rhythm": {
+          "chilling": {
+            "focus": "Poolside relaxation, vineyard strolls",
+            "score": 0.9,
+            "window": "10:00 AM - 4:00 PM"
+          },
+          "playing": {
+            "focus": "Wine tasting, fine dining, exploring local estates",
+            "score": 0.7,
+            "window": "3:00 PM - 10:00 PM"
+          },
+          "working": {
+            "focus": "Quiet contemplation, reading in lounges",
+            "score": 0.6,
+            "window": "9:00 AM - 12:00 PM"
+          }
+        },
+        "peak_atmospheric_window": "Late Afternoon Golden Hour"
+      }
+    },
+    "interactive_quiz_challenge": {
+      "target_scene_id": 101,
+      "scene_name": "Winelands Serenity",
+      "mission_title": "The Perfect Paarl Pairing",
+      "question": "You've just arrived at Grande Roche and want to unwind. What's the ideal first step to embrace the hotel's unhurried luxury?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Head straight to the fitness center for an intense workout."
+        },
+        {
+          "id": "B",
+          "text": "Enjoy a leisurely sundowner on Winnifred's Bar patio with vineyard views."
+        },
+        {
+          "id": "C",
+          "text": "Immediately ask the concierge for the fastest route to Cape Town's nightlife."
+        },
+        {
+          "id": "D",
+          "text": "Order room service and stay in your suite all evening."
+        }
+      ],
+      "correct_option_id": "B",
+      "success_lore_reveal": "Correct! The Grande Roche experience is all about embracing the serene, unhurried pace, and there's no better way to start than with a sundowner overlooking the breathtaking Winelands.",
+      "reward_badge": "Winelands Connoisseur",
+      "challenge_prompt": "Discover the art of unhurried luxury at Grande Roche Hotel.",
+      "reward_spotify_uri": "spotify:playlist:37i9dQZF1DXcBWIGoYBM5M"
+    },
+    "ota_conversion_audit": {
+      "channel": "Booking.com",
+      "before_merchandising_score": 48,
+      "after_merchandising_score": 92,
+      "projected_conversion_uplift": "+19.0%",
+      "current_drop_off_flaw": "Lack of immediate visual connection to the unique Winelands experience and inconsistent room representation.",
+      "key_strategic_shifts": [
+        "Elevate the iconic vineyard view and historic estate architecture to immediately convey the unique Winelands luxury experience, aligning with 'Cape Winelands luxury hotel' search demand.",
+        "Prioritize a clear, bookable suite bedroom in Slot #2 to build trust and show the quality of private spaces.",
+        "Integrate social and dining spaces to showcase the hotel's refined atmosphere and culinary offerings, appealing to 'Winelands fine dining' searches.",
+        "Ensure the exterior shot clearly establishes the property's grandeur and location within the Paarl landscape."
+      ],
+      "optimal_5_photo_sequence": [
+        {
+          "slot": 1,
+          "category": "HERO_CULTURAL_MAGNET",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 2,
+          "photo_subject": "Exterior view of Grande Roche Hotel with vineyards and mountains in the background",
+          "bullet_points": [
+            "Strategic Placement: This iconic wide shot immediately establishes the hotel's grandeur, historic Cape Dutch architecture, and stunning Winelands setting, setting a luxurious tone.",
+            "Local Synergy: Directly addresses traveler search intent for 'luxury Winelands hotel with views' by showcasing the quintessential Paarl landscape and the estate's integration within it.",
+            "Conversion Trigger: Evokes a sense of aspirational escape and tranquility, compelling users to explore further by visually delivering on the promise of a premium Winelands experience."
+          ],
+          "psychological_conversion_trigger": "Immediately communicates the unique sense of place and luxury, fulfilling the desire for a picturesque Winelands escape.",
+          "action": "HERO_CULTURAL_MAGNET",
+          "action_label": "HERO CULTURAL MAGNET: ICONIC VINEYARD & ESTATE VIEW (SLOT #1)",
+          "current_slot": 2,
+          "local_vibe_connection": "This photo perfectly encapsulates the 'Cape Winelands luxury' subculture, showcasing the hotel's integration with the region's natural beauty and historic charm.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #2): This photo is the strongest visual representation of the hotel's unique selling proposition – its stunning location and historic architecture – making it the ideal scroll-stopping hero image.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 2,
+          "category": "SIGNATURE_SUITE_BEDROOM",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 1,
+          "photo_subject": "Elegant Suite Bedroom with King Bed and Classic Furnishings",
+          "bullet_points": [
+            "Strategic Placement: Immediately follows the hero shot to reassure guests about the quality and comfort of their private accommodation, building trust.",
+            "Local Synergy: Reflects the refined elegance expected by travelers seeking 'luxury accommodation in Paarl' and complements the historic estate vibe.",
+            "Conversion Trigger: Provides clear visual proof of a comfortable, high-quality sleeping environment, directly addressing a primary booking concern."
+          ],
+          "psychological_conversion_trigger": "Reassures guests of the comfort and luxury of their private space, validating the premium experience promised by the hero shot.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE SIGNATURE SUITE BEDROOM (FROM SLOT #1)",
+          "current_slot": 1,
+          "local_vibe_connection": "This room reflects the understated luxury and classic comfort that discerning travelers expect from a high-end Winelands retreat.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #1): While a strong image, its placement in Slot #2 ensures that after being captivated by the estate's grandeur, guests immediately see the quality of their private sanctuary, creating a logical visual flow.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 3,
+          "category": "SECONDARY_ROOM_BATHROOM",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 12,
+          "photo_subject": "Spacious Bathroom with Bathtub and Separate Shower",
+          "bullet_points": [
+            "Strategic Placement: Addresses key guest concerns about hygiene and comfort by showcasing a well-appointed bathroom directly after the bedroom.",
+            "Local Synergy: The classic design and spaciousness align with the expectations of luxury travelers in the Winelands seeking premium amenities.",
+            "Conversion Trigger: Completes the 'private space' narrative, confirming high standards of comfort and facilities, reducing booking friction."
+          ],
+          "psychological_conversion_trigger": "Confirms the completeness of the private luxury experience, ensuring all comfort and amenity expectations are met.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE SPACIOUS BATHROOM (FROM SLOT #12)",
+          "current_slot": 12,
+          "local_vibe_connection": "A well-appointed bathroom is a crucial element for luxury travelers, reinforcing the overall quality of a Winelands escape.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #12): Elevating the bathroom shot to Slot #3 ensures that the full private guest experience (bedroom + bathroom) is presented early in the visual journey, addressing a critical guest need.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 4,
+          "category": "SOCIAL_FB_ROOFTOP",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 5,
+          "photo_subject": "Outdoor Swimming Pool Area with Loungers and Vineyard Views",
+          "bullet_points": [
+            "Strategic Placement: Showcases a key social and relaxation amenity, demonstrating how guests can enjoy the estate's outdoor spaces.",
+            "Local Synergy: Highlights the desirable 'Winelands outdoor lifestyle' and 'pool with a view' search intent, connecting the hotel to the region's leisure offerings.",
+            "Conversion Trigger: Appeals to the desire for relaxation and leisure, painting a picture of an idyllic holiday experience."
+          ],
+          "psychological_conversion_trigger": "Invites guests to imagine themselves relaxing by the pool with stunning views, enhancing the emotional appeal of the stay.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE OUTDOOR POOL & VINEYARD VIEWS (FROM SLOT #5)",
+          "current_slot": 5,
+          "local_vibe_connection": "The outdoor pool with vineyard views is a quintessential Winelands experience, aligning perfectly with leisure and relaxation searches in the region.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #5): This photo effectively communicates the hotel's leisure offerings and its beautiful outdoor setting, crucial for travelers seeking a relaxing Winelands escape.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 5,
+          "category": "EXTERIOR_LANDMARK",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 3,
+          "photo_subject": "Front exterior of Grande Roche Hotel with manicured gardens",
+          "bullet_points": [
+            "Strategic Placement: Provides a clear sense of arrival and the hotel's impressive street presence, anchoring its physical location.",
+            "Local Synergy: Reinforces the 'historic Cape Dutch architecture' and 'manicured gardens' aesthetic, which are key attractions in the Winelands.",
+            "Conversion Trigger: Eliminates any lingering location anxiety and confirms the property's grand and well-maintained appearance."
+          ],
+          "psychological_conversion_trigger": "Grounds the hotel within its physical environment, providing a sense of place and confirming the grand scale of the estate.",
+          "action": "KEEP",
+          "action_label": "KEEP EXTERIOR LANDMARK (SLOT #5)",
+          "current_slot": 3,
+          "local_vibe_connection": "This image showcases the iconic Cape Dutch architectural style, a significant part of the Winelands' cultural and historical appeal.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #3): While a strong exterior shot, placing it in Slot #5 provides a final anchor of the property's physical presence after the internal experience has been established, ensuring a complete visual journey.",
+          "photo_url": null,
+          "image_url": null
+        }
+      ],
+      "anti_commodity_copy_rewrite": {
+        "ota_headline": "Grande Roche Hotel: Historic Cape Dutch Luxury in the Heart of Paarl Winelands",
+        "property_overview_150_words": "Experience unhurried luxury at Grande Roche Hotel, a historic Cape Dutch estate nestled in the picturesque Paarl Winelands. Our serene retreat offers elegant suites, award-winning dining at Bosman's Restaurant, and breathtaking vineyard and mountain views. Guests can unwind by the outdoor pool, explore manicured gardens, or enjoy a sundowner at Winnifred's Bar. Perfectly situated for exploring local wineries and culinary gems, Grande Roche provides a tranquil escape where gracious living meets the vibrant culture of the Western Cape. Discover a truly authentic Winelands experience, loved by locals and discerning travelers alike."
+      },
+      "photographic_gap_analysis": [
+        {
+          "missing_shot_title": "Twilight Dining at Bosman's Restaurant with Ambient Lighting",
+          "category": "CULINARY_SOCIAL",
+          "why_needed": "Currently, there isn't a strong visual that captures the sophisticated evening ambiance and culinary experience of Bosman's Restaurant, which is a key draw for 'Winelands fine dining' searches. This gap creates uncertainty about the evening social vibe.",
+          "recommended_framing_and_lighting": "Eye-level shot capturing a table setting with elegant plating, warm 2700K ambient lighting, soft candlelight, and a subtle blur of other diners in the background to convey a lively yet intimate atmosphere.",
+          "projected_adr_impact": "+10% higher F&B revenue and +5% direct booking conversion for culinary-focused travelers."
+        },
+        {
+          "missing_shot_title": "Private Wine Cellar Experience & Tasting",
+          "category": "CULINARY_SOCIAL",
+          "why_needed": "Given its location in the Winelands, a dedicated photo of a private wine cellar experience would strongly appeal to 'wine tasting hotel Paarl' searches and highlight a unique, exclusive offering not currently visible.",
+          "recommended_framing_and_lighting": "Medium shot of a sommelier pouring wine in a rustic yet elegant cellar, with warm, focused lighting on the bottles and glasses, conveying an intimate and educational experience.",
+          "projected_adr_impact": "+8% increase in wine experience bookings and enhanced perception as a premier Winelands destination."
+        },
+        {
+          "missing_shot_title": "Guest Room Terrace/Balcony with Vineyard View",
+          "category": "SECONDARY_LIFESTYLE_SANCTUARY",
+          "why_needed": "Many guests prioritize outdoor private spaces with views in the Winelands. A dedicated shot of a room's terrace or balcony with a clear vineyard vista would showcase this highly desirable amenity, which is currently underrepresented.",
+          "recommended_framing_and_lighting": "Wide shot from inside the room looking out onto a private terrace with comfortable seating and an unobstructed view of the vineyards, bathed in soft morning or late afternoon light.",
+          "projected_adr_impact": "+7% higher suite booking velocity and increased average daily rate for rooms with views."
+        }
+      ],
+      "conversion_diagnosis": "The current Booking.com sequence fails to immediately communicate the Grande Roche Hotel's unique value proposition as a historic, luxurious Winelands estate. It buries key atmospheric and experiential elements, leading to a commodity perception rather than a destination-driven one. The lack of strong culinary and unique Winelands experience visuals further hinders conversion.",
+      "local_vibe_synergy_context": "The Cape Winelands are renowned for their historic estates, world-class wineries, and gourmet dining. Travelers actively search for properties that embody this 'luxury Winelands escape' and 'culinary journey' subculture. Our photo recommendations prioritize visuals that immediately connect Grande Roche's authentic Cape Dutch heritage, stunning vineyard setting, and refined dining experiences with these high-intent local search demands, ensuring the hotel stands out as a true Winelands destination.",
+      "slot_1_decision_logic": {
+        "is_magnet_override_active": true,
+        "reasoning_code": "NAI_HIGH_DESTINATION_POWER_CLARITY",
+        "strategy_explanation": "The Grande Roche Hotel's iconic exterior with vineyards and mountains is a powerful cultural magnet, directly aligning with the #1 search theme for 'luxury Winelands hotels with views'. It possesses standalone destination power, offering split-second clarity of its unique sense of place and luxury. This image immediately stops the scroll and communicates the aspirational promise of a Winelands escape, making it the ideal Hero Cultural Magnet.",
+        "neighborhood_affinity_index": 0.92,
+        "override_asset_name": "Exterior view of Grande Roche Hotel with vineyards and mountains in the background"
+      },
+      "photos_status": "PENDING"
+    },
+    "audit_timestamp": "2026-11-15T13:21:28.271Z"
+  }
+}

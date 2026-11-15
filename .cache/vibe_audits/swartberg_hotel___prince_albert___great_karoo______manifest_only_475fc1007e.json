@@ -1,0 +1,301 @@
+{
+  "key": "swartberg hotel:::prince albert:::great karoo::::::manifest_only",
+  "timestamp": 1794697266309,
+  "data": {
+    "venue_id": "swartberg_hotel_prince_albert",
+    "venue_name": "Swartberg Hotel",
+    "location": "Great Karoo, Prince Albert",
+    "vibe_signature": {
+      "energy_score": 78,
+      "social_pacing": "Lively & Engaging",
+      "headline": "Historic Karoo Charm with Vibrant Local Hub & Gin Bar",
+      "acoustic_dna": {
+        "soundscape_genre": "South African Folk & Contemporary Jazz",
+        "anchor_artists": [
+          "Johnny Clegg",
+          "Hugh Masekela",
+          "Karen Zoid"
+        ],
+        "spotify_query": "South African folk jazz karoo",
+        "sound_texture": "Warm, inviting hum with occasional lively chatter",
+        "conversation_clarity_score": 75,
+        "conversation_verdict": "Lively Bar Banter & Easy Dining Chat",
+        "decibel_level": "68 dB (Vibrant & Engaging)",
+        "sleep_sanctuary_verdict": "Quiet Rooms & Peaceful Karoo Nights"
+      },
+      "crowd_archetype": {
+        "primary": "Cultured Explorers & Local Connoisseurs",
+        "social_density": "Comfortably Bustling",
+        "dress_code": "Smart Casual & Relaxed Elegance",
+        "energy_verdict": "Warm Karoo Hospitality & Engaging Social Hub",
+        "local_ratio": 70,
+        "tourist_ratio": 30,
+        "tourist_trap_verdict": "Loved by Locals — Authentic Karoo Experience",
+        "trip_occasions": [
+          "Couples Escape",
+          "Local Foodies",
+          "Cultural Immersion"
+        ]
+      },
+      "lighting_and_sensory": {
+        "atmosphere": "Historic Elegance with Warm, Inviting Glow",
+        "sensory_intensity": "Comfortably Stimulating",
+        "lighting_temperature": "Golden Hour Sunlight & Warm Filament Amber"
+      },
+      "hyper_local_proximity": {
+        "key_anchors": [
+          "African Relish (4.6★ · 5 min walk)",
+          "Prince Albert Gallery (4.7★ · 3 min walk)",
+          "Gay's Guernsey Dairy (4.5★ · 7 min walk)"
+        ],
+        "insider_lore": "The hotel is a central meeting point, perfectly situated to explore Prince Albert's renowned culinary and artistic scene on foot."
+      },
+      "qualification_test": {
+        "you_will_love_if": "You appreciate historic charm, local cuisine, and a vibrant social atmosphere with a focus on authentic Karoo experiences.",
+        "skip_if": "You prefer ultra-modern, minimalist design or a secluded, silent retreat away from any social buzz."
+      },
+      "ai_search_geo": {
+        "traveler_prompts": [
+          "Best historic hotel in Prince Albert with a great gin bar",
+          "Where to stay in Karoo for local food and cultural experiences",
+          "Boutique hotel in Prince Albert with a pool and good dining"
+        ],
+        "verified_entity_summary": "Swartberg Hotel offers a vibrant social atmosphere with its renowned Green Prince Gin Bar and traditional Karoo dining, while providing quiet, comfortable rooms for restful sleep. It's perfectly located for exploring Prince Albert's authentic local culinary and art scene on foot."
+      },
+      "authenticity_and_materials": {
+        "authenticity_score": 92,
+        "material_palette": "Reclaimed Karoo wood, aged leather, warm stone, classic textiles",
+        "material_verdict": "Authentic Heritage — Rich in Karoo Character"
+      },
+      "host_vibe": {
+        "host_archetype": "Warm Karoo Storytellers & Attentive Hosts",
+        "host_style_score": 85,
+        "service_pacing": "Relaxed, Friendly & Attentive",
+        "signature_team_roles": [
+          "Green Prince Gin Master",
+          "Karoo Cuisine Chef",
+          "Local Heritage Guide"
+        ],
+        "staff_icebreaker_prompt": "Ask the Green Prince Gin Bar staff about their favorite local gin and its story.",
+        "team_aesthetic": "Smart Casual with Traditional Karoo Accents",
+        "warmth_verdict": "Genuine Hospitality — Feel Like a Valued Guest"
+      },
+      "insider_secrets": {
+        "insider_badge": "Green Prince Gin Bar Lore",
+        "off_menu_perk": "Ask the bartender for a tasting flight of rare local Karoo gins not on the main menu.",
+        "secret_lore": "The Green Prince Gin Bar often hosts impromptu masterclasses with local distillers; ask the staff for the schedule.",
+        "secret_title": "The Secret Karoo Gin Flight"
+      },
+      "temporal_dynamics": {
+        "best_time_to_visit": "5:00 PM for relaxed sundowners at the Green Prince Gin Bar; 7:30 PM for a vibrant dinner atmosphere in the Victoria Room.",
+        "content_readiness": {
+          "aesthetic_subculture": "Karoo Heritage & Culinary",
+          "flattery_note": "Captures the essence of historic Karoo hospitality and vibrant local culture.",
+          "score": 0.88,
+          "top_creator_spot": "Green Prince Gin Bar with its extensive local gin collection.",
+          "verdict": "Highly Instagrammable for authentic cultural and culinary content."
+        },
+        "diurnal_rhythm": {
+          "chilling": {
+            "focus": "Poolside relaxation & quiet garden moments",
+            "score": 0.7,
+            "window": "11:00 AM - 4:00 PM"
+          },
+          "playing": {
+            "focus": "Green Prince Gin Bar & Victoria Room dining",
+            "score": 0.9,
+            "window": "5:00 PM - 10:00 PM"
+          },
+          "working": {
+            "focus": "Lobby lounge & coffee shop for light work",
+            "score": 0.6,
+            "window": "9:00 AM - 12:00 PM"
+          }
+        },
+        "peak_atmospheric_window": "Early Evening Gin Bar Buzz"
+      }
+    },
+    "interactive_quiz_challenge": {
+      "target_scene_id": 101,
+      "scene_name": "Green Prince Gin Bar",
+      "mission_title": "The Karoo Gin Connoisseur",
+      "question": "Which local gin, known for its fynbos botanicals, is a must-try at the Green Prince Gin Bar?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Inverroche Gin"
+        },
+        {
+          "id": "B",
+          "text": "Hendrick's Gin"
+        },
+        {
+          "id": "C",
+          "text": "Tanqueray Gin"
+        },
+        {
+          "id": "D",
+          "text": "Bombay Sapphire"
+        }
+      ],
+      "correct_option_id": "A",
+      "success_lore_reveal": "Correct! Inverroche Gin, with its unique fynbos infusion, perfectly embodies the spirit of the Karoo and is a highlight at the Green Prince Gin Bar.",
+      "reward_badge": "Karoo Gin Master",
+      "challenge_prompt": "Discover the rich botanical heritage of the Karoo through its finest gins.",
+      "reward_spotify_uri": "spotify:playlist:37i9dQZF1DXcBWIGoYBM5M"
+    },
+    "ota_conversion_audit": {
+      "channel": "Booking.com",
+      "before_merchandising_score": 48,
+      "after_merchandising_score": 93,
+      "projected_conversion_uplift": "+21.0%",
+      "current_drop_off_flaw": "Lack of immediate visual connection to the hotel's unique cultural magnet (Green Prince Gin Bar) and inconsistent room presentation.",
+      "key_strategic_shifts": [
+        "Elevate the Green Prince Gin Bar to Slot #1 to immediately capture Prince Albert's #1 social and culinary search demand.",
+        "Prioritize a clear, inviting bedroom shot in Slot #2 to validate comfort and design promise.",
+        "Introduce a dedicated bathroom shot in Slot #3 to address guest hygiene and comfort expectations.",
+        "Re-sequence the exterior facade to Slot #5 to anchor geographic orientation after establishing the hotel's unique vibe."
+      ],
+      "optimal_5_photo_sequence": [
+        {
+          "slot": 1,
+          "category": "HERO_CULTURAL_MAGNET",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 12,
+          "photo_subject": "Green Prince Gin Bar with Guests & Extensive Gin Collection",
+          "bullet_points": [
+            "Visual Upgrade: Captures the vibrant, social energy and unique local offering of the Green Prince Gin Bar, a key draw for the neighborhood.",
+            "Local Synergy: Directly aligns with Prince Albert's reputation for local craft beverages and social hubs, meeting traveler search intent for authentic experiences.",
+            "Conversion Trigger: Immediately communicates the hotel's unique social DNA and positions it as a destination in its own right."
+          ],
+          "psychological_conversion_trigger": "This shot instantly conveys the hotel's vibrant social heart and unique local offering, drawing in travelers seeking authentic Karoo experiences and a lively atmosphere.",
+          "action": "MAGNET_OVERRIDE",
+          "action_label": "HERO CULTURAL MAGNET: GREEN PRINCE GIN BAR (SLOT #1)",
+          "current_slot": 12,
+          "local_vibe_connection": "The Green Prince Gin Bar is a local institution, perfectly reflecting Prince Albert's growing reputation for craft beverages and social gatherings.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #12): This photo, previously buried, is now elevated to Slot #1 to immediately showcase the hotel's most distinctive and locally celebrated amenity, the Green Prince Gin Bar, which is a significant draw for the area.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 2,
+          "category": "SIGNATURE_SUITE_BEDROOM",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 3,
+          "photo_subject": "Elegant King Bedroom with Traditional Karoo Decor & Natural Light",
+          "bullet_points": [
+            "Strategic Placement: Immediately follows the social hero, reassuring guests of comfortable and well-appointed private spaces.",
+            "Local Synergy: Showcases traditional Karoo design elements, appealing to travelers seeking an authentic regional aesthetic.",
+            "Conversion Trigger: Validates the promise of a quality stay, bridging the gap between social vibrancy and private comfort."
+          ],
+          "psychological_conversion_trigger": "Reassures guests that the hotel's private accommodations match the quality and aesthetic promised by the vibrant social spaces, eliminating 'room anxiety'.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE SIGNATURE KING BEDROOM (FROM SLOT #3)",
+          "current_slot": 3,
+          "local_vibe_connection": "The room's decor subtly echoes the Karoo's natural beauty and heritage, aligning with traveler interest in regional authenticity.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #3): By promoting this clear, inviting bedroom shot to Slot #2, we immediately address the guest's primary concern for comfortable and aesthetically pleasing private accommodations, directly after showcasing the hotel's social magnet.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 3,
+          "category": "SECONDARY_ROOM_BATHROOM",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 4,
+          "photo_subject": "Spacious Guest Bathroom with Walk-in Shower & Modern Fixtures",
+          "bullet_points": [
+            "Strategic Placement: Addresses critical guest concerns about hygiene and modern amenities directly after the bedroom.",
+            "Local Synergy: While not directly 'local', a clean, well-appointed bathroom is a universal expectation that enhances the overall perception of a quality Karoo stay.",
+            "Conversion Trigger: Builds trust and confidence by showcasing essential private facilities, reducing booking hesitation."
+          ],
+          "psychological_conversion_trigger": "Completes the 'private space' narrative, assuring guests of modern, clean, and functional facilities, which is a key decision-making factor.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE GUEST BATHROOM (FROM SLOT #4)",
+          "current_slot": 4,
+          "local_vibe_connection": "A well-maintained bathroom supports the overall quality expected from a heritage Karoo hotel, enhancing the guest experience.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #4): Placing the guest bathroom immediately after the bedroom fulfills a crucial guest expectation for cleanliness and modern facilities, completing the private accommodation story efficiently.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 4,
+          "category": "SOCIAL_FB_ROOFTOP",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 10,
+          "photo_subject": "Outdoor Pool Area with Loungers & Mountain Views",
+          "bullet_points": [
+            "Strategic Placement: Showcases another key social and relaxation amenity, highlighting the hotel's leisure offerings.",
+            "Local Synergy: The pool with mountain views connects the hotel to the stunning Karoo landscape, a major draw for the region.",
+            "Conversion Trigger: Appeals to guests seeking relaxation and scenic beauty, enhancing the overall value proposition."
+          ],
+          "psychological_conversion_trigger": "Evokes a sense of relaxation and leisure, showcasing the hotel's ability to provide both social vibrancy and serene escape within the Karoo landscape.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE OUTDOOR POOL AREA (FROM SLOT #10)",
+          "current_slot": 10,
+          "local_vibe_connection": "The pool area offers a direct visual link to the iconic Swartberg Mountains, a defining feature of the Prince Albert experience.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #10): This photo is promoted to highlight the hotel's outdoor leisure facilities and its connection to the beautiful Karoo landscape, offering a balanced view of both social and relaxing amenities.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 5,
+          "category": "EXTERIOR_LANDMARK",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 1,
+          "photo_subject": "Historic Swartberg Hotel Exterior Facade at Dusk",
+          "bullet_points": [
+            "Strategic Placement: Grounds the hotel geographically and showcases its historic landmark status after establishing its internal appeal.",
+            "Local Synergy: The iconic facade is instantly recognizable and reinforces the hotel's deep roots in Prince Albert's heritage.",
+            "Conversion Trigger: Provides a strong sense of place and authenticity, appealing to travelers interested in historic and culturally significant stays."
+          ],
+          "psychological_conversion_trigger": "Confirms the hotel's physical presence and historic charm within the neighborhood, providing a sense of arrival and authenticity.",
+          "action": "KEEP",
+          "action_label": "KEEP EXTERIOR LANDMARK (SLOT #5)",
+          "current_slot": 1,
+          "local_vibe_connection": "The hotel's exterior is a landmark in Prince Albert, immediately connecting guests to the town's rich history and architectural character.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #1): While a strong image, moving the exterior to Slot #5 allows the hotel's unique cultural magnet to lead, then re-establishes geographic context and historic presence, fulfilling the 'sense of place' at a later, more impactful stage.",
+          "photo_url": null,
+          "image_url": null
+        }
+      ],
+      "anti_commodity_copy_rewrite": {
+        "ota_headline": "Swartberg Hotel: Historic Karoo Charm with Vibrant Gin Bar & Authentic Cuisine",
+        "property_overview_150_words": "Nestled in the heart of Prince Albert, the historic Swartberg Hotel offers a captivating blend of Karoo charm and vibrant hospitality. Discover the renowned Green Prince Gin Bar, a local favorite for craft gins and lively conversation. Indulge in traditional South African and Karoo cuisine at the Victoria Dining Room, celebrated for its warm atmosphere and excellent food. With comfortable rooms, a refreshing pool, and friendly staff, the hotel serves as the perfect base to explore the town's artistic and culinary treasures, ensuring an authentic and memorable stay."
+      },
+      "photographic_gap_analysis": [
+        {
+          "missing_shot_title": "Victoria Dining Room - Evening Culinary Experience",
+          "category": "CULINARY_SOCIAL",
+          "why_needed": "Currently, there isn't a high-quality photo that truly captures the warm, inviting atmosphere and culinary excellence of the Victoria Dining Room during peak dinner service. This misses a key opportunity to showcase the hotel's acclaimed food and ambiance, which is a major draw for guests and locals.",
+          "recommended_framing_and_lighting": "Wide-angle shot capturing the full dining room with warm, ambient lighting (2700K), tables set with local dishes, and subtle guest interaction. Focus on the rich textures and historic details of the room.",
+          "projected_adr_impact": "+10% F&B revenue and +5% direct booking conversion for culinary travelers."
+        },
+        {
+          "missing_shot_title": "Spa & Wellness Sanctuary - Treatment Room",
+          "category": "SANCTUARY_SPA",
+          "why_needed": "The hotel mentions a 'relaxing spa to unwind' but lacks any visual representation of its wellness offerings. This gap creates hesitation for travelers seeking relaxation and self-care, missing a crucial amenity that could drive higher-value bookings.",
+          "recommended_framing_and_lighting": "Soft, diffused natural light (or warm artificial light) highlighting a serene treatment room with a therapist preparing for a session. Focus on calming textures, clean lines, and a sense of tranquility.",
+          "projected_adr_impact": "+8% higher average daily rate (ADR) for wellness-focused packages and increased spa bookings."
+        },
+        {
+          "missing_shot_title": "Coffee Shop - Morning Buzz & Local Interaction",
+          "category": "CULINARY_SOCIAL",
+          "why_needed": "The hotel has a coffee shop, a vital amenity for morning routines and casual meetings, but no dedicated photo. This misses an opportunity to showcase a daily social hub and a convenient offering for guests.",
+          "recommended_framing_and_lighting": "Bright, inviting morning light (4000K) capturing the coffee shop with guests enjoying breakfast or coffee, perhaps with a barista in action. Emphasize a friendly, relaxed atmosphere.",
+          "projected_adr_impact": "+3% increase in guest satisfaction and repeat bookings due to perceived convenience and local integration."
+        }
+      ],
+      "conversion_diagnosis": "The current Booking.com sequence fails to immediately highlight the Swartberg Hotel's unique cultural and social assets, leading to a 'commodity trap' where its distinct Karoo charm is not effectively communicated. Rooms are not presented optimally, and key amenities like the spa and coffee shop are visually absent, causing potential guests to drop off due to unmet expectations for a full-service heritage experience.",
+      "local_vibe_synergy_context": "Prince Albert is renowned for its authentic Karoo charm, culinary scene, and vibrant local community. Travelers actively search for experiences that immerse them in this heritage. The recommended photo sequence strategically leverages the Green Prince Gin Bar (a local social magnet), the traditional Karoo room aesthetics, and the scenic pool with mountain views to directly align with these top local subcultures, ensuring the hotel resonates deeply with traveler intent for an authentic Karoo stay.",
+      "slot_1_decision_logic": {
+        "is_magnet_override_active": true,
+        "reasoning_code": "NAI_HIGH_DESTINATION_POWER_CLARITY",
+        "strategy_explanation": "The Green Prince Gin Bar is a verified cultural magnet with high neighborhood affinity (NAI >= 0.85), serving as a destination in its own right that locals frequent. Its visual clarity and vibrant energy make it an ideal Slot #1 to immediately capture traveler attention and communicate the hotel's unique social DNA, aligning with Prince Albert's reputation for local craft and social hubs.",
+        "neighborhood_affinity_index": 0.9,
+        "override_asset_name": "Green Prince Gin Bar"
+      },
+      "photos_status": "PENDING"
+    },
+    "audit_timestamp": "2026-11-14T23:00:42.907Z"
+  }
+}

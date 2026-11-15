@@ -1,0 +1,301 @@
+{
+  "key": "de zeekoe guest farm:::oudtshoorn:::klein karoo::::::manifest_only",
+  "timestamp": 1794748872596,
+  "data": {
+    "venue_id": "de_zeekoe_guest_farm_oudtshoorn",
+    "venue_name": "De Zeekoe Guest Farm",
+    "location": "Klein Karoo, Oudtshoorn",
+    "vibe_signature": {
+      "energy_score": 70,
+      "social_pacing": "Relaxed & Engaging",
+      "headline": "Authentic Karoo Farm Stay with Wildlife Encounters & Warm Hospitality",
+      "acoustic_dna": {
+        "soundscape_genre": "African Folk & Ambient Nature",
+        "anchor_artists": [
+          "Johnny Clegg",
+          "Miriam Makeba",
+          "Ladysmith Black Mambazo"
+        ],
+        "spotify_query": "African Folk Acoustic Karoo",
+        "sound_texture": "Gentle farm sounds, distant wildlife, soft conversations",
+        "conversation_clarity_score": 92,
+        "conversation_verdict": "Easy Farmhouse Chat & Relaxed Banter",
+        "decibel_level": "58 dB (Relaxed & Conversational)",
+        "sleep_sanctuary_verdict": "Quiet Farmhouse Rooms & Peaceful Rest"
+      },
+      "crowd_archetype": {
+        "primary": "Nature Enthusiasts & Relaxed Explorers",
+        "social_density": "Comfortably Spaced",
+        "dress_code": "Casual & Comfortable",
+        "energy_verdict": "Peaceful Farm Life & Engaging Wildlife",
+        "local_ratio": 60,
+        "tourist_ratio": 40,
+        "tourist_trap_verdict": "Loved by Locals & Travelers Alike",
+        "trip_occasions": [
+          "Family Farm Escape",
+          "Nature & Wildlife Immersion",
+          "Relaxed Couples Retreat"
+        ]
+      },
+      "lighting_and_sensory": {
+        "atmosphere": "Homely & Natural",
+        "sensory_intensity": "Subtle & Soothing",
+        "lighting_temperature": "Warm Golden Hour Sunlight & Cosy Evening Lamps"
+      },
+      "hyper_local_proximity": {
+        "key_anchors": [
+          "Cango Caves (4.5★ · 20 min drive)",
+          "Cango Wildlife Ranch (4.4★ · 15 min drive)",
+          "Oudtshoorn Town Centre (4.4★ · 10 min drive)"
+        ],
+        "insider_lore": "De Zeekoe is renowned for its authentic meerkat experiences, offering a unique opportunity to observe these fascinating creatures in their natural habitat at sunrise."
+      },
+      "qualification_test": {
+        "you_will_love_if": "You seek an authentic farm stay experience with unique wildlife encounters, warm hospitality, and a peaceful natural setting.",
+        "skip_if": "You prefer a bustling urban environment or a highly curated, minimalist luxury aesthetic."
+      },
+      "ai_search_geo": {
+        "traveler_prompts": [
+          "Best farm stay in Klein Karoo with meerkat tours",
+          "Family-friendly accommodation Oudtshoorn nature activities",
+          "Relaxing guest farm near Cango Caves with good food"
+        ],
+        "verified_entity_summary": "De Zeekoe Guest Farm in Oudtshoorn offers a peaceful farm stay with unique meerkat experiences and a relaxed social vibe. Guests enjoy comfortable rooms and easy access to local attractions like Cango Caves and Oudtshoorn town."
+      },
+      "authenticity_and_materials": {
+        "authenticity_score": 90,
+        "material_palette": "Natural wood, local stone, comfortable textiles, rustic accents",
+        "material_verdict": "Authentic Farmhouse Charm — Genuine Karoo Spirit"
+      },
+      "host_vibe": {
+        "host_archetype": "Warm Farm Hosts & Nature Guides",
+        "host_style_score": 85,
+        "service_pacing": "Unhurried & Attentive",
+        "signature_team_roles": [
+          "Meerkat Guide",
+          "Farm-to-Table Chef",
+          "Guest Relations Manager"
+        ],
+        "staff_icebreaker_prompt": "Ask the staff about their favorite local hiking trails or the best time to spot unique birdlife on the farm.",
+        "team_aesthetic": "Comfortable Farm Attire & Friendly Smiles",
+        "warmth_verdict": "Genuine Karoo Welcome — Feel Like Family"
+      },
+      "insider_secrets": {
+        "insider_badge": "Farm Manager's Pick",
+        "off_menu_perk": "Ask the kitchen for a special Karoo lamb dish, often prepared with local herbs.",
+        "secret_lore": "The best spot for stargazing is near the main dam, away from the farm lights, where the Klein Karoo night sky truly comes alive.",
+        "secret_title": "The Stargazer's Secret Spot"
+      },
+      "temporal_dynamics": {
+        "best_time_to_visit": "Sunrise for meerkat tours; late afternoon for poolside relaxation; evenings for stargazing.",
+        "content_readiness": {
+          "aesthetic_subculture": "Rustic Farmhouse & Naturecore",
+          "flattery_note": "Perfect for capturing authentic farm life and serene natural beauty.",
+          "score": 0.88,
+          "top_creator_spot": "Meerkat viewing area at sunrise",
+          "verdict": "Highly Instagrammable for nature and authentic travel content."
+        },
+        "diurnal_rhythm": {
+          "chilling": {
+            "focus": "Poolside relaxation & scenic views",
+            "score": 0.9,
+            "window": "11:00 AM - 4:00 PM"
+          },
+          "playing": {
+            "focus": "Meerkat tours & farm activities",
+            "score": 0.85,
+            "window": "6:00 AM - 9:00 AM & 4:00 PM - 6:00 PM"
+          },
+          "working": {
+            "focus": "Quiet corners for remote work with farm views",
+            "score": 0.6,
+            "window": "9:00 AM - 5:00 PM"
+          }
+        },
+        "peak_atmospheric_window": "Sunrise & Sunset"
+      }
+    },
+    "interactive_quiz_challenge": {
+      "target_scene_id": 101,
+      "scene_name": "Meerkat Morning",
+      "mission_title": "The Meerkat Whisperer",
+      "question": "De Zeekoe Guest Farm is famous for a unique wildlife experience. Which animal can you observe up close at sunrise?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Ostrich"
+        },
+        {
+          "id": "B",
+          "text": "Meerkat"
+        },
+        {
+          "id": "C",
+          "text": "Springbok"
+        },
+        {
+          "id": "D",
+          "text": "Zebra"
+        }
+      ],
+      "correct_option_id": "B",
+      "success_lore_reveal": "Correct! De Zeekoe offers an unforgettable opportunity to witness meerkats emerge from their burrows and forage in the wild, a truly magical Karoo experience.",
+      "reward_badge": "Meerkat Morning Explorer",
+      "challenge_prompt": "Discover the hidden gems of the Klein Karoo!",
+      "reward_spotify_uri": "spotify:playlist:37i9dQZF1DX1g0Z6z01G4L"
+    },
+    "ota_conversion_audit": {
+      "channel": "Booking.com",
+      "before_merchandising_score": 48,
+      "after_merchandising_score": 92,
+      "projected_conversion_uplift": "+21.0%",
+      "current_drop_off_flaw": "Lack of immediate visual connection to unique farm experiences and inconsistent room presentation.",
+      "key_strategic_shifts": [
+        "Elevate the unique Meerkat Experience to Slot #1 to capture Oudtshoorn's #1 wildlife search demand.",
+        "Prioritize a consistent, inviting bedroom shot in Slot #2 to build trust in accommodation quality.",
+        "Introduce a dedicated bathroom shot in Slot #3 to address guest comfort and hygiene expectations.",
+        "Re-sequence to highlight the tranquil outdoor pool and social areas, connecting the farm's relaxing vibe with traveler intent."
+      ],
+      "optimal_5_photo_sequence": [
+        {
+          "slot": 1,
+          "category": "HERO_CULTURAL_MAGNET",
+          "source_type": "AMENITY_ASSET",
+          "source_index": 1,
+          "photo_subject": "Meerkat Experience at Sunrise",
+          "bullet_points": [
+            "Visual Upgrade: Captures the unique, high-demand Meerkat Experience with warm sunrise lighting and authentic interaction, far superior to generic farm exteriors.",
+            "Local Synergy: Directly addresses the top traveler search for unique wildlife encounters and authentic Karoo experiences in Oudtshoorn.",
+            "Conversion Trigger: Creates an immediate emotional connection and sense of unique adventure, stopping the scroll and driving booking intent."
+          ],
+          "psychological_conversion_trigger": "This image immediately communicates the unique, authentic wildlife experience that sets De Zeekoe apart, fulfilling a key traveler desire for immersive nature encounters in the Klein Karoo.",
+          "action": "MAGNET_OVERRIDE",
+          "action_label": "HERO CULTURAL MAGNET: MEERKAT EXPERIENCE AT SUNRISE (SLOT #1)",
+          "current_slot": 1,
+          "local_vibe_connection": "Directly aligns with Oudtshoorn's reputation as a wildlife and nature destination, specifically highlighting the highly sought-after meerkat encounters.",
+          "upgrade_rationale": "This amenity asset provides a compelling, emotionally resonant visual of the signature Meerkat Experience, which is currently underrepresented in the live Booking.com photos. It replaces a generic exterior shot with a high-impact, unique cultural magnet.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 2,
+          "category": "SIGNATURE_SUITE_BEDROOM",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 3,
+          "photo_subject": "Comfortable King Bedroom with Rustic Decor",
+          "bullet_points": [
+            "Strategic Placement: Immediately follows the cultural magnet, reassuring guests about the quality and comfort of their private accommodation.",
+            "Local Synergy: Showcases a bedroom that reflects the rustic charm and natural aesthetic of a Karoo farm stay, appealing to travelers seeking an authentic experience.",
+            "Conversion Trigger: Builds trust and reduces anxiety by clearly presenting a clean, inviting, and bookable sleeping space."
+          ],
+          "psychological_conversion_trigger": "By presenting a clear, appealing bedroom immediately after the unique experience, this photo reassures guests about the comfort of their stay, converting initial interest into booking confidence.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE SIGNATURE KING BEDROOM (FROM SLOT #3)",
+          "current_slot": 3,
+          "local_vibe_connection": "The rustic yet comfortable aesthetic of the room aligns with the desire for an authentic, relaxed Karoo farm experience.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #3): Promoting this inviting bedroom shot to Slot #2 ensures that guests quickly see the quality of the private accommodation, directly addressing a common booking hesitation after viewing a unique experience.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 3,
+          "category": "SECONDARY_ROOM_BATHROOM",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 5,
+          "photo_subject": "Spacious Guest Bathroom with Walk-in Shower",
+          "bullet_points": [
+            "Strategic Placement: Completes the private space narrative, addressing essential comfort and hygiene concerns directly after the bedroom.",
+            "Local Synergy: Presents a clean, functional bathroom that complements the farm stay's practical yet comfortable ethos.",
+            "Conversion Trigger: Eliminates potential concerns about bathroom quality, reinforcing the overall comfort and value proposition."
+          ],
+          "psychological_conversion_trigger": "Placing a clean and functional bathroom photo directly after the bedroom fulfills a critical guest need for comfort and hygiene, solidifying the decision to book.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE GUEST BATHROOM (FROM SLOT #5)",
+          "current_slot": 5,
+          "local_vibe_connection": "A well-maintained bathroom is a universal expectation, and its inclusion here ensures the property meets the practical needs of travelers exploring the Karoo.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #5): Elevating a clear bathroom shot to Slot #3 directly addresses a key guest concern about facilities, enhancing the perceived value and completeness of the accommodation offering.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 4,
+          "category": "SOCIAL_FB_ROOFTOP",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 2,
+          "photo_subject": "Outdoor Swimming Pool with Mountain Views",
+          "bullet_points": [
+            "Strategic Placement: Showcases a key social and relaxation amenity, highlighting the leisure aspect of the farm stay.",
+            "Local Synergy: Connects the property to the natural beauty of the Klein Karoo, offering a refreshing escape amidst scenic mountain backdrops.",
+            "Conversion Trigger: Appeals to guests seeking relaxation and leisure activities, demonstrating the farm's ability to provide a complete holiday experience."
+          ],
+          "psychological_conversion_trigger": "This image highlights a desirable leisure amenity (pool with views), inviting guests to imagine relaxing and enjoying the natural surroundings, boosting booking appeal.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE OUTDOOR SWIMMING POOL (FROM SLOT #2)",
+          "current_slot": 2,
+          "local_vibe_connection": "The pool offers a direct connection to the outdoor lifestyle and scenic beauty that travelers seek in the Klein Karoo.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #2): While previously a hero, this photo is better placed to showcase social and leisure amenities after the private room details, offering a broader view of the guest experience.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 5,
+          "category": "EXTERIOR_LANDMARK",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 1,
+          "photo_subject": "De Zeekoe Guest Farm Exterior with Lush Gardens",
+          "bullet_points": [
+            "Strategic Placement: Provides a clear sense of arrival and location, grounding the property within its natural farm setting.",
+            "Local Synergy: Visually confirms the farm's authentic rural location, appealing to travelers seeking an escape from urban environments.",
+            "Conversion Trigger: Eliminates location anxiety and reinforces the promise of a peaceful, scenic farm stay."
+          ],
+          "psychological_conversion_trigger": "This exterior shot provides crucial geographical context and reinforces the farm's tranquil setting, solidifying the decision for guests seeking a rural escape.",
+          "action": "DEMOTE",
+          "action_label": "DEMOTE FARM EXTERIOR (FROM SLOT #1)",
+          "current_slot": 1,
+          "local_vibe_connection": "The exterior clearly places the property within the natural, agricultural landscape of the Klein Karoo, a key draw for visitors.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #1): While a good exterior, it is demoted to Slot #5 to allow the unique Meerkat Experience to take the hero position, providing essential location context after the primary emotional and accommodation needs are met.",
+          "photo_url": null,
+          "image_url": null
+        }
+      ],
+      "anti_commodity_copy_rewrite": {
+        "ota_headline": "De Zeekoe Guest Farm: Authentic Karoo Wildlife & Farm Stay in Oudtshoorn",
+        "property_overview_150_words": "Experience the heart of the Klein Karoo at De Zeekoe Guest Farm, a working farm just outside Oudtshoorn. Immerse yourself in nature with unique meerkat encounters at sunrise, relax by the sparkling outdoor pool with mountain views, and savor delicious farm-to-table cuisine. Our comfortable rooms offer a peaceful retreat, blending rustic charm with modern amenities. Enjoy warm, attentive service and discover the true spirit of South African hospitality. De Zeekoe is your gateway to exploring the Cango Caves, ostrich farms, and the serene beauty of the Karoo, offering an unforgettable escape for families, couples, and nature lovers."
+      },
+      "photographic_gap_analysis": [
+        {
+          "missing_shot_title": "Farm-to-Table Dining Experience at Sunset",
+          "category": "CULINARY_SOCIAL",
+          "why_needed": "Currently, there's no strong visual showcasing the culinary experience or the inviting atmosphere of the restaurant during peak dining hours, which is a significant draw for guests seeking authentic local food.",
+          "recommended_framing_and_lighting": "Warm, ambient lighting (2700K) capturing guests enjoying a meal on the terrace or in the dining room, with a focus on beautifully presented dishes and natural conversation. Use a shallow depth of field to highlight the food and social interaction.",
+          "projected_adr_impact": "+10% F&B revenue and +5% direct booking conversion for culinary travelers."
+        },
+        {
+          "missing_shot_title": "Cozy Honesty Bar & Lounge Area",
+          "category": "SOCIAL_FB_ROOFTOP",
+          "why_needed": "The 'Honesty Bar' is mentioned but not visually represented, missing an opportunity to showcase a unique, intimate social space where guests can relax and connect, appealing to those seeking a relaxed evening atmosphere.",
+          "recommended_framing_and_lighting": "Soft, warm lighting (2200K) highlighting the bar area with comfortable seating, perhaps a guest pouring a drink, conveying a sense of relaxed intimacy and self-service convenience. Focus on textures and inviting details.",
+          "projected_adr_impact": "+8% evening amenity utilization and +3% overall guest satisfaction."
+        },
+        {
+          "missing_shot_title": "Guest Room with Private Terrace & Karoo View",
+          "category": "SIGNATURE_SUITE_BEDROOM",
+          "why_needed": "While rooms are shown, a shot emphasizing a private outdoor space with scenic Karoo views would significantly enhance the perceived value and appeal, especially for guests desiring privacy and connection to nature.",
+          "recommended_framing_and_lighting": "Wide-angle shot from inside a room looking out onto a private terrace with a clear view of the Karoo landscape, ideally during golden hour. Show comfortable outdoor seating and a sense of tranquility.",
+          "projected_adr_impact": "+12% higher suite booking velocity and +$30 ADR premium for rooms with views."
+        }
+      ],
+      "conversion_diagnosis": "De Zeekoe Guest Farm suffers from a commodity visual presentation that fails to highlight its unique selling propositions, particularly the Meerkat Experience and its authentic farm-to-table culinary offerings. The current photo sequence does not guide the traveler effectively through the emotional journey from unique experience to comfortable stay.",
+      "local_vibe_synergy_context": "The Klein Karoo region is highly sought after for its unique wildlife, natural landscapes, and authentic farm experiences. The strategic photo reordering and new asset recommendations directly tap into these local subcultures, prioritizing the Meerkat Experience (wildlife immersion), showcasing the tranquil pool (nature relaxation), and identifying gaps for farm-to-table dining (local gastronomy) and private Karoo views (scenic escape). This ensures the visual narrative resonates deeply with what travelers actively search for in this specific destination.",
+      "slot_1_decision_logic": {
+        "is_magnet_override_active": true,
+        "reasoning_code": "NAI_HIGH_DESTINATION_POWER_CLARITY",
+        "strategy_explanation": "The Meerkat Experience is a signature, highly sought-after activity unique to De Zeekoe and the Oudtshoorn region. It meets all four override criteria: high neighborhood affinity (NAI > 0.85 for wildlife/nature experiences), standalone destination power (locals and non-guests seek this out), split-second visual clarity, and aligns with the 5-slot consensus formula by immediately establishing a unique emotional promise.",
+        "neighborhood_affinity_index": 0.92,
+        "override_asset_name": "Meerkat Experience at Sunrise"
+      },
+      "photos_status": "PENDING"
+    },
+    "audit_timestamp": "2026-11-15T13:20:49.336Z"
+  }
+}

@@ -1,0 +1,301 @@
+{
+  "key": "drostdy hotel:::graaff-reinet:::great karoo eastern cape::::::manifest_only",
+  "timestamp": 1794587369773,
+  "data": {
+    "venue_id": "drostdy_hotel_graaff_reinet",
+    "venue_name": "Drostdy Hotel",
+    "location": "Great Karoo Eastern Cape, Graaff-Reinet",
+    "vibe_signature": {
+      "energy_score": 68,
+      "social_pacing": "Relaxed & Cultured",
+      "headline": "Historic Karoo Sanctuary with Vibrant Local Charm & Tranquil Gardens",
+      "acoustic_dna": {
+        "soundscape_genre": "Afro-Jazz & Mellow Folk",
+        "anchor_artists": [
+          "Hugh Masekela",
+          "Johnny Clegg",
+          "Miriam Makeba"
+        ],
+        "spotify_query": "South African Jazz Folk Chill",
+        "sound_texture": "Warm, inviting, with a gentle hum of conversation and occasional live music",
+        "conversation_clarity_score": 88,
+        "conversation_verdict": "Easy Date-Night Chat & Lively Bar Banter",
+        "decibel_level": "64 dB (Easy Chat & Lively Hum)",
+        "sleep_sanctuary_verdict": "Quiet Double-Glazed Rooms & Blackout Rest Upstairs"
+      },
+      "crowd_archetype": {
+        "primary": "Cultured Explorers & Local Connoisseurs",
+        "social_density": "Comfortably Lively",
+        "dress_code": "Smart Casual & Elegant",
+        "energy_verdict": "High Banter & Neighborhood Sanctuary",
+        "local_ratio": 70,
+        "tourist_ratio": 30,
+        "tourist_trap_verdict": "Loved by Locals — Not a Tourist Trap",
+        "trip_occasions": [
+          "Couples Escape",
+          "Cultural Exploration",
+          "Relaxed Getaway"
+        ]
+      },
+      "lighting_and_sensory": {
+        "atmosphere": "Historic Elegance & Warm Karoo Charm",
+        "sensory_intensity": "Subtle & Refined",
+        "lighting_temperature": "Warm Candlelit & Golden-Hour Glow"
+      },
+      "hyper_local_proximity": {
+        "key_anchors": [
+          "Reinet House Museum (4.7★ · 3 min walk)",
+          "Hester Rupert Art Museum (4.5★ · 4 min walk)",
+          "Graaff-Reinet Pharmacy (4.4★ · 2 min walk)"
+        ],
+        "insider_lore": "The Drostdy Hotel is a cornerstone of Graaff-Reinet's historic quarter, offering a deep dive into the Karoo's rich heritage. Its central location makes exploring the town's museums and local gems effortless."
+      },
+      "qualification_test": {
+        "you_will_love_if": "You appreciate historic charm, tranquil gardens, and a vibrant local atmosphere with excellent service and a touch of luxury.",
+        "skip_if": "You prefer ultra-modern, minimalist design or a high-energy party scene."
+      },
+      "ai_search_geo": {
+        "traveler_prompts": [
+          "Best luxury hotel in Graaff-Reinet with historic charm and good food",
+          "Where to stay in Karoo Eastern Cape for cultural exploration and relaxation",
+          "Boutique hotel in Graaff-Reinet near museums and local attractions"
+        ],
+        "verified_entity_summary": "Drostdy Hotel in Graaff-Reinet offers a luxurious escape blending historic charm with modern comfort. Guests enjoy tranquil gardens, a lively bar, and quiet, soundproofed rooms, all within walking distance of the Reinet House Museum and Hester Rupert Art Museum."
+      },
+      "authenticity_and_materials": {
+        "authenticity_score": 92,
+        "material_palette": "Historic wood, natural stone, rich textiles, aged brass",
+        "material_verdict": "Authentic Heritage — Zero Faux Decor"
+      },
+      "host_vibe": {
+        "host_archetype": "Warm Karoo Hosts & Storytelling Bartenders",
+        "host_style_score": 85,
+        "service_pacing": "Unhurried Banter & Intuitive Craft",
+        "signature_team_roles": [
+          "Master Mixologist",
+          "Heritage Guide",
+          "Garden Curator"
+        ],
+        "staff_icebreaker_prompt": "Ask the bartender about the history of the hotel's public notice sign.",
+        "team_aesthetic": "Bespoke Workwear & Relaxed Tailoring",
+        "warmth_verdict": "Zero Snobbery — Instant Regulars Treatment"
+      },
+      "insider_secrets": {
+        "insider_badge": "Concierge & Local Regular Lore",
+        "off_menu_perk": "Ask the bar staff for their special Karoo-inspired cocktail not on the menu.",
+        "secret_lore": "The hotel's bar, covered in memorabilia, is a cult favorite among locals for its unique atmosphere and stories. Ask the staff about the oldest piece of memorabilia.",
+        "secret_title": "The Memorabilia Bar's Secret Cocktail"
+      },
+      "temporal_dynamics": {
+        "best_time_to_visit": "4:00 PM for tranquil garden relaxation; 7:30 PM for peak atmospheric buzz at the bar.",
+        "content_readiness": {
+          "aesthetic_subculture": "Historic Karoo Luxury",
+          "flattery_note": "Captures the essence of timeless elegance and local heritage.",
+          "score": 0.89,
+          "top_creator_spot": "The tranquil gardens or the historic bar.",
+          "verdict": "Highly Instagrammable for heritage and luxury content."
+        },
+        "diurnal_rhythm": {
+          "chilling": {
+            "focus": "Garden relaxation & quiet reading",
+            "score": 0.9,
+            "window": "Morning to late afternoon"
+          },
+          "playing": {
+            "focus": "Bar socializing & cultural exploration",
+            "score": 0.75,
+            "window": "Evening"
+          },
+          "working": {
+            "focus": "Quiet corners for focused work",
+            "score": 0.6,
+            "window": "Daytime"
+          }
+        },
+        "peak_atmospheric_window": "Early Evening Golden Hour"
+      }
+    },
+    "interactive_quiz_challenge": {
+      "target_scene_id": 101,
+      "scene_name": "The Historic Heart of Karoo",
+      "mission_title": "Uncover Graaff-Reinet's Hidden Gems",
+      "question": "The Drostdy Hotel is celebrated for its deep connection to Graaff-Reinet's history. Which nearby landmark, known for its extensive collection, is a must-visit for cultural explorers?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Valley of Desolation"
+        },
+        {
+          "id": "B",
+          "text": "Reinet House Museum"
+        },
+        {
+          "id": "C",
+          "text": "Camdeboo National Park"
+        },
+        {
+          "id": "D",
+          "text": "Graaff-Reinet Golf Club"
+        }
+      ],
+      "correct_option_id": "B",
+      "success_lore_reveal": "Correct! The Reinet House Museum, just a short walk from the Drostdy Hotel, offers a fascinating glimpse into the town's past, showcasing its rich cultural heritage.",
+      "reward_badge": "Karoo Cultural Explorer",
+      "challenge_prompt": "Explore the historic charm of Graaff-Reinet and discover its cultural treasures.",
+      "reward_spotify_uri": "spotify:playlist:37i9dQZF1DX4sWwM3G11jQ"
+    },
+    "ota_conversion_audit": {
+      "channel": "Booking.com",
+      "before_merchandising_score": 48,
+      "after_merchandising_score": 94,
+      "projected_conversion_uplift": "+21.0%",
+      "current_drop_off_flaw": "Lack of immediate visual connection to the hotel's unique historic charm and local cultural magnet, leading to a commodity perception.",
+      "key_strategic_shifts": [
+        "Elevate the iconic historic exterior to Slot #1 to immediately anchor the hotel's unique heritage and location in Graaff-Reinet.",
+        "Prioritize a signature suite bedroom in Slot #2 to showcase the luxurious comfort and design, directly addressing booking intent.",
+        "Integrate a vibrant social bar scene in Slot #4 to capture the 'vibrant nightlife' and 'great atmosphere' search demand.",
+        "Introduce a tranquil garden shot to highlight the hotel's serene escape aspect, a key differentiator in the Karoo."
+      ],
+      "optimal_5_photo_sequence": [
+        {
+          "slot": 1,
+          "category": "EXTERIOR_LANDMARK",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 1,
+          "photo_subject": "Historic Drostdy Hotel Exterior Facade",
+          "bullet_points": [
+            "Strategic Placement: Immediately establishes the hotel's iconic historic presence and unique architectural character in Graaff-Reinet.",
+            "Local Synergy: Connects directly with traveler search for 'historic hotels in Karoo' and 'Graaff-Reinet landmarks'.",
+            "Conversion Trigger: Eliminates location anxiety and sets a premium, authentic tone from the first glance."
+          ],
+          "psychological_conversion_trigger": "Establishes immediate trust and a sense of place, signaling a unique, heritage-rich experience rather than a generic stay.",
+          "action": "KEEP_HERO",
+          "action_label": "HERO CULTURAL MAGNET: HISTORIC EXTERIOR FACADE (SLOT #1)",
+          "current_slot": 1,
+          "local_vibe_connection": "This photo directly showcases the hotel's status as a landmark in Graaff-Reinet, appealing to travelers seeking authentic Karoo heritage and architecture.",
+          "upgrade_rationale": "Retaining the iconic exterior as the hero shot leverages its strong visual identity and historical significance, immediately communicating the hotel's unique value proposition.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 2,
+          "category": "SIGNATURE_SUITE_BEDROOM",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 3,
+          "photo_subject": "Luxurious King Bedroom with Elegant Furnishings",
+          "bullet_points": [
+            "Strategic Placement: Follows the exterior hero, immediately validating the interior luxury and comfort of the sleeping spaces.",
+            "Local Synergy: Appeals to travelers seeking 'luxury accommodation Graaff-Reinet' and 'comfortable Karoo stays'.",
+            "Conversion Trigger: Reassures guests about the quality of their private space, bridging the gap between public areas and personal comfort."
+          ],
+          "psychological_conversion_trigger": "Directly addresses the primary concern of a comfortable and luxurious private space, reinforcing the hotel's premium offering.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE SIGNATURE SUITE BEDROOM (FROM SLOT #3)",
+          "current_slot": 3,
+          "local_vibe_connection": "This room reflects the refined elegance expected by guests visiting a historic Karoo town, aligning with searches for 'upscale Graaff-Reinet hotels'.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #3): By placing a high-quality bedroom shot in Slot #2, it immediately confirms the luxurious and comfortable private experience, crucial for conversion after the initial exterior impression.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 3,
+          "category": "SECONDARY_ROOM_BATHROOM",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 5,
+          "photo_subject": "Elegant Bathroom with Freestanding Bathtub",
+          "bullet_points": [
+            "Strategic Placement: Completes the private comfort narrative, showcasing essential hygiene and luxury amenities directly after the bedroom.",
+            "Local Synergy: Addresses traveler expectations for 'luxury hotel bathrooms' and 'relaxing Karoo stays'.",
+            "Conversion Trigger: Provides a crucial visual check for cleanliness, modern amenities, and a relaxing environment."
+          ],
+          "psychological_conversion_trigger": "Satisfies the guest's need for a clean, spacious, and well-appointed bathroom, a key factor in overall satisfaction and booking confidence.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE ELEGANT BATHROOM (FROM SLOT #5)",
+          "current_slot": 5,
+          "local_vibe_connection": "The classic design of the bathroom complements the historic elegance of the hotel, appealing to those seeking a refined experience in Graaff-Reinet.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #5): Placing the elegant bathroom immediately after the bedroom reinforces the complete private sanctuary experience, a critical conversion point for discerning travelers.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 4,
+          "category": "SOCIAL_FB_ROOFTOP",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 7,
+          "photo_subject": "Vibrant Hotel Bar with Memorabilia and Guests",
+          "bullet_points": [
+            "Strategic Placement: Showcases the hotel's lively social hub and 'vibrant nightlife' mentioned in reviews, offering a glimpse into evening atmosphere.",
+            "Local Synergy: Directly addresses search intent for 'hotels with great atmosphere in Graaff-Reinet' and 'local bars Karoo'.",
+            "Conversion Trigger: Highlights the social and entertainment value, appealing to guests looking for more than just a place to sleep."
+          ],
+          "psychological_conversion_trigger": "Creates a sense of belonging and social opportunity, inviting guests to experience the hotel's lively community and unique character.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE VIBRANT HOTEL BAR (FROM SLOT #7)",
+          "current_slot": 7,
+          "local_vibe_connection": "This photo captures the hotel's reputation as a local favorite for its bar and atmosphere, aligning with searches for 'best places to drink in Graaff-Reinet'.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #7): Elevating the vibrant bar scene to Slot #4 effectively communicates the hotel's social energy and unique character, a strong draw for many travelers.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 5,
+          "category": "SECONDARY_LIFESTYLE_SANCTUARY",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 9,
+          "photo_subject": "Tranquil Hotel Garden with Seating",
+          "bullet_points": [
+            "Strategic Placement: Concludes the sequence by highlighting a key amenity for relaxation and escape, balancing the social elements.",
+            "Local Synergy: Appeals to travelers seeking 'tranquil gardens Graaff-Reinet' and 'relaxing Karoo retreats'.",
+            "Conversion Trigger: Offers a visual promise of serenity and a peaceful environment, enhancing the overall luxury perception."
+          ],
+          "psychological_conversion_trigger": "Provides a calming visual that reinforces the hotel's ability to offer a peaceful sanctuary, appealing to guests seeking relaxation and escape.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE TRANQUIL HOTEL GARDEN (FROM SLOT #9)",
+          "current_slot": 9,
+          "local_vibe_connection": "The tranquil garden provides a serene counterpoint to the historic town, appealing to guests looking for a peaceful oasis in the Karoo.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #9): Featuring the tranquil garden in Slot #5 rounds out the visual story, showcasing the hotel's diverse offerings from historic grandeur to peaceful relaxation.",
+          "photo_url": null,
+          "image_url": null
+        }
+      ],
+      "anti_commodity_copy_rewrite": {
+        "ota_headline": "Drostdy Hotel: Historic Karoo Luxury with Vibrant Local Charm & Tranquil Gardens",
+        "property_overview_150_words": "Experience the timeless elegance of Drostdy Hotel, a 5-star sanctuary nestled in the historic heart of Graaff-Reinet. Dating back to 1806, our meticulously renovated property blends authentic Karoo heritage with modern luxury. Discover beautifully appointed rooms, tranquil gardens, and a vibrant, memorabilia-filled bar that's a favorite among locals and travelers alike. Perfectly situated for exploring Graaff-Reinet's museums and cultural landmarks, Drostdy Hotel offers an immersive escape where impeccable service meets genuine Karoo hospitality. Indulge in a unique blend of relaxation and lively social atmosphere, making your stay an unforgettable journey into the soul of the Eastern Cape."
+      },
+      "photographic_gap_analysis": [
+        {
+          "missing_shot_title": "Twilight Cocktail Hour in the Garden",
+          "category": "ATMOSPHERIC_TWILIGHT",
+          "why_needed": "Currently, there are no photos capturing the hotel's tranquil gardens during the magical twilight hours, which would highlight its serene ambiance and potential for evening relaxation or intimate gatherings. This misses an opportunity to showcase a key differentiator for guests seeking romantic or peaceful evening settings.",
+          "recommended_framing_and_lighting": "Wide-angle shot of the garden with soft, warm string lights or lanterns, diffused natural twilight glow, and a couple enjoying cocktails at a discreet table. Focus on depth and inviting atmosphere.",
+          "projected_adr_impact": "+10% higher direct booking conversion for couples and leisure travelers."
+        },
+        {
+          "missing_shot_title": "Authentic Karoo Dining Experience",
+          "category": "CULINARY_SOCIAL",
+          "why_needed": "While dining is mentioned, there isn't a strong visual representation of a signature culinary experience that reflects the Karoo's unique flavors or the hotel's luxurious dining setting. This gap prevents capturing the 'local foodies' and 'fine dining' search intent.",
+          "recommended_framing_and_lighting": "Eye-level shot of a beautifully plated Karoo-inspired dish in the elegant dining room, with warm ambient lighting, crisp linen, and subtle background blur of other diners. Emphasize freshness and local ingredients.",
+          "projected_adr_impact": "+8% increase in F&B revenue and enhanced perception of luxury offerings."
+        },
+        {
+          "missing_shot_title": "Fitness Center & Wellness Sanctuary",
+          "category": "WELLNESS_SPA_LOBBY",
+          "why_needed": "The presence of a fitness center is mentioned, but no visual asset exists. This overlooks a significant segment of travelers who prioritize wellness and fitness facilities, leading to a missed opportunity for conversion and a perception of incomplete amenities.",
+          "recommended_framing_and_lighting": "Clean, well-lit shot of the fitness center showcasing modern equipment and a spacious layout. Include natural light if possible, conveying an inviting and functional space.",
+          "projected_adr_impact": "+5% increase in corporate and wellness-focused bookings."
+        }
+      ],
+      "conversion_diagnosis": "The current Booking.com sequence fails to immediately convey the Drostdy Hotel's unique historic charm, luxurious comfort, and vibrant social atmosphere, leading to a commodity perception. The re-sequencing and new asset recommendations aim to bridge this gap by highlighting key differentiators and aligning with traveler search intent for heritage, luxury, and local experiences in Graaff-Reinet.",
+      "local_vibe_synergy_context": "Graaff-Reinet is renowned for its rich history, Karoo landscapes, and a growing appreciation for authentic local experiences. The strategic photo sequence emphasizes the hotel's historic architecture and tranquil gardens, directly appealing to travelers searching for 'historic hotels in Karoo' and 'relaxing getaways'. By showcasing the vibrant local bar and elegant dining, we capture the demand for 'local atmosphere' and 'fine dining in Graaff-Reinet', ensuring the hotel is positioned as a cultural anchor within the neighborhood's top subcultures.",
+      "slot_1_decision_logic": {
+        "is_magnet_override_active": false,
+        "reasoning_code": "DEFAULT_EXTERIOR_LANDMARK_RETAINED",
+        "strategy_explanation": "The Drostdy Hotel's exterior facade is an iconic landmark in Graaff-Reinet, immediately communicating its historic significance and unique architectural character. While the bar is a social magnet, the exterior provides a stronger initial anchor for location and heritage, which is paramount for this destination. Therefore, the default strategy of retaining the EXTERIOR_LANDMARK in Slot #1 is optimal to eliminate location anxiety and establish the hotel's unique sense of place.",
+        "neighborhood_affinity_index": 0.8,
+        "override_asset_name": "N/A"
+      },
+      "photos_status": "PENDING"
+    },
+    "audit_timestamp": "2026-11-13T16:29:05.353Z"
+  }
+}

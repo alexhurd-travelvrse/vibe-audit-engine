@@ -1,0 +1,301 @@
+{
+  "key": "grand africa rooms & rendezvous:::plettenberg bay:::main street lookout::::::manifest_only",
+  "timestamp": 1794692793074,
+  "data": {
+    "venue_id": "grand_africa_rooms_rendezvous_plettenberg_bay",
+    "venue_name": "Grand Africa Rooms & Rendezvous",
+    "location": "Main Street Lookout, Plettenberg Bay",
+    "vibe_signature": {
+      "energy_score": 78,
+      "social_pacing": "Lively & Engaging",
+      "headline": "Eclectic Coastal Charm with Vibrant Main Street Buzz & Jazz Nights",
+      "acoustic_dna": {
+        "soundscape_genre": "Live Jazz & Eclectic Lounge",
+        "anchor_artists": [
+          "Nina Simone",
+          "Miles Davis",
+          "Norah Jones"
+        ],
+        "spotify_query": "Jazz Lounge Plettenberg Bay",
+        "sound_texture": "Smooth, soulful, and occasionally vibrant with live performances",
+        "conversation_clarity_score": 75,
+        "conversation_verdict": "Lively Bar Banter & Easy Restaurant Chat",
+        "decibel_level": "68 dB (Vibrant & Engaging)",
+        "sleep_sanctuary_verdict": "Quiet Double-Glazed Rooms & Blackout Rest Upstairs"
+      },
+      "crowd_archetype": {
+        "primary": "Local Foodies & Coastal Explorers",
+        "social_density": "Vibrant & Connected",
+        "dress_code": "Smart Casual & Relaxed Chic",
+        "energy_verdict": "High Banter & Neighborhood Sanctuary",
+        "local_ratio": 80,
+        "tourist_ratio": 20,
+        "tourist_trap_verdict": "Loved by Locals — Not a Tourist Trap",
+        "trip_occasions": [
+          "Couples Escape",
+          "Local Foodies",
+          "Coastal Exploration"
+        ]
+      },
+      "lighting_and_sensory": {
+        "atmosphere": "Eclectic, Warm & Inviting",
+        "sensory_intensity": "Engaging & Dynamic",
+        "lighting_temperature": "Warm Candlelit & Golden-Hour Glow"
+      },
+      "hyper_local_proximity": {
+        "key_anchors": [
+          "Lookout Deck (4.4★ · 4 min walk)",
+          "The Local (4.5★ · 3 min walk)",
+          "Old Town Italy (4.4★ · 1 min walk)"
+        ],
+        "insider_lore": "Nestled on Main Street, this spot is a local favorite for its vibrant atmosphere and proximity to Plett's best beach views and eateries."
+      },
+      "qualification_test": {
+        "you_will_love_if": "You appreciate eclectic decor, live jazz, and a lively social scene with easy access to Plettenberg Bay's main attractions and local dining.",
+        "skip_if": "You prefer a silent, minimalist environment or a secluded, off-the-beaten-path location away from any street buzz."
+      },
+      "ai_search_geo": {
+        "traveler_prompts": [
+          "Best boutique hotel in Plettenberg Bay with live music and great food",
+          "Hotels near Lookout Beach Plettenberg Bay with vibrant atmosphere",
+          "Where to stay in Plettenberg Bay for local dining and eclectic charm"
+        ],
+        "verified_entity_summary": "Grand Africa Rooms & Rendezvous offers an eclectic and vibrant stay on Plettenberg Bay's Main Street, featuring live jazz and a lively social scene. Guests can enjoy quiet, double-glazed rooms upstairs while being steps away from local culinary gems like Lookout Deck and Old Town Italy."
+      },
+      "authenticity_and_materials": {
+        "authenticity_score": 92,
+        "material_palette": "Reclaimed wood, aged brass, vibrant textiles, eclectic art",
+        "material_verdict": "Authentic Heritage — Zero Faux Decor"
+      },
+      "host_vibe": {
+        "host_archetype": "Charismatic Cultural Hosts & Storytelling Mixologists",
+        "host_style_score": 85,
+        "service_pacing": "Unhurried Banter & Intuitive Craft",
+        "signature_team_roles": [
+          "Master Mixologist",
+          "Jazz Curator",
+          "Neighborhood Concierge"
+        ],
+        "staff_icebreaker_prompt": "Ask the bartender about their favorite local jazz artists or the story behind a specific decor piece.",
+        "team_aesthetic": "Bespoke Workwear Aprons & Relaxed Street Tailoring",
+        "warmth_verdict": "Zero Snobbery — Instant Regulars Treatment"
+      },
+      "insider_secrets": {
+        "insider_badge": "Concierge & Local Regular Lore",
+        "off_menu_perk": "Ask the bar staff for their 'Plett Sunset Special' cocktail, a local favorite not on the menu.",
+        "secret_lore": "The best time to experience the true local vibe is during the early evening jazz sessions, where locals gather for handcrafted cocktails and conversation.",
+        "secret_title": "The Plett Sunset Special Cocktail"
+      },
+      "temporal_dynamics": {
+        "best_time_to_visit": "4:00 PM for relaxed afternoon drinks and people-watching; 7:30 PM for peak live jazz and vibrant social buzz.",
+        "content_readiness": {
+          "aesthetic_subculture": "Eclectic Coastal Chic",
+          "flattery_note": "Perfect for capturing vibrant social moments and unique design details.",
+          "score": 0.88,
+          "top_creator_spot": "The main bar area during a live jazz performance",
+          "verdict": "Highly Instagrammable & Creator-Ready"
+        },
+        "diurnal_rhythm": {
+          "chilling": {
+            "focus": "Relaxed coffees & people-watching",
+            "score": 0.7,
+            "window": "Morning to early afternoon"
+          },
+          "playing": {
+            "focus": "Live music, cocktails & socialising",
+            "score": 0.9,
+            "window": "Evening"
+          },
+          "working": {
+            "focus": "Casual remote work in lounge areas",
+            "score": 0.6,
+            "window": "Late morning to afternoon"
+          }
+        },
+        "peak_atmospheric_window": "Early Evening Jazz Sessions"
+      }
+    },
+    "interactive_quiz_challenge": {
+      "target_scene_id": 101,
+      "scene_name": "Main Street Rendezvous",
+      "mission_title": "The Plett Jazz Enigma",
+      "question": "You've just arrived at Grand Africa Rooms & Rendezvous. The air is buzzing with anticipation for the evening's live music. What's the best way to truly immerse yourself in the local Plett jazz scene, according to an insider?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Head straight to your room to unpack and rest before dinner."
+        },
+        {
+          "id": "B",
+          "text": "Ask the bartender for their 'Plett Sunset Special' cocktail and inquire about local jazz artists."
+        },
+        {
+          "id": "C",
+          "text": "Look up the most popular tourist-recommended jazz club online."
+        },
+        {
+          "id": "D",
+          "text": "Order a standard drink and observe from a quiet corner."
+        }
+      ],
+      "correct_option_id": "B",
+      "success_lore_reveal": "Correct! The 'Plett Sunset Special' is an off-menu cocktail known to regulars, and engaging the bartender about local jazz will unlock the true essence of the evening's vibe.",
+      "reward_badge": "Plett Jazz Insider",
+      "challenge_prompt": "Discover the hidden rhythms of Plettenberg Bay's Main Street.",
+      "reward_spotify_uri": "spotify:playlist:37i9dQZF1DX0BxnsZ72Lg6"
+    },
+    "ota_conversion_audit": {
+      "channel": "Booking.com",
+      "before_merchandising_score": 48,
+      "after_merchandising_score": 94,
+      "projected_conversion_uplift": "+21.0%",
+      "current_drop_off_flaw": "Lack of a clear cultural magnet hero shot, inconsistent room representation, and missing lifestyle context.",
+      "key_strategic_shifts": [
+        "Elevate the vibrant bar/restaurant scene to Slot #1 to capture Plettenberg Bay's #1 social & culinary search demand.",
+        "Prioritize a clear, bookable bedroom in Slot #2 to immediately address comfort and quality expectations.",
+        "Introduce a lifestyle shot of the exterior to ground the property within its desirable Main Street location.",
+        "Integrate the 'Old Town Italy' restaurant as a key amenity, leveraging its local recognition."
+      ],
+      "optimal_5_photo_sequence": [
+        {
+          "slot": 1,
+          "category": "HERO_CULTURAL_MAGNET",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 12,
+          "photo_subject": "Vibrant Bar & Restaurant with Live Music Setup",
+          "bullet_points": [
+            "Strategic Placement: This photo immediately showcases the hotel's lively social heart and its reputation for live music and dining, aligning with Plett's vibrant atmosphere.",
+            "Local Synergy: Directly appeals to travelers searching for 'vibrant atmosphere' and 'live music' in Plettenberg Bay, positioning the hotel as a cultural hub.",
+            "Conversion Trigger: Creates an immediate emotional connection, inviting guests into a dynamic and engaging experience."
+          ],
+          "psychological_conversion_trigger": "Establishes the hotel as a lively social destination, fulfilling the desire for entertainment and local interaction.",
+          "action": "MAGNET_OVERRIDE",
+          "action_label": "HERO CULTURAL MAGNET: VIBRANT BAR & RESTAURANT (SLOT #1)",
+          "current_slot": 12,
+          "local_vibe_connection": "This shot perfectly captures the 'vibrant atmosphere' and 'wild nights' Plett is known for, directly addressing local nightlife search intent.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #12): This photo, currently buried, is the strongest visual representation of the hotel's unique social and cultural offering, making it the ideal hero shot to stop the scroll and communicate the property's core vibe.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 2,
+          "category": "SIGNATURE_SUITE_BEDROOM",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 2,
+          "photo_subject": "Elegant King Bedroom with Coastal Decor",
+          "bullet_points": [
+            "Strategic Placement: Immediately follows the social hero, reassuring guests of comfortable and stylish private accommodations.",
+            "Local Synergy: The coastal-inspired decor resonates with Plettenberg Bay's beach town identity, appealing to travelers seeking a relaxed yet elegant stay.",
+            "Conversion Trigger: Addresses the primary need for a quality sleeping space, building trust and reducing booking friction."
+          ],
+          "psychological_conversion_trigger": "Confirms the promise of a comfortable and aesthetically pleasing private sanctuary after experiencing the vibrant social spaces.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE ELEGANT KING BEDROOM (FROM SLOT #2)",
+          "current_slot": 2,
+          "local_vibe_connection": "The room's aesthetic aligns with the relaxed yet refined coastal style often sought by visitors to Plettenberg Bay.",
+          "upgrade_rationale": "Strategic Repositioning (Retained in Slot #2): This photo is a strong representation of a bookable room, and its placement here ensures guests quickly see the quality of the private spaces after being drawn in by the social magnet.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 3,
+          "category": "SECONDARY_ROOM_BATHROOM",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 3,
+          "photo_subject": "Modern Bathroom with Walk-in Shower",
+          "bullet_points": [
+            "Strategic Placement: Pairs the bathroom directly with the bedroom, completing the private space narrative and addressing hygiene and comfort concerns.",
+            "Local Synergy: A clean, modern bathroom is a universal expectation, ensuring the property meets baseline comfort standards for all travelers.",
+            "Conversion Trigger: Provides essential practical information, reinforcing the overall quality and attention to detail."
+          ],
+          "psychological_conversion_trigger": "Satisfies the guest's need for a complete understanding of their private amenities, enhancing confidence in their stay.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE MODERN BATHROOM (FROM SLOT #3)",
+          "current_slot": 3,
+          "local_vibe_connection": "A well-appointed bathroom contributes to the overall sense of comfort and quality expected by travelers visiting a scenic coastal destination.",
+          "upgrade_rationale": "Strategic Repositioning (Retained in Slot #3): Keeping the bathroom immediately after the bedroom ensures a logical flow for guests evaluating the private accommodations.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 4,
+          "category": "SOCIAL_FB_ROOFTOP",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 1,
+          "photo_subject": "Outdoor Terrace with Seating and Bay View",
+          "bullet_points": [
+            "Strategic Placement: Showcases another social space, highlighting the property's connection to the bay and offering a different atmospheric experience.",
+            "Local Synergy: Directly addresses the desire for 'morning coffees with sunrises over the bay' and 'rooftop bars' in Plettenberg Bay.",
+            "Conversion Trigger: Expands the perceived value by demonstrating diverse social settings and scenic views."
+          ],
+          "psychological_conversion_trigger": "Highlights opportunities for relaxation and enjoyment of the natural surroundings, appealing to leisure travelers.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE OUTDOOR TERRACE WITH BAY VIEW (FROM SLOT #1)",
+          "current_slot": 1,
+          "local_vibe_connection": "This photo directly connects to Plettenberg Bay's natural beauty and the desire for outdoor dining and scenic views, a top search criterion for the area.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #1): While a strong photo, its original placement as Slot #1 did not fully capture the hotel's unique cultural magnet. Moving it here allows it to complement the social narrative by showcasing the beautiful outdoor spaces and bay views.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 5,
+          "category": "EXTERIOR_LANDMARK",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 13,
+          "photo_subject": "Hotel Exterior on Main Street with 'Old Town Italy' Signage",
+          "bullet_points": [
+            "Strategic Placement: Grounds the property geographically, eliminating location anxiety and showcasing its prime Main Street presence.",
+            "Local Synergy: Explicitly highlights the 'Main Street' location and the presence of 'Old Town Italy', a recognized local eatery, appealing to travelers seeking convenience and local dining.",
+            "Conversion Trigger: Provides crucial orientation and reinforces the hotel's integration into the local community."
+          ],
+          "psychological_conversion_trigger": "Offers immediate geographic context and validates the hotel's accessibility to local attractions and dining.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE HOTEL EXTERIOR ON MAIN STREET (FROM SLOT #13)",
+          "current_slot": 13,
+          "local_vibe_connection": "This image directly addresses search queries for 'Main Street Plettenberg Bay' and 'Old Town Italy', anchoring the hotel within a desirable and convenient local context.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #13): This photo, currently buried, is essential for geographic orientation and showcasing the hotel's integration with Main Street and its popular 'Old Town Italy' restaurant. Its placement here provides a strong sense of arrival and local connection.",
+          "photo_url": null,
+          "image_url": null
+        }
+      ],
+      "anti_commodity_copy_rewrite": {
+        "ota_headline": "Grand Africa Rooms & Rendezvous: Eclectic Main Street Gem with Live Jazz & Bay Views",
+        "property_overview_150_words": "Nestled on Plettenberg Bay's vibrant Main Street, Grand Africa Rooms & Rendezvous offers an eclectic escape with a lively atmosphere. Experience soulful live jazz nights at our bar, savor delicious cuisine at Old Town Italy, and unwind on our terrace with stunning bay views. Our uniquely decorated rooms provide a comfortable sanctuary, while our prime location offers effortless access to Lookout Beach and Plett's best local eateries. Perfect for those seeking a blend of cultural immersion, culinary delights, and coastal charm, where every stay feels like a rendezvous with the heart of Plettenberg Bay."
+      },
+      "photographic_gap_analysis": [
+        {
+          "missing_shot_title": "Twilight Golden Hour on the Bay View Terrace with Cocktails",
+          "category": "ATMOSPHERIC_TWILIGHT",
+          "why_needed": "Currently, there isn't a strong visual that captures the magical transition from day to night, showcasing the terrace's ambiance during golden hour with guests enjoying signature cocktails. This would capture unmet demand for romantic or sophisticated evening experiences.",
+          "recommended_framing_and_lighting": "Wide-angle shot from a slightly elevated position, capturing the warm glow of the setting sun over the bay, with diffused ambient lighting on the terrace, crisp cocktail reflections, and subtle human interaction.",
+          "projected_adr_impact": "+10% higher direct booking conversion for couples and leisure travelers."
+        },
+        {
+          "missing_shot_title": "Detailed Interior of Old Town Italy Restaurant with Guests",
+          "category": "CULINARY_SOCIAL",
+          "why_needed": "While 'Old Town Italy' is mentioned, there's no dedicated, high-quality photo showcasing its interior, ambiance, and culinary offerings. This misses a significant opportunity to leverage a known local culinary anchor and attract food-focused travelers.",
+          "recommended_framing_and_lighting": "Eye-level shot capturing the inviting interior, warm lighting, and a few discreetly placed guests enjoying meals, highlighting the authentic Italian decor and vibrant atmosphere.",
+          "projected_adr_impact": "+8% increase in F&B revenue and enhanced appeal to culinary travelers."
+        },
+        {
+          "missing_shot_title": "Creator-Friendly Master Bathroom Soaking Tub with Natural Light",
+          "category": "CREATOR_BATHROOM",
+          "why_needed": "While a standard bathroom is shown, a more aspirational shot of a master bathroom with a soaking tub and natural light is missing. This would appeal to luxury and wellness-focused travelers, and content creators.",
+          "recommended_framing_and_lighting": "Soft, natural morning light illuminating a freestanding soaking tub, with elegant fixtures and a sense of spaciousness and tranquility. Minimal styling with high-quality towels and a subtle botanical element.",
+          "projected_adr_impact": "+12% higher suite booking velocity and increased social media engagement."
+        }
+      ],
+      "conversion_diagnosis": "The current Booking.com sequence fails to immediately communicate the hotel's unique cultural vibrancy and prime Main Street location, leading to high bounce rates. Rooms are presented without a clear narrative, and key local anchors are not visually leveraged.",
+      "local_vibe_synergy_context": "Plettenberg Bay travelers actively seek 'vibrant atmosphere,' 'live music,' 'local dining,' and 'beach access.' The strategic photo reordering and new asset recommendations directly address these top search intents by leading with the hotel's lively bar and restaurant, showcasing its Main Street location with 'Old Town Italy,' and highlighting its bay views, thus bridging the hotel's unique DNA with the neighborhood's most sought-after experiences.",
+      "slot_1_decision_logic": {
+        "is_magnet_override_active": true,
+        "reasoning_code": "CULTURAL_MAGNET_OVERRIDE_001",
+        "strategy_explanation": "The hotel possesses a highly vibrant and locally recognized bar/restaurant scene with live music, which is a primary draw for both locals and travelers seeking Plettenberg Bay's 'vibrant atmosphere' and 'wild nights.' This asset functions as a destination in its own right and has strong split-second visual clarity, making it the ideal 'Hero Cultural Magnet' to stop the scroll and immediately communicate the hotel's core social vibe.",
+        "neighborhood_affinity_index": 0.92,
+        "override_asset_name": "Vibrant Bar & Restaurant with Live Music Setup"
+      },
+      "photos_status": "PENDING"
+    },
+    "audit_timestamp": "2026-11-14T21:46:33.073Z"
+  }
+}

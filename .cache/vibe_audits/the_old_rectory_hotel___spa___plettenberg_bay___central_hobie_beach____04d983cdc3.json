@@ -1,0 +1,301 @@
+{
+  "key": "the old rectory hotel & spa:::plettenberg bay:::central hobie beach::::::manifest_only",
+  "timestamp": 1794692792661,
+  "data": {
+    "venue_id": "the_old_rectory_hotel_spa_plettenberg_bay",
+    "venue_name": "The Old Rectory Hotel & Spa",
+    "location": "Central Hobie Beach, Plettenberg Bay",
+    "vibe_signature": {
+      "energy_score": 68,
+      "social_pacing": "Relaxed & Attentive",
+      "headline": "Tranquil Coastal Sanctuary with Lively Local Charm & Attentive Service",
+      "acoustic_dna": {
+        "soundscape_genre": "Coastal Chill & Mellow Jazz",
+        "anchor_artists": [
+          "Jack Johnson",
+          "Norah Jones",
+          "Ben Howard"
+        ],
+        "spotify_query": "Coastal Chill Jazz Mellow Acoustic",
+        "sound_texture": "Soft waves, gentle conversation, occasional live acoustic sets",
+        "conversation_clarity_score": 88,
+        "conversation_verdict": "Easy Date-Night Chat & Relaxed Banter",
+        "decibel_level": "64 dB (Easy Chat & Lively Hum)",
+        "sleep_sanctuary_verdict": "Quiet Soundproofed Rooms & Blackout Rest Upstairs"
+      },
+      "crowd_archetype": {
+        "primary": "Discerning Couples & Relaxed Explorers",
+        "social_density": "Comfortably Spaced & Intimate",
+        "dress_code": "Smart Casual & Beach Chic",
+        "energy_verdict": "Relaxed Coastal Vibe & Attentive Service",
+        "local_ratio": 70,
+        "tourist_ratio": 30,
+        "tourist_trap_verdict": "Loved by Locals — Zero Tourist Trap",
+        "trip_occasions": [
+          "Couples Escape",
+          "Beach & Wellness Retreat",
+          "Garden Route Exploration"
+        ]
+      },
+      "lighting_and_sensory": {
+        "atmosphere": "Warm, Serene & Inviting",
+        "sensory_intensity": "Subtle & Soothing",
+        "lighting_temperature": "Golden Hour Sunlight & Warm Evening Lamps"
+      },
+      "hyper_local_proximity": {
+        "key_anchors": [
+          "Sotto Mediterranean Restaurant & Cocktail Lounge (4.7★ · 5 min walk)",
+          "Hobie Beach (4.5★ · 2 min walk)",
+          "Surf Cafe (4.6★ · 7 min walk)"
+        ],
+        "insider_lore": "Nestled just steps from Hobie Beach, this rectory-turned-hotel offers a serene escape with easy access to Plett's best local dining and vibrant coastal scene."
+      },
+      "qualification_test": {
+        "you_will_love_if": "You seek a tranquil, luxurious retreat with personalized service, steps from the beach and authentic local dining, offering a relaxed yet sophisticated atmosphere.",
+        "skip_if": "You prefer large, bustling resorts, a party-centric nightlife, or a highly formal, impersonal hotel experience."
+      },
+      "ai_search_geo": {
+        "traveler_prompts": [
+          "Best boutique hotel Plettenberg Bay near Hobie Beach with a spa",
+          "Luxury hotel Garden Route with quiet rooms and local dining options",
+          "Relaxing coastal escape South Africa with attentive service and pool"
+        ],
+        "verified_entity_summary": "The Old Rectory Hotel & Spa offers a tranquil coastal sanctuary with a relaxed social vibe, quiet soundproofed rooms, and is steps away from Hobie Beach, Sotto Mediterranean Restaurant, and Surf Cafe, making it ideal for discerning travelers."
+      },
+      "authenticity_and_materials": {
+        "authenticity_score": 92,
+        "material_palette": "Natural wood, crisp linens, warm stone, botanical accents",
+        "material_verdict": "Authentic Coastal Charm — Elegant & Unpretentious"
+      },
+      "host_vibe": {
+        "host_archetype": "Warm Local Insiders & Attentive Hosts",
+        "host_style_score": 85,
+        "service_pacing": "Unhurried, Friendly & Intuitive",
+        "signature_team_roles": [
+          "Neighborhood Concierge",
+          "Spa Therapist",
+          "Restaurant Host"
+        ],
+        "staff_icebreaker_prompt": "Ask the concierge for their favorite hidden spot along the Garden Route.",
+        "team_aesthetic": "Relaxed Professional Attire & Warm Smiles",
+        "warmth_verdict": "Zero Snobbery — Instant Regulars Treatment"
+      },
+      "insider_secrets": {
+        "insider_badge": "Local Concierge & Regulars' Tip",
+        "off_menu_perk": "Ask the bar staff for a bespoke, locally-inspired cocktail not on the menu.",
+        "secret_lore": "The hotel's garden offers a secluded spot perfect for an afternoon read, often overlooked by guests heading straight to the pool or beach.",
+        "secret_title": "The Secret Garden Nook"
+      },
+      "temporal_dynamics": {
+        "best_time_to_visit": "4:00 PM for relaxed poolside drinks; 7:30 PM for an intimate dinner atmosphere.",
+        "content_readiness": {
+          "aesthetic_subculture": "Coastal Luxury & Wellness",
+          "flattery_note": "Captures the serene elegance and natural beauty of Plettenberg Bay.",
+          "score": 0.89,
+          "top_creator_spot": "Poolside lounge with ocean glimpses",
+          "verdict": "Highly Instagrammable for serene luxury and wellness content."
+        },
+        "diurnal_rhythm": {
+          "chilling": {
+            "focus": "Poolside relaxation & spa treatments",
+            "score": 0.9,
+            "window": "10:00 AM - 4:00 PM"
+          },
+          "playing": {
+            "focus": "Beach walks & local dining exploration",
+            "score": 0.75,
+            "window": "11:00 AM - 9:00 PM"
+          },
+          "working": {
+            "focus": "Quiet corners for focused tasks",
+            "score": 0.6,
+            "window": "9:00 AM - 5:00 PM"
+          }
+        },
+        "peak_atmospheric_window": "Late Afternoon Golden Hour"
+      }
+    },
+    "interactive_quiz_challenge": {
+      "target_scene_id": 12607395,
+      "scene_name": "The Old Rectory Hotel & Spa",
+      "mission_title": "Plettenberg Bay Coastal Escape",
+      "question": "You've just arrived at The Old Rectory. What's the first thing you do to truly embrace the local Plettenberg Bay vibe?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Head straight to the main beach for a swim."
+        },
+        {
+          "id": "B",
+          "text": "Ask the concierge for their favorite local, non-touristy restaurant recommendation."
+        },
+        {
+          "id": "C",
+          "text": "Relax by the hotel pool with a book and a refreshing drink."
+        },
+        {
+          "id": "D",
+          "text": "Book a full-day tour to a major tourist attraction."
+        }
+      ],
+      "correct_option_id": "B",
+      "success_lore_reveal": "Correct! The Old Rectory's staff are local insiders. Asking for their favorite local spot is the best way to discover Plettenberg Bay's authentic charm and avoid tourist traps.",
+      "reward_badge": "Local Insider Badge",
+      "challenge_prompt": "Discover the true Plettenberg Bay with insider tips!",
+      "reward_spotify_uri": "spotify:playlist:37i9dQZF1DXcBWIGoYBM5M"
+    },
+    "ota_conversion_audit": {
+      "channel": "Booking.com",
+      "before_merchandising_score": 48,
+      "after_merchandising_score": 94,
+      "projected_conversion_uplift": "+21.0%",
+      "current_drop_off_flaw": "Commoditized visual sequence failing to highlight unique social spaces and local proximity, leading to generic perception.",
+      "key_strategic_shifts": [
+        "Elevate the tranquil pool area to Slot #1 to immediately convey the hotel's serene luxury and coastal relaxation, aligning with Plettenberg Bay's #1 wellness search demand.",
+        "Promote a signature bedroom to Slot #2 to quickly establish room quality and match the aspirational vibe set by the hero shot.",
+        "Introduce a dedicated bathroom shot in Slot #3 to address a critical guest comfort and hygiene check, currently missing from the top sequence.",
+        "Re-sequence the exterior facade to Slot #5 to ground the property geographically after establishing its unique internal and social offerings."
+      ],
+      "optimal_5_photo_sequence": [
+        {
+          "slot": 1,
+          "category": "SOCIAL_FB_ROOFTOP",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 2,
+          "photo_subject": "Outdoor Pool Area with Sun Loungers and Lush Greenery",
+          "bullet_points": [
+            "Strategic Placement: Immediately conveys the hotel's serene, luxurious, and relaxing atmosphere, a key draw for Plettenberg Bay travelers.",
+            "Local Synergy: Directly aligns with the strong traveler demand for coastal relaxation, wellness, and outdoor leisure experiences in Plettenberg Bay.",
+            "Conversion Trigger: Evokes a sense of calm and escape, inviting guests to visualize themselves unwinding in this idyllic setting."
+          ],
+          "psychological_conversion_trigger": "This image instantly communicates the hotel's core promise of tranquil luxury and relaxation, a primary driver for Plettenberg Bay bookings.",
+          "action": "HERO_CULTURAL_MAGNET",
+          "action_label": "HERO CULTURAL MAGNET: OUTDOOR POOL AREA (SLOT #1)",
+          "current_slot": 2,
+          "local_vibe_connection": "Captures the essence of Plettenberg Bay's relaxed, outdoor-centric lifestyle and wellness appeal.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #2): This photo, with its inviting pool and lush surroundings, is visually superior as a hero shot compared to the previous exterior, immediately establishing the hotel's tranquil luxury and aligning with local wellness search intent.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 2,
+          "category": "SIGNATURE_SUITE_BEDROOM",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 3,
+          "photo_subject": "Signature King Bedroom with Elegant Coastal Decor and Natural Light",
+          "bullet_points": [
+            "Strategic Placement: Follows the hero shot to immediately validate the quality and comfort of the private sleeping spaces, ensuring consistency in luxury.",
+            "Local Synergy: Reflects the desire for comfortable, aesthetically pleasing accommodations that complement the natural beauty of the Plettenberg Bay coast.",
+            "Conversion Trigger: Reassures guests of a high-quality, restful stay, directly addressing the need for comfortable and stylish private quarters."
+          ],
+          "psychological_conversion_trigger": "Establishes trust and confirms that the private accommodations match the aspirational social spaces, reducing booking friction.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE SIGNATURE KING BEDROOM (FROM SLOT #3)",
+          "current_slot": 3,
+          "local_vibe_connection": "Provides a visual of the comfortable, stylish retreat travelers seek after a day exploring Plettenberg Bay's beaches and attractions.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #3): By placing a high-quality bedroom shot in Slot #2, we immediately confirm the private space aligns with the hotel's luxury promise, a critical step in the booking journey.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 3,
+          "category": "SECONDARY_ROOM_BATHROOM",
+          "source_type": "AMENITY_ASSET",
+          "source_index": 1,
+          "photo_subject": "Modern Guest Bathroom with Walk-in Shower and Premium Fixtures",
+          "bullet_points": [
+            "Visual Upgrade: This asset provides a clear, well-lit view of a modern, clean bathroom, a significant improvement over the current lack of dedicated bathroom visuals.",
+            "Local Synergy: Addresses the universal traveler expectation for high-quality, clean, and functional bathrooms, crucial for a relaxing coastal stay.",
+            "Conversion Trigger: Eliminates a common point of hesitation by showcasing essential hygiene and comfort, completing the private space narrative."
+          ],
+          "psychological_conversion_trigger": "Directly addresses a key guest concern (bathroom quality) immediately after the bedroom, building confidence and trust.",
+          "action": "SWAP_IN",
+          "action_label": "SWAP IN MODERN GUEST BATHROOM (SLOT #3)",
+          "current_slot": 0,
+          "local_vibe_connection": "Ensures the practical comforts match the serene and luxurious experience expected in a Plettenberg Bay retreat.",
+          "upgrade_rationale": "Upgrades from a missing category to a clear, well-composed shot of a modern bathroom. This asset is visually and psychologically superior as it directly addresses a critical guest need for cleanliness and quality in private facilities, which is currently absent from the top Booking.com photos.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 4,
+          "category": "WELLNESS_SPA_LOBBY",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 4,
+          "photo_subject": "Elegant Hotel Bar and Lounge Area with Comfortable Seating",
+          "bullet_points": [
+            "Strategic Placement: Showcases the hotel's social and evening atmosphere, complementing the daytime relaxation and private room visuals.",
+            "Local Synergy: Highlights a sophisticated social space for guests to unwind, aligning with Plettenberg Bay's demand for quality dining and leisure experiences.",
+            "Conversion Trigger: Appeals to guests seeking a complete experience, from relaxation to social engagement, within the hotel."
+          ],
+          "psychological_conversion_trigger": "Presents the hotel as a holistic destination for both rest and social enjoyment, enhancing perceived value.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE ELEGANT HOTEL BAR & LOUNGE (FROM SLOT #4)",
+          "current_slot": 4,
+          "local_vibe_connection": "Offers a glimpse into the refined social scene available within the hotel, complementing the local culinary offerings.",
+          "upgrade_rationale": "Strategic Repositioning (Retained in Live Slot #4): This photo effectively captures the hotel's inviting social atmosphere, crucial for guests looking for a complete experience beyond just a room.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 5,
+          "category": "EXTERIOR_LANDMARK",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 1,
+          "photo_subject": "Historic White Exterior Facade of The Old Rectory Hotel & Spa",
+          "bullet_points": [
+            "Strategic Placement: Grounds the property geographically after showcasing its internal amenities, providing essential location context.",
+            "Local Synergy: Connects the hotel's unique architecture to the Plettenberg Bay landscape, appealing to travelers seeking distinctive local character.",
+            "Conversion Trigger: Eliminates location anxiety and reinforces the hotel's unique identity within its surroundings."
+          ],
+          "psychological_conversion_trigger": "Provides crucial geographic orientation and architectural context, solidifying the hotel's presence in the destination.",
+          "action": "DEMOTE",
+          "action_label": "DEMOTE HISTORIC EXTERIOR FACADE (FROM SLOT #1)",
+          "current_slot": 1,
+          "local_vibe_connection": "Visually anchors the hotel within the charming architectural style of Plettenberg Bay, connecting it to the local sense of place.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #1): By placing the exterior facade in Slot #5, we ensure that the hotel's unique internal offerings are highlighted first, while still providing essential geographic context at the end of the initial visual journey.",
+          "photo_url": null,
+          "image_url": null
+        }
+      ],
+      "anti_commodity_copy_rewrite": {
+        "ota_headline": "The Old Rectory Hotel & Spa: Tranquil Coastal Luxury Steps from Hobie Beach",
+        "property_overview_150_words": "Experience serene luxury at The Old Rectory Hotel & Spa, a beautifully restored sanctuary just moments from Plettenberg Bay's pristine Hobie Beach. Our boutique hotel blends historic charm with modern comfort, offering elegantly appointed rooms, a tranquil outdoor pool, and a sophisticated bar and lounge. Indulge in personalized service from our local insider team, who ensure every stay is tailored to your desires. Discover authentic local dining and vibrant coastal life within a short stroll, making us the perfect base for exploring the Garden Route. Unwind in an atmosphere of relaxed sophistication, where every detail is crafted for your ultimate comfort and a truly memorable Plettenberg Bay escape."
+      },
+      "photographic_gap_analysis": [
+        {
+          "missing_shot_title": "Twilight Golden Hour at the Poolside Bar",
+          "category": "ATMOSPHERIC_TWILIGHT",
+          "why_needed": "This shot is missing from all channels and would capture the magical transition from day to evening, showcasing the hotel's social ambiance and appeal for sunset drinks, a key traveler intent in coastal destinations.",
+          "recommended_framing_and_lighting": "Wide-angle shot capturing the pool area with soft, warm golden hour light, subtle lighting from the bar, and reflections on the water, with a few guests enjoying cocktails.",
+          "projected_adr_impact": "+10% higher F&B spend and +$30 ADR premium for evening experience seekers."
+        },
+        {
+          "missing_shot_title": "Spa Treatment Room with Natural Light & Serene Setup",
+          "category": "SANCTUARY_SPA",
+          "why_needed": "Despite being a 'Spa Hotel', there are no dedicated, high-quality visuals of the spa facilities. This gap creates hesitation for wellness-focused travelers who prioritize spa amenities.",
+          "recommended_framing_and_lighting": "Clean, minimalist shot of a treatment room with soft, diffused natural light, showcasing a massage bed with fresh linens and subtle wellness accents (e.g., essential oils, warm towels).",
+          "projected_adr_impact": "+8% higher direct booking conversion for wellness packages and +$25 ADR for spa-inclusive stays."
+        },
+        {
+          "missing_shot_title": "Local Breakfast Spread in the Garden Courtyard",
+          "category": "CULINARY_SOCIAL",
+          "why_needed": "The hotel is praised for its breakfasts, but there's no compelling visual. This shot would capture the fresh, local culinary experience and the charming setting, appealing to food-focused travelers.",
+          "recommended_framing_and_lighting": "Eye-level shot of a beautifully arranged breakfast table in the garden courtyard, featuring fresh local produce, artisanal pastries, and warm beverages, with soft morning light.",
+          "projected_adr_impact": "+7% increase in direct bookings from foodies and +$15 ADR for breakfast-inclusive rates."
+        }
+      ],
+      "conversion_diagnosis": "The current Booking.com photo sequence fails to effectively communicate the hotel's unique blend of tranquil luxury, local charm, and comprehensive amenities. It suffers from a commoditized presentation, burying key social and comfort features, leading to a generic perception that doesn't resonate with Plettenberg Bay's discerning traveler base seeking relaxation and authentic experiences.",
+      "local_vibe_synergy_context": "Plettenberg Bay travelers actively seek serene coastal escapes, wellness experiences, and authentic local dining. The proposed photo sequence strategically highlights the hotel's tranquil pool (wellness/relaxation), comfortable rooms (retreat), and elegant social spaces (local leisure), directly aligning with these top neighborhood subcultures. By showcasing the hotel's ability to deliver on these core desires, the visual merchandising bridges the property's DNA with the local market demand.",
+      "slot_1_decision_logic": {
+        "is_magnet_override_active": true,
+        "reasoning_code": "NAI_DESTINATION_CLARITY_CONSENSUS",
+        "strategy_explanation": "The Old Rectory's tranquil outdoor pool area is a primary draw for guests seeking relaxation and wellness in Plettenberg Bay. It functions as a standalone destination within the hotel, directly mirroring the top local search themes for coastal escapes and leisure. The chosen photo clearly and warmly conveys this emotional promise, making it an ideal Hero Cultural Magnet.",
+        "neighborhood_affinity_index": 0.9,
+        "override_asset_name": "Outdoor Pool Area with Sun Loungers and Lush Greenery"
+      },
+      "photos_status": "PENDING"
+    },
+    "audit_timestamp": "2026-11-14T21:46:10.795Z"
+  }
+}

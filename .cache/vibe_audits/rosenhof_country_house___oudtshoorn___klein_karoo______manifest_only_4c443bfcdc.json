@@ -1,0 +1,300 @@
+{
+  "key": "rosenhof country house:::oudtshoorn:::klein karoo::::::manifest_only",
+  "timestamp": 1794748875576,
+  "data": {
+    "venue_id": "rosenhof_country_house_oudtshoorn",
+    "venue_name": "Rosenhof Country House",
+    "location": "Klein Karoo, Oudtshoorn",
+    "vibe_signature": {
+      "energy_score": 65,
+      "social_pacing": "Relaxed & Refined",
+      "headline": "Historic Karoo Charm with Tranquil Gardens & Attentive Service",
+      "acoustic_dna": {
+        "soundscape_genre": "Classical & Ambient",
+        "anchor_artists": [
+          "Ludovico Einaudi",
+          "Max Richter",
+          "Olafur Arnalds"
+        ],
+        "spotify_query": "classical ambient piano for relaxation",
+        "sound_texture": "Gentle murmurs, soft classical melodies, distant fountain sounds",
+        "conversation_clarity_score": 92,
+        "conversation_verdict": "Easy Date-Night Chat & Relaxed Conversation",
+        "decibel_level": "58 dB (Refined & Tranquil)",
+        "sleep_sanctuary_verdict": "Quiet Soundproofed Rooms & Blackout Rest"
+      },
+      "crowd_archetype": {
+        "primary": "Couples & Discerning Travelers",
+        "social_density": "Intimate & Spacious",
+        "dress_code": "Smart Casual",
+        "energy_verdict": "Refined Tranquility & Attentive Service",
+        "local_ratio": 55,
+        "tourist_ratio": 45,
+        "tourist_trap_verdict": "Loved by Discerning Travelers & Locals",
+        "trip_occasions": [
+          "Couples Escape",
+          "Garden Route Stopover",
+          "Relaxing Retreat"
+        ]
+      },
+      "lighting_and_sensory": {
+        "atmosphere": "Elegant & Serene",
+        "sensory_intensity": "Subtle & Soothing",
+        "lighting_temperature": "Warm Golden Glow & Natural Sunlight"
+      },
+      "hyper_local_proximity": {
+        "key_anchors": [
+          "Cango Wildlife Ranch (4.5★ · 10 min drive)",
+          "Cango Caves (4.6★ · 25 min drive)",
+          "Buffelsdrift Game Lodge (4.5★ · 15 min drive)"
+        ],
+        "insider_lore": "Oudtshoorn is the 'Ostrich Capital of the World', offering unique farm experiences and the stunning Cango Caves nearby."
+      },
+      "qualification_test": {
+        "you_will_love_if": "You seek a tranquil, luxurious country escape with impeccable service and a focus on relaxation amidst beautiful gardens.",
+        "skip_if": "You prefer a high-energy, bustling social scene or a property directly in the heart of a vibrant urban center."
+      },
+      "ai_search_geo": {
+        "traveler_prompts": [
+          "Luxury country house Oudtshoorn with spa and fine dining",
+          "Best tranquil hotel in Klein Karoo for couples",
+          "Where to stay in Oudtshoorn with beautiful gardens and attentive staff"
+        ],
+        "verified_entity_summary": "Rosenhof Country House in Oudtshoorn offers a serene 5-star escape with quiet, comfortable rooms and a refined social atmosphere. Guests can enjoy tranquil gardens and easy access to local attractions like the Cango Wildlife Ranch and Cango Caves."
+      },
+      "authenticity_and_materials": {
+        "authenticity_score": 90,
+        "material_palette": "Victorian wood, plush fabrics, antique furnishings, rose garden flora",
+        "material_verdict": "Authentic Heritage — Refined Country Elegance"
+      },
+      "host_vibe": {
+        "host_archetype": "Gracious Hosts & Attentive Concierges",
+        "host_style_score": 85,
+        "service_pacing": "Unhurried & Personalized",
+        "signature_team_roles": [
+          "Head Chef",
+          "Garden Curator",
+          "Concierge"
+        ],
+        "staff_icebreaker_prompt": "Ask the concierge about the best local ostrich farm tour or a hidden gem in the Klein Karoo.",
+        "team_aesthetic": "Classic Uniforms & Polished Presentation",
+        "warmth_verdict": "Impeccable Service — Personalized & Welcoming"
+      },
+      "insider_secrets": {
+        "insider_badge": "Garden Curator's Pick",
+        "off_menu_perk": "Request a private garden tour with the curator to learn about the indigenous flora.",
+        "secret_lore": "The rose gardens are meticulously maintained and offer several secluded spots perfect for a quiet read or a private conversation.",
+        "secret_title": "The Hidden Rose Garden Nook"
+      },
+      "temporal_dynamics": {
+        "best_time_to_visit": "4:00 PM for afternoon tea in the garden; 7:30 PM for a refined dinner experience in the Country Kitchen.",
+        "content_readiness": {
+          "aesthetic_subculture": "Luxury Country Living",
+          "flattery_note": "Perfect for capturing serene, elegant moments.",
+          "score": 0.8,
+          "top_creator_spot": "The Rose Garden Gazebo",
+          "verdict": "Highly Instagrammable for tranquil luxury content."
+        },
+        "diurnal_rhythm": {
+          "chilling": {
+            "focus": "Garden relaxation, poolside lounging",
+            "score": 0.9,
+            "window": "10:00 AM - 5:00 PM"
+          },
+          "playing": {
+            "focus": "Pre-dinner drinks at the bar, fine dining",
+            "score": 0.7,
+            "window": "6:00 PM - 10:00 PM"
+          },
+          "working": {
+            "focus": "Quiet lounge areas, in-room comfort",
+            "score": 0.6,
+            "window": "Anytime"
+          }
+        },
+        "peak_atmospheric_window": "Late Afternoon Golden Hour in the Gardens"
+      }
+    },
+    "interactive_quiz_challenge": {
+      "target_scene_id": 101,
+      "scene_name": "The Rose Garden Retreat",
+      "mission_title": "Uncover the Karoo's Tranquil Heart",
+      "question": "You've just arrived at Rosenhof Country House. What's the first thing you seek to truly unwind and embrace the Klein Karoo's peaceful atmosphere?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Head straight to the bar for a lively cocktail."
+        },
+        {
+          "id": "B",
+          "text": "Explore the meticulously kept rose gardens for a quiet spot."
+        },
+        {
+          "id": "C",
+          "text": "Check out the gym for an invigorating workout."
+        },
+        {
+          "id": "D",
+          "text": "Plan an immediate excursion to the busiest local attraction."
+        }
+      ],
+      "correct_option_id": "B",
+      "success_lore_reveal": "Correct! Rosenhof's tranquil rose gardens are the perfect sanctuary to begin your serene Karoo escape, reflecting the property's core vibe of refined relaxation.",
+      "reward_badge": "Karoo Tranquility Seeker",
+      "challenge_prompt": "Discover the essence of peace at Rosenhof Country House."
+    },
+    "ota_conversion_audit": {
+      "channel": "Booking.com",
+      "before_merchandising_score": 48,
+      "after_merchandising_score": 92,
+      "projected_conversion_uplift": "+19.0%",
+      "current_drop_off_flaw": "Lack of immediate visual communication of unique tranquil luxury and disconnect between exterior and interior quality.",
+      "key_strategic_shifts": [
+        "Elevate the iconic Rose Garden & Pool to Slot #1 to immediately convey tranquil luxury, aligning with 'Klein Karoo escape' search demand.",
+        "Promote a high-quality Signature King Bedroom to Slot #2 to assure guests of the luxurious comfort matching the initial impression.",
+        "Introduce a refined dining experience photo in Slot #4 to highlight the 'Country Kitchen's' culinary appeal, a key draw for discerning travelers.",
+        "Re-sequence the exterior facade to Slot #5 to provide geographic context after establishing the property's unique atmosphere."
+      ],
+      "optimal_5_photo_sequence": [
+        {
+          "slot": 1,
+          "category": "HERO_CULTURAL_MAGNET",
+          "source_type": "AMENITY_ASSET",
+          "source_index": 1,
+          "photo_subject": "Lush Rose Garden & Sparkling Pool with Country House in Background",
+          "bullet_points": [
+            "Visual Upgrade: This asset captures the property's signature tranquil luxury with vibrant rose gardens, a inviting pool, and the elegant country house, offering a superior emotional connection over current live photos.",
+            "Local Synergy: Directly aligns with traveler search intent for 'Klein Karoo escape' and 'luxury country retreat', showcasing the unique natural beauty and serenity of the region.",
+            "Conversion Trigger: Instantly communicates a sense of peaceful escape and refined relaxation, drawing in guests seeking a high-end, tranquil experience."
+          ],
+          "psychological_conversion_trigger": "Immediately establishes the property as a serene, luxurious escape, fulfilling the desire for tranquility and natural beauty in the Klein Karoo.",
+          "action": "MAGNET_OVERRIDE",
+          "action_label": "HERO CULTURAL MAGNET: ROSE GARDEN & POOL (SLOT #1)",
+          "current_slot": 13,
+          "local_vibe_connection": "This image perfectly encapsulates the serene, natural beauty and refined country living that travelers seek when visiting the Klein Karoo, connecting the hotel's essence with the region's allure.",
+          "upgrade_rationale": "This new amenity asset provides a far superior, emotionally resonant hero shot compared to the current Booking.com Slot #1 (a generic exterior). It features a wider, more inviting composition with lush gardens, sparkling pool, and warm natural light, immediately conveying the property's unique tranquil luxury.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 2,
+          "category": "SIGNATURE_SUITE_BEDROOM",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 3,
+          "photo_subject": "Signature King Bedroom with Elegant Furnishings & Garden View",
+          "bullet_points": [
+            "Strategic Placement: Positions a high-quality, bookable bedroom immediately after the hero shot, reassuring guests of the luxurious comfort and quality of their private space.",
+            "Local Synergy: Reflects the expectation of refined country living, offering a comfortable and elegant sanctuary after exploring the Klein Karoo.",
+            "Conversion Trigger: Addresses the critical 'where will I sleep?' question early, building trust and reinforcing the luxury promise."
+          ],
+          "psychological_conversion_trigger": "Reassures guests that the private accommodations match the high standard of the public spaces, directly addressing comfort and luxury expectations.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE SIGNATURE KING BEDROOM (FROM SLOT #3)",
+          "current_slot": 3,
+          "local_vibe_connection": "This elegant bedroom aligns with the desire for comfortable, luxurious stays in the tranquil setting of the Klein Karoo, offering a private retreat.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #3): This photo is promoted to Slot #2 to immediately showcase the quality of the private accommodations, ensuring visual consistency with the luxurious hero image and addressing traveler's primary concern for comfortable sleeping arrangements.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 3,
+          "category": "SECONDARY_ROOM_BATHROOM",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 4,
+          "photo_subject": "Spacious Guest Bathroom with Victorian Bathtub & Elegant Finishes",
+          "bullet_points": [
+            "Strategic Placement: Completes the private comfort narrative by showcasing the bathroom directly after the bedroom, fulfilling guest expectations for hygiene and luxury amenities.",
+            "Local Synergy: Reinforces the 'refined country living' theme, demonstrating attention to detail in all aspects of the guest experience.",
+            "Conversion Trigger: Addresses practical concerns about bathroom quality and spaciousness, enhancing the overall perception of value and comfort."
+          ],
+          "psychological_conversion_trigger": "Confirms the high standard of private amenities, crucial for discerning travelers who prioritize comfort and cleanliness.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE GUEST BATHROOM (FROM SLOT #4)",
+          "current_slot": 4,
+          "local_vibe_connection": "A luxurious bathroom experience complements the overall refined country house vibe, catering to guests seeking comfort and relaxation after a day of exploration.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #4): This photo is promoted to Slot #3 to immediately follow the bedroom, creating a cohesive visual story of private luxury and addressing the importance of bathroom quality for booking decisions.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 4,
+          "category": "SOCIAL_FB_ROOFTOP",
+          "source_type": "AMENITY_ASSET",
+          "source_index": 2,
+          "photo_subject": "Elegant Country Kitchen Dining Room with Guests",
+          "bullet_points": [
+            "Visual Upgrade: This amenity asset vividly portrays the refined dining experience and social atmosphere of the Country Kitchen, offering a more engaging and aspirational view than existing dining photos.",
+            "Local Synergy: Highlights the 'traditional Karoo cuisine' and 'fine dining' aspects, appealing to food-focused travelers exploring the Klein Karoo's culinary offerings.",
+            "Conversion Trigger: Showcases the property's social and culinary appeal, inviting guests to imagine themselves enjoying a memorable meal in a sophisticated setting."
+          ],
+          "psychological_conversion_trigger": "Activates the desire for a complete luxury experience, including high-quality dining and social interaction within the property.",
+          "action": "SWAP_IN",
+          "action_label": "SWAP IN COUNTRY KITCHEN DINING (SLOT #4)",
+          "current_slot": 10,
+          "local_vibe_connection": "The Country Kitchen's focus on traditional Karoo cuisine directly connects to the local culinary heritage, appealing to travelers seeking authentic regional flavors.",
+          "upgrade_rationale": "This new amenity asset significantly upgrades the representation of the dining experience. It replaces a less atmospheric live photo with a vibrant, warm shot of the Country Kitchen, featuring guests and showcasing the inviting ambiance and culinary focus, which is a key draw for the property.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 5,
+          "category": "EXTERIOR_LANDMARK",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 1,
+          "photo_subject": "Historic Rosenhof Country House Exterior Facade",
+          "bullet_points": [
+            "Strategic Placement: Provides essential geographic and architectural context as the final image in the sequence, grounding the property within its historic Klein Karoo setting.",
+            "Local Synergy: Connects the hotel's heritage charm with the broader appeal of Oudtshoorn's historic estates and country living.",
+            "Conversion Trigger: Eliminates any lingering location anxiety by clearly showing the property's street presence and architectural style."
+          ],
+          "psychological_conversion_trigger": "Offers a sense of place and authenticity, confirming the property's physical presence and historic charm after the internal experience has been established.",
+          "action": "DEMOTE",
+          "action_label": "DEMOTE EXTERIOR FACADE (FROM SLOT #1)",
+          "current_slot": 1,
+          "local_vibe_connection": "The historic facade grounds the property within Oudtshoorn's architectural landscape, appealing to travelers interested in the region's heritage.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #1): While a strong exterior, it is demoted to Slot #5 to allow the unique cultural magnet (Rose Garden & Pool) to lead, providing essential geographic context after the property's experiential promise has been established.",
+          "photo_url": null,
+          "image_url": null
+        }
+      ],
+      "anti_commodity_copy_rewrite": {
+        "ota_headline": "Rosenhof Country House: Tranquil 5-Star Karoo Escape with Lush Gardens & Gourmet Dining",
+        "property_overview_150_words": "Discover refined country living at Rosenhof Country House, a 5-star boutique hotel nestled in Oudtshoorn's serene Klein Karoo. Immerse yourself in lush rose gardens, unwind by the sparkling pool, and savor traditional Karoo cuisine in our elegant Country Kitchen. Our attentive staff ensures a personalized experience, blending historic charm with modern luxury. Perfect for couples and discerning travelers seeking a tranquil escape, Rosenhof offers a peaceful sanctuary with easy access to the region's unique attractions like the Cango Caves and ostrich farms. Experience the romance and authenticity of the Klein Karoo."
+      },
+      "photographic_gap_analysis": [
+        {
+          "missing_shot_title": "Twilight Golden Hour Aperitivo at the Bar",
+          "category": "ATMOSPHERIC_TWILIGHT",
+          "why_needed": "Currently, there isn't a strong visual that captures the inviting, warm evening ambiance of the bar area, which is a key social hub for pre-dinner drinks. This shot would address traveler intent for 'evening atmosphere' and 'cocktail hour'.",
+          "recommended_framing_and_lighting": "Warm 2700K ambient lighting, eye-level shot of the bar with a mixologist crafting a drink, soft focus on glassware and subtle guest interaction, capturing the intimate and refined evening vibe.",
+          "projected_adr_impact": "+5% higher F&B spend and increased direct bookings from guests seeking sophisticated evening experiences."
+        },
+        {
+          "missing_shot_title": "Creator-Friendly Spa Treatment Room with Natural Light",
+          "category": "SANCTUARY_SPA",
+          "why_needed": "While a spa is mentioned, there are no compelling visuals of the treatment rooms or wellness facilities. This gap misses the opportunity to attract wellness-focused travelers and showcase the tranquil, restorative aspect of the property.",
+          "recommended_framing_and_lighting": "Soft, diffused natural light entering a serene treatment room, showcasing clean lines, natural materials, and a sense of calm. Focus on a massage bed or a relaxing corner with subtle botanical elements.",
+          "projected_adr_impact": "+8% higher spa package bookings and enhanced appeal to wellness tourism segments."
+        },
+        {
+          "missing_shot_title": "Authentic Karoo Breakfast Spread in Garden Setting",
+          "category": "CULINARY_SOCIAL",
+          "why_needed": "The property offers breakfast, but a visually appealing shot of a breakfast spread, especially in the beautiful garden setting, is missing. This would capture 'gourmet breakfast' and 'al fresco dining' search intent.",
+          "recommended_framing_and_lighting": "Bright, natural morning light, overhead shot of a beautifully arranged breakfast table with local Karoo delicacies, fresh fruits, and coffee, set against the backdrop of the rose gardens.",
+          "projected_adr_impact": "+6% increase in direct bookings from food-focused travelers and enhanced perception of value."
+        }
+      ],
+      "conversion_diagnosis": "The current Booking.com sequence fails to immediately highlight Rosenhof's unique tranquil luxury and disconnects the exterior from the interior experience, leading to high drop-off rates from travelers seeking a refined country escape.",
+      "local_vibe_synergy_context": "The Klein Karoo is known for its unique natural beauty, tranquil escapes, and authentic country experiences. The photo recommendations prioritize showcasing Rosenhof's lush rose gardens, elegant interiors, and refined dining, directly aligning with traveler search demand for 'luxury country house Oudtshoorn', 'tranquil Karoo retreat', and 'gourmet dining Klein Karoo'. By leading with the garden and pool, we immediately communicate the serene escape that defines the region's appeal.",
+      "slot_1_decision_logic": {
+        "is_magnet_override_active": true,
+        "reasoning_code": "NAI_HIGH_DESTINATION_POWER_CLARITY",
+        "strategy_explanation": "The Rose Garden & Pool is a signature, highly aesthetic asset that perfectly embodies the 'tranquil country escape' subculture of the Klein Karoo. It possesses strong destination power, is instantly recognizable, and meets all criteria for a Hero Cultural Magnet override, immediately communicating the property's unique value proposition.",
+        "neighborhood_affinity_index": 0.9,
+        "override_asset_name": "Lush Rose Garden & Sparkling Pool with Country House in Background"
+      },
+      "photos_status": "PENDING"
+    },
+    "audit_timestamp": "2026-11-15T13:20:50.562Z"
+  }
+}

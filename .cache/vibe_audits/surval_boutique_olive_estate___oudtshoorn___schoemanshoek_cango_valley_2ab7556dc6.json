@@ -1,0 +1,300 @@
+{
+  "key": "surval boutique olive estate:::oudtshoorn:::schoemanshoek cango valley::::::manifest_only",
+  "timestamp": 1794748873220,
+  "data": {
+    "venue_id": "surval_boutique_olive_estate_oudtshoorn",
+    "venue_name": "Surval Boutique Olive Estate",
+    "location": "Schoemanshoek Cango Valley, Oudtshoorn",
+    "vibe_signature": {
+      "energy_score": 68,
+      "social_pacing": "Relaxed & Elegant Countryside Retreat",
+      "headline": "Historic Karoo Charm Meets Luxurious Olive Grove Serenity",
+      "acoustic_dna": {
+        "soundscape_genre": "Ambient Countryside & Soft Jazz",
+        "anchor_artists": [
+          "Norah Jones",
+          "Diana Krall",
+          "Ludovico Einaudi"
+        ],
+        "spotify_query": "ambient countryside jazz piano",
+        "sound_texture": "Gentle rustling leaves, distant bird calls, soft piano melodies",
+        "conversation_clarity_score": 92,
+        "conversation_verdict": "Easy, Intimate Conversation",
+        "decibel_level": "58 dB (Relaxed & Elegant)",
+        "sleep_sanctuary_verdict": "Quiet, Air-Conditioned Rooms with Blackout Rest"
+      },
+      "crowd_archetype": {
+        "primary": "Couples & Tranquility Seekers",
+        "social_density": "Spacious & Unhurried",
+        "dress_code": "Smart Casual to Elegant Evening Wear",
+        "energy_verdict": "Peaceful Serenity & Refined Relaxation",
+        "local_ratio": 60,
+        "tourist_ratio": 40,
+        "tourist_trap_verdict": "Authentic Karoo Escape — Not a Tourist Trap",
+        "trip_occasions": [
+          "Couples Escape",
+          "Relaxing Getaway",
+          "Wedding & Events"
+        ]
+      },
+      "lighting_and_sensory": {
+        "atmosphere": "Warm, Elegant & Serene",
+        "sensory_intensity": "Subtle & Refined",
+        "lighting_temperature": "Golden Hour Sunlight & Warm Ambient Lamps"
+      },
+      "hyper_local_proximity": {
+        "key_anchors": [
+          "Cango Caves (4.5★ · 10 min drive)",
+          "Cango Wildlife Ranch (4.4★ · 15 min drive)",
+          "Buffelsdrift Game Lodge (4.6★ · 20 min drive)"
+        ],
+        "insider_lore": "Nestled in the Schoemanshoek Valley, Surval offers a tranquil base to explore the natural wonders of the Klein Karoo, from ancient caves to wildlife encounters, all within a short scenic drive."
+      },
+      "qualification_test": {
+        "you_will_love_if": "You seek an elegant, peaceful retreat amidst olive groves with historic charm, attentive service, and easy access to Oudtshoorn's natural attractions.",
+        "skip_if": "You prefer a bustling, urban environment or a high-energy party scene."
+      },
+      "ai_search_geo": {
+        "traveler_prompts": [
+          "Best boutique hotel Oudtshoorn with olive groves and mountain views",
+          "Quiet luxury accommodation near Cango Caves South Africa",
+          "Romantic getaway in Klein Karoo with excellent service and food"
+        ],
+        "verified_entity_summary": "Surval Boutique Olive Estate offers an elegant and serene escape in Oudtshoorn, providing quiet, comfortable rooms amidst olive groves. It's perfectly situated for exploring local gems like Cango Caves and Cango Wildlife Ranch."
+      },
+      "authenticity_and_materials": {
+        "authenticity_score": 90,
+        "material_palette": "Restored 18th-century wood, natural stone, crisp linens, warm textiles",
+        "material_verdict": "Authentic Heritage — Elegant & Timeless"
+      },
+      "host_vibe": {
+        "host_archetype": "Warm, Attentive & Thoughtful Hosts",
+        "host_style_score": 85,
+        "service_pacing": "Unhurried, Personalized & Discreet",
+        "signature_team_roles": [
+          "Estate Manager",
+          "Culinary Team",
+          "Guest Relations Specialist"
+        ],
+        "staff_icebreaker_prompt": "Ask the staff about the history of the olive estate or their favorite local wine pairing with dinner.",
+        "team_aesthetic": "Smart, Polished & Approachable Attire",
+        "warmth_verdict": "Genuine Hospitality — Personalized & Caring"
+      },
+      "insider_secrets": {
+        "insider_badge": "Estate Manager's Recommendation",
+        "off_menu_perk": "Ask the kitchen for a special tasting of their estate-produced olive oil with fresh bread.",
+        "secret_lore": "The estate produces its own award-winning olive oil. A private tasting can often be arranged for guests, offering a true taste of the Karoo.",
+        "secret_title": "The Estate's Secret Olive Oil Tasting"
+      },
+      "temporal_dynamics": {
+        "best_time_to_visit": "Late afternoon (4:00 PM - 6:00 PM) for serene olive grove walks and sunset views; evening (7:00 PM - 9:00 PM) for elegant dining.",
+        "content_readiness": {
+          "aesthetic_subculture": "Luxury Countryside Escape",
+          "flattery_note": "Perfect for capturing serene, elegant moments amidst nature.",
+          "score": 0.88,
+          "top_creator_spot": "Olive grove pathways at sunset",
+          "verdict": "Highly Instagrammable for tranquil luxury content."
+        },
+        "diurnal_rhythm": {
+          "chilling": {
+            "focus": "Poolside relaxation, reading in gardens",
+            "score": 0.9,
+            "window": "10:00 AM - 4:00 PM"
+          },
+          "playing": {
+            "focus": "Exploring local attractions, olive grove tours",
+            "score": 0.7,
+            "window": "9:00 AM - 5:00 PM"
+          },
+          "working": {
+            "focus": "Quiet remote work in rooms or common areas",
+            "score": 0.6,
+            "window": "Anytime"
+          }
+        },
+        "peak_atmospheric_window": "Sunset over the Swartberg Mountains"
+      }
+    },
+    "interactive_quiz_challenge": {
+      "target_scene_id": 101,
+      "scene_name": "Olive Grove Sunset",
+      "mission_title": "The Karoo's Golden Hour",
+      "question": "As the sun dips below the Swartberg Mountains, casting a golden glow over the olive groves, what local delicacy would you pair with a glass of fine South African wine?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Karoo lamb chops with rosemary"
+        },
+        {
+          "id": "B",
+          "text": "Freshly baked roosterkoek with local preserves"
+        },
+        {
+          "id": "C",
+          "text": "Ostrich fillet with a berry reduction"
+        },
+        {
+          "id": "D",
+          "text": "Biltong and droëwors platter"
+        }
+      ],
+      "correct_option_id": "C",
+      "success_lore_reveal": "The Klein Karoo is renowned for its ostrich farming. Pairing a succulent ostrich fillet with a rich berry reduction perfectly complements the region's culinary heritage and the estate's elegant dining experience.",
+      "reward_badge": "Karoo Connoisseur",
+      "challenge_prompt": "Discover the culinary heart of the Klein Karoo!"
+    },
+    "ota_conversion_audit": {
+      "channel": "Booking.com",
+      "before_merchandising_score": 48,
+      "after_merchandising_score": 92,
+      "projected_conversion_uplift": "+21.0%",
+      "current_drop_off_flaw": "Lack of immediate visual connection to the unique olive estate experience and inconsistent room representation.",
+      "key_strategic_shifts": [
+        "Elevate the unique olive grove and mountain backdrop to Slot #1 to immediately convey the tranquil, luxurious estate experience, aligning with 'Karoo escape' search demand.",
+        "Prioritize a clear, inviting signature bedroom shot in Slot #2 to confirm the promise of comfort and elegance, addressing 'luxury accommodation Oudtshoorn' searches.",
+        "Introduce a dedicated bathroom shot in Slot #3 to meet essential guest expectations for hygiene and private comfort.",
+        "Showcase the elegant dining and social spaces to highlight the estate's refined hospitality and culinary offerings, capturing 'romantic dinner Oudtshoorn' interest."
+      ],
+      "optimal_5_photo_sequence": [
+        {
+          "slot": 1,
+          "category": "HERO_CULTURAL_MAGNET",
+          "source_type": "AMENITY_ASSET",
+          "source_index": 1,
+          "photo_subject": "Panoramic View of Olive Groves with Swartberg Mountains at Sunset",
+          "bullet_points": [
+            "Visual Upgrade: This asset captures the breathtaking scale and serene beauty of the estate's setting, far superior to generic exterior shots.",
+            "Local Synergy: Directly aligns with traveler searches for 'Karoo olive estate views' and 'mountain retreat Oudtshoorn'.",
+            "Conversion Trigger: Evokes an immediate sense of tranquility, luxury, and unique destination appeal, stopping the scroll."
+          ],
+          "psychological_conversion_trigger": "Immediately establishes the unique, serene, and luxurious natural setting, fulfilling the desire for a picturesque Karoo escape.",
+          "action": "MAGNET_OVERRIDE",
+          "action_label": "HERO CULTURAL MAGNET: OLIVE GROVES & MOUNTAIN SUNSET (SLOT #1)",
+          "current_slot": 1,
+          "local_vibe_connection": "This photo perfectly encapsulates the tranquil, scenic beauty of the Schoemanshoek Valley, a key draw for visitors seeking a peaceful Karoo experience.",
+          "upgrade_rationale": "This asset is visually and psychologically superior as it presents a sweeping, emotionally resonant landscape view that immediately conveys the estate's unique selling proposition, unlike the current close-up exterior which lacks context and grandeur.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 2,
+          "category": "SIGNATURE_SUITE_BEDROOM",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 3,
+          "photo_subject": "Elegant King Bedroom with Classic Furnishings and Garden View",
+          "bullet_points": [
+            "Strategic Placement: Immediately reassures guests about the quality and comfort of the private accommodations after the initial 'wow' of the estate.",
+            "Local Synergy: Reflects the refined comfort expected by travelers searching for 'luxury accommodation Oudtshoorn'.",
+            "Conversion Trigger: Confirms the promise of a comfortable and elegant sleeping space, reducing booking hesitation."
+          ],
+          "psychological_conversion_trigger": "Validates the luxury and comfort of the private guest experience, ensuring the sleeping quarters match the aspirational estate vibe.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE ELEGANT KING BEDROOM (FROM SLOT #3)",
+          "current_slot": 3,
+          "local_vibe_connection": "This room reflects the understated elegance and comfort that travelers expect from a high-end Karoo boutique estate.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #3): Placing a clear, inviting bedroom shot in Slot #2 immediately confirms the quality of the private spaces, a critical factor for guests after being drawn in by the hero shot.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 3,
+          "category": "SECONDARY_ROOM_BATHROOM",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 5,
+          "photo_subject": "Spacious Bathroom with Walk-in Shower and Modern Fixtures",
+          "bullet_points": [
+            "Strategic Placement: Addresses essential guest concerns about hygiene and private amenities directly after the bedroom.",
+            "Local Synergy: Meets the expectation for well-appointed, clean facilities in a luxury country estate.",
+            "Conversion Trigger: Builds trust and completes the mental picture of a comfortable, private sanctuary."
+          ],
+          "psychological_conversion_trigger": "Satisfies the fundamental need for a clean, functional, and aesthetically pleasing private bathroom, completing the comfort narrative.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE SPACIOUS BATHROOM (FROM SLOT #5)",
+          "current_slot": 5,
+          "local_vibe_connection": "A well-maintained and spacious bathroom is a key indicator of quality for travelers seeking a comfortable stay in the region.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #5): Placing the bathroom directly after the bedroom in Slot #3 ensures that a crucial aspect of guest comfort and hygiene is addressed early in the visual journey.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 4,
+          "category": "SOCIAL_FB_ROOFTOP",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 7,
+          "photo_subject": "Outdoor Dining Terrace with Mountain Views",
+          "bullet_points": [
+            "Strategic Placement: Showcases the social and culinary experience, highlighting the estate's elegant atmosphere and scenic dining options.",
+            "Local Synergy: Appeals to travelers looking for 'romantic dining Oudtshoorn' or 'restaurants with a view Karoo'.",
+            "Conversion Trigger: Illustrates the lifestyle and experiential aspects of the stay, beyond just the room."
+          ],
+          "psychological_conversion_trigger": "Highlights the social and culinary appeal, painting a picture of memorable dining experiences with a view, enhancing the overall value proposition.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE OUTDOOR DINING TERRACE (FROM SLOT #7)",
+          "current_slot": 7,
+          "local_vibe_connection": "This photo connects to the local appreciation for outdoor dining and scenic views, a highlight of the Karoo experience.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #7): This photo effectively communicates the estate's elegant dining and social atmosphere, crucial for guests seeking a complete luxury experience.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 5,
+          "category": "EXTERIOR_LANDMARK",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 1,
+          "photo_subject": "Historic Estate Building Exterior with Lush Gardens",
+          "bullet_points": [
+            "Strategic Placement: Provides a clear sense of arrival and the historic charm of the property, grounding the guest's mental map.",
+            "Local Synergy: Connects to searches for 'historic hotels Oudtshoorn' and 'charming estates Karoo'.",
+            "Conversion Trigger: Eliminates location anxiety and reinforces the unique architectural character of the property."
+          ],
+          "psychological_conversion_trigger": "Anchors the property geographically and visually, confirming its authentic historic character and inviting presence.",
+          "action": "KEEP",
+          "action_label": "KEEP HISTORIC ESTATE EXTERIOR (SLOT #1)",
+          "current_slot": 1,
+          "local_vibe_connection": "The historic architecture is a key part of Oudtshoorn's charm, appealing to travelers interested in heritage and unique stays.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #1): While previously the hero, this photo now serves to anchor the property's physical presence and historic charm after the more experiential lead-in, effectively eliminating location anxiety.",
+          "photo_url": null,
+          "image_url": null
+        }
+      ],
+      "anti_commodity_copy_rewrite": {
+        "ota_headline": "Surval Boutique Olive Estate: Historic Karoo Luxury Amidst Olive Groves & Mountain Views",
+        "property_overview_150_words": "Nestled in the picturesque Schoemanshoek Valley, Surval Boutique Olive Estate offers an intimate escape where 18th-century charm meets modern luxury. Experience serene olive groves, breathtaking Swartberg Mountain views, and elegant accommodations designed for ultimate relaxation. Indulge in exquisite dining, personalized service, and a tranquil atmosphere that invites you to unwind. Perfectly positioned for exploring Oudtshoorn's natural wonders, from the Cango Caves to wildlife encounters, Surval provides an authentic Karoo experience that feels both grand and intimately welcoming. Discover a true sanctuary where every detail is crafted for your comfort and delight."
+      },
+      "photographic_gap_analysis": [
+        {
+          "missing_shot_title": "Twilight Poolside Bar & Lounge Area",
+          "category": "ATMOSPHERIC_TWILIGHT",
+          "why_needed": "Currently, there are no photos capturing the inviting evening ambiance of the poolside bar or lounge areas, missing a key social and relaxation aspect for guests after a day of exploring. This would appeal to travelers searching for 'evening drinks Oudtshoorn' or 'relaxing hotel bar Karoo'.",
+          "recommended_framing_and_lighting": "Wide-angle shot of the poolside bar area at twilight, with warm, diffused lighting from lanterns and subtle uplighting, showing comfortable seating and a few guests enjoying drinks. Focus on the golden hour glow and inviting atmosphere.",
+          "projected_adr_impact": "+10% higher F&B revenue and +$30 ADR premium for evening experience."
+        },
+        {
+          "missing_shot_title": "Estate-Produced Olive Oil Tasting Experience",
+          "category": "CULINARY_SOCIAL",
+          "why_needed": "The estate produces its own olive oil, a unique and authentic local experience that is not visually represented. This misses an opportunity to showcase a distinctive cultural offering and appeal to 'foodie experiences Oudtshoorn' or 'local produce Karoo' searches.",
+          "recommended_framing_and_lighting": "Close-up, well-lit shot of an olive oil tasting setup, with small bowls of olive oil, fresh bread, and perhaps a hand pouring oil. Emphasize natural textures and warm, inviting light.",
+          "projected_adr_impact": "+8% direct booking conversion for guests seeking unique local experiences."
+        },
+        {
+          "missing_shot_title": "Guest Room Terrace/Balcony with View",
+          "category": "SECONDARY_LIFESTYLE_SANCTUARY",
+          "why_needed": "Many guests value private outdoor spaces with views. If available, a photo showcasing a room's terrace or balcony with the scenic backdrop would significantly enhance perceived value and appeal to 'rooms with a view Oudtshoorn' searches.",
+          "recommended_framing_and_lighting": "Eye-level shot from inside a guest room looking out onto a private terrace or balcony, highlighting the view of the olive groves or mountains. Include comfortable outdoor seating and natural light.",
+          "projected_adr_impact": "+12% higher suite booking velocity and +$45 ADR premium for rooms with private outdoor spaces."
+        }
+      ],
+      "conversion_diagnosis": "The current Booking.com sequence fails to immediately convey the unique, luxurious olive estate experience, burying key differentiators and essential room details. This leads to high drop-off rates from travelers seeking a distinctive Karoo retreat.",
+      "local_vibe_synergy_context": "The Oudtshoorn region is known for its unique Karoo landscape, ostrich farming, and natural attractions like the Cango Caves. Travelers are increasingly seeking authentic, tranquil experiences that connect them to the local environment. The proposed photo sequence and copy rewrite strategically highlight Surval's olive groves, mountain views, historic charm, and elegant dining, directly addressing these local subcultures and traveler desires for a luxurious, serene Karoo escape.",
+      "slot_1_decision_logic": {
+        "is_magnet_override_active": true,
+        "reasoning_code": "NAI_DESTINATION_CLARITY_CONSENSUS",
+        "strategy_explanation": "The panoramic olive grove and mountain view is an extraordinary, high-impact cultural asset that perfectly aligns with the #1 trending subcultural search theme for 'Karoo olive estate views' and 'mountain retreat Oudtshoorn'. It is a destination in its own right, offers split-second clarity, and fits the 5-Slot Consensus Formula as a HERO_CULTURAL_MAGNET.",
+        "neighborhood_affinity_index": 0.92,
+        "override_asset_name": "Panoramic View of Olive Groves with Swartberg Mountains at Sunset"
+      },
+      "photos_status": "PENDING"
+    },
+    "audit_timestamp": "2026-11-15T13:20:50.185Z"
+  }
+}

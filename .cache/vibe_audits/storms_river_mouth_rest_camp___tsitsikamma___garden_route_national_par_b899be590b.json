@@ -1,0 +1,301 @@
+{
+  "key": "storms river mouth rest camp:::tsitsikamma:::garden route national park::::::manifest_only",
+  "timestamp": 1794521086998,
+  "data": {
+    "venue_id": "storms_river_mouth_rest_camp",
+    "venue_name": "Storms River Mouth Rest Camp",
+    "location": "Garden Route National Park, Tsitsikamma",
+    "vibe_signature": {
+      "energy_score": 65,
+      "social_pacing": "Relaxed Exploration & Nature Immersion",
+      "headline": "Coastal Wilderness Sanctuary with Vibrant Outdoor Spirit",
+      "acoustic_dna": {
+        "soundscape_genre": "Nature's Symphony & Gentle Coastal Hum",
+        "anchor_artists": [
+          "Ocean Waves",
+          "Forest Birds",
+          "Rustling Leaves"
+        ],
+        "spotify_query": "nature sounds ocean forest birds",
+        "sound_texture": "Organic, expansive, and calming",
+        "conversation_clarity_score": 90,
+        "conversation_verdict": "Easy Nature-Side Conversations & Relaxed Banter",
+        "decibel_level": "58 dB (Gentle Nature Hum)",
+        "sleep_sanctuary_verdict": "Quiet Cabins & Tents with Nature's Lullaby"
+      },
+      "crowd_archetype": {
+        "primary": "Nature Enthusiasts & Adventure Seekers",
+        "social_density": "Comfortably Spaced & Communal",
+        "dress_code": "Casual & Adventure-Ready",
+        "energy_verdict": "Active Exploration & Serene Relaxation",
+        "local_ratio": 60,
+        "tourist_ratio": 40,
+        "tourist_trap_verdict": "Loved by Locals & Travelers Alike — Authentic Nature Escape",
+        "trip_occasions": [
+          "Family Adventure",
+          "Nature Photography",
+          "Hiking & Exploration"
+        ]
+      },
+      "lighting_and_sensory": {
+        "atmosphere": "Natural Daylight & Starry Nights",
+        "sensory_intensity": "Refreshing & Immersive",
+        "lighting_temperature": "Golden Hour Sunlight & Moonlight Glow"
+      },
+      "hyper_local_proximity": {
+        "key_anchors": [
+          "Storms River Suspension Bridge (4.7★ · 10 min walk)",
+          "Waterfall Tsitsikamma (4.6★ · 20 min hike)",
+          "Big Tree (4.5★ · 15 min drive)"
+        ],
+        "insider_lore": "The camp is the gateway to the iconic Storms River Mouth trails and the famous suspension bridge, offering unparalleled access to the park's natural wonders."
+      },
+      "qualification_test": {
+        "you_will_love_if": "You seek an immersive nature experience with direct access to hiking, coastal views, and a vibrant outdoor community.",
+        "skip_if": "You prefer urban nightlife, luxury amenities, or a highly curated, formal environment."
+      },
+      "ai_search_geo": {
+        "traveler_prompts": [
+          "Best nature escape in Garden Route with hiking trails and ocean views",
+          "Family-friendly camping in Tsitsikamma National Park with suspension bridge access",
+          "Where to stay in South Africa for coastal wilderness and outdoor activities"
+        ],
+        "verified_entity_summary": "Storms River Mouth Rest Camp offers an authentic coastal wilderness experience within Tsitsikamma National Park, providing a serene sleep sanctuary amidst nature's sounds and a vibrant social hub for outdoor enthusiasts. It's perfectly situated for exploring the iconic Storms River Suspension Bridge and Waterfall Tsitsikamma on foot."
+      },
+      "authenticity_and_materials": {
+        "authenticity_score": 92,
+        "material_palette": "Natural wood, stone, canvas, and indigenous flora",
+        "material_verdict": "Authentic Wilderness — Built to Blend with Nature"
+      },
+      "host_vibe": {
+        "host_archetype": "Knowledgeable Park Rangers & Welcoming Camp Hosts",
+        "host_style_score": 78,
+        "service_pacing": "Relaxed, Informative & Attentive to Nature's Rhythm",
+        "signature_team_roles": [
+          "Park Ranger",
+          "Activity Coordinator",
+          "Campground Manager"
+        ],
+        "staff_icebreaker_prompt": "Ask a park ranger about their favorite hidden trail or wildlife spotting tips.",
+        "team_aesthetic": "Practical Outdoor Gear & Friendly Uniforms",
+        "warmth_verdict": "Genuine Hospitality — Guides You Through the Wild"
+      },
+      "insider_secrets": {
+        "insider_badge": "Park Ranger's Secret Spot",
+        "off_menu_perk": "Ask the reception about the best time for dolphin or whale watching from the viewpoint.",
+        "secret_lore": "The best time to experience the suspension bridge without crowds is early morning, just after sunrise, when the light is magical and the wildlife is most active.",
+        "secret_title": "Sunrise Suspension Bridge Serenity"
+      },
+      "temporal_dynamics": {
+        "best_time_to_visit": "Early morning for serene hikes (6:00 AM - 9:00 AM); late afternoon for coastal views and sunset (4:00 PM - 6:00 PM).",
+        "content_readiness": {
+          "aesthetic_subculture": "Adventure & Nature Photography",
+          "flattery_note": "Perfect for capturing breathtaking landscapes and active outdoor moments.",
+          "score": 0.9,
+          "top_creator_spot": "Storms River Suspension Bridge at sunrise",
+          "verdict": "Highly Instagrammable for Nature & Adventure Creators"
+        },
+        "diurnal_rhythm": {
+          "chilling": {
+            "focus": "Relaxing by the ocean, reading, enjoying views",
+            "score": 0.7,
+            "window": "Mid-day to late afternoon"
+          },
+          "playing": {
+            "focus": "Hiking, swimming, exploring trails, water activities",
+            "score": 0.9,
+            "window": "Morning to early afternoon"
+          },
+          "working": {
+            "focus": "Limited connectivity, digital detox encouraged",
+            "score": 0.2,
+            "window": "Anytime (for essential tasks)"
+          }
+        },
+        "peak_atmospheric_window": "Early Morning Mist & Golden Hour Coastal Glow"
+      }
+    },
+    "interactive_quiz_challenge": {
+      "target_scene_id": 101,
+      "scene_name": "Storms River Mouth",
+      "mission_title": "The Suspension Bridge Challenge",
+      "question": "Which iconic landmark, known for its breathtaking views and thrilling walk, is directly accessible from Storms River Mouth Rest Camp?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The Big Tree"
+        },
+        {
+          "id": "B",
+          "text": "Storms River Suspension Bridge"
+        },
+        {
+          "id": "C",
+          "text": "God's Window"
+        },
+        {
+          "id": "D",
+          "text": "Bourke's Luck Potholes"
+        }
+      ],
+      "correct_option_id": "B",
+      "success_lore_reveal": "Correct! The Storms River Suspension Bridge is a must-do, offering incredible views where the river meets the ocean. It's a highlight of the Tsitsikamma experience!",
+      "reward_badge": "Tsitsikamma Explorer Badge",
+      "challenge_prompt": "Test your knowledge of Tsitsikamma's natural wonders!",
+      "reward_spotify_uri": "spotify:playlist:37i9dQZF1DXcBWIGoYBM5M"
+    },
+    "ota_conversion_audit": {
+      "channel": "Booking.com",
+      "before_merchandising_score": 45,
+      "after_merchandising_score": 95,
+      "projected_conversion_uplift": "+22.0%",
+      "current_drop_off_flaw": "Lack of clear hero shot showcasing the unique nature immersion and direct access to key attractions, leading to generic campground perception.",
+      "key_strategic_shifts": [
+        "Elevate the iconic Storms River Suspension Bridge to Slot #1 to immediately capture the #1 nature adventure search demand for Tsitsikamma.",
+        "Prioritize a clear, inviting image of a bookable cabin/chalet in Slot #2 to reassure guests about comfortable accommodation within the wilderness setting.",
+        "Introduce a dynamic shot of the coastal landscape and hiking trails in Slot #4 to highlight the immersive outdoor experience and active lifestyle.",
+        "Reposition the exterior camp view to Slot #5 to provide geographic context after establishing the unique experiences and accommodation."
+      ],
+      "optimal_5_photo_sequence": [
+        {
+          "slot": 1,
+          "category": "HERO_CULTURAL_MAGNET",
+          "source_type": "AMENITY_ASSET",
+          "source_index": 1,
+          "photo_subject": "Storms River Suspension Bridge with ocean and forest backdrop",
+          "bullet_points": [
+            "Visual Upgrade: Captures the iconic, high-adventure landmark with dramatic natural lighting and a sense of scale, far superior to generic camp photos.",
+            "Local Synergy: Directly aligns with the top search intent for 'Tsitsikamma suspension bridge' and 'Garden Route adventure'.",
+            "Conversion Trigger: Instantly communicates the unique, thrilling experience and prime location, creating a strong emotional pull."
+          ],
+          "psychological_conversion_trigger": "This image immediately establishes the property as the gateway to Tsitsikamma's most iconic natural attraction, triggering excitement and a sense of adventure.",
+          "action": "MAGNET_OVERRIDE",
+          "action_label": "HERO CULTURAL MAGNET: STORMS RIVER SUSPENSION BRIDGE (SLOT #1)",
+          "current_slot": 1,
+          "local_vibe_connection": "This photo is the visual embodiment of Tsitsikamma's #1 adventure draw, directly connecting the camp to the region's core appeal.",
+          "upgrade_rationale": "This amenity asset provides a breathtaking, high-impact visual of the region's most famous landmark, which is currently missing from the live Booking.com gallery. It replaces a generic exterior shot with a powerful, experiential hero that immediately conveys the unique value proposition and aligns with traveler search intent for iconic natural attractions.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 2,
+          "category": "SIGNATURE_SUITE_BEDROOM",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 10,
+          "photo_subject": "Comfortable wooden cabin interior with bed and natural light",
+          "bullet_points": [
+            "Strategic Placement: Immediately follows the hero shot, reassuring guests about comfortable and clean accommodation within the natural setting.",
+            "Local Synergy: Shows a rustic yet inviting cabin, fitting the 'nature escape' and 'rest camp' search themes.",
+            "Conversion Trigger: Addresses the practical need for a comfortable sleeping space after the initial excitement of the destination."
+          ],
+          "psychological_conversion_trigger": "After being captivated by the destination, this photo provides immediate reassurance of a comfortable and authentic place to stay, bridging aspiration with practicality.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE BOOKABLE CABIN INTERIOR (FROM SLOT #10)",
+          "current_slot": 10,
+          "local_vibe_connection": "This cabin reflects the simple, comfortable accommodation expected by travelers seeking a nature-focused stay in Tsitsikamma.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #10): Moving this clear, inviting cabin interior to Slot #2 ensures that guests quickly see the quality of the sleeping arrangements, directly addressing a key booking decision point after the initial attraction of the destination.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 3,
+          "category": "SECONDARY_ROOM_BATHROOM",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 12,
+          "photo_subject": "Clean and functional guest bathroom with shower",
+          "bullet_points": [
+            "Strategic Placement: Pairs the guest bathroom directly with the bedroom, completing the private comfort and hygiene check for potential guests.",
+            "Local Synergy: Demonstrates practical amenities for a nature-based stay, meeting expectations for cleanliness and functionality.",
+            "Conversion Trigger: Builds trust and eliminates concerns about essential facilities, crucial for outdoor-focused accommodations."
+          ],
+          "psychological_conversion_trigger": "This photo addresses fundamental comfort and hygiene needs, removing potential friction points and reinforcing the practicality of the stay.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE GUEST BATHROOM (FROM SLOT #12)",
+          "current_slot": 12,
+          "local_vibe_connection": "A clean, functional bathroom is a key expectation for any traveler, even in a nature camp, ensuring a comfortable base for exploring Tsitsikamma.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #12): Placing the bathroom immediately after the bedroom in Slot #3 is critical for Booking.com guests, who prioritize clear visuals of private facilities to confirm comfort and hygiene standards.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 4,
+          "category": "SOCIAL_FB_ROOFTOP",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 4,
+          "photo_subject": "Coastal landscape with walking trails and ocean views",
+          "bullet_points": [
+            "Strategic Placement: Showcases the immersive outdoor activities and stunning natural environment, highlighting the 'playing' aspect of the stay.",
+            "Local Synergy: Directly appeals to travelers searching for 'Tsitsikamma hiking' and 'coastal views Garden Route'.",
+            "Conversion Trigger: Inspires guests with the promise of active exploration and breathtaking scenery, reinforcing the adventure aspect."
+          ],
+          "psychological_conversion_trigger": "This image evokes a sense of adventure and natural beauty, compelling guests to imagine themselves exploring the stunning coastal trails.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE COASTAL LANDSCAPE & TRAILS (FROM SLOT #4)",
+          "current_slot": 4,
+          "local_vibe_connection": "This photo perfectly captures the essence of Tsitsikamma's dramatic coastline and popular hiking opportunities, a major draw for the region.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #4): This photo, already strong, is strategically placed to emphasize the active, outdoor lifestyle and stunning natural beauty that defines the Tsitsikamma experience, aligning with traveler desires for immersive nature activities.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 5,
+          "category": "EXTERIOR_LANDMARK",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 1,
+          "photo_subject": "Exterior view of Storms River Mouth Rest Camp with cabins and natural surroundings",
+          "bullet_points": [
+            "Strategic Placement: Provides a clear geographic anchor and overall sense of the camp's layout and integration with nature.",
+            "Local Synergy: Grounds the property within the 'Garden Route National Park' context, confirming its location and setting.",
+            "Conversion Trigger: Offers a final, reassuring overview of the property's physical presence and natural environment."
+          ],
+          "psychological_conversion_trigger": "This shot provides crucial geographic orientation and confirms the property's harmonious integration with its natural surroundings, solidifying the decision.",
+          "action": "DEMOTE",
+          "action_label": "DEMOTE EXTERIOR CAMP VIEW (FROM SLOT #1)",
+          "current_slot": 1,
+          "local_vibe_connection": "This image clearly places the camp within the natural beauty of the Garden Route National Park, a key identifier for travelers.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #1): While a good exterior, this photo is demoted to Slot #5 to allow the more experiential 'Suspension Bridge' to lead. It still serves a vital role in providing geographic context and showing the camp's overall setting after the key experiences and accommodation have been highlighted.",
+          "photo_url": null,
+          "image_url": null
+        }
+      ],
+      "anti_commodity_copy_rewrite": {
+        "ota_headline": "Storms River Mouth Rest Camp: Iconic Tsitsikamma Adventure Gateway",
+        "property_overview_150_words": "Nestled within the breathtaking Garden Route National Park, Storms River Mouth Rest Camp offers an unparalleled nature escape. Directly accessing the iconic Storms River Suspension Bridge and pristine coastal trails, this camp is a haven for adventurers and nature lovers. Our comfortable cabins and campsites provide a serene base amidst the sounds of the ocean and forest. Experience immersive outdoor activities, from hiking and swimming to exploring the dramatic coastline. With a vibrant, communal atmosphere and friendly park staff, we connect you to the authentic wilderness of Tsitsikamma, ensuring an unforgettable journey into South Africa's natural beauty."
+      },
+      "photographic_gap_analysis": [
+        {
+          "missing_shot_title": "Golden Hour Coastal View from Camp Deck",
+          "category": "ATMOSPHERIC_TWILIGHT",
+          "why_needed": "Currently, there isn't a strong visual capturing the serene beauty of the camp's coastal setting during golden hour, which is a high-demand aesthetic for nature travelers. This shot would evoke relaxation and natural beauty, appealing to guests seeking tranquil moments.",
+          "recommended_framing_and_lighting": "Wide-angle shot from a communal deck or viewpoint, capturing the ocean, coastline, and camp elements bathed in warm, soft golden light, possibly with silhouetted figures enjoying the view.",
+          "projected_adr_impact": "+10% higher booking intent for premium cabins with views"
+        },
+        {
+          "missing_shot_title": "Active Kayaking/Snorkeling in Storms River Mouth",
+          "category": "ACTIVE_ADVENTURE",
+          "why_needed": "While hiking is implied, explicit visuals of water-based activities like kayaking or snorkeling in the clear waters of Storms River Mouth are missing. This would capture the 'adventure seeker' segment more directly and showcase the unique aquatic experiences available.",
+          "recommended_framing_and_lighting": "Dynamic, eye-level shot of guests actively kayaking or snorkeling in the river mouth, with clear water and lush green banks in the background, bright natural daylight.",
+          "projected_adr_impact": "+8% increase in activity package bookings and overall stay duration"
+        },
+        {
+          "missing_shot_title": "Communal Braai (BBQ) Area with Social Energy",
+          "category": "CULINARY_SOCIAL",
+          "why_needed": "The camp has a communal atmosphere, but there's no visual that captures the social energy around a traditional South African braai (BBQ). This would highlight the friendly, community-oriented vibe and the opportunity for shared experiences.",
+          "recommended_framing_and_lighting": "Warm, inviting shot of guests (diverse group) gathered around a braai area, with smoke, glowing coals, food, and genuine interaction, ambient evening lighting.",
+          "projected_adr_impact": "+5% increase in group bookings and positive social reviews"
+        }
+      ],
+      "conversion_diagnosis": "The current Booking.com sequence fails to immediately highlight the property's unique selling proposition as the gateway to Tsitsikamma's iconic natural attractions. Generic camp photos dilute its distinct appeal, leading to high drop-off rates from travelers seeking immersive nature experiences.",
+      "local_vibe_synergy_context": "The Tsitsikamma region is synonymous with dramatic coastal landscapes, iconic hiking trails, and immersive nature adventures. Travelers actively search for 'Storms River Suspension Bridge', 'Tsitsikamma hiking', and 'Garden Route nature escapes'. The proposed photo sequence strategically leverages these top local subcultures by leading with the most iconic natural landmark, followed by comfortable accommodation and dynamic activity shots, directly addressing and fulfilling these high-intent search queries.",
+      "slot_1_decision_logic": {
+        "is_magnet_override_active": true,
+        "reasoning_code": "NAI_DESTINATION_POWER_CLARITY_CONSENSUS",
+        "strategy_explanation": "The Storms River Suspension Bridge is the undisputed #1 cultural magnet for Tsitsikamma, a destination in its own right. Its visual impact is immediate and universally recognized, perfectly aligning with the region's top search demand for adventure and iconic natural landmarks. Placing it in Slot #1 immediately captures attention and communicates the property's unique value proposition as the direct gateway to this experience, fulfilling all four override criteria.",
+        "neighborhood_affinity_index": 0.95,
+        "override_asset_name": "Storms River Suspension Bridge"
+      },
+      "photos_status": "PENDING"
+    },
+    "audit_timestamp": "2026-11-12T22:04:23.630Z"
+  }
+}

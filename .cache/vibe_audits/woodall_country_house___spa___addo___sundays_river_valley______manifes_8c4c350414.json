@@ -1,0 +1,237 @@
+{
+  "key": "woodall country house & spa:::addo:::sundays river valley::::::manifest_only",
+  "timestamp": 1794520545484,
+  "data": {
+    "venue_id": "woodall_country_house_spa_addo",
+    "venue_name": "Woodall Country House & Spa",
+    "location": "Sundays River Valley, Addo",
+    "vibe_signature": {
+      "energy_score": 68,
+      "social_pacing": "Relaxed & Attentive",
+      "headline": "Peaceful Citrus Farm Oasis with Warm, Attentive Service",
+      "acoustic_dna": {
+        "soundscape_genre": "Ambient African & Relaxed Jazz",
+        "anchor_artists": [
+          "Hugh Masekela",
+          "Miriam Makeba",
+          "Abdullah Ibrahim"
+        ],
+        "spotify_query": "African jazz instrumental chill",
+        "sound_texture": "Soft, natural sounds with gentle background music"
+      },
+      "crowd_archetype": {
+        "primary": "Couples & Nature Enthusiasts",
+        "social_density": "Spacious & Intimate",
+        "dress_code": "Smart Casual",
+        "energy_verdict": "Tranquil Relaxation & Engaging Conversation",
+        "local_ratio": 65,
+        "tourist_ratio": 35,
+        "tourist_trap_verdict": "Loved by Locals — Not a Tourist Trap",
+        "trip_occasions": [
+          "Couples Escape",
+          "Wildlife Safari Base",
+          "Relaxation & Wellness"
+        ]
+      },
+      "lighting_and_sensory": {
+        "atmosphere": "Serene & Natural",
+        "sensory_intensity": "Gentle & Restorative",
+        "lighting_temperature": "Warm Golden Hour Sunlight & Cosy Evening Lamps"
+      },
+      "hyper_local_proximity": {
+        "key_anchors": [
+          "Addo Elephant National Park (4.8★ · 15 min drive)",
+          "Africanos Inn, Bar, Grill & Barn Addo (4.4★ · 8 min drive)",
+          "Thirsty Herds Pub (4.5★ · 8 min drive)"
+        ],
+        "insider_lore": "Woodall is nestled on a working citrus farm, offering a genuine connection to the agricultural heart of the Sundays River Valley, a short drive from the iconic Addo Elephant National Park."
+      },
+      "qualification_test": {
+        "you_will_love_if": "You seek a luxurious, peaceful retreat with exceptional service, surrounded by nature and close to wildlife experiences.",
+        "skip_if": "You prefer a bustling, urban environment or a party-centric atmosphere."
+      }
+    },
+    "interactive_quiz_challenge": {
+      "target_scene_id": 1,
+      "scene_name": "The Safari Sundowner",
+      "mission_title": "Spot the Elephant's Favorite Sip",
+      "question": "After a thrilling safari, you're relaxing at Woodall's bar. What local, refreshing drink would best complement the serene African sunset?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A crisp South African Sauvignon Blanc"
+        },
+        {
+          "id": "B",
+          "text": "A classic Gin & Tonic with local botanicals"
+        },
+        {
+          "id": "C",
+          "text": "A strong espresso martini"
+        },
+        {
+          "id": "D",
+          "text": "A sweet, fruity cocktail with an umbrella"
+        }
+      ],
+      "correct_option_id": "B",
+      "success_lore_reveal": "Correct! The Gin & Tonic, especially with local botanicals, is a quintessential sundowner, perfectly matching the tranquil African evening and Woodall's sophisticated yet natural vibe.",
+      "reward_badge": "Safari Sundowner Savvy",
+      "challenge_prompt": "Test your knowledge of local safari traditions and Woodall's refined tastes!",
+      "reward_spotify_uri": "spotify:playlist:37i9dQZF1DX4sWygjaqf1p"
+    },
+    "ota_conversion_audit": {
+      "channel": "Booking.com",
+      "before_merchandising_score": 48,
+      "after_merchandising_score": 92,
+      "projected_conversion_uplift": "+19.0%",
+      "current_drop_off_flaw": "Lack of immediate visual connection to the unique 'country house & spa' experience and the surrounding natural beauty, with too many similar room shots upfront.",
+      "key_strategic_shifts": [
+        "Elevate the signature outdoor pool and natural setting to Slot #1 to immediately convey the tranquil, luxurious oasis vibe that travelers seek in Addo.",
+        "Prioritize a clear, inviting bedroom shot in Slot #2 to assure comfort and quality after the initial emotional hook.",
+        "Integrate a dedicated spa/wellness shot to highlight a key amenity and meet growing traveler demand for restorative experiences.",
+        "Re-sequence the exterior shot to Slot #5 to ground the property geographically after establishing its unique character."
+      ],
+      "optimal_5_photo_sequence": [
+        {
+          "slot": 1,
+          "category": "SOCIAL_FB_ROOFTOP",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 1,
+          "photo_subject": "Outdoor Pool with Lush Greenery and Seating",
+          "bullet_points": [
+            "Strategic Placement: This hero shot immediately establishes the property's serene, luxurious outdoor oasis, a key draw for travelers to the Sundays River Valley.",
+            "Local Synergy: Connects directly with the desire for relaxation and natural beauty, complementing the safari experience of the region.",
+            "Conversion Trigger: Evokes a sense of escape and tranquility, making guests envision themselves unwinding by the pool."
+          ],
+          "psychological_conversion_trigger": "Immediately communicates a luxurious, peaceful retreat amidst nature, aligning with traveler desire for relaxation post-safari.",
+          "action": "KEEP_HERO",
+          "action_label": "HERO CULTURAL MAGNET: OUTDOOR POOL OASIS (SLOT #1)",
+          "current_slot": 1,
+          "local_vibe_connection": "Directly addresses the traveler's search for serene, high-quality relaxation options in the Addo region, complementing the adventurous safari experience.",
+          "upgrade_rationale": "Strategic Repositioning (Retained from Live Slot #1): This photo, already a strong visual, is perfectly positioned to be the hero, immediately showcasing the property's core appeal as a tranquil country house and spa.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 2,
+          "category": "SIGNATURE_SUITE_BEDROOM",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 10,
+          "photo_subject": "Spacious King Bedroom with Elegant Furnishings and Garden View",
+          "bullet_points": [
+            "Strategic Placement: Follows the hero shot to immediately assure guests of the luxurious and comfortable sleeping accommodations, reinforcing the overall quality.",
+            "Local Synergy: Provides a sense of private sanctuary, a desired contrast to the adventurous outdoor activities in the Addo region.",
+            "Conversion Trigger: Builds trust and reduces anxiety by showcasing a high-quality, inviting private space."
+          ],
+          "psychological_conversion_trigger": "Assures comfort and luxury in the private guest space, validating the initial impression of a high-end retreat.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE SIGNATURE KING BEDROOM (FROM SLOT #10)",
+          "current_slot": 10,
+          "local_vibe_connection": "Addresses the need for comfortable and aesthetically pleasing accommodations after a day exploring the natural wonders of the Sundays River Valley.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #10): This photo is promoted to Slot #2 to immediately showcase the quality of the private accommodations, a critical factor for booking intent, directly after the aspirational hero shot.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 3,
+          "category": "SECONDARY_LIFESTYLE_SANCTUARY",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 14,
+          "photo_subject": "Elegant Bathroom with Freestanding Tub and Natural Light",
+          "bullet_points": [
+            "Strategic Placement: Positions the bathroom directly after the bedroom, completing the private comfort and hygiene check crucial for Booking.com guests.",
+            "Local Synergy: Reinforces the spa and wellness aspect of the property, appealing to travelers seeking restorative experiences in a natural setting.",
+            "Conversion Trigger: Highlights luxury amenities and attention to detail in private spaces, enhancing perceived value."
+          ],
+          "psychological_conversion_trigger": "Completes the private space narrative, showcasing luxury and comfort in the bathroom, a key decision-making factor for many travelers.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE ELEGANT BATHROOM WITH TUB (FROM SLOT #14)",
+          "current_slot": 14,
+          "local_vibe_connection": "Aligns with the broader wellness and relaxation subculture that travelers seek in tranquil, natural destinations like Addo.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #14): This photo is promoted to Slot #3 to provide immediate visual proof of the high-quality, luxurious bathroom facilities, directly complementing the bedroom shot.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 4,
+          "category": "WELLNESS_SPA_LOBBY",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 17,
+          "photo_subject": "Serene Spa Treatment Room with Natural Elements",
+          "bullet_points": [
+            "Strategic Placement: Showcases a key amenity (the spa) that is highly relevant to the 'Country House & Spa' branding and traveler expectations.",
+            "Local Synergy: Directly addresses the demand for wellness and relaxation experiences, a significant draw for visitors to a tranquil natural area.",
+            "Conversion Trigger: Highlights a unique selling proposition and enhances the perception of a holistic, restorative stay."
+          ],
+          "psychological_conversion_trigger": "Highlights a core amenity (the spa) that aligns with the property's name and traveler desire for wellness and relaxation.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE SERENE SPA TREATMENT ROOM (FROM SLOT #17)",
+          "current_slot": 17,
+          "local_vibe_connection": "Captures the essence of a restorative escape, a key aspect of the Sundays River Valley experience beyond just safaris.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #17): This photo is promoted to Slot #4 to prominently feature the spa, a critical component of the property's identity and a strong draw for guests seeking relaxation.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 5,
+          "category": "EXTERIOR_LANDMARK",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 2,
+          "photo_subject": "Exterior View of Woodall Country House & Spa with Gardens",
+          "bullet_points": [
+            "Strategic Placement: Grounds the property geographically and provides a sense of arrival, completing the visual journey.",
+            "Local Synergy: Shows the harmonious integration of the country house architecture with the natural landscape of the Sundays River Valley.",
+            "Conversion Trigger: Eliminates location anxiety and reinforces the authentic 'country house' aesthetic."
+          ],
+          "psychological_conversion_trigger": "Provides essential geographic context and reinforces the authentic 'country house' aesthetic, solidifying the booking decision.",
+          "action": "DEMOTE",
+          "action_label": "DEMOTE EXTERIOR VIEW (FROM SLOT #2)",
+          "current_slot": 2,
+          "local_vibe_connection": "Connects the property's physical presence to the natural, rural charm of the Addo region, appealing to those seeking an authentic South African experience.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #2): This photo is moved to Slot #5 to provide a clear sense of place and arrival after the internal amenities and experiences have been showcased, effectively grounding the guest's mental map.",
+          "photo_url": null,
+          "image_url": null
+        }
+      ],
+      "anti_commodity_copy_rewrite": {
+        "ota_headline": "Woodall Country House & Spa: Luxurious Addo Oasis with Safari Access & Serene Wellness",
+        "property_overview_150_words": "Nestled on a peaceful citrus farm in the heart of the Sundays River Valley, Woodall Country House & Spa offers a 5-star escape adjacent to Addo Elephant National Park. Experience luxurious, owner-run hospitality with attentive local staff, elegant suites, and a tranquil spa. Our expansive outdoor pool and lush gardens provide a serene oasis, perfect for unwinding after a day of wildlife adventures. Enjoy exceptional dining and a warm, inviting atmosphere that blends English charm with authentic South African warmth, making every stay feel like paradise."
+      },
+      "photographic_gap_analysis": [
+        {
+          "missing_shot_title": "Twilight Golden Hour Aperitivo at the Bar",
+          "category": "ATMOSPHERIC_TWILIGHT",
+          "why_needed": "Currently, there isn't a strong visual that captures the inviting, sophisticated evening atmosphere of the bar area, which is a key social hub. This shot would appeal to guests looking for relaxed evening entertainment and a sense of refined leisure.",
+          "recommended_framing_and_lighting": "Warm 2700K ambient lighting, eye-level shot of guests enjoying drinks at the bar, with soft reflections on glassware and a hint of the golden hour glow through a window or open door.",
+          "projected_adr_impact": "+8% higher F&B spend and increased evening social engagement."
+        },
+        {
+          "missing_shot_title": "Creator-Friendly Master Bathroom Soaking Tub with Natural Light",
+          "category": "CREATOR_BATHROOM",
+          "why_needed": "While a bathroom shot exists, a more aspirational, well-lit image of a soaking tub with natural light would capture the growing demand for 'self-care' and 'wellness' content, appealing to a broader, visually-driven audience.",
+          "recommended_framing_and_lighting": "Wide-angle shot from a slightly elevated perspective, showcasing a freestanding tub with soft, diffused natural light, perhaps with a subtle botanical element. Focus on clean lines and luxurious textures.",
+          "projected_adr_impact": "+10% higher suite booking velocity and increased social media shares."
+        },
+        {
+          "missing_shot_title": "Authentic Farm-to-Table Dining Experience",
+          "category": "CULINARY_SOCIAL",
+          "why_needed": "The property emphasizes its location on a citrus farm and excellent dinner, but lacks a compelling visual that highlights the farm-to-table culinary experience. This would attract food-focused travelers and showcase local authenticity.",
+          "recommended_framing_and_lighting": "Close-up to mid-shot of beautifully plated dishes, perhaps with a soft-focus background of the dining area or a hint of the farm. Emphasize fresh ingredients and elegant presentation under warm, inviting light.",
+          "projected_adr_impact": "+7% increase in direct bookings from culinary travelers and enhanced perception of local authenticity."
+        }
+      ],
+      "conversion_diagnosis": "The current Booking.com sequence buries the property's unique 'country house & spa' essence and its connection to the Addo region's natural beauty. By leading with the serene pool oasis and strategically placing key amenities like the spa and elegant rooms, the audit aims to immediately capture the emotional desire for a luxurious, tranquil escape, while also grounding the property geographically. The lack of strong evening social and specific culinary visuals also represents a missed opportunity to engage high-value traveler segments.",
+      "local_vibe_synergy_context": "The Sundays River Valley and Addo region are primarily known for wildlife safaris and natural tranquility. Travelers seek luxurious, comfortable accommodations that offer a peaceful retreat after adventurous days. The photo recommendations prioritize visuals that convey serenity, high-end relaxation (pool, spa, elegant rooms), and the property's harmonious integration with its natural surroundings, directly aligning with the local subcultures of 'Safari & Nature Immersion' and 'Restorative Wellness'.",
+      "slot_1_decision_logic": {
+        "is_magnet_override_active": false,
+        "reasoning_code": "DEFAULT_RETAINED_HIGH_AFFINITY_POOL",
+        "strategy_explanation": "While Woodall Country House & Spa possesses a strong signature outdoor pool, it does not meet the 'Destination Power Check' as a standalone attraction for non-hotel locals. However, the existing Slot #1 (Outdoor Pool) is highly effective at conveying the property's core value proposition of a serene, luxurious oasis, which strongly aligns with the local traveler search for relaxation and natural beauty post-safari. Therefore, the default hero (Outdoor Pool) is retained due to its high neighborhood affinity and strong visual impact.",
+        "neighborhood_affinity_index": 0.88,
+        "override_asset_name": "N/A"
+      },
+      "photos_status": "PENDING"
+    },
+    "audit_timestamp": "2026-11-12T21:55:28.165Z"
+  }
+}

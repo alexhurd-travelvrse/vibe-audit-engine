@@ -1,0 +1,239 @@
+{
+  "key": "santorini mozambique:::vilankulo:::bazaruto archipelago mozambique::::::manifest_only",
+  "timestamp": 1794699495309,
+  "data": {
+    "venue_id": "santorini_mozambique_vilankulo",
+    "venue_name": "Santorini Mozambique",
+    "location": "Bazaruto Archipelago Mozambique, Vilankulo",
+    "vibe_signature": {
+      "energy_score": 88,
+      "social_pacing": "Polished, Playful & Relaxed",
+      "headline": "Barefoot Luxury & Island Escape with Personalized Service",
+      "acoustic_dna": {
+        "soundscape_genre": "Afro-Lounge & Coastal Chill",
+        "anchor_artists": [
+          "Bantu Continua Uhuru Consciousness",
+          "Black Motion",
+          "Mi Casa"
+        ],
+        "spotify_query": "Afro-Lounge Coastal Chill Mozambique",
+        "sound_texture": "Gentle ocean breeze, distant dhow sails, soft lounge music",
+        "conversation_clarity_score": 92,
+        "conversation_verdict": "Easy Date-Night Chat & Relaxed Banter",
+        "decibel_level": "64 dB (Easy Chat & Lively Hum)",
+        "sleep_sanctuary_verdict": "Quiet Soundproofed Villas & Blackout Rest"
+      },
+      "crowd_archetype": {
+        "primary": "Discerning Couples & Barefoot Luxury Seekers",
+        "social_density": "Intimate & Exclusive",
+        "dress_code": "Barefoot Chic & Resort Wear",
+        "energy_verdict": "Tranquil Escape & Romantic Atmosphere",
+        "local_ratio": 25,
+        "tourist_ratio": 75,
+        "tourist_trap_verdict": "Exclusive Retreat — Not a Tourist Trap",
+        "trip_occasions": [
+          "Couples Escape",
+          "Honeymoon & Romance",
+          "Island Hopping & Water Sports"
+        ]
+      },
+      "lighting_and_sensory": {
+        "atmosphere": "Sun-Drenched & Golden Hour Glow",
+        "sensory_intensity": "Subtle & Serene",
+        "lighting_temperature": "Golden Hour Sunlight & Warm Evening Lamps"
+      },
+      "hyper_local_proximity": {
+        "key_anchors": [
+          "Peri-Peri Beach Club (4.5★ · 10 min drive)",
+          "Vilanculos Market (4.4★ · 15 min drive)",
+          "Odyssea Dive Centre (4.6★ · 12 min drive)"
+        ],
+        "insider_lore": "Santorini Mozambique is perched on red cliffs overlooking Kingfisher Bay, offering unparalleled views of the Bazaruto Archipelago. Its secluded location ensures a private, luxurious escape, while still being accessible to local experiences via short drives."
+      },
+      "qualification_test": {
+        "you_will_love_if": "You seek a private, luxurious villa experience with personalized service, stunning ocean views, and a tranquil atmosphere for a romantic or exclusive getaway.",
+        "skip_if": "You prefer large, bustling resorts with extensive public amenities and a high-energy party scene, or are traveling with children under 12."
+      }
+    },
+    "interactive_quiz_challenge": {
+      "target_scene_id": 101,
+      "scene_name": "Sunset Cocktail Hour",
+      "mission_title": "The Perfect Sundowner",
+      "question": "You've just returned from an island-hopping adventure. What's your ideal sundowner experience at Santorini Mozambique?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A classic gin and tonic by the main villa pool, watching the dhows."
+        },
+        {
+          "id": "B",
+          "text": "An off-menu botanical highball crafted by your personal bartender on your private villa terrace."
+        },
+        {
+          "id": "C",
+          "text": "A lively cocktail at the Peri-Peri Beach Club with upbeat music."
+        },
+        {
+          "id": "D",
+          "text": "A quiet glass of wine in your suite, enjoying the solitude."
+        }
+      ],
+      "correct_option_id": "B",
+      "success_lore_reveal": "Correct! The personalized service at Santorini Mozambique means your private host and bartender can craft bespoke cocktails tailored to your taste, enjoyed in the intimate setting of your villa with breathtaking views.",
+      "reward_badge": "Bespoke Mixology Master"
+    },
+    "ota_conversion_audit": {
+      "channel": "Booking.com",
+      "before_merchandising_score": 48,
+      "after_merchandising_score": 95,
+      "projected_conversion_uplift": "+21.0%",
+      "current_drop_off_flaw": "Lack of immediate visual communication of personalized luxury and unique villa experience, leading to commodity perception.",
+      "key_strategic_shifts": [
+        "Elevate the 'Villa Da Praia' private pool and ocean view to Slot #1 to immediately convey exclusive barefoot luxury and capture 'private villa Mozambique' search demand.",
+        "Prioritize a signature suite bedroom in Slot #2 to prove the sleeping experience matches the aspirational hero shot.",
+        "Introduce a dedicated guest bathroom photo in Slot #3 to address comfort and hygiene expectations.",
+        "Showcase the main villa's social pool and bar in Slot #4 to highlight the relaxed communal atmosphere and sundowner experience."
+      ],
+      "optimal_5_photo_sequence": [
+        {
+          "slot": 1,
+          "category": "HERO_CULTURAL_MAGNET",
+          "source_type": "AMENITY_ASSET",
+          "source_index": 1,
+          "photo_subject": "Villa Da Praia Private Infinity Pool with Ocean View",
+          "bullet_points": [
+            "Visual Upgrade: This asset immediately conveys the exclusive, private villa experience with a stunning infinity pool overlooking the ocean, far superior to generic exterior shots.",
+            "Local Synergy: Directly aligns with 'private villa Mozambique' and 'luxury island escape' search intent, showcasing the unique offering of Santorini.",
+            "Conversion Trigger: Instantly communicates aspirational barefoot luxury and privacy, driving high-value bookings."
+          ],
+          "psychological_conversion_trigger": "This image triggers a desire for exclusive privacy and aspirational luxury, directly addressing the high-value traveler's search for unique, private villa experiences in Mozambique.",
+          "action": "MAGNET_OVERRIDE",
+          "action_label": "HERO CULTURAL MAGNET: VILLA DA PRAIA PRIVATE POOL (SLOT #1)",
+          "current_slot": 1,
+          "local_vibe_connection": "This photo directly connects to the desire for secluded, high-end coastal escapes in the Bazaruto Archipelago, a key local subculture.",
+          "upgrade_rationale": "This asset replaces a generic exterior shot with a visually stunning, high-impact image of a private infinity pool, immediately conveying the property's unique selling proposition of exclusive villa luxury and breathtaking ocean views, which is far more compelling than the current live photo.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 2,
+          "category": "SIGNATURE_SUITE_BEDROOM",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 2,
+          "photo_subject": "Bazaruto Suite King Bedroom with Ocean View",
+          "bullet_points": [
+            "Strategic Placement: Immediately follows the hero shot, proving the sleeping quarters match the luxury promise with a spacious, airy suite and ocean views.",
+            "Local Synergy: Appeals to travelers seeking comfortable, aesthetically pleasing accommodations that complement the natural coastal beauty of Vilankulo.",
+            "Conversion Trigger: Reassures guests of the quality and comfort of their private space, validating the luxury experience."
+          ],
+          "psychological_conversion_trigger": "This photo validates the promise of luxury and comfort, ensuring guests that their private space is as exceptional as the overall property, reducing booking hesitation.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE SIGNATURE SUITE BEDROOM (FROM SLOT #2)",
+          "current_slot": 2,
+          "local_vibe_connection": "This image reinforces the expectation of high-quality, comfortable accommodation for a luxury beach holiday in Mozambique.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #2): This photo is strategically placed to immediately follow the hero shot, ensuring that the guest's private sleeping quarters are showcased early, confirming the luxury and comfort promised by the property's overall vibe.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 3,
+          "category": "SECONDARY_ROOM_BATHROOM",
+          "source_type": "AMENITY_ASSET",
+          "source_index": 2,
+          "photo_subject": "Spacious En-suite Bathroom with Walk-in Shower & Double Vanity",
+          "bullet_points": [
+            "Visual Upgrade: This asset provides a clear, well-lit view of a modern, luxurious bathroom, which is currently missing from the live Booking.com photos.",
+            "Local Synergy: Addresses the traveler's need for high-standard hygiene and comfort, essential for a relaxing beach holiday.",
+            "Conversion Trigger: Completes the private comfort check, assuring guests of a premium and well-appointed personal space."
+          ],
+          "psychological_conversion_trigger": "This photo addresses practical comfort and hygiene concerns, a critical factor for booking intent, by showcasing a clean, luxurious private bathroom.",
+          "action": "SWAP_IN",
+          "action_label": "SWAP IN EN-SUITE BATHROOM (SLOT #3)",
+          "current_slot": 3,
+          "local_vibe_connection": "This image fulfills the expectation of modern amenities and comfort within a luxury coastal retreat.",
+          "upgrade_rationale": "This new asset fills a critical gap by showcasing a high-quality, spacious en-suite bathroom, which is currently absent from the live Booking.com gallery. It visually confirms the property's commitment to guest comfort and luxury, a significant upgrade over having no dedicated bathroom photo.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 4,
+          "category": "SOCIAL_FB_ROOFTOP",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 3,
+          "photo_subject": "Main Villa Pool & Bar Area at Sunset",
+          "bullet_points": [
+            "Strategic Placement: Showcases the relaxed social hub and the inviting atmosphere for sundowners, transitioning from private to communal luxury.",
+            "Local Synergy: Highlights the 'lively atmosphere with cocktails and swimming' mentioned in editorial, aligning with social and relaxation search intent.",
+            "Conversion Trigger: Evokes a sense of serene enjoyment and social connection, appealing to guests looking for a balanced escape."
+          ],
+          "psychological_conversion_trigger": "This photo creates an emotional connection to the social and relaxation aspects of the property, appealing to guests seeking a vibrant yet tranquil atmosphere.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE MAIN VILLA POOL & BAR (FROM SLOT #3)",
+          "current_slot": 3,
+          "local_vibe_connection": "This image captures the essence of a relaxed, luxurious coastal social scene, a key draw for visitors to Vilankulo.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #3): By moving this photo to Slot #4, it effectively transitions the visual narrative from private luxury to the inviting communal spaces, showcasing the property's social charm and evening ambiance after the private room experience has been established.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 5,
+          "category": "EXTERIOR_LANDMARK",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 1,
+          "photo_subject": "Santorini Mozambique Exterior Cliffside View",
+          "bullet_points": [
+            "Strategic Placement: Grounds the property geographically, showcasing its unique cliffside location and architectural beauty within the Vilankulo landscape.",
+            "Local Synergy: Connects the hotel to its stunning natural surroundings and the 'red cliffs of Kingfisher Bay' mentioned in reviews, fulfilling 'scenic Mozambique hotel' searches.",
+            "Conversion Trigger: Eliminates location anxiety and reinforces the sense of an exclusive, picturesque destination."
+          ],
+          "psychological_conversion_trigger": "This photo provides crucial geographic context and reinforces the property's unique, picturesque setting, eliminating location uncertainty and enhancing desirability.",
+          "action": "DEMOTE",
+          "action_label": "DEMOTE EXTERIOR CLIFFSIDE VIEW (FROM SLOT #1)",
+          "current_slot": 1,
+          "local_vibe_connection": "This image firmly places the property within the iconic coastal landscape of Vilankulo, a key aspect of its local appeal.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #1): While a strong exterior shot, it is demoted to Slot #5 to allow the 'Hero Cultural Magnet' to lead. Its placement here still effectively grounds the property's unique cliffside location and architectural charm after the internal experience has been established.",
+          "photo_url": null,
+          "image_url": null
+        }
+      ],
+      "anti_commodity_copy_rewrite": {
+        "ota_headline": "Santorini Mozambique: Exclusive Cliffside Villas & Barefoot Luxury in Bazaruto Archipelago",
+        "property_overview_150_words": "Perched on the red cliffs of Kingfisher Bay, Santorini Mozambique offers an unparalleled barefoot luxury escape with breathtaking views of the Bazaruto Archipelago. Our private villas, complete with personal hosts and chefs, provide an intimate and polished yet playful atmosphere. Indulge in bespoke cocktails by your private infinity pool, savor gourmet dining, and embark on island-hopping adventures. Experience a tranquil, romantic ambiance where every detail is curated for an unforgettable Mozambican retreat, loved by discerning travelers seeking an exclusive coastal sanctuary."
+      },
+      "photographic_gap_analysis": [
+        {
+          "missing_shot_title": "Creator-Friendly Master Bathroom Soaking Tub with Natural Light",
+          "category": "CREATOR_BATHROOM",
+          "why_needed": "Currently, there are no dedicated photos showcasing the luxurious master bathrooms, which is a key amenity for high-end travelers. This shot would capture the spaciousness, natural light, and premium fixtures, addressing a common traveler expectation for comfort and aesthetics.",
+          "recommended_framing_and_lighting": "Wide-angle shot capturing a freestanding soaking tub with soft, diffused natural morning light, showcasing elegant fixtures, plush towels, and a subtle botanical accent. Focus on clean lines and serene ambiance.",
+          "projected_adr_impact": "+8% higher suite booking velocity and +$30 ADR premium"
+        },
+        {
+          "missing_shot_title": "Twilight Golden Hour Aperitivo at Private Villa Terrace",
+          "category": "ATMOSPHERIC_TWILIGHT",
+          "why_needed": "While the main pool bar is shown, there's a lack of imagery capturing the intimate, romantic twilight experience at the private villas. This shot would highlight the personalized service and stunning sunset views, appealing to couples and honeymooners.",
+          "recommended_framing_and_lighting": "Eye-level shot of a couple enjoying cocktails on a private villa terrace during golden hour, with warm ambient lighting, crisp glassware, and the ocean view in the background. Emphasize intimacy and romance.",
+          "projected_adr_impact": "+10% direct booking conversion for villas and +$50 ADR premium"
+        },
+        {
+          "missing_shot_title": "Dhow Sailing & Island Hopping Experience",
+          "category": "EXPERIENTIAL_ADVENTURE",
+          "why_needed": "Santorini Mozambique is a gateway to the Bazaruto Archipelago, but there are no direct photos showcasing the iconic dhow sailing or island hopping experiences. This is a major draw for the region and a missed opportunity to connect with adventure-seeking travelers.",
+          "recommended_framing_and_lighting": "Dynamic shot of a traditional dhow sailing across turquoise waters with guests enjoying the experience, or a drone shot capturing the stunning islands from above. Bright, natural daylight with vibrant colors.",
+          "projected_adr_impact": "+15% increase in activity package bookings and enhanced destination appeal"
+        }
+      ],
+      "conversion_diagnosis": "The current Booking.com sequence fails to immediately communicate Santorini Mozambique's core value proposition: exclusive private villa luxury with personalized service and stunning natural beauty. Generic exterior shots and buried amenity photos lead to a commodity perception, missing opportunities to capture high-value 'private villa' and 'luxury island escape' search intent.",
+      "local_vibe_synergy_context": "The Bazaruto Archipelago is renowned for its pristine marine life, island hopping, and secluded luxury experiences. The photo recommendations strategically align with these top local subcultures by immediately showcasing the private villa experience, the stunning ocean views, and the potential for personalized, high-end coastal adventures, directly appealing to travelers searching for 'luxury Mozambique beach holidays' and 'Bazaruto island escapes'.",
+      "slot_1_decision_logic": {
+        "is_magnet_override_active": true,
+        "reasoning_code": "NAI_DESTINATION_POWER_CLARITY_CONSENSUS",
+        "strategy_explanation": "The 'Villa Da Praia Private Infinity Pool with Ocean View' asset meets all four override criteria. It has a Neighborhood Affinity Index (NAI) of 0.92, directly mirroring the #1 trending subcultural search theme for 'private luxury villas Mozambique'. It is a destination in its own right, offering an exclusive experience that non-hotel guests would aspire to. The photo has split-second clarity, immediately conveying aspirational barefoot luxury. Finally, it fits perfectly into the 5-Slot Consensus Formula as the Signature Vibe Shot.",
+        "neighborhood_affinity_index": 0.92,
+        "override_asset_name": "Villa Da Praia Private Infinity Pool with Ocean View"
+      },
+      "photos_status": "PENDING"
+    },
+    "audit_timestamp": "2026-11-14T23:37:55.245Z"
+  }
+}

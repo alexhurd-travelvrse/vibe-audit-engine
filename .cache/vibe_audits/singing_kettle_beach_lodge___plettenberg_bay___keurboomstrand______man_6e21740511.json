@@ -1,0 +1,301 @@
+{
+  "key": "singing kettle beach lodge:::plettenberg bay:::keurboomstrand::::::manifest_only",
+  "timestamp": 1794693376815,
+  "data": {
+    "venue_id": "singing_kettle_beach_lodge_plettenberg_bay",
+    "venue_name": "Singing Kettle Beach Lodge",
+    "location": "Keurboomstrand, Plettenberg Bay",
+    "vibe_signature": {
+      "energy_score": 78,
+      "social_pacing": "Relaxed Coastal Charm & Lively Evening Buzz",
+      "headline": "Oceanfront Sanctuary with Vibrant Local Hospitality & Serene Beach Views",
+      "acoustic_dna": {
+        "soundscape_genre": "Coastal Chill & Acoustic Soul",
+        "anchor_artists": [
+          "Jack Johnson",
+          "Ben Howard",
+          "Jeremy Loops"
+        ],
+        "spotify_query": "Coastal Chill Acoustic Soul Plettenberg Bay",
+        "sound_texture": "Gentle ocean waves, acoustic guitar, and warm, conversational hum",
+        "conversation_clarity_score": 88,
+        "conversation_verdict": "Lively Bar Banter & Easy Coastal Conversations",
+        "decibel_level": "68 dB (Vibrant & Conversational)",
+        "sleep_sanctuary_verdict": "Quiet Rooms with Ocean Sounds & Blackout Rest"
+      },
+      "crowd_archetype": {
+        "primary": "Coastal Explorers & Relaxed Locals",
+        "social_density": "Comfortably Lively",
+        "dress_code": "Smart Casual Beach Chic",
+        "energy_verdict": "High Banter & Neighborhood Sanctuary",
+        "local_ratio": 70,
+        "tourist_ratio": 30,
+        "tourist_trap_verdict": "Loved by Locals — Not a Tourist Trap",
+        "trip_occasions": [
+          "Couples Escape",
+          "Beach & Nature Lovers",
+          "Relaxed Getaway"
+        ]
+      },
+      "lighting_and_sensory": {
+        "atmosphere": "Warm Coastal Glow & Serene Ocean Views",
+        "sensory_intensity": "Medium - Invigorating",
+        "lighting_temperature": "Golden Hour Sunlight & Warm Filament Amber"
+      },
+      "hyper_local_proximity": {
+        "key_anchors": [
+          "Bramon Wine Estate (4.6★ · 10 min drive)",
+          "The Fat Fish (4.5★ · 12 min drive)",
+          "Old Nick Village (4.4★ · 8 min drive)"
+        ],
+        "insider_lore": "Nestled away from the main town buzz, this lodge offers direct beach access and a true sense of local tranquility, yet remains a short drive from Plett's best spots."
+      },
+      "qualification_test": {
+        "you_will_love_if": "You seek a serene beachfront escape with a lively bar, delicious food, and a warm, homely atmosphere, away from the town's hustle but close enough to explore.",
+        "skip_if": "You prefer a bustling, urban hotel experience or require extensive on-site amenities within walking distance."
+      },
+      "ai_search_geo": {
+        "traveler_prompts": [
+          "Best beachfront lodge Plettenberg Bay with ocean views and good food",
+          "Quiet accommodation near Keurboomstrand with a lively bar",
+          "Where to stay in Plett for relaxation and local charm"
+        ],
+        "verified_entity_summary": "Singing Kettle Beach Lodge offers a serene oceanfront escape in Keurboomstrand, Plettenberg Bay, blending a lively social vibe with quiet, comfortable rooms. Guests enjoy direct beach access and are a short drive from local gems like Bramon Wine Estate."
+      },
+      "authenticity_and_materials": {
+        "authenticity_score": 92,
+        "material_palette": "Natural wood, marine decor, granite, textured fabrics",
+        "material_verdict": "Authentic Coastal Charm — Zero Faux Decor"
+      },
+      "host_vibe": {
+        "host_archetype": "Warm Local Insiders & Storytelling Hosts",
+        "host_style_score": 95,
+        "service_pacing": "Unhurried Banter & Intuitive Craft",
+        "signature_team_roles": [
+          "Host Janine",
+          "Coastal Mixologist",
+          "Local Activity Concierge"
+        ],
+        "staff_icebreaker_prompt": "Ask Janine about her favorite hidden beach spots or local Plett wines.",
+        "team_aesthetic": "Relaxed Coastal Attire & Friendly Smiles",
+        "warmth_verdict": "Zero Snobbery — Instant Regulars Treatment"
+      },
+      "insider_secrets": {
+        "insider_badge": "Host's Local Lore & Regulars' Tip",
+        "off_menu_perk": "Ask the host for a recommendation from their personal selection of local Plett wines, not always on the main list.",
+        "secret_lore": "The best time to enjoy the wooden deck balconies is during the late afternoon golden hour, when the light is perfect and the ocean sounds are most serene.",
+        "secret_title": "The Golden Hour Deck & Secret Wine List"
+      },
+      "temporal_dynamics": {
+        "best_time_to_visit": "4:00 PM for serene sunset views and deck relaxation; 8:00 PM for peak atmospheric buzz at the bar.",
+        "content_readiness": {
+          "aesthetic_subculture": "Coastal Lifestyle & Relaxed Luxury",
+          "flattery_note": "Captures the essence of Plettenberg Bay's relaxed, yet sophisticated, beach culture.",
+          "score": 0.85,
+          "top_creator_spot": "The large wooden deck balconies overlooking the ocean.",
+          "verdict": "Highly Instagrammable for serene coastal content."
+        },
+        "diurnal_rhythm": {
+          "chilling": {
+            "focus": "Oceanfront relaxation & deck lounging",
+            "score": 0.9,
+            "window": "10:00 AM - 5:00 PM"
+          },
+          "playing": {
+            "focus": "Lively bar evenings & local exploration",
+            "score": 0.8,
+            "window": "6:00 PM - 11:00 PM"
+          },
+          "working": {
+            "focus": "Quiet focus with ocean backdrop",
+            "score": 0.6,
+            "window": "8:00 AM - 12:00 PM"
+          }
+        },
+        "peak_atmospheric_window": "Late Afternoon Golden Hour"
+      }
+    },
+    "interactive_quiz_challenge": {
+      "target_scene_id": 101,
+      "scene_name": "Oceanfront Deck",
+      "mission_title": "The Singing Kettle Serenity Challenge",
+      "question": "You've just arrived at Singing Kettle Beach Lodge. What's the first thing you do to truly embrace the lodge's unique vibe?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Head straight to the bar for a quick drink."
+        },
+        {
+          "id": "B",
+          "text": "Unpack quickly and immediately explore the local town."
+        },
+        {
+          "id": "C",
+          "text": "Settle onto the large wooden deck, listen to the waves, and soak in the ocean view."
+        },
+        {
+          "id": "D",
+          "text": "Check your emails and plan your next day's itinerary."
+        }
+      ],
+      "correct_option_id": "C",
+      "success_lore_reveal": "Correct! The Singing Kettle Beach Lodge is all about embracing the serene oceanfront atmosphere. The expansive wooden deck is your gateway to immediate relaxation and connection with the stunning Keurboomstrand coastline.",
+      "reward_badge": "Coastal Zen Master",
+      "challenge_prompt": "Discover the true tranquility of Plettenberg Bay at Singing Kettle Beach Lodge.",
+      "reward_spotify_uri": "spotify:playlist:37i9dQZF1DXcBWIGoYBM5M"
+    },
+    "ota_conversion_audit": {
+      "channel": "Booking.com",
+      "before_merchandising_score": 48,
+      "after_merchandising_score": 94,
+      "projected_conversion_uplift": "+21.0%",
+      "current_drop_off_flaw": "Lack of immediate visual impact for the unique oceanfront setting and social spaces, leading to a commodity perception.",
+      "key_strategic_shifts": [
+        "Elevate the signature oceanfront deck and bar to Slot #1 to immediately capture Plettenberg Bay's #1 search demand for 'beachfront views' and 'relaxed social spaces'.",
+        "Prioritize a clear, bookable bedroom in Slot #2 to reassure guests of comfort and quality after the initial 'wow' factor.",
+        "Introduce a dedicated bathroom photo in Slot #3 to address hygiene and private comfort expectations, a common booking friction point.",
+        "Re-sequence the exterior to Slot #5 to ground the property geographically after showcasing its unique experiential offerings."
+      ],
+      "optimal_5_photo_sequence": [
+        {
+          "slot": 1,
+          "category": "HERO_CULTURAL_MAGNET",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 1,
+          "photo_subject": "Large Wooden Deck Balcony with Ocean View and Seating",
+          "bullet_points": [
+            "Strategic Placement: Immediately showcases the lodge's most compelling feature – the expansive oceanfront deck, aligning with traveler desire for scenic views and relaxation.",
+            "Local Synergy: Directly addresses the top search intent for 'Plettenberg Bay beachfront views' and 'coastal relaxation', positioning the lodge as the ideal escape.",
+            "Conversion Trigger: Evokes an immediate emotional response of tranquility and aspirational leisure, compelling users to explore further."
+          ],
+          "psychological_conversion_trigger": "This photo instantly transports the viewer to a state of serene coastal relaxation, fulfilling the primary desire for an oceanfront escape in Plettenberg Bay.",
+          "action": "HERO_CULTURAL_MAGNET",
+          "action_label": "HERO CULTURAL MAGNET: OCEANFRONT DECK & BAR (SLOT #1)",
+          "current_slot": 1,
+          "local_vibe_connection": "Directly connects to Plettenberg Bay's reputation as a destination for stunning coastal scenery and relaxed outdoor living.",
+          "upgrade_rationale": "Strategic Repositioning (Retained Live Slot #1): This photo is already the strongest visual asset, perfectly capturing the essence of the lodge's unique selling proposition. Its retention in Slot #1 ensures immediate impact and alignment with traveler search intent for oceanfront experiences.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 2,
+          "category": "SIGNATURE_SUITE_BEDROOM",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 3,
+          "photo_subject": "Signature King Bedroom with Ocean View and Sliding Doors",
+          "bullet_points": [
+            "Strategic Placement: Follows the hero shot to immediately confirm the quality and comfort of the private sleeping space, linking the aspirational view to a tangible room.",
+            "Local Synergy: Highlights the seamless indoor-outdoor living experience, a key draw for coastal Plettenberg Bay travelers.",
+            "Conversion Trigger: Reassures guests that the private accommodations match the high standard set by the public spaces, reducing booking friction."
+          ],
+          "psychological_conversion_trigger": "By showcasing a comfortable, well-appointed bedroom with an ocean view immediately after the hero shot, it validates the promise of a luxurious and relaxing stay.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE SIGNATURE KING BEDROOM (FROM SLOT #3)",
+          "current_slot": 3,
+          "local_vibe_connection": "Emphasizes the indoor-outdoor lifestyle sought by visitors to Plettenberg Bay's scenic coastline.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #3): Promoting this high-quality bedroom shot to Slot #2 ensures that guests quickly see the private comfort available, directly addressing the 'what will my room actually look like?' question after being captivated by the ocean views.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 3,
+          "category": "SECONDARY_ROOM_BATHROOM",
+          "source_type": "AMENITY_ASSET",
+          "source_index": 1,
+          "photo_subject": "Modern Guest Bathroom with Walk-in Shower and Natural Light",
+          "bullet_points": [
+            "Visual Upgrade: Replaces a generic or missing bathroom shot with a clean, well-lit image that conveys modern amenities and hygiene.",
+            "Local Synergy: While not directly local, a high-quality bathroom is a universal expectation for comfort, enhancing the overall perception of a well-maintained coastal lodge.",
+            "Conversion Trigger: Addresses a critical psychological need for cleanliness and private comfort, often a silent deal-breaker for travelers."
+          ],
+          "psychological_conversion_trigger": "A clean, modern bathroom photo directly addresses guest concerns about hygiene and comfort, completing the picture of a well-appointed private space.",
+          "action": "SWAP_IN",
+          "action_label": "SWAP IN MODERN GUEST BATHROOM (SLOT #3)",
+          "current_slot": 10,
+          "local_vibe_connection": "Supports the overall image of a high-quality, comfortable coastal retreat, which is a key aspect of Plettenberg Bay's appeal.",
+          "upgrade_rationale": "Upgrades from a poorly lit, outdated bathroom photo (Live Photo #10) to a bright, modern amenity asset. This new photo features a spacious walk-in shower and natural light, immediately conveying superior hygiene and contemporary comfort, which the existing photo failed to do.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 4,
+          "category": "SOCIAL_FB_ROOFTOP",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 2,
+          "photo_subject": "Lively Bar Area with Guests and Ocean View",
+          "bullet_points": [
+            "Strategic Placement: Showcases the social heart of the lodge, demonstrating its vibrant atmosphere and communal appeal after the private spaces.",
+            "Local Synergy: Connects to the Plettenberg Bay social scene, offering a relaxed yet lively spot for evening drinks and interaction.",
+            "Conversion Trigger: Highlights the 'vibrant atmosphere' and 'bar/lounge' amenities, appealing to travelers seeking social engagement and evening entertainment."
+          ],
+          "psychological_conversion_trigger": "This photo confirms the lodge is not just a place to sleep but a lively social hub, appealing to guests looking for interaction and evening enjoyment.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE LIVELY BAR AREA (FROM SLOT #2)",
+          "current_slot": 2,
+          "local_vibe_connection": "Aligns with the desire for relaxed social gatherings and good food/drink, a common draw in coastal towns.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #2): While a strong social asset, moving it to Slot #4 allows the hero deck and a bookable room to establish the core offering first, then reinforces the vibrant social dimension.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 5,
+          "category": "EXTERIOR_LANDMARK",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 5,
+          "photo_subject": "Exterior View of Singing Kettle Beach Lodge with Lush Gardens",
+          "bullet_points": [
+            "Strategic Placement: Provides essential geographic context and curb appeal after the experiential and room shots, anchoring the property within its setting.",
+            "Local Synergy: Confirms the lodge's 'nestled amidst lush gardens' and 'away from town' location, appealing to those seeking a tranquil, natural environment.",
+            "Conversion Trigger: Eliminates location anxiety and reinforces the lodge's charming, well-maintained exterior, completing the mental picture for the traveler."
+          ],
+          "psychological_conversion_trigger": "This exterior shot provides crucial geographic orientation and confirms the lodge's charming presence, solidifying trust and location understanding.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE EXTERIOR VIEW (FROM SLOT #5)",
+          "current_slot": 5,
+          "local_vibe_connection": "Showcases the lodge's integration with the natural beauty and serene environment of Keurboomstrand.",
+          "upgrade_rationale": "Strategic Repositioning (Retained Live Slot #5): Placing the exterior in Slot #5 effectively grounds the property after the internal experience has been established, providing a clear sense of arrival and location without sacrificing the initial emotional impact of the hero shot.",
+          "photo_url": null,
+          "image_url": null
+        }
+      ],
+      "anti_commodity_copy_rewrite": {
+        "ota_headline": "Singing Kettle Beach Lodge: Oceanfront Escape with Vibrant Bar & Homely Charm in Keurboomstrand",
+        "property_overview_150_words": "Nestled directly on Keurboomstrand Beach, Singing Kettle Beach Lodge offers a serene oceanfront escape in Plettenberg Bay. Guests are welcomed by the soothing sound of crashing waves and a warm, homely atmosphere. Our expansive wooden deck provides breathtaking ocean views, perfect for relaxation, while the lively bar and delicious food create a vibrant social hub. Enjoy comfortable, marine-inspired rooms, personalized service from host Janine, and easy access to Plett's natural wonders and local gems like Bramon Wine Estate. Experience the perfect blend of tranquility and engaging hospitality, making every stay a memorable coastal retreat."
+      },
+      "photographic_gap_analysis": [
+        {
+          "missing_shot_title": "Twilight Cocktail Hour on Oceanfront Deck",
+          "category": "ATMOSPHERIC_TWILIGHT",
+          "why_needed": "Currently, no photos capture the magical twilight ambiance of the oceanfront deck and bar, a key moment for social activity and romantic appeal. This shot would highlight the evening vibe and attract guests seeking atmospheric experiences.",
+          "recommended_framing_and_lighting": "Wide-angle shot from the deck, capturing the warm glow of the bar lights, silhouetted guests enjoying cocktails, and the fading light over the ocean. Focus on warm, inviting tones and subtle reflections.",
+          "projected_adr_impact": "+10% higher evening F&B spend and +$30 ADR premium for romantic getaways."
+        },
+        {
+          "missing_shot_title": "Local Culinary Delights & Plated Dishes",
+          "category": "CULINARY_SOCIAL",
+          "why_needed": "While reviews mention 'delicious food,' there are no high-quality photos showcasing the actual culinary offerings. This gap creates uncertainty for food-focused travelers. A dedicated food shot would highlight the quality and presentation.",
+          "recommended_framing_and_lighting": "Close-up, artfully styled shot of a signature dish (e.g., fresh seafood platter) on the deck or in the dining area, with natural light and a shallow depth of field to emphasize freshness and appeal.",
+          "projected_adr_impact": "+8% increase in direct bookings from foodies and +$25 average check per dinner."
+        },
+        {
+          "missing_shot_title": "Guest Room with Private Balcony & Morning Coffee",
+          "category": "SIGNATURE_SUITE_BEDROOM",
+          "why_needed": "Many rooms feature 'extra large wooden deck balconies,' but no photo explicitly captures a guest enjoying this private outdoor space. This shot would personalize the experience and highlight a key amenity.",
+          "recommended_framing_and_lighting": "Eye-level shot from inside a guest room, looking out onto a private balcony with a guest enjoying coffee, capturing the ocean view and the sense of private sanctuary. Soft morning light.",
+          "projected_adr_impact": "+12% higher booking velocity for rooms with balconies and +$40 ADR premium."
+        }
+      ],
+      "conversion_diagnosis": "The current Booking.com sequence fails to immediately communicate the lodge's unique oceanfront charm and vibrant social spaces, leading to a perception of commodity. The lack of clear, high-quality photos for key amenities like bathrooms and culinary offerings further hinders conversion. The proposed re-sequencing and new asset recommendations will create a compelling visual narrative that aligns with traveler search intent for Plettenberg Bay's coastal experiences.",
+      "local_vibe_synergy_context": "Plettenberg Bay is renowned for its stunning beaches, relaxed coastal lifestyle, and access to natural beauty. Travelers actively search for accommodations that offer direct ocean access, scenic views, and a blend of tranquility with local social opportunities. The recommended photo sequence prioritizes the lodge's oceanfront deck and bar, directly addressing the demand for 'beachfront views' and 'vibrant atmosphere'. By showcasing the comfortable rooms and the exterior, the audit ensures the lodge's unique DNA is perfectly aligned with the region's top subcultures: coastal relaxation, outdoor living, and local hospitality.",
+      "slot_1_decision_logic": {
+        "is_magnet_override_active": true,
+        "reasoning_code": "NAI_HIGH_DESTINATION_POWER_CLARITY",
+        "strategy_explanation": "The Singing Kettle Beach Lodge's large wooden deck balcony with direct ocean views and integrated bar is an extraordinary cultural magnet. It meets all four override criteria: its Neighborhood Affinity Index is high (NAI >= 0.90) as it directly mirrors Plettenberg Bay's top search themes for 'beachfront views' and 'relaxed social spaces'. It possesses destination power, drawing both guests and locals for its unique setting. The photo itself has split-second clarity, immediately conveying serenity and social potential. Finally, it fits perfectly into the 5-Slot Consensus Formula as the ideal Hero Cultural Magnet.",
+        "neighborhood_affinity_index": 0.9,
+        "override_asset_name": "Large Wooden Deck Balcony with Ocean View and Seating"
+      },
+      "photos_status": "PENDING"
+    },
+    "audit_timestamp": "2026-11-14T21:55:54.297Z"
+  }
+}

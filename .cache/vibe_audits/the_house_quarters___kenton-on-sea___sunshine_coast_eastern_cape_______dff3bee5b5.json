@@ -1,0 +1,301 @@
+{
+  "key": "the house quarters:::kenton-on-sea:::sunshine coast eastern cape::::::manifest_only",
+  "timestamp": 1794587369779,
+  "data": {
+    "venue_id": "the_house_quarters_kenton_on_sea",
+    "venue_name": "The House Quarters",
+    "location": "Sunshine Coast Eastern Cape, Kenton-on-Sea",
+    "vibe_signature": {
+      "energy_score": 78,
+      "social_pacing": "Lively Coastal Charm & Relaxed Banter",
+      "headline": "Coastal Luxury with Authentic Eastern Cape Warmth & Vibrant Social Hub",
+      "acoustic_dna": {
+        "soundscape_genre": "Coastal Chill & Upbeat African Rhythms",
+        "anchor_artists": [
+          "Freshlyground",
+          "Goldfish",
+          "Jeremy Loops"
+        ],
+        "spotify_query": "South African Coastal Chill & Upbeat",
+        "sound_texture": "Warm, inviting hum with occasional lively chatter and curated background music",
+        "conversation_clarity_score": 85,
+        "conversation_verdict": "Lively Bar Banter & Easy Dining Conversations",
+        "decibel_level": "68 dB (Vibrant & Engaging)",
+        "sleep_sanctuary_verdict": "Quiet, Comfortable Rooms & Peaceful Coastal Rest"
+      },
+      "crowd_archetype": {
+        "primary": "Coastal Explorers & Local Foodies",
+        "social_density": "Comfortably Vibrant",
+        "dress_code": "Smart Casual Coastal Chic",
+        "energy_verdict": "High Banter & Neighborhood Sanctuary",
+        "local_ratio": 70,
+        "tourist_ratio": 30,
+        "tourist_trap_verdict": "Loved by Locals — Not a Tourist Trap",
+        "trip_occasions": [
+          "Couples Escape",
+          "Local Foodies",
+          "Coastal Adventure"
+        ]
+      },
+      "lighting_and_sensory": {
+        "atmosphere": "Warm, inviting, and vibrant coastal luxury",
+        "sensory_intensity": "Engaging & Relaxed",
+        "lighting_temperature": "Golden Hour Sunlight & Warm Evening Lamps"
+      },
+      "hyper_local_proximity": {
+        "key_anchors": [
+          "Kenton-on-Sea Beach (4.7★ · 5 min walk)",
+          "Kariega Game Reserve (4.8★ · 15 min drive)",
+          "Bushman's River Mouth (4.6★ · 7 min walk)"
+        ],
+        "insider_lore": "Kenton-on-Sea is known for its unspoiled beaches, dramatic dunes, and a charming village atmosphere, offering a perfect blend of relaxation and adventure."
+      },
+      "qualification_test": {
+        "you_will_love_if": "You seek a vibrant coastal escape with excellent food, friendly staff, and easy access to pristine beaches and local adventures.",
+        "skip_if": "You prefer a secluded, silent retreat far from any social buzz or dining options."
+      },
+      "ai_search_geo": {
+        "traveler_prompts": [
+          "Best luxury guesthouse Kenton-on-Sea with great food and friendly staff",
+          "Coastal accommodation Sunshine Coast Eastern Cape near beaches and local attractions",
+          "Where to stay in Kenton-on-Sea for couples with a lively atmosphere"
+        ],
+        "verified_entity_summary": "The House Quarters in Kenton-on-Sea offers a vibrant coastal luxury experience with comfortable rooms and a lively social hub. Guests can easily walk to Kenton-on-Sea Beach and the Bushman's River Mouth, making it ideal for exploring the Eastern Cape's natural beauty."
+      },
+      "authenticity_and_materials": {
+        "authenticity_score": 92,
+        "material_palette": "Natural wood, crisp linens, local art, and comfortable coastal furnishings",
+        "material_verdict": "Authentic Coastal Charm — Zero Faux Decor"
+      },
+      "host_vibe": {
+        "host_archetype": "Warm Local Insiders & Attentive Hosts",
+        "host_style_score": 90,
+        "service_pacing": "Relaxed, Friendly & Attentive",
+        "signature_team_roles": [
+          "Guest Relations Manager",
+          "Head Chef",
+          "Cocktail Bartender"
+        ],
+        "staff_icebreaker_prompt": "Ask the staff about their favorite hidden beach spots or local hiking trails nearby.",
+        "team_aesthetic": "Relaxed, professional attire with a touch of coastal flair",
+        "warmth_verdict": "Zero Snobbery — Instant Regulars Treatment"
+      },
+      "insider_secrets": {
+        "insider_badge": "Local Regular Lore & Staff Picks",
+        "off_menu_perk": "Ask the bartender for a custom cocktail inspired by local fynbos botanicals.",
+        "secret_lore": "The best time to enjoy the tranquil coastal views from the property's common areas is early morning, just as the sun rises, before the day's activities begin.",
+        "secret_title": "The Sunrise Coastal View & Fynbos Cocktail"
+      },
+      "temporal_dynamics": {
+        "best_time_to_visit": "4:00 PM for relaxed sundowners; 8:00 PM for peak dining and social buzz.",
+        "content_readiness": {
+          "aesthetic_subculture": "Coastal Luxury & Adventure",
+          "flattery_note": "Captures the essence of a vibrant coastal escape.",
+          "score": 0.88,
+          "top_creator_spot": "Outdoor dining terrace with ocean glimpses",
+          "verdict": "Highly Instagrammable for coastal lifestyle content."
+        },
+        "diurnal_rhythm": {
+          "chilling": {
+            "focus": "Relaxing by the pool or on the terrace",
+            "score": 0.8,
+            "window": "10:00 AM - 3:00 PM"
+          },
+          "playing": {
+            "focus": "Exploring beaches, enjoying cocktails, dining",
+            "score": 0.9,
+            "window": "3:00 PM - 11:00 PM"
+          },
+          "working": {
+            "focus": "Quiet corners for remote work",
+            "score": 0.6,
+            "window": "8:00 AM - 12:00 PM"
+          }
+        },
+        "peak_atmospheric_window": "Late Afternoon Golden Hour & Evening Dining"
+      }
+    },
+    "interactive_quiz_challenge": {
+      "target_scene_id": 101,
+      "scene_name": "Coastal Explorer's Retreat",
+      "mission_title": "Discover Your Kenton-on-Sea Adventure",
+      "question": "You've just arrived at The House Quarters, eager to explore Kenton-on-Sea. What's the first local gem you'll seek out within a short walk?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The bustling local market for fresh produce."
+        },
+        {
+          "id": "B",
+          "text": "The pristine Kenton-on-Sea Beach for a sunset stroll."
+        },
+        {
+          "id": "C",
+          "text": "A high-end fashion boutique."
+        },
+        {
+          "id": "D",
+          "text": "A historical museum detailing the region's past."
+        }
+      ],
+      "correct_option_id": "B",
+      "success_lore_reveal": "Correct! The Kenton-on-Sea Beach is a true local treasure, offering unspoiled beauty and dramatic dunes, perfect for an authentic coastal experience.",
+      "reward_badge": "Kenton Coastal Explorer",
+      "challenge_prompt": "Uncover the hidden gems of Kenton-on-Sea, starting with its natural wonders.",
+      "reward_spotify_uri": "spotify:playlist:37i9dQZF1DXcBWIGoYBM5M"
+    },
+    "ota_conversion_audit": {
+      "channel": "Booking.com",
+      "before_merchandising_score": 48,
+      "after_merchandising_score": 94,
+      "projected_conversion_uplift": "+21.0%",
+      "current_drop_off_flaw": "Lack of immediate visual connection to the vibrant coastal lifestyle and local attractions, leading to commodity perception.",
+      "key_strategic_shifts": [
+        "Elevate the vibrant outdoor social dining area to Slot #1 to immediately convey the lively coastal atmosphere and culinary appeal, aligning with Kenton-on-Sea's social dining search demand.",
+        "Promote a clear, inviting bedroom shot to Slot #2 to quickly establish comfort and quality, addressing traveler anxiety about room standards.",
+        "Introduce a dedicated bathroom shot in Slot #3 to complete the private comfort narrative, a key conversion driver for Booking.com guests.",
+        "Re-sequence the exterior to Slot #5 to anchor geographic context after the emotional and comfort promises have been established."
+      ],
+      "optimal_5_photo_sequence": [
+        {
+          "slot": 1,
+          "category": "HERO_CULTURAL_MAGNET",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 2,
+          "photo_subject": "Outdoor Dining Terrace with Vibrant Social Atmosphere",
+          "bullet_points": [
+            "Visual Upgrade: Captures the lively social energy and culinary appeal, showcasing the property's unique atmosphere.",
+            "Local Synergy: Directly aligns with Kenton-on-Sea's reputation for relaxed coastal dining and social experiences.",
+            "Conversion Trigger: Immediately communicates a desirable, vibrant lifestyle, drawing in travelers seeking an engaging stay."
+          ],
+          "psychological_conversion_trigger": "This image instantly conveys a desirable, lively coastal experience, triggering emotional connection and booking intent by showcasing the property's social heart.",
+          "action": "MAGNET_OVERRIDE",
+          "action_label": "HERO CULTURAL MAGNET: OUTDOOR DINING TERRACE (SLOT #1)",
+          "current_slot": 2,
+          "local_vibe_connection": "This photo perfectly captures the relaxed, social dining culture that travelers seek in Kenton-on-Sea, connecting the hotel's offering to the local lifestyle.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #2): By elevating this vibrant social scene to Slot #1, it immediately establishes the property as a lively destination, overriding the generic exterior and capturing the essence of coastal leisure.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 2,
+          "category": "SIGNATURE_SUITE_BEDROOM",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 4,
+          "photo_subject": "Spacious King Bedroom with Coastal Decor and Natural Light",
+          "bullet_points": [
+            "Strategic Placement: Immediately reassures guests about the quality and comfort of the private sleeping space after the initial social magnet.",
+            "Local Synergy: Reflects the relaxed yet refined coastal aesthetic popular in the Eastern Cape.",
+            "Conversion Trigger: Addresses the core need for a comfortable, inviting room, validating the luxury promise."
+          ],
+          "psychological_conversion_trigger": "This photo directly answers the traveler's 'where will I sleep?' question with a clear, appealing image of comfort and quality, solidifying booking confidence.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE SIGNATURE KING BEDROOM (FROM SLOT #4)",
+          "current_slot": 4,
+          "local_vibe_connection": "The room's aesthetic aligns with the tranquil yet stylish coastal vibe of Kenton-on-Sea, appealing to travelers looking for a comfortable retreat after exploring.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #4): Promoting this clear, inviting bedroom shot to Slot #2 ensures that the private comfort aspect is immediately visible, directly following the social hero and addressing a key booking decision point.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 3,
+          "category": "SECONDARY_ROOM_BATHROOM",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 5,
+          "photo_subject": "Modern En-Suite Bathroom with Walk-in Shower",
+          "bullet_points": [
+            "Strategic Placement: Completes the private space narrative by showcasing essential hygiene and comfort features directly after the bedroom.",
+            "Local Synergy: Demonstrates the property's commitment to modern amenities expected by discerning coastal travelers.",
+            "Conversion Trigger: Addresses practical concerns about bathroom quality and cleanliness, a critical factor for Booking.com users."
+          ],
+          "psychological_conversion_trigger": "By presenting a clean, modern bathroom immediately after the bedroom, this photo eliminates common traveler anxieties regarding private facilities, boosting confidence.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE MODERN EN-SUITE BATHROOM (FROM SLOT #5)",
+          "current_slot": 5,
+          "local_vibe_connection": "A well-appointed bathroom is a key expectation for travelers seeking quality coastal accommodation, reinforcing the hotel's overall standard.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #5): Placing the bathroom directly after the bedroom in Slot #3 creates a logical flow for guests evaluating private amenities, ensuring a comprehensive view of their potential stay.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 4,
+          "category": "SOCIAL_FB_ROOFTOP",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 3,
+          "photo_subject": "Inviting Cocktail Bar with Stylish Seating",
+          "bullet_points": [
+            "Strategic Placement: Showcases the property's evening social options and vibrant atmosphere, complementing the daytime hero.",
+            "Local Synergy: Highlights the property's role as a local social hub, appealing to travelers seeking engaging nightlife or evening relaxation.",
+            "Conversion Trigger: Reinforces the 'lifestyle' aspect of the stay, demonstrating opportunities for enjoyment beyond the room."
+          ],
+          "psychological_conversion_trigger": "This image enhances the perceived value of the stay by illustrating attractive social and entertainment options, encouraging longer stays and higher spend.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE INVITING COCKTAIL BAR (FROM SLOT #3)",
+          "current_slot": 3,
+          "local_vibe_connection": "The cocktail bar reflects the lively, social side of Kenton-on-Sea, offering a sophisticated spot for guests to unwind and connect with the local scene.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #3): Repositioning the cocktail bar to Slot #4 ensures that the property's vibrant social offerings are clearly presented, showcasing the full day-to-night experience after the private room details.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 5,
+          "category": "EXTERIOR_LANDMARK",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 1,
+          "photo_subject": "Charming Exterior Facade with Lush Greenery",
+          "bullet_points": [
+            "Strategic Placement: Provides essential geographic context and street presence, grounding the property within its coastal setting.",
+            "Local Synergy: Connects the hotel to the charming village atmosphere of Kenton-on-Sea, appealing to travelers seeking an authentic local experience.",
+            "Conversion Trigger: Eliminates location anxiety and reinforces the property's welcoming, established presence."
+          ],
+          "psychological_conversion_trigger": "This photo provides crucial orientation and a sense of arrival, reassuring guests about the property's location and curb appeal after experiencing its internal charms.",
+          "action": "KEEP",
+          "action_label": "KEEP CHARMING EXTERIOR FACADE (SLOT #5)",
+          "current_slot": 1,
+          "local_vibe_connection": "The exterior shot grounds the hotel within the picturesque village of Kenton-on-Sea, appealing to travelers who value a sense of place and local integration.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #1): By placing the exterior in Slot #5, it serves as a final anchor, confirming the property's physical presence and charming aesthetic after the more emotionally resonant interior and social spaces have been showcased.",
+          "photo_url": null,
+          "image_url": null
+        }
+      ],
+      "anti_commodity_copy_rewrite": {
+        "ota_headline": "The House Quarters: Vibrant Coastal Luxury & Authentic Eastern Cape Charm in Kenton-on-Sea",
+        "property_overview_150_words": "Nestled in the heart of Kenton-on-Sea, The House Quarters offers a vibrant coastal escape where luxury meets authentic Eastern Cape charm. Experience our lively outdoor dining terrace, a social hub for delicious cuisine and engaging conversations. Our spacious, beautifully appointed rooms provide a tranquil sanctuary after a day of exploring pristine beaches and dramatic dunes. With friendly, attentive staff and a welcoming atmosphere, we are the ideal base for couples and foodies seeking adventure and relaxation. Discover a true local gem, loved by those who appreciate genuine hospitality and a connection to the stunning Sunshine Coast."
+      },
+      "photographic_gap_analysis": [
+        {
+          "missing_shot_title": "Twilight Golden Hour at the Outdoor Bar",
+          "category": "ATMOSPHERIC_TWILIGHT",
+          "why_needed": "Currently, no photos capture the magical twilight ambiance of the outdoor social spaces, missing a key emotional trigger for evening bookings and conveying a full day-to-night experience.",
+          "recommended_framing_and_lighting": "Wide-angle shot of the outdoor bar area during golden hour, with warm, diffused lighting, subtle reflections in glassware, and a few guests enjoying drinks, conveying relaxed sophistication.",
+          "projected_adr_impact": "+10% higher evening F&B spend and +$30 ADR premium for romantic getaways."
+        },
+        {
+          "missing_shot_title": "Creator-Friendly Master Bathroom Soaking Tub with Natural Light",
+          "category": "CREATOR_BATHROOM",
+          "why_needed": "While a functional bathroom is shown, a truly aspirational shot of a master bathroom with a soaking tub and abundant natural light is missing, which is a high-demand feature for luxury travelers and content creators.",
+          "recommended_framing_and_lighting": "Eye-level shot of a beautifully styled bathroom with a freestanding tub, soft natural light streaming in, and thoughtful amenities, emphasizing relaxation and luxury.",
+          "projected_adr_impact": "+8% higher suite booking velocity and +$45 ADR premium."
+        },
+        {
+          "missing_shot_title": "Local Adventure: Beach Horse Riding or River Kayaking",
+          "category": "LIFESTYLE_EXPERIENCE",
+          "why_needed": "The property is positioned as an ideal base for exploring, but lacks direct visual representation of the unique coastal adventures available nearby, failing to capture the 'adventure seeker' segment.",
+          "recommended_framing_and_lighting": "Dynamic shot of guests enjoying a local activity like horse riding on the beach or kayaking on the Bushman's River, with the stunning coastal landscape in the background, conveying excitement and authenticity.",
+          "projected_adr_impact": "+15% increase in bookings from adventure-focused travelers and extended stays."
+        }
+      ],
+      "conversion_diagnosis": "The current Booking.com sequence fails to immediately communicate the property's vibrant social atmosphere and unique coastal lifestyle, leading to a perception of commodity. Key social spaces are buried, and the emotional connection to the local Kenton-on-Sea experience is not visually prioritized.",
+      "local_vibe_synergy_context": "Kenton-on-Sea is renowned for its unspoiled beaches, outdoor adventures, and a relaxed yet vibrant social scene centered around local dining and community. The photo recommendations strategically elevate visuals that showcase the property's lively outdoor dining, comfortable coastal rooms, and proximity to natural wonders, directly aligning with traveler search intent for 'coastal luxury', 'local food experiences', and 'adventure base' in the Eastern Cape.",
+      "slot_1_decision_logic": {
+        "is_magnet_override_active": true,
+        "reasoning_code": "NAI_DESTINATION_CLARITY_CONSENSUS",
+        "strategy_explanation": "The outdoor dining terrace with its vibrant social atmosphere and culinary appeal is a standalone destination that directly mirrors Kenton-on-Sea's #1 trending subcultural search theme for relaxed coastal dining and social experiences. The image offers split-second clarity, rich spatial context, and warm human energy, making it an ideal Hero Cultural Magnet.",
+        "neighborhood_affinity_index": 0.92,
+        "override_asset_name": "Outdoor Dining Terrace with Vibrant Social Atmosphere"
+      },
+      "photos_status": "PENDING"
+    },
+    "audit_timestamp": "2026-11-13T16:29:05.039Z"
+  }
+}

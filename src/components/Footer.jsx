@@ -59,6 +59,8 @@ const Footer = () => {
                         <span className="footer-divider" aria-hidden="true">|</span>
                         <Link to="/privacy" className="footer-link">Privacy Policy</Link>
                         <span className="footer-divider" aria-hidden="true">|</span>
+                        <Link to="/cookies" className="footer-link">Cookie Policy</Link>
+                        <span className="footer-divider" aria-hidden="true">|</span>
                         <Link to="/terms" className="footer-link">Terms &amp; Conditions</Link>
                     </div>
                 </div>

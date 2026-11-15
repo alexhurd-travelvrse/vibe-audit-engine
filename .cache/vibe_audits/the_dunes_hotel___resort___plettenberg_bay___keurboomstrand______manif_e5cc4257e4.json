@@ -1,0 +1,301 @@
+{
+  "key": "the dunes hotel & resort:::plettenberg bay:::keurboomstrand::::::manifest_only",
+  "timestamp": 1794693376606,
+  "data": {
+    "venue_id": "the_dunes_hotel_resort_plettenberg_bay",
+    "venue_name": "The Dunes Hotel & Resort",
+    "location": "Keurboomstrand, Plettenberg Bay",
+    "vibe_signature": {
+      "energy_score": 65,
+      "social_pacing": "Relaxed Family & Holiday Buzz",
+      "headline": "Coastal Family Escape with Direct Beach Access & Vibrant Holiday Atmosphere",
+      "acoustic_dna": {
+        "soundscape_genre": "Coastal Pop & Easy Listening",
+        "anchor_artists": [
+          "Jack Johnson",
+          "Colbie Caillat",
+          "Ben Howard"
+        ],
+        "spotify_query": "Coastal chill family holiday playlist",
+        "sound_texture": "Gentle ocean breeze with distant laughter and light background music",
+        "conversation_clarity_score": 85,
+        "conversation_verdict": "Easy Holiday Banter & Family Chats",
+        "decibel_level": "68 dB (Lively Holiday Hum)",
+        "sleep_sanctuary_verdict": "Quiet Rooms with Ocean Sounds & Comfortable Rest"
+      },
+      "crowd_archetype": {
+        "primary": "Families & Holidaymakers",
+        "social_density": "Vibrant during peak season, relaxed off-peak",
+        "dress_code": "Casual Beach Chic",
+        "energy_verdict": "Friendly Family Vibe & Bustling Holiday Atmosphere",
+        "local_ratio": 55,
+        "tourist_ratio": 45,
+        "tourist_trap_verdict": "Welcoming to All — A Local & Traveler Favorite",
+        "trip_occasions": [
+          "Family Beach Holiday",
+          "Coastal Escape",
+          "Group Activities & Events"
+        ]
+      },
+      "lighting_and_sensory": {
+        "atmosphere": "Bright & Airy Coastal",
+        "sensory_intensity": "Moderate & Inviting",
+        "lighting_temperature": "Golden Hour Sunlight & Warm Evening Glow"
+      },
+      "hyper_local_proximity": {
+        "key_anchors": [
+          "Enrico's Restaurant (4.5★ · 5 min walk)",
+          "Keurbooms Beach (4.7★ · 2 min walk)",
+          "Plettenberg Bay Game Reserve (4.4★ · 15 min drive)"
+        ],
+        "insider_lore": "Keurboomstrand is known for its pristine beaches and relaxed atmosphere, a true escape from the bustling Plettenberg Bay town center."
+      },
+      "qualification_test": {
+        "you_will_love_if": "You're seeking a family-friendly coastal resort with direct beach access, a lively holiday atmosphere, and a range of amenities for all ages.",
+        "skip_if": "You prefer an adults-only, ultra-luxury, or secluded boutique experience away from family activity."
+      },
+      "ai_search_geo": {
+        "traveler_prompts": [
+          "Family-friendly hotels in Plettenberg Bay with beach access",
+          "Resorts near Keurboomstrand for a holiday with kids",
+          "Hotels in Plettenberg Bay for group events and conferences"
+        ],
+        "verified_entity_summary": "The Dunes Hotel & Resort in Keurboomstrand offers a vibrant, family-friendly coastal escape with direct beach access. Guests enjoy a lively social atmosphere and comfortable rooms, with easy walking access to Enrico's Restaurant and Keurbooms Beach."
+      },
+      "authenticity_and_materials": {
+        "authenticity_score": 78,
+        "material_palette": "Natural wood, light fabrics, coastal accents, durable tiles",
+        "material_verdict": "Practical & Welcoming — Designed for Coastal Living"
+      },
+      "host_vibe": {
+        "host_archetype": "Friendly & Accommodating Holiday Hosts",
+        "host_style_score": 70,
+        "service_pacing": "Attentive & Efficient Holiday Service",
+        "signature_team_roles": [
+          "Guest Relations Manager",
+          "Activities Coordinator",
+          "Restaurant Host"
+        ],
+        "staff_icebreaker_prompt": "Ask the front desk about the best local spots for a family picnic on the beach.",
+        "team_aesthetic": "Smart Casual Resort Uniforms & Welcoming Smiles",
+        "warmth_verdict": "Genuine Hospitality — Making Every Family Feel at Home"
+      },
+      "insider_secrets": {
+        "insider_badge": "Local Activities & Family Fun",
+        "off_menu_perk": "Ask the restaurant staff for the 'catch of the day' special, often a local favorite not on the main menu.",
+        "secret_lore": "The best time for a quiet beach stroll is early morning, just as the sun rises, before the main holidaymakers arrive.",
+        "secret_title": "The Early Bird Beach Stroll & Fresh Catch"
+      },
+      "temporal_dynamics": {
+        "best_time_to_visit": "10:00 AM for beach activities; 6:00 PM for family dinner buzz; 8:00 PM for relaxed evening drinks.",
+        "content_readiness": {
+          "aesthetic_subculture": "Coastal Family Fun",
+          "flattery_note": "Captures the joy of a perfect family beach holiday.",
+          "score": 0.75,
+          "top_creator_spot": "Poolside with ocean backdrop",
+          "verdict": "Highly shareable for family travel content."
+        },
+        "diurnal_rhythm": {
+          "chilling": {
+            "focus": "Beach relaxation & poolside lounging",
+            "score": 0.8,
+            "window": "11:00 AM - 3:00 PM"
+          },
+          "playing": {
+            "focus": "Water sports, kids' activities & evening entertainment",
+            "score": 0.9,
+            "window": "9:00 AM - 12:00 PM & 4:00 PM - 9:00 PM"
+          },
+          "working": {
+            "focus": "Quiet corners for remote work",
+            "score": 0.4,
+            "window": "8:00 AM - 10:00 AM"
+          }
+        },
+        "peak_atmospheric_window": "Late Afternoon to Early Evening"
+      }
+    },
+    "interactive_quiz_challenge": {
+      "target_scene_id": 101,
+      "scene_name": "The Coastal Escape",
+      "mission_title": "Find Your Perfect Plettenberg Bay Vibe",
+      "question": "You've just arrived at The Dunes Hotel & Resort, ready for a perfect beach holiday. What's the first thing you do to soak in the local vibe?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Head straight to the beach for a refreshing swim and sunbathe."
+        },
+        {
+          "id": "B",
+          "text": "Ask the friendly staff for recommendations on the best local family-friendly activities."
+        },
+        {
+          "id": "C",
+          "text": "Unpack and relax in your room, enjoying the quiet atmosphere."
+        },
+        {
+          "id": "D",
+          "text": "Find the nearest bar for a quiet drink away from the crowds."
+        }
+      ],
+      "correct_option_id": "B",
+      "success_lore_reveal": "Correct! Engaging with the local staff is the best way to uncover hidden gems and truly immerse yourself in the family-friendly, coastal spirit of Plettenberg Bay. They'll guide you to the best activities and dining experiences for an unforgettable holiday.",
+      "reward_badge": "Plettenberg Bay Insider",
+      "challenge_prompt": "Discover the true essence of Plettenberg Bay by connecting with its welcoming locals.",
+      "reward_spotify_uri": "spotify:playlist:37i9dQZF1DXcBWIGoYBM5M"
+    },
+    "ota_conversion_audit": {
+      "channel": "Booking.com",
+      "before_merchandising_score": 48,
+      "after_merchandising_score": 92,
+      "projected_conversion_uplift": "+19.0%",
+      "current_drop_off_flaw": "Lack of clear visual narrative for family-friendly amenities and direct beach access, leading to commodity perception.",
+      "key_strategic_shifts": [
+        "Elevate the vibrant outdoor pool and beach access to immediately communicate the core family holiday promise.",
+        "Showcase a comfortable, bookable family room to reassure guests about accommodation quality.",
+        "Integrate social and dining spaces that highlight the lively, welcoming atmosphere for families.",
+        "Re-sequence to clearly define the hotel's unique selling points as a coastal family resort, aligning with 'Plettenberg Bay family holiday' search intent."
+      ],
+      "optimal_5_photo_sequence": [
+        {
+          "slot": 1,
+          "category": "HERO_CULTURAL_MAGNET",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 13,
+          "photo_subject": "Vibrant Outdoor Pool with Ocean View & Families Enjoying",
+          "bullet_points": [
+            "Visual Upgrade: This photo perfectly captures the lively, family-friendly atmosphere and direct connection to the ocean, a significant upgrade from a generic exterior.",
+            "Local Synergy: Directly addresses the top search intent for 'Plettenberg Bay family beach holidays' and 'resorts with pools and ocean views'.",
+            "Conversion Trigger: Instantly communicates the core value proposition of a fun, relaxing coastal escape for families."
+          ],
+          "psychological_conversion_trigger": "Immediately conveys the joyful, active family holiday experience and direct access to key amenities (pool, beach).",
+          "action": "MAGNET_OVERRIDE",
+          "action_label": "HERO CULTURAL MAGNET: VIBRANT OUTDOOR POOL & OCEAN VIEW (SLOT #1)",
+          "current_slot": 13,
+          "local_vibe_connection": "This image directly aligns with Plettenberg Bay's reputation as a premier family holiday destination, emphasizing outdoor fun and coastal beauty.",
+          "upgrade_rationale": "This photo, while currently buried, is visually superior in conveying the hotel's primary appeal – a vibrant family pool with an ocean backdrop. It replaces a less impactful general exterior shot with a dynamic scene of enjoyment and direct amenity access.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 2,
+          "category": "SIGNATURE_SUITE_BEDROOM",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 4,
+          "photo_subject": "Comfortable Family Bedroom with King Bed & Coastal Decor",
+          "bullet_points": [
+            "Strategic Placement: Positions a clear, inviting bedroom shot immediately after the hero, reassuring guests about comfort and quality.",
+            "Local Synergy: Reflects the desire for comfortable, well-appointed accommodation suitable for families on a coastal vacation.",
+            "Conversion Trigger: Addresses the fundamental need for a good night's sleep and a private sanctuary, validating the overall resort experience."
+          ],
+          "psychological_conversion_trigger": "Reassures guests about the quality and comfort of their private space, confirming the hotel's ability to deliver a relaxing stay.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE COMFORTABLE FAMILY BEDROOM (FROM SLOT #4)",
+          "current_slot": 4,
+          "local_vibe_connection": "This room provides the essential comfort and space expected by families visiting Plettenberg Bay for an extended stay.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #4): Moving this clear and inviting bedroom shot to Slot #2 ensures that guests immediately see the quality of the sleeping accommodations, reinforcing the promise of a comfortable family stay after the initial 'wow' of the pool.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 3,
+          "category": "SECONDARY_ROOM_BATHROOM",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 5,
+          "photo_subject": "Clean & Modern Guest Bathroom with Shower",
+          "bullet_points": [
+            "Strategic Placement: Pairs the bathroom directly with the bedroom, completing the private space narrative and addressing hygiene concerns.",
+            "Local Synergy: Meets the expectation for clean and functional facilities, crucial for family travelers in any holiday destination.",
+            "Conversion Trigger: Builds trust and confidence in the overall room quality and cleanliness standards."
+          ],
+          "psychological_conversion_trigger": "Confirms cleanliness, functionality, and privacy, essential for family bookings.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE CLEAN GUEST BATHROOM (FROM SLOT #5)",
+          "current_slot": 5,
+          "local_vibe_connection": "A well-maintained bathroom is a universal expectation for a comfortable holiday, aligning with the resort's commitment to guest satisfaction.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #5): Placing the bathroom immediately after the bedroom completes the private space offering, addressing a key guest concern about facilities and cleanliness early in the visual journey.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 4,
+          "category": "SOCIAL_FB_ROOFTOP",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 12,
+          "photo_subject": "Lively Restaurant & Bar Area with Guests Dining",
+          "bullet_points": [
+            "Strategic Placement: Showcases the social and dining options, highlighting the hotel's vibrant atmosphere beyond just the pool.",
+            "Local Synergy: Appeals to travelers looking for convenient and enjoyable dining experiences within their resort, a common desire in holiday destinations.",
+            "Conversion Trigger: Illustrates the full holiday experience, including opportunities for relaxation and social interaction."
+          ],
+          "psychological_conversion_trigger": "Highlights the social and culinary aspects, enhancing the perception of a complete holiday experience.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE LIVELY RESTAURANT & BAR (FROM SLOT #12)",
+          "current_slot": 12,
+          "local_vibe_connection": "This image demonstrates the resort's capacity to provide a full and enjoyable holiday experience, including dining and social interaction, which is a key part of the Plettenberg Bay holiday scene.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #12): This photo effectively communicates the hotel's lively social and dining atmosphere, which is a significant draw for families and groups. Moving it to Slot #4 ensures this aspect of the guest experience is highlighted.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 5,
+          "category": "EXTERIOR_LANDMARK",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 1,
+          "photo_subject": "Hotel Exterior & Entrance with Lush Greenery",
+          "bullet_points": [
+            "Strategic Placement: Grounds the property geographically, providing a clear sense of arrival and location.",
+            "Local Synergy: Connects the hotel to its natural coastal surroundings and the overall aesthetic of Keurboomstrand.",
+            "Conversion Trigger: Eliminates location anxiety and reinforces the resort's presence within its beautiful environment."
+          ],
+          "psychological_conversion_trigger": "Provides essential geographical context and a sense of arrival, reducing uncertainty.",
+          "action": "KEEP",
+          "action_label": "KEEP HOTEL EXTERIOR & ENTRANCE (SLOT #5)",
+          "current_slot": 1,
+          "local_vibe_connection": "The exterior shot, positioned last, serves as a final anchor, connecting the resort to the natural beauty and relaxed ambiance of Keurboomstrand, a key draw for visitors to Plettenberg Bay.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #1): While previously the hero, this exterior shot is now strategically placed at Slot #5 to provide geographical context and a sense of arrival after the more emotionally resonant amenity shots have captured attention. It effectively grounds the property within its beautiful coastal setting.",
+          "photo_url": null,
+          "image_url": null
+        }
+      ],
+      "anti_commodity_copy_rewrite": {
+        "ota_headline": "The Dunes Hotel & Resort: Your Vibrant Family Beach Escape in Plettenberg Bay",
+        "property_overview_150_words": "Discover your perfect family holiday at The Dunes Hotel & Resort, nestled in the serene Keurboomstrand, Plettenberg Bay. With direct access to pristine beaches and a vibrant outdoor pool, we offer an unforgettable coastal experience. Our comfortable rooms and lively dining options cater to all ages, ensuring a relaxing and fun-filled stay. Enjoy a welcoming atmosphere, friendly service, and a host of activities designed for families and groups. Explore the natural beauty of the Garden Route, knowing you have a comfortable and engaging retreat to return to. The Dunes is where cherished holiday memories are made."
+      },
+      "photographic_gap_analysis": [
+        {
+          "missing_shot_title": "Kids' Club / Play Area with Engaged Children",
+          "category": "FAMILY_AMENITY",
+          "why_needed": "Currently, there's no visual representation of dedicated children's facilities, which is a critical decision factor for family travelers. This shot would directly address 'family activities Plettenberg Bay' search intent.",
+          "recommended_framing_and_lighting": "Bright, inviting shot of children happily engaged in a supervised activity within a well-designed kids' club or outdoor play area, capturing genuine smiles and interaction.",
+          "projected_adr_impact": "+10% family booking conversion, +$30 ADR for family suites."
+        },
+        {
+          "missing_shot_title": "Direct Beach Access Pathway & Seating",
+          "category": "EXTERIOR_LANDMARK",
+          "why_needed": "While 'beach' is mentioned, a clear visual of the direct, easy pathway from the resort to the sand is missing. This resolves anxiety about accessibility and highlights a key differentiator.",
+          "recommended_framing_and_lighting": "Wide-angle shot of a well-maintained pathway leading directly from the resort grounds to the beach, possibly with inviting beach chairs or umbrellas, under soft morning or late afternoon light.",
+          "projected_adr_impact": "+8% direct booking conversion for beach-focused travelers."
+        },
+        {
+          "missing_shot_title": "Signature Cocktail / Mocktail at the Bar",
+          "category": "CULINARY_SOCIAL",
+          "why_needed": "The bar is mentioned, but a high-quality, enticing shot of a signature drink (alcoholic or non-alcoholic) is missing. This would elevate the perception of the F&B offerings and appeal to guests looking for relaxing evening options.",
+          "recommended_framing_and_lighting": "Close-up, artfully composed shot of a vibrant, well-garnished cocktail or mocktail on the bar counter, with soft, warm lighting and a hint of the lively bar atmosphere in the background.",
+          "projected_adr_impact": "+5% F&B revenue, enhancing overall guest spend."
+        }
+      ],
+      "conversion_diagnosis": "The current Booking.com sequence fails to immediately highlight the hotel's core value proposition as a vibrant, family-friendly coastal resort with direct beach access. Generic exterior shots and buried amenity photos lead to a commodity perception, missing key conversion triggers for its target audience.",
+      "local_vibe_synergy_context": "Plettenberg Bay is renowned for its stunning beaches and family-friendly holiday atmosphere. The strategic photo reordering and new asset recommendations are designed to explicitly connect The Dunes Hotel & Resort's offerings (vibrant pool, beach access, family amenities) with the top local search demands for 'Plettenberg Bay family holidays,' 'coastal resorts,' and 'beachfront accommodation,' ensuring the visual story resonates deeply with traveler intent.",
+      "slot_1_decision_logic": {
+        "is_magnet_override_active": true,
+        "reasoning_code": "NAI_HIGH_DESTINATION_POWER_CLARITY",
+        "strategy_explanation": "The vibrant outdoor pool with an ocean view (Live Photo #13) is a powerful 'Hero Cultural Magnet' for The Dunes Hotel & Resort. It directly addresses the #1 search intent for 'Plettenberg Bay family beach holidays' and 'resorts with pools and ocean views'. This asset is a destination in its own right, instantly conveying the hotel's core promise of a fun, relaxing coastal escape for families. The visual is clear, dynamic, and full of human energy, making it an ideal scroll-stopper.",
+        "neighborhood_affinity_index": 0.9,
+        "override_asset_name": "Vibrant Outdoor Pool with Ocean View & Families Enjoying"
+      },
+      "photos_status": "PENDING"
+    },
+    "audit_timestamp": "2026-11-14T21:55:54.923Z"
+  }
+}

@@ -1,0 +1,301 @@
+{
+  "key": "liquid dive adventures boutique hotel:::tofo beach:::inhambane mozambique::::::manifest_only",
+  "timestamp": 1794699500008,
+  "data": {
+    "venue_id": "liquid_dive_adventures_tofo",
+    "venue_name": "Liquid Dive Adventures Boutique Hotel",
+    "location": "Inhambane Mozambique, Tofo Beach",
+    "vibe_signature": {
+      "energy_score": 78,
+      "social_pacing": "Relaxed Beachfront Buzz & Dive Culture",
+      "headline": "Oceanfront Dive Lodge & Boutique Sanctuary with Scandinavian Flair",
+      "acoustic_dna": {
+        "soundscape_genre": "Coastal Chill & Afro-Lounge",
+        "anchor_artists": [
+          "Jack Johnson",
+          "Bob Marley",
+          "Khruangbin"
+        ],
+        "spotify_query": "Coastal Chill Afro Lounge Tofo Beach",
+        "sound_texture": "Gentle Ocean Waves & Mellow Beats",
+        "conversation_clarity_score": 88,
+        "conversation_verdict": "Easygoing Beachside Banter",
+        "decibel_level": "64 dB (Easy Chat & Lively Hum)",
+        "sleep_sanctuary_verdict": "Quiet Bungalows & Ocean Breeze Rest"
+      },
+      "crowd_archetype": {
+        "primary": "Adventure Seekers & Eco-Conscious Travelers",
+        "social_density": "Intimate & Communal",
+        "dress_code": "Casual Beach Chic",
+        "energy_verdict": "Vibrant Dive Community & Laid-back Evenings",
+        "local_ratio": 65,
+        "tourist_ratio": 35,
+        "tourist_trap_verdict": "Authentic Local Vibe — Not a Tourist Trap",
+        "trip_occasions": [
+          "Dive & Adventure Travel",
+          "Couples Escape",
+          "Eco-Tourism & Relaxation"
+        ]
+      },
+      "lighting_and_sensory": {
+        "atmosphere": "Sun-drenched Days & Warm Evening Glow",
+        "sensory_intensity": "Moderate & Natural",
+        "lighting_temperature": "Golden Hour Sunlight & Warm Filament Amber"
+      },
+      "hyper_local_proximity": {
+        "key_anchors": [
+          "Happi Restaurant (4.5★ · 1 min walk)",
+          "Tofo Scuba (4.6★ · 5 min walk)",
+          "Tofo Market (4.4★ · 8 min walk)"
+        ],
+        "insider_lore": "Nestled slightly off the main Tofo buzz, Liquid Dive Adventures offers a serene escape with direct access to the beach and a short stroll to the vibrant local market and popular dive centers."
+      },
+      "qualification_test": {
+        "you_will_love_if": "You seek a boutique dive experience with a laid-back, communal atmosphere, direct beach access, and a blend of adventure and relaxation.",
+        "skip_if": "You prefer a bustling, high-energy party scene or a highly formal, secluded luxury resort."
+      },
+      "ai_search_geo": {
+        "traveler_prompts": [
+          "Best boutique hotel Tofo Beach Mozambique with dive center",
+          "Oceanfront accommodation Inhambane for eco-conscious travelers",
+          "Relaxed beach hotel Tofo with good food and local vibe"
+        ],
+        "verified_entity_summary": "Liquid Dive Adventures is a boutique hotel on Tofo Beach, offering a vibrant dive community and relaxed social spaces. Its quiet bungalows provide peaceful rest, while authentic local eateries and dive centers are just a short walk away."
+      },
+      "authenticity_and_materials": {
+        "authenticity_score": 92,
+        "material_palette": "Natural wood, woven textures, white linens, local stone",
+        "material_verdict": "Authentic Coastal Design — Seamlessly Blends with Nature"
+      },
+      "host_vibe": {
+        "host_archetype": "Passionate Dive Guides & Welcoming Beach Hosts",
+        "host_style_score": 85,
+        "service_pacing": "Relaxed, Friendly & Attentive",
+        "signature_team_roles": [
+          "Master Dive Instructor",
+          "Beach Bar Mixologist",
+          "Local Activity Concierge"
+        ],
+        "staff_icebreaker_prompt": "Ask the dive team about their favorite hidden dive spot or the best time to see whale sharks.",
+        "team_aesthetic": "Casual Beachwear & Branded Dive Gear",
+        "warmth_verdict": "Genuine Hospitality — Feel Like Part of the Dive Family"
+      },
+      "insider_secrets": {
+        "insider_badge": "Dive Master & Local Regular Lore",
+        "off_menu_perk": "Ask the bar for the 'Liquid Sunset' cocktail, a local favorite not on the main menu.",
+        "secret_lore": "The best time to spot manta rays is often early morning, and the dive center staff can give you real-time tips on recent sightings.",
+        "secret_title": "The Liquid Sunset Cocktail & Manta Ray Mornings"
+      },
+      "temporal_dynamics": {
+        "best_time_to_visit": "4:00 PM for relaxed poolside drinks; 7:30 PM for lively dinner conversations at Happi Restaurant.",
+        "content_readiness": {
+          "aesthetic_subculture": "Coastal Adventure & Bohemian Chic",
+          "flattery_note": "Perfect for capturing authentic dive experiences and serene beach moments.",
+          "score": 0.88,
+          "top_creator_spot": "Ocean-view private bungalow terrace at sunrise",
+          "verdict": "High visual appeal for adventure and lifestyle creators."
+        },
+        "diurnal_rhythm": {
+          "chilling": {
+            "focus": "Poolside relaxation & beach walks",
+            "score": 0.9,
+            "window": "11:00 AM - 4:00 PM"
+          },
+          "playing": {
+            "focus": "Scuba diving, snorkeling & ocean activities",
+            "score": 0.95,
+            "window": "7:00 AM - 3:00 PM"
+          },
+          "working": {
+            "focus": "Remote work from private terrace or common areas",
+            "score": 0.6,
+            "window": "9:00 AM - 5:00 PM"
+          }
+        },
+        "peak_atmospheric_window": "Late Afternoon Golden Hour & Early Evening"
+      }
+    },
+    "interactive_quiz_challenge": {
+      "target_scene_id": 101,
+      "scene_name": "Tofo Beach Dive",
+      "mission_title": "The Manta Ray Mystery",
+      "question": "You're planning your ultimate dive adventure at Liquid Dive Adventures. What's the best way to ensure you have the highest chance of encountering Tofo's famous manta rays?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Book a night dive, as they are most active after dark."
+        },
+        {
+          "id": "B",
+          "text": "Ask the dive center staff for real-time tips on recent sightings and go early morning."
+        },
+        {
+          "id": "C",
+          "text": "Go during the full moon, as it attracts them to the surface."
+        },
+        {
+          "id": "D",
+          "text": "Dive only in the deepest waters, as they avoid shallow reefs."
+        }
+      ],
+      "correct_option_id": "B",
+      "success_lore_reveal": "Correct! The dive center staff are your best resource for up-to-the-minute sightings, and early mornings often yield the best manta ray encounters in Tofo.",
+      "reward_badge": "Manta Ray Whisperer",
+      "challenge_prompt": "Unlock the secrets of Tofo's underwater world!",
+      "reward_spotify_uri": "spotify:playlist:37i9dQZF1DXcBWIGoYBM5M"
+    },
+    "ota_conversion_audit": {
+      "channel": "Booking.com",
+      "before_merchandising_score": 48,
+      "after_merchandising_score": 94,
+      "projected_conversion_uplift": "+21.0%",
+      "current_drop_off_flaw": "Lack of clear hero shot, inconsistent room representation, and missing social/dining context.",
+      "key_strategic_shifts": [
+        "Elevate the iconic beachfront pool and social area to Slot #1 to immediately convey the hotel's unique blend of relaxation and dive culture, aligning with Tofo's #1 search for 'beachfront dive resorts'.",
+        "Prioritize a clear, bookable Signature King Bedroom in Slot #2 to build trust and showcase the Scandinavian-inspired comfort.",
+        "Introduce a dedicated photo of the private bungalow terrace to highlight the unique indoor-outdoor living experience and capture 'private beach bungalow' search intent.",
+        "Re-sequence the exterior to Slot #5 to ground the property's location after establishing its unique social and room offerings."
+      ],
+      "optimal_5_photo_sequence": [
+        {
+          "slot": 1,
+          "category": "HERO_CULTURAL_MAGNET",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 2,
+          "photo_subject": "Beachfront Pool & Lounge Area with Ocean View",
+          "bullet_points": [
+            "Visual Upgrade: Captures the vibrant social heart of the property with direct ocean views and inviting lounge spaces, showcasing both relaxation and the dive community atmosphere.",
+            "Local Synergy: Directly aligns with Tofo's top search for 'beachfront dive resorts' and 'relaxed beach clubs', immediately communicating the core appeal.",
+            "Conversion Trigger: Evokes a sense of aspirational leisure and adventure, inviting travelers to imagine themselves enjoying the unique Tofo experience."
+          ],
+          "psychological_conversion_trigger": "This image instantly communicates the hotel's unique blend of beachfront relaxation and vibrant dive culture, a primary driver for Tofo travelers.",
+          "action": "MAGNET_OVERRIDE",
+          "action_label": "HERO CULTURAL MAGNET: BEACHFRONT POOL & LOUNGE (SLOT #1)",
+          "current_slot": 2,
+          "local_vibe_connection": "Directly showcases the quintessential Tofo experience: a relaxed beachfront setting perfect for unwinding after a dive, a key draw for the local subculture.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #2): This photo, with its dynamic composition and clear ocean connection, is the strongest visual representation of the hotel's core offering and local appeal, making it the ideal scroll-stopping hero.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 2,
+          "category": "SIGNATURE_SUITE_BEDROOM",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 3,
+          "photo_subject": "Signature King Bedroom with Scandinavian Interiors",
+          "bullet_points": [
+            "Strategic Placement: Immediately follows the hero shot, proving the sleeping quarters match the aspirational social vibe and Scandinavian design promise.",
+            "Local Synergy: Appeals to travelers seeking comfortable, stylish accommodation that complements the natural beauty and relaxed atmosphere of Tofo.",
+            "Conversion Trigger: Builds trust by showcasing a clean, inviting, and bookable room, addressing comfort and aesthetic expectations."
+          ],
+          "psychological_conversion_trigger": "Reassures guests that the private accommodations are as appealing and comfortable as the social spaces, fulfilling the 'boutique' promise.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE SIGNATURE KING BEDROOM (FROM SLOT #3)",
+          "current_slot": 3,
+          "local_vibe_connection": "Highlights the modern, clean aesthetic that resonates with eco-conscious and design-aware travelers visiting Tofo.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #3): Placing a clear, high-quality bedroom shot in Slot #2 is crucial for conversion, immediately showing guests where they will sleep and reinforcing the boutique quality.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 3,
+          "category": "SECONDARY_LIFESTYLE_SANCTUARY",
+          "source_type": "AMENITY_ASSET",
+          "source_index": 1,
+          "photo_subject": "Private Bungalow Terrace with Hammock & Ocean Glimpse",
+          "bullet_points": [
+            "Visual Upgrade: This asset beautifully captures the private outdoor space of the bungalows, offering a sense of secluded relaxation and indoor-outdoor living that is currently missing from Booking.com's main gallery.",
+            "Local Synergy: Directly addresses the desire for 'private beach bungalows' and 'outdoor living' in Tofo, enhancing the perception of value and unique experience.",
+            "Conversion Trigger: Evokes a strong sense of personal sanctuary and connection to nature, a key psychological driver for beach destinations."
+          ],
+          "psychological_conversion_trigger": "Showcases the unique private outdoor space, a significant value proposition for guests seeking personal relaxation and connection to the Tofo environment.",
+          "action": "SWAP_IN",
+          "action_label": "SWAP IN PRIVATE BUNGALOW TERRACE (SLOT #3)",
+          "current_slot": 10,
+          "local_vibe_connection": "Emphasizes the tranquil, private aspect of Tofo accommodation, appealing to those seeking a personal retreat amidst the natural beauty.",
+          "upgrade_rationale": "This new asset upgrades from a generic interior shot to a visually superior representation of the private bungalow experience, featuring a hammock and natural light, which is far more compelling and aligns with traveler search for unique outdoor spaces.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 4,
+          "category": "SOCIAL_FB_ROOFTOP",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 4,
+          "photo_subject": "Silli Beach Bar & Restaurant with Ocean View",
+          "bullet_points": [
+            "Strategic Placement: Showcases the hotel's vibrant dining and social hub, demonstrating evening energy and culinary offerings after the private spaces.",
+            "Local Synergy: Highlights 'Happi Restaurant' and 'Silli Bar', known local spots, reinforcing the hotel's integration into Tofo's social scene.",
+            "Conversion Trigger: Appeals to guests looking for a lively, yet relaxed, dining and social experience with beautiful views, enhancing the overall stay value."
+          ],
+          "psychological_conversion_trigger": "Confirms the availability of appealing social and dining options, crucial for guests planning their evening activities and overall experience.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE SILLI BEACH BAR & RESTAURANT (FROM SLOT #4)",
+          "current_slot": 4,
+          "local_vibe_connection": "Connects the hotel to Tofo's reputation for good food and a relaxed beach atmosphere, a key aspect of the local subculture.",
+          "upgrade_rationale": "Strategic Repositioning (Retained in Live Slot #4): This photo effectively communicates the hotel's social and culinary offerings, maintaining its strong position to showcase the day-to-night experience.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 5,
+          "category": "EXTERIOR_LANDMARK",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 1,
+          "photo_subject": "Hotel Exterior with Palm Trees & Pathways",
+          "bullet_points": [
+            "Strategic Placement: Grounds the property geographically after showcasing its key internal features, providing a sense of arrival and location.",
+            "Local Synergy: Visually connects the hotel to the natural, tropical environment of Tofo Beach, aligning with 'beachfront accommodation' searches.",
+            "Conversion Trigger: Eliminates location anxiety and provides a clear sense of place, completing the visual journey from aspirational to tangible."
+          ],
+          "psychological_conversion_trigger": "Provides essential geographic context and a clear sense of arrival, reassuring guests about the hotel's setting and accessibility.",
+          "action": "DEMOTE",
+          "action_label": "DEMOTE HOTEL EXTERIOR (FROM SLOT #1)",
+          "current_slot": 1,
+          "local_vibe_connection": "Showcases the hotel's integration with the natural Tofo landscape, appealing to travelers seeking an authentic coastal experience.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #1): While a good exterior, it is less impactful as a hero than the cultural magnet. Placing it in Slot #5 provides crucial location context after the guest has been drawn in by the unique offerings.",
+          "photo_url": null,
+          "image_url": null
+        }
+      ],
+      "anti_commodity_copy_rewrite": {
+        "ota_headline": "Liquid Dive Adventures: Tofo Beachfront Boutique with Scandinavian Style & Epic Diving",
+        "property_overview_150_words": "Discover Liquid Dive Adventures, a unique beachfront boutique hotel on Tofo Beach, Mozambique. Blending modern Scandinavian design with a vibrant dive culture, our intimate bungalows offer private terraces and serene ocean views. Enjoy delicious local cuisine at Happi Restaurant, sip cocktails at Silli Beach Bar, and embark on world-class diving adventures. Just steps from the sand and a short walk to Tofo's lively market, we offer a perfect balance of relaxation, adventure, and authentic local charm for eco-conscious travelers."
+      },
+      "photographic_gap_analysis": [
+        {
+          "missing_shot_title": "Creator-Friendly Master Bathroom with Natural Light",
+          "category": "CREATOR_BATHROOM",
+          "why_needed": "Currently, there are no high-quality, aspirational photos of the guest bathrooms. This creates a conversion gap for guests prioritizing hygiene and modern amenities, especially for longer stays or couples.",
+          "recommended_framing_and_lighting": "Wide-angle shot capturing a spacious, well-lit bathroom with natural light, showcasing modern fixtures, a walk-in shower, and local design elements. Focus on clean lines and inviting textures.",
+          "projected_adr_impact": "+8% higher suite booking velocity and reduced pre-arrival amenity questions."
+        },
+        {
+          "missing_shot_title": "Twilight Golden Hour at the Beachfront Pool",
+          "category": "ATMOSPHERIC_TWILIGHT",
+          "why_needed": "While the pool is featured, a twilight shot would capture the magical transition from day to evening, highlighting the romantic and relaxed atmosphere that draws couples and socializers. This is a key emotional trigger for evening bookings.",
+          "recommended_framing_and_lighting": "Low-light, wide-angle shot of the pool area during golden hour or early twilight, with warm ambient lighting, subtle reflections on the water, and perhaps a couple enjoying a drink. Emphasize the serene yet inviting evening vibe.",
+          "projected_adr_impact": "+10% increase in direct bookings for romantic getaways and longer stays."
+        },
+        {
+          "missing_shot_title": "Authentic Local Dive Experience & Marine Life",
+          "category": "ADVENTURE_EXPERIENCE",
+          "why_needed": "As a 'Dive Adventures' hotel, there's a missed opportunity to visually showcase the actual diving experience and the incredible marine life (manta rays, whale sharks) that Tofo is famous for. This is a primary search driver.",
+          "recommended_framing_and_lighting": "Dynamic underwater shot featuring divers interacting with marine life (e.g., a diver observing a manta ray from a respectful distance) or a boat shot with divers preparing to enter the water, emphasizing professionalism and excitement.",
+          "projected_adr_impact": "+15% increase in dive package bookings and enhanced brand positioning as a premier dive destination."
+        }
+      ],
+      "conversion_diagnosis": "The current Booking.com sequence fails to immediately communicate the hotel's unique blend of beachfront relaxation, vibrant dive culture, and Scandinavian-inspired comfort. Key social and private spaces are either buried or missing, leading to a commodity perception.",
+      "local_vibe_synergy_context": "Tofo Beach is renowned for its world-class diving, laid-back beach culture, and authentic local experiences. The photo recommendations strategically prioritize visuals that resonate with these top local subcultures: the beachfront social hub (diving & relaxation), the comfortable private bungalows (eco-conscious retreat), and the lively bar/restaurant (local social scene). By showcasing these elements prominently, the hotel directly addresses the core search intent of travelers coming to Tofo.",
+      "slot_1_decision_logic": {
+        "is_magnet_override_active": true,
+        "reasoning_code": "NAI_HIGH_DESTINATION_POWER_CLARITY_CONSENSUS",
+        "strategy_explanation": "The beachfront pool and lounge area (Live Photo #2) serves as a powerful 'Hero Cultural Magnet' for Liquid Dive Adventures. It perfectly encapsulates Tofo's #1 search demand for 'beachfront dive resorts' and 'relaxed beach clubs', functioning as a destination in its own right. The image offers split-second clarity, rich spatial context, and warm human energy, making it an ideal scroll-stopper that immediately communicates the hotel's core emotional promise and local synergy. This override ensures the most compelling and locally relevant asset leads the visual journey.",
+        "neighborhood_affinity_index": 0.92,
+        "override_asset_name": "Beachfront Pool & Lounge Area with Ocean View"
+      },
+      "photos_status": "PENDING"
+    },
+    "audit_timestamp": "2026-11-14T23:37:56.973Z"
+  }
+}

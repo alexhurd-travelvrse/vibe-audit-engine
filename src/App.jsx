@@ -13,6 +13,8 @@ import BarcelonaPage from './pages/BarcelonaPage';
 import PartnerPage from './pages/PartnerPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import TermsPage from './pages/TermsPage';
+import CookiePolicyPage from './pages/CookiePolicyPage';
+import CookieConsentBanner from './components/CookieConsentBanner';
 import VibeApiDemoPage from './pages/VibeApiDemoPage';
 import WtmMobileDeckPage from './pages/WtmMobileDeckPage';
 import VibeInsightsPage from './pages/VibeInsightsPage';
@@ -88,6 +90,9 @@ const OwnerModeBanner = () => {
 
 const shouldDropAnalyticsEvent = () => {
   if (typeof window === 'undefined') return false;
+  if (localStorage.getItem('atmosvibe_cookie_consent') === 'rejected') {
+    return true;
+  }
   if (typeof window.__shouldBlockVercelAnalytics === 'function') {
     return window.__shouldBlockVercelAnalytics();
   }
@@ -99,6 +104,7 @@ const shouldDropAnalyticsEvent = () => {
   }
   if (
     localStorage.getItem('ignore_analytics') === 'true' ||
+    localStorage.getItem('atmosvibe_cookie_consent') === 'rejected' ||
     document.cookie.includes('ignore_analytics=true')
   ) {
     return true;
@@ -217,6 +223,7 @@ const App = () => {
       <Router>
         <ScrollToTop />
         <OwnerModeBanner />
+        <CookieConsentBanner />
         <Routes>
           <Route path="/" element={<B2BHome />} />
           <Route path="/vibe-insights" element={<VibeInsightsDirectoryRoutePage />} />
@@ -234,6 +241,8 @@ const App = () => {
           <Route path="/tui" element={<WtmMobileDeckPage defaultDemo="tui-zora" />} />
           <Route path="/privacy" element={<PrivacyPolicyPage />} />
           <Route path="/terms" element={<TermsPage />} />
+          <Route path="/cookies" element={<CookiePolicyPage />} />
+          <Route path="/cookie-policy" element={<CookiePolicyPage />} />
           <Route path="/barcelona" element={<BarcelonaPage />} />
           <Route path="/partner" element={<PartnerPage />} />
           <Route path="/marketplace" element={<Navigate to="/" replace />} />

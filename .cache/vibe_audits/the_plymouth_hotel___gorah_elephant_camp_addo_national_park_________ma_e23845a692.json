@@ -1,0 +1,301 @@
+{
+  "key": "the plymouth hotel:::gorah elephant camp addo national park:::::::::manifest_only",
+  "timestamp": 1794520502028,
+  "data": {
+    "venue_id": "gorah_elephant_camp_addo",
+    "venue_name": "Gorah Elephant Camp",
+    "location": "Addo National Park, South Africa",
+    "vibe_signature": {
+      "energy_score": 75,
+      "social_pacing": "Relaxed Safari Immersion & Attentive Service",
+      "headline": "Luxury Safari Lodge with Unforgettable Wildlife Encounters & Refined Comfort",
+      "acoustic_dna": {
+        "soundscape_genre": "Ambient Nature & Gentle Conversation",
+        "anchor_artists": [
+          "African Tribal Ambient",
+          "Nature Sounds",
+          "Relaxing Lounge Music"
+        ],
+        "spotify_query": "African safari ambient lounge",
+        "sound_texture": "Rustling leaves, distant animal calls, soft murmurs",
+        "conversation_clarity_score": 92,
+        "conversation_verdict": "Easy Safari Storytelling & Relaxed Banter",
+        "decibel_level": "58 dB (Tranquil & Immersive)",
+        "sleep_sanctuary_verdict": "Quiet Canvas Tents & Deep Nature-Infused Rest"
+      },
+      "crowd_archetype": {
+        "primary": "Adventure Seekers & Nature Enthusiasts",
+        "social_density": "Intimate & Exclusive",
+        "dress_code": "Smart Casual Safari Chic",
+        "energy_verdict": "Refined Relaxation & Shared Wonder",
+        "local_ratio": 30,
+        "tourist_ratio": 70,
+        "tourist_trap_verdict": "Authentic Safari Experience — Not a Tourist Trap",
+        "trip_occasions": [
+          "Luxury Safari Escape",
+          "Romantic Getaway",
+          "Nature Photography"
+        ]
+      },
+      "lighting_and_sensory": {
+        "atmosphere": "Warm, Earthy & Naturally Lit",
+        "sensory_intensity": "Subtle & Immersive",
+        "lighting_temperature": "Golden Hour Sunlight, Warm Lantern Glow & Fireside Ambiance"
+      },
+      "hyper_local_proximity": {
+        "key_anchors": [
+          "Addo Elephant National Park (4.9★ · 0 min walk)",
+          "Schotia Safaris Private Game Reserve (4.8★ · 20 min drive)",
+          "Daniell Cheetah Breeding (4.7★ · 30 min drive)"
+        ],
+        "insider_lore": "Gorah is nestled within the Addo Elephant National Park, offering unparalleled access to wildlife right from your doorstep. The camp's waterhole is a magnet for elephants, especially at dusk."
+      },
+      "qualification_test": {
+        "you_will_love_if": "You seek an authentic, luxurious safari experience with close encounters with wildlife and exceptional service in a tranquil setting.",
+        "skip_if": "You prefer urban environments, fast-paced nightlife, or budget accommodations without a focus on nature immersion."
+      },
+      "ai_search_geo": {
+        "traveler_prompts": [
+          "Best luxury safari lodge in Addo Elephant National Park with private game drives",
+          "Romantic safari getaway South Africa with elephant sightings",
+          "Where to stay in Addo for an immersive wildlife experience and exquisite dining"
+        ],
+        "verified_entity_summary": "Gorah Elephant Camp offers an unparalleled luxury safari experience within Addo Elephant National Park, providing tranquil sleep in canvas tents and refined social spaces, all while being steps away from incredible wildlife viewing and expert-led game drives."
+      },
+      "authenticity_and_materials": {
+        "authenticity_score": 98,
+        "material_palette": "Canvas, reclaimed wood, natural stone, leather, brass accents",
+        "material_verdict": "Authentic Safari Heritage — Zero Faux Decor"
+      },
+      "host_vibe": {
+        "host_archetype": "Knowledgeable Rangers & Attentive Hosts",
+        "host_style_score": 90,
+        "service_pacing": "Unhurried, Personalized & Intuitive",
+        "signature_team_roles": [
+          "Head Ranger",
+          "Safari Guide",
+          "Camp Manager"
+        ],
+        "staff_icebreaker_prompt": "Ask your ranger about their most memorable wildlife encounter in Addo.",
+        "team_aesthetic": "Classic Safari Attire & Warm, Welcoming Smiles",
+        "warmth_verdict": "Genuine Hospitality — Treated Like Valued Guests"
+      },
+      "insider_secrets": {
+        "insider_badge": "Ranger's Choice & Sunset Lore",
+        "off_menu_perk": "Ask your guide for a special sundowner spot during your evening game drive.",
+        "secret_lore": "The best time to observe elephants at the camp's waterhole is often just before sunset, when the light is magical and the herds gather for a final drink.",
+        "secret_title": "The Sunset Waterhole Spectacle"
+      },
+      "temporal_dynamics": {
+        "best_time_to_visit": "4:00 PM for sundowners and elephant viewing; 7:30 PM for fireside dining and stargazing.",
+        "content_readiness": {
+          "aesthetic_subculture": "Luxury Safari & Wildlife Photography",
+          "flattery_note": "Perfect for capturing breathtaking wildlife moments and elegant camp life.",
+          "score": 0.95,
+          "top_creator_spot": "The main lodge veranda overlooking the waterhole at sunset.",
+          "verdict": "Highly Instagrammable & Creator-Ready"
+        },
+        "diurnal_rhythm": {
+          "chilling": {
+            "focus": "Relaxing by the pool or on your private deck, observing wildlife.",
+            "score": 0.9,
+            "window": "11:00 AM - 3:00 PM"
+          },
+          "playing": {
+            "focus": "Morning and evening game drives, guided bush walks.",
+            "score": 0.95,
+            "window": "6:00 AM - 10:00 AM & 4:00 PM - 7:00 PM"
+          },
+          "working": {
+            "focus": "Minimal, but comfortable spaces for essential connectivity.",
+            "score": 0.3,
+            "window": "Anytime (limited focus)"
+          }
+        },
+        "peak_atmospheric_window": "Late Afternoon Golden Hour & Evening Stargazing"
+      }
+    },
+    "interactive_quiz_challenge": {
+      "target_scene_id": 101,
+      "scene_name": "Safari Sundowner",
+      "mission_title": "The Perfect Sundowner",
+      "question": "You've just finished an exhilarating game drive. What's the ideal way to unwind at Gorah Elephant Camp?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Head straight to your tent for an early night."
+        },
+        {
+          "id": "B",
+          "text": "Join fellow guests for sundowners on the lodge veranda, overlooking the waterhole."
+        },
+        {
+          "id": "C",
+          "text": "Go for a solo walk around the camp perimeter."
+        },
+        {
+          "id": "D",
+          "text": "Immediately check emails and social media."
+        }
+      ],
+      "correct_option_id": "B",
+      "success_lore_reveal": "Correct! The lodge veranda at sunset is the heart of Gorah's social experience, offering breathtaking views of elephants at the waterhole while you enjoy a refreshing drink.",
+      "reward_badge": "Safari Sundowner Savvy",
+      "challenge_prompt": "Discover the magic of Gorah's evening rituals!",
+      "reward_spotify_uri": "spotify:playlist:37i9dQZF1DXcBWIGoYBM5M"
+    },
+    "ota_conversion_audit": {
+      "channel": "Booking.com",
+      "before_merchandising_score": 42,
+      "after_merchandising_score": 95,
+      "projected_conversion_uplift": "+21.0%",
+      "current_drop_off_flaw": "Lack of immediate visual connection to the unique safari experience and the intimate luxury of the tents.",
+      "key_strategic_shifts": [
+        "Elevate the iconic elephant waterhole view to Slot #1 to immediately convey the unique safari immersion and capture 'Addo safari lodge' search demand.",
+        "Promote a signature canvas tent interior to Slot #2 to showcase the luxurious and authentic accommodation, addressing 'luxury safari tent' searches.",
+        "Re-sequence social and dining areas to highlight the refined camp atmosphere and connect with 'Addo fine dining' and 'safari bar' interests.",
+        "Introduce a dedicated photo of the main lodge exterior to ground the property within its natural setting and satisfy 'Gorah Elephant Camp exterior' queries."
+      ],
+      "optimal_5_photo_sequence": [
+        {
+          "slot": 1,
+          "category": "HERO_CULTURAL_MAGNET",
+          "source_type": "AMENITY_ASSET",
+          "source_index": 1,
+          "photo_subject": "Elephants at the waterhole in front of the main lodge at sunset",
+          "bullet_points": [
+            "Visual Upgrade: This asset captures the quintessential Gorah experience – elephants in their natural habitat, framed by the elegant lodge, bathed in golden light, offering an emotional connection far superior to a generic exterior.",
+            "Local Synergy: Directly addresses the primary traveler intent for Addo: immersive elephant encounters and luxury safari, instantly differentiating Gorah from other lodges.",
+            "Conversion Trigger: Evokes a powerful sense of wonder and exclusivity, compelling immediate booking by showcasing the unique wildlife interaction."
+          ],
+          "psychological_conversion_trigger": "Triggers a strong emotional desire for an authentic, luxurious safari experience with guaranteed wildlife sightings.",
+          "action": "MAGNET_OVERRIDE",
+          "action_label": "HERO CULTURAL MAGNET: ELEPHANTS AT WATERHOLE (SLOT #1)",
+          "current_slot": 1,
+          "local_vibe_connection": "This image is the ultimate visual representation of Addo Elephant National Park's core appeal, directly aligning with traveler searches for 'Addo elephant encounters' and 'luxury safari lodges with wildlife views'.",
+          "upgrade_rationale": "This new asset provides an unparalleled visual and emotional impact, showcasing the unique selling proposition of Gorah – direct elephant viewing from the lodge – which is far more compelling than a standard exterior shot. It immediately communicates the immersive safari experience in a way no other photo can.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 2,
+          "category": "SIGNATURE_SUITE_BEDROOM",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 4,
+          "photo_subject": "Luxury Canvas Tent Interior with King Bed and Safari Decor",
+          "bullet_points": [
+            "Strategic Placement: Immediately reassures guests about the quality and authenticity of the private accommodation, directly following the aspirational hero shot.",
+            "Local Synergy: Showcases the unique 'canvas tent' luxury that is a hallmark of authentic safari experiences, appealing to travelers seeking 'luxury safari tents Addo'.",
+            "Conversion Trigger: Confirms that the private sanctuary matches the overall luxury and immersive promise, reducing hesitation about comfort."
+          ],
+          "psychological_conversion_trigger": "Validates the promise of luxury and comfort within an authentic safari setting, ensuring the sleeping experience aligns with the adventure.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE LUXURY CANVAS TENT INTERIOR (FROM SLOT #4)",
+          "current_slot": 4,
+          "local_vibe_connection": "This photo directly addresses the desire for authentic yet luxurious safari accommodation, a key search term for travelers looking for 'safari tent stays' in the Addo region.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #4): By placing the signature canvas tent directly after the hero shot, it immediately answers the critical question of 'where will I sleep?' with a visually appealing and authentic representation of the private accommodations, reinforcing the luxury safari theme.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 3,
+          "category": "SECONDARY_ROOM_BATHROOM",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 5,
+          "photo_subject": "En-suite Bathroom with Freestanding Bathtub and Safari Views",
+          "bullet_points": [
+            "Strategic Placement: Completes the private comfort narrative by showcasing the luxurious and well-appointed en-suite bathroom immediately after the bedroom.",
+            "Local Synergy: Highlights the unique aspect of a safari bathroom with potential views, appealing to those seeking 'luxury safari bathrooms' or 'unique lodge amenities'.",
+            "Conversion Trigger: Addresses hygiene and luxury expectations, enhancing the perception of a complete and indulgent private space."
+          ],
+          "psychological_conversion_trigger": "Reassures guests of high standards of comfort and privacy, completing the mental picture of their personal sanctuary.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE EN-SUITE BATHROOM (FROM SLOT #5)",
+          "current_slot": 5,
+          "local_vibe_connection": "This image reinforces the luxury aspect of the safari experience, catering to travelers who prioritize high-end amenities even in a wilderness setting, aligning with searches for 'luxury safari lodge amenities'.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #5): Placing the en-suite bathroom directly after the bedroom creates a seamless flow, allowing guests to visualize their complete private space. This addresses a common traveler need for clear visuals of bathroom facilities early in the booking journey.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 4,
+          "category": "SOCIAL_FB_ROOFTOP",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 2,
+          "photo_subject": "Elegant Dining Area with Safari Views",
+          "bullet_points": [
+            "Strategic Placement: Showcases the social and culinary experience, demonstrating the camp's refined atmosphere beyond the private tents.",
+            "Local Synergy: Connects to the 'safari dining' and 'lodge restaurant' search intent, highlighting the quality of the communal spaces.",
+            "Conversion Trigger: Illustrates the holistic luxury experience, from private comfort to shared, elegant moments."
+          ],
+          "psychological_conversion_trigger": "Paints a picture of the social and culinary delights, enhancing the overall value proposition of the safari stay.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE ELEGANT DINING AREA (FROM SLOT #2)",
+          "current_slot": 2,
+          "local_vibe_connection": "This photo highlights the sophisticated dining experience, a key component for travelers searching for 'fine dining safari lodges' or 'luxury restaurants in Addo'.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #2): By placing the elegant dining area in Slot #4, it effectively showcases the social and culinary aspects of the camp after the private accommodations have been established. This provides a balanced view of the guest experience, from personal sanctuary to communal luxury.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 5,
+          "category": "EXTERIOR_LANDMARK",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 1,
+          "photo_subject": "Main Lodge Exterior with Thatched Roof and Natural Surroundings",
+          "bullet_points": [
+            "Strategic Placement: Grounds the property geographically and architecturally, providing a sense of place and arrival.",
+            "Local Synergy: Confirms the authentic safari lodge aesthetic, aligning with searches for 'Addo safari lodge architecture' and 'traditional safari camps'.",
+            "Conversion Trigger: Eliminates location anxiety and reinforces the unique, integrated design within the natural environment."
+          ],
+          "psychological_conversion_trigger": "Provides a clear sense of arrival and confirms the property's authentic safari lodge identity within its natural setting.",
+          "action": "DEMOTE",
+          "action_label": "DEMOTE MAIN LODGE EXTERIOR (FROM SLOT #1)",
+          "current_slot": 1,
+          "local_vibe_connection": "This image clearly defines the property's architectural style and integration into the Addo landscape, appealing to travelers seeking 'authentic safari lodge design' and 'Addo accommodation exterior'.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #1): While a strong exterior, it is demoted from the hero slot to allow the unique elephant waterhole view to take precedence. In Slot #5, it effectively serves as the architectural gateway, providing a sense of place and arrival after the aspirational and experiential elements have been presented.",
+          "photo_url": null,
+          "image_url": null
+        }
+      ],
+      "anti_commodity_copy_rewrite": {
+        "ota_headline": "Gorah Elephant Camp: Luxury Safari Lodge in Addo with Private Elephant Encounters",
+        "property_overview_150_words": "Immerse yourself in the heart of Addo Elephant National Park at Gorah Elephant Camp, a luxurious tented safari lodge offering unparalleled wildlife viewing. Experience the thrill of elephants at your doorstep, indulge in exquisite dining, and unwind in elegant canvas tents. Our attentive team and expert rangers ensure an authentic, unforgettable safari adventure, blending refined comfort with the raw beauty of the African bush. Discover a true sanctuary where nature's grandeur meets exceptional hospitality."
+      },
+      "photographic_gap_analysis": [
+        {
+          "missing_shot_title": "Twilight Fireside Boma Dinner & Stargazing",
+          "category": "CULINARY_SOCIAL",
+          "why_needed": "Currently, there isn't a strong visual of the magical evening boma experience, which is a highlight for many safari travelers. This shot would capture the communal, atmospheric dining under the stars, addressing unmet demand for 'romantic safari dinners' and 'boma experiences'.",
+          "recommended_framing_and_lighting": "Wide-angle shot capturing the boma fire, elegantly set tables, and guests enjoying dinner, with a clear view of the starry night sky. Use warm, low-light photography to emphasize ambiance.",
+          "projected_adr_impact": "+10% higher direct booking conversion for couples and honeymooners."
+        },
+        {
+          "missing_shot_title": "Guided Bush Walk & Ranger Interaction",
+          "category": "EXPERIENTIAL_ADVENTURE",
+          "why_needed": "While game drives are implied, the unique and intimate experience of a guided bush walk with a knowledgeable ranger is not visually represented. This addresses travelers seeking 'walking safaris Addo' and 'expert guided tours'.",
+          "recommended_framing_and_lighting": "Eye-level shot of guests walking with a ranger through the bush, highlighting interaction and the natural environment. Natural daylight, emphasizing the sense of discovery.",
+          "projected_adr_impact": "+8% increase in activity bookings and enhanced perception of immersive experiences."
+        },
+        {
+          "missing_shot_title": "Private Tent Deck with Safari View & Morning Coffee",
+          "category": "SECONDARY_LIFESTYLE_SANCTUARY",
+          "why_needed": "There's no dedicated photo showcasing the private deck experience of the tents, which is a significant draw for guests seeking personal relaxation and intimate wildlife viewing from their accommodation. This captures 'private safari deck' and 'tent with a view' searches.",
+          "recommended_framing_and_lighting": "Shot from inside the tent looking out onto the private deck with a guest enjoying coffee, framed by the natural landscape. Soft morning light, emphasizing tranquility and exclusivity.",
+          "projected_adr_impact": "+15% higher suite booking velocity and increased perceived value of private spaces."
+        }
+      ],
+      "conversion_diagnosis": "The current Booking.com sequence fails to immediately convey Gorah Elephant Camp's unique selling proposition: direct, luxurious elephant encounters within Addo National Park. The lack of a strong hero image and suboptimal sequencing of key amenities leads to a commoditized perception, causing high drop-off rates from travelers specifically searching for immersive safari experiences.",
+      "local_vibe_synergy_context": "The Addo region is synonymous with elephant safaris and immersive wildlife experiences. Travelers actively search for 'Addo elephant lodge', 'luxury safari Addo', and 'wildlife viewing accommodation'. The proposed photo sequence prioritizes visuals that directly address these core local subcultures, starting with the iconic elephant waterhole, followed by the authentic luxury of the safari tents and the elegant communal spaces, ensuring Gorah Elephant Camp immediately resonates with its target audience's primary search intent.",
+      "slot_1_decision_logic": {
+        "is_magnet_override_active": true,
+        "reasoning_code": "NAI_DESTINATION_CLARITY_CONSENSUS",
+        "strategy_explanation": "The 'Elephants at the waterhole' asset perfectly meets all four override criteria. It has an exceptionally high Neighborhood Affinity Index (NAI) as elephant encounters are the primary draw for Addo. It is a standalone destination feature, visually unambiguous, and fits seamlessly into the 5-slot consensus formula, immediately communicating the unique, immersive safari experience.",
+        "neighborhood_affinity_index": 0.98,
+        "override_asset_name": "Elephants at the waterhole in front of the main lodge at sunset"
+      },
+      "photos_status": "PENDING"
+    },
+    "audit_timestamp": "2026-11-12T21:54:37.868Z"
+  }
+}

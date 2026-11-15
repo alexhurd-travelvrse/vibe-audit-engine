@@ -1,0 +1,301 @@
+{
+  "key": "the plymouth hotel:::woodall country house addo:::::::::manifest_only",
+  "timestamp": 1794520502548,
+  "data": {
+    "venue_id": "woodall_country_house_addo",
+    "venue_name": "The Plymouth Hotel",
+    "location": "Woodall Country House Addo",
+    "vibe_signature": {
+      "energy_score": 75,
+      "social_pacing": "Relaxed & Refined Socializing",
+      "headline": "Elegant Country Retreat with Lush Gardens & Attentive Service",
+      "acoustic_dna": {
+        "soundscape_genre": "Ambient Lounge & Soft Jazz",
+        "anchor_artists": [
+          "Norah Jones",
+          "Diana Krall",
+          "The Cinematic Orchestra"
+        ],
+        "spotify_query": "ambient lounge jazz for hotels",
+        "sound_texture": "Smooth, mellow, and unobtrusive",
+        "conversation_clarity_score": 92,
+        "conversation_verdict": "Easy Date-Night Chat & Relaxed Conversation",
+        "decibel_level": "58 dB (Relaxed & Refined)",
+        "sleep_sanctuary_verdict": "Quiet Soundproofed Rooms & Serene Garden Rest"
+      },
+      "crowd_archetype": {
+        "primary": "Discerning Couples & Wellness Seekers",
+        "social_density": "Comfortably Spaced & Intimate",
+        "dress_code": "Smart Casual to Elegant Evening Wear",
+        "energy_verdict": "Tranquil Serenity & Understated Luxury",
+        "local_ratio": 60,
+        "tourist_ratio": 40,
+        "tourist_trap_verdict": "Loved by Locals & Discerning Travelers",
+        "trip_occasions": [
+          "Couples Escape",
+          "Wellness Retreat",
+          "Safari & Nature Getaway"
+        ]
+      },
+      "lighting_and_sensory": {
+        "atmosphere": "Warm, Elegant & Serene",
+        "sensory_intensity": "Subtle & Soothing",
+        "lighting_temperature": "Warm Golden Glow & Natural Sunlight"
+      },
+      "hyper_local_proximity": {
+        "key_anchors": [
+          "Addo Elephant National Park (4.7★ · 10 min drive)",
+          "Orange Elephant Trading Post (4.5★ · 8 min drive)",
+          "Africanos Country Estate (4.4★ · 12 min drive)"
+        ],
+        "insider_lore": "Nestled amidst the tranquil Addo countryside, Woodall Country House offers a serene escape with easy access to the renowned Addo Elephant National Park and local farm-to-table experiences."
+      },
+      "qualification_test": {
+        "you_will_love_if": "You seek a luxurious, peaceful retreat with exceptional service, fine dining, and proximity to nature, where relaxation and refined comfort are paramount.",
+        "skip_if": "You prefer a high-energy, bustling urban environment or a budget-focused stay without premium amenities."
+      },
+      "ai_search_geo": {
+        "traveler_prompts": [
+          "Luxury country house near Addo Elephant National Park with spa",
+          "Best romantic hotel in Addo with fine dining and quiet rooms",
+          "Where to stay in Addo for a serene wellness retreat"
+        ],
+        "verified_entity_summary": "The Plymouth Hotel at Woodall Country House Addo offers a serene and elegant escape, blending luxurious comfort with a tranquil social vibe. Guests enjoy quiet, soundproofed rooms and easy access to the Addo Elephant National Park and other highly-rated local attractions."
+      },
+      "authenticity_and_materials": {
+        "authenticity_score": 90,
+        "material_palette": "Natural wood, plush fabrics, local stone, wrought iron",
+        "material_verdict": "Authentic Country Elegance — Thoughtfully Curated"
+      },
+      "host_vibe": {
+        "host_archetype": "Gracious Hosts & Attentive Concierges",
+        "host_style_score": 85,
+        "service_pacing": "Unhurried, Personalized & Intuitive",
+        "signature_team_roles": [
+          "Head Chef",
+          "Spa Therapist",
+          "Safari Guide Concierge"
+        ],
+        "staff_icebreaker_prompt": "Ask the concierge for their favorite hidden gem in the Addo region for a unique local experience.",
+        "team_aesthetic": "Refined Uniforms & Warm, Welcoming Attire",
+        "warmth_verdict": "Exceptional Hospitality — Personalized & Genuine Care"
+      },
+      "insider_secrets": {
+        "insider_badge": "Concierge & Local Lore",
+        "off_menu_perk": "Request a private guided bird-watching tour on the estate grounds at dawn.",
+        "secret_lore": "The best time to spot rare bird species is just after sunrise from the hidden viewing deck near the river, a spot known only to the most seasoned guests and staff.",
+        "secret_title": "The Dawn Bird-Watching Deck"
+      },
+      "temporal_dynamics": {
+        "best_time_to_visit": "4:00 PM for afternoon tea and garden strolls; 7:30 PM for a romantic dinner experience.",
+        "content_readiness": {
+          "aesthetic_subculture": "Luxury Safari & Wellness",
+          "flattery_note": "Perfect for capturing serene luxury and natural beauty.",
+          "score": 0.9,
+          "top_creator_spot": "Infinity Pool with Garden Views",
+          "verdict": "Highly Instagrammable & Serene"
+        },
+        "diurnal_rhythm": {
+          "chilling": {
+            "focus": "Spa treatments, poolside relaxation, garden walks",
+            "score": 0.9,
+            "window": "10:00 AM - 4:00 PM"
+          },
+          "playing": {
+            "focus": "Safari excursions, local tours, fine dining",
+            "score": 0.7,
+            "window": "6:00 AM - 9:00 AM & 5:00 PM - 9:00 PM"
+          },
+          "working": {
+            "focus": "Quiet contemplation, light reading, email catch-up",
+            "score": 0.6,
+            "window": "9:00 AM - 12:00 PM"
+          }
+        },
+        "peak_atmospheric_window": "Late Afternoon Golden Hour & Evening Dining"
+      }
+    },
+    "interactive_quiz_challenge": {
+      "target_scene_id": 101,
+      "scene_name": "The Serene Countryside Retreat",
+      "mission_title": "Discover Your Perfect Addo Escape",
+      "question": "You've just arrived at The Plymouth Hotel, seeking ultimate relaxation. What's your ideal first activity?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Head straight to the spa for a rejuvenating treatment."
+        },
+        {
+          "id": "B",
+          "text": "Explore the lush gardens with a refreshing drink."
+        },
+        {
+          "id": "C",
+          "text": "Plan your next day's safari adventure with the concierge."
+        },
+        {
+          "id": "D",
+          "text": "Unpack and enjoy the luxurious comfort of your room."
+        }
+      ],
+      "correct_option_id": "A",
+      "success_lore_reveal": "Excellent choice! The Woodall Spa is renowned for its tranquil ambiance and bespoke treatments, perfectly setting the tone for a relaxing stay.",
+      "reward_badge": "Addo Serenity Seeker",
+      "challenge_prompt": "Uncover the hidden gems of Woodall Country House & Spa!",
+      "reward_spotify_uri": "spotify:playlist:37i9dQZF1DXcBWIGoYBM5M"
+    },
+    "ota_conversion_audit": {
+      "channel": "Booking.com",
+      "before_merchandising_score": 45,
+      "after_merchandising_score": 92,
+      "projected_conversion_uplift": "+21.0%",
+      "current_drop_off_flaw": "Lack of immediate visual connection to luxury spa/wellness and clear room differentiation, leading to commodity perception.",
+      "key_strategic_shifts": [
+        "Elevate the Spa & Wellness experience to Slot #1 to capture Addo's #1 wellness and relaxation search demand.",
+        "Promote a signature suite bedroom to Slot #2 to immediately convey luxury and comfort, addressing room quality concerns.",
+        "Introduce a dedicated bathroom shot in Slot #3 to complete the private comfort narrative for discerning guests.",
+        "Re-sequence exterior to Slot #5 to anchor geographic context after establishing the property's unique offerings."
+      ],
+      "optimal_5_photo_sequence": [
+        {
+          "slot": 1,
+          "category": "HERO_CULTURAL_MAGNET",
+          "source_type": "AMENITY_ASSET",
+          "source_index": 1,
+          "photo_subject": "Serene Spa Treatment Room with Natural Light",
+          "bullet_points": [
+            "Visual Upgrade: This asset showcases the tranquil and luxurious spa environment with soft lighting and inviting textures, far superior to any existing generic amenity shot.",
+            "Local Synergy: Directly aligns with the high traveler search demand for wellness and relaxation experiences in a country retreat setting.",
+            "Conversion Trigger: Immediately communicates a sense of calm, luxury, and self-care, appealing to guests seeking a restorative escape."
+          ],
+          "psychological_conversion_trigger": "Triggers immediate desire for relaxation and luxury wellness, positioning the hotel as a premium retreat.",
+          "action": "MAGNET_OVERRIDE",
+          "action_label": "HERO CULTURAL MAGNET: SERENE SPA TREATMENT ROOM (SLOT #1)",
+          "current_slot": 1,
+          "local_vibe_connection": "Directly addresses the strong traveler intent for wellness and serene escapes in the Addo region.",
+          "upgrade_rationale": "This new asset provides a visually stunning and emotionally resonant depiction of the spa, which is a key differentiator for Woodall. It replaces a generic exterior shot with a high-impact visual that immediately conveys the hotel's core value proposition of luxury wellness.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 2,
+          "category": "SIGNATURE_SUITE_BEDROOM",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 3,
+          "photo_subject": "Luxurious King Bedroom with Garden View",
+          "bullet_points": [
+            "Strategic Placement: Immediately follows the spa hero, proving the sleeping accommodations match the luxury promise and addressing room quality concerns upfront.",
+            "Local Synergy: Showcases the elegant and comfortable private space that complements the tranquil country house experience travelers seek.",
+            "Conversion Trigger: Reassures guests of a high-quality, comfortable stay, reinforcing the value proposition after the initial 'wow' of the spa."
+          ],
+          "psychological_conversion_trigger": "Validates the luxury experience extends to private spaces, building trust and reducing booking hesitation.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE LUXURIOUS KING BEDROOM (FROM SLOT #3)",
+          "current_slot": 3,
+          "local_vibe_connection": "Connects to the desire for comfortable and elegant accommodations within a natural, serene environment.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #3): By promoting this high-quality bedroom shot to Slot #2, we immediately demonstrate the comfort and luxury of the private accommodations, directly addressing a key booking decision factor for guests.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 3,
+          "category": "SECONDARY_ROOM_BATHROOM",
+          "source_type": "AMENITY_ASSET",
+          "source_index": 2,
+          "photo_subject": "Elegant Master Bathroom with Soaking Tub & Walk-in Shower",
+          "bullet_points": [
+            "Visual Upgrade: This asset provides a clear, well-lit view of a spacious and luxurious bathroom, a critical element often overlooked but highly valued by guests.",
+            "Local Synergy: Reinforces the overall luxury and comfort expected by travelers seeking a high-end country house experience.",
+            "Conversion Trigger: Addresses hygiene and comfort concerns, completing the private space narrative and enhancing the perception of a premium stay."
+          ],
+          "psychological_conversion_trigger": "Satisfies the guest's need for a clean, luxurious, and functional private bathroom, a key indicator of overall hotel quality.",
+          "action": "SWAP_IN",
+          "action_label": "SWAP IN ELEGANT MASTER BATHROOM (SLOT #3)",
+          "current_slot": 10,
+          "local_vibe_connection": "Aligns with the discerning traveler's expectation for high standards in all aspects of a luxury country retreat.",
+          "upgrade_rationale": "This new amenity asset fills a critical gap by showcasing a high-quality, elegant bathroom. It replaces a generic or non-existent bathroom photo on Booking.com with a visually appealing and reassuring image that directly impacts guest comfort and booking confidence.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 4,
+          "category": "SOCIAL_FB_ROOFTOP",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 5,
+          "photo_subject": "Lush Garden Terrace with Outdoor Seating",
+          "bullet_points": [
+            "Strategic Placement: Showcases the social and relaxation areas, demonstrating the property's ambiance beyond the private rooms.",
+            "Local Synergy: Highlights the natural beauty and outdoor living that is a key draw for visitors to the Addo countryside.",
+            "Conversion Trigger: Invites guests to imagine themselves relaxing and enjoying the serene environment, enhancing the emotional appeal."
+          ],
+          "psychological_conversion_trigger": "Creates an aspirational image of leisure and connection with nature, a strong motivator for booking a country escape.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE LUSH GARDEN TERRACE (FROM SLOT #5)",
+          "current_slot": 5,
+          "local_vibe_connection": "Emphasizes the outdoor lifestyle and connection to nature, a core aspect of the Addo experience.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #5): By promoting the garden terrace, we highlight the property's beautiful outdoor social spaces, which are crucial for a country house experience and appeal to guests seeking relaxation and connection with nature.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 5,
+          "category": "EXTERIOR_LANDMARK",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 1,
+          "photo_subject": "Grand Entrance & Exterior of Woodall Country House",
+          "bullet_points": [
+            "Strategic Placement: Provides essential geographic context and architectural grandeur after the internal offerings have been established.",
+            "Local Synergy: Clearly identifies the property within its natural, expansive country setting, aligning with expectations for a rural retreat.",
+            "Conversion Trigger: Grounds the guest's mental map, confirming location and the impressive scale of the property."
+          ],
+          "psychological_conversion_trigger": "Eliminates location anxiety and reinforces the sense of arrival at a distinguished country estate.",
+          "action": "DEMOTE",
+          "action_label": "DEMOTE GRAND EXTERIOR (FROM SLOT #1)",
+          "current_slot": 1,
+          "local_vibe_connection": "Confirms the property's presence as a prominent and elegant landmark within the Addo landscape.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #1): While a strong exterior, its demotion allows a more compelling cultural magnet to lead, with the exterior still serving its vital role in Slot #5 to provide clear geographic and architectural context after the guest is emotionally invested.",
+          "photo_url": null,
+          "image_url": null
+        }
+      ],
+      "anti_commodity_copy_rewrite": {
+        "ota_headline": "Woodall Country House & Spa: Luxurious Addo Retreat with Award-Winning Spa & Safari Access",
+        "property_overview_150_words": "Nestled in the heart of Addo, Woodall Country House & Spa offers an exquisite escape blending serene luxury with authentic South African charm. Indulge in our award-winning spa, savor gourmet cuisine, and unwind in elegantly appointed rooms with lush garden views. Perfectly positioned for unforgettable safari adventures at Addo Elephant National Park, our country house provides a tranquil sanctuary where personalized service and natural beauty converge. Experience the ultimate blend of relaxation, wildlife, and refined hospitality."
+      },
+      "photographic_gap_analysis": [
+        {
+          "missing_shot_title": "Twilight Golden Hour Dining Experience",
+          "category": "CULINARY_SOCIAL",
+          "why_needed": "Currently, there are no photos capturing the romantic and sophisticated ambiance of the dining experience during the evening, which is a key draw for couples and discerning guests. This shot would highlight the culinary excellence and atmospheric charm.",
+          "recommended_framing_and_lighting": "Warm 2700K ambient lighting, soft candlelight on tables, focus on beautifully plated dishes with a blurred background of elegant diners, 50mm f/1.8 lens for depth.",
+          "projected_adr_impact": "+10% higher F&B spend and +$30 ADR premium for romantic packages."
+        },
+        {
+          "missing_shot_title": "Private Terrace/Balcony with Garden Views",
+          "category": "SECONDARY_LIFESTYLE_SANCTUARY",
+          "why_needed": "Many guests seek private outdoor spaces for relaxation. A dedicated shot of a room's private terrace or balcony with inviting seating and lush garden views would showcase an important amenity and enhance the sense of exclusive tranquility.",
+          "recommended_framing_and_lighting": "Morning light, wide-angle shot from inside the room looking out onto the terrace, showing comfortable seating and the expansive garden beyond, emphasizing privacy and serenity.",
+          "projected_adr_impact": "+8% higher suite booking velocity and increased direct bookings for rooms with outdoor spaces."
+        },
+        {
+          "missing_shot_title": "Guided Safari Departure/Arrival Experience",
+          "category": "EXPERIENTIAL_ADVENTURE",
+          "why_needed": "While proximity to Addo Elephant National Park is mentioned, there's no visual representation of the actual safari experience or the seamless transition from the hotel to the adventure. This shot would visually connect the hotel to its primary experiential offering.",
+          "recommended_framing_and_lighting": "Guests boarding a safari vehicle at the hotel entrance, with staff assisting, early morning light, emphasizing excitement and convenience. Or, returning guests with a warm welcome.",
+          "projected_adr_impact": "+15% increase in safari package bookings and enhanced perceived value of the overall stay."
+        }
+      ],
+      "conversion_diagnosis": "The current Booking.com sequence fails to immediately highlight Woodall Country House's unique luxury spa and wellness offerings, leading to a generic perception. Rooms are not showcased early enough, and key experiential elements like dining ambiance and private outdoor spaces are missing. This results in a lower conversion rate as travelers struggle to quickly grasp the property's distinct value proposition and luxury appeal.",
+      "local_vibe_synergy_context": "The Addo region is primarily sought after for its natural beauty, wildlife (especially elephants), and tranquil country escapes. Travelers are looking for luxury accommodations that offer both proximity to nature and opportunities for relaxation and wellness. The strategic photo reordering prioritizes the spa and luxurious rooms, directly addressing the high demand for serene, high-end retreats. The inclusion of garden and dining shots further reinforces the connection to the natural, refined country lifestyle that defines the local subculture.",
+      "slot_1_decision_logic": {
+        "is_magnet_override_active": true,
+        "reasoning_code": "NAI_HIGH_DESTINATION_POWER_CLARITY_CONSENSUS",
+        "strategy_explanation": "The spa at Woodall Country House is a standalone destination, highly rated and directly aligns with the top traveler search intent for wellness and relaxation in the Addo region. The chosen asset clearly communicates luxury and serenity in under 0.5 seconds, meeting all four override criteria. Placing it in Slot #1 immediately captures the emotional desire for a restorative escape, differentiating the property from competitors.",
+        "neighborhood_affinity_index": 0.9,
+        "override_asset_name": "Serene Spa Treatment Room with Natural Light"
+      },
+      "photos_status": "PENDING"
+    },
+    "audit_timestamp": "2026-11-12T21:54:37.932Z"
+  }
+}

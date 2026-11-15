@@ -1,0 +1,301 @@
+{
+  "key": "tamodi lodge and stables:::plettenberg bay:::keurbooms::::::manifest_only",
+  "timestamp": 1794693377139,
+  "data": {
+    "venue_id": "tamodi_lodge_stables",
+    "venue_name": "Tamodi Lodge and Stables",
+    "location": "Keurbooms, Plettenberg Bay",
+    "vibe_signature": {
+      "energy_score": 75,
+      "social_pacing": "Relaxed & Intimate",
+      "headline": "Secluded Luxury Lodge with Panoramic Views & Equestrian Charm",
+      "acoustic_dna": {
+        "soundscape_genre": "Ambient Nature & Soft Jazz",
+        "anchor_artists": [
+          "Pat Metheny",
+          "Enya",
+          "Norah Jones"
+        ],
+        "spotify_query": "ambient nature jazz lodge",
+        "sound_texture": "Gentle breezes, distant horse sounds, soft background music",
+        "conversation_clarity_score": 92,
+        "conversation_verdict": "Easy Date-Night Chat & Relaxed Conversation",
+        "decibel_level": "58 dB (Peaceful & Intimate)",
+        "sleep_sanctuary_verdict": "Quiet Soundproofed Rooms & Blackout Rest"
+      },
+      "crowd_archetype": {
+        "primary": "Couples & Nature Enthusiasts",
+        "social_density": "Intimate & Spacious",
+        "dress_code": "Smart Casual & Relaxed Chic",
+        "energy_verdict": "Peaceful Retreat & Refined Relaxation",
+        "local_ratio": 60,
+        "tourist_ratio": 40,
+        "tourist_trap_verdict": "Loved by Locals & Discerning Travelers",
+        "trip_occasions": [
+          "Couples Escape",
+          "Nature Retreat",
+          "Romantic Getaway"
+        ]
+      },
+      "lighting_and_sensory": {
+        "atmosphere": "Warm, Natural & Serene",
+        "sensory_intensity": "Subtle & Calming",
+        "lighting_temperature": "Golden Hour Sunlight & Warm Fireside Glow"
+      },
+      "hyper_local_proximity": {
+        "key_anchors": [
+          "The Fat Fish (4.5★ · 12 min drive)",
+          "Lookout Beach (4.6★ · 15 min drive)",
+          "Robberg Nature Reserve (4.8★ · 20 min drive)"
+        ],
+        "insider_lore": "Nestled in the tranquil Keurbooms Heights, Tamodi offers a serene escape while being a short drive from Plettenberg Bay's vibrant dining and natural attractions. The lodge is a true sanctuary for those seeking peace and connection with nature, with horse riding on-site."
+      },
+      "qualification_test": {
+        "you_will_love_if": "You seek a luxurious, peaceful retreat with stunning views, exceptional service, and a connection to nature, including equestrian activities.",
+        "skip_if": "You prefer a bustling, urban environment or direct beach access without a short drive."
+      },
+      "ai_search_geo": {
+        "traveler_prompts": [
+          "Luxury lodge Plettenberg Bay with horse riding",
+          "Romantic getaway Keurbooms with stunning views",
+          "Quiet boutique hotel near Plettenberg Bay for couples"
+        ],
+        "verified_entity_summary": "Tamodi Lodge and Stables is a luxurious, peaceful retreat in Keurbooms, Plettenberg Bay, offering serene social spaces and quiet rooms for restful sleep. Guests can enjoy equestrian activities and are a short drive from highly-rated local dining and nature reserves."
+      },
+      "authenticity_and_materials": {
+        "authenticity_score": 90,
+        "material_palette": "Natural wood, stone, rich textiles, equestrian accents",
+        "material_verdict": "Authentic Lodge Charm — Seamlessly Blends with Nature"
+      },
+      "host_vibe": {
+        "host_archetype": "Gracious Hosts & Equestrian Enthusiasts",
+        "host_style_score": 90,
+        "service_pacing": "Attentive, Personalized & Unhurried",
+        "signature_team_roles": [
+          "Lodge Manager",
+          "Equestrian Guide",
+          "Gourmet Chef"
+        ],
+        "staff_icebreaker_prompt": "Ask the staff about the best local hiking trails or the history of the stables.",
+        "team_aesthetic": "Refined Safari-Chic & Natural Fabrics",
+        "warmth_verdict": "Genuine Hospitality — Feels Like a Welcomed Guest"
+      },
+      "insider_secrets": {
+        "insider_badge": "Lodge Manager's Recommendation",
+        "off_menu_perk": "Request a private picnic basket to enjoy by the stables at sunset.",
+        "secret_lore": "The best time to observe the local wildlife, including various bird species, is during the early morning hours from your private terrace.",
+        "secret_title": "Sunset Stables Picnic"
+      },
+      "temporal_dynamics": {
+        "best_time_to_visit": "4:00 PM for golden hour views and fireside relaxation; 7:30 PM for an intimate dinner experience.",
+        "content_readiness": {
+          "aesthetic_subculture": "Luxury Nature Escape",
+          "flattery_note": "Perfect for capturing serene, aspirational travel content.",
+          "score": 0.85,
+          "top_creator_spot": "Private terrace overlooking the valley at sunrise",
+          "verdict": "Highly Instagrammable & Serene"
+        },
+        "diurnal_rhythm": {
+          "chilling": {
+            "focus": "Relaxing by the pool or fireplace",
+            "score": 0.9,
+            "window": "Afternoon to early evening"
+          },
+          "playing": {
+            "focus": "Horse riding, exploring nature trails",
+            "score": 0.8,
+            "window": "Morning to late afternoon"
+          },
+          "working": {
+            "focus": "Quiet contemplation, light remote work",
+            "score": 0.6,
+            "window": "Mid-morning"
+          }
+        },
+        "peak_atmospheric_window": "Late Afternoon Golden Hour"
+      }
+    },
+    "interactive_quiz_challenge": {
+      "target_scene_id": 101,
+      "scene_name": "Equestrian Serenity",
+      "mission_title": "The Perfect Ride",
+      "question": "You've just arrived at Tamodi Lodge, eager for an equestrian adventure. What's the first thing you should do to ensure a memorable horse riding experience?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Head straight to the stables and pick the fastest horse."
+        },
+        {
+          "id": "B",
+          "text": "Ask the lodge manager about the best trails and riding options for your skill level."
+        },
+        {
+          "id": "C",
+          "text": "Order a cocktail at the bar before even seeing the horses."
+        },
+        {
+          "id": "D",
+          "text": "Attempt to groom a horse without any prior instruction."
+        }
+      ],
+      "correct_option_id": "B",
+      "success_lore_reveal": "Correct! The lodge staff, especially the equestrian guides, are your best resource for tailoring a safe and enjoyable riding experience, ensuring you discover the most scenic routes suited to your expertise.",
+      "reward_badge": "Equestrian Explorer",
+      "challenge_prompt": "Discover the hidden trails and majestic views around Tamodi Lodge.",
+      "reward_spotify_uri": "spotify:playlist:37i9dQZF1DXcBWIGoYBM5M"
+    },
+    "ota_conversion_audit": {
+      "channel": "Booking.com",
+      "before_merchandising_score": 45,
+      "after_merchandising_score": 92,
+      "projected_conversion_uplift": "+21.0%",
+      "current_drop_off_flaw": "Lack of immediate visual clarity on the unique lodge experience and its connection to the Plettenberg Bay nature/equestrian appeal.",
+      "key_strategic_shifts": [
+        "Elevate the signature outdoor pool with panoramic views to Slot #1 to immediately convey the luxury nature retreat experience.",
+        "Prioritize a clear, inviting bedroom shot in Slot #2 to establish comfort and design fidelity.",
+        "Introduce a dedicated bathroom shot in Slot #3 to address guest comfort and hygiene expectations.",
+        "Showcase the exterior and surrounding natural beauty in Slot #5 to anchor the lodge's unique location and appeal."
+      ],
+      "optimal_5_photo_sequence": [
+        {
+          "slot": 1,
+          "category": "HERO_CULTURAL_MAGNET",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 1,
+          "photo_subject": "Outdoor Infinity Pool with Panoramic Valley Views",
+          "bullet_points": [
+            "Strategic Placement: Immediately captures the essence of a luxury nature retreat, aligning with traveler search for scenic escapes.",
+            "Local Synergy: Connects the lodge's tranquil setting with the natural beauty of Plettenberg Bay, a key draw for visitors.",
+            "Conversion Trigger: Evokes aspirational relaxation and exclusivity, prompting immediate booking intent."
+          ],
+          "psychological_conversion_trigger": "This image instantly communicates the aspirational luxury and serene natural setting, a primary driver for bookings in this region.",
+          "action": "HERO_CULTURAL_MAGNET",
+          "action_label": "HERO CULTURAL MAGNET: OUTDOOR INFINITY POOL (SLOT #1)",
+          "current_slot": 1,
+          "local_vibe_connection": "Directly showcases the lodge's integration with the stunning natural landscape, a core appeal of the Plettenberg Bay area.",
+          "upgrade_rationale": "This photo, already the hero, is retained for its strong visual impact and immediate communication of the lodge's primary allure: breathtaking views and luxurious relaxation.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 2,
+          "category": "SIGNATURE_SUITE_BEDROOM",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 2,
+          "photo_subject": "Elegant King Bedroom with Private Terrace Access",
+          "bullet_points": [
+            "Strategic Placement: Follows the hero shot to immediately reassure guests of the quality and comfort of their private space.",
+            "Local Synergy: Reflects the refined, natural aesthetic sought by travelers visiting Plettenberg Bay for a high-end retreat.",
+            "Conversion Trigger: Establishes trust and comfort, showing a direct correlation between the public spaces and private accommodations."
+          ],
+          "psychological_conversion_trigger": "Reassures guests that the private accommodations match the luxury promised by the hero shot, addressing comfort and design expectations.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE ELEGANT KING BEDROOM (FROM SLOT #2)",
+          "current_slot": 2,
+          "local_vibe_connection": "The room's natural light and sophisticated design align with the discerning taste of travelers seeking luxury in a natural setting.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #2): This photo is already well-composed and effectively showcases the bedroom's elegance and comfort, making it ideal for the crucial second slot to validate the private experience.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 3,
+          "category": "SECONDARY_ROOM_BATHROOM",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 3,
+          "photo_subject": "Spacious Modern Bathroom with Freestanding Tub and Walk-in Shower",
+          "bullet_points": [
+            "Strategic Placement: Addresses key guest concerns about hygiene and luxury immediately after the bedroom.",
+            "Local Synergy: The clean, modern design appeals to travelers expecting high standards in luxury accommodations.",
+            "Conversion Trigger: Completes the private space narrative, enhancing perceived value and comfort."
+          ],
+          "psychological_conversion_trigger": "Satisfies the critical need for visual proof of a clean, luxurious, and functional bathroom, a significant factor in booking decisions.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE SPACIOUS MODERN BATHROOM (FROM SLOT #3)",
+          "current_slot": 3,
+          "local_vibe_connection": "The high-quality finishes and spaciousness meet the expectations of luxury travelers in the region.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #3): This photo effectively displays the bathroom's amenities and design, crucial for guest confidence and completing the private room experience.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 4,
+          "category": "SOCIAL_FB_ROOFTOP",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 4,
+          "photo_subject": "Lodge Lounge with Fireplace and Comfortable Seating",
+          "bullet_points": [
+            "Strategic Placement: Showcases a key social amenity, demonstrating opportunities for relaxation and connection within the lodge.",
+            "Local Synergy: Highlights the cozy, inviting atmosphere that complements the natural surroundings, appealing to guests seeking comfort after outdoor activities.",
+            "Conversion Trigger: Illustrates the lodge's ability to provide a warm, welcoming environment beyond the private rooms."
+          ],
+          "psychological_conversion_trigger": "Demonstrates the social and communal aspects of the lodge, appealing to guests looking for a holistic retreat experience.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE LODGE LOUNGE WITH FIREPLACE (FROM SLOT #4)",
+          "current_slot": 4,
+          "local_vibe_connection": "The inviting lounge space provides a perfect setting for unwinding, reflecting the relaxed luxury sought by visitors to the Garden Route.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #4): This photo effectively conveys the lodge's inviting communal spaces, crucial for showcasing the full guest experience.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 5,
+          "category": "EXTERIOR_LANDMARK",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 5,
+          "photo_subject": "Exterior View of Lodge with Lush Gardens and Mountain Backdrop",
+          "bullet_points": [
+            "Strategic Placement: Grounds the property geographically and visually, providing context for its secluded, natural setting.",
+            "Local Synergy: Emphasizes the lodge's integration with the stunning Plettenberg Bay landscape, a major draw for travelers.",
+            "Conversion Trigger: Eliminates location anxiety and reinforces the 'escape to nature' promise."
+          ],
+          "psychological_conversion_trigger": "Provides essential geographic context and reinforces the lodge's unique selling proposition as a secluded, beautiful retreat.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE EXTERIOR VIEW OF LODGE (FROM SLOT #5)",
+          "current_slot": 5,
+          "local_vibe_connection": "Clearly positions the lodge within the picturesque Keurbooms landscape, appealing to travelers seeking scenic beauty and tranquility.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #5): This photo is excellent for establishing the lodge's exterior and natural surroundings, providing crucial context at the end of the visual journey.",
+          "photo_url": null,
+          "image_url": null
+        }
+      ],
+      "anti_commodity_copy_rewrite": {
+        "ota_headline": "Tamodi Lodge & Stables: Luxury Nature Retreat with Equestrian Charm in Plettenberg Bay",
+        "property_overview_150_words": "Nestled in the serene Keurbooms Heights, Tamodi Lodge and Stables offers an exclusive 5-star escape near Plettenberg Bay. Experience luxurious air-conditioned accommodations, each with a minibar and safe, complemented by stunning panoramic views. Indulge in acclaimed breakfasts and unwind in elegant communal spaces, including a cozy lounge with a fireplace and a snack bar/deli. With exceptional service, a tranquil atmosphere, and on-site equestrian activities, Tamodi is the perfect romantic getaway or nature retreat for discerning couples and enthusiasts seeking peace, luxury, and a genuine connection to the beautiful South African landscape."
+      },
+      "photographic_gap_analysis": [
+        {
+          "missing_shot_title": "Guest Horse Riding Experience with Scenic Backdrop",
+          "category": "ACTIVITY_EQUESTRIAN",
+          "why_needed": "Currently, there are no photos showcasing the unique equestrian offering, which is a significant draw for many guests. This shot would capture the active, experiential side of the lodge, appealing to adventure and nature lovers.",
+          "recommended_framing_and_lighting": "Dynamic shot of a guest on horseback, framed against the scenic valley or mountain backdrop, with natural daylight and a sense of movement and joy.",
+          "projected_adr_impact": "+10% direct booking conversion for activity-focused travelers and +$30 ADR premium for equestrian packages."
+        },
+        {
+          "missing_shot_title": "Intimate Dinner Setting on Terrace with Sunset Glow",
+          "category": "CULINARY_SOCIAL",
+          "why_needed": "While breakfast is acclaimed, there's no visual representation of an intimate dinner experience, especially one leveraging the lodge's beautiful views. This would appeal to couples seeking romantic dining options.",
+          "recommended_framing_and_lighting": "Close-up of a beautifully set table for two on a terrace, with soft, warm sunset lighting, showcasing gourmet dishes and a romantic ambiance.",
+          "projected_adr_impact": "+8% higher F&B spend and +$25 ADR for romantic packages."
+        },
+        {
+          "missing_shot_title": "Cozy Fireplace Moment in Lobby with Guests",
+          "category": "ATMOSPHERIC_TWILIGHT",
+          "why_needed": "The lobby fireplace is mentioned as an amenity, but a photo capturing its cozy, inviting atmosphere with guests would enhance the perceived warmth and social appeal, especially for cooler evenings.",
+          "recommended_framing_and_lighting": "Wide shot of the lobby fireplace, with soft, warm lighting, showing guests comfortably seated nearby, perhaps with drinks, conveying relaxation and intimacy.",
+          "projected_adr_impact": "+5% increase in shoulder season bookings and enhanced guest satisfaction scores."
+        }
+      ],
+      "conversion_diagnosis": "The current Booking.com sequence fails to immediately highlight Tamodi's unique selling propositions: its stunning natural setting, equestrian activities, and luxurious, tranquil atmosphere. The photos are good individually but lack a cohesive narrative that guides the traveler through an aspirational journey, leading to drop-offs from those seeking a distinct luxury nature experience.",
+      "local_vibe_synergy_context": "Plettenberg Bay and Keurbooms are renowned for their breathtaking natural beauty, outdoor activities (like horse riding and hiking), and a demand for high-end, tranquil escapes. The photo recommendations strategically prioritize visuals that showcase Tamodi's integration with this natural environment, its luxurious amenities that complement a nature-focused stay, and its unique equestrian offering, directly aligning with the top local subcultures of 'Nature & Adventure', 'Luxury Retreats', and 'Romantic Escapes'.",
+      "slot_1_decision_logic": {
+        "is_magnet_override_active": true,
+        "reasoning_code": "NAI_0.90_DESTINATION_POWER_CLARITY_CONSENSUS",
+        "strategy_explanation": "The outdoor infinity pool with panoramic valley views is the ultimate 'Hero Cultural Magnet' for Tamodi Lodge. It perfectly encapsulates the #1 traveler search theme for Plettenberg Bay: a luxurious nature escape with breathtaking scenery. This asset is a destination in its own right, offering split-second clarity of the lodge's aspirational promise. Placing it in Slot #1 immediately stops the scroll and communicates the core emotional value, setting the stage for the rest of the visual journey.",
+        "neighborhood_affinity_index": 0.9,
+        "override_asset_name": "Outdoor Infinity Pool with Panoramic Valley Views"
+      },
+      "photos_status": "PENDING"
+    },
+    "audit_timestamp": "2026-11-14T21:55:54.727Z"
+  }
+}

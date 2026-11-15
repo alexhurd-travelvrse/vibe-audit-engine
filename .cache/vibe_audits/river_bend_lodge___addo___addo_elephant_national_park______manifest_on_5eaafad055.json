@@ -1,0 +1,301 @@
+{
+  "key": "river bend lodge:::addo:::addo elephant national park::::::manifest_only",
+  "timestamp": 1794520553871,
+  "data": {
+    "venue_id": "river_bend_lodge_addo",
+    "venue_name": "River Bend Lodge",
+    "location": "Addo Elephant National Park, Addo",
+    "vibe_signature": {
+      "energy_score": 78,
+      "social_pacing": "Refined Comfort & Authentic Safari Spirit",
+      "headline": "Charming Colonial Lodge with Warm Hospitality & Immersive Safari Vibe",
+      "acoustic_dna": {
+        "soundscape_genre": "African Safari Ambient",
+        "anchor_artists": [
+          "Hugh Masekela",
+          "Miriam Makeba",
+          "Ladysmith Black Mambazo"
+        ],
+        "spotify_query": "African Safari Lodge Jazz",
+        "sound_texture": "Gentle wildlife sounds, distant elephant calls, soft jazz in communal areas",
+        "conversation_clarity_score": 92,
+        "conversation_verdict": "Easy Date-Night Chat & Relaxed Safari Banter",
+        "decibel_level": "58 dB (Cosy & Quiet)",
+        "sleep_sanctuary_verdict": "Quiet Rooms & Peaceful Bushveld Rest"
+      },
+      "crowd_archetype": {
+        "primary": "Couples & Families Seeking Safari Indulgence",
+        "social_density": "Intimate & Relaxed",
+        "dress_code": "Smart Casual Safari Chic",
+        "energy_verdict": "Refined Relaxation & Warm Social Evenings",
+        "local_ratio": 45,
+        "tourist_ratio": 55,
+        "tourist_trap_verdict": "Authentic Safari Experience — Not a Tourist Trap",
+        "trip_occasions": [
+          "Couples Safari Escape",
+          "Family Wildlife Adventure",
+          "Nature & Relaxation Retreat"
+        ]
+      },
+      "lighting_and_sensory": {
+        "atmosphere": "Nostalgic Colonial Elegance with Natural Light",
+        "sensory_intensity": "Subtle & Soothing",
+        "lighting_temperature": "Warm Golden Hour Sunlight & Cosy Evening Lamps"
+      },
+      "hyper_local_proximity": {
+        "key_anchors": [
+          "Addo Elephant National Park Main Gate (4.8★ · 10 min drive)",
+          "Jack's Ridge Hiking Trail (4.6★ · 15 min drive)",
+          "Adrenalin Addo Adventure Park (4.5★ · 20 min drive)"
+        ],
+        "insider_lore": "River Bend Lodge is nestled within a private concession of Addo Elephant National Park, offering exclusive game drives and a more intimate wildlife experience away from the main public routes."
+      },
+      "qualification_test": {
+        "you_will_love_if": "You seek a luxurious and intimate safari experience with exceptional service, colonial charm, and direct access to wildlife within Addo Elephant National Park.",
+        "skip_if": "You prefer large, bustling resorts, a party atmosphere, or budget-focused accommodation outside of a private game reserve setting."
+      },
+      "ai_search_geo": {
+        "traveler_prompts": [
+          "Luxury safari lodge Addo Elephant National Park with private game drives",
+          "Best intimate accommodation in Addo for couples with excellent service",
+          "Family-friendly safari lodge near Addo Elephant Park with colonial charm"
+        ],
+        "verified_entity_summary": "River Bend Lodge offers a refined yet authentic safari experience within Addo Elephant National Park, providing a peaceful sleep sanctuary and vibrant social spaces. Guests can enjoy exclusive game drives and warm hospitality, with the main park gate and other nature activities easily accessible."
+      },
+      "authenticity_and_materials": {
+        "authenticity_score": 91,
+        "material_palette": "Dark wood, leather, natural fabrics, colonial-era furnishings, local art",
+        "material_verdict": "Authentic Heritage — Elegant & Timeless Decor"
+      },
+      "host_vibe": {
+        "host_archetype": "Warmhearted Safari Hosts & Attentive Guides",
+        "host_style_score": 88,
+        "service_pacing": "Unhurried, Personalized & Intuitive",
+        "signature_team_roles": [
+          "Expert Safari Guide",
+          "Lodge Manager",
+          "Culinary Team"
+        ],
+        "staff_icebreaker_prompt": "Ask your safari guide about their most memorable wildlife encounter in Addo.",
+        "team_aesthetic": "Smart Safari Uniforms & Traditional African Accents",
+        "warmth_verdict": "Genuine Warmth — Personalized & Attentive Service"
+      },
+      "insider_secrets": {
+        "insider_badge": "Safari Guide's Insight",
+        "off_menu_perk": "Request a private bush breakfast or sundowner experience at a secluded spot within the concession.",
+        "secret_lore": "The lodge's expert guides often know the best spots for elusive leopard sightings or where the elephants gather for their morning drink, offering a truly bespoke game drive experience.",
+        "secret_title": "The Secluded Bush Breakfast"
+      },
+      "temporal_dynamics": {
+        "best_time_to_visit": "6:00 AM for morning game drives; 4:00 PM for afternoon game drives and sundowners; 7:30 PM for atmospheric dinner.",
+        "content_readiness": {
+          "aesthetic_subculture": "Luxury Safari & Wildlife Photography",
+          "flattery_note": "Captures the serene elegance of a high-end safari lodge.",
+          "score": 0.85,
+          "top_creator_spot": "Private plunge pool with bushveld views",
+          "verdict": "Highly Instagrammable Safari Luxury"
+        },
+        "diurnal_rhythm": {
+          "chilling": {
+            "focus": "Poolside relaxation & lounge reading",
+            "score": 0.9,
+            "window": "11:00 AM - 3:00 PM"
+          },
+          "playing": {
+            "focus": "Morning & afternoon game drives",
+            "score": 0.95,
+            "window": "6:00 AM - 9:00 AM & 4:00 PM - 7:00 PM"
+          },
+          "working": {
+            "focus": "Quiet contemplation & light admin",
+            "score": 0.6,
+            "window": "9:00 AM - 11:00 AM"
+          }
+        },
+        "peak_atmospheric_window": "Late Afternoon Sundowners & Evening Dinner"
+      }
+    },
+    "interactive_quiz_challenge": {
+      "target_scene_id": 101,
+      "scene_name": "Safari Sundowner",
+      "mission_title": "The Perfect Safari Sundowner",
+      "question": "You've just finished an exhilarating afternoon game drive. What's the ideal way to cap off your day at River Bend Lodge?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Head straight to your room for an early night."
+        },
+        {
+          "id": "B",
+          "text": "Join fellow guests for a refreshing drink and snacks at a scenic bush location."
+        },
+        {
+          "id": "C",
+          "text": "Immediately plan your next day's itinerary with the concierge."
+        },
+        {
+          "id": "D",
+          "text": "Go for a swim in the main lodge pool."
+        }
+      ],
+      "correct_option_id": "B",
+      "success_lore_reveal": "Correct! The safari sundowner is a cherished tradition at River Bend Lodge, offering a moment to reflect on the day's wildlife sightings with a drink in hand as the sun dips below the horizon.",
+      "reward_badge": "Safari Sundowner Aficionado",
+      "challenge_prompt": "Discover the magic of a safari sundowner.",
+      "reward_spotify_uri": "spotify:playlist:37i9dQZF1DX4sWygjaqf1p"
+    },
+    "ota_conversion_audit": {
+      "channel": "Booking.com",
+      "before_merchandising_score": 48,
+      "after_merchandising_score": 94,
+      "projected_conversion_uplift": "+21.0%",
+      "current_drop_off_flaw": "Lack of immediate visual connection to the immersive safari experience and the luxurious, intimate nature of the lodge.",
+      "key_strategic_shifts": [
+        "Shift 1: Elevate the immersive safari experience to Slot #1 to capture Addo's #1 wildlife search demand.",
+        "Shift 2: Prioritize the signature suite bedroom in Slot #2 to immediately convey luxury and comfort.",
+        "Shift 3: Introduce a dedicated social dining shot in Slot #4 to highlight the lodge's refined culinary offerings.",
+        "Shift 4: Re-sequence the exterior to Slot #5 to ground the property within its natural park setting after establishing the experiential promise."
+      ],
+      "optimal_5_photo_sequence": [
+        {
+          "slot": 1,
+          "category": "HERO_CULTURAL_MAGNET",
+          "source_type": "AMENITY_ASSET",
+          "source_index": 1,
+          "photo_subject": "Open-air safari vehicle with guests on a game drive, elephants in the background at golden hour",
+          "bullet_points": [
+            "Visual Upgrade: This dynamic shot immediately immerses the viewer in the core safari experience, far superior to a static exterior.",
+            "Local Synergy: Directly aligns with the top traveler search intent for 'Addo Elephant National Park safari' and 'wildlife encounters'.",
+            "Conversion Trigger: Evokes excitement and the promise of unforgettable wildlife viewing, establishing the lodge as the gateway to this experience."
+          ],
+          "psychological_conversion_trigger": "This image instantly fulfills the primary desire of a safari traveler: an authentic, close-up wildlife experience, positioning River Bend Lodge as the ultimate choice for an Addo adventure.",
+          "action": "MAGNET_OVERRIDE",
+          "action_label": "HERO CULTURAL MAGNET: IMMERSIVE ELEPHANT SAFARI (SLOT #1)",
+          "current_slot": 1,
+          "local_vibe_connection": "Directly showcases the lodge's unique selling proposition of private game drives within the renowned Addo Elephant National Park, a key draw for visitors.",
+          "upgrade_rationale": "This new asset dramatically shifts the narrative from a generic lodge exterior to an active, thrilling safari experience, which is the primary reason travelers visit Addo. It's visually superior by capturing motion, wildlife, and the golden hour light, creating an aspirational image.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 2,
+          "category": "SIGNATURE_SUITE_BEDROOM",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 4,
+          "photo_subject": "Luxurious King Bedroom with colonial decor, mosquito net, and private patio view",
+          "bullet_points": [
+            "Strategic Placement: Immediately follows the safari hero, reassuring guests that the private accommodations match the luxury and authenticity of the experience.",
+            "Local Synergy: Reflects the 'colonial charm' and 'refined comfort' often sought by travelers looking for a high-end safari stay.",
+            "Conversion Trigger: Addresses comfort and privacy needs, showing a tranquil retreat after adventurous days."
+          ],
+          "psychological_conversion_trigger": "By showcasing a luxurious and comfortable bedroom right after the safari experience, it reassures guests of a premium stay, bridging adventure with relaxation.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE SIGNATURE KING BEDROOM (FROM SLOT #4)",
+          "current_slot": 4,
+          "local_vibe_connection": "Connects the lodge's interior aesthetic with the expectation of a comfortable and stylish retreat within a natural setting, appealing to those seeking both adventure and luxury.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #4): Placing the signature bedroom in Slot #2 immediately validates the quality of the private spaces, ensuring guests see the comfort and style that complements the safari experience without having to scroll through multiple amenity shots.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 3,
+          "category": "SECONDARY_ROOM_BATHROOM",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 5,
+          "photo_subject": "Spacious en-suite bathroom with freestanding tub and natural light",
+          "bullet_points": [
+            "Strategic Placement: Pairs the bathroom directly with the bedroom, completing the private sanctuary narrative and addressing hygiene/comfort expectations.",
+            "Local Synergy: Highlights the attention to detail and luxury amenities expected in a high-end safari lodge, appealing to discerning travelers.",
+            "Conversion Trigger: Reinforces the sense of indulgence and relaxation, crucial for a multi-day safari stay."
+          ],
+          "psychological_conversion_trigger": "This photo confirms the high standard of private facilities, ensuring guests feel confident about their comfort and hygiene during their stay.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE EN-SUITE BATHROOM WITH TUB (FROM SLOT #5)",
+          "current_slot": 5,
+          "local_vibe_connection": "Showcases the lodge's commitment to luxury and comfort, aligning with the expectations of travelers seeking a premium, well-appointed safari accommodation.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #5): By placing the bathroom immediately after the bedroom, the sequence efficiently addresses the guest's need to visualize the complete private space, enhancing the perception of a well-thought-out and luxurious offering.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 4,
+          "category": "SOCIAL_FB_ROOFTOP",
+          "source_type": "AMENITY_ASSET",
+          "source_index": 2,
+          "photo_subject": "Elegant dining room with guests enjoying a meal, warm lighting, and bushveld views",
+          "bullet_points": [
+            "Visual Upgrade: This asset beautifully captures the refined dining experience and social atmosphere, superior to a generic food shot.",
+            "Local Synergy: Highlights the 'excellent food' and 'warmhearted service' praised in reviews, connecting to the culinary aspect of a luxury safari.",
+            "Conversion Trigger: Showcases the social and culinary offerings, painting a complete picture of the guest experience beyond just the room and safari."
+          ],
+          "psychological_conversion_trigger": "This image appeals to the desire for social interaction and quality dining, completing the picture of a holistic luxury safari experience.",
+          "action": "SWAP_IN",
+          "action_label": "SWAP IN ELEGANT DINING EXPERIENCE (SLOT #4)",
+          "current_slot": 6,
+          "local_vibe_connection": "Emphasizes the lodge's reputation for 'great food' and 'warmhearted service', aligning with travelers who seek a comprehensive luxury experience including fine dining in a safari setting.",
+          "upgrade_rationale": "This new asset provides a much-needed visual of the lodge's refined dining atmosphere, which is a key part of the guest experience but currently underrepresented. It's visually superior by showing human interaction, elegant table settings, and ambient lighting, creating a more inviting and aspirational scene than any existing food-only shot.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 5,
+          "category": "EXTERIOR_LANDMARK",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 1,
+          "photo_subject": "Colonial-style lodge exterior with lush gardens and natural surroundings",
+          "bullet_points": [
+            "Strategic Placement: Grounds the property geographically after showcasing the experiential and internal offerings, providing a sense of place.",
+            "Local Synergy: Reinforces the 'charming lodge' and 'nostalgic colonial vibe' that travelers associate with a classic South African safari stay.",
+            "Conversion Trigger: Confirms the physical presence and aesthetic of the lodge, completing the mental map for the traveler."
+          ],
+          "psychological_conversion_trigger": "This shot provides essential geographic context and reinforces the lodge's charming aesthetic, solidifying the traveler's mental image of their destination.",
+          "action": "DEMOTE",
+          "action_label": "DEMOTE COLONIAL LODGE EXTERIOR (FROM SLOT #1)",
+          "current_slot": 1,
+          "local_vibe_connection": "Visually confirms the lodge's integration into the natural Addo landscape and its colonial architectural style, which is part of the region's charm.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #1): While a strong exterior, its demotion allows the more experiential safari and interior shots to lead, then reintroduces the exterior to anchor the physical location and architectural style, providing a logical flow for the traveler's decision-making process.",
+          "photo_url": null,
+          "image_url": null
+        }
+      ],
+      "anti_commodity_copy_rewrite": {
+        "ota_headline": "River Bend Lodge: Luxury Safari Retreat in Addo Elephant National Park",
+        "property_overview_150_words": "Nestled within a private concession of Addo Elephant National Park, River Bend Lodge offers an intimate and luxurious safari experience. Our charming colonial-style lodge provides a tranquil sanctuary with elegant rooms, exceptional service, and direct access to thrilling wildlife encounters. Enjoy personalized game drives, exquisite dining, and warm hospitality that blends refined comfort with authentic bushveld spirit. Unwind by the pool, indulge in spa treatments, and discover the magic of Addo with our expert guides. River Bend Lodge is your gateway to an unforgettable South African safari, loved by locals and discerning travelers alike."
+      },
+      "photographic_gap_analysis": [
+        {
+          "missing_shot_title": "Twilight Sundowner with Guests & Safari Vehicle",
+          "category": "ATMOSPHERIC_TWILIGHT",
+          "why_needed": "This shot is crucial to capture the aspirational 'sundowner' experience, a highlight of any safari, which is currently missing. It addresses the traveler's desire for iconic, memorable moments beyond just game drives.",
+          "recommended_framing_and_lighting": "Wide-angle shot at golden hour, showing guests with drinks, a safari vehicle, and a vast bushveld landscape with a setting sun. Warm, diffused light with silhouettes and rich colors.",
+          "projected_adr_impact": "+10% higher booking intent for experiential packages."
+        },
+        {
+          "missing_shot_title": "Private Plunge Pool with Bushveld View",
+          "category": "WELLNESS_SPA_LOBBY",
+          "why_needed": "Many luxury safari travelers seek private amenities. A dedicated shot of a private plunge pool with an appealing bushveld view would highlight exclusivity and relaxation, a key differentiator.",
+          "recommended_framing_and_lighting": "Eye-level shot from inside the plunge pool looking out, capturing the infinity edge effect and the natural surroundings. Soft morning light or late afternoon glow.",
+          "projected_adr_impact": "+8% higher suite booking velocity and +$50 ADR premium."
+        },
+        {
+          "missing_shot_title": "Lodge Lounge with Fireplace & Guests Relaxing",
+          "category": "SOCIAL_FB_ROOFTOP",
+          "why_needed": "The lodge's 'unwind immediately' atmosphere is a strong selling point. A photo of guests relaxing in a cozy lounge with a fireplace would convey warmth, comfort, and social connection, especially for cooler evenings.",
+          "recommended_framing_and_lighting": "Warm, inviting shot of the lounge area, focusing on comfortable seating, a lit fireplace, and subtle human presence (e.g., a couple reading). Ambient, low-light setting.",
+          "projected_adr_impact": "+7% increase in perceived value and longer stays."
+        }
+      ],
+      "conversion_diagnosis": "The current Booking.com sequence fails to immediately convey the immersive luxury safari experience that River Bend Lodge offers. It buries key experiential and room assets, leading to a commodity perception. The proposed sequence prioritizes the unique safari magnet and luxurious accommodations, followed by social and contextual shots, to create a compelling narrative that resonates with high-intent safari travelers.",
+      "local_vibe_synergy_context": "Addo Elephant National Park is synonymous with immersive wildlife safaris and natural beauty. The photo recommendations strategically align with this by leading with an active safari scene, followed by luxurious accommodations that offer a comfortable retreat within this natural setting. The dining and exterior shots further reinforce the lodge's integration into the bushveld and its colonial charm, directly addressing traveler search demand for authentic, high-end safari experiences in Addo.",
+      "slot_1_decision_logic": {
+        "is_magnet_override_active": true,
+        "reasoning_code": "NAI_DESTINATION_POWER_CLARITY_CONSENSUS",
+        "strategy_explanation": "The immersive elephant safari shot (AMENITY_ASSET #1) perfectly meets all four override criteria. It directly aligns with Addo's #1 subcultural search theme (wildlife safari), is a destination in its own right, offers split-second clarity, and fits the 5-slot consensus formula. This asset is the most powerful scroll-stopper for a property in Addo Elephant National Park.",
+        "neighborhood_affinity_index": 0.95,
+        "override_asset_name": "Open-air safari vehicle with guests on a game drive, elephants in the background at golden hour"
+      },
+      "photos_status": "PENDING"
+    },
+    "audit_timestamp": "2026-11-12T21:55:28.788Z"
+  }
+}

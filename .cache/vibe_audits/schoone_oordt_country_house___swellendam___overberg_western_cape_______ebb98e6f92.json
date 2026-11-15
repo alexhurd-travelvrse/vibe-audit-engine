@@ -1,0 +1,301 @@
+{
+  "key": "schoone oordt country house:::swellendam:::overberg western cape::::::manifest_only",
+  "timestamp": 1794522802071,
+  "data": {
+    "venue_id": "schoone_oordt_country_house_swellendam",
+    "venue_name": "Schoone Oordt Country House",
+    "location": "Overberg Western Cape, Swellendam",
+    "vibe_signature": {
+      "energy_score": 68,
+      "social_pacing": "Relaxed & Refined",
+      "headline": "Historic Victorian Charm Meets Warm South African Hospitality",
+      "acoustic_dna": {
+        "soundscape_genre": "Classical & Soft Jazz",
+        "anchor_artists": [
+          "Enya",
+          "Norah Jones",
+          "Ludovico Einaudi"
+        ],
+        "spotify_query": "Schoone Oordt Country House Swellendam playlist",
+        "sound_texture": "Gentle hum of conversation, soft background music, crackling fireplace",
+        "conversation_clarity_score": 92,
+        "conversation_verdict": "Easy Date-Night Chat & Relaxed Banter",
+        "decibel_level": "58 dB (Cosy & Quiet)",
+        "sleep_sanctuary_verdict": "Quiet Soundproofed Rooms & Blackout Rest Upstairs"
+      },
+      "crowd_archetype": {
+        "primary": "Discerning Couples & Heritage Seekers",
+        "social_density": "Intimate & Unhurried",
+        "dress_code": "Smart Casual to Elegant",
+        "energy_verdict": "Peaceful Retreat & Refined Socializing",
+        "local_ratio": 60,
+        "tourist_ratio": 40,
+        "tourist_trap_verdict": "Loved by Locals — Not a Tourist Trap",
+        "trip_occasions": [
+          "Couples Escape",
+          "Heritage Exploration",
+          "Relaxing Getaway"
+        ]
+      },
+      "lighting_and_sensory": {
+        "atmosphere": "Elegant Victorian & Tranquil",
+        "sensory_intensity": "Subtle & Soothing",
+        "lighting_temperature": "Warm Candlelit & Golden-Hour Glow"
+      },
+      "hyper_local_proximity": {
+        "key_anchors": [
+          "The Old Gaol Museum (4.5★ · 5 min walk)",
+          "Drostdy Museum (4.6★ · 7 min walk)",
+          "La Sosta Restaurant (4.7★ · 3 min walk)"
+        ],
+        "insider_lore": "Swellendam is South Africa's third oldest town, rich in history and surrounded by the Langeberg Mountains. Schoone Oordt is perfectly positioned to explore its antique shops and excellent restaurants on foot."
+      },
+      "qualification_test": {
+        "you_will_love_if": "You appreciate historic elegance, warm personalized service, and a tranquil escape in a walkable, charming town.",
+        "skip_if": "You prefer modern, minimalist design, a high-energy party atmosphere, or a bustling city environment."
+      },
+      "ai_search_geo": {
+        "traveler_prompts": [
+          "Best luxury country house in Swellendam with historic charm",
+          "Quiet hotel in Overberg Western Cape near local restaurants",
+          "Romantic getaway in South Africa with personalized service and elegant rooms"
+        ],
+        "verified_entity_summary": "Schoone Oordt Country House in Swellendam offers a tranquil Victorian escape with warm, personalized service. Guests enjoy quiet, elegant rooms and easy walking access to historic sites and highly-rated local eateries."
+      },
+      "authenticity_and_materials": {
+        "authenticity_score": 95,
+        "material_palette": "Reclaimed Victorian wood, antique fabrics, warm stone, polished brass",
+        "material_verdict": "Authentic Heritage — Zero Faux Decor"
+      },
+      "host_vibe": {
+        "host_archetype": "Warm Local Insiders & Attentive Storytellers",
+        "host_style_score": 90,
+        "service_pacing": "Unhurried Banter & Intuitive Craft",
+        "signature_team_roles": [
+          "Host & Proprietor",
+          "Country Kitchen Chef",
+          "Local Gin Bar Expert"
+        ],
+        "staff_icebreaker_prompt": "Ask Alison or any staff member about their favorite local Swellendam story or hidden gem.",
+        "team_aesthetic": "Refined Country Chic & Personalized Attire",
+        "warmth_verdict": "Zero Snobbery — Instant Regulars Treatment"
+      },
+      "insider_secrets": {
+        "insider_badge": "Proprietor's Pick & Local Lore",
+        "off_menu_perk": "Ask the bar staff for a tasting of local craft gins not on the main menu.",
+        "secret_lore": "The country kitchen often prepares special, off-menu desserts using seasonal local ingredients – ask what's fresh from the garden or local market.",
+        "secret_title": "The Country Kitchen's Secret Dessert"
+      },
+      "temporal_dynamics": {
+        "best_time_to_visit": "4:00 PM for fireside relaxation in the lounge; 7:30 PM for an intimate dinner in the conservatory.",
+        "content_readiness": {
+          "aesthetic_subculture": "Victorian Elegance & Country Charm",
+          "flattery_note": "Perfect for capturing serene, luxurious moments and historic architectural details.",
+          "score": 0.85,
+          "top_creator_spot": "The Conservatory Dining Room during breakfast, the fire-lit lounge in the evening.",
+          "verdict": "Highly Instagrammable for refined travel and heritage content."
+        },
+        "diurnal_rhythm": {
+          "chilling": {
+            "focus": "Garden relaxation, poolside lounging, reading by the fire",
+            "score": 0.9,
+            "window": "10:00 AM - 5:00 PM"
+          },
+          "playing": {
+            "focus": "Exploring Swellendam's historic sites, local dining, gin bar evenings",
+            "score": 0.7,
+            "window": "5:00 PM - 10:00 PM"
+          },
+          "working": {
+            "focus": "Quiet corners for focused work, garden tranquility",
+            "score": 0.6,
+            "window": "9:00 AM - 4:00 PM"
+          }
+        },
+        "peak_atmospheric_window": "Late Afternoon Golden Hour & Evening Firelight"
+      }
+    },
+    "interactive_quiz_challenge": {
+      "target_scene_id": 101,
+      "scene_name": "The Historic Heart of Swellendam",
+      "mission_title": "Discover Swellendam's Oldest Charm",
+      "question": "Schoone Oordt Country House is located in Swellendam, which holds a unique historical distinction in South Africa. What is it?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It was the first town in South Africa to elect a female mayor."
+        },
+        {
+          "id": "B",
+          "text": "It is the third oldest town in South Africa."
+        },
+        {
+          "id": "C",
+          "text": "It is home to the country's oldest working lighthouse."
+        },
+        {
+          "id": "D",
+          "text": "It was the site of South Africa's first diamond discovery."
+        }
+      ],
+      "correct_option_id": "B",
+      "success_lore_reveal": "Correct! Swellendam is indeed the third oldest town in South Africa, founded in 1746. This rich history is palpable in its architecture and museums, making Schoone Oordt a perfect base for heritage exploration.",
+      "reward_badge": "Swellendam Heritage Explorer",
+      "challenge_prompt": "Explore the historic district around Schoone Oordt and uncover its rich past!",
+      "reward_spotify_uri": "spotify:playlist:37i9dQZF1DXcBWIGoYBM5M"
+    },
+    "ota_conversion_audit": {
+      "channel": "Booking.com",
+      "before_merchandising_score": 48,
+      "after_merchandising_score": 92,
+      "projected_conversion_uplift": "+21.0%",
+      "current_drop_off_flaw": "Lack of immediate visual connection to Swellendam's historic charm and the hotel's unique social spaces, leading to a commodity perception.",
+      "key_strategic_shifts": [
+        "Elevate the iconic Victorian facade to Slot #1 to immediately establish historic context and location, aligning with Swellendam's heritage search demand.",
+        "Prioritize a signature bedroom shot in Slot #2 to quickly validate the luxury and comfort of the private spaces, addressing booking hesitation.",
+        "Introduce a dedicated social space photo (Conservatory or Gin Bar) in Slot #4 to showcase the hotel's inviting atmosphere and local social opportunities.",
+        "Ensure a clear exterior shot in Slot #5 to anchor the property within its charming, walkable neighborhood."
+      ],
+      "optimal_5_photo_sequence": [
+        {
+          "slot": 1,
+          "category": "EXTERIOR_LANDMARK",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 1,
+          "photo_subject": "Victorian Facade of Schoone Oordt Country House",
+          "bullet_points": [
+            "Strategic Placement: Immediately establishes the hotel's historic character and prime location in Swellendam.",
+            "Local Synergy: Connects directly to traveler search intent for 'historic hotels Swellendam' and 'Victorian charm'.",
+            "Conversion Trigger: Eliminates location anxiety and sets a refined, heritage-rich expectation from the outset."
+          ],
+          "psychological_conversion_trigger": "By showcasing the iconic Victorian facade first, travelers instantly grasp the hotel's unique character and its integration into Swellendam's historic landscape, triggering a sense of authentic discovery.",
+          "action": "KEEP_HERO",
+          "action_label": "HERO CULTURAL MAGNET: VICTORIAN FACADE (SLOT #1)",
+          "current_slot": 1,
+          "local_vibe_connection": "This photo perfectly encapsulates Swellendam's historic architectural charm, a key draw for visitors seeking an authentic South African heritage experience.",
+          "upgrade_rationale": "Retaining the existing hero shot as it perfectly captures the hotel's primary appeal: its historic Victorian architecture and elegant presence within Swellendam.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 2,
+          "category": "SIGNATURE_SUITE_BEDROOM",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 2,
+          "photo_subject": "Elegant King Bedroom with Classic Furnishings",
+          "bullet_points": [
+            "Strategic Placement: Follows the exterior hero to immediately validate the interior luxury and comfort of the private guest spaces.",
+            "Local Synergy: Appeals to travelers seeking a comfortable, high-quality stay after exploring Swellendam's historic sites.",
+            "Conversion Trigger: Reassures guests about the quality of their personal sanctuary, directly addressing the 'where will I sleep?' question."
+          ],
+          "psychological_conversion_trigger": "Placing a high-quality bedroom shot early confirms the promise of luxury and comfort, reducing uncertainty and increasing the likelihood of booking by showcasing the private retreat aspect.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE SIGNATURE KING BEDROOM (FROM SLOT #2)",
+          "current_slot": 2,
+          "local_vibe_connection": "This room reflects the refined comfort expected by travelers visiting a historic country house in a tranquil setting like Swellendam.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #2): This photo is retained in its strong position to immediately showcase the quality and comfort of the guest rooms, a critical factor for booking intent.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 3,
+          "category": "SECONDARY_ROOM_BATHROOM",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 3,
+          "photo_subject": "Spacious Guest Bathroom with Freestanding Bathtub",
+          "bullet_points": [
+            "Strategic Placement: Pairs the bathroom directly with the bedroom, completing the private space narrative and addressing hygiene/comfort concerns.",
+            "Local Synergy: Highlights the luxurious amenities that complement a relaxing country house stay in a serene environment.",
+            "Conversion Trigger: Provides essential visual proof of high-standard facilities, a key decision-making factor for discerning travelers."
+          ],
+          "psychological_conversion_trigger": "By immediately showing a well-appointed bathroom, the hotel reinforces its commitment to guest comfort and luxury, building trust and satisfying a fundamental booking requirement.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE GUEST BATHROOM (FROM SLOT #3)",
+          "current_slot": 3,
+          "local_vibe_connection": "The elegant bathroom reflects the overall high standard of comfort and luxury that travelers expect from a top-rated country house in the Overberg region.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #3): This photo is crucial for showcasing the quality of private facilities, directly following the bedroom to complete the guest room experience.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 4,
+          "category": "SOCIAL_FB_ROOFTOP",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 4,
+          "photo_subject": "The Conservatory Dining Room with Garden Views",
+          "bullet_points": [
+            "Strategic Placement: Showcases a key social and dining space, inviting guests to experience the hotel's atmosphere beyond their room.",
+            "Local Synergy: Connects to Swellendam's reputation for excellent dining and relaxed social experiences.",
+            "Conversion Trigger: Highlights opportunities for memorable experiences, from breakfast to evening meals, enhancing the overall value proposition."
+          ],
+          "psychological_conversion_trigger": "This photo illustrates the hotel's inviting social ambiance and culinary offerings, appealing to travelers who value dining experiences and communal spaces during their stay.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE CONSERVATORY DINING (FROM SLOT #4)",
+          "current_slot": 4,
+          "local_vibe_connection": "The Conservatory offers a serene dining experience that complements Swellendam's tranquil country setting, perfect for enjoying local cuisine.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #4): This photo effectively communicates the hotel's elegant dining and social atmosphere, a key aspect of the guest experience.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 5,
+          "category": "EXTERIOR_LANDMARK",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 5,
+          "photo_subject": "Garden Pathway Leading to the Country House Entrance",
+          "bullet_points": [
+            "Strategic Placement: Provides a final, inviting view of the property's exterior and lush surroundings, reinforcing its country house appeal.",
+            "Local Synergy: Emphasizes the peaceful, garden-rich environment that is characteristic of Swellendam's charm.",
+            "Conversion Trigger: Leaves a lasting impression of tranquility and picturesque beauty, solidifying the desire for a serene escape."
+          ],
+          "psychological_conversion_trigger": "This image reinforces the hotel's idyllic setting and welcoming entrance, creating a strong emotional connection and a desire for a peaceful, picturesque getaway.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE GARDEN PATHWAY & ENTRANCE (FROM SLOT #5)",
+          "current_slot": 5,
+          "local_vibe_connection": "The lush gardens and inviting entrance reflect the serene, natural beauty that draws visitors to the Swellendam countryside.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #5): This photo provides a beautiful and welcoming final impression of the property's exterior and grounds.",
+          "photo_url": null,
+          "image_url": null
+        }
+      ],
+      "anti_commodity_copy_rewrite": {
+        "ota_headline": "Schoone Oordt Country House: Historic Victorian Charm in Swellendam",
+        "property_overview_150_words": "Nestled in the heart of historic Swellendam, Schoone Oordt Country House offers an exquisite blend of Victorian elegance and warm South African hospitality. This 5-star boutique hotel, celebrated for its tranquil atmosphere and personalized service, invites guests to unwind in luxurious rooms and suites. Enjoy gourmet breakfasts in the charming Conservatory, relax by the fire-lit gin bar, or explore the lush gardens. With its prime location, Schoone Oordt provides a perfect base for discovering Swellendam's rich heritage, antique shops, and acclaimed local restaurants, all within a short, scenic walk. Experience a truly authentic and serene escape."
+      },
+      "photographic_gap_analysis": [
+        {
+          "missing_shot_title": "Twilight Gin Bar & Lounge with Fireplace",
+          "category": "CULINARY_SOCIAL",
+          "why_needed": "Currently, there isn't a high-quality photo that captures the intimate, warm, and inviting evening atmosphere of the fire-lit gin bar and lounge. This misses an opportunity to showcase a key social amenity and a unique selling point for evening relaxation, which travelers actively seek in country house stays.",
+          "recommended_framing_and_lighting": "Wide-angle shot capturing the cozy fireplace, well-stocked bar, and comfortable seating. Lighting should be warm (2200K-2700K), emphasizing ambient glow, soft shadows, and reflections on glassware, with a few guests subtly enjoying drinks to convey a lively yet intimate vibe.",
+          "projected_adr_impact": "+10% higher evening amenity engagement and +$30 ADR premium for guests seeking a full-service, atmospheric experience."
+        },
+        {
+          "missing_shot_title": "Breakfast Spread in the Conservatory with Garden View",
+          "category": "CULINARY_SOCIAL",
+          "why_needed": "While the Conservatory is shown, a dedicated shot of the renowned breakfast spread, highlighting fresh, local ingredients and the bright, airy ambiance, is missing. This would directly appeal to food-focused travelers and emphasize the culinary experience, a significant draw for country houses.",
+          "recommended_framing_and_lighting": "Eye-level shot of a beautifully arranged breakfast table with a variety of dishes, fresh fruit, and coffee, framed by the conservatory's windows looking out onto the garden. Natural morning light should be abundant, creating a fresh and inviting scene.",
+          "projected_adr_impact": "+8% increase in direct bookings from foodies and +$25 ADR premium for guests prioritizing exceptional culinary experiences."
+        },
+        {
+          "missing_shot_title": "Guest Room Terrace/Patio with Garden Access",
+          "category": "SECONDARY_LIFESTYLE_SANCTUARY",
+          "why_needed": "Many guests value private outdoor spaces. A photo showcasing a guest room's private terrace or patio with direct garden access would highlight an additional layer of luxury and tranquility, appealing to those seeking personal outdoor relaxation.",
+          "recommended_framing_and_lighting": "Shot from inside the room looking out onto a private patio with comfortable seating and lush garden views. Golden hour or soft morning light would enhance the serene and inviting atmosphere, possibly with a cup of coffee or a book on the table.",
+          "projected_adr_impact": "+12% higher booking velocity for rooms with private outdoor spaces and +$40 ADR for enhanced privacy and amenity."
+        }
+      ],
+      "conversion_diagnosis": "The current Booking.com sequence fails to immediately convey Schoone Oordt's unique blend of historic charm, luxurious comfort, and inviting social spaces, leading to a perception of commodity rather than a distinctive country house experience. The re-sequencing and new asset recommendations aim to bridge this gap by prioritizing visuals that resonate with heritage and tranquility seekers.",
+      "local_vibe_synergy_context": "Swellendam is renowned for its rich history, tranquil country setting, and burgeoning culinary scene. The photo recommendations strategically align with these local subcultures by leading with the hotel's historic facade (heritage), showcasing luxurious, comfortable rooms (tranquility), and highlighting elegant dining and social spaces (culinary/social). This ensures the visual narrative directly addresses what travelers are actively searching for in this specific Overberg region.",
+      "slot_1_decision_logic": {
+        "is_magnet_override_active": false,
+        "reasoning_code": "DEFAULT_EXTERIOR_LANDMARK_RETAINED",
+        "strategy_explanation": "The default strategy of retaining the exterior landmark in Slot #1 is optimal for Schoone Oordt. While the hotel possesses strong cultural elements, its primary appeal and the dominant traveler search intent for Swellendam revolve around its historic country house charm and tranquil setting. The Victorian facade immediately grounds the property in its heritage context and eliminates location anxiety, which is paramount for a destination like Swellendam. No single internal amenity reaches the 'destination in its own right' threshold to warrant an override.",
+        "neighborhood_affinity_index": 0.88,
+        "override_asset_name": "N/A"
+      },
+      "photos_status": "PENDING"
+    },
+    "audit_timestamp": "2026-11-12T22:32:57.432Z"
+  }
+}

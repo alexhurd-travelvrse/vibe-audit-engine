@@ -1,0 +1,301 @@
+{
+  "key": "bahia mar boutique hotel:::vilankulo:::bazaruto archipelago mozambique::::::manifest_only",
+  "timestamp": 1794699501095,
+  "data": {
+    "venue_id": "bahia_mar_vilankulo",
+    "venue_name": "Bahia Mar Boutique Hotel",
+    "location": "Bazaruto Archipelago Mozambique, Vilankulo",
+    "vibe_signature": {
+      "energy_score": 78,
+      "social_pacing": "Relaxed Coastal Luxury & Attentive Service",
+      "headline": "Breathtaking Ocean Views & Serene Boutique Escape",
+      "acoustic_dna": {
+        "soundscape_genre": "Afro-Lounge & Mellow Global Beats",
+        "anchor_artists": [
+          "Bonga",
+          "Salif Keita",
+          "Cesária Évora"
+        ],
+        "spotify_query": "Afro-Lounge Chillout Mozambique",
+        "sound_texture": "Gentle Ocean Breeze & Soft Conversational Hum",
+        "conversation_clarity_score": 88,
+        "conversation_verdict": "Easy Coastal Chat & Relaxed Banter",
+        "decibel_level": "62 dB (Relaxed & Conversational)",
+        "sleep_sanctuary_verdict": "Quiet, Serene Rooms with Ocean Sounds"
+      },
+      "crowd_archetype": {
+        "primary": "Discerning Couples & Wellness Seekers",
+        "social_density": "Spacious & Intimate",
+        "dress_code": "Smart Casual & Resort Chic",
+        "energy_verdict": "Peaceful Serenity & Understated Luxury",
+        "local_ratio": 45,
+        "tourist_ratio": 55,
+        "tourist_trap_verdict": "Authentic Coastal Charm — Not a Tourist Trap",
+        "trip_occasions": [
+          "Couples Escape",
+          "Wellness Retreat",
+          "Honeymoon"
+        ]
+      },
+      "lighting_and_sensory": {
+        "atmosphere": "Sun-Drenched & Golden Hour Glow",
+        "sensory_intensity": "Calm & Restorative",
+        "lighting_temperature": "Golden Hour Sunlight & Warm Evening Lamps"
+      },
+      "hyper_local_proximity": {
+        "key_anchors": [
+          "Casa Jules (4.6★ · 7 min walk)",
+          "Samara Restaurant (4.5★ · 5 min walk)",
+          "Vilanculos Beach (4.7★ · 3 min walk)"
+        ],
+        "insider_lore": "Vilankulo is the gateway to the pristine Bazaruto Archipelago, renowned for its incredible marine life and untouched islands. Bahia Mar offers direct access to this natural wonder."
+      },
+      "qualification_test": {
+        "you_will_love_if": "You seek a luxurious, peaceful escape with breathtaking ocean views, exceptional service, and a focus on wellness and natural beauty.",
+        "skip_if": "You prefer a bustling party atmosphere, a city-center location, or a budget-friendly stay without premium amenities."
+      },
+      "ai_search_geo": {
+        "traveler_prompts": [
+          "Best luxury boutique hotel Vilankulo with ocean views and spa",
+          "Honeymoon resorts Mozambique near Bazaruto Archipelago",
+          "Quiet beachfront hotel Vilankulo for wellness and relaxation"
+        ],
+        "verified_entity_summary": "Bahia Mar Boutique Hotel in Vilankulo offers a serene, luxurious escape with stunning ocean views and a focus on wellness. Guests enjoy peaceful, soundproofed rooms and easy access to local culinary gems and the pristine Vilanculos Beach."
+      },
+      "authenticity_and_materials": {
+        "authenticity_score": 92,
+        "material_palette": "Natural wood, local stone, crisp linens, woven textures",
+        "material_verdict": "Authentic Coastal Design — Seamlessly Blends with Nature"
+      },
+      "host_vibe": {
+        "host_archetype": "Warm, Attentive & Culturally Connected Hosts",
+        "host_style_score": 85,
+        "service_pacing": "Unhurried, Intuitive & Personalized",
+        "signature_team_roles": [
+          "Wellness Concierge",
+          "Local Activity Planner",
+          "Culinary Storyteller"
+        ],
+        "staff_icebreaker_prompt": "Ask the concierge about their favorite hidden spot in the Bazaruto Archipelago for snorkeling.",
+        "team_aesthetic": "Relaxed Resort Wear & Natural Fabrics",
+        "warmth_verdict": "Genuine Hospitality — Anticipating Every Need"
+      },
+      "insider_secrets": {
+        "insider_badge": "Wellness & Sunset Lore",
+        "off_menu_perk": "Request a private sunset yoga session on the terrace overlooking the ocean.",
+        "secret_lore": "The best time to experience the hotel's panoramic views is during the golden hour, just before sunset, when the sky transforms into a canvas of vibrant colors. The staff can arrange a special sundowner cocktail experience.",
+        "secret_title": "The Golden Hour Sunset Ritual"
+      },
+      "temporal_dynamics": {
+        "best_time_to_visit": "4:00 PM for serene poolside relaxation; 6:00 PM for breathtaking sunset views and cocktails.",
+        "content_readiness": {
+          "aesthetic_subculture": "Coastal Luxury & Wellness",
+          "flattery_note": "Perfect for capturing serene, aspirational travel content.",
+          "score": 0.9,
+          "top_creator_spot": "Infinity Pool with Ocean Backdrop",
+          "verdict": "Highly Instagrammable & Serene"
+        },
+        "diurnal_rhythm": {
+          "chilling": {
+            "focus": "Poolside relaxation, spa treatments, ocean gazing",
+            "score": 0.9,
+            "window": "Morning to Late Afternoon"
+          },
+          "playing": {
+            "focus": "Water sports, island excursions, local exploration",
+            "score": 0.7,
+            "window": "Late Morning to Early Evening"
+          },
+          "working": {
+            "focus": "Quiet contemplation, light remote work with a view",
+            "score": 0.6,
+            "window": "Early Morning to Mid-Morning"
+          }
+        },
+        "peak_atmospheric_window": "Late Afternoon Golden Hour"
+      }
+    },
+    "interactive_quiz_challenge": {
+      "target_scene_id": 101,
+      "scene_name": "Bazaruto Archipelago Discovery",
+      "mission_title": "Island Explorer's Quiz",
+      "question": "Which famous marine park, known for its pristine coral reefs and diverse marine life, is easily accessible from Bahia Mar Boutique Hotel?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Gorongosa National Park"
+        },
+        {
+          "id": "B",
+          "text": "Bazaruto Archipelago National Park"
+        },
+        {
+          "id": "C",
+          "text": "Limpopo National Park"
+        },
+        {
+          "id": "D",
+          "text": "Quirimbas National Park"
+        }
+      ],
+      "correct_option_id": "B",
+      "success_lore_reveal": "Correct! The Bazaruto Archipelago National Park is a true gem, offering unparalleled snorkeling, diving, and island hopping experiences, all just a short boat ride from Bahia Mar.",
+      "reward_badge": "Archipelago Explorer Badge",
+      "challenge_prompt": "Test your knowledge of Mozambique's natural wonders!",
+      "reward_spotify_uri": "spotify:playlist:37i9dQZF1DXcBWIGoYBM5M"
+    },
+    "ota_conversion_audit": {
+      "channel": "Booking.com",
+      "before_merchandising_score": 48,
+      "after_merchandising_score": 95,
+      "projected_conversion_uplift": "+21.0%",
+      "current_drop_off_flaw": "Lack of immediate visual connection to the unique oceanfront location and wellness offerings, generic room photos.",
+      "key_strategic_shifts": [
+        "Elevate the iconic infinity pool with ocean views to Slot #1 to immediately capture 'Vilankulo oceanfront luxury' search demand.",
+        "Prioritize a signature suite bedroom in Slot #2 to confirm the sleeping experience matches the aspirational lifestyle.",
+        "Introduce a dedicated wellness/spa shot in Slot #4 to highlight a key differentiator and meet 'Vilankulo spa hotel' searches.",
+        "Reposition the exterior landmark to Slot #5 to ground the property geographically after establishing its unique appeal."
+      ],
+      "optimal_5_photo_sequence": [
+        {
+          "slot": 1,
+          "category": "HERO_CULTURAL_MAGNET",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 2,
+          "photo_subject": "Infinity Pool with Panoramic Ocean Views",
+          "bullet_points": [
+            "Visual Upgrade: Captures the hotel's most iconic feature with stunning natural light and expansive ocean backdrop.",
+            "Local Synergy: Directly aligns with 'Vilankulo oceanfront luxury' and 'Bazaruto views' traveler search intent.",
+            "Conversion Trigger: Evokes immediate desire for a serene, aspirational coastal escape."
+          ],
+          "psychological_conversion_trigger": "This image instantly communicates the hotel's unique selling proposition: a luxurious, tranquil oasis with unparalleled ocean vistas, directly addressing the primary desire for a scenic coastal getaway in Vilankulo.",
+          "action": "MAGNET_OVERRIDE",
+          "action_label": "HERO CULTURAL MAGNET: INFINITY POOL & OCEAN VIEWS (SLOT #1)",
+          "current_slot": 2,
+          "local_vibe_connection": "This photo perfectly showcases the hotel's prime location overlooking the Bazaruto Archipelago, a key draw for travelers seeking natural beauty and serene coastal experiences in Vilankulo.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #2): By elevating the hotel's most iconic and aspirational feature – the infinity pool with panoramic ocean views – to Slot #1, we immediately establish the property's unique value proposition and align with top-tier 'Vilankulo luxury oceanfront' search demand, outperforming a generic exterior shot.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 2,
+          "category": "SIGNATURE_SUITE_BEDROOM",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 3,
+          "photo_subject": "Signature King Bedroom with Ocean View Terrace",
+          "bullet_points": [
+            "Strategic Placement: Immediately reassures guests that the private accommodations match the luxury promised by Slot #1.",
+            "Local Synergy: Highlights comfortable, stylish rooms that complement the natural beauty of the Vilankulo coast.",
+            "Conversion Trigger: Confirms comfort and quality of the sleeping experience, reducing booking friction."
+          ],
+          "psychological_conversion_trigger": "Following the aspirational hero shot, this bedroom photo provides tangible proof of a luxurious and comfortable private space, directly addressing the need for a high-quality stay.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE SIGNATURE KING BEDROOM (FROM SLOT #3)",
+          "current_slot": 3,
+          "local_vibe_connection": "This room, with its natural light and potential for ocean views, connects to the desire for a tranquil and comfortable retreat after exploring the Vilankulo area.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #3): Promoting a high-quality bedroom shot to Slot #2 ensures that the guest's private sanctuary is showcased immediately after the main amenity, reinforcing the overall luxury experience and addressing a critical booking decision point.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 3,
+          "category": "SECONDARY_ROOM_BATHROOM",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 6,
+          "photo_subject": "Spacious Modern Bathroom with Walk-in Shower",
+          "bullet_points": [
+            "Strategic Placement: Addresses essential hygiene and comfort concerns directly after the bedroom.",
+            "Local Synergy: Reflects the modern amenities expected in a boutique hotel in a desirable coastal destination.",
+            "Conversion Trigger: Completes the private space narrative, ensuring all comfort needs are met."
+          ],
+          "psychological_conversion_trigger": "By presenting a clean, modern bathroom immediately after the bedroom, this photo completes the mental picture of a comfortable and well-appointed private space, crucial for booking confidence.",
+          "action": "PROMOTE",
+          "action_label": "PROMOTE MODERN BATHROOM (FROM SLOT #6)",
+          "current_slot": 6,
+          "local_vibe_connection": "A well-appointed bathroom contributes to the overall sense of luxury and relaxation that travelers seek when visiting a coastal destination like Vilankulo.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #6): Placing a high-quality bathroom photo in Slot #3, directly after the bedroom, optimizes the visual flow by addressing a key guest concern about private facilities early in the booking journey.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 4,
+          "category": "WELLNESS_SPA_LOBBY",
+          "source_type": "AMENITY_ASSET",
+          "source_index": 1,
+          "photo_subject": "Serene Wellness Center & Spa Treatment Room",
+          "bullet_points": [
+            "Visual Upgrade: Introduces a dedicated, high-quality shot of the wellness center, a key amenity not prominently featured on Booking.com.",
+            "Local Synergy: Captures 'Vilankulo wellness retreat' and 'relaxing spa hotel' search demand, aligning with the hotel's focus on tranquility.",
+            "Conversion Trigger: Appeals to guests seeking restorative experiences and adds significant value beyond just accommodation."
+          ],
+          "psychological_conversion_trigger": "This photo highlights a significant value-add for guests seeking relaxation and self-care, broadening the hotel's appeal and justifying a premium stay.",
+          "action": "SWAP_IN",
+          "action_label": "SWAP IN WELLNESS CENTER & SPA (SLOT #4)",
+          "current_slot": 10,
+          "local_vibe_connection": "The wellness center aligns with the tranquil and restorative atmosphere of Vilankulo, offering guests a perfect complement to beach activities and island excursions.",
+          "upgrade_rationale": "This amenity asset replaces a less impactful live photo by showcasing a key differentiator – the serene wellness center and spa. It upgrades from a generic interior shot to a visually superior, emotionally resonant image that directly addresses the growing traveler demand for wellness experiences, with soft, inviting lighting and a clear sense of calm.",
+          "photo_url": null,
+          "image_url": null
+        },
+        {
+          "slot": 5,
+          "category": "EXTERIOR_LANDMARK",
+          "source_type": "LIVE_PHOTO",
+          "source_index": 1,
+          "photo_subject": "Hotel Exterior with Lush Gardens and Ocean Backdrop",
+          "bullet_points": [
+            "Strategic Placement: Provides essential geographic context and a sense of arrival after showcasing key internal amenities.",
+            "Local Synergy: Connects the hotel's physical presence to the natural beauty of the Vilankulo coastline.",
+            "Conversion Trigger: Grounds the property in its stunning environment, reinforcing location and curb appeal."
+          ],
+          "psychological_conversion_trigger": "By placing the exterior last in the core sequence, it serves as a final anchor, confirming the hotel's beautiful setting and architectural integration with its surroundings.",
+          "action": "DEMOTE",
+          "action_label": "DEMOTE EXTERIOR LANDMARK (FROM SLOT #1)",
+          "current_slot": 1,
+          "local_vibe_connection": "This exterior shot clearly places the hotel within the lush, coastal landscape of Vilankulo, appealing to travelers who prioritize a beautiful and natural setting.",
+          "upgrade_rationale": "Strategic Repositioning (Moved from Live Slot #1): While a strong exterior, moving it to Slot #5 allows the more unique and aspirational cultural magnet (infinity pool) to lead, while still providing crucial geographic context and a sense of arrival at the end of the core visual journey.",
+          "photo_url": null,
+          "image_url": null
+        }
+      ],
+      "anti_commodity_copy_rewrite": {
+        "ota_headline": "Bahia Mar Boutique Hotel: Vilankulo Oceanfront Luxury & Wellness Escape",
+        "property_overview_150_words": "Perched on an elevated plateau overlooking the pristine Bazaruto Archipelago, Bahia Mar Boutique Hotel offers an unparalleled blend of modern comfort and serene luxury in Vilankulo. Guests are invited to unwind in spacious, elegantly designed rooms, each boasting breathtaking ocean views. Indulge in refined cuisine at our à la carte restaurant, refresh by the infinity pool, or rejuvenate at the fully equipped wellness center. With exceptional, warm service and direct access to Vilankulo's natural wonders, Bahia Mar is the ultimate escape for discerning travelers seeking tranquility, adventure, and authentic Mozambican charm."
+      },
+      "photographic_gap_analysis": [
+        {
+          "missing_shot_title": "Golden Hour Dining Experience at the À La Carte Restaurant",
+          "category": "CULINARY_SOCIAL",
+          "why_needed": "Currently, there isn't a high-quality photo that captures the sophisticated dining experience with the stunning ocean backdrop, especially during the magical golden hour. This misses a key opportunity to showcase the hotel's culinary excellence and romantic ambiance, which is a major draw for couples and foodies.",
+          "recommended_framing_and_lighting": "Wide-angle shot capturing a beautifully set table with exquisite dishes, soft warm lighting (2700K), and the ocean sunset visible in the background. Focus on inviting atmosphere and culinary artistry.",
+          "projected_adr_impact": "+10% higher F&B spend and +7% direct booking conversion for romantic getaways."
+        },
+        {
+          "missing_shot_title": "Private Terrace with Plunge Pool & Ocean View",
+          "category": "SIGNATURE_SUITE_BEDROOM",
+          "why_needed": "Many luxury travelers seek private outdoor spaces with plunge pools. If available, a dedicated, aspirational shot of a suite's private terrace with a plunge pool and ocean view would significantly elevate perceived value and capture 'private pool Vilankulo' search demand, which is currently unmet visually.",
+          "recommended_framing_and_lighting": "Eye-level shot from inside the suite looking out onto the private terrace and plunge pool, with the ocean clearly visible. Soft morning light, highlighting the tranquility and exclusivity.",
+          "projected_adr_impact": "+15% higher suite booking velocity and +$60 ADR premium for premium categories."
+        },
+        {
+          "missing_shot_title": "Authentic Local Activity: Dhow Sailing Excursion",
+          "category": "EXPERIENTIAL_LOCAL",
+          "why_needed": "While the hotel is a gateway to the Bazaruto Archipelago, there isn't a strong visual asset showcasing an authentic local experience like a traditional dhow sailing trip. This would connect the hotel more deeply with the destination's unique offerings and appeal to adventure and culture seekers.",
+          "recommended_framing_and_lighting": "Dynamic shot of a traditional dhow sailing on turquoise waters, with guests enjoying the experience and the islands in the background. Bright, natural daylight, capturing the joy and authenticity.",
+          "projected_adr_impact": "+8% increase in activity bookings and enhanced destination appeal."
+        }
+      ],
+      "conversion_diagnosis": "The current Booking.com sequence fails to immediately highlight Bahia Mar's unique oceanfront luxury, wellness offerings, and aspirational lifestyle, leading to high drop-off rates from travelers seeking a premium coastal escape in Vilankulo. Generic sequencing buries key differentiators.",
+      "local_vibe_synergy_context": "Vilankulo is renowned for its breathtaking ocean views, access to the Bazaruto Archipelago, and a tranquil, wellness-focused atmosphere. The photo recommendations strategically prioritize visuals that showcase the hotel's direct connection to these local subcultures – from the panoramic infinity pool reflecting the archipelago's beauty to the serene wellness center that complements the destination's restorative vibe. This ensures the visual narrative directly answers traveler searches for 'Vilankulo oceanfront luxury', 'Bazaruto views', and 'wellness retreats in Mozambique'.",
+      "slot_1_decision_logic": {
+        "is_magnet_override_active": true,
+        "reasoning_code": "NAI_HIGH_DESTINATION_POWER_CLARITY",
+        "strategy_explanation": "The infinity pool with panoramic ocean views is Bahia Mar's most iconic and aspirational asset, directly mirroring the top traveler search themes for 'Vilankulo oceanfront luxury' and 'Bazaruto views'. It functions as a standalone destination, offers split-second visual clarity, and perfectly sets the emotional tone for a premium coastal escape. This asset is far more impactful as a hero than a generic exterior shot.",
+        "neighborhood_affinity_index": 0.92,
+        "override_asset_name": "Infinity Pool with Panoramic Ocean Views"
+      },
+      "photos_status": "PENDING"
+    },
+    "audit_timestamp": "2026-11-14T23:37:58.407Z"
+  }
+}
