@@ -230,9 +230,26 @@ export default function VibeInsightsPage() {
             marginBottom: '1.25rem',
           }}
         >
-          <Link to="/vibe-insights" className="vi-back-link">
-            ← Vibe Insights Directory
-          </Link>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
+            <Link to="/vibe-insights" className="vi-back-link">
+              ← Vibe Insights Directory
+            </Link>
+            <Link
+              to="/vibe-insights/london-local-destination-gap"
+              style={{
+                fontSize: '12px',
+                fontWeight: 700,
+                color: '#ffd700',
+                textDecoration: 'none',
+                padding: '6px 12px',
+                borderRadius: '999px',
+                border: '1px solid rgba(255, 215, 0, 0.35)',
+                background: 'rgba(255, 215, 0, 0.08)',
+              }}
+            >
+              New Part II: Local Destination “Walled Garden” Study (45.5/100) →
+            </Link>
+          </div>
 
           <button
             type="button"

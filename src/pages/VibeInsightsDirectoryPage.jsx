@@ -76,7 +76,27 @@ const B2B_SECTORS = [
     number: '03',
     categoryTitle: 'City & Area Vibe Reports',
     icon: MapPin,
-    subcategories: [],
+    subcategories: [
+      {
+        id: 'london-local-destination-gap',
+        subcategoryLabel: 'London Neighbourhoods • Local Destination Study (Part II)',
+        code: 'AV-RES-2026-LON-DEST',
+        date: 'Nov 2026',
+        title:
+          'The “Walled Garden” Blind Spot: Why London’s Best Lifestyle Hotels Hide the Neighbourhoods Outside Their Doors',
+        summary:
+          'Why London’s top 10 lifestyle hotels score 88.4/100 at marketing their own internal bars and rooftops on owned channels, yet drop to 45.5/100 on local neighbourhood storytelling — and show destination context in only 16% of OTA Hero slots.',
+        status: 'New Report',
+        statusType: 'published',
+        href: '/vibe-insights/london-local-destination-gap',
+        metaPills: [
+          '88.4 Own Vibe vs 45.5 Local Vibe',
+          '-42.9 pt Walled Garden Drop',
+          '16% OTA Destination Context',
+          'n = 10 London Hotels',
+        ],
+      },
+    ],
   },
   {
     id: 'tours-cruises-attractions',

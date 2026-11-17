@@ -18,6 +18,7 @@ import CookieConsentBanner from './components/CookieConsentBanner';
 import VibeApiDemoPage from './pages/VibeApiDemoPage';
 import WtmMobileDeckPage from './pages/WtmMobileDeckPage';
 import VibeInsightsPage from './pages/VibeInsightsPage';
+import LocalDestinationStudyPage from './pages/LocalDestinationStudyPage';
 import VibeInsightsDirectoryPage from './pages/VibeInsightsDirectoryPage';
 import B2BLeadGenOnboarding from './B2BLeadGenOnboarding';
 import './B2BLeadGenOnboarding.css';
@@ -217,6 +218,13 @@ const VibeInsightsRoutePage = () => (
   </Layout>
 );
 
+const LocalDestinationStudyRoutePage = () => (
+  <Layout>
+    <LocalDestinationStudyPage />
+    <Footer />
+  </Layout>
+);
+
 const App = () => {
   return (
     <HelmetProvider>
@@ -227,6 +235,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<B2BHome />} />
           <Route path="/vibe-insights" element={<VibeInsightsDirectoryRoutePage />} />
+          <Route path="/vibe-insights/london-local-destination-gap" element={<LocalDestinationStudyRoutePage />} />
           <Route path="/vibe-insights/:slug" element={<VibeInsightsRoutePage />} />
           <Route path="/research/:slug" element={<VibeInsightsRoutePage />} />
           <Route path="/ignore-me" element={<IgnoreAnalyticsPage />} />

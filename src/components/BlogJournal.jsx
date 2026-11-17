@@ -4,28 +4,28 @@ import './BlogJournal.css';
 
 const CURATED_POSTS = [
     {
-        id: 'substack-1',
-        title: "The Walled Garden & The Bathroom Sink: Auditing 10 of London’s Best Lifestyle Hotels",
-        excerpt: "Why London’s flagship lifestyle hotels score 92.5/100 in real life and 88.4/100 at marketing their own bars—yet drop to 45.5/100 on local neighbourhood vibe and 56.5/100 on Booking.com.",
+        id: 'substack-local-destination',
+        title: "The “Walled Garden” Trap: Why London’s Best Lifestyle Hotels Hide the Neighbourhoods Outside Their Doors",
+        excerpt: "London’s flagship lifestyle hotels score 88.4/100 at marketing their own internal bars and rooftops—yet drop to 45.5/100 on local destination storytelling and show neighbourhood context in just 16% of OTA Hero photos.",
         date: "Nov 2026",
-        image: "/AtmosVibe-LinkedIn-London10-Study-Card.png",
-        link: "https://atmosvibe.substack.com",
-        badge: "SUBSTACK",
-        ctaLabel: "Read on Substack",
-        isInternal: false,
-        readTime: "6 min read"
+        image: "/AtmosVibe-Local-Destination-Page-1.png",
+        link: "/vibe-insights/london-local-destination-gap",
+        badge: "VIBE INSIGHTS • PART II",
+        ctaLabel: "Read Full Study",
+        isInternal: true,
+        readTime: "5 min read"
     },
     {
-        id: 'substack-2',
-        title: "Why Next-Gen Travelers Hunt for \"Vibe\" Over Location",
-        excerpt: "The way people plan travel has fundamentally changed. Travellers actively hunt for specific cultural experiences and neighbourhood micro-vibes before they ever shortlist a hotel.",
-        date: "May 2026",
-        image: "https://substackcdn.com/image/fetch/$s_!k-xU!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3ff25769-b76f-49dc-99a8-4e491814f90c_2938x1440.png",
-        link: "https://travelvrse.substack.com/p/why-next-gen-travelers-hunt-for-vibe",
-        badge: "SUBSTACK",
-        ctaLabel: "Read on Substack",
-        isInternal: false,
-        readTime: "5 min read"
+        id: 'substack-1',
+        title: "Hotels Lead With Their Vibe on Their Own Sites—Why Not on Booking.com?",
+        excerpt: "Why London’s flagship lifestyle hotels score 92.5/100 in real life and 88.4/100 on their own homepages—yet collapse to 56.5/100 across their first 5 Booking.com photos.",
+        date: "Nov 2026",
+        image: "/AtmosVibe-Infographic-Page-1.png",
+        link: "/vibe-insights/london-boutique-ota-gap",
+        badge: "VIBE INSIGHTS • PART I",
+        ctaLabel: "Read Full Study",
+        isInternal: true,
+        readTime: "6 min read"
     }
 ];
 

@@ -309,8 +309,22 @@ function runPrerender() {
   });
   fs.writeFileSync(path.join(studyOutDir, 'index.html'), studyHtml, 'utf-8');
 
+  // 3. /vibe-insights/london-local-destination-gap Study #02 Page
+  const localStudyOutDir = path.join(distDir, 'vibe-insights', 'london-local-destination-gap');
+  fs.mkdirSync(localStudyOutDir, { recursive: true });
+  const localStudyHtml = injectRoutePage({
+    baseHtml,
+    title: 'The “Walled Garden” Blind Spot: Why London’s Best Lifestyle Hotels Hide Their Local Neighbourhood | AtmosVibe Vibe Insights',
+    description:
+      'AtmosVibe Part II Benchmark of 10 Flagship London Hotels: Comparing On-Site Vibe & Experiences Marketing (88.4/100) vs. Local Destination Marketing on Own Websites (45.5/100) and OTA Hero Galleries (16% Destination Context).',
+    canonicalUrl: 'https://www.atmosvibe.io/vibe-insights/london-local-destination-gap',
+    jsonLdObject: buildLondonStudyJsonLd(),
+    staticRootHtml: buildLondonStudyStaticHtml(),
+  });
+  fs.writeFileSync(path.join(localStudyOutDir, 'index.html'), localStudyHtml, 'utf-8');
+
   console.log(
-    '[prerender] Successfully generated static HTML + JSON-LD for /vibe-insights and /vibe-insights/london-boutique-ota-gap'
+    '[prerender] Successfully generated static HTML + JSON-LD for /vibe-insights, /vibe-insights/london-boutique-ota-gap, and /vibe-insights/london-local-destination-gap'
   );
 }
 
