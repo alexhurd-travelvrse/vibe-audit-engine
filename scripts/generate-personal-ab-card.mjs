@@ -32,7 +32,7 @@ const html = `<!DOCTYPE html>
     gap: 12px;
   }
   .title {
-    font-size: 23.5px;
+    font-size: 22.5px;
     font-weight: 800;
     letter-spacing: -0.02em;
     color: #ffffff;
@@ -44,9 +44,9 @@ const html = `<!DOCTYPE html>
   .badge {
     background: rgba(255, 255, 255, 0.08);
     border: 1px solid rgba(255, 255, 255, 0.18);
-    padding: 5px 13px;
+    padding: 5px 12px;
     border-radius: 999px;
-    font-size: 12px;
+    font-size: 11.5px;
     font-weight: 800;
     color: #e2e8f0;
     white-space: nowrap;
@@ -79,14 +79,16 @@ const html = `<!DOCTYPE html>
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 8px;
   }
   .option-pill {
-    font-size: 12px;
+    font-size: 11.5px;
     font-weight: 800;
     padding: 4px 10px;
     border-radius: 7px;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.03em;
     text-transform: uppercase;
+    white-space: nowrap;
   }
   .hotel-a .option-pill {
     background: rgba(251, 113, 133, 0.18);
@@ -97,9 +99,10 @@ const html = `<!DOCTYPE html>
     color: #34d399;
   }
   .card-tag {
-    font-size: 12px;
+    font-size: 11.5px;
     font-weight: 700;
     color: #94a3b8;
+    white-space: nowrap;
   }
 
   /* 3-photo mini collage inside each card */
@@ -181,42 +184,42 @@ const html = `<!DOCTYPE html>
 
   <div class="header">
     <div class="title">You’re booking a weekend in London. <span>Which hotel gets your click?</span></div>
-    <div class="badge">Weakest vs. Strongest in Study</div>
+    <div class="badge">#10 Weakest vs. #1 Strongest</div>
   </div>
 
   <div class="ab-grid">
-    <!-- HOTEL A: SINGLE REAL HOTEL (THE NED - WEAKEST ON LOCAL AREA & OTA CONTEXT) -->
+    <!-- HOTEL A: SINGLE REAL HOTEL (THE MANDRAKE - WEAKEST LOCAL AREA SCORE 28/100) -->
     <div class="card hotel-a">
       <div class="card-top">
-        <span class="option-pill">Hotel A • Only Promotes Itself</span>
-        <span class="card-tag">Local Area Score: 31 / 100</span>
+        <span class="option-pill">Hotel A • Walled Garden</span>
+        <span class="card-tag">Local Area Score: 28 / 100 (#10)</span>
       </div>
 
       <div class="photo-grid">
         <div class="photo-main">
-          <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/286553896.jpg?k=4590082834acee225ac0d1a76104d8ec96314996fbf3549114fe03f4e8aa4e25&o=" />
-          <span class="img-label">Indoor Bedroom</span>
+          <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/871085375.jpg?k=34247c46f6d191530d624e4be77f2fdee0214685c1c52df0ba6bcce4b1cb3206&o=" />
+          <span class="img-label">In-House Courtyard</span>
         </div>
         <div class="photo-sub">
-          <img src="https://cf.bstatic.com/xdata/images/hotel/max500/787726337.jpg?k=9fb90a5781a1d70d8a99a04eee4b05e7f7ed9f6916eb221a990c4001ea29d68a&o=" />
-          <span class="img-label">Windowless Lounge</span>
+          <img src="https://cf.bstatic.com/xdata/images/hotel/max500/181663431.jpg?k=f9502aa9110f102facb298719ae7b219afb5a97cf13d3968d434767424b4b600&o=" />
+          <span class="img-label">In-House Lounge</span>
         </div>
         <div class="photo-sub">
-          <img src="https://cf.bstatic.com/xdata/images/hotel/max300/787726373.jpg?k=a1e5063f13e07e430a4c322066245ed753141d9664a366452bb4b04138f621f5&o=" />
-          <span class="img-label">Bathroom Tub &amp; Sink</span>
+          <img src="https://cf.bstatic.com/xdata/images/hotel/max300/871090248.jpg?k=c0a21fd869f35cb500db738e10ee5e175104b92dc21762da561b862d42fa7f32&o=" />
+          <span class="img-label">In-House Conservatory</span>
         </div>
       </div>
 
       <div>
-        <div class="card-caption">100% inward-facing (rooms, couch &amp; bathroom)</div>
-        <div class="card-sub">Sits 6 mins from St Paul’s &amp; Leadenhall Market—yet shows zero trace of the neighbourhood outside.</div>
+        <div class="card-caption">90/100 on its own vibe — 28/100 on its local area</div>
+        <div class="card-sub">Markets itself as a closed private island—barely mentioning the Fitzrovia galleries &amp; Soho bistros outside its door.</div>
       </div>
     </div>
 
-    <!-- HOTEL B: SINGLE REAL HOTEL (THE HOXTON SHOREDITCH - STRONGEST ON LOCAL AREA 66/100) -->
+    <!-- HOTEL B: SINGLE REAL HOTEL (THE HOXTON SHOREDITCH - STRONGEST LOCAL AREA SCORE 66/100) -->
     <div class="card hotel-b">
       <div class="card-top">
-        <span class="option-pill">Hotel B • Vibe + Local Area</span>
+        <span class="option-pill">Hotel B • Local Gateway</span>
         <span class="card-tag">Local Area Score: 66 / 100 (#1)</span>
       </div>
 
@@ -236,15 +239,15 @@ const html = `<!DOCTYPE html>
       </div>
 
       <div>
-        <div class="card-caption">Pairs its on-site vibe with a local neighbourhood guide</div>
-        <div class="card-sub">Connects its lobby &amp; dining to Columbia Road, Brick Lane &amp; East London indie spots.</div>
+        <div class="card-caption">87/100 on its own vibe — 66/100 on its local area</div>
+        <div class="card-sub">Connects its lobby &amp; dining to a curated neighbourhood guide of Columbia Road, Brick Lane &amp; East London indie spots.</div>
       </div>
     </div>
   </div>
 
   <div class="footer-strip">
     <div>
-      <strong>London 10-Hotel Audit:</strong> Top hotels score <strong class="cyan">88/100</strong> promoting their own bars, but drop to <strong class="gold">45/100</strong> on their local area (<strong class="rose">84%</strong> of OTA hero photos show zero destination context).
+      <strong>London 10-Hotel Audit (Part II):</strong> On their own websites, top hotels score <strong class="cyan">88.4/100</strong> promoting their own bars, yet drop to <strong class="gold">45.5/100</strong> on their local neighbourhood.
     </div>
     <div class="brand-mark">Atmos<span>Vibe</span></div>
   </div>
@@ -261,14 +264,14 @@ const page = await browser.newPage({
 await page.setContent(html, { waitUntil: 'networkidle' });
 
 const fileName = 'AtmosVibe-Personal-Hotel-A-vs-B.png';
-const v4Name = 'AtmosVibe-Personal-Hotel-A-vs-B-v4.png';
+const v6Name = 'AtmosVibe-Personal-Hotel-A-vs-B-v6.png';
 const pubPath = path.join(publicDir, fileName);
 const artPath = path.join(artifactDir, fileName);
-const artV4Path = path.join(artifactDir, v4Name);
+const artV6Path = path.join(artifactDir, v6Name);
 
 await page.screenshot({ path: pubPath });
 fs.copyFileSync(pubPath, artPath);
-fs.copyFileSync(pubPath, artV4Path);
+fs.copyFileSync(pubPath, artV6Path);
 console.log(`Saved ${fileName}`);
 
 await browser.close();

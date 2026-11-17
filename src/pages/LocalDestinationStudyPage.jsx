@@ -320,10 +320,12 @@ export default function LocalDestinationStudyPage() {
                 maxWidth: '940px',
               }}
             >
-              Travellers rarely fly to London just to sit inside a hotel lobby—they book a{' '}
-              <strong>neighbourhood micro-vibe first</strong> (Shoreditch street culture, South Bank riverside walks, Soho &amp; Fitzrovia bistros, or King’s Cross regeneration) and shortlist the property that connects them to it. Yet when we audited how 10 flagship London lifestyle hotels showcase their local destination across their{' '}
-              <strong>own websites, Instagram feeds and OTA galleries</strong>, we uncovered a massive structural blind spot: properties market themselves like self-contained islands, leaving a{' '}
-              <strong style={{ color: '#fb7185' }}>-42.9 point drop-off</strong> between their internal F&amp;B marketing (<strong>88.4/100</strong>) and their local destination storytelling (<strong>45.5/100</strong>).
+              When leisure travellers research a city break today—across Google, social media and AI search (ChatGPT, Perplexity and Gemini)—they increasingly search for the{' '}
+              <strong>destination and neighbourhood vibe first</strong> (Shoreditch street culture, South Bank riverside walks, Soho &amp; Fitzrovia bistros or King’s Cross regeneration) before shortlisting a hotel. Yet when we audited how 10 flagship London lifestyle hotels showcase their local destination across their{' '}
+              <strong>own websites, Instagram feeds and OTA galleries</strong>, we uncovered a major structural gap: properties score{' '}
+              <strong>88.4/100</strong> at promoting their in-house bars and rooms, yet drop by{' '}
+              <strong style={{ color: '#fb7185' }}>42.9 points</strong> to{' '}
+              <strong>45.5/100</strong> on local destination storytelling.
             </p>
 
             {/* 4 Key Findings Grid */}
@@ -455,7 +457,7 @@ export default function LocalDestinationStudyPage() {
                   The “Inward Fortress” (Mandrake, Ned, EDITION)
                 </h3>
                 <p style={{ fontSize: '0.86rem', color: '#cbd5e1', lineHeight: 1.6, margin: 0 }}>
-                  Properties with powerhouse internal F&amp;B ecosystems (like The Ned’s 9 restaurants or Berners Tavern at EDITION) fear that showcasing local bistros will send dining spend out the door. Result: their websites act as closed members’ clubs, leaving them invisible when travellers or AI search engines hunt for <em>Fitzrovia</em> or <em>City of London</em> neighbourhood experiences.
+                  Properties operating major internal F&amp;B ecosystems (such as The Ned’s 9 restaurants or Berners Tavern at EDITION) naturally focus their digital merchandising on in-house dining and nightlife. The trade-off: their websites read like self-contained private worlds, leaving little signal of the surrounding <em>Fitzrovia</em> or <em>City of London</em> neighbourhood for travellers or AI search engines.
                 </p>
               </div>
 

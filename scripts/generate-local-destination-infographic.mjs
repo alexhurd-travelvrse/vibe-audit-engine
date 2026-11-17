@@ -310,7 +310,7 @@ const html = `<!DOCTYPE html>
     <div>
       <div class="kicker">London 10 Hotel Audit • Part II</div>
       <h1>Hotels Market Their <span class="cyan">Own Bars</span>—Why Hide Their <span class="gold">Neighbourhood</span>?</h1>
-      <p class="lead">Guests book a neighbourhood first—yet London’s top 10 lifestyle hotels market themselves like closed islands:</p>
+      <p class="lead">Travellers increasingly search by neighbourhood vibe—yet how do London’s top 10 lifestyle hotels market their local area?</p>
     </div>
 
     <div class="score-stack">
