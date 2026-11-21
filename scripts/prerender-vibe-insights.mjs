@@ -90,6 +90,8 @@ function buildLondonStudyJsonLd() {
         description:
           'Empirical dataset measuring Physical Vibe (92.5 avg), Owned Digital Own Property Vibe (88.4 avg), Owned Digital Local Destination Vibe (45.5 avg), and Booking.com Top-5 Hero Mix (56.5 avg; 70% rooms/bathrooms/utility vs. 14% social/culinary and 16% destination) across 10 London lifestyle hotels (463 total OTA photos).',
         url: 'https://www.atmosvibe.io/vibe-insights/london-boutique-ota-gap',
+        license: 'https://creativecommons.org/licenses/by/4.0/',
+        isAccessibleForFree: true,
         creator: {
           '@type': 'Organization',
           name: 'AtmosVibe',

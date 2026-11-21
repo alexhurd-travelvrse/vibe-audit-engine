@@ -179,6 +179,8 @@ export default function VibeInsightsPage() {
           name: '2026 London Lifestyle Hotel Vibe Dataset: Physical Presence vs. Owned Digital (Own Vibe & Local Destination) vs. Booking.com Top-5 Gallery',
           description: LONDON_10_STUDY_META.subtitle,
           url: LONDON_10_STUDY_META.canonicalUrl,
+          license: 'https://creativecommons.org/licenses/by/4.0/',
+          isAccessibleForFree: true,
           creator: {
             '@type': 'Organization',
             name: 'AtmosVibe',

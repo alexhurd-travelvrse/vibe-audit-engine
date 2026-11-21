@@ -457,7 +457,8 @@ export function buildSouthBankRegistryJsonLd() {
         description:
           'Independently verified 8-Signal Vibe Signatures for London South Bank (SE1): Destination sensory & walkability baseline (91.3/100), 3 audited boutique hotels (Sea Containers London, Bankside Hotel, The Hoxton Southwark), and 6 verified zero-chain local gems & cultural attractions.',
         url: REGISTRY_URLS.southBankRegistry,
-        license: REGISTRY_URLS.methodology,
+        license: 'https://creativecommons.org/licenses/by/4.0/',
+        isAccessibleForFree: true,
         dateModified: SOUTH_BANK_DESTINATION_SIGNATURE.lastVerified,
         creator: {
           '@type': 'Organization',
