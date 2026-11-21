@@ -247,7 +247,22 @@ export default function VibeInsightsPage() {
                 background: 'rgba(255, 215, 0, 0.08)',
               }}
             >
-              New Part II: Local Destination “Walled Garden” Study (45.5/100) →
+              Part II: Local Destination “Walled Garden” Study (45.5/100) →
+            </Link>
+            <Link
+              to="/registry/london-south-bank"
+              style={{
+                fontSize: '12px',
+                fontWeight: 700,
+                color: '#00e5ff',
+                textDecoration: 'none',
+                padding: '6px 12px',
+                borderRadius: '999px',
+                border: '1px solid rgba(0, 229, 255, 0.35)',
+                background: 'rgba(0, 229, 255, 0.08)',
+              }}
+            >
+              South Bank (SE1) Vibe Signature Registry →
             </Link>
           </div>
 

@@ -26,14 +26,16 @@ const team = [
         role: "Founder & CEO",
         image: "/models/Alex_Hurd.jpg",
         linkedin: "https://www.linkedin.com/in/alexhurd/",
-        background: "Ex Shazam, Cortexica, InfoSpace, Cinergy"
+        background: "Ex Play2Pay, Shazam, Cortexica, InfoSpace, Cinergy"
     }
 ];
 
 const skills = [
     'Search Engines',
     'Digital Signatures',
-    'Business Intelligence'
+    'Business Intelligence',
+    'Gamified Conversion',
+    'AI Venture Building'
 ];
 
 const TeamSection = () => {

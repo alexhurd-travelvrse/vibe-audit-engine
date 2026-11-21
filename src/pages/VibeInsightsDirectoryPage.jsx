@@ -78,6 +78,25 @@ const B2B_SECTORS = [
     icon: MapPin,
     subcategories: [
       {
+        id: 'london-south-bank-registry',
+        subcategoryLabel: 'London South Bank (SE1) • Canonical Vibe Signature Registry',
+        code: 'AV-REG-2026-LON-SE1',
+        date: 'Nov 2026',
+        title:
+          'London South Bank (SE1): Canonical Destination, Hotel & Local Gem Vibe Signature Registry',
+        summary:
+          'Verified 8-Signal Vibe Signatures for South Bank (91.3/100 Destination Vibe, 97.2 Walkability, 76% Zero-Chain Gems), 3 audited boutique hotels (Sea Containers, Bankside Hotel, The Hoxton Southwark), and 6 verified local gems — synced with TravelVRSE.',
+        status: 'Live Registry',
+        statusType: 'live',
+        href: '/registry/london-south-bank',
+        metaPills: [
+          '91.3 Destination Vibe Signature',
+          '97.2 Walkability (2–8 Min Corridors)',
+          '3 Hotels + 6 Local Gems Verified',
+          'Synced with TravelVRSE',
+        ],
+      },
+      {
         id: 'london-local-destination-gap',
         subcategoryLabel: 'London Neighbourhoods • Local Destination Study (Part II)',
         code: 'AV-RES-2026-LON-DEST',
@@ -86,7 +105,7 @@ const B2B_SECTORS = [
           'The “Walled Garden” Blind Spot: Why London’s Best Lifestyle Hotels Hide the Neighbourhoods Outside Their Doors',
         summary:
           'Why London’s top 10 lifestyle hotels score 88.4/100 at marketing their own internal bars and rooftops on owned channels, yet drop to 45.5/100 on local neighbourhood storytelling — and show destination context in only 16% of OTA Hero slots.',
-        status: 'New Report',
+        status: 'Published Report',
         statusType: 'published',
         href: '/vibe-insights/london-local-destination-gap',
         metaPills: [
@@ -103,7 +122,26 @@ const B2B_SECTORS = [
     number: '04',
     categoryTitle: 'Tours, Cruises & Attractions',
     icon: Compass,
-    subcategories: [],
+    subcategories: [
+      {
+        id: 'south-bank-local-gems-cohort',
+        subcategoryLabel: 'London South Bank (SE1) • 6 Verified Local Gems & Attractions',
+        code: 'AV-GEM-LON-SE1-01..06',
+        date: 'Nov 2026',
+        title:
+          'South Bank Zero-Chain Local Gems & Cultural Attractions — Verified Vibe Signatures',
+        summary:
+          'On-site verified Vibe Signatures, acoustic profiles, peak diurnal windows, and timed hotel walking corridors for Gabriel’s Wharf (93.1), BFI Mediatheque (94.6), Tate Modern (95.4), Borough Market (94.2), Waterloo Book Market (91.8), and Leake Street Arches (92.4).',
+        status: '6 Signatures Live',
+        statusType: 'live',
+        href: '/registry/london-south-bank',
+        metaPills: [
+          '76% Zero-Chain Independent Ratio',
+          'Timed 2–8 Min Hotel Walk Radii',
+          'Acoustic & Peak Window Telemetry',
+        ],
+      },
+    ],
   },
 ];
 

@@ -19,6 +19,8 @@ import VibeApiDemoPage from './pages/VibeApiDemoPage';
 import WtmMobileDeckPage from './pages/WtmMobileDeckPage';
 import VibeInsightsPage from './pages/VibeInsightsPage';
 import LocalDestinationStudyPage from './pages/LocalDestinationStudyPage';
+import SouthBankRegistryPage from './pages/SouthBankRegistryPage';
+import MethodologyPage from './pages/MethodologyPage';
 import VibeInsightsDirectoryPage from './pages/VibeInsightsDirectoryPage';
 import B2BLeadGenOnboarding from './B2BLeadGenOnboarding';
 import './B2BLeadGenOnboarding.css';
@@ -225,6 +227,20 @@ const LocalDestinationStudyRoutePage = () => (
   </Layout>
 );
 
+const SouthBankRegistryRoutePage = () => (
+  <Layout>
+    <SouthBankRegistryPage />
+    <Footer />
+  </Layout>
+);
+
+const MethodologyRoutePage = () => (
+  <Layout>
+    <MethodologyPage />
+    <Footer />
+  </Layout>
+);
+
 const App = () => {
   return (
     <HelmetProvider>
@@ -236,6 +252,10 @@ const App = () => {
           <Route path="/" element={<B2BHome />} />
           <Route path="/vibe-insights" element={<VibeInsightsDirectoryRoutePage />} />
           <Route path="/vibe-insights/london-local-destination-gap" element={<LocalDestinationStudyRoutePage />} />
+          <Route path="/vibe-insights/london-south-bank-registry" element={<SouthBankRegistryRoutePage />} />
+          <Route path="/registry/london-south-bank" element={<SouthBankRegistryRoutePage />} />
+          <Route path="/london/south-bank" element={<SouthBankRegistryRoutePage />} />
+          <Route path="/methodology" element={<MethodologyRoutePage />} />
           <Route path="/vibe-insights/:slug" element={<VibeInsightsRoutePage />} />
           <Route path="/research/:slug" element={<VibeInsightsRoutePage />} />
           <Route path="/ignore-me" element={<IgnoreAnalyticsPage />} />

@@ -21,6 +21,11 @@
     { "source": "/api/(.*)", "destination": "/api/$1" },
     { "source": "/vibe-insights", "destination": "/vibe-insights/index.html" },
     { "source": "/vibe-insights/london-boutique-ota-gap", "destination": "/vibe-insights/london-boutique-ota-gap/index.html" },
+    { "source": "/vibe-insights/london-local-destination-gap", "destination": "/vibe-insights/london-local-destination-gap/index.html" },
+    { "source": "/vibe-insights/london-south-bank-registry", "destination": "/registry/london-south-bank/index.html" },
+    { "source": "/registry/london-south-bank", "destination": "/registry/london-south-bank/index.html" },
+    { "source": "/london/south-bank", "destination": "/london/south-bank/index.html" },
+    { "source": "/methodology", "destination": "/methodology/index.html" },
     { "source": "/research/london-boutique-ota-gap", "destination": "/vibe-insights/london-boutique-ota-gap/index.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ],

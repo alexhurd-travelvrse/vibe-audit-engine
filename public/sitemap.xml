@@ -1,32 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://atmosvibe.io/</loc>
-    <lastmod>2026-11-09</lastmod>
+    <loc>https://www.atmosvibe.io/</loc>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://atmosvibe.io/vibe-insights</loc>
-    <lastmod>2026-11-09</lastmod>
+    <loc>https://www.atmosvibe.io/vibe-insights</loc>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
-    <loc>https://atmosvibe.io/vibe-insights/london-boutique-ota-gap</loc>
-    <lastmod>2026-11-09</lastmod>
+    <loc>https://www.atmosvibe.io/vibe-insights/london-boutique-ota-gap</loc>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
-    <loc>https://atmosvibe.io/vibe-api</loc>
-    <lastmod>2026-11-09</lastmod>
+    <loc>https://www.atmosvibe.io/vibe-insights/london-local-destination-gap</loc>
+    <lastmod>2026-11-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://www.atmosvibe.io/registry/london-south-bank</loc>
+    <lastmod>2026-11-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://www.atmosvibe.io/london/south-bank</loc>
+    <lastmod>2026-11-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://www.atmosvibe.io/methodology</loc>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://atmosvibe.io/audit</loc>
-    <lastmod>2026-11-09</lastmod>
+    <loc>https://www.atmosvibe.io/audit</loc>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>

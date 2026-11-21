@@ -242,6 +242,21 @@ export default function LocalDestinationStudyPage() {
             >
               Read Part I: OTA Top-5 Hero Photo Study →
             </Link>
+            <Link
+              to="/registry/london-south-bank"
+              style={{
+                fontSize: '12px',
+                fontWeight: 700,
+                color: '#00e5ff',
+                textDecoration: 'none',
+                padding: '6px 12px',
+                borderRadius: '999px',
+                border: '1px solid rgba(0, 229, 255, 0.35)',
+                background: 'rgba(0, 229, 255, 0.08)',
+              }}
+            >
+              Live South Bank (SE1) Vibe Signature Registry →
+            </Link>
           </div>
 
           <button

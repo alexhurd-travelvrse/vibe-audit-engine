@@ -2,6 +2,15 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { LONDON_10_STUDY_META, LONDON_10_HOTELS } from '../src/data/london10StudyData.js';
+import {
+  REGISTRY_URLS,
+  SOUTH_BANK_DESTINATION_SIGNATURE,
+  SOUTH_BANK_HOTEL_SIGNATURES,
+  SOUTH_BANK_LOCAL_GEM_SIGNATURES,
+  ATMOSVIBE_METHODOLOGY_DATA,
+  buildSouthBankRegistryJsonLd,
+  buildMethodologyJsonLd,
+} from '../src/data/southBankRegistryData.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -323,8 +332,102 @@ function runPrerender() {
   });
   fs.writeFileSync(path.join(localStudyOutDir, 'index.html'), localStudyHtml, 'utf-8');
 
+  // 4. /registry/london-south-bank & /london/south-bank Canonical Sensory Registry
+  const southBankStaticHtml = `
+    <div class="vibe-insights-static-prerender">
+      <article>
+        <header>
+          <p>CANONICAL SENSORY REGISTRY • ${escapeHtml(SOUTH_BANK_DESTINATION_SIGNATURE.registryCode)} • VERIFIED ${escapeHtml(SOUTH_BANK_DESTINATION_SIGNATURE.lastVerified)}</p>
+          <h1>London South Bank (SE1): Destination, Hotel &amp; Local Gem Vibe Signatures</h1>
+          <p>Independently verified 8-Signal Vibe Signatures for London South Bank (SE1): Composite Destination Vibe (${SOUTH_BANK_DESTINATION_SIGNATURE.compositeVibeScore}/100), Pedestrian Walkability (${SOUTH_BANK_DESTINATION_SIGNATURE.walkabilityScore}/100), Independent Zero-Chain Gem Ratio (${SOUTH_BANK_DESTINATION_SIGNATURE.independentGemRatioPct}%), 3 audited boutique hotels, and 6 verified local gems and cultural attractions. Synced with <a href="${escapeHtml(REGISTRY_URLS.travelvrseSouthBankHub)}">TravelVRSE South Bank Hub</a>.</p>
+        </header>
+        <section>
+          <h2>Tier 1: The 8 Verified Real-World Signals of London’s South Bank</h2>
+          <ul>
+            ${SOUTH_BANK_DESTINATION_SIGNATURE.eightSignals
+              .map(
+                (s) =>
+                  `<li><strong>Signal #${escapeHtml(s.number)} — ${escapeHtml(s.signal)} (${s.score}/100 • ${escapeHtml(s.factRatio)}):</strong> ${escapeHtml(s.verification)}</li>`
+              )
+              .join('\n')}
+          </ul>
+        </section>
+        <section>
+          <h2>Tier 2: South Bank Boutique Hotel Vibe Signatures &amp; Honest-Fit Verdicts</h2>
+          ${SOUTH_BANK_HOTEL_SIGNATURES.map(
+            (h) => `
+            <article>
+              <h3>${escapeHtml(h.name)} (${escapeHtml(h.address)})</h3>
+              <p><strong>Physical Vibe:</strong> ${h.scores.physicalVibe}/100 | <strong>Own Vibe (Web):</strong> ${h.scores.ownPropertyDigital}/100 | <strong>Local Area (Web):</strong> ${h.scores.localDestinationDigital}/100 | <strong>OTA Top-5:</strong> ${h.scores.otaTop5Hero}/100</p>
+              <p><strong>Love this if:</strong> ${escapeHtml(h.loveThisIf)}</p>
+              <p><strong>Avoid this if:</strong> ${escapeHtml(h.avoidThisIf)}</p>
+              <p><strong>Acoustic Profile:</strong> ${escapeHtml(h.acousticProfile)}</p>
+            </article>
+          `
+          ).join('\n')}
+        </section>
+        <section>
+          <h2>Tier 3: Verified South Bank Local Gems &amp; Cultural Attractions</h2>
+          ${SOUTH_BANK_LOCAL_GEM_SIGNATURES.map(
+            (g) => `
+            <article>
+              <h3>${escapeHtml(g.name)} (${g.vibeScore}/100 Vibe • ${escapeHtml(g.address)})</h3>
+              <p>${escapeHtml(g.vibeSignatureSummary)}</p>
+              <p><strong>Peak Window:</strong> ${escapeHtml(g.bestWindow)} | <strong>Acoustics:</strong> ${escapeHtml(g.acousticProfile)}</p>
+            </article>
+          `
+          ).join('\n')}
+        </section>
+      </article>
+    </div>
+  `.trim();
+
+  const sbRegistryHtml = injectRoutePage({
+    baseHtml,
+    title: 'London South Bank (SE1) Canonical Vibe Signature Registry: Destination, Hotels & Local Gems | AtmosVibe',
+    description:
+      'Verified 8-Signal Vibe Signatures for London South Bank (SE1): Destination Vibe (91.3/100), Walkability (97.2/100), Sea Containers London, Bankside Hotel, The Hoxton Southwark, and 6 zero-chain local gems.',
+    canonicalUrl: REGISTRY_URLS.southBankRegistry,
+    jsonLdObject: buildSouthBankRegistryJsonLd(),
+    staticRootHtml: southBankStaticHtml,
+  });
+
+  const sbRegistryOutDir = path.join(distDir, 'registry', 'london-south-bank');
+  fs.mkdirSync(sbRegistryOutDir, { recursive: true });
+  fs.writeFileSync(path.join(sbRegistryOutDir, 'index.html'), sbRegistryHtml, 'utf-8');
+
+  const sbAliasOutDir = path.join(distDir, 'london', 'south-bank');
+  fs.mkdirSync(sbAliasOutDir, { recursive: true });
+  fs.writeFileSync(path.join(sbAliasOutDir, 'index.html'), sbRegistryHtml, 'utf-8');
+
+  // 5. /methodology Page
+  const methodologyStaticHtml = `
+    <div class="vibe-insights-static-prerender">
+      <article>
+        <h1>${escapeHtml(ATMOSVIBE_METHODOLOGY_DATA.title)}</h1>
+        <p>${escapeHtml(ATMOSVIBE_METHODOLOGY_DATA.subtitle)}</p>
+        ${ATMOSVIBE_METHODOLOGY_DATA.pillars
+          .map((p) => `<section><h2>${escapeHtml(p.title)}</h2><p>${escapeHtml(p.summary)}</p></section>`)
+          .join('\n')}
+        <p>${escapeHtml(ATMOSVIBE_METHODOLOGY_DATA.editorialDisclosure)}</p>
+      </article>
+    </div>
+  `.trim();
+
+  const methodologyOutDir = path.join(distDir, 'methodology');
+  fs.mkdirSync(methodologyOutDir, { recursive: true });
+  const methodologyHtml = injectRoutePage({
+    baseHtml,
+    title: `${ATMOSVIBE_METHODOLOGY_DATA.title} | AtmosVibe`,
+    description: ATMOSVIBE_METHODOLOGY_DATA.subtitle,
+    canonicalUrl: REGISTRY_URLS.methodology,
+    jsonLdObject: buildMethodologyJsonLd(),
+    staticRootHtml: methodologyStaticHtml,
+  });
+  fs.writeFileSync(path.join(methodologyOutDir, 'index.html'), methodologyHtml, 'utf-8');
+
   console.log(
-    '[prerender] Successfully generated static HTML + JSON-LD for /vibe-insights, /vibe-insights/london-boutique-ota-gap, and /vibe-insights/london-local-destination-gap'
+    '[prerender] Successfully generated static HTML + JSON-LD for /vibe-insights, /vibe-insights/london-boutique-ota-gap, /vibe-insights/london-local-destination-gap, /registry/london-south-bank, /london/south-bank, and /methodology'
   );
 }
 
