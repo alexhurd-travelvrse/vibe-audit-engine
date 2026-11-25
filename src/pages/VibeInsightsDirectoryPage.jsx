@@ -78,6 +78,25 @@ const B2B_SECTORS = [
     icon: MapPin,
     subcategories: [
       {
+        id: 'richmond-set-jetting-study',
+        subcategoryLabel: 'Richmond-upon-Thames (TW9 / TW10) • 3-LLM Benchmark & Canonical Vibe Registry',
+        code: 'AV-RES-2026-LON-TW9',
+        date: 'Nov 2026',
+        title:
+          'Can ChatGPT Plan a Vibey Trip? We Tested AI Trip Planners on Ted Lasso’s Richmond',
+        summary:
+          'We tested ChatGPT, Google Gemini and Perplexity on Ted Lasso’s Richmond. All 3 out of 3 LLMs recommended the exact same 250m filming checklist (while 2 of 3 sent visitors 14 miles away to Selhurst Park) — and 0 out of 3 mentioned the real village pub atmosphere 60 metres across the Green at The Coach & Horses or the 1.2 km Thames Path walk to Petersham Meadows.',
+        status: 'New Study & Registry',
+        statusType: 'published',
+        href: '/vibe-insights/richmond-set-jetting-study',
+        metaPills: [
+          '3 / 3 LLMs Same Corner Checklist',
+          '0 / 3 Mention The Coach & Horses (60m Away)',
+          '6 Audited Richmond Spots (94.2 Vibe)',
+          '3 Audited Riverside & Hilltop Hotels',
+        ],
+      },
+      {
         id: 'london-south-bank-registry',
         subcategoryLabel: 'London South Bank (SE1) • Canonical Vibe Signature Registry',
         code: 'AV-REG-2026-LON-SE1',
@@ -123,6 +142,24 @@ const B2B_SECTORS = [
     categoryTitle: 'Tours, Cruises & Attractions',
     icon: Compass,
     subcategories: [
+      {
+        id: 'richmond-ted-lasso-spatial-cohort',
+        subcategoryLabel: 'Richmond-upon-Thames (TW9 / TW10) • 6 Audited Local Spots & Towpath Gems',
+        code: 'AV-GEM-LON-TW9-01..06',
+        date: 'Nov 2026',
+        title:
+          'Ted Lasso’s Richmond: 3-LLM Benchmark vs. 6 Verified Local Vibe Signatures',
+        summary:
+          'Comparing what ChatGPT, Google Gemini and Perplexity recommend against verified on-the-ground Vibe Signatures for The Coach & Horses (94.8), 11 Paved Court (93.6), Red K6 Phone Boxes & Green Corner (92.4), Richmond Green (96.2), Thames Path Promenade (97.1), and Petersham Nurseries (95.8).',
+        status: '6 Signatures Live',
+        statusType: 'live',
+        href: '/vibe-insights/richmond-set-jetting-study',
+        metaPills: [
+          '82% Zero-Chain Independent Ratio',
+          '60m Dispersion Anchor: Coach & Horses',
+          '1.2 km Thames Path to Petersham',
+        ],
+      },
       {
         id: 'south-bank-local-gems-cohort',
         subcategoryLabel: 'London South Bank (SE1) • 6 Verified Local Gems & Attractions',

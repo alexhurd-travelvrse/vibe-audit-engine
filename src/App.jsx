@@ -20,6 +20,7 @@ import WtmMobileDeckPage from './pages/WtmMobileDeckPage';
 import VibeInsightsPage from './pages/VibeInsightsPage';
 import LocalDestinationStudyPage from './pages/LocalDestinationStudyPage';
 import SouthBankRegistryPage from './pages/SouthBankRegistryPage';
+import RichmondStudyRegistryPage from './pages/RichmondStudyRegistryPage';
 import MethodologyPage from './pages/MethodologyPage';
 import VibeInsightsDirectoryPage from './pages/VibeInsightsDirectoryPage';
 import B2BLeadGenOnboarding from './B2BLeadGenOnboarding';
@@ -234,6 +235,13 @@ const SouthBankRegistryRoutePage = () => (
   </Layout>
 );
 
+const RichmondStudyRegistryRoutePage = () => (
+  <Layout>
+    <RichmondStudyRegistryPage />
+    <Footer />
+  </Layout>
+);
+
 const MethodologyRoutePage = () => (
   <Layout>
     <MethodologyPage />
@@ -255,6 +263,10 @@ const App = () => {
           <Route path="/vibe-insights/london-south-bank-registry" element={<SouthBankRegistryRoutePage />} />
           <Route path="/registry/london-south-bank" element={<SouthBankRegistryRoutePage />} />
           <Route path="/london/south-bank" element={<SouthBankRegistryRoutePage />} />
+          <Route path="/vibe-insights/richmond-set-jetting-study" element={<RichmondStudyRegistryRoutePage />} />
+          <Route path="/vibe-insights/london-richmond-registry" element={<RichmondStudyRegistryRoutePage />} />
+          <Route path="/registry/london-richmond" element={<RichmondStudyRegistryRoutePage />} />
+          <Route path="/london/richmond" element={<RichmondStudyRegistryRoutePage />} />
           <Route path="/methodology" element={<MethodologyRoutePage />} />
           <Route path="/vibe-insights/:slug" element={<VibeInsightsRoutePage />} />
           <Route path="/research/:slug" element={<VibeInsightsRoutePage />} />

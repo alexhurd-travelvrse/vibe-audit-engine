@@ -4,6 +4,18 @@ import './BlogJournal.css';
 
 const CURATED_POSTS = [
     {
+        id: 'substack-richmond-set-jetting',
+        title: "Can ChatGPT Plan a Vibey Trip? We Tested AI Trip Planners on Ted Lasso’s Richmond",
+        excerpt: "We gave ChatGPT, Google Gemini and Perplexity the same prompt for a Ted Lasso trip to Richmond. All 3 sent visitors to the exact same 250m filming checklist - while 0 out of 3 mentioned the real village pub atmosphere 60 metres across the Green.",
+        date: "Nov 2026",
+        image: "/AtmosVibe-Richmond-Carousel-Slide-1.png",
+        link: "/vibe-insights/richmond-set-jetting-study",
+        badge: "VIBE INSIGHTS • STUDY #03",
+        ctaLabel: "Read Full Study",
+        isInternal: true,
+        readTime: "3 min read"
+    },
+    {
         id: 'substack-local-destination',
         title: "The “Walled Garden” Trap: Why London’s Best Lifestyle Hotels Hide the Neighbourhoods Outside Their Doors",
         excerpt: "London’s flagship lifestyle hotels score 88.4/100 at marketing their own internal bars and rooftops—yet drop to 45.5/100 on local destination storytelling and show neighbourhood context in just 16% of OTA Hero photos.",

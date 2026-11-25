@@ -25,6 +25,10 @@
     { "source": "/vibe-insights/london-south-bank-registry", "destination": "/registry/london-south-bank/index.html" },
     { "source": "/registry/london-south-bank", "destination": "/registry/london-south-bank/index.html" },
     { "source": "/london/south-bank", "destination": "/london/south-bank/index.html" },
+    { "source": "/vibe-insights/richmond-set-jetting-study", "destination": "/vibe-insights/richmond-set-jetting-study/index.html" },
+    { "source": "/vibe-insights/london-richmond-registry", "destination": "/registry/london-richmond/index.html" },
+    { "source": "/registry/london-richmond", "destination": "/registry/london-richmond/index.html" },
+    { "source": "/london/richmond", "destination": "/london/richmond/index.html" },
     { "source": "/methodology", "destination": "/methodology/index.html" },
     { "source": "/research/london-boutique-ota-gap", "destination": "/vibe-insights/london-boutique-ota-gap/index.html" },
     { "source": "/(.*)", "destination": "/index.html" }

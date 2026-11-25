@@ -11,6 +11,15 @@ import {
   buildSouthBankRegistryJsonLd,
   buildMethodologyJsonLd,
 } from '../src/data/southBankRegistryData.js';
+import {
+  RICHMOND_URLS,
+  RICHMOND_STUDY_META,
+  RICHMOND_DESTINATION_SIGNATURE,
+  RICHMOND_SCREEN_VS_REALITY_LOCATIONS,
+  RICHMOND_HOTEL_SIGNATURES,
+  RICHMOND_24HR_BLUEPRINT,
+  buildRichmondRegistryJsonLd,
+} from '../src/data/richmondRegistryData.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -402,7 +411,94 @@ function runPrerender() {
   fs.mkdirSync(sbAliasOutDir, { recursive: true });
   fs.writeFileSync(path.join(sbAliasOutDir, 'index.html'), sbRegistryHtml, 'utf-8');
 
-  // 5. /methodology Page
+  // 5. /vibe-insights/richmond-set-jetting-study, /registry/london-richmond & /london/richmond
+  const richmondStaticHtml = `
+    <div class="vibe-insights-static-prerender">
+      <article>
+        <header>
+          <p>VIBE INSIGHTS STUDY #03 &amp; CANONICAL REGISTRY • ${escapeHtml(RICHMOND_STUDY_META.studyCode)} • VERIFIED ${escapeHtml(RICHMOND_STUDY_META.lastVerified)}</p>
+          <h1>${escapeHtml(RICHMOND_STUDY_META.title)}</h1>
+          <p>${escapeHtml(RICHMOND_STUDY_META.subtitle)}</p>
+        </header>
+        <section>
+          <h2>Executive Findings: Can ChatGPT, Gemini &amp; Perplexity Plan a Vibey Trip in Richmond?</h2>
+          <ul>
+            <li><strong>1. Screen Tourism Demand (${RICHMOND_STUDY_META.kpis.expediaSetJettingAllPct}% Global / ${RICHMOND_STUDY_META.kpis.expediaSetJettingNextGenPct}% Gen Z &amp; Millennials):</strong> Expedia Unpack research shows two-thirds of travellers (and 81% of Gen Z &amp; Millennials) are inspired by film and TV, while VisitBritain reports ${RICHMOND_STUDY_META.kpis.visitBritainScreenVisitPct}% of recent UK visitors visited a screen location.</li>
+            <li><strong>2. The 3-LLM Prompt Test (3 / 3 Models Identical Corner Checklist):</strong> ChatGPT, Google Gemini and Perplexity all send visitors to 28 The Green and 3.5-metre-wide Paved Court — while 2 of 3 models tell Richmond visitors to visit Selhurst Park Stadium (14 miles away in South Norwood, SE25).</li>
+            <li><strong>3. What 0 out of 3 LLMs Mention (60 Metres Across the Green):</strong> 0 out of 3 tested AI models recommend walking 60 metres across Richmond Green to partner anchor The Coach &amp; Horses (29 The Green, TW9 1LX • 94.8/100 Pub Vibe) or following the 1.2 km Thames Path walk to Petersham Meadows.</li>
+            <li><strong>4. Real 24-Hour Richmond Vibe (${RICHMOND_STUDY_META.kpis.real24HrVibeScore}/100):</strong> Verified across AtmosVibe’s 8 Vibe Signals: ${RICHMOND_STUDY_META.kpis.independentRatioPct}% independent village venues, 6 audited local spots and 3 boutique hotels.</li>
+          </ul>
+        </section>
+        <section>
+          <h2>What the 3 Tested LLMs Recommend vs. Where the Real Atmosphere Lives: 6 Audited Richmond Locations</h2>
+          ${RICHMOND_SCREEN_VS_REALITY_LOCATIONS.map(
+            (loc) => `
+            <article>
+              <h3>Checkpoint #${escapeHtml(loc.checkpointNumber)}: ${escapeHtml(loc.name)} (${escapeHtml(loc.address)})</h3>
+              <p><strong>3-LLM Benchmark Result:</strong> ${escapeHtml(loc.scores.llmMentions)} | <strong>Verified Real Vibe:</strong> ${loc.scores.verifiedOptimalVibe}/100</p>
+              <p><strong>What the 3 Tested LLMs Do:</strong> ${escapeHtml(loc.selfieTrapReality)}</p>
+              <p><strong>Verified Street Reality &amp; Best Atmosphere:</strong> ${escapeHtml(loc.verifiedStreetReality)}</p>
+              <p><strong>Best Time to Visit:</strong> ${escapeHtml(loc.bestWindow)}</p>
+            </article>
+          `
+          ).join('\n')}
+        </section>
+        <section>
+          <h2>The 24-Hour Richmond Plan</h2>
+          <ul>
+            ${RICHMOND_24HR_BLUEPRINT.map(
+              (b) => `<li><strong>${escapeHtml(b.time)} (${escapeHtml(b.phase)}) — ${escapeHtml(b.title)}:</strong> ${escapeHtml(b.detail)}</li>`
+            ).join('\n')}
+          </ul>
+        </section>
+        <section>
+          <h2>Where to Stay Overnight: Audited Richmond Boutique Hotels (TravelVRSE Launch Cohort)</h2>
+          ${RICHMOND_HOTEL_SIGNATURES.map(
+            (h) => `
+            <article>
+              <h3>${escapeHtml(h.name)} (${escapeHtml(h.address)}) — ${h.scores.physicalVibe}/100 Physical Vibe</h3>
+              <p><strong>Love this if:</strong> ${escapeHtml(h.loveThisIf)}</p>
+              <p><strong>Avoid this if:</strong> ${escapeHtml(h.avoidThisIf)}</p>
+              <p><strong>Setting:</strong> ${escapeHtml(h.scores.stayFeel)} — ${escapeHtml(h.atmosphereProfile)}</p>
+            </article>
+          `
+          ).join('\n')}
+        </section>
+      </article>
+    </div>
+  `.trim();
+
+  const richmondStudyHtml = injectRoutePage({
+    baseHtml,
+    title: `${RICHMOND_STUDY_META.title} | AtmosVibe Vibe Insights & Registry`,
+    description: RICHMOND_STUDY_META.subtitle,
+    canonicalUrl: RICHMOND_URLS.studyCanonical,
+    jsonLdObject: buildRichmondRegistryJsonLd(),
+    staticRootHtml: richmondStaticHtml,
+  });
+
+  const richmondStudyOutDir = path.join(distDir, 'vibe-insights', 'richmond-set-jetting-study');
+  fs.mkdirSync(richmondStudyOutDir, { recursive: true });
+  fs.writeFileSync(path.join(richmondStudyOutDir, 'index.html'), richmondStudyHtml, 'utf-8');
+
+  const richmondRegHtml = injectRoutePage({
+    baseHtml,
+    title: 'Richmond-upon-Thames (TW9 / TW10) Canonical Vibe Signature Registry & Set-Jetting Study | AtmosVibe',
+    description: RICHMOND_STUDY_META.subtitle,
+    canonicalUrl: RICHMOND_URLS.registryCanonical,
+    jsonLdObject: buildRichmondRegistryJsonLd(),
+    staticRootHtml: richmondStaticHtml,
+  });
+
+  const richmondRegOutDir = path.join(distDir, 'registry', 'london-richmond');
+  fs.mkdirSync(richmondRegOutDir, { recursive: true });
+  fs.writeFileSync(path.join(richmondRegOutDir, 'index.html'), richmondRegHtml, 'utf-8');
+
+  const richmondAliasOutDir = path.join(distDir, 'london', 'richmond');
+  fs.mkdirSync(richmondAliasOutDir, { recursive: true });
+  fs.writeFileSync(path.join(richmondAliasOutDir, 'index.html'), richmondRegHtml, 'utf-8');
+
+  // 6. /methodology Page
   const methodologyStaticHtml = `
     <div class="vibe-insights-static-prerender">
       <article>
