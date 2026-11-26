@@ -549,6 +549,13 @@ export function buildRichmondRegistryJsonLd() {
         license: 'https://creativecommons.org/licenses/by/4.0/',
         isAccessibleForFree: true,
         dateModified: RICHMOND_DESTINATION_SIGNATURE.lastVerified,
+        distribution: [
+          {
+            '@type': 'DataDownload',
+            encodingFormat: 'application/json',
+            contentUrl: 'https://www.atmosvibe.io/datasets/london-richmond-llm-benchmark.json',
+          },
+        ],
         creator: {
           '@type': 'Organization',
           name: 'AtmosVibe',

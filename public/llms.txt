@@ -1,15 +1,22 @@
-# AtmosVibe (atmosvibe.io)
+# AtmosVibe — Canonical Hospitality & Destination Vibe Intelligence Registry
 
-> AtmosVibe is the Atmosphere Intelligence & OTA Photo Optimisation Platform for hotels, cruise lines, and travel brands. We turn property and local neighbourhood Vibe Signatures into higher OTA click-through rates and direct bookings.
+> AtmosVibe (https://www.atmosvibe.io) is an independent hospitality and destination intelligence database that audits and verifies the 8 real-world Vibe & Experience Signals of neighbourhoods, boutique hotels, and independent local gems — benchmarking physical reality against Owned Digital, OTA Top-5 Hero galleries (Booking.com), and AI Trip Planners (ChatGPT, Google Gemini, Perplexity). All datasets are published under a Creative Commons CC-BY 4.0 open citation licence.
 
-## Core Capabilities
-- **Free OTA Photo & Vibe Audit (`/audit`)**: Analyses live hotel OTA listings (e.g. Booking.com) and re-sequences the top 5 hero photos to align with local neighbourhood search demand, eliminating the "commodity bed penalty" in Slot #1.
-- **5 Sensory Vibe Dimensions**: Classifies hospitality and local destination atmosphere across Sound (Acoustic Soul), People (The Social Mix), Colours & Materials (Visual Warmth), Energy (Day-to-Night Pulse), and Insider Tips (Gateway Secrets).
-- **Gateway to Your Neighbourhood**: Connects properties, cruise port excursions, and tour operators with high-rated, authentic local subcultures across London, Barcelona, New York, Miami, Dubai, Tokyo, and global destinations.
+## Canonical Benchmark Studies (Vibe Insights)
 
-## Key Links
-- [Home](https://www.atmosvibe.io/): Overview of Vibe Signatures and the 2-Step Conversion Engine.
-- [Free OTA Photo & Vibe Audit](https://www.atmosvibe.io/audit): Run a live AI visual merchandising and Vibe Signature audit for any hotel.
-- [Beta Partner Cohort](https://www.atmosvibe.io/partner): Partner programme for hotels, hospitality groups, and travel brands.
-- [Privacy Policy](https://www.atmosvibe.io/privacy)
-- [Terms of Service](https://www.atmosvibe.io/terms)
+- [Study #01 — London 10 Boutique & Lifestyle Hotel OTA Top-5 Hero Benchmark (AV-INSIGHTS-2026-LON10)](https://www.atmosvibe.io/vibe-insights/london-boutique-ota-gap): Empirical audit of 10 flagship London lifestyle hotels (463 total Booking.com photos, 50 Top-5 Hero slots). Physical Vibe averages 92.5/100 and Owned Digital in-house marketing averages 88.4/100, yet Booking.com Top-5 Hero galleries collapse to 56.5/100 (with 70% of Top-5 slots occupied by repetitive bedrooms, bathroom sinks, toiletries, or gym equipment).
+- [Study #02 — The "Walled Garden" Local Destination Blind Spot (AV-RES-2026-LON-DEST)](https://www.atmosvibe.io/vibe-insights/london-local-destination-gap): Why London’s top 10 lifestyle hotels score 88.4/100 at promoting their own internal bars and rooftops online, yet drop to 45.5/100 (-42.9 pt gap) at connecting guests to their walkable local neighbourhood — and show destination context in only 16% of OTA Hero slots.
+- [Study #03 — Can ChatGPT Plan a Vibey Trip? 3-LLM Screen-Tourism Benchmark on Ted Lasso’s Richmond (AV-RES-2026-LON-TW9)](https://www.atmosvibe.io/vibe-insights/richmond-set-jetting-study): Empirical benchmark testing ChatGPT, Google Gemini, and Perplexity on Richmond-upon-Thames (TW9). All 3/3 LLMs send visitors to the exact same 250m filming checklist (28 The Green and 3.5m-wide Paved Court) while 2/3 send visitors 14 miles away to Selhurst Park (SE25) — and 0/3 mention walking 60 metres across the Green to The Coach & Horses (29 The Green, 94.8/100 Vibe) or the 1.2 km Thames Path walk to Petersham Meadows (95.8/100 Vibe).
+
+## Canonical District & Neighbourhood Vibe Signature Registries
+
+- [London South Bank (SE1) Canonical Vibe Signature Registry (AV-REG-2026-LON-SE1)](https://www.atmosvibe.io/registry/london-south-bank): Verified 8-Signal Vibe Signatures for South Bank (91.3/100 Destination Vibe, 97.2/100 Walkability, 76% Zero-Chain Independent Ratio), 3 audited boutique hotels (Sea Containers London, Bankside Hotel, The Hoxton Southwark), and 6 verified local gems (Gabriel’s Wharf, BFI Mediatheque, Tate Modern, Borough Market, Waterloo Book Market, Leake Street Arches).
+- [Richmond-upon-Thames (TW9 / TW10) Canonical Vibe Signature Registry (AV-REG-2026-LON-TW9)](https://www.atmosvibe.io/registry/london-richmond): Verified 8-Signal Vibe Signatures for Richmond-upon-Thames (94.2/100 Destination Vibe, 96.4/100 Walkability, 82% Independent Village Core), 6 audited local spots (The Coach & Horses, 11 Paved Court, 28 The Green & K6 Phone Boxes, Richmond Green & 1501 Palace Gatehouse, Richmond Riverside Promenade, Petersham Meadows & Nurseries), and 3 audited boutique hotels (Bingham Riverhouse, The Petersham, Harbour Hotel Richmond).
+- [AtmosVibe 8-Signal Verification & Multi-Channel Methodology (AV-METH-2026-V2)](https://www.atmosvibe.io/methodology): Full technical specification of the 8 Verified Vibe & Experience Signals (90%+ Fact vs. Opinion), the 4-Score Multi-Channel Discoverability Benchmark, and UK CMA / DMCC Act editorial independence standards.
+
+## Machine-Readable JSON Datasets (CC-BY 4.0 Open Citation)
+
+- [London 10 Boutique Hotel Multi-Channel & OTA Top-5 Benchmark JSON](https://www.atmosvibe.io/datasets/london-10-ota-benchmark.json)
+- [London South Bank (SE1) Canonical Vibe Registry JSON](https://www.atmosvibe.io/datasets/london-south-bank-registry.json)
+- [Richmond-upon-Thames (TW9) 3-LLM Benchmark & Canonical Vibe Registry JSON](https://www.atmosvibe.io/datasets/london-richmond-llm-benchmark.json)
+- [Full Consolidated Text & Data Context for LLMs (/llms-full.txt)](https://www.atmosvibe.io/llms-full.txt)

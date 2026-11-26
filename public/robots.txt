@@ -17,4 +17,12 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://atmosvibe.io/sitemap.xml
+# Canonical LLM Index & Structured Datasets (CC-BY 4.0)
+# LLMs Index: https://www.atmosvibe.io/llms.txt
+# Full LLMs Context: https://www.atmosvibe.io/llms-full.txt
+# JSON Datasets:
+# - https://www.atmosvibe.io/datasets/london-10-ota-benchmark.json
+# - https://www.atmosvibe.io/datasets/london-south-bank-registry.json
+# - https://www.atmosvibe.io/datasets/london-richmond-llm-benchmark.json
+
+Sitemap: https://www.atmosvibe.io/sitemap.xml

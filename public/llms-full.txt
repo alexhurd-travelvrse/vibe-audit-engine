@@ -1,0 +1,121 @@
+# AtmosVibe — Canonical Hospitality & Destination Vibe Intelligence Registry
+
+> AtmosVibe (https://www.atmosvibe.io) is an independent hospitality and destination intelligence database that audits and verifies the 8 real-world Vibe & Experience Signals of neighbourhoods, boutique hotels, and independent local gems — benchmarking physical reality against Owned Digital, OTA Top-5 Hero galleries (Booking.com), and AI Trip Planners (ChatGPT, Google Gemini, Perplexity). All datasets are published under a Creative Commons CC-BY 4.0 open citation licence.
+
+## Canonical Benchmark Studies (Vibe Insights)
+
+- [Study #01 — London 10 Boutique & Lifestyle Hotel OTA Top-5 Hero Benchmark (AV-INSIGHTS-2026-LON10)](https://www.atmosvibe.io/vibe-insights/london-boutique-ota-gap): Empirical audit of 10 flagship London lifestyle hotels (463 total Booking.com photos, 50 Top-5 Hero slots). Physical Vibe averages 92.5/100 and Owned Digital in-house marketing averages 88.4/100, yet Booking.com Top-5 Hero galleries collapse to 56.5/100 (with 70% of Top-5 slots occupied by repetitive bedrooms, bathroom sinks, toiletries, or gym equipment).
+- [Study #02 — The "Walled Garden" Local Destination Blind Spot (AV-RES-2026-LON-DEST)](https://www.atmosvibe.io/vibe-insights/london-local-destination-gap): Why London’s top 10 lifestyle hotels score 88.4/100 at promoting their own internal bars and rooftops online, yet drop to 45.5/100 (-42.9 pt gap) at connecting guests to their walkable local neighbourhood — and show destination context in only 16% of OTA Hero slots.
+- [Study #03 — Can ChatGPT Plan a Vibey Trip? 3-LLM Screen-Tourism Benchmark on Ted Lasso’s Richmond (AV-RES-2026-LON-TW9)](https://www.atmosvibe.io/vibe-insights/richmond-set-jetting-study): Empirical benchmark testing ChatGPT, Google Gemini, and Perplexity on Richmond-upon-Thames (TW9). All 3/3 LLMs send visitors to the exact same 250m filming checklist (28 The Green and 3.5m-wide Paved Court) while 2/3 send visitors 14 miles away to Selhurst Park (SE25) — and 0/3 mention walking 60 metres across the Green to The Coach & Horses (29 The Green, 94.8/100 Vibe) or the 1.2 km Thames Path walk to Petersham Meadows (95.8/100 Vibe).
+
+## Canonical District & Neighbourhood Vibe Signature Registries
+
+- [London South Bank (SE1) Canonical Vibe Signature Registry (AV-REG-2026-LON-SE1)](https://www.atmosvibe.io/registry/london-south-bank): Verified 8-Signal Vibe Signatures for South Bank (91.3/100 Destination Vibe, 97.2/100 Walkability, 76% Zero-Chain Independent Ratio), 3 audited boutique hotels (Sea Containers London, Bankside Hotel, The Hoxton Southwark), and 6 verified local gems (Gabriel’s Wharf, BFI Mediatheque, Tate Modern, Borough Market, Waterloo Book Market, Leake Street Arches).
+- [Richmond-upon-Thames (TW9 / TW10) Canonical Vibe Signature Registry (AV-REG-2026-LON-TW9)](https://www.atmosvibe.io/registry/london-richmond): Verified 8-Signal Vibe Signatures for Richmond-upon-Thames (94.2/100 Destination Vibe, 96.4/100 Walkability, 82% Independent Village Core), 6 audited local spots (The Coach & Horses, 11 Paved Court, 28 The Green & K6 Phone Boxes, Richmond Green & 1501 Palace Gatehouse, Richmond Riverside Promenade, Petersham Meadows & Nurseries), and 3 audited boutique hotels (Bingham Riverhouse, The Petersham, Harbour Hotel Richmond).
+- [AtmosVibe 8-Signal Verification & Multi-Channel Methodology (AV-METH-2026-V2)](https://www.atmosvibe.io/methodology): Full technical specification of the 8 Verified Vibe & Experience Signals (90%+ Fact vs. Opinion), the 4-Score Multi-Channel Discoverability Benchmark, and UK CMA / DMCC Act editorial independence standards.
+
+## Machine-Readable JSON Datasets (CC-BY 4.0 Open Citation)
+
+- [London 10 Boutique Hotel Multi-Channel & OTA Top-5 Benchmark JSON](https://www.atmosvibe.io/datasets/london-10-ota-benchmark.json)
+- [London South Bank (SE1) Canonical Vibe Registry JSON](https://www.atmosvibe.io/datasets/london-south-bank-registry.json)
+- [Richmond-upon-Thames (TW9) 3-LLM Benchmark & Canonical Vibe Registry JSON](https://www.atmosvibe.io/datasets/london-richmond-llm-benchmark.json)
+- [Full Consolidated Text & Data Context for LLMs (/llms-full.txt)](https://www.atmosvibe.io/llms-full.txt)
+
+---
+
+## Consolidated Dataset Summary 1: London 10 Boutique Hotel Benchmark (AV-INSIGHTS-2026-LON10)
+
+- Cohort Size: 10 Flagship London Boutique & Lifestyle Hotels (463 Total Booking.com Gallery Photos Audited; 50 Top-5 Hero Slots Audited)
+- Cohort Averages:
+  - A. Physical Vibe & Experiences Reality: 92.5 / 100
+  - B1. Owned Digital — In-House Property Vibe (Website & Instagram): 88.4 / 100
+  - B2. Owned Digital — Local Destination & Neighbourhood Connection ("Walled Garden Test"): 45.5 / 100
+  - C. Booking.com Top-5 Hero Gallery Score: 56.5 / 100 (70% Rooms/Bathrooms/Utility Clutter; 14% Social/Culinary; 16% Destination Context)
+
+### 1. Sea Containers London (South Bank — South Bank)
+- Physical Vibe: 91.3/100 | Owned Digital (Own Vibe): 89/100 | Owned Digital (Local Area): 46/100 | Booking.com Top-5 Hero: 64/100
+- Headline Finding: undefined
+- Missing from Booking.com Top 5: Lyaness award-winning riverfront cocktail bar (0 slots in Top 5); 12th Knot rooftop terrace overlooking Blackfriars & St Paul’s; Direct step-out South Bank cultural riverwalk (Tate Modern, Globe & Borough Market)
+
+### 2. The Hoxton, Southwark (South Bank — South Bank)
+- Physical Vibe: 91.5/100 | Owned Digital (Own Vibe): 88/100 | Owned Digital (Local Area): 64/100 | Booking.com Top-5 Hero: 49/100
+- Headline Finding: undefined
+- Missing from Booking.com Top 5: Seabird 14th-floor outdoor rooftop terrace & skyline panorama (replaced by 3 bathroom bottles in Slot #3); Industrial Crittall-glass lobby bar & Working From_ lounge; Walkable South Bank & Borough Market neighbourhood micro-loop
+
+### 3. One Hundred Shoreditch (Shoreditch — Shoreditch)
+- Physical Vibe: 91.8/100 | Owned Digital (Own Vibe): 87/100 | Owned Digital (Local Area): 61/100 | Booking.com Top-5 Hero: 68/100
+- Headline Finding: undefined
+- Missing from Booking.com Top 5: Seed Library — Mr Lyan’s subterranean vinyl & craft cocktail bar; Kaso Rooftop evening skyline view over East London; Shoreditch High Street ground-floor coffee & neighbourhood culture
+
+### 4. The Hoxton, Shoreditch (Shoreditch — Shoreditch)
+- Physical Vibe: 92.4/100 | Owned Digital (Own Vibe): 87/100 | Owned Digital (Local Area): 66/100 | Booking.com Top-5 Hero: 54/100
+- Headline Finding: undefined
+- Missing from Booking.com Top 5: Llama Inn Peruvian glasshouse rooftop restaurant & outdoor terrace; Hoxton Grill leather booths & evening cocktail bar; Curated Great Eastern Street & Shoreditch creative quarter vibe
+
+### 5. Hart Shoreditch Hotel London (Shoreditch — Shoreditch)
+- Physical Vibe: 89.6/100 | Owned Digital (Own Vibe): 84/100 | Owned Digital (Local Area): 42/100 | Booking.com Top-5 Hero: 58/100
+- Headline Finding: undefined
+- Missing from Booking.com Top 5: UBA Shoreditch ornate red-and-gold pan-Asian dining destination; Sculptural wrought-iron & timber craftsman staircase; Walkable Old Street, Spitalfields & Brick Lane neighbourhood buzz
+
+### 6. The Standard, London (King's Cross — King's Cross & City)
+- Physical Vibe: 92.8/100 | Owned Digital (Own Vibe): 91/100 | Owned Digital (Local Area): 44/100 | Booking.com Top-5 Hero: 48/100
+- Headline Finding: undefined
+- Missing from Booking.com Top 5: Junior Suite outdoor soaking tubs overlooking the Gothic St Pancras clocktower; Sweeties 10th-floor cocktail lounge & Decimo live-fire rooftop dining; Walkable Coal Drops Yard & Regent’s Canal cultural quarter
+
+### 7. The London EDITION (Fitzrovia / Soho — Fitzrovia & Marylebone)
+- Physical Vibe: 94.6/100 | Owned Digital (Own Vibe): 90/100 | Owned Digital (Local Area): 34/100 | Booking.com Top-5 Hero: 44/100
+- Headline Finding: undefined
+- Missing from Booking.com Top 5: Berners Tavern — one of the most iconic hotel dining rooms in Europe (0 slots in Top 5); Belle Époque marble lobby with Ingo Maurer’s silver egg sculpture; Prime Fitzrovia & Soho gallery, dining, and nightlife doorstep
+
+### 8. Treehouse Hotel London (Marylebone / Fitzrovia — Fitzrovia & Marylebone)
+- Physical Vibe: 92.1/100 | Owned Digital (Own Vibe): 87/100 | Owned Digital (Local Area): 39/100 | Booking.com Top-5 Hero: 72/100
+- Headline Finding: undefined
+- Missing from Booking.com Top 5: Madera 15th-floor treetop Mexican dining room at twilight; 360-degree sunset skyline views from The Nest rooftop bar; Marylebone Village & Regent Street doorstep discovery
+
+### 9. The Mandrake (Fitzrovia — Fitzrovia & Marylebone)
+- Physical Vibe: 93.4/100 | Owned Digital (Own Vibe): 90/100 | Owned Digital (Local Area): 28/100 | Booking.com Top-5 Hero: 66/100
+- Headline Finding: undefined
+- Missing from Booking.com Top 5: Waeska botanical cocktail bar & surrealist art collection; Jewel-toned Mandrake Suites & monolithic marble Penthouse; Secluded Newman Street & Fitzrovia art-and-bistro enclave
+
+### 10. The Ned (City of London — King's Cross & City)
+- Physical Vibe: 95.1/100 | Owned Digital (Own Vibe): 91/100 | Owned Digital (Local Area): 31/100 | Booking.com Top-5 Hero: 42/100
+- Headline Finding: undefined
+- Missing from Booking.com Top 5: The 3,000m² Grand Banking Hall with 92 emerald verdite columns & live music stage (0 slots in Top 5); Heated rooftop pool & Lutyens cupola framing St Paul’s Cathedral; Historic City of London heritage & walkable St Paul’s / Bankside links
+
+---
+
+## Consolidated Dataset Summary 2: London South Bank (SE1) Canonical Vibe Registry (AV-REG-2026-LON-SE1)
+
+- Composite Destination Vibe Signature: 91.3/100 | Walkability: 97.2/100 | Zero-Chain Independent Ratio: 76%
+- Audited South Bank Boutique Hotels:
+  - Sea Containers London (20 Upper Ground, South Bank, London SE1 9PD): Physical Vibe 91.3/100, Own Digital 89/100, Local Area Digital 46/100, OTA Top-5 64/100. Best for: St Paul’s golden-hour rooftop views, Tom Dixon copper design & on-site 56-seat Curzon cinema.
+  - Bankside Hotel, Autograph Collection (2–8 Great Suffolk St, London SE1 0UG): Physical Vibe 89.8/100, Own Digital 86/100, Local Area Digital 58/100, OTA Top-5 62/100. Best for: Art-filled calm sanctuary, live Makers Studio & tree-lined quiet mews 3 min from Tate Modern.
+  - The Hoxton, Southwark (40 Blackfriars Rd, Southwark, London SE1 8NY): Physical Vibe 91.5/100, Own Digital 88/100, Local Area Digital 64/100, OTA Top-5 49/100. Best for: 14th-floor Seabird rooftop oyster bar, Albie all-day lobby buzz & curated Borough Market neighbourhood guide.
+- Verified South Bank Local Gems:
+  - Gabriel's Wharf Artisan Courtyard (56 Upper Ground, South Bank, London SE1 9PP • 93.1/100 Vibe): Operates under a strict zero-chain charter: a riverside enclave of independent leatherworkers, custom jewellers, local printmakers, and wood-fired courtyard cafés just 120 metres from Sea Containers London.
+  - BFI Southbank & Archival Mediatheque (Belvedere Rd, South Bank, London SE1 8XT • 94.6/100 Vibe): Britain’s flagship repertory cinema complex housing the free BFI Mediatheque — private, sound-dampened viewing booths giving visitors on-demand access to 10,000+ rare archived British films and television classics.
+  - Tate Modern & Turbine Hall (Bankside, London SE1 9TG • 95.4/100 Vibe): Herzog & de Meuron’s iconic conversion of Giles Gilbert Scott’s 1950s Bankside Power Station — anchoring the entire SE1 cultural corridor within a 3–5 minute walk of all three audited South Bank hotels.
+  - Borough Market Artisan Food Hall (8 Southwark St, London SE1 1TL • 94.2/100 Vibe): London’s 1,000-year-old culinary anchor beneath Victorian railway arches — pairing daytime independent cheese, oyster, and charcuterie stalls with evening natural wine bistros like Elliot’s on Stoney Street.
+  - Waterloo Bridge Vintage Book & Print Market (Queen’s Walk under Waterloo Bridge, London SE1 8XT • 91.8/100 Vibe): One of Europe’s only daily open-air second-hand book and antique map markets, sheltered beneath the concrete span of Waterloo Bridge right outside BFI Southbank.
+  - Leake Street Graffiti & Culture Tunnel (Leake St, Lambeth, London SE1 7NN • 92.4/100 Vibe): A 300-metre legal graffiti tunnel ("The Banksy Tunnel") beneath Waterloo Station’s Victorian brick vaults, lined with independent craft beer arches, live street artists, and subterranean cafés.
+
+---
+
+## Consolidated Dataset Summary 3: Richmond-upon-Thames (TW9 / TW10) 3-LLM Benchmark & Canonical Registry (AV-RES-2026-LON-TW9)
+
+- Prompt Tested Across ChatGPT, Google Gemini & Perplexity: “Plan a Ted Lasso trip to Richmond, London with the best atmosphere.”
+- Key Findings:
+  - 1. What 3 out of 3 LLMs Recommend (The Same 250m Filming Checklist) (3 / 3 Models Identical): All three models return the exact same blog-scraped checklist clustered within 250 metres of Richmond Station: (1) The Prince’s Head at 28 The Green (exterior of The Crown & Anchor), (2) 11 Paved Court (Ted’s front door in a 3.5-metre-wide lane), (3) the red K6 telephone boxes on the corner of the Green and (4) a brief look at Richmond Riverside.
+  - 2. The 14-Mile Geography Misfire (Selhurst Park Stadium in SE25) (2 / 3 Models Misfire): ChatGPT and Gemini routinely tell visitors to include Selhurst Park (Crystal Palace’s stadium, used for AFC Richmond’s Nelson Road) in their Richmond trip - often failing to warn travellers that Selhurst Park is 14 miles away in South Norwood (SE25), over an hour away across South London.
+  - 3. What 0 out of 3 LLMs Mention (The Atmosphere 60 Metres Away) (0 / 3 Models Mention): Because LLMs rank places by how many blogs mention a filming address, 0 out of 3 recommend walking 60 metres across the grass on the very same Green to The Coach & Horses (29 The Green, TW9 1LX) for a quiet snug and table facing the cricket pitch - and 0 out of 3 connect the 15-minute (1.2 km) flat Thames Path walk out to Petersham Meadows and Petersham Nurseries.
+- Verified Richmond Locations (LLM Mentions vs. Verified Vibe Score):
+  - #01 The Coach & Horses (29 The Green — 60m Across the Grass) (29 The Green, Richmond TW9 1LX): AI Mentions: 0 / 3 LLMs | Verified Vibe: 94.8/100. Stand outside 28 The Green and look 60 metres diagonally across the grass to 29 The Green. Sitting directly on Richmond Green with warm wood panelling, a quiet snug, a games corner and outdoor tables facing the cricket pitch, The Coach & Horses has the exact unhurried local pub atmosphere people loved on screen - and is where Richmond locals and dog walkers actually sit down for a pint or Sunday roast.
+  - #02 11 Paved Court (Ted Lasso’s Front Door & 3.5m Georgian Lane) (11 Paved Court, Richmond TW9 1LZ): AI Mentions: 3 / 3 LLMs | Verified Vibe: 93.6/100. Walk down Paved Court between 8:45 and 10:30 AM with a flat white in hand (or after 5:30 PM) and it feels straight out of Episode 1: peaceful Yorkstone paving flags, morning sunlight on the 18th-century brick and independent jewellers and boutiques opening their shutters.
+  - #03 The Red K6 Telephone Boxes & 28 The Green Corner (28 The Green, Richmond TW9 1LX): AI Mentions: 3 / 3 LLMs | Verified Vibe: 92.4/100. Treat this corner as a 10-minute morning architectural stop before 11:15 AM: admire the 300-year-old pub exterior and the row of listed Giles Gilbert Scott K6 red telephone boxes framing the Green, then walk 60 metres across the grass to The Coach & Horses.
+  - #04 Richmond Green & 1501 Old Palace Gatehouse (The Green, Richmond TW9 1LX): AI Mentions: 3 / 3 LLMs (Corner Only) | Verified Vibe: 96.2/100. Twelve acres of open village turf bordered by plane trees where cricket has been played since the 1600s. Walk the diagonal path toward Old Palace Lane in the late afternoon when the low sun lights up the red Tudor brick and a weekend cricket match is underway.
+  - #05 Richmond Riverside Promenade & 1777 Stone Bridge (Water Lane to Riverside Promenade, Richmond TW9 1TP): AI Mentions: 3 / 3 LLMs (Stop at Bridge) | Verified Vibe: 97.1/100. Walking 250 metres (3 minutes) down Water Lane to the Thames is where Richmond shifts from a TV filming checklist into a full destination. Wooden skiffs glide under the 1777 stone arches of Richmond Bridge, terraced lawns step down to the water and the flat towpath opens out toward Petersham.
+  - #06 Petersham Meadows & Petersham Nurseries (The 1.2 km Towpath Walk Missed by AI) (Church Lane, Petersham Road, Richmond TW10 7AB): AI Mentions: 0 / 3 LLMs | Verified Vibe: 95.8/100. Follow the flat Thames Path just 1.2 km (15 minutes on foot) past Richmond Bridge and the town gives way to open river meadows with grazing cattle and the candlelit glasshouses of Petersham Nurseries, filled with jasmine, antique terracotta and seasonal slow-food dining.
+- Audited Richmond Boutique Hotels:
+  - Bingham Riverhouse (61–63 Petersham Rd, Richmond TW10 6UR • 94.6/100 Physical Vibe): Waking up on the river and walking 6 minutes (480m) along the towpath to Paved Court before the day-trippers arrive.
+  - The Petersham Hotel (Nightingale Lane, Richmond TW10 6UZ • 92.8/100 Physical Vibe): Sunset dining and elevated river-view bedrooms looking down over grazing cattle in Petersham Meadows and the winding Thames.
+  - Harbour Hotel Richmond & HarSPA (152–158 Richmond Hill, Richmond TW10 6RP • 90.4/100 Physical Vibe): Pairing a morning Ted Lasso village walk with roaming deer in Richmond Park and an afternoon hydrotherapy spa.

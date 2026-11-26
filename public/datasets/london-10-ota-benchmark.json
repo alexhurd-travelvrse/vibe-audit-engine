@@ -1,0 +1,637 @@
+{
+  "schemaVersion": "2026.11",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "publisher": {
+    "name": "AtmosVibe Hospitality & Destination Intelligence",
+    "url": "https://www.atmosvibe.io",
+    "methodologyUrl": "https://www.atmosvibe.io/methodology"
+  },
+  "studyMeta": {
+    "slug": "london-boutique-ota-gap",
+    "canonicalUrl": "https://atmosvibe.io/vibe-insights/london-boutique-ota-gap",
+    "substackUrl": "https://atmosvibe.substack.com",
+    "linkedinCompanyUrl": "https://www.linkedin.com/company/atmosvibe",
+    "publishDate": "2026-11-09",
+    "studyCode": "AV-RES-2026-LON10",
+    "title": "The 2026 London Lifestyle Hotel Vibe Study: Physical Presence vs. Owned Digital vs. OTA Gallery",
+    "subtitle": "AtmosVibe benchmark of 10 flagship lifestyle hotels across London’s top tourist districts across Physical Presence (92.5/100), Owned Digital — Own Property Vibe (88.4/100), Owned Digital — Local Destination Vibe (45.5/100), and Live Booking.com Top-5 Hero Images (56.5/100).",
+    "kpis": {
+      "avgMathVibeScore": 92.5,
+      "avgPhysicalVibeScore": 92.5,
+      "avgOwnPropertyDigitalScore": 88.4,
+      "avgLocalDestinationDigitalScore": 45.5,
+      "avgOtaTop5Score": 56.5,
+      "avgVibeLossPts": 36,
+      "totalPhotosAudited": 382,
+      "top5SlotsAudited": 50,
+      "genericRoomUtilitySlots": 35,
+      "genericRoomUtilityRatePct": 70,
+      "socialCulinarySlotsCount": 7,
+      "socialCulinaryRatePct": 14,
+      "destinationExteriorSlotsCount": 8,
+      "destinationExteriorRatePct": 16
+    }
+  },
+  "hotels": [
+    {
+      "id": "sea-containers",
+      "index": 1,
+      "name": "Sea Containers London",
+      "neighborhood": "South Bank",
+      "cluster": "South Bank",
+      "scores": {
+        "physicalVibe": 91.3,
+        "ownedDigitalOwnPropertyVibe": 89,
+        "ownedDigitalLocalDestinationVibe": 46,
+        "bookingComTop5HeroScore": 64
+      },
+      "totalOtaGalleryPhotos": 45,
+      "heroTop5Mix": {
+        "socialCulinary": 0,
+        "destinationExterior": 1,
+        "roomUtility": 4,
+        "summary": "1 Destination River View • 0 Social/Culinary • 4 Suite Couches & Bed"
+      },
+      "ownPropertyDigitalSummary": "Strong internal merchandising (89/100): Website and Instagram immediately showcase 12th Knot rooftop sunset cocktails, Lyaness mixology, and Tom Dixon’s maritime design.",
+      "localDestinationDigitalSummary": "Moderate \"Walled Garden\" gap (46/100): Visually frames the Thames skyline, yet owned content focuses heavily on keeping guests inside its own bars — under-marketing step-out South Bank micro-vibes like Borough Market street food, BFI cinema culture, and Bankside riverside pubs.",
+      "otaRealitySummary": "Slot #1 shows a daytime river exterior, but Slots #2, #3, #4, and #5 show four nearly identical living-room couches and a standard bed. Neither Lyaness nor 12th Knot appears anywhere in the Top 5.",
+      "buriedGemsMissingFromTop5": [
+        "Lyaness award-winning riverfront cocktail bar (0 slots in Top 5)",
+        "12th Knot rooftop terrace overlooking Blackfriars & St Paul’s",
+        "Direct step-out South Bank cultural riverwalk (Tate Modern, Globe & Borough Market)"
+      ],
+      "bookingComTop5Slots": [
+        {
+          "slot": 1,
+          "isCommodity": false,
+          "caption": "a view of a river with buildings and a city at Sea Containers London in London",
+          "verdict": "✅ Destination River Exterior"
+        },
+        {
+          "slot": 2,
+          "isCommodity": true,
+          "caption": "a living room with a blue couch and a large window at Sea Containers London in London",
+          "verdict": "Suite Couch Shot #1"
+        },
+        {
+          "slot": 3,
+          "isCommodity": true,
+          "caption": "a living room with a couch and a large window at Sea Containers London in London",
+          "verdict": "🚨 Duplicate Suite Couch #2"
+        },
+        {
+          "slot": 4,
+          "isCommodity": true,
+          "caption": "a bedroom with a bed and a table with a lamp at Sea Containers London in London",
+          "verdict": "Standard Bed & Lamp"
+        },
+        {
+          "slot": 5,
+          "isCommodity": true,
+          "caption": "a living room with a couch and chairs and a table at Sea Containers London in London",
+          "verdict": "🚨 3rd Living Room Couch Shot"
+        }
+      ]
+    },
+    {
+      "id": "hoxton-southwark",
+      "index": 2,
+      "name": "The Hoxton, Southwark",
+      "neighborhood": "South Bank",
+      "cluster": "South Bank",
+      "scores": {
+        "physicalVibe": 91.5,
+        "ownedDigitalOwnPropertyVibe": 88,
+        "ownedDigitalLocalDestinationVibe": 64,
+        "bookingComTop5HeroScore": 49
+      },
+      "totalOtaGalleryPhotos": 48,
+      "heroTop5Mix": {
+        "socialCulinary": 2,
+        "destinationExterior": 0,
+        "roomUtility": 3,
+        "summary": "0 Destination Views • 3 Bathroom/Gym/Bed Utility Shots (incl. 3 Soap Bottles)"
+      },
+      "ownPropertyDigitalSummary": "Strong internal merchandising (88/100): Website and social feeds lead with Seabird’s marble raw bar, rooftop terrace cocktails, and Albie all-day lobby dining.",
+      "localDestinationDigitalSummary": "Above-average neighbourhood storytelling (64/100): One of the few brands running dedicated \"Neighbourhood Guides\" and local partner spotlights for Southwark & Borough Market — though buried several clicks below F&B pages and missing from visual hero slots.",
+      "otaRealitySummary": "While Slots #1 and #4 show indoor dining tables, the iconic 14th-floor Seabird rooftop view and South Bank skyline are missing — while Slot #3 shows three bottles of bathroom shower gel and Slot #5 shows gym treadmills.",
+      "buriedGemsMissingFromTop5": [
+        "Seabird 14th-floor outdoor rooftop terrace & skyline panorama (replaced by 3 bathroom bottles in Slot #3)",
+        "Industrial Crittall-glass lobby bar & Working From_ lounge",
+        "Walkable South Bank & Borough Market neighbourhood micro-loop"
+      ],
+      "bookingComTop5Slots": [
+        {
+          "slot": 1,
+          "isCommodity": false,
+          "caption": "a restaurant with tables and couches and plants at The Hoxton Southwark in London",
+          "verdict": "✅ Indoor Restaurant Seating"
+        },
+        {
+          "slot": 2,
+          "isCommodity": true,
+          "caption": "a hotel room with a bed and a large window at The Hoxton Southwark in London",
+          "verdict": "Standard Bed Shot"
+        },
+        {
+          "slot": 3,
+          "isCommodity": true,
+          "caption": "a shelf with three bottles ofodorizers on it in a bathroom at The Hoxton Southwark in London",
+          "verdict": "🚨 3 Bathroom Bottles on a Shelf"
+        },
+        {
+          "slot": 4,
+          "isCommodity": true,
+          "caption": "a restaurant with tables and chairs and plants at The Hoxton Southwark in London",
+          "verdict": "Duplicate Indoor Restaurant Table"
+        },
+        {
+          "slot": 5,
+          "isCommodity": true,
+          "caption": "a gym with lots of treadmills and weights at The Hoxton Southwark in London",
+          "verdict": "🚨 Row of Gym Treadmills"
+        }
+      ]
+    },
+    {
+      "id": "one-hundred-shoreditch",
+      "index": 3,
+      "name": "One Hundred Shoreditch",
+      "neighborhood": "Shoreditch",
+      "cluster": "Shoreditch",
+      "scores": {
+        "physicalVibe": 91.8,
+        "ownedDigitalOwnPropertyVibe": 87,
+        "ownedDigitalLocalDestinationVibe": 61,
+        "bookingComTop5HeroScore": 68
+      },
+      "totalOtaGalleryPhotos": 45,
+      "heroTop5Mix": {
+        "socialCulinary": 1,
+        "destinationExterior": 1,
+        "roomUtility": 3,
+        "summary": "1 Rooftop Patio • 1 Daytime Exterior • 3 Suite Living Room Couches"
+      },
+      "ownPropertyDigitalSummary": "Strong internal merchandising (87/100): Website and social channels highlight Kaso Rooftop Mediterranean dining, Seed Library’s subterranean vinyl-and-cocktail mood, and bespoke Studio Lofts.",
+      "localDestinationDigitalSummary": "Solid East London cultural awareness (61/100): Publishes East London neighbourhood tips (Columbia Road, Brick Lane, independent galleries), though primary landing pages and social grid remain ~85% focused on onsite F&B.",
+      "otaRealitySummary": "Includes a rooftop patio in Slot #3, but repeats suite living-room couches three times (Slots #1, #2, and #5) and uses a flat daytime office-style exterior in Slot #4 while hiding Seed Library.",
+      "buriedGemsMissingFromTop5": [
+        "Seed Library — Mr Lyan’s subterranean vinyl & craft cocktail bar",
+        "Kaso Rooftop evening skyline view over East London",
+        "Shoreditch High Street ground-floor coffee & neighbourhood culture"
+      ],
+      "bookingComTop5Slots": [
+        {
+          "slot": 1,
+          "isCommodity": false,
+          "caption": "a living room with a couch and a table at One Hundred Shoreditch in London",
+          "verdict": "✅ Design Studio Couch #1"
+        },
+        {
+          "slot": 2,
+          "isCommodity": true,
+          "caption": "a large room with a red couch and large windows at One Hundred Shoreditch in London",
+          "verdict": "Duplicate Suite Couch #2"
+        },
+        {
+          "slot": 3,
+          "isCommodity": false,
+          "caption": "a patio with tables and chairs and plants at One Hundred Shoreditch in London",
+          "verdict": "✅ Rooftop Terrace Patio"
+        },
+        {
+          "slot": 4,
+          "isCommodity": true,
+          "caption": "a large white building with black windows at One Hundred Shoreditch in London",
+          "verdict": "Flat Daytime Exterior"
+        },
+        {
+          "slot": 5,
+          "isCommodity": true,
+          "caption": "a living room with a couch and a table at One Hundred Shoreditch in London",
+          "verdict": "🚨 3rd Living Room Couch Shot"
+        }
+      ]
+    },
+    {
+      "id": "hoxton-shoreditch",
+      "index": 4,
+      "name": "The Hoxton, Shoreditch",
+      "neighborhood": "Shoreditch",
+      "cluster": "Shoreditch",
+      "scores": {
+        "physicalVibe": 92.4,
+        "ownedDigitalOwnPropertyVibe": 87,
+        "ownedDigitalLocalDestinationVibe": 66,
+        "bookingComTop5HeroScore": 54
+      },
+      "totalOtaGalleryPhotos": 8,
+      "heroTop5Mix": {
+        "socialCulinary": 2,
+        "destinationExterior": 1,
+        "roomUtility": 2,
+        "summary": "2 Lobby/Dining Shots • Slot #2 = Bathroom Sink • Slot #3 = Red Bus"
+      },
+      "ownPropertyDigitalSummary": "Strong internal merchandising (87/100): Website and Instagram consistently feature Llama Inn’s rooftop glasshouse, craft cocktails, and its signature living-room lobby.",
+      "localDestinationDigitalSummary": "Highest local gateway score in the study (66/100): Built its brand around Shoreditch community collaborations, local indie makers, and neighbourhood guides — yet none of that curated East London identity carries over to OTAs.",
+      "otaRealitySummary": "Leads well with the fireplace lobby in Slot #1, but immediately drops a bathroom sink and mirror into Slot #2 and a generic street bus shot into Slot #3, while omitting Llama Inn Rooftop entirely.",
+      "buriedGemsMissingFromTop5": [
+        "Llama Inn Peruvian glasshouse rooftop restaurant & outdoor terrace",
+        "Hoxton Grill leather booths & evening cocktail bar",
+        "Curated Great Eastern Street & Shoreditch creative quarter vibe"
+      ],
+      "bookingComTop5Slots": [
+        {
+          "slot": 1,
+          "isCommodity": false,
+          "caption": "a lobby with couches and tables and a fireplace at The Hoxton, Shoreditch in London",
+          "verdict": "✅ Signature Fireplace Lobby"
+        },
+        {
+          "slot": 2,
+          "isCommodity": true,
+          "caption": "a bathroom with a sink and a large mirror at The Hoxton, Shoreditch in London",
+          "verdict": "🚨 Bathroom Sink in Slot #2"
+        },
+        {
+          "slot": 3,
+          "isCommodity": true,
+          "caption": "a red double decker bus parked in front of a store at The Hoxton, Shoreditch in London",
+          "verdict": "🚨 Generic Bus on Street"
+        },
+        {
+          "slot": 4,
+          "isCommodity": false,
+          "caption": "a restaurant with tables and chairs and plants at The Hoxton, Shoreditch in London",
+          "verdict": "✅ Courtyard Restaurant Seating"
+        },
+        {
+          "slot": 5,
+          "isCommodity": true,
+          "caption": "a hotel room with a bed and a desk and a window at The Hoxton, Shoreditch in London",
+          "verdict": "Standard Bed & Desk"
+        }
+      ]
+    },
+    {
+      "id": "hart-shoreditch",
+      "index": 5,
+      "name": "Hart Shoreditch Hotel London",
+      "neighborhood": "Shoreditch",
+      "cluster": "Shoreditch",
+      "scores": {
+        "physicalVibe": 89.6,
+        "ownedDigitalOwnPropertyVibe": 84,
+        "ownedDigitalLocalDestinationVibe": 42,
+        "bookingComTop5HeroScore": 58
+      },
+      "totalOtaGalleryPhotos": 8,
+      "heroTop5Mix": {
+        "socialCulinary": 1,
+        "destinationExterior": 1,
+        "roomUtility": 3,
+        "summary": "1 Lobby Bar • Slot #3 = Corporate Conference Table • 0 Guest Rooms"
+      },
+      "ownPropertyDigitalSummary": "Good internal merchandising (84/100): Owned channels showcase the bespoke cabinetmaker joinery, wrought-iron staircase, and UBA Shoreditch dining room.",
+      "localDestinationDigitalSummary": "Template-constrained local storytelling (42/100): Nods to East London’s historic craft roots in brand copy, but Hilton’s standardized property web template reduces live Shoreditch nightlife, coffee, and street-market discovery to basic mileage bullets.",
+      "otaRealitySummary": "Leads with the lobby bar in Slot #1, but wastes Slot #3 on a sterile corporate boardroom conference table and repeats two more lobby seating corners in Slots #4 and #5.",
+      "buriedGemsMissingFromTop5": [
+        "UBA Shoreditch ornate red-and-gold pan-Asian dining destination",
+        "Sculptural wrought-iron & timber craftsman staircase",
+        "Walkable Old Street, Spitalfields & Brick Lane neighbourhood buzz"
+      ],
+      "bookingComTop5Slots": [
+        {
+          "slot": 1,
+          "isCommodity": false,
+          "caption": "a lobby with chairs and tables and a bar at Hart Shoreditch Hotel London, Curio Collection by Hilton in London",
+          "verdict": "✅ Warm Copper Lobby Bar"
+        },
+        {
+          "slot": 2,
+          "isCommodity": false,
+          "caption": "a row of buildings on a city street at Hart Shoreditch Hotel London, Curio Collection by Hilton in London",
+          "verdict": "Shoreditch Street Exterior"
+        },
+        {
+          "slot": 3,
+          "isCommodity": true,
+          "caption": "a conference room with a table and chairs at Hart Shoreditch Hotel London, Curio Collection by Hilton in London",
+          "verdict": "🚨 Corporate Conference Room"
+        },
+        {
+          "slot": 4,
+          "isCommodity": true,
+          "caption": "a lobby with a table and chairs in a room at Hart Shoreditch Hotel London, Curio Collection by Hilton in London",
+          "verdict": "Duplicate Lobby Seating #2"
+        },
+        {
+          "slot": 5,
+          "isCommodity": true,
+          "caption": "a couch with pillows sitting in front of a wall with shelves at Hart Shoreditch Hotel London, Curio Collection by Hilton in London",
+          "verdict": "3rd Lobby Couch Corner"
+        }
+      ]
+    },
+    {
+      "id": "the-standard-london",
+      "index": 6,
+      "name": "The Standard, London",
+      "neighborhood": "King's Cross",
+      "cluster": "King's Cross & City",
+      "scores": {
+        "physicalVibe": 92.8,
+        "ownedDigitalOwnPropertyVibe": 91,
+        "ownedDigitalLocalDestinationVibe": 44,
+        "bookingComTop5HeroScore": 48
+      },
+      "totalOtaGalleryPhotos": 51,
+      "heroTop5Mix": {
+        "socialCulinary": 1,
+        "destinationExterior": 1,
+        "roomUtility": 3,
+        "summary": "Slot #1 = Traffic Light & Concrete • Slot #3 = Bathroom Sink • 0 Rooftop/Terrace Tubs"
+      },
+      "ownPropertyDigitalSummary": "Best-in-class internal brand vibe (91/100): Website and Instagram are bold and cinematic, leading with outdoor St Pancras terrace tubs, Decimo 10th-floor dining, and DJ programming.",
+      "localDestinationDigitalSummary": "Self-contained nightlife bubble (44/100): Visually uses St Pancras clocktower as a dramatic backdrop, yet 90%+ of digital and social content keeps the narrative strictly inside The Standard — barely touching Coal Drops Yard, Regent’s Canal walks, or Granary Square culture.",
+      "otaRealitySummary": "Booking.com’s computer-vision caption labels Slot #1 \"a building with a red traffic light in front of it,\" and puts a bathroom sink and mirror in Slot #3. The iconic St Pancras terrace tubs and 10th-floor rooftop views are completely absent from the Top 5.",
+      "buriedGemsMissingFromTop5": [
+        "Junior Suite outdoor soaking tubs overlooking the Gothic St Pancras clocktower",
+        "Sweeties 10th-floor cocktail lounge & Decimo live-fire rooftop dining",
+        "Walkable Coal Drops Yard & Regent’s Canal cultural quarter"
+      ],
+      "bookingComTop5Slots": [
+        {
+          "slot": 1,
+          "isCommodity": true,
+          "caption": "a building with a red traffic light in front of it at The Standard London in London",
+          "verdict": "🚨 Grey Concrete + Red Traffic Light"
+        },
+        {
+          "slot": 2,
+          "isCommodity": false,
+          "caption": "a bedroom with a bed and a couch at The Standard London in London",
+          "verdict": "✅ Retro-70s Bedroom Design"
+        },
+        {
+          "slot": 3,
+          "isCommodity": true,
+          "caption": "a bathroom with a sink and a mirror at The Standard London in London",
+          "verdict": "🚨 Bathroom Sink & Mirror"
+        },
+        {
+          "slot": 4,
+          "isCommodity": false,
+          "caption": "a restaurant with red chairs and tables and tablesktop at The Standard London in London",
+          "verdict": "✅ Indoor Restaurant Seating"
+        },
+        {
+          "slot": 5,
+          "isCommodity": false,
+          "caption": "a library with leather couches and a table and chairs at The Standard London in London",
+          "verdict": "Library Lounge Couches"
+        }
+      ]
+    },
+    {
+      "id": "london-edition",
+      "index": 7,
+      "name": "The London EDITION",
+      "neighborhood": "Fitzrovia / Soho",
+      "cluster": "Fitzrovia & Marylebone",
+      "scores": {
+        "physicalVibe": 94.6,
+        "ownedDigitalOwnPropertyVibe": 90,
+        "ownedDigitalLocalDestinationVibe": 34,
+        "bookingComTop5HeroScore": 44
+      },
+      "totalOtaGalleryPhotos": 45,
+      "heroTop5Mix": {
+        "socialCulinary": 0,
+        "destinationExterior": 1,
+        "roomUtility": 4,
+        "summary": "0 Social/Culinary (Berners Tavern Missing) • 1 Street Door • 4 White Beds in a Row"
+      },
+      "ownPropertyDigitalSummary": "Exceptional internal vibe presentation (90/100): EDITION’s website and social channels lead directly with Berners Tavern’s gilt-framed gallery walls, the silver-orb Belle Époque lobby, and Punch Room cocktails.",
+      "localDestinationDigitalSummary": "Sharp \"Walled Garden\" drop-off (34/100): Despite sitting right on the Fitzrovia/Soho border — surrounded by Charlotte Street bistros, Soho vinyl shops, and West End galleries — owned web & social treat the hotel as a closed luxury island.",
+      "otaRealitySummary": "The second-largest Vibe Gap in our study (-50.6 pts): Slot #1 is a flat street door facade, and Slots #2, #3, #4, and #5 are FOUR white beds in a row. Berners Tavern and the iconic silver-orb lobby do not appear at all in the Top 5.",
+      "buriedGemsMissingFromTop5": [
+        "Berners Tavern — one of the most iconic hotel dining rooms in Europe (0 slots in Top 5)",
+        "Belle Époque marble lobby with Ingo Maurer’s silver egg sculpture",
+        "Prime Fitzrovia & Soho gallery, dining, and nightlife doorstep"
+      ],
+      "bookingComTop5Slots": [
+        {
+          "slot": 1,
+          "isCommodity": true,
+          "caption": "a large building with a door in front of it at The London EDITION in London",
+          "verdict": "🚨 Flat Street Facade & Door"
+        },
+        {
+          "slot": 2,
+          "isCommodity": true,
+          "caption": "a bedroom with a large white bed and a chair at The London EDITION in London",
+          "verdict": "White Bed #1"
+        },
+        {
+          "slot": 3,
+          "isCommodity": true,
+          "caption": "a hotel room with two beds and a desk at The London EDITION in London",
+          "verdict": "🚨 White Twin Beds #2"
+        },
+        {
+          "slot": 4,
+          "isCommodity": true,
+          "caption": "a bedroom with a large white bed and a desk at The London EDITION in London",
+          "verdict": "🚨 White Bed #3"
+        },
+        {
+          "slot": 5,
+          "isCommodity": true,
+          "caption": "a bedroom with a white bed and a wooden wall at The London EDITION in London",
+          "verdict": "🚨 White Bed #4 in a Row"
+        }
+      ]
+    },
+    {
+      "id": "treehouse-london",
+      "index": 8,
+      "name": "Treehouse Hotel London",
+      "neighborhood": "Marylebone / Fitzrovia",
+      "cluster": "Fitzrovia & Marylebone",
+      "scores": {
+        "physicalVibe": 92.1,
+        "ownedDigitalOwnPropertyVibe": 87,
+        "ownedDigitalLocalDestinationVibe": 39,
+        "bookingComTop5HeroScore": 72
+      },
+      "totalOtaGalleryPhotos": 8,
+      "heroTop5Mix": {
+        "socialCulinary": 1,
+        "destinationExterior": 1,
+        "roomUtility": 3,
+        "summary": "1 Skyline Window Hero • 1 Rooftop Terrace • Slot #2 = Teddy Bear • Slot #4 = Christmas Tree"
+      },
+      "ownPropertyDigitalSummary": "Strong internal merchandising (87/100): Website and social channels showcase The Nest 360° rooftop terrace, Madera’s treetop dining room, and panoramic bedroom window perches.",
+      "localDestinationDigitalSummary": "Skyline-only destination framing (39/100): Sells London visually from 16 floors up, but misses street-level Marylebone High Street village cafés, Regent’s Park walks, and independent Fitzrovia wine bars on owned channels.",
+      "otaRealitySummary": "Achieves the highest OTA Top-5 score in the study (72/100) because Slot #1 shows the skyline bay-window and Slot #3 shows The Nest rooftop — yet wastes Slot #2 on a close-up of a teddy bear on a bed and Slot #4 on an out-of-season Christmas tree.",
+      "buriedGemsMissingFromTop5": [
+        "Madera 15th-floor treetop Mexican dining room at twilight",
+        "360-degree sunset skyline views from The Nest rooftop bar",
+        "Marylebone Village & Regent Street doorstep discovery"
+      ],
+      "bookingComTop5Slots": [
+        {
+          "slot": 1,
+          "isCommodity": false,
+          "caption": "a hotel room with a bed and a large window at Treehouse Hotel London in London",
+          "verdict": "✅ Skyline Bay-Window Hero"
+        },
+        {
+          "slot": 2,
+          "isCommodity": true,
+          "caption": "a teddy bear sitting on a bed with a tray of food at Treehouse Hotel London in London",
+          "verdict": "🚨 Teddy Bear on Bed Close-Up"
+        },
+        {
+          "slot": 3,
+          "isCommodity": false,
+          "caption": "a patio with couches and tables and potted plants at Treehouse Hotel London in London",
+          "verdict": "✅ The Nest Rooftop Terrace"
+        },
+        {
+          "slot": 4,
+          "isCommodity": true,
+          "caption": "a living room with a christmas tree and a large window at Treehouse Hotel London in London",
+          "verdict": "🚨 Out-of-Season Christmas Tree"
+        },
+        {
+          "slot": 5,
+          "isCommodity": true,
+          "caption": "a bedroom with a large bed and a couch at Treehouse Hotel London in London",
+          "verdict": "2nd Bedroom Shot"
+        }
+      ]
+    },
+    {
+      "id": "the-mandrake",
+      "index": 9,
+      "name": "The Mandrake",
+      "neighborhood": "Fitzrovia",
+      "cluster": "Fitzrovia & Marylebone",
+      "scores": {
+        "physicalVibe": 93.4,
+        "ownedDigitalOwnPropertyVibe": 90,
+        "ownedDigitalLocalDestinationVibe": 28,
+        "bookingComTop5HeroScore": 66
+      },
+      "totalOtaGalleryPhotos": 45,
+      "heroTop5Mix": {
+        "socialCulinary": 1,
+        "destinationExterior": 2,
+        "roomUtility": 2,
+        "summary": "Repeats Same Courtyard Garden 4× in Top 5 • 0 Signature Suites or Waeska Bar"
+      },
+      "ownPropertyDigitalSummary": "Hypnotic internal brand world (90/100): Website and Instagram brilliantly capture its hanging botanical courtyard, Waeska’s surrealist mixology, YOPO dining, and the marble Penthouse.",
+      "localDestinationDigitalSummary": "Lowest local destination score in cohort (28/100): Deliberately markets itself as an inward-looking secret world — leaving out the surrounding Fitzrovia gallery, specialty coffee, and Charlotte Street dining vibe almost completely.",
+      "otaRealitySummary": "Rightly leads with its signature hanging garden in Slot #1 and social courtyard in Slot #3 — but Booking.com repeats four angles of the exact same courtyard/plants across Slots #1, #2, #4, and #5 while showing zero bedrooms and zero photos of Waeska Bar or YOPO.",
+      "buriedGemsMissingFromTop5": [
+        "Waeska botanical cocktail bar & surrealist art collection",
+        "Jewel-toned Mandrake Suites & monolithic marble Penthouse",
+        "Secluded Newman Street & Fitzrovia art-and-bistro enclave"
+      ],
+      "bookingComTop5Slots": [
+        {
+          "slot": 1,
+          "isCommodity": false,
+          "caption": "an outdoor patio with chairs and tables and plants at The Mandrake in London",
+          "verdict": "✅ Hanging Garden Courtyard #1"
+        },
+        {
+          "slot": 2,
+          "isCommodity": true,
+          "caption": "an overhead view of a garden with plants at The Mandrake in London",
+          "verdict": "🚨 Duplicate Garden Overhead #2"
+        },
+        {
+          "slot": 3,
+          "isCommodity": false,
+          "caption": "a group of people standing in a lobby with palm trees at The Mandrake in London",
+          "verdict": "✅ Social Courtyard Lounge"
+        },
+        {
+          "slot": 4,
+          "isCommodity": true,
+          "caption": "an aerial view of a garden on the side of a building at The Mandrake in London",
+          "verdict": "🚨 3rd Garden Aerial Angle"
+        },
+        {
+          "slot": 5,
+          "isCommodity": false,
+          "caption": "a conservatory with chairs and plants and windows at The Mandrake in London",
+          "verdict": "4th Plant Angle (0 Rooms Shown)"
+        }
+      ]
+    },
+    {
+      "id": "the-ned",
+      "index": 10,
+      "name": "The Ned",
+      "neighborhood": "City of London",
+      "cluster": "King's Cross & City",
+      "scores": {
+        "physicalVibe": 95.1,
+        "ownedDigitalOwnPropertyVibe": 91,
+        "ownedDigitalLocalDestinationVibe": 31,
+        "bookingComTop5HeroScore": 42
+      },
+      "totalOtaGalleryPhotos": 45,
+      "heroTop5Mix": {
+        "socialCulinary": 0,
+        "destinationExterior": 0,
+        "roomUtility": 5,
+        "summary": "0/5 Social, Culinary or Destination Shots • 5/5 Bedrooms, Desks & Bathtub"
+      },
+      "ownPropertyDigitalSummary": "Powerhouse internal merchandising (91/100): Website (`thened.com`) and Instagram brilliantly showcase its 92-column Grand Banking Hall, live music stage, 9 internal restaurants, and rooftop pool.",
+      "localDestinationDigitalSummary": "Closed members-club ecosystem (31/100): Because The Ned operates 9 onsite restaurants and bars under one roof, owned digital & social focus almost 100% inward — rarely marketing historic City alleyways, St Paul’s, Leadenhall Market, or nearby Spitalfields.",
+      "otaRealitySummary": "The single largest Vibe Gap in London (-53.1 pts): 100% of The Ned’s Top-5 Booking.com photos (Slots #1 through #5) are bedrooms, living-room couches, desks, and a bathroom tub. Not a single pixel of the 3,000m² Grand Banking Hall, the 9 restaurants, the Vault Bar, or the St Paul’s rooftop pool appears in the Top 5.",
+      "buriedGemsMissingFromTop5": [
+        "The 3,000m² Grand Banking Hall with 92 emerald verdite columns & live music stage (0 slots in Top 5)",
+        "Heated rooftop pool & Lutyens cupola framing St Paul’s Cathedral",
+        "Historic City of London heritage & walkable St Paul’s / Bankside links"
+      ],
+      "bookingComTop5Slots": [
+        {
+          "slot": 1,
+          "isCommodity": true,
+          "caption": "a bedroom with a bed and a chair and a fireplace at The Ned in London",
+          "verdict": "🚨 Bedroom in Slot #1 (Hides Banking Hall)"
+        },
+        {
+          "slot": 2,
+          "isCommodity": true,
+          "caption": "a living room with a couch and a table at The Ned in London",
+          "verdict": "🚨 Suite Couch #2"
+        },
+        {
+          "slot": 3,
+          "isCommodity": true,
+          "caption": "a living room with a desk and a table and chairs at The Ned in London",
+          "verdict": "🚨 Room Desk #3"
+        },
+        {
+          "slot": 4,
+          "isCommodity": true,
+          "caption": "a bedroom with a bed and a chair and a sink at The Ned in London",
+          "verdict": "🚨 2nd Bedroom & Sink #4"
+        },
+        {
+          "slot": 5,
+          "isCommodity": true,
+          "caption": "a bathroom with a tub and a sink and a mirror at The Ned in London",
+          "verdict": "🚨 Bathroom Tub & Sink #5"
+        }
+      ]
+    }
+  ]
+}

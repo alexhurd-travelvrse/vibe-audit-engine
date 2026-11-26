@@ -935,6 +935,15 @@ export default function RichmondStudyRegistryPage() {
               </div>
 
               <div style={{ display: 'flex', gap: '0.65rem', flexWrap: 'wrap' }}>
+                <a
+                  href="/datasets/london-richmond-llm-benchmark.json"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="vi-action-btn-secondary"
+                  style={{ textDecoration: 'none' }}
+                >
+                  <span>Open JSON Dataset ↗</span>
+                </a>
                 <Link to="/methodology" className="vi-action-btn-secondary" style={{ textDecoration: 'none' }}>
                   <span>Read 8-Signal Methodology</span>
                 </Link>

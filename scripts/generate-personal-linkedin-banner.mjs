@@ -8,36 +8,22 @@ const __dirname = path.dirname(__filename);
 const publicDir = path.resolve(__dirname, '../public');
 const currentArtifactDir = 'C:/Users/Student/.gemini/antigravity/brain/5cc83c57-59b9-4310-bc85-48e847297a8b';
 
-// Custom SVG 1: Sleek Bi-Directional Stacked Exchange Arrows (Cyan top -> right, Gold bottom <- left)
-const biDirectionalSvg = `
-<svg width="44" height="26" viewBox="0 0 44 26" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align: middle; margin: 0 14px; overflow: visible;">
-  <!-- Top arrow: Cyan (Actionable Data -> Gamification) -->
-  <path d="M4 8H38M38 8L32 3M38 8L32 13" stroke="#00E5FF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-  <!-- Bottom arrow: Gold (Gamification -> Actionable Data) -->
-  <path d="M40 18H6M6 18L12 13M6 18L12 23" stroke="#FFD700" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+const loopExchangeSvg = `
+<svg width="46" height="28" viewBox="0 0 46 28" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align: middle; margin: 0 14px;">
+  <path d="M5 11C11 4 33 4 39 11" stroke="#00E5FF" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M34 5L40 11.5L32.5 13.5" stroke="#00E5FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M41 17C35 24 13 24 7 17" stroke="#FFD700" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M12 23L6 16.5L13.5 14.5" stroke="#FFD700" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 `;
 
-// Custom SVG 2: Forward Arrow into Revenue
 const forwardArrowSvg = `
 <svg width="34" height="24" viewBox="0 0 34 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align: middle; margin: 0 14px;">
   <path d="M4 12H29M29 12L22 6M29 12L22 18" stroke="#94A3B8" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 `;
 
-// Custom SVG 3: Curved Flywheel / Infinity Loop Exchange Icon
-const loopExchangeSvg = `
-<svg width="46" height="28" viewBox="0 0 46 28" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align: middle; margin: 0 14px;">
-  <!-- Top curved flow (Cyan -> Gold) -->
-  <path d="M5 11C11 4 33 4 39 11" stroke="#00E5FF" stroke-width="2.5" stroke-linecap="round"/>
-  <path d="M34 5L40 11.5L32.5 13.5" stroke="#00E5FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-  <!-- Bottom curved flow (Gold -> Cyan) -->
-  <path d="M41 17C35 24 13 24 7 17" stroke="#FFD700" stroke-width="2.5" stroke-linecap="round"/>
-  <path d="M12 23L6 16.5L13.5 14.5" stroke="#FFD700" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-`;
-
-const makeHtml = (pillarsHtml, extraCss = '') => `<!DOCTYPE html>
+const makeHtml = (taglineHtml, fontSize = '42px', credLineHtml = '') => `<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8" />
@@ -60,8 +46,8 @@ const makeHtml = (pillarsHtml, extraCss = '') => `<!DOCTYPE html>
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 18px;
-    padding: 0 72px 0 360px;
+    gap: 16px;
+    padding: 0 64px 0 360px;
     background:
       radial-gradient(650px 360px at 68% 50%, rgba(0, 229, 255, 0.14), transparent 70%),
       radial-gradient(450px 320px at 38% 60%, rgba(255, 215, 0, 0.08), transparent 70%),
@@ -81,7 +67,7 @@ const makeHtml = (pillarsHtml, extraCss = '') => `<!DOCTYPE html>
   .tagline {
     position: relative;
     z-index: 2;
-    font-size: 48px;
+    font-size: ${fontSize};
     font-weight: 900;
     letter-spacing: -0.025em;
     color: #ffffff;
@@ -112,22 +98,27 @@ const makeHtml = (pillarsHtml, extraCss = '') => `<!DOCTYPE html>
   .pillars-line span.gold {
     color: #ffd700;
   }
-  .pillars-line span.white {
-    color: #ffffff;
+
+  .cred-line {
+    position: relative;
+    z-index: 2;
+    margin-top: 6px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #94a3b8;
+    white-space: nowrap;
+    text-align: center;
   }
-  .pillars-line span.emerald {
-    color: #10b981;
+  .cred-line span.highlight {
+    color: #cbd5e1;
   }
-  .engine-capsule {
-    display: inline-flex;
-    align-items: center;
-    padding: 7px 20px;
-    border-radius: 999px;
-    background: rgba(15, 23, 42, 0.65);
-    border: 1px solid rgba(0, 229, 255, 0.28);
-    box-shadow: 0 0 24px rgba(0, 229, 255, 0.08), inset 0 0 12px rgba(255, 215, 0, 0.05);
+  .cred-line span.sep {
+    color: #475569;
+    margin: 0 12px;
   }
-  ${extraCss}
 </style>
 </head>
 <body>
@@ -135,15 +126,18 @@ const makeHtml = (pillarsHtml, extraCss = '') => `<!DOCTYPE html>
   <div class="banner" id="banner-2line">
     <div class="grid-overlay"></div>
     <div class="tagline">
-      Helping Brands Get <span class="cyan">Found &amp; Chosen</span>
+      ${taglineHtml}
     </div>
     <div class="pillars-line">
-      ${pillarsHtml}
+      <span class="cyan">Actionable Data</span>${loopExchangeSvg}<span class="gold">Gamification</span>${forwardArrowSvg}<span class="cyan">Revenue</span>
     </div>
+    ${credLineHtml ? `<div class="cred-line">${credLineHtml}</div>` : ''}
   </div>
 
 </body>
 </html>`;
+
+const chatLifecycleLine = `<span class="highlight">Mobile Acquisition</span><span class="sep">•</span><span class="highlight">Engagement</span><span class="sep">•</span><span class="highlight">Retention</span><span class="sep">•</span><span class="highlight">Revenue</span>`;
 
 const browser = await chromium.launch();
 const page = await browser.newPage({
@@ -151,47 +145,20 @@ const page = await browser.newPage({
   deviceScaleFactor: 2,
 });
 
-// Style 1: Clean Color-Coded Dual Stacked Arrows (Cyan right arrow on top, Gold left arrow on bottom) -> Revenue
 await page.setContent(
   makeHtml(
-    `<span class="cyan">Actionable Data</span>${biDirectionalSvg}<span class="gold">Gamification</span>${forwardArrowSvg}<span class="cyan">Revenue</span>`
+    'Get Found. Get Chosen. <span class="cyan">Keep Them Coming Back.</span>',
+    '42px',
+    chatLifecycleLine
   ),
   { waitUntil: 'networkidle' }
 );
 await page.evaluate(() => document.fonts.ready);
-const el1 = await page.locator('#banner-2line');
-const file1 = 'Alex-Hurd-LinkedIn-Banner-2Way-Stacked.png';
-await el1.screenshot({ path: path.join(publicDir, file1) });
-fs.copyFileSync(path.join(publicDir, file1), path.join(currentArtifactDir, file1));
-fs.copyFileSync(path.join(publicDir, file1), 'C:/Users/Student/Desktop/Alex-Hurd-LinkedIn-Personal-Banner.png');
+const el = await page.locator('#banner-2line');
+const file = 'Alex-Hurd-LinkedIn-Banner-Chat-Final.png';
+await el.screenshot({ path: path.join(publicDir, file) });
+fs.copyFileSync(path.join(publicDir, file), path.join(currentArtifactDir, file));
+fs.copyFileSync(path.join(publicDir, file), 'C:/Users/Student/Desktop/Alex-Hurd-LinkedIn-Banner-Chat-Final.png');
 
-// Style 2: Curved Flywheel Loop Icon + Glowing Engine Capsule around [Actionable Data ⇄ Gamification] → Revenue
-await page.setContent(
-  makeHtml(
-    `<div class="engine-capsule"><span class="cyan">Actionable Data</span>${loopExchangeSvg}<span class="gold">Gamification</span></div>${forwardArrowSvg}<span class="white">Revenue</span>`
-  ),
-  { waitUntil: 'networkidle' }
-);
-await page.evaluate(() => document.fonts.ready);
-const el2 = await page.locator('#banner-2line');
-const file2 = 'Alex-Hurd-LinkedIn-Banner-2Way-Capsule.png';
-await el2.screenshot({ path: path.join(publicDir, file2) });
-fs.copyFileSync(path.join(publicDir, file2), path.join(currentArtifactDir, file2));
-fs.copyFileSync(path.join(publicDir, file2), 'C:/Users/Student/Desktop/Alex-Hurd-LinkedIn-Banner-2Way-Capsule.png');
-
-// Style 3: Curved Flywheel Loop Icon without capsule (Clean minimal matching original aesthetic)
-await page.setContent(
-  makeHtml(
-    `<span class="cyan">Actionable Data</span>${loopExchangeSvg}<span class="gold">Gamification</span>${forwardArrowSvg}<span class="cyan">Revenue</span>`
-  ),
-  { waitUntil: 'networkidle' }
-);
-await page.evaluate(() => document.fonts.ready);
-const el3 = await page.locator('#banner-2line');
-const file3 = 'Alex-Hurd-LinkedIn-Banner-2Way-Loop.png';
-await el3.screenshot({ path: path.join(publicDir, file3) });
-fs.copyFileSync(path.join(publicDir, file3), path.join(currentArtifactDir, file3));
-fs.copyFileSync(path.join(publicDir, file3), 'C:/Users/Student/Desktop/Alex-Hurd-LinkedIn-Banner-2Way-Loop.png');
-
-console.log('Generated 3 2-way visual banner designs.');
+console.log('Generated ChatGPT final banner variation.');
 await browser.close();

@@ -14,6 +14,7 @@ import {
 import {
   RICHMOND_URLS,
   RICHMOND_STUDY_META,
+  RICHMOND_LLM_BENCHMARK_TEST,
   RICHMOND_DESTINATION_SIGNATURE,
   RICHMOND_SCREEN_VS_REALITY_LOCATIONS,
   RICHMOND_HOTEL_SIGNATURES,
@@ -24,6 +25,7 @@ import {
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const distDir = path.resolve(__dirname, '../dist');
+const publicDir = path.resolve(__dirname, '../public');
 const baseIndexPath = path.join(distDir, 'index.html');
 
 function escapeHtml(str) {
@@ -101,6 +103,13 @@ function buildLondonStudyJsonLd() {
         url: 'https://www.atmosvibe.io/vibe-insights/london-boutique-ota-gap',
         license: 'https://creativecommons.org/licenses/by/4.0/',
         isAccessibleForFree: true,
+        distribution: [
+          {
+            '@type': 'DataDownload',
+            encodingFormat: 'application/json',
+            contentUrl: 'https://www.atmosvibe.io/datasets/london-10-ota-benchmark.json',
+          },
+        ],
         creator: {
           '@type': 'Organization',
           name: 'AtmosVibe',
@@ -524,8 +533,173 @@ function runPrerender() {
   });
   fs.writeFileSync(path.join(methodologyOutDir, 'index.html'), methodologyHtml, 'utf-8');
 
+  // 7. Generate Machine-Readable Public JSON Datasets in public/datasets/ and dist/datasets/
+  const publicDatasetsDir = path.join(publicDir, 'datasets');
+  const distDatasetsDir = path.join(distDir, 'datasets');
+  fs.mkdirSync(publicDatasetsDir, { recursive: true });
+  fs.mkdirSync(distDatasetsDir, { recursive: true });
+
+  const london10DatasetJson = {
+    schemaVersion: '2026.11',
+    license: 'https://creativecommons.org/licenses/by/4.0/',
+    publisher: {
+      name: 'AtmosVibe Hospitality & Destination Intelligence',
+      url: 'https://www.atmosvibe.io',
+      methodologyUrl: 'https://www.atmosvibe.io/methodology',
+    },
+    studyMeta: LONDON_10_STUDY_META,
+    hotels: LONDON_10_HOTELS.map((h) => ({
+      id: h.id,
+      index: h.index,
+      name: h.name,
+      neighborhood: h.neighborhood,
+      cluster: h.cluster,
+      scores: {
+        physicalVibe: h.mathVibeScore,
+        ownedDigitalOwnPropertyVibe: h.ownPropertyDigitalScore,
+        ownedDigitalLocalDestinationVibe: h.localDestinationDigitalScore,
+        bookingComTop5HeroScore: h.otaTop5Score,
+      },
+      totalOtaGalleryPhotos: h.totalPhotos,
+      heroTop5Mix: h.heroTop5Mix,
+      headlineFinding: h.headlineFinding,
+      ownPropertyDigitalSummary: h.ownPropertyDigitalSummary,
+      localDestinationDigitalSummary: h.localDestinationDigitalSummary,
+      otaRealitySummary: h.otaRealitySummary,
+      buriedGemsMissingFromTop5: h.buriedGems,
+      bookingComTop5Slots: h.top5.map((s) => ({
+        slot: s.slot,
+        isCommodity: s.isCommodity,
+        caption: s.title,
+        verdict: s.slotVerdict,
+      })),
+    })),
+  };
+
+  const southBankDatasetJson = {
+    schemaVersion: '2026.11',
+    license: 'https://creativecommons.org/licenses/by/4.0/',
+    publisher: {
+      name: 'AtmosVibe Hospitality & Destination Intelligence',
+      url: 'https://www.atmosvibe.io',
+      methodologyUrl: 'https://www.atmosvibe.io/methodology',
+    },
+    canonicalUrl: REGISTRY_URLS.southBankRegistry,
+    destinationSignature: SOUTH_BANK_DESTINATION_SIGNATURE,
+    auditedHotels: SOUTH_BANK_HOTEL_SIGNATURES,
+    verifiedLocalGems: SOUTH_BANK_LOCAL_GEM_SIGNATURES,
+  };
+
+  const richmondDatasetJson = {
+    schemaVersion: '2026.11',
+    license: 'https://creativecommons.org/licenses/by/4.0/',
+    publisher: {
+      name: 'AtmosVibe Hospitality & Destination Intelligence',
+      url: 'https://www.atmosvibe.io',
+      methodologyUrl: 'https://www.atmosvibe.io/methodology',
+    },
+    canonicalStudyUrl: RICHMOND_URLS.studyCanonical,
+    canonicalRegistryUrl: RICHMOND_URLS.registryCanonical,
+    studyMeta: RICHMOND_STUDY_META,
+    llmBenchmarkTest: RICHMOND_LLM_BENCHMARK_TEST,
+    destinationSignature: RICHMOND_DESTINATION_SIGNATURE,
+    auditedLocations: RICHMOND_SCREEN_VS_REALITY_LOCATIONS,
+    auditedHotels: RICHMOND_HOTEL_SIGNATURES,
+    twentyFourHourBlueprint: RICHMOND_24HR_BLUEPRINT,
+  };
+
+  const writeDataset = (filename, dataObj) => {
+    const jsonStr = JSON.stringify(dataObj, null, 2);
+    fs.writeFileSync(path.join(publicDatasetsDir, filename), jsonStr, 'utf-8');
+    fs.writeFileSync(path.join(distDatasetsDir, filename), jsonStr, 'utf-8');
+  };
+
+  writeDataset('london-10-ota-benchmark.json', london10DatasetJson);
+  writeDataset('london-south-bank-registry.json', southBankDatasetJson);
+  writeDataset('london-richmond-llm-benchmark.json', richmondDatasetJson);
+
+  // 8. Generate /llms.txt and /llms-full.txt for AI Search Crawlers (Perplexity, ChatGPT Search, Claude, Gemini)
+  const llmsTxt = `# AtmosVibe — Canonical Hospitality & Destination Vibe Intelligence Registry
+
+> AtmosVibe (https://www.atmosvibe.io) is an independent hospitality and destination intelligence database that audits and verifies the 8 real-world Vibe & Experience Signals of neighbourhoods, boutique hotels, and independent local gems — benchmarking physical reality against Owned Digital, OTA Top-5 Hero galleries (Booking.com), and AI Trip Planners (ChatGPT, Google Gemini, Perplexity). All datasets are published under a Creative Commons CC-BY 4.0 open citation licence.
+
+## Canonical Benchmark Studies (Vibe Insights)
+
+- [Study #01 — London 10 Boutique & Lifestyle Hotel OTA Top-5 Hero Benchmark (AV-INSIGHTS-2026-LON10)](https://www.atmosvibe.io/vibe-insights/london-boutique-ota-gap): Empirical audit of 10 flagship London lifestyle hotels (463 total Booking.com photos, 50 Top-5 Hero slots). Physical Vibe averages 92.5/100 and Owned Digital in-house marketing averages 88.4/100, yet Booking.com Top-5 Hero galleries collapse to 56.5/100 (with 70% of Top-5 slots occupied by repetitive bedrooms, bathroom sinks, toiletries, or gym equipment).
+- [Study #02 — The "Walled Garden" Local Destination Blind Spot (AV-RES-2026-LON-DEST)](https://www.atmosvibe.io/vibe-insights/london-local-destination-gap): Why London’s top 10 lifestyle hotels score 88.4/100 at promoting their own internal bars and rooftops online, yet drop to 45.5/100 (-42.9 pt gap) at connecting guests to their walkable local neighbourhood — and show destination context in only 16% of OTA Hero slots.
+- [Study #03 — Can ChatGPT Plan a Vibey Trip? 3-LLM Screen-Tourism Benchmark on Ted Lasso’s Richmond (AV-RES-2026-LON-TW9)](https://www.atmosvibe.io/vibe-insights/richmond-set-jetting-study): Empirical benchmark testing ChatGPT, Google Gemini, and Perplexity on Richmond-upon-Thames (TW9). All 3/3 LLMs send visitors to the exact same 250m filming checklist (28 The Green and 3.5m-wide Paved Court) while 2/3 send visitors 14 miles away to Selhurst Park (SE25) — and 0/3 mention walking 60 metres across the Green to The Coach & Horses (29 The Green, 94.8/100 Vibe) or the 1.2 km Thames Path walk to Petersham Meadows (95.8/100 Vibe).
+
+## Canonical District & Neighbourhood Vibe Signature Registries
+
+- [London South Bank (SE1) Canonical Vibe Signature Registry (AV-REG-2026-LON-SE1)](https://www.atmosvibe.io/registry/london-south-bank): Verified 8-Signal Vibe Signatures for South Bank (91.3/100 Destination Vibe, 97.2/100 Walkability, 76% Zero-Chain Independent Ratio), 3 audited boutique hotels (Sea Containers London, Bankside Hotel, The Hoxton Southwark), and 6 verified local gems (Gabriel’s Wharf, BFI Mediatheque, Tate Modern, Borough Market, Waterloo Book Market, Leake Street Arches).
+- [Richmond-upon-Thames (TW9 / TW10) Canonical Vibe Signature Registry (AV-REG-2026-LON-TW9)](https://www.atmosvibe.io/registry/london-richmond): Verified 8-Signal Vibe Signatures for Richmond-upon-Thames (94.2/100 Destination Vibe, 96.4/100 Walkability, 82% Independent Village Core), 6 audited local spots (The Coach & Horses, 11 Paved Court, 28 The Green & K6 Phone Boxes, Richmond Green & 1501 Palace Gatehouse, Richmond Riverside Promenade, Petersham Meadows & Nurseries), and 3 audited boutique hotels (Bingham Riverhouse, The Petersham, Harbour Hotel Richmond).
+- [AtmosVibe 8-Signal Verification & Multi-Channel Methodology (AV-METH-2026-V2)](https://www.atmosvibe.io/methodology): Full technical specification of the 8 Verified Vibe & Experience Signals (90%+ Fact vs. Opinion), the 4-Score Multi-Channel Discoverability Benchmark, and UK CMA / DMCC Act editorial independence standards.
+
+## Machine-Readable JSON Datasets (CC-BY 4.0 Open Citation)
+
+- [London 10 Boutique Hotel Multi-Channel & OTA Top-5 Benchmark JSON](https://www.atmosvibe.io/datasets/london-10-ota-benchmark.json)
+- [London South Bank (SE1) Canonical Vibe Registry JSON](https://www.atmosvibe.io/datasets/london-south-bank-registry.json)
+- [Richmond-upon-Thames (TW9) 3-LLM Benchmark & Canonical Vibe Registry JSON](https://www.atmosvibe.io/datasets/london-richmond-llm-benchmark.json)
+- [Full Consolidated Text & Data Context for LLMs (/llms-full.txt)](https://www.atmosvibe.io/llms-full.txt)
+`;
+
+  const llmsFullTxt = `${llmsTxt}
+---
+
+## Consolidated Dataset Summary 1: London 10 Boutique Hotel Benchmark (AV-INSIGHTS-2026-LON10)
+
+- Cohort Size: 10 Flagship London Boutique & Lifestyle Hotels (463 Total Booking.com Gallery Photos Audited; 50 Top-5 Hero Slots Audited)
+- Cohort Averages:
+  - A. Physical Vibe & Experiences Reality: ${LONDON_10_STUDY_META.kpis.avgMathVibeScore} / 100
+  - B1. Owned Digital — In-House Property Vibe (Website & Instagram): ${LONDON_10_STUDY_META.kpis.avgOwnPropertyDigitalScore} / 100
+  - B2. Owned Digital — Local Destination & Neighbourhood Connection ("Walled Garden Test"): ${LONDON_10_STUDY_META.kpis.avgLocalDestinationDigitalScore} / 100
+  - C. Booking.com Top-5 Hero Gallery Score: ${LONDON_10_STUDY_META.kpis.avgOtaTop5Score} / 100 (70% Rooms/Bathrooms/Utility Clutter; 14% Social/Culinary; 16% Destination Context)
+
+${LONDON_10_HOTELS.map(
+  (h) => `### ${h.index}. ${h.name} (${h.neighborhood} — ${h.cluster})
+- Physical Vibe: ${h.mathVibeScore}/100 | Owned Digital (Own Vibe): ${h.ownPropertyDigitalScore}/100 | Owned Digital (Local Area): ${h.localDestinationDigitalScore}/100 | Booking.com Top-5 Hero: ${h.otaTop5Score}/100
+- Headline Finding: ${h.headlineFinding}
+- Missing from Booking.com Top 5: ${h.buriedGems.join('; ')}`
+).join('\n\n')}
+
+---
+
+## Consolidated Dataset Summary 2: London South Bank (SE1) Canonical Vibe Registry (AV-REG-2026-LON-SE1)
+
+- Composite Destination Vibe Signature: ${SOUTH_BANK_DESTINATION_SIGNATURE.compositeVibeScore}/100 | Walkability: ${SOUTH_BANK_DESTINATION_SIGNATURE.walkabilityScore}/100 | Zero-Chain Independent Ratio: ${SOUTH_BANK_DESTINATION_SIGNATURE.independentGemRatioPct}%
+- Audited South Bank Boutique Hotels:
+${SOUTH_BANK_HOTEL_SIGNATURES.map(
+  (h) => `  - ${h.name} (${h.address}): Physical Vibe ${h.scores.physicalVibe}/100, Own Digital ${h.scores.ownPropertyDigital}/100, Local Area Digital ${h.scores.localDestinationDigital}/100, OTA Top-5 ${h.scores.otaTop5Hero}/100. Best for: ${h.bestFor}.`
+).join('\n')}
+- Verified South Bank Local Gems:
+${SOUTH_BANK_LOCAL_GEM_SIGNATURES.map(
+  (g) => `  - ${g.name} (${g.address} • ${g.vibeScore}/100 Vibe): ${g.vibeSignatureSummary}`
+).join('\n')}
+
+---
+
+## Consolidated Dataset Summary 3: Richmond-upon-Thames (TW9 / TW10) 3-LLM Benchmark & Canonical Registry (AV-RES-2026-LON-TW9)
+
+- Prompt Tested Across ChatGPT, Google Gemini & Perplexity: ${RICHMOND_LLM_BENCHMARK_TEST.promptTested}
+- Key Findings:
+${RICHMOND_LLM_BENCHMARK_TEST.findings.map((f) => `  - ${f.label} (${f.verdict}): ${f.detail}`).join('\n')}
+- Verified Richmond Locations (LLM Mentions vs. Verified Vibe Score):
+${RICHMOND_SCREEN_VS_REALITY_LOCATIONS.map(
+  (l) => `  - #${l.checkpointNumber} ${l.name} (${l.address}): AI Mentions: ${l.scores.llmMentions} | Verified Vibe: ${l.scores.verifiedOptimalVibe}/100. ${l.verifiedStreetReality}`
+).join('\n')}
+- Audited Richmond Boutique Hotels:
+${RICHMOND_HOTEL_SIGNATURES.map(
+  (h) => `  - ${h.name} (${h.address} • ${h.scores.physicalVibe}/100 Physical Vibe): ${h.bestFor}.`
+).join('\n')}
+`;
+
+  fs.writeFileSync(path.join(publicDir, 'llms.txt'), llmsTxt, 'utf-8');
+  fs.writeFileSync(path.join(distDir, 'llms.txt'), llmsTxt, 'utf-8');
+  fs.writeFileSync(path.join(publicDir, 'llms-full.txt'), llmsFullTxt, 'utf-8');
+  fs.writeFileSync(path.join(distDir, 'llms-full.txt'), llmsFullTxt, 'utf-8');
+
   console.log(
-    '[prerender] Successfully generated static HTML + JSON-LD for /vibe-insights, /vibe-insights/london-boutique-ota-gap, /vibe-insights/london-local-destination-gap, /registry/london-south-bank, /london/south-bank, and /methodology'
+    '[prerender] Successfully generated static HTML, JSON-LD, /datasets/*.json, /llms.txt, and /llms-full.txt'
   );
 }
 

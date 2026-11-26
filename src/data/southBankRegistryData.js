@@ -460,6 +460,13 @@ export function buildSouthBankRegistryJsonLd() {
         license: 'https://creativecommons.org/licenses/by/4.0/',
         isAccessibleForFree: true,
         dateModified: SOUTH_BANK_DESTINATION_SIGNATURE.lastVerified,
+        distribution: [
+          {
+            '@type': 'DataDownload',
+            encodingFormat: 'application/json',
+            contentUrl: 'https://www.atmosvibe.io/datasets/london-south-bank-registry.json',
+          },
+        ],
         creator: {
           '@type': 'Organization',
           name: 'AtmosVibe',

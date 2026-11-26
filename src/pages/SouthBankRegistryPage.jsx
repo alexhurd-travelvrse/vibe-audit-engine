@@ -804,9 +804,20 @@ export default function SouthBankRegistryPage() {
                 </p>
               </div>
 
-              <Link to="/methodology" className="vi-action-btn-secondary">
-                <span>Read Full 8-Signal Methodology →</span>
-              </Link>
+              <div style={{ display: 'flex', gap: '0.65rem', flexWrap: 'wrap' }}>
+                <a
+                  href="/datasets/london-south-bank-registry.json"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="vi-action-btn-secondary"
+                  style={{ textDecoration: 'none' }}
+                >
+                  <span>Open JSON Dataset ↗</span>
+                </a>
+                <Link to="/methodology" className="vi-action-btn-secondary">
+                  <span>Read Full 8-Signal Methodology →</span>
+                </Link>
+              </div>
             </div>
           </div>
         </section>

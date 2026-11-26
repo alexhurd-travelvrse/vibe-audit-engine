@@ -181,6 +181,13 @@ export default function VibeInsightsPage() {
           url: LONDON_10_STUDY_META.canonicalUrl,
           license: 'https://creativecommons.org/licenses/by/4.0/',
           isAccessibleForFree: true,
+          distribution: [
+            {
+              '@type': 'DataDownload',
+              encodingFormat: 'application/json',
+              contentUrl: 'https://www.atmosvibe.io/datasets/london-10-ota-benchmark.json',
+            },
+          ],
           creator: {
             '@type': 'Organization',
             name: 'AtmosVibe',
